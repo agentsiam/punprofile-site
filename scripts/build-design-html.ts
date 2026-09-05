@@ -297,7 +297,7 @@ function scaleSection(d: Design): string {
   /** Resolve a name that may be a Material role rather than a palette token.
    *  The state layer is drawn in the element's own content colour, and asking
    *  for `on-surface` directly rendered `background:undefined` on every swatch
-   *  until 03/09/2026, because that name lives in `aliases`, not in `colors`. */
+   *  until 05/09/2026, because that name lives in `aliases`, not in `colors`. */
   const colour = (name: string): string => {
     const direct = d.colors[name];
     if (direct) return direct;
