@@ -43,6 +43,10 @@ interface Design {
   scheme: string;
   source: string;
   colors: Record<string, string>;
+  /** Material role names mapped onto this palette's own token names. A role is
+   *  not a colour: `on-surface` resolves to `ink-deep`, which is where the hex
+   *  lives. Reading `colors["on-surface"]` gets undefined. */
+  aliases?: Record<string, string>;
   "state-layers": Record<string, number>;
   typography: Record<string, TypeRole>;
   shape: Record<string, string>;
@@ -290,10 +294,28 @@ function scaleSection(d: Design): string {
         `<div class="scale-item"><div class="elev-demo" style="box-shadow:${v === "none" ? "none" : v}"></div><code>${k}</code></div>`,
     )
     .join("");
+  /** Resolve a name that may be a Material role rather than a palette token.
+   *  The state layer is drawn in the element's own content colour, and asking
+   *  for `on-surface` directly rendered `background:undefined` on every swatch
+   *  until 03/09/2026, because that name lives in `aliases`, not in `colors`. */
+  const colour = (name: string): string => {
+    const direct = d.colors[name];
+    if (direct) return direct;
+    const aliased = d.aliases?.[name];
+    const resolved = aliased ? d.colors[aliased] : undefined;
+    if (!resolved) {
+      throw new Error(
+        `design.md has no colour for "${name}", and no alias resolving to one. ` +
+          `The page would render it as undefined, which is worse than not building.`,
+      );
+    }
+    return resolved;
+  };
+
   const state = Object.entries(d["state-layers"])
     .map(
       ([k, v]) =>
-        `<div class="scale-item"><div class="state-demo"><span style="background:${d.colors["on-surface"]};opacity:${v}"></span></div><code>${k}</code><span>${Math.round(v * 100)}%</span></div>`,
+        `<div class="scale-item"><div class="state-demo"><span style="background:${colour("on-surface")};opacity:${v}"></span></div><code>${k}</code><span>${Math.round(v * 100)}%</span></div>`,
     )
     .join("");
   const motion = Object.entries(d.motion)
