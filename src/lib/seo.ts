@@ -80,16 +80,23 @@ export const PUBLIC_ROUTES: readonly { path: string; priority: number }[] = [
    * whole argument is that it does not overstate what it can do. Each joins this
    * list on the day its product ships.
    */
-  /**
-   * The catalogue page, 06/09/2026. Above the one product page for the reason
-   * `/coaching` sits above `/pricing`: it is the page a stranger searching for
-   * what PunProfile does should land on, and the product pages sit under it.
+  /*
+   * `/products` and `/services` are BOTH absent, 06/09/2026, and for the same
+   * reason `/method` is: their Thai is drafted rather than read back, so both
+   * carry `NOT_YET_INDEXED` and both join this list on the day that marker
+   * comes off.
    *
-   * `/services` is deliberately absent, the same arrangement `/method` has: its
-   * Thai is drafted rather than read back, so the page carries
-   * `NOT_YET_INDEXED` and joins this list on the day that marker comes off.
+   * `/products` was listed here for an hour on the reasoning that it is the
+   * page a stranger searching for what PunProfile does should land on, which is
+   * true and is not the test. The test is the one `/method` set: an unreviewed
+   * page is not a search result, whatever it is about. Listing the catalogue
+   * and gating the services page split one rule into two on the strength of
+   * nothing, and the catalogue is the page carrying MORE unread Thai of the
+   * two.
+   *
+   * When they join, `/products` takes 0.8 and sits above the product pages, for
+   * the reason `/coaching` sits above `/pricing`: they sit one level under it.
    */
-  { path: "/products", priority: 0.8 },
   { path: "/products/eu-fit-check", priority: 0.7 },
   ...(POSTS.length > 0 ? [{ path: "/blog", priority: 0.7 }] : []),
   { path: "/faq", priority: 0.6 },
