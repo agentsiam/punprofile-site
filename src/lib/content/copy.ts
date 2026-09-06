@@ -205,19 +205,28 @@ export const COPY = {
    * **`nav.services` and `nav.coaching` are not the same destination and the
    * labels have to say so.** `/coaching` is the pitch, with the hook, the proof
    * and the founder section on it; `/services` is what the work actually is.
-   * "Coaching 1:1" names the relationship and "the three services" names the
-   * catalogue, which is the distinction a reader is choosing between.
+   * "Coaching 1:1" names the relationship and "Our Services" names the
+   * catalogue, which is the distinction a reader is choosing between. The two
+   * rows sit next to each other at the foot of the group so that reading is
+   * available rather than implied.
    *
-   * **The key is `nav.threeServices` and not `nav.services`, and that is not a
-   * naming preference.** `BINDINGS` in `verify-copy.ts` still maps
-   * `nav.services` to the termbase term `our-services`, which is fixed at the
-   * English "Our Services" from 15/08/2026 on the rule that site navigation is
-   * English. The key had no string behind it while `/services` did not exist,
-   * so the binding sat dormant; naming this one after it woke the binding up
-   * and failed the run. The term is also out of step with the group heading
-   * directly above it, `nav.products`, which Paul rewrote to `บริการของเรา` on
-   * 23/08/2026. Which of the two is right is a decision about Thai in the menu
-   * and it belongs to him, so this key steps around it rather than settling it.
+   * **`nav.services` is the key and the label is English, Paul's call on
+   * 06/09/2026.** The key carries a binding: `BINDINGS` in `verify-copy.ts`
+   * maps it to the termbase term `our-services`, fixed at "Our Services" since
+   * 15/08/2026 on the rule that site navigation is English. The key had no
+   * string behind it for the fifteen days `/services` did not exist, so the
+   * binding sat dormant, and the first draft of this entry stepped around it
+   * under a different key. Paul kept the term instead, which is the answer that
+   * leaves one rule about navigation rather than two.
+   *
+   * **What it costs, recorded because it is visible on the page.** The group
+   * heading directly above this row is `nav.products`, which Paul rewrote to
+   * `บริการของเรา` on 23/08/2026, and `our-services`' own `why` notes it was
+   * `บริการของเรา` until the English rule replaced it. So the menu now reads
+   * `บริการของเรา` as the heading and "Our Services" as a row inside it: the
+   * same two words, once in each language, one above the other. If that reads
+   * wrong on the page, the fix is the term rather than this key, and it is one
+   * edit in `termbase.yml` followed by `npm run termbase`.
    */
   "nav.allProducts": {
     screen: "Site menu, the Products group",
@@ -225,11 +234,16 @@ export const COPY = {
     // TH-UNREVIEWED, 06/09/2026.
     th: "บริการทั้งหมด",
   },
-  "nav.threeServices": {
+  "nav.services": {
     screen: "Site menu, the Products group",
-    en: "The three services",
-    // TH-UNREVIEWED, 06/09/2026.
-    th: "สามบริการหลัก",
+    en: "Our Services",
+    /*
+     * English in the Thai column, which is what `our-services` fixes and what
+     * `nav.faq`, `nav.contact` and `nav.menu` already do. LR-01's passthrough
+     * check allows an identical pair only where a termbase entry says so, and
+     * this is one of the five it says it about.
+     */
+    th: "Our Services",
   },
   "nav.faq": {
     screen: "Site menu",

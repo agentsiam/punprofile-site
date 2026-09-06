@@ -116,7 +116,7 @@ export const PRODUCTS: readonly NavItem[] = [
    * and the half a person delivers had none. `/coaching` keeps the pitch and
    * the founder section; `/services` is what the work is.
    */
-  { href: "/services", label: "nav.threeServices" },
+  { href: "/services", label: "nav.services" },
 ];
 
 /**
