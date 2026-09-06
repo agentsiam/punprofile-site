@@ -171,7 +171,7 @@ export const DESTINATIONS = {
   cvcheck: {
     href: "/products/cv-check",
     cost: COST.read,
-    // TH-UNREVIEWED. A draft, following the pattern the other `read`-cost
+    // Read back 06/09/2026. A draft, following the pattern the other `read`-cost
     // labels already use: `ดู` and then what the page shows, which is how
     // `pricing` and `coaching` read.
     label: { en: "See how the CV Check works", th: "ดูว่า CV Check ทำงานอย่างไร" },
@@ -187,7 +187,7 @@ export const DESTINATIONS = {
   products: {
     href: "/products",
     cost: COST.read,
-    // TH-UNREVIEWED, 06/09/2026.
+    // Read back 06/09/2026.
     label: { en: "See everything we make", th: "ดูบริการทั้งหมดของเรา" },
   },
   /**
@@ -201,7 +201,7 @@ export const DESTINATIONS = {
   servicesPage: {
     href: "/services",
     cost: COST.read,
-    // TH-UNREVIEWED, 06/09/2026.
+    // Read back 06/09/2026.
     label: { en: "See the three services", th: "ดูบริการทั้งสามอย่าง" },
   },
   contact: {

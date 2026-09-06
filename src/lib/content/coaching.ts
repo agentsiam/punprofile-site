@@ -312,34 +312,42 @@ export const FOUNDER_TURN: Copy = {
 /** After the turn. What he does about it, and what he will not do. */
 export const FOUNDER_AFTER: readonly Copy[] = [
   {
-    // TH-UNREVIEWED, 25/08/2026. `ผม` to `เรา`, drafted.
+    // Read back 06/09/2026, and `ผม` to `เรา` held.
     // What coaching is, is a claim about the method and never was Paul's
     // opinion, so it moves to the shared voice cleanly. See
     // `founder-section-we.md` for which paragraphs could not.
     en: "For us, career coaching is not writing you a new story that makes you look better than you are. It is helping you see who your existing experience is valuable to, which direction you should be heading, and how to tell your own story so another market understands it.",
-    // Read back 25/08/2026, AND THIS ONE IS HIS OWN SENTENCE. The term is
-    // swapped and not a word around it. Read it back before it ships: an English
-    // phrase dropped into the middle of his Thai is exactly the kind of change
-    // that is right as a rule and wrong in a particular voice.
-    th: "สำหรับเรา Career Coaching ไม่ใช่การเขียนเรื่องใหม่ให้คุณดูเก่งกว่าความเป็นจริง แต่คือการช่วยให้คุณมองเห็นว่าประสบการณ์ที่มีอยู่มีค่ากับใคร คุณควรมุ่งไปทางไหน และจะเล่าเรื่องของตัวเองอย่างไรให้คนอีกตลาดเข้าใจ",
+    // Paul's wording, 06/09/2026, and the read-back this comment was asking for.
+    // The worry it recorded was real: the term had been swapped and not a word
+    // around it, and an English phrase dropped into the middle of his Thai is
+    // the kind of change that is right as a rule and wrong in a particular
+    // voice. He rewrote the sentence around it rather than accepting the swap:
+    // `เขียนเรื่องใหม่` became `แต่งเรื่องใหม่`, `ดูเก่งกว่า` became `ดูดีกว่า`,
+    // and the closing clause reads `คนในตลาดอื่น` rather than `คนอีกตลาด`.
+    th: "สำหรับเรา Career Coaching ไม่ใช่การแต่งเรื่องใหม่ให้คุณดูดีกว่าความเป็นจริง แต่คือการช่วยให้คุณมองเห็นว่าประสบการณ์ที่มีอยู่ของคุณมีคุณค่าสำหรับใคร ควรมุ่งหน้าไปทางไหน และจะเล่าเรื่องของตัวเองอย่างไรให้คนในตลาดอื่นเข้าใจ",
   },
   {
-    // TH-UNREVIEWED, 25/08/2026. `ผม` to `เรา`, drafted.
+    // Read back 06/09/2026, and `ผม` to `เรา` held.
     // The minimum change. This paragraph is the one Dew changes most and not by
     // wording: ten years in US placement means one of them did the recruiting
     // job before choosing not to do it here. That is his to write.
     en: "We chose career coaching over being recruiters because the first question should be “what suits you”, not “which vacancy can I put you into”.",
-    // Read back 25/08/2026, HIS OWN SENTENCE. Term swapped, nothing else.
-    th: "เราเลือกทำ Career Coaching แทนการเป็นนายหน้าจัดหางาน เพราะคำถามแรกควรเป็น “อะไรเหมาะกับคุณ” ไม่ใช่ “จะนำคุณไปใส่ในตำแหน่งไหนได้บ้าง”",
+    // Paul's wording, 06/09/2026. `นายหน้าจัดหางาน` became `บริษัทจัดหางาน`,
+    // which is the form the published disclaimer in `footer.ts` already uses, so
+    // the page and the legal line now name the same thing. Both quoted questions
+    // were opened out: "อะไรเหมาะกับคุณ" to "งานแบบไหนเหมาะกับคุณ", and
+    // "จะนำคุณไปใส่ในตำแหน่งไหนได้บ้าง" to
+    // "มีตำแหน่งว่างไหนที่เราจะส่งคุณเข้าไปได้บ้าง".
+    th: "เราเลือกทำ Career Coaching แทนการเป็นบริษัทจัดหางาน เพราะคำถามแรกควรเป็น “งานแบบไหนเหมาะกับคุณ” ไม่ใช่ “มีตำแหน่งว่างไหนที่เราจะส่งคุณเข้าไปได้บ้าง”",
   },
   {
     en: "PunProfile is paid by you, not by an employer. So the advice starts from your goals and your situation, not from a role somebody is rushing to fill.",
     th: "PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำจึงเริ่มจากเป้าหมายและความเป็นจริงของคุณ ไม่ใช่จากตำแหน่งที่ใครกำลังรีบหาคนไปใส่",
   },
   {
-    // TH-UNREVIEWED, 25/08/2026. `ผม` to `เรา`, drafted.
+    // Read back 06/09/2026, and `ผม` to `เรา` held.
     en: "In the end, you are still the one walking this road. Our job is to make sure you are not guessing the whole way: to let you know what you already have in hand, what is still missing, and what the next step should be.",
-    th: "สุดท้ายแล้ว คุณยังเป็นคนเดินเส้นทางนี้ด้วยตัวเอง งานของเราคือช่วยให้คุณไม่ต้องเดินด้วยการคาดเดาไปตลอดทาง เพื่อให้คุณรู้ว่าตอนนี้มีอะไรอยู่ในมือ ยังขาดอะไร และก้าวต่อไปควรเป็นก้าวไหน",
+    th: "สุดท้ายคุณยังเป็นคนที่ต้องเดินเส้นทางนี้ด้วยตัวเอง งานของเราคือช่วยให้คุณไม่ต้องคาดเดาไปตลอดทาง ให้คุณรู้ว่ามีอะไรอยู่ในมือแล้ว ยังขาดอะไร และควรก้าวต่อไปทางไหน",
   },
 ];
 

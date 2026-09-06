@@ -81,23 +81,29 @@ export const PUBLIC_ROUTES: readonly { path: string; priority: number }[] = [
    * list on the day its product ships.
    */
   /*
-   * `/products` and `/services` are BOTH absent, 06/09/2026, and for the same
-   * reason `/method` is: their Thai is drafted rather than read back, so both
-   * carry `NOT_YET_INDEXED` and both join this list on the day that marker
-   * comes off.
+   * `/products`, `/services` and `/method` joined on 06/09/2026, when Paul
+   * emptied `thai-review-queue.md`.
    *
-   * `/products` was listed here for an hour on the reasoning that it is the
-   * page a stranger searching for what PunProfile does should land on, which is
-   * true and is not the test. The test is the one `/method` set: an unreviewed
-   * page is not a search result, whatever it is about. Listing the catalogue
-   * and gating the services page split one rule into two on the strength of
-   * nothing, and the catalogue is the page carrying MORE unread Thai of the
-   * two.
+   * All three were absent for the same reason and it was never thinness: their
+   * Thai was drafted rather than read back, so each carried `NOT_YET_INDEXED`
+   * and each was linked, honest, and not offered to a crawler as finished. That
+   * was the whole condition, stated on `/method`'s layout the day it shipped,
+   * and it is now met for all seventy-nine strings across every module.
    *
-   * When they join, `/products` takes 0.8 and sits above the product pages, for
-   * the reason `/coaching` sits above `/pricing`: they sit one level under it.
+   * `/products` and `/services` take 0.8, the same as `/coaching` and
+   * `/pricing`: they are the two catalogues, and the individual product pages
+   * sit one level under them at 0.7. `/method` takes 0.7 because it explains
+   * how the score works to someone who already cares, which is a page reached
+   * from another page rather than one a stranger searches for.
+   *
+   * The four `soon` product pages stay absent, and for the OTHER reason: a page
+   * that says the product is not open yet is thin content whatever its Thai.
+   * Each joins on the day its product ships.
    */
+  { path: "/products", priority: 0.8 },
+  { path: "/services", priority: 0.8 },
   { path: "/products/eu-fit-check", priority: 0.7 },
+  { path: "/method", priority: 0.7 },
   ...(POSTS.length > 0 ? [{ path: "/blog", priority: 0.7 }] : []),
   { path: "/faq", priority: 0.6 },
   { path: "/contact", priority: 0.5 },

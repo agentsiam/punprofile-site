@@ -43,36 +43,38 @@ import type { DimensionKey } from "@/lib/model";
  * THAI
  * ---------------------------------------------------------------------------
  *
- * **Every Thai string in this file is a draft nobody has read back.** Each
- * carries TH-UNREVIEWED and lands in `thai-review-queue.md`. Until they are
- * read, this route is `NOT_YET_INDEXED`, the same arrangement the four `soon`
- * product pages use: linked, honest, and not offered to a crawler as finished.
+ * **Every Thai string in this file has now been read back, 06/09/2026.** They
+ * were drafts carrying `TH-UNREVIEWED` from the day the page shipped, which is
+ * why `/method` was `NOT_YET_INDEXED`: linked, honest, and not offered to a
+ * crawler as finished. Paul closed all twenty-five in one pass through
+ * `thai-review-queue.md`, rewriting ten of them, so the marker and the tag both
+ * come off together.
  */
 
 export const METHOD_HEADING: Copy = {
   en: "The method behind the score",
-  // TH-UNREVIEWED
+  // Read back 06/09/2026.
   th: "วิธีประเมินที่อยู่เบื้องหลังคะแนน",
 };
 
 export const METHOD_INTRO: Copy = {
   en: "Every number this site gives you comes from the same method. It is written down here so you can judge it before you decide how much to trust it.",
-  // TH-UNREVIEWED
+  // Read back 06/09/2026.
   th: "ตัวเลขทุกตัวที่คุณเห็นบนเว็บนี้มาจากวิธีเดียวกัน เราเขียนวิธีนี้ไว้ให้อ่านก่อน คุณจะได้ตัดสินใจเองว่าจะเชื่อมากแค่ไหน",
 };
 
 export const CLAIM_HEADING: Copy = {
   en: "What it rests on",
-  // TH-UNREVIEWED
+  // Read back 06/09/2026.
   th: "ข้อสมมติหลักของวิธีนี้",
 };
 
 export const CLAIM_BODY: Copy = {
   en: "Getting hired in Europe is not mostly a question of being good enough. It is a question of being legible, and legibility can be measured.",
-  // TH-UNREVIEWED. The home page states the same claim from the reader's side,
+  // Paul's wording, 06/09/2026. The home page states the same claim from the reader's side,
   // in Paul's own approved wording; this states it as the premise of a method,
   // which is a different sentence doing a different job on a different page.
-  th: "การได้งานในยุโรปไม่ได้ขึ้นอยู่กับว่าคุณเก่งพอหรือไม่เป็นหลัก แต่ขึ้นอยู่กับว่าคนที่อ่านโปรไฟล์มองเห็นสิ่งที่คุณมีหรือไม่ และสิ่งนี้วัดได้",
+  th: "การได้งานในยุโรปไม่ได้อยู่ที่ว่าคุณเก่งพอหรือไม่เป็นหลัก แต่อยู่ที่ว่าคนอ่านโปรไฟล์มองเห็นสิ่งที่คุณมีหรือไม่ และเรื่องนี้วัดได้",
 };
 
 /** The two verbs, in this order. `10_Methodology.md` § 1 owns the reasoning. */
@@ -80,51 +82,51 @@ export const VERBS: readonly { name: Copy; body: Copy }[] = [
   {
     name: {
       en: "Reorganise",
-      // TH-UNREVIEWED
+      // Read back 06/09/2026.
       th: "จัดระเบียบ",
     },
     body: {
       en: "What you already have, so the market can read it. Same experience, made visible. This part is fast, and it is most of the gap.",
-      // TH-UNREVIEWED
-      th: "จัดสิ่งที่คุณมีอยู่แล้วให้ตลาดอ่านออก ประสบการณ์เดิม แต่มองเห็นได้ชัดขึ้น ขั้นนี้ทำได้เร็ว และเป็นช่องว่างส่วนใหญ่ที่เจอ",
+      // Paul's wording, 06/09/2026.
+      th: "จัดสิ่งที่คุณมีอยู่แล้วให้ตลาดงานมองเห็น ประสบการณ์ยังเหมือนเดิม เพียงแต่นำเสนอให้ชัดขึ้น ขั้นนี้ทำได้เร็ว และปัญหาส่วนใหญ่มักอยู่ตรงนี้",
     },
   },
   {
     name: {
       en: "Upskill",
-      // TH-UNREVIEWED
+      // Read back 06/09/2026.
       th: "เติมทักษะที่ยังขาด",
     },
     body: {
       en: "What you genuinely do not have. Language before anything else. This part is slow, which is the reason to start it early rather than when it becomes the thing in the way.",
-      // TH-UNREVIEWED
-      th: "เติมสิ่งที่ยังขาดอยู่จริง โดยเฉพาะภาษา ขั้นนี้ใช้เวลานาน จึงควรเริ่มตั้งแต่ต้น ไม่ใช่รอจนกลายเป็นอุปสรรค",
+      // Paul's wording, 06/09/2026.
+      th: "เติมสิ่งที่คุณยังไม่มีจริง ๆ โดยเริ่มจากภาษาเป็นอันดับแรก ขั้นนี้ต้องใช้เวลา จึงควรเริ่มให้เร็ว แทนที่จะรอจนมันกลายเป็นอุปสรรค",
     },
   },
 ];
 
 export const THRESHOLD_HEADING: Copy = {
   en: "Thresholds, not scores",
-  // TH-UNREVIEWED
+  // Read back 06/09/2026.
   th: "เกณฑ์ผ่าน ไม่ใช่แค่คะแนน",
 };
 
 export const THRESHOLD_BODY: readonly Copy[] = [
   {
     en: "A score tells you where you stand. A threshold tells you whether you are ready, and only the second one is something you can act on.",
-    // TH-UNREVIEWED
-    th: "คะแนนบอกว่าคุณอยู่ตรงไหน เกณฑ์ผ่านบอกว่าคุณพร้อมหรือยัง และมีเพียงอย่างหลังที่นำไปลงมือต่อได้",
+    // Paul's wording, 06/09/2026.
+    th: "คะแนนบอกว่าคุณอยู่ตรงไหน ส่วนเกณฑ์ผ่านบอกว่าคุณพร้อมหรือยัง และมีเพียงอย่างหลังเท่านั้นที่นำไปวางแผนลงมือต่อได้",
   },
   {
     en: "So the method sets a bar for each dimension, and you are ready when you clear every bar rather than when the average looks respectable. The dimensions do not trade against each other: being good at the job does not give you the right to work there.",
-    // TH-UNREVIEWED
+    // Read back 06/09/2026.
     th: "วิธีนี้จึงตั้งเกณฑ์ไว้ในแต่ละด้าน คุณพร้อมเมื่อผ่านครบทุกด้าน ไม่ใช่เมื่อค่าเฉลี่ยดูดี เพราะแต่ละด้านทดแทนกันไม่ได้ ความเก่งในงานไม่ได้ทำให้คุณมีสิทธิ์ทำงานที่นั่น",
   },
 ];
 
 export const GATES_HEADING: Copy = {
   en: "The four gates, in the order they are cleared",
-  // TH-UNREVIEWED
+  // Read back 06/09/2026.
   th: "สี่ด่าน เรียงตามลำดับที่ต้องผ่าน",
 };
 
@@ -138,22 +140,22 @@ export const GATES_HEADING: Copy = {
 export const GATE_QUESTIONS: Record<DimensionKey, Copy> = {
   mobilityReadiness: {
     en: "Can you legally and practically be there?",
-    // TH-UNREVIEWED
+    // Read back 06/09/2026.
     th: "คุณไปอยู่ที่นั่นได้จริงหรือไม่ ทั้งในทางกฎหมายและในทางปฏิบัติ",
   },
   employability: {
     en: "Can you get interviews?",
-    // TH-UNREVIEWED
-    th: "คุณได้รับการติดต่อให้ไปสัมภาษณ์หรือไม่",
+    // Paul's wording, 06/09/2026.
+    th: "คุณไปถึงขั้นสัมภาษณ์ได้หรือไม่",
   },
   europeanMarketFit: {
     en: "Are you competitive against local candidates?",
-    // TH-UNREVIEWED
+    // Read back 06/09/2026.
     th: "คุณแข่งกับผู้สมัครในประเทศนั้นได้หรือไม่",
   },
   professionalCapability: {
     en: "Can you do the job?",
-    // TH-UNREVIEWED
+    // Read back 06/09/2026.
     th: "คุณทำงานนั้นได้หรือไม่",
   },
 };
@@ -165,20 +167,20 @@ export const GATE_QUESTIONS: Record<DimensionKey, Copy> = {
  */
 export const GATE_BAR: Copy = {
   en: "clears at",
-  // TH-UNREVIEWED
-  th: "ผ่านที่",
+  // Paul's wording, 06/09/2026.
+  th: "เกณฑ์ผ่าน",
 };
 
 export const GATES_ORDER: Copy = {
   en: "This order, and not score order. Someone with no route to work there is polishing a CV for a job they cannot legally take.",
-  // TH-UNREVIEWED
-  th: "เรียงตามลำดับนี้ ไม่ได้เรียงตามคะแนน คนที่ยังไม่มีทางไปทำงานที่นั่น กำลังขัดเกลา CV ให้กับงานที่ยังรับไม่ได้ตามกฎหมาย",
+  // Paul's wording, 06/09/2026.
+  th: "ต้องเรียงตามลำดับนี้ ไม่ใช่ตามคะแนน เพราะคนที่ยังไม่มีช่องทางไปทำงานที่นั่นอย่างถูกกฎหมาย ต่อให้ปรับ CV ดีแค่ไหน ก็ยังสมัครงานที่ตัวเองไม่มีสิทธิรับอยู่ดี",
 };
 
 export const GATES_LOWEST: Copy = {
   en: "And the lowest gate you have not cleared is the only one that matters this month. The method does not hand you a five-item list.",
-  // TH-UNREVIEWED
-  th: "และด่านที่ต่ำที่สุดที่คุณยังไม่ผ่าน คือด่านเดียวที่สำคัญในเดือนนี้ วิธีนี้จะไม่ยื่นรายการห้าข้อให้คุณไปทำพร้อมกัน",
+  // Paul's wording, 06/09/2026.
+  th: "และด่านแรกที่คุณยังไม่ผ่าน คือด่านเดียวที่สำคัญในเดือนนี้ วิธีนี้ไม่ได้ยื่นรายการห้าข้อให้คุณไปทำพร้อมกัน",
 };
 
 /**
@@ -190,26 +192,26 @@ export const GATES_LOWEST: Copy = {
  */
 export const LIMIT_HEADING: Copy = {
   en: "What it does not do",
-  // TH-UNREVIEWED
+  // Read back 06/09/2026.
   th: "สิ่งที่วิธีนี้ไม่ได้ทำ",
 };
 
 export const LIMIT_BODY: readonly Copy[] = [
   {
     en: "It measures what a form can reach. A bar you have not cleared is a sequence, not a refusal, and the method never scores something it cannot see.",
-    // TH-UNREVIEWED
-    th: "วิธีนี้วัดได้เท่าที่แบบสอบถามเข้าถึง ด่านที่ยังไม่ผ่านคือลำดับของสิ่งที่ต้องทำ ไม่ใช่คำปฏิเสธ และวิธีนี้จะไม่ให้คะแนนสิ่งที่มองไม่เห็น",
+    // Paul's wording, 06/09/2026.
+    th: "วิธีนี้วัดได้เฉพาะสิ่งที่แบบสอบถามเข้าถึง เกณฑ์ที่คุณยังไม่ผ่านบอกเพียงลำดับว่าควรทำอะไรก่อน ไม่ใช่คำตัดสินว่าคุณไปต่อไม่ได้ และวิธีนี้จะไม่ให้คะแนนสิ่งที่มองไม่เห็น",
   },
   {
     en: "The method names a fifth gate, whether you can afford to get there and land. The check does not score it, because nothing it asks you can measure that honestly.",
-    // TH-UNREVIEWED
-    th: "วิธีนี้มีด่านที่ห้าคือเรื่องเงิน ว่าคุณมีทุนพอจะเดินทางไปและตั้งหลักที่นั่นหรือไม่ แบบประเมินนี้ไม่ให้คะแนนด่านนั้น เพราะคำถามที่ถามอยู่วัดเรื่องนี้อย่างตรงไปตรงมาไม่ได้",
+    // Paul's wording, 06/09/2026.
+    th: "วิธีนี้มีด่านที่ห้า คือคุณมีเงินพอสำหรับการเดินทางและตั้งหลักที่นั่นหรือไม่ แต่แบบประเมินนี้ไม่ให้คะแนนด่านดังกล่าว เพราะไม่มีคำถามใดที่สามารถวัดเรื่องนี้ได้อย่างตรงไปตรงมา",
   },
 ];
 
 export const METHOD_CLOSE: Copy = {
   en: "That is the whole method. See where you stand against it.",
-  // TH-UNREVIEWED
+  // Read back 06/09/2026.
   th: "ทั้งหมดนี้คือวิธีที่เราใช้ ลองดูว่าตอนนี้คุณอยู่ตรงไหนเมื่อวัดด้วยวิธีนี้",
 };
 
@@ -223,6 +225,6 @@ export const METHOD_CLOSE: Copy = {
  */
 export const METHOD_PROOF: Copy = {
   en: "The method is published, gate by gate",
-  // TH-UNREVIEWED
+  // Read back 06/09/2026.
   th: "เปิดวิธีประเมินให้ดูครบทุกด่าน",
 };

@@ -156,7 +156,7 @@ export const FOOTER_COLUMNS: readonly FooterColumn[] = [
        * how the check decides what it decides, so it belongs beside the check
        * and above the questions people ask about it.
        *
-       * TH-UNREVIEWED on the label, like everything else on that page.
+       * Read back 06/09/2026. on the label, like everything else on that page.
        */
       { href: "/method", label: { en: "How we measure", th: "วิธีที่เราใช้ประเมิน" } },
       { href: "/faq", label: { en: "FAQ", th: "FAQ" } },

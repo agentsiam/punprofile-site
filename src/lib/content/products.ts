@@ -124,7 +124,7 @@ export const COMING_SOON: Copy = {
  */
 export const STATUS_SOON: Copy = {
   en: "Coming soon",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "เร็ว ๆ นี้",
 };
 
@@ -515,7 +515,7 @@ export const PRODUCT_ART: Record<string, ProductArt> = {
     figure: "gates",
     alt: {
       en: "Four bars of different heights, one per gate, with the shortest marked",
-      // TH-UNREVIEWED, 06/09/2026. Describes what the drawing shows and nothing
+      // Read back 06/09/2026. Describes what the drawing shows and nothing
       // about what it means, which is the rule `PORTRAIT_ALT` in `coaching.ts`
       // already follows.
       th: "แท่งกราฟสี่แท่งความสูงต่างกัน แทนด่านทั้งสี่ โดยแท่งที่สั้นที่สุดถูกทำเครื่องหมายไว้",
@@ -525,23 +525,23 @@ export const PRODUCT_ART: Record<string, ProductArt> = {
     figure: "page",
     alt: {
       en: "A page of a CV with the top third marked out from the rest",
-      // TH-UNREVIEWED, 06/09/2026.
-      th: "หน้ากระดาษ CV ที่ทำเครื่องหมายแยกส่วนหนึ่งในสามด้านบนออกจากส่วนที่เหลือ",
+      // Paul's wording, 06/09/2026.
+      th: "CV หนึ่งหน้า โดยทำเครื่องหมายแยกส่วนหนึ่งในสามด้านบนออกจากส่วนที่เหลือ",
     },
   },
   "fit-report": {
     figure: "report",
     alt: {
       en: "A report laid out as a chart above four rows of findings",
-      // TH-UNREVIEWED, 06/09/2026.
-      th: "หน้ารายงานที่มีกราฟอยู่ด้านบน และรายการผลการอ่านสี่บรรทัดอยู่ด้านล่าง",
+      // Paul's wording, 06/09/2026.
+      th: "หน้ารายงานที่มีกราฟด้านบน และผลการประเมินสี่แถวด้านล่าง",
     },
   },
   "matched-jobs": {
     figure: "roles",
     alt: {
       en: "Three role cards, one of them marked as the one that matches",
-      // TH-UNREVIEWED, 06/09/2026.
+      // Read back 06/09/2026.
       th: "การ์ดตำแหน่งงานสามใบ โดยใบหนึ่งถูกทำเครื่องหมายว่าตรงกับโปรไฟล์",
     },
   },
@@ -549,7 +549,7 @@ export const PRODUCT_ART: Record<string, ProductArt> = {
     figure: "pipeline",
     alt: {
       en: "Four columns of a tracker, from saved through to offer",
-      // TH-UNREVIEWED, 06/09/2026.
+      // Read back 06/09/2026.
       th: "กระดานติดตามการสมัครงานสี่คอลัมน์ ตั้งแต่ตำแหน่งที่เก็บไว้จนถึงข้อเสนอจ้างงาน",
     },
   },
@@ -602,77 +602,77 @@ export const isFreeProduct = (slug: string): boolean => FREE_SLUGS.has(slug);
  */
 export const INDEX_EYEBROW: Copy = {
   en: "Everything PunProfile makes",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "ทุกอย่างที่ PunProfile ทำขึ้นมา",
+  // Paul's wording, 06/09/2026.
+  th: "เครื่องมือและบริการทั้งหมดจาก PunProfile",
 };
 
 export const INDEX_HEADING: Copy = {
   en: "Five tools and one conversation, in the order most people take them",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "เครื่องมือห้าอย่างกับการพูดคุยอีกหนึ่งครั้ง เรียงตามลำดับที่คนส่วนใหญ่ใช้จริง",
+  // Paul's wording, 06/09/2026.
+  th: "เครื่องมือห้าอย่างและการพูดคุยกับโค้ชอีกหนึ่งแบบ เรียงตามลำดับที่คนส่วนใหญ่มักใช้",
 };
 
 export const INDEX_INTRO: Copy = {
   en: "Start wherever you are. Nothing here needs the one before it, and the first two ask for nothing but your answers.",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย ไม่มีอย่างไหนที่ต้องทำตามลำดับ และสองอย่างแรกขอแค่คำตอบของคุณเท่านั้น",
+  // Paul's wording, 06/09/2026.
+  th: "เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า และสองอย่างแรกต้องการเพียงคำตอบจากคุณ",
 };
 
 export const INDEX_PATH_HEADING: Copy = {
   en: "How they fit together",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "แต่ละอย่างต่อกันอย่างไร",
+  // Paul's wording, 06/09/2026.
+  th: "แต่ละอย่างทำงานร่วมกันอย่างไร",
 };
 
 export const INDEX_PATH_LEDE: Copy = {
   en: "Each one answers the question the one before it leaves you holding.",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "แต่ละอย่างตอบคำถามที่เกิดขึ้นจากอย่างก่อนหน้า",
+  // Paul's wording, 06/09/2026.
+  th: "แต่ละอย่างช่วยตอบคำถามที่อันก่อนหน้าทิ้งไว้",
 };
 
 export const INDEX_TABLE_HEADING: Copy = {
   en: "Side by side",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "เทียบกันทีละอย่าง",
+  // Paul's wording, 06/09/2026.
+  th: "เปรียบเทียบกันชัด ๆ",
 };
 
 export const COL_PRODUCT: Copy = {
   en: "What it is",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "บริการ",
 };
 
 export const COL_WHO: Copy = {
   en: "Who it is for",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "เหมาะกับใคร",
 };
 
 export const COL_WHAT: Copy = {
   en: "What happens",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "เกิดอะไรขึ้นบ้าง",
 };
 
 export const COL_COST: Copy = {
   en: "How it is paid for",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "จ่ายอย่างไร",
 };
 
 /** The chip on a product that is open. The counterpart of `COMING_SOON`. */
 export const STATUS_LIVE: Copy = {
   en: "Open now",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "เปิดให้ใช้งานแล้ว",
 };
 
 /** The link at the foot of a card on the catalogue page. */
 export const CARD_ACTION: Copy = {
   en: "See what it does",
-  // TH-UNREVIEWED, 06/09/2026. Follows the pattern the `read`-cost labels in
+  // Paul's wording, 06/09/2026. Follows the pattern the `read`-cost labels in
   // `cta.ts` already use: ดู, and then what the page shows.
-  th: "ดูรายละเอียดของบริการนี้",
+  th: "ดูว่าเครื่องมือนี้ช่วยอะไรได้บ้าง",
 };
 
 /**
@@ -686,14 +686,14 @@ export const CARD_ACTION: Copy = {
  */
 export const NOT_A_TOOL_HEADING: Copy = {
   en: "And the part that is not a tool",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "และส่วนที่ไม่ใช่เครื่องมือ",
 };
 
 export const NOT_A_TOOL_BODY: Copy = {
   en: "Everything above reads what you already have. The coaching is where we decide what to do about it, and it is the engagement every client starts with.",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "ทุกอย่างด้านบนคืออ่านสิ่งที่คุณมีอยู่แล้ว ส่วนการโค้ชคือการตัดสินใจร่วมกันว่าจะทำอะไรต่อ และเป็นจุดเริ่มต้นของลูกค้าทุกคน",
+  // Paul's wording, 06/09/2026.
+  th: "เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว ส่วนการโค้ชคือพื้นที่ที่เราช่วยกันตัดสินใจว่าจะทำอะไรกับสิ่งที่พบ และเป็นจุดเริ่มต้นของลูกค้าทุกคน",
 };
 
 /* ==========================================================================
@@ -715,13 +715,13 @@ export const NOT_A_TOOL_BODY: Copy = {
  */
 export const CLOSE_HEADING: Copy = {
   en: "Not sure which one you need?",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "ยังไม่แน่ใจว่าควรเริ่มจากอันไหน",
 };
 
 export const CLOSE_BODY: Copy = {
   en: "Tell me where you are and what you are aiming at, and I will say which of these is worth your time and which is not.",
-  // TH-UNREVIEWED, 06/09/2026. First person, which is what `DESTINATIONS.contact`
+  // Read back 06/09/2026. First person, which is what `DESTINATIONS.contact`
   // in `cta.ts` settled: the reader reaches a person, not a company.
   th: "บอกผมว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ แล้วผมจะบอกว่าอันไหนคุ้มกับเวลาของคุณ และอันไหนยังไม่ต้อง",
 };
@@ -736,6 +736,6 @@ export const CLOSE_BODY: Copy = {
  */
 export const RELATED_HEADING: Copy = {
   en: "The rest of the catalogue",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "บริการอื่นในชุดเดียวกัน",
 };

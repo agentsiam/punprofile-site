@@ -281,33 +281,33 @@ export function serviceForDimension(dimension: string): ServiceId {
  */
 export const SERVICES_EYEBROW: Copy = {
   en: "Working with a person",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "งานส่วนที่ต้องทำร่วมกับคน",
+  // Paul's wording, 06/09/2026.
+  th: "ทำงานร่วมกับคน",
 };
 
 export const SERVICES_PAGE_HEADING: Copy = {
   en: "Three services, and the one you start with",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "สามบริการ และบริการที่คุณจะเริ่มต้นด้วย",
+  // Paul's wording, 06/09/2026.
+  th: "สามบริการ และจุดเริ่มต้นของคุณ",
 };
 
 export const SERVICES_PAGE_INTRO: Copy = {
   en: "The tools read what you already have. This is the part where someone reads it with you and decides what to do about it.",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "เครื่องมือต่าง ๆ ทำหน้าที่อ่านสิ่งที่คุณมีอยู่แล้ว ส่วนนี้คือการที่มีคนอ่านไปพร้อมกับคุณ แล้วช่วยตัดสินใจว่าจะทำอะไรต่อ",
+  // Paul's wording, 06/09/2026.
+  th: "เครื่องมือต่าง ๆ อ่านสิ่งที่คุณมีอยู่แล้ว ส่วนตรงนี้คือการมีใครสักคนช่วยอ่านไปกับคุณ และช่วยกันตัดสินใจว่าจะทำอะไรกับสิ่งที่พบ",
 };
 
 export const ENGAGEMENT_HEADING: Copy = {
   en: "How an engagement runs",
-  // TH-UNREVIEWED, 06/09/2026.
-  th: "การทำงานร่วมกันเป็นอย่างไร",
+  // Paul's wording, 06/09/2026.
+  th: "เราทำงานร่วมกันอย่างไร",
 };
 
 export const ENGAGEMENT_LEDE: Copy = {
   en: "Four steps, and the first one is free. Nothing is scoped or priced until we both know what you are actually aiming at.",
-  // TH-UNREVIEWED, 06/09/2026. `ไม่มีค่าใช้จ่าย` rather than the shorter word,
+  // Paul's wording, 06/09/2026. `ไม่มีค่าใช้จ่าย` rather than the shorter word,
   // which is the form `faq.ts` and the product pages already use for this.
-  th: "สี่ขั้นตอน โดยขั้นแรกไม่มีค่าใช้จ่าย เราจะยังไม่กำหนดขอบเขตงานหรือราคา จนกว่าทั้งสองฝ่ายจะเห็นตรงกันว่าคุณกำลังมุ่งไปทางไหน",
+  th: "มีสี่ขั้นตอน และขั้นแรกไม่มีค่าใช้จ่าย เราจะยังไม่กำหนดขอบเขตงานหรือราคา จนกว่าทั้งคุณและเราจะรู้ชัดว่าคุณกำลังมุ่งไปทางไหน",
 };
 
 export interface EngagementStep {
@@ -319,59 +319,59 @@ export const ENGAGEMENT: readonly EngagementStep[] = [
   {
     lead: {
       en: "A first conversation, at no charge",
-      // TH-UNREVIEWED, 06/09/2026.
+      // Read back 06/09/2026.
       th: "คุยกันครั้งแรก โดยไม่มีค่าใช้จ่าย",
     },
     body: {
       en: "Thirty minutes on where you are and what you are aiming at. If nothing here is the right thing for you, that is what the half hour is for.",
-      // TH-UNREVIEWED, 06/09/2026.
-      th: "ครึ่งชั่วโมงเพื่อคุยว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ ถ้าไม่มีบริการไหนที่เหมาะกับคุณ ครึ่งชั่วโมงนี้ก็มีไว้เพื่อบอกแบบนั้น",
+      // Paul's wording, 06/09/2026.
+      th: "คุยกันครึ่งชั่วโมงว่าตอนนี้คุณอยู่ตรงไหนและกำลังมุ่งไปทางไหน หากไม่มีบริการไหนเหมาะกับคุณ การคุยครั้งนี้ก็มีไว้เพื่อบอกให้ชัดตั้งแต่ต้น",
     },
   },
   {
     lead: {
       en: "The direction, before any document",
-      // TH-UNREVIEWED, 06/09/2026.
+      // Read back 06/09/2026.
       th: "หาทิศทางให้ชัด ก่อนลงมือทำเอกสาร",
     },
     body: {
       en: "The role, the industry and the country, decided together and written down, because however good a CV is, sent into the wrong market it is still an application aimed at nothing.",
-      // TH-UNREVIEWED, 06/09/2026. The reasoning is the `coaching` service's own
+      // Paul's wording, 06/09/2026. The reasoning is the `coaching` service's own
       // summary above, which is Paul's Thai; this line points at it rather than
       // replacing it.
-      th: "ตำแหน่ง อุตสาหกรรม และประเทศ ตัดสินใจร่วมกันและเขียนไว้ให้ชัด เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี",
+      th: "เราจะช่วยกันเลือกตำแหน่ง อุตสาหกรรม และประเทศเป้าหมาย แล้วเขียนทั้งหมดไว้ให้ชัด เพราะต่อให้ CV ดีแค่ไหน หากส่งไปผิดตลาด ก็ยังเป็นใบสมัครที่ไม่ตรงเป้าอยู่ดี",
     },
   },
   {
     lead: {
       en: "The documents you reuse",
-      // TH-UNREVIEWED, 06/09/2026.
+      // Read back 06/09/2026.
       th: "ชุดเอกสารที่คุณใช้ซ้ำได้",
     },
     body: {
       en: "A master CV, a LinkedIn profile and, where the field asks for one, a portfolio. Base versions, built once and tailored per role afterwards.",
-      // TH-UNREVIEWED, 06/09/2026.
-      th: "CV ฉบับหลัก โปรไฟล์ LinkedIn และเว็บไซต์ Portfolio ในสายงานที่ต้องใช้ ทำเวอร์ชันตั้งต้นไว้ก่อน แล้วค่อยปรับให้ตรงกับแต่ละตำแหน่ง",
+      // Paul's wording, 06/09/2026.
+      th: "CV ฉบับหลัก โปรไฟล์ LinkedIn และ Portfolio หากสายงานของคุณต้องใช้ ทำเป็นฉบับตั้งต้นไว้ครั้งเดียว แล้วค่อยปรับให้ตรงกับแต่ละตำแหน่ง",
     },
   },
   {
     lead: {
       en: "One application at a time, to the end",
-      // TH-UNREVIEWED, 06/09/2026.
+      // Read back 06/09/2026.
       th: "สมัครทีละตำแหน่ง จนจบกระบวนการ",
     },
     body: {
       en: "Shortlist, tailor, prepare for that specific interview, then read the offer and the contract together. The CV goes out under your name and the person in the interview is you.",
-      // TH-UNREVIEWED, 06/09/2026. The closing clause is Paul's own, from
+      // Paul's wording, 06/09/2026. The closing clause is Paul's own, from
       // `NOT_FOR` in `coaching.ts`.
-      th: "คัดตำแหน่ง ปรับเอกสาร เตรียมสัมภาษณ์ให้ตรงกับที่นั่น แล้วอ่านข้อเสนอและสัญญาไปด้วยกัน CV ต้องส่งออกไปในชื่อของคุณ และคนที่นั่งสัมภาษณ์ก็คือคุณ",
+      th: "คัดตำแหน่ง ปรับเอกสาร เตรียมตัวสำหรับการสัมภาษณ์แต่ละงาน แล้วช่วยกันอ่านข้อเสนอและสัญญาจ้าง CV ถูกส่งออกไปในชื่อของคุณ และคนที่ต้องนั่งอยู่ในห้องสัมภาษณ์ก็คือคุณ",
     },
   },
 ];
 
 export const SERVICES_FAQ_INTRO: Copy = {
   en: "Four things people ask before the first conversation.",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "สี่เรื่องที่คนมักถามก่อนจะได้คุยกันครั้งแรก",
 };
 
@@ -384,66 +384,66 @@ export const SERVICES_FAQ: readonly ServiceFaq[] = [
   {
     q: {
       en: "Do I have to take the coaching to get the other two?",
-      // TH-UNREVIEWED, 06/09/2026.
+      // Read back 06/09/2026.
       th: "ต้องใช้บริการโค้ชชิ่งก่อนถึงจะใช้อีกสองบริการได้ไหม",
     },
     a: {
       en: "No. The other two can be taken on their own. The coaching is where every client starts because the direction usually turns out to be the thing that was unclear, not the documents.",
-      // TH-UNREVIEWED, 06/09/2026.
-      th: "ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ที่ลูกค้าทุกคนเริ่มจากโค้ชชิ่ง เพราะส่วนใหญ่แล้วสิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่ตัวเอกสาร",
+      // Paul's wording, 06/09/2026.
+      th: "ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร",
     },
   },
   {
     q: {
       en: "What does it cost?",
-      // TH-UNREVIEWED, 06/09/2026.
-      th: "ค่าบริการเท่าไหร่",
+      // Paul's wording, 06/09/2026.
+      th: "ค่าบริการเท่าไร",
     },
     a: {
       en: "It depends on which of the three you need and how far you already are, so it is settled in the first conversation rather than on this page. The tools have their own prices and those are published.",
-      // TH-UNREVIEWED, 06/09/2026. It points at `/pricing` in words rather than
+      // Paul's wording, 06/09/2026. It points at `/pricing` in words rather than
       // quoting a number, which is the rule the product pages follow.
-      th: "ขึ้นอยู่กับว่าคุณต้องใช้บริการไหนบ้าง และตอนนี้คุณไปถึงขั้นไหนแล้ว จึงตกลงกันในการคุยครั้งแรกแทนที่จะระบุไว้ในหน้านี้ ส่วนเครื่องมือต่าง ๆ มีราคาประกาศไว้แยกต่างหาก",
+      th: "ขึ้นอยู่กับว่าคุณต้องการบริการไหนในสามบริการ และตอนนี้เตรียมไปถึงไหนแล้ว เราจึงจะตกลงราคากันในการคุยครั้งแรก ไม่ได้กำหนดไว้ในหน้านี้ ส่วนเครื่องมือต่าง ๆ มีราคาแยกและประกาศไว้แล้ว",
     },
   },
   {
     q: {
       en: "Do I need to be in Europe already?",
-      // TH-UNREVIEWED, 06/09/2026.
-      th: "ต้องอยู่ในยุโรปอยู่แล้วหรือเปล่า",
+      // Paul's wording, 06/09/2026.
+      th: "ต้องอยู่ในยุโรปก่อนหรือไม่",
     },
     a: {
       en: "No. Most of the people we work with are still in Thailand, and the sessions are held online.",
-      // TH-UNREVIEWED, 06/09/2026.
-      th: "ไม่ต้อง คนส่วนใหญ่ที่เราทำงานด้วยยังอยู่ในประเทศไทย และเซสชันจัดแบบออนไลน์",
+      // Paul's wording, 06/09/2026.
+      th: "ไม่ต้อง คนส่วนใหญ่ที่เราทำงานด้วยยังอยู่ในประเทศไทย และเราคุยกันทางออนไลน์",
     },
   },
   {
     q: {
       en: "What language are the sessions in?",
-      // TH-UNREVIEWED, 06/09/2026.
-      th: "เซสชันใช้ภาษาอะไร",
+      // Paul's wording, 06/09/2026.
+      th: "คุยกันเป็นภาษาอะไร",
     },
     a: {
       en: "Mainly English, so every conversation doubles as practice for the interviews you are preparing for. Anything that has to be precise can be said in Thai.",
-      // TH-UNREVIEWED, 06/09/2026. The first clause is Paul's own wording from
+      // Paul's wording, 06/09/2026. The first clause is Paul's own wording from
       // the coaching service's `includes` above, including `เป็นหลัก`, which is
       // there because a flat claim that sessions ARE in English is one a reader
       // could hold against the first session that switches.
-      th: "ใช้ภาษาอังกฤษเป็นหลัก ทุกครั้งที่คุยกันจึงได้ฝึกภาษาสำหรับการสัมภาษณ์ไปในตัว ส่วนเรื่องที่ต้องสื่อสารให้แม่นยำ พูดภาษาไทยได้",
+      th: "ใช้ภาษาอังกฤษเป็นหลัก ทุกครั้งที่คุยกันจึงเป็นการฝึกสำหรับการสัมภาษณ์ไปในตัว หากมีเรื่องไหนที่ต้องคุยกันให้เข้าใจตรงกันอย่างแม่นยำ ก็ใช้ภาษาไทยได้",
     },
   },
 ];
 
 export const SERVICES_CLOSE_HEADING: Copy = {
   en: "Start with the half hour",
-  // TH-UNREVIEWED, 06/09/2026.
+  // Read back 06/09/2026.
   th: "เริ่มจากการคุยกันครึ่งชั่วโมง",
 };
 
 export const SERVICES_CLOSE_BODY: Copy = {
   en: "Tell me where you are and what you are aiming at. If none of this is the right thing for you, I would rather say so in the first conversation than in the third.",
-  // TH-UNREVIEWED, 06/09/2026. First person, per `DESTINATIONS.contact` in
+  // Paul's wording, 06/09/2026. First person, per `DESTINATIONS.contact` in
   // `cta.ts`: the reader reaches a person, not a company.
-  th: "บอกผมว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ ถ้าไม่มีอะไรตรงกับคุณเลย ผมอยากบอกตั้งแต่การคุยครั้งแรก มากกว่าจะมาบอกตอนครั้งที่สาม",
+  th: "บอกผมว่าตอนนี้คุณอยู่ตรงไหนและกำลังมุ่งไปทางไหน หากไม่มีบริการไหนตรงกับสิ่งที่คุณต้องการ ผมอยากบอกคุณตั้งแต่คุยกันครั้งแรก มากกว่าปล่อยให้ไปถึงครั้งที่สาม",
 };

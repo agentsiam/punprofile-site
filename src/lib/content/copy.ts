@@ -38,7 +38,9 @@
  * There are no `TH-UNREVIEWED` markers left here. Paul worked through
  * `thai-review-queue.md` in two passes on 17/08/2026 and closed all twenty-seven,
  * then closed the eight depth-chart axis labels the same way on 23/08/2026, six
- * rewritten and two approved as drafted. Their block carries the detail.
+ * rewritten and two approved as drafted. Their block carries the detail. The two
+ * menu keys added on 06/09/2026 were closed in the same way that day, in a pass
+ * that emptied the queue across every module for the first time.
  *
  * `services.cta.heading` was rewritten and read back the same day; its own note
  * says why it stopped promising contact.
@@ -231,7 +233,7 @@ export const COPY = {
   "nav.allProducts": {
     screen: "Site menu, the Products group",
     en: "All products",
-    // TH-UNREVIEWED, 06/09/2026.
+    // Read back 06/09/2026.
     th: "บริการทั้งหมด",
   },
   "nav.services": {
