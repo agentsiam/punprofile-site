@@ -28,15 +28,28 @@ const nextConfig: NextConfig = {
     return [
       { source: "/assess", destination: "/efc-assessment", permanent: true },
       { source: "/en/assess", destination: "/en/efc-assessment", permanent: true },
-      /**
-       * `/services` folded into `/coaching` on 23/08/2026. Same rule as above and
-       * the same reason: the route was in the sitemap from 16/08/2026 and in the
-       * footer of every page, so the link exists in other people's hands.
-       * `?focus=` is preserved by Next along with every other query string, which
-       * is what keeps the result screen's link pointing at the right card.
+      /*
+       * The `/services` redirect was removed on 06/09/2026, because the route
+       * came back. What it said is worth keeping:
+       *
+       *   `/services` folded into `/coaching` on 23/08/2026. Same rule as above
+       *   and the same reason: the route was in the sitemap from 16/08/2026 and
+       *   in the footer of every page, so the link exists in other people's
+       *   hands. `?focus=` is preserved by Next along with every other query
+       *   string, which is what keeps the result screen's link pointing at the
+       *   right card.
+       *
+       * **It was `permanent: true`, which is a 308, and browsers cache those
+       * hard.** Anyone who opened `/services` between 23/08 and today has the
+       * hop stored and will keep landing on `/coaching` until that entry
+       * expires or they clear it. There is no way to un-send a 308 from here.
+       * The page is reachable from the menu and from `/products` for everyone
+       * else, and a candidate who followed a stale link lands on the coaching
+       * pitch, which is a reasonable place to be rather than an error.
+       *
+       * `?focus=` still works and still points at the cards, which now render
+       * on both pages: `ServiceCards` owns that mapping and is imported by each.
        */
-      { source: "/services", destination: "/coaching", permanent: true },
-      { source: "/en/services", destination: "/en/coaching", permanent: true },
     ];
   },
 };

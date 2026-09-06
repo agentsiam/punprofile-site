@@ -80,6 +80,16 @@ export const PUBLIC_ROUTES: readonly { path: string; priority: number }[] = [
    * whole argument is that it does not overstate what it can do. Each joins this
    * list on the day its product ships.
    */
+  /**
+   * The catalogue page, 06/09/2026. Above the one product page for the reason
+   * `/coaching` sits above `/pricing`: it is the page a stranger searching for
+   * what PunProfile does should land on, and the product pages sit under it.
+   *
+   * `/services` is deliberately absent, the same arrangement `/method` has: its
+   * Thai is drafted rather than read back, so the page carries
+   * `NOT_YET_INDEXED` and joins this list on the day that marker comes off.
+   */
+  { path: "/products", priority: 0.8 },
   { path: "/products/eu-fit-check", priority: 0.7 },
   ...(POSTS.length > 0 ? [{ path: "/blog", priority: 0.7 }] : []),
   { path: "/faq", priority: 0.6 },

@@ -176,6 +176,34 @@ export const DESTINATIONS = {
     // `pricing` and `coaching` read.
     label: { en: "See how the CV Check works", th: "ดูว่า CV Check ทำงานอย่างไร" },
   },
+  /**
+   * The catalogue page, added 06/09/2026 with `/products`.
+   *
+   * `COST.read`: it opens a page and asks for nothing. The label names what the
+   * page shows rather than what it sells, the same shape `pricing` and
+   * `coaching` already use, because a catalogue that promises an outcome is
+   * promising on behalf of five things that each promise their own.
+   */
+  products: {
+    href: "/products",
+    cost: COST.read,
+    // TH-UNREVIEWED, 06/09/2026.
+    label: { en: "See everything we make", th: "ดูบริการทั้งหมดของเรา" },
+  },
+  /**
+   * The services page, restored 06/09/2026 with `/services`.
+   *
+   * `services` above still points at `/coaching`, and deliberately: it is the
+   * label a result screen uses to send a candidate to the card their own chart
+   * points at, and that mapping lives on `/coaching` because the four axes map
+   * to coaching work. This one is the page about the three services themselves.
+   */
+  servicesPage: {
+    href: "/services",
+    cost: COST.read,
+    // TH-UNREVIEWED, 06/09/2026.
+    label: { en: "See the three services", th: "ดูบริการทั้งสามอย่าง" },
+  },
   contact: {
     href: "/contact",
     cost: COST.contact,
@@ -342,6 +370,29 @@ export const PAGE_ACTIONS: Record<string, PageActions> = {
     secondary: "pricing",
     because:
       "It is not built, and it is the surface matched roles land on, so the prices are the page that explains what fills it.",
+  },
+  /**
+   * `/products` and `/services`, added 06/09/2026 with the two pages.
+   *
+   * Both ask for the check and both offer the prices second, and the reasoning
+   * is the landing page's: a reader on a page that lists everything has not
+   * chosen anything yet, so the cheapest ask that hands something back is the
+   * right one, and the second question a reader holds at that point is what it
+   * costs. `/services` differs in its secondary only: the three services are
+   * sold in conversation and priced in one, so the reader who is already past
+   * the catalogue wants the person rather than the page.
+   */
+  "/products": {
+    primary: "assess",
+    secondary: "pricing",
+    because:
+      "A reader looking at all five at once has chosen none of them. The check is the cheapest thing we can ask for and the only one that hands something back the same minute, which is the landing page's reasoning and holds here for the same reason.",
+  },
+  "/services": {
+    primary: "contact",
+    secondary: "pricing",
+    because:
+      "The three services are scoped and priced in a conversation, which is what `/coaching` settled on 23/08/2026 for the same three cards. The secondary goes to the prices for a reader who would rather see a number before speaking to anyone.",
   },
   "/pricing": {
     primary: "contact",

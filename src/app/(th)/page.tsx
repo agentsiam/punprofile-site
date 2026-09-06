@@ -209,9 +209,14 @@ export default function Home() {
               {/* The second proof, 26/08/2026, and it is a link because that is
                   what makes it one. An unlinked "our method is published" is an
                   adjective, which slot 7 forbids. */}
+              {/* `inline-flex min-h-6`, 06/09/2026: this link sits in a chip
+                  row rather than inside a sentence, so WCAG 2.2's inline
+                  exception does not cover it and its box was 20px against a
+                  24px floor. Nothing moves; the hit area grows around the
+                  text. */}
               <Link
                 href={path("/method")}
-                className="text-body-sm-strong text-ink-deep underline underline-offset-4"
+                className="inline-flex min-h-6 items-center text-body-sm-strong text-ink-deep underline underline-offset-4"
               >
                 {pick(METHOD_PROOF)}
               </Link>

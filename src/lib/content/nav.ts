@@ -91,12 +91,32 @@ export interface NavItem {
  * leaves this array rather than leaving the top level.
  */
 export const PRODUCTS: readonly NavItem[] = [
+  /*
+   * The overview row, first, added 06/09/2026 with `/products`.
+   *
+   * The rule above still holds and this row does not break it: `/products` is
+   * a page that exists and lists exactly what has shipped, so it invites a
+   * reader to something real. What it adds is the thing a list of five names
+   * cannot: how the five fit together, and which of them is open today.
+   */
+  { href: "/products", label: "nav.allProducts" },
   { href: "/products/eu-fit-check", label: "nav.assess" },
   { href: "/products/cv-check", label: "nav.cvCheck" },
   { href: "/products/fit-report", label: "nav.fitReport" },
   { href: "/products/matched-jobs", label: "nav.matchedJobs" },
   { href: "/products/guided-job-hunt", label: "nav.guidedJobHunt" },
   { href: "/coaching", label: "nav.coaching" },
+  /*
+   * `/services` is back, 06/09/2026, on Paul's call.
+   *
+   * The note above records that it left this array on 23/08/2026 when the page
+   * folded into `/coaching`, and that the fold looked like an entry leaving the
+   * list rather than leaving the top level. It comes back because the fold's
+   * reason expired: `/products` now gives the plug-and-play half a catalogue,
+   * and the half a person delivers had none. `/coaching` keeps the pitch and
+   * the founder section; `/services` is what the work is.
+   */
+  { href: "/services", label: "nav.threeServices" },
 ];
 
 /**

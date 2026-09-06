@@ -27,6 +27,7 @@ import { useCopy } from "@/components/LocaleProvider";
 import {
   AI_NOTE,
   CORE_BADGE,
+  FOCUS_NOTE,
   SERVICES,
   SERVICES_HEADING,
   SERVICES_INTRO,
@@ -88,10 +89,7 @@ function Body() {
 
                 {on && (
                   <p className="mt-2 text-body-sm-strong text-on-primary-pale">
-                    {pick({
-                      en: "Your result points here",
-                      th: "ผลประเมินของคุณชี้มาที่บริการนี้",
-                    })}
+                    {pick(FOCUS_NOTE)}
                   </p>
                 )}
 

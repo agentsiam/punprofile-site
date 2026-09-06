@@ -48,6 +48,32 @@ export default function AssessLayout({ children }: { children: React.ReactNode }
      * a tier that says "one step off the page" would be saying it about the page.
      */
     <div className="flex min-h-full flex-1 flex-col bg-surface-container">
+      {/*
+        The page's own name, for a reader who cannot see the screen.
+
+        Added 06/09/2026 after a browser pass found the assessment rendering
+        with NO heading of any level in three of its four states. The question
+        screen, the loading state and the contact gate are the product, and a
+        page with no `h1` gives a screen-reader user nothing to orient on and a
+        crawler nothing but the `<title>`. It is `sr-only` because the visual
+        design is deliberate and correct: a heading over question 3 of 17 would
+        be furniture on a screen whose whole argument is that it is one question
+        at a time.
+
+        The string is `nav.assess`, the product's own name, `fixed: true` in the
+        termbase and read out of the copy bank rather than typed, which is what
+        makes "it is written the same way everywhere" true rather than intended.
+        `layout.tsx` already titles the tab with the same key.
+
+        **The Thai column is read directly and that is safe here, uniquely.**
+        This layout is re-exported by `(en)/en/efc-assessment/layout.tsx`, so it
+        renders in both trees and has no locale to resolve against. `nav.assess`
+        is `EU Fit Check` in both columns, because it is a product name and
+        LR-01 passes a product name through rather than translating it, and the
+        term is `fixed: true` so it cannot quietly stop being. If it ever does,
+        this line has to become a client component reading `useCopy()`.
+      */}
+      <h1 className="sr-only">{ALL_COPY["nav.assess"].th}</h1>
       {children}
     </div>
   );

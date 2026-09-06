@@ -194,6 +194,43 @@ export const COPY = {
     en: "Guided Job Hunt",
     th: "Guided Job Hunt",
   },
+  /*
+   * Two entries added 06/09/2026 with `/products` and `/services`.
+   *
+   * **`nav.allProducts` is an overview row, not a product**, and it sits first
+   * in the group for that reason: a menu of five names with no shape was the
+   * gap the catalogue page was built to close, so the row that leads to the
+   * shape belongs above the names rather than under them.
+   *
+   * **`nav.services` and `nav.coaching` are not the same destination and the
+   * labels have to say so.** `/coaching` is the pitch, with the hook, the proof
+   * and the founder section on it; `/services` is what the work actually is.
+   * "Coaching 1:1" names the relationship and "the three services" names the
+   * catalogue, which is the distinction a reader is choosing between.
+   *
+   * **The key is `nav.threeServices` and not `nav.services`, and that is not a
+   * naming preference.** `BINDINGS` in `verify-copy.ts` still maps
+   * `nav.services` to the termbase term `our-services`, which is fixed at the
+   * English "Our Services" from 15/08/2026 on the rule that site navigation is
+   * English. The key had no string behind it while `/services` did not exist,
+   * so the binding sat dormant; naming this one after it woke the binding up
+   * and failed the run. The term is also out of step with the group heading
+   * directly above it, `nav.products`, which Paul rewrote to `บริการของเรา` on
+   * 23/08/2026. Which of the two is right is a decision about Thai in the menu
+   * and it belongs to him, so this key steps around it rather than settling it.
+   */
+  "nav.allProducts": {
+    screen: "Site menu, the Products group",
+    en: "All products",
+    // TH-UNREVIEWED, 06/09/2026.
+    th: "บริการทั้งหมด",
+  },
+  "nav.threeServices": {
+    screen: "Site menu, the Products group",
+    en: "The three services",
+    // TH-UNREVIEWED, 06/09/2026.
+    th: "สามบริการหลัก",
+  },
   "nav.faq": {
     screen: "Site menu",
     en: "FAQ",

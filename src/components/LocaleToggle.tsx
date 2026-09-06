@@ -31,7 +31,7 @@
  * name carries the language's own name, so a screen reader never gets a flag.
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { LOCALES, localePath, stripLocale, type Locale } from "@/lib/locale";
 import { getLocaleSwitchInPlace } from "@/lib/localeInPlace";
@@ -68,7 +68,19 @@ function FlagTh() {
   );
 }
 
+/**
+ * The saltire's clip path needs an id, and the id has to be unique per render.
+ *
+ * It was the literal `locale-uk-saltire` until 06/09/2026, and `LocaleToggle`
+ * renders twice on every page, once in the top bar and once in the drawer, so
+ * every `/en` page shipped two elements with that id. An SVG `url(#id)`
+ * reference resolves to the FIRST match in the document, so the drawer's flag
+ * was clipping against the bar's path: identical here, and silently wrong the
+ * moment the two ever differ. `useId` is React's answer to exactly this and
+ * costs nothing.
+ */
 function FlagEn() {
+  const saltire = useId();
   return (
     <svg
       viewBox="0 0 60 30"
@@ -77,14 +89,14 @@ function FlagEn() {
       aria-hidden
       focusable="false"
     >
-      <clipPath id="locale-uk-saltire">
+      <clipPath id={saltire}>
         <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
       </clipPath>
       <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
       <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFFFFF" strokeWidth="6" />
       <path
         d="M0,0 L60,30 M60,0 L0,30"
-        clipPath="url(#locale-uk-saltire)"
+        clipPath={`url(#${saltire})`}
         stroke="#C8102E"
         strokeWidth="4"
       />

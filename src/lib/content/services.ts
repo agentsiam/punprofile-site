@@ -217,6 +217,22 @@ export const AI_NOTE: Copy = {
 
 export const CORE_BADGE: Copy = { en: "Core service", th: "บริการหลัก" };
 
+/**
+ * The line on the card a candidate's own result points at. Moved here
+ * 06/09/2026.
+ *
+ * It was an inline `pick({ en, th })` literal inside `ServiceCards.tsx`, which
+ * is what R49 forbids: a candidate-facing string outside `src/lib/content/` is
+ * a string `verify:pages` never harvests, so its Thai is unlinted and a missing
+ * column is invisible. It only renders on a `?focus=` arrival, which is the
+ * least-viewed state on the page and therefore the least likely place for
+ * anyone to notice. Wording unchanged.
+ */
+export const FOCUS_NOTE: Copy = {
+  en: "Your result points here",
+  th: "ผลประเมินของคุณชี้มาที่บริการนี้",
+};
+
 /** The result screen's lowest axis picks the card to open on. */
 export function serviceForDimension(dimension: string): ServiceId {
   const hit = SERVICES.find((s) => s.answers === dimension);
@@ -226,3 +242,208 @@ export function serviceForDimension(dimension: string): ServiceId {
   // anything unrecognised.
   return hit?.id ?? "coaching";
 }
+
+/* ==========================================================================
+   THE SERVICES PAGE, /services
+   ========================================================================== */
+
+/**
+ * `/services`, restored 06/09/2026 on Paul's call.
+ *
+ * ---------------------------------------------------------------------------
+ * IT WAS RETIRED ONCE, AND WHAT IS DIFFERENT NOW
+ * ---------------------------------------------------------------------------
+ *
+ * The route existed for one day and folded into `/coaching` on 23/08/2026,
+ * recorded in `nav.ts`. The fold was right at the time: the page was the three
+ * cards and nothing else, `/coaching` needed them, and two pages carrying one
+ * section is one section that gets edited in the wrong place.
+ *
+ * What changed is that `/products` now exists. The catalogue of TOOLS has a
+ * page, and the three services had nowhere of their own to be compared, so the
+ * site could answer "what can I buy" for the plug-and-play half and not for the
+ * half a person delivers. This page is the second half of that pair, and the
+ * split between it and `/coaching` is the one the fold blurred:
+ *
+ * - **`/services` is what the work is.** Three services, how an engagement
+ *   runs, what it does not cover.
+ * - **`/coaching` is why you would want it.** The hook, the proof, the personas
+ *   and the founder section, which is a pitch and not a catalogue.
+ *
+ * The cards themselves are still `ServiceCards`, rendered by both pages, so
+ * there is still exactly one place they are written.
+ *
+ * **The limit section is `coaching.ts`'s `NOT_FOR`, imported rather than
+ * rewritten.** Those three lines are Paul's own and they carry two standing
+ * decisions, that PunProfile is paid by the candidate rather than by an
+ * employer and that nobody can honestly guarantee a job or a visa. A second
+ * wording of a standing decision is the thing this repo has a lint for.
+ */
+export const SERVICES_EYEBROW: Copy = {
+  en: "Working with a person",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "งานส่วนที่ต้องทำร่วมกับคน",
+};
+
+export const SERVICES_PAGE_HEADING: Copy = {
+  en: "Three services, and the one you start with",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "สามบริการ และบริการที่คุณจะเริ่มต้นด้วย",
+};
+
+export const SERVICES_PAGE_INTRO: Copy = {
+  en: "The tools read what you already have. This is the part where someone reads it with you and decides what to do about it.",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "เครื่องมือต่าง ๆ ทำหน้าที่อ่านสิ่งที่คุณมีอยู่แล้ว ส่วนนี้คือการที่มีคนอ่านไปพร้อมกับคุณ แล้วช่วยตัดสินใจว่าจะทำอะไรต่อ",
+};
+
+export const ENGAGEMENT_HEADING: Copy = {
+  en: "How an engagement runs",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "การทำงานร่วมกันเป็นอย่างไร",
+};
+
+export const ENGAGEMENT_LEDE: Copy = {
+  en: "Four steps, and the first one is free. Nothing is scoped or priced until we both know what you are actually aiming at.",
+  // TH-UNREVIEWED, 06/09/2026. `ไม่มีค่าใช้จ่าย` rather than the shorter word,
+  // which is the form `faq.ts` and the product pages already use for this.
+  th: "สี่ขั้นตอน โดยขั้นแรกไม่มีค่าใช้จ่าย เราจะยังไม่กำหนดขอบเขตงานหรือราคา จนกว่าทั้งสองฝ่ายจะเห็นตรงกันว่าคุณกำลังมุ่งไปทางไหน",
+};
+
+export interface EngagementStep {
+  lead: Copy;
+  body: Copy;
+}
+
+export const ENGAGEMENT: readonly EngagementStep[] = [
+  {
+    lead: {
+      en: "A first conversation, at no charge",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "คุยกันครั้งแรก โดยไม่มีค่าใช้จ่าย",
+    },
+    body: {
+      en: "Thirty minutes on where you are and what you are aiming at. If nothing here is the right thing for you, that is what the half hour is for.",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "ครึ่งชั่วโมงเพื่อคุยว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ ถ้าไม่มีบริการไหนที่เหมาะกับคุณ ครึ่งชั่วโมงนี้ก็มีไว้เพื่อบอกแบบนั้น",
+    },
+  },
+  {
+    lead: {
+      en: "The direction, before any document",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "หาทิศทางให้ชัด ก่อนลงมือทำเอกสาร",
+    },
+    body: {
+      en: "The role, the industry and the country, decided together and written down, because however good a CV is, sent into the wrong market it is still an application aimed at nothing.",
+      // TH-UNREVIEWED, 06/09/2026. The reasoning is the `coaching` service's own
+      // summary above, which is Paul's Thai; this line points at it rather than
+      // replacing it.
+      th: "ตำแหน่ง อุตสาหกรรม และประเทศ ตัดสินใจร่วมกันและเขียนไว้ให้ชัด เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี",
+    },
+  },
+  {
+    lead: {
+      en: "The documents you reuse",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "ชุดเอกสารที่คุณใช้ซ้ำได้",
+    },
+    body: {
+      en: "A master CV, a LinkedIn profile and, where the field asks for one, a portfolio. Base versions, built once and tailored per role afterwards.",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "CV ฉบับหลัก โปรไฟล์ LinkedIn และเว็บไซต์ Portfolio ในสายงานที่ต้องใช้ ทำเวอร์ชันตั้งต้นไว้ก่อน แล้วค่อยปรับให้ตรงกับแต่ละตำแหน่ง",
+    },
+  },
+  {
+    lead: {
+      en: "One application at a time, to the end",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "สมัครทีละตำแหน่ง จนจบกระบวนการ",
+    },
+    body: {
+      en: "Shortlist, tailor, prepare for that specific interview, then read the offer and the contract together. The CV goes out under your name and the person in the interview is you.",
+      // TH-UNREVIEWED, 06/09/2026. The closing clause is Paul's own, from
+      // `NOT_FOR` in `coaching.ts`.
+      th: "คัดตำแหน่ง ปรับเอกสาร เตรียมสัมภาษณ์ให้ตรงกับที่นั่น แล้วอ่านข้อเสนอและสัญญาไปด้วยกัน CV ต้องส่งออกไปในชื่อของคุณ และคนที่นั่งสัมภาษณ์ก็คือคุณ",
+    },
+  },
+];
+
+export const SERVICES_FAQ_INTRO: Copy = {
+  en: "Four things people ask before the first conversation.",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "สี่เรื่องที่คนมักถามก่อนจะได้คุยกันครั้งแรก",
+};
+
+export interface ServiceFaq {
+  q: Copy;
+  a: Copy;
+}
+
+export const SERVICES_FAQ: readonly ServiceFaq[] = [
+  {
+    q: {
+      en: "Do I have to take the coaching to get the other two?",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "ต้องใช้บริการโค้ชชิ่งก่อนถึงจะใช้อีกสองบริการได้ไหม",
+    },
+    a: {
+      en: "No. The other two can be taken on their own. The coaching is where every client starts because the direction usually turns out to be the thing that was unclear, not the documents.",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ที่ลูกค้าทุกคนเริ่มจากโค้ชชิ่ง เพราะส่วนใหญ่แล้วสิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่ตัวเอกสาร",
+    },
+  },
+  {
+    q: {
+      en: "What does it cost?",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "ค่าบริการเท่าไหร่",
+    },
+    a: {
+      en: "It depends on which of the three you need and how far you already are, so it is settled in the first conversation rather than on this page. The tools have their own prices and those are published.",
+      // TH-UNREVIEWED, 06/09/2026. It points at `/pricing` in words rather than
+      // quoting a number, which is the rule the product pages follow.
+      th: "ขึ้นอยู่กับว่าคุณต้องใช้บริการไหนบ้าง และตอนนี้คุณไปถึงขั้นไหนแล้ว จึงตกลงกันในการคุยครั้งแรกแทนที่จะระบุไว้ในหน้านี้ ส่วนเครื่องมือต่าง ๆ มีราคาประกาศไว้แยกต่างหาก",
+    },
+  },
+  {
+    q: {
+      en: "Do I need to be in Europe already?",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "ต้องอยู่ในยุโรปอยู่แล้วหรือเปล่า",
+    },
+    a: {
+      en: "No. Most of the people we work with are still in Thailand, and the sessions are held online.",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "ไม่ต้อง คนส่วนใหญ่ที่เราทำงานด้วยยังอยู่ในประเทศไทย และเซสชันจัดแบบออนไลน์",
+    },
+  },
+  {
+    q: {
+      en: "What language are the sessions in?",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "เซสชันใช้ภาษาอะไร",
+    },
+    a: {
+      en: "Mainly English, so every conversation doubles as practice for the interviews you are preparing for. Anything that has to be precise can be said in Thai.",
+      // TH-UNREVIEWED, 06/09/2026. The first clause is Paul's own wording from
+      // the coaching service's `includes` above, including `เป็นหลัก`, which is
+      // there because a flat claim that sessions ARE in English is one a reader
+      // could hold against the first session that switches.
+      th: "ใช้ภาษาอังกฤษเป็นหลัก ทุกครั้งที่คุยกันจึงได้ฝึกภาษาสำหรับการสัมภาษณ์ไปในตัว ส่วนเรื่องที่ต้องสื่อสารให้แม่นยำ พูดภาษาไทยได้",
+    },
+  },
+];
+
+export const SERVICES_CLOSE_HEADING: Copy = {
+  en: "Start with the half hour",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "เริ่มจากการคุยกันครึ่งชั่วโมง",
+};
+
+export const SERVICES_CLOSE_BODY: Copy = {
+  en: "Tell me where you are and what you are aiming at. If none of this is the right thing for you, I would rather say so in the first conversation than in the third.",
+  // TH-UNREVIEWED, 06/09/2026. First person, per `DESTINATIONS.contact` in
+  // `cta.ts`: the reader reaches a person, not a company.
+  th: "บอกผมว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ ถ้าไม่มีอะไรตรงกับคุณเลย ผมอยากบอกตั้งแต่การคุยครั้งแรก มากกว่าจะมาบอกตอนครั้งที่สาม",
+};

@@ -104,6 +104,42 @@ export const PRIVACY_INTRO: Copy = {
   th: "ประกาศนี้อธิบายว่า PunProfile เก็บข้อมูลอะไรบ้างเมื่อคุณใช้ EU Fit Check เก็บไว้เพื่ออะไร และคุณขอให้เราทำอะไรกับข้อมูลนั้นได้บ้าง",
 };
 
+/**
+ * The way back, at the foot of the notice. Moved here 06/09/2026.
+ *
+ * It was written inline in `privacy/page.tsx` as a ternary on the locale,
+ * `th ? "กลับหน้าแรก" : "Back to the start"`, which is the one thing R49 exists
+ * to prevent: a candidate-facing string outside `src/lib/content/` is a string
+ * `verify:copy` never reads, so it can carry an LR failure, lose its Thai or
+ * drift from its English and nothing catches it. Found in the UI review of
+ * 06/09/2026. The wording is unchanged; only where it lives is.
+ */
+/**
+ * The draft banner and the last-updated label. Moved here 06/09/2026, with
+ * `PRIVACY_BACK` below and for the same reason.
+ *
+ * The banner renders only while `PRIVACY_REVIEWED` is false, which is why it
+ * survived three copy reviews unread: `verify:copy` never saw it because it was
+ * not in a content module, and nobody saw it on the page because the flag has
+ * been true since 20/08/2026. That is the worst shape a string can have. It is
+ * kept rather than deleted, because the flag exists to be flipped back the next
+ * time the notice is rewritten.
+ */
+export const PRIVACY_DRAFT_BANNER: Copy = {
+  en: "Draft. Not yet reviewed by a qualified person and not yet something to rely on.",
+  th: "ฉบับร่าง ยังไม่ผ่านการตรวจสอบทางกฎหมาย ยังไม่ควรใช้อ้างอิง",
+};
+
+export const PRIVACY_UPDATED_LABEL: Copy = {
+  en: "Last updated",
+  th: "ปรับปรุงล่าสุด",
+};
+
+export const PRIVACY_BACK: Copy = {
+  en: "Back to the start",
+  th: "กลับหน้าแรก",
+};
+
 export const PRIVACY_SECTIONS: PrivacySection[] = [
   {
     heading: {

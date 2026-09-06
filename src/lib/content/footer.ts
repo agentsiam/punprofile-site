@@ -101,6 +101,20 @@ export const FACEBOOK_PAGE = "https://www.facebook.com/punprofile";
 
 export const FOLLOW_EYEBROW: Copy = { en: "Follow", th: "ติดตามเรา" };
 
+/**
+ * The label on the Facebook button. Moved here 06/09/2026.
+ *
+ * It was written inline in `SiteFooter.tsx` as a ternary on the locale, which
+ * is what R49 forbids and for a reason this string demonstrates: it sits in the
+ * chrome of every page on the site and `verify:copy` had never read it, so
+ * nothing checked its Thai against the termbase or noticed if one column went
+ * missing. Wording unchanged; only where it lives is.
+ */
+export const FOLLOW_LABEL: Copy = {
+  en: "Our Facebook page",
+  th: "เพจ Facebook ของเรา",
+};
+
 /*
  * `FOLLOW_BODY` was here and is retired, 17/08/2026, on Paul: "it does not make
  * sense, we're not promoting the FB group on the web app."

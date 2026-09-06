@@ -336,6 +336,15 @@
    */
   .ground-fixed {
     --color-ink: #163300;
+    /* Pinned 06/09/2026, and it is a bug fix rather than a tidy-up.
+       `ink-deep` was measured on lime at 9.45 in the note below and never
+       pinned, so it followed the scheme: in dark it is `#cdffad`, which on this
+       lime ground holds 1.30 and vanishes. The blog's signup consent line links
+       the privacy notice with `text-ink-deep` and was unreadable in dark from
+       the day the band shipped. Pinning it here fixes every future use of the
+       role on a fixed ground rather than one link, which is the same argument
+       that put `primary` and `action` in this block. */
+    --color-ink-deep: #163300;
     --color-body: #454745;
     --color-mute-strong: #6a6c6a;
     --color-line: #dfe3dc;
@@ -790,6 +799,15 @@
    */
   .ground-dark {
     --color-ink: #e8ebe6;
+    /* Pinned 06/09/2026, for the mirror of the reason given in
+       `.ground-fixed`, and this one fails in LIGHT rather than in dark: the
+       light value of `ink-deep` is `#163300`, which is this band's own ground,
+       so any `text-ink-deep` inside a dark band is ink on ink at 1.0. Nothing
+       shipped that way, and nothing had to: a role that is safe in one scheme
+       and invisible in the other is a trap waiting for the next component that
+       gets rendered in here. `#cdffad` is the dark scheme's own value for the
+       role and it is what the lime pill on this ground already uses. */
+    --color-ink-deep: #cdffad;
     --color-body: #c3c7bd;
     --color-mute-strong: #a3a79e;
     --color-canvas: #163300;

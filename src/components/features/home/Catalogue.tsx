@@ -16,14 +16,16 @@
  * stranger arriving from a job post is actually holding. Free first: a reader
  * who learns the first two cost nothing is more likely to read the third.
  *
- * `status: "soon"` carries the same `COMING_SOON` line the product pages use,
- * so a candidate cannot tap through to a page and discover there what this page
- * could have told them.
+ * `status: "soon"` shows the same `STATUS_SOON` label the catalogue page and
+ * the product pages use, so a candidate cannot tap through to a page and
+ * discover there what this page could have told them. It was `COMING_SOON`, the
+ * full sentence, until 06/09/2026: see the note on `STATUS_SOON` in
+ * `products.ts` for why a promise and a label are two strings.
  */
 
 import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
-import { COMING_SOON, PRODUCTS } from "@/lib/content/products";
+import { PRODUCTS, STATUS_SOON, isFreeProduct } from "@/lib/content/products";
 import {
   CATALOGUE_FREE,
   CATALOGUE_PAID,
@@ -31,23 +33,26 @@ import {
 } from "@/lib/content/home";
 import { DESTINATIONS } from "@/lib/content/cta";
 
-/**
- * Free versus token-priced, decided here rather than stored on the product.
+/*
+ * Free versus token-priced moved into `products.ts` on 06/09/2026, as
+ * `FREE_SLUGS` and `isFreeProduct`, when `/products` needed the same answer.
+ * Two copies of that set would be two answers to which column a product is in,
+ * and the second one edited would be wrong silently, on whichever page nobody
+ * had open.
  *
- * `products.ts` has no price field on purpose: `/pricing` owns every number and
- * a second place holding what something costs is a second place for it to be
- * wrong. What this array holds is not a price, it is which of two columns a
- * product belongs in, which is a fact about the catalogue rather than about the
- * money. When a product moves column, it moves here, and `/pricing` is still
- * the only file that knows what anything costs.
+ * The reason it is not a field on the product is unchanged and is worth keeping
+ * here: `products.ts` has no price field on purpose. `/pricing` owns every
+ * number and a second place holding what something costs is a second place for
+ * it to be wrong. What the set holds is not a price, it is which of two columns
+ * a product belongs in, which is a fact about the catalogue rather than about
+ * the money.
  */
-const FREE_SLUGS = new Set(["eu-fit-check", "cv-check", "guided-job-hunt"]);
 
 export default function Catalogue() {
   const { pick, path } = useCopy();
 
-  const free = PRODUCTS.filter((p) => FREE_SLUGS.has(p.slug));
-  const paid = PRODUCTS.filter((p) => !FREE_SLUGS.has(p.slug));
+  const free = PRODUCTS.filter((p) => isFreeProduct(p.slug));
+  const paid = PRODUCTS.filter((p) => !isFreeProduct(p.slug));
 
   const card = (slug: string, name: string, headline: string, soon: boolean) => (
     <li key={slug}>
@@ -58,7 +63,7 @@ export default function Catalogue() {
         <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span className="text-heading-sm">{name}</span>
           {soon && (
-            <span className="text-caption-strong text-mute-strong">{pick(COMING_SOON)}</span>
+            <span className="text-caption-strong text-mute-strong">{pick(STATUS_SOON)}</span>
           )}
         </span>
         <span className="mt-2 text-body-md text-body">{headline}</span>

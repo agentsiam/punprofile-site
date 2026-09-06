@@ -6,6 +6,7 @@ import {
   DISCLAIMER,
   FACEBOOK_PAGE,
   EYEBROW,
+  FOLLOW_LABEL,
   FOOTER_COLUMNS,
 } from "@/lib/content/footer";
 
@@ -37,7 +38,6 @@ import {
  * and the only screen in the flow that collects anything.
  */
 export default function SiteFooter({ locale }: { locale: Locale }) {
-  const th = locale === "th";
 
   /*
    * The top hairline is ours and not the reference's. Its pages end on white,
@@ -52,6 +52,15 @@ export default function SiteFooter({ locale }: { locale: Locale }) {
         {/* Columns first and full width. The lockup used to share this row and
             now closes the footer instead, which is the order the reference
             uses: what you might still want, then who this was. */}
+        {/* `min-h-6` on every link in this list, added 06/09/2026.
+
+            Measured in a browser at 390 and at 1280: the footer links were
+            20px tall, which is under the 24px floor WCAG 2.2 sets for a target
+            (2.5.8), and this is the densest set of links on the site. The row
+            gap already gives them 12px of separation, so the fix is the link's
+            own box rather than the spacing between them, and it changes nothing
+            visible: the text sits where it sat and the hit area grows around
+            it. */}
         <nav className="grid grid-cols-2 gap-8 medium:grid-cols-4">
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.heading.en}>
@@ -69,14 +78,14 @@ export default function SiteFooter({ locale }: { locale: Locale }) {
                           href={l.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-body-large underline-offset-4 duration-[350ms] ease-nav transition-colors hover:underline"
+                          className="inline-flex min-h-6 items-center text-body-large underline-offset-4 duration-[350ms] ease-nav transition-colors hover:underline"
                         >
                           {pick(l.label, locale)}
                         </a>
                       ) : (
                         <Link
                           href={localePath(l.href, locale)}
-                          className="text-body-large underline-offset-4 duration-[350ms] ease-nav transition-colors hover:underline"
+                          className="inline-flex min-h-6 items-center text-body-large underline-offset-4 duration-[350ms] ease-nav transition-colors hover:underline"
                         >
                           {pick(l.label, locale)}
                         </Link>
@@ -131,7 +140,7 @@ export default function SiteFooter({ locale }: { locale: Locale }) {
             {/* The label stays on the button rather than becoming a heading
                 above it. `FOLLOW_EYEBROW` was that heading and has no place in
                 a single closing row; the button already says where it goes. */}
-            {th ? "เพจ Facebook ของเรา" : "Our Facebook page"}
+            {pick(FOLLOW_LABEL, locale)}
           </a>
         </div>
 

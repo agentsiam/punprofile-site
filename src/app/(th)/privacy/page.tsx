@@ -16,29 +16,29 @@ import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
 import {
   PRIVACY_HEADING,
+  PRIVACY_BACK,
+  PRIVACY_DRAFT_BANNER,
   PRIVACY_INTRO,
   PRIVACY_LAST_UPDATED,
   PRIVACY_REVIEWED,
   PRIVACY_SECTIONS,
+  PRIVACY_UPDATED_LABEL,
 } from "@/lib/content/privacy";
 
 export default function PrivacyPage() {
-  const { locale, pick, path } = useCopy();
-  const th = locale === "th";
+  const { pick, path } = useCopy();
 
   return (
     <div className="mx-auto w-full max-w-2xl px-6 py-16">
       {!PRIVACY_REVIEWED && (
         <p className="mb-10 rounded-small border border-warning bg-warning-container px-4 py-3 text-body-medium text-on-warning-container">
-          {th
-            ? "ฉบับร่าง ยังไม่ผ่านการตรวจสอบทางกฎหมาย ยังไม่ควรใช้อ้างอิง"
-            : "Draft. Not yet reviewed by a qualified person and not yet something to rely on."}
+          {pick(PRIVACY_DRAFT_BANNER)}
         </p>
       )}
 
       <h1 className="text-headline-large">{pick(PRIVACY_HEADING)}</h1>
       <p className="mt-2 text-body-medium text-on-surface-variant">
-        {th ? "ปรับปรุงล่าสุด" : "Last updated"} {PRIVACY_LAST_UPDATED}
+        {pick(PRIVACY_UPDATED_LABEL)} {PRIVACY_LAST_UPDATED}
       </p>
       <p className="mt-6 text-body-large text-on-surface-variant">{pick(PRIVACY_INTRO)}</p>
 
@@ -68,8 +68,14 @@ export default function PrivacyPage() {
       ))}
 
       <p className="mt-12">
-        <Link href={path("/")} className="text-body-medium text-ink-deep underline">
-          {th ? "กลับหน้าแรก" : "Back to the start"}
+        {/* `inline-flex min-h-6` because this is a standalone link rather than
+            one inside a sentence, so WCAG 2.2's inline exception does not cover
+            it and its box was 17px against a 24px floor. */}
+        <Link
+          href={path("/")}
+          className="inline-flex min-h-6 items-center text-body-medium text-ink-deep underline"
+        >
+          {pick(PRIVACY_BACK)}
         </Link>
       </p>
     </div>

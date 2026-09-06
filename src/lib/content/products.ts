@@ -104,6 +104,30 @@ export const COMING_SOON: Copy = {
   th: "ตอนนี้ยังไม่เปิดให้ใช้งาน ทักมาหาผมได้ แล้วผมจะแจ้งให้คุณรู้เมื่อเปิด",
 };
 
+/**
+ * The short form of the same fact, for a list. Added 06/09/2026.
+ *
+ * `COMING_SOON` above is a promise and a sentence: it is not open, message me,
+ * I will tell you when it is. That is the right thing to say on the product's
+ * own page, where the reader has arrived to find out about one thing and the
+ * next step has to be offered rather than implied.
+ *
+ * It is the wrong thing in a chip. Rendered beside a name in the catalogue, in
+ * the comparison table and on the related-products row, the sentence is four
+ * times the length of the name it qualifies, wraps to two lines inside a pill
+ * and reads as the heading. Measured on the built page, 06/09/2026, which is
+ * where it became obvious.
+ *
+ * So: the label in a list, the sentence on the page. Both say the same thing
+ * and neither is a second promise, which is the rule that made `COMING_SOON`
+ * one string in the first place.
+ */
+export const STATUS_SOON: Copy = {
+  en: "Coming soon",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "เร็ว ๆ นี้",
+};
+
 export const HOW_HEADING: Copy = {
   en: "How it works",
   // Paul's wording, 23/08/2026.
@@ -452,3 +476,266 @@ export const PRODUCTS: readonly Product[] = [
 
 export const productBySlug = (slug: string): Product | undefined =>
   PRODUCTS.find((p) => p.slug === slug);
+
+/* ==========================================================================
+   THE ARTWORK
+   ========================================================================== */
+
+/**
+ * A figure per product page. Filled 06/09/2026.
+ *
+ * It moved here out of `ProductPage.tsx` for one reason: a description of a
+ * picture is a candidate-facing string, and R49 says those live in a content
+ * module. While every entry pointed at the same dashed box there was nothing to
+ * describe and an empty `alt` at the call site was honest. The moment a figure
+ * says something, a reader who cannot see it is owed the same sentence.
+ *
+ * **`figure` names a drawing, not a file.** Every photograph and illustration
+ * in `public/` is already spoken for by another surface, and the note this
+ * replaces was right about the alternative: art borrowed from the assessment
+ * looks finished, says nothing about the product on the page, and is therefore
+ * art nobody ever replaces. What is drawn instead is the mechanism the page has
+ * just described, in `ProductDiagram.tsx`, out of the same tokens as the rest of
+ * the page. A diagram of a thing the product actually does cannot be mistaken
+ * for stock, and it stays true in both colour schemes.
+ *
+ * **This map is still the swap list.** One line per product, so replacing one
+ * with a real photograph is one line here plus a branch in the diagram
+ * component, and replacing all five is five.
+ */
+export type ProductFigure = "gates" | "page" | "report" | "roles" | "pipeline";
+
+export interface ProductArt {
+  figure: ProductFigure;
+  alt: Copy;
+}
+
+export const PRODUCT_ART: Record<string, ProductArt> = {
+  "eu-fit-check": {
+    figure: "gates",
+    alt: {
+      en: "Four bars of different heights, one per gate, with the shortest marked",
+      // TH-UNREVIEWED, 06/09/2026. Describes what the drawing shows and nothing
+      // about what it means, which is the rule `PORTRAIT_ALT` in `coaching.ts`
+      // already follows.
+      th: "แท่งกราฟสี่แท่งความสูงต่างกัน แทนด่านทั้งสี่ โดยแท่งที่สั้นที่สุดถูกทำเครื่องหมายไว้",
+    },
+  },
+  "cv-check": {
+    figure: "page",
+    alt: {
+      en: "A page of a CV with the top third marked out from the rest",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "หน้ากระดาษ CV ที่ทำเครื่องหมายแยกส่วนหนึ่งในสามด้านบนออกจากส่วนที่เหลือ",
+    },
+  },
+  "fit-report": {
+    figure: "report",
+    alt: {
+      en: "A report laid out as a chart above four rows of findings",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "หน้ารายงานที่มีกราฟอยู่ด้านบน และรายการผลการอ่านสี่บรรทัดอยู่ด้านล่าง",
+    },
+  },
+  "matched-jobs": {
+    figure: "roles",
+    alt: {
+      en: "Three role cards, one of them marked as the one that matches",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "การ์ดตำแหน่งงานสามใบ โดยใบหนึ่งถูกทำเครื่องหมายว่าตรงกับโปรไฟล์",
+    },
+  },
+  "guided-job-hunt": {
+    figure: "pipeline",
+    alt: {
+      en: "Four columns of a tracker, from saved through to offer",
+      // TH-UNREVIEWED, 06/09/2026.
+      th: "กระดานติดตามการสมัครงานสี่คอลัมน์ ตั้งแต่ตำแหน่งที่เก็บไว้จนถึงข้อเสนอจ้างงาน",
+    },
+  },
+};
+
+/* ==========================================================================
+   WHICH COLUMN A PRODUCT SITS IN
+   ========================================================================== */
+
+/**
+ * Free versus token-priced. Moved here 06/09/2026 out of `Catalogue.tsx`.
+ *
+ * It was defined inside the landing page's catalogue section, which was the
+ * only place that needed it until `/products` existed. Two copies of this set
+ * would be two answers to which column a product is in, and the second one to
+ * be edited would be wrong silently, on whichever page nobody had open.
+ *
+ * `products.ts` still holds no price and never will: `/pricing` owns every
+ * number. What this holds is a fact about the catalogue rather than about the
+ * money, which is why it can live beside the products without breaking that.
+ */
+export const FREE_SLUGS: ReadonlySet<string> = new Set([
+  "eu-fit-check",
+  "cv-check",
+  "guided-job-hunt",
+]);
+
+export const isFreeProduct = (slug: string): boolean => FREE_SLUGS.has(slug);
+
+/* ==========================================================================
+   THE CATALOGUE PAGE, /products
+   ========================================================================== */
+
+/**
+ * `/products`, added 06/09/2026 on Paul's call.
+ *
+ * **Why it did not exist until now.** The five product pages shipped on
+ * 23/08/2026 reachable only from the menu, and the landing page's catalogue
+ * section is the only other place that lists them. That is enough for someone
+ * arriving at the top of the site and nothing at all for someone who arrives on
+ * one product page from a shared link: the menu is a list of names with no
+ * shape, and there was nowhere to send a reader who wants to see how the five
+ * fit together before choosing one.
+ *
+ * **It states no price**, the same rule the product pages follow. `/pricing` is
+ * where someone chooses; this is where someone learns the shape of the offer.
+ * The two columns below say free or token-priced, which is a fact about the
+ * catalogue rather than a number, and the labels are `home.ts`'s own so the
+ * landing page and this page cannot drift into two words for one column.
+ */
+export const INDEX_EYEBROW: Copy = {
+  en: "Everything PunProfile makes",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "ทุกอย่างที่ PunProfile ทำขึ้นมา",
+};
+
+export const INDEX_HEADING: Copy = {
+  en: "Five tools and one conversation, in the order most people take them",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "เครื่องมือห้าอย่างกับการพูดคุยอีกหนึ่งครั้ง เรียงตามลำดับที่คนส่วนใหญ่ใช้จริง",
+};
+
+export const INDEX_INTRO: Copy = {
+  en: "Start wherever you are. Nothing here needs the one before it, and the first two ask for nothing but your answers.",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย ไม่มีอย่างไหนที่ต้องทำตามลำดับ และสองอย่างแรกขอแค่คำตอบของคุณเท่านั้น",
+};
+
+export const INDEX_PATH_HEADING: Copy = {
+  en: "How they fit together",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "แต่ละอย่างต่อกันอย่างไร",
+};
+
+export const INDEX_PATH_LEDE: Copy = {
+  en: "Each one answers the question the one before it leaves you holding.",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "แต่ละอย่างตอบคำถามที่เกิดขึ้นจากอย่างก่อนหน้า",
+};
+
+export const INDEX_TABLE_HEADING: Copy = {
+  en: "Side by side",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "เทียบกันทีละอย่าง",
+};
+
+export const COL_PRODUCT: Copy = {
+  en: "What it is",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "บริการ",
+};
+
+export const COL_WHO: Copy = {
+  en: "Who it is for",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "เหมาะกับใคร",
+};
+
+export const COL_WHAT: Copy = {
+  en: "What happens",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "เกิดอะไรขึ้นบ้าง",
+};
+
+export const COL_COST: Copy = {
+  en: "How it is paid for",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "จ่ายอย่างไร",
+};
+
+/** The chip on a product that is open. The counterpart of `COMING_SOON`. */
+export const STATUS_LIVE: Copy = {
+  en: "Open now",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "เปิดให้ใช้งานแล้ว",
+};
+
+/** The link at the foot of a card on the catalogue page. */
+export const CARD_ACTION: Copy = {
+  en: "See what it does",
+  // TH-UNREVIEWED, 06/09/2026. Follows the pattern the `read`-cost labels in
+  // `cta.ts` already use: ดู, and then what the page shows.
+  th: "ดูรายละเอียดของบริการนี้",
+};
+
+/**
+ * The coaching card at the foot of the catalogue, and why it is set apart.
+ *
+ * Coaching is deliberately absent from `PRODUCTS`, stated at the head of this
+ * file: it has `/coaching`, which is a longer page with the founder section on
+ * it, and folding it into the product template would lose more than it tidied.
+ * The catalogue page still has to name it, because a reader comparing five
+ * tools is a reader who should know the sixth thing exists and is not a tool.
+ */
+export const NOT_A_TOOL_HEADING: Copy = {
+  en: "And the part that is not a tool",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "และส่วนที่ไม่ใช่เครื่องมือ",
+};
+
+export const NOT_A_TOOL_BODY: Copy = {
+  en: "Everything above reads what you already have. The coaching is where we decide what to do about it, and it is the engagement every client starts with.",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "ทุกอย่างด้านบนคืออ่านสิ่งที่คุณมีอยู่แล้ว ส่วนการโค้ชคือการตัดสินใจร่วมกันว่าจะทำอะไรต่อ และเป็นจุดเริ่มต้นของลูกค้าทุกคน",
+};
+
+/* ==========================================================================
+   THE TWO LINES THE CLOSING BAND NEVER HAD
+   ========================================================================== */
+
+/**
+ * The closing band on every product page carried a button and nothing else.
+ *
+ * Found in the UI review of 06/09/2026: a 215px dark-green band with a single
+ * pill floating in the middle of it, on all five pages. A band that asks for
+ * something without saying what it is asking about is a band a reader scrolls
+ * past, and the block library gives B8 a line above the action for exactly this
+ * reason.
+ *
+ * One pair for all five rather than a pair per product, for the same reason
+ * `COMING_SOON` is one string: the ask is identical on all five and a second
+ * wording of it is a second promise.
+ */
+export const CLOSE_HEADING: Copy = {
+  en: "Not sure which one you need?",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "ยังไม่แน่ใจว่าควรเริ่มจากอันไหน",
+};
+
+export const CLOSE_BODY: Copy = {
+  en: "Tell me where you are and what you are aiming at, and I will say which of these is worth your time and which is not.",
+  // TH-UNREVIEWED, 06/09/2026. First person, which is what `DESTINATIONS.contact`
+  // in `cta.ts` settled: the reader reaches a person, not a company.
+  th: "บอกผมว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ แล้วผมจะบอกว่าอันไหนคุ้มกับเวลาของคุณ และอันไหนยังไม่ต้อง",
+};
+
+/**
+ * The heading over a product page's own FAQ, which it never had.
+ *
+ * The questions sat on the band with no heading over them, so on `/products/
+ * cv-check`, where there is one question, the section read as a stray paragraph
+ * rather than as an answer to something. `FAQ_HEADING` in `faq.ts` is the site's
+ * word for this and is imported rather than restated.
+ */
+export const RELATED_HEADING: Copy = {
+  en: "The rest of the catalogue",
+  // TH-UNREVIEWED, 06/09/2026.
+  th: "บริการอื่นในชุดเดียวกัน",
+};
