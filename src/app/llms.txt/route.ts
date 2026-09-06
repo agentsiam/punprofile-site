@@ -63,10 +63,28 @@ export function GET() {
       "EU Fit Check",
       "The free assessment. Around two minutes, on a phone, no sign-up before the first result. Scores four dimensions: professional capability, employability, mobility readiness, European market fit",
     ),
+    /*
+     * The catalogue and the services page, added 06/09/2026 with both routes.
+     *
+     * They sit above `/coaching` because they are what a model asking "what
+     * does this business sell" should read first: one page listing the five
+     * tools and one listing the three services, where the previous answer was
+     * the coaching pitch and a menu.
+     */
+    route(
+      "/products",
+      "Products",
+      "All five tools side by side: who each is for, what happens, what it does not do, and whether it is free or priced in tokens. Only EU Fit Check is open; the other four have pages that say so",
+    ),
+    route(
+      "/services",
+      "The three services",
+      "What the work with a person actually is: career coaching, getting a profile ready to apply, and running one application end to end. How an engagement runs, and who it is not for",
+    ),
     route(
       "/coaching",
       "Coaching 1:1",
-      "How the coaching works, the method, who it is not for, and the three ways of working together with what each covers. The /services route folded in here on 23/08/2026 and redirects",
+      "The case for the coaching rather than the catalogue of it: the method, the proof, who it is not for, and the founder. The `/services` route folded in here between 23/08/2026 and 06/09/2026 and now has its own page again",
     ),
     route(
       "/pricing",
