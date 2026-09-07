@@ -13,14 +13,23 @@
 set -euo pipefail
 
 REPO="/Users/paulb/Documents/LTD OS/punprofile-career/punprofile-profile-app"
-SITE="https://punprofile.vercel.app"
+SITE="https://punprofile.app"
 
-# Verified in the Vercel dashboard, 14/08/2026:
-#   GitHub punprofilecareer-droid/punprofile-profile-app, connected 4 Aug
+# Re-verified in the Vercel dashboard, 07/09/2026, after the move off the
+# free Hobby account:
+#   GitHub agentsiam/punprofile-site. The repo was re-hosted under the
+#   agentsiam account because a Viewer seat can neither transfer a project in
+#   nor create one, and a Member seat costs $20/mo. The old
+#   punprofilecareer-droid repo is a redirect stub now; nothing pushes to it.
 #   Production branch: master. A push to master auto-deploys, no CLI needed.
-#   Domains punprofile.vercel.app (primary, claimed 14/08) and
-#   punprofile-profile-app.vercel.app, both on Production
-#   Vercel account punprofile.career@gmail.com, team slug pun-profile, Hobby
+#   Domain punprofile.app, registered through Vercel on the AgentSiam team,
+#   auto-renews 07/09/2027.
+#   Vercel account hi@agentsiam.com, team slug agent-siam, Pro.
+#
+# The retired Hobby project still answers on punprofile.vercel.app and holds
+# every link ever published. It carries REDIRECT_TO=https://punprofile.app,
+# which turns on the catch-all 308 in next.config.ts. Do not set REDIRECT_TO
+# on this project; it would redirect to itself.
 
 
 # ---------------------------------------------------------------------------
