@@ -25,9 +25,40 @@ const nextConfig: NextConfig = {
    * redirect silently destroys the channel data it was added to protect.
    */
   async redirects() {
+    /*
+     * The site moved to its own domain, `punprofile.app`, on 07/09/2026, and
+     * `punprofile.vercel.app` stayed behind holding every link ever published:
+     * the Facebook daily job posts, the pinned post, the LINE account, and
+     * whatever Google had indexed by then. A landing page saying "we moved"
+     * would ask each of those visitors to click a second time, and would leave
+     * two copies of every page competing in the index. A permanent redirect
+     * moves the person and the ranking in one hop, so that is what this is.
+     *
+     * It stays off until `REDIRECT_TO` is set, and it is set on the old
+     * project only. The new project never carries it, so it can never redirect
+     * to itself. One environment variable is the whole switch, and unsetting
+     * it is the whole rollback, which matters because a 308 is cached hard by
+     * browsers and cannot be un-sent.
+     *
+     * Placed after the `/assess` rules deliberately. Next evaluates in order,
+     * so an old Facebook link hops `/assess` to `/efc-assessment` first and
+     * then to the new domain, arriving at the right page with `?src=fb&job=`
+     * intact rather than at a dead path on a live one.
+     */
+    const movedTo = process.env.REDIRECT_TO;
+
     return [
       { source: "/assess", destination: "/efc-assessment", permanent: true },
       { source: "/en/assess", destination: "/en/efc-assessment", permanent: true },
+      ...(movedTo
+        ? [
+            {
+              source: "/:path*",
+              destination: `${movedTo}/:path*`,
+              permanent: true,
+            },
+          ]
+        : []),
       /*
        * The `/services` redirect was removed on 06/09/2026, because the route
        * came back. What it said is worth keeping:
