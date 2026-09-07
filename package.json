@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3100",
-    "build": "next build",
+    "build": "if [ -n \"$CONVEX_DEPLOY_KEY\" ]; then npx convex deploy --cmd 'npm run build:next'; else npm run build:next; fi",
+    "build:next": "next build",
     "start": "next start",
     "lint": "eslint",
     "termbase": "tsx scripts/sync-termbase.ts",
