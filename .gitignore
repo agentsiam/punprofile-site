@@ -57,3 +57,6 @@ next-env.d.ts
 # Routes retired rather than deleted, because the desktop bridge cannot delete.
 # Kept out of git: the redirect in next.config.ts is the real record of the fold.
 .retired/
+
+# Parked for Paul to empty. Gitignored: nothing here is kept.
+_to_delete/
