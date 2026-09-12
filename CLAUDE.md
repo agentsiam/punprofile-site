@@ -6,7 +6,7 @@ sibling repo `../punprofile-career-coaching/`. Nothing here defines what the app
 `README.md` is orientation. This file is what to do.
 
 Rule IDs R1 upward are stable and are cited from elsewhere in this repo. A retired rule keeps its
-number and is marked RETIRED. Numbers are never reused. Core rules C1 to C48 live in the core block
+number and is marked RETIRED. Numbers are never reused. Core rules C1 to C49 live in the core block
 at the foot of this file and are identical in every repo.
 
 **Three rules are LAW: R1, R14, R37.** A law overrides everything else in this file. Check them
@@ -18,6 +18,9 @@ handoff, lives in `product-roadmap.md` in the sibling repo's
 `punprofile-work/work-projects/eu-fit-check/`, which this file points at rather than holds (C35).
 
 `AGENTS.md` in this repo is a one-line `@CLAUDE.md` import. Never two rule sets in one repo.
+
+Sections 1 to 8 run past the 160-line stop in the shared standard. The length was considered and
+waived: every rule here is a constraint this repo needs, and cutting to the target would drop one.
 
 This file is rules. `README.md`, `DESIGN.md` and `scripts/README.md` are navigation. Do not
 duplicate one into the other.
@@ -199,11 +202,11 @@ looking for it. The full cross-check is the pre-push list in section 6, on every
 
 ---
 
-<!-- CLAUDE-CORE:BEGIN v1 — synced from /Users/paulb/Documents/LTD OS/_standards/CLAUDE-core.md. Do not edit here. -->
+<!-- CLAUDE-CORE:BEGIN. Synced from /Users/paulb/Documents/LTD OS/_standards/CLAUDE-core.md; the Version line inside the block says which core this is. Do not edit here. -->
 
 # CLAUDE core rules
 
-Version 3.7. This line is bumped on every edit to this file, no exceptions, and it travels inside
+Version 3.10. This line is bumped on every edit to this file, no exceptions, and it travels inside
 every pasted block, so any repo's copy says which core it came from. Byte-identity against the
 canonical file is verified by diffing the pasted block against
 `/Users/paulb/Documents/LTD OS/_standards/CLAUDE-core.md` directly; no hash is needed.
@@ -211,7 +214,7 @@ canonical file is verified by diffing the pasted block against
 Identical in every one of Paul's repositories. Do not edit this block inside a repo. Edit the
 canonical copy and re-sync, so the same rule cannot say two things in two places.
 
-Rule IDs are stable, currently C1 to C48. A new rule takes the next free number and sits in the
+Rule IDs are stable, currently C1 to C49. A new rule takes the next free number and sits in the
 section it belongs to, so numbers are unique but not strictly ordered within a section. A retired
 rule keeps its number and is marked RETIRED. Numbers are never reused. Repo-specific rules are
 numbered R1 upward in the repo's own file and never collide with these.
@@ -235,7 +238,9 @@ several decisions are genuinely open at once, list them all in one block at the 
 dripping them out, and say which ones block the others, because a decision he cannot see is a
 decision he cannot make. Each item in the block still stands alone under C4. Never use the
 exception to stack questions that are merely ready rather than open, and never reopen a topic he
-has already steered.
+has already steered. A downstream question that is genuinely unanswerable until an upstream one
+settles is held back, not batched; one that is merely affected joins the block with its dependency
+marked.
 
 **C4. A question is a closed choice with a recommendation.** Never an open prompt, never "say the
 word", never "let me know". Working out the option set is the job. The recommended option comes
@@ -260,7 +265,9 @@ reused within one message.
 The test is whether he could answer correctly having read nothing else and remembering nothing from
 the last message. Six lines is fine if two will not do. Number the question Q1 and its options 1a,
 1b, so he can reply "1a" or "skip". Put it at the END of the message. And where the answer becomes
-record, the question says which document the answer lands in. Where the repo keeps a standing
+record, the question says which document the answer lands in. A question about a document carries
+that document's full absolute path and the section inside it, in the question block itself: he
+usually answers from a phone or away from the repo, and cannot answer about a doc he cannot open. Where the repo keeps a standing
 question queue, the split is routing, not preference: a decision that is his and can wait goes to
 the queue; the in-reply block is for what blocks the work now.
 
@@ -276,6 +283,9 @@ numbered blocks on the same topic read as being challenged rather than helped.
 "see my earlier message", "scroll up". No "4c is done", no bare "action 76", no bare "v2". Name the
 thing every time, in plain words, on every mention. He answers from a phone and does not scroll
 back. Numbering restarts every message: it addresses the reply he is about to type and nothing more.
+This covers documents as well as messages: a bare version number in a doc, "v2", "v5.0", names
+nothing once the file travels, so name the thing first and the number after it, per the repo's own
+version vocabulary where one exists.
 
 **C7. Every file and folder named in chat carries its full absolute path**, starting `/Users/paulb/`.
 Never `~`, never a repo-relative fragment, never a bare filename. Every mention, not only the first,
@@ -427,6 +437,13 @@ not memory of an earlier read.
 
 **C46. Say what is verified, what is inferred and what is opinion.** Every substantive claim carries
 which of the three it is, and the boundaries are not blurred to make an answer read more confident.
+
+**C49. Paul outranks the record.** The repo's documents are the history of decisions made, never an
+authority over new ones. When he states a new fact or a change of direction, flag any conflict with
+the record once, with its cost, then update the record through the normal approval flow and
+execute. Never audit his statement against the docs to argue it away, never present his stated
+direction as the option being recommended against, and never require him to state a decision twice.
+"The docs say otherwise" is a reason to update the docs.
 
 **C48. Flag contradictions and risks rather than smoothing them.** Two sources that disagree, a
 listing that markets what the rules forbid, a policy the practice breaches: surface it, do not
