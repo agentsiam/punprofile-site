@@ -8,17 +8,12 @@
  * answer to being handed a rebuilt home page was "I don't know where to review
  * this", and he was right: there was nowhere.
  *
- * `copy-worksheet.md` covers `copy.ts`, `narrative-copy.ts`, `consent-copy.ts`
- * and the levers, and round-trips through `import-copy-worksheet.ts`. It does
- * not cover the per-page modules, and it should not be extended to: the
- * importer writes back into `copy.ts` by key, so a page-module string pasted
- * into that worksheet would be silently dropped on the next import. A worksheet
- * that loses an edit is worse than no worksheet.
+ * Superseded as a language workflow on 08/09/2026 by `LANGUAGE-SYSTEM.md`, which
+ * covers every module. This exporter remains only as a whole-page reading-order
+ * view for layout review; it does not own wording or provenance.
  *
- * So this is a **read-and-mark-up sheet, not a round trip.** It says so at the
- * top of every file it writes. Corrections come back as text and are applied by
- * hand, which is the same way `coaching.ts`, `services.ts` and `faq.ts` were
- * built from his Thai in the first place.
+ * Corrections belong in the canonical language file and are regenerated into
+ * code. This output is disposable.
  *
  * ---------------------------------------------------------------------------
  * WHAT IT PUTS IN FRONT OF HIM, AND WHY IN THIS ORDER
@@ -30,7 +25,7 @@
  *
  * **In the order the strings appear on the page**, not in export order or
  * alphabetically. Register is a property of a whole page, which is the finding
- * `Language_System.md` records under LR-09, and a sheet in the wrong order
+ * `LANGUAGE-SYSTEM.md` records, and a sheet in the wrong order
  * cannot show it. That is what `SECTIONS` below is for.
  *
  * **Provenance on every string**, because half of them are his own words already

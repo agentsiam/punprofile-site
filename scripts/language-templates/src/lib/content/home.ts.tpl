@@ -62,7 +62,7 @@ import type { AnyCopyKey } from "@/lib/locale";
  * published string is the typo and this is what he meant.
  */
 export const HERO_STANDING: Copy = {
-  en: "We have talked with over a hundred Thai professionals who want to work in Europe, and we see the same picture come up again and again.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhFUk9fU1RBTkRJTkc:EN%%,
   // **Rewritten by Paul, 17/08/2026**, from his own pinned-post sentence.
   // The note above about `มารับร้อยคน` being a typo for `มาเป็นร้อยคน` is
   // settled by this: he wrote `กว่าร้อยคน`, and moved it in front of the
@@ -72,7 +72,7 @@ export const HERO_STANDING: Copy = {
   // goes, which is the opposite of LR-05's usual direction and right here:
   // ภาพ is ordinary Thai for what he means, and แพทเทิร์น was carrying
   // nothing the Thai could not.
-  th: "เราคุยกับคนไทยกว่าร้อยคนที่อยากไปทำงานในยุโรป และเห็นภาพเดิมเกิดขึ้นซ้ำ ๆ",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhFUk9fU1RBTkRJTkc:TH%%,
 };
 
 /**
@@ -104,7 +104,7 @@ export const HERO_STANDING: Copy = {
  * composer skill's step 1.
  */
 export const HERO_REFRAME: Copy = {
-  en: "Most of the problem is not that you are not good enough. It is that the European job market plays by a different set of rules from Thailand's, and nobody tells you at the start what those rules are.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhFUk9fUkVGUkFNRQ:EN%%,
   // **Paul's wording, 17/08/2026.** Worth reading against what it replaced,
   // because it is the same move landed harder.
   //
@@ -116,12 +116,12 @@ export const HERO_REFRAME: Copy = {
   // `ตลาดงานยุโรปเล่นด้วยกติกาคนละชุด` gives the market the verb. The rules
   // stop being a property of a situation and become something someone else
   // is already playing by.
-  th: "ปัญหาส่วนใหญ่ไม่ใช่ว่าคุณเก่งไม่พอ แต่เป็นเพราะตลาดงานยุโรปเล่นด้วยกติกาคนละชุดกับไทย และไม่มีใครบอกคุณตั้งแต่แรกว่ากติกาเหล่านั้นคืออะไร",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhFUk9fUkVGUkFNRQ:TH%%,
 };
 
 export const HERO_MASCOT_ALT: Copy = {
-  en: "The PunProfile character reading a document through a magnifying glass",
-  th: "ตัวการ์ตูน PunProfile กำลังส่องเอกสารด้วยแว่นขยาย",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhFUk9fTUFTQ09UX0FMVA:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhFUk9fTUFTQ09UX0FMVA:TH%%,
 };
 
 // ------------------------------------------------------- what we actually do
@@ -137,18 +137,18 @@ export const HERO_MASCOT_ALT: Copy = {
  * Nothing refreshes it. `npm run market`, then commit both files.
  */
 export const MARKET_HEADING: Copy = {
-  en: "What we actually do, every day",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6Ok1BUktFVF9IRUFESU5H:EN%%,
   // **Daily, not weekly**, corrected by Paul 17/08/2026. That is a fact
   // rather than a wording preference and I had it wrong: `run.sh` in the
   // coaching repo's `work-skills/daily-jobs/` fires every day at 18:00
   // Europe/Berlin.
   //
   // `ทุกๆวัน` is his spacing and is left exactly as he typed it.
-  th: "สิ่งที่เราทำจริงในทุกวัน",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6Ok1BUktFVF9IRUFESU5H:TH%%,
 };
 
 export const MARKET_BODY: Copy = {
-  en: "We go through job adverts from across Europe, check which employers really do sponsor a visa, and pick out only the roles a Thai applicant can genuinely apply for.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6Ok1BUktFVF9CT0RZ:EN%%,
   // **`สปอนเซอร์วีซ่า`, decided by Paul 17/08/2026**, overriding the
   // `สนับสนุนวีซ่า` this line briefly carried. He used it as a verb three
   // times in one review pass, here, on the stat label below and in
@@ -158,7 +158,7 @@ export const MARKET_BODY: Copy = {
   // `ไล่ดู` and `คัดมา` rather than `อ่าน` and `ประกาศ`: the first pair
   // describes sifting, the second described reading and republishing, and
   // sifting is what the pipeline does. `สมัครได้จริง` closes on the reader.
-  th: "เราไล่ดูประกาศงานจากทั่วยุโรป เช็กว่าบริษัทไหนระบุเรื่องสปอนเซอร์วีซ่าไว้อย่างชัดเจน แล้วคัดมาเฉพาะตำแหน่งที่คนไทยมีโอกาสสมัครได้จริง",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6Ok1BUktFVF9CT0RZ:TH%%,
 };
 
 /**
@@ -190,7 +190,7 @@ export const MARKET_STATS: readonly MarketStat[] = [
 ];
 
 export const MARKET_FOOT: Copy = {
-  en: "Figures from {from} to {to}. We post these roles in the Thai Jobs in Europe group.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6Ok1BUktFVF9GT09U:EN%%,
   /*
    * The free-and-public clause was here and came out on 17/08/2026, for two
    * reasons that landed together.
@@ -208,7 +208,7 @@ export const MARKET_FOOT: Copy = {
    * is a whole section about what is free, and a footnote about dates is not
    * where a reader looks for it. Removing it removed a duplicate.
    */
-  th: "ระหว่าง {from} ถึง {to} เราได้ประกาศตำแหน่งเหล่านี้ในกลุ่ม Thai Jobs in Europe",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6Ok1BUktFVF9GT09U:TH%%,
 };
 
 
@@ -219,17 +219,17 @@ export const MARKET_FOOT: Copy = {
 // point at the one that is theirs. `home-page-v2.md` carries the full mapping.
 
 export const PROBLEM_HEADING: Copy = {
-  en: "The problem is rarely the experience",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlBST0JMRU1fSEVBRElORw:EN%%,
   // Read back 25/08/2026. `10_Methodology.md`'s core claim said to a
   // stranger: illegibility rather than capability.
-  th: "ปัญหาส่วนใหญ่ไม่ได้อยู่ที่ประสบการณ์ของคุณ",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlBST0JMRU1fSEVBRElORw:TH%%,
 };
 
 export const PROBLEM_BODY: Copy = {
-  en: "A Bangkok senior title can read as mid-level in Amsterdam. A well-known Thai employer reads as an unknown one. Most people are not turned down for what they have done, they are turned down before anyone works out what that was.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlBST0JMRU1fQk9EWQ:EN%%,
   // Read back 25/08/2026. Drafted from `10_Methodology.md` and from the
   // CV Check page's own `how` lines, which Paul reviewed on 23/08/2026.
-  th: "ตำแหน่งระดับอาวุโสในกรุงเทพฯ อาจถูกมองว่าเป็นเพียงระดับกลางในอัมสเตอร์ดัม บริษัทชื่อดังในไทยอาจไม่มีใครรู้จักในยุโรป คนส่วนใหญ่ไม่ได้ถูกปฏิเสธเพราะประสบการณ์ที่มี แต่ถูกปฏิเสธก่อนที่ใครจะเข้าใจด้วยซ้ำว่าเคยทำอะไรมาบ้าง",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlBST0JMRU1fQk9EWQ:TH%%,
 };
 
 // ------------------------------------------------------------------ triage
@@ -275,8 +275,8 @@ export interface Triage {
  */
 // Read back 25/08/2026. Draft.
 export const SAMPLE_LEAD: Copy = {
-  en: "This is what the first read looks like: four scores, and what each one means for you.",
-  th: "ผลเบื้องต้นมีหน้าตาแบบนี้: คะแนนสี่ด้าน พร้อมคำอธิบายว่าแต่ละด้านหมายถึงอะไรสำหรับคุณ",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlNBTVBMRV9MRUFE:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlNBTVBMRV9MRUFE:TH%%,
 };
 
 /**
@@ -288,111 +288,111 @@ export const SAMPLE_LEAD: Copy = {
  */
 // Read back 25/08/2026. Draft.
 export const CATALOGUE_LEAD: Copy = {
-  en: "Three ways of working together, and below them everything you can use on your own.",
-  th: "สามรูปแบบที่เราจะทำงานร่วมกัน และด้านล่างคือทุกอย่างที่คุณใช้ได้ด้วยตัวเอง",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNBVEFMT0dVRV9MRUFE:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNBVEFMT0dVRV9MRUFE:TH%%,
 };
 
 export const TRIAGE_HEADING: Copy = {
-  en: "You do not need to know which service you need",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRV9IRUFESU5H:EN%%,
   // Read back 25/08/2026. The reference product's own framing, which is
   // the load-bearing idea on its page: the reader picks a problem, not a tool.
-  th: "คุณไม่จำเป็นต้องรู้ว่าควรใช้บริการไหน",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRV9IRUFESU5H:TH%%,
 };
 
 export const TRIAGE_LEAD: Copy = {
-  en: "Pick the one that sounds like you.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRV9MRUFE:EN%%,
   // Read back 25/08/2026.
-  th: "เลือกข้อที่ตรงกับคุณที่สุด",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRV9MRUFE:TH%%,
 };
 
 export const TRIAGE: readonly Triage[] = [
   {
     id: "no-callbacks",
     line: {
-      en: "I have applied to a lot of places and hardly anyone gets back to me.",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVswXS5saW5l:EN%%,
       // Paul's Thai, VERBATIM from `questions.ts`, the employer-response option.
       // Nothing was added: it already stands on its own.
-      th: "สมัครไปหลายที่แล้ว แต่แทบไม่มีใครติดต่อกลับ",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVswXS5saW5l:TH%%,
     },
     // Read back 25/08/2026. Draft for `HOME-05-no-callbacks`.
     body: {
-      en: "Go to CV Check, which reads the CV the way a European screener reads it.",
-      th: "ไปที่ CV Check ซึ่งจะอ่าน CV ของคุณแบบเดียวกับที่ผู้คัดกรองในยุโรปอ่าน",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVswXS5ib2R5:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVswXS5ib2R5:TH%%,
     },
     href: "/products/cv-check",
   },
   {
     id: "no-offers",
     line: {
-      en: "I have interviewed, but I do not get through to the next round.",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVsxXS5saW5l:EN%%,
       // Paul's Thai, VERBATIM from `questions.ts`, the job-search-stage option.
-      th: "เคยสัมภาษณ์แล้ว แต่ยังไม่ผ่านเข้ารอบถัดไป",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVsxXS5saW5l:TH%%,
     },
     // Read back 25/08/2026. Draft for `HOME-05-no-offers`.
     body: {
-      en: "Go to coaching, where we work through the round you keep stopping at.",
-      th: "ไปที่หน้าโค้ชชิ่ง เพื่อช่วยกันแก้จุดที่ทำให้คุณติดอยู่ในรอบเดิม",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVsxXS5ib2R5:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVsxXS5ib2R5:TH%%,
     },
     href: "/coaching",
   },
   {
     id: "cv-not-europe",
     line: {
-      en: "I have a CV, but it has not been adapted for Europe.",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVsyXS5saW5l:EN%%,
       // Read back 25/08/2026. Paul's CV option `มีแต่ยังไม่ปรับให้เหมาะกับยุโรป`
       // with its subject restored, because the option is a fragment answering
       // a question the reader cannot see here.
-      th: "มี CV อยู่แล้ว แต่ยังไม่ได้ปรับให้เหมาะกับตลาดยุโรป",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVsyXS5saW5l:TH%%,
     },
     // Read back 25/08/2026. Draft for `HOME-05-cv-not-europe`.
     body: {
-      en: "Go to CV Check, which lists what to change and why, one point at a time.",
-      th: "ไปที่ CV Check ซึ่งจะบอกว่าควรแก้จุดไหน พร้อมเหตุผลของแต่ละจุด",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVsyXS5ib2R5:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVsyXS5ib2R5:TH%%,
     },
     href: "/products/cv-check",
   },
   {
     id: "visa-unknown",
     line: {
-      en: "On visas and work rights, I do not yet know what I need to prepare.",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVszXS5saW5l:EN%%,
       // Read back 25/08/2026. Paul's visa option `ยังไม่รู้ว่าต้องเตรียมอะไรบ้าง`
       // with the subject of its own question folded in.
-      th: "เรื่องวีซ่าและสิทธิในการทำงาน ยังไม่รู้ว่าต้องเตรียมอะไรบ้าง",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVszXS5saW5l:TH%%,
     },
     // Read back 25/08/2026. Draft for `HOME-05-visa-unknown`.
     body: {
-      en: "Start the check, which asks about work rights and says where you stand.",
-      th: "เริ่มทำ EU Fit Check ซึ่งจะถามเรื่องสิทธิในการทำงานและบอกว่าตอนนี้คุณอยู่จุดไหน",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVszXS5ib2R5:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVszXS5ib2R5:TH%%,
     },
     href: "/efc-assessment",
   },
   {
     id: "no-target",
     line: {
-      en: "I am not sure which field I want to work in over there.",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVs0XS5saW5l:EN%%,
       // Read back 25/08/2026. Paul's `ยังไม่แน่ใจ` on the target-field
       // question, which needs that question to mean anything.
-      th: "ยังไม่แน่ใจว่าอยากทำงานสายไหนในยุโรป",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVs0XS5saW5l:TH%%,
     },
     // Read back 25/08/2026. Draft for `HOME-05-no-target`.
     body: {
-      en: "Go to coaching, where deciding the direction is the first thing we do.",
-      th: "ไปที่หน้าโค้ชชิ่ง ซึ่งสิ่งแรกที่เราจะทำคือช่วยกันกำหนดทิศทาง",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVs0XS5ib2R5:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVs0XS5ib2R5:TH%%,
     },
     href: "/coaching",
   },
   {
     id: "dormant-linkedin",
     line: {
-      en: "I have a LinkedIn, but I have not updated it in a long time.",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVs1XS5saW5l:EN%%,
       // Read back 25/08/2026. Paul's LinkedIn option `มี แต่ไม่ได้อัปเดต`,
       // expanded the same way as the two above.
-      th: "มี LinkedIn อยู่ แต่ไม่ได้อัปเดตมานานแล้ว",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVs1XS5saW5l:TH%%,
     },
     // Read back 25/08/2026. Draft for `HOME-05-dormant-linkedin`.
     body: {
-      en: "Start the check, which scores how ready your profile is to be found.",
-      th: "เริ่มทำ EU Fit Check ซึ่งจะประเมินว่าโปรไฟล์ของคุณพร้อมให้คนหาเจอแค่ไหน",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVs1XS5ib2R5:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlRSSUFHRVs1XS5ib2R5:TH%%,
     },
     href: "/efc-assessment",
   },
@@ -416,66 +416,66 @@ export interface HowStep {
 }
 
 export const HOW_HEADING: Copy = {
-  en: "How it works",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19IRUFESU5H:EN%%,
   // Read back 25/08/2026.
-  th: "ขั้นตอนเป็นอย่างไร",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19IRUFESU5H:TH%%,
 };
 
 export const HOW_STEPS: readonly HowStep[] = [
   {
     n: 1,
     title: {
-      en: "Answer on your phone",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1swXS50aXRsZQ:EN%%,
       // Rebuilt from Paul's own EU Fit Check line of 23/08/2026 on `/pricing`.
-      th: "ตอบคำถามบนมือถือ",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1swXS50aXRsZQ:TH%%,
     },
     body: {
-      en: "Seventeen questions about where you are now. No CV needed and no account.",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1swXS5ib2R5:EN%%,
       // Read back 25/08/2026. The count is real: `verify-content.ts` pins
       // Stage 1 at 17 questions and fails the build if it drifts.
-      th: "คำถาม 17 ข้อเกี่ยวกับสถานการณ์ของคุณตอนนี้ ไม่ต้องใช้ CV และไม่ต้องสร้างบัญชี",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1swXS5ib2R5:TH%%,
     },
   },
   {
     n: 2,
     title: {
-      en: "See your first read straight away",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1sxXS50aXRsZQ:EN%%,
       // Read back 25/08/2026.
-      th: "เห็นผลเบื้องต้นทันที",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1sxXS50aXRsZQ:TH%%,
     },
     body: {
-      en: "Four scores against the bars the European market uses, and the parts your answers could not reach are named rather than filled in.",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1sxXS5ib2R5:EN%%,
       // Read back 25/08/2026. The second clause is the not-measured rule
       // from `teaser.score.none`, which is the honest half of this product.
-      th: "คะแนนสี่ด้านเทียบกับเกณฑ์ที่ตลาดยุโรปใช้จริง ส่วนที่คำตอบของคุณยังประเมินไม่ได้ เราจะบอกตรง ๆ แทนที่จะเดาให้",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1sxXS5ib2R5:TH%%,
     },
   },
   {
     n: 3,
     title: {
-      en: "Find which one comes first",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1syXS50aXRsZQ:EN%%,
       // Read back 25/08/2026.
-      th: "รู้ว่าควรเริ่มจากเรื่องไหน",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1syXS50aXRsZQ:TH%%,
     },
     body: {
-      en: "The read names the weakest area and what to do about it, in the order that moves the result soonest.",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1syXS5ib2R5:EN%%,
       // Read back 25/08/2026. `เห็นผลได้เร็วที่สุด` is Paul's own phrase from
       // the Fit Report page, reviewed 23/08/2026.
-      th: "ผลจะบอกว่าด้านไหนยังอ่อนที่สุด และควรทำอะไรก่อน โดยเริ่มจากสิ่งที่จะช่วยให้คุณเห็นผลได้เร็วที่สุด",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1syXS5ib2R5:TH%%,
     },
   },
   {
     n: 4,
     title: {
-      en: "Take the next step when you are ready",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1szXS50aXRsZQ:EN%%,
       // Read back 25/08/2026.
-      th: "ไปต่อเมื่อคุณพร้อม",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1szXS50aXRsZQ:TH%%,
     },
     body: {
-      en: "Some of what comes next is free. The rest is bought a piece at a time, and nothing needs a subscription.",
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1szXS5ib2R5:EN%%,
       // Read back 25/08/2026. Says nothing about being contacted, which is
       // the 23/08/2026 decision recorded on `FREE_ITEMS` in `pricing.ts`.
-      th: "บางส่วนใช้ได้ฟรี ส่วนที่เหลือเลือกซื้อทีละชิ้นได้ตามที่ต้องการ ไม่มีระบบสมาชิกรายเดือน",
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkhPV19TVEVQU1szXS5ib2R5:TH%%,
     },
   },
 ];
@@ -506,16 +506,16 @@ export interface SampleAxis {
 }
 
 export const SAMPLE_HEADING: Copy = {
-  en: "You cannot fix what nobody will tell you",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlNBTVBMRV9IRUFESU5H:EN%%,
   // Read back 25/08/2026. The reference product's own heading, which is
   // the argument for the whole section.
-  th: "สิ่งที่ไม่มีใครบอก คุณก็แก้ไม่ได้",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlNBTVBMRV9IRUFESU5H:TH%%,
 };
 
 export const SAMPLE_LABEL: Copy = {
-  en: "Example",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlNBTVBMRV9MQUJFTA:EN%%,
   // Read back 25/08/2026. One word, above the card, unmissable.
-  th: "ตัวอย่าง",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlNBTVBMRV9MQUJFTA:TH%%,
 };
 
 export const SAMPLE_AXES: readonly SampleAxis[] = [
@@ -526,10 +526,10 @@ export const SAMPLE_AXES: readonly SampleAxis[] = [
 ];
 
 export const SAMPLE_NOTE: Copy = {
-  en: "An example, not a real person. Your own numbers come from your own answers.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlNBTVBMRV9OT1RF:EN%%,
   // Read back 25/08/2026. Built on the shape of Paul's own calculator
   // disclaimer of 23/08/2026, which says the numbers come from what you typed.
-  th: "นี่เป็นเพียงตัวอย่าง ไม่ใช่ผลของคนจริง ตัวเลขของคุณจะมาจากคำตอบของคุณเอง",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlNBTVBMRV9OT1RF:TH%%,
 };
 
 // --------------------------------------------------------------- who this is
@@ -543,9 +543,9 @@ export const SAMPLE_NOTE: Copy = {
  * are the pipeline's rather than a person's.
  */
 export const WHO_HEADING: Copy = {
-  en: "Who is behind this",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OldIT19IRUFESU5H:EN%%,
   // Read back 25/08/2026.
-  th: "ใครอยู่เบื้องหลัง PunProfile",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OldIT19IRUFESU5H:TH%%,
 };
 
 export const WHO_BODY: Copy = {
@@ -561,10 +561,10 @@ export const WHO_BODY: Copy = {
    * `dew-tatiy-review.md` is waiting on them.
    */
   // Read back 25/08/2026. Drafted.
-  en: "PunProfile is two people, and you talk to both of them. Neither is paid by an employer, so the advice starts from your goals rather than from a vacancy somebody is rushing to fill.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OldIT19CT0RZ:EN%%,
   // Read back 25/08/2026. The second sentence is Paul's own, from
   // `FOUNDER_AFTER` in `coaching.ts`, which he wrote and reviewed.
-  th: "PunProfile มีกันสองคน และคุณจะได้คุยกับเราทั้งคู่ เราไม่ได้รับเงินจากนายจ้าง บริษัทไหนจะรีบหาคนแค่ไหนก็ไม่ใช่โจทย์ของเรา เราเริ่มจากเป้าหมายของคุณ",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OldIT19CT0RZ:TH%%,
 };
 
 // ------------------------------------------------------------------- results
@@ -594,10 +594,10 @@ export interface Result {
 }
 
 export const RESULTS_HEADING: Copy = {
-  en: "What happened next",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNfSEVBRElORw:EN%%,
   // Not rendered while RESULTS is empty. Held rather than written, so the day
   // there is one to show, the heading is not the thing blocking it.
-  th: "ผลลัพธ์ที่เกิดขึ้นจริง",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNfSEVBRElORw:TH%%,
 };
 
 export const RESULTS: readonly Result[] = [];
@@ -617,25 +617,25 @@ export const RESULTS: readonly Result[] = [];
  * 24/08/2026. Pack prices live on `/pricing` and appear nowhere else.
  */
 export const CATALOGUE_HEADING: Copy = {
-  en: "What you can get",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNBVEFMT0dVRV9IRUFESU5H:EN%%,
   // Read back 25/08/2026.
-  th: "คุณได้อะไรจากที่นี่บ้าง",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNBVEFMT0dVRV9IRUFESU5H:TH%%,
 };
 
 export const CATALOGUE_FREE: Copy = {
-  en: "Free",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNBVEFMT0dVRV9GUkVF:EN%%,
   // Paul's own heading from `/pricing`, 23/08/2026, shortened to a label.
-  th: "ใช้ได้ฟรี",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNBVEFMT0dVRV9GUkVF:TH%%,
 };
 
 export const CATALOGUE_PAID: Copy = {
-  en: "Paid with tokens",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNBVEFMT0dVRV9QQUlE:EN%%,
   // Read back 25/08/2026.
-  th: "จ่ายด้วยโทเคน",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNBVEFMT0dVRV9QQUlE:TH%%,
 };
 
 export const CATALOGUE_PRICE_LINE: Copy = {
-  en: "One role that matches your criteria, sent to you, is 50 THB. Everything here is priced in the same token.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNBVEFMT0dVRV9QUklDRV9MSU5F:EN%%,
   /*
    * Read back 25/08/2026, and this is the only price on the page.
    *
@@ -644,16 +644,16 @@ export const CATALOGUE_PRICE_LINE: Copy = {
    * unit was held flat at 50 THB when the packs were decided: it is the one
    * figure a candidate has to carry, and it stays true whichever pack they buy.
    */
-  th: "ตำแหน่งงาน 1 ตำแหน่งที่ตรงกับเงื่อนไขของคุณและส่งตรงถึงคุณ ราคา 50 บาท ทุกอย่างที่นี่คิดราคาเป็นหน่วยโทเคนเดียวกัน",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNBVEFMT0dVRV9QUklDRV9MSU5F:TH%%,
 };
 
 // --------------------------------------------------------------- FAQ teaser
 
 export const FAQ_TEASER_HEADING: Copy = {
-  en: "You ask, we answer straight",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkZBUV9URUFTRVJfSEVBRElORw:EN%%,
   // Read back 25/08/2026. The reference product's own heading, and it
   // suits a page whose FAQ opens by refusing to guarantee a job or a visa.
-  th: "ถามมา เราตอบตรง",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkZBUV9URUFTRVJfSEVBRElORw:TH%%,
 };
 
 // ------------------------------------------------------------ the visa answer
@@ -674,7 +674,7 @@ export const FAQ_TEASER_HEADING: Copy = {
  * needs neither.
  */
 export const VISA_BODY: Copy = {
-  en: "Visa sponsorship is the question we are asked most. What we can do is help make your profile strong enough to compete from the start, rather than waiting for luck to fall your way.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlZJU0FfQk9EWQ:EN%%,
   // **Paul rewrote his own pinned-post sentence for this page, 17/08/2026.**
   // The note that used to sit here said it was his verbatim and not to be
   // paraphrased, which was right about everyone except him.
@@ -684,7 +684,7 @@ export const VISA_BODY: Copy = {
   // `ไม่ใช่แค่รอโชคช่วย`. That last one is the interesting change: the feed
   // version refuses the magic in four words, and a page has room to say
   // what you do instead of waiting.
-  th: "คำถามเรื่องการสปอนเซอร์วีซ่าคือเรื่องที่เราเจอบ่อยที่สุด สิ่งที่เราทำได้คือช่วยให้โปรไฟล์ของคุณแข็งแรงพอที่จะแข่งขันได้ตั้งแต่แรก แทนที่จะต้องรอให้โชคเข้าข้าง",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlZJU0FfQk9EWQ:TH%%,
 };
 
 // ---------------------------------------------------- what is free, RETIRED
@@ -710,9 +710,9 @@ export const VISA_BODY: Copy = {
  * the same claim twice on one page reads as padding.
  */
 export const CLOSE_LEAD: Copy = {
-  en: "See which stage of the path to working in Europe you are on.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNMT1NFX0xFQUQ:EN%%,
   // PAUL, from `pinned-post-punprofile-intro.md`, with the timing clause
   // removed, and `ไปทำงาน` restored on his read of 17/08/2026 where this
   // file had drifted to `สู่การทำงาน`.
-  th: "เช็กว่าตอนนี้คุณอยู่ขั้นไหน และควรทำอะไรต่อเพื่อไปทำงานในยุโรป",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OkNMT1NFX0xFQUQ:TH%%,
 };

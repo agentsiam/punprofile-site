@@ -38,7 +38,9 @@
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
-import { PROVENANCE, THIN_CORPUS } from "./lib/provenance";
+import { readLanguageSystem } from "./lib/language-system.js";
+
+const THIN_CORPUS = 3000;
 
 /**
  * Every text file in a directory, or nothing if it does not exist yet.
@@ -64,12 +66,11 @@ const ROOT = resolve(import.meta.dirname, "..");
  * a feed, competing, and it is allowed to be looser. Judging one against the
  * other's bands would fail honest writing.
  *
- * **The app surface is derived, not listed.** Any module whose header claims
- * Paul's provenance joins it automatically, using the same claim
- * `audit-thai.ts` reads. That is deliberate: a hardcoded list was correct on
- * 15/08/2026 when four modules were his and wrong an hour later when eleven
- * were, and nothing would have said so. One fact, read in one way, in two
- * places.
+ * **The app surface comes from per-string records in `LANGUAGE-SYSTEM.md`.**
+ * File-level claims were retired on 08/09/2026 because copy added later could
+ * inherit an approval it never received. Only records with `paul-written`
+ * provenance calibrate this surface; approved model drafts may ship but do not
+ * teach the tool what Paul's voice sounds like.
  *
  * **Only confirmed Paul-authored Thai counts.** The daily drafts are model
  * output, and `capture-published.py` puts it plainly: what a model wrote is the
@@ -80,29 +81,7 @@ const ROOT = resolve(import.meta.dirname, "..");
 /** Where Paul drops confirmed material by hand. One folder per surface. */
 const GOLDEN = "../punprofile-career-coaching/punprofile-work/work-content/golden-th";
 
-/** Every app module whose own header claims his provenance. */
-function paulsModules(): string[] {
-  const dirs = ["src/lib/content", "src/lib"];
-  const out: string[] = [];
-  for (const d of dirs) {
-    for (const f of readdirSync(resolve(ROOT, d))) {
-      if (!f.endsWith(".ts") || f.includes("termbase.generated")) continue;
-      const rel = `${d}/${f}`;
-      let src: string;
-      try {
-        src = readFileSync(resolve(ROOT, rel), "utf8");
-      } catch {
-        continue;
-      }
-      if (!/(?<!\w)th:\s*"/.test(src)) continue;
-      if (PROVENANCE.test(src.slice(0, 4000))) out.push(rel);
-    }
-  }
-  return out;
-}
-
 const CORPUS: Record<string, string[]> = {
-  app: [...paulsModules(), ...glob(`${GOLDEN}/app`)],
   /**
    * The pinned post is the only Facebook-surface Thai confirmed as his.
    * `work-pipeline/published/` fills as posts are captured, forward-only by his
@@ -186,19 +165,28 @@ function extract(path: string): string[] {
     .filter((l) => THAI.test(l));
 }
 
-const surfaces = Object.fromEntries(
-  Object.entries(CORPUS).map(([name, files]) => [
+const cleanApp = readLanguageSystem().entries.filter(
+  (entry) => entry.provenance === "paul-written",
+);
+const surfaces: Record<string, { stats: Stats; files: number }> = {
+  app: {
+    stats: measure(cleanApp.map((entry) => entry.th)),
+    files: new Set(cleanApp.map((entry) => entry.source)).size,
+  },
+  ...Object.fromEntries(
+    Object.entries(CORPUS).map(([name, files]) => [
     name,
     { stats: measure(files.flatMap((f) => extract(resolve(ROOT, f)))), files: files.length },
-  ]),
-);
+    ]),
+  ),
+};
 
 // `--surface post` to measure against the feed register instead of the app's.
 const surfaceArg = process.argv.indexOf("--surface");
 const surfaceChosen = surfaceArg > -1;
 const surfaceName = surfaceChosen ? process.argv[surfaceArg + 1] : "app";
 if (!surfaces[surfaceName]) {
-  console.error(`Unknown surface "${surfaceName}". Known: ${Object.keys(CORPUS).join(", ")}`);
+  console.error(`Unknown surface "${surfaceName}". Known: ${Object.keys(surfaces).join(", ")}`);
   process.exit(1);
 }
 if (surfaces[surfaceName].stats.thaiChars === 0) {

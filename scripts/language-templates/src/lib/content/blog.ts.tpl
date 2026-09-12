@@ -124,17 +124,17 @@ export const TOPICS: readonly Topic[] = [
     // is แบบเช็ก, a compound assembled to avoid saying "survey".
     // `How-to` in both, corrected 17/08/2026. Paul hyphenated it on the review
     // sheet, matching the pillar's own name in `Content_Strategy.md`.
-    label: { en: "How-to", th: "How-to" },
+    label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1swXS5sYWJlbA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1swXS5sYWJlbA:TH%% },
     wash: "var(--color-secondary-container)",
   },
   {
     id: "market",
-    label: { en: "The European job market", th: "ตลาดงานยุโรป" },
+    label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1sxXS5sYWJlbA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1sxXS5sYWJlbA:TH%% },
     wash: "var(--color-primary-container)",
   },
   {
     id: "perspective",
-    label: { en: "Perspective", th: "มุมมอง" },
+    label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1syXS5sYWJlbA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1syXS5sYWJlbA:TH%% },
     wash: "var(--color-tertiary-container)",
   },
   {
@@ -157,7 +157,7 @@ export const TOPICS: readonly Topic[] = [
      * topic rather than by editing this label a second time.
      */
     id: "stories",
-    label: { en: "What people worry about", th: "เรื่องที่หลายคนกังวล" },
+    label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1szXS5sYWJlbA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1szXS5sYWJlbA:TH%% },
     wash: "var(--color-primary-container)",
   },
 ];
@@ -337,8 +337,8 @@ export const BLOG_HEADING: Copy = {
   // "explained one piece at a time"; his is a promise about what the reader gets
   // out of it. `ลงหลักปักฐาน`, putting down roots, is the first time anything on
   // this site names the actual end state rather than the job.
-  en: "Stories from Europe, on the road to settling there",
-  th: "เรื่องเล่าจากยุโรป บนเส้นทางสู่การลงหลักปักฐาน",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfSEVBRElORw:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfSEVBRElORw:TH%%,
 };
 
 export const BLOG_INTRO: Copy = {
@@ -358,22 +358,22 @@ export const BLOG_INTRO: Copy = {
   // His other draft closed on `ไม่ขายฝันด้วยสูตรลัด`, we do not sell dreams. He
   // did not pick it, and it is worth recording why that is the right call: it
   // accuses the rest of the market, and nothing else on this site does.
-  en: "Articles on finding work in Europe: visas, CVs and getting ready. Written from real information you can check, not shortcuts that sound good and do not work.",
-  th: "รวมบทความเรื่องการหางานในยุโรป วีซ่า เรซูเม่ และการเตรียมตัว เขียนจากข้อมูลจริงที่ตรวจสอบได้ ไม่ใช่สูตรลัดที่ฟังดูดีแต่ใช้จริงไม่ได้",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfSU5UUk8:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfSU5UUk8:TH%%,
 };
 
-export const BLOG_TOPICS_LABEL: Copy = { en: "Pick a topic", th: "เลือกหัวข้อ" };
+export const BLOG_TOPICS_LABEL: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfVE9QSUNTX0xBQkVM:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfVE9QSUNTX0xBQkVM:TH%% };
 
-export const BLOG_ALL: Copy = { en: "All", th: "ทั้งหมด" };
+export const BLOG_ALL: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfQUxM:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfQUxM:TH%% };
 
-export const BLOG_BACK: Copy = { en: "All articles", th: "บทความทั้งหมด" };
+export const BLOG_BACK: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfQkFDSw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfQkFDSw:TH%% };
 
 export const BLOG_EMPTY: Copy = {
-  en: "Nothing in this topic yet.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfRU1QVFk:EN%%,
   // Paul's wording, 17/08/2026. He cut `ลองดูหัวข้ออื่น`: the topic row is
   // directly above this line, so telling the reader to try another one is
   // narrating a control they can already see.
-  th: "ยังไม่มีบทความในหัวข้อนี้",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfRU1QVFk:TH%%,
 };
 
 /**
@@ -383,23 +383,23 @@ export const BLOG_EMPTY: Copy = {
  * the page still carries its action, so nobody arrives at a dead end.
  */
 export const BLOG_NONE_YET: Copy = {
-  en: "There is nothing to read yet. We are writing the first one.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfTk9ORV9ZRVQ:EN%%,
   // Paul's wording, 17/08/2026, and this is the one that matters most on
   // this page: with no articles published it is the only Thai a visitor to
   // `/blog` actually sees. `ให้อ่าน` says what is missing from the reader's
   // side, and `เรา` puts someone behind the work rather than leaving it as
   // a state the page is in.
-  th: "ตอนนี้ยังไม่มีบทความให้อ่าน เรากำลังเขียนชิ้นแรกอยู่",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfTk9ORV9ZRVQ:TH%%,
 };
 
 export const BLOG_QUESTION_LABEL: Copy = {
   // Paul's own label, from the second of the two pieces that closes on a
   // question. See the note at the top of this file on why it replaced the other.
-  en: "A question for you",
-  th: "คำถามสำหรับคุณ",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfUVVFU1RJT05fTEFCRUw:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfUVVFU1RJT05fTEFCRUw:TH%%,
 };
 
-export const BLOG_READ: Copy = { en: "Read", th: "อ่านบทความ" };
+export const BLOG_READ: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfUkVBRA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfUkVBRA:TH%% };
 
 // ---------------------------------------------------------------------------
 // The "start here" block, and the email capture above it.
@@ -429,23 +429,23 @@ export const BLOG_READ: Copy = { en: "Read", th: "อ่านบทความ
 // ---------------------------------------------------------------------------
 
 export const PLAYBOOKS_HEADING: Copy = {
-  en: "First time here? Start with these guides.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlBMQVlCT09LU19IRUFESU5H:EN%%,
   // Paul's wording, 17/08/2026. `ใช่ไหม` and `ได้เลย` are the difference
   // between a label and someone speaking: the first makes the question a
   // real one and the second gives permission rather than an instruction.
-  th: "เพิ่งเข้ามาครั้งแรกใช่ไหม? เริ่มจากคู่มือเหล่านี้ได้เลย",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlBMQVlCT09LU19IRUFESU5H:TH%%,
 };
 
 export const PLAYBOOKS_INTRO: Copy = {
-  en: "The articles to start with. Each one explains from the basics through to what you can go and do yourself.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlBMQVlCT09LU19JTlRSTw:EN%%,
   // Paul's wording, 17/08/2026. `ควรเริ่มอ่าน` rather than `ควรอ่านก่อน`,
   // which is where to begin rather than an order of merit, and `พื้นฐาน`
   // names what they start from.
-  th: "บทความแนะนำสำหรับเริ่มต้น แต่ละเรื่องอธิบายตั้งแต่พื้นฐานจนคุณนำไปใช้ต่อได้ด้วยตัวเอง",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlBMQVlCT09LU19JTlRSTw:TH%%,
 };
 
 /** The field's accessible name. Never rendered as a visible label. */
-export const SIGNUP_LABEL: Copy = { en: "Your email", th: "อีเมลของคุณ" };
+export const SIGNUP_LABEL: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9MQUJFTA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9MQUJFTA:TH%% };
 
 /** An example address, which is neither language. */
 export const SIGNUP_PLACEHOLDER = "name@email.com";
@@ -468,8 +468,8 @@ export const SIGNUP_PLACEHOLDER = "name@email.com";
  * same words.
  */
 export const SIGNUP_BUTTON: Copy = {
-  en: "Get news and advice by email",
-  th: "รับข่าวสารและคำแนะนำทางอีเมล",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9CVVRUT04:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9CVVRUT04:TH%%,
 };
 
 /**
@@ -488,8 +488,8 @@ export const SIGNUP_NOTE: Copy = {
   // promise. That is why he found it and the search did not.
   //
   // The no-spam and stop-any-time halves are unchanged and are still true.
-  en: "News and practical advice only. No spam, and you can stop at any time.",
-  th: "ส่งเฉพาะข่าวสารและคำแนะนำ ไม่มีสแปม ยกเลิกได้ทุกเมื่อ",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9OT1RF:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9OT1RF:TH%%,
 };
 
 /**
@@ -516,23 +516,23 @@ export const SIGNUP_CONSENT: Copy = {
   //
   // `ปั้นโปรไฟล์` in Thai script rather than the wordmark, which is LR-01 where
   // the brand opens a Thai clause.
-  en: "You agree that PunProfile may keep and use your email address to send you news and practical advice. We do not pass your details to anyone else.",
-  th: "ยินยอมให้ PunProfile เก็บและใช้อีเมลของคุณเพื่อส่งข่าวสารและคำแนะนำ เราจะไม่ส่งต่อข้อมูลของคุณให้บุคคลอื่น",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9DT05TRU5U:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9DT05TRU5U:TH%%,
 };
 
 export const SIGNUP_DONE: Copy = {
   // Last of the four, 17/08/2026. Same paid-feature promise in the success
   // message, which is the one a reader sees only after they have said yes.
-  en: "Done. We will send news and practical advice to this address.",
-  th: "เรียบร้อย เราจะส่งข่าวสารและคำแนะนำไปที่อีเมลนี้",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9ET05F:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9ET05F:TH%%,
 };
 
 export const SIGNUP_BAD_EMAIL: Copy = {
-  en: "That email is not right. Please check it.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9CQURfRU1BSUw:EN%%,
   // Paul's wording, 17/08/2026. `ดู` goes: the field either parses or it
   // does not, and hedging a validation error makes the reader wonder
   // whether they have to fix it.
-  th: "อีเมลนี้ไม่ถูกต้อง ลองตรวจดูอีกครั้ง",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9CQURfRU1BSUw:TH%%,
 };
 
 // ---------------------------------------------------------------------------
@@ -554,37 +554,37 @@ export const SIGNUP_BAD_EMAIL: Copy = {
 // ---------------------------------------------------------------------------
 
 export const UNSUBSCRIBE_HEADING: Copy = {
-  en: "You will not get these emails any more",
-  th: "คุณจะไม่ได้รับอีเมลเหล่านี้อีก",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlVOU1VCU0NSSUJFX0hFQURJTkc:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlVOU1VCU0NSSUJFX0hFQURJTkc:TH%%,
 };
 
 export const UNSUBSCRIBE_BODY: Copy = {
-  en: "We have recorded your request to stop, with the date. Your details and your result are unchanged, and you can still contact us about your result at any time.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlVOU1VCU0NSSUJFX0JPRFk:EN%%,
   // Paul's wording, 17/08/2026. It names what was recorded rather than only
   // that something was: `คำขอหยุดรับข่าวสารพร้อมวันที่` is the PDPA record
   // this page exists to create, and `privacy.ts` promises exactly it.
-  th: "เราได้บันทึกคำขอหยุดรับข่าวสารพร้อมวันที่ไว้แล้ว ข้อมูลและผลประเมินของคุณยังอยู่ตามเดิม และคุณยังติดต่อเราเพื่อสอบถามเกี่ยวกับผลได้เสมอ",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlVOU1VCU0NSSUJFX0JPRFk:TH%%,
 };
 
 export const UNSUBSCRIBE_RESTART: Copy = {
-  en: "Change your mind whenever, and you can sign up again from the blog, or just contact us.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlVOU1VCU0NSSUJFX1JFU1RBUlQ:EN%%,
   // Paul's wording, 17/08/2026. It adds the second route: someone who has
   // just unsubscribed may not want to hunt for a form, and the contact page
   // is a person.
-  th: "เปลี่ยนใจเมื่อไหร่ ก็กลับมาสมัครรับข่าวสารใหม่ได้ที่หน้าบทความ หรือติดต่อเราได้เลย",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlVOU1VCU0NSSUJFX1JFU1RBUlQ:TH%%,
 };
 
 export const UNSUBSCRIBE_WORKING: Copy = {
-  en: "One moment.",
-  th: "รอสักครู่",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlVOU1VCU0NSSUJFX1dPUktJTkc:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlVOU1VCU0NSSUJFX1dPUktJTkc:TH%%,
 };
 
 export const SIGNUP_BUSY: Copy = {
   // Paul's wording, 17/08/2026. Shorter, and it leads with what happened rather
   // than with our inability to do it: `บันทึกไม่สำเร็จ` states the outcome where
   // `ยังบันทึกไม่ได้ในตอนนี้` narrates our side of it.
-  en: "That did not save. Please try again in a moment.",
-  th: "บันทึกไม่สำเร็จ ลองอีกครั้งในอีกสักครู่",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9CVVNZ:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlNJR05VUF9CVVNZ:TH%%,
 };
 
 /**
@@ -598,7 +598,7 @@ export const SIGNUP_BUSY: Copy = {
  * visits reads as a different string.
  */
 export const BLOG_CLOSE: Copy = {
-  en: "Read this far and still not sure where to start? Two minutes, and you will know which stage of the path to working in Europe you are on.",
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfQ0xPU0U:EN%%,
   // Paul's wording, 17/08/2026, and it is the closing line on the index and
   // at the foot of every article.
   //
@@ -607,5 +607,5 @@ export const BLOG_CLOSE: Copy = {
   // The second half is his own closing sentence from the pinned post,
   // already used on the home page, so the blog closes the way the site
   // closes.
-  th: "อ่านมาถึงตรงนี้แล้วยังไม่รู้ว่าจะเริ่มจากไหน? ใช้เวลาเพียง 2 นาที เช็กว่าตอนนี้คุณอยู่ขั้นไหน และควรทำอะไรต่อเพื่อไปทำงานในยุโรป",
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfQ0xPU0U:TH%%,
 };

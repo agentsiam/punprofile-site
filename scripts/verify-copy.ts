@@ -354,7 +354,7 @@ if (missing.length || questionsMissing.length) {
   console.log(`\n${missing.length + questionsMissing.length} still need Thai:`);
   for (const [key] of missing) console.log(`  ${key}`);
   for (const q of questionsMissing) console.log(`  ${q}`);
-  console.log("\nRun: npx tsx scripts/export-copy-worksheet.ts");
+  console.log("\nRun: npm run review:language");
 } else {
   console.log("\nEvery string has Thai.");
 }

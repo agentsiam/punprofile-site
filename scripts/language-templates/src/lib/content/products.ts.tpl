@@ -1,0 +1,741 @@
+import type { Copy } from "./copy";
+import { HERO_REFRAME } from "./home";
+
+/**
+ * One page per product. Added 23/08/2026, Paul's call to build all of them
+ * rather than only the ones that exist.
+ *
+ * ---------------------------------------------------------------------------
+ * WHAT A PRODUCT PAGE IS FOR, AND WHY IT CARRIES NO PRICE
+ * ---------------------------------------------------------------------------
+ *
+ * `/pricing` is where someone chooses. A product page is where someone learns,
+ * and the two must not both try to do both: a number repeated across six
+ * marketing pages is six places for it to drift. Decided 23/08/2026, and it is
+ * how the reference product handles the same split.
+ *
+ * The shape follows `careersy.ai/cv-score`: a headline naming the PROBLEM rather
+ * than the feature, one line on what you get, how it works in three points, what
+ * it does NOT do stated plainly, a short FAQ, and one action repeated at the
+ * foot. The "what it does not do" block is not modesty. It is the app's own
+ * honesty rule applied to a sales page, and on three of these it carries a
+ * standing decision: the app does not rewrite CVs, PunProfile is not a
+ * recruiter, and the tracker does not chase employers.
+ *
+ * **Every Thai string here was read back by Paul on 23/08/2026** through
+ * `thai-review-queue.md`. Nine he approved as drafted, the rest he rewrote, and
+ * each rewritten line is attributed where it sits. Where his Thai moved the
+ * meaning, the English was changed to follow it rather than the other way round.
+ *
+ * ---------------------------------------------------------------------------
+ * STATUS, AND WHY AN UNBUILT PRODUCT STILL GETS A PAGE
+ * ---------------------------------------------------------------------------
+ *
+ * Four of the five do not exist yet: only EU Fit Check is `live`. Their pages ship
+ * anyway, with `status: "soon"` rendering a line that says so and an action that
+ * opens a conversation rather than a dead button. That is the white-glove flow in
+ * any case, since payment is a bank transfer arranged one to one, and it measures
+ * demand before the build rather than after it.
+ *
+ * **A page that pretended the thing existed would be the version to refuse.** The
+ * status line is what makes shipping these honest.
+ *
+ * **And a `soon` page is not a search result.** Each one carries `NOT_YET_INDEXED`
+ * from `seo.ts`, `index: false, follow: true`, added 23/08/2026 on Paul's call.
+ * They are linked from the Products menu on every page of the site, so leaving
+ * them indexable would have made the four thinnest pages the four most linked-to.
+ * Three things flip together on the day a product opens: `status` to `live`, the
+ * route into `PUBLIC_ROUTES`, and that tag off.
+ *
+ * Coaching 1:1 is deliberately absent from this file. It has `/coaching`, which
+ * is a longer sales page with the founder section and the three service cards
+ * on it, and folding that into a template would lose more than it tidied.
+ */
+
+export type ProductStatus = "live" | "soon";
+
+/**
+ * `audience` and `howLede` were drafted 25/08/2026 to fill `PROD-01` and
+ * `PROD-02`, the two parts the reference's product pages have and these did
+ * not: a chip saying who the thing is for, above everything else, and a line
+ * under "how this works" saying what the steps add up to.
+ *
+ * Both are written from what each product's own `how` list already says, not
+ * from a claim about it, which is the rule that keeps a summary honest: if the
+ * line cannot be checked against the three bullets under it, it is marketing.
+ */
+export interface ProductFaq {
+  q: Copy;
+  a: Copy;
+}
+
+export interface Product {
+  /** The URL segment, under `/products/`. */
+  slug: string;
+  /** Who this one is for, in a few words. Renders as the audience chip. */
+  audience: Copy;
+  /** One line under "how this works", before the steps. */
+  howLede: Copy;
+  name: Copy;
+  status: ProductStatus;
+  /** The problem the reader arrived with, not a description of the feature. */
+  headline: Copy;
+  /** What they get, in one line. */
+  lede: Copy;
+  /** How it works. Three, because a fourth stops being read. */
+  how: readonly Copy[];
+  /** What it does not do. Plainly, and usually carrying a standing decision. */
+  limit: Copy;
+  faq: readonly ProductFaq[];
+  /** Key into `PAGE_ACTIONS`. Every product page has its own entry. */
+  actionsKey: string;
+}
+
+/**
+ * Shown under the name on any product whose `status` is `soon`.
+ *
+ * One string for all of them rather than a per-product variant, so the promise
+ * is identical everywhere and there is one place to change it on the day the
+ * first one ships.
+ */
+export const COMING_SOON: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDT01JTkdfU09PTg:EN%%,
+  // Paul's wording, 23/08/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDT01JTkdfU09PTg:TH%%,
+};
+
+/**
+ * The short form of the same fact, for a list. Added 06/09/2026.
+ *
+ * `COMING_SOON` above is a promise and a sentence: it is not open, message me,
+ * I will tell you when it is. That is the right thing to say on the product's
+ * own page, where the reader has arrived to find out about one thing and the
+ * next step has to be offered rather than implied.
+ *
+ * It is the wrong thing in a chip. Rendered beside a name in the catalogue, in
+ * the comparison table and on the related-products row, the sentence is four
+ * times the length of the name it qualifies, wraps to two lines inside a pill
+ * and reads as the heading. Measured on the built page, 06/09/2026, which is
+ * where it became obvious.
+ *
+ * So: the label in a list, the sentence on the page. Both say the same thing
+ * and neither is a second promise, which is the rule that made `COMING_SOON`
+ * one string in the first place.
+ */
+export const STATUS_SOON: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpTVEFUVVNfU09PTg:EN%%,
+  // Read back 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpTVEFUVVNfU09PTg:TH%%,
+};
+
+export const HOW_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIT1dfSEVBRElORw:EN%%,
+  // Paul's wording, 23/08/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIT1dfSEVBRElORw:TH%%,
+};
+
+export const LIMIT_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpMSU1JVF9IRUFESU5H:EN%%,
+  // Drafted 23/08/2026, read back and approved unchanged.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpMSU1JVF9IRUFESU5H:TH%%,
+};
+
+export const PRODUCTS: readonly Product[] = [
+  /* ------------------------------------------------------------ EU Fit Check */
+  {
+    slug: "eu-fit-check",
+    // Read back 25/08/2026. Draft for `PROD-01-eu-fit-check`.
+    audience: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5hdWRpZW5jZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5hdWRpZW5jZQ:TH%%,
+    },
+    // Read back 25/08/2026. Draft for `PROD-02-eu-fit-check`.
+    howLede: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dMZWRl:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dMZWRl:TH%%,
+    },
+    name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5uYW1l:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5uYW1l:TH%% },
+    status: "live",
+    // Lifted whole from `home.ts` HERO_REFRAME, Paul's own Thai. It is already
+    // the problem statement this page needs and it is already approved, so
+    // composing a second one would be inventing a rival for a line that works.
+    headline: HERO_REFRAME,
+    lede: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5sZWRl:EN%%,
+      // Paul's own Thai, `copy.ts` landing.reassurance.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5sZWRl:TH%%,
+    },
+    how: [
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMF0:EN%%,
+        // Paul's own Thai, `faq.ts`.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMF0:TH%%,
+      },
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMV0:EN%%,
+        // Paul's own Thai, 23/08/2026, from the pricing sheet.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMV0:TH%%,
+      },
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMl0:EN%%,
+        // Paul's own Thai, `faq.ts`.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMl0:TH%%,
+      },
+    ],
+    limit: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5saW1pdA:EN%%,
+      // Paul's own Thai, `faq.ts`. It is the honesty rule in his own words and it
+      // belongs on this page more than anywhere else.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5saW1pdA:TH%%,
+    },
+    faq: [
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMF0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMF0ucQ:TH%% },
+        a: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMF0uYQ:EN%%,
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMF0uYQ:TH%%,
+        },
+      },
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMV0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMV0ucQ:TH%% },
+        a: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMV0uYQ:EN%%,
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMV0uYQ:TH%%,
+        },
+      },
+    ],
+    actionsKey: "/products/eu-fit-check",
+  },
+
+  /* --------------------------------------------------------------- CV Check */
+  {
+    slug: "cv-check",
+    // Read back 25/08/2026. Draft for `PROD-01-cv-check`.
+    audience: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5hdWRpZW5jZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5hdWRpZW5jZQ:TH%%,
+    },
+    // Read back 25/08/2026. Draft for `PROD-02-cv-check`.
+    howLede: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5ob3dMZWRl:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5ob3dMZWRl:TH%%,
+    },
+    name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5uYW1l:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5uYW1l:TH%% },
+    status: "soon",
+    headline: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5oZWFkbGluZQ:EN%%,
+      // Paul's wording, 23/08/2026.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5oZWFkbGluZQ:TH%%,
+    },
+    lede: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5sZWRl:EN%%,
+      // Paul's wording, 23/08/2026.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5sZWRl:TH%%,
+    },
+    how: [
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5ob3dbMF0:EN%%,
+        // Paul's wording, 23/08/2026. The reading-order opener from the Kick-start
+        // run sheet, which exists because the ATS artefact only shows up when a CV
+        // parses badly and the first real CV parsed cleanly.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5ob3dbMF0:TH%%,
+      },
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5ob3dbMV0:EN%%,
+        // Paul's wording, 23/08/2026. This is the core claim in `10_Methodology.md`:
+        // illegibility rather than capability. A Bangkok senior title may read as
+        // mid-level and a well-known Thai employer reads as an unknown one.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5ob3dbMV0:TH%%,
+      },
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5ob3dbMl0:EN%%,
+        // Drafted 23/08/2026, read back and approved unchanged.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5ob3dbMl0:TH%%,
+      },
+    ],
+    limit: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5saW1pdA:EN%%,
+      /*
+       * Drafted 23/08/2026, read back and approved unchanged, and this line is a standing decision rather
+       * than a caveat. **The app does not rewrite CVs**, decided by Paul on
+       * 04/08/2026 and recorded in `competitive-reference.md` as the one thing
+       * explicitly not taken from the nearest competitor. A checker reads and
+       * scores. The difference has to hold in the copy as well as the code.
+       */
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5saW1pdA:TH%%,
+    },
+    faq: [
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5mYXFbMF0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5mYXFbMF0ucQ:TH%% },
+        a: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5mYXFbMF0uYQ:EN%%,
+          // Paul's wording, 23/08/2026.
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1sxXS5mYXFbMF0uYQ:TH%%,
+        },
+      },
+    ],
+    actionsKey: "/products/cv-check",
+  },
+
+  /* ------------------------------------------------------------- Fit Report */
+  {
+    slug: "fit-report",
+    // Read back 25/08/2026. Draft for `PROD-01-fit-report`.
+    audience: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5hdWRpZW5jZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5hdWRpZW5jZQ:TH%%,
+    },
+    // Read back 25/08/2026. Draft for `PROD-02-fit-report`.
+    howLede: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dMZWRl:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dMZWRl:TH%%,
+    },
+    name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5uYW1l:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5uYW1l:TH%% },
+    status: "soon",
+    headline: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5oZWFkbGluZQ:EN%%,
+      // Drafted 23/08/2026, read back and approved unchanged. `อยู่ขั้นไหน` is Paul's own correction on the
+      // pinned post of 14/08/2026, where he changed อยู่ตรงไหน to อยู่ขั้นไหน:
+      // progress is a stage you are at, not a place you are in.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5oZWFkbGluZQ:TH%%,
+    },
+    lede: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5sZWRl:EN%%,
+      // Rebuilt from Paul's own Thai of 23/08/2026 on the pricing sheet.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5sZWRl:TH%%,
+    },
+    how: [
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dbMF0:EN%%,
+        // Drafted 23/08/2026, read back and approved unchanged. Thresholds rather than scores, which
+        // `10_Methodology.md` calls the single most important idea in the method.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dbMF0:TH%%,
+      },
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dbMV0:EN%%,
+        // Paul's wording, 23/08/2026. Gates are cleared in dependency order, not
+        // score order, and the lowest uncleared one is the only one that matters
+        // this month.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dbMV0:TH%%,
+      },
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dbMl0:EN%%,
+        // Paul's wording, 23/08/2026.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dbMl0:TH%%,
+      },
+    ],
+    limit: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5saW1pdA:EN%%,
+      // Drafted 23/08/2026, read back and approved unchanged.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5saW1pdA:TH%%,
+    },
+    faq: [
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMF0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMF0ucQ:TH%% },
+        a: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMF0uYQ:EN%%,
+          // Paul's wording, 23/08/2026.
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMF0uYQ:TH%%,
+        },
+      },
+    ],
+    actionsKey: "/products/fit-report",
+  },
+
+  /* ----------------------------------------------------------- Matched Jobs */
+  {
+    slug: "matched-jobs",
+    // Read back 25/08/2026. Draft for `PROD-01-matched-jobs`.
+    audience: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5hdWRpZW5jZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5hdWRpZW5jZQ:TH%%,
+    },
+    // Read back 25/08/2026. Draft for `PROD-02-matched-jobs`.
+    howLede: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5ob3dMZWRl:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5ob3dMZWRl:TH%%,
+    },
+    name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5uYW1l:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5uYW1l:TH%% },
+    status: "soon",
+    headline: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5oZWFkbGluZQ:EN%%,
+      // Drafted 23/08/2026, read back and approved unchanged.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5oZWFkbGluZQ:TH%%,
+    },
+    lede: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5sZWRl:EN%%,
+      // Paul's own Thai of 23/08/2026, from the pricing sheet.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5sZWRl:TH%%,
+    },
+    how: [
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5ob3dbMF0:EN%%,
+        // Paul's wording, 23/08/2026.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5ob3dbMF0:TH%%,
+      },
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5ob3dbMV0:EN%%,
+        // Paul's wording, 23/08/2026. One at a time is the method's own rule
+        // against handing anyone a five-item list, applied to job search.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5ob3dbMV0:TH%%,
+      },
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5ob3dbMl0:EN%%,
+        // Drafted 23/08/2026, read back and approved unchanged. Work rights sit outside the match bar and are
+        // always stated, decided 22/08/2026, using the pipeline's own
+        // "Publish (Work Rights Required)" verdict whose rule is that the label is
+        // not optional and not a footnote.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5ob3dbMl0:TH%%,
+      },
+    ],
+    limit: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5saW1pdA:EN%%,
+      // Paul's wording, 23/08/2026. Paul's own FAQ makes the same point: PunProfile
+      // takes its fee from the candidate rather than the employer, so there is no
+      // quota and no role anyone is pushed toward.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5saW1pdA:TH%%,
+    },
+    faq: [
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5mYXFbMF0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5mYXFbMF0ucQ:TH%% },
+        a: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5mYXFbMF0uYQ:EN%%,
+          // Paul's wording, 23/08/2026. Deliberately does not say real time: the
+          // mechanism will be batched, and a promise of real time is a claim the
+          // system does not meet.
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5mYXFbMF0uYQ:TH%%,
+        },
+      },
+    ],
+    actionsKey: "/products/matched-jobs",
+  },
+
+  /* ------------------------------------------------------- Guided Job Hunt */
+  {
+    slug: "guided-job-hunt",
+    // Read back 25/08/2026. Draft for `PROD-01-guided-job-hunt`.
+    audience: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5hdWRpZW5jZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5hdWRpZW5jZQ:TH%%,
+    },
+    // Read back 25/08/2026. Draft for `PROD-02-guided-job-hunt`.
+    howLede: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5ob3dMZWRl:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5ob3dMZWRl:TH%%,
+    },
+    name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5uYW1l:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5uYW1l:TH%% },
+    status: "soon",
+    headline: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5oZWFkbGluZQ:EN%%,
+      // Drafted 23/08/2026, read back and approved unchanged.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5oZWFkbGluZQ:TH%%,
+    },
+    lede: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5sZWRl:EN%%,
+      // Paul's wording, 23/08/2026. Free because it is the surface paid deliveries
+      // land on, decided 23/08/2026: charging for it would be charging twice for
+      // one workflow.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5sZWRl:TH%%,
+    },
+    how: [
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5ob3dbMF0:EN%%,
+        // Paul's wording, 23/08/2026.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5ob3dbMF0:TH%%,
+      },
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5ob3dbMV0:EN%%,
+        // Paul's wording, 23/08/2026. Self-updated by design: a notebook rather than
+        // an automated pipeline, per the 04/08/2026 scope note.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5ob3dbMV0:TH%%,
+      },
+      {
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5ob3dbMl0:EN%%,
+        // Paul's wording, 23/08/2026.
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5ob3dbMl0:TH%%,
+      },
+    ],
+    limit: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5saW1pdA:EN%%,
+      // Paul's wording, 23/08/2026.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5saW1pdA:TH%%,
+    },
+    faq: [
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMF0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMF0ucQ:TH%% },
+        a: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMF0uYQ:EN%%,
+          // Paul's wording, 23/08/2026.
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMF0uYQ:TH%%,
+        },
+      },
+    ],
+    actionsKey: "/products/guided-job-hunt",
+  },
+];
+
+export const productBySlug = (slug: string): Product | undefined =>
+  PRODUCTS.find((p) => p.slug === slug);
+
+/* ==========================================================================
+   THE ARTWORK
+   ========================================================================== */
+
+/**
+ * A figure per product page. Filled 06/09/2026.
+ *
+ * It moved here out of `ProductPage.tsx` for one reason: a description of a
+ * picture is a candidate-facing string, and R49 says those live in a content
+ * module. While every entry pointed at the same dashed box there was nothing to
+ * describe and an empty `alt` at the call site was honest. The moment a figure
+ * says something, a reader who cannot see it is owed the same sentence.
+ *
+ * **`figure` names a drawing, not a file.** Every photograph and illustration
+ * in `public/` is already spoken for by another surface, and the note this
+ * replaces was right about the alternative: art borrowed from the assessment
+ * looks finished, says nothing about the product on the page, and is therefore
+ * art nobody ever replaces. What is drawn instead is the mechanism the page has
+ * just described, in `ProductDiagram.tsx`, out of the same tokens as the rest of
+ * the page. A diagram of a thing the product actually does cannot be mistaken
+ * for stock, and it stays true in both colour schemes.
+ *
+ * **This map is still the swap list.** One line per product, so replacing one
+ * with a real photograph is one line here plus a branch in the diagram
+ * component, and replacing all five is five.
+ */
+export type ProductFigure = "gates" | "page" | "report" | "roles" | "pipeline";
+
+export interface ProductArt {
+  figure: ProductFigure;
+  alt: Copy;
+}
+
+export const PRODUCT_ART: Record<string, ProductArt> = {
+  "eu-fit-check": {
+    figure: "gates",
+    alt: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5ldS1maXQtY2hlY2suYWx0:EN%%,
+      // Read back 06/09/2026. Describes what the drawing shows and nothing
+      // about what it means, which is the rule `PORTRAIT_ALT` in `coaching.ts`
+      // already follows.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5ldS1maXQtY2hlY2suYWx0:TH%%,
+    },
+  },
+  "cv-check": {
+    figure: "page",
+    alt: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5jdi1jaGVjay5hbHQ:EN%%,
+      // Paul's wording, 06/09/2026.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5jdi1jaGVjay5hbHQ:TH%%,
+    },
+  },
+  "fit-report": {
+    figure: "report",
+    alt: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5maXQtcmVwb3J0LmFsdA:EN%%,
+      // Paul's wording, 06/09/2026.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5maXQtcmVwb3J0LmFsdA:TH%%,
+    },
+  },
+  "matched-jobs": {
+    figure: "roles",
+    alt: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5tYXRjaGVkLWpvYnMuYWx0:EN%%,
+      // Read back 06/09/2026.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5tYXRjaGVkLWpvYnMuYWx0:TH%%,
+    },
+  },
+  "guided-job-hunt": {
+    figure: "pipeline",
+    alt: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5ndWlkZWQtam9iLWh1bnQuYWx0:EN%%,
+      // Read back 06/09/2026.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5ndWlkZWQtam9iLWh1bnQuYWx0:TH%%,
+    },
+  },
+};
+
+/* ==========================================================================
+   WHICH COLUMN A PRODUCT SITS IN
+   ========================================================================== */
+
+/**
+ * Free versus token-priced. Moved here 06/09/2026 out of `Catalogue.tsx`.
+ *
+ * It was defined inside the landing page's catalogue section, which was the
+ * only place that needed it until `/products` existed. Two copies of this set
+ * would be two answers to which column a product is in, and the second one to
+ * be edited would be wrong silently, on whichever page nobody had open.
+ *
+ * `products.ts` still holds no price and never will: `/pricing` owns every
+ * number. What this holds is a fact about the catalogue rather than about the
+ * money, which is why it can live beside the products without breaking that.
+ */
+export const FREE_SLUGS: ReadonlySet<string> = new Set([
+  "eu-fit-check",
+  "cv-check",
+  "guided-job-hunt",
+]);
+
+export const isFreeProduct = (slug: string): boolean => FREE_SLUGS.has(slug);
+
+/* ==========================================================================
+   THE CATALOGUE PAGE, /products
+   ========================================================================== */
+
+/**
+ * `/products`, added 06/09/2026 on Paul's call.
+ *
+ * **Why it did not exist until now.** The five product pages shipped on
+ * 23/08/2026 reachable only from the menu, and the landing page's catalogue
+ * section is the only other place that lists them. That is enough for someone
+ * arriving at the top of the site and nothing at all for someone who arrives on
+ * one product page from a shared link: the menu is a list of names with no
+ * shape, and there was nowhere to send a reader who wants to see how the five
+ * fit together before choosing one.
+ *
+ * **It states no price**, the same rule the product pages follow. `/pricing` is
+ * where someone chooses; this is where someone learns the shape of the offer.
+ * The two columns below say free or token-priced, which is a fact about the
+ * catalogue rather than a number, and the labels are `home.ts`'s own so the
+ * landing page and this page cannot drift into two words for one column.
+ */
+export const INDEX_EYEBROW: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9FWUVCUk9X:EN%%,
+  // Paul's wording, 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9FWUVCUk9X:TH%%,
+};
+
+export const INDEX_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9IRUFESU5H:EN%%,
+  // Paul's wording, 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9IRUFESU5H:TH%%,
+};
+
+export const INDEX_INTRO: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9JTlRSTw:EN%%,
+  // Paul's wording, 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9JTlRSTw:TH%%,
+};
+
+export const INDEX_PATH_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9QQVRIX0hFQURJTkc:EN%%,
+  // Paul's wording, 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9QQVRIX0hFQURJTkc:TH%%,
+};
+
+export const INDEX_PATH_LEDE: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9QQVRIX0xFREU:EN%%,
+  // Paul's wording, 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9QQVRIX0xFREU:TH%%,
+};
+
+export const INDEX_TABLE_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9UQUJMRV9IRUFESU5H:EN%%,
+  // Paul's wording, 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9UQUJMRV9IRUFESU5H:TH%%,
+};
+
+export const COL_PRODUCT: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDT0xfUFJPRFVDVA:EN%%,
+  // Read back 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDT0xfUFJPRFVDVA:TH%%,
+};
+
+export const COL_WHO: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDT0xfV0hP:EN%%,
+  // Read back 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDT0xfV0hP:TH%%,
+};
+
+export const COL_WHAT: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDT0xfV0hBVA:EN%%,
+  // Read back 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDT0xfV0hBVA:TH%%,
+};
+
+export const COL_COST: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDT0xfQ09TVA:EN%%,
+  // Read back 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDT0xfQ09TVA:TH%%,
+};
+
+/** The chip on a product that is open. The counterpart of `COMING_SOON`. */
+export const STATUS_LIVE: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpTVEFUVVNfTElWRQ:EN%%,
+  // Read back 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpTVEFUVVNfTElWRQ:TH%%,
+};
+
+/** The link at the foot of a card on the catalogue page. */
+export const CARD_ACTION: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDQVJEX0FDVElPTg:EN%%,
+  // Paul's wording, 06/09/2026. Follows the pattern the `read`-cost labels in
+  // `cta.ts` already use: ดู, and then what the page shows.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDQVJEX0FDVElPTg:TH%%,
+};
+
+/**
+ * The coaching card at the foot of the catalogue, and why it is set apart.
+ *
+ * Coaching is deliberately absent from `PRODUCTS`, stated at the head of this
+ * file: it has `/coaching`, which is a longer page with the founder section on
+ * it, and folding it into the product template would lose more than it tidied.
+ * The catalogue page still has to name it, because a reader comparing five
+ * tools is a reader who should know the sixth thing exists and is not a tool.
+ */
+export const NOT_A_TOOL_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpOT1RfQV9UT09MX0hFQURJTkc:EN%%,
+  // Read back 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpOT1RfQV9UT09MX0hFQURJTkc:TH%%,
+};
+
+export const NOT_A_TOOL_BODY: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpOT1RfQV9UT09MX0JPRFk:EN%%,
+  // Paul's wording, 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpOT1RfQV9UT09MX0JPRFk:TH%%,
+};
+
+/* ==========================================================================
+   THE TWO LINES THE CLOSING BAND NEVER HAD
+   ========================================================================== */
+
+/**
+ * The closing band on every product page carried a button and nothing else.
+ *
+ * Found in the UI review of 06/09/2026: a 215px dark-green band with a single
+ * pill floating in the middle of it, on all five pages. A band that asks for
+ * something without saying what it is asking about is a band a reader scrolls
+ * past, and the block library gives B8 a line above the action for exactly this
+ * reason.
+ *
+ * One pair for all five rather than a pair per product, for the same reason
+ * `COMING_SOON` is one string: the ask is identical on all five and a second
+ * wording of it is a second promise.
+ */
+export const CLOSE_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDTE9TRV9IRUFESU5H:EN%%,
+  // Read back 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDTE9TRV9IRUFESU5H:TH%%,
+};
+
+export const CLOSE_BODY: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDTE9TRV9CT0RZ:EN%%,
+  // Read back 06/09/2026. First person, which is what `DESTINATIONS.contact`
+  // in `cta.ts` settled: the reader reaches a person, not a company.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpDTE9TRV9CT0RZ:TH%%,
+};
+
+/**
+ * The heading over a product page's own FAQ, which it never had.
+ *
+ * The questions sat on the band with no heading over them, so on `/products/
+ * cv-check`, where there is one question, the section read as a stray paragraph
+ * rather than as an answer to something. `FAQ_HEADING` in `faq.ts` is the site's
+ * word for this and is imported rather than restated.
+ */
+export const RELATED_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpSRUxBVEVEX0hFQURJTkc:EN%%,
+  // Read back 06/09/2026.
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpSRUxBVEVEX0hFQURJTkc:TH%%,
+};

@@ -48,6 +48,9 @@ next-env.d.ts
 # generated candidate reports
 /reports/
 
+# Generated from LANGUAGE-SYSTEM.md for Paul's one-pass review.
+/LANGUAGE-REVIEW-QUEUE.md
+
 # Candidate exports. Real contact details: never commit these.
 /data
 

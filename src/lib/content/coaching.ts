@@ -189,7 +189,7 @@ export const METHOD: readonly MethodStep[] = [
   },
   {
     n: "02",
-    heading: { en: "Five a form can really assess", th: "มีเพียง 5 ข้อที่แบบฟอร์มประเมินได้อย่างน่าเชื่อถือ" },
+    heading: { en: "Five a form can really assess", th: "มีแค่ 5 ข้อที่แบบประเมินวัดได้จริง" },
     body: [
       {
         en: "Of those thirty-four, only five can be assessed reliably from answers on a form. So we score those five, and show the rest as a hollow circle meaning “not assessed yet”, not a score of zero.",

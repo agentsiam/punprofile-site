@@ -4,14 +4,14 @@
  *   npx tsx scripts/lint-thai.ts                      # this app's strings
  *   npx tsx scripts/lint-thai.ts <draft.md> [...]     # Facebook post drafts
  *
- * `Language_System.md` in the coaching repo holds the rules and the reasoning,
- * `termbase.yml` holds the decided terms. This file holds neither. It implements
- * LR-02 and LR-04 to LR-08 mechanically and nothing else, so a rule changes in
- * one place and is enforced in one place.
+ * `LANGUAGE-SYSTEM.md` in this repo holds the canonical rules, copy, provenance,
+ * and judge verdicts. The generated termbase holds decided terms. This file
+ * implements the mechanical subset; `verify-language-system.ts` owns the
+ * structural-calque gate.
  *
- * What it deliberately cannot check: LR-01 and LR-03. Whether a sentence sounds
- * like a Thai person said it is not a pattern, and a lint that pretended to judge
- * it would be worse than one that says plainly it does not.
+ * What it deliberately cannot check is naturalness. A regex may nominate a
+ * string, but only a hash-bound bilingual verdict or Paul's own decision can
+ * pass the structural-calque gate.
  *
  * `verify-copy.ts` imports `lintThai` and fails on what it returns. Post drafts
  * go through the CLI.
@@ -69,9 +69,7 @@ const span = (f: LintFinding) => (f.at ? f.at[1] - f.at[0] : 0);
  *
  * The termbase's ban on คุยฟรี, แชทฟรี, ทักฟรี and นัดคุยฟรี is untouched.
  *
- * `Language_System.md` owns the rule's wording and lives in the read-mostly
- * zone, so its LR-04 section still describes the narrower list. That is a
- * pending edit, not a disagreement.
+ * `LANGUAGE-SYSTEM.md` owns the rule's wording and records this widening.
  */
 /*
  * `ใช้` added 23/08/2026, and it is the same move as `อ่าน` and `เปิด` on 17/08
@@ -98,8 +96,7 @@ const span = (f: LintFinding) => (f.at ? f.at[1] - f.at[0] : 0);
  * The termbase ban on `คุยฟรี`, `แชทฟรี`, `ทักฟรี` and `นัดคุยฟรี` is untouched,
  * and `CASUAL_VERBS` is still checked first, so `คุยได้ฟรี` fails as before.
  *
- * `Language_System.md` still describes the narrower list and sits in the
- * read-mostly zone. Pending edit, not a disagreement, exactly as on 17/08.
+ * `LANGUAGE-SYSTEM.md` records the wider list and its decision history.
  */
 const FREE_STEMS = ["ปรึกษา", "ทดลอง", "ตรวจ", "เรียน", "ส่ง", "จัดส่ง", "อบรม", "อ่าน", "เปิด", "ใช้"];
 
