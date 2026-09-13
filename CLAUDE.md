@@ -46,6 +46,7 @@ duplicate one into the other.
 | `../punprofile-career-coaching/` | every specification, brand, method, language and roadmap document | does it say what the app should be, look like, ask or score | Owner-approved only (C32), and never committed from a session working in this repo |
 | `tokens.generated.css`, `design-tokens.generated.ts` | the token layer | is it written by `scripts/build-tokens.ts` | Generated, never hand-edited (R14) |
 | `/data` | candidate data, gitignored, in neither repo | is it a person's answers | Free, never committed |
+| `screenshots/` | visual checks of built pages, light and dark, desktop and mobile | is it a picture of the app as built | Free, binary-heavy, never globbed |
 | `src/`, `convex/`, `scripts/`, `public/` | implementation | everything else | Free |
 
 | Question | Owner |
