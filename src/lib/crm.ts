@@ -253,3 +253,121 @@ export const PRIORITY_RANK: Record<Priority, number> = {
  * same as judged and found wanting.
  */
 export const FIT_RANK: Record<FitTier, number> = { strong: 3, moderate: 2, weak: 1 };
+
+/**
+ * ---------------------------------------------------------------------------
+ * LOOKUP: FINDING ONE PERSON
+ * ---------------------------------------------------------------------------
+ *
+ * The list is a queue. This is the other thing a coach does with it: a call
+ * just ended, a name is in his head, and he needs that row. Sorting cannot
+ * answer that and neither can a stage filter, so before this existed the only
+ * routes were scrolling the table or already knowing the lead's id.
+ *
+ * Two decisions worth keeping:
+ *
+ * **It matches the fields a person is actually known by**, which includes the
+ * ones nobody thinks of as a name: an email, a LINE id, a phone number, and the
+ * lead id itself, because an id is what a URL and an export hand you and
+ * pasting it back in should land somewhere.
+ *
+ * **Phone numbers compare as digits.** `083 754 3356`, `0837543356` and
+ * `+66 83 754 3356` are one number written three ways, and a substring test on
+ * the raw strings matches none of them against the others. The digit run is
+ * compared from the right, so a number stored with a country code still matches
+ * the local form somebody types from memory.
+ *
+ * Thai and Latin both fall out of `toLowerCase` plus `includes`: Thai has no
+ * case, so the lowercase pass is a no-op on it and the substring test is what
+ * does the work either way. No normalisation beyond that, deliberately. Tone
+ * marks and vowel signs are part of the name as stored and as typed.
+ */
+export type SearchableLead = {
+  _id: string;
+  fullName?: string | null;
+  firstName?: string | null;
+  lastName?: string | null;
+  email?: string | null;
+  phone?: string | null;
+  lineId?: string | null;
+};
+
+/** The digit run of a written phone number, or "" when it holds none. */
+function digitsOf(value: string): string {
+  return value.replace(/\D/g, "");
+}
+
+/**
+ * A phone number reduced to its national significant digits, so that the three
+ * ways one Thai mobile gets written all compare equal:
+ *
+ *     083 754 3356   ->  837543356
+ *     +66 83 754 3356 ->  837543356
+ *     0066837543356  ->  837543356
+ *
+ * The trunk zero and the country code are notation, not part of the number, and
+ * a suffix test on the raw digits gets this wrong in both directions: `66…` and
+ * `0…` share no tail, so the international and national forms of one number do
+ * not match each other.
+ */
+function phoneKey(value: string): string {
+  let d = digitsOf(value);
+  if (d.startsWith("00")) d = d.slice(2);
+  if (d.startsWith("66")) d = d.slice(2);
+  if (d.startsWith("0")) d = d.slice(1);
+  return d;
+}
+
+/**
+ * Is this query a written phone number rather than a word or an id.
+ *
+ * Without this test the digits inside a lead id become a phone query, and an id
+ * pasted from a URL returns the person it names plus whoever happens to share a
+ * digit run with it. Caught against the live table: one paste returned two
+ * people.
+ */
+function looksLikePhone(raw: string): boolean {
+  return /^[+()\-.\s\d]+$/.test(raw) && digitsOf(raw).length >= 6;
+}
+
+/**
+ * A query as the matcher needs it. Built once per request rather than per row:
+ * at a thousand rows the normalisation below is the expensive part of the scan.
+ */
+export function parseLeadQuery(raw: string): { text: string; phone: string } | null {
+  const text = raw.trim().toLowerCase();
+  if (!text) return null;
+  return { text, phone: looksLikePhone(text) ? phoneKey(text) : "" };
+}
+
+/**
+ * Does this lead match the query.
+ *
+ * Phone and LINE id are tested twice over, as text and as a number, because a
+ * LINE id is a phone number about half the time and a handle the rest of it.
+ */
+export function leadMatchesQuery(
+  lead: SearchableLead,
+  q: { text: string; phone: string },
+): boolean {
+  const fields = [lead.fullName, lead.firstName, lead.lastName, lead.email, lead.lineId, lead._id];
+  for (const f of fields) {
+    if (f && f.toLowerCase().includes(q.text)) return true;
+  }
+  /**
+   * The stored side must be long enough to be a phone number. A four-digit
+   * LINE id is not one, and treating it as one made it match every query
+   * ending in those four digits.
+   */
+  if (q.phone.length >= 6) {
+    for (const f of [lead.phone, lead.lineId]) {
+      if (!f) continue;
+      const key = phoneKey(f);
+      if (key.length < 8) continue;
+      // Equal when both are whole numbers, `includes` so that a remembered
+      // fragment of eight digits or more still finds the row.
+      if (key === q.phone || (q.phone.length >= 8 && key.includes(q.phone))) return true;
+    }
+  }
+  return false;
+}

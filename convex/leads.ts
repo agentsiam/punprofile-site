@@ -19,6 +19,8 @@ import {
   REASON_REQUIRED,
   PRIORITY_RANK,
   FIT_RANK,
+  parseLeadQuery,
+  leadMatchesQuery,
 } from "../src/lib/crm";
 import { temperatureFor } from "../src/lib/temperature";
 import { toScoringInputForLead } from "../src/lib/content/mapping";
@@ -526,6 +528,21 @@ export const listForAdmin = query({
     /** Hidden by default: a judged-out lead is noise in a working queue. */
     includeDisqualified: v.optional(v.boolean()),
     /**
+     * Free-text lookup over name, email, LINE id, phone and the lead id.
+     *
+     * It runs on the server for the same reason the sort does: the display
+     * limit is applied last, so a filter in the browser would only ever search
+     * the hundred rows the limit already kept. Searching for someone who sorts
+     * 200th would return nothing and look like they were not in the CRM, which
+     * is the exact failure this exists to fix.
+     *
+     * A query also widens the population it runs over. The abandoned and
+     * judged-out toggles are queue hygiene, and hiding a person from a lookup
+     * because he was judged out three weeks ago answers a question nobody
+     * asked. Looking someone up is not the same act as working a queue.
+     */
+    q: v.optional(v.string()),
+    /**
      * One pipeline stage only. Applied before the display limit, so picking a
      * stage with two hundred people in it returns that stage's first hundred
      * and not whatever survived a limit taken across all three.
@@ -544,9 +561,14 @@ export const listForAdmin = query({
     // fresh session, so abandoned rows are the common case rather than the rare
     // one. They are still queryable, because "how many start and never finish"
     // is the funnel's most important number.
-    const statuses = args.includeAbandoned
-      ? (["email_captured", "completed", "partial"] as const)
-      : (["email_captured", "completed"] as const);
+    // Built once, not per row: the normalisation is the costly half.
+    const query = parseLeadQuery(args.q ?? "");
+    const searching = query !== null;
+
+    const statuses =
+      args.includeAbandoned || searching
+        ? (["email_captured", "completed", "partial"] as const)
+        : (["email_captured", "completed"] as const);
 
     /**
      * The scan window, deliberately independent of the display limit.
@@ -623,9 +645,10 @@ export const listForAdmin = query({
       ? leadsOnly.filter((l) => l.status === args.onlyStatus)
       : leadsOnly;
 
-    const withStatus = args.includeDisqualified
-      ? inStage
-      : inStage.filter((l) => l.crmStatus !== "disqualified");
+    const withStatus =
+      args.includeDisqualified || searching
+        ? inStage
+        : inStage.filter((l) => l.crmStatus !== "disqualified");
 
     // The CRM contains reachable people and nothing else. A row with no
     // contact is traffic, and traffic has no status, no priority and no name.
@@ -666,6 +689,12 @@ export const listForAdmin = query({
       : visible;
 
     /**
+     * The lookup, applied before the priority pass below so that a search does
+     * not pay to grade and temperature-score every row it is about to discard.
+     */
+    const found = query ? inCrmStatus.filter((l) => leadMatchesQuery(l, query)) : inCrmStatus;
+
+    /**
      * Priority, precomputed so the sort can read it without recomputing
      * temperature per comparison.
      *
@@ -676,7 +705,7 @@ export const listForAdmin = query({
      * reason about a person with. See `src/lib/crm.ts`.
      */
     const prio = new Map<string, { rank: number; fit: number }>();
-    for (const l of inCrmStatus) {
+    for (const l of found) {
       const temp = temperatureFor(toScoringInputForLead(l.responses ?? {}));
       const grade = gradeLead(toGradeInput(l.responses ?? {}), latestCoachIcp(byLead.get(l._id) ?? []));
       const p = priorityFor({
@@ -687,7 +716,7 @@ export const listForAdmin = query({
       prio.set(l._id, { rank: PRIORITY_RANK[p], fit: grade.tier ? FIT_RANK[grade.tier] : 0 });
     }
 
-    const ordered = inCrmStatus.sort((a, b) => {
+    const ordered = found.sort((a, b) => {
       switch (sort) {
         case "priority": {
           const pa = prio.get(a._id) ?? { rank: 0, fit: 0 };

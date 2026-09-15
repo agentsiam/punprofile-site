@@ -98,6 +98,18 @@ export default function LeadList() {
 
   /** Set by clicking a stage in the pipeline above. Null is everyone. */
   const [stage, setStage] = useState<LeadStatus | null>(null);
+
+  /**
+   * The lookup box. Runs on the server, like the sort and for the same reason:
+   * filtering here would only ever search the rows the display limit already
+   * kept, so anyone sorting below the cut would read as absent from the CRM.
+   *
+   * No debounce. Convex re-runs the query on each keystroke and the scan is a
+   * few hundred rows behind a warm cache; a delay here would buy nothing and
+   * cost the thing that makes a search box feel like one.
+   */
+  const [q, setQ] = useState("");
+  const searching = q.trim().length > 0;
   const leads = useQuery(api.leads.listForAdmin, {
     includeAbandoned,
     // Picking Disqualified in the bar implies showing them. Without this,
@@ -114,6 +126,7 @@ export default function LeadList() {
      */
     view: "crm" as const,
     onlyCrmStatus: stage ?? undefined,
+    q: q.trim() || undefined,
   });
 
   const rows = useMemo(() => {
@@ -141,10 +154,27 @@ export default function LeadList() {
 
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <p className="text-body-medium text-on-surface-variant">
-          {rows.length} {rows.length === 1 ? "person" : "people"}, {contactable} reachable on
-          LINE or phone, {withCv} with a CV
+          {searching ? (
+            <>
+              {rows.length} {rows.length === 1 ? "match" : "matches"} for “{q.trim()}”, searched
+              across everyone including abandoned and judged out
+            </>
+          ) : (
+            <>
+              {rows.length} {rows.length === 1 ? "person" : "people"}, {contactable} reachable on
+              LINE or phone, {withCv} with a CV
+            </>
+          )}
         </p>
         <div className="flex flex-wrap items-center gap-4">
+          <input
+            type="search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            aria-label="Find a person"
+            placeholder="Find by name, email, LINE or phone"
+            className="field h-9 min-h-0 w-64 px-3 text-body-medium"
+          />
           <label className="flex items-center gap-2 text-body-medium text-on-surface-variant">
             <input
               type="checkbox"
@@ -168,7 +198,9 @@ export default function LeadList() {
 
       {rows.length === 0 ? (
         <p className="rounded-large border border-outline-variant bg-surface px-6 py-6 text-body-large text-on-surface-variant">
-          Nobody has cleared the contact gate yet.
+          {searching
+            ? `Nobody in this deployment matches “${q.trim()}”. A lead who registered against a different Convex deployment will not appear here.`
+            : "Nobody has cleared the contact gate yet."}
         </p>
       ) : (
         <div className="overflow-x-auto">
