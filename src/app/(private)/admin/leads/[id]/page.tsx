@@ -7,9 +7,26 @@
  */
 
 import { use } from "react";
+import { useQuery } from "convex/react";
 import AdminGate from "@/components/AdminGate";
 import LeadDetail from "@/components/features/dashboard/LeadDetail";
-import type { Id } from "../../../../../../convex/_generated/dataModel";
+import { api } from "../../../../../../convex/_generated/api";
+
+/**
+ * The id in the URL is unchecked text. Resolved first, so an id from another
+ * table reads as "no lead" instead of throwing a validator error from every
+ * query `LeadDetail` runs. Inside `AdminGate`, so it only runs signed in.
+ */
+function ResolvedLead({ id }: { id: string }) {
+  const leadId = useQuery(api.leads.resolveLeadId, { id });
+  if (leadId === undefined) {
+    return <p className="text-body-large text-on-surface-variant">Loading...</p>;
+  }
+  if (leadId === null) {
+    return <p className="text-body-large text-error">No lead with that id.</p>;
+  }
+  return <LeadDetail leadId={leadId} />;
+}
 
 export default function LeadPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -20,7 +37,7 @@ export default function LeadPage({ params }: { params: Promise<{ id: string }> }
     // half leaves both too narrow to scan.
     <div className="mx-auto w-full max-w-5xl px-6 py-16 leading-normal">
       <AdminGate>
-        <LeadDetail leadId={id as Id<"leads">} />
+        <ResolvedLead id={id} />
       </AdminGate>
     </div>
   );

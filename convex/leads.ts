@@ -824,6 +824,21 @@ export const listForAdmin = query({
   },
 });
 
+/**
+ * The lead page's id comes from the URL, so it is whatever was typed or pasted.
+ * Every query on that page validates `v.id("leads")`, and an id from another
+ * table fails that validator with a thrown error rather than a null, which took
+ * the whole page down instead of saying the lead does not exist. The page asks
+ * here first and only mounts the lead once this returns a real one.
+ */
+export const resolveLeadId = query({
+  args: { id: v.string() },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    return ctx.db.normalizeId("leads", args.id);
+  },
+});
+
 /** FR-013: one lead in full, including every consent timestamp. */
 export const getForAdmin = query({
   args: { leadId: v.id("leads") },
