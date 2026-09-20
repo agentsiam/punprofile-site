@@ -481,9 +481,14 @@
   /* Hover and selected were EU Fit Check's blue through `tertiary`, which now
      resolves to the cyan accent. A chosen answer is the one thing on the screen
      the candidate did, so it takes the accent's ground and the ink that goes on
-     it: `primary-pale` fill with an `on-primary` edge, which holds 12.01 against
-     the fill and does not depend on the lime, whose 1.47 on white would have
-     made the selected border invisible. */
+     it: `primary-pale` fill with an `on-primary-pale` edge, which does not
+     depend on the lime, whose 1.47 on white would have made the selected border
+     invisible.
+
+     The edge is `on-primary-pale`, not `on-primary`. Both are `#163300` in
+     light, so this changes nothing there; in dark `on-primary` is `#0e0f0c` and
+     held 1.41 on the fill, which is the role's own rule in `design.md`: it is
+     the ink for a lime fill and nothing else. */
   .tile:hover:not([aria-pressed="true"]) {
     background-color: color-mix(
       in srgb, var(--color-on-surface) calc(var(--state-hover) * 100%), var(--color-surface));
@@ -491,7 +496,7 @@
   }
   .tile[aria-pressed="true"] {
     background-color: var(--color-primary-pale);
-    border-color: var(--color-on-primary);
+    border-color: var(--color-on-primary-pale);
     color: var(--color-on-primary-pale);
   }
   /* The affordance. Sized and coloured so an unselected tile still says it is
@@ -540,7 +545,7 @@
   }
   .segment[aria-pressed="true"] {
     background-color: var(--color-primary-pale);
-    border-color: var(--color-on-primary);
+    border-color: var(--color-on-primary-pale);
     color: var(--color-on-tertiary-container);
     font-weight: 600;
     z-index: 1;
@@ -673,12 +678,18 @@
       in srgb, var(--color-on-primary-container) calc(var(--state-hover) * 100%),
       var(--color-primary-container));
   }
-  /* `on-primary`, not `primary`. The label was the lime, which holds 1.47 on
+  /* `ink-deep`, not `primary`. The label was the lime, which holds 1.47 on
      white: a button nobody could read. The lime is a fill in this system and
-     this button has no fill, so its type takes the ink that goes on the lime. */
+     this button has no fill, so its type takes the green-black ink instead.
+
+     It was `on-primary` until `design.md` stated that role's rule: the ink for
+     a lime fill and nothing else. Both are `#163300` in light, so the light
+     button is unchanged; in dark `on-primary` is `#0e0f0c`, the page itself,
+     and this label measured 1.0 on every screen that carries it, the
+     assessment's skip button included. */
   .btn-outlined {
     background-color: transparent;
-    color: var(--color-on-primary);
+    color: var(--color-ink-deep);
     border: 1px solid var(--color-line-strong);
   }
   .btn-outlined:hover:not(:disabled) {

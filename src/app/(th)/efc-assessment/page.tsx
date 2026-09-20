@@ -371,15 +371,17 @@ export default function AssessPage() {
 
                 Roles rather than the literals this markup carried before the
                 rebrand: it was `border-neutral-300 border-t-eufit`, and `eufit`
-                does not exist any more. The head is `on-primary`, the green-black,
+                does not exist any more. The head is `ink-deep`, the green-black,
                 and not the lime: a spinner is a meaningful graphic and needs 3:1,
-                which the lime does not hold on white.
+                which the lime does not hold on white. `ink-deep` rather than
+                `on-primary`, which is the same `#163300` in light and the page's
+                own colour in dark.
 
                 `mascot-in` in `globals.css` still has a second caller at the end
                 of the flow, so it stays. */}
             <div
               role="presentation"
-              className="mx-auto mb-5 block size-8 animate-spin rounded-full border-2 border-line border-t-on-primary"
+              className="mx-auto mb-5 block size-8 animate-spin rounded-full border-2 border-line border-t-ink-deep"
             />
             <p className="text-body-large text-on-surface-variant" role="status">
               {t("assess.starting")}
@@ -680,10 +682,11 @@ export default function AssessPage() {
               read's column on desktop: it is the end of that thought, and full
               width would make a queue notice the widest thing on the page. */}
           <div className="card-plain mt-6 flex items-start gap-3 border border-line px-5 py-4 text-left">
-            {/* `on-primary`, not `primary`: the lime holds 1.47 on white and an
-                icon carrying meaning needs 3:1, so it takes the ink the brand
-                puts on its own accent. */}
-            <svg viewBox="0 0 24 24" aria-hidden className="mt-0.5 size-5 shrink-0 fill-on-primary">
+            {/* `ink-deep`, not `primary`: the lime holds 1.47 on white and an
+                icon carrying meaning needs 3:1, so it takes the green-black ink.
+                Not `on-primary`, which is the same colour in light and the card's
+                own ground in dark. */}
+            <svg viewBox="0 0 24 24" aria-hidden className="mt-0.5 size-5 shrink-0 fill-ink-deep">
               <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM13.25 17h-2.5v-6.5h2.5V17Z" />
             </svg>
             <div>

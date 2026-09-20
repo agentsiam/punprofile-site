@@ -58,7 +58,7 @@ function Body() {
               key={s.id}
               id={s.id}
               className={`card-plain flex flex-col overflow-hidden border duration-[350ms] ease-nav transition-colors ${
-                on ? "border-on-primary bg-primary-pale" : "border-line"
+                on ? "border-on-primary-pale bg-primary-pale" : "border-line"
               }`}
             >
               {/* A fixed 4:3 band, filled. The three illustrations became
@@ -104,7 +104,7 @@ function Body() {
                     <li key={i} className="flex gap-3 text-body-large text-on-surface">
                       <span
                         aria-hidden
-                        className="mt-2 block size-1.5 shrink-0 rounded-full bg-on-primary"
+                        className="mt-2 block size-1.5 shrink-0 rounded-full bg-ink-deep"
                       />
                       <span>{pick(item)}</span>
                     </li>
