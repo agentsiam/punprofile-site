@@ -85,7 +85,7 @@ export const BRAND_TOKENS_CSS = `  :root {
     --color-error: #d03238;
     --color-on-error: #ffffff;
     --color-error-container: #320707;
-    --color-on-error-container: #ffffff;
+    --color-on-error-container: #e8ebe6;
     --color-background: #ffffff;
     --color-on-background: #163300;
     --color-surface: #ffffff;
