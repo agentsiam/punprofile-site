@@ -29,7 +29,7 @@ Result: **429 Paul-written clean-corpus records**, **788 records approved to bui
    - DO: `ปัญหาส่วนใหญ่ไม่ใช่ว่าคุณเก่งไม่พอ แต่เป็นเพราะตลาดงานยุโรปเล่นด้วยกติกาคนละชุดกับไทย` (Paul's wording, home page).
    - DON'T: translate each English clause and reconnect it with `จึง`, `ที่`, and `ไม่ใช่จาก` in the same order.
 3. Name the reader's lived symptom before diagnosing it. In short-form use the observed `มี X แต่ Y...` stack, then hand the floor back. Long-form answers the question the reader deliberately opened and does not inherit feed padding.
-4. Relocate blame from the reader to the rules without promising an outcome. State limits in the same breath as the offer. PunProfile has no placed-client or testimonial claim.
+4. Relocate blame from the reader to the rules without promising an outcome. State limits in the same breath as the offer. PunProfile has no placed-client claim.
 5. Keep Thai rhythm short enough to scan, but do not chop it to hit a metric. Register bands are triage only. They do not prove idiomatic Thai.
 6. Apply termbase decisions exactly. Product names, navigation labels, LINE, and fixed calls to action are decisions, not untranslated gaps. An exact English-to-Thai pass-through without a termbase entry fails unless its record already carries a current Paul-approved verdict; that verdict is per-string evidence, not inference.
 7. Use `เรา` for broadcast and app copy, `ผม` for one-to-one messages, and state `คุณ` when addressing the reader. The termbase records deliberate exceptions.
@@ -8258,6 +8258,221 @@ review:
   text_hash: d8464af22c11c45694e5e7007fcabb78737c3928eb0125c8430eab58a93738fd
   prompt_version: structural-calque-v1
   basis: Paul approved this item through the consolidated language review on 10/09/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[0].quote`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[0].quote
+source: src/lib/content/home.ts
+path: RESULTS[0].quote
+render: Home page, RESULTS[0].quote
+narrative_slot: proof
+en: The one-on-one coaching helped me recognize my strengths and present my experience more effectively. I now feel much more confident and focused in my job search.
+th: พอได้คุยกับโค้ชแบบตัวต่อตัว ฉันเห็นจุดแข็งของตัวเองชัดขึ้น และรู้ว่าจะเล่าประสบการณ์อย่างไรให้น่าสนใจ ตอนนี้สมัครงานได้อย่างมั่นใจและมีทิศทางมากขึ้นค่ะ
+provenance: paul-approved
+date: 22/09/2026
+term_bindings: []
+decision_note: |-
+  Paul supplied this on 22/09/2026 as a real client's words, from 1-on-1 coaching. Quoted as supplied, never edited for voice.
+
+  Not part of the clean corpus: this is the client's voice, not PunProfile's.
+review:
+  structural_calque: pass
+  text_hash: 8a25c60f282bfce7c8bcaf7fb7bd6591bae36d399643f5b9cae3fd2682f9b765
+  prompt_version: structural-calque-v1
+  basis: Paul supplied this text on 22/09/2026 as a real client's words. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[0].who`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[0].who
+source: src/lib/content/home.ts
+path: RESULTS[0].who
+render: Home page, RESULTS[0].who
+narrative_slot: utility
+en: Min
+th: มิน
+provenance: paul-approved
+date: 22/09/2026
+term_bindings: []
+decision_note: |-
+  The client's first name, as Paul supplied it on 22/09/2026.
+review:
+  structural_calque: pass
+  text_hash: 456dcd3f622b36a408d4f59ac8e561f1d6c90cc6727ca68d00be5cb3ebca7a83
+  prompt_version: structural-calque-v1
+  basis: Paul supplied this text on 22/09/2026 as a real client's words. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[0].role`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[0].role
+source: src/lib/content/home.ts
+path: RESULTS[0].role
+render: Home page, RESULTS[0].role
+narrative_slot: utility
+en: Marketing Professional
+th: สายงานการตลาด
+provenance: paul-approved
+date: 22/09/2026
+term_bindings: []
+decision_note: |-
+  The client's line of work, as Paul supplied it on 22/09/2026.
+review:
+  structural_calque: pass
+  text_hash: 86347d8e1c0ef8653541b895f5aa39c618723ec7dc1f069a886671eeacb20550
+  prompt_version: structural-calque-v1
+  basis: Paul supplied this text on 22/09/2026 as a real client's words. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[1].quote`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[1].quote
+source: src/lib/content/home.ts
+path: RESULTS[1].quote
+render: Home page, RESULTS[1].quote
+narrative_slot: proof
+en: The customized job alerts save me a lot of time. Relevant opportunities that match my skills and goals arrive directly in my inbox, so I never miss a great role.
+th: ระบบแจ้งเตือนงานช่วยประหยัดเวลาได้เยอะครับ ไม่ต้องคอยไล่หางานเองทุกวัน เพราะตำแหน่งที่ตรงกับทักษะและเป้าหมายจะส่งเข้าอีเมลให้เลย ทำให้ไม่พลาดโอกาสดี ๆ
+provenance: paul-approved
+date: 22/09/2026
+term_bindings: []
+decision_note: |-
+  Paul supplied this on 22/09/2026 as a real client's words, from customised job alerts. Quoted as supplied, never edited for voice.
+
+  Not part of the clean corpus: this is the client's voice, not PunProfile's.
+review:
+  structural_calque: pass
+  text_hash: ff6f99a0540ca7fce6207f911bd6b03d4b773984323b8b5bc4af3a30ebd2b283
+  prompt_version: structural-calque-v1
+  basis: Paul supplied this text on 22/09/2026 as a real client's words. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[1].who`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[1].who
+source: src/lib/content/home.ts
+path: RESULTS[1].who
+render: Home page, RESULTS[1].who
+narrative_slot: utility
+en: Non
+th: นนท์
+provenance: paul-approved
+date: 22/09/2026
+term_bindings: []
+decision_note: |-
+  The client's first name, as Paul supplied it on 22/09/2026.
+review:
+  structural_calque: pass
+  text_hash: bd14cd4cb30497c16269b0846263275ee239d974630368f46e4a2611f17327ee
+  prompt_version: structural-calque-v1
+  basis: Paul supplied this text on 22/09/2026 as a real client's words. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[1].role`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[1].role
+source: src/lib/content/home.ts
+path: RESULTS[1].role
+render: Home page, RESULTS[1].role
+narrative_slot: utility
+en: IT Professional
+th: สายงานไอที
+provenance: paul-approved
+date: 22/09/2026
+term_bindings: []
+decision_note: |-
+  The client's line of work, as Paul supplied it on 22/09/2026.
+review:
+  structural_calque: pass
+  text_hash: 9e73b72df16afca807b7d6f7aab6f23d3270c93e3cf5532c4f7ca965c63b9212
+  prompt_version: structural-calque-v1
+  basis: Paul supplied this text on 22/09/2026 as a real client's words. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[2].quote`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[2].quote
+source: src/lib/content/home.ts
+path: RESULTS[2].quote
+render: Home page, RESULTS[2].quote
+narrative_slot: proof
+en: PunProfile’s AI upskilling course was easy to follow and immediately useful. I now work more efficiently and feel confident using AI tools in my daily tasks.
+th: เนื้อหาเรื่อง AI เข้าใจง่ายและนำไปใช้กับงานได้จริงครับ ตอนนี้ผมใช้เครื่องมือ AI ช่วยทำงานได้คล่องขึ้น ประหยัดเวลา และมั่นใจกว่าเดิมเยอะ
+provenance: paul-approved
+date: 22/09/2026
+term_bindings: []
+decision_note: |-
+  Paul supplied this on 22/09/2026 as a real client's words, from AI training. Quoted as supplied, never edited for voice.
+
+  The brand is cased PunProfile in the English, where the supplied text read Punprofile. Nothing else was changed.
+
+  Not part of the clean corpus: this is the client's voice, not PunProfile's.
+review:
+  structural_calque: pass
+  text_hash: 4697f845c2d7980a7673d7fcee9edb6b65f8d440dfce72a17428264525fe8d11
+  prompt_version: structural-calque-v1
+  basis: Paul supplied this text on 22/09/2026 as a real client's words. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[2].who`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[2].who
+source: src/lib/content/home.ts
+path: RESULTS[2].who
+render: Home page, RESULTS[2].who
+narrative_slot: utility
+en: Jay
+th: เจ
+provenance: paul-approved
+date: 22/09/2026
+term_bindings: []
+decision_note: |-
+  The client's first name, as Paul supplied it on 22/09/2026.
+review:
+  structural_calque: pass
+  text_hash: 29f9dae3837af3714a6bf6437a0da18b852516d2f934c5d533cdb7867bc69d0c
+  prompt_version: structural-calque-v1
+  basis: Paul supplied this text on 22/09/2026 as a real client's words. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[2].role`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[2].role
+source: src/lib/content/home.ts
+path: RESULTS[2].role
+render: Home page, RESULTS[2].role
+narrative_slot: utility
+en: Business Professional
+th: สายงานธุรกิจ
+provenance: paul-approved
+date: 22/09/2026
+term_bindings: []
+decision_note: |-
+  The client's line of work, as Paul supplied it on 22/09/2026.
+review:
+  structural_calque: pass
+  text_hash: 421572bcb3a3c6cf194aa551b4ff2662788a28a90cdd073f95e68c84b95dad5e
+  prompt_version: structural-calque-v1
+  basis: Paul supplied this text on 22/09/2026 as a real client's words. A quote is not rewritten, so it is recorded as authoritative.
 ```
 
 <!-- COPY-ENTRY -->

@@ -570,37 +570,80 @@ export const WHO_BODY: Copy = {
 // ------------------------------------------------------------------- results
 
 /**
- * **Nothing renders from here yet, and that is deliberate.** Paul's call of
- * 24/08/2026, option 2b: keep the shape so the first real result has somewhere
- * to go, rather than inventing one now or rebuilding the section later.
+ * **Three client quotes, supplied by Paul on 22/09/2026 as real clients' own
+ * words**, one each from 1-on-1 coaching, customised job alerts and AI
+ * training. They are quoted as supplied and never edited for voice.
  *
- * The reference product's equivalent section carries three named testimonials.
- * PunProfile has no placed clients, the Social Proof pillar in
- * `01_Project_Foundation.md` is empty, and a fabricated one would be the single
- * worst thing that could be put on this site.
+ * None carries a portrait. A stock face beside a real client's name would say
+ * that stranger is the client, so a portrait goes in only when the client
+ * supplies it.
  *
- * **The rules for the day this fills.** A result needs a real person's consent
- * in writing, their own words rather than a paraphrase, and the same variability
- * disclaimer the reference product carries. One real result outranks three
- * polished ones. Until then `RESULTS` stays empty and the page renders no
- * heading, no empty state and no "coming soon", because a visible placeholder
- * for social proof is a claim that social proof is imminent.
+ * **The rules for every result.** A real person's consent in writing, and their
+ * own words rather than a paraphrase. One real result outranks three polished
+ * ones. The section carries no variability disclaimer, Paul's call of
+ * 22/09/2026.
  */
 export interface Result {
   id: string;
   quote: Copy;
-  /** First name and role only, and only with written consent. */
+  /** First name only, and only with written consent. */
   who: Copy;
+  /** What they do, in the client's own terms. */
+  role: Copy;
 }
 
 export const RESULTS_HEADING: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNfSEVBRElORw:EN%%,
-  // Not rendered while RESULTS is empty. Held rather than written, so the day
-  // there is one to show, the heading is not the thing blocking it.
   th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNfSEVBRElORw:TH%%,
 };
 
-export const RESULTS: readonly Result[] = [];
+export const RESULTS: readonly Result[] = [
+  {
+    id: "coaching",
+    quote: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMF0ucXVvdGU:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMF0ucXVvdGU:TH%%,
+    },
+    who: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMF0ud2hv:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMF0ud2hv:TH%%,
+    },
+    role: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMF0ucm9sZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMF0ucm9sZQ:TH%%,
+    },
+  },
+  {
+    id: "job-alerts",
+    quote: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMV0ucXVvdGU:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMV0ucXVvdGU:TH%%,
+    },
+    who: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMV0ud2hv:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMV0ud2hv:TH%%,
+    },
+    role: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMV0ucm9sZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMV0ucm9sZQ:TH%%,
+    },
+  },
+  {
+    id: "ai-training",
+    quote: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMl0ucXVvdGU:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMl0ucXVvdGU:TH%%,
+    },
+    who: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMl0ud2hv:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMl0ud2hv:TH%%,
+    },
+    role: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMl0ucm9sZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMl0ucm9sZQ:TH%%,
+    },
+  },
+];
 
 // -------------------------------------------------------------- the catalogue
 

@@ -15,9 +15,8 @@
  *
  * `SAMPLE_LABEL` renders as a chip above the card and `SAMPLE_NOTE` under it.
  * That is not belt and braces for its own sake. This is the ONLY fabricated
- * thing on the site: the Social Proof pillar is empty, there are no placed
- * clients, and `RESULTS` in `home.ts` is deliberately an empty array for
- * exactly that reason.
+ * thing on the site: the Social Proof pillar is empty and there are no placed
+ * clients.
  *
  * It is publishable because it illustrates a FORMAT rather than asserting a
  * RESULT, which is the same test `/pricing`'s calculator disclaimer had to pass.

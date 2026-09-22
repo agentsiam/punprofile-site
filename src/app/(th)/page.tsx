@@ -64,7 +64,6 @@ import Catalogue from "@/components/features/home/Catalogue";
 import { SERVICES } from "@/lib/content/services";
 import { DESTINATIONS } from "@/lib/content/cta";
 import Band from "@/components/Band";
-import Slot from "@/components/blocks/Slot";
 import SplitFeature from "@/components/blocks/SplitFeature";
 import Testimonials from "@/components/blocks/Testimonials";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
@@ -646,15 +645,11 @@ export default function Home() {
 
         {/* -------------------------------------------------- testimonials
 
-            B13, and the section that used to render nothing at all.
+            B13: three client quotes, read from `RESULTS` in `home.ts`, which
+            also holds where they came from and the rules for adding one.
 
-            The rule it was built on has not changed: a visible placeholder for
-            social proof is itself a claim that social proof is imminent. What
-            changed is what a placeholder can be. A coded slot inside a dashed
-            border is a question with Paul's name on it, not a client saying
-            something, and nobody reading this page could mistake one for the
-            other. `RESULTS` is still the source; the day it has a row, the
-            slots go and the quotes take their place with no edit here.
+            No line under the heading and no variability disclaimer, Paul's
+            call of 22/09/2026: the heading and the three cards, nothing else.
 
             The reference's version runs as a carousel with arrows and a story
             link per card. Neither is here: there is one screen of cards and no
@@ -663,15 +658,14 @@ export default function Home() {
         <Band block="B13" ground="canvas" width="wide">
           <div className="max-w-3xl">
             <h2 className={SECTION_HEADING(locale)}>{pick(RESULTS_HEADING)}</h2>
-            <p className="mt-4">
-              <Slot code="HOME-06" block>
-                one line under the heading: who these people are as a group
-              </Slot>
-            </p>
           </div>
           <div className="mt-10">
             <Testimonials
-              items={RESULTS.map((r) => ({ quote: pick(r.quote), who: pick(r.who) }))}
+              items={RESULTS.map((r) => ({
+                quote: pick(r.quote),
+                who: pick(r.who),
+                role: pick(r.role),
+              }))}
               placeholders={3}
               codePrefix="HOME-07"
             />

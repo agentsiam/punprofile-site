@@ -570,37 +570,80 @@ export const WHO_BODY: Copy = {
 // ------------------------------------------------------------------- results
 
 /**
- * **Nothing renders from here yet, and that is deliberate.** Paul's call of
- * 24/08/2026, option 2b: keep the shape so the first real result has somewhere
- * to go, rather than inventing one now or rebuilding the section later.
+ * **Three client quotes, supplied by Paul on 22/09/2026 as real clients' own
+ * words**, one each from 1-on-1 coaching, customised job alerts and AI
+ * training. They are quoted as supplied and never edited for voice.
  *
- * The reference product's equivalent section carries three named testimonials.
- * PunProfile has no placed clients, the Social Proof pillar in
- * `01_Project_Foundation.md` is empty, and a fabricated one would be the single
- * worst thing that could be put on this site.
+ * None carries a portrait. A stock face beside a real client's name would say
+ * that stranger is the client, so a portrait goes in only when the client
+ * supplies it.
  *
- * **The rules for the day this fills.** A result needs a real person's consent
- * in writing, their own words rather than a paraphrase, and the same variability
- * disclaimer the reference product carries. One real result outranks three
- * polished ones. Until then `RESULTS` stays empty and the page renders no
- * heading, no empty state and no "coming soon", because a visible placeholder
- * for social proof is a claim that social proof is imminent.
+ * **The rules for every result.** A real person's consent in writing, and their
+ * own words rather than a paraphrase. One real result outranks three polished
+ * ones. The section carries no variability disclaimer, Paul's call of
+ * 22/09/2026.
  */
 export interface Result {
   id: string;
   quote: Copy;
-  /** First name and role only, and only with written consent. */
+  /** First name only, and only with written consent. */
   who: Copy;
+  /** What they do, in the client's own terms. */
+  role: Copy;
 }
 
 export const RESULTS_HEADING: Copy = {
   en: "What happened next",
-  // Not rendered while RESULTS is empty. Held rather than written, so the day
-  // there is one to show, the heading is not the thing blocking it.
   th: "ผลลัพธ์ที่เกิดขึ้นจริง",
 };
 
-export const RESULTS: readonly Result[] = [];
+export const RESULTS: readonly Result[] = [
+  {
+    id: "coaching",
+    quote: {
+      en: "The one-on-one coaching helped me recognize my strengths and present my experience more effectively. I now feel much more confident and focused in my job search.",
+      th: "พอได้คุยกับโค้ชแบบตัวต่อตัว ฉันเห็นจุดแข็งของตัวเองชัดขึ้น และรู้ว่าจะเล่าประสบการณ์อย่างไรให้น่าสนใจ ตอนนี้สมัครงานได้อย่างมั่นใจและมีทิศทางมากขึ้นค่ะ",
+    },
+    who: {
+      en: "Min",
+      th: "มิน",
+    },
+    role: {
+      en: "Marketing Professional",
+      th: "สายงานการตลาด",
+    },
+  },
+  {
+    id: "job-alerts",
+    quote: {
+      en: "The customized job alerts save me a lot of time. Relevant opportunities that match my skills and goals arrive directly in my inbox, so I never miss a great role.",
+      th: "ระบบแจ้งเตือนงานช่วยประหยัดเวลาได้เยอะครับ ไม่ต้องคอยไล่หางานเองทุกวัน เพราะตำแหน่งที่ตรงกับทักษะและเป้าหมายจะส่งเข้าอีเมลให้เลย ทำให้ไม่พลาดโอกาสดี ๆ",
+    },
+    who: {
+      en: "Non",
+      th: "นนท์",
+    },
+    role: {
+      en: "IT Professional",
+      th: "สายงานไอที",
+    },
+  },
+  {
+    id: "ai-training",
+    quote: {
+      en: "PunProfile’s AI upskilling course was easy to follow and immediately useful. I now work more efficiently and feel confident using AI tools in my daily tasks.",
+      th: "เนื้อหาเรื่อง AI เข้าใจง่ายและนำไปใช้กับงานได้จริงครับ ตอนนี้ผมใช้เครื่องมือ AI ช่วยทำงานได้คล่องขึ้น ประหยัดเวลา และมั่นใจกว่าเดิมเยอะ",
+    },
+    who: {
+      en: "Jay",
+      th: "เจ",
+    },
+    role: {
+      en: "Business Professional",
+      th: "สายงานธุรกิจ",
+    },
+  },
+];
 
 // -------------------------------------------------------------- the catalogue
 

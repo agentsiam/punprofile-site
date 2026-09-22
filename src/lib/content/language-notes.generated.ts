@@ -2925,6 +2925,87 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "10/09/2026",
     "decisionNote": "Not rendered while RESULTS is empty. Held rather than written, so the day\n\nthere is one to show, the heading is not the thing blocking it.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
   },
+  "src/lib/content/home.ts::RESULTS[0].quote": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[0].quote",
+    "render": "Home page, RESULTS[0].quote",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "22/09/2026",
+    "decisionNote": "Paul supplied this on 22/09/2026 as a real client's words, from 1-on-1 coaching. Quoted as supplied, never edited for voice.\n\nNot part of the clean corpus: this is the client's voice, not PunProfile's."
+  },
+  "src/lib/content/home.ts::RESULTS[0].who": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[0].who",
+    "render": "Home page, RESULTS[0].who",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "22/09/2026",
+    "decisionNote": "The client's first name, as Paul supplied it on 22/09/2026."
+  },
+  "src/lib/content/home.ts::RESULTS[0].role": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[0].role",
+    "render": "Home page, RESULTS[0].role",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "22/09/2026",
+    "decisionNote": "The client's line of work, as Paul supplied it on 22/09/2026."
+  },
+  "src/lib/content/home.ts::RESULTS[1].quote": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[1].quote",
+    "render": "Home page, RESULTS[1].quote",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "22/09/2026",
+    "decisionNote": "Paul supplied this on 22/09/2026 as a real client's words, from customised job alerts. Quoted as supplied, never edited for voice.\n\nNot part of the clean corpus: this is the client's voice, not PunProfile's."
+  },
+  "src/lib/content/home.ts::RESULTS[1].who": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[1].who",
+    "render": "Home page, RESULTS[1].who",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "22/09/2026",
+    "decisionNote": "The client's first name, as Paul supplied it on 22/09/2026."
+  },
+  "src/lib/content/home.ts::RESULTS[1].role": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[1].role",
+    "render": "Home page, RESULTS[1].role",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "22/09/2026",
+    "decisionNote": "The client's line of work, as Paul supplied it on 22/09/2026."
+  },
+  "src/lib/content/home.ts::RESULTS[2].quote": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[2].quote",
+    "render": "Home page, RESULTS[2].quote",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "22/09/2026",
+    "decisionNote": "Paul supplied this on 22/09/2026 as a real client's words, from AI training. Quoted as supplied, never edited for voice.\n\nThe brand is cased PunProfile in the English, where the supplied text read Punprofile. Nothing else was changed.\n\nNot part of the clean corpus: this is the client's voice, not PunProfile's."
+  },
+  "src/lib/content/home.ts::RESULTS[2].who": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[2].who",
+    "render": "Home page, RESULTS[2].who",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "22/09/2026",
+    "decisionNote": "The client's first name, as Paul supplied it on 22/09/2026."
+  },
+  "src/lib/content/home.ts::RESULTS[2].role": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[2].role",
+    "render": "Home page, RESULTS[2].role",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "22/09/2026",
+    "decisionNote": "The client's line of work, as Paul supplied it on 22/09/2026."
+  },
   "src/lib/content/home.ts::SAMPLE_HEADING": {
     "source": "src/lib/content/home.ts",
     "path": "SAMPLE_HEADING",
