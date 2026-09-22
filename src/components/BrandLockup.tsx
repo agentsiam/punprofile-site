@@ -19,14 +19,21 @@
  * them, so a prop would have to be passed identically in three places and would
  * be wrong in whichever one somebody forgot.
  *
- * Deliberately not a link, in either brand. The header sits above a running
- * assessment and a logo that navigates home is a one-tap way to lose ten
- * answers. Navigation has its own control on the left.
+ * **A link to the home page in the reader's language**, Paul's call of
+ * 22/09/2026, through `path("/")` like every other internal link (R35), so
+ * `/en/pricing` goes to `/en` and `/pricing` to `/`. **Except while an
+ * assessment is running**, when it is the image alone: a logo that navigates
+ * home is a one-tap way to lose ten answers, and this reads the same lock
+ * `NavLockGate` does, so it goes dead at the moment the menu and the footer
+ * disappear and comes back when they do.
  */
 
+import { useSyncExternalStore } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCopy } from "@/components/LocaleProvider";
+import { getNavLocked, getNavLockedServer, subscribeNavLock } from "@/lib/navLock";
 
 /**
  * The assessment's path, without a locale prefix. One constant because three
@@ -42,9 +49,11 @@ export function isAssessment(pathname: string): boolean {
 }
 
 export default function BrandLockup() {
-  const { t } = useCopy();
+  const { t, path } = useCopy();
   const pathname = usePathname() ?? "";
   const efc = isAssessment(pathname);
+  const locked = useSyncExternalStore(subscribeNavLock, getNavLocked, getNavLockedServer);
+  const home = path("/");
 
   const alt = efc ? `${t("nav.assess")} — ${t("nav.brand")}` : t("nav.brand");
   // The EFC lockup is wider relative to its height and its descriptor line is
@@ -83,7 +92,7 @@ export default function BrandLockup() {
    * `SiteFooter` keeps the reversed asset unconditionally and must: the footer is
    * on `inverse-surface` in both schemes, which is what that role is for.
    */
-  return (
+  const lockup = (
     <span data-logo-ground="surface" className="contents">
       <Image
         // Both are vector, and both carry the brand orange mark, which is what
@@ -106,5 +115,18 @@ export default function BrandLockup() {
         className={`brand-wordmark-white ${box}`}
       />
     </span>
+  );
+
+  if (locked) return lockup;
+  return (
+    <Link
+      href={home}
+      aria-current={pathname === home ? "page" : undefined}
+      // The artwork runs to its own edges, so the global 2px offset put the
+      // focus ring on the letters.
+      className="flex shrink-0 items-center rounded-md focus-visible:outline-offset-4"
+    >
+      {lockup}
+    </Link>
   );
 }

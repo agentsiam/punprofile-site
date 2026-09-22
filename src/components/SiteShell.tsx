@@ -164,13 +164,10 @@ export default function SiteShell({
               is a way out of here.
             */}
             <header className="sticky top-0 z-40 flex h-[76px] shrink-0 items-center bg-canvas">
-              {/* The lockup, not the word. Still deliberately not a link, and
-                  more deliberately now that it is centred and looks like one:
-                  the header sits above a running assessment, and a logo that
-                  navigates home is a one-tap way to lose ten answers.
-                  Navigation has its own control on the left. `nav.brand` stays
-                  as the alt text, which is the only place the string is still
-                  needed.
+              {/* The lockup, not the word. A link home in the reader's
+                  language, and the image alone while an assessment is running;
+                  `BrandLockup` says why. `nav.brand` is the alt text, and so
+                  the link's accessible name.
 
                   Vector since 16/08/2026, replacing the 594x96 PNG. Taller than
                   the old one at `h-9` because this lockup carries the COACHING
