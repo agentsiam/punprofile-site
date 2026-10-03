@@ -149,11 +149,14 @@ sibling repo by the exporter that makes them.
 
 ## 6. Tooling and commands
 
-Cloned as siblings in one parent folder, from two accounts, `punprofilecareer-droid/punprofile-profile-app`
+Cloned as siblings in one parent folder, from two accounts, `agentsiam/punprofile-site`
 and `paulthinks/punprofile-career-coaching`. Eleven scripts read across by relative path, and each says so when the sibling is missing (C47), so a
-lone clone runs but cannot regenerate its colours or its termbase. Production is
-`dashing-shepherd-41`, serving `punprofile.vercel.app`; development is `quiet-mule-251`, named in
-`.env.local`, holding real lead data (R38).
+lone clone runs but cannot regenerate its colours or its termbase. The site is
+`punprofile.app`, on the Vercel team `agent-siam`; `punprofile.vercel.app` 308s to it. The Convex
+production deployment is `dashing-shepherd-41` and development is `quiet-mule-251`, named in
+`.env.local`, holding real lead data (R38). Which one the live site reads is set by Vercel's
+environment, not by this file: read the `convex.cloud` URL out of the deployed bundle before
+touching data in either dashboard.
 
 | Command | Does |
 |---|---|
@@ -194,6 +197,7 @@ missing one of its eight slots, naming a destination `cta.ts` lacks, or stating 
 - A story record holding its own copy of a figure is a fourth place for a stale number to hide, which is why `verify:narrative` exists rather than a document being enough.
 - The consent migration is the worked example of R43 to R45: `captureContact` dual-writes, `resolveConsent` returns `never_asked` rather than guessing, and the backfill reported 200 written then 0 written on an immediate re-run.
 - A deploy that appeared to change nothing was a different deployment, not a failed push (R41).
+- A coach account was deleted from the production dashboard while the live site was reading dev, so the deletion did nothing anyone could see and the production rows were lost. Check which deployment the bundle reads first.
 - The Now pill shipped dark green on dark green, because `bg-primary` was paired with `.ground-fixed` and that pairing cancels itself out. On a lime ground the lime is the ground and the pill on it is the dark one (R21).
 
 ## 8. Cadence
