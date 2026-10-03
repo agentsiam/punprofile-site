@@ -24,7 +24,7 @@ import type { Block, Section } from "./content/blog";
  * identically.
  *
  * `SITE_URL` is the same variable `convex/notify.ts` reads and
- * `scripts/launch-prod.sh` sets. The fallback is the domain claimed 14/08/2026.
+ * `scripts/launch-prod.sh` sets. The fallback is the primary domain, `punprofile.app`.
  *
  * ---------------------------------------------------------------------------
  * TWO LANGUAGES, TWO SETS OF URLS
@@ -46,7 +46,7 @@ import type { Block, Section } from "./content/blog";
  * have been served English by accident. The URL now answers that question, so
  * the `/en` tree can honestly be English.
  */
-export const SITE_URL = process.env.SITE_URL ?? "https://punprofile.vercel.app";
+export const SITE_URL = process.env.SITE_URL ?? "https://punprofile.app";
 
 /** Absolute, for structured data and sitemaps, which may not take a relative. */
 export const absolute = (path: string): string => new URL(path, SITE_URL).toString();

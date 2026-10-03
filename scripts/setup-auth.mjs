@@ -39,7 +39,9 @@ const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "paul.bussabong@gmail.com";
 // while still working on the old one, which is the confusing way round.
 // punprofile-profile-app.vercel.app stays alive and serves the same
 // deployment, it is just no longer the address anything refers to.
-const PROD_SITE_URL = "https://punprofile.vercel.app";
+// Since 07/09/2026 the primary domain is punprofile.app and the old
+// vercel.app addresses 308 to it, so this follows the domain.
+const PROD_SITE_URL = "https://punprofile.app";
 // 3100, not 3000: another project owns 3000 on Paul's machine. This has to
 // match the port `npm run dev` actually serves on, because Convex Auth builds
 // its redirects from SITE_URL, so a mismatch breaks admin sign-in locally with

@@ -62,7 +62,7 @@ export const newLead = internalAction({
 
     // The primary domain, matching `00_Quick_Facts.md`. The fallback only
     // applies where SITE_URL is unset, which is dev.
-    const site = process.env.SITE_URL ?? "https://punprofile.vercel.app";
+    const site = process.env.SITE_URL ?? "https://punprofile.app";
 
     const subject = args.sqlGate
       ? "EU Fit Check: a lead cleared the booking gate"

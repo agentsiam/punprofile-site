@@ -58,7 +58,7 @@ export const send = internalAction({
   handler: async (ctx, args): Promise<SendResult> => {
     const key = process.env.RESEND_API_KEY;
     const from = process.env.MAIL_FROM;
-    const site = process.env.SITE_URL ?? "https://punprofile.vercel.app";
+    const site = process.env.SITE_URL ?? "https://punprofile.app";
 
     const list: Recipient[] = await ctx.runQuery(internal.marketing.recipients, {});
     const dryRun = args.dryRun ?? true;
