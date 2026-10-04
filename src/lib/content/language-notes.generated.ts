@@ -8123,7 +8123,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.nav.skip",
     "render": "Every page, skip link before the header",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "04/10/2026",
     "decisionNote": "Draft 04/10/2026 for the site audit finding that keyboard users tab through the header on every page."
   },
@@ -8132,7 +8132,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.landing.title",
     "render": "Home page, search title",
     "narrativeSlot": "audience",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "04/10/2026",
     "decisionNote": "Draft 04/10/2026. The headline ran to 105 characters as a title; Google cuts at about 60."
   },
@@ -8141,7 +8141,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "INDEX_TITLE",
     "render": "Products index, search title",
     "narrativeSlot": "artefact",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "04/10/2026",
     "decisionNote": "Draft 04/10/2026. Replaces the heading as the title, which ran past 90 characters."
   },
@@ -8150,7 +8150,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[0].seoTitle",
     "render": "EU Fit Check product page, search title",
     "narrativeSlot": "artefact",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "04/10/2026",
     "decisionNote": "Draft 04/10/2026. The product page and the assessment shared the title \"EU Fit Check\"."
   },
@@ -8159,7 +8159,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "START_IN_EUROPE.seoTitle",
     "render": "Start in Europe article, search title",
     "narrativeSlot": "symptom",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "04/10/2026",
     "decisionNote": "Draft 04/10/2026. The Thai is the first half of Paul's own headline. The English headline ran to 100 characters as a title."
   }
