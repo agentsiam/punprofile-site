@@ -122,6 +122,9 @@ export default function BrandLockup() {
     <Link
       href={home}
       aria-current={pathname === home ? "page" : undefined}
+      // Named on the link itself: in dark the named wordmark is display:none
+      // and only the alt="" one shows, so the link had no name at all.
+      aria-label={alt}
       // The artwork runs to its own edges, so the global 2px offset put the
       // focus ring on the letters.
       className="flex shrink-0 items-center rounded-md focus-visible:outline-offset-4"
