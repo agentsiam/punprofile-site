@@ -22136,3 +22136,113 @@ review:
   prompt_version: structural-calque-v1
   basis: Paul approved this item through the consolidated language review on 10/09/2026.
 ```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.nav.skip`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.nav.skip
+source: src/lib/content/copy.ts
+path: COPY.nav.skip
+render: Every page, skip link before the header
+narrative_slot: utility
+en: "Skip to content"
+th: "ข้ามไปที่เนื้อหา"
+provenance: draft
+date: 04/10/2026
+term_bindings: []
+decision_note: "Draft 04/10/2026 for the site audit finding that keyboard users tab through the header on every page."
+review:
+  structural_calque: pending
+  text_hash: b6f74ad30228c128c33a9d36a5faf4bf6fa4a9990f6337ff9feb162c64b08a13
+  prompt_version: structural-calque-v1
+  basis: Model draft, awaiting Paul's verdict in the language review queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.landing.title`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.landing.title
+source: src/lib/content/copy.ts
+path: COPY.landing.title
+render: Home page, search title
+narrative_slot: audience
+en: "Work in Europe: career coaching for Thai professionals"
+th: "อยากไปทำงานยุโรป: โค้ชอาชีพสำหรับคนไทย"
+provenance: draft
+date: 04/10/2026
+term_bindings: []
+decision_note: "Draft 04/10/2026. The headline ran to 105 characters as a title; Google cuts at about 60."
+review:
+  structural_calque: pending
+  text_hash: 58f1c45c5f228c0a07ddedb8d7451180ca9f76a0f529a484c7897404e3c2fbc9
+  prompt_version: structural-calque-v1
+  basis: Model draft, awaiting Paul's verdict in the language review queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::INDEX_TITLE`
+
+```yaml
+id: src/lib/content/products.ts::INDEX_TITLE
+source: src/lib/content/products.ts
+path: INDEX_TITLE
+render: Products index, search title
+narrative_slot: artefact
+en: "Tools and coaching for working in Europe"
+th: "เครื่องมือและโค้ชสำหรับคนที่อยากไปทำงานยุโรป"
+provenance: draft
+date: 04/10/2026
+term_bindings: []
+decision_note: "Draft 04/10/2026. Replaces the heading as the title, which ran past 90 characters."
+review:
+  structural_calque: pending
+  text_hash: 1f9dada748bfce3e93302faef7013de61e89a7a9ee2f71d92d15da7ac47f1d02
+  prompt_version: structural-calque-v1
+  basis: Model draft, awaiting Paul's verdict in the language review queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[0].seoTitle`
+
+```yaml
+id: src/lib/content/products.ts::PRODUCTS[0].seoTitle
+source: src/lib/content/products.ts
+path: PRODUCTS[0].seoTitle
+render: EU Fit Check product page, search title
+narrative_slot: artefact
+en: "EU Fit Check: what it shows you"
+th: "EU Fit Check บอกอะไรคุณบ้าง"
+provenance: draft
+date: 04/10/2026
+term_bindings: []
+decision_note: "Draft 04/10/2026. The product page and the assessment shared the title \"EU Fit Check\"."
+review:
+  structural_calque: pending
+  text_hash: a59f3e4b68e730f173461069b3d7f85771448183d057af6798367c67f73c8c59
+  prompt_version: structural-calque-v1
+  basis: Model draft, awaiting Paul's verdict in the language review queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.seoTitle`
+
+```yaml
+id: src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.seoTitle
+source: src/lib/content/posts/start-in-europe.ts
+path: START_IN_EUROPE.seoTitle
+render: Start in Europe article, search title
+narrative_slot: symptom
+en: "Want to work in Europe? Where to start"
+th: "อยากไปทำงานยุโรป เริ่มจากตรงไหน"
+provenance: draft
+date: 04/10/2026
+term_bindings: []
+decision_note: "Draft 04/10/2026. The Thai is the first half of Paul's own headline. The English headline ran to 100 characters as a title."
+review:
+  structural_calque: pending
+  text_hash: 7a701bd548b273c68df891428e08b22bb93c279270d2f2e8aeccb0c0b3e4e1cf
+  prompt_version: structural-calque-v1
+  basis: Model draft, awaiting Paul's verdict in the language review queue.
+```

@@ -35,7 +35,7 @@ export async function generateMetadata({
       path: `/products/${slug}`,
       // The name in the tab, the headline as the description. The headline is the
       // problem the reader has, which is what a search result should be answering.
-      title: product.name,
+      title: product.seoTitle ?? product.name,
       description: product.headline,
     }),
     // A product that is not open yet is not a search result. Spread AFTER the

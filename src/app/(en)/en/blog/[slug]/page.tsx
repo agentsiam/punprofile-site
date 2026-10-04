@@ -19,7 +19,7 @@ export async function generateMetadata({
 
   const base = pageMetadata({
     path: `/blog/${post.slug}`,
-    title: post.title,
+    title: post.seoTitle ?? post.title,
     description: post.summary,
     locale: "en",
     type: "article",

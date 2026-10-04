@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ProductIndex from "@/components/features/products/ProductIndex";
-import { INDEX_HEADING, INDEX_INTRO } from "@/lib/content/products";
+import { INDEX_TITLE, INDEX_INTRO } from "@/lib/content/products";
 import { pageMetadata } from "@/lib/seo";
 
 /**
@@ -21,7 +21,7 @@ import { pageMetadata } from "@/lib/seo";
  */
 export const metadata: Metadata = pageMetadata({
   path: "/products",
-  title: INDEX_HEADING,
+  title: INDEX_TITLE,
   description: INDEX_INTRO,
 });
 

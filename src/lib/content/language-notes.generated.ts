@@ -8117,5 +8117,50 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "10/09/2026",
     "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved the supplied suggested revision."
+  },
+  "src/lib/content/copy.ts::COPY.nav.skip": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.nav.skip",
+    "render": "Every page, skip link before the header",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "04/10/2026",
+    "decisionNote": "Draft 04/10/2026 for the site audit finding that keyboard users tab through the header on every page."
+  },
+  "src/lib/content/copy.ts::COPY.landing.title": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.landing.title",
+    "render": "Home page, search title",
+    "narrativeSlot": "audience",
+    "provenance": "draft",
+    "date": "04/10/2026",
+    "decisionNote": "Draft 04/10/2026. The headline ran to 105 characters as a title; Google cuts at about 60."
+  },
+  "src/lib/content/products.ts::INDEX_TITLE": {
+    "source": "src/lib/content/products.ts",
+    "path": "INDEX_TITLE",
+    "render": "Products index, search title",
+    "narrativeSlot": "artefact",
+    "provenance": "draft",
+    "date": "04/10/2026",
+    "decisionNote": "Draft 04/10/2026. Replaces the heading as the title, which ran past 90 characters."
+  },
+  "src/lib/content/products.ts::PRODUCTS[0].seoTitle": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[0].seoTitle",
+    "render": "EU Fit Check product page, search title",
+    "narrativeSlot": "artefact",
+    "provenance": "draft",
+    "date": "04/10/2026",
+    "decisionNote": "Draft 04/10/2026. The product page and the assessment shared the title \"EU Fit Check\"."
+  },
+  "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.seoTitle": {
+    "source": "src/lib/content/posts/start-in-europe.ts",
+    "path": "START_IN_EUROPE.seoTitle",
+    "render": "Start in Europe article, search title",
+    "narrativeSlot": "symptom",
+    "provenance": "draft",
+    "date": "04/10/2026",
+    "decisionNote": "Draft 04/10/2026. The Thai is the first half of Paul's own headline. The English headline ran to 100 characters as a title."
   }
 } as const;

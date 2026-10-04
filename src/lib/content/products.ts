@@ -77,6 +77,8 @@ export interface Product {
   /** One line under "how this works", before the steps. */
   howLede: Copy;
   name: Copy;
+  /** Search title where the name alone would collide with another page's. */
+  seoTitle?: Copy;
   status: ProductStatus;
   /** The problem the reader arrived with, not a description of the feature. */
   headline: Copy;
@@ -144,6 +146,11 @@ export const PRODUCTS: readonly Product[] = [
   /* ------------------------------------------------------------ EU Fit Check */
   {
     slug: "eu-fit-check",
+    // `/efc-assessment` is titled "EU Fit Check" too; this keeps the two apart.
+    seoTitle: {
+      en: "EU Fit Check: what it shows you",
+      th: "EU Fit Check บอกอะไรคุณบ้าง",
+    },
     // Read back 25/08/2026. Draft for `PROD-01-eu-fit-check`.
     audience: {
       en: "For anyone weighing up a move to Europe",
@@ -604,6 +611,13 @@ export const INDEX_EYEBROW: Copy = {
   en: "Everything PunProfile makes",
   // Paul's wording, 06/09/2026.
   th: "เครื่องมือและบริการทั้งหมดจาก PunProfile",
+};
+
+/** The index page's search title. The heading is a sentence and ran to 94
+ *  characters in Thai as a title. */
+export const INDEX_TITLE: Copy = {
+  en: "Tools and coaching for working in Europe",
+  th: "เครื่องมือและโค้ชสำหรับคนที่อยากไปทำงานยุโรป",
 };
 
 export const INDEX_HEADING: Copy = {

@@ -19,7 +19,7 @@ export async function generateMetadata({
   return {
     ...pageMetadata({
       path: `/products/${slug}`,
-      title: product.name,
+      title: product.seoTitle ?? product.name,
       description: product.headline,
       locale: "en",
     }),

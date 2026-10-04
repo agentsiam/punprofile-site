@@ -31,7 +31,7 @@ export async function generateMetadata({
 
   const base = pageMetadata({
     path: `/blog/${post.slug}`,
-    title: post.title,
+    title: post.seoTitle ?? post.title,
     description: post.summary,
     type: "article",
     // The article's own sharing card, cut to the ratio every platform crops to.

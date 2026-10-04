@@ -92,6 +92,11 @@ export const COPY = {
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2Lm1lbnU:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2Lm1lbnU:TH%%,
   },
+  "nav.skip": {
+    screen: "Every page, the first focusable link, visible on keyboard focus only",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2LnNraXA:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2LnNraXA:TH%%,
+  },
   "nav.menuClose": {
     screen: "Header, the open menu's close button",
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2Lm1lbnVDbG9zZQ:EN%%,
@@ -312,6 +317,11 @@ export const COPY = {
     // `แคเรียร์โค้ชชิ่ง` is the service name, which belongs on the card in
     // section 3 rather than in the line that says who this site is for.
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubGFuZGluZy5leWVicm93:TH%%,
+  },
+  "landing.title": {
+    screen: "The home page's title in search results and the browser tab",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubGFuZGluZy50aXRsZQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubGFuZGluZy50aXRsZQ:TH%%,
   },
   "landing.headline": {
     screen: "Landing, and the site's default page title",

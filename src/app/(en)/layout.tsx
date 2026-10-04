@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   // while the site is on a vercel.app subdomain.
   verification: VERIFICATION,
   title: {
-    default: `${t("landing.headline", "en")} | PunProfile`,
+    default: `${t("landing.title", "en")} | PunProfile`,
     template: "%s | PunProfile",
   },
   description: t("landing.subhead", "en"),

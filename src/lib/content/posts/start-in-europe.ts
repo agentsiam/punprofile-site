@@ -55,6 +55,11 @@ export const START_IN_EUROPE: Post = {
     en: "You want to work in Europe. Where do you start? Do not spend the first 30 days applying",
   },
 
+  seoTitle: {
+    th: "อยากไปทำงานยุโรป เริ่มจากตรงไหน",
+    en: "Want to work in Europe? Where to start",
+  },
+
   summary: {
     th: "คนส่วนใหญ่เริ่มจากการส่งใบสมัคร ทั้งที่ใบสมัครควรเป็นปลายทางของการตัดสินใจสามเรื่องก่อนหน้า ได้แก่ จะเจาะตลาดไหน จะย้ายไปด้วยเส้นทางใด และจะทำให้นายจ้างเข้าใจคุณค่าของประสบการณ์จากไทยได้อย่างไร",
     en: "Most people start by sending applications, when an application should be the end point of three earlier decisions: which market to go after, which route you will move on, and how you will make an employer see the value of experience gained in Thailand.",

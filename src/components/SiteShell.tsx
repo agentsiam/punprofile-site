@@ -14,7 +14,7 @@ import { DEFAULT_LOCALE } from "@/lib/locale";
 import type { Locale } from "@/lib/locale";
 import { DISCLAIMER, FACEBOOK_PAGE } from "@/lib/content/footer";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
-import { pick } from "@/lib/locale";
+import { pick, t } from "@/lib/locale";
 
 /**
  * The document, from `<html>` down. Extracted from the root layout 16/08/2026.
@@ -163,6 +163,15 @@ export default function SiteShell({
               answers, and absence beats a disabled control that still says there
               is a way out of here.
             */}
+            {/* The first focusable element on every page, visible only on
+                keyboard focus, so a keyboard user is not made to tab through
+                the header each time (site audit, 22/09/2026). */}
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-canvas focus:px-5 focus:py-3 focus:text-body-sm-strong focus:text-ink-deep focus:shadow-level-2"
+            >
+              {t("nav.skip", locale)}
+            </a>
             <header className="sticky top-0 z-40 flex h-[76px] shrink-0 items-center bg-canvas">
               {/* The lockup, not the word. A link home in the reader's
                   language, and the image alone while an assessment is running;
@@ -208,7 +217,7 @@ export default function SiteShell({
               <SectionNav />
             </NavLockGate>
             <ConvexClientProvider>
-              <main className="flex flex-1 flex-col">{children}</main>
+              <main id="main" tabIndex={-1} className="flex flex-1 flex-col outline-none">{children}</main>
             </ConvexClientProvider>
             {/* Hidden for the same reason and by the same signal as the
                 menu: during the check, every link out costs the candidate

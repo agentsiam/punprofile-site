@@ -83,7 +83,7 @@ export const metadata: Metadata = {
    * Two pages sharing one title is the problem this pass was fixing.
    */
   title: {
-    default: `${t("landing.headline", DEFAULT_LOCALE)} | PunProfile`,
+    default: `${t("landing.title", DEFAULT_LOCALE)} | PunProfile`,
     template: "%s | PunProfile",
   },
   description: t("landing.subhead", DEFAULT_LOCALE),

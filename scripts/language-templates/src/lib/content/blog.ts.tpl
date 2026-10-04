@@ -254,6 +254,8 @@ export interface Post {
   /** ISO, for `<time dateTime>` and metadata. Rendered DD/MM/YYYY. */
   published: string;
   title: Copy;
+  /** Search title, where the headline is too long for a result. */
+  seoTitle?: Copy;
   /** One line. The card, and the share preview a LINE paste renders. */
   summary: Copy;
   /**

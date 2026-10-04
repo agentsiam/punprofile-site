@@ -92,6 +92,11 @@ export const COPY = {
     en: "Menu",
     th: "Menu",
   },
+  "nav.skip": {
+    screen: "Every page, the first focusable link, visible on keyboard focus only",
+    en: "Skip to content",
+    th: "ข้ามไปที่เนื้อหา",
+  },
   "nav.menuClose": {
     screen: "Header, the open menu's close button",
     en: "Close menu",
@@ -312,6 +317,11 @@ export const COPY = {
     // `แคเรียร์โค้ชชิ่ง` is the service name, which belongs on the card in
     // section 3 rather than in the line that says who this site is for.
     th: "โค้ชชิ่งด้านอาชีพสำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป",
+  },
+  "landing.title": {
+    screen: "The home page's title in search results and the browser tab",
+    en: "Work in Europe: career coaching for Thai professionals",
+    th: "อยากไปทำงานยุโรป: โค้ชอาชีพสำหรับคนไทย",
   },
   "landing.headline": {
     screen: "Landing, and the site's default page title",
