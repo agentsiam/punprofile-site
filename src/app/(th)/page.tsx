@@ -70,6 +70,7 @@ import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 import { MARKET } from "@/lib/content/market-snapshot.generated";
 import { METHOD_PROOF } from "@/lib/content/method";
 import { FAQ, FAQ_HEADING } from "@/lib/content/faq";
+import { PORTRAIT_ALT } from "@/lib/content/coaching";
 import {
   CATALOGUE_HEADING,
   CATALOGUE_LEAD,
@@ -621,9 +622,24 @@ export default function Home() {
             sit in the section above the fold rather than in this one. */}
       <Band block="B2" ground="canvas" width="wide">
         {/* B2: the reference states who is behind a thing beside a picture of
-            them, not as a paragraph on its own. The portrait is a placeholder;
-            `/coaching` has the real one and this page has never carried it. */}
-        <SplitFeature src="/placeholder-4x3.svg" alt="" reverse>
+            them, not as a paragraph on its own. The portrait and its alt text
+            are the ones `/coaching` uses. The source is a 421px square, so it
+            sits as a round portrait on the soft ground rather than being
+            stretched across a 4:3 box, which would blur it and crop the head. */}
+        <SplitFeature
+          reverse
+          media={
+            <div className="flex size-full items-center justify-center bg-canvas-soft">
+              <Image
+                src="/paul-portrait.png"
+                alt={pick(PORTRAIT_ALT)}
+                width={421}
+                height={421}
+                className="size-48 rounded-full object-cover medium:size-64"
+              />
+            </div>
+          }
+        >
           <h2 className={SECTION_HEADING(locale)}>{pick(WHO_HEADING)}</h2>
           <p className="mt-3 max-w-2xl text-body-large text-on-surface-variant">
             {pick(WHO_BODY)}
