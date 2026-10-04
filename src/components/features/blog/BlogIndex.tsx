@@ -135,10 +135,12 @@ function BlogBody() {
             empty page look broken rather than new. */}
         {topics.length > 0 && (
           <>
-            <p className="text-body-medium font-semibold text-on-surface-variant">
+            <p id="blog-topics-label" className="text-body-medium font-semibold text-on-surface-variant">
               {pick(BLOG_TOPICS_LABEL)}
             </p>
-            <nav className="mt-4 flex flex-wrap gap-3">
+            {/* Named by the label above it, so it is told apart from the
+                footer's navigation landmark (axe landmark-unique). */}
+            <nav aria-labelledby="blog-topics-label" className="mt-4 flex flex-wrap gap-3">
               <Chip href={path("/blog")} label={pick(BLOG_ALL)} on={active === null} />
               {topics.map((t) => (
                 <Chip

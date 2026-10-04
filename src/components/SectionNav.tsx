@@ -63,7 +63,9 @@ export default function SectionNav() {
   const links = [{ href: DESTINATIONS.assess.href, label: pick(DESTINATIONS.assess.label) }];
 
   return (
-    <div className="sticky top-[76px] z-30 border-b border-line bg-canvas-soft">
+    // One landmark for the whole bar, so the section's own name sits inside it
+    // too; it used to sit outside every landmark (axe region, 22/09/2026).
+    <nav aria-label={t("nav.assess")} className="sticky top-[76px] z-30 border-b border-line bg-canvas-soft">
       <div className="page-container flex h-14 items-center gap-6 overflow-x-auto">
         <Link
           href={path(ROOT)}
@@ -73,7 +75,7 @@ export default function SectionNav() {
           {t("nav.assess")}
         </Link>
 
-        <nav aria-label={t("nav.assess")} className="flex items-center gap-1">
+        <div className="flex items-center gap-1">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -86,8 +88,8 @@ export default function SectionNav() {
               {l.label}
             </Link>
           ))}
-        </nav>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 }

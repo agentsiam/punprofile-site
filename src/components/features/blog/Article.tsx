@@ -134,7 +134,7 @@ export default function Article({ slug }: { slug: string }) {
         <div className="mx-auto w-full max-w-2xl px-6 py-14">
           <Link
             href={path("/blog")}
-            className="text-body-medium text-on-surface-variant underline underline-offset-2"
+            className="inline-flex min-h-6 items-center text-body-medium text-on-surface-variant underline underline-offset-2"
           >
             &larr; {pick(BLOG_BACK)}
           </Link>

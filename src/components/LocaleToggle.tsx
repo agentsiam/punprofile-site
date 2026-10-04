@@ -173,10 +173,13 @@ export default function LocaleToggle() {
 
     if (getLocaleSwitchInPlace()) return;
 
+    // The hash travels too: a reader deep in a page who switches language
+    // should land on the same section, not at the top.
     const query = params.toString();
+    const hash = typeof window === "undefined" ? "" : window.location.hash;
     const target = localePath(stripLocale(pathname), next);
     const stays = target === pathname;
-    if (!stays) router.push(query ? `${target}?${query}` : target);
+    if (!stays) router.push(`${target}${query ? `?${query}` : ""}${hash}`);
   };
 
   // Close on an outside tap or on Escape. Both, because a phone never sends
@@ -269,8 +272,7 @@ export default function LocaleToggle() {
             <li key={l}>
               <button
                 type="button"
-                role="menuitemradio"
-                aria-checked={locale === l}
+                aria-pressed={locale === l}
                 onClick={() => choose(l)}
                 tabIndex={open ? undefined : -1}
                 className={`flex w-full items-center gap-3 rounded-2xl px-5 py-4 text-left text-body-md-strong duration-[350ms] ease-nav transition-colors ${

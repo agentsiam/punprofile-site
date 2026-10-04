@@ -215,6 +215,7 @@ export default function QuestionCard({
         <div
           className="mb-5 h-1 w-full overflow-hidden rounded-full bg-canvas-soft"
           role="progressbar"
+          aria-label={t("assess.progress", { step, total })}
           aria-valuemin={0}
           aria-valuemax={total}
           aria-valuenow={step}
