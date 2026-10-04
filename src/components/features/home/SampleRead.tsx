@@ -58,9 +58,15 @@ export default function SampleRead() {
           {SAMPLE_AXES.map((axis) => {
             const measured = axis.score !== null;
             return (
-              <div key={axis.label}>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <dt className="text-body-large text-on-surface">{t(axis.label)}</dt>
+              /* Each group holds only its <dt> and <dd>s, laid out as one wrapping row, so a
+                 screen reader pairs every label with its score. The track was a
+                 sibling <div> inside a nested wrapper, which broke that pairing
+                 (axe definition-list, serious, 22/09/2026). */
+              <div
+                key={axis.label}
+                className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
+              >
+                  <dt className="grow basis-40 text-body-large text-on-surface">{t(axis.label)}</dt>
                   {/* `teaser.score.none` rather than a dash or a zero. A dash
                       reads as a broken field and a zero is a claim; this says
                       the honest thing, which is that it was not measured. */}
@@ -73,20 +79,18 @@ export default function SampleRead() {
                       ? t("teaser.score.value").replace("{score}", axis.score!.toFixed(1))
                       : t("teaser.score.none")}
                   </dd>
-                </div>
                 {/* The track is always drawn, so an unmeasured axis reads as a
                     gap in the picture rather than as a missing row. */}
-                <div
-                  className="mt-2 h-2 w-full overflow-hidden rounded-full bg-surface-container-high"
-                  role="presentation"
-                >
-                  {measured && (
-                    <div
-                      className="h-full rounded-full bg-primary"
-                      style={{ width: `${(axis.score! / MAX) * 100}%` }}
-                    />
-                  )}
-                </div>
+                <dd aria-hidden className="mt-1 basis-full">
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-surface-container-high">
+                    {measured && (
+                      <div
+                        className="h-full rounded-full bg-primary"
+                        style={{ width: `${(axis.score! / MAX) * 100}%` }}
+                      />
+                    )}
+                  </div>
+                </dd>
               </div>
             );
           })}

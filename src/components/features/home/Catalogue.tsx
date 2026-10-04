@@ -105,7 +105,10 @@ export default function Catalogue() {
             place; pulling "50" out of it here would be inventing copy and would
             break the moment the Thai is reviewed. */}
         <div className="mt-8 border-y border-line py-6">
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-4">
+          {/* Below `medium` the link takes its own row under the sentence. As a
+              flex row the sentence was squeezed to about six words a line
+              beside the button on a phone (site audit, 22/09/2026). */}
+          <div className="grid grid-cols-[auto_1fr] items-center gap-x-5 gap-y-4 medium:flex medium:flex-wrap">
             <span
               aria-hidden
               className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary-pale text-on-primary-pale"
@@ -117,7 +120,7 @@ export default function Catalogue() {
             </p>
             <Link
               href={path(DESTINATIONS.pricing.href)}
-              className="inline-flex min-h-12 shrink-0 items-center rounded-full border border-line-strong px-5 text-body-sm-strong text-ink-deep duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
+              className="col-span-2 inline-flex min-h-12 shrink-0 items-center justify-self-start rounded-full border border-line-strong px-5 text-body-sm-strong text-ink-deep duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
             >
               {pick(DESTINATIONS.pricing.label)}
             </Link>
