@@ -148,7 +148,7 @@ const POTENTIAL_MARKER = "ได้";
  * Longer Thai words that legitimately contain a banned form as a substring.
  * See the note in the banned-form loop below.
  */
-const LEGITIMATE_HOSTS = ["ออนไลน์"];
+const LEGITIMATE_HOSTS = ["ออนไลน์", "ออฟไลน์"];
 
 function withoutQuotes(s: string): string {
   return s.replace(/"[^"]*"|"[^"]*"|'[^']*'/g, (m) => " ".repeat(m.length));
@@ -199,8 +199,13 @@ export function lintThai(targets: LintTarget[]): LintFinding[] {
            */
           if (
             LEGITIMATE_HOSTS.some((w) => {
-              const j = th.indexOf(w);
-              return j !== -1 && j <= i && i + form.length <= j + w.length;
+              // Every placement of the host that could cover this match, not
+              // the first occurrence of it: a second ออนไลน์ in one string
+              // was otherwise reported as the banned form.
+              for (let j = i + form.length - w.length; j <= i; j++) {
+                if (j >= 0 && th.startsWith(w, j)) return true;
+              }
+              return false;
             })
           ) {
             from = i + 1;
