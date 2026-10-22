@@ -226,7 +226,14 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
               for those would be inventing one. */}
           <span className="text-body-medium text-on-surface-variant">
             {lead.attribution
-              ? `via ${lead.attribution.channel.replace(/_/g, " ")}${
+              ? `via ${
+                  // A blog newsletter sign-up is stored as channel "other" with
+                  // raw "blog_signup" (convex/subscribe.ts), so name it here
+                  // rather than showing the bare bucket.
+                  lead.attribution.raw === "blog_signup"
+                    ? "blog newsletter sign-up"
+                    : lead.attribution.channel.replace(/_/g, " ")
+                }${
                   lead.attribution.campaign ? ` · post ${lead.attribution.campaign}` : ""
                 }`
               : "origin unknown"}
