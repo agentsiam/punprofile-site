@@ -1,4 +1,5 @@
 import type { Copy } from "./copy";
+import { HALF_TRUE_EUROPE_NEEDS_TALENT } from "./posts/half-true-europe-needs-talent";
 import { START_IN_EUROPE } from "./posts/start-in-europe";
 
 /**
@@ -280,19 +281,24 @@ export interface Post {
  * order is editable here rather than being a property of the dates.
  */
 export const POSTS: readonly Post[] = [
+  // The second article, published 23/10/2026: queue entry 2 of the coaching
+  // repo's `blog-queue.md`, Paul's Thai, its prose in its own module like the
+  // first.
+  HALF_TRUE_EUROPE_NEEDS_TALENT,
+  //
   // The first article, published 18/08/2026. Its prose lives in
   // `posts/start-in-europe.ts` rather than inline: it is about 3,000 words in
   // two languages, and this file defines the schema. The array is still the
   // registry and still the running order, which is all it ever was.
   START_IN_EUROPE,
   //
-  // Two more are queued in the coaching repo's `blog-queue.md`, which carries
+  // One more is queued in the coaching repo's `blog-queue.md`, which carries
   // the slug, the pillar, the citation map, the line ranges into the Thai
-  // source and the finished English, so publishing them is adding them here
+  // source and the finished English, so publishing it is adding it here
   // rather than deciding anything again. Article 1 of the original three was
-  // superseded by the one above; see the note at the top of this file.
+  // superseded by `start-in-europe`; see the note at the top of this file.
   //
-  // Nothing else in the app needs changing when they land. The menu entry, the
+  // Nothing else in the app needs changing when it lands. The menu entry, the
   // footer link and the sitemap all read `POSTS.length`, so they appear on
   // their own and an empty blog is never advertised.
 ];

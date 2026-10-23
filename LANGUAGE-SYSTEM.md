@@ -9961,6 +9961,732 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.title`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.title
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.title
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.title'
+narrative_slot: utility
+en: "“Europe needs skilled people” is only half true"
+th: "“ยุโรปต้องการคนเก่ง” เป็นความจริงเพียงครึ่งเดียว"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 3c29239a119dd9e4602d6a5919fbb5f720872f255e84b384bd7291312db8210c
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.summary`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.summary
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.summary
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.summary'
+narrative_slot: utility
+en: "The opportunity is real, but you have to pick the country and prepare in a way that matches its market."
+th: "โอกาสมีอยู่จริง แต่ต้องเลือกประเทศและเตรียมตัวให้ตรงกับตลาด"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: c20295f731c77e6aaa4a078ef9d0106ec5f47829e2e3b67e833adec67f2ce3e4
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.question`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.question
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.question
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.question'
+narrative_slot: symptom
+en: "Right now, is the main obstacle your skills, the job market, the paperwork, or choosing a target country?"
+th: "ตอนนี้อุปสรรคหลักอยู่ที่ทักษะ ตลาดงาน เอกสาร หรือการเลือกประเทศเป้าหมาย?"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: cc2e717bd991a83c55356a9090472d57c2d01bae57745874a3c1aa5a2d6f81a7
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[0].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[0].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[0].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[0].text'
+narrative_slot: misread
+en: "Many European countries are facing slower growth in their working-age population, while some industries still need more workers. People who move there for work therefore play a growing part in the region's economy."
+th: "หลายประเทศในยุโรปกำลังเผชิญกับการเติบโตที่ช้าลงของประชากรวัยทำงาน ขณะที่บางอุตสาหกรรมยังต้องการแรงงานเพิ่ม คนที่ย้ายเข้ามาทำงานจึงมีบทบาทต่อเศรษฐกิจของภูมิภาคมากขึ้น"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 80faa6aa4be97bd5585fc32017e6d3e8c127792c3e7e2b93c1c38da957aa3d82
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[1].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[1].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[1].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[1].text'
+narrative_slot: misread
+en: "A European Commission study states that the share of the EU working-age population born outside the EU rose from around 8% in 2014 to more than 12% in 2024, and that this group has helped ease labour shortages."
+th: "งานศึกษาของคณะกรรมาธิการยุโรประบุว่า สัดส่วนประชากรวัยทำงานในสหภาพยุโรปที่เกิดนอก EU เพิ่มจากประมาณ 8% ในปี 2014 เป็นมากกว่า 12% ในปี 2024 และแรงงานกลุ่มนี้มีส่วนช่วยบรรเทาปัญหาการขาดแคลนแรงงาน"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: ff2330dc65ad88476ab892c07acb86c280d5bdc5b84d21ff52f0e5237005f908
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[2].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[2].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[2].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[0].body[2].text'
+narrative_slot: misread
+en: "A shortage in the aggregate does not mean applicants in every field will find work easily."
+th: "อย่างไรก็ตาม การขาดแรงงานในภาพรวมไม่ได้แปลว่าผู้สมัครทุกสายอาชีพจะหางานได้ง่าย"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 9ff50bb7d674cc2258e7d45f5fa73d47c67217693fcc068c45bf38a3b951aa75
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].heading`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].heading
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].heading
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].heading'
+narrative_slot: mechanism
+en: "The same job can be short of people in one country and oversupplied in the next"
+th: "งานเดียวกันอาจขาดคนในประเทศหนึ่ง แต่มีคนล้นในอีกประเทศ"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 8b7ee037fc5c1050cd179ef2701815ebee3ed2df41390a6cc6356350e003c1a4
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[0].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[0].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[0].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[0].text'
+narrative_slot: mechanism
+en: "The European job market differs by country, city, industry and language. Reading only region-wide figures can therefore leave you with a distorted picture of your own chances."
+th: "ตลาดงานยุโรปแตกต่างกันตามประเทศ เมือง อุตสาหกรรม และภาษา การดูตัวเลขระดับภูมิภาคอย่างเดียวจึงอาจทำให้เข้าใจโอกาสของตัวเองคลาดเคลื่อนได้"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: dbd69d7bfdf11d8ca4ece1c074dbedccc04d66ecc40d56acd19459b7bd19946b
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[1].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[1].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[1].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[1].text'
+narrative_slot: mechanism
+en: "Data from the European Labour Authority finds that of the occupations classed as in shortage in at least one country, 98% are also classed as in surplus in another."
+th: "ข้อมูลจาก European Labour Authority พบว่า ในบรรดาอาชีพที่ถูกจัดว่าขาดแคลนในอย่างน้อยหนึ่งประเทศ มีถึง 98% ที่ถูกจัดว่ามีแรงงานเกินความต้องการในประเทศอื่นด้วย"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: bc5a9d81b69b00f0ccc0b92ffae985f4f6d98c8071b4e71f24fe379071869916
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[2].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[2].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[2].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[2].text'
+narrative_slot: mechanism
+en: "Widely reported shortage occupations include nurses, welders, electricians and chefs, as well as work in health, engineering and construction."
+th: "อาชีพที่ขาดแคลนอย่างแพร่หลายมีทั้งพยาบาล ช่างเชื่อม ช่างไฟ พ่อครัว ตลอดจนงานด้านสุขภาพ วิศวกรรม และการก่อสร้าง"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 98d1f01ad5e60014eb1956e8cd7d39d8266f7ee972d31e5f892b292647e33e34
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text'
+narrative_slot: mechanism
+en: "So instead of asking broadly whether Europe needs your profession, the question that helps you plan is this."
+th: "แทนที่จะถามกว้าง ๆ ว่า “ยุโรปต้องการอาชีพของฉันไหม” คำถามที่ช่วยให้วางแผนได้มากกว่าคือ"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: bce48043af816a4ad4eb7795984bfd071ddb36e747c20606a0c14e9b7b734ecb
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text'
+narrative_slot: mechanism
+en: "Which country needs my skills, and do I meet that country's conditions for working there?"
+th: "ประเทศใดกำลังต้องการทักษะของฉัน และฉันผ่านเงื่อนไขการทำงานของประเทศนั้นหรือไม่?"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: a5fc4708b19640a3372750c194360a59b066a0cb334b117e8d8a536b2bdcb98b
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].heading`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].heading
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].heading
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].heading'
+narrative_slot: mechanism
+en: "Having the skills the market wants is not the only condition"
+th: "มีทักษะตรงตลาด ยังต้องผ่านเงื่อนไขอื่นด้วย"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 78d039b850b1a57858429073b9babb64f72c680aecffa934337fd31e03c3b1e9
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[0].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[0].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[0].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[0].text'
+narrative_slot: mechanism
+en: "Even where your experience matches what the market needs, an employer still has several other things to weigh, for example:"
+th: "แม้ประสบการณ์ของคุณจะสอดคล้องกับความต้องการของตลาด นายจ้างยังต้องพิจารณาอีกหลายเรื่อง เช่น"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 5bc4e731c29707c163864a1731e1fd12930c5cb83798ae20165c3a0a7aab93ca
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[0]`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[0]
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[0]
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[0]'
+narrative_slot: mechanism
+en: "Whether your qualification or professional licence is recognised"
+th: "คุณวุฒิหรือใบประกอบวิชาชีพได้รับการยอมรับหรือไม่"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 30d2bd5ef7fef862d9d8c95ada8cb2feea8ab50df86db12e3e0197675cfbdcd9
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[1]`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[1]
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[1]
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[1]'
+narrative_slot: mechanism
+en: "What level of the local language the role requires"
+th: "ตำแหน่งนั้นต้องใช้ภาษาท้องถิ่นระดับใด"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 7587e22ca0b98819effb39e65b40dbf8209cbf30b7e1e9b2758b62fc5a19746b
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[2]`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[2]
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[2]
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[2]'
+narrative_slot: mechanism
+en: "Whether the company is able to hire an applicant from abroad"
+th: "บริษัทสามารถจ้างผู้สมัครจากต่างประเทศได้หรือไม่"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 391f9f4b7025961c95e10f5c6ada92d4e469febd1ee4f2bbced6278342250952
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[3]`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[3]
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[3]
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[3]'
+narrative_slot: mechanism
+en: "Which type of work permit would have to be applied for"
+th: "ต้องขอใบอนุญาตทำงานประเภทไหน"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 1765378bc3b9a92f4cfc8f81dde8f4b696cce459ac2afc829f548729f35dd905
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[4]`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[4]
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[4]
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[1].items[4]'
+narrative_slot: mechanism
+en: "When you could start and move"
+th: "คุณเริ่มงานและย้ายประเทศได้เมื่อไร"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: faa9007a7e07a22ac8ce6dcd292b0de4447430235835a6321c9488b027796418
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[2].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[2].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[2].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[2].text'
+narrative_slot: mechanism
+en: "Professions connected to health, law, education or safety often carry extra requirements. You may have to go through a recognition process before you can apply or start."
+th: "อาชีพที่เกี่ยวข้องกับสุขภาพ กฎหมาย การศึกษา หรือความปลอดภัยมักมีข้อกำหนดเพิ่มเติม คุณอาจต้องผ่านกระบวนการรับรองคุณวุฒิก่อนจึงจะสมัครหรือเริ่มงานได้"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: d2eb4e278d963e7299a32cdef43ae679661d2adecfaac019a83d404cbf2b6146
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[3].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[3].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[3].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].body[3].text'
+narrative_slot: mechanism
+en: "This is why capable people can still go unanswered. The problem may not be the worth of your experience, but that the employer cannot yet see how the hiring and the move would actually happen."
+th: "นี่เป็นเหตุผลว่าทำไมคนที่มีฝีมือจึงอาจยังไม่ได้รับการตอบรับ ปัญหาอาจไม่ได้อยู่ที่คุณค่าของประสบการณ์ แต่อยู่ที่นายจ้างยังมองไม่เห็นว่ากระบวนการจ้างและย้ายประเทศจะเกิดขึ้นได้จริงอย่างไร"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: dcd34660c605735394de7cdb655bcf3475bcc1caa10136a7afe4ad37642d4737
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].heading`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].heading
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].heading
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].heading'
+narrative_slot: mechanism
+en: "The EU Talent Pool is adding a route between applicants and employers"
+th: "EU Talent Pool กำลังเพิ่มช่องทางเชื่อมผู้สมัครกับนายจ้าง"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 1680494a8961a724667a60e2d425f13f5f73c3952c80f067aa0b2ba62356cd0f
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[0].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[0].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[0].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[0].text'
+narrative_slot: mechanism
+en: "In March 2026 the Council of the EU gave its final approval to the EU Talent Pool. The platform will connect applicants from outside the EU with employers in member states that opt in, and is expected to be fully in use in 2027."
+th: "ในเดือนมีนาคม 2026 สภาแห่งสหภาพยุโรปให้ความเห็นชอบขั้นสุดท้ายแก่ EU Talent Pool แพลตฟอร์มนี้จะช่วยเชื่อมผู้สมัครจากนอก EU กับนายจ้างในประเทศสมาชิกที่สมัครใจเข้าร่วม และคาดว่าจะเปิดใช้งานเต็มรูปแบบในปี 2027"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 08c7f3efeec5ab6b5c14a5a65460d5bb1cc72d78bf468d4b797a1337d79ab43b
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[1].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[1].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[1].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[1].text'
+narrative_slot: mechanism
+en: "Receiving a job offer through the platform does not replace immigration procedure. Applicants still have to obtain residence rights and a work permit under each country's own rules."
+th: "การได้รับข้อเสนองานผ่านแพลตฟอร์มไม่ได้ทดแทนขั้นตอนตรวจคนเข้าเมือง ผู้สมัครยังต้องขอสิทธิพำนักและใบอนุญาตทำงานตามกฎของแต่ละประเทศ"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: cb990da92b14a9eed97b51b8a1b625a8a35621a6aabdf398c7be4c3b7fca75be
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[2].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[2].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[2].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[3].body[2].text'
+narrative_slot: mechanism
+en: "The development shows that Europe is building more routes to attract skilled workers. But an applicant's success still depends on preparing in a way that matches the market and the rules of the target country."
+th: "พัฒนาการนี้แสดงให้เห็นว่ายุโรปกำลังสร้างช่องทางดึงดูดแรงงานที่มีทักษะมากขึ้น แต่ความสำเร็จของผู้สมัครยังขึ้นอยู่กับการเตรียมตัวให้ตรงกับตลาดและกติกาของประเทศเป้าหมาย"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: e1b8864b659beeabcc195fdc36893927849d5bc9e04f6ac84f62b48e34381054
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].heading`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].heading
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].heading
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].heading'
+narrative_slot: mechanism
+en: "How to make your skills ready to move country"
+th: "ทำอย่างไรให้ทักษะของคุณพร้อมย้ายประเทศ"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 2ea8c4ec2646efc81ee8c7e45fee5f594ae8b081c817a4c203d50b0c0a944eb5
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[0].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[0].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[0].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[0].text'
+narrative_slot: mechanism
+en: "Rather than scattering applications across Europe, pick one to three target countries and check these four things."
+th: "แทนที่จะส่งใบสมัครกระจายไปทั่วยุโรป ลองเลือกประเทศเป้าหมายหนึ่งถึงสามประเทศ แล้วตรวจสอบสี่เรื่องต่อไปนี้"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 64f2b5057f32f663283633bc112793599eadbf11bcf3513967d7014d81329e38
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[0]`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[0]
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[0]
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[0]'
+narrative_slot: mechanism
+en: "Whether your occupation is genuinely in shortage in that country"
+th: "อาชีพของคุณขาดแคลนในประเทศนั้นจริงหรือไม่"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 914f7376ab789271c18e11bbd7de62fcdfa68a87d8cedca375f4953aa1579739
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[1]`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[1]
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[1]
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[1]'
+narrative_slot: mechanism
+en: "Whether your qualification or professional licence has to be recognised"
+th: "คุณวุฒิหรือใบประกอบวิชาชีพต้องผ่านการรับรองหรือไม่"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: a8f63837d4173f9a1c1e8c37b10577026b687211c3e9ac30565b12af5ad1e829
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[2]`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[2]
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[2]
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[2]'
+narrative_slot: mechanism
+en: "What level of language and experience employers there want"
+th: "นายจ้างต้องการภาษาและประสบการณ์ระดับใด"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: a4b662ca4cea089c4bcc7f9a81c79f32fde5134682c75faf2b49ced4414400ba
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[3]`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[3]
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[3]
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[1].items[3]'
+narrative_slot: mechanism
+en: "Which work-permit route matches your situation"
+th: "ใบอนุญาตทำงานเส้นทางไหนตรงกับสถานการณ์ของคุณ"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 1022d44cbe11c0b33dd4af473a4d11301d8c70f429243d7848e47156c3ea238f
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[2].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[2].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[2].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[2].text'
+narrative_slot: mechanism
+en: "Once you have that, revise your CV so it tells more than a list of duties. Say what problems you solved, what you specialise in, and what results you produced, so an employer can see quickly how your experience answers the problem in front of them."
+th: "เมื่อได้ข้อมูลแล้ว ค่อยปรับเรซูเม่ให้เล่ามากกว่ารายการหน้าที่ ระบุว่าคุณเคยแก้ปัญหาอะไร มีความเชี่ยวชาญด้านไหน และสร้างผลลัพธ์แบบใด เพื่อให้นายจ้างเห็นได้เร็วว่าประสบการณ์ของคุณตอบโจทย์ที่เขากำลังเผชิญอย่างไร"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: b95afc5a3fc7a65ca73621f235c82e6a5ebc78c5a7ebfb77c009a79f2db59940
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[3].text`
+
+```yaml
+id: src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[3].text
+source: src/lib/content/posts/half-true-europe-needs-talent.ts
+path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[3].text
+render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[4].body[3].text'
+narrative_slot: mechanism
+en: "Market demand is only one part of it. The chance to move comes when your skills, the country, the employer and a suitable migration route line up at the same time."
+th: "การที่ตลาดต้องการคนเป็นเพียงส่วนหนึ่ง โอกาสย้ายประเทศจะเกิดขึ้นได้เมื่อทักษะของคุณตรงกับประเทศ นายจ้าง และเส้นทางการย้ายถิ่นที่เหมาะสมในเวลาเดียวกัน"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+review:
+  structural_calque: pass
+  text_hash: 8e098b2f5603f9271fc7a62cb6736ca3dafbd26cf03859b6976b3a3b2feaae11
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.image.alt`
 
 ```yaml
