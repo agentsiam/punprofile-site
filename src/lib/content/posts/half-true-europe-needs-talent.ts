@@ -22,13 +22,25 @@ import type { Post } from "../blog";
  * carries two claims in two paragraphs, the 98% and the named shortage
  * occupations, so it is cited on both rather than borrowed by one.
  *
- * No illustration yet. Card, header and share preview fall through to `og.png`
- * until one is added, at which point R48 wants a sharing card too.
+ * The illustration is the series' clay figure on a cobbled street, holding a
+ * star-headed key up to three front doors, only one of which has a star: the
+ * article's claim that skills fit some countries and not others. Made from the
+ * prompt in the queue entry, saved in the coaching repo's brand inbox, cut to
+ * 1200 x 900 here and to a 1200 x 630 sharing card with the 15% upward bias.
  */
 export const HALF_TRUE_EUROPE_NEEDS_TALENT: Post = {
   slug: "half-true-europe-needs-talent",
   topic: "market",
   published: "2026-10-23",
+
+  image: {
+    src: "/blog/half-true-europe-needs-talent.jpg",
+    // Describes the scene, not the article, like the first article's alt.
+    alt: {
+      th: "ตัวการ์ตูนดินปั้นถือกุญแจหัวรูปดาว ยืนอยู่หน้าประตูสามบานบนถนนปูหิน สีส้ม สีเหลือง และสีน้ำเงิน มีเพียงบานสีน้ำเงินที่มีรูปดาวเจาะไว้",
+      en: "A clay figure holding a key with a star-shaped head, standing in front of three doors on a cobbled street, coral, yellow and dark blue, and only the blue one has a star cut into it",
+    },
+  },
 
   title: {
     th: "“ยุโรปต้องการคนเก่ง” เป็นความจริงเพียงครึ่งเดียว",

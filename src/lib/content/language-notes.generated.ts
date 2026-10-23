@@ -3564,6 +3564,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "16/08/2026",
     "decisionNote": "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
   },
+  "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.image.alt": {
+    "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",
+    "path": "HALF_TRUE_EUROPE_NEEDS_TALENT.image.alt",
+    "render": "Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.image.alt",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "23/10/2026",
+    "decisionNote": "Claude's draft, written from the image Paul generated 23/10/2026. Describes the scene, not the argument, like START_IN_EUROPE.image.alt. Waiting on Paul."
+  },
   "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.question": {
     "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",
     "path": "HALF_TRUE_EUROPE_NEEDS_TALENT.question",
