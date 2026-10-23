@@ -97,7 +97,7 @@ export const HALF_TRUE_EUROPE_NEEDS_TALENT: Post = {
           kind: "p",
           text: {
             th: "อาชีพที่ขาดแคลนอย่างแพร่หลายมีทั้งพยาบาล ช่างเชื่อม ช่างไฟ พ่อครัว ตลอดจนงานด้านสุขภาพ วิศวกรรม และการก่อสร้าง",
-            en: "Widely reported shortage occupations include nurses, welders, electricians and chefs, as well as work in health, engineering and construction.",
+            en: "Widely reported shortage occupations include nurses, welders, electricians and cooks, as well as work in health, engineering and construction.",
           },
           cite: { label: "European Labour Authority", href: "https://www.ela.europa.eu/en/publications/labour-shortages-and-surpluses-europe-2024" },
         },

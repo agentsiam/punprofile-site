@@ -3634,7 +3634,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-written",
     "date": "16/08/2026",
-    "decisionNote": "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+    "decisionNote": "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul. 23/10/2026: chefs corrected to cooks, the ELA report's word."
   },
   "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text": {
     "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",

@@ -10167,15 +10167,15 @@ source: src/lib/content/posts/half-true-europe-needs-talent.ts
 path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[2].text
 render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[2].text'
 narrative_slot: mechanism
-en: "Widely reported shortage occupations include nurses, welders, electricians and chefs, as well as work in health, engineering and construction."
+en: "Widely reported shortage occupations include nurses, welders, electricians and cooks, as well as work in health, engineering and construction."
 th: "อาชีพที่ขาดแคลนอย่างแพร่หลายมีทั้งพยาบาล ช่างเชื่อม ช่างไฟ พ่อครัว ตลอดจนงานด้านสุขภาพ วิศวกรรม และการก่อสร้าง"
 provenance: paul-written
 date: 16/08/2026
 term_bindings: []
-decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul. 23/10/2026: chefs corrected to cooks, the ELA report's word."
 review:
   structural_calque: pass
-  text_hash: 98d1f01ad5e60014eb1956e8cd7d39d8266f7ee972d31e5f892b292647e33e34
+  text_hash: 09ceb58c7e9b0ba6a29d64a307ac1bfe9168b1ec54aebfeeb42656f7e124a579
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
