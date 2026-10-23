@@ -3569,9 +3569,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "HALF_TRUE_EUROPE_NEEDS_TALENT.image.alt",
     "render": "Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.image.alt",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "23/10/2026",
-    "decisionNote": "Claude's draft, written from the image Paul generated 23/10/2026. Describes the scene, not the argument, like START_IN_EUROPE.image.alt. Waiting on Paul."
+    "decisionNote": "Claude's draft, written from the image Paul generated 23/10/2026. Describes the scene, not the argument, like START_IN_EUROPE.image.alt. Paul approved it unchanged on 23/10/2026."
   },
   "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.question": {
     "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",

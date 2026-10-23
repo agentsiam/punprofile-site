@@ -10015,15 +10015,15 @@ render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_
 narrative_slot: utility
 en: "A clay figure holding a key with a star-shaped head, standing in front of three doors on a cobbled street, coral, yellow and dark blue, and only the blue one has a star cut into it"
 th: "ตัวการ์ตูนดินปั้นถือกุญแจหัวรูปดาว ยืนอยู่หน้าประตูสามบานบนถนนปูหิน สีส้ม สีเหลือง และสีน้ำเงิน มีเพียงบานสีน้ำเงินที่มีรูปดาวเจาะไว้"
-provenance: draft
+provenance: paul-approved
 date: 23/10/2026
 term_bindings: []
-decision_note: "Claude's draft, written from the image Paul generated 23/10/2026. Describes the scene, not the argument, like START_IN_EUROPE.image.alt. Waiting on Paul."
+decision_note: "Claude's draft, written from the image Paul generated 23/10/2026. Describes the scene, not the argument, like START_IN_EUROPE.image.alt. Paul approved it unchanged on 23/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a239e24a6e0115c4e652bc9670a79f9742768c9cb55e32e743ddd04ae5fd341c
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 23/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
