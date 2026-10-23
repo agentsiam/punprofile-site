@@ -3650,18 +3650,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text",
     "render": "Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
+    "provenance": "paul-approved",
     "date": "16/08/2026",
-    "decisionNote": "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+    "decisionNote": "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul. 23/10/2026: ฉัน changed to เรา on Paul's rule."
   },
   "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text": {
     "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",
     "path": "HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text",
     "render": "Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
+    "provenance": "paul-approved",
     "date": "16/08/2026",
-    "decisionNote": "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+    "decisionNote": "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul. 23/10/2026: ฉัน changed to เรา on Paul's rule."
   },
   "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.sections[2].heading": {
     "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",
@@ -4865,9 +4865,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "START_IN_EUROPE.sections[3].body[2].text",
     "render": "Blog article: Start in Europe, START_IN_EUROPE.sections[3].body[2].text",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
+    "provenance": "paul-approved",
     "date": "18/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "decisionNote": "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
   },
   "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.sections[3].body[3].text": {
     "source": "src/lib/content/posts/start-in-europe.ts",
@@ -4883,18 +4883,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "START_IN_EUROPE.sections[3].body[4].items[0]",
     "render": "Blog article: Start in Europe, START_IN_EUROPE.sections[3].body[4].items[0]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
+    "provenance": "paul-approved",
     "date": "18/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "decisionNote": "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
   },
   "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.sections[3].body[4].items[1]": {
     "source": "src/lib/content/posts/start-in-europe.ts",
     "path": "START_IN_EUROPE.sections[3].body[4].items[1]",
     "render": "Blog article: Start in Europe, START_IN_EUROPE.sections[3].body[4].items[1]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
+    "provenance": "paul-approved",
     "date": "18/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "decisionNote": "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
   },
   "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.sections[3].body[5].text": {
     "source": "src/lib/content/posts/start-in-europe.ts",
@@ -5216,9 +5216,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "START_IN_EUROPE.sections[6].body[2].text",
     "render": "Blog article: Start in Europe, START_IN_EUROPE.sections[6].body[2].text",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
+    "provenance": "paul-approved",
     "date": "18/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "decisionNote": "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
   },
   "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.sections[6].body[3].text": {
     "source": "src/lib/content/posts/start-in-europe.ts",
@@ -5396,18 +5396,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "START_IN_EUROPE.sections[8].body[3].items[1]",
     "render": "Blog article: Start in Europe, START_IN_EUROPE.sections[8].body[3].items[1]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
+    "provenance": "paul-approved",
     "date": "18/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "decisionNote": "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
   },
   "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.sections[8].body[3].items[2]": {
     "source": "src/lib/content/posts/start-in-europe.ts",
     "path": "START_IN_EUROPE.sections[8].body[3].items[2]",
     "render": "Blog article: Start in Europe, START_IN_EUROPE.sections[8].body[3].items[2]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
+    "provenance": "paul-approved",
     "date": "18/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "decisionNote": "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
   },
   "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.sections[8].body[4].text": {
     "source": "src/lib/content/posts/start-in-europe.ts",
