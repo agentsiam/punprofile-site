@@ -148,7 +148,7 @@ const POTENTIAL_MARKER = "ได้";
  * Longer Thai words that legitimately contain a banned form as a substring.
  * See the note in the banned-form loop below.
  */
-const LEGITIMATE_HOSTS = ["ออนไลน์", "ออฟไลน์"];
+const LEGITIMATE_HOSTS = ["ออนไลน์", "ออฟไลน์", "ไทม์ไลน์", "เดดไลน์", "ไกด์ไลน์"];
 
 function withoutQuotes(s: string): string {
   return s.replace(/"[^"]*"|"[^"]*"|'[^']*'/g, (m) => " ".repeat(m.length));
