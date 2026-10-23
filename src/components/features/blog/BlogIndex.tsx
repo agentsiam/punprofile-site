@@ -159,10 +159,12 @@ function BlogBody() {
             {pick(POSTS.length === 0 ? BLOG_NONE_YET : BLOG_EMPTY)}
           </p>
         ) : (
-          // `items-start` so a short card keeps its own height rather than
-          // stretching to the tallest in its row, the same call the services
-          // grid makes and for the same reason.
-          <div className="mt-10 grid items-start gap-6 medium:grid-cols-2 large:grid-cols-3">
+          // Stretched, so the cards in a row share one height. This was
+          // `items-start`, copied from the services grid, until 23/10/2026: on
+          // the blog every card carries art and a date pinned to its foot, and
+          // a row of two different heights read as a layout bug rather than as
+          // two articles of different length.
+          <div className="mt-10 grid items-stretch gap-6 medium:grid-cols-2 large:grid-cols-3">
             {posts.map((p, i) => (
               <PostCard key={p.slug} post={p} size={i === 0 ? "lead" : "normal"} />
             ))}

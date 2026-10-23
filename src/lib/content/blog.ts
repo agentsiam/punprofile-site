@@ -260,7 +260,11 @@ export interface Post {
   /** One line. The card, and the share preview a LINE paste renders. */
   summary: Copy;
   /**
-   * The article's own illustration, optional. Same shape as `services.ts` uses,
+   * The article's own illustration, **required since 23/10/2026**. It was
+   * optional, and the second article shipped to a preview without one: a
+   * text-only card beside an illustrated one, and a LINE paste that previewed
+   * the site logo. Required, an article cannot compile without art, so it
+   * cannot reach a preview without it. Same shape as `services.ts` uses,
    * deliberately: one `src` and one translated `alt`, cover-cropped to 4:3 in
    * the asset rather than at render, so the crop is decided once.
    *
@@ -268,9 +272,9 @@ export interface Post {
    * article header show it; `generateMetadata` makes it the Open Graph image, so
    * a LINE paste previews the article rather than the site; and `articleJsonLd`
    * carries it, which is what an answer engine quotes alongside the headline.
-   * An article without one falls through to `og.png` on all of them.
+   * Art at `/blog/<slug>.jpg` also needs its sharing card (R48).
    */
-  image?: { src: string; alt: Copy };
+  image: { src: string; alt: Copy };
   sections: readonly Section[];
   /** Paul's closing question, where the piece has one. */
   question?: Copy;

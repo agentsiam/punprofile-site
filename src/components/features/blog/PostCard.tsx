@@ -18,6 +18,13 @@
  * larger headline, which is the whole of the editorial hierarchy here: there is
  * no featured section, because with three articles a featured section would be
  * the blog.
+ *
+ * **The lead card takes the whole row and lays its art beside the text**, from
+ * `medium:` up, with the art at its own 4:3 so the crop decided in the asset
+ * is the crop shown. Sharing a row with a normal card, it either dwarfed its
+ * neighbour (art stacked across two columns) or cropped its art to a portrait
+ * strip (art stretched to the neighbour's height). On a phone it stacks like
+ * every other card.
  */
 
 import Image from "next/image";
@@ -40,7 +47,7 @@ export default function PostCard({
   return (
     <article
       className={`relative flex flex-col rounded-large border border-outline-variant bg-surface transition-colors hover:border-primary ${
-        lead ? "large:col-span-2" : ""
+        lead ? "medium:col-span-2 medium:flex-row large:col-span-3" : ""
       }`}
     >
       {/* Above the text, not beside it, and only when the article has one. The
@@ -49,18 +56,22 @@ export default function PostCard({
           `overflow-hidden` because the card's own corner is `rounded-large` and
           a square image inside it would show four white notches. */}
       {post.image && (
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-large">
+        <div
+          className={`relative aspect-[4/3] w-full shrink-0 overflow-hidden rounded-t-large ${
+            lead ? "medium:w-1/2 medium:rounded-tr-none medium:rounded-l-large" : ""
+          }`}
+        >
           <Image
             src={post.image.src}
             alt={pick(post.image.alt)}
             fill
-            sizes={lead ? "(max-width: 1200px) 100vw, 66vw" : "(max-width: 1200px) 100vw, 33vw"}
+            sizes={lead ? "(max-width: 600px) 100vw, 50vw" : "(max-width: 1200px) 100vw, 33vw"}
             className="object-cover"
           />
         </div>
       )}
 
-      <div className="flex flex-1 flex-col px-6 py-7">
+      <div className={`flex flex-1 flex-col px-6 py-7 ${lead ? "medium:justify-center medium:px-10" : ""}`}>
         <p className="text-body-medium font-semibold text-ink-deep">{pick(topic.label)}</p>
 
         <h2 className={`mt-3 ${lead ? "text-headline-small" : "text-title-large"}`}>
@@ -76,7 +87,7 @@ export default function PostCard({
 
         <p className="mt-3 text-body-large text-on-surface-variant">{pick(post.summary)}</p>
 
-        <div className="mt-auto flex flex-wrap items-baseline justify-between gap-3 pt-7">
+        <div className={`mt-auto flex flex-wrap items-baseline justify-between gap-3 pt-7 ${lead ? "medium:mt-0" : ""}`}>
           <time dateTime={post.published} className="text-body-medium text-on-surface-variant">
             {formatDate(post.published)}
           </time>
