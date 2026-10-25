@@ -1,5 +1,4 @@
 import type { Copy } from "./copy";
-import { HERO_REFRAME } from "./home";
 
 /**
  * One page per product. Added 23/08/2026, Paul's call to build all of them
@@ -191,10 +190,16 @@ export const PRODUCTS: readonly Product[] = [
     },
     name: { en: "EU Fit Check", th: "EU Fit Check" },
     status: "live",
-    // Lifted whole from `home.ts` HERO_REFRAME, Paul's own Thai. It is already
-    // the problem statement this page needs and it is already approved, so
-    // composing a second one would be inventing a rival for a line that works.
-    headline: HERO_REFRAME,
+    /*
+     * Replaced 25/10/2026, draft. It was `home.ts` HERO_REFRAME, which is the
+     * home page's reframe of the whole problem: six lines in Thai at hero size,
+     * and it never said what this page offers. A product headline names the
+     * question the product answers, in one line.
+     */
+    headline: {
+      en: "Before you apply in Europe, find out how ready you are.",
+      th: "ก่อนสมัครงานในยุโรป รู้ก่อนว่าตอนนี้คุณพร้อมแค่ไหน",
+    },
     /*
      * Rewritten 25/10/2026, draft, not yet read back. The old lede said only
      * how long it takes. This one says what the reader gets for the two
@@ -202,8 +207,8 @@ export const PRODUCTS: readonly Product[] = [
      * the four chart axes, as `coaching.ts` describes it.
      */
     lede: {
-      en: "17 questions, about 2 minutes. See how ready you are on the four things that decide a hire in Europe, before you spend time and money on applications. Free, no sign-up.",
-      th: "ตอบคำถาม 17 ข้อ ใช้เวลาประมาณ 2 นาที แล้วดูว่าตอนนี้คุณพร้อมแค่ไหนใน 4 ด้านที่มีผลต่อการจ้างงานในยุโรป ก่อนจะลงทั้งเวลาและเงินไปกับการสมัครงาน ใช้ฟรี ไม่ต้องสมัครสมาชิก",
+      en: "17 questions, about 2 minutes, and you see your result on the four things that decide a hire in Europe straight away. Free, no sign-up.",
+      th: "ตอบคำถาม 17 ข้อ ใช้เวลาประมาณ 2 นาที แล้วเห็นผลทันทีใน 4 ด้านที่มีผลต่อการจ้างงานในยุโรป ใช้ฟรี ไม่ต้องสมัครสมาชิก",
     },
     /*
      * Rewritten 25/10/2026, drafts, not yet read back. What you answer, what
