@@ -191,7 +191,7 @@ export const PRODUCTS: readonly Product[] = [
     name: { en: "EU Fit Check", th: "EU Fit Check" },
     status: "live",
     /*
-     * Replaced 25/10/2026, draft. It was `home.ts` HERO_REFRAME, which is the
+     * Replaced 25/10/2026, approved by Paul the same day. It was `home.ts` HERO_REFRAME, which is the
      * home page's reframe of the whole problem: six lines in Thai at hero size,
      * and it never said what this page offers. A product headline names the
      * question the product answers, in one line.
