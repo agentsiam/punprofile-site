@@ -4,7 +4,7 @@ import type { Post } from "../blog";
  * `ai-is-becoming-a-baseline-skill`, the blog's third article.
  *
  * Paul's Thai, from `thai-europe-job-guide.md` in the coaching repo's
- * `golden-th/other/` (Newsletter 1), queued in `blog-queue.md` on 16/08/2026.
+ * `golden-th/other/` (Newsletter 1), queued in the coaching repo's `blog/blog.md` on 16/08/2026.
  * The first article built to the `blog-post` skill's five rules: it opens with
  * `สรุปสั้น ๆ`, closes on three FAQ, carries a search title, cites a source in
  * every section that makes a market claim, and links to one related article.

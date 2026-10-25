@@ -31,12 +31,12 @@ import { START_IN_EUROPE } from "./posts/start-in-europe";
  * half-finished build. Three articles were prepared from
  * `golden-th/other/thai-europe-job-guide.md`, the only Thai in either repo
  * confirmed to be his own, and he held all three. They are queued in the
- * coaching repo's `blog-queue.md` with their slugs, pillars, citation maps, line
+ * coaching repo's blog folder (`work-content/blog/`) with their slugs, pillars, citation maps, line
  * ranges into the Thai source and finished English.
  *
  * **Article 1 was superseded on 18/08/2026** by a longer piece written to the
  * same slug, `start-in-europe`, which is Paul's Thai in the coaching repo's
- * `blog-first-30-days-th.md`. It is the first article to carry a FAQ, which is
+ * `blog/start-in-europe/article.md`. It is the first article to carry a FAQ, which is
  * where the `qa` block below came from. The queue's entry for the article it
  * replaced is marked rather than deleted, so two articles are waiting there and
  * one is waiting beside it.
@@ -297,7 +297,7 @@ export const POSTS: readonly Post[] = [
   AI_IS_BECOMING_A_BASELINE_SKILL,
   //
   // The second article, published 23/10/2026: queue entry 2 of the coaching
-  // repo's `blog-queue.md`, Paul's Thai, its prose in its own module like the
+  // repo's blog folder, Paul's Thai, its prose in its own module like the
   // first.
   HALF_TRUE_EUROPE_NEEDS_TALENT,
   //
@@ -307,7 +307,7 @@ export const POSTS: readonly Post[] = [
   // registry and still the running order, which is all it ever was.
   START_IN_EUROPE,
   //
-  // The coaching repo's `blog-queue.md` is empty after this; new articles come
+  // The coaching repo's `work-content/blog/blog.md` lists every article; new ones come
   // through the `blog-post` skill. The menu entry, the footer link and the
   // sitemap all read `POSTS.length`, so nothing else changes when one lands.
 ];

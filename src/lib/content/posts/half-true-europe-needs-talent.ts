@@ -4,7 +4,7 @@ import type { Post } from "../blog";
  * `half-true-europe-needs-talent`, the blog's second article. Published 23/10/2026.
  *
  * Paul's Thai, from `thai-europe-job-guide.md` in the coaching repo's
- * `golden-th/other/` (Newsletter 2), queued in `blog-queue.md` on 16/08/2026
+ * `golden-th/other/` (Newsletter 2), queued in the coaching repo's `blog/blog.md` on 16/08/2026
  * with its slug, pillar, citation map and English. Publishing it was
  * transcription, not a second round of decisions.
  *

@@ -34,7 +34,7 @@ import { maySend, type ConsentEvent } from "../src/lib/consent";
 const ROOT = resolve(import.meta.dirname, "..");
 const BLOCKS = resolve(
   ROOT,
-  "../punprofile-career-coaching/punprofile-work/work-content/email-send-blocks.md",
+  "../punprofile-career-coaching/punprofile-work/work-content/email/email-send-blocks.md",
 );
 const OUT = resolve(ROOT, "data/send-pack");
 

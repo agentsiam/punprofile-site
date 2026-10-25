@@ -23,7 +23,7 @@ import type { Post } from "../blog";
  * He wrote it in Thai on 18/08/2026, rewriting a composed draft in place. **The
  * English below is a translation of it and only ever runs in that direction**,
  * the same as the FAQ. Where the two disagree the Thai is right and the English
- * is what gets corrected. LR-09 is the rule; `blog-first-30-days-th.md` in the
+ * is what gets corrected. LR-09 is the rule; `blog/start-in-europe/article.md` in the
  * coaching repo is the source of record, and it carries the register
  * measurement and the term check.
  *
