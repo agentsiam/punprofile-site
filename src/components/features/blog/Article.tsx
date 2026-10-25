@@ -20,6 +20,7 @@
  */
 
 import Image from "next/image";
+import PostCard from "@/components/features/blog/PostCard";
 import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
 import CallToAction from "@/components/CallToAction";
@@ -30,6 +31,7 @@ import {
   formatDate,
   postBySlug,
   topicById,
+  BLOG_RELATED_LABEL,
 } from "@/lib/content/blog";
 import type { Block } from "@/lib/content/blog";
 
@@ -193,6 +195,17 @@ export default function Article({ slug }: { slug: string }) {
               {pick(BLOG_QUESTION_LABEL)}
             </p>
             <p className="mt-2 text-title-medium text-on-surface">{pick(post.question)}</p>
+          </div>
+        )}
+
+        {/* One related article, as the same card the blog index uses, so the
+            reader recognises it as an article rather than an advert. */}
+        {post.related && postBySlug(post.related) && (
+          <div className="mt-12">
+            <p className="text-body-medium font-semibold text-ink-deep">{pick(BLOG_RELATED_LABEL)}</p>
+            <div className="mt-4">
+              <PostCard post={postBySlug(post.related)!} />
+            </div>
           </div>
         )}
 

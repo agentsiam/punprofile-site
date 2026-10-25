@@ -1,4 +1,5 @@
 import type { Copy } from "./copy";
+import { AI_IS_BECOMING_A_BASELINE_SKILL } from "./posts/ai-is-becoming-a-baseline-skill";
 import { HALF_TRUE_EUROPE_NEEDS_TALENT } from "./posts/half-true-europe-needs-talent";
 import { START_IN_EUROPE } from "./posts/start-in-europe";
 
@@ -278,6 +279,13 @@ export interface Post {
   sections: readonly Section[];
   /** Paul's closing question, where the piece has one. */
   question?: Copy;
+  /**
+   * The slug of the one article a reader of this one should read next,
+   * rendered as a card after the closing question. One, not a list: the
+   * `blog-post` skill asks every article to send its reader somewhere
+   * specific, and a list of three is a choice handed back to the reader.
+   */
+  related?: string;
 }
 
 /**
@@ -285,6 +293,9 @@ export interface Post {
  * order is editable here rather than being a property of the dates.
  */
 export const POSTS: readonly Post[] = [
+  // The third article, the first built to the `blog-post` skill's five rules.
+  AI_IS_BECOMING_A_BASELINE_SKILL,
+  //
   // The second article, published 23/10/2026: queue entry 2 of the coaching
   // repo's `blog-queue.md`, Paul's Thai, its prose in its own module like the
   // first.
@@ -296,15 +307,9 @@ export const POSTS: readonly Post[] = [
   // registry and still the running order, which is all it ever was.
   START_IN_EUROPE,
   //
-  // One more is queued in the coaching repo's `blog-queue.md`, which carries
-  // the slug, the pillar, the citation map, the line ranges into the Thai
-  // source and the finished English, so publishing it is adding it here
-  // rather than deciding anything again. Article 1 of the original three was
-  // superseded by `start-in-europe`; see the note at the top of this file.
-  //
-  // Nothing else in the app needs changing when it lands. The menu entry, the
-  // footer link and the sitemap all read `POSTS.length`, so they appear on
-  // their own and an empty blog is never advertised.
+  // The coaching repo's `blog-queue.md` is empty after this; new articles come
+  // through the `blog-post` skill. The menu entry, the footer link and the
+  // sitemap all read `POSTS.length`, so nothing else changes when one lands.
 ];
 
 export const postBySlug = (slug: string): Post | undefined =>
@@ -409,6 +414,12 @@ export const BLOG_QUESTION_LABEL: Copy = {
   // question. See the note at the top of this file on why it replaced the other.
   en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfUVVFU1RJT05fTEFCRUw:EN%%,
   th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfUVVFU1RJT05fTEFCRUw:TH%%,
+};
+
+/** The label above the related-article card at the end of an article. */
+export const BLOG_RELATED_LABEL: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfUkVMQVRFRF9MQUJFTA:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfUkVMQVRFRF9MQUJFTA:TH%%,
 };
 
 export const BLOG_READ: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfUkVBRA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OkJMT0dfUkVBRA:TH%% };

@@ -571,6 +571,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/blog.ts::BLOG_RELATED_LABEL`
+
+```yaml
+id: src/lib/content/blog.ts::BLOG_RELATED_LABEL
+source: src/lib/content/blog.ts
+path: BLOG_RELATED_LABEL
+render: 'Blog article: the label above the related-article card'
+narrative_slot: utility
+en: "Read next"
+th: "อ่านต่อ"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the related-article card the blog-post skill's third rule asks for. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: 62049b7862df9e3957eea661a450ed80bb86979840daffd9512d63c494f62325
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/blog.ts::BLOG_READ`
 
 ```yaml
@@ -9958,6 +9980,886 @@ review:
   text_hash: 4d5a466df806a861d0f453c6f5492b0b2d023f32e9684ee8d6ba4564f865394e
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.title`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.title
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.title
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.title'
+narrative_slot: utility
+en: "Being able to use AI is becoming a baseline skill for working people"
+th: "ใช้ AI เป็น กำลังจะกลายเป็นทักษะพื้นฐานของคนทำงาน"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 4cc1e32ad3b14fe78f00a99216f4021e7c13467c219d5efb0b6697a3b6766c1a
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.seoTitle`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.seoTitle
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.seoTitle
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.seoTitle'
+narrative_slot: utility
+en: "The AI skills employers in Europe look for"
+th: "ทักษะ AI ที่นายจ้างในยุโรปมองหา"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: 7ee8a44a56032151589aa3b61275975f060e6d8fc6e207338137a7b9b1a1cd40
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.summary`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.summary
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.summary
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.summary'
+narrative_slot: utility
+en: "Employers are not only looking at whether you can use AI. They want to see how you turned it into work that produced something."
+th: "นายจ้างไม่ได้ดูแค่ว่าใช้ AI เป็นหรือไม่ แต่อยากเห็นว่าคุณนำไปสร้างผลงานได้จริงอย่างไร"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: e27dd78fd5cc415c26259e1ad51cbc3e2bc75f4b789ef48533fc915217b254a0
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.question`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.question
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.question
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.question'
+narrative_slot: symptom
+en: "If AI cut the time your routine work takes by 30%, what would you use the time it gave back to create?"
+th: "ถ้า AI ช่วยลดเวลางานประจำลงได้ 30% คุณจะนำเวลาที่ได้คืนมาไปสร้างคุณค่าอะไรเพิ่ม?"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 477488073f1227eb4f2d41b8a083ab74f8d17868600bb3b5ba78b6aa71d74053
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].heading`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].heading
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].heading
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].heading'
+narrative_slot: utility
+en: "In short"
+th: "สรุปสั้น ๆ"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 374fe2a22b8ee3e8e5258f04555c18cc495f7e98cd81f38c658fcd36b432e16b
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text'
+narrative_slot: utility
+en: "Employers in Europe are not only looking at whether you can use AI. They want to see how you used it to produce real work."
+th: "นายจ้างในยุโรปไม่ได้ดูแค่ว่าคุณใช้ AI เป็นหรือไม่ แต่อยากเห็นว่าคุณนำ AI ไปสร้างผลงานได้จริงอย่างไร"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: d004f4ff5eff8a97efe4aeaa891527d42eb8da4e0a8166d32f82c155c41a1745
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text'
+narrative_slot: utility
+en: "So reskilling does not mean becoming a programmer. It means applying AI to the expertise you already have, checking what it produces, and being able to show it as work on your CV or in an interview."
+th: "การ Reskill จึงไม่ได้หมายความว่าต้องเปลี่ยนสายไปเป็นโปรแกรมเมอร์ แต่คือการนำ AI มาใช้กับความเชี่ยวชาญที่มีอยู่ ตรวจสอบผลลัพธ์ได้ และเล่าออกมาเป็นผลงานในเรซูเม่หรือการสัมภาษณ์ได้"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: 3d6e40ff215aa3e526fd6a36d87a41f709b1edbce38c7fb250e953fd50448fb9
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[0].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[0].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[0].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[0].text'
+narrative_slot: misread
+en: "AI is changing how work is done in many professions, from marketers, analysts, managers and HR through to designers. The effect is not limited to technology roles."
+th: "AI กำลังเปลี่ยนวิธีทำงานในหลายสายอาชีพ ตั้งแต่นักการตลาด นักวิเคราะห์ ผู้จัดการ ฝ่ายบุคคล ไปจนถึงนักออกแบบ ผลกระทบจึงไม่ได้จำกัดอยู่เฉพาะงานด้านเทคโนโลยี"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 471ae3d831ec8ae4f754f80a5298424d20bf7ffb9baeb73d403d2cfcda3c584d
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[1].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[1].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[1].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[1].text'
+narrative_slot: misread
+en: "For anyone looking at opportunities in Europe, reskilling does not mean changing career to become a programmer. It means learning how to apply AI to the expertise you already have, so that you work better and more efficiently."
+th: "สำหรับคนที่มองหาโอกาสในยุโรป การ Reskill ไม่ได้หมายความว่าต้องเปลี่ยนสายไปเป็นโปรแกรมเมอร์ แต่ต้องเรียนรู้ว่าจะนำ AI มาใช้กับความเชี่ยวชาญที่มีอยู่ เพื่อทำงานได้ดีและมีประสิทธิภาพขึ้นอย่างไร"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: a40ccd11309dbd91863b00348ba04886c7cd9a6095b5e66f2f584214c0f9bcdc
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[2].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[2].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[2].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[2].text'
+narrative_slot: misread
+en: "These three trends are directly affecting the skills employers look for."
+th: "สามเทรนด์ต่อไปนี้กำลังมีผลโดยตรงต่อทักษะที่นายจ้างมองหา"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: d67d04cfdf150e660872455727c52959eb1e187f4742f65692437cd3d54bfc0b
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].heading`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].heading
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].heading
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].heading'
+narrative_slot: mechanism
+en: "1. AI literacy is becoming a foundation everyone should have"
+th: "1. AI Literacy กำลังกลายเป็นพื้นฐานที่ทุกคนควรมี"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 362797e094190085db356a99507a29ecbcbc8c922816feb80725751183d667cf
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[0].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[0].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[0].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[0].text'
+narrative_slot: mechanism
+en: "Being able to open an AI tool and use it is not enough. Employers want people who understand which kinds of work the technology suits, where its limits are, and how to check the output before it is actually used."
+th: "การเปิดเครื่องมือ AI แล้วใช้งานได้ยังไม่พอ นายจ้างต้องการคนที่เข้าใจว่าเทคโนโลยีนี้เหมาะกับงานแบบไหน มีข้อจำกัดตรงไหน และจะตรวจสอบผลลัพธ์อย่างไรก่อนนำไปใช้จริง"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 64d8fab40b12a68c5726947440a587e1a23850bc0b4b79d44b15858c264cf4e9
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[1].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[1].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[1].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[1].text'
+narrative_slot: mechanism
+en: "This carries more weight in Europe, because the AI Act requires organisations that provide or use AI systems to support their people's AI literacy in a way appropriate to the work and the risks involved."
+th: "เรื่องนี้มีน้ำหนักมากขึ้นในยุโรป เพราะกฎหมาย AI Act กำหนดให้องค์กรที่ให้บริการหรือใช้งานระบบ AI ต้องสนับสนุนความรู้ความเข้าใจด้าน AI ของบุคลากรให้เหมาะกับงานและความเสี่ยงที่เกี่ยวข้อง"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 43b1fe26e7e1636bf8aef6d26bdd42eb1fbf14bfce0edc97bff84d7589305ee4
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[2].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[2].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[2].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[2].text'
+narrative_slot: mechanism
+en: "The skills the market wants are therefore broader than writing prompts. You should know how to verify information, spot privacy risks, notice bias in the output, and judge which work should and should not use AI."
+th: "ทักษะที่ตลาดต้องการจึงกว้างกว่าการเขียน Prompt คุณควรรู้วิธีตรวจสอบข้อมูล มองเห็นความเสี่ยงด้านความเป็นส่วนตัว สังเกตอคติในผลลัพธ์ และตัดสินใจได้ว่างานใดควรหรือไม่ควรใช้ AI"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 3fce6cfded36bc91cd409805be688af52a6dccadac4065f6c3d1693b0ff930e7
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].heading`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].heading
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].heading
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].heading'
+narrative_slot: mechanism
+en: "2. The advantage goes to people who can redesign how the work is done"
+th: "2. คนที่ได้เปรียบคือคนที่ออกแบบวิธีทำงานใหม่ได้"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: ef8de20e2ed6b06dd5a53518ab8c00cacfaf7448134641bf3620251027c0aae6
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[0].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[0].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[0].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[0].text'
+narrative_slot: mechanism
+en: "Stating on a CV that you can use ChatGPT or Copilot may not do much to make you stand out. Employers want to see whether you took AI and actually changed a process with it and produced a result."
+th: "การระบุในเรซูเม่ว่าใช้ ChatGPT หรือ Copilot เป็น อาจยังไม่ช่วยให้คุณโดดเด่นมากนัก นายจ้างอยากเห็นว่าคุณนำ AI ไปปรับขั้นตอนการทำงานและสร้างผลลัพธ์ได้จริงหรือไม่"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: abeb88afe6cf295c076225256e1ab162071f1d52758986241f33fe181414a297
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[1].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[1].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[1].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[1].text'
+narrative_slot: mechanism
+en: "For example, using AI to summarise customer information, draft a report, run a first pass over feedback, or prepare questions for a meeting, then bringing your own knowledge of the field in to check it, correct it and make the final decision."
+th: "ตัวอย่างเช่น ใช้ AI สรุปข้อมูลลูกค้า ทำร่างรายงาน วิเคราะห์ความคิดเห็นในเบื้องต้น หรือเตรียมคำถามสำหรับการประชุม จากนั้นนำความรู้ในสายงานมาตรวจสอบ ปรับแก้ และตัดสินใจขั้นสุดท้าย"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: e96841d00a52a889bb2e9cbbda57a5c4a6beccd5a280761503c96e9d35e0c2fd
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[2].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[2].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[2].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[2].text'
+narrative_slot: mechanism
+en: "Microsoft's view is that workers will increasingly build, delegate to and manage AI agents. The leaders it surveyed expect their teams to be training agents (41%) and managing them (36%) within five years."
+th: "Microsoft มองว่าคนทำงานจะต้องสร้าง มอบหมายงาน และดูแลจัดการ AI agents มากขึ้น ผู้บริหารที่ร่วมการสำรวจคาดว่าภายใน 5 ปี ทีมของตนจะต้องฝึก AI agents (41%) และดูแลจัดการ AI agents (36%)"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: 69837e9ee47354fdcb4b400d6fcf88c4cd7968477050509df00ff425a89033fe
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[3].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[3].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[3].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[3].text'
+narrative_slot: mechanism
+en: "So the question that carries weight in an application is not only “which AI can you use”, but “what problem did you take AI to, and how did the work get better”."
+th: "ดังนั้น คำถามที่มีน้ำหนักในการสมัครงานจึงไม่ใช่เพียง “ใช้ AI ตัวไหนเป็น” แต่คือ “นำ AI ไปแก้ปัญหาอะไร และงานดีขึ้นอย่างไร”"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 53f81501e38a5430401f33978fac3f607c5821ced25816decd223e0daa51b24b
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].heading`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].heading
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].heading
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].heading'
+narrative_slot: mechanism
+en: "3. Human skills are worth more as AI takes on more of the repetitive work"
+th: "3. ทักษะของคนยิ่งมีราคาเมื่อ AI รับงานซ้ำ ๆ ไปมากขึ้น"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: f2494772d6fcc8faa5ac19d2dacd6aeeb602a0816db311be302947efd948e789
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[0].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[0].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[0].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[0].text'
+narrative_slot: mechanism
+en: "As AI handles more repetitive work, analytical thinking, creativity, communication, adaptability and working with others all take on a larger role."
+th: "เมื่อ AI ช่วยจัดการงานที่ทำซ้ำได้มากขึ้น การคิดวิเคราะห์ ความคิดสร้างสรรค์ การสื่อสาร ความยืดหยุ่น และการทำงานร่วมกับผู้อื่นจะยิ่งมีบทบาท"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 47b8a3e27e594a364278f819c055151526fbc38f65e8435e898656a577d274b1
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[1].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[1].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[1].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[1].text'
+narrative_slot: mechanism
+en: "The World Economic Forum reports that 77% of the employers surveyed plan to develop their staff's skills to work better alongside AI by 2030, while human skills remain a significant part of the jobs that are growing."
+th: "World Economic Forum รายงานว่า 77% ของนายจ้างที่ร่วมการสำรวจวางแผนพัฒนาทักษะพนักงานให้ทำงานร่วมกับ AI ได้ดีขึ้นภายในปี 2030 ขณะเดียวกัน ทักษะของมนุษย์ยังเป็นส่วนสำคัญของงานที่กำลังเติบโต"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: b40e28299c17249ab5d0c41c9b1478fd71c2cd97e28cefd5923522ded1067d1a
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[2].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[2].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[2].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[2].text'
+narrative_slot: mechanism
+en: "The goal of reskilling is therefore not to try to compete with AI. It is to combine an understanding of the technology with the experience and judgement you already have."
+th: "เป้าหมายของการ Reskill จึงไม่ใช่การพยายามแข่งกับ AI แต่เป็นการผสานความเข้าใจเทคโนโลยีเข้ากับประสบการณ์และวิจารณญาณที่คุณมี"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 0666fcdc45e444fc8023da621c15bd187ad7baf5a9f6ebd170a3a1b904fbfa57
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].heading`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].heading
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].heading
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].heading'
+narrative_slot: artefact
+en: "Turn what you know about AI into work you can talk about"
+th: "เปลี่ยนความรู้เรื่อง AI ให้เป็นผลงานที่เล่าได้"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 363951c1e8107d66fe8f23055f30b1a7376bad4ad033afaef6f79b70e7699e7c
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[0].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[0].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[0].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[0].text'
+narrative_slot: artefact
+en: "Pick one routine task and try letting AI help with part of it. As you go, note down:"
+th: "เลือกงานประจำมาหนึ่งอย่าง แล้วทดลองให้ AI ช่วยบางขั้นตอน ระหว่างทดลอง ลองจดไว้ว่า"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 8f3fd33c1ca2a7805774ef884c1aed5b33e5ec40f60871a1ed1c81d67da69856
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[0]`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[0]
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[0]
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[0]'
+narrative_slot: artefact
+en: "What problem you are solving"
+th: "คุณกำลังแก้ปัญหาอะไร"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 1169fc81eaea8a70a1b14b8028e271f99e9b1f1461f1ef375649e5a23243f7ce
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[1]`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[1]
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[1]
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[1]'
+narrative_slot: artefact
+en: "Where AI came in to help"
+th: "AI เข้ามาช่วยตรงไหน"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: ab8639ea6dfbef892df1e8ff41c22d3a380197eee2bd94d28faea93be54814a3
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[2]`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[2]
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[2]
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[2]'
+narrative_slot: artefact
+en: "How you checked the output"
+th: "คุณตรวจสอบผลลัพธ์ด้วยวิธีใด"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: bea9297305edb38edb4073df318b887775370f6f20fbe42e4aa2270739e830ba
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[3]`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[3]
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[3]
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[3]'
+narrative_slot: artefact
+en: "How the work got faster or better in quality"
+th: "งานเร็วขึ้นหรือมีคุณภาพดีขึ้นอย่างไร"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 9db456f006b82507e8d55cb5b40a5851be14d43a0352f5c1392699ed184dfa32
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[4]`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[4]
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[4]
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[4]'
+narrative_slot: artefact
+en: "What risks or limits you found"
+th: "พบความเสี่ยงหรือข้อจำกัดอะไรบ้าง"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 9295a320e50918b7d59b907ea63641eb049eae7db83000c5705b4f47a77f5acd
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[2].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[2].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[2].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[2].text'
+narrative_slot: artefact
+en: "A small experiment like that develops into a clearer example for a CV, a portfolio or an interview than writing the short line “AI skills”."
+th: "การทดลองเล็ก ๆ แบบนี้นำไปพัฒนาเป็นตัวอย่างผลงานในเรซูเม่ พอร์ตโฟลิโอ หรือการสัมภาษณ์ได้ชัดกว่าการเขียนสั้น ๆ ว่า “มีทักษะด้าน AI”"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 977589062765734c895dfc274a3d00b4c9248f740c27f8f5adfda4773e5b3f83
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[3].text`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[3].text
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[3].text
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[3].text'
+narrative_slot: artefact
+en: "You do not have to work through every tool on the market. You do have to show an employer that you can learn a new technology, use it responsibly, and turn a tool into a real business result."
+th: "คุณไม่ต้องไล่เรียนทุกเครื่องมือในตลาด แต่ควรแสดงให้นายจ้างเห็นว่าเรียนรู้เทคโนโลยีใหม่ได้ ใช้อย่างรับผิดชอบ และเปลี่ยนเครื่องมือให้เป็นผลลัพธ์ทางธุรกิจได้จริง"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 8a52659949e665fcec2de4313030cb7036143d7c804dec08132b1f04d0bd334d
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].heading`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].heading
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].heading
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].heading'
+narrative_slot: utility
+en: "Frequently asked questions"
+th: "คำถามที่พบบ่อย"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 5d2eb18e9b4a38709aefd29e1ef1986e51b9a3df1afc4be131012c2e86f4da68
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].q`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].q
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].q
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].q'
+narrative_slot: utility
+en: "What is AI literacy?"
+th: "AI Literacy คืออะไร"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: b5760a7eb987651697377fa254cefd5feb8a46b807178fa70aa961790c5d1ef7
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[0]`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[0]
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[0]
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[0]'
+narrative_slot: utility
+en: "It is understanding which kinds of work AI suits, where its limits are, and how to check its output before using it, not just being able to open a tool and use it."
+th: "คือความเข้าใจว่า AI เหมาะกับงานแบบไหน มีข้อจำกัดตรงไหน และจะตรวจสอบผลลัพธ์อย่างไรก่อนนำไปใช้จริง ไม่ใช่แค่การเปิดเครื่องมือแล้วใช้งานได้"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: 79216b098146b1a18ed650ec276fb7492ee72311bb191c59e405ac383bf8008c
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[1]`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[1]
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[1]
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[1]'
+narrative_slot: utility
+en: "In the EU, Article 4 of the AI Act, in force since 2 February 2025, requires organisations that provide or use AI systems to support their staff's AI literacy."
+th: "ในสหภาพยุโรป มาตรา 4 ของ AI Act ซึ่งมีผลตั้งแต่ 2 กุมภาพันธ์ 2025 กำหนดให้องค์กรที่ให้บริการหรือใช้งานระบบ AI ต้องสนับสนุนความรู้ด้าน AI ของบุคลากร"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: e34e21710449e9220ad48224132a38adda53e609b3ea0e0e38c0351b31c8bc0d
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].q`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].q
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].q
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].q'
+narrative_slot: utility
+en: "Do I have to learn to code to reskill in AI?"
+th: "ต้องเรียนเขียนโปรแกรมไหม ถึงจะ Reskill ด้าน AI ได้"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: cab0bd83bf6e3985b9e3f491b04195ad8f01fe6112e944bf40d36698bf5ebe2d
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].a[0]`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].a[0]
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].a[0]
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].a[0]'
+narrative_slot: utility
+en: "No. What employers look for is someone who can apply AI to the work in their own field, such as summarising customer information, drafting a report or preparing questions for a meeting, then use their own knowledge to check it and make the final call."
+th: "ไม่จำเป็น สิ่งที่นายจ้างมองหาคือคนที่นำ AI มาใช้กับงานในสายของตัวเองได้ เช่น สรุปข้อมูลลูกค้า ทำร่างรายงาน หรือเตรียมคำถามก่อนประชุม แล้วใช้ความรู้ในสายงานตรวจสอบและตัดสินใจขั้นสุดท้าย"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: 3b34d2cdf83869ca2debb9332ffc49f6cfb7c79f5342bdbb4d866b960f144036
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].q`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].q
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].q
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].q'
+narrative_slot: utility
+en: "How should I put AI skills on my CV?"
+th: "ควรเขียนทักษะ AI ในเรซูเม่อย่างไร"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: d46dd3989862febcd26886d46ec8dcfe9d5cfb1ac80500dfb15c7bfc2e0dd464
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].a[0]`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].a[0]
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].a[0]
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].a[0]'
+narrative_slot: utility
+en: "Describe it as work rather than writing a short line saying you have AI skills: what problem you solved, where AI helped, how you checked the output, and how much faster or better the work became."
+th: "เล่าเป็นผลงานแทนการเขียนสั้น ๆ ว่ามีทักษะด้าน AI ระบุว่าคุณแก้ปัญหาอะไร AI ช่วยตรงไหน คุณตรวจสอบผลลัพธ์อย่างไร และงานเร็วขึ้นหรือดีขึ้นแค่ไหน"
+provenance: draft
+date: 25/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: d6b10df58b11d4078348063c9eb1592e9910b197a3ca0b504280aa25ea0b9d6f
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->

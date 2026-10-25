@@ -171,6 +171,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "17/08/2026",
     "decisionNote": "Paul's own label, from the second of the two pieces that closes on a\n\nquestion. See the note at the top of this file on why it replaced the other."
   },
+  "src/lib/content/blog.ts::BLOG_RELATED_LABEL": {
+    "source": "src/lib/content/blog.ts",
+    "path": "BLOG_RELATED_LABEL",
+    "render": "Blog article: the label above the related-article card",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the related-article card the blog-post skill's third rule asks for. Waiting on Paul."
+  },
   "src/lib/content/blog.ts::BLOG_READ": {
     "source": "src/lib/content/blog.ts",
     "path": "BLOG_READ",
@@ -3545,6 +3554,366 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "15/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.title": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.title",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.title",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.seoTitle": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.seoTitle",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.seoTitle",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.summary": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.summary",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.summary",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.question": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.question",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.question",
+    "narrativeSlot": "symptom",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].heading": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].heading",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[0].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[0].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[0].text",
+    "narrativeSlot": "misread",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[1].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[1].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[1].text",
+    "narrativeSlot": "misread",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[2].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[2].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[2].text",
+    "narrativeSlot": "misread",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].heading": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].heading",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].heading",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[0].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[0].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[0].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[1].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[1].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[1].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[2].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[2].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[2].body[2].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].heading": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].heading",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].heading",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[0].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[0].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[0].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[1].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[1].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[1].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[2].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[2].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[2].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[3].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[3].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[3].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].heading": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].heading",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].heading",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[0].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[0].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[0].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[1].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[1].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[1].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[2].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[2].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[4].body[2].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].heading": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].heading",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].heading",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[0].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[0].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[0].text",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[0]": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[0]",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[0]",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[1]": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[1]",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[1]",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[2]": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[2]",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[2]",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[3]": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[3]",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[3]",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[4]": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[4]",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[1].items[4]",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[2].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[2].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[2].text",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[3].text": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[3].text",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[5].body[3].text",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].heading": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].heading",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].q": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].q",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].q",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[0]": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[0]",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[1]": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[1]",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[1]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].q": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].q",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].q",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].a[0]": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].a[0]",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].q": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].q",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].q",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+  },
+  "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].a[0]": {
+    "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
+    "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].a[0]",
+    "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "25/10/2026",
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
   },
   "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.title": {
     "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",
