@@ -3965,9 +3965,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.image.alt",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.image.alt",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.question": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4100,9 +4100,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[3].body[4].alt",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[4].alt",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4244,9 +4244,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[7].body[2].alt",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[2].alt",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",

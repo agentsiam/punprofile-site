@@ -10983,15 +10983,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.image.alt'
 narrative_slot: utility
 en: "Cara smiling as she talks with Paul at a café table under an arcade in Barcelona"
 th: "คาร่ายิ้มขณะนั่งคุยกับพอลที่โต๊ะคาเฟ่ใต้ซุ้มทางเดินในบาร์เซโลนา"
-provenance: draft
+provenance: paul-approved
 date: 26/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: aee79d947aff224199dba4759641388002a8f7e8b5968ae125d676c882b2effe
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11313,15 +11313,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[
 narrative_slot: utility
 en: "Cara explaining her experience, at a café table under an arcade in Barcelona"
 th: "คาร่ากำลังเล่าประสบการณ์ ขณะนั่งคุยกันที่โต๊ะคาเฟ่ใต้ซุ้มทางเดินในบาร์เซโลนา"
-provenance: draft
+provenance: paul-approved
 date: 26/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1989f2603cb7ff185ef1a4709dd7ba6ca620152019323058c42db197fceeb040
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11665,15 +11665,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[
 narrative_slot: utility
 en: "Cara and Paul laughing together at the end of the interview"
 th: "คาร่ากับพอลหัวเราะด้วยกันตอนจบการสัมภาษณ์"
-provenance: draft
+provenance: paul-approved
 date: 26/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4fd107a9d02ed5970fb444719073d0fc1ea0f8821a262b4e469297190788d287
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
