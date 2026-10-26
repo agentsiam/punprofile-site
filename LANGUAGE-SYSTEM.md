@@ -581,15 +581,15 @@ render: 'Blog article: the label above the related-article card'
 narrative_slot: utility
 en: "Read next"
 th: "อ่านต่อ"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the related-article card the blog-post skill's third rule asks for. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the related-article card the blog-post skill's third rule asks for. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 62049b7862df9e3957eea661a450ed80bb86979840daffd9512d63c494f62325
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10015,15 +10015,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "The AI skills employers in Europe look for"
 th: "ทักษะ AI ที่นายจ้างในยุโรปมองหา"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 7ee8a44a56032151589aa3b61275975f060e6d8fc6e207338137a7b9b1a1cd40
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10103,15 +10103,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "Employers in Europe are not only looking at whether you can use AI. They want to see how you used it to produce real work."
 th: "นายจ้างในยุโรปไม่ได้ดูแค่ว่าคุณใช้ AI เป็นหรือไม่ แต่อยากเห็นว่าคุณนำ AI ไปสร้างผลงานได้จริงอย่างไร"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d004f4ff5eff8a97efe4aeaa891527d42eb8da4e0a8166d32f82c155c41a1745
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10125,15 +10125,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "So reskilling does not mean becoming a programmer. It means applying AI to the expertise you already have, checking what it produces, and being able to show it as work on your CV or in an interview."
 th: "การ Reskill จึงไม่ได้หมายความว่าต้องเปลี่ยนสายไปเป็นโปรแกรมเมอร์ แต่คือการนำ AI มาใช้กับความเชี่ยวชาญที่มีอยู่ ตรวจสอบผลลัพธ์ได้ และเล่าออกมาเป็นผลงานในเรซูเม่หรือการสัมภาษณ์ได้"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3d6e40ff215aa3e526fd6a36d87a41f709b1edbce38c7fb250e953fd50448fb9
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10367,15 +10367,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: mechanism
 en: "Microsoft's view is that workers will increasingly build, delegate to and manage AI agents. The leaders it surveyed expect their teams to be training agents (41%) and managing them (36%) within five years."
 th: "Microsoft มองว่าคนทำงานจะต้องสร้าง มอบหมายงาน และดูแลจัดการ AI agents มากขึ้น ผู้บริหารที่ร่วมการสำรวจคาดว่าภายใน 5 ปี ทีมของตนจะต้องฝึก AI agents (41%) และดูแลจัดการ AI agents (36%)"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 69837e9ee47354fdcb4b400d6fcf88c4cd7968477050509df00ff425a89033fe
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10719,15 +10719,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "What is AI literacy?"
 th: "AI Literacy คืออะไร"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b5760a7eb987651697377fa254cefd5feb8a46b807178fa70aa961790c5d1ef7
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10741,15 +10741,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "It is understanding which kinds of work AI suits, where its limits are, and how to check its output before using it, not just being able to open a tool and use it."
 th: "คือความเข้าใจว่า AI เหมาะกับงานแบบไหน มีข้อจำกัดตรงไหน และจะตรวจสอบผลลัพธ์อย่างไรก่อนนำไปใช้จริง ไม่ใช่แค่การเปิดเครื่องมือแล้วใช้งานได้"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 79216b098146b1a18ed650ec276fb7492ee72311bb191c59e405ac383bf8008c
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10763,15 +10763,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "In the EU, Article 4 of the AI Act, in force since 2 February 2025, requires organisations that provide or use AI systems to support their staff's AI literacy."
 th: "ในสหภาพยุโรป มาตรา 4 ของ AI Act ซึ่งมีผลตั้งแต่ 2 กุมภาพันธ์ 2025 กำหนดให้องค์กรที่ให้บริการหรือใช้งานระบบ AI ต้องสนับสนุนความรู้ด้าน AI ของบุคลากร"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e34e21710449e9220ad48224132a38adda53e609b3ea0e0e38c0351b31c8bc0d
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10785,15 +10785,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "Do I have to learn to code to reskill in AI?"
 th: "ต้องเรียนเขียนโปรแกรมไหม ถึงจะ Reskill ด้าน AI ได้"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: cab0bd83bf6e3985b9e3f491b04195ad8f01fe6112e944bf40d36698bf5ebe2d
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10807,15 +10807,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "No. What employers look for is someone who can apply AI to the work in their own field, such as summarising customer information, drafting a report or preparing questions for a meeting, then use their own knowledge to check it and make the final call."
 th: "ไม่จำเป็น สิ่งที่นายจ้างมองหาคือคนที่นำ AI มาใช้กับงานในสายของตัวเองได้ เช่น สรุปข้อมูลลูกค้า ทำร่างรายงาน หรือเตรียมคำถามก่อนประชุม แล้วใช้ความรู้ในสายงานตรวจสอบและตัดสินใจขั้นสุดท้าย"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3b34d2cdf83869ca2debb9332ffc49f6cfb7c79f5342bdbb4d866b960f144036
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10829,15 +10829,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "How should I put AI skills on my CV?"
 th: "ควรเขียนทักษะ AI ในเรซูเม่อย่างไร"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d46dd3989862febcd26886d46ec8dcfe9d5cfb1ac80500dfb15c7bfc2e0dd464
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10851,15 +10851,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "Describe it as work rather than writing a short line saying you have AI skills: what problem you solved, where AI helped, how you checked the output, and how much faster or better the work became."
 th: "เล่าเป็นผลงานแทนการเขียนสั้น ๆ ว่ามีทักษะด้าน AI ระบุว่าคุณแก้ปัญหาอะไร AI ช่วยตรงไหน คุณตรวจสอบผลลัพธ์อย่างไร และงานเร็วขึ้นหรือดีขึ้นแค่ไหน"
-provenance: draft
+provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d6b10df58b11d4078348063c9eb1592e9910b197a3ca0b504280aa25ea0b9d6f
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->

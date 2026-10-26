@@ -176,9 +176,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "BLOG_RELATED_LABEL",
     "render": "Blog article: the label above the related-article card",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the related-article card the blog-post skill's third rule asks for. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the related-article card the blog-post skill's third rule asks for. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/blog.ts::BLOG_READ": {
     "source": "src/lib/content/blog.ts",
@@ -3569,9 +3569,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.seoTitle",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.seoTitle",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.summary": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
@@ -3605,18 +3605,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[1].body[0].text": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
@@ -3713,9 +3713,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[2].text",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[2].text",
     "narrativeSlot": "mechanism",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[3].body[3].text": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
@@ -3857,63 +3857,63 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].q",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].q",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[0]": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[0]",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[1]": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[1]",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[0].a[1]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].q": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].q",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].q",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].a[0]": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].a[0]",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[1].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].q": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].q",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].q",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].a[0]": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].a[0]",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[6].body[2].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "25/10/2026",
-    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Waiting on Paul."
+    "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.title": {
     "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",
