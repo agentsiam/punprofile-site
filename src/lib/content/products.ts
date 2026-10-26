@@ -130,8 +130,8 @@ export const STATUS_SOON: Copy = {
 };
 
 /**
- * The EU Fit Check page's two extra sections, added 25/10/2026. Drafts, not yet
- * read back. See `product-page-eu-fit-check.md` for why only this page has them:
+ * The EU Fit Check page's two extra sections, added 25/10/2026, read back and
+ * approved by Paul 26/10/2026. See `product-page-eu-fit-check.md` for why only this page has them:
  * it is the one live product, and the only one with a result to show.
  */
 /**
@@ -183,7 +183,7 @@ export const PRODUCTS: readonly Product[] = [
       th: "คนที่กำลังคิดเรื่องไปทำงานในยุโรป",
     },
     // Read back 25/08/2026. Draft for `PROD-02-eu-fit-check`.
-    // Draft 25/10/2026, `product-page-eu-fit-check.md`. Not yet read back.
+    // Read back and approved by Paul 26/10/2026, `product-page-eu-fit-check.md`.
     howLede: {
       en: "What you answer, and what you see the moment you finish.",
       th: "สิ่งที่คุณจะตอบ และสิ่งที่คุณจะเห็นทันทีที่ทำเสร็จ",
@@ -201,7 +201,7 @@ export const PRODUCTS: readonly Product[] = [
       th: "ก่อนสมัครงานในยุโรป รู้ก่อนว่าตอนนี้คุณพร้อมแค่ไหน",
     },
     /*
-     * Rewritten 25/10/2026, draft, not yet read back. The old lede said only
+     * Rewritten 25/10/2026, read back and approved by Paul 26/10/2026. The old lede said only
      * how long it takes. This one says what the reader gets for the two
      * minutes. "Four things that decide a hire" is the framework's own grouping,
      * the four chart axes, as `coaching.ts` describes it.
@@ -211,7 +211,7 @@ export const PRODUCTS: readonly Product[] = [
       th: "ตอบคำถาม 17 ข้อ ใช้เวลาประมาณ 2 นาที แล้วเห็นผลทันทีใน 4 ด้านที่มีผลต่อการจ้างงานในยุโรป ใช้ฟรี ไม่ต้องสมัครสมาชิก",
     },
     /*
-     * Rewritten 25/10/2026, drafts, not yet read back. What you answer, what
+     * Rewritten 25/10/2026, read back and approved by Paul 26/10/2026. What you answer, what
      * you see, what you compare against. Every claim is on the first read today:
      * the four axes, the percentile line and the job-pipeline card.
      */
@@ -231,7 +231,7 @@ export const PRODUCTS: readonly Product[] = [
         th: "ดูว่าคุณเทียบกับคนอื่นที่ทำแบบประเมินนี้แล้วเป็นอย่างไร และจากประกาศงานที่เราตรวจสอบ มีกี่ตำแหน่งที่บริษัทระบุว่าสปอนเซอร์วีซ่า",
       },
     ],
-    // Draft 25/10/2026, built from Paul's approved FAQ answer on the empty parts
+    // Approved by Paul 26/10/2026, built from his approved FAQ answer on the empty parts
     // of the chart. It now answers that question, so the question left this FAQ.
     limit: {
       en: "It reads your answers, not your CV. Where a form cannot measure something reliably, the chart leaves it empty instead of guessing. Those parts need someone to read your real CV or talk with you.",
@@ -240,7 +240,7 @@ export const PRODUCTS: readonly Product[] = [
     /*
      * Four questions, 25/10/2026, chosen for the doubts that stop someone
      * tapping. Answers are Paul's approved `faq.ts` Thai, unchanged; the data
-     * question is a draft that drops ฉัน from the /faq version.
+     * question, approved 26/10/2026, drops ฉัน from the /faq version.
      */
     faq: [
       {
