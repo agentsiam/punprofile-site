@@ -3,13 +3,13 @@ import type { Post } from "../blog";
 /**
  * `cara-working-in-spain`, the blog's first real story.
  *
- * Cara's own words, quoted from the corrected captions of the six clips cut
- * from PunProfile's interview with her, with her permission for a written
- * article on this site (confirmed by Paul 26/10/2026). Quotes are never
- * reworded. Nothing her release excludes appears: no surname, company,
- * salary, visa detail or school, and nothing from the interview's
- * do-not-publish ranges. The connecting Thai was drafted by Claude and
- * approved by Paul. Record: the coaching repo's
+ * คาร่า's own words (Cara in English), quoted from the corrected captions of
+ * the six clips cut from PunProfile's interview with her, with her permission
+ * for a written article and photographs on this site (confirmed by Paul
+ * 26/10/2026). Quotes are never reworded. Nothing her release excludes
+ * appears: no surname, company, salary, visa detail or school, and nothing
+ * from the interview's do-not-publish ranges. Photographs are stills from the
+ * interview footage. Record: the coaching repo's
  * `work-content/blog/cara-working-in-spain/article.md`.
  */
 export const CARA_WORKING_IN_SPAIN: Post = {
@@ -31,6 +31,19 @@ export const CARA_WORKING_IN_SPAIN: Post = {
   summary: {
     th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnN1bW1hcnk:TH%%,
     en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnN1bW1hcnk:EN%%,
+  },
+
+  person: {
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnBlcnNvbg:TH%%,
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnBlcnNvbg:EN%%,
+  },
+
+  image: {
+    src: "/blog/cara-working-in-spain.jpg",
+    alt: {
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLmltYWdlLmFsdA:TH%%,
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLmltYWdlLmFsdA:EN%%,
+    },
   },
 
   question: {
@@ -91,7 +104,6 @@ export const CARA_WORKING_IN_SPAIN: Post = {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzJdLmJvZHlbMV0udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzJdLmJvZHlbMV0udGV4dA:EN%%,
           },
-          by: "Cara",
         },
         {
           kind: "p",
@@ -121,7 +133,6 @@ export const CARA_WORKING_IN_SPAIN: Post = {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzNdLmJvZHlbMV0udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzNdLmJvZHlbMV0udGV4dA:EN%%,
           },
-          by: "Cara",
         },
         {
           kind: "quote",
@@ -129,13 +140,20 @@ export const CARA_WORKING_IN_SPAIN: Post = {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzNdLmJvZHlbMl0udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzNdLmJvZHlbMl0udGV4dA:EN%%,
           },
-          by: "Cara",
         },
         {
           kind: "p",
           text: {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzNdLmJvZHlbM10udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzNdLmJvZHlbM10udGV4dA:EN%%,
+          },
+        },
+        {
+          kind: "figure",
+          src: "/blog/cara-working-in-spain-fig-1-explaining.jpg",
+          alt: {
+            th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzNdLmJvZHlbNF0uYWx0:TH%%,
+            en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzNdLmJvZHlbNF0uYWx0:EN%%,
           },
         },
       ],
@@ -159,7 +177,6 @@ export const CARA_WORKING_IN_SPAIN: Post = {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzRdLmJvZHlbMV0udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzRdLmJvZHlbMV0udGV4dA:EN%%,
           },
-          by: "Cara",
         },
         {
           kind: "p",
@@ -182,7 +199,6 @@ export const CARA_WORKING_IN_SPAIN: Post = {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzVdLmJvZHlbMF0udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzVdLmJvZHlbMF0udGV4dA:EN%%,
           },
-          by: "Cara",
         },
         {
           kind: "p",
@@ -197,7 +213,6 @@ export const CARA_WORKING_IN_SPAIN: Post = {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzVdLmJvZHlbMl0udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzVdLmJvZHlbMl0udGV4dA:EN%%,
           },
-          by: "Cara",
         },
       ],
     },
@@ -220,7 +235,6 @@ export const CARA_WORKING_IN_SPAIN: Post = {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzZdLmJvZHlbMV0udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzZdLmJvZHlbMV0udGV4dA:EN%%,
           },
-          by: "Cara",
         },
         {
           kind: "quote",
@@ -228,7 +242,6 @@ export const CARA_WORKING_IN_SPAIN: Post = {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzZdLmJvZHlbMl0udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzZdLmJvZHlbMl0udGV4dA:EN%%,
           },
-          by: "Cara",
         },
       ],
     },
@@ -244,13 +257,20 @@ export const CARA_WORKING_IN_SPAIN: Post = {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzddLmJvZHlbMF0udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzddLmJvZHlbMF0udGV4dA:EN%%,
           },
-          by: "Cara",
         },
         {
           kind: "p",
           text: {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzddLmJvZHlbMV0udGV4dA:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzddLmJvZHlbMV0udGV4dA:EN%%,
+          },
+        },
+        {
+          kind: "figure",
+          src: "/blog/cara-working-in-spain-fig-2-laughing.jpg",
+          alt: {
+            th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzddLmJvZHlbMl0uYWx0:TH%%,
+            en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2NhcmEtd29ya2luZy1pbi1zcGFpbi50czo6Q0FSQV9XT1JLSU5HX0lOX1NQQUlOLnNlY3Rpb25zWzddLmJvZHlbMl0uYWx0:EN%%,
           },
         },
       ],

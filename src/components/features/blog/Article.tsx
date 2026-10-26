@@ -34,8 +34,9 @@ import {
   BLOG_RELATED_LABEL,
 } from "@/lib/content/blog";
 import type { Block } from "@/lib/content/blog";
+import type { Copy } from "@/lib/content/copy";
 
-function Body({ blocks }: { blocks: readonly Block[] }) {
+function Body({ blocks, person }: { blocks: readonly Block[]; person?: Copy }) {
   const { pick } = useCopy();
 
   return (
@@ -83,8 +84,24 @@ function Body({ blocks }: { blocks: readonly Block[] }) {
           return (
             <figure key={i} className="mt-6 border-l-4 border-primary pl-5">
               <blockquote className="text-title-medium text-on-surface">{pick(block.text)}</blockquote>
-              <figcaption className="mt-2 text-body-medium text-on-surface-variant">{block.by}</figcaption>
+              {person && (
+                <figcaption className="mt-2 text-body-medium text-on-surface-variant">{pick(person)}</figcaption>
+              )}
             </figure>
+          );
+        }
+
+        if (block.kind === "figure") {
+          return (
+            <div key={i} className="relative mt-8 aspect-[4/3] w-full overflow-hidden rounded-large">
+              <Image
+                src={block.src}
+                alt={pick(block.alt)}
+                fill
+                sizes="(max-width: 672px) 100vw, 672px"
+                className="object-cover"
+              />
+            </div>
           );
         }
 
@@ -194,7 +211,7 @@ export default function Article({ slug }: { slug: string }) {
         {post.sections.map((section, i) => (
           <section key={i} className={i === 0 ? "mt-8" : "mt-12"}>
             {section.heading && <h2 className="text-headline-small">{pick(section.heading)}</h2>}
-            <Body blocks={section.body} />
+            <Body blocks={section.body} person={post.person} />
           </section>
         ))}
 

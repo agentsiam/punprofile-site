@@ -242,11 +242,17 @@ export type Block =
   | { kind: "sub"; text: Copy }
   | { kind: "qa"; q: Copy; a: readonly Copy[] }
   /**
-   * A person's own words, quoted as they said them. `by` is the name they agreed
-   * to be shown under, not translated. The Thai is never reworded, only
-   * corrected where a transcript misheard a word; the English is a translation.
+   * A person's own words, quoted as they said them, attributed to the post's
+   * `person`. The Thai is never reworded, only corrected where a transcript
+   * misheard a word; the English is a translation.
    */
-  | { kind: "quote"; text: Copy; by: string };
+  | { kind: "quote"; text: Copy }
+  /**
+   * A picture inside the article, between paragraphs, to break a long read.
+   * Same shape as the hero: one `src`, a translated `alt` describing the scene.
+   * Files follow `<slug>-fig-<n>-<what>.jpg`, numbered in reading order.
+   */
+  | { kind: "figure"; src: string; alt: Copy };
 
 export interface Section {
   /** Absent on the opening section, which runs straight on from the title. */
@@ -301,6 +307,8 @@ export interface Post {
    * specific, and a list of three is a choice handed back to the reader.
    */
   related?: string;
+  /** The person a real story's quotes are attributed to, as they agreed to be named. */
+  person?: Copy;
 }
 
 /**
