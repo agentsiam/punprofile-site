@@ -79,6 +79,15 @@ function Body({ blocks }: { blocks: readonly Block[] }) {
           );
         }
 
+        if (block.kind === "quote") {
+          return (
+            <figure key={i} className="mt-6 border-l-4 border-primary pl-5">
+              <blockquote className="text-title-medium text-on-surface">{pick(block.text)}</blockquote>
+              <figcaption className="mt-2 text-body-medium text-on-surface-variant">{block.by}</figcaption>
+            </figure>
+          );
+        }
+
         if (block.kind === "qa") {
           return (
             // `h3`, under the section's own `h2`. The FAQ is an appendix to the

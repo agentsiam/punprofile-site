@@ -315,6 +315,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "17/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
+  "src/lib/content/blog.ts::TOPICS[4].label": {
+    "source": "src/lib/content/blog.ts",
+    "path": "TOPICS[4].label",
+    "render": "Blog topic label: real stories",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for the new topic that holds real people's stories, first used by Cara's story. Waiting on Paul."
+  },
   "src/lib/content/blog.ts::UNSUBSCRIBE_BODY": {
     "source": "src/lib/content/blog.ts",
     "path": "UNSUBSCRIBE_BODY",
@@ -3914,6 +3923,357 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "25/10/2026",
     "decisionNote": "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.title": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.title",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.title",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.seoTitle": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.seoTitle",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.seoTitle",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.summary": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.summary",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.summary",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.question": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.question",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.question",
+    "narrativeSlot": "symptom",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[0].heading": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[0].heading",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[0].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[0].body[0].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[0].body[0].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[0].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[1].body[0].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[1].body[0].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[0].text",
+    "narrativeSlot": "audience",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[1].body[1].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[1].body[1].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[1].text",
+    "narrativeSlot": "audience",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].heading": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[2].heading",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].heading",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[0].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[2].body[0].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].body[0].text",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[1].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[2].body[1].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].body[1].text",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[2].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[2].body[2].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].body[2].text",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].heading": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[3].heading",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].heading",
+    "narrativeSlot": "symptom",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[0].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[3].body[0].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[0].text",
+    "narrativeSlot": "symptom",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[1].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[3].body[1].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[1].text",
+    "narrativeSlot": "symptom",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[2].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[3].body[2].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[2].text",
+    "narrativeSlot": "symptom",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[3].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[3].body[3].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[3].text",
+    "narrativeSlot": "symptom",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].heading": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[4].heading",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].heading",
+    "narrativeSlot": "mechanism",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[0].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[4].body[0].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[0].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[1].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[4].body[1].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[1].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[2].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[4].body[2].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[2].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].heading": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[5].heading",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].heading",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[0].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[5].body[0].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].body[0].text",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[1].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[5].body[1].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].body[1].text",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[2].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[5].body[2].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].body[2].text",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].heading": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[6].heading",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].heading",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[0].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[6].body[0].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].body[0].text",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[1].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[6].body[1].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].body[1].text",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[2].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[6].body[2].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].body[2].text",
+    "narrativeSlot": "misread",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].heading": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[7].heading",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].heading",
+    "narrativeSlot": "mechanism",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[0].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[7].body[0].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[0].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[1].text": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[7].body[1].text",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[1].text",
+    "narrativeSlot": "mechanism",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].heading": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[8].heading",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "16/08/2026",
+    "decisionNote": "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[0].q": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[8].body[0].q",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[0].q",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[1].q": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[8].body[1].q",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[1].q",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[2].q": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[8].body[2].q",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[2].q",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
+  },
+  "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]": {
+    "source": "src/lib/content/posts/cara-working-in-spain.ts",
+    "path": "CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]",
+    "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "26/10/2026",
+    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Waiting on Paul."
   },
   "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.title": {
     "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",
