@@ -17594,17 +17594,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].faq[0].a
 render: Product pages, PRODUCTS[0].faq[0].a
 narrative_slot: utility
-en: Because we do not guess a score for something a form cannot measure.
-th: เพราะเราไม่เดาคะแนนในเรื่องที่แบบฟอร์มวัดไม่ได้
+en: Yes. The assessment is in Thai, and language is one of the things we assess rather than a condition for starting.
+th: ได้ แบบประเมินเป็นภาษาไทย และเรื่องภาษาเป็นหนึ่งในหัวข้อที่เราประเมิน ไม่ใช่เงื่อนไขในการเริ่มทำ
 provenance: paul-approved
-date: 23/08/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 4ac6659a98709ade2262691df86a09cb525983671a53237a7340437b799990b1
+  text_hash: bbecbc80aab11b5b97a1af3793baa6a0089fbc758195f960fbda5406d36101f8
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -17616,17 +17616,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].faq[0].q
 render: Product pages, PRODUCTS[0].faq[0].q
 narrative_slot: utility
-en: Why are parts of my chart empty?
-th: ทำไมกราฟบางส่วนถึงว่างอยู่
+en: My English is not strong yet. Can I still do this?
+th: ภาษาอังกฤษยังไม่แข็งแรง ทำได้ไหม
 provenance: paul-approved
-date: 23/08/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 9e9a6952675211ac1c35ce4b0594170fd6e3e6f01fb39d42533d72588f06de4c
+  text_hash: 9ca129a4502f1809f73354c46e3d4c4bd925c601523d468854d2c3b4c4545ec4
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -17638,17 +17638,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].faq[1].a
 render: Product pages, PRODUCTS[0].faq[1].a
 narrative_slot: utility
-en: Yes. You can go back and change an answer at any point, and the chart updates straight away.
-th: ได้ คุณย้อนกลับไปแก้คำตอบได้ตลอด กราฟจะอัปเดตตามคำตอบใหม่ให้ทันที
+en: A person actually reads your answers. The system does not decide on its own who gets contacted back.
+th: จะมีคนอ่านคำตอบของคุณจริง ๆ ระบบไม่ได้เป็นผู้ตัดสินเพียงลำพังว่าเราจะติดต่อใครกลับ
 provenance: paul-approved
-date: 23/08/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 557aab42165d22f6f978856b2464f922e7451ad00df031255838d8e7233f37a4
+  text_hash: 9cd4b6aae1b6ce40f429424a9f6624fa4bbb8dbafc7b8c001b0b3389b638831c
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -17660,17 +17660,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].faq[1].q
 render: Product pages, PRODUCTS[0].faq[1].q
 narrative_slot: utility
-en: Can I change an answer, or take it again?
-th: แก้คำตอบหรือทำใหม่ได้ไหม
+en: What happens after I finish the assessment?
+th: ทำแบบประเมินเสร็จแล้วจะเกิดอะไรขึ้น
 provenance: paul-approved
-date: 23/08/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: c045967d24f00345d88ece595c942e4c8b490b72758986e0446f4fd7027d6a76
+  text_hash: 5f55bf4b9f1df6e11d6c57dd4623518783cfc80a655ad37160e3215c91554980
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -17682,17 +17682,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].how[0]
 render: Product pages, PRODUCTS[0].how[0]
 narrative_slot: mechanism
-en: It takes about 2 minutes, and the moment you finish you see your first read and your own chart.
-th: ใช้เวลาประมาณ 2 นาที พอทำเสร็จ คุณจะเห็นผลเบื้องต้นและกราฟของตัวเองทันที
-provenance: paul-written
-date: 23/08/2026
+en: 17 questions about your work experience, your English, your target country and where you are in the move. In Thai, on your phone.
+th: คำถาม 17 ข้อ เกี่ยวกับประสบการณ์ทำงาน ระดับภาษาอังกฤษ ประเทศเป้าหมาย และตอนนี้คุณอยู่ขั้นไหนบนเส้นทางไปทำงานในยุโรป ตอบเป็นภาษาไทยบนมือถือได้เลย
+provenance: paul-approved
+date: 26/10/2026
 term_bindings: []
-decision_note: Paul's own Thai, `faq.ts`.
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 8cd8d75f3158c77c9c09c0cbe13c0ad8c65d92105313fff87c7faff6bca5da78
+  text_hash: 8c98fba595467b85eb119fbe73fbd63c519c80343328d0ac542cc63905d5d0c9
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -17704,17 +17704,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].how[1]
 render: Product pages, PRODUCTS[0].how[1]
 narrative_slot: mechanism
-en: Answer on your phone, and get your first read the moment you finish.
-th: ตอบคำถามบนมือถือได้เลย รับผลเบื้องต้นทันทีเมื่อทำเสร็จ
-provenance: paul-written
-date: 23/08/2026
+en: 'Your own chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European market. Each scored out of 5.'
+th: กราฟของคุณเองใน 4 ด้าน คือ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความสอดคล้องกับตลาดยุโรป แต่ละด้านมีคะแนนเต็ม 5
+provenance: paul-approved
+date: 26/10/2026
 term_bindings: []
-decision_note: Paul's own Thai, 23/08/2026, from the pricing sheet.
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 88a12762ca731c94f619fac44052367f2c872f69f2373763f9f8b22d2b703e6c
+  text_hash: 718e92f75773f970829df65960c27a4233c146daaaad9fbb2573207c85095101
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -17726,17 +17726,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].how[2]
 render: Product pages, PRODUCTS[0].how[2]
 narrative_slot: mechanism
-en: No. The EU Fit Check is free, and there is no payment step in it.
-th: ไม่มีค่าใช้จ่าย คุณทำ EU Fit Check ได้ฟรี และไม่มีขั้นตอนการชำระเงิน
-provenance: paul-written
-date: 23/08/2026
+en: How you compare with everyone else who has taken it, and how many of the job adverts we checked come from employers who sponsor a visa.
+th: ดูว่าคุณเทียบกับคนอื่นที่ทำแบบประเมินนี้แล้วเป็นอย่างไร และจากประกาศงานที่เราตรวจสอบ มีกี่ตำแหน่งที่บริษัทระบุว่าสปอนเซอร์วีซ่า
+provenance: paul-approved
+date: 26/10/2026
 term_bindings: []
-decision_note: Paul's own Thai, `faq.ts`.
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 82a995ccbbda243fde7518117702fb4cf67f326455cf8083ba3aeaa55689d04c
+  text_hash: b558f201d4d659900cebda71951e154609aaa11c63ae08f6d93117e104fd1354
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -17748,20 +17748,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].howLede
 render: Product pages, PRODUCTS[0].howLede
 narrative_slot: mechanism
-en: Seventeen questions on your phone, and a first read the moment you finish.
-th: คำถาม 17 ข้อบนมือถือ พร้อมผลเบื้องต้นทันทีที่คุณทำเสร็จ
+en: What you answer, and what you see the moment you finish.
+th: สิ่งที่คุณจะตอบ และสิ่งที่คุณจะเห็นทันทีที่ทำเสร็จ
 provenance: paul-approved
-date: 10/09/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 3925c6e792cb3217c98826d42bd139105d5df080132b726143bb5bec2f4c1545
+  text_hash: 84295922a18c3d3ca9781a7a769dc3a955d38e3ec5b3490e057be9cf24695415
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -17773,17 +17770,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].lede
 render: Product pages, PRODUCTS[0].lede
 narrative_slot: utility
-en: Under 2 minutes. Your first read straight away, with no sign-up.
-th: ใช้เวลาไม่ถึง 2 นาที รู้ผลเบื้องต้นทันที ไม่ต้องสมัครสมาชิก
-provenance: paul-written
-date: 23/08/2026
+en: 17 questions, about 2 minutes, and you see your result on the four things that decide a hire in Europe straight away. Free, no sign-up.
+th: ตอบคำถาม 17 ข้อ ใช้เวลาประมาณ 2 นาที แล้วเห็นผลทันทีใน 4 ด้านที่มีผลต่อการจ้างงานในยุโรป ใช้ฟรี ไม่ต้องสมัครสมาชิก
+provenance: paul-approved
+date: 26/10/2026
 term_bindings: []
-decision_note: Paul's own Thai, `copy.ts` landing.reassurance.
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 65ab7984c21b6038acf645820dfc75132a67cd12d5365d80265171de15141c90
+  text_hash: b9783e129c2d3ca49629cf1227c54cc146de493ee1f8d966fa3a2aaa6324dcc3
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -17795,20 +17792,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].limit
 render: Product pages, PRODUCTS[0].limit
 narrative_slot: limit
-en: We do not guess a score for something a form cannot measure.
-th: เพราะเราไม่เดาคะแนนในเรื่องที่แบบฟอร์มวัดไม่ได้
-provenance: paul-written
-date: 23/08/2026
+en: It reads your answers, not your CV. Where a form cannot measure something reliably, the chart leaves it empty instead of guessing. Those parts need someone to read your real CV or talk with you.
+th: แบบประเมินนี้อ่านจากคำตอบของคุณ ยังไม่ได้อ่าน CV ตัวจริง เรื่องไหนที่ประเมินจากคำตอบได้ไม่น่าเชื่อถือพอ กราฟจะเว้นว่างไว้แทนการเดาคะแนน ส่วนนั้นต้องมีคนอ่าน CV ตัวจริงของคุณหรือได้คุยกับคุณก่อน
+provenance: paul-approved
+date: 26/10/2026
 term_bindings: []
-decision_note: |-
-  Paul's own Thai, `faq.ts`. It is the honesty rule in his own words and it
-
-  belongs on this page more than anywhere else.
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: b3828f6b4e7aa6b4860113b2793d6e6f53051f240bb14748a4cee17e3c53b55e
+  text_hash: a17b9c13ad2a6485fcfb49f1b546b98048228ea31d8d97060e54c1f574803d54
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -22971,6 +22965,160 @@ review:
   text_hash: a59f3e4b68e730f173461069b3d7f85771448183d057af6798367c67f73c8c59
   prompt_version: structural-calque-v1
   basis: Paul approved this item unchanged in the language review on 04/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::SHOWCASE_HEADING`
+
+```yaml
+id: src/lib/content/products.ts::SHOWCASE_HEADING
+source: src/lib/content/products.ts
+path: SHOWCASE_HEADING
+render: EU Fit Check product page, SHOWCASE_HEADING
+narrative_slot: proof
+en: What you see at the end
+th: สิ่งที่คุณจะเห็นเมื่อทำเสร็จ
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 0d13dd803675498db29e6cb1a67fa657a6cbcb11ac4197dda583b6015418e5b2
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::SHOWCASE_LEDE`
+
+```yaml
+id: src/lib/content/products.ts::SHOWCASE_LEDE
+source: src/lib/content/products.ts
+path: SHOWCASE_LEDE
+render: EU Fit Check product page, SHOWCASE_LEDE
+narrative_slot: proof
+en: Beside your own chart, the result shows where everyone else who has taken it stands. The figures below are live.
+th: นอกจากกราฟของคุณเอง หน้าผลลัพธ์ยังแสดงให้เห็นว่าคนอื่นที่ทำแบบประเมินนี้อยู่ตรงไหน ตัวเลขด้านล่างนี้เป็นข้อมูลจริงล่าสุด
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 973a4805db0eb219628ef0f7d716ef8c3307bbdf1ef051c5891595af1ef21e1b
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[0].headline`
+
+```yaml
+id: src/lib/content/products.ts::PRODUCTS[0].headline
+source: src/lib/content/products.ts
+path: PRODUCTS[0].headline
+render: Product pages, PRODUCTS[0].headline
+narrative_slot: symptom
+en: Before you apply in Europe, find out how ready you are.
+th: ก่อนสมัครงานในยุโรป รู้ก่อนว่าตอนนี้คุณพร้อมแค่ไหน
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 1fa5da24b9dae60705bfb1bfebdebd7357bd55fb9a8ecc9ec6ee92e2cc5b2139
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[0].faq[2].q`
+
+```yaml
+id: src/lib/content/products.ts::PRODUCTS[0].faq[2].q
+source: src/lib/content/products.ts
+path: PRODUCTS[0].faq[2].q
+render: Product pages, PRODUCTS[0].faq[2].q
+narrative_slot: utility
+en: What happens to the information I enter?
+th: ข้อมูลที่กรอกไปจะถูกนำไปใช้ทำอะไร
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 5410067ebe5a38750df1a93f4e2dc262e8df2718fc994ef3c28d6ccaddadb910
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[0].faq[2].a`
+
+```yaml
+id: src/lib/content/products.ts::PRODUCTS[0].faq[2].a
+source: src/lib/content/products.ts
+path: PRODUCTS[0].faq[2].a
+render: Product pages, PRODUCTS[0].faq[2].a
+narrative_slot: utility
+en: We use it to prepare your result and to contact you through the channels you agreed to, nothing else. We do not sell it or pass it on, and you can ask us to delete it at any time.
+th: เราใช้ข้อมูลของคุณเพื่อจัดทำผลประเมินและติดต่อกลับผ่านช่องทางที่คุณยินยอมไว้เท่านั้น เราไม่ขายหรือส่งต่อข้อมูลให้บุคคลอื่น และคุณขอให้ลบได้ทุกเมื่อ
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 676b82dcc8c3553f344c6d5452482da1391b697fa3bd0832178b1aa8d9346541
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[0].faq[3].q`
+
+```yaml
+id: src/lib/content/products.ts::PRODUCTS[0].faq[3].q
+source: src/lib/content/products.ts
+path: PRODUCTS[0].faq[3].q
+render: Product pages, PRODUCTS[0].faq[3].q
+narrative_slot: utility
+en: Can I change an answer, or take it again?
+th: แก้คำตอบหรือทำใหม่ได้ไหม
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: c045967d24f00345d88ece595c942e4c8b490b72758986e0446f4fd7027d6a76
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[0].faq[3].a`
+
+```yaml
+id: src/lib/content/products.ts::PRODUCTS[0].faq[3].a
+source: src/lib/content/products.ts
+path: PRODUCTS[0].faq[3].a
+render: Product pages, PRODUCTS[0].faq[3].a
+narrative_slot: utility
+en: Yes. You can go back and change an answer at any point, and the chart updates straight away.
+th: ได้ คุณย้อนกลับไปแก้คำตอบได้ตลอด กราฟจะอัปเดตตามคำตอบใหม่ให้ทันที
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 557aab42165d22f6f978856b2464f922e7451ad00df031255838d8e7233f37a4
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->

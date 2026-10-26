@@ -6477,8 +6477,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[0].faq[0].a",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[0].faq[0].q": {
     "source": "src/lib/content/products.ts",
@@ -6486,8 +6486,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[0].faq[0].q",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[0].faq[1].a": {
     "source": "src/lib/content/products.ts",
@@ -6495,8 +6495,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[0].faq[1].a",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[0].faq[1].q": {
     "source": "src/lib/content/products.ts",
@@ -6504,35 +6504,35 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[0].faq[1].q",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[0].how[0]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].how[0]",
     "render": "Product pages, PRODUCTS[0].how[0]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's own Thai, `faq.ts`."
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[0].how[1]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].how[1]",
     "render": "Product pages, PRODUCTS[0].how[1]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's own Thai, 23/08/2026, from the pricing sheet."
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[0].how[2]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].how[2]",
     "render": "Product pages, PRODUCTS[0].how[2]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's own Thai, `faq.ts`."
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[0].howLede": {
     "source": "src/lib/content/products.ts",
@@ -6540,26 +6540,26 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[0].howLede",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "10/09/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[0].lede": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].lede",
     "render": "Product pages, PRODUCTS[0].lede",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's own Thai, `copy.ts` landing.reassurance."
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[0].limit": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].limit",
     "render": "Product pages, PRODUCTS[0].limit",
     "narrativeSlot": "limit",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's own Thai, `faq.ts`. It is the honesty rule in his own words and it\n\nbelongs on this page more than anywhere else."
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[0].name": {
     "source": "src/lib/content/products.ts",
@@ -8459,6 +8459,69 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "04/10/2026",
     "decisionNote": "Draft 04/10/2026. The product page and the assessment shared the title \"EU Fit Check\"."
+  },
+  "src/lib/content/products.ts::SHOWCASE_HEADING": {
+    "source": "src/lib/content/products.ts",
+    "path": "SHOWCASE_HEADING",
+    "render": "EU Fit Check product page, SHOWCASE_HEADING",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+  },
+  "src/lib/content/products.ts::SHOWCASE_LEDE": {
+    "source": "src/lib/content/products.ts",
+    "path": "SHOWCASE_LEDE",
+    "render": "EU Fit Check product page, SHOWCASE_LEDE",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[0].headline": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[0].headline",
+    "render": "Product pages, PRODUCTS[0].headline",
+    "narrativeSlot": "symptom",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[0].faq[2].q": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[0].faq[2].q",
+    "render": "Product pages, PRODUCTS[0].faq[2].q",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[0].faq[2].a": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[0].faq[2].a",
+    "render": "Product pages, PRODUCTS[0].faq[2].a",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[0].faq[3].q": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[0].faq[3].q",
+    "render": "Product pages, PRODUCTS[0].faq[3].q",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[0].faq[3].a": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[0].faq[3].a",
+    "render": "Product pages, PRODUCTS[0].faq[3].a",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
   },
   "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.seoTitle": {
     "source": "src/lib/content/posts/start-in-europe.ts",
