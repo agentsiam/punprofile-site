@@ -283,20 +283,21 @@ export const TERMBASE: Termbase = {
     },
     {
       "id": "cta-book-consultation",
-      "en": "Book a consultation",
+      "en": "See the Fit Report",
       "th": [
-        "นัดปรึกษาฟรี 30 นาที"
+        "ดูรายละเอียด Fit Report"
       ],
       "banned": [
-        "นัดคุยฟรี 30 นาที"
+        "นัดคุยฟรี 30 นาที",
+        "นัดปรึกษาฟรี 30 นาที"
       ],
       "surfaces": [
         "app"
       ],
       "fixed": true,
       "rule": "LR-08",
-      "decided": "09/08/2026",
-      "why": "The result page's action, and the compressed in-product form of the Free Consultation Hook. Not yet wired: the result page's live primary is the services page until Phase 2 captures contact details, which 03_Content_System.md App CTAs explains. Not a conflict, a deferral.\n"
+      "decided": "26/10/2026",
+      "why": "The result page's booking card. It offered a free 30-minute consultation until 26/10/2026, when Paul removed every free call and made the 30-minute interview part of the paid Fit Report. The old button is banned rather than dropped, so it cannot come back from the English. Not yet wired: the card stays hidden until booking is switched on, which 03_Content_System.md App CTAs explains.\n"
     },
     {
       "id": "footer-legal",
@@ -489,7 +490,7 @@ export const TERMBASE: Termbase = {
     "reader": "คุณ",
     "why": "เรา for the brand in broadcast copy, ผม in 1:1 messages where a brand plural reads evasive, คุณ for the reader always and stated rather than implied. The contact button คุยกับผม is first person on an app surface on purpose: it is the one string that opens a 1:1, so it speaks in the register of what it starts. Listed in `terms` above rather than treated as a person violation.\n"
   },
-  "sourceHash": "168c2b844da2fb3b"
+  "sourceHash": "679dad03aa995293"
 } as const;
 
 export const TERMS = TERMBASE.terms;
