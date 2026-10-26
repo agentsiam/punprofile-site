@@ -576,23 +576,19 @@ export default function Home() {
             sit in the section above the fold rather than in this one. */}
       <Band block="B2" ground="canvas" width="wide">
         {/* B2: the reference states who is behind a thing beside a picture of
-            them, not as a paragraph on its own. The portrait and its alt text
-            are the ones `/coaching` uses. The source is a 421px square, so it
-            sits as a round portrait on the soft ground rather than being
-            stretched across a 4:3 box, which would blur it and crop the head. */}
+            them, not as a paragraph on its own, and the picture fills the frame.
+            It used to float the square `/coaching` portrait in an empty box,
+            because a 421px source could not fill a 4:3 one without blurring and
+            cropping the head. A photograph marooned in grey reads as a picture
+            that failed to load, so the fix was a wider source rather than a
+            smaller frame: 1248x832, which the box crops at the sides.
+
+            The alt text is still the one `/coaching` uses, because it names who
+            is in the picture and nothing about the setting. */}
         <SplitFeature
           reverse
-          media={
-            <div className="flex size-full items-center justify-center bg-canvas-soft">
-              <Image
-                src="/paul-portrait.png"
-                alt={pick(PORTRAIT_ALT)}
-                width={421}
-                height={421}
-                className="size-48 rounded-full object-cover medium:size-64"
-              />
-            </div>
-          }
+          src="/paul-portrait-wide.jpg"
+          alt={pick(PORTRAIT_ALT)}
         >
           <h2 className={SECTION_HEADING(locale)}>{pick(WHO_HEADING)}</h2>
           <p className="mt-3 max-w-2xl text-body-large text-on-surface-variant">
