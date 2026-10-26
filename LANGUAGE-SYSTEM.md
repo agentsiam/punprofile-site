@@ -12082,16 +12082,16 @@ path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text
 render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text'
 narrative_slot: mechanism
 en: "So instead of asking broadly whether Europe needs your profession, the question that helps you plan is this."
-th: "แทนที่จะถามกว้าง ๆ ว่า “ยุโรปต้องการอาชีพของฉันไหม” คำถามที่ช่วยให้วางแผนได้มากกว่าคือ"
-provenance: paul-written
+th: "แทนที่จะถามกว้าง ๆ ว่า “ยุโรปต้องการอาชีพของเราไหม” คำถามที่ช่วยให้วางแผนได้มากกว่าคือ"
+provenance: paul-approved
 date: 16/08/2026
 term_bindings: []
-decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: bce48043af816a4ad4eb7795984bfd071ddb36e747c20606a0c14e9b7b734ecb
+  text_hash: f0ef68b2b391c9e5c834dbb4f1be4747a0585a4e5df6387a423d349a74e93d3a
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -12104,16 +12104,16 @@ path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text
 render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text'
 narrative_slot: mechanism
 en: "Which country needs my skills, and do I meet that country's conditions for working there?"
-th: "ประเทศใดกำลังต้องการทักษะของฉัน และฉันผ่านเงื่อนไขการทำงานของประเทศนั้นหรือไม่?"
-provenance: paul-written
+th: "ประเทศใดกำลังต้องการทักษะของเรา และเราผ่านเงื่อนไขการทำงานของประเทศนั้นหรือไม่?"
+provenance: paul-approved
 date: 16/08/2026
 term_bindings: []
-decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: a5fc4708b19640a3372750c194360a59b066a0cb334b117e8d8a536b2bdcb98b
+  text_hash: a316db9b5b38287d168755370e8b853ae3f4783ea09abbd5033f918c759e7e76
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -15224,18 +15224,16 @@ narrative_slot: mechanism
 en: >-
   That number does not tell you whether Europe has jobs or does not. It tells you that “does Europe need my
   profession?” is too broad a question to plan with.
-th: >-
-  ตัวเลขนี้ไม่ได้บอกว่ายุโรปมีหรือไม่มีงาน แต่มันบอกว่าคำว่า “ยุโรปต้องการอาชีพของฉันไหม”
-  เป็นคำถามที่กว้างเกินกว่าจะใช้วางแผนได้
-provenance: paul-written
+th: "ตัวเลขนี้ไม่ได้บอกว่ายุโรปมีหรือไม่มีงาน แต่มันบอกว่าคำว่า “ยุโรปต้องการอาชีพของเราไหม” เป็นคำถามที่กว้างเกินกว่าจะใช้วางแผนได้"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: 7ab21b1525fe93e6ce4dd9fb525b960f5e660a505e7d963fc59b9d067292ddd5
+  text_hash: 2aa0f46837c235acc44984eec7597a50a0095676c1cf3cc466ff7cc1fd404fed
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -15270,16 +15268,16 @@ path: START_IN_EUROPE.sections[3].body[4].items[0]
 render: 'Blog article: Start in Europe, START_IN_EUROPE.sections[3].body[4].items[0]'
 narrative_slot: mechanism
 en: Which country needs my skills?
-th: ประเทศไหนกำลังต้องการทักษะของฉัน
-provenance: paul-written
+th: "ประเทศไหนกำลังต้องการทักษะของเรา"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: 5d7919997b1a5d0d94d4094c0e904ac5f21c31fb85e87c81b0ad9f7d69cd1f8b
+  text_hash: b45d44d2ffa15285716648e3f5c0e713be59b20b995e7fc3a6a57c5a94abed33
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -15292,16 +15290,16 @@ path: START_IN_EUROPE.sections[3].body[4].items[1]
 render: 'Blog article: Start in Europe, START_IN_EUROPE.sections[3].body[4].items[1]'
 narrative_slot: mechanism
 en: And do I meet that country's conditions for working there?
-th: และฉันผ่านเงื่อนไขที่จะทำงานในประเทศนั้นหรือไม่
-provenance: paul-written
+th: "และเราผ่านเงื่อนไขที่จะทำงานในประเทศนั้นหรือไม่"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: 169f59e6afc9b17879fc7843367200e9ddd73f67223636454e43c77566d8c711
+  text_hash: fa4426035e891d845774894109924d3cdd1432ad4ca2cca946e99cdc02663b77
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -16153,16 +16151,16 @@ narrative_slot: mechanism
 en: >-
   The turn comes when the question in your head changes from “how do I describe myself?” to “what problem is
   the market hiring someone to solve?”
-th: จุดเปลี่ยนเกิดขึ้นเมื่อคำถามในหัวเปลี่ยนจาก “ฉันจะอธิบายตัวเองอย่างไร” เป็น “ตลาดกำลังจ้างคนมาแก้ปัญหาอะไร”
-provenance: paul-written
+th: "จุดเปลี่ยนเกิดขึ้นเมื่อคำถามในหัวเปลี่ยนจาก “เราจะอธิบายตัวเองอย่างไร” เป็น “ตลาดกำลังจ้างคนมาแก้ปัญหาอะไร”"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: a533b2a1edb6a1e27bdbc5866561af999aa7afcdd1add4021086f68b29e84c42
+  text_hash: f9c964a716e955f622a784d6ab7f82d6ea7e9ba40791ffce0a8a22ce2c5cc2eb
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -16620,16 +16618,16 @@ path: START_IN_EUROPE.sections[8].body[3].items[1]
 render: 'Blog article: Start in Europe, START_IN_EUROPE.sections[8].body[3].items[1]'
 narrative_slot: mechanism
 en: My experience proves I can do it
-th: ประสบการณ์ของฉันพิสูจน์ได้ว่าทำเรื่องนี้เป็น
-provenance: paul-written
+th: "ประสบการณ์ของเราพิสูจน์ได้ว่าทำเรื่องนี้เป็น"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: 91b4e0f7ad7424e778527dcc9d2e04a5f4ab932007fa9cef1cc0231a8e77837f
+  text_hash: 120af574a22072fd79b7ee759fb08f23bbdcfd45b9ba3cafaff9d8115964388e
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -16642,16 +16640,16 @@ path: START_IN_EUROPE.sections[8].body[3].items[2]
 render: 'Blog article: Start in Europe, START_IN_EUROPE.sections[8].body[3].items[2]'
 narrative_slot: mechanism
 en: And this company has a way of actually hiring me
-th: และบริษัทนี้มีทางจ้างฉันได้จริง
-provenance: paul-written
+th: "และบริษัทนี้มีทางจ้างเราได้จริง"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: e203c69e118dd23693bc2f4e452868176df11f2b1d5abb2de51e42dfa30ed48e
+  text_hash: b828897d1c3b16a793990ebeedd9df830fa7fc559d18fa1ee8b5e29d4fb45c2c
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
