@@ -3587,9 +3587,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "AI_IS_BECOMING_A_BASELINE_SKILL.image.alt",
     "render": "Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.image.alt",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "26/10/2026",
-    "decisionNote": "Claude's draft, written from the image Paul generated 26/10/2026. Describes the scene, not the argument. Waiting on Paul."
+    "decisionNote": "Claude's draft, written from the image Paul generated 26/10/2026. Describes the scene, not the argument. Paul approved it unchanged on 26/10/2026."
   },
   "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.question": {
     "source": "src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts",

@@ -10059,15 +10059,15 @@ render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELIN
 narrative_slot: utility
 en: "A clay figure of a woman sitting by a window, holding a pencil and checking a sheet of paper that a small clay robot hands her"
 th: "ตัวการ์ตูนดินปั้นผู้หญิงนั่งข้างหน้าต่าง ถือดินสอกำลังตรวจกระดาษที่หุ่นยนต์ดินปั้นตัวเล็กยื่นให้"
-provenance: draft
+provenance: paul-approved
 date: 26/10/2026
 term_bindings: []
-decision_note: "Claude's draft, written from the image Paul generated 26/10/2026. Describes the scene, not the argument. Waiting on Paul."
+decision_note: "Claude's draft, written from the image Paul generated 26/10/2026. Describes the scene, not the argument. Paul approved it unchanged on 26/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f235a2c138009b3d0018bdbfaf9ecbd064b32552ef2888bcf65fea248e0966ad
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
