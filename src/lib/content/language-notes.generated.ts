@@ -9072,50 +9072,14 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "26/10/2026",
     "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
   },
-  "src/lib/content/copy.ts::COPY.fit.col.how": {
-    "source": "src/lib/content/copy.ts",
-    "path": "COPY.fit.col.how",
-    "render": "Fit Report, area table column",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
-  },
   "src/lib/content/copy.ts::COPY.fit.col.note": {
     "source": "src/lib/content/copy.ts",
     "path": "COPY.fit.col.note",
     "render": "Fit Report, area table column",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
-  },
-  "src/lib/content/copy.ts::COPY.fit.how.indicators": {
-    "source": "src/lib/content/copy.ts",
-    "path": "COPY.fit.how.indicators",
-    "render": "Fit Report, area table cell. {met} is 0 to 4",
-    "narrativeSlot": "utility",
     "provenance": "paul-written",
     "date": "26/10/2026",
-    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
-  },
-  "src/lib/content/copy.ts::COPY.fit.how.interview": {
-    "source": "src/lib/content/copy.ts",
-    "path": "COPY.fit.how.interview",
-    "render": "Fit Report, area table cell",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
-  },
-  "src/lib/content/copy.ts::COPY.fit.how.survey": {
-    "source": "src/lib/content/copy.ts",
-    "path": "COPY.fit.how.survey",
-    "render": "Fit Report, area table cell",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+    "decisionNote": "Paul's heading, 26/10/2026: the column carries the coach's next step for the candidate, replacing a 'measured from' column that only showed coach bookkeeping."
   },
   "src/lib/content/copy.ts::COPY.fit.how.none": {
     "source": "src/lib/content/copy.ts",

@@ -24413,28 +24413,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.fit.col.how`
-
-```yaml
-id: src/lib/content/copy.ts::COPY.fit.col.how
-source: src/lib/content/copy.ts
-path: COPY.fit.col.how
-render: Fit Report, area table column
-narrative_slot: utility
-en: Measured from
-th: ประเมินจาก
-provenance: paul-approved
-date: 26/10/2026
-term_bindings: []
-decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
-review:
-  structural_calque: pass
-  text_hash: aab7231a3699af03d5aeeee892d10c182adf556f4f50b26330a0b6eca825cf4f
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/copy.ts::COPY.fit.col.note`
 
 ```yaml
@@ -24443,83 +24421,17 @@ source: src/lib/content/copy.ts
 path: COPY.fit.col.note
 render: Fit Report, area table column
 narrative_slot: utility
-en: What I saw
-th: สิ่งที่ผมเห็น
-provenance: paul-approved
-date: 26/10/2026
-term_bindings: []
-decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
-review:
-  structural_calque: pass
-  text_hash: a7bd8198785abd509417403cba2e702d1a7b22a7568d984aa204885f08b1193a
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.fit.how.indicators`
-
-```yaml
-id: src/lib/content/copy.ts::COPY.fit.how.indicators
-source: src/lib/content/copy.ts
-path: COPY.fit.how.indicators
-render: Fit Report, area table cell. {met} is 0 to 4
-narrative_slot: utility
-en: Interview, {met} of 4 met
-th: 'จากการสัมภาษณ์: ผ่านเกณฑ์ {met} จาก 4 ข้อ'
+en: What to do next
+th: สิ่งที่ควรทำต่อ
 provenance: paul-written
 date: 26/10/2026
 term_bindings: []
-decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+decision_note: 'Paul''s heading, 26/10/2026: the column carries the coach''s next step for the candidate, replacing a ''measured from'' column that only showed coach bookkeeping.'
 review:
   structural_calque: pass
-  text_hash: 7014abccd3e8ef0ddc6dc39df399a63591a279f14a760310cebc29de53710c87
+  text_hash: f709e0004a947a50f6103ead7886b9964398064e170ccdcd6ce316558941a4aa
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.fit.how.interview`
-
-```yaml
-id: src/lib/content/copy.ts::COPY.fit.how.interview
-source: src/lib/content/copy.ts
-path: COPY.fit.how.interview
-render: Fit Report, area table cell
-narrative_slot: utility
-en: Interview
-th: สัมภาษณ์
-provenance: paul-approved
-date: 26/10/2026
-term_bindings: []
-decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
-review:
-  structural_calque: pass
-  text_hash: f7894b769f7536ee54f97a2bde671fdcbc33d7c0b43a5ee01c156283d793d356
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.fit.how.survey`
-
-```yaml
-id: src/lib/content/copy.ts::COPY.fit.how.survey
-source: src/lib/content/copy.ts
-path: COPY.fit.how.survey
-render: Fit Report, area table cell
-narrative_slot: utility
-en: Your answers
-th: คำตอบของคุณ
-provenance: paul-approved
-date: 26/10/2026
-term_bindings: []
-decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
-review:
-  structural_calque: pass
-  text_hash: 540f36a68339fb286792a5aa7b3be5e455dea9ef42cc2f592d4530eb6e144166
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->

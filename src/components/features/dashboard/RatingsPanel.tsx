@@ -6,8 +6,10 @@
  * Coach-facing and English, like the rest of the dashboard. Each competency is
  * rated by the framework's own formula from `src/lib/ecra.ts`: tick the
  * indicators that were met, or pick the lookup level. The note is the one
- * thing here a candidate reads, under that competency in their Fit Report, so
- * it is written in Thai, in the coach's own voice.
+ * thing here a candidate reads: it prints as "what to do next" beside that
+ * competency in their Fit Report, so it is written in Thai, in the coach's own
+ * voice. Below the area's market bar it is required, because a low score with
+ * no next step is a verdict, not a report (Paul, 26/10/2026).
  *
  * Saving adds a row; it never edits one. The latest per competency counts.
  */
@@ -16,13 +18,14 @@ import { useMemo, useState } from "react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
-import { DIMENSIONS } from "@/lib/model";
+import { DIMENSIONS, GATES } from "@/lib/model";
 import { ECRA, ecraScore } from "@/lib/ecra";
 
-function Row({ leadId, itemKey, label, latest }: {
+function Row({ leadId, itemKey, label, bar, latest }: {
   leadId: Id<"leads">;
   itemKey: string;
   label: string;
+  bar: number;
   latest?: { value: number; score: number; note?: string };
 }) {
   const rule = ECRA[itemKey];
@@ -34,7 +37,9 @@ function Row({ leadId, itemKey, label, latest }: {
   const [note, setNote] = useState(latest?.note ?? "");
   const [saving, setSaving] = useState(false);
   const value = rule.formula === "indicators" ? ticks.filter(Boolean).length : level;
-  const ready = rule.formula === "indicators" || level >= 0;
+  const chosen = rule.formula === "indicators" || level >= 0;
+  const belowBar = chosen && ecraScore(rule, value) < bar;
+  const ready = chosen && (!belowBar || note.trim().length > 0);
 
   return (
     <div className="border-b border-line py-4">
@@ -42,7 +47,7 @@ function Row({ leadId, itemKey, label, latest }: {
         <p className="text-body-md-strong">{label}</p>
         <p className="text-body-sm text-mute-strong">
           {latest ? `Saved ${latest.score}/5` : "Not rated"}
-          {ready ? ` · now ${ecraScore(rule, value)}/5` : ""}
+          {chosen ? ` · now ${ecraScore(rule, value)}/5 (bar ${bar})` : ""}
         </p>
       </div>
       {rule.formula === "indicators" ? (
@@ -75,7 +80,11 @@ function Row({ leadId, itemKey, label, latest }: {
       <textarea
         className="mt-2 w-full rounded-md border border-line bg-canvas px-2 py-1.5 text-body-sm"
         rows={2}
-        placeholder="What you saw, in Thai. The candidate reads this."
+        placeholder={
+          belowBar
+            ? "Required below the bar: what they should do next, in Thai. Printed in their Fit Report."
+            : "Optional: what they should do next, in Thai. Printed in their Fit Report."
+        }
         value={note}
         onChange={(e) => setNote(e.target.value)}
       />
@@ -119,7 +128,14 @@ export default function RatingsPanel({ leadId }: { leadId: Id<"leads"> }) {
           {d.items
             .filter((i) => i.tier !== "proxy" && ECRA[i.key])
             .map((i) => (
-              <Row key={i.key} leadId={leadId} itemKey={i.key} label={i.label} latest={latest.get(i.key)} />
+              <Row
+                key={i.key}
+                leadId={leadId}
+                itemKey={i.key}
+                label={i.label}
+                bar={GATES.find((g) => g.key === d.key)?.bar ?? 3}
+                latest={latest.get(i.key)}
+              />
             ))}
         </details>
       ))}

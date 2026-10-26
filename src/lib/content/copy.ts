@@ -1197,30 +1197,10 @@ export const COPY = {
     en: "Start here",
     th: "เริ่มที่นี่",
   },
-  "fit.col.how": {
-    screen: "Fit Report, area table column",
-    en: "Measured from",
-    th: "ประเมินจาก",
-  },
   "fit.col.note": {
     screen: "Fit Report, area table column",
-    en: "What I saw",
-    th: "สิ่งที่ผมเห็น",
-  },
-  "fit.how.indicators": {
-    screen: "Fit Report, area table cell. {met} is 0 to 4",
-    en: "Interview, {met} of 4 met",
-    th: "จากการสัมภาษณ์: ผ่านเกณฑ์ {met} จาก 4 ข้อ",
-  },
-  "fit.how.interview": {
-    screen: "Fit Report, area table cell",
-    en: "Interview",
-    th: "สัมภาษณ์",
-  },
-  "fit.how.survey": {
-    screen: "Fit Report, area table cell",
-    en: "Your answers",
-    th: "คำตอบของคุณ",
+    en: "What to do next",
+    th: "สิ่งที่ควรทำต่อ",
   },
   "fit.how.none": {
     screen: "Fit Report, area table cell",

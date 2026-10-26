@@ -283,7 +283,12 @@ export function radarSvg(axes: RadarAxis[], opts: RadarOptions): string {
      * start segments in this product's Thai, and it fails over to the character
      * rule when none of them lands near the middle.
      */
-    const STARTS = ["การ", "ความ", "ใน", "และ", "ของ", "ที่", "กับ", "จาก", "เพื่อ"];
+    // Widened 26/10/2026 for the Fit Report's competency names, which split
+    // `การสร้างเค / รือข่ายอาชีพ` and `ผู้ส / รรหา` with the original nine.
+    const STARTS = [
+      "การ", "ความ", "ใน", "และ", "ของ", "ที่", "กับ", "จาก", "เพื่อ",
+      "เครือข่าย", "อาชีพ", "เมื่อ", "ผู้", "ติดต่อ", "ด้าน", "วิชาชีพ", "ใบอนุญาต", "ตนเอง", "ธุรกิจ", "ลูกค้า", "ทำงาน", "ผลลัพธ์", "เรื่อง", "ตลาด", "ประกอบ",
+    ];
     const wordStarts: number[] = [];
     for (const w of STARTS) {
       let from = 1;

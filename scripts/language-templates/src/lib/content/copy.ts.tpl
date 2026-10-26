@@ -1197,30 +1197,10 @@ export const COPY = {
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnBhdGguc3RhcnQ:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnBhdGguc3RhcnQ:TH%%,
   },
-  "fit.col.how": {
-    screen: "Fit Report, area table column",
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5ob3c:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5ob3c:TH%%,
-  },
   "fit.col.note": {
     screen: "Fit Report, area table column",
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5ub3Rl:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5ub3Rl:TH%%,
-  },
-  "fit.how.indicators": {
-    screen: "Fit Report, area table cell. {met} is 0 to 4",
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lmhvdy5pbmRpY2F0b3Jz:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lmhvdy5pbmRpY2F0b3Jz:TH%%,
-  },
-  "fit.how.interview": {
-    screen: "Fit Report, area table cell",
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lmhvdy5pbnRlcnZpZXc:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lmhvdy5pbnRlcnZpZXc:TH%%,
-  },
-  "fit.how.survey": {
-    screen: "Fit Report, area table cell",
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lmhvdy5zdXJ2ZXk:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lmhvdy5zdXJ2ZXk:TH%%,
   },
   "fit.how.none": {
     screen: "Fit Report, area table cell",

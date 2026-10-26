@@ -10,6 +10,7 @@ import { mutation, query } from "./_generated/server";
 import { requireAdmin } from "./leads";
 import { v, ConvexError } from "convex/values";
 import { ECRA, ecraScore } from "../src/lib/ecra";
+import { DIMENSIONS, GATES } from "../src/lib/model";
 
 /** The latest rating per competency for one candidate. */
 export const latestForLead = query({
@@ -47,11 +48,17 @@ export const rate = mutation({
       throw new ConvexError(`Value out of range for ${args.itemKey}.`);
     }
     const note = args.note?.trim() || undefined;
+    const score = ecraScore(rule, args.value);
+    // Below the area's market bar a rating needs a next step, because it prints
+    // in the candidate's Fit Report as "what to do next". Paul, 26/10/2026.
+    const dim = DIMENSIONS.find((d) => d.items.some((i) => i.key === args.itemKey));
+    const bar = GATES.find((g) => g.key === dim?.key)?.bar ?? 3;
+    if (score < bar && !note) throw new ConvexError("Below the market bar, write what they should do next.");
     return await ctx.db.insert("competencyRatings", {
       leadId: args.leadId,
       itemKey: args.itemKey,
       value: args.value,
-      score: ecraScore(rule, args.value),
+      score,
       note,
       ratedAt: Date.now(),
       by,

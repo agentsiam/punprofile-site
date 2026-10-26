@@ -794,9 +794,10 @@ const FIT_STYLES = `
   ol.path .p-num { color: var(--viz-muted); font-size: .72rem; font-weight: 700; }
   ol.path .p-name { font-weight: 700; margin: .2rem 0; }
   ol.path .p-tag { display: inline-block; margin-top: .3rem; padding: .05rem .5rem; border-radius: 999px; font-size: .7rem; font-weight: 700; background: var(--color-warning-deep); color: #fff; }
-  .how-int { color: var(--ink-1); font-weight: 600; }
   .how-none { color: var(--viz-muted); }
-  .coach-note { color: var(--ink-2); font-size: .82rem; }
+  .coach-note { color: var(--ink-1); font-size: .86rem; }
+  .is-fit table.scores thead th:first-child { width: 38%; }
+  .is-fit table.scores thead th:nth-child(2) { width: 4.5rem; }
   ol.moves { list-style: none; padding: 0; margin: 1rem 0 0; }
   ol.moves li { background: var(--viz-surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: .6rem; }
   .m-text { font-weight: 600; margin: 0 0 .5rem; }
@@ -885,18 +886,13 @@ ${inner}
     .map((d, idx) => {
       const svg = radarSvg(
         d.items.map((i) => ({ label: name(i.key, i.label), value: i.score })),
-        { idPrefix: `fitdim${idx}`, size: 300, values: false, maxLabel: 40, widthRatio: 2.1, wrapLabels: true, threshold: d.bar },
+        { idPrefix: `fitdim${idx}`, size: 300, values: false, maxLabel: 60, widthRatio: 2.1, wrapLabels: true, threshold: d.bar },
       );
       const rows = d.items
-        .map((i) => {
-          const how =
-            i.source === "interview"
-              ? `<span class="how-int">${esc(i.indicatorsMet !== undefined ? s("fit.how.indicators", { met: i.indicatorsMet }) : s("fit.how.interview"))}</span>`
-              : i.source === "survey"
-                ? esc(s("fit.how.survey"))
-                : `<span class="how-none">${esc(s("fit.how.none"))}</span>`;
-          return `<tr><th scope="row">${esc(name(i.key, i.label))}</th><td class="num">${i.score === null ? "–" : i.score.toFixed(1)}</td><td>${how}</td><td class="coach-note">${esc(i.note ?? "")}</td></tr>`;
-        })
+        .map(
+          (i) =>
+            `<tr><th scope="row">${esc(name(i.key, i.label))}</th><td class="num">${i.score === null ? "–" : i.score.toFixed(1)}</td><td class="coach-note">${esc(i.note ?? "")}</td></tr>`,
+        )
         .join("");
       return section(
         d.key,
@@ -904,7 +900,7 @@ ${inner}
         `  <p class="dim-score">${d.score === null ? esc(s("fit.how.none")) : `<strong>${d.score.toFixed(1)}</strong> / 5 · ${esc(s("fit.col.bar"))} ${d.bar.toFixed(1)}`}</p>
   <figure class="chart" style="max-width:36rem">${svg}</figure>
   <p class="legend-bar">${esc(s("fit.legend.bar"))}</p>
-  <table class="scores"><thead><tr><th scope="col">${esc(s("report.competency"))}</th><th scope="col">${esc(s("report.score"))}</th><th scope="col">${esc(s("fit.col.how"))}</th><th scope="col">${esc(s("fit.col.note"))}</th></tr></thead><tbody>${rows}</tbody></table>`,
+  <table class="scores"><thead><tr><th scope="col">${esc(s("report.competency"))}</th><th scope="col">${esc(s("report.score"))}</th><th scope="col">${esc(s("fit.col.note"))}</th></tr></thead><tbody>${rows}</tbody></table>`,
       );
     })
     .join("\n");
