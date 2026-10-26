@@ -1778,9 +1778,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.report.footer",
     "render": "Candidate PDF, the footing on the last page",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "17/08/2026",
-    "decisionNote": "Paul's wording, 17/08/2026. It names the instrument the answers came\n\nfrom, opens on what the document is, and turns the closing clause into\n\nan invitation, `นัดคุยกัน`, rather than a statement about coverage.\n\n*`PunProfile แคเรียร์โค้ชชิ่ง` is half-transliterated, and that is his**\n\nrather than a slip to tidy: LR-01 exempts the legal entity\n\n`PunProfile Career Coaching` from translation where it names the data\n\ncontroller, and a report footing says who prepared a document rather\n\nthan who controls the data. `footer.brand`, which does name the\n\ncontroller, is a `fixed` termbase string and is untouched."
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
   },
   "src/lib/content/copy.ts::COPY.report.next": {
     "source": "src/lib/content/copy.ts",
@@ -1850,9 +1850,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.result.measured",
     "render": "Full result, the coverage line. {count}, {total} and {more} are substituted",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "15/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
   "src/lib/content/copy.ts::COPY.result.startWith": {
     "source": "src/lib/content/copy.ts",
@@ -2480,9 +2480,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "FAQ[6].a[1]",
     "render": "FAQ page, FAQ[6].a[1]",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
   },
   "src/lib/content/faq.ts::FAQ[6].q": {
     "source": "src/lib/content/faq.ts",
@@ -3425,9 +3425,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "NARRATIVE_COPY.narrative.cta.body",
     "render": "Result summary, under the heading. Sells measurement, never a verdict",
     "narrativeSlot": "ask",
-    "provenance": "paul-approved",
-    "date": "15/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
   "src/lib/content/narrative-copy.ts::NARRATIVE_COPY.narrative.cta.button": {
     "source": "src/lib/content/narrative-copy.ts",
@@ -3435,8 +3435,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Result summary, the consultation button itself",
     "narrativeSlot": "ask",
     "provenance": "paul-approved",
-    "date": "15/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
   },
   "src/lib/content/narrative-copy.ts::NARRATIVE_COPY.narrative.cta.heading": {
     "source": "src/lib/content/narrative-copy.ts",
@@ -6216,8 +6216,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Pricing page, PRICING_QUESTIONS[0].a[1]",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
   },
   "src/lib/content/pricing.ts::PRICING_QUESTIONS[0].q": {
     "source": "src/lib/content/pricing.ts",
@@ -7053,8 +7053,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[2].faq[0].a",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[2].faq[0].q": {
     "source": "src/lib/content/products.ts",
@@ -7080,8 +7080,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[2].how[0]",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "Drafted 23/08/2026, read back and approved unchanged. Thresholds rather than scores, which\n\n`10_Methodology.md` calls the single most important idea in the method."
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
   },
   "src/lib/content/products.ts::PRODUCTS[2].how[1]": {
     "source": "src/lib/content/products.ts",
@@ -7089,17 +7089,17 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[2].how[1]",
     "narrativeSlot": "mechanism",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026. Gates are cleared in dependency order, not\n\nscore order, and the lowest uncleared one is the only one that matters\n\nthis month."
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[2].how[2]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[2].how[2]",
     "render": "Product pages, PRODUCTS[2].how[2]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
   },
   "src/lib/content/products.ts::PRODUCTS[2].howLede": {
     "source": "src/lib/content/products.ts",
@@ -7107,8 +7107,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[2].howLede",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "10/09/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
   },
   "src/lib/content/products.ts::PRODUCTS[2].lede": {
     "source": "src/lib/content/products.ts",
@@ -7116,8 +7116,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[2].lede",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Rebuilt from Paul's own Thai of 23/08/2026 on the pricing sheet."
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[2].limit": {
     "source": "src/lib/content/products.ts",
@@ -8223,8 +8223,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Services page, ENGAGEMENT_LEDE",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026. `ไม่มีค่าใช้จ่าย` rather than the shorter word,\n\nwhich is the form `faq.ts` and the product pages already use for this."
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
   "src/lib/content/services.ts::ENGAGEMENT[0].body": {
     "source": "src/lib/content/services.ts",
@@ -8232,8 +8232,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Services page, ENGAGEMENT[0].body",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
   "src/lib/content/services.ts::ENGAGEMENT[0].lead": {
     "source": "src/lib/content/services.ts",
@@ -8241,8 +8241,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Services page, ENGAGEMENT[0].lead",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "06/09/2026",
-    "decisionNote": "Read back 06/09/2026."
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
   },
   "src/lib/content/services.ts::ENGAGEMENT[1].body": {
     "source": "src/lib/content/services.ts",
@@ -8828,6 +8828,492 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "04/10/2026",
     "decisionNote": "Draft 04/10/2026. The product page and the assessment shared the title \"EU Fit Check\"."
+  },
+  "src/lib/content/copy.ts::COPY.item.qualificationRecognition": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.qualificationRecognition",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.item.financialPreparedness": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.financialPreparedness",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.relocationPlanning": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.relocationPlanning",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.culturalAdaptability": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.culturalAdaptability",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.administrativeReadiness": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.administrativeReadiness",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.crossCultural": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.crossCultural",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.independence": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.independence",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.item.ownershipMindset": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.ownershipMindset",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.item.businessAwareness": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.businessAwareness",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.collaborationStyle": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.collaborationStyle",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.item.salaryExpectations": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.salaryExpectations",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.labourMarketKnowledge": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.labourMarketKnowledge",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.adaptability": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.adaptability",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.professionalConfidence": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.professionalConfidence",
+    "render": "Fit Report, competency name",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.fit.eyebrow": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.eyebrow",
+    "render": "Fit Report, cover eyebrow",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.cover.sub": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.cover.sub",
+    "render": "Fit Report, cover line. {count} is the number of competencies",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.cover.prepared": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.cover.prepared",
+    "render": "Fit Report, cover date. {date} is DD/MM/YYYY",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.summary.heading": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.summary.heading",
+    "render": "Fit Report, summary heading",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.col.area": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.col.area",
+    "render": "Fit Report, summary table column",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.col.score": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.col.score",
+    "render": "Fit Report, summary table column",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.col.bar": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.col.bar",
+    "render": "Fit Report, summary table column",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.col.gap": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.col.gap",
+    "render": "Fit Report, summary table column",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.fit.cleared": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.cleared",
+    "render": "Fit Report, gap cell when the bar is met",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.legend.bar": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.legend.bar",
+    "render": "Fit Report, under every chart",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.fit.path.heading": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.path.heading",
+    "render": "Fit Report, gate path heading",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.path.lede": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.path.lede",
+    "render": "Fit Report, gate path lede",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.path.start": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.path.start",
+    "render": "Fit Report, marker on the first uncleared area",
+    "narrativeSlot": "ask",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.col.how": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.col.how",
+    "render": "Fit Report, area table column",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.col.note": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.col.note",
+    "render": "Fit Report, area table column",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.how.indicators": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.how.indicators",
+    "render": "Fit Report, area table cell. {met} is 0 to 4",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.fit.how.interview": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.how.interview",
+    "render": "Fit Report, area table cell",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.how.survey": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.how.survey",
+    "render": "Fit Report, area table cell",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.how.none": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.how.none",
+    "render": "Fit Report, area table cell",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.moves.heading": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.moves.heading",
+    "render": "Fit Report, moves heading",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.moves.lede": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.moves.lede",
+    "render": "Fit Report, moves lede",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.fit.roles.heading": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.roles.heading",
+    "render": "Fit Report, roles heading",
+    "narrativeSlot": "proof",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.fit.roles.lede": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.roles.lede",
+    "render": "Fit Report, roles lede. {total}, {matching}, {countries} substituted",
+    "narrativeSlot": "proof",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.fit.roles.none": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.roles.none",
+    "render": "Fit Report, roles when nothing matches",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.fit.roles.note": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.roles.note",
+    "render": "Fit Report, under the roles",
+    "narrativeSlot": "limit",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.fit.footer": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.footer",
+    "render": "Fit Report, last page footing",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/products.ts::FULL_HEADING": {
+    "source": "src/lib/content/products.ts",
+    "path": "FULL_HEADING",
+    "render": "EU Fit Check product page, full-version section heading",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/products.ts::FULL_LEDE": {
+    "source": "src/lib/content/products.ts",
+    "path": "FULL_LEDE",
+    "render": "EU Fit Check product page, full-version section lede",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/products.ts::FULL_CTA": {
+    "source": "src/lib/content/products.ts",
+    "path": "FULL_CTA",
+    "render": "EU Fit Check product page, full-version section link",
+    "narrativeSlot": "ask",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.cvQuality": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.cvQuality",
+    "render": "Full report, readiness-to-apply chart axis",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.linkedinProfile": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.linkedinProfile",
+    "render": "Full report, readiness-to-apply chart axis",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.interviewSkills": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.interviewSkills",
+    "render": "Full report, readiness-to-apply chart axis",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.personalBrand": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.personalBrand",
+    "render": "Full report, readiness-to-apply chart axis",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.networking": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.networking",
+    "render": "Full report, readiness-to-apply chart axis",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.item.jobSearchStrategy": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.jobSearchStrategy",
+    "render": "Full report, readiness-to-apply chart axis",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.item.recruiterReadiness": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.item.recruiterReadiness",
+    "render": "Full report, readiness-to-apply chart axis",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.report.full.heading": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.report.full.heading",
+    "render": "Candidate PDF, full-version section heading",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.report.full.body": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.report.full.body",
+    "render": "Candidate PDF, full-version section body",
+    "narrativeSlot": "ask",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.report.full.example": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.report.full.example",
+    "render": "Candidate PDF, label over the example chart",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.report.full.link": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.report.full.link",
+    "render": "Candidate PDF, where to read more",
+    "narrativeSlot": "ask",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
   },
   "src/lib/content/products.ts::SHOWCASE_HEADING": {
     "source": "src/lib/content/products.ts",

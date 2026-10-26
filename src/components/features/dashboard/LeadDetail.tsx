@@ -43,6 +43,7 @@ import CoachPanel from "./CoachPanel";
 import ConsentPanel from "./ConsentPanel";
 import EngagementPanel from "./EngagementPanel";
 import OutcomePanel from "./OutcomePanel";
+import RatingsPanel from "./RatingsPanel";
 import { stateFor, meetsBookingGate, LIFECYCLE_LABELS } from "@/lib/lifecycle";
 import { CONSENT_CHANNELS, CONSENT_PURPOSES } from "@/lib/consent";
 
@@ -125,6 +126,52 @@ async function openReport(
   win.document.close();
 }
 
+/**
+ * The paid Fit Report, built the same way as `openReport`: at click time, from
+ * the stored answers plus the coach's interview ratings, nothing persisted.
+ * Added 26/10/2026.
+ */
+async function openFitReport(
+  lead: { fullName: string | null; responses: Record<string, unknown>; createdAt: number },
+  ratings: { itemKey: string; value: number; score: number; note?: string }[],
+  locale: "th" | "en",
+) {
+  const win = window.open("", "_blank");
+  if (!win) {
+    alert("The report opens in a new tab. Allow popups for this site and press the button again.");
+    return;
+  }
+  win.document.write("<!doctype html><title>Building…</title><p>Building the Fit Report…");
+  const [{ renderFitReport }, { scoreResponse, scoreFull }, { toScoringInputForLead }, { rankMoves }, { matchRoles }, { ECRA }] =
+    await Promise.all([
+      import("@/lib/report"),
+      import("@/lib/scoring"),
+      import("@/lib/content/mapping"),
+      import("@/lib/levers"),
+      import("@/lib/market-match"),
+      import("@/lib/ecra"),
+    ]);
+  const input = toScoringInputForLead(lead.responses);
+  const profile = scoreResponse(input);
+  const html = renderFitReport(
+    {
+      profile,
+      full: scoreFull(profile, ratings, (k) => ECRA[k]?.formula),
+      moves: rankMoves(input),
+      roles: matchRoles(input.targetCountries ?? [], input.targetRole),
+    },
+    {
+      candidate: lead.fullName ?? "Anonymous lead",
+      targetCountries: input.targetCountries,
+      targetRole: input.targetRole ?? undefined,
+    },
+    { locale, autoPrint: true },
+  );
+  win.document.open();
+  win.document.write(html);
+  win.document.close();
+}
+
 /** Hands a generated file to the browser. Nothing is stored server-side. */
 function download(contents: string, filename: string, mime: string) {
   const url = URL.createObjectURL(new Blob([contents], { type: mime }));
@@ -149,11 +196,12 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
   // badge and the panels can never disagree about what exists.
   const engagements = useQuery(api.delivery.forLead, { leadId });
   const outcomes = useQuery(api.outcomes.forLead, { leadId });
+  const ratings = useQuery(api.ratings.latestForLead, { leadId });
   const deleteLead = useMutation(api.leads.deleteLeadOnRequest);
   const setCrmStatus = useMutation(api.leads.setCrmStatus);
   const [dispReason, setDispReason] = useState("");
   // Which report is being built, so one spinner cannot appear on both buttons.
-  const [building, setBuilding] = useState<"full" | "limited" | null>(null);
+  const [building, setBuilding] = useState<"full" | "limited" | "fit-th" | "fit-en" | null>(null);
   const [confirmText, setConfirmText] = useState("");
   const [deleteNote, setDeleteNote] = useState("");
   const [deleting, setDeleting] = useState(false);
@@ -273,6 +321,25 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
         >
           {building === "full" ? "Building..." : "Full report PDF (coach)"}
         </button>
+        {(["th", "en"] as const).map((loc) => (
+          <button
+            key={loc}
+            type="button"
+            disabled={building !== null || !ratings?.length}
+            title={ratings?.length ? undefined : "Rate the interview below first"}
+            onClick={async () => {
+              setBuilding(`fit-${loc}`);
+              try {
+                await openFitReport({ ...lead, responses: corrected.effective }, ratings ?? [], loc);
+              } finally {
+                setBuilding(null);
+              }
+            }}
+            className="ml-3 mt-4 btn-outlined h-12 px-5 text-label-large hover:bg-surface-container"
+          >
+            {building === `fit-${loc}` ? "Building..." : `Fit Report PDF (${loc === "th" ? "Thai" : "English"})`}
+          </button>
+        ))}
 
         {/* Subject-access request. Two formats: the HTML is what you send the
             person, the JSON is the portable copy if they ask for one.
@@ -425,6 +492,10 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
           </Section>
 
           <CallLog leadId={leadId} />
+
+          <Section title="Fit Report interview">
+            <RatingsPanel leadId={leadId} />
+          </Section>
 
           {/* Right column is "what we did about it", so the commercial record
               belongs under the call log: invitation, call, sale, work, outcome,

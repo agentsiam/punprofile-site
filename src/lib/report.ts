@@ -69,9 +69,10 @@ import type { RadarAxis } from "./radar";
 import { buildNarrative } from "./narrative";
 import { assertCandidateSafe, itemName, dimensionName, dimensionNameByLabel } from "./views";
 import { t, type Locale } from "./locale";
-import { BAND_COPY } from "./model";
+import { BAND_COPY, GATES } from "./model";
 import { topStrengths, developmentPriorities } from "./scoring";
 import { projectUnlock } from "./levers";
+import { FULL_SAMPLE } from "./content/products";
 import type { ProfileScore } from "./scoring";
 import type { Tier } from "./model";
 
@@ -84,7 +85,7 @@ export interface ReportMeta {
   currentRole?: string;
 }
 
-export type ReportVariant = "full" | "limited";
+export type ReportVariant = "full" | "limited" | "fit";
 
 export interface ReportOptions {
   /** Defaults to `full`, so the two offline scripts need no argument. */
@@ -653,6 +654,21 @@ ${rows}
   // "everything unmeasured" and is the one the copy key was written against.
   const unlock = projectUnlock(profile);
 
+  // The full version's chart, as an invented and labelled example: one area,
+  // every competency, which is what the paid Fit Report gives for all four.
+  // Added 26/10/2026 with the purchase call to action it illustrates.
+  const fullSample = radarSvg(
+    FULL_SAMPLE.map((a) => ({ label: itemName(a.key, a.key, locale), value: a.score })),
+    {
+      idPrefix: "fullsample",
+      size: 300,
+      values: false,
+      maxLabel: 40,
+      widthRatio: 2.1,
+      caption: dimLabel("employability", "Employability"),
+    },
+  );
+
   const body = `  <header class="top">
     <p class="eyebrow">PunProfile · EU Fit Check</p>
     <h1>${esc(meta.candidate)}</h1>
@@ -684,6 +700,14 @@ ${dimSections}
       <h2>${esc(s("report.priorities"))}</h2>
       ${listOf(priorities)}
     </div>
+  </section>
+
+  <section id="full">
+    <h2>${esc(s("report.full.heading"))}</h2>
+    <p>${esc(s("report.full.body"))}</p>
+    <p class="eyebrow">${esc(s("report.full.example"))}</p>
+    <figure class="chart" style="max-width:34rem">${fullSample}</figure>
+    <p class="next"><strong>${esc(s("report.full.link"))}</strong></p>
   </section>
 
   <section>
@@ -729,4 +753,228 @@ function stripMarkup(html: string): string {
     .replace(/<style>[\s\S]*?<\/style>/g, " ")
     .replace(/<script>[\s\S]*?<\/script>/g, " ")
     .replace(/<[^>]+>/g, " ");
+}
+
+/* ===================================================================== */
+/* THE PAID FIT REPORT                                                    */
+/* ===================================================================== */
+
+/**
+ * What the paid Fit Report adds to the stylesheet. Added 26/10/2026.
+ *
+ * The free report is plain on purpose: white, one chart colour, no cover. This
+ * one has to read as a different document at a glance, so it gets a cover page
+ * on the dark brand ground, numbered sections with their own footing, and the
+ * market bar as a second chart mark in the warning-deep token.
+ */
+const FIT_STYLES = `
+  .is-fit { --viz-bar: var(--color-warning-deep); }
+  .cover {
+    background: var(--color-canvas-dark); color: var(--color-on-canvas-dark);
+    border-radius: 14px; padding: 3.5rem 2.5rem; margin-top: 2rem;
+    min-height: 34rem; display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .cover .eyebrow { color: var(--color-canvas-brand); font-size: .8rem; }
+  .cover h1 { color: #fff; font-size: 2.6rem; margin-top: 1rem; }
+  .cover .sub { color: var(--color-on-canvas-dark); font-size: 1rem; margin-top: .5rem; }
+  .cover .cover-line { color: var(--color-canvas-brand); font-size: 1.15rem; font-weight: 600; max-width: 32rem; margin: 2.5rem 0 0; }
+  .cover .cover-date { color: var(--color-on-canvas-dark); font-size: .85rem; margin: 0; }
+  .sec-num { display: inline-block; min-width: 2rem; color: var(--color-warning-deep); font-variant-numeric: tabular-nums; }
+  .sec-foot { margin-top: 1.25rem; padding-top: .5rem; border-top: 1px solid var(--border); color: var(--viz-muted); font-size: .72rem; display: flex; justify-content: space-between; }
+  .legend-bar { color: var(--ink-2); font-size: .78rem; margin: .5rem 0 0; }
+  .legend-bar::before { content: ""; display: inline-block; width: 1.6rem; border-top: 2px dashed var(--color-warning-deep); vertical-align: middle; margin-right: .5rem; }
+  table.gap { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: .9rem; }
+  table.gap th, table.gap td { text-align: left; padding: .55rem .5rem; border-bottom: 1px solid var(--border); }
+  table.gap thead th { color: var(--ink-2); font-size: .78rem; font-weight: 600; }
+  .gap-open { color: var(--color-warning-deep); font-weight: 700; }
+  .gap-clear { color: var(--color-positive-deep); font-weight: 700; }
+  ol.path { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .5rem; }
+  ol.path li { background: var(--viz-surface); border: 1px solid var(--border); border-radius: 10px; padding: .8rem .85rem; font-size: .84rem; }
+  ol.path li.is-start { border: 2px solid var(--color-warning-deep); }
+  ol.path .p-num { color: var(--viz-muted); font-size: .72rem; font-weight: 700; }
+  ol.path .p-name { font-weight: 700; margin: .2rem 0; }
+  ol.path .p-tag { display: inline-block; margin-top: .3rem; padding: .05rem .5rem; border-radius: 999px; font-size: .7rem; font-weight: 700; background: var(--color-warning-deep); color: #fff; }
+  .how-int { color: var(--ink-1); font-weight: 600; }
+  .how-none { color: var(--viz-muted); }
+  .coach-note { color: var(--ink-2); font-size: .82rem; }
+  ol.moves { list-style: none; padding: 0; margin: 1rem 0 0; }
+  ol.moves li { background: var(--viz-surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: .6rem; }
+  .m-text { font-weight: 600; margin: 0 0 .5rem; }
+  .m-dim { color: var(--ink-2); font-size: .78rem; margin: 0 0 .35rem; }
+  .m-bars { display: grid; grid-template-columns: 4.5rem minmax(0,1fr) 2.5rem; gap: .25rem .5rem; align-items: center; font-size: .78rem; }
+  .m-track { height: .55rem; background: var(--viz-grid); border-radius: 999px; overflow: hidden; }
+  .m-fill { height: 100%; border-radius: 999px; background: var(--viz-muted); }
+  .m-fill.is-after { background: var(--viz-series-1); }
+  ul.roles { list-style: none; padding: 0; margin: 1rem 0 0; }
+  ul.roles li { padding: .6rem 0; border-bottom: 1px solid var(--border); }
+  .r-title { font-weight: 600; }
+  .r-meta { color: var(--ink-2); font-size: .8rem; }
+  @media print {
+    .cover { min-height: 255mm; border-radius: 0; margin: 0; break-after: page; }
+    .is-fit .fit-sec { break-before: page; }
+    ol.path, ol.moves li, table.gap { break-inside: avoid; }
+  }`;
+
+export interface FitReportInput {
+  profile: ProfileScore;
+  full: import("./scoring").FullDimensionScore[];
+  moves: import("./levers").MoveImpact[];
+  roles: import("./market-match").RoleMatch;
+}
+
+export function renderFitReport(input: FitReportInput, meta: ReportMeta, opts: ReportOptions = {}): string {
+  const locale: Locale = opts.locale ?? "th";
+  const s = (key: Parameters<typeof t>[0], vars?: Record<string, string | number>) => t(key, locale, vars);
+  const dimLabel = (key: string, fallback: string) => dimensionName(key, fallback, locale);
+  const name = (key: string, fallback: string) => itemName(key, fallback, locale);
+  const { full, moves, roles } = input;
+  const today = ddmmyyyy(new Date().toISOString().slice(0, 10));
+  const competencies = full.reduce((n, d) => n + d.items.length, 0);
+
+  let secNo = 0;
+  const section = (id: string, heading: string, inner: string) => {
+    secNo++;
+    const num = String(secNo).padStart(2, "0");
+    return `<section class="fit-sec" id="${id}">
+  <h2><span class="sec-num">${num}</span>${esc(heading)}</h2>
+${inner}
+  <p class="sec-foot"><span>${esc(s("fit.eyebrow"))} · ${esc(meta.candidate)}</span><span>${num} · ${esc(heading)}</span></p>
+</section>`;
+  };
+  const gapCell = (score: number | null, bar: number) =>
+    score === null
+      ? `<td class="how-none">${esc(s("fit.how.none"))}</td>`
+      : score >= bar
+        ? `<td class="gap-clear">${esc(s("fit.cleared"))}</td>`
+        : `<td class="gap-open">${(bar - score).toFixed(1)}</td>`;
+
+  // ---- summary: the overview with every area's bar
+  const overview = radarSvg(
+    full.map((d) => ({ label: dimLabel(d.key, d.label), value: d.score })),
+    { idPrefix: "fitoverview", size: 300, values: true, maxLabel: 40, widthRatio: 2.1, wrapLabels: true, threshold: full.map((d) => d.bar) },
+  );
+  const gapRows = full
+    .map(
+      (d) => `<tr><th scope="row">${esc(dimLabel(d.key, d.label))}</th><td class="num">${d.score === null ? "–" : d.score.toFixed(1)}</td><td class="num">${d.bar.toFixed(1)}</td>${gapCell(d.score, d.bar)}</tr>`,
+    )
+    .join("");
+  const summary = section(
+    "summary",
+    s("fit.summary.heading"),
+    `  <figure class="chart" style="max-width:36rem">${overview}</figure>
+  <p class="legend-bar">${esc(s("fit.legend.bar"))}</p>
+  <table class="gap"><thead><tr><th scope="col">${esc(s("fit.col.area"))}</th><th scope="col">${esc(s("fit.col.score"))}</th><th scope="col">${esc(s("fit.col.bar"))}</th><th scope="col">${esc(s("fit.col.gap"))}</th></tr></thead><tbody>${gapRows}</tbody></table>`,
+  );
+
+  // ---- the order to work in: gates in dependency order, first uncleared marked
+  const ordered = GATES.map((g) => full.find((d) => d.key === g.key)!).filter(Boolean);
+  const startKey = ordered.find((d) => d.score !== null && d.score < d.bar)?.key;
+  const path = section(
+    "path",
+    s("fit.path.heading"),
+    `  <p>${esc(s("fit.path.lede"))}</p>
+  <ol class="path">${ordered
+    .map(
+      (d, i) => `<li class="${d.key === startKey ? "is-start" : ""}"><span class="p-num">${i + 1}</span><p class="p-name">${esc(dimLabel(d.key, d.label))}</p><span>${d.score === null ? esc(s("fit.how.none")) : `${d.score.toFixed(1)} / ${d.bar.toFixed(1)}`}</span>${d.key === startKey ? `<br><span class="p-tag">${esc(s("fit.path.start"))}</span>` : ""}</li>`,
+    )
+    .join("")}</ol>`,
+  );
+
+  // ---- one page per area, every competency an axis
+  const areas = full
+    .map((d, idx) => {
+      const svg = radarSvg(
+        d.items.map((i) => ({ label: name(i.key, i.label), value: i.score })),
+        { idPrefix: `fitdim${idx}`, size: 300, values: false, maxLabel: 40, widthRatio: 2.1, wrapLabels: true, threshold: d.bar },
+      );
+      const rows = d.items
+        .map((i) => {
+          const how =
+            i.source === "interview"
+              ? `<span class="how-int">${esc(i.indicatorsMet !== undefined ? s("fit.how.indicators", { met: i.indicatorsMet }) : s("fit.how.interview"))}</span>`
+              : i.source === "survey"
+                ? esc(s("fit.how.survey"))
+                : `<span class="how-none">${esc(s("fit.how.none"))}</span>`;
+          return `<tr><th scope="row">${esc(name(i.key, i.label))}</th><td class="num">${i.score === null ? "–" : i.score.toFixed(1)}</td><td>${how}</td><td class="coach-note">${esc(i.note ?? "")}</td></tr>`;
+        })
+        .join("");
+      return section(
+        d.key,
+        dimLabel(d.key, d.label),
+        `  <p class="dim-score">${d.score === null ? esc(s("fit.how.none")) : `<strong>${d.score.toFixed(1)}</strong> / 5 · ${esc(s("fit.col.bar"))} ${d.bar.toFixed(1)}`}</p>
+  <figure class="chart" style="max-width:36rem">${svg}</figure>
+  <p class="legend-bar">${esc(s("fit.legend.bar"))}</p>
+  <table class="scores"><thead><tr><th scope="col">${esc(s("report.competency"))}</th><th scope="col">${esc(s("report.score"))}</th><th scope="col">${esc(s("fit.col.how"))}</th><th scope="col">${esc(s("fit.col.note"))}</th></tr></thead><tbody>${rows}</tbody></table>`,
+      );
+    })
+    .join("\n");
+
+  // ---- what moves the score most
+  const top = moves.filter((m) => m.changes.length && m.changes[0].delta > 0).slice(0, 4);
+  const pct = (v: number | null) => `${Math.round(((v ?? 0) / 5) * 100)}%`;
+  const movesSec = top.length
+    ? section(
+        "moves",
+        s("fit.moves.heading"),
+        `  <p>${esc(s("fit.moves.lede"))}</p>
+  <ol class="moves">${top
+    .map((m) => {
+      const c = m.changes[0];
+      return `<li><p class="m-text">${esc(m.move.candidate[locale] || m.move.candidate.en)}</p><p class="m-dim">${esc(dimLabel(c.dimension, c.label))}</p>
+  <div class="m-bars"><span>${(c.from ?? 0).toFixed(1)}</span><div class="m-track"><div class="m-fill" style="width:${pct(c.from)}"></div></div><span></span>
+  <span>${(c.to ?? 0).toFixed(1)}</span><div class="m-track"><div class="m-fill is-after" style="width:${pct(c.to)}"></div></div><span>+${c.delta.toFixed(1)}</span></div></li>`;
+    })
+    .join("")}</ol>`,
+      )
+    : "";
+
+  // ---- roles that fit
+  const countries = (meta.targetCountries ?? []).join(", ");
+  const rolesSec = section(
+    "roles",
+    s("fit.roles.heading"),
+    roles.matching
+      ? `  <p>${esc(s("fit.roles.lede", { total: roles.inCountries, matching: roles.matching, countries }))}</p>
+  <ul class="roles">${roles.examples
+    .map((r) => `<li><span class="r-title">${esc(r.title)}</span><br><span class="r-meta">${esc(r.employer)} · ${esc(r.country)} · ${esc(ddmmyyyy(r.firstSeen))}</span></li>`)
+    .join("")}</ul>
+  <p class="legend-bar" style="margin-top:1rem">${esc(s("fit.roles.note"))}</p>`
+      : `  <p>${esc(s("fit.roles.none"))}</p>`,
+  );
+
+  const metaBits = [meta.targetRole ? esc(meta.targetRole) : "", countries ? esc(countries) : ""].filter(Boolean);
+  const body = `  <div class="cover">
+    <div>
+      <p class="eyebrow">${esc(s("fit.eyebrow"))}</p>
+      <h1>${esc(meta.candidate)}</h1>
+      <p class="sub">${metaBits.join(" · ")}</p>
+    </div>
+    <div>
+      <p class="cover-line">${esc(s("fit.cover.sub", { count: competencies }))}</p>
+      <p class="cover-date">${esc(s("fit.cover.prepared", { date: today }))}</p>
+    </div>
+  </div>
+
+${summary}
+${path}
+${areas}
+${movesSec}
+${rolesSec}
+
+  <footer>${esc(s("fit.footer"))}</footer>`;
+
+  const html = document_({
+    lang: locale,
+    title: `Fit Report — ${meta.candidate}`,
+    variant: "fit",
+    printLabel: s("report.savePdf"),
+    body,
+    autoPrint: opts.autoPrint ?? false,
+  }).replace("</style>", `${FIT_STYLES}\n</style>`);
+
+  const leaks = assertCandidateSafe(stripMarkup(html));
+  if (leaks.length) {
+    throw new Error(`renderFitReport: internal vocabulary reached a candidate document (${leaks.join(", ")}).`);
+  }
+  return html;
 }

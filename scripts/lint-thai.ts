@@ -97,8 +97,12 @@ const span = (f: LintFinding) => (f.at ? f.at[1] - f.at[0] : 0);
  * and `CASUAL_VERBS` is still checked first, so `คุยได้ฟรี` fails as before.
  *
  * `LANGUAGE-SYSTEM.md` records the wider list and its decision history.
+ *
+ * `แบบ` added 26/10/2026, from Paul's own rewrite of the EU Fit Check page's
+ * full-version section: `EU Fit Check แบบฟรี` names the free version of a
+ * product beside its paid one, which is a tier and not a casual verb.
  */
-const FREE_STEMS = ["ปรึกษา", "ทดลอง", "ตรวจ", "เรียน", "ส่ง", "จัดส่ง", "อบรม", "อ่าน", "เปิด", "ใช้"];
+const FREE_STEMS = ["ปรึกษา", "ทดลอง", "ตรวจ", "เรียน", "ส่ง", "จัดส่ง", "อบรม", "อ่าน", "เปิด", "ใช้", "แบบ"];
 
 /** Casual verbs that must stay separate from ฟรี. LR-04. */
 const CASUAL_VERBS = ["คุย", "แชท", "ทัก", "แอด", "เม้าท์", "ถาม"];

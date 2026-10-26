@@ -16,6 +16,7 @@ import Band from "@/components/Band";
 import MarketStats from "@/components/blocks/MarketStats";
 import SampleChartCard from "@/components/features/products/SampleChartCard";
 import LiveStatsBand from "@/components/features/products/LiveStatsBand";
+import FullReportBand from "@/components/features/products/FullReportBand";
 import { MARKET_HEADING } from "@/lib/content/home";
 
 /** The pipeline figures as a strip under the hero: proof before the steps. */
@@ -28,6 +29,16 @@ function ProofBand() {
         <MarketStats />
       </div>
     </Band>
+  );
+}
+
+/** What the free check shows, then what the paid full version adds. */
+function AfterHow() {
+  return (
+    <>
+      <LiveStatsBand />
+      <FullReportBand />
+    </>
   );
 }
 
@@ -44,6 +55,6 @@ export const SHOWCASE: Partial<Record<string, Showcase>> = {
   "eu-fit-check": {
     hero: SampleChartCard,
     afterHero: ProofBand,
-    afterHow: LiveStatsBand,
+    afterHow: AfterHow,
   },
 };

@@ -118,13 +118,13 @@ export const NARRATIVE_COPY = {
   },
   "narrative.cta.body": {
     screen: "Result summary, under the heading. Sells measurement, never a verdict",
-    en: "A 30-minute consultation with PunProfile goes through your answers in detail and turns this into a plan you can act on.",
-    th: "มาคุยกัน 30 นาทีกับ PunProfile เราจะช่วยดูคำตอบของคุณให้ละเอียดขึ้น แล้วสรุปออกมาเป็นแผนที่บอกชัดว่าควรทำอะไรต่อ",
+    en: "The Fit Report goes through your answers with you in a 30-minute interview, scores every competency in all four areas, and tells you what to do first.",
+    th: "Fit Report จะเจาะลึกคำตอบของคุณผ่านการสัมภาษณ์ 30 นาที ประเมินครบทุกทักษะในทั้ง 4 ด้าน และบอกว่าควรเริ่มทำอะไรก่อน",
   },
   "narrative.cta.button": {
     screen: "Result summary, the consultation button itself",
-    en: "Book a free 30-minute consultation",
-    th: "นัดปรึกษาฟรี 30 นาที",
+    en: "See the Fit Report",
+    th: "ดูรายละเอียด Fit Report",
   },
 } as const satisfies Record<string, CopyEntry>;
 

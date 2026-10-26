@@ -5013,38 +5013,17 @@ source: src/lib/content/copy.ts
 path: COPY.report.footer
 render: Candidate PDF, the footing on the last page
 narrative_slot: utility
-en: >-
-  This report was prepared by PunProfile Career Coaching from your EU Fit Check answers. A 30-minute
-  conversation covers the parts a form cannot fully reflect.
-th: >-
-  ผลประเมินนี้จัดทำโดย PunProfile จากคำตอบใน EU Fit Check นัดคุยกัน 30
-  นาทีเพื่อประเมินส่วนที่แบบฟอร์มยังสะท้อนได้ไม่ครบ
-provenance: paul-written
-date: 17/08/2026
+en: This report was prepared by PunProfile Career Coaching from your EU Fit Check answers.
+th: ผลประเมินนี้จัดทำโดย PunProfile จากคำตอบใน EU Fit Check
+provenance: paul-approved
+date: 26/10/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 17/08/2026. It names the instrument the answers came
-
-  from, opens on what the document is, and turns the closing clause into
-
-  an invitation, `นัดคุยกัน`, rather than a statement about coverage.
-
-  *`PunProfile แคเรียร์โค้ชชิ่ง` is half-transliterated, and that is his**
-
-  rather than a slip to tidy: LR-01 exempts the legal entity
-
-  `PunProfile Career Coaching` from translation where it names the data
-
-  controller, and a report footing says who prepared a document rather
-
-  than who controls the data. `footer.brand`, which does name the
-
-  controller, is a `fixed` termbase string and is untouched.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
 review:
   structural_calque: pass
-  text_hash: 0b6bb50404e53bba01728f7456224a37f2cd2f5adf1237c992dbd892463156b6
+  text_hash: c6062dc8a783dc517bf6324a73186561ec146230269027c82443f79f9d1b4f0f
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -5246,19 +5225,15 @@ source: src/lib/content/copy.ts
 path: COPY.result.measured
 render: Full result, the coverage line. {count}, {total} and {more} are substituted
 narrative_slot: utility
-en: >-
-  Your answers measure {count} of {total} areas. A 30-minute conversation can measure {more} more, the parts
-  no form can see.
-th: >-
-  จากคำตอบของคุณ เราประเมินได้ {count} จาก {total} ด้าน การพูดคุย 30 นาทีจะช่วยประเมินเพิ่มได้อีก {more} ด้าน
-  รวมถึงรายละเอียดที่แบบฟอร์มนี้ยังสะท้อนไม่ได้
-provenance: paul-approved
-date: 15/08/2026
+en: Your answers measure {count} of {total} areas. The Fit Report's 30-minute interview measures {more} more, the parts no form can see.
+th: จากคำตอบของคุณ เราประเมินได้ {count} จากทั้งหมด {total} ด้าน การสัมภาษณ์ 30 นาทีใน Fit Report จะช่วยให้ประเมินได้เพิ่มอีก {more} ด้าน รวมถึงรายละเอียดที่แบบฟอร์มนี้ยังสะท้อนไม่ได้
+provenance: paul-written
+date: 26/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 1cac878220666b5b77597270a38741e6c6fe93748fa81948be90a6ecfecd336c
+  text_hash: afaa21d9e69fbf34d7cf1ee8216755ceed6c0a042e7b0ac8d2df465fd097c1c1
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -6980,17 +6955,17 @@ source: src/lib/content/faq.ts
 path: FAQ[6].a[1]
 render: FAQ page, FAQ[6].a[1]
 narrative_slot: utility
-en: Both the EU Fit Check and that first conversation are free.
-th: ทำ EU Fit Check พร้อมดูผลเบื้องต้น และคุยกับเราครั้งแรกได้ฟรี
-provenance: paul-written
-date: 14/08/2026
+en: The EU Fit Check is free.
+th: ทำ EU Fit Check และดูผลเบื้องต้นได้ฟรี
+provenance: paul-approved
+date: 26/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
 review:
   structural_calque: pass
-  text_hash: 6606c39e58a68f22e9142ef7466143df8b6031ea21d4df786515227ffb5ede24
+  text_hash: f11550df01b5ef3392e9230da91ec5bb285168a4be80aaa553216a0dfb4313b5
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -9635,19 +9610,15 @@ source: src/lib/content/narrative-copy.ts
 path: NARRATIVE_COPY.narrative.cta.body
 render: Result summary, under the heading. Sells measurement, never a verdict
 narrative_slot: ask
-en: >-
-  A 30-minute consultation with PunProfile goes through your answers in detail and turns this into a plan you
-  can act on.
-th: >-
-  มาคุยกัน 30 นาทีกับ PunProfile เราจะช่วยดูคำตอบของคุณให้ละเอียดขึ้น
-  แล้วสรุปออกมาเป็นแผนที่บอกชัดว่าควรทำอะไรต่อ
-provenance: paul-approved
-date: 15/08/2026
+en: The Fit Report goes through your answers with you in a 30-minute interview, scores every competency in all four areas, and tells you what to do first.
+th: Fit Report จะเจาะลึกคำตอบของคุณผ่านการสัมภาษณ์ 30 นาที ประเมินครบทุกทักษะในทั้ง 4 ด้าน และบอกว่าควรเริ่มทำอะไรก่อน
+provenance: paul-written
+date: 26/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: d98cab5d9bdd6f27bf020c92011054d77329c4c60e9e57ab40fb231be7d2a1d1
+  text_hash: 37f5e1e37c18d02385612daa7f643531ca6d1bf4c032d8ac9565ef13d64215aa
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -9661,17 +9632,17 @@ source: src/lib/content/narrative-copy.ts
 path: NARRATIVE_COPY.narrative.cta.button
 render: Result summary, the consultation button itself
 narrative_slot: ask
-en: Book a free 30-minute consultation
-th: นัดปรึกษาฟรี 30 นาที
+en: See the Fit Report
+th: ดูรายละเอียด Fit Report
 provenance: paul-approved
-date: 15/08/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
 review:
   structural_calque: pass
-  text_hash: a3fe95a9a57ab32aed49c4a50f3936f20e4dcc56b241a2f93ca810113308061b
+  text_hash: f38228268af25b35dc7d4043445dcc53e76c535698a503343065c430360a20d5
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -16826,17 +16797,17 @@ source: src/lib/content/pricing.ts
 path: PRICING_QUESTIONS[0].a[1]
 render: Pricing page, PRICING_QUESTIONS[0].a[1]
 narrative_slot: utility
-en: Both the EU Fit Check and that first conversation are free.
-th: ทำ EU Fit Check พร้อมดูผลเบื้องต้น และคุยกับเราครั้งแรกได้ฟรี
+en: The EU Fit Check is free.
+th: ทำ EU Fit Check และดูผลเบื้องต้นได้ฟรี
 provenance: paul-approved
-date: 23/08/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
 review:
   structural_calque: pass
-  text_hash: 6606c39e58a68f22e9142ef7466143df8b6031ea21d4df786515227ffb5ede24
+  text_hash: f11550df01b5ef3392e9230da91ec5bb285168a4be80aaa553216a0dfb4313b5
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19032,15 +19003,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[0].a
 render: Product pages, PRODUCTS[2].faq[0].a
 narrative_slot: utility
-en: The free read shows you where you stand. This one names the gate and sequences the work.
-th: ผลเบื้องต้นบอกว่าคุณอยู่ขั้นไหน ส่วนฉบับเต็มบอกว่าด่านไหนยังไม่ผ่าน และควรทำอะไรตามลำดับ
+en: The free result reads your answers on four areas. The Fit Report adds a 30-minute interview, scores every competency in all four, and tells you what to do first.
+th: ผลประเมินเบื้องต้นที่ดูได้ฟรีมาจากคำตอบของคุณใน 4 ด้าน ส่วน Fit Report เพิ่มการสัมภาษณ์ 30 นาที ประเมินครบทุกทักษะในทั้ง 4 ด้าน และบอกว่าควรเริ่มทำอะไรก่อน
 provenance: paul-written
-date: 23/08/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: c0d6757dceee83cd753ba016a270a1d7c982fc97fae0bff78e187b68cafce626
+  text_hash: 5f201cbd3c69522b4b0ca1237a0e5001b02caaf142ff016b365088e624f9f0b2
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19103,20 +19074,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].how[0]
 render: Product pages, PRODUCTS[2].how[0]
 narrative_slot: mechanism
-en: All four scores against the bars the European market actually uses, rather than four numbers on their own.
-th: เทียบคะแนนทั้งสี่ด้านกับเกณฑ์ที่ตลาดยุโรปใช้จริง ไม่ใช่แค่ตัวเลขลอย ๆ
+en: 'A 30-minute interview with me covers what a form cannot see: your CV, how you talk about your work, and the roles you are aiming at.'
+th: สัมภาษณ์ 30 นาทีกับผม เพื่อดูส่วนที่แบบฟอร์มมองไม่เห็น ทั้ง CV วิธีที่คุณเล่าถึงงานของตัวเอง และตำแหน่งที่คุณตั้งเป้าไว้
 provenance: paul-approved
-date: 23/08/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: |-
-  Drafted 23/08/2026, read back and approved unchanged. Thresholds rather than scores, which
-
-  `10_Methodology.md` calls the single most important idea in the method.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
 review:
   structural_calque: pass
-  text_hash: cb3795be96b119a2d9830310f107dfc9d7c289bda8904d134cc54b59a2c73eaf
+  text_hash: 25a7b6e2ed105b61e9355b4b24e06cd970e5f1827a21dde3859103d23725ecb7
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19128,20 +19096,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].how[1]
 render: Product pages, PRODUCTS[2].how[1]
 narrative_slot: mechanism
-en: Which gate you have not cleared, and why you should start with that one.
-th: บอกว่าคุณยังไม่ผ่านด่านไหน และทำไมจึงควรเริ่มจากด่านนั้นก่อน
+en: All four areas as full charts, eight to ten competencies each, scored against the bars the European market uses.
+th: แสดงผลครบทั้ง 4 ด้านเป็นกราฟแยกด้าน ด้านละ 8–10 ทักษะ พร้อมคะแนนเทียบกับเกณฑ์ที่ใช้จริงในตลาดงานยุโรป
 provenance: paul-written
-date: 23/08/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. Gates are cleared in dependency order, not
-
-  score order, and the lowest uncleared one is the only one that matters
-
-  this month.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: f2949a233340c29e409cf18b65c474ae1c0b6e279d6d7f9d9f5a2f6485d25048
+  text_hash: 382efbd86d15c81c24802e54de924dcadda009f7dd06db7ddf5bc0e753d29691
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19155,17 +19118,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].how[2]
 render: Product pages, PRODUCTS[2].how[2]
 narrative_slot: mechanism
-en: A sequence of what to do, ordered by what moves the result soonest.
-th: จัดลำดับสิ่งที่ควรทำ โดยเริ่มจากสิ่งที่จะช่วยให้คุณเห็นผลได้เร็วที่สุด
-provenance: paul-written
-date: 23/08/2026
+en: Which gate you have not cleared, and the order to work in, starting with what moves the result soonest.
+th: บอกว่าคุณยังไม่ผ่านด่านไหน และควรทำอะไรตามลำดับ โดยเริ่มจากสิ่งที่ช่วยให้เห็นผลเร็วที่สุด
+provenance: paul-approved
+date: 26/10/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
 review:
   structural_calque: pass
-  text_hash: 5eec16ed5bb3b4202822590c08559d28eef7e0089daf5203f117a540c7bef81f
+  text_hash: 3899eb74cdb523293bdc8d4925b7ebca45afab1cd6e46943e33c2a03456fa066
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19177,20 +19140,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].howLede
 render: Product pages, PRODUCTS[2].howLede
 narrative_slot: mechanism
-en: All four scores against the market's own bars, and what to do first.
-th: คะแนนทั้งสี่ด้านเทียบกับเกณฑ์ที่ตลาดใช้จริง พร้อมบอกว่าควรเริ่มจากอะไร
+en: Your answers, a 30-minute interview, and a report you keep.
+th: คำตอบของคุณ การสัมภาษณ์ 30 นาที และรายงานที่คุณเก็บไว้ใช้ต่อได้
 provenance: paul-approved
-date: 10/09/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
 review:
   structural_calque: pass
-  text_hash: 2b52a14a2d84c57edc658dcaa71d2e17688258278912c06dab2da4c1ef7a3cd2
+  text_hash: 4b2b44fbc2fce28c46f7b2b96fe11ea0a8e9e0d26f651063b541fc986d5f54a1
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19202,15 +19162,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].lede
 render: Product pages, PRODUCTS[2].lede
 narrative_slot: utility
-en: The full EU Fit Check result as a document you keep and plan the next step with.
-th: ผลประเมินฉบับเต็มจาก EU Fit Check ในรูปแบบเอกสารที่คุณเก็บไว้ใช้ในการวางแผนขั้นต่อไปได้
+en: 'The full report: all four areas scored competency by competency, completed in a 30-minute interview with me.'
+th: ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับผม
 provenance: paul-written
-date: 23/08/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: Rebuilt from Paul's own Thai of 23/08/2026 on the pricing sheet.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 5488d404c79d1bd5e3410ad959ad6e5f4ff8b0a2984f20d01765372298493a3e
+  text_hash: 56f1f451e90eefb0fb90e5e20dba4c6b7df3ef39727202f7f4885f43bba1d597
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -22220,22 +22180,15 @@ source: src/lib/content/services.ts
 path: ENGAGEMENT_LEDE
 render: Services page, ENGAGEMENT_LEDE
 narrative_slot: utility
-en: >-
-  Four steps, and the first one is free. Nothing is scoped or priced until we both know what you are actually
-  aiming at.
-th: >-
-  มีสี่ขั้นตอน และขั้นแรกไม่มีค่าใช้จ่าย เราจะยังไม่กำหนดขอบเขตงานหรือราคา
-  จนกว่าทั้งคุณและเราจะรู้ชัดว่าคุณกำลังมุ่งไปทางไหน
+en: Four steps. Nothing is scoped or priced until we both know what you are actually aiming at.
+th: กระบวนการมี 4 ขั้นตอน โดยเราจะกำหนดขอบเขตและค่าบริการโค้ชชิ่งเมื่อทั้งคุณและเราเข้าใจชัดเจนแล้วว่าเป้าหมายของคุณคืออะไร
 provenance: paul-written
-date: 06/09/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 06/09/2026. `ไม่มีค่าใช้จ่าย` rather than the shorter word,
-
-  which is the form `faq.ts` and the product pages already use for this.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 4518df9397da081896ad04caa6c4e63e36b6a294e98acf5bde4e574f90bffb9b
+  text_hash: 005a86ea03b28a8280fa4b47245572ef008b6fa5b30d192d5020af5a18dacd9d
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -22249,19 +22202,15 @@ source: src/lib/content/services.ts
 path: ENGAGEMENT[0].body
 render: Services page, ENGAGEMENT[0].body
 narrative_slot: utility
-en: >-
-  Thirty minutes on where you are and what you are aiming at. If nothing here is the right thing for you, that
-  is what the half hour is for.
-th: >-
-  คุยกันครึ่งชั่วโมงว่าตอนนี้คุณอยู่ตรงไหนและกำลังมุ่งไปทางไหน หากไม่มีบริการไหนเหมาะกับคุณ
-  การคุยครั้งนี้ก็มีไว้เพื่อบอกให้ชัดตั้งแต่ต้น
+en: A 30-minute interview and a full report on where you stand. It shows us both whether coaching is the right next step, and the report is yours to keep either way.
+th: สัมภาษณ์ 30 นาที พร้อมรายงานฉบับเต็มที่ประเมินว่าตอนนี้คุณอยู่ตรงไหน ช่วยให้เราทั้งคู่เห็นว่าโค้ชชิ่งเป็นขั้นต่อไปที่เหมาะกับคุณหรือไม่ คุณเก็บรายงานไว้ใช้ต่อได้ ไม่ว่าจะตัดสินใจใช้บริการโค้ชชิ่งต่อหรือไม่ก็ตาม
 provenance: paul-written
-date: 06/09/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: e6a4a34be7ab3527d17566a1fd5c842df16dfe016c48012e0e8b150a6c175d86
+  text_hash: 929973ca7e183833e4a7950ac0451dc20b4a66fa8f97082e8755d30af758bc57
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -22275,17 +22224,17 @@ source: src/lib/content/services.ts
 path: ENGAGEMENT[0].lead
 render: Services page, ENGAGEMENT[0].lead
 narrative_slot: utility
-en: A first conversation, at no charge
-th: คุยกันครั้งแรก โดยไม่มีค่าใช้จ่าย
+en: The Fit Report, to start
+th: เริ่มจาก Fit Report
 provenance: paul-approved
-date: 06/09/2026
+date: 26/10/2026
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
 review:
   structural_calque: pass
-  text_hash: 1cecc1a93776f93ab802a77dd98088ecb678d41718fe91e56993e3817aefa3f8
+  text_hash: 37907a118c3621e3dd51a2e591c143c10a69af9d1768895ecfb9e71dd9b01fe6
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -23867,6 +23816,1194 @@ review:
   text_hash: a59f3e4b68e730f173461069b3d7f85771448183d057af6798367c67f73c8c59
   prompt_version: structural-calque-v1
   basis: Paul approved this item unchanged in the language review on 04/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.qualificationRecognition`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.qualificationRecognition
+source: src/lib/content/copy.ts
+path: COPY.item.qualificationRecognition
+render: Fit Report, competency name
+narrative_slot: utility
+en: Degree and licence recognition
+th: การรับรองวุฒิการศึกษาและใบอนุญาตประกอบวิชาชีพ
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 6310c1ec04a9fe705d215d075b13f18616ac0a14c5e50ee2bf6bf95b7a8f0f86
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.financialPreparedness`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.financialPreparedness
+source: src/lib/content/copy.ts
+path: COPY.item.financialPreparedness
+render: Fit Report, competency name
+narrative_slot: utility
+en: Financial Preparedness
+th: ความพร้อมด้านการเงิน
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 1206c44bf818fb4df743ef559ca9c797a049ba9b41d3bbce9e61eafca6e76860
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.relocationPlanning`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.relocationPlanning
+source: src/lib/content/copy.ts
+path: COPY.item.relocationPlanning
+render: Fit Report, competency name
+narrative_slot: utility
+en: Relocation Planning
+th: การวางแผนย้ายประเทศ
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: c736f1166f4d5898977ab298c85f5e704d877e77ee850663c1051c613ac2c08e
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.culturalAdaptability`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.culturalAdaptability
+source: src/lib/content/copy.ts
+path: COPY.item.culturalAdaptability
+render: Fit Report, competency name
+narrative_slot: utility
+en: Cultural Adaptability
+th: การปรับตัวทางวัฒนธรรม
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: da9321f403fe0308cb516f152df55de48682124b99412dd322089fb516256294
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.administrativeReadiness`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.administrativeReadiness
+source: src/lib/content/copy.ts
+path: COPY.item.administrativeReadiness
+render: Fit Report, competency name
+narrative_slot: utility
+en: Administrative Readiness
+th: ความพร้อมด้านเอกสาร
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: dd58803072a301d8676357dc94418cbc9faad53cfb0fb5c28e75783556c95998
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.crossCultural`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.crossCultural
+source: src/lib/content/copy.ts
+path: COPY.item.crossCultural
+render: Fit Report, competency name
+narrative_slot: utility
+en: Cross-cultural Communication
+th: การสื่อสารข้ามวัฒนธรรม
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 74edc8860822435227fb93f10610c1cad4b75273138be40276e7cf308c1d941f
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.independence`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.independence
+source: src/lib/content/copy.ts
+path: COPY.item.independence
+render: Fit Report, competency name
+narrative_slot: utility
+en: Independence
+th: การทำงานด้วยตนเอง
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 997e1a10e26e8ac72d8ec6572ae8a44e8420370d947fc0b2d1f6775a465fd556
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.ownershipMindset`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.ownershipMindset
+source: src/lib/content/copy.ts
+path: COPY.item.ownershipMindset
+render: Fit Report, competency name
+narrative_slot: utility
+en: Ownership Mindset
+th: ความรับผิดชอบต่องานและผลลัพธ์
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 1f1f1e2d5d0ac94370ed4f7a0b48b0ba1b20894fce0d0d9e306275d46c63b99d
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.businessAwareness`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.businessAwareness
+source: src/lib/content/copy.ts
+path: COPY.item.businessAwareness
+render: Fit Report, competency name
+narrative_slot: utility
+en: Customer & Business Awareness
+th: ความเข้าใจธุรกิจและลูกค้า
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 9f4b26b6a8cd316e789cb2d2aa65b0b9a96051e72f703e515e2c65a868b6edb7
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.collaborationStyle`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.collaborationStyle
+source: src/lib/content/copy.ts
+path: COPY.item.collaborationStyle
+render: Fit Report, competency name
+narrative_slot: utility
+en: Collaboration Style
+th: รูปแบบการทำงานร่วมกับผู้อื่น
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: a7398a5dfe0692f619911be4e54b0f24c7c4e196b4efd3438fff5df9b62c44c4
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.salaryExpectations`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.salaryExpectations
+source: src/lib/content/copy.ts
+path: COPY.item.salaryExpectations
+render: Fit Report, competency name
+narrative_slot: utility
+en: Salary Expectations
+th: ความคาดหวังด้านเงินเดือน
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 3377b765bf17daed96696049a437360ee1e098b82d3ac75d825e2f36ecdaf6f1
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.labourMarketKnowledge`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.labourMarketKnowledge
+source: src/lib/content/copy.ts
+path: COPY.item.labourMarketKnowledge
+render: Fit Report, competency name
+narrative_slot: utility
+en: Labour Market Knowledge
+th: ความรู้เรื่องตลาดงาน
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 50748a2a1f89794438a945fc85d224a66b1be2a257f857b43b54cea43e2fea0d
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.adaptability`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.adaptability
+source: src/lib/content/copy.ts
+path: COPY.item.adaptability
+render: Fit Report, competency name
+narrative_slot: utility
+en: Adaptability
+th: การปรับตัว
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 0191f8145e6a36cf3a283e2529bd46c3d986a8cf0691bed7350726aa82f6c564
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.professionalConfidence`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.professionalConfidence
+source: src/lib/content/copy.ts
+path: COPY.item.professionalConfidence
+render: Fit Report, competency name
+narrative_slot: utility
+en: Professional Confidence
+th: ความมั่นใจในการทำงาน
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 9dfb81682597592caa717a141adb00e3b6a60e18cc5dac8ad6ddaf5e284ca531
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.eyebrow`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.eyebrow
+source: src/lib/content/copy.ts
+path: COPY.fit.eyebrow
+render: Fit Report, cover eyebrow
+narrative_slot: artefact
+en: PunProfile · Fit Report
+th: Fit Report โดย PunProfile
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: c1461dd8ec3f0feebfd88524e6aaf1774f86fc01cd1a620233eaf0da45e57927
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.cover.sub`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.cover.sub
+source: src/lib/content/copy.ts
+path: COPY.fit.cover.sub
+render: Fit Report, cover line. {count} is the number of competencies
+narrative_slot: artefact
+en: 'The full report: {count} competencies, scored from your answers and a 30-minute interview.'
+th: 'รายงานฉบับเต็ม: {count} ทักษะ ประเมินจากคำตอบของคุณและการสัมภาษณ์ 30 นาที'
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: ea32bfbaedcbe733a7be1df3901f8196c6245665bda1c870e56cccf4dfc667cb
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.cover.prepared`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.cover.prepared
+source: src/lib/content/copy.ts
+path: COPY.fit.cover.prepared
+render: Fit Report, cover date. {date} is DD/MM/YYYY
+narrative_slot: utility
+en: Prepared {date}
+th: จัดทำเมื่อ {date}
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: f0b32ad8cd143bdfdc5a6099a14f6d05912b99c2b491f91f3714a245255693bd
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.summary.heading`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.summary.heading
+source: src/lib/content/copy.ts
+path: COPY.fit.summary.heading
+render: Fit Report, summary heading
+narrative_slot: proof
+en: Where you stand against the market's bar
+th: คุณอยู่ตรงไหน เมื่อเทียบกับเกณฑ์ของตลาด
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 8fb60d7a9a42603be69c9fcbdea99c9f1e54fc0da0af7fb85e80f6e9784e1c41
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.col.area`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.col.area
+source: src/lib/content/copy.ts
+path: COPY.fit.col.area
+render: Fit Report, summary table column
+narrative_slot: utility
+en: Area
+th: ด้าน
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: e48f5f01477d8eb0893ff9751b1b124fd74b4d22ddda7b82cbd25543ae911942
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.col.score`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.col.score
+source: src/lib/content/copy.ts
+path: COPY.fit.col.score
+render: Fit Report, summary table column
+narrative_slot: utility
+en: Your score
+th: คะแนนของคุณ
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: b377d2b469992a149fad5a840e715225b66eba716305f88837662500b09eb3db
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.col.bar`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.col.bar
+source: src/lib/content/copy.ts
+path: COPY.fit.col.bar
+render: Fit Report, summary table column
+narrative_slot: utility
+en: Market bar
+th: เกณฑ์ของตลาด
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 2d9c2be6149f15480de1ec20c213538962fea5da22e6bcca819934c5a5b59f95
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.col.gap`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.col.gap
+source: src/lib/content/copy.ts
+path: COPY.fit.col.gap
+render: Fit Report, summary table column
+narrative_slot: utility
+en: Still to go
+th: คะแนนที่ยังขาด
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 560d2bc2f3a9852faa65b92271a096d6c11dabe474b521c7c3d269d557a29011
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.cleared`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.cleared
+source: src/lib/content/copy.ts
+path: COPY.fit.cleared
+render: Fit Report, gap cell when the bar is met
+narrative_slot: utility
+en: Cleared
+th: ผ่านเกณฑ์
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 5d52f3b6dea9d8d8d0a09f371a76e503fc7db4857fafc9d4637f523443f34f3a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.legend.bar`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.legend.bar
+source: src/lib/content/copy.ts
+path: COPY.fit.legend.bar
+render: Fit Report, under every chart
+narrative_slot: utility
+en: 'Dashed line: the score the European market expects in this area.'
+th: 'เส้นประ: เกณฑ์คะแนนที่คาดหวังในตลาดงานยุโรปสำหรับด้านนี้'
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: bf61ab79fdbb5269f99f1d921307cd6e220b6ba8197c76abb9b5eb4c8904e6e2
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.path.heading`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.path.heading
+source: src/lib/content/copy.ts
+path: COPY.fit.path.heading
+render: Fit Report, gate path heading
+narrative_slot: mechanism
+en: The order to work in
+th: ลำดับที่ควรลงมือ
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 4089aee67de3cc88af2176c6d98ca5ce59397d4c20a93fba25bc69e9738f1e35
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.path.lede`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.path.lede
+source: src/lib/content/copy.ts
+path: COPY.fit.path.lede
+render: Fit Report, gate path lede
+narrative_slot: mechanism
+en: Each area builds on the one before it, so the first one you have not cleared is where to start.
+th: แต่ละด้านต่อยอดจากด้านก่อนหน้า ด้านแรกที่ยังไม่ผ่านเกณฑ์จึงเป็นจุดที่ควรเริ่ม
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 31b2c6f97fba9d9fa2f66129f48d3b40de3e20db9ffae5a6b04e1762cc04234b
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.path.start`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.path.start
+source: src/lib/content/copy.ts
+path: COPY.fit.path.start
+render: Fit Report, marker on the first uncleared area
+narrative_slot: ask
+en: Start here
+th: เริ่มที่นี่
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: c711b42b2289a6e6d350610db395962ede8c7be245ecd3a040e5ff619bf8a0be
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.col.how`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.col.how
+source: src/lib/content/copy.ts
+path: COPY.fit.col.how
+render: Fit Report, area table column
+narrative_slot: utility
+en: Measured from
+th: ประเมินจาก
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: aab7231a3699af03d5aeeee892d10c182adf556f4f50b26330a0b6eca825cf4f
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.col.note`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.col.note
+source: src/lib/content/copy.ts
+path: COPY.fit.col.note
+render: Fit Report, area table column
+narrative_slot: utility
+en: What I saw
+th: สิ่งที่ผมเห็น
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: a7bd8198785abd509417403cba2e702d1a7b22a7568d984aa204885f08b1193a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.how.indicators`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.how.indicators
+source: src/lib/content/copy.ts
+path: COPY.fit.how.indicators
+render: Fit Report, area table cell. {met} is 0 to 4
+narrative_slot: utility
+en: Interview, {met} of 4 met
+th: 'จากการสัมภาษณ์: ผ่านเกณฑ์ {met} จาก 4 ข้อ'
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 7014abccd3e8ef0ddc6dc39df399a63591a279f14a760310cebc29de53710c87
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.how.interview`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.how.interview
+source: src/lib/content/copy.ts
+path: COPY.fit.how.interview
+render: Fit Report, area table cell
+narrative_slot: utility
+en: Interview
+th: สัมภาษณ์
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: f7894b769f7536ee54f97a2bde671fdcbc33d7c0b43a5ee01c156283d793d356
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.how.survey`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.how.survey
+source: src/lib/content/copy.ts
+path: COPY.fit.how.survey
+render: Fit Report, area table cell
+narrative_slot: utility
+en: Your answers
+th: คำตอบของคุณ
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 540f36a68339fb286792a5aa7b3be5e455dea9ef42cc2f592d4530eb6e144166
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.how.none`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.how.none
+source: src/lib/content/copy.ts
+path: COPY.fit.how.none
+render: Fit Report, area table cell
+narrative_slot: utility
+en: Not rated
+th: ยังไม่ได้ประเมิน
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: f0e85b2b28067d5a632f56327428f96c427427d123387ea28a2c15f980da0c97
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.moves.heading`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.moves.heading
+source: src/lib/content/copy.ts
+path: COPY.fit.moves.heading
+render: Fit Report, moves heading
+narrative_slot: mechanism
+en: What moves your score most
+th: สิ่งที่ช่วยให้คะแนนขยับมากที่สุด
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 7602c8fbe5ec034cdd86813d36652fff923df0538e03f75f6770c6d806d02d2c
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.moves.lede`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.moves.lede
+source: src/lib/content/copy.ts
+path: COPY.fit.moves.lede
+render: Fit Report, moves lede
+narrative_slot: mechanism
+en: 'Each one is worked out from your own answers: do this, and this is what that area would read.'
+th: แต่ละข้อคำนวณจากคำตอบของคุณ เพื่อแสดงว่าหากปรับปรุงข้อนี้ได้ตามเกณฑ์ คะแนนในด้านนั้นจะเปลี่ยนเป็นเท่าไร
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 253da68e860e89e3527b0f862ee5fe656b7bd0bd8b1131d102c31d45aaf5fe85
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.roles.heading`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.roles.heading
+source: src/lib/content/copy.ts
+path: COPY.fit.roles.heading
+render: Fit Report, roles heading
+narrative_slot: proof
+en: Roles that fit you
+th: ตำแหน่งงานในสายงานของคุณ
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 2b2b2d4c330c8c5931d40ca88dade1c70c0ab7b94a8203468a4757d98a4ebbb5
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.roles.lede`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.roles.lede
+source: src/lib/content/copy.ts
+path: COPY.fit.roles.lede
+render: Fit Report, roles lede. {total}, {matching}, {countries} substituted
+narrative_slot: proof
+en: 'Of the {total} roles we published in {countries}, {matching} have a title in your field. The newest:'
+th: จากตำแหน่งงานทั้งหมด {total} ตำแหน่งที่เราเผยแพร่ใน {countries} มี {matching} ตำแหน่งที่ชื่อตำแหน่งตรงกับสายงานของคุณ โดยตำแหน่งล่าสุดมีดังนี้
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 613d5e465f34705c19aa296f43fe89e54f950d2e45ad81cb7aa5aba2a159325e
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.roles.none`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.roles.none
+source: src/lib/content/copy.ts
+path: COPY.fit.roles.none
+render: Fit Report, roles when nothing matches
+narrative_slot: proof
+en: None of the roles we have published so far match your field in those countries.
+th: ยังไม่มีตำแหน่งที่เราเผยแพร่ซึ่งตรงกับสายงานของคุณในประเทศเหล่านี้
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: a8e28cd3a8fbf0819e5b7640340489acd45920f1674bd843880216be95d733f1
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.roles.note`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.roles.note
+source: src/lib/content/copy.ts
+path: COPY.fit.roles.note
+render: Fit Report, under the roles
+narrative_slot: limit
+en: Matched by job title. Whether you can apply is checked role by role.
+th: รายการนี้จับคู่จากชื่อตำแหน่งงาน ส่วนคุณมีคุณสมบัติตรงตามเงื่อนไขการสมัครหรือไม่ ต้องตรวจสอบรายละเอียดของแต่ละตำแหน่ง
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 766c084d6ebfabe86464aaaad736763ef29f98c9274bc4e588e8f017252c93c9
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.footer`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.footer
+source: src/lib/content/copy.ts
+path: COPY.fit.footer
+render: Fit Report, last page footing
+narrative_slot: artefact
+en: Fit Report prepared by PunProfile Career Coaching from your EU Fit Check answers and a 30-minute interview.
+th: Fit Report จัดทำโดย PunProfile จากคำตอบใน EU Fit Check และการสัมภาษณ์ 30 นาที
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 2f6d6c2c8ebbf053a27c8b56f1b7b3866729f8f90b8e683076584079af5a61f7
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FULL_HEADING`
+
+```yaml
+id: src/lib/content/products.ts::FULL_HEADING
+source: src/lib/content/products.ts
+path: FULL_HEADING
+render: EU Fit Check product page, full-version section heading
+narrative_slot: artefact
+en: 'The full version: every competency, area by area'
+th: 'ฉบับเต็ม: ครบทุกทักษะ แยกทีละด้าน'
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 60df3b9d9e32fe10cb7030a31a88517ced9a241b737b5e82a0ac1aa9c953243f
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FULL_LEDE`
+
+```yaml
+id: src/lib/content/products.ts::FULL_LEDE
+source: src/lib/content/products.ts
+path: FULL_LEDE
+render: EU Fit Check product page, full-version section lede
+narrative_slot: artefact
+en: The free check scores four areas from your answers. The Fit Report adds a 30-minute interview with me and opens each area up like this, eight to ten competencies at a time.
+th: EU Fit Check แบบฟรีให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับผม และแสดงผลแต่ละด้านเป็นกราฟแบบนี้ โดยแยกเป็นด้านละ 8–10 ทักษะ
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 8bafa902bd16fb566c17d9515c77d11a569764dbe9858ac64802d5a464a9deea
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FULL_CTA`
+
+```yaml
+id: src/lib/content/products.ts::FULL_CTA
+source: src/lib/content/products.ts
+path: FULL_CTA
+render: EU Fit Check product page, full-version section link
+narrative_slot: ask
+en: See what the Fit Report includes
+th: ดูว่า Fit Report มีอะไรบ้าง
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 129084e93806ff370cef853d0f2986aa043efa4bc54f1ca24f638fd30547bd7a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.cvQuality`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.cvQuality
+source: src/lib/content/copy.ts
+path: COPY.item.cvQuality
+render: Full report, readiness-to-apply chart axis
+narrative_slot: utility
+en: CV quality
+th: คุณภาพของ CV
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 2e19453b183956056dc75fbbc96323d87ae3702975fcecde4cf2e6426e9d6f8c
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.linkedinProfile`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.linkedinProfile
+source: src/lib/content/copy.ts
+path: COPY.item.linkedinProfile
+render: Full report, readiness-to-apply chart axis
+narrative_slot: utility
+en: LinkedIn profile
+th: โปรไฟล์ LinkedIn
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 3e8fc6dfc6d57a9f150be7aff465dd112488f2baa56ff988ada2e6ce063e8db2
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.interviewSkills`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.interviewSkills
+source: src/lib/content/copy.ts
+path: COPY.item.interviewSkills
+render: Full report, readiness-to-apply chart axis
+narrative_slot: utility
+en: Interview skills
+th: ทักษะการสัมภาษณ์งาน
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 09fe7946a3d3d3ed5f3a2f4a46325ef403edd903e98750580828f57b07362461
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.personalBrand`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.personalBrand
+source: src/lib/content/copy.ts
+path: COPY.item.personalBrand
+render: Full report, readiness-to-apply chart axis
+narrative_slot: utility
+en: Personal brand
+th: Personal Brand
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 82049ac762d86d2d4038df6e559ea33606038f837bd3d54b009fd7c9b566c60a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.networking`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.networking
+source: src/lib/content/copy.ts
+path: COPY.item.networking
+render: Full report, readiness-to-apply chart axis
+narrative_slot: utility
+en: Networking
+th: การสร้างเครือข่ายอาชีพ
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 8af1249ee40c53395e928594ecc0db37a22928f04697f41e8ee9aebd43bcf81d
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.jobSearchStrategy`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.jobSearchStrategy
+source: src/lib/content/copy.ts
+path: COPY.item.jobSearchStrategy
+render: Full report, readiness-to-apply chart axis
+narrative_slot: utility
+en: Job search strategy
+th: กลยุทธ์การหางาน
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 6e04979d00f581160cc0e91867d87daaf68f38edb3a4acb1ccb9fdab7ddab624
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.item.recruiterReadiness`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.item.recruiterReadiness
+source: src/lib/content/copy.ts
+path: COPY.item.recruiterReadiness
+render: Full report, readiness-to-apply chart axis
+narrative_slot: utility
+en: Recruiter readiness
+th: ความพร้อมเมื่อผู้สรรหาบุคลากรติดต่อมา
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 11ec9447efb7fceda6edfe741be4fc4b578bd520e2275cc473fac51682863591
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.report.full.heading`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.report.full.heading
+source: src/lib/content/copy.ts
+path: COPY.report.full.heading
+render: Candidate PDF, full-version section heading
+narrative_slot: artefact
+en: 'The full version: every competency, area by area'
+th: 'ฉบับเต็ม: ครบทุกทักษะ แยกทีละด้าน'
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 60df3b9d9e32fe10cb7030a31a88517ced9a241b737b5e82a0ac1aa9c953243f
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.report.full.body`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.report.full.body
+source: src/lib/content/copy.ts
+path: COPY.report.full.body
+render: Candidate PDF, full-version section body
+narrative_slot: ask
+en: This report scores four areas from your answers. The Fit Report adds a 30-minute interview with me and scores every competency in each area, like the example below. If you want it, message me on LINE or by email and I will arrange the interview and the payment.
+th: รายงานนี้ให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับผม และประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างด้านล่าง หากสนใจ ทักมาทาง LINE หรืออีเมลได้เลย ผมจะนัดเวลาสัมภาษณ์และแจ้งรายละเอียดการชำระเงินให้
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 52e7f4a0af0730874aa06ba0db5477c49d1fd0fdb4a548fabe3e4fc23803e9fd
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.report.full.example`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.report.full.example
+source: src/lib/content/copy.ts
+path: COPY.report.full.example
+render: Candidate PDF, label over the example chart
+narrative_slot: utility
+en: Example, not your result
+th: ตัวอย่าง ไม่ใช่ผลของคุณ
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 73c5693835896f6f4b297e5ccd78094a8542041fa1fbfb162d5e2824cb17e75a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.report.full.link`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.report.full.link
+source: src/lib/content/copy.ts
+path: COPY.report.full.link
+render: Candidate PDF, where to read more
+narrative_slot: ask
+en: 'Details: punprofile.app/products/fit-report'
+th: 'ดูรายละเอียด: punprofile.app/products/fit-report'
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: caace11bd1dd388e1c49a308861b7b77dd2f21dc7aad73629d61cff01c9ae213
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
 ```
 
 <!-- COPY-ENTRY -->

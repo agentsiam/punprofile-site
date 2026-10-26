@@ -73,6 +73,13 @@ export interface RadarOptions {
    */
   values?: boolean;
   /**
+   * The market bar, drawn as a dashed ring: one number for every axis, or one
+   * per axis. Added 26/10/2026 for the paid Fit Report, where the gap between
+   * the shape and this ring is the point of the page. Its stroke is
+   * `var(--viz-bar)`, which the report's stylesheet defines; no colour here.
+   */
+  threshold?: number | number[];
+  /**
    * How much wider than tall the viewBox is. Default `WIDTH_RATIO`.
    *
    * The side labels sit outside the plot, so this is the only control over
@@ -158,6 +165,18 @@ export function radarSvg(axes: RadarAxis[], opts: RadarOptions): string {
   for (let i = 0; i < n; i++) {
     const p = polar(cx, cy, R, i, n);
     parts.push(`<line x1="${cx}" y1="${cy}" x2="${p.x.toFixed(1)}" y2="${p.y.toFixed(1)}" stroke="var(--viz-grid)" stroke-width="1" stroke-opacity="0.55" />`);
+  }
+
+  if (opts.threshold !== undefined) {
+    const t = opts.threshold;
+    const pts = Array.from({ length: n }, (_, i) => {
+      const v = Array.isArray(t) ? t[i] : t;
+      const p = polar(cx, cy, (R * v) / max, i, n);
+      return `${p.x.toFixed(1)},${p.y.toFixed(1)}`;
+    }).join(" ");
+    parts.push(
+      `<polygon class="viz-threshold" points="${pts}" fill="none" stroke="var(--viz-bar)" stroke-width="2" stroke-dasharray="6 5" />`,
+    );
   }
 
   // Scale ticks on the upward spoke only — one set of numbers, not n sets.
