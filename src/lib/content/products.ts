@@ -173,6 +173,17 @@ export const FULL_SAMPLE: readonly { key: string; score: number }[] = [
   { key: "recruiterReadiness", score: 3.5 },
 ];
 
+/** The two labels over the hero's charts, 26/10/2026: what the free check gives, and what the Fit Report gives. */
+export const HERO_FREE_LABEL: Copy = {
+  en: "Free: 4 areas",
+  th: "ฟรี: 4 ด้าน",
+};
+
+export const HERO_FULL_LABEL: Copy = {
+  en: "Fit Report: every competency",
+  th: "Fit Report: ทุกทักษะ",
+};
+
 export const FULL_HEADING: Copy = {
   en: "The full version: every competency, area by area",
   th: "ฉบับเต็ม: ครบทุกทักษะ แยกทีละด้าน",

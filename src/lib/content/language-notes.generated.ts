@@ -8829,6 +8829,24 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "04/10/2026",
     "decisionNote": "Draft 04/10/2026. The product page and the assessment shared the title \"EU Fit Check\"."
   },
+  "src/lib/content/products.ts::HERO_FREE_LABEL": {
+    "source": "src/lib/content/products.ts",
+    "path": "HERO_FREE_LABEL",
+    "render": "EU Fit Check product page, label over the free chart in the hero",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paul chose these two labels as written in option 1a, 26/10/2026, when the free and full charts moved side by side into the EU Fit Check hero."
+  },
+  "src/lib/content/products.ts::HERO_FULL_LABEL": {
+    "source": "src/lib/content/products.ts",
+    "path": "HERO_FULL_LABEL",
+    "render": "EU Fit Check product page, label over the full chart in the hero",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Paul chose these two labels as written in option 1a, 26/10/2026, when the free and full charts moved side by side into the EU Fit Check hero."
+  },
   "src/lib/content/copy.ts::COPY.item.qualificationRecognition": {
     "source": "src/lib/content/copy.ts",
     "path": "COPY.item.qualificationRecognition",

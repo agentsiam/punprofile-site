@@ -14,7 +14,7 @@ import type { ComponentType } from "react";
 import { useCopy } from "@/components/LocaleProvider";
 import Band from "@/components/Band";
 import MarketStats from "@/components/blocks/MarketStats";
-import SampleChartCard from "@/components/features/products/SampleChartCard";
+import HeroCharts from "@/components/features/products/HeroCharts";
 import LiveStatsBand from "@/components/features/products/LiveStatsBand";
 import FullReportBand from "@/components/features/products/FullReportBand";
 import { MARKET_HEADING } from "@/lib/content/home";
@@ -32,11 +32,11 @@ function ProofBand() {
   );
 }
 
-/** What the free check shows, then what the paid full version adds. */
-function AfterHow() {
+/** The proof strip, then straight into what the paid full version adds. */
+function AfterHero() {
   return (
     <>
-      <LiveStatsBand />
+      <ProofBand />
       <FullReportBand />
     </>
   );
@@ -45,6 +45,10 @@ function AfterHow() {
 export interface Showcase {
   /** Replaces the summary card in the hero's right column. */
   hero?: ComponentType;
+  /** Takes the hero's full width under the text, instead of a right column. */
+  heroWide?: ComponentType;
+  /** "How it works" as the steps alone, without its illustration. */
+  hideHowMedia?: boolean;
   /** A band between the hero and "how it works". */
   afterHero?: ComponentType;
   /** A band between "how it works" and "what it does not do". */
@@ -53,8 +57,12 @@ export interface Showcase {
 
 export const SHOWCASE: Partial<Record<string, Showcase>> = {
   "eu-fit-check": {
-    hero: SampleChartCard,
-    afterHero: ProofBand,
-    afterHow: AfterHow,
+    // 26/10/2026, Paul's call: free and full charts side by side in the first
+    // screen, the full-version words straight after the proof strip, and the
+    // generic illustration out of "how it works".
+    heroWide: HeroCharts,
+    afterHero: AfterHero,
+    hideHowMedia: true,
+    afterHow: LiveStatsBand,
   },
 };

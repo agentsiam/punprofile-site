@@ -173,6 +173,17 @@ export const FULL_SAMPLE: readonly { key: string; score: number }[] = [
   { key: "recruiterReadiness", score: 3.5 },
 ];
 
+/** The two labels over the hero's charts, 26/10/2026: what the free check gives, and what the Fit Report gives. */
+export const HERO_FREE_LABEL: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIRVJPX0ZSRUVfTEFCRUw:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIRVJPX0ZSRUVfTEFCRUw:TH%%,
+};
+
+export const HERO_FULL_LABEL: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIRVJPX0ZVTExfTEFCRUw:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIRVJPX0ZVTExfTEFCRUw:TH%%,
+};
+
 export const FULL_HEADING: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGVUxMX0hFQURJTkc:EN%%,
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGVUxMX0hFQURJTkc:TH%%,

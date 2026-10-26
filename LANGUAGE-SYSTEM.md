@@ -23819,6 +23819,50 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::HERO_FREE_LABEL`
+
+```yaml
+id: src/lib/content/products.ts::HERO_FREE_LABEL
+source: src/lib/content/products.ts
+path: HERO_FREE_LABEL
+render: EU Fit Check product page, label over the free chart in the hero
+narrative_slot: artefact
+en: 'Free: 4 areas'
+th: 'ฟรี: 4 ด้าน'
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paul chose these two labels as written in option 1a, 26/10/2026, when the free and full charts moved side by side into the EU Fit Check hero.
+review:
+  structural_calque: pass
+  text_hash: d2ab2fe98fc2017c464f28750b8321cc918eafae4763c061c9ed806726339474
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::HERO_FULL_LABEL`
+
+```yaml
+id: src/lib/content/products.ts::HERO_FULL_LABEL
+source: src/lib/content/products.ts
+path: HERO_FULL_LABEL
+render: EU Fit Check product page, label over the full chart in the hero
+narrative_slot: artefact
+en: 'Fit Report: every competency'
+th: 'Fit Report: ทุกทักษะ'
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Paul chose these two labels as written in option 1a, 26/10/2026, when the free and full charts moved side by side into the EU Fit Check hero.
+review:
+  structural_calque: pass
+  text_hash: 31fc224e206e16d32ae4ce5706ba0fbf4b7c8ac1ab578de343f2292ef443705d
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/copy.ts::COPY.item.qualificationRecognition`
 
 ```yaml
