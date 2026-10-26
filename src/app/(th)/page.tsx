@@ -65,9 +65,9 @@ import { SERVICES } from "@/lib/content/services";
 import { DESTINATIONS } from "@/lib/content/cta";
 import Band from "@/components/Band";
 import SplitFeature from "@/components/blocks/SplitFeature";
+import MarketStats from "@/components/blocks/MarketStats";
 import Testimonials from "@/components/blocks/Testimonials";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
-import { MARKET } from "@/lib/content/market-snapshot.generated";
 import { METHOD_PROOF } from "@/lib/content/method";
 import { FAQ, FAQ_HEADING } from "@/lib/content/faq";
 import { PORTRAIT_ALT } from "@/lib/content/coaching";
@@ -81,9 +81,7 @@ import {
   HOW_HEADING,
   HOW_STEPS,
   MARKET_BODY,
-  MARKET_FOOT,
   MARKET_HEADING,
-  MARKET_STATS,
   PROBLEM_BODY,
   PROBLEM_HEADING,
   RESULTS,
@@ -96,22 +94,6 @@ import {
   WHO_BODY,
   WHO_HEADING,
 } from "@/lib/content/home";
-
-/**
- * One mark per pipeline figure. See the note at the call site for why they are
- * not the same glyph three times.
- *
- * `screened` is a document, `published` is a document with a tick, `employers`
- * is a building. Nothing here is a brand asset; they are the plainest reading
- * of each noun, which is what an icon beside a number should be.
- */
-const STAT_MARK: Record<string, string> = {
-  screened: "M6 2h8l4 4v16H6V2Zm7 1.5V7h3.5L13 3.5ZM8 11h8v1.5H8V11Zm0 4h8v1.5H8V15Z",
-  published:
-    "M6 2h8l4 4v16H6V2Zm7 1.5V7h3.5L13 3.5Zm-2.2 15.1L7.5 15.3l1.1-1.1 2.2 2.2 4.6-4.6 1.1 1.1-5.7 5.7Z",
-  employers:
-    "M3 21V7l7-4 7 4v3h4v11H3Zm2-2h4v-3H5v3Zm0-5h4v-3H5v3Zm0-5h4V6H5v3Zm6 10h4v-3h-4v3Zm0-5h4v-3h-4v3Zm0-5h4V6h-4v3Zm8 10h2v-7h-2v7Z",
-};
 
 export default function Home() {
   const { t, pick, path, locale } = useCopy();
@@ -307,37 +289,9 @@ export default function Home() {
           </Link>
           </div>
           <hr className="mt-10 border-line" />
-          <div className="mt-10 grid gap-10 medium:grid-cols-3">
-            {MARKET_STATS.map((stat) => (
-              <div key={stat.field}>
-                {/* A mark per figure rather than the same tick three times.
-                    Three identical chips say the three numbers are the same
-                    kind of thing, and they are not: a post read, a post that
-                    said the word sponsorship, a company behind them. Drawn
-                    rather than fetched, one path each, inheriting the chip's
-                    own colour. */}
-                <span
-                  aria-hidden
-                  className="flex size-10 items-center justify-center rounded-full bg-primary-pale text-on-primary-pale"
-                >
-                  <svg viewBox="0 0 24 24" className="size-5" fill="currentColor">
-                    <path d={STAT_MARK[stat.field] ?? STAT_MARK.screened} />
-                  </svg>
-                </span>
-                <p className="mt-4 text-display-md text-ink-deep">{MARKET[stat.field]}</p>
-                <p className="mt-2 text-body-large text-body">{t(stat.label)}</p>
-              </div>
-            ))}
+          <div className="mt-10">
+            <MarketStats />
           </div>
-          {/* The window is one sentence in both languages rather than three
-              fragments joined here, which is the rule `copy.ts` states for
-              placeholders: Thai puts the dates in its own place and only the
-              whole sentence can carry that. */}
-          <p className="mt-4 text-body-medium text-on-surface-variant">
-            {pick(MARKET_FOOT)
-              .replaceAll("{from}", MARKET.from)
-              .replaceAll("{to}", MARKET.to)}
-          </p>
       </Band>
 
         {/* ------------------------------------------------- the problem */}
@@ -622,23 +576,19 @@ export default function Home() {
             sit in the section above the fold rather than in this one. */}
       <Band block="B2" ground="canvas" width="wide">
         {/* B2: the reference states who is behind a thing beside a picture of
-            them, not as a paragraph on its own. The portrait and its alt text
-            are the ones `/coaching` uses. The source is a 421px square, so it
-            sits as a round portrait on the soft ground rather than being
-            stretched across a 4:3 box, which would blur it and crop the head. */}
+            them, not as a paragraph on its own, and the picture fills the frame.
+            It used to float the square `/coaching` portrait in an empty box,
+            because a 421px source could not fill a 4:3 one without blurring and
+            cropping the head. A photograph marooned in grey reads as a picture
+            that failed to load, so the fix was a wider source rather than a
+            smaller frame: 1248x832, which the box crops at the sides.
+
+            The alt text is still the one `/coaching` uses, because it names who
+            is in the picture and nothing about the setting. */}
         <SplitFeature
           reverse
-          media={
-            <div className="flex size-full items-center justify-center bg-canvas-soft">
-              <Image
-                src="/paul-portrait.png"
-                alt={pick(PORTRAIT_ALT)}
-                width={421}
-                height={421}
-                className="size-48 rounded-full object-cover medium:size-64"
-              />
-            </div>
-          }
+          src="/paul-portrait-wide.jpg"
+          alt={pick(PORTRAIT_ALT)}
         >
           <h2 className={SECTION_HEADING(locale)}>{pick(WHO_HEADING)}</h2>
           <p className="mt-3 max-w-2xl text-body-large text-on-surface-variant">

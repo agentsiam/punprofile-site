@@ -1,5 +1,4 @@
 import type { Copy } from "./copy";
-import { HERO_REFRAME } from "./home";
 
 /**
  * One page per product. Added 23/08/2026, Paul's call to build all of them
@@ -130,6 +129,33 @@ export const STATUS_SOON: Copy = {
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpTVEFUVVNfU09PTg:TH%%,
 };
 
+/**
+ * The EU Fit Check page's two extra sections, added 25/10/2026, read back and
+ * approved by Paul 26/10/2026. See `product-page-eu-fit-check.md` for why only this page has them:
+ * it is the one live product, and the only one with a result to show.
+ */
+/**
+ * The example chart in the EU Fit Check hero, 25/10/2026. Invented and labelled
+ * as an example on the page. Uneven on purpose, so it teaches what the chart
+ * shows rather than flattering the reader.
+ */
+export const HERO_SAMPLE_SCORES = {
+  professionalCapability: 3.8,
+  employability: 2.1,
+  mobilityReadiness: 3.0,
+  europeanMarketFit: 2.6,
+} as const;
+
+export const SHOWCASE_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpTSE9XQ0FTRV9IRUFESU5H:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpTSE9XQ0FTRV9IRUFESU5H:TH%%,
+};
+
+export const SHOWCASE_LEDE: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpTSE9XQ0FTRV9MRURF:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpTSE9XQ0FTRV9MRURF:TH%%,
+};
+
 export const HOW_HEADING: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIT1dfSEVBRElORw:EN%%,
   // Paul's wording, 23/08/2026.
@@ -157,57 +183,101 @@ export const PRODUCTS: readonly Product[] = [
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5hdWRpZW5jZQ:TH%%,
     },
     // Read back 25/08/2026. Draft for `PROD-02-eu-fit-check`.
+    // Read back and approved by Paul 26/10/2026, `product-page-eu-fit-check.md`.
     howLede: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dMZWRl:EN%%,
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dMZWRl:TH%%,
     },
     name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5uYW1l:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5uYW1l:TH%% },
     status: "live",
-    // Lifted whole from `home.ts` HERO_REFRAME, Paul's own Thai. It is already
-    // the problem statement this page needs and it is already approved, so
-    // composing a second one would be inventing a rival for a line that works.
-    headline: HERO_REFRAME,
+    /*
+     * Replaced 25/10/2026, approved by Paul the same day. It was `home.ts` HERO_REFRAME, which is the
+     * home page's reframe of the whole problem: six lines in Thai at hero size,
+     * and it never said what this page offers. A product headline names the
+     * question the product answers, in one line.
+     */
+    headline: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5oZWFkbGluZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5oZWFkbGluZQ:TH%%,
+    },
+    /*
+     * Rewritten 25/10/2026, read back and approved by Paul 26/10/2026. The old lede said only
+     * how long it takes. This one says what the reader gets for the two
+     * minutes. "Four things that decide a hire" is the framework's own grouping,
+     * the four chart axes, as `coaching.ts` describes it.
+     */
     lede: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5sZWRl:EN%%,
-      // Paul's own Thai, `copy.ts` landing.reassurance.
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5sZWRl:TH%%,
     },
+    /*
+     * Rewritten 25/10/2026, read back and approved by Paul 26/10/2026. What you answer, what
+     * you see, what you compare against. Every claim is on the first read today:
+     * the four axes, the percentile line and the job-pipeline card.
+     */
     how: [
       {
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMF0:EN%%,
-        // Paul's own Thai, `faq.ts`.
+        // Built from Paul's approved answer to "EU Fit Check คืออะไร" in `faq.ts`.
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMF0:TH%%,
       },
       {
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMV0:EN%%,
-        // Paul's own Thai, 23/08/2026, from the pricing sheet.
+        // The four Thai names are the chart's own axis labels in `copy.ts`.
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMV0:TH%%,
       },
       {
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMl0:EN%%,
-        // Paul's own Thai, `faq.ts`.
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5ob3dbMl0:TH%%,
       },
     ],
+    // Approved by Paul 26/10/2026, built from his approved FAQ answer on the empty parts
+    // of the chart. It now answers that question, so the question left this FAQ.
     limit: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5saW1pdA:EN%%,
-      // Paul's own Thai, `faq.ts`. It is the honesty rule in his own words and it
-      // belongs on this page more than anywhere else.
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5saW1pdA:TH%%,
     },
+    /*
+     * Four questions, 25/10/2026, chosen for the doubts that stop someone
+     * tapping. Answers are Paul's approved `faq.ts` Thai, unchanged; the data
+     * question, approved 26/10/2026, drops ฉัน from the /faq version.
+     */
     faq: [
       {
-        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMF0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMF0ucQ:TH%% },
+        q: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMF0ucQ:EN%%,
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMF0ucQ:TH%%,
+        },
         a: {
           en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMF0uYQ:EN%%,
           th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMF0uYQ:TH%%,
         },
       },
       {
-        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMV0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMV0ucQ:TH%% },
+        q: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMV0ucQ:EN%%,
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMV0ucQ:TH%%,
+        },
         a: {
           en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMV0uYQ:EN%%,
           th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMV0uYQ:TH%%,
+        },
+      },
+      {
+        q: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMl0ucQ:EN%%,
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMl0ucQ:TH%%,
+        },
+        a: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMl0uYQ:EN%%,
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbMl0uYQ:TH%%,
+        },
+      },
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbM10ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbM10ucQ:TH%% },
+        a: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbM10uYQ:EN%%,
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1swXS5mYXFbM10uYQ:TH%%,
         },
       },
     ],

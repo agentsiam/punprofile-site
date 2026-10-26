@@ -53,6 +53,7 @@ import SplitFeature from "@/components/blocks/SplitFeature";
 import Checklist from "@/components/blocks/Checklist";
 import AudienceChip from "@/components/blocks/AudienceChip";
 import ProductDiagram from "@/components/features/products/ProductDiagram";
+import { SHOWCASE } from "@/components/features/products/ProductShowcase";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 import { FAQ_HEADING } from "@/lib/content/faq";
 import { CATALOGUE_FREE, CATALOGUE_PAID } from "@/lib/content/home";
@@ -79,6 +80,10 @@ export default function ProductPage({ product }: { product: Product }) {
   const soon = product.status === "soon";
   const art = PRODUCT_ART[product.slug];
   const others = PRODUCTS.filter((p) => p.slug !== product.slug);
+  const showcase = SHOWCASE[product.slug] ?? {};
+  const Hero = showcase.hero;
+  const AfterHero = showcase.afterHero;
+  const AfterHow = showcase.afterHow;
 
   /*
    * The summary card, and the one thing it must not become.
@@ -141,21 +146,27 @@ export default function ProductPage({ product }: { product: Product }) {
             <CallToAction page={product.actionsKey} className="mt-8" show="primary" />
           </div>
 
-          <div className="card-outlined px-8 py-8">
-            <dl className="flex flex-col">
-              {summary.map((row, i) => (
-                <div
-                  key={i}
-                  className="border-b border-line py-5 first:pt-0 last:border-b-0 last:pb-0"
-                >
-                  <dt className="text-caption-strong text-mute-strong">{pick(row.label)}</dt>
-                  <dd className="mt-2 text-body-md-strong text-ink-deep">{pick(row.value)}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {Hero ? (
+            <Hero />
+          ) : (
+            <div className="card-outlined px-8 py-8">
+              <dl className="flex flex-col">
+                {summary.map((row, i) => (
+                  <div
+                    key={i}
+                    className="border-b border-line py-5 first:pt-0 last:border-b-0 last:pb-0"
+                  >
+                    <dt className="text-caption-strong text-mute-strong">{pick(row.label)}</dt>
+                    <dd className="mt-2 text-body-md-strong text-ink-deep">{pick(row.value)}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          )}
         </div>
       </Band>
+
+      {AfterHero && <AfterHero />}
 
       {/* --------------------------------------------------------- how ----
 
@@ -183,6 +194,8 @@ export default function ProductPage({ product }: { product: Product }) {
           </SplitFeature>
         </div>
       </Band>
+
+      {AfterHow && <AfterHow />}
 
       {/* ------------------------------------------------------- limit ---- */}
       {/* Its own block with its own heading rather than a line of small print.

@@ -1,5 +1,4 @@
 import type { Copy } from "./copy";
-import { HERO_REFRAME } from "./home";
 
 /**
  * One page per product. Added 23/08/2026, Paul's call to build all of them
@@ -130,6 +129,33 @@ export const STATUS_SOON: Copy = {
   th: "เร็ว ๆ นี้",
 };
 
+/**
+ * The EU Fit Check page's two extra sections, added 25/10/2026, read back and
+ * approved by Paul 26/10/2026. See `product-page-eu-fit-check.md` for why only this page has them:
+ * it is the one live product, and the only one with a result to show.
+ */
+/**
+ * The example chart in the EU Fit Check hero, 25/10/2026. Invented and labelled
+ * as an example on the page. Uneven on purpose, so it teaches what the chart
+ * shows rather than flattering the reader.
+ */
+export const HERO_SAMPLE_SCORES = {
+  professionalCapability: 3.8,
+  employability: 2.1,
+  mobilityReadiness: 3.0,
+  europeanMarketFit: 2.6,
+} as const;
+
+export const SHOWCASE_HEADING: Copy = {
+  en: "What you see at the end",
+  th: "สิ่งที่คุณจะเห็นเมื่อทำเสร็จ",
+};
+
+export const SHOWCASE_LEDE: Copy = {
+  en: "Beside your own chart, the result shows where everyone else who has taken it stands. The figures below are live.",
+  th: "นอกจากกราฟของคุณเอง หน้าผลลัพธ์ยังแสดงให้เห็นว่าคนอื่นที่ทำแบบประเมินนี้อยู่ตรงไหน ตัวเลขด้านล่างนี้เป็นข้อมูลจริงล่าสุด",
+};
+
 export const HOW_HEADING: Copy = {
   en: "How it works",
   // Paul's wording, 23/08/2026.
@@ -157,50 +183,94 @@ export const PRODUCTS: readonly Product[] = [
       th: "คนที่กำลังคิดเรื่องไปทำงานในยุโรป",
     },
     // Read back 25/08/2026. Draft for `PROD-02-eu-fit-check`.
+    // Read back and approved by Paul 26/10/2026, `product-page-eu-fit-check.md`.
     howLede: {
-      en: "Seventeen questions on your phone, and a first read the moment you finish.",
-      th: "คำถาม 17 ข้อบนมือถือ พร้อมผลเบื้องต้นทันทีที่คุณทำเสร็จ",
+      en: "What you answer, and what you see the moment you finish.",
+      th: "สิ่งที่คุณจะตอบ และสิ่งที่คุณจะเห็นทันทีที่ทำเสร็จ",
     },
     name: { en: "EU Fit Check", th: "EU Fit Check" },
     status: "live",
-    // Lifted whole from `home.ts` HERO_REFRAME, Paul's own Thai. It is already
-    // the problem statement this page needs and it is already approved, so
-    // composing a second one would be inventing a rival for a line that works.
-    headline: HERO_REFRAME,
-    lede: {
-      en: "Under 2 minutes. Your first read straight away, with no sign-up.",
-      // Paul's own Thai, `copy.ts` landing.reassurance.
-      th: "ใช้เวลาไม่ถึง 2 นาที รู้ผลเบื้องต้นทันที ไม่ต้องสมัครสมาชิก",
+    /*
+     * Replaced 25/10/2026, approved by Paul the same day. It was `home.ts` HERO_REFRAME, which is the
+     * home page's reframe of the whole problem: six lines in Thai at hero size,
+     * and it never said what this page offers. A product headline names the
+     * question the product answers, in one line.
+     */
+    headline: {
+      en: "Before you apply in Europe, find out how ready you are.",
+      th: "ก่อนสมัครงานในยุโรป รู้ก่อนว่าตอนนี้คุณพร้อมแค่ไหน",
     },
+    /*
+     * Rewritten 25/10/2026, read back and approved by Paul 26/10/2026. The old lede said only
+     * how long it takes. This one says what the reader gets for the two
+     * minutes. "Four things that decide a hire" is the framework's own grouping,
+     * the four chart axes, as `coaching.ts` describes it.
+     */
+    lede: {
+      en: "17 questions, about 2 minutes, and you see your result on the four things that decide a hire in Europe straight away. Free, no sign-up.",
+      th: "ตอบคำถาม 17 ข้อ ใช้เวลาประมาณ 2 นาที แล้วเห็นผลทันทีใน 4 ด้านที่มีผลต่อการจ้างงานในยุโรป ใช้ฟรี ไม่ต้องสมัครสมาชิก",
+    },
+    /*
+     * Rewritten 25/10/2026, read back and approved by Paul 26/10/2026. What you answer, what
+     * you see, what you compare against. Every claim is on the first read today:
+     * the four axes, the percentile line and the job-pipeline card.
+     */
     how: [
       {
-        en: "It takes about 2 minutes, and the moment you finish you see your first read and your own chart.",
-        // Paul's own Thai, `faq.ts`.
-        th: "ใช้เวลาประมาณ 2 นาที พอทำเสร็จ คุณจะเห็นผลเบื้องต้นและกราฟของตัวเองทันที",
+        en: "17 questions about your work experience, your English, your target country and where you are in the move. In Thai, on your phone.",
+        // Built from Paul's approved answer to "EU Fit Check คืออะไร" in `faq.ts`.
+        th: "คำถาม 17 ข้อ เกี่ยวกับประสบการณ์ทำงาน ระดับภาษาอังกฤษ ประเทศเป้าหมาย และตอนนี้คุณอยู่ขั้นไหนบนเส้นทางไปทำงานในยุโรป ตอบเป็นภาษาไทยบนมือถือได้เลย",
       },
       {
-        en: "Answer on your phone, and get your first read the moment you finish.",
-        // Paul's own Thai, 23/08/2026, from the pricing sheet.
-        th: "ตอบคำถามบนมือถือได้เลย รับผลเบื้องต้นทันทีเมื่อทำเสร็จ",
+        en: "Your own chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European market. Each scored out of 5.",
+        // The four Thai names are the chart's own axis labels in `copy.ts`.
+        th: "กราฟของคุณเองใน 4 ด้าน คือ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความสอดคล้องกับตลาดยุโรป แต่ละด้านมีคะแนนเต็ม 5",
       },
       {
-        en: "No. The EU Fit Check is free, and there is no payment step in it.",
-        // Paul's own Thai, `faq.ts`.
-        th: "ไม่มีค่าใช้จ่าย คุณทำ EU Fit Check ได้ฟรี และไม่มีขั้นตอนการชำระเงิน",
+        en: "How you compare with everyone else who has taken it, and how many of the job adverts we checked come from employers who sponsor a visa.",
+        th: "ดูว่าคุณเทียบกับคนอื่นที่ทำแบบประเมินนี้แล้วเป็นอย่างไร และจากประกาศงานที่เราตรวจสอบ มีกี่ตำแหน่งที่บริษัทระบุว่าสปอนเซอร์วีซ่า",
       },
     ],
+    // Approved by Paul 26/10/2026, built from his approved FAQ answer on the empty parts
+    // of the chart. It now answers that question, so the question left this FAQ.
     limit: {
-      en: "We do not guess a score for something a form cannot measure.",
-      // Paul's own Thai, `faq.ts`. It is the honesty rule in his own words and it
-      // belongs on this page more than anywhere else.
-      th: "เพราะเราไม่เดาคะแนนในเรื่องที่แบบฟอร์มวัดไม่ได้",
+      en: "It reads your answers, not your CV. Where a form cannot measure something reliably, the chart leaves it empty instead of guessing. Those parts need someone to read your real CV or talk with you.",
+      th: "แบบประเมินนี้อ่านจากคำตอบของคุณ ยังไม่ได้อ่าน CV ตัวจริง เรื่องไหนที่ประเมินจากคำตอบได้ไม่น่าเชื่อถือพอ กราฟจะเว้นว่างไว้แทนการเดาคะแนน ส่วนนั้นต้องมีคนอ่าน CV ตัวจริงของคุณหรือได้คุยกับคุณก่อน",
     },
+    /*
+     * Four questions, 25/10/2026, chosen for the doubts that stop someone
+     * tapping. Answers are Paul's approved `faq.ts` Thai, unchanged; the data
+     * question, approved 26/10/2026, drops ฉัน from the /faq version.
+     */
     faq: [
       {
-        q: { en: "Why are parts of my chart empty?", th: "ทำไมกราฟบางส่วนถึงว่างอยู่" },
+        q: {
+          en: "My English is not strong yet. Can I still do this?",
+          th: "ภาษาอังกฤษยังไม่แข็งแรง ทำได้ไหม",
+        },
         a: {
-          en: "Because we do not guess a score for something a form cannot measure.",
-          th: "เพราะเราไม่เดาคะแนนในเรื่องที่แบบฟอร์มวัดไม่ได้",
+          en: "Yes. The assessment is in Thai, and language is one of the things we assess rather than a condition for starting.",
+          th: "ได้ แบบประเมินเป็นภาษาไทย และเรื่องภาษาเป็นหนึ่งในหัวข้อที่เราประเมิน ไม่ใช่เงื่อนไขในการเริ่มทำ",
+        },
+      },
+      {
+        q: {
+          en: "What happens after I finish the assessment?",
+          th: "ทำแบบประเมินเสร็จแล้วจะเกิดอะไรขึ้น",
+        },
+        a: {
+          en: "A person actually reads your answers. The system does not decide on its own who gets contacted back.",
+          th: "จะมีคนอ่านคำตอบของคุณจริง ๆ ระบบไม่ได้เป็นผู้ตัดสินเพียงลำพังว่าเราจะติดต่อใครกลับ",
+        },
+      },
+      {
+        q: {
+          en: "What happens to the information I enter?",
+          th: "ข้อมูลที่กรอกไปจะถูกนำไปใช้ทำอะไร",
+        },
+        a: {
+          en: "We use it to prepare your result and to contact you through the channels you agreed to, nothing else. We do not sell it or pass it on, and you can ask us to delete it at any time.",
+          th: "เราใช้ข้อมูลของคุณเพื่อจัดทำผลประเมินและติดต่อกลับผ่านช่องทางที่คุณยินยอมไว้เท่านั้น เราไม่ขายหรือส่งต่อข้อมูลให้บุคคลอื่น และคุณขอให้ลบได้ทุกเมื่อ",
         },
       },
       {
