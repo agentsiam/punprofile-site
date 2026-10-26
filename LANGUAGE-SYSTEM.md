@@ -10049,6 +10049,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.image.alt`
+
+```yaml
+id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.image.alt
+source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
+path: AI_IS_BECOMING_A_BASELINE_SKILL.image.alt
+render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.image.alt'
+narrative_slot: utility
+en: "A clay figure of a woman sitting by a window, holding a pencil and checking a sheet of paper that a small clay robot hands her"
+th: "ตัวการ์ตูนดินปั้นผู้หญิงนั่งข้างหน้าต่าง ถือดินสอกำลังตรวจกระดาษที่หุ่นยนต์ดินปั้นตัวเล็กยื่นให้"
+provenance: draft
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, written from the image Paul generated 26/10/2026. Describes the scene, not the argument. Waiting on Paul."
+review:
+  structural_calque: pending
+  text_hash: f235a2c138009b3d0018bdbfaf9ecbd064b32552ef2888bcf65fea248e0966ad
+  prompt_version: structural-calque-v1
+  basis: Draft awaiting Paul's approval of the Thai.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.question`
 
 ```yaml
@@ -10101,34 +10123,12 @@ source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
 path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text
 render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[0].text'
 narrative_slot: utility
-en: "Employers in Europe are not only looking at whether you can use AI. They want to see how you used it to produce real work."
-th: "นายจ้างในยุโรปไม่ได้ดูแค่ว่าคุณใช้ AI เป็นหรือไม่ แต่อยากเห็นว่าคุณนำ AI ไปสร้างผลงานได้จริงอย่างไร"
-provenance: paul-approved
-date: 25/10/2026
-term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
-review:
-  structural_calque: pass
-  text_hash: d004f4ff5eff8a97efe4aeaa891527d42eb8da4e0a8166d32f82c155c41a1745
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item unchanged on 26/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text`
-
-```yaml
-id: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts::AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text
-source: src/lib/content/posts/ai-is-becoming-a-baseline-skill.ts
-path: AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text
-render: 'Blog article: AI is becoming a baseline skill, AI_IS_BECOMING_A_BASELINE_SKILL.sections[0].body[1].text'
-narrative_slot: utility
 en: "So reskilling does not mean becoming a programmer. It means applying AI to the expertise you already have, checking what it produces, and being able to show it as work on your CV or in an interview."
 th: "การ Reskill จึงไม่ได้หมายความว่าต้องเปลี่ยนสายไปเป็นโปรแกรมเมอร์ แต่คือการนำ AI มาใช้กับความเชี่ยวชาญที่มีอยู่ ตรวจสอบผลลัพธ์ได้ และเล่าออกมาเป็นผลงานในเรซูเม่หรือการสัมภาษณ์ได้"
 provenance: paul-approved
 date: 25/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026."
+decision_note: "Claude's draft, 25/10/2026, for the blog-post skill's five rules or a source correction; lifted from Paul's own lines where one existed. Paul approved it unchanged on 26/10/2026. The first of the two approved lines was dropped 26/10/2026 because it repeated the summary shown above it; this is the second."
 review:
   structural_calque: pass
   text_hash: 3d6e40ff215aa3e526fd6a36d87a41f709b1edbce38c7fb250e953fd50448fb9

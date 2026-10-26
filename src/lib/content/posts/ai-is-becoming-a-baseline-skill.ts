@@ -16,8 +16,17 @@ import type { Post } from "../blog";
 export const AI_IS_BECOMING_A_BASELINE_SKILL: Post = {
   slug: "ai-is-becoming-a-baseline-skill",
   topic: "perspective",
-  published: "2026-10-25",
+  published: "2026-10-26",
   related: "start-in-europe",
+
+  image: {
+    src: "/blog/ai-is-becoming-a-baseline-skill.jpg",
+    // Describes the scene, not the article, like the other two articles' alt.
+    alt: {
+      th: "ตัวการ์ตูนดินปั้นผู้หญิงนั่งข้างหน้าต่าง ถือดินสอกำลังตรวจกระดาษที่หุ่นยนต์ดินปั้นตัวเล็กยื่นให้",
+      en: "A clay figure of a woman sitting by a window, holding a pencil and checking a sheet of paper that a small clay robot hands her",
+    },
+  },
 
   title: {
     th: "ใช้ AI เป็น กำลังจะกลายเป็นทักษะพื้นฐานของคนทำงาน",
@@ -46,13 +55,6 @@ export const AI_IS_BECOMING_A_BASELINE_SKILL: Post = {
         en: "In short",
       },
       body: [
-        {
-          kind: "p",
-          text: {
-            th: "นายจ้างในยุโรปไม่ได้ดูแค่ว่าคุณใช้ AI เป็นหรือไม่ แต่อยากเห็นว่าคุณนำ AI ไปสร้างผลงานได้จริงอย่างไร",
-            en: "Employers in Europe are not only looking at whether you can use AI. They want to see how you used it to produce real work.",
-          },
-        },
         {
           kind: "p",
           text: {

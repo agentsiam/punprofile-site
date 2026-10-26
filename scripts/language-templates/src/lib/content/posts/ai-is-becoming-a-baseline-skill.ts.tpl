@@ -16,8 +16,17 @@ import type { Post } from "../blog";
 export const AI_IS_BECOMING_A_BASELINE_SKILL: Post = {
   slug: "ai-is-becoming-a-baseline-skill",
   topic: "perspective",
-  published: "2026-10-25",
+  published: "2026-10-26",
   related: "start-in-europe",
+
+  image: {
+    src: "/blog/ai-is-becoming-a-baseline-skill.jpg",
+    // Describes the scene, not the article, like the other two articles' alt.
+    alt: {
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2FpLWlzLWJlY29taW5nLWEtYmFzZWxpbmUtc2tpbGwudHM6OkFJX0lTX0JFQ09NSU5HX0FfQkFTRUxJTkVfU0tJTEwuaW1hZ2UuYWx0:TH%%,
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2FpLWlzLWJlY29taW5nLWEtYmFzZWxpbmUtc2tpbGwudHM6OkFJX0lTX0JFQ09NSU5HX0FfQkFTRUxJTkVfU0tJTEwuaW1hZ2UuYWx0:EN%%,
+    },
+  },
 
   title: {
     th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2FpLWlzLWJlY29taW5nLWEtYmFzZWxpbmUtc2tpbGwudHM6OkFJX0lTX0JFQ09NSU5HX0FfQkFTRUxJTkVfU0tJTEwudGl0bGU:TH%%,
@@ -51,13 +60,6 @@ export const AI_IS_BECOMING_A_BASELINE_SKILL: Post = {
           text: {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2FpLWlzLWJlY29taW5nLWEtYmFzZWxpbmUtc2tpbGwudHM6OkFJX0lTX0JFQ09NSU5HX0FfQkFTRUxJTkVfU0tJTEwuc2VjdGlvbnNbMF0uYm9keVswXS50ZXh0:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2FpLWlzLWJlY29taW5nLWEtYmFzZWxpbmUtc2tpbGwudHM6OkFJX0lTX0JFQ09NSU5HX0FfQkFTRUxJTkVfU0tJTEwuc2VjdGlvbnNbMF0uYm9keVswXS50ZXh0:EN%%,
-          },
-        },
-        {
-          kind: "p",
-          text: {
-            th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2FpLWlzLWJlY29taW5nLWEtYmFzZWxpbmUtc2tpbGwudHM6OkFJX0lTX0JFQ09NSU5HX0FfQkFTRUxJTkVfU0tJTEwuc2VjdGlvbnNbMF0uYm9keVsxXS50ZXh0:TH%%,
-            en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2FpLWlzLWJlY29taW5nLWEtYmFzZWxpbmUtc2tpbGwudHM6OkFJX0lTX0JFQ09NSU5HX0FfQkFTRUxJTkVfU0tJTEwuc2VjdGlvbnNbMF0uYm9keVsxXS50ZXh0:EN%%,
           },
         },
       ],
