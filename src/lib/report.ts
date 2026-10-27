@@ -72,8 +72,7 @@ import { t, type Locale } from "./locale";
 import { BAND_COPY, GATES } from "./model";
 import { topStrengths, developmentPriorities } from "./scoring";
 import { projectUnlock } from "./levers";
-import { FULL_SAMPLE, HERO_SAMPLE_SCORES } from "./content/products";
-import { DESTINATIONS } from "./content/cta";
+import { FULL_CTA, FULL_SAMPLE, HERO_SAMPLE_SCORES } from "./content/products";
 import type { ProfileScore } from "./scoring";
 import type { Tier } from "./model";
 
@@ -203,14 +202,14 @@ const STYLES = `${BRAND_TOKENS_CSS.replace(/\n  \}$/, `\n${BRAND_FONT_STACKS}\n 
 
   /* ---------------------------------------- the Fit Report ask, 27/10/2026
      A real button, kept in print: the PDF is where the candidate reads this,
-     and a link in a PDF stays clickable. Buying is a LINE conversation while
-     payment is arranged by hand, so the button opens the chat. */
+     and a link in a PDF stays clickable. It goes to the Fit Report page, the
+     same step the EU Fit Check page's own button takes; that page asks for the
+     conversation that buys it. */
   .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 1.25rem; break-inside: avoid; }
   .cta-btn {
     display: inline-block; font: 600 .95rem/1 var(--font-sans); color: var(--viz-surface);
     background: var(--ink-1); border-radius: 999px; padding: .85rem 1.6rem; text-decoration: none;
   }
-  .cta-link { color: var(--ink-2); font-size: .85rem; text-decoration: underline; }
 
   /* ------------------------------------------------------------ score strip */
   .strip {
@@ -712,8 +711,7 @@ ${dimSections}
     <p class="eyebrow">${esc(s("report.full.example"))}</p>
     ${fullSample}
     <p class="cta-row">
-      <a class="cta-btn" href="${esc(DESTINATIONS.line.href)}">${esc(DESTINATIONS.line.label[locale])}</a>
-      <a class="cta-link" href="https://punprofile.app/products/fit-report">${esc(s("report.full.link"))}</a>
+      <a class="cta-btn" href="https://punprofile.app/products/fit-report">${esc(FULL_CTA[locale])}</a>
     </p>
   </section>
 
