@@ -3929,9 +3929,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.title",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.title",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.seoTitle": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -3947,9 +3947,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.summary",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.summary",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.person": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -3974,9 +3974,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.question",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.question",
     "narrativeSlot": "symptom",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[0].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -3992,36 +3992,36 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[0].body[0].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[0].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[1].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
     "path": "CARA_WORKING_IN_SPAIN.sections[1].body[0].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[0].text",
     "narrativeSlot": "audience",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[1].body[1].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
     "path": "CARA_WORKING_IN_SPAIN.sections[1].body[1].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[1].text",
     "narrativeSlot": "audience",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
     "path": "CARA_WORKING_IN_SPAIN.sections[2].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].heading",
     "narrativeSlot": "misread",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4046,27 +4046,27 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[2].body[2].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].body[2].text",
     "narrativeSlot": "misread",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
     "path": "CARA_WORKING_IN_SPAIN.sections[3].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].heading",
     "narrativeSlot": "symptom",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
     "path": "CARA_WORKING_IN_SPAIN.sections[3].body[0].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[0].text",
     "narrativeSlot": "symptom",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[1].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4091,9 +4091,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[3].body[3].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[3].text",
     "narrativeSlot": "symptom",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[4].alt": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4109,18 +4109,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[4].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].heading",
     "narrativeSlot": "mechanism",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
     "path": "CARA_WORKING_IN_SPAIN.sections[4].body[0].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[0].text",
     "narrativeSlot": "mechanism",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[1].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4136,18 +4136,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[4].body[2].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[2].text",
     "narrativeSlot": "mechanism",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
     "path": "CARA_WORKING_IN_SPAIN.sections[5].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].heading",
     "narrativeSlot": "misread",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4181,9 +4181,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[6].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].heading",
     "narrativeSlot": "misread",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4217,9 +4217,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[7].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].heading",
     "narrativeSlot": "mechanism",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4235,9 +4235,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[7].body[1].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[1].text",
     "narrativeSlot": "mechanism",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[2].alt": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4271,9 +4271,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[1].q": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4289,9 +4289,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[2].q": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4307,9 +4307,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
   },
   "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.title": {
     "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",

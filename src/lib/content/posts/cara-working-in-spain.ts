@@ -15,7 +15,7 @@ import type { Post } from "../blog";
 export const CARA_WORKING_IN_SPAIN: Post = {
   slug: "cara-working-in-spain",
   topic: "real",
-  published: "2026-10-26",
+  published: "2026-10-27",
   related: "start-in-europe",
 
   title: {

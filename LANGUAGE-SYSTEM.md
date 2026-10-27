@@ -10895,15 +10895,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.title'
 narrative_slot: utility
 en: "A thousand applications, 800 wasted: six things Cara wants you to know before you move to Europe for work"
 th: "สมัครงานพันที่ เสียเปล่า 800: 6 เรื่องที่คาร่าอยากให้รู้ก่อนย้ายมาทำงานยุโรป"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 846fcb3f02ba72f10ff3f1cb69636846c1a436f92df08116be486053df3611e2
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -10939,15 +10939,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.summary'
 narrative_slot: utility
 en: "You can work in a company without a third language, age is not the main problem, and a CV photo does not help the way you think. Cara on six things from her route from Thai student to working in Spain."
 th: "ไม่ต้องพูดภาษาที่ 3 ก็ทำงานในบริษัทได้ อายุไม่ใช่ปัญหาหลัก และรูปในเรซูเม่ไม่ได้ช่วยอย่างที่คิด คาร่าเล่า 6 เรื่องจากเส้นทางนักเรียนไทยสู่คนทำงานในสเปน"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: ecb57e7e57e966ec7b37ee1c012f6512fff030e93a6834dab19e2ee88fc2ee3d
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11005,15 +11005,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.question'
 narrative_slot: symptom
 en: "Of these six, which one did you believe?"
 th: "ใน 6 เรื่องนี้ เรื่องไหนที่คุณเคยเชื่อ?"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 92b17bfffc8a79d738cdec72bd5e4089aff3cce2fe7f335710a13d5f9f8877d8
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11049,15 +11049,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[0].body[
 narrative_slot: utility
 en: "In Cara's experience, a third language, your age or knowing nobody do not decide whether you get a job in Europe. What decides it is an application that matches the role, and a plan that starts before you graduate."
 th: "จากประสบการณ์ของคาร่า ภาษาที่ 3 อายุ หรือการไม่รู้จักใคร ไม่ได้ตัดสินว่าคุณจะได้งานในยุโรป สิ่งที่ตัดสินคือใบสมัครที่ตรงกับตำแหน่ง และแผนที่เริ่มก่อนเรียนจบ"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d341c03f95a6f3baa90ed63753059c984e254393a32b43f24cd052ac1bcf1c77
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11071,15 +11071,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[
 narrative_slot: audience
 en: "Cara is Thai and moved to Spain to study. After graduating she sent about a thousand applications before landing a job at a company there. Today she works mostly in English."
 th: "คาร่าเป็นคนไทยที่ย้ายมาเรียนต่อที่สเปน หลังเรียนจบเธอส่งใบสมัครไปราวพันที่ กว่าจะได้งานในบริษัทที่นั่น ตอนนี้เธอใช้ภาษาอังกฤษในการทำงานเป็นหลัก"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e288d49155f0ba359e4b814a34f26e9880c4163fbe757c75cc7a5670449979e0
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11093,15 +11093,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[
 narrative_slot: audience
 en: "We asked her the questions Thais ask us most, and several of her answers overturn what most people believe. The quotes are her own words."
 th: "เราคุยกับเธอถึงคำถามที่คนไทยถามเราบ่อยที่สุด และคำตอบของเธอหักล้างความเชื่อเดิมหลายข้อ ข้อความในกรอบคือคำพูดของเธอเอง"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0561d7bd3992f5c2abc1e4296edb19694daa593974a7ed157b5f709cccd8be73
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11115,15 +11115,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].headi
 narrative_slot: misread
 en: "1. “You have to speak the local language first” is not always true"
 th: "1. “ต้องพูดภาษาท้องถิ่นได้ก่อน” ไม่จริงเสมอไป"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3241ec2bdf139f06113dda4ad75ebb560ee8844fb3b9c50a4a9f5179fd815f8d
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11181,15 +11181,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].body[
 narrative_slot: misread
 en: "Takeaway: the local language helps with daily life, but it is not the first hurdle for a job in a company that works in English."
 th: "ข้อคิด: ภาษาท้องถิ่นช่วยชีวิตประจำวัน แต่ไม่ใช่ด่านแรกของงานในบริษัทที่ใช้ภาษาอังกฤษ"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 844b715fdd433f7c262bab475bbbaf9f828220d19a824714f7661a9da3f90aca
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11203,15 +11203,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].headi
 narrative_slot: symptom
 en: "2. A thousand applications, 800 wasted"
 th: "2. สมัครพันที่ เสียเปล่า 800"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 8c65a8f4dfc69c554ef76ba840771a669393fa3d09d90ca7807d462584c0d438
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11225,15 +11225,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[
 narrative_slot: symptom
 en: "Cara sent about a thousand applications and says 800 were wasted, because she used the same CV for every role."
 th: "คาร่าส่งใบสมัครไปราวพันที่ และเล่าว่า 800 ที่เสียเปล่า เพราะใช้เรซูเม่ใบเดิมกับทุกตำแหน่ง"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 60eb088aad3c301500b70024ee275ca1ea977a1065915090068292a67c47ffbb
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11291,15 +11291,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[
 narrative_slot: symptom
 en: "Takeaway: apply less, but adjust every application to the advert."
 th: "ข้อคิด: สมัครน้อยลง แต่ปรับให้ตรงกับประกาศทุกครั้ง"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 8cfaa0de96a6c08c7b33a931094194af57dc867f14d0605b9f700822ddecde4b
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11335,15 +11335,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].headi
 narrative_slot: mechanism
 en: "3. An internship is the easiest door in"
 th: "3. ฝึกงานคือประตูที่เปิดง่ายที่สุด"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3aab5532e1778c9809b9739bd79e98b7a4e2d2a4b539733bf5551495ba8f6eaa
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11357,15 +11357,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[
 narrative_slot: mechanism
 en: "Cara asked her school early whether an internship was required and how it worked, because nobody had told her."
 th: "คาร่าถามโรงเรียนตั้งแต่เนิ่น ๆ ว่าการฝึกงานบังคับไหมและต้องทำอย่างไร เพราะไม่มีใครบอกเธอ"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 41dac6bf18622f8babe6f1f9435de1341be45cbde29311d7907e7af2c2198771
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11401,15 +11401,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[
 narrative_slot: mechanism
 en: "Takeaway: ask about internships before the course starts, and pick your target companies in advance."
 th: "ข้อคิด: ถามเรื่องฝึกงานตั้งแต่ก่อนเริ่มเรียน และเล็งบริษัทไว้ล่วงหน้า"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 6c25cf379e576478823398ebcd84d9f1cf473cb81d14bb609d5ce62e1f48243a
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11423,15 +11423,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].headi
 narrative_slot: misread
 en: "4. Age is not the problem. Mindset is"
 th: "4. อายุไม่ใช่ปัญหา mindset ต่างหากที่สำคัญ"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: eecd0df2332ba4d0d52e104c2dc10ddb48422c9f64efbafc016e0e49bcc887f8
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11511,15 +11511,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].headi
 narrative_slot: misread
 en: "5. You can start without knowing a single person"
 th: "5. ไม่รู้จักใครเลยสักคน ก็เริ่มได้"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 6f4f50ea8768f4ac2682875bf8fc8d9744adbba79169623c513f9485523c88d4
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11599,15 +11599,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].headi
 narrative_slot: mechanism
 en: "6. A photo on your CV does not help the way you think"
 th: "6. รูปในเรซูเม่ ไม่ได้ช่วยอย่างที่คิด"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f52da7674fa43d536ae19c772273aad0f2a1fa96afb61c16b4e53a36afa02e7f
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11643,15 +11643,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[
 narrative_slot: mechanism
 en: "That figure is what she sees around her, not a statistic. What makes a CV stand out is your skills, most important first, because recruiters rarely read to the bottom."
 th: "ตัวเลขนี้คือสิ่งที่เธอเห็นรอบตัว ไม่ใช่สถิติ สิ่งที่ทำให้เรซูเม่โดดเด่นคือทักษะที่เรียงสำคัญที่สุดไว้บนสุด เพราะ recruiter มักอ่านไม่ถึงข้างล่าง"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f269dca317bd5bae3c3e1870615c068b0d6dde1fce23c9a43f4219efed539216
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11731,15 +11731,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[
 narrative_slot: utility
 en: "Not always. Many roles in companies that work in English do not require the local language, but some do. Check real adverts in the country you are aiming at."
 th: "ไม่เสมอไป หลายตำแหน่งในบริษัทที่ใช้ภาษาอังกฤษไม่กำหนดภาษาท้องถิ่น แต่บางตำแหน่งกำหนด เช็กจากประกาศงานจริงในประเทศที่คุณเล็ง"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2c7eb4304f3e680e6395adef8e42edab9ca0aeb6a17834f31053beadf55c94b8
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11775,15 +11775,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[
 narrative_slot: utility
 en: "Mostly not, and many people leave it out for privacy, though some countries still expect one. Follow the custom of the market you apply to."
 th: "ส่วนใหญ่ไม่จำเป็น และหลายคนไม่ใส่เพราะเรื่องความเป็นส่วนตัว แต่บางประเทศยังนิยม ดูธรรมเนียมของตลาดที่คุณสมัคร"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b8d41b35b50e544bc160b118deaa666ec64985dea5b66ebea6e22bf25c06f902
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11819,15 +11819,15 @@ render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[
 narrative_slot: utility
 en: "Yes. Contacts make it easier, but they are not a condition. What matters more is an application that matches the role."
 th: "ได้ คนรู้จักช่วยให้ง่ายขึ้น แต่ไม่ใช่เงื่อนไข สิ่งที่สำคัญกว่าคือใบสมัครที่ตรงกับตำแหน่ง"
-provenance: draft
+provenance: paul-approved
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f88795af59f98eb660948f1d54f32861fc3bc442a523ac9fc5e9902857695b2a
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item on 27/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
