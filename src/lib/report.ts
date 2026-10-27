@@ -72,7 +72,7 @@ import { t, type Locale } from "./locale";
 import { BAND_COPY, GATES } from "./model";
 import { topStrengths, developmentPriorities } from "./scoring";
 import { projectUnlock } from "./levers";
-import { FULL_SAMPLE } from "./content/products";
+import { FULL_SAMPLE, HERO_SAMPLE_SCORES } from "./content/products";
 import { DESTINATIONS } from "./content/cta";
 import type { ProfileScore } from "./scoring";
 import type { Tier } from "./model";
@@ -666,20 +666,12 @@ ${rows}
   // "everything unmeasured" and is the one the copy key was written against.
   const unlock = projectUnlock(profile);
 
-  // The full version's chart, as an invented and labelled example: one area,
-  // every competency, which is what the paid Fit Report gives for all four.
-  // Added 26/10/2026 with the purchase call to action it illustrates.
-  const fullSample = radarSvg(
-    FULL_SAMPLE.map((a) => ({ label: itemName(a.key, a.key, locale), value: a.score })),
-    {
-      idPrefix: "fullsample",
-      size: 300,
-      values: false,
-      maxLabel: 40,
-      widthRatio: 2.1,
-      caption: dimLabel("employability", "Employability"),
-    },
-  );
+  // The full version, shown as the book it is: a closed cover and an open
+  // spread of two real pages, the summary against the market bar and one area
+  // with every competency. Invented, labelled example data. Every word on these
+  // pages is the Fit Report's own copy, so nothing here is new wording.
+  // Was a single 8-axis chart, 26/10/2026; the book, 27/10/2026.
+  const fullSample = bookShowcase(locale, s, dimLabel);
 
   const body = `  <header class="top">
     <p class="eyebrow">PunProfile · EU Fit Check</p>
@@ -718,7 +710,7 @@ ${dimSections}
     <h2>${esc(s("report.full.heading"))}</h2>
     <p>${esc(s("report.full.body"))}</p>
     <p class="eyebrow">${esc(s("report.full.example"))}</p>
-    <figure class="chart" style="max-width:34rem">${fullSample}</figure>
+    ${fullSample}
     <p class="cta-row">
       <a class="cta-btn" href="${esc(DESTINATIONS.line.href)}">${esc(DESTINATIONS.line.label[locale])}</a>
       <a class="cta-link" href="https://punprofile.app/products/fit-report">${esc(s("report.full.link"))}</a>
@@ -741,7 +733,7 @@ ${dimSections}
     printLabel: s("report.savePdf"),
     body,
     autoPrint: opts.autoPrint ?? false,
-  });
+  }).replace("</style>", `${BOOK_STYLES}\n</style>`);
 
   // The check that makes the whitelist rule enforceable rather than aspirational.
   // Run against the rendered document, so a word hard-coded into a template here
@@ -769,6 +761,147 @@ function stripMarkup(html: string): string {
     .replace(/<script>[\s\S]*?<\/script>/g, " ")
     .replace(/<[^>]+>/g, " ");
 }
+
+/**
+ * The Fit Report as a book, for the free report's last section. 27/10/2026.
+ *
+ * Each page is laid out at a real page width and scaled down with a transform,
+ * so the miniature is the paid document's own typography shrunk, not a second
+ * design that can drift from it. The notes column shows grey lines, not text:
+ * a coach note is written per candidate and an invented one would read as
+ * advice.
+ */
+function bookShowcase(
+  locale: Locale,
+  s: (key: Parameters<typeof t>[0], vars?: Record<string, string | number>) => string,
+  dimLabel: (key: string, fallback: string) => string,
+): string {
+  const empAvg = FULL_SAMPLE.reduce((n, a) => n + a.score, 0) / FULL_SAMPLE.length;
+  const areaScore = (k: string) =>
+    k === "employability" ? empAvg : (HERO_SAMPLE_SCORES as Record<string, number>)[k] ?? 0;
+  const areas = GATES.map((g) => ({ key: g.key, bar: g.bar, score: areaScore(g.key) }));
+  const empBar = GATES.find((g) => g.key === "employability")!.bar;
+
+  const overview = radarSvg(
+    areas.map((a) => ({ label: dimLabel(a.key, a.key), value: a.score })),
+    { idPrefix: "bookov", size: 300, values: false, maxLabel: 40, widthRatio: 1.75, wrapLabels: true, threshold: areas.map((a) => a.bar) },
+  );
+  const areaChart = radarSvg(
+    FULL_SAMPLE.map((a) => ({ label: itemName(a.key, a.key, locale), value: a.score })),
+    { idPrefix: "bookemp", size: 300, values: false, maxLabel: 40, widthRatio: 1.75, wrapLabels: true, threshold: empBar },
+  );
+  const gapRows = areas
+    .map((a) => {
+      const gap = a.score >= a.bar ? `<td class="bk-clear">${esc(s("fit.cleared"))}</td>` : `<td class="bk-open">${(a.bar - a.score).toFixed(1)}</td>`;
+      return `<tr><th>${esc(dimLabel(a.key, a.key))}</th><td>${a.score.toFixed(1)}</td><td>${a.bar.toFixed(1)}</td>${gap}</tr>`;
+    })
+    .join("");
+  const noteRows = FULL_SAMPLE.map((a, i) => {
+    const note =
+      a.score >= empBar
+        ? `<span class="bk-clear">${esc(s("fit.cleared"))}</span>`
+        : `<span class="bk-line" style="width:${[88, 72, 94, 64, 80, 70, 90, 76][i % 8]}%"></span><span class="bk-line" style="width:${[52, 66, 40, 58, 46, 62, 50, 44][i % 8]}%"></span>`;
+    return `<tr><th>${esc(itemName(a.key, a.key, locale))}</th><td>${a.score.toFixed(1)}</td><td>${note}</td></tr>`;
+  }).join("");
+  const foot = (num: string, heading: string) =>
+    `<p class="bk-foot"><span>${esc(s("fit.eyebrow"))}</span><span>${num}</span></p>`;
+
+  return `<div class="book" aria-label="${esc(s("report.full.example"))}">
+    <div class="bk-closed">
+      <div class="bk-frame"><div class="bk-page bk-cover">
+        <div>
+          <p class="bk-eyebrow">${esc(s("fit.eyebrow"))}</p>
+          <p class="bk-title">Fit Report</p>
+        </div>
+        <div>
+          <p class="bk-coverline">${esc(s("fit.cover.sub", { count: 34 }))}</p>
+          <span class="bk-line bk-line-dark" style="width:40%"></span>
+        </div>
+      </div></div>
+    </div>
+    <div class="bk-open">
+      <div class="bk-frame"><div class="bk-page">
+        <h3><span class="bk-num">01</span>${esc(s("fit.summary.heading"))}</h3>
+        <figure>${overview}</figure>
+        <p class="bk-legend">${esc(s("fit.legend.bar"))}</p>
+        <table><thead><tr><th>${esc(s("fit.col.area"))}</th><th>${esc(s("fit.col.score"))}</th><th>${esc(s("fit.col.bar"))}</th><th>${esc(s("fit.col.gap"))}</th></tr></thead><tbody>${gapRows}</tbody></table>
+        ${foot("01", "")}
+      </div></div>
+      <div class="bk-frame"><div class="bk-page">
+        <h3><span class="bk-num">04</span>${esc(dimLabel("employability", "Employability"))}</h3>
+        <figure>${areaChart}</figure>
+        <table class="bk-notes"><thead><tr><th>${esc(s("report.competency"))}</th><th>${esc(s("report.score"))}</th><th>${esc(s("fit.col.note"))}</th></tr></thead><tbody>${noteRows}</tbody></table>
+        ${foot("04", "")}
+      </div></div>
+    </div>
+  </div>`;
+}
+
+/** The book's stylesheet. Scoped under `.book`, used only by the free report. */
+const BOOK_STYLES = `
+  .book {
+    --viz-bar: var(--color-warning-deep);
+    --pw: 560px; --ph: 792px; --k: .36; --kc: .27;
+    display: flex; align-items: flex-end; justify-content: center; gap: 2.25rem;
+    margin: 1.5rem 0 .5rem; padding: 2.25rem 1.5rem 2rem;
+    background: radial-gradient(120% 90% at 50% 0%, var(--viz-surface) 0%, var(--viz-grid) 100%);
+    border: 1px solid var(--border); border-radius: 16px; break-inside: avoid;
+  }
+  .bk-frame { position: relative; width: calc(var(--pw) * var(--k)); height: calc(var(--ph) * var(--k)); overflow: hidden; background: #fff; }
+  .bk-page {
+    position: absolute; top: 0; left: 0; width: var(--pw); height: var(--ph);
+    transform: scale(var(--k)); transform-origin: top left;
+    padding: 44px 40px 36px; color: var(--ink-1); font-size: 14px; line-height: 1.45;
+    display: flex; flex-direction: column;
+  }
+  .bk-page h3 { font-size: 22px; line-height: 1.25; margin: 0 0 6px; }
+  .bk-num { display: inline-block; min-width: 38px; color: var(--color-warning-deep); }
+  .bk-page figure { margin: 4px auto 0; width: 100%; }
+  .bk-page figure svg { width: 100%; height: auto; display: block; }
+  .bk-legend { color: var(--ink-2); font-size: 12px; margin: 2px 0 8px; }
+  .bk-legend::before { content: ""; display: inline-block; width: 26px; border-top: 2px dashed var(--color-warning-deep); vertical-align: middle; margin-right: 8px; }
+  .bk-page table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .bk-page th, .bk-page td { text-align: left; padding: 7px 6px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .bk-page thead th { color: var(--ink-2); font-size: 11px; font-weight: 600; }
+  .bk-page tbody th { font-weight: 600; }
+  .bk-notes tbody th { width: 40%; }
+  .bk-notes td:nth-child(2) { width: 46px; font-weight: 700; }
+  .bk-open .bk-frame:last-child figure { width: 92%; margin-bottom: 6px; }
+  .bk-open .bk-frame:first-child figure { width: 100%; margin: 14px auto 8px; }
+  .bk-open .bk-page tbody td:nth-child(2) { font-weight: 700; }
+  .bk-clear { color: var(--color-positive-deep); font-weight: 700; }
+  .bk-open .bk-page td.bk-open, td.bk-open { color: var(--color-warning-deep); font-weight: 700; }
+  .bk-line { display: block; height: 7px; border-radius: 999px; background: var(--viz-grid); margin: 3px 0; }
+  .bk-line-dark { background: rgba(255,255,255,.22); height: 9px; }
+  .bk-foot { margin-top: auto; padding-top: 8px; border-top: 1px solid var(--border); color: var(--viz-muted); font-size: 11px; display: flex; justify-content: space-between; }
+
+  /* the closed book: cover on the dark brand ground, page edges behind it */
+  .bk-closed { position: relative; transform: rotate(-4deg); margin-bottom: .4rem; }
+  .bk-closed .bk-frame { --k: var(--kc); border-radius: 3px 8px 8px 3px;
+    box-shadow: 3px 3px 0 #f4f2ec, 6px 6px 0 #e6e3da, 9px 9px 0 #f4f2ec, 12px 12px 0 #dcd8cc, 0 18px 28px rgba(0,0,0,.22); }
+  .bk-closed .bk-frame::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 9px; background: linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0)); z-index: 2; }
+  .bk-cover { background: var(--color-canvas-dark); color: var(--color-on-canvas-dark); justify-content: space-between; padding: 64px 48px 56px 60px; }
+  .bk-eyebrow { color: var(--color-canvas-brand); font-size: 16px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin: 0; }
+  .bk-title { color: #fff; font-size: 64px; font-weight: 800; line-height: 1.05; margin: 22px 0 0; }
+  .bk-coverline { color: var(--color-canvas-brand); font-size: 22px; font-weight: 600; line-height: 1.35; margin: 0 0 22px; }
+
+  /* the open spread: two pages meeting at a shaded spine */
+  .bk-open { display: flex; position: relative; filter: drop-shadow(0 16px 22px rgba(0,0,0,.18)); }
+  .bk-open .bk-frame:first-child { border-radius: 6px 0 0 6px; box-shadow: inset -18px 0 22px -18px rgba(0,0,0,.28); }
+  .bk-open .bk-frame:last-child { border-radius: 0 6px 6px 0; box-shadow: inset 18px 0 22px -18px rgba(0,0,0,.28); }
+  .bk-open::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 6px; border-radius: 0 0 6px 6px;
+    background: repeating-linear-gradient(180deg, #e8e5dc 0 1px, #fbfaf7 1px 2px); }
+
+  @media (max-width: 720px) {
+    .book { --k: .26; --kc: .2; gap: 1.25rem; padding: 1.5rem .75rem; }
+  }
+  @media (max-width: 480px) {
+    .book { flex-direction: column; align-items: center; --k: .27; --kc: .2; }
+  }
+  @media print {
+    .book { --k: .37; --kc: .27; gap: 1.75rem; padding: 1.75rem 1rem 1.5rem; }
+  }
+`;
 
 /* ===================================================================== */
 /* THE PAID FIT REPORT                                                    */
