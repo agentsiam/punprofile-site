@@ -19,8 +19,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
   related: "start-in-europe",
 
   title: {
-    th: "จากนักเรียนสู่คนทำงานในสเปน: 6 เรื่องที่คาร่าอยากให้รู้ก่อนย้ายมายุโรป",
-    en: "From student to working in Spain: six things Cara wants you to know before you move to Europe",
+    th: "สมัครงานพันที่ เสียเปล่า 800: 6 เรื่องที่คาร่าอยากให้รู้ก่อนย้ายมาทำงานยุโรป",
+    en: "A thousand applications, 800 wasted: six things Cara wants you to know before you move to Europe for work",
   },
 
   seoTitle: {
@@ -29,8 +29,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
   },
 
   summary: {
-    th: "คาร่าย้ายมาเรียนที่สเปน แล้วหางานต่อจนได้ทำงานในบริษัทที่นั่น นี่คือ 6 เรื่องที่เธอเล่าจากประสบการณ์จริง",
-    en: "Cara moved to Spain to study, then found work in a company there. These are six things she told us from her own experience.",
+    th: "ไม่ต้องพูดภาษาที่ 3 ก็ทำงานในบริษัทได้ อายุไม่ใช่ปัญหาหลัก และรูปในเรซูเม่ไม่ได้ช่วยอย่างที่คิด คาร่าเล่า 6 เรื่องจากเส้นทางนักเรียนไทยสู่คนทำงานในสเปน",
+    en: "You can work in a company without a third language, age is not the main problem, and a CV photo does not help the way you think. Cara on six things from her route from Thai student to working in Spain.",
   },
 
   person: {
@@ -72,23 +72,23 @@ export const CARA_WORKING_IN_SPAIN: Post = {
         {
           kind: "p",
           text: {
-            th: "คาร่าเป็นคนไทยที่ย้ายมาเรียนต่อที่สเปน แล้วหางานต่อหลังเรียนจบ ตอนนี้เธอทำงานในบริษัทที่สเปน และใช้ภาษาอังกฤษในการทำงานเป็นหลัก",
-            en: "Cara is Thai. She moved to Spain to study, then looked for work after she graduated. She now works in a company in Spain, mostly in English.",
+            th: "คาร่าเป็นคนไทยที่ย้ายมาเรียนต่อที่สเปน หลังเรียนจบเธอส่งใบสมัครไปราวพันที่ กว่าจะได้งานในบริษัทที่นั่น ตอนนี้เธอใช้ภาษาอังกฤษในการทำงานเป็นหลัก",
+            en: "Cara is Thai and moved to Spain to study. After graduating she sent about a thousand applications before landing a job at a company there. Today she works mostly in English.",
           },
         },
         {
           kind: "p",
           text: {
-            th: "เรานั่งคุยกับเธอถึงคำถามที่คนไทยที่อยากมาทำงานยุโรปถามเราบ่อยที่สุด ข้อความในกรอบด้านล่างคือคำพูดของเธอเอง ตัดมาจากบทสัมภาษณ์",
-            en: "We sat down with her to talk through the questions Thais who want to work in Europe ask us most. The quotes below are her own words, taken from the interview.",
+            th: "เรานั่งคุยกับเธอถึงคำถามที่คนไทยที่อยากมาทำงานยุโรปถามเราบ่อยที่สุด คำตอบของเธอหักล้างความเชื่อเดิมหลายข้อ ข้อความในกรอบคือคำพูดของเธอเอง ตัดมาจากบทสัมภาษณ์",
+            en: "We sat down with her to talk through the questions Thais who want to work in Europe ask us most. Several of her answers overturn what most people believe. The quotes are her own words, taken from the interview.",
           },
         },
       ],
     },
     {
       heading: {
-        th: "1. ไม่พูดภาษาที่ 3 ก็ทำงานในบริษัทได้",
-        en: "1. You can work in a company without a third language",
+        th: "1. “ต้องพูดภาษาท้องถิ่นได้ก่อน” ไม่จริงเสมอไป",
+        en: "1. “You have to speak the local language first” is not always true",
       },
       body: [
         {
@@ -116,8 +116,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
     },
     {
       heading: {
-        th: "2. สมัครพันที่ด้วยเรซูเม่ใบเดียว ไม่ได้ผล",
-        en: "2. A thousand applications with one CV did not work",
+        th: "2. สมัครพันที่ เสียเปล่า 800",
+        en: "2. A thousand applications, 800 wasted",
       },
       body: [
         {
@@ -160,8 +160,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
     },
     {
       heading: {
-        th: "3. วางแผนฝึกงานไว้ตั้งแต่ก่อนเรียนจบ",
-        en: "3. Plan the internship before you graduate",
+        th: "3. ฝึกงานคือประตูที่เปิดง่ายที่สุด",
+        en: "3. An internship is the easiest door in",
       },
       body: [
         {
@@ -189,8 +189,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
     },
     {
       heading: {
-        th: "4. อายุไม่ใช่ปัญหาหลัก",
-        en: "4. Age is not the main problem",
+        th: "4. อายุไม่ใช่ปัญหา mindset ต่างหากที่สำคัญ",
+        en: "4. Age is not the problem. Mindset is",
       },
       body: [
         {
@@ -218,8 +218,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
     },
     {
       heading: {
-        th: "5. ไม่รู้จักใครก็เริ่มได้",
-        en: "5. You can start without knowing anyone",
+        th: "5. ไม่รู้จักใครเลยสักคน ก็เริ่มได้",
+        en: "5. You can start without knowing a single person",
       },
       body: [
         {
@@ -247,8 +247,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
     },
     {
       heading: {
-        th: "6. ไม่ต้องใส่รูปในเรซูเม่",
-        en: "6. You do not need a photo on your CV",
+        th: "6. รูปในเรซูเม่ ไม่ได้ช่วยอย่างที่คิด",
+        en: "6. A photo on your CV does not help the way you think",
       },
       body: [
         {

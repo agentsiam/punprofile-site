@@ -3929,9 +3929,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.title",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.title",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.seoTitle": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -3947,9 +3947,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.summary",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.summary",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.person": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4001,27 +4001,27 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[1].body[0].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[0].text",
     "narrativeSlot": "audience",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[1].body[1].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
     "path": "CARA_WORKING_IN_SPAIN.sections[1].body[1].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[1].text",
     "narrativeSlot": "audience",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
     "path": "CARA_WORKING_IN_SPAIN.sections[2].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].heading",
     "narrativeSlot": "misread",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4055,9 +4055,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[3].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].heading",
     "narrativeSlot": "symptom",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4109,9 +4109,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[4].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].heading",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4145,9 +4145,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[5].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].heading",
     "narrativeSlot": "misread",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4181,9 +4181,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[6].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].heading",
     "narrativeSlot": "misread",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4217,9 +4217,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[7].heading",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].heading",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
