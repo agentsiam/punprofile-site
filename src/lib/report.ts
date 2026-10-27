@@ -73,6 +73,7 @@ import { BAND_COPY, GATES } from "./model";
 import { topStrengths, developmentPriorities } from "./scoring";
 import { projectUnlock } from "./levers";
 import { FULL_SAMPLE } from "./content/products";
+import { DESTINATIONS } from "./content/cta";
 import type { ProfileScore } from "./scoring";
 import type { Tier } from "./model";
 
@@ -199,6 +200,17 @@ const STYLES = `${BRAND_TOKENS_CSS.replace(/\n  \}$/, `\n${BRAND_FONT_STACKS}\n 
     background: var(--ink-1); border: 0; border-radius: 999px;
     padding: .7rem 1.4rem; cursor: pointer;
   }
+
+  /* ---------------------------------------- the Fit Report ask, 27/10/2026
+     A real button, kept in print: the PDF is where the candidate reads this,
+     and a link in a PDF stays clickable. Buying is a LINE conversation while
+     payment is arranged by hand, so the button opens the chat. */
+  .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 1.25rem; break-inside: avoid; }
+  .cta-btn {
+    display: inline-block; font: 600 .95rem/1 var(--font-sans); color: var(--viz-surface);
+    background: var(--ink-1); border-radius: 999px; padding: .85rem 1.6rem; text-decoration: none;
+  }
+  .cta-link { color: var(--ink-2); font-size: .85rem; text-decoration: underline; }
 
   /* ------------------------------------------------------------ score strip */
   .strip {
@@ -707,7 +719,10 @@ ${dimSections}
     <p>${esc(s("report.full.body"))}</p>
     <p class="eyebrow">${esc(s("report.full.example"))}</p>
     <figure class="chart" style="max-width:34rem">${fullSample}</figure>
-    <p class="next"><strong>${esc(s("report.full.link"))}</strong></p>
+    <p class="cta-row">
+      <a class="cta-btn" href="${esc(DESTINATIONS.line.href)}">${esc(DESTINATIONS.line.label[locale])}</a>
+      <a class="cta-link" href="https://punprofile.app/products/fit-report">${esc(s("report.full.link"))}</a>
+    </p>
   </section>
 
   <section>
