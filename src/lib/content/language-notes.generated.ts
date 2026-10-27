@@ -7081,7 +7081,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer."
   },
   "src/lib/content/products.ts::PRODUCTS[2].how[1]": {
     "source": "src/lib/content/products.ts",
@@ -7117,7 +7117,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-written",
     "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer."
   },
   "src/lib/content/products.ts::PRODUCTS[2].limit": {
     "source": "src/lib/content/products.ts",
@@ -9223,7 +9223,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "artefact",
     "provenance": "paul-written",
     "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer."
   },
   "src/lib/content/products.ts::FULL_CTA": {
     "source": "src/lib/content/products.ts",
@@ -9313,7 +9313,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "ask",
     "provenance": "paul-written",
     "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer."
   },
   "src/lib/content/copy.ts::COPY.report.full.example": {
     "source": "src/lib/content/copy.ts",

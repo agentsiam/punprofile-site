@@ -190,8 +190,8 @@ export const FULL_HEADING: Copy = {
 };
 
 export const FULL_LEDE: Copy = {
-  en: "The free check scores four areas from your answers. The Fit Report adds a 30-minute interview with me and opens each area up like this, eight to ten competencies at a time.",
-  th: "EU Fit Check แบบฟรีให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับผม และแสดงผลแต่ละด้านเป็นกราฟแบบนี้ โดยแยกเป็นด้านละ 8–10 ทักษะ",
+  en: "The free check scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and opens each area up like this, eight to ten competencies at a time.",
+  th: "EU Fit Check แบบฟรีให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และแสดงผลแต่ละด้านเป็นกราฟแบบนี้ โดยแยกเป็นด้านละ 8–10 ทักษะ",
 };
 
 export const FULL_CTA: Copy = {
@@ -420,16 +420,16 @@ export const PRODUCTS: readonly Product[] = [
       th: "รู้ว่าตัวเองอยู่ขั้นไหนแล้ว คำถามต่อไปคือควรลงมือทำอะไรก่อน",
     },
     lede: {
-      en: "The full report: all four areas scored competency by competency, completed in a 30-minute interview with me.",
+      en: "The full report: all four areas scored competency by competency, completed in a 30-minute interview with an expert.",
       // Rebuilt from Paul's own Thai of 23/08/2026 on the pricing sheet.
-      th: "ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับผม",
+      th: "ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับ Expert",
     },
     how: [
       {
-        en: "A 30-minute interview with me covers what a form cannot see: your CV, how you talk about your work, and the roles you are aiming at.",
+        en: "A 30-minute interview with an expert covers what a form cannot see: your CV, how you talk about your work, and the roles you are aiming at.",
         // Drafted 23/08/2026, read back and approved unchanged. Thresholds rather than scores, which
         // `10_Methodology.md` calls the single most important idea in the method.
-        th: "สัมภาษณ์ 30 นาทีกับผม เพื่อดูส่วนที่แบบฟอร์มมองไม่เห็น ทั้ง CV วิธีที่คุณเล่าถึงงานของตัวเอง และตำแหน่งที่คุณตั้งเป้าไว้",
+        th: "สัมภาษณ์ 30 นาทีกับ Expert เพื่อดูส่วนที่แบบฟอร์มมองไม่เห็น ทั้ง CV วิธีที่คุณเล่าถึงงานของตัวเอง และตำแหน่งที่คุณตั้งเป้าไว้",
       },
       {
         en: "All four areas as full charts, eight to ten competencies each, scored against the bars the European market uses.",

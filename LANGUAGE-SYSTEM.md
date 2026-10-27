@@ -19074,15 +19074,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].how[0]
 render: Product pages, PRODUCTS[2].how[0]
 narrative_slot: mechanism
-en: 'A 30-minute interview with me covers what a form cannot see: your CV, how you talk about your work, and the roles you are aiming at.'
-th: สัมภาษณ์ 30 นาทีกับผม เพื่อดูส่วนที่แบบฟอร์มมองไม่เห็น ทั้ง CV วิธีที่คุณเล่าถึงงานของตัวเอง และตำแหน่งที่คุณตั้งเป้าไว้
+en: 'A 30-minute interview with an expert covers what a form cannot see: your CV, how you talk about your work, and the roles you are aiming at.'
+th: สัมภาษณ์ 30 นาทีกับ Expert เพื่อดูส่วนที่แบบฟอร์มมองไม่เห็น ทั้ง CV วิธีที่คุณเล่าถึงงานของตัวเอง และตำแหน่งที่คุณตั้งเป้าไว้
 provenance: paul-approved
 date: 26/10/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer.
 review:
   structural_calque: pass
-  text_hash: 25a7b6e2ed105b61e9355b4b24e06cd970e5f1827a21dde3859103d23725ecb7
+  text_hash: 1b24b147272fd1bce8bbe4946ea93df86dec3d0202daf5fde99b927579d5b639
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 26/10/2026.
 ```
@@ -19162,15 +19162,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].lede
 render: Product pages, PRODUCTS[2].lede
 narrative_slot: utility
-en: 'The full report: all four areas scored competency by competency, completed in a 30-minute interview with me.'
-th: ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับผม
+en: 'The full report: all four areas scored competency by competency, completed in a 30-minute interview with an expert.'
+th: ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับ Expert
 provenance: paul-written
 date: 26/10/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer.
 review:
   structural_calque: pass
-  text_hash: 56f1f451e90eefb0fb90e5e20dba4c6b7df3ef39727202f7f4885f43bba1d597
+  text_hash: 535b50640e269f0f7fb7246c5b9489b802205f6d162ff1fdc90f36afb4a9233e
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -24773,15 +24773,15 @@ source: src/lib/content/products.ts
 path: FULL_LEDE
 render: EU Fit Check product page, full-version section lede
 narrative_slot: artefact
-en: The free check scores four areas from your answers. The Fit Report adds a 30-minute interview with me and opens each area up like this, eight to ten competencies at a time.
-th: EU Fit Check แบบฟรีให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับผม และแสดงผลแต่ละด้านเป็นกราฟแบบนี้ โดยแยกเป็นด้านละ 8–10 ทักษะ
+en: The free check scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and opens each area up like this, eight to ten competencies at a time.
+th: EU Fit Check แบบฟรีให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และแสดงผลแต่ละด้านเป็นกราฟแบบนี้ โดยแยกเป็นด้านละ 8–10 ทักษะ
 provenance: paul-written
 date: 26/10/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer.
 review:
   structural_calque: pass
-  text_hash: 8bafa902bd16fb566c17d9515c77d11a569764dbe9858ac64802d5a464a9deea
+  text_hash: 24d9e3a67b340b8ad00f4e2f0b51911aea51e321f49a4d87f86e5b574f5134ef
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -24993,15 +24993,15 @@ source: src/lib/content/copy.ts
 path: COPY.report.full.body
 render: Candidate PDF, full-version section body
 narrative_slot: ask
-en: This report scores four areas from your answers. The Fit Report adds a 30-minute interview with me and scores every competency in each area, like the example below. If you want it, message me on LINE or by email and I will arrange the interview and the payment.
-th: รายงานนี้ให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับผม และประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างด้านล่าง หากสนใจ ทักมาทาง LINE หรืออีเมลได้เลย ผมจะนัดเวลาสัมภาษณ์และแจ้งรายละเอียดการชำระเงินให้
+en: This report scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and scores every competency in each area, like the example below. If you want it, message me on LINE or by email and I will arrange the interview and the payment.
+th: รายงานนี้ให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างด้านล่าง หากสนใจ ทักมาทาง LINE หรืออีเมลได้เลย ผมจะนัดเวลาสัมภาษณ์และแจ้งรายละเอียดการชำระเงินให้
 provenance: paul-written
 date: 26/10/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer.
 review:
   structural_calque: pass
-  text_hash: 52e7f4a0af0730874aa06ba0db5477c49d1fd0fdb4a548fabe3e4fc23803e9fd
+  text_hash: ae773afc076d10eb874190a5b12b1a5d631166104201416e9b067d6074a12fde
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
