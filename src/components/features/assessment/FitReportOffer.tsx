@@ -22,7 +22,14 @@ import { useCopy } from "@/components/LocaleProvider";
 import FullSampleChart from "@/components/features/products/FullSampleChart";
 import { FULL_CTA, HERO_FULL_LABEL } from "@/lib/content/products";
 
-export default function FitReportOffer({ responses }: { responses: Record<string, unknown> }) {
+export default function FitReportOffer({
+  responses,
+  name,
+}: {
+  responses: Record<string, unknown>;
+  /** Typed at the contact step; goes on the cover of the Fit Report book in the PDF. */
+  name?: string;
+}) {
   const { t, pick, path, locale } = useCopy();
   const [building, setBuilding] = useState(false);
 
@@ -39,9 +46,16 @@ export default function FitReportOffer({ responses }: { responses: Record<string
         import("@/lib/scoring"),
         import("@/lib/content/mapping"),
       ]);
+      const input = toScoringInput(responses as Parameters<typeof toScoringInput>[0]);
       const html = renderReport(
-        scoreResponse(toScoringInput(responses as Parameters<typeof toScoringInput>[0])),
-        { candidate: t("report.self.title"), submittedAt: new Date().toISOString().slice(0, 10) },
+        scoreResponse(input),
+        {
+          candidate: t("report.self.title"),
+          coverName: name || "Fit Report",
+          submittedAt: new Date().toISOString().slice(0, 10),
+          targetCountries: input.targetCountries,
+          targetRole: input.targetRole ?? undefined,
+        },
         { variant: "limited", locale, autoPrint: true },
       );
       win.document.open();

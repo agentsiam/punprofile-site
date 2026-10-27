@@ -83,6 +83,12 @@ export interface ReportMeta {
   targetCountries?: string[];
   targetRole?: string;
   currentRole?: string;
+  /**
+   * The name on the Fit Report book's cover in the free report, when it is not
+   * `candidate`: the result screen titles its PDF "your result" but still knows
+   * the name typed at the contact step. 27/10/2026.
+   */
+  coverName?: string;
 }
 
 export type ReportVariant = "full" | "limited" | "fit";
@@ -670,7 +676,11 @@ ${rows}
   // with every competency. Invented, labelled example data. Every word on these
   // pages is the Fit Report's own copy, so nothing here is new wording.
   // Was a single 8-axis chart, 26/10/2026; the book, 27/10/2026.
-  const fullSample = bookShowcase(locale, s, dimLabel);
+  // The cover carries the reader's own name, as the real cover does. Paul 1a, 27/10/2026.
+  const fullSample = bookShowcase(locale, s, dimLabel, {
+    name: meta.coverName ?? meta.candidate,
+    sub: [meta.targetRole, meta.targetCountries?.join(", ")].filter(Boolean).join(" · "),
+  });
 
   const body = `  <header class="top">
     <p class="eyebrow">PunProfile · EU Fit Check</p>
@@ -773,6 +783,7 @@ function bookShowcase(
   locale: Locale,
   s: (key: Parameters<typeof t>[0], vars?: Record<string, string | number>) => string,
   dimLabel: (key: string, fallback: string) => string,
+  cover: { name: string; sub: string },
 ): string {
   const empAvg = FULL_SAMPLE.reduce((n, a) => n + a.score, 0) / FULL_SAMPLE.length;
   const areaScore = (k: string) =>
@@ -810,8 +821,8 @@ function bookShowcase(
       <div class="bk-frame"><div class="bk-page bk-cover">
         <div>
           <p class="bk-eyebrow">${esc(s("fit.eyebrow"))}</p>
-          <p class="bk-title">Fit Report</p>
-          <span class="bk-line bk-line-dark" style="width:62%;margin-top:14px"></span>
+          <p class="bk-title">${esc(cover.name)}</p>
+          ${cover.sub ? `<p class="bk-sub">${esc(cover.sub)}</p>` : ""}
         </div>
         <div>
           <p class="bk-coverline">${esc(s("fit.cover.sub", { count: 34 }))}</p>
@@ -886,7 +897,8 @@ const BOOK_STYLES = `
   .bk-closed .bk-frame::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 9px; background: linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0)); z-index: 2; }
   .bk-cover { background: var(--color-canvas-dark); color: var(--color-on-canvas-dark); justify-content: space-between; padding: 64px 48px 56px 60px; }
   .bk-eyebrow { color: var(--color-canvas-brand); font-size: 16px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin: 0; }
-  .bk-title { color: #fff; font-size: 64px; font-weight: 800; line-height: 1.05; margin: 22px 0 0; }
+  .bk-title { color: #fff; font-size: 52px; font-weight: 800; line-height: 1.1; margin: 22px 0 0; overflow-wrap: anywhere; }
+  .bk-sub { color: var(--color-on-canvas-dark); font-size: 18px; margin: 12px 0 0; }
   .bk-coverline { color: var(--color-canvas-brand); font-size: 22px; font-weight: 600; line-height: 1.35; margin: 0 0 22px; }
 
   /* the open spread: two pages meeting at a shaded spine */

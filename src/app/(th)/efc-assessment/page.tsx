@@ -147,6 +147,8 @@ const ENGLISH_SWITCH_AT: readonly string[] = ["B1", "B2", "C1", "C2"];
 export default function AssessPage() {
   const { t, pick, path, locale, setLocale } = useCopy();
   const [leadId, setLeadId] = useState<Id<"leads"> | null>(null);
+  // The name typed at the contact step, kept only for this screen's PDF cover. 27/10/2026.
+  const [contactName, setContactName] = useState<string>("");
   const [local, setLocal] = useState<Record<string, Answer>>({});
   const [step, setStep] = useState(0); // 0..STAGE1.length-1 = questions, then the contact gate, then the teaser
   /** Which half of the question transition is on screen. See `commit` below. */
@@ -560,6 +562,7 @@ export default function AssessPage() {
         totalSteps={TOTAL_STEPS + 1}
         onSubmit={async (values) => {
           await captureContact({ leadId, ...values });
+          setContactName(`${values.firstName} ${values.lastName}`.trim());
         }}
       />
     );
@@ -716,7 +719,7 @@ export default function AssessPage() {
 
       {/* The Fit Report card and the candidate's own PDF, 26/10/2026. Directly
           under their chart, because this is the moment they are most interested. */}
-      {session && <FitReportOffer responses={session.responses} />}
+      {session && <FitReportOffer responses={session.responses} name={contactName} />}
 
       {/* TASK-083. Facts about everyone who has taken this and one about the
           candidate, so the screen after the queue message has something on it
