@@ -8829,6 +8829,42 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "04/10/2026",
     "decisionNote": "Draft 04/10/2026. The product page and the assessment shared the title \"EU Fit Check\"."
   },
+  "src/lib/content/copy.ts::COPY.result.fitReport.heading": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.result.fitReport.heading",
+    "render": "Result screen, Fit Report card heading",
+    "narrativeSlot": "ask",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 27/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.result.fitReport.body": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.result.fitReport.body",
+    "render": "Result screen, Fit Report card body",
+    "narrativeSlot": "ask",
+    "provenance": "paul-written",
+    "date": "26/10/2026",
+    "decisionNote": "Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 27/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.result.download": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.result.download",
+    "render": "Result screen, button that opens the candidate's own PDF",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
+  "src/lib/content/copy.ts::COPY.report.self.title": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.report.self.title",
+    "render": "Candidate PDF downloaded from the result screen, the title where a name would be",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "26/10/2026",
+    "decisionNote": "Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+  },
   "src/lib/content/products.ts::HERO_FREE_LABEL": {
     "source": "src/lib/content/products.ts",
     "path": "HERO_FREE_LABEL",

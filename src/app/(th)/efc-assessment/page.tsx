@@ -24,6 +24,7 @@ import { setNavLocked } from "@/lib/navLock";
 import { setLocaleSwitchInPlace } from "@/lib/localeInPlace";
 import { buildTeaserSummary } from "@/lib/views";
 import { toScoringInput } from "@/lib/content/mapping";
+import FitReportOffer from "@/components/features/assessment/FitReportOffer";
 
 /**
  * TASK-018..022: the Stage 1 flow. The nine questions from
@@ -712,6 +713,10 @@ export default function AssessPage() {
           </div>
         </div>
       </div>
+
+      {/* The Fit Report card and the candidate's own PDF, 26/10/2026. Directly
+          under their chart, because this is the moment they are most interested. */}
+      {session && <FitReportOffer responses={session.responses} />}
 
       {/* TASK-083. Facts about everyone who has taken this and one about the
           candidate, so the screen after the queue message has something on it

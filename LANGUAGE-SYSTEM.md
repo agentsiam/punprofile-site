@@ -23819,6 +23819,94 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.result.fitReport.heading`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.result.fitReport.heading
+source: src/lib/content/copy.ts
+path: COPY.result.fitReport.heading
+render: Result screen, Fit Report card heading
+narrative_slot: ask
+en: Want the detail on every competency in all four areas?
+th: อยากเห็นรายละเอียดครบทุกทักษะในทั้ง 4 ด้านไหม
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 27/10/2026.
+review:
+  structural_calque: pass
+  text_hash: cfaabc6f6b45425e353cf05ccc86614c4ec5e277b675da9fdb72d57bc9a39bf0
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.result.fitReport.body`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.result.fitReport.body
+source: src/lib/content/copy.ts
+path: COPY.result.fitReport.body
+render: Result screen, Fit Report card body
+narrative_slot: ask
+en: The Fit Report builds on the result you just got, with a 30-minute interview with an expert, to score every competency in each area, like this example.
+th: Fit Report ต่อยอดจากผลที่คุณเพิ่งได้รับ ด้วยการสัมภาษณ์ 30 นาทีกับ Expert เพื่อประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างนี้
+provenance: paul-written
+date: 26/10/2026
+term_bindings: []
+decision_note: Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 27/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 691922b15486b58e6532dc6717c21628a4ab14f5055867b3bf1f46ee7e1e42ef
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.result.download`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.result.download
+source: src/lib/content/copy.ts
+path: COPY.result.download
+render: Result screen, button that opens the candidate's own PDF
+narrative_slot: utility
+en: Download your report (PDF)
+th: ดาวน์โหลดรายงานผลของคุณ (PDF)
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: ee68b88a6b39fcf39feff705a47213304829c9fbbe5c06c7713d0a32ecf43964
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.report.self.title`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.report.self.title
+source: src/lib/content/copy.ts
+path: COPY.report.self.title
+render: Candidate PDF downloaded from the result screen, the title where a name would be
+narrative_slot: utility
+en: Your EU Fit Check result
+th: ผลประเมิน EU Fit Check ของคุณ
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+review:
+  structural_calque: pass
+  text_hash: 5572a43f4c322a06a655176ec18097dbc34a627cd15fe57521622a1d0420b6c6
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/products.ts::HERO_FREE_LABEL`
 
 ```yaml

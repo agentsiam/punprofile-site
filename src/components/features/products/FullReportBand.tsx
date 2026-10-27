@@ -19,7 +19,7 @@ export default function FullReportBand() {
   const { pick, locale, path } = useCopy();
 
   return (
-    <Band block="B3" ground="canvas" width="wide">
+    <Band block="B3" ground="soft" width="wide">
       <div className="max-w-3xl">
         <h2 className={SECTION_HEADING(locale)}>{pick(FULL_HEADING)}</h2>
         <p className="mt-4 text-body-large text-on-surface-variant">{pick(FULL_LEDE)}</p>

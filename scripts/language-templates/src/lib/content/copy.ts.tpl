@@ -1242,6 +1242,26 @@ export const COPY = {
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmZvb3Rlcg:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmZvb3Rlcg:TH%%,
   },
+  "result.fitReport.heading": {
+    screen: "Result screen, Fit Report card heading",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmZpdFJlcG9ydC5oZWFkaW5n:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmZpdFJlcG9ydC5oZWFkaW5n:TH%%,
+  },
+  "result.fitReport.body": {
+    screen: "Result screen, Fit Report card body",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmZpdFJlcG9ydC5ib2R5:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmZpdFJlcG9ydC5ib2R5:TH%%,
+  },
+  "result.download": {
+    screen: "Result screen, button that opens the candidate's own PDF",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmRvd25sb2Fk:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmRvd25sb2Fk:TH%%,
+  },
+  "report.self.title": {
+    screen: "Candidate PDF downloaded from the result screen, the title where a name would be",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LnNlbGYudGl0bGU:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LnNlbGYudGl0bGU:TH%%,
+  },
   "report.footer": {
     screen: "Candidate PDF, the footing on the last page",
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZvb3Rlcg:EN%%,

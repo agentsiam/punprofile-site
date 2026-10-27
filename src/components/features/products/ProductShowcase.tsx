@@ -11,36 +11,9 @@
  */
 
 import type { ComponentType } from "react";
-import { useCopy } from "@/components/LocaleProvider";
-import Band from "@/components/Band";
-import MarketStats from "@/components/blocks/MarketStats";
 import HeroCharts from "@/components/features/products/HeroCharts";
 import LiveStatsBand from "@/components/features/products/LiveStatsBand";
 import FullReportBand from "@/components/features/products/FullReportBand";
-import { MARKET_HEADING } from "@/lib/content/home";
-
-/** The pipeline figures as a strip under the hero: proof before the steps. */
-function ProofBand() {
-  const { pick } = useCopy();
-  return (
-    <Band block="B3" ground="soft" width="wide">
-      <h2 className="text-heading-sm text-ink-deep">{pick(MARKET_HEADING)}</h2>
-      <div className="mt-8">
-        <MarketStats />
-      </div>
-    </Band>
-  );
-}
-
-/** The proof strip, then straight into what the paid full version adds. */
-function AfterHero() {
-  return (
-    <>
-      <ProofBand />
-      <FullReportBand />
-    </>
-  );
-}
 
 export interface Showcase {
   /** Replaces the summary card in the hero's right column. */
@@ -58,10 +31,11 @@ export interface Showcase {
 export const SHOWCASE: Partial<Record<string, Showcase>> = {
   "eu-fit-check": {
     // 26/10/2026, Paul's call: free and full charts side by side in the first
-    // screen, the full-version words straight after the proof strip, and the
-    // generic illustration out of "how it works".
+    // screen, the full-version words straight after it, and the generic
+    // illustration out of "how it works". The job-ad strip left this page the
+    // same evening: it proves the job pipeline, not the check (Paul, 1b).
     heroWide: HeroCharts,
-    afterHero: AfterHero,
+    afterHero: FullReportBand,
     hideHowMedia: true,
     afterHow: LiveStatsBand,
   },

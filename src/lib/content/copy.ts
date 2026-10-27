@@ -1242,6 +1242,26 @@ export const COPY = {
     en: "Fit Report prepared by PunProfile Career Coaching from your EU Fit Check answers and a 30-minute interview.",
     th: "Fit Report จัดทำโดย PunProfile จากคำตอบใน EU Fit Check และการสัมภาษณ์ 30 นาที",
   },
+  "result.fitReport.heading": {
+    screen: "Result screen, Fit Report card heading",
+    en: "Want the detail on every competency in all four areas?",
+    th: "อยากเห็นรายละเอียดครบทุกทักษะในทั้ง 4 ด้านไหม",
+  },
+  "result.fitReport.body": {
+    screen: "Result screen, Fit Report card body",
+    en: "The Fit Report builds on the result you just got, with a 30-minute interview with an expert, to score every competency in each area, like this example.",
+    th: "Fit Report ต่อยอดจากผลที่คุณเพิ่งได้รับ ด้วยการสัมภาษณ์ 30 นาทีกับ Expert เพื่อประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างนี้",
+  },
+  "result.download": {
+    screen: "Result screen, button that opens the candidate's own PDF",
+    en: "Download your report (PDF)",
+    th: "ดาวน์โหลดรายงานผลของคุณ (PDF)",
+  },
+  "report.self.title": {
+    screen: "Candidate PDF downloaded from the result screen, the title where a name would be",
+    en: "Your EU Fit Check result",
+    th: "ผลประเมิน EU Fit Check ของคุณ",
+  },
   "report.footer": {
     screen: "Candidate PDF, the footing on the last page",
     en: "This report was prepared by PunProfile Career Coaching from your EU Fit Check answers.",
