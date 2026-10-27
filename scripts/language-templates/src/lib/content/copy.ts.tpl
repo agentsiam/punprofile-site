@@ -1057,11 +1057,6 @@ export const COPY = {
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZ1bGwuZXhhbXBsZQ:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZ1bGwuZXhhbXBsZQ:TH%%,
   },
-  "report.full.link": {
-    screen: "Candidate PDF, where to read more",
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZ1bGwubGluaw:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZ1bGwubGluaw:TH%%,
-  },
   "item.qualificationRecognition": {
     screen: "Fit Report, competency name",
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5xdWFsaWZpY2F0aW9uUmVjb2duaXRpb24:EN%%,

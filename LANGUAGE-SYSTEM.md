@@ -24993,15 +24993,15 @@ source: src/lib/content/copy.ts
 path: COPY.report.full.body
 render: Candidate PDF, full-version section body
 narrative_slot: ask
-en: This report scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and scores every competency in each area, like the example below. If you want it, message me on LINE or by email and I will arrange the interview and the payment.
-th: รายงานนี้ให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างด้านล่าง หากสนใจ ทักมาทาง LINE หรืออีเมลได้เลย ผมจะนัดเวลาสัมภาษณ์และแจ้งรายละเอียดการชำระเงินให้
+en: This report scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and scores every competency in each area, like the example below.
+th: รายงานนี้ให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างด้านล่าง
 provenance: paul-written
 date: 26/10/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Last sentence (message on LINE or email) deleted on Paul's 1a, 27/10/2026, because the report's button now leads to the Fit Report page, which asks for the conversation.
 review:
   structural_calque: pass
-  text_hash: ae773afc076d10eb874190a5b12b1a5d631166104201416e9b067d6074a12fde
+  text_hash: 567332cb1b476732b3f00cd1b04652e5fdaa734a91ded2ef04cc16f1f4bb7199
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -25024,28 +25024,6 @@ decision_note: Fit Report redefined as the paid full version with a 30-minute in
 review:
   structural_calque: pass
   text_hash: 73c5693835896f6f4b297e5ccd78094a8542041fa1fbfb162d5e2824cb17e75a
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.report.full.link`
-
-```yaml
-id: src/lib/content/copy.ts::COPY.report.full.link
-source: src/lib/content/copy.ts
-path: COPY.report.full.link
-render: Candidate PDF, where to read more
-narrative_slot: ask
-en: 'Details: punprofile.app/products/fit-report'
-th: 'ดูรายละเอียด: punprofile.app/products/fit-report'
-provenance: paul-approved
-date: 26/10/2026
-term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
-review:
-  structural_calque: pass
-  text_hash: caace11bd1dd388e1c49a308861b7b77dd2f21dc7aad73629d61cff01c9ae213
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 26/10/2026.
 ```

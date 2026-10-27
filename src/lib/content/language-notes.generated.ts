@@ -9313,22 +9313,13 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "ask",
     "provenance": "paul-written",
     "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer."
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Last sentence (message on LINE or email) deleted on Paul's 1a, 27/10/2026, because the report's button now leads to the Fit Report page, which asks for the conversation."
   },
   "src/lib/content/copy.ts::COPY.report.full.example": {
     "source": "src/lib/content/copy.ts",
     "path": "COPY.report.full.example",
     "render": "Candidate PDF, label over the example chart",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
-  },
-  "src/lib/content/copy.ts::COPY.report.full.link": {
-    "source": "src/lib/content/copy.ts",
-    "path": "COPY.report.full.link",
-    "render": "Candidate PDF, where to read more",
-    "narrativeSlot": "ask",
     "provenance": "paul-approved",
     "date": "26/10/2026",
     "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
