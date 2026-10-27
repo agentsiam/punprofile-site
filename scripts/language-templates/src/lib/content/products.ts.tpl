@@ -156,6 +156,49 @@ export const SHOWCASE_LEDE: Copy = {
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpTSE9XQ0FTRV9MRURF:TH%%,
 };
 
+/**
+ * The EU Fit Check page's full-version section, and the PDF's, added 26/10/2026.
+ * The paid Fit Report gives every competency in each area; this shows one area,
+ * readiness to apply, as an invented and labelled example. The keys are the
+ * `model.ts` item keys, so the axis names come from `item.*` in `copy.ts`.
+ */
+export const FULL_SAMPLE: readonly { key: string; score: number }[] = [
+  { key: "aiDigitalFluency", score: 3.5 },
+  { key: "cvQuality", score: 2.5 },
+  { key: "linkedinProfile", score: 2.0 },
+  { key: "interviewSkills", score: 3.0 },
+  { key: "personalBrand", score: 2.5 },
+  { key: "networking", score: 1.5 },
+  { key: "jobSearchStrategy", score: 2.0 },
+  { key: "recruiterReadiness", score: 3.5 },
+];
+
+/** The two labels over the hero's charts, 26/10/2026: what the free check gives, and what the Fit Report gives. */
+export const HERO_FREE_LABEL: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIRVJPX0ZSRUVfTEFCRUw:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIRVJPX0ZSRUVfTEFCRUw:TH%%,
+};
+
+export const HERO_FULL_LABEL: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIRVJPX0ZVTExfTEFCRUw:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIRVJPX0ZVTExfTEFCRUw:TH%%,
+};
+
+export const FULL_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGVUxMX0hFQURJTkc:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGVUxMX0hFQURJTkc:TH%%,
+};
+
+export const FULL_LEDE: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGVUxMX0xFREU:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGVUxMX0xFREU:TH%%,
+};
+
+export const FULL_CTA: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGVUxMX0NUQQ:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGVUxMX0NUQQ:TH%%,
+};
+
 export const HOW_HEADING: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpIT1dfSEVBRElORw:EN%%,
   // Paul's wording, 23/08/2026.
@@ -368,7 +411,7 @@ export const PRODUCTS: readonly Product[] = [
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dMZWRl:TH%%,
     },
     name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5uYW1l:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5uYW1l:TH%% },
-    status: "soon",
+    status: "live",
     headline: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5oZWFkbGluZQ:EN%%,
       // Drafted 23/08/2026, read back and approved unchanged. `อยู่ขั้นไหน` is Paul's own correction on the

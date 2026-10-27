@@ -156,6 +156,49 @@ export const SHOWCASE_LEDE: Copy = {
   th: "นอกจากกราฟของคุณเอง หน้าผลลัพธ์ยังแสดงให้เห็นว่าคนอื่นที่ทำแบบประเมินนี้อยู่ตรงไหน ตัวเลขด้านล่างนี้เป็นข้อมูลจริงล่าสุด",
 };
 
+/**
+ * The EU Fit Check page's full-version section, and the PDF's, added 26/10/2026.
+ * The paid Fit Report gives every competency in each area; this shows one area,
+ * readiness to apply, as an invented and labelled example. The keys are the
+ * `model.ts` item keys, so the axis names come from `item.*` in `copy.ts`.
+ */
+export const FULL_SAMPLE: readonly { key: string; score: number }[] = [
+  { key: "aiDigitalFluency", score: 3.5 },
+  { key: "cvQuality", score: 2.5 },
+  { key: "linkedinProfile", score: 2.0 },
+  { key: "interviewSkills", score: 3.0 },
+  { key: "personalBrand", score: 2.5 },
+  { key: "networking", score: 1.5 },
+  { key: "jobSearchStrategy", score: 2.0 },
+  { key: "recruiterReadiness", score: 3.5 },
+];
+
+/** The two labels over the hero's charts, 26/10/2026: what the free check gives, and what the Fit Report gives. */
+export const HERO_FREE_LABEL: Copy = {
+  en: "Free: 4 areas",
+  th: "ฟรี: 4 ด้าน",
+};
+
+export const HERO_FULL_LABEL: Copy = {
+  en: "Fit Report: every competency",
+  th: "Fit Report: ทุกทักษะ",
+};
+
+export const FULL_HEADING: Copy = {
+  en: "The full version: every competency, area by area",
+  th: "ฉบับเต็ม: ครบทุกทักษะ แยกทีละด้าน",
+};
+
+export const FULL_LEDE: Copy = {
+  en: "The free check scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and opens each area up like this, eight to ten competencies at a time.",
+  th: "EU Fit Check แบบฟรีให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และแสดงผลแต่ละด้านเป็นกราฟแบบนี้ โดยแยกเป็นด้านละ 8–10 ทักษะ",
+};
+
+export const FULL_CTA: Copy = {
+  en: "See what the Fit Report includes",
+  th: "ดูว่า Fit Report มีอะไรบ้าง",
+};
+
 export const HOW_HEADING: Copy = {
   en: "How it works",
   // Paul's wording, 23/08/2026.
@@ -364,11 +407,11 @@ export const PRODUCTS: readonly Product[] = [
     },
     // Read back 25/08/2026. Draft for `PROD-02-fit-report`.
     howLede: {
-      en: "All four scores against the market's own bars, and what to do first.",
-      th: "คะแนนทั้งสี่ด้านเทียบกับเกณฑ์ที่ตลาดใช้จริง พร้อมบอกว่าควรเริ่มจากอะไร",
+      en: "Your answers, a 30-minute interview, and a report you keep.",
+      th: "คำตอบของคุณ การสัมภาษณ์ 30 นาที และรายงานที่คุณเก็บไว้ใช้ต่อได้",
     },
     name: { en: "Fit Report", th: "Fit Report" },
-    status: "soon",
+    status: "live",
     headline: {
       en: "You know which stage you are at. The next question is what to do first.",
       // Drafted 23/08/2026, read back and approved unchanged. `อยู่ขั้นไหน` is Paul's own correction on the
@@ -377,28 +420,28 @@ export const PRODUCTS: readonly Product[] = [
       th: "รู้ว่าตัวเองอยู่ขั้นไหนแล้ว คำถามต่อไปคือควรลงมือทำอะไรก่อน",
     },
     lede: {
-      en: "The full EU Fit Check result as a document you keep and plan the next step with.",
+      en: "The full report: all four areas scored competency by competency, completed in a 30-minute interview with an expert.",
       // Rebuilt from Paul's own Thai of 23/08/2026 on the pricing sheet.
-      th: "ผลประเมินฉบับเต็มจาก EU Fit Check ในรูปแบบเอกสารที่คุณเก็บไว้ใช้ในการวางแผนขั้นต่อไปได้",
+      th: "ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับ Expert",
     },
     how: [
       {
-        en: "All four scores against the bars the European market actually uses, rather than four numbers on their own.",
+        en: "A 30-minute interview with an expert covers what a form cannot see: your CV, how you talk about your work, and the roles you are aiming at.",
         // Drafted 23/08/2026, read back and approved unchanged. Thresholds rather than scores, which
         // `10_Methodology.md` calls the single most important idea in the method.
-        th: "เทียบคะแนนทั้งสี่ด้านกับเกณฑ์ที่ตลาดยุโรปใช้จริง ไม่ใช่แค่ตัวเลขลอย ๆ",
+        th: "สัมภาษณ์ 30 นาทีกับ Expert เพื่อดูส่วนที่แบบฟอร์มมองไม่เห็น ทั้ง CV วิธีที่คุณเล่าถึงงานของตัวเอง และตำแหน่งที่คุณตั้งเป้าไว้",
       },
       {
-        en: "Which gate you have not cleared, and why you should start with that one.",
+        en: "All four areas as full charts, eight to ten competencies each, scored against the bars the European market uses.",
         // Paul's wording, 23/08/2026. Gates are cleared in dependency order, not
         // score order, and the lowest uncleared one is the only one that matters
         // this month.
-        th: "บอกว่าคุณยังไม่ผ่านด่านไหน และทำไมจึงควรเริ่มจากด่านนั้นก่อน",
+        th: "แสดงผลครบทั้ง 4 ด้านเป็นกราฟแยกด้าน ด้านละ 8–10 ทักษะ พร้อมคะแนนเทียบกับเกณฑ์ที่ใช้จริงในตลาดงานยุโรป",
       },
       {
-        en: "A sequence of what to do, ordered by what moves the result soonest.",
+        en: "Which gate you have not cleared, and the order to work in, starting with what moves the result soonest.",
         // Paul's wording, 23/08/2026.
-        th: "จัดลำดับสิ่งที่ควรทำ โดยเริ่มจากสิ่งที่จะช่วยให้คุณเห็นผลได้เร็วที่สุด",
+        th: "บอกว่าคุณยังไม่ผ่านด่านไหน และควรทำอะไรตามลำดับ โดยเริ่มจากสิ่งที่ช่วยให้เห็นผลเร็วที่สุด",
       },
     ],
     limit: {
@@ -410,9 +453,9 @@ export const PRODUCTS: readonly Product[] = [
       {
         q: { en: "How is this different from the free result?", th: "ต่างจากผลเบื้องต้นที่ได้ฟรีอย่างไร" },
         a: {
-          en: "The free read shows you where you stand. This one names the gate and sequences the work.",
+          en: "The free result reads your answers on four areas. The Fit Report adds a 30-minute interview, scores every competency in all four, and tells you what to do first.",
           // Paul's wording, 23/08/2026.
-          th: "ผลเบื้องต้นบอกว่าคุณอยู่ขั้นไหน ส่วนฉบับเต็มบอกว่าด่านไหนยังไม่ผ่าน และควรทำอะไรตามลำดับ",
+          th: "ผลประเมินเบื้องต้นที่ดูได้ฟรีมาจากคำตอบของคุณใน 4 ด้าน ส่วน Fit Report เพิ่มการสัมภาษณ์ 30 นาที ประเมินครบทุกทักษะในทั้ง 4 ด้าน และบอกว่าควรเริ่มทำอะไรก่อน",
         },
       },
     ],

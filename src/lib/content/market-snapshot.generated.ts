@@ -11,9 +11,9 @@
 import type { MarketSnapshot } from "../../../scripts/sync-market-snapshot";
 
 export const MARKET: MarketSnapshot = {
-  "screened": 1151,
-  "published": 239,
+  "screened": 1163,
+  "published": 243,
   "employers": 101,
   "from": "07/07/2026",
-  "to": "24/10/2026"
+  "to": "26/10/2026"
 } as const;

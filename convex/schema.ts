@@ -953,4 +953,28 @@ export default defineSchema({
     /** @absent none — not a human correction; it came from the app or an import */
     by: v.optional(v.string()),
   }).index("by_lead_time", ["leadId", "takenAt"]),
+
+  /**
+   * The coach's ECRA ratings from the Fit Report interview, one row per
+   * rating. Added 26/10/2026. Nothing is edited in place: a re-rating is a new
+   * row and the latest row per competency is the one the report uses, so every
+   * earlier rating keeps its date and author.
+   *
+   * `value` is in the framework's own units (`src/lib/ecra.ts`): the number of
+   * indicators met, 0 to 4, or the index of the lookup level, 0 being best.
+   * `score` is the 1 to 5 result, stored so a later change to the rule table
+   * cannot silently rescore a report already sent.
+   */
+  competencyRatings: defineTable({
+    leadId: v.id("leads"),
+    itemKey: v.string(),
+    value: v.number(),
+    score: v.number(),
+    /** What the coach observed, in Thai, shown to the candidate under the competency. */
+    /** @absent none — the coach left no note for this competency */
+    note: v.optional(v.string()),
+    ratedAt: v.number(),
+    /** Which admin rated it. Their own data, not the candidate's. */
+    by: v.string(),
+  }).index("by_lead_item", ["leadId", "itemKey"]),
 });

@@ -304,10 +304,10 @@ export const ENGAGEMENT_HEADING: Copy = {
 };
 
 export const ENGAGEMENT_LEDE: Copy = {
-  en: "Four steps, and the first one is free. Nothing is scoped or priced until we both know what you are actually aiming at.",
+  en: "Four steps. Nothing is scoped or priced until we both know what you are actually aiming at.",
   // Paul's wording, 06/09/2026. `ไม่มีค่าใช้จ่าย` rather than the shorter word,
   // which is the form `faq.ts` and the product pages already use for this.
-  th: "มีสี่ขั้นตอน และขั้นแรกไม่มีค่าใช้จ่าย เราจะยังไม่กำหนดขอบเขตงานหรือราคา จนกว่าทั้งคุณและเราจะรู้ชัดว่าคุณกำลังมุ่งไปทางไหน",
+  th: "กระบวนการมี 4 ขั้นตอน โดยเราจะกำหนดขอบเขตและค่าบริการโค้ชชิ่งเมื่อทั้งคุณและเราเข้าใจชัดเจนแล้วว่าเป้าหมายของคุณคืออะไร",
 };
 
 export interface EngagementStep {
@@ -318,14 +318,14 @@ export interface EngagementStep {
 export const ENGAGEMENT: readonly EngagementStep[] = [
   {
     lead: {
-      en: "A first conversation, at no charge",
+      en: "The Fit Report, to start",
       // Read back 06/09/2026.
-      th: "คุยกันครั้งแรก โดยไม่มีค่าใช้จ่าย",
+      th: "เริ่มจาก Fit Report",
     },
     body: {
-      en: "Thirty minutes on where you are and what you are aiming at. If nothing here is the right thing for you, that is what the half hour is for.",
+      en: "A 30-minute interview and a full report on where you stand. It shows us both whether coaching is the right next step, and the report is yours to keep either way.",
       // Paul's wording, 06/09/2026.
-      th: "คุยกันครึ่งชั่วโมงว่าตอนนี้คุณอยู่ตรงไหนและกำลังมุ่งไปทางไหน หากไม่มีบริการไหนเหมาะกับคุณ การคุยครั้งนี้ก็มีไว้เพื่อบอกให้ชัดตั้งแต่ต้น",
+      th: "สัมภาษณ์ 30 นาที พร้อมรายงานฉบับเต็มที่ประเมินว่าตอนนี้คุณอยู่ตรงไหน ช่วยให้เราทั้งคู่เห็นว่าโค้ชชิ่งเป็นขั้นต่อไปที่เหมาะกับคุณหรือไม่ คุณเก็บรายงานไว้ใช้ต่อได้ ไม่ว่าจะตัดสินใจใช้บริการโค้ชชิ่งต่อหรือไม่ก็ตาม",
     },
   },
   {

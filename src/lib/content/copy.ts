@@ -943,8 +943,8 @@ export const COPY = {
   },
   "result.measured": {
     screen: "Full result, the coverage line. {count}, {total} and {more} are substituted",
-    en: "Your answers measure {count} of {total} areas. A 30-minute conversation can measure {more} more, the parts no form can see.",
-    th: "จากคำตอบของคุณ เราประเมินได้ {count} จาก {total} ด้าน การพูดคุย 30 นาทีจะช่วยประเมินเพิ่มได้อีก {more} ด้าน รวมถึงรายละเอียดที่แบบฟอร์มนี้ยังสะท้อนไม่ได้",
+    en: "Your answers measure {count} of {total} areas. The Fit Report's 30-minute interview measures {more} more, the parts no form can see.",
+    th: "จากคำตอบของคุณ เราประเมินได้ {count} จากทั้งหมด {total} ด้าน การสัมภาษณ์ 30 นาทีใน Fit Report จะช่วยให้ประเมินได้เพิ่มอีก {more} ด้าน รวมถึงรายละเอียดที่แบบฟอร์มนี้ยังสะท้อนไม่ได้",
   },
   "result.caveat": {
     screen: "Full result, the persistent honesty line. FR-007 requires it to be unmissable",
@@ -1042,9 +1042,224 @@ export const COPY = {
     en: "What happens next",
     th: "ขั้นตอนต่อไป",
   },
+  "report.full.heading": {
+    screen: "Candidate PDF, full-version section heading",
+    en: "The full version: every competency, area by area",
+    th: "ฉบับเต็ม: ครบทุกทักษะ แยกทีละด้าน",
+  },
+  "report.full.body": {
+    screen: "Candidate PDF, full-version section body",
+    en: "This report scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and scores every competency in each area, like the example below.",
+    th: "รายงานนี้ให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างด้านล่าง",
+  },
+  "report.full.example": {
+    screen: "Candidate PDF, label over the example chart",
+    en: "Example, not your result",
+    th: "ตัวอย่าง ไม่ใช่ผลของคุณ",
+  },
+  "item.qualificationRecognition": {
+    screen: "Fit Report, competency name",
+    en: "Degree and licence recognition",
+    th: "การรับรองวุฒิการศึกษาและใบอนุญาตประกอบวิชาชีพ",
+  },
+  "item.financialPreparedness": {
+    screen: "Fit Report, competency name",
+    en: "Financial Preparedness",
+    th: "ความพร้อมด้านการเงิน",
+  },
+  "item.relocationPlanning": {
+    screen: "Fit Report, competency name",
+    en: "Relocation Planning",
+    th: "การวางแผนย้ายประเทศ",
+  },
+  "item.culturalAdaptability": {
+    screen: "Fit Report, competency name",
+    en: "Cultural Adaptability",
+    th: "การปรับตัวทางวัฒนธรรม",
+  },
+  "item.administrativeReadiness": {
+    screen: "Fit Report, competency name",
+    en: "Administrative Readiness",
+    th: "ความพร้อมด้านเอกสาร",
+  },
+  "item.crossCultural": {
+    screen: "Fit Report, competency name",
+    en: "Cross-cultural Communication",
+    th: "การสื่อสารข้ามวัฒนธรรม",
+  },
+  "item.independence": {
+    screen: "Fit Report, competency name",
+    en: "Independence",
+    th: "การทำงานด้วยตนเอง",
+  },
+  "item.ownershipMindset": {
+    screen: "Fit Report, competency name",
+    en: "Ownership Mindset",
+    th: "ความรับผิดชอบต่องานและผลลัพธ์",
+  },
+  "item.businessAwareness": {
+    screen: "Fit Report, competency name",
+    en: "Customer & Business Awareness",
+    th: "ความเข้าใจธุรกิจและลูกค้า",
+  },
+  "item.collaborationStyle": {
+    screen: "Fit Report, competency name",
+    en: "Collaboration Style",
+    th: "รูปแบบการทำงานร่วมกับผู้อื่น",
+  },
+  "item.salaryExpectations": {
+    screen: "Fit Report, competency name",
+    en: "Salary Expectations",
+    th: "ความคาดหวังด้านเงินเดือน",
+  },
+  "item.labourMarketKnowledge": {
+    screen: "Fit Report, competency name",
+    en: "Labour Market Knowledge",
+    th: "ความรู้เรื่องตลาดงาน",
+  },
+  "item.adaptability": {
+    screen: "Fit Report, competency name",
+    en: "Adaptability",
+    th: "การปรับตัว",
+  },
+  "item.professionalConfidence": {
+    screen: "Fit Report, competency name",
+    en: "Professional Confidence",
+    th: "ความมั่นใจในการทำงาน",
+  },
+  "fit.eyebrow": {
+    screen: "Fit Report, cover eyebrow",
+    en: "PunProfile · Fit Report",
+    th: "Fit Report โดย PunProfile",
+  },
+  "fit.cover.sub": {
+    screen: "Fit Report, cover line. {count} is the number of competencies",
+    en: "The full report: {count} competencies, scored from your answers and a 30-minute interview.",
+    th: "รายงานฉบับเต็ม: {count} ทักษะ ประเมินจากคำตอบของคุณและการสัมภาษณ์ 30 นาที",
+  },
+  "fit.cover.prepared": {
+    screen: "Fit Report, cover date. {date} is DD/MM/YYYY",
+    en: "Prepared {date}",
+    th: "จัดทำเมื่อ {date}",
+  },
+  "fit.summary.heading": {
+    screen: "Fit Report, summary heading",
+    en: "Where you stand against the market's bar",
+    th: "คุณอยู่ตรงไหน เมื่อเทียบกับเกณฑ์ของตลาด",
+  },
+  "fit.col.area": {
+    screen: "Fit Report, summary table column",
+    en: "Area",
+    th: "ด้าน",
+  },
+  "fit.col.score": {
+    screen: "Fit Report, summary table column",
+    en: "Your score",
+    th: "คะแนนของคุณ",
+  },
+  "fit.col.bar": {
+    screen: "Fit Report, summary table column",
+    en: "Market bar",
+    th: "เกณฑ์ของตลาด",
+  },
+  "fit.col.gap": {
+    screen: "Fit Report, summary table column",
+    en: "Still to go",
+    th: "คะแนนที่ยังขาด",
+  },
+  "fit.cleared": {
+    screen: "Fit Report, gap cell when the bar is met",
+    en: "Cleared",
+    th: "ผ่านเกณฑ์",
+  },
+  "fit.legend.bar": {
+    screen: "Fit Report, under every chart",
+    en: "Dashed line: the score the European market expects in this area.",
+    th: "เส้นประ: เกณฑ์คะแนนที่คาดหวังในตลาดงานยุโรปสำหรับด้านนี้",
+  },
+  "fit.path.heading": {
+    screen: "Fit Report, gate path heading",
+    en: "The order to work in",
+    th: "ลำดับที่ควรลงมือ",
+  },
+  "fit.path.lede": {
+    screen: "Fit Report, gate path lede",
+    en: "Each area builds on the one before it, so the first one you have not cleared is where to start.",
+    th: "แต่ละด้านต่อยอดจากด้านก่อนหน้า ด้านแรกที่ยังไม่ผ่านเกณฑ์จึงเป็นจุดที่ควรเริ่ม",
+  },
+  "fit.path.start": {
+    screen: "Fit Report, marker on the first uncleared area",
+    en: "Start here",
+    th: "เริ่มที่นี่",
+  },
+  "fit.col.note": {
+    screen: "Fit Report, area table column",
+    en: "What to do next",
+    th: "สิ่งที่ควรทำต่อ",
+  },
+  "fit.how.none": {
+    screen: "Fit Report, area table cell",
+    en: "Not rated",
+    th: "ยังไม่ได้ประเมิน",
+  },
+  "fit.moves.heading": {
+    screen: "Fit Report, moves heading",
+    en: "What moves your score most",
+    th: "สิ่งที่ช่วยให้คะแนนขยับมากที่สุด",
+  },
+  "fit.moves.lede": {
+    screen: "Fit Report, moves lede",
+    en: "Each one is worked out from your own answers: do this, and this is what that area would read.",
+    th: "แต่ละข้อคำนวณจากคำตอบของคุณ เพื่อแสดงว่าหากปรับปรุงข้อนี้ได้ตามเกณฑ์ คะแนนในด้านนั้นจะเปลี่ยนเป็นเท่าไร",
+  },
+  "fit.roles.heading": {
+    screen: "Fit Report, roles heading",
+    en: "Roles that fit you",
+    th: "ตำแหน่งงานในสายงานของคุณ",
+  },
+  "fit.roles.lede": {
+    screen: "Fit Report, roles lede. {total}, {matching}, {countries} substituted",
+    en: "Of the {total} roles we published in {countries}, {matching} have a title in your field. The newest:",
+    th: "จากตำแหน่งงานทั้งหมด {total} ตำแหน่งที่เราเผยแพร่ใน {countries} มี {matching} ตำแหน่งที่ชื่อตำแหน่งตรงกับสายงานของคุณ โดยตำแหน่งล่าสุดมีดังนี้",
+  },
+  "fit.roles.none": {
+    screen: "Fit Report, roles when nothing matches",
+    en: "None of the roles we have published so far match your field in those countries.",
+    th: "ยังไม่มีตำแหน่งที่เราเผยแพร่ซึ่งตรงกับสายงานของคุณในประเทศเหล่านี้",
+  },
+  "fit.roles.note": {
+    screen: "Fit Report, under the roles",
+    en: "Matched by job title. Whether you can apply is checked role by role.",
+    th: "รายการนี้จับคู่จากชื่อตำแหน่งงาน ส่วนคุณมีคุณสมบัติตรงตามเงื่อนไขการสมัครหรือไม่ ต้องตรวจสอบรายละเอียดของแต่ละตำแหน่ง",
+  },
+  "fit.footer": {
+    screen: "Fit Report, last page footing",
+    en: "Fit Report prepared by PunProfile Career Coaching from your EU Fit Check answers and a 30-minute interview.",
+    th: "Fit Report จัดทำโดย PunProfile จากคำตอบใน EU Fit Check และการสัมภาษณ์ 30 นาที",
+  },
+  "result.fitReport.heading": {
+    screen: "Result screen, Fit Report card heading",
+    en: "Want the detail on every competency in all four areas?",
+    th: "อยากเห็นรายละเอียดครบทุกทักษะในทั้ง 4 ด้านไหม",
+  },
+  "result.fitReport.body": {
+    screen: "Result screen, Fit Report card body",
+    en: "The Fit Report builds on the result you just got, with a 30-minute interview with an expert, to score every competency in each area, like this example.",
+    th: "Fit Report ต่อยอดจากผลที่คุณเพิ่งได้รับ ด้วยการสัมภาษณ์ 30 นาทีกับ Expert เพื่อประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างนี้",
+  },
+  "result.download": {
+    screen: "Result screen, button that opens the candidate's own PDF",
+    en: "Download your report (PDF)",
+    th: "ดาวน์โหลดรายงานผลของคุณ (PDF)",
+  },
+  "report.self.title": {
+    screen: "Candidate PDF downloaded from the result screen, the title where a name would be",
+    en: "Your EU Fit Check result",
+    th: "ผลประเมิน EU Fit Check ของคุณ",
+  },
   "report.footer": {
     screen: "Candidate PDF, the footing on the last page",
-    en: "This report was prepared by PunProfile Career Coaching from your EU Fit Check answers. A 30-minute conversation covers the parts a form cannot fully reflect.",
+    en: "This report was prepared by PunProfile Career Coaching from your EU Fit Check answers.",
     // Paul's wording, 17/08/2026. It names the instrument the answers came
     // from, opens on what the document is, and turns the closing clause into
     // an invitation, `นัดคุยกัน`, rather than a statement about coverage.
@@ -1055,7 +1270,7 @@ export const COPY = {
     // controller, and a report footing says who prepared a document rather
     // than who controls the data. `footer.brand`, which does name the
     // controller, is a `fixed` termbase string and is untouched.
-    th: "ผลประเมินนี้จัดทำโดย PunProfile จากคำตอบใน EU Fit Check นัดคุยกัน 30 นาทีเพื่อประเมินส่วนที่แบบฟอร์มยังสะท้อนได้ไม่ครบ",
+    th: "ผลประเมินนี้จัดทำโดย PunProfile จากคำตอบใน EU Fit Check",
   },
   "report.savePdf": {
     screen: "Candidate PDF, the button that reopens the print dialog. Screen only, never printed",
@@ -1131,6 +1346,41 @@ export const COPY = {
     screen: "Named when this is the candidate's strongest area",
     en: "AI & Digital Fluency",
     th: "ทักษะการใช้ AI และเครื่องมือดิจิทัล",
+  },
+  "item.cvQuality": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: "CV quality",
+    th: "คุณภาพของ CV",
+  },
+  "item.linkedinProfile": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: "LinkedIn profile",
+    th: "โปรไฟล์ LinkedIn",
+  },
+  "item.interviewSkills": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: "Interview skills",
+    th: "ทักษะการสัมภาษณ์งาน",
+  },
+  "item.personalBrand": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: "Personal brand",
+    th: "Personal Brand",
+  },
+  "item.networking": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: "Networking",
+    th: "การสร้างเครือข่ายอาชีพ",
+  },
+  "item.jobSearchStrategy": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: "Job search strategy",
+    th: "กลยุทธ์การหางาน",
+  },
+  "item.recruiterReadiness": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: "Recruiter readiness",
+    th: "ความพร้อมเมื่อผู้สรรหาบุคลากรติดต่อมา",
   },
   "item.cvStatus": {
     screen: "Named when this is the candidate's strongest area",

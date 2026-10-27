@@ -357,7 +357,7 @@ export const PAGE_ACTIONS: Record<string, PageActions> = {
     primary: "contact",
     secondary: "assess",
     because:
-      "It is not built, and it is built ON the check, so anyone interested in the full result needs the free one first.",
+      "Bought by message while payment is a bank transfer arranged by hand, so the ask is a conversation. It is built on the check, so the secondary sends anyone who has not done the free one there first.",
   },
   "/products/matched-jobs": {
     primary: "contact",

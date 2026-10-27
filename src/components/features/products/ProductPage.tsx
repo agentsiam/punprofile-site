@@ -82,6 +82,7 @@ export default function ProductPage({ product }: { product: Product }) {
   const others = PRODUCTS.filter((p) => p.slug !== product.slug);
   const showcase = SHOWCASE[product.slug] ?? {};
   const Hero = showcase.hero;
+  const HeroWide = showcase.heroWide;
   const AfterHero = showcase.afterHero;
   const AfterHow = showcase.afterHow;
 
@@ -103,7 +104,7 @@ export default function ProductPage({ product }: { product: Product }) {
   return (
     <div className="w-full">
       <Band block="B1" ground="canvas" width="wide">
-        <div className="grid items-start gap-12 large:grid-cols-[1.15fr_1fr] large:gap-16">
+        <div className={HeroWide ? "max-w-3xl" : "grid items-start gap-12 large:grid-cols-[1.15fr_1fr] large:gap-16"}>
           <div>
             {/* The name and the status are one row. Two stacked pills said the
                 same kind of thing twice and pushed the headline down a line. */}
@@ -146,7 +147,7 @@ export default function ProductPage({ product }: { product: Product }) {
             <CallToAction page={product.actionsKey} className="mt-8" show="primary" />
           </div>
 
-          {Hero ? (
+          {HeroWide ? null : Hero ? (
             <Hero />
           ) : (
             <div className="card-outlined px-8 py-8">
@@ -164,6 +165,7 @@ export default function ProductPage({ product }: { product: Product }) {
             </div>
           )}
         </div>
+        {HeroWide && <HeroWide />}
       </Band>
 
       {AfterHero && <AfterHero />}
@@ -182,16 +184,20 @@ export default function ProductPage({ product }: { product: Product }) {
           {pick(product.howLede)}
         </p>
         <div className="mt-10">
-          <SplitFeature
-            reverse
-            media={
-              <div className="flex h-full w-full items-center justify-center bg-canvas p-6">
-                <ProductDiagram figure={art.figure} title={pick(art.alt)} />
-              </div>
-            }
-          >
+          {showcase.hideHowMedia ? (
             <Checklist items={product.how.map((item) => ({ lead: pick(item) }))} />
-          </SplitFeature>
+          ) : (
+            <SplitFeature
+              reverse
+              media={
+                <div className="flex h-full w-full items-center justify-center bg-canvas p-6">
+                  <ProductDiagram figure={art.figure} title={pick(art.alt)} />
+                </div>
+              }
+            >
+              <Checklist items={product.how.map((item) => ({ lead: pick(item) }))} />
+            </SplitFeature>
+          )}
         </div>
       </Band>
 

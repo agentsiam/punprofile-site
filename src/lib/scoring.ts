@@ -468,3 +468,81 @@ function collect(profile: ProfileScore): Highlight[] {
   }
   return out;
 }
+
+// ------------------------------------------------------------ full report
+
+/**
+ * One competency in the paid Fit Report. Added 26/10/2026.
+ *
+ * `interview` means the coach rated it in the 30-minute interview, by the
+ * framework's own formula (`ecra.ts`). `survey` means the free check already
+ * collects that competency's defined inputs (`ecra` tier), so its survey score
+ * stands until the coach rates it. Proxies are not ECRA competencies and do not
+ * appear: the full report is the framework itself, not the free read enlarged.
+ */
+export interface FullItemScore {
+  key: string;
+  label: string;
+  score: number | null;
+  source: "interview" | "survey" | null;
+  /** Indicators met, 0 to 4, when the competency is rated that way. */
+  indicatorsMet?: number;
+  /** The coach's note, shown to the candidate. */
+  note?: string;
+}
+
+export interface FullDimensionScore {
+  key: DimensionKey;
+  label: string;
+  /** Mean of the rated competencies, as `08_Coaching_Business.md` defines it. */
+  score: number | null;
+  /** The market bar for this area, from `GATES`. */
+  bar: number;
+  items: FullItemScore[];
+}
+
+export interface CompetencyRating {
+  itemKey: string;
+  score: number;
+  value: number;
+  note?: string;
+}
+
+/**
+ * The free profile plus the coach's interview ratings, as the full report reads
+ * it. The free scoring above is untouched: this is a second projection of the
+ * same assessment, never a second engine (R11), and it only ever adds the
+ * coach's own ratings to what the survey already measured.
+ */
+export function scoreFull(
+  profile: ProfileScore,
+  ratings: CompetencyRating[],
+  formulaOf: (itemKey: string) => "indicators" | "lookup" | undefined,
+): FullDimensionScore[] {
+  const byKey = new Map(ratings.map((r) => [r.itemKey, r]));
+  return profile.dimensions.map((d) => {
+    const def = DIMENSIONS.find((x) => x.key === d.key)!;
+    const items: FullItemScore[] = def.items
+      .filter((i) => i.tier !== "proxy")
+      .map((i) => {
+        const rated = byKey.get(i.key);
+        if (rated) {
+          return {
+            key: i.key,
+            label: i.label,
+            score: rated.score,
+            source: "interview" as const,
+            indicatorsMet: formulaOf(i.key) === "indicators" ? rated.value : undefined,
+            note: rated.note,
+          };
+        }
+        const free = d.items.find((x) => x.key === i.key);
+        const s = i.tier === "ecra" && free && free.score !== null ? free.score : null;
+        return { key: i.key, label: i.label, score: s, source: s === null ? null : ("survey" as const) };
+      });
+    const scored = items.filter((i) => i.score !== null).map((i) => i.score as number);
+    const score = scored.length ? Math.round((scored.reduce((a, b) => a + b, 0) / scored.length) * 10) / 10 : null;
+    const bar = GATES.find((g) => g.key === d.key)?.bar ?? 3;
+    return { key: d.key, label: d.label, score, bar, items };
+  });
+}

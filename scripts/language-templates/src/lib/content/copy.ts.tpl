@@ -1042,6 +1042,221 @@ export const COPY = {
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0Lm5leHQ:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0Lm5leHQ:TH%%,
   },
+  "report.full.heading": {
+    screen: "Candidate PDF, full-version section heading",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZ1bGwuaGVhZGluZw:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZ1bGwuaGVhZGluZw:TH%%,
+  },
+  "report.full.body": {
+    screen: "Candidate PDF, full-version section body",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZ1bGwuYm9keQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZ1bGwuYm9keQ:TH%%,
+  },
+  "report.full.example": {
+    screen: "Candidate PDF, label over the example chart",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZ1bGwuZXhhbXBsZQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZ1bGwuZXhhbXBsZQ:TH%%,
+  },
+  "item.qualificationRecognition": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5xdWFsaWZpY2F0aW9uUmVjb2duaXRpb24:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5xdWFsaWZpY2F0aW9uUmVjb2duaXRpb24:TH%%,
+  },
+  "item.financialPreparedness": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5maW5hbmNpYWxQcmVwYXJlZG5lc3M:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5maW5hbmNpYWxQcmVwYXJlZG5lc3M:TH%%,
+  },
+  "item.relocationPlanning": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5yZWxvY2F0aW9uUGxhbm5pbmc:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5yZWxvY2F0aW9uUGxhbm5pbmc:TH%%,
+  },
+  "item.culturalAdaptability": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5jdWx0dXJhbEFkYXB0YWJpbGl0eQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5jdWx0dXJhbEFkYXB0YWJpbGl0eQ:TH%%,
+  },
+  "item.administrativeReadiness": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5hZG1pbmlzdHJhdGl2ZVJlYWRpbmVzcw:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5hZG1pbmlzdHJhdGl2ZVJlYWRpbmVzcw:TH%%,
+  },
+  "item.crossCultural": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5jcm9zc0N1bHR1cmFs:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5jcm9zc0N1bHR1cmFs:TH%%,
+  },
+  "item.independence": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5pbmRlcGVuZGVuY2U:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5pbmRlcGVuZGVuY2U:TH%%,
+  },
+  "item.ownershipMindset": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5vd25lcnNoaXBNaW5kc2V0:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5vd25lcnNoaXBNaW5kc2V0:TH%%,
+  },
+  "item.businessAwareness": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5idXNpbmVzc0F3YXJlbmVzcw:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5idXNpbmVzc0F3YXJlbmVzcw:TH%%,
+  },
+  "item.collaborationStyle": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5jb2xsYWJvcmF0aW9uU3R5bGU:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5jb2xsYWJvcmF0aW9uU3R5bGU:TH%%,
+  },
+  "item.salaryExpectations": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5zYWxhcnlFeHBlY3RhdGlvbnM:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5zYWxhcnlFeHBlY3RhdGlvbnM:TH%%,
+  },
+  "item.labourMarketKnowledge": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5sYWJvdXJNYXJrZXRLbm93bGVkZ2U:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5sYWJvdXJNYXJrZXRLbm93bGVkZ2U:TH%%,
+  },
+  "item.adaptability": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5hZGFwdGFiaWxpdHk:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5hZGFwdGFiaWxpdHk:TH%%,
+  },
+  "item.professionalConfidence": {
+    screen: "Fit Report, competency name",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5wcm9mZXNzaW9uYWxDb25maWRlbmNl:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5wcm9mZXNzaW9uYWxDb25maWRlbmNl:TH%%,
+  },
+  "fit.eyebrow": {
+    screen: "Fit Report, cover eyebrow",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmV5ZWJyb3c:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmV5ZWJyb3c:TH%%,
+  },
+  "fit.cover.sub": {
+    screen: "Fit Report, cover line. {count} is the number of competencies",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvdmVyLnN1Yg:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvdmVyLnN1Yg:TH%%,
+  },
+  "fit.cover.prepared": {
+    screen: "Fit Report, cover date. {date} is DD/MM/YYYY",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvdmVyLnByZXBhcmVk:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvdmVyLnByZXBhcmVk:TH%%,
+  },
+  "fit.summary.heading": {
+    screen: "Fit Report, summary heading",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnN1bW1hcnkuaGVhZGluZw:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnN1bW1hcnkuaGVhZGluZw:TH%%,
+  },
+  "fit.col.area": {
+    screen: "Fit Report, summary table column",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5hcmVh:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5hcmVh:TH%%,
+  },
+  "fit.col.score": {
+    screen: "Fit Report, summary table column",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5zY29yZQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5zY29yZQ:TH%%,
+  },
+  "fit.col.bar": {
+    screen: "Fit Report, summary table column",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5iYXI:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5iYXI:TH%%,
+  },
+  "fit.col.gap": {
+    screen: "Fit Report, summary table column",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5nYXA:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5nYXA:TH%%,
+  },
+  "fit.cleared": {
+    screen: "Fit Report, gap cell when the bar is met",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNsZWFyZWQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNsZWFyZWQ:TH%%,
+  },
+  "fit.legend.bar": {
+    screen: "Fit Report, under every chart",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmxlZ2VuZC5iYXI:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmxlZ2VuZC5iYXI:TH%%,
+  },
+  "fit.path.heading": {
+    screen: "Fit Report, gate path heading",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnBhdGguaGVhZGluZw:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnBhdGguaGVhZGluZw:TH%%,
+  },
+  "fit.path.lede": {
+    screen: "Fit Report, gate path lede",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnBhdGgubGVkZQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnBhdGgubGVkZQ:TH%%,
+  },
+  "fit.path.start": {
+    screen: "Fit Report, marker on the first uncleared area",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnBhdGguc3RhcnQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnBhdGguc3RhcnQ:TH%%,
+  },
+  "fit.col.note": {
+    screen: "Fit Report, area table column",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5ub3Rl:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmNvbC5ub3Rl:TH%%,
+  },
+  "fit.how.none": {
+    screen: "Fit Report, area table cell",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lmhvdy5ub25l:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lmhvdy5ub25l:TH%%,
+  },
+  "fit.moves.heading": {
+    screen: "Fit Report, moves heading",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lm1vdmVzLmhlYWRpbmc:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lm1vdmVzLmhlYWRpbmc:TH%%,
+  },
+  "fit.moves.lede": {
+    screen: "Fit Report, moves lede",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lm1vdmVzLmxlZGU:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0Lm1vdmVzLmxlZGU:TH%%,
+  },
+  "fit.roles.heading": {
+    screen: "Fit Report, roles heading",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLmhlYWRpbmc:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLmhlYWRpbmc:TH%%,
+  },
+  "fit.roles.lede": {
+    screen: "Fit Report, roles lede. {total}, {matching}, {countries} substituted",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLmxlZGU:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLmxlZGU:TH%%,
+  },
+  "fit.roles.none": {
+    screen: "Fit Report, roles when nothing matches",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLm5vbmU:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLm5vbmU:TH%%,
+  },
+  "fit.roles.note": {
+    screen: "Fit Report, under the roles",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLm5vdGU:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLm5vdGU:TH%%,
+  },
+  "fit.footer": {
+    screen: "Fit Report, last page footing",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmZvb3Rlcg:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmZvb3Rlcg:TH%%,
+  },
+  "result.fitReport.heading": {
+    screen: "Result screen, Fit Report card heading",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmZpdFJlcG9ydC5oZWFkaW5n:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmZpdFJlcG9ydC5oZWFkaW5n:TH%%,
+  },
+  "result.fitReport.body": {
+    screen: "Result screen, Fit Report card body",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmZpdFJlcG9ydC5ib2R5:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmZpdFJlcG9ydC5ib2R5:TH%%,
+  },
+  "result.download": {
+    screen: "Result screen, button that opens the candidate's own PDF",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmRvd25sb2Fk:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVzdWx0LmRvd25sb2Fk:TH%%,
+  },
+  "report.self.title": {
+    screen: "Candidate PDF downloaded from the result screen, the title where a name would be",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LnNlbGYudGl0bGU:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LnNlbGYudGl0bGU:TH%%,
+  },
   "report.footer": {
     screen: "Candidate PDF, the footing on the last page",
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkucmVwb3J0LmZvb3Rlcg:EN%%,
@@ -1131,6 +1346,41 @@ export const COPY = {
     screen: "Named when this is the candidate's strongest area",
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5haURpZ2l0YWxGbHVlbmN5:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5haURpZ2l0YWxGbHVlbmN5:TH%%,
+  },
+  "item.cvQuality": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5jdlF1YWxpdHk:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5jdlF1YWxpdHk:TH%%,
+  },
+  "item.linkedinProfile": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5saW5rZWRpblByb2ZpbGU:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5saW5rZWRpblByb2ZpbGU:TH%%,
+  },
+  "item.interviewSkills": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5pbnRlcnZpZXdTa2lsbHM:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5pbnRlcnZpZXdTa2lsbHM:TH%%,
+  },
+  "item.personalBrand": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5wZXJzb25hbEJyYW5k:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5wZXJzb25hbEJyYW5k:TH%%,
+  },
+  "item.networking": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5uZXR3b3JraW5n:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5uZXR3b3JraW5n:TH%%,
+  },
+  "item.jobSearchStrategy": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5qb2JTZWFyY2hTdHJhdGVneQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5qb2JTZWFyY2hTdHJhdGVneQ:TH%%,
+  },
+  "item.recruiterReadiness": {
+    screen: "Full report, readiness-to-apply chart axis",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5yZWNydWl0ZXJSZWFkaW5lc3M:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuaXRlbS5yZWNydWl0ZXJSZWFkaW5lc3M:TH%%,
   },
   "item.cvStatus": {
     screen: "Named when this is the candidate's strongest area",
