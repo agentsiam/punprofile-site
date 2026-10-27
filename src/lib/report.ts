@@ -69,7 +69,7 @@ import type { RadarAxis } from "./radar";
 import { buildNarrative } from "./narrative";
 import { assertCandidateSafe, itemName, dimensionName, dimensionNameByLabel } from "./views";
 import { t, type Locale } from "./locale";
-import { BAND_COPY, GATES } from "./model";
+import { BAND_COPY, DIMENSIONS, GATES } from "./model";
 import { topStrengths, developmentPriorities } from "./scoring";
 import { projectUnlock } from "./levers";
 import { FULL_CTA, FULL_SAMPLE, HERO_SAMPLE_SCORES } from "./content/products";
@@ -777,12 +777,13 @@ function bookShowcase(
   const empAvg = FULL_SAMPLE.reduce((n, a) => n + a.score, 0) / FULL_SAMPLE.length;
   const areaScore = (k: string) =>
     k === "employability" ? empAvg : (HERO_SAMPLE_SCORES as Record<string, number>)[k] ?? 0;
-  const areas = GATES.map((g) => ({ key: g.key, bar: g.bar, score: areaScore(g.key) }));
+  // The real report draws and lists the areas in model order, not gate order.
+  const areas = DIMENSIONS.map((d) => ({ key: d.key, bar: GATES.find((g) => g.key === d.key)?.bar ?? 3, score: areaScore(d.key) }));
   const empBar = GATES.find((g) => g.key === "employability")!.bar;
 
   const overview = radarSvg(
     areas.map((a) => ({ label: dimLabel(a.key, a.key), value: a.score })),
-    { idPrefix: "bookov", size: 300, values: false, maxLabel: 40, widthRatio: 1.75, wrapLabels: true, threshold: areas.map((a) => a.bar) },
+    { idPrefix: "bookov", size: 300, values: true, maxLabel: 40, widthRatio: 1.75, wrapLabels: true, threshold: areas.map((a) => a.bar) },
   );
   const areaChart = radarSvg(
     FULL_SAMPLE.map((a) => ({ label: itemName(a.key, a.key, locale), value: a.score })),
@@ -790,7 +791,7 @@ function bookShowcase(
   );
   const gapRows = areas
     .map((a) => {
-      const gap = a.score >= a.bar ? `<td class="bk-clear">${esc(s("fit.cleared"))}</td>` : `<td class="bk-open">${(a.bar - a.score).toFixed(1)}</td>`;
+      const gap = a.score >= a.bar ? `<td class="bk-clear">${esc(s("fit.cleared"))}</td>` : `<td class="bk-gap">${(a.bar - a.score).toFixed(1)}</td>`;
       return `<tr><th>${esc(dimLabel(a.key, a.key))}</th><td>${a.score.toFixed(1)}</td><td>${a.bar.toFixed(1)}</td>${gap}</tr>`;
     })
     .join("");
@@ -802,7 +803,7 @@ function bookShowcase(
     return `<tr><th>${esc(itemName(a.key, a.key, locale))}</th><td>${a.score.toFixed(1)}</td><td>${note}</td></tr>`;
   }).join("");
   const foot = (num: string, heading: string) =>
-    `<p class="bk-foot"><span>${esc(s("fit.eyebrow"))}</span><span>${num}</span></p>`;
+    `<p class="bk-foot"><span>${esc(s("fit.eyebrow"))}</span><span>${num} · ${esc(heading)}</span></p>`;
 
   return `<div class="book" aria-label="${esc(s("report.full.example"))}">
     <div class="bk-closed">
@@ -810,10 +811,11 @@ function bookShowcase(
         <div>
           <p class="bk-eyebrow">${esc(s("fit.eyebrow"))}</p>
           <p class="bk-title">Fit Report</p>
+          <span class="bk-line bk-line-dark" style="width:62%;margin-top:14px"></span>
         </div>
         <div>
           <p class="bk-coverline">${esc(s("fit.cover.sub", { count: 34 }))}</p>
-          <span class="bk-line bk-line-dark" style="width:40%"></span>
+          <span class="bk-line bk-line-dark" style="width:34%"></span>
         </div>
       </div></div>
     </div>
@@ -823,13 +825,15 @@ function bookShowcase(
         <figure>${overview}</figure>
         <p class="bk-legend">${esc(s("fit.legend.bar"))}</p>
         <table><thead><tr><th>${esc(s("fit.col.area"))}</th><th>${esc(s("fit.col.score"))}</th><th>${esc(s("fit.col.bar"))}</th><th>${esc(s("fit.col.gap"))}</th></tr></thead><tbody>${gapRows}</tbody></table>
-        ${foot("01", "")}
+        ${foot("01", s("fit.summary.heading"))}
       </div></div>
       <div class="bk-frame"><div class="bk-page">
         <h3><span class="bk-num">04</span>${esc(dimLabel("employability", "Employability"))}</h3>
+        <p class="bk-score"><strong>${empAvg.toFixed(1)}</strong> / 5 · ${esc(s("fit.col.bar"))} ${empBar.toFixed(1)}</p>
         <figure>${areaChart}</figure>
+        <p class="bk-legend">${esc(s("fit.legend.bar"))}</p>
         <table class="bk-notes"><thead><tr><th>${esc(s("report.competency"))}</th><th>${esc(s("report.score"))}</th><th>${esc(s("fit.col.note"))}</th></tr></thead><tbody>${noteRows}</tbody></table>
-        ${foot("04", "")}
+        ${foot("04", dimLabel("employability", "Employability"))}
       </div></div>
     </div>
   </div>`;
@@ -862,13 +866,15 @@ const BOOK_STYLES = `
   .bk-page th, .bk-page td { text-align: left; padding: 7px 6px; border-bottom: 1px solid var(--border); vertical-align: middle; }
   .bk-page thead th { color: var(--ink-2); font-size: 11px; font-weight: 600; }
   .bk-page tbody th { font-weight: 600; }
-  .bk-notes tbody th { width: 40%; }
+  .bk-notes tbody th { width: 40%; font-weight: 400; }
+  .bk-score { margin: 4px 0 0; font-size: 15px; }
+  .bk-score strong { font-size: 22px; }
   .bk-notes td:nth-child(2) { width: 46px; font-weight: 700; }
-  .bk-open .bk-frame:last-child figure { width: 92%; margin-bottom: 6px; }
+  .bk-open .bk-frame:last-child figure { width: 80%; margin-bottom: 0; }
   .bk-open .bk-frame:first-child figure { width: 100%; margin: 14px auto 8px; }
   .bk-open .bk-page tbody td:nth-child(2) { font-weight: 700; }
   .bk-clear { color: var(--color-positive-deep); font-weight: 700; }
-  .bk-open .bk-page td.bk-open, td.bk-open { color: var(--color-warning-deep); font-weight: 700; }
+  .bk-gap { color: var(--color-warning-deep); font-weight: 700; }
   .bk-line { display: block; height: 7px; border-radius: 999px; background: var(--viz-grid); margin: 3px 0; }
   .bk-line-dark { background: rgba(255,255,255,.22); height: 9px; }
   .bk-foot { margin-top: auto; padding-top: 8px; border-top: 1px solid var(--border); color: var(--viz-muted); font-size: 11px; display: flex; justify-content: space-between; }
