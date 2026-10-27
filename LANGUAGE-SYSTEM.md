@@ -11003,17 +11003,17 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.question
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.question'
 narrative_slot: symptom
-en: "Of these six, which one did you used to believe?"
-th: "ใน 6 เรื่องนี้ มีเรื่องไหนที่คุณเคยเชื่อมาก่อนบ้าง?"
-provenance: paul-approved
-date: 26/10/2026
+en: "Of these six, which one did you believe?"
+th: "ใน 6 เรื่องนี้ เรื่องไหนที่คุณเคยเชื่อ?"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: 627723b1399c6089ae38ce7e6b1fb402e51876deaeb14107830dbf991525c04f
+  structural_calque: pending
+  text_hash: 92b17bfffc8a79d738cdec72bd5e4089aff3cce2fe7f335710a13d5f9f8877d8
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11047,17 +11047,17 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.sections[0].body[0].text
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[0].body[0].text'
 narrative_slot: utility
-en: "A third language, your age, or knowing nobody are not what decides whether you get a job in Europe. In Cara's experience, what matters more is an application that matches the role, and a plan made before you graduate."
-th: "ภาษาที่ 3 อายุ หรือการไม่รู้จักใครเลย ไม่ใช่สิ่งที่ตัดสินว่าคุณจะได้งานในยุโรปหรือไม่ จากประสบการณ์ของคาร่า สิ่งที่มีผลมากกว่าคือใบสมัครที่ตรงกับตำแหน่ง และการวางแผนตั้งแต่ก่อนเรียนจบ"
-provenance: paul-approved
-date: 26/10/2026
+en: "In Cara's experience, a third language, your age or knowing nobody do not decide whether you get a job in Europe. What decides it is an application that matches the role, and a plan that starts before you graduate."
+th: "จากประสบการณ์ของคาร่า ภาษาที่ 3 อายุ หรือการไม่รู้จักใคร ไม่ได้ตัดสินว่าคุณจะได้งานในยุโรป สิ่งที่ตัดสินคือใบสมัครที่ตรงกับตำแหน่ง และแผนที่เริ่มก่อนเรียนจบ"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: a2b7a17c87bc177c1b7bf94723cf301473a88be6c55bd7aeb6017d09a8a06890
+  structural_calque: pending
+  text_hash: d341c03f95a6f3baa90ed63753059c984e254393a32b43f24cd052ac1bcf1c77
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11091,15 +11091,15 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.sections[1].body[1].text
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[1].text'
 narrative_slot: audience
-en: "We sat down with her to talk through the questions Thais who want to work in Europe ask us most. Several of her answers overturn what most people believe. The quotes are her own words, taken from the interview."
-th: "เรานั่งคุยกับเธอถึงคำถามที่คนไทยที่อยากมาทำงานยุโรปถามเราบ่อยที่สุด คำตอบของเธอหักล้างความเชื่อเดิมหลายข้อ ข้อความในกรอบคือคำพูดของเธอเอง ตัดมาจากบทสัมภาษณ์"
+en: "We asked her the questions Thais ask us most, and several of her answers overturn what most people believe. The quotes are her own words."
+th: "เราคุยกับเธอถึงคำถามที่คนไทยถามเราบ่อยที่สุด และคำตอบของเธอหักล้างความเชื่อเดิมหลายข้อ ข้อความในกรอบคือคำพูดของเธอเอง"
 provenance: draft
 date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
   structural_calque: pending
-  text_hash: aba5c436feadc79eccafb0f0819c1f9c1cfad502ccc6ea5daf87ffa94fa3718b
+  text_hash: 0561d7bd3992f5c2abc1e4296edb19694daa593974a7ed157b5f709cccd8be73
   prompt_version: structural-calque-v1
   basis: Draft awaiting Paul's approval of the Thai.
 ```
@@ -11179,17 +11179,17 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.sections[2].body[2].text
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].body[2].text'
 narrative_slot: misread
-en: "The local language still helps with daily life and with colleagues. But for a job in a company that works in English, it is not the first hurdle."
-th: "ภาษาท้องถิ่นยังช่วยเรื่องชีวิตประจำวันและความสัมพันธ์กับเพื่อนร่วมงาน แต่สำหรับงานในบริษัทที่ใช้ภาษาอังกฤษ มันไม่ใช่ด่านแรกที่ต้องผ่าน"
-provenance: paul-approved
-date: 26/10/2026
+en: "Takeaway: the local language helps with daily life, but it is not the first hurdle for a job in a company that works in English."
+th: "ข้อคิด: ภาษาท้องถิ่นช่วยชีวิตประจำวัน แต่ไม่ใช่ด่านแรกของงานในบริษัทที่ใช้ภาษาอังกฤษ"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: 0429c63e42247d70c70b018c7428361c09378e35d319d170f573d0701f696a1c
+  structural_calque: pending
+  text_hash: 844b715fdd433f7c262bab475bbbaf9f828220d19a824714f7661a9da3f90aca
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11223,17 +11223,17 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.sections[3].body[0].text
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[0].text'
 narrative_slot: symptom
-en: "While looking for work, Cara sent about a thousand applications, and says about 800 of them were wasted, because she used the same CV for every role."
-th: "ช่วงหางาน คาร่าส่งใบสมัครไปราวพันที่ และเล่าว่าราว 800 ที่นั้นเสียเปล่า เพราะเธอใช้เรซูเม่ใบเดิมกับทุกตำแหน่ง"
-provenance: paul-approved
-date: 26/10/2026
+en: "Cara sent about a thousand applications and says 800 were wasted, because she used the same CV for every role."
+th: "คาร่าส่งใบสมัครไปราวพันที่ และเล่าว่า 800 ที่เสียเปล่า เพราะใช้เรซูเม่ใบเดิมกับทุกตำแหน่ง"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: 5c55f2d66747f5699ae5ce7a3c5eb889fb5b5557bb70cb800860de550f92bee3
+  structural_calque: pending
+  text_hash: 60eb088aad3c301500b70024ee275ca1ea977a1065915090068292a67c47ffbb
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11289,17 +11289,17 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.sections[3].body[3].text
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[3].text'
 narrative_slot: symptom
-en: "Fewer applications, each adjusted to the advert, work better than a large number sent unchanged."
-th: "ใบสมัครที่น้อยลงแต่ปรับให้ตรงกับประกาศแต่ละที่ ได้ผลกว่าการกดสมัครจำนวนมาก"
-provenance: paul-approved
-date: 26/10/2026
+en: "Takeaway: apply less, but adjust every application to the advert."
+th: "ข้อคิด: สมัครน้อยลง แต่ปรับให้ตรงกับประกาศทุกครั้ง"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: 20999bcf968e103841349c868c24c67436b918152290e604d331eaae6bf103ad
+  structural_calque: pending
+  text_hash: 8cfaa0de96a6c08c7b33a931094194af57dc867f14d0605b9f700822ddecde4b
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11355,17 +11355,17 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.sections[4].body[0].text
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[0].text'
 narrative_slot: mechanism
-en: "Cara asked her school early on whether an internship was required and how it worked, because nobody had told her at the start."
-th: "คาร่าถามโรงเรียนตั้งแต่เนิ่น ๆ ว่าการฝึกงานเป็นข้อบังคับหรือไม่ และต้องทำอย่างไร เพราะไม่มีใครบอกเธอตั้งแต่แรก"
-provenance: paul-approved
-date: 26/10/2026
+en: "Cara asked her school early whether an internship was required and how it worked, because nobody had told her."
+th: "คาร่าถามโรงเรียนตั้งแต่เนิ่น ๆ ว่าการฝึกงานบังคับไหมและต้องทำอย่างไร เพราะไม่มีใครบอกเธอ"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: c0a8a9ccbf0d1349afa101934f65c0a7998d0c2fa453778fbf2ade9c4f588bfd
+  structural_calque: pending
+  text_hash: 41dac6bf18622f8babe6f1f9435de1341be45cbde29311d7907e7af2c2198771
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11399,17 +11399,17 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.sections[4].body[2].text
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[2].text'
 narrative_slot: mechanism
-en: "If you are coming to study, ask about internships before the course starts, and choose the companies you want to intern at in advance."
-th: "ถ้าคุณกำลังจะมาเรียนต่อ ให้ถามเรื่องการฝึกงานตั้งแต่ก่อนเริ่มเรียน และเลือกบริษัทที่อยากฝึกงานไว้ล่วงหน้า"
-provenance: paul-approved
-date: 26/10/2026
+en: "Takeaway: ask about internships before the course starts, and pick your target companies in advance."
+th: "ข้อคิด: ถามเรื่องฝึกงานตั้งแต่ก่อนเริ่มเรียน และเล็งบริษัทไว้ล่วงหน้า"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: 3a7d6ef97f3de956112e7c912c64e142427a86aeb9c013cd860c1d764de87ed5
+  structural_calque: pending
+  text_hash: 6c25cf379e576478823398ebcd84d9f1cf473cb81d14bb609d5ce62e1f48243a
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11641,17 +11641,17 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.sections[7].body[1].text
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[1].text'
 narrative_slot: mechanism
-en: "That figure is what she sees around her, not a statistic. What makes a CV stand out instead of a photo is your skills, how you word your experience, and the experience itself, with your most important skills at the top, because recruiters rarely read to the bottom."
-th: "ตัวเลขนี้เป็นสิ่งที่เธอเห็นรอบตัว ไม่ใช่สถิติ สิ่งที่ทำให้เรซูเม่โดดเด่นแทนรูปคือทักษะ การเรียบเรียงคำเพื่อนำเสนอตัวเอง และประสบการณ์ โดยเรียงทักษะสำคัญที่สุดไว้ข้างบน เพราะผู้คัดเลือกมักอ่านไม่ถึงข้างล่าง"
-provenance: paul-approved
-date: 26/10/2026
+en: "That figure is what she sees around her, not a statistic. What makes a CV stand out is your skills, most important first, because recruiters rarely read to the bottom."
+th: "ตัวเลขนี้คือสิ่งที่เธอเห็นรอบตัว ไม่ใช่สถิติ สิ่งที่ทำให้เรซูเม่โดดเด่นคือทักษะที่เรียงสำคัญที่สุดไว้บนสุด เพราะ recruiter มักอ่านไม่ถึงข้างล่าง"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: 4001aeeec6c58f3484a13edb0eb17cfaa29817e524c36b94eab4eb88924098e5
+  structural_calque: pending
+  text_hash: f269dca317bd5bae3c3e1870615c068b0d6dde1fce23c9a43f4219efed539216
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11730,16 +11730,16 @@ path: CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]'
 narrative_slot: utility
 en: "Not always. Many roles in companies that work in English do not require the local language, but some do. Check real adverts in the country you are aiming at."
-th: "ไม่เสมอไป งานในบริษัทที่ใช้ภาษาอังกฤษเป็นภาษาทำงานหลายตำแหน่งไม่กำหนดภาษาท้องถิ่น แต่บางตำแหน่งกำหนด ควรเช็กจากประกาศงานจริงในประเทศที่คุณเล็งไว้"
-provenance: paul-approved
-date: 26/10/2026
+th: "ไม่เสมอไป หลายตำแหน่งในบริษัทที่ใช้ภาษาอังกฤษไม่กำหนดภาษาท้องถิ่น แต่บางตำแหน่งกำหนด เช็กจากประกาศงานจริงในประเทศที่คุณเล็ง"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: d82b850a3c46ff2e695d112b71f2ad19c0f0ac4666d85a0c05b68b985aa043f6
+  structural_calque: pending
+  text_hash: 2c7eb4304f3e680e6395adef8e42edab9ca0aeb6a17834f31053beadf55c94b8
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11773,17 +11773,17 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]'
 narrative_slot: utility
-en: "In many countries it is not needed, and many people leave it out for privacy, though some countries and companies still expect one. Follow the custom of the market you apply to."
-th: "ในหลายประเทศไม่จำเป็น และหลายคนเลือกไม่ใส่เพราะเรื่องความเป็นส่วนตัว แต่บางประเทศหรือบางบริษัทยังนิยมใส่ ดูจากธรรมเนียมของตลาดที่คุณสมัคร"
-provenance: paul-approved
-date: 26/10/2026
+en: "Mostly not, and many people leave it out for privacy, though some countries still expect one. Follow the custom of the market you apply to."
+th: "ส่วนใหญ่ไม่จำเป็น และหลายคนไม่ใส่เพราะเรื่องความเป็นส่วนตัว แต่บางประเทศยังนิยม ดูธรรมเนียมของตลาดที่คุณสมัคร"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: 59d62c015e53a9b7061aad31df0173b27cd81c66df2b97b8fa6b6d57b77dde63
+  structural_calque: pending
+  text_hash: b8d41b35b50e544bc160b118deaa666ec64985dea5b66ebea6e22bf25c06f902
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11817,17 +11817,17 @@ source: src/lib/content/posts/cara-working-in-spain.ts
 path: CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]
 render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]'
 narrative_slot: utility
-en: "Yes. Contacts make some things easier, but they are not a condition of getting a job. What matters more is an application that matches the role."
-th: "ได้ คนรู้จักช่วยให้บางเรื่องง่ายขึ้น แต่ไม่ใช่เงื่อนไขของการได้งาน สิ่งที่มีผลมากกว่าคือใบสมัครที่ตรงกับตำแหน่ง"
-provenance: paul-approved
-date: 26/10/2026
+en: "Yes. Contacts make it easier, but they are not a condition. What matters more is an application that matches the role."
+th: "ได้ คนรู้จักช่วยให้ง่ายขึ้น แต่ไม่ใช่เงื่อนไข สิ่งที่สำคัญกว่าคือใบสมัครที่ตรงกับตำแหน่ง"
+provenance: draft
+date: 27/10/2026
 term_bindings: []
-decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
 review:
-  structural_calque: pass
-  text_hash: 40ef7395c59224e7ba88c5e30ac8cc46bbe6756d2cbc687ef5e4d7b5ec0ef941
+  structural_calque: pending
+  text_hash: f88795af59f98eb660948f1d54f32861fc3bc442a523ac9fc5e9902857695b2a
   prompt_version: structural-calque-v1
-  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+  basis: Draft awaiting Paul's approval of the Thai.
 ```
 
 <!-- COPY-ENTRY -->

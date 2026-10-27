@@ -3974,9 +3974,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.question",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.question",
     "narrativeSlot": "symptom",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[0].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -3992,9 +3992,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[0].body[0].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[0].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[1].body[0].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4012,7 +4012,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "audience",
     "provenance": "draft",
     "date": "27/10/2026",
-    "decisionNote": "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Waiting on Paul."
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4046,9 +4046,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[2].body[2].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].body[2].text",
     "narrativeSlot": "misread",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4064,9 +4064,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[3].body[0].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[0].text",
     "narrativeSlot": "symptom",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[1].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4091,9 +4091,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[3].body[3].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[3].text",
     "narrativeSlot": "symptom",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[4].alt": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4118,9 +4118,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[4].body[0].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[0].text",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[1].text": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4136,9 +4136,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[4].body[2].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[2].text",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].heading": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4235,9 +4235,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[7].body[1].text",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[1].text",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[2].alt": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4271,9 +4271,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[1].q": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4289,9 +4289,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[2].q": {
     "source": "src/lib/content/posts/cara-working-in-spain.ts",
@@ -4307,9 +4307,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]",
     "render": "Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+    "provenance": "draft",
+    "date": "27/10/2026",
+    "decisionNote": "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Waiting on Paul."
   },
   "src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.title": {
     "source": "src/lib/content/posts/half-true-europe-needs-talent.ts",

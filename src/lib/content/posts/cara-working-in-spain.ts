@@ -47,8 +47,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
   },
 
   question: {
-    th: "ใน 6 เรื่องนี้ มีเรื่องไหนที่คุณเคยเชื่อมาก่อนบ้าง?",
-    en: "Of these six, which one did you used to believe?",
+    th: "ใน 6 เรื่องนี้ เรื่องไหนที่คุณเคยเชื่อ?",
+    en: "Of these six, which one did you believe?",
   },
 
   sections: [
@@ -61,8 +61,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
         {
           kind: "p",
           text: {
-            th: "ภาษาที่ 3 อายุ หรือการไม่รู้จักใครเลย ไม่ใช่สิ่งที่ตัดสินว่าคุณจะได้งานในยุโรปหรือไม่ จากประสบการณ์ของคาร่า สิ่งที่มีผลมากกว่าคือใบสมัครที่ตรงกับตำแหน่ง และการวางแผนตั้งแต่ก่อนเรียนจบ",
-            en: "A third language, your age, or knowing nobody are not what decides whether you get a job in Europe. In Cara's experience, what matters more is an application that matches the role, and a plan made before you graduate.",
+            th: "จากประสบการณ์ของคาร่า ภาษาที่ 3 อายุ หรือการไม่รู้จักใคร ไม่ได้ตัดสินว่าคุณจะได้งานในยุโรป สิ่งที่ตัดสินคือใบสมัครที่ตรงกับตำแหน่ง และแผนที่เริ่มก่อนเรียนจบ",
+            en: "In Cara's experience, a third language, your age or knowing nobody do not decide whether you get a job in Europe. What decides it is an application that matches the role, and a plan that starts before you graduate.",
           },
         },
       ],
@@ -79,8 +79,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
         {
           kind: "p",
           text: {
-            th: "เรานั่งคุยกับเธอถึงคำถามที่คนไทยที่อยากมาทำงานยุโรปถามเราบ่อยที่สุด คำตอบของเธอหักล้างความเชื่อเดิมหลายข้อ ข้อความในกรอบคือคำพูดของเธอเอง ตัดมาจากบทสัมภาษณ์",
-            en: "We sat down with her to talk through the questions Thais who want to work in Europe ask us most. Several of her answers overturn what most people believe. The quotes are her own words, taken from the interview.",
+            th: "เราคุยกับเธอถึงคำถามที่คนไทยถามเราบ่อยที่สุด และคำตอบของเธอหักล้างความเชื่อเดิมหลายข้อ ข้อความในกรอบคือคำพูดของเธอเอง",
+            en: "We asked her the questions Thais ask us most, and several of her answers overturn what most people believe. The quotes are her own words.",
           },
         },
       ],
@@ -108,8 +108,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
         {
           kind: "p",
           text: {
-            th: "ภาษาท้องถิ่นยังช่วยเรื่องชีวิตประจำวันและความสัมพันธ์กับเพื่อนร่วมงาน แต่สำหรับงานในบริษัทที่ใช้ภาษาอังกฤษ มันไม่ใช่ด่านแรกที่ต้องผ่าน",
-            en: "The local language still helps with daily life and with colleagues. But for a job in a company that works in English, it is not the first hurdle.",
+            th: "ข้อคิด: ภาษาท้องถิ่นช่วยชีวิตประจำวัน แต่ไม่ใช่ด่านแรกของงานในบริษัทที่ใช้ภาษาอังกฤษ",
+            en: "Takeaway: the local language helps with daily life, but it is not the first hurdle for a job in a company that works in English.",
           },
         },
       ],
@@ -123,8 +123,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
         {
           kind: "p",
           text: {
-            th: "ช่วงหางาน คาร่าส่งใบสมัครไปราวพันที่ และเล่าว่าราว 800 ที่นั้นเสียเปล่า เพราะเธอใช้เรซูเม่ใบเดิมกับทุกตำแหน่ง",
-            en: "While looking for work, Cara sent about a thousand applications, and says about 800 of them were wasted, because she used the same CV for every role.",
+            th: "คาร่าส่งใบสมัครไปราวพันที่ และเล่าว่า 800 ที่เสียเปล่า เพราะใช้เรซูเม่ใบเดิมกับทุกตำแหน่ง",
+            en: "Cara sent about a thousand applications and says 800 were wasted, because she used the same CV for every role.",
           },
         },
         {
@@ -144,8 +144,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
         {
           kind: "p",
           text: {
-            th: "ใบสมัครที่น้อยลงแต่ปรับให้ตรงกับประกาศแต่ละที่ ได้ผลกว่าการกดสมัครจำนวนมาก",
-            en: "Fewer applications, each adjusted to the advert, work better than a large number sent unchanged.",
+            th: "ข้อคิด: สมัครน้อยลง แต่ปรับให้ตรงกับประกาศทุกครั้ง",
+            en: "Takeaway: apply less, but adjust every application to the advert.",
           },
         },
         {
@@ -167,8 +167,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
         {
           kind: "p",
           text: {
-            th: "คาร่าถามโรงเรียนตั้งแต่เนิ่น ๆ ว่าการฝึกงานเป็นข้อบังคับหรือไม่ และต้องทำอย่างไร เพราะไม่มีใครบอกเธอตั้งแต่แรก",
-            en: "Cara asked her school early on whether an internship was required and how it worked, because nobody had told her at the start.",
+            th: "คาร่าถามโรงเรียนตั้งแต่เนิ่น ๆ ว่าการฝึกงานบังคับไหมและต้องทำอย่างไร เพราะไม่มีใครบอกเธอ",
+            en: "Cara asked her school early whether an internship was required and how it worked, because nobody had told her.",
           },
         },
         {
@@ -181,8 +181,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
         {
           kind: "p",
           text: {
-            th: "ถ้าคุณกำลังจะมาเรียนต่อ ให้ถามเรื่องการฝึกงานตั้งแต่ก่อนเริ่มเรียน และเลือกบริษัทที่อยากฝึกงานไว้ล่วงหน้า",
-            en: "If you are coming to study, ask about internships before the course starts, and choose the companies you want to intern at in advance.",
+            th: "ข้อคิด: ถามเรื่องฝึกงานตั้งแต่ก่อนเริ่มเรียน และเล็งบริษัทไว้ล่วงหน้า",
+            en: "Takeaway: ask about internships before the course starts, and pick your target companies in advance.",
           },
         },
       ],
@@ -261,8 +261,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
         {
           kind: "p",
           text: {
-            th: "ตัวเลขนี้เป็นสิ่งที่เธอเห็นรอบตัว ไม่ใช่สถิติ สิ่งที่ทำให้เรซูเม่โดดเด่นแทนรูปคือทักษะ การเรียบเรียงคำเพื่อนำเสนอตัวเอง และประสบการณ์ โดยเรียงทักษะสำคัญที่สุดไว้ข้างบน เพราะผู้คัดเลือกมักอ่านไม่ถึงข้างล่าง",
-            en: "That figure is what she sees around her, not a statistic. What makes a CV stand out instead of a photo is your skills, how you word your experience, and the experience itself, with your most important skills at the top, because recruiters rarely read to the bottom.",
+            th: "ตัวเลขนี้คือสิ่งที่เธอเห็นรอบตัว ไม่ใช่สถิติ สิ่งที่ทำให้เรซูเม่โดดเด่นคือทักษะที่เรียงสำคัญที่สุดไว้บนสุด เพราะ recruiter มักอ่านไม่ถึงข้างล่าง",
+            en: "That figure is what she sees around her, not a statistic. What makes a CV stand out is your skills, most important first, because recruiters rarely read to the bottom.",
           },
         },
         {
@@ -289,7 +289,7 @@ export const CARA_WORKING_IN_SPAIN: Post = {
           },
           a: [
             {
-              th: "ไม่เสมอไป งานในบริษัทที่ใช้ภาษาอังกฤษเป็นภาษาทำงานหลายตำแหน่งไม่กำหนดภาษาท้องถิ่น แต่บางตำแหน่งกำหนด ควรเช็กจากประกาศงานจริงในประเทศที่คุณเล็งไว้",
+              th: "ไม่เสมอไป หลายตำแหน่งในบริษัทที่ใช้ภาษาอังกฤษไม่กำหนดภาษาท้องถิ่น แต่บางตำแหน่งกำหนด เช็กจากประกาศงานจริงในประเทศที่คุณเล็ง",
               en: "Not always. Many roles in companies that work in English do not require the local language, but some do. Check real adverts in the country you are aiming at.",
             },
           ],
@@ -302,8 +302,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
           },
           a: [
             {
-              th: "ในหลายประเทศไม่จำเป็น และหลายคนเลือกไม่ใส่เพราะเรื่องความเป็นส่วนตัว แต่บางประเทศหรือบางบริษัทยังนิยมใส่ ดูจากธรรมเนียมของตลาดที่คุณสมัคร",
-              en: "In many countries it is not needed, and many people leave it out for privacy, though some countries and companies still expect one. Follow the custom of the market you apply to.",
+              th: "ส่วนใหญ่ไม่จำเป็น และหลายคนไม่ใส่เพราะเรื่องความเป็นส่วนตัว แต่บางประเทศยังนิยม ดูธรรมเนียมของตลาดที่คุณสมัคร",
+              en: "Mostly not, and many people leave it out for privacy, though some countries still expect one. Follow the custom of the market you apply to.",
             },
           ],
         },
@@ -315,8 +315,8 @@ export const CARA_WORKING_IN_SPAIN: Post = {
           },
           a: [
             {
-              th: "ได้ คนรู้จักช่วยให้บางเรื่องง่ายขึ้น แต่ไม่ใช่เงื่อนไขของการได้งาน สิ่งที่มีผลมากกว่าคือใบสมัครที่ตรงกับตำแหน่ง",
-              en: "Yes. Contacts make some things easier, but they are not a condition of getting a job. What matters more is an application that matches the role.",
+              th: "ได้ คนรู้จักช่วยให้ง่ายขึ้น แต่ไม่ใช่เงื่อนไข สิ่งที่สำคัญกว่าคือใบสมัครที่ตรงกับตำแหน่ง",
+              en: "Yes. Contacts make it easier, but they are not a condition. What matters more is an application that matches the role.",
             },
           ],
         },
