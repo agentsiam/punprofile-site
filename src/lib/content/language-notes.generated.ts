@@ -7077,38 +7077,38 @@ export const LANGUAGE_DECISION_NOTES = {
   "src/lib/content/products.ts::PRODUCTS[2].how[0]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[2].how[0]",
-    "render": "Product pages, PRODUCTS[2].how[0]",
+    "render": "Fit Report page, how it works step 1",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer."
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[2].how[1]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[2].how[1]",
-    "render": "Product pages, PRODUCTS[2].how[1]",
+    "render": "Fit Report page, how it works step 2",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-written",
-    "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[2].how[2]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[2].how[2]",
-    "render": "Product pages, PRODUCTS[2].how[2]",
+    "render": "Fit Report page, how it works step 3",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[2].howLede": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[2].howLede",
-    "render": "Product pages, PRODUCTS[2].howLede",
+    "render": "Fit Report page, how it works lede",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[2].lede": {
     "source": "src/lib/content/products.ts",
@@ -9395,5 +9395,275 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "04/10/2026",
     "decisionNote": "Draft 04/10/2026. The Thai is the first half of Paul's own headline. The English headline ran to 100 characters as a title."
+  },
+  "src/lib/content/products.ts::PRODUCTS[2].faq[1].q": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[2].faq[1].q",
+    "render": "Fit Report page, FAQ question",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[2].faq[1].a": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[2].faq[1].a",
+    "render": "Fit Report page, FAQ answer",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[2].faq[2].q": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[2].faq[2].q",
+    "render": "Fit Report page, FAQ question",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[2].faq[2].a": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[2].faq[2].a",
+    "render": "Fit Report page, FAQ answer",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[2].faq[3].q": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[2].faq[3].q",
+    "render": "Fit Report page, FAQ question",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[2].faq[3].a": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[2].faq[3].a",
+    "render": "Fit Report page, FAQ answer",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_HEADING": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_HEADING",
+    "render": "Fit Report page, comparison heading",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[0].label": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[0].label",
+    "render": "Fit Report page, comparison row label",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[0].free": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[0].free",
+    "render": "Fit Report page, comparison cell, EU Fit Check",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[0].full": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[0].full",
+    "render": "Fit Report page, comparison cell, Fit Report",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[1].label": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[1].label",
+    "render": "Fit Report page, comparison row label",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[1].free": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[1].free",
+    "render": "Fit Report page, comparison cell, EU Fit Check",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[1].full": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[1].full",
+    "render": "Fit Report page, comparison cell, Fit Report",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[2].label": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[2].label",
+    "render": "Fit Report page, comparison row label",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[2].full": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[2].full",
+    "render": "Fit Report page, comparison cell, Fit Report",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[3].label": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[3].label",
+    "render": "Fit Report page, comparison row label",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[3].free": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[3].free",
+    "render": "Fit Report page, comparison cell, EU Fit Check",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[3].full": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[3].full",
+    "render": "Fit Report page, comparison cell, Fit Report",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[4].label": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[4].label",
+    "render": "Fit Report page, comparison row label",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[4].full": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[4].full",
+    "render": "Fit Report page, comparison cell, Fit Report",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_COMPARE_ROWS[5].label": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_COMPARE_ROWS[5].label",
+    "render": "Fit Report page, comparison row label",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_INSIDE_HEADING": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_INSIDE_HEADING",
+    "render": "Fit Report page, page tiles heading",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_TILES[0].caption": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_TILES[0].caption",
+    "render": "Fit Report page, tile caption, summary page",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_TILES[1].caption": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_TILES[1].caption",
+    "render": "Fit Report page, tile caption, order page",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_TILES[2].title": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_TILES[2].title",
+    "render": "Fit Report page, tile title, area page",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_TILES[2].caption": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_TILES[2].caption",
+    "render": "Fit Report page, tile caption, area page",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_TILES[3].caption": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_TILES[3].caption",
+    "render": "Fit Report page, tile caption, moves page",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_TILES[4].caption": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_TILES[4].caption",
+    "render": "Fit Report page, tile caption, roles page",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_SAMPLE_PDF": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_SAMPLE_PDF",
+    "render": "Fit Report page, sample PDF link",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+  },
+  "src/lib/content/products.ts::FIT_EXPERT_HEADING": {
+    "source": "src/lib/content/products.ts",
+    "path": "FIT_EXPERT_HEADING",
+    "render": "Fit Report page, who interviews you heading",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
   }
 } as const;

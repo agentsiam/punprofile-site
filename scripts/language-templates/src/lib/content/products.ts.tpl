@@ -1,4 +1,5 @@
 import type { Copy } from "./copy";
+import { CATALOGUE_FREE, CATALOGUE_PAID } from "./home";
 
 /**
  * One page per product. Added 23/08/2026, Paul's call to build all of them
@@ -458,6 +459,18 @@ export const PRODUCTS: readonly Product[] = [
           th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMF0uYQ:TH%%,
         },
       },
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMV0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMV0ucQ:TH%% },
+        a: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMV0uYQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMV0uYQ:TH%% },
+      },
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMl0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMl0ucQ:TH%% },
+        a: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMl0uYQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMl0uYQ:TH%% },
+      },
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbM10ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbM10ucQ:TH%% },
+        a: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbM10uYQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbM10uYQ:TH%% },
+      },
     ],
     actionsKey: "/products/fit-report",
   },
@@ -866,3 +879,36 @@ export const RELATED_HEADING: Copy = {
   // Read back 06/09/2026.
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpSRUxBVEVEX0hFQURJTkc:TH%%,
 };
+
+/* ---------------------------------------------------------------------------
+ * The Fit Report page, 28/10/2026. product-page-fit-report.md has the research
+ * and the order; Paul approved the order (1a), the expert card (2a) and no
+ * guarantee (3a) on 28/10/2026.
+ * ------------------------------------------------------------------------- */
+
+export const FIT_COMPARE_HEADING: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9IRUFESU5H:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9IRUFESU5H:TH%% };
+
+/** `null` is drawn as a dash: the free check has no such thing. The cost row reuses the catalogue's own two labels. */
+export const FIT_COMPARE_ROWS: readonly { label: Copy; free: Copy | null; full: Copy | null }[] = [
+  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmxhYmVs:TH%% }, free: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmZyZWU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmZyZWU:TH%% }, full: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmZ1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmZ1bGw:TH%% } },
+  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmxhYmVs:TH%% }, free: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmZyZWU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmZyZWU:TH%% }, full: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmZ1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmZ1bGw:TH%% } },
+  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzJdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzJdLmxhYmVs:TH%% }, free: null, full: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzJdLmZ1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzJdLmZ1bGw:TH%% } },
+  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmxhYmVs:TH%% }, free: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmZyZWU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmZyZWU:TH%% }, full: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmZ1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmZ1bGw:TH%% } },
+  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzRdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzRdLmxhYmVs:TH%% }, free: null, full: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzRdLmZ1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzRdLmZ1bGw:TH%% } },
+  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzVdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzVdLmxhYmVs:TH%% }, free: CATALOGUE_FREE, full: CATALOGUE_PAID },
+];
+
+export const FIT_INSIDE_HEADING: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfSU5TSURFX0hFQURJTkc:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfSU5TSURFX0hFQURJTkc:TH%% };
+
+/** One tile per report page. `section` is the page's id in renderFitReport; the title is the page's own heading where it has one. */
+export const FIT_TILES: readonly { section: string; titleKey?: string; title?: Copy; caption: Copy }[] = [
+  { section: "summary", titleKey: "fit.summary.heading", caption: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbMF0uY2FwdGlvbg:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbMF0uY2FwdGlvbg:TH%% } },
+  { section: "path", titleKey: "fit.path.heading", caption: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbMV0uY2FwdGlvbg:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbMV0uY2FwdGlvbg:TH%% } },
+  { section: "employability", title: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbMl0udGl0bGU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbMl0udGl0bGU:TH%% }, caption: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbMl0uY2FwdGlvbg:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbMl0uY2FwdGlvbg:TH%% } },
+  { section: "moves", titleKey: "fit.moves.heading", caption: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbM10uY2FwdGlvbg:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbM10uY2FwdGlvbg:TH%% } },
+  { section: "roles", titleKey: "fit.roles.heading", caption: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbNF0uY2FwdGlvbg:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfVElMRVNbNF0uY2FwdGlvbg:TH%% } },
+];
+
+export const FIT_SAMPLE_PDF: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfU0FNUExFX1BERg:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfU0FNUExFX1BERg:TH%% };
+
+export const FIT_EXPERT_HEADING: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJUX0hFQURJTkc:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJUX0hFQURJTkc:TH%% };

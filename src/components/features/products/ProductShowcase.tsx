@@ -14,6 +14,9 @@ import type { ComponentType } from "react";
 import HeroCharts from "@/components/features/products/HeroCharts";
 import LiveStatsBand from "@/components/features/products/LiveStatsBand";
 import FullReportBand from "@/components/features/products/FullReportBand";
+import FitBookHero from "@/components/features/products/fit/FitBookHero";
+import FitAfterHero from "@/components/features/products/fit/FitAfterHero";
+import FitExpertCard from "@/components/features/products/fit/FitExpertCard";
 
 export interface Showcase {
   /** Replaces the summary card in the hero's right column. */
@@ -38,5 +41,14 @@ export const SHOWCASE: Partial<Record<string, Showcase>> = {
     afterHero: FullReportBand,
     hideHowMedia: true,
     afterHow: LiveStatsBand,
+  },
+  "fit-report": {
+    // 28/10/2026, Paul 1a 2a 3a on product-page-fit-report.md: the book first,
+    // then free beside full, then five real pages and the sample PDF, then the
+    // buying steps, then who interviews you.
+    heroWide: FitBookHero,
+    afterHero: FitAfterHero,
+    hideHowMedia: true,
+    afterHow: FitExpertCard,
   },
 };

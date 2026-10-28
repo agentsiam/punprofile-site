@@ -108,6 +108,12 @@ export interface ReportOptions {
    * file that prints itself on open is a file nobody opens twice.
    */
   autoPrint?: boolean;
+  /**
+   * Fit Report only: draw grey lines where a competency below the bar has no
+   * coach note. For the public sample, where an invented note would read as
+   * real advice. 28/10/2026.
+   */
+  sampleNotes?: boolean;
 }
 
 const esc = (s: string) =>
@@ -960,6 +966,7 @@ const FIT_STYLES = `
   ol.path .p-tag { display: inline-block; margin-top: .3rem; padding: .05rem .5rem; border-radius: 999px; font-size: .7rem; font-weight: 700; background: var(--color-warning-deep); color: #fff; }
   .how-none { color: var(--viz-muted); }
   .coach-note { color: var(--ink-1); font-size: .86rem; }
+  .coach-note .bk-line { display: block; height: 7px; border-radius: 999px; background: var(--viz-grid); margin: 4px 0; }
   .is-fit table.scores thead th:first-child { width: 38%; }
   .is-fit table.scores thead th:nth-child(2) { width: 4.5rem; }
   ol.moves { list-style: none; padding: 0; margin: 1rem 0 0; }
@@ -1055,7 +1062,13 @@ ${inner}
       const rows = d.items
         .map(
           (i) =>
-            `<tr><th scope="row">${esc(name(i.key, i.label))}</th><td class="num">${i.score === null ? "–" : i.score.toFixed(1)}</td><td class="coach-note">${esc(i.note ?? "")}</td></tr>`,
+            `<tr><th scope="row">${esc(name(i.key, i.label))}</th><td class="num">${i.score === null ? "–" : i.score.toFixed(1)}</td><td class="coach-note">${
+              i.note
+                ? esc(i.note)
+                : opts.sampleNotes && i.score !== null && i.score < d.bar
+                  ? `<span class="bk-line" style="width:86%"></span><span class="bk-line" style="width:54%"></span>`
+                  : ""
+            }</td></tr>`,
         )
         .join("");
       return section(
@@ -1137,4 +1150,67 @@ ${rolesSec}
     throw new Error(`renderFitReport: internal vocabulary reached a candidate document (${leaks.join(", ")}).`);
   }
   return html;
+}
+
+
+/* ===================================================================== */
+/* PIECES FOR THE FIT REPORT PRODUCT PAGE, 28/10/2026                     */
+/* ===================================================================== */
+
+/** A bare document around `body`: the report's own stylesheet, no toolbar, transparent ground. */
+function pieceDocument(lang: string, extraCss: string, body: string): string {
+  return `<!doctype html>
+<html lang="${lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+${BRAND_FONT_LINK}
+<style>
+${STYLES}
+${extraCss}
+  html, body { background: transparent; padding: 0; margin: 0; overflow: hidden; }
+  main { max-width: none; }
+</style>
+</head>
+<body>
+<main>
+${body}
+</main>
+</body>
+</html>`;
+}
+
+/**
+ * The book on its own, for the Fit Report page's hero. The same builder the
+ * free report uses, so the page and the PDF cannot show two different books.
+ */
+export function renderBookPreview(locale: Locale, cover: { name: string; sub: string }): string {
+  const s = (key: Parameters<typeof t>[0], vars?: Record<string, string | number>) => t(key, locale, vars);
+  const dimLabel = (key: string, fallback: string) => dimensionName(key, fallback, locale);
+  return pieceDocument(
+    locale,
+    `${BOOK_STYLES}
+  .book { margin: 0; border: 0; background: transparent; --k: .44; --kc: .33; padding: 1.5rem 1rem 2rem; }
+  @media (max-width: 900px) { .book { --k: .36; --kc: .27; } }
+  @media (max-width: 720px) { .book { --k: .27; --kc: .2; } }
+  @media (max-width: 480px) { .book { --k: .3; --kc: .17; } }`,
+    bookShowcase(locale, s, dimLabel, cover),
+  );
+}
+
+/**
+ * One page of a rendered Fit Report, cut out of the whole document by section
+ * id, as a fixed A4 sheet the page scales down. `html` is a renderFitReport()
+ * result; nothing is re-laid-out, so a tile is the real page.
+ */
+export function fitReportPage(html: string, sectionId: string): string {
+  const css = `<style>
+  html, body { background: #fff !important; margin: 0; padding: 0; overflow: hidden; }
+  body { width: 794px; height: 1123px; padding: 56px 60px !important; box-sizing: border-box; }
+  .toolbar, footer, .cover { display: none !important; }
+  .fit-sec { display: none !important; }
+  .fit-sec#${sectionId} { display: flex !important; flex-direction: column; break-before: auto; margin: 0; }
+  main { max-width: none !important; }
+</style>`;
+  return html.replace("</head>", `${css}\n</head>`);
 }
