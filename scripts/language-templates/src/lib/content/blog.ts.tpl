@@ -1,5 +1,6 @@
 import type { Copy } from "./copy";
 import { AI_IS_BECOMING_A_BASELINE_SKILL } from "./posts/ai-is-becoming-a-baseline-skill";
+import { CARA_WORKING_IN_SPAIN } from "./posts/cara-working-in-spain";
 import { HALF_TRUE_EUROPE_NEEDS_TALENT } from "./posts/half-true-europe-needs-talent";
 import { START_IN_EUROPE } from "./posts/start-in-europe";
 
@@ -105,7 +106,7 @@ import { START_IN_EUROPE } from "./posts/start-in-europe";
  * an article, so an empty pillar is invisible to a reader and legible to whoever
  * writes the next piece.
  */
-export type TopicId = "how-to" | "market" | "perspective" | "questions" | "stories";
+export type TopicId = "how-to" | "market" | "perspective" | "questions" | "stories" | "real";
 
 export interface Topic {
   id: TopicId;
@@ -161,6 +162,14 @@ export const TOPICS: readonly Topic[] = [
     id: "stories",
     label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1szXS5sYWJlbA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1szXS5sYWJlbA:TH%% },
     wash: "var(--color-primary-container)",
+  },
+  {
+    // A real person's story, told in their own words with their permission.
+    // Not Social Proof: the people in it are not clients, so it never claims an
+    // outcome PunProfile produced.
+    id: "real",
+    label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1s0XS5sYWJlbA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2Jsb2cudHM6OlRPUElDU1s0XS5sYWJlbA:TH%% },
+    wash: "var(--color-secondary-container)",
   },
 ];
 
@@ -231,7 +240,19 @@ export type Block =
    * structure, a question is a claim about what the section answers.
    */
   | { kind: "sub"; text: Copy }
-  | { kind: "qa"; q: Copy; a: readonly Copy[] };
+  | { kind: "qa"; q: Copy; a: readonly Copy[] }
+  /**
+   * A person's own words, quoted as they said them, attributed to the post's
+   * `person`. The Thai is never reworded, only corrected where a transcript
+   * misheard a word; the English is a translation.
+   */
+  | { kind: "quote"; text: Copy }
+  /**
+   * A picture inside the article, between paragraphs, to break a long read.
+   * Same shape as the hero: one `src`, a translated `alt` describing the scene.
+   * Files follow `<slug>-fig-<n>-<what>.jpg`, numbered in reading order.
+   */
+  | { kind: "figure"; src: string; alt: Copy };
 
 export interface Section {
   /** Absent on the opening section, which runs straight on from the title. */
@@ -286,6 +307,8 @@ export interface Post {
    * specific, and a list of three is a choice handed back to the reader.
    */
   related?: string;
+  /** The person a real story's quotes are attributed to, as they agreed to be named. */
+  person?: Copy;
 }
 
 /**
@@ -293,6 +316,9 @@ export interface Post {
  * order is editable here rather than being a property of the dates.
  */
 export const POSTS: readonly Post[] = [
+  // The fourth article, the first real story: Cara, in her own words.
+  CARA_WORKING_IN_SPAIN,
+  //
   // The third article, the first built to the `blog-post` skill's five rules.
   AI_IS_BECOMING_A_BASELINE_SKILL,
   //

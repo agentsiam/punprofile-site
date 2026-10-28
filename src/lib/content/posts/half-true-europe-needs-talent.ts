@@ -116,14 +116,14 @@ export const HALF_TRUE_EUROPE_NEEDS_TALENT: Post = {
         {
           kind: "p",
           text: {
-            th: "แทนที่จะถามกว้าง ๆ ว่า “ยุโรปต้องการอาชีพของฉันไหม” คำถามที่ช่วยให้วางแผนได้มากกว่าคือ",
+            th: "แทนที่จะถามกว้าง ๆ ว่า “ยุโรปต้องการอาชีพของเราไหม” คำถามที่ช่วยให้วางแผนได้มากกว่าคือ",
             en: "So instead of asking broadly whether Europe needs your profession, the question that helps you plan is this.",
           },
         },
         {
           kind: "p",
           text: {
-            th: "ประเทศใดกำลังต้องการทักษะของฉัน และฉันผ่านเงื่อนไขการทำงานของประเทศนั้นหรือไม่?",
+            th: "ประเทศใดกำลังต้องการทักษะของเรา และเราผ่านเงื่อนไขการทำงานของประเทศนั้นหรือไม่?",
             en: "Which country needs my skills, and do I meet that country's conditions for working there?",
           },
         },

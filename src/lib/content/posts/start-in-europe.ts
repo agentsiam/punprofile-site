@@ -320,7 +320,7 @@ export const START_IN_EUROPE: Post = {
         {
           kind: "p",
           text: {
-            th: "ตัวเลขนี้ไม่ได้บอกว่ายุโรปมีหรือไม่มีงาน แต่มันบอกว่าคำว่า “ยุโรปต้องการอาชีพของฉันไหม” เป็นคำถามที่กว้างเกินกว่าจะใช้วางแผนได้",
+            th: "ตัวเลขนี้ไม่ได้บอกว่ายุโรปมีหรือไม่มีงาน แต่มันบอกว่าคำว่า “ยุโรปต้องการอาชีพของเราไหม” เป็นคำถามที่กว้างเกินกว่าจะใช้วางแผนได้",
             en: "That number does not tell you whether Europe has jobs or does not. It tells you that “does Europe need my profession?” is too broad a question to plan with.",
           },
         },
@@ -336,11 +336,11 @@ export const START_IN_EUROPE: Post = {
           bare: true,
           items: [
             {
-              th: "ประเทศไหนกำลังต้องการทักษะของฉัน",
+              th: "ประเทศไหนกำลังต้องการทักษะของเรา",
               en: "Which country needs my skills?",
             },
             {
-              th: "และฉันผ่านเงื่อนไขที่จะทำงานในประเทศนั้นหรือไม่",
+              th: "และเราผ่านเงื่อนไขที่จะทำงานในประเทศนั้นหรือไม่",
               en: "And do I meet that country's conditions for working there?",
             },
           ],
@@ -567,7 +567,7 @@ export const START_IN_EUROPE: Post = {
         {
           kind: "p",
           text: {
-            th: "จุดเปลี่ยนเกิดขึ้นเมื่อคำถามในหัวเปลี่ยนจาก “ฉันจะอธิบายตัวเองอย่างไร” เป็น “ตลาดกำลังจ้างคนมาแก้ปัญหาอะไร”",
+            th: "จุดเปลี่ยนเกิดขึ้นเมื่อคำถามในหัวเปลี่ยนจาก “เราจะอธิบายตัวเองอย่างไร” เป็น “ตลาดกำลังจ้างคนมาแก้ปัญหาอะไร”",
             en: "The turn comes when the question in your head changes from “how do I describe myself?” to “what problem is the market hiring someone to solve?”",
           },
         },
@@ -698,11 +698,11 @@ export const START_IN_EUROPE: Post = {
               en: "This market wants this kind of skill",
             },
             {
-              th: "ประสบการณ์ของฉันพิสูจน์ได้ว่าทำเรื่องนี้เป็น",
+              th: "ประสบการณ์ของเราพิสูจน์ได้ว่าทำเรื่องนี้เป็น",
               en: "My experience proves I can do it",
             },
             {
-              th: "และบริษัทนี้มีทางจ้างฉันได้จริง",
+              th: "และบริษัทนี้มีทางจ้างเราได้จริง",
               en: "And this company has a way of actually hiring me",
             },
           ],
