@@ -408,8 +408,8 @@ export const PRODUCTS: readonly Product[] = [
     },
     // Read back 25/08/2026. Draft for `PROD-02-fit-report`.
     howLede: {
-      en: "From your first message to the report in your hands.",
-      th: "ตั้งแต่ทักมาจนได้รายงาน",
+      en: "From first contact to the report in your hands.",
+      th: "ตั้งแต่เริ่มติดต่อจนได้รับรายงาน",
     },
     name: { en: "Fit Report", th: "Fit Report" },
     status: "live",
@@ -423,7 +423,7 @@ export const PRODUCTS: readonly Product[] = [
     lede: {
       en: "The full report: all four areas scored competency by competency, completed in a 30-minute interview with an expert.",
       // Rebuilt from Paul's own Thai of 23/08/2026 on the pricing sheet.
-      th: "ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับ Expert",
+      th: "ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับผู้เชี่ยวชาญ",
     },
     how: [
       {
@@ -433,11 +433,11 @@ export const PRODUCTS: readonly Product[] = [
         th: "ทักมาทาง LINE ผมจะแจ้งรายละเอียดการชำระเงิน และนัดเวลาสัมภาษณ์ที่สะดวก",
       },
       {
-        en: "A 30-minute video interview with an expert about your CV, your work so far and the roles you are aiming at, in Thai or English.",
+        en: "A 30-minute video interview with an expert about your CV, your work experience and the roles you are interested in, in Thai or English.",
         // Paul's wording, 23/08/2026. Gates are cleared in dependency order, not
         // score order, and the lowest uncleared one is the only one that matters
         // this month.
-        th: "สัมภาษณ์ 30 นาทีกับ Expert ทางวิดีโอคอล คุยกันเรื่อง CV งานที่ผ่านมา และตำแหน่งที่คุณตั้งเป้าไว้ เลือกคุยเป็นภาษาไทยหรืออังกฤษก็ได้",
+        th: "สัมภาษณ์ผ่านวิดีโอคอล 30 นาทีกับผู้เชี่ยวชาญ พูดคุยเกี่ยวกับ CV ประสบการณ์ทำงาน และตำแหน่งที่คุณสนใจ โดยเลือกสัมภาษณ์เป็นภาษาไทยหรืออังกฤษได้",
       },
       {
         en: "Your Fit Report arrives as a PDF the same day, yours to keep and plan from.",
@@ -461,7 +461,7 @@ export const PRODUCTS: readonly Product[] = [
       },
       {
         q: { en: "Do I need to do the EU Fit Check first?", th: "ต้องทำ EU Fit Check ก่อนไหม" },
-        a: { en: "Yes. The Fit Report builds on your EU Fit Check answers, so the 30 minutes go on what a form cannot see.", th: "ควรทำก่อนครับ Fit Report ต่อยอดจากคำตอบใน EU Fit Check การสัมภาษณ์จึงใช้เวลา 30 นาทีกับส่วนที่แบบฟอร์มมองไม่เห็น" },
+        a: { en: "We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet.", th: "แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้" },
       },
       {
         q: { en: "Which language is the interview in?", th: "สัมภาษณ์เป็นภาษาอะไร" },
@@ -886,11 +886,11 @@ export const RELATED_HEADING: Copy = {
  * guarantee (3a) on 28/10/2026.
  * ------------------------------------------------------------------------- */
 
-export const FIT_COMPARE_HEADING: Copy = { en: "EU Fit Check and the Fit Report, side by side", th: "EU Fit Check กับ Fit Report ต่างกันอย่างไร" };
+export const FIT_COMPARE_HEADING: Copy = { en: "EU Fit Check and the Fit Report, side by side", th: "EU Fit Check และ Fit Report ต่างกันอย่างไร" };
 
 /** `null` is drawn as a dash: the free check has no such thing. The cost row reuses the catalogue's own two labels. */
 export const FIT_COMPARE_ROWS: readonly { label: Copy; free: Copy | null; full: Copy | null }[] = [
-  { label: { en: "Based on", th: "ประเมินจาก" }, free: { en: "Your answers", th: "คำตอบของคุณ" }, full: { en: "Your answers + a 30-minute interview with an expert", th: "คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับ Expert" } },
+  { label: { en: "Based on", th: "ประเมินจาก" }, free: { en: "Your answers", th: "คำตอบของคุณ" }, full: { en: "Your answers + a 30-minute interview with an expert", th: "คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับผู้เชี่ยวชาญ" } },
   { label: { en: "What you get", th: "ผลที่ได้" }, free: { en: "4 areas", th: "4 ด้าน" }, full: { en: "4 areas, all 34 competencies", th: "4 ด้าน ครบ 34 ทักษะ" } },
   { label: { en: "The market's bar", th: "เกณฑ์ของตลาด" }, free: null, full: { en: "On every chart", th: "ทุกกราฟ" } },
   { label: { en: "What to do next", th: "สิ่งที่ควรทำต่อ" }, free: { en: "One step", th: "1 ข้อ" }, full: { en: "Every competency below the bar, in order", th: "ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ" } },
@@ -898,17 +898,17 @@ export const FIT_COMPARE_ROWS: readonly { label: Copy; free: Copy | null; full: 
   { label: { en: "Cost", th: "ค่าใช้จ่าย" }, free: CATALOGUE_FREE, full: CATALOGUE_PAID },
 ];
 
-export const FIT_INSIDE_HEADING: Copy = { en: "What is inside", th: "ในรายงานมีอะไรบ้าง" };
+export const FIT_INSIDE_HEADING: Copy = { en: "What is in the Fit Report", th: "ใน Fit Report มีอะไรบ้าง" };
 
 /** One tile per report page. `section` is the page's id in renderFitReport; the title is the page's own heading where it has one. */
 export const FIT_TILES: readonly { section: string; titleKey?: string; title?: Copy; caption: Copy }[] = [
-  { section: "summary", titleKey: "fit.summary.heading", caption: { en: "All four areas on one chart, with the bar the European market expects and how far each one has to go.", th: "ทั้ง 4 ด้านบนกราฟเดียว พร้อมเส้นเกณฑ์ที่ตลาดงานยุโรปคาดหวัง และคะแนนที่ยังขาดในแต่ละด้าน" } },
-  { section: "path", titleKey: "fit.path.heading", caption: { en: "Which gate comes first, and where you start.", th: "ด่านไหนต้องผ่านก่อน และคุณควรเริ่มจากตรงไหน" } },
-  { section: "employability", title: { en: "Every competency in each area", th: "ทุกทักษะในแต่ละด้าน" }, caption: { en: "One chart per area, eight to ten competencies each. Below the bar, each one comes with what to do next.", th: "กราฟแยกด้าน ด้านละ 8–10 ทักษะ ทักษะไหนยังไม่ถึงเกณฑ์ จะมีสิ่งที่ควรทำต่อเขียนไว้ให้ทีละข้อ" } },
-  { section: "moves", titleKey: "fit.moves.heading", caption: { en: "The moves that lift your score most, ranked, with the before and after.", th: "เรียงให้แล้วว่าทำอะไรก่อนคะแนนขยับมากที่สุด พร้อมคะแนนก่อนและหลัง" } },
-  { section: "roles", titleKey: "fit.roles.heading", caption: { en: "Real roles in the countries you chose, from the job ads we track.", th: "ตำแหน่งงานจริงในประเทศที่คุณเลือก จากประกาศงานที่เราตรวจสอบ" } },
+  { section: "summary", titleKey: "fit.summary.heading", caption: { en: "See all four areas on one chart against the bar the European market expects, and how far each one still has to go.", th: "ดูคะแนนทั้ง 4 ด้านในกราฟเดียว เปรียบเทียบกับเกณฑ์ที่ตลาดงานยุโรปคาดหวัง พร้อมดูว่าแต่ละด้านยังต้องพัฒนาอีกเท่าไร" } },
+  { section: "path", titleKey: "fit.path.heading", caption: { en: "Which bar to clear first, and where to start.", th: "ควรผ่านเกณฑ์ด้านไหนก่อน และเริ่มพัฒนาจากจุดใด" } },
+  { section: "employability", title: { en: "Every competency in each area", th: "ทุกทักษะในแต่ละด้าน" }, caption: { en: "A closer look at all four areas, one chart each with eight to ten competencies, with advice on which are below the bar and how to develop them.", th: "เจาะลึกทักษะทั้ง 4 ด้าน ผ่านกราฟแยกด้านละ 8–10 ทักษะ พร้อมคำแนะนำว่าทักษะไหนยังไม่ถึงเกณฑ์ และควรพัฒนาอย่างไร" } },
+  { section: "moves", titleKey: "fit.moves.heading", caption: { en: "Ranked for you: what to work on first to lift your score most, with the before and after.", th: "จัดลำดับให้แล้วว่าควรพัฒนาอะไรก่อน เพื่อเพิ่มคะแนนได้มากที่สุด พร้อมเปรียบเทียบคะแนนก่อนและหลัง" } },
+  { section: "roles", titleKey: "fit.roles.heading", caption: { en: "Open roles in the countries you chose, with the job ads we have checked.", th: "ตำแหน่งงานที่เปิดรับสมัครจริงในประเทศที่คุณเลือก พร้อมประกาศงานที่เราตรวจสอบแล้ว" } },
 ];
 
 export const FIT_SAMPLE_PDF: Copy = { en: "Download a sample Fit Report (PDF)", th: "ดาวน์โหลดตัวอย่าง Fit Report ฉบับเต็ม (PDF)" };
 
-export const FIT_EXPERT_HEADING: Copy = { en: "Who interviews you", th: "ใครเป็นคนสัมภาษณ์คุณ" };
+export const FIT_EXPERT_HEADING: Copy = { en: "Who will interview you", th: "ใครจะเป็นผู้สัมภาษณ์คุณ" };

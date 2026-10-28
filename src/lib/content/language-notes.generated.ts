@@ -7081,7 +7081,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::PRODUCTS[2].how[1]": {
     "source": "src/lib/content/products.ts",
@@ -7090,7 +7090,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::PRODUCTS[2].how[2]": {
     "source": "src/lib/content/products.ts",
@@ -7099,7 +7099,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::PRODUCTS[2].howLede": {
     "source": "src/lib/content/products.ts",
@@ -7108,16 +7108,16 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::PRODUCTS[2].lede": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[2].lede",
-    "render": "Product pages, PRODUCTS[2].lede",
+    "render": "Fit Report page, hero lede",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer."
+    "provenance": "paul-approved",
+    "date": "28/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::PRODUCTS[2].limit": {
     "source": "src/lib/content/products.ts",
@@ -9403,7 +9403,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::PRODUCTS[2].faq[1].a": {
     "source": "src/lib/content/products.ts",
@@ -9412,7 +9412,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::PRODUCTS[2].faq[2].q": {
     "source": "src/lib/content/products.ts",
@@ -9421,7 +9421,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::PRODUCTS[2].faq[2].a": {
     "source": "src/lib/content/products.ts",
@@ -9430,7 +9430,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::PRODUCTS[2].faq[3].q": {
     "source": "src/lib/content/products.ts",
@@ -9439,7 +9439,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::PRODUCTS[2].faq[3].a": {
     "source": "src/lib/content/products.ts",
@@ -9448,7 +9448,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_HEADING": {
     "source": "src/lib/content/products.ts",
@@ -9457,7 +9457,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[0].label": {
     "source": "src/lib/content/products.ts",
@@ -9466,7 +9466,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[0].free": {
     "source": "src/lib/content/products.ts",
@@ -9475,7 +9475,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[0].full": {
     "source": "src/lib/content/products.ts",
@@ -9484,7 +9484,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[1].label": {
     "source": "src/lib/content/products.ts",
@@ -9493,7 +9493,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[1].free": {
     "source": "src/lib/content/products.ts",
@@ -9502,7 +9502,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[1].full": {
     "source": "src/lib/content/products.ts",
@@ -9511,7 +9511,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[2].label": {
     "source": "src/lib/content/products.ts",
@@ -9520,7 +9520,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[2].full": {
     "source": "src/lib/content/products.ts",
@@ -9529,7 +9529,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[3].label": {
     "source": "src/lib/content/products.ts",
@@ -9538,7 +9538,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[3].free": {
     "source": "src/lib/content/products.ts",
@@ -9547,7 +9547,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[3].full": {
     "source": "src/lib/content/products.ts",
@@ -9556,7 +9556,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[4].label": {
     "source": "src/lib/content/products.ts",
@@ -9565,7 +9565,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[4].full": {
     "source": "src/lib/content/products.ts",
@@ -9574,7 +9574,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_COMPARE_ROWS[5].label": {
     "source": "src/lib/content/products.ts",
@@ -9583,7 +9583,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_INSIDE_HEADING": {
     "source": "src/lib/content/products.ts",
@@ -9592,7 +9592,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "artefact",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_TILES[0].caption": {
     "source": "src/lib/content/products.ts",
@@ -9601,7 +9601,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "artefact",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_TILES[1].caption": {
     "source": "src/lib/content/products.ts",
@@ -9610,7 +9610,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "artefact",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_TILES[2].title": {
     "source": "src/lib/content/products.ts",
@@ -9619,7 +9619,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "artefact",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_TILES[2].caption": {
     "source": "src/lib/content/products.ts",
@@ -9628,7 +9628,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "artefact",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_TILES[3].caption": {
     "source": "src/lib/content/products.ts",
@@ -9637,7 +9637,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "artefact",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_TILES[4].caption": {
     "source": "src/lib/content/products.ts",
@@ -9646,7 +9646,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "artefact",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_SAMPLE_PDF": {
     "source": "src/lib/content/products.ts",
@@ -9655,7 +9655,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "proof",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   },
   "src/lib/content/products.ts::FIT_EXPERT_HEADING": {
     "source": "src/lib/content/products.ts",
@@ -9664,6 +9664,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "proof",
     "provenance": "paul-approved",
     "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026."
+    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
   }
 } as const;
