@@ -2,57 +2,38 @@
 
 /**
  * Five real pages of the report, then the whole sample as a PDF. Added
- * 28/10/2026.
- *
- * Each tile is a page cut out of a Fit Report rendered from the invented
- * candidate in `fit-sample.ts`, so what a reader sees here is what the report
- * code draws today. The titles are the pages' own headings.
+ * 28/10/2026, made flat the same day (Paul, 1a): each page is cropped to its
+ * top, where the point of the page is, and on a phone the row scrolls sideways
+ * instead of shrinking the pages past reading.
  */
 
-import { useEffect, useState } from "react";
 import { useCopy } from "@/components/LocaleProvider";
 import Band from "@/components/Band";
 import CallToAction from "@/components/CallToAction";
 import ReportFrame from "./ReportFrame";
+import { useFitPages } from "./useFitPages";
 import { SECTION_HEADING } from "@/lib/content/footer";
 import { FIT_INSIDE_HEADING, FIT_SAMPLE_PDF, FIT_TILES } from "@/lib/content/products";
 import type { AnyCopyKey } from "@/lib/locale";
 
-const SHEET_H = 900;
+const IDS = FIT_TILES.map((x) => x.section);
 
 export default function FitInsideBand() {
   const { t, pick, locale } = useCopy();
-  const [pages, setPages] = useState<Record<string, string> | null>(null);
-
-  useEffect(() => {
-    let live = true;
-    Promise.all([import("@/lib/report"), import("@/lib/fit-sample")]).then(([r, f]) => {
-      if (!live) return;
-      const html = r.renderFitReport(f.fitSampleInput(), f.fitSampleMeta(locale), {
-        locale,
-        autoPrint: false,
-        sampleNotes: true,
-      });
-      setPages(Object.fromEntries(FIT_TILES.map((tile) => [tile.section, r.fitReportPage(html, tile.section)])));
-    });
-    return () => {
-      live = false;
-    };
-  }, [locale]);
+  const pages = useFitPages(locale, IDS);
+  const title = (tile: (typeof FIT_TILES)[number]) => (tile.title ? pick(tile.title) : t(tile.titleKey as AnyCopyKey));
 
   return (
     <Band block="B3" ground="canvas" width="wide">
       <h2 className={SECTION_HEADING(locale)}>{pick(FIT_INSIDE_HEADING)}</h2>
 
-      <ol className="mt-10 grid gap-x-6 gap-y-10 medium:grid-cols-2 large:grid-cols-3">
+      <ol className="-mx-4 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 medium:mx-0 medium:grid medium:grid-cols-2 medium:gap-6 medium:overflow-visible medium:px-0 large:grid-cols-3">
         {FIT_TILES.map((tile) => (
-          <li key={tile.section}>
-            <div className="card-outlined overflow-hidden shadow-[0_12px_28px_rgba(0,0,0,.10)]">
-              <ReportFrame html={pages?.[tile.section] ?? null} title={tile.title ? pick(tile.title) : t(tile.titleKey as AnyCopyKey)} sheetHeight={SHEET_H} />
+          <li key={tile.section} className="w-[78%] shrink-0 snap-start medium:w-auto">
+            <div className="card-outlined overflow-hidden rounded-[30px] bg-white">
+              <ReportFrame html={pages?.[tile.section] ?? null} title={title(tile)} sheetHeight={600} />
             </div>
-            <h3 className="mt-4 text-heading-sm text-ink-deep">
-              {tile.title ? pick(tile.title) : t(tile.titleKey as AnyCopyKey)}
-            </h3>
+            <h3 className="mt-4 text-heading-sm text-ink-deep">{title(tile)}</h3>
             <p className="mt-2 text-body-md text-on-surface-variant">{pick(tile.caption)}</p>
           </li>
         ))}

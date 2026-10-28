@@ -1,5 +1,4 @@
 import type { Copy } from "./copy";
-import { CATALOGUE_FREE, CATALOGUE_PAID } from "./home";
 
 /**
  * One page per product. Added 23/08/2026, Paul's call to build all of them
@@ -76,6 +75,8 @@ export interface Product {
   audience: Copy;
   /** One line under "how this works", before the steps. */
   howLede: Copy;
+  /** Overrides HOW_HEADING on this product's page. 28/10/2026. */
+  howHeading?: Copy;
   name: Copy;
   /** Search title where the name alone would collide with another page's. */
   seoTitle?: Copy;
@@ -467,11 +468,8 @@ export const PRODUCTS: readonly Product[] = [
         q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMl0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMl0ucQ:TH%% },
         a: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMl0uYQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbMl0uYQ:TH%% },
       },
-      {
-        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbM10ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbM10ucQ:TH%% },
-        a: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbM10uYQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5mYXFbM10uYQ:TH%% },
-      },
     ],
+    howHeading: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dIZWFkaW5n:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5ob3dIZWFkaW5n:TH%% },
     actionsKey: "/products/fit-report",
   },
 
@@ -888,16 +886,6 @@ export const RELATED_HEADING: Copy = {
 
 export const FIT_COMPARE_HEADING: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9IRUFESU5H:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9IRUFESU5H:TH%% };
 
-/** `null` is drawn as a dash: the free check has no such thing. The cost row reuses the catalogue's own two labels. */
-export const FIT_COMPARE_ROWS: readonly { label: Copy; free: Copy | null; full: Copy | null }[] = [
-  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmxhYmVs:TH%% }, free: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmZyZWU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmZyZWU:TH%% }, full: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmZ1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzBdLmZ1bGw:TH%% } },
-  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmxhYmVs:TH%% }, free: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmZyZWU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmZyZWU:TH%% }, full: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmZ1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzFdLmZ1bGw:TH%% } },
-  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzJdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzJdLmxhYmVs:TH%% }, free: null, full: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzJdLmZ1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzJdLmZ1bGw:TH%% } },
-  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmxhYmVs:TH%% }, free: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmZyZWU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmZyZWU:TH%% }, full: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmZ1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzNdLmZ1bGw:TH%% } },
-  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzRdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzRdLmxhYmVs:TH%% }, free: null, full: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzRdLmZ1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzRdLmZ1bGw:TH%% } },
-  { label: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzVdLmxhYmVs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ09NUEFSRV9ST1dTWzVdLmxhYmVs:TH%% }, free: CATALOGUE_FREE, full: CATALOGUE_PAID },
-];
-
 export const FIT_INSIDE_HEADING: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfSU5TSURFX0hFQURJTkc:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfSU5TSURFX0hFQURJTkc:TH%% };
 
 /** One tile per report page. `section` is the page's id in renderFitReport; the title is the page's own heading where it has one. */
@@ -912,3 +900,52 @@ export const FIT_TILES: readonly { section: string; titleKey?: string; title?: C
 export const FIT_SAMPLE_PDF: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfU0FNUExFX1BERg:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfU0FNUExFX1BERg:TH%% };
 
 export const FIT_EXPERT_HEADING: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJUX0hFQURJTkc:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJUX0hFQURJTkc:TH%% };
+
+/** The two comparison cards, 28/10/2026 (Paul, 2a). `on` false draws a dash. */
+export const FIT_PLAN_FREE = {
+  pill: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnBpbGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnBpbGw:TH%% },
+  sub: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnN1Yg:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnN1Yg:TH%% },
+  rows: [
+    { text: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnJvd3NbMF0:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnJvd3NbMF0:TH%% }, on: true },
+    { text: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnJvd3NbMV0:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnJvd3NbMV0:TH%% }, on: true },
+    { text: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnJvd3NbMl0:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnJvd3NbMl0:TH%% }, on: false },
+    { text: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnJvd3NbM10:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnJvd3NbM10:TH%% }, on: false },
+    { text: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnJvd3NbNF0:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GUkVFLnJvd3NbNF0:TH%% }, on: false },
+  ],
+} as const;
+
+export const FIT_PLAN_FULL = {
+  sub: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnN1Yg:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnN1Yg:TH%% },
+  rows: [
+    { text: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnJvd3NbMF0:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnJvd3NbMF0:TH%% }, on: true },
+    { text: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnJvd3NbMV0:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnJvd3NbMV0:TH%% }, on: true },
+    { text: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnJvd3NbMl0:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnJvd3NbMl0:TH%% }, on: true },
+    { text: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnJvd3NbM10:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnJvd3NbM10:TH%% }, on: true },
+    { text: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnJvd3NbNF0:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfUExBTl9GVUxMLnJvd3NbNF0:TH%% }, on: true },
+  ],
+} as const;
+
+/** The three notes beside the big page in the showcase band, 28/10/2026 (Paul, 1a). */
+export const FIT_CALLOUTS: readonly { mark: string; title: Copy; body: Copy }[] = [
+  { mark: "bar", title: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMF0udGl0bGU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMF0udGl0bGU:TH%% }, body: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMF0uYm9keQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMF0uYm9keQ:TH%% } },
+  { mark: "34", title: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMV0udGl0bGU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMV0udGl0bGU:TH%% }, body: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMV0uYm9keQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMV0uYm9keQ:TH%% } },
+  { mark: "check", title: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMl0udGl0bGU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMl0udGl0bGU:TH%% }, body: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMl0uYm9keQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfQ0FMTE9VVFNbMl0uYm9keQ:TH%% } },
+];
+
+/** Paul as the expert, from his own facts of 28/10/2026. No hire counts, by his choice. */
+export const FIT_EXPERT = {
+  title: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULnRpdGxl:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULnRpdGxl:TH%% },
+  role: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULnJvbGU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULnJvbGU:TH%% },
+  applicantHeading: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmFwcGxpY2FudEhlYWRpbmc:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmFwcGxpY2FudEhlYWRpbmc:TH%% },
+  applicant: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmFwcGxpY2FudA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmFwcGxpY2FudA:TH%% },
+  hiringHeading: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmhpcmluZ0hlYWRpbmc:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmhpcmluZ0hlYWRpbmc:TH%% },
+  hiring: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmhpcmluZw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmhpcmluZw:TH%% },
+  bridge: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmJyaWRnZQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmJyaWRnZQ:TH%% },
+  facts: [
+    { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmZhY3RzWzBd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmZhY3RzWzBd:TH%% },
+    { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmZhY3RzWzFd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmZhY3RzWzFd:TH%% },
+    { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmZhY3RzWzJd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmZhY3RzWzJd:TH%% },
+    { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmZhY3RzWzNd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmZhY3RzWzNd:TH%% },
+  ],
+  link: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmxpbms:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpGSVRfRVhQRVJULmxpbms:TH%% },
+} as const;

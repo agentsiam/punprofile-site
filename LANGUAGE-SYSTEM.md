@@ -19065,17 +19065,17 @@ source: src/lib/content/products.ts
 path: HOW_HEADING
 render: Product pages, HOW_HEADING
 narrative_slot: utility
-en: How it works
-th: บริการนี้ทำงานอย่างไร
-provenance: paul-written
-date: 23/08/2026
+en: How to start
+th: เริ่มต้นอย่างไร
+provenance: paul-approved
+date: 28/10/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: Paul's wording, 23/08/2026. Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: 252fd935c8dae450f3bcccb0c9b7bdaf554f2a4048f7a9ba88ff3e0000464988
+  text_hash: a1fec05053ecd33d99054fc56ad8a3141461cbefa4fe5e5bc47be05127939d78
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 28/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19223,17 +19223,17 @@ source: src/lib/content/products.ts
 path: LIMIT_HEADING
 render: Product pages, LIMIT_HEADING
 narrative_slot: utility
-en: What it does not do
-th: สิ่งที่บริการนี้ไม่ได้ทำ
+en: Worth knowing before you decide
+th: สิ่งที่ควรรู้ก่อนตัดสินใจ
 provenance: paul-approved
-date: 23/08/2026
+date: 28/10/2026
 term_bindings: []
-decision_note: Drafted 23/08/2026, read back and approved unchanged.
+decision_note: Drafted 23/08/2026, read back and approved unchanged. Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: 61085714bb8fce91fa331b9e2f96cd150124c760cf7a876abdd1c6ab02d7aa3e
+  text_hash: 80521faa37f48f3a257655b7c1ea4f2ca7fdedfe43db088d8fb199a9b8d48e6d
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 28/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19944,20 +19944,21 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].audience
 render: Product pages, PRODUCTS[2].audience
 narrative_slot: audience
-en: For anyone who wants the full read, not the summary
-th: คนที่อยากได้ผลแบบเต็ม ไม่ใช่แค่สรุป
+en: For anyone who has done the EU Fit Check and wants to know what to work on next
+th: สำหรับคนที่ทำ EU Fit Check แล้ว และอยากรู้ว่าควรพัฒนาอะไรต่อ
 provenance: paul-approved
-date: 10/09/2026
+date: 28/10/2026
 term_bindings: []
 decision_note: |-
+  Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
   No string-local reasoning comment was present at migration.
 
   Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
 review:
   structural_calque: pass
-  text_hash: 7ccfc4558622aafaa87f1e48394ce2563bc3b7c96d5c13e288a30e11458c7de1
+  text_hash: 265a2d5919a280a9da88bd00bfa74b0edadfd1f95bb8b7d3e9ef7dc810550128
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: Paul approved this item in review on 28/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19967,19 +19968,19 @@ review:
 id: src/lib/content/products.ts::PRODUCTS[2].faq[0].a
 source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[0].a
-render: Product pages, PRODUCTS[2].faq[0].a
+render: Fit Report page, FAQ answer
 narrative_slot: utility
-en: The free result reads your answers on four areas. The Fit Report adds a 30-minute interview, scores every competency in all four, and tells you what to do first.
-th: ผลประเมินเบื้องต้นที่ดูได้ฟรีมาจากคำตอบของคุณใน 4 ด้าน ส่วน Fit Report เพิ่มการสัมภาษณ์ 30 นาที ประเมินครบทุกทักษะในทั้ง 4 ด้าน และบอกว่าควรเริ่มทำอะไรก่อน
-provenance: paul-written
-date: 26/10/2026
+en: We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet.
+th: แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้
+provenance: paul-approved
+date: 28/10/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: 5f201cbd3c69522b4b0ca1237a0e5001b02caaf142ff016b365088e624f9f0b2
+  text_hash: a9e9f5cfc6700d9a56ef68208f8baf4d9f00ed52f889453cf1f2f3babf6ce6c7
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 28/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19989,19 +19990,19 @@ review:
 id: src/lib/content/products.ts::PRODUCTS[2].faq[0].q
 source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[0].q
-render: Product pages, PRODUCTS[2].faq[0].q
+render: Fit Report page, FAQ question
 narrative_slot: utility
-en: How is this different from the free result?
-th: ต่างจากผลเบื้องต้นที่ได้ฟรีอย่างไร
+en: Do I need to do the EU Fit Check first?
+th: ต้องทำ EU Fit Check ก่อนไหม
 provenance: paul-approved
-date: 23/08/2026
+date: 28/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: No string-local reasoning comment was present at migration. Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: 64dffb12429ef0411d880c14241dab0a70207cff0a093c0bdebef28f14966e84
+  text_hash: 855857569a765f98fd08218926f1c68bcb82f01df284f9778916352eabf40280
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 28/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -20013,12 +20014,13 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].headline
 render: Product pages, PRODUCTS[2].headline
 narrative_slot: utility
-en: You know which stage you are at. The next question is what to do first.
-th: รู้ว่าตัวเองอยู่ขั้นไหนแล้ว คำถามต่อไปคือควรลงมือทำอะไรก่อน
+en: You have your first result. Where should you start?
+th: รู้ผลเบื้องต้นแล้ว ควรเริ่มพัฒนาตรงไหนก่อน?
 provenance: paul-approved
-date: 14/08/2026
+date: 28/10/2026
 term_bindings: []
 decision_note: |-
+  Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
   Drafted 23/08/2026, read back and approved unchanged. `อยู่ขั้นไหน` is Paul's own correction on the
 
   pinned post of 14/08/2026, where he changed อยู่ตรงไหน to อยู่ขั้นไหน:
@@ -20026,9 +20028,9 @@ decision_note: |-
   progress is a stage you are at, not a place you are in.
 review:
   structural_calque: pass
-  text_hash: b33bce90b94e058f268373267c98620a395d130aad7ae77bbfc35349b9a20049
+  text_hash: 2af9481f7e0204f8d9f882b380b0cbefafe9cc43842ef9f5bdbb982432c0a2c6
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 28/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -20150,17 +20152,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].limit
 render: Product pages, PRODUCTS[2].limit
 narrative_slot: limit
-en: The document tells you what to do. It does not do it for you.
-th: เอกสารนี้บอกว่าควรทำอะไร แต่ไม่ได้ลงมือทำแทนคุณ
+en: The Fit Report tells you what to work on and where to start. If you want me to help with your CV and LinkedIn, or to practise interviews together, that continues in 1:1 coaching.
+th: Fit Report ช่วยให้คุณรู้ว่าควรพัฒนาอะไรและเริ่มจากตรงไหน หากต้องการให้ผมช่วยปรับ CV และ LinkedIn หรือฝึกสัมภาษณ์ด้วยกัน สามารถทำต่อได้ใน Coaching 1:1
 provenance: paul-approved
-date: 23/08/2026
+date: 28/10/2026
 term_bindings: []
-decision_note: Drafted 23/08/2026, read back and approved unchanged.
+decision_note: Drafted 23/08/2026, read back and approved unchanged. Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: 35bce5897fe97bcc6c0cf69a3fec2540b3fa7838611c6e9359378d632ac4d45a
+  text_hash: bd04cefe47adeb3d5777f5afcaa95aa7b22a1bbb66908b2bc469fa132bbeba8c
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 28/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -20721,17 +20723,17 @@ source: src/lib/content/products.ts
 path: RELATED_HEADING
 render: Product pages, RELATED_HEADING
 narrative_slot: utility
-en: The rest of the catalogue
-th: บริการอื่นในชุดเดียวกัน
+en: More from PunProfile
+th: บริการอื่นของ PunProfile
 provenance: paul-approved
-date: 06/09/2026
+date: 28/10/2026
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: Read back 06/09/2026. Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: 6f624ccb9c80c2c007310160eeaef6fcf12162e010273ea5bb41ac492286643a
+  text_hash: 970a20f5a568afd42dba77974b987f425851e3f6b59872267b1cc2f996ab286b
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 28/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -20743,17 +20745,17 @@ source: src/lib/content/products.ts
 path: STATUS_LIVE
 render: Product pages, STATUS_LIVE
 narrative_slot: utility
-en: Open now
-th: เปิดให้ใช้งานแล้ว
+en: Available now
+th: พร้อมให้บริการ
 provenance: paul-approved
-date: 06/09/2026
+date: 28/10/2026
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: Read back 06/09/2026. Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: c2261e17532a8a2a5c84cec7539cc8a5a135c58343f0104c671cebc5048c2543
+  text_hash: 733cc216dc91abb8f4efd43c9238770e8f3775cf06f8fbefbddf6d0016ca9b70
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 28/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -26179,15 +26181,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[1].q
 render: Fit Report page, FAQ question
 narrative_slot: utility
-en: Do I need to do the EU Fit Check first?
-th: ต้องทำ EU Fit Check ก่อนไหม
+en: Which language is the interview in?
+th: สัมภาษณ์เป็นภาษาอะไร
 provenance: paul-approved
 date: 28/10/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: 855857569a765f98fd08218926f1c68bcb82f01df284f9778916352eabf40280
+  text_hash: 8af9f17cbf9508e96d28904ce28d790dddba1b72345b8bb40b6d23d3c93e0323
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 28/10/2026.
 ```
@@ -26201,15 +26203,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[1].a
 render: Fit Report page, FAQ answer
 narrative_slot: mechanism
-en: We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet.
-th: แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้
+en: Thai or English, your choice. If you want your working English assessed too, do it in English.
+th: เลือกได้ทั้งไทยและอังกฤษ ถ้าอยากให้ประเมินภาษาอังกฤษเพื่อการทำงานด้วย แนะนำให้คุยเป็นภาษาอังกฤษ
 provenance: paul-approved
 date: 28/10/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: a9e9f5cfc6700d9a56ef68208f8baf4d9f00ed52f889453cf1f2f3babf6ce6c7
+  text_hash: ddfe092d09f64504a96a09ef34c85fdfc5b31704f0d4f5e7cd27f26f837de6bd
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 28/10/2026.
 ```
@@ -26223,15 +26225,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[2].q
 render: Fit Report page, FAQ question
 narrative_slot: utility
-en: Which language is the interview in?
-th: สัมภาษณ์เป็นภาษาอะไร
+en: How long until I get the report?
+th: นานแค่ไหนกว่าจะได้รายงาน
 provenance: paul-approved
 date: 28/10/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: 8af9f17cbf9508e96d28904ce28d790dddba1b72345b8bb40b6d23d3c93e0323
+  text_hash: ad0f5cdb2817c5bf90bd6a8d7b56e1bb8967561a2a3c94e137995409d153d938
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 28/10/2026.
 ```
@@ -26245,56 +26247,12 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[2].a
 render: Fit Report page, FAQ answer
 narrative_slot: mechanism
-en: Thai or English, your choice. If you want your working English assessed too, do it in English.
-th: เลือกได้ทั้งไทยและอังกฤษ ถ้าอยากให้ประเมินภาษาอังกฤษเพื่อการทำงานด้วย แนะนำให้คุยเป็นภาษาอังกฤษ
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: ddfe092d09f64504a96a09ef34c85fdfc5b31704f0d4f5e7cd27f26f837de6bd
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::PRODUCTS[2].faq[3].q`
-
-```yaml
-id: src/lib/content/products.ts::PRODUCTS[2].faq[3].q
-source: src/lib/content/products.ts
-path: PRODUCTS[2].faq[3].q
-render: Fit Report page, FAQ question
-narrative_slot: utility
-en: How long until I get the report?
-th: นานแค่ไหนกว่าจะได้รายงาน
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: ad0f5cdb2817c5bf90bd6a8d7b56e1bb8967561a2a3c94e137995409d153d938
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::PRODUCTS[2].faq[3].a`
-
-```yaml
-id: src/lib/content/products.ts::PRODUCTS[2].faq[3].a
-source: src/lib/content/products.ts
-path: PRODUCTS[2].faq[3].a
-render: Fit Report page, FAQ answer
-narrative_slot: mechanism
 en: The same day as the interview.
 th: ภายในวันเดียวกับที่สัมภาษณ์
 provenance: paul-approved
 date: 28/10/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
   text_hash: 0c2d4d243b6391ef6b8e4cdf18c65d204d52c1944eafff5340dc1054c9c51514
@@ -26320,314 +26278,6 @@ decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. T
 review:
   structural_calque: pass
   text_hash: 58aa99c74fcc511a7281b41806ab1f3759343563dd4507c3d2e68580287a8f6b
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[0].label`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[0].label
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[0].label
-render: Fit Report page, comparison row label
-narrative_slot: utility
-en: Based on
-th: ประเมินจาก
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: 6f9cb71eca9e195d8b54b3e10f73d3fec9b8468955b64042fda31f9724f90788
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[0].free`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[0].free
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[0].free
-render: Fit Report page, comparison cell, EU Fit Check
-narrative_slot: mechanism
-en: Your answers
-th: คำตอบของคุณ
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: 540f36a68339fb286792a5aa7b3be5e455dea9ef42cc2f592d4530eb6e144166
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[0].full`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[0].full
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[0].full
-render: Fit Report page, comparison cell, Fit Report
-narrative_slot: mechanism
-en: Your answers + a 30-minute interview with an expert
-th: คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับผู้เชี่ยวชาญ
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: 3beb10a61406110c71e7f2d62fa273b416b4c1d36b427afdcb57bd42115b4f81
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[1].label`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[1].label
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[1].label
-render: Fit Report page, comparison row label
-narrative_slot: utility
-en: What you get
-th: ผลที่ได้
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: 28da68b24cd7b38e0507c7fc90e152a3ff0a34419ca03fe29645fa319d3fc8b3
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[1].free`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[1].free
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[1].free
-render: Fit Report page, comparison cell, EU Fit Check
-narrative_slot: mechanism
-en: 4 areas
-th: 4 ด้าน
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: cc659eb5133e5b74901a4d20600147e3ffb96964ddef061a7e46e2356d8ae682
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[1].full`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[1].full
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[1].full
-render: Fit Report page, comparison cell, Fit Report
-narrative_slot: mechanism
-en: 4 areas, all 34 competencies
-th: 4 ด้าน ครบ 34 ทักษะ
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: d8d3dc5790ebda69258e298a3013d217566c41e2214fa603cfc9073260eef1e2
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[2].label`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[2].label
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[2].label
-render: Fit Report page, comparison row label
-narrative_slot: utility
-en: The market's bar
-th: เกณฑ์ของตลาด
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: a28954824051bfae4cb4ff4ad1928d4681942bc3773be9c91ac4c29817d86fa9
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[2].full`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[2].full
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[2].full
-render: Fit Report page, comparison cell, Fit Report
-narrative_slot: mechanism
-en: On every chart
-th: ทุกกราฟ
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: 4e74bd9847f11136c5626d167fe3570d6d07616a48340912b36516322a75d5a4
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[3].label`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[3].label
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[3].label
-render: Fit Report page, comparison row label
-narrative_slot: utility
-en: What to do next
-th: สิ่งที่ควรทำต่อ
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: f709e0004a947a50f6103ead7886b9964398064e170ccdcd6ce316558941a4aa
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[3].free`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[3].free
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[3].free
-render: Fit Report page, comparison cell, EU Fit Check
-narrative_slot: mechanism
-en: One step
-th: 1 ข้อ
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: 4780648fa658820cf94bc36d028c87db94a8ff334e46bf70d5e0832a97568241
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[3].full`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[3].full
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[3].full
-render: Fit Report page, comparison cell, Fit Report
-narrative_slot: mechanism
-en: Every competency below the bar, in order
-th: ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: b191ffeacbaf1376e6f28e90330d105d6931b893ef2b5db62ed9131f3e0cd0db
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[4].label`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[4].label
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[4].label
-render: Fit Report page, comparison row label
-narrative_slot: utility
-en: Roles that fit you
-th: ตำแหน่งงานที่ตรงกับคุณ
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: 005636c8d3c55cf7be186ad8110c86e0be23d59c7a63d8243506932e0e597e60
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[4].full`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[4].full
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[4].full
-render: Fit Report page, comparison cell, Fit Report
-narrative_slot: mechanism
-en: Included
-th: มี
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: a5e4b1bde2794d52ab5e7b9d4b9e0c20be43c6c42cf3548735fb0f6d54816cec
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_COMPARE_ROWS[5].label`
-
-```yaml
-id: src/lib/content/products.ts::FIT_COMPARE_ROWS[5].label
-source: src/lib/content/products.ts
-path: FIT_COMPARE_ROWS[5].label
-render: Fit Report page, comparison row label
-narrative_slot: utility
-en: Cost
-th: ค่าใช้จ่าย
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
-review:
-  structural_calque: pass
-  text_hash: 7a3a6273693279004d785f472cdc93a013571abe60ead0e2f6bb8dae78a198a7
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 28/10/2026.
 ```
@@ -26826,6 +26476,710 @@ decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. T
 review:
   structural_calque: pass
   text_hash: 16debd8149b1e726aa03d55057bcb1cb520037b7fa25b3667903a3462570ce54
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[2].howHeading`
+
+```yaml
+id: src/lib/content/products.ts::PRODUCTS[2].howHeading
+source: src/lib/content/products.ts
+path: PRODUCTS[2].howHeading
+render: Fit Report page, steps heading
+narrative_slot: mechanism
+en: How to get your Fit Report
+th: ขั้นตอนการรับ Fit Report
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 41b50ae5e04984ae2c52c01fcd7496d97f84cb613d521ff8d6a35de9120e4f12
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FREE.pill`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FREE.pill
+source: src/lib/content/products.ts
+path: FIT_PLAN_FREE.pill
+render: Fit Report page, comparison card label
+narrative_slot: utility
+en: Free
+th: ฟรี
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: b0eaee73460765632c0086c84f15a6473ede8252afd70225d71de7eb43aec7b2
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FREE.sub`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FREE.sub
+source: src/lib/content/products.ts
+path: FIT_PLAN_FREE.sub
+render: Fit Report page, comparison card, EU Fit Check
+narrative_slot: mechanism
+en: 17 questions, about 2 minutes
+th: แบบประเมิน 17 ข้อ ประมาณ 2 นาที
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: f08a0559441950a315582e4517e8d8a532fab2d3635f927d2221a5cfb5995d42
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FREE.rows[0]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FREE.rows[0]
+source: src/lib/content/products.ts
+path: FIT_PLAN_FREE.rows[0]
+render: Fit Report page, comparison card row, EU Fit Check
+narrative_slot: mechanism
+en: 4 area scores, from your answers
+th: คะแนน 4 ด้าน จากคำตอบของคุณ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: c0394f2ecfa4dc45403b967f8ea838232254dd531f5b0fd5d322e90168ec13cc
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FREE.rows[1]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FREE.rows[1]
+source: src/lib/content/products.ts
+path: FIT_PLAN_FREE.rows[1]
+render: Fit Report page, comparison card row, EU Fit Check
+narrative_slot: mechanism
+en: One next step
+th: สิ่งที่ควรทำต่อ 1 ข้อ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 27c0c4dc4b480153daffcf14015b3dfacd4b26c38be2bf8de8e36ef5dbf6f611
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FREE.rows[2]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FREE.rows[2]
+source: src/lib/content/products.ts
+path: FIT_PLAN_FREE.rows[2]
+render: Fit Report page, comparison card row, EU Fit Check
+narrative_slot: mechanism
+en: The market's bar on every chart
+th: เกณฑ์ของตลาดบนทุกกราฟ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: d2a65c8bdfbc72591eccd175fedcbe1f59bef190eb8ce0126aac6e46bb5affd3
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FREE.rows[3]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FREE.rows[3]
+source: src/lib/content/products.ts
+path: FIT_PLAN_FREE.rows[3]
+render: Fit Report page, comparison card row, EU Fit Check
+narrative_slot: mechanism
+en: All 34 competencies
+th: ครบ 34 ทักษะ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 3014569317ca7438ab3d6626ee6fdcc7a8144454308977dbb2ed7fc07e5a4e4a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FREE.rows[4]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FREE.rows[4]
+source: src/lib/content/products.ts
+path: FIT_PLAN_FREE.rows[4]
+render: Fit Report page, comparison card row, EU Fit Check
+narrative_slot: mechanism
+en: Roles that fit you
+th: ตำแหน่งงานที่ตรงกับคุณ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 005636c8d3c55cf7be186ad8110c86e0be23d59c7a63d8243506932e0e597e60
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FULL.sub`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FULL.sub
+source: src/lib/content/products.ts
+path: FIT_PLAN_FULL.sub
+render: Fit Report page, comparison card, Fit Report
+narrative_slot: mechanism
+en: Your answers + a 30-minute interview with an expert
+th: คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับผู้เชี่ยวชาญ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 3beb10a61406110c71e7f2d62fa273b416b4c1d36b427afdcb57bd42115b4f81
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FULL.rows[0]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FULL.rows[0]
+source: src/lib/content/products.ts
+path: FIT_PLAN_FULL.rows[0]
+render: Fit Report page, comparison card row, Fit Report
+narrative_slot: mechanism
+en: All 4 areas, all 34 competencies
+th: คะแนน 4 ด้าน ครบ 34 ทักษะ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 88ec5b118d90e2eed625551c969fa22f1e6b133d69e19cb371affe2298f2abe6
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FULL.rows[1]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FULL.rows[1]
+source: src/lib/content/products.ts
+path: FIT_PLAN_FULL.rows[1]
+render: Fit Report page, comparison card row, Fit Report
+narrative_slot: mechanism
+en: A next step for every competency below the bar, in order
+th: สิ่งที่ควรทำต่อ ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: f932364a1e05a30ff2270ad15a9ec408e7d38d47bc8014c33006282581968919
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FULL.rows[2]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FULL.rows[2]
+source: src/lib/content/products.ts
+path: FIT_PLAN_FULL.rows[2]
+render: Fit Report page, comparison card row, Fit Report
+narrative_slot: mechanism
+en: The market's bar on every chart
+th: เกณฑ์ของตลาดบนทุกกราฟ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: d2a65c8bdfbc72591eccd175fedcbe1f59bef190eb8ce0126aac6e46bb5affd3
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FULL.rows[3]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FULL.rows[3]
+source: src/lib/content/products.ts
+path: FIT_PLAN_FULL.rows[3]
+render: Fit Report page, comparison card row, Fit Report
+narrative_slot: mechanism
+en: The order to work in
+th: ลำดับที่ควรลงมือ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 4089aee67de3cc88af2176c6d98ca5ce59397d4c20a93fba25bc69e9738f1e35
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_PLAN_FULL.rows[4]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_PLAN_FULL.rows[4]
+source: src/lib/content/products.ts
+path: FIT_PLAN_FULL.rows[4]
+render: Fit Report page, comparison card row, Fit Report
+narrative_slot: mechanism
+en: Roles that fit you
+th: ตำแหน่งงานที่ตรงกับคุณ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 005636c8d3c55cf7be186ad8110c86e0be23d59c7a63d8243506932e0e597e60
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_CALLOUTS[0].title`
+
+```yaml
+id: src/lib/content/products.ts::FIT_CALLOUTS[0].title
+source: src/lib/content/products.ts
+path: FIT_CALLOUTS[0].title
+render: Fit Report page, showcase callout title
+narrative_slot: artefact
+en: The job market's bar on every chart
+th: เทียบเกณฑ์ตลาดงานในทุกกราฟ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. Thai rewritten by Paul in chat 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: e7a9ca9461bf4f971810af20c491b1ebd220b3e0c95d86e89ab36e5b236fd84e
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_CALLOUTS[0].body`
+
+```yaml
+id: src/lib/content/products.ts::FIT_CALLOUTS[0].body
+source: src/lib/content/products.ts
+path: FIT_CALLOUTS[0].body
+render: Fit Report page, showcase callout body
+narrative_slot: artefact
+en: See clearly which skills clear the bar and which still need work.
+th: เห็นชัดว่าทักษะไหนผ่านเกณฑ์ และทักษะไหนยังต้องพัฒนา
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. Thai rewritten by Paul in chat 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: e8208c36fc13219121905a3c14321ae70246abd429c2adb4dad2954bccfdba22
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_CALLOUTS[1].title`
+
+```yaml
+id: src/lib/content/products.ts::FIT_CALLOUTS[1].title
+source: src/lib/content/products.ts
+path: FIT_CALLOUTS[1].title
+render: Fit Report page, showcase callout title
+narrative_slot: artefact
+en: All 4 areas, skill by skill
+th: ครบทั้ง 4 ด้าน แยกเป็นรายทักษะ
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. Thai rewritten by Paul in chat 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 3f84253ee7d70e07593e4201ac1f25c8a28b0e7173129dd32024b8c0d2a84822
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_CALLOUTS[1].body`
+
+```yaml
+id: src/lib/content/products.ts::FIT_CALLOUTS[1].body
+source: src/lib/content/products.ts
+path: FIT_CALLOUTS[1].body
+render: Fit Report page, showcase callout body
+narrative_slot: artefact
+en: Eight to ten skills per area, assessed from your answers and a 30-minute interview.
+th: ด้านละ 8–10 ทักษะ ประเมินจากคำตอบของคุณและการสัมภาษณ์ 30 นาที
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. Thai rewritten by Paul in chat 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 3a7b52d82121612ed2739dd700db1e2073114e58595a5ddf241d8e5a772cd3d0
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_CALLOUTS[2].title`
+
+```yaml
+id: src/lib/content/products.ts::FIT_CALLOUTS[2].title
+source: src/lib/content/products.ts
+path: FIT_CALLOUTS[2].title
+render: Fit Report page, showcase callout title
+narrative_slot: artefact
+en: How to develop each skill
+th: รู้ว่าควรพัฒนาแต่ละทักษะอย่างไร
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. Thai rewritten by Paul in chat 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 70331f77c54b715b62244e8a0f1ead59e212976cb0023656411426be71139c2b
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_CALLOUTS[2].body`
+
+```yaml
+id: src/lib/content/products.ts::FIT_CALLOUTS[2].body
+source: src/lib/content/products.ts
+path: FIT_CALLOUTS[2].body
+render: Fit Report page, showcase callout body
+narrative_slot: artefact
+en: Advice for you, with things you can act on next.
+th: คำแนะนำเฉพาะคุณ พร้อมสิ่งที่นำไปลงมือทำต่อได้
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. Thai rewritten by Paul in chat 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 2611b940c5e4c5b6fde60854729c2555d876c5be22c4c4487726a218eacf73ba
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.title`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.title
+source: src/lib/content/products.ts
+path: FIT_EXPERT.title
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: I have sat on both sides of the interview table
+th: ผมเคยนั่งอยู่ทั้งสองฝั่งของโต๊ะสัมภาษณ์
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 4cd3f280dc1c04d3d9310ef7cacd0d0dfcb9a6a27ef0a5b485cf56c755396aeb
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.role`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.role
+source: src/lib/content/products.ts
+path: FIT_EXPERT.role
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: Paul · founder of PunProfile · Marketing Director in Europe
+th: พอล · ผู้ก่อตั้ง PunProfile · Marketing Director ในยุโรป
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 22a1a44e16e3e4a91f9ae0a866c661e2402245f772e943108d853118d829a24c
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.applicantHeading`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.applicantHeading
+source: src/lib/content/products.ts
+path: FIT_EXPERT.applicantHeading
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: As an applicant
+th: ฝั่งผู้สมัคร
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 72ec56310b4f6d108af2216f85dd63463e589a90ace51b1962b816726523e822
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.applicant`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.applicant
+source: src/lib/content/products.ts
+path: FIT_EXPERT.applicant
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: I moved to Spain to work in 2016. Since then I have sent thousands of applications and sat hundreds of interviews, so I know what it is like to send a CV and hear nothing back.
+th: ผมย้ายมาทำงานที่สเปนตั้งแต่ปี 2016 ตลอดเส้นทางนี้ผมสมัครงานไปหลายพันตำแหน่ง และผ่านการสัมภาษณ์มาหลายร้อยครั้ง ผมจึงเข้าใจดีว่าการส่ง CV ออกไปแล้วไม่มีใครตอบกลับเป็นอย่างไร
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 55fdb1643ec1ebfa9adf51c22c95e2c8b0707afafe8a0120ad5a44b00b13f9f8
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.hiringHeading`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.hiringHeading
+source: src/lib/content/products.ts
+path: FIT_EXPERT.hiringHeading
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: As a hiring manager
+th: ฝั่งผู้จ้าง
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: ac632b92f1bb9d85f0f016303787906de696060591613c7141bcc7a33c8601a2
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.hiring`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.hiring
+source: src/lib/content/products.ts
+path: FIT_EXPERT.hiring
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: Today I am a Marketing Director. The CVs that reach me have already passed the AI screen and the Talent Acquisition manager, and I have read hundreds of them, so I have seen not just good CVs but the ones that actually get the job. I also hire remote workers and freelancers in Marketing and MarTech for several employers.
+th: วันนี้ผมเป็น Marketing Director CV ที่มาถึงผมผ่านการคัดกรองจาก AI และ Talent Acquisition Manager มาแล้ว ผมอ่าน CV ระดับนี้มาหลายร้อยฉบับ จึงได้เห็นไม่ใช่แค่ CV ที่ดี แต่เป็น CV ที่ได้งานจริง นอกจากนี้ผมยังคัดเลือก remote worker และ freelancer ด้าน Marketing และ MarTech ให้กับหลายบริษัท
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 8def00404a992e5e205691ec23fbdae3ffa1fbf93fd09d9fe41ef8e34c2a6ad3
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.bridge`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.bridge
+source: src/lib/content/products.ts
+path: FIT_EXPERT.bridge
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: In the 30-minute interview I read your profile the way a hiring manager in Europe would, and bring a marketer's eye to how you present yourself.
+th: ในการสัมภาษณ์ 30 นาที ผมจะอ่านโปรไฟล์ของคุณด้วยมุมมองเดียวกับ hiring manager ในยุโรป และใช้มุมมองด้านการตลาดช่วยให้คุณนำเสนอตัวเองได้ชัดขึ้น
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 88616fd67cced3dabb3be40b0876c1c0096e66de477cded5b69b155a75bd0630
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.facts[0]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.facts[0]
+source: src/lib/content/products.ts
+path: FIT_EXPERT.facts[0]
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: Working in Europe since 2016
+th: ทำงานในยุโรปตั้งแต่ปี 2016
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: f8022e5152f55de4a8434b794832b63f44d80e580afc4d948dc48bec6be7b20c
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.facts[1]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.facts[1]
+source: src/lib/content/products.ts
+path: FIT_EXPERT.facts[1]
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: Based in Spain, clients across Europe, mostly the UK
+th: ประจำที่สเปน ดูแลลูกค้าทั่วยุโรป โดยเฉพาะ UK
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: be5402d61c56dc7ddd206e6813364c452d6a103a495e22c16974d15f16935a99
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.facts[2]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.facts[2]
+source: src/lib/content/products.ts
+path: FIT_EXPERT.facts[2]
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: Marketing and MarTech hiring
+th: คัดเลือกคนด้าน Marketing และ MarTech
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: b6a1c2974f3960c233a068da638b748a738c8a226c0af993b61dbe0eb1aaaf12
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.facts[3]`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.facts[3]
+source: src/lib/content/products.ts
+path: FIT_EXPERT.facts[3]
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: Runs the “Jobs at companies in Europe” group
+th: ผู้ดูแลกลุ่ม “งานบริษัทในยุโรป”
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 44df12fa1df246716ef695bab6f427589f05ab172cf726eb91be815401228bde
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 28/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::FIT_EXPERT.link`
+
+```yaml
+id: src/lib/content/products.ts::FIT_EXPERT.link
+source: src/lib/content/products.ts
+path: FIT_EXPERT.link
+render: Fit Report page, who interviews you
+narrative_slot: proof
+en: Read my story
+th: อ่านเรื่องราวของผม
+provenance: paul-approved
+date: 28/10/2026
+term_bindings: []
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 4549a0c08f13a85105f659093b9f0be7184f494c4b4ea53a640f2fe0a690f42e
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 28/10/2026.
 ```

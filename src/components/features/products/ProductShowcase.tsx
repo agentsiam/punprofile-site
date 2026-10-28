@@ -14,7 +14,7 @@ import type { ComponentType } from "react";
 import HeroCharts from "@/components/features/products/HeroCharts";
 import LiveStatsBand from "@/components/features/products/LiveStatsBand";
 import FullReportBand from "@/components/features/products/FullReportBand";
-import FitBookHero from "@/components/features/products/fit/FitBookHero";
+import FitHeroNone from "@/components/features/products/fit/FitHeroNone";
 import FitAfterHero from "@/components/features/products/fit/FitAfterHero";
 import FitExpertCard from "@/components/features/products/fit/FitExpertCard";
 
@@ -43,10 +43,11 @@ export const SHOWCASE: Partial<Record<string, Showcase>> = {
     afterHow: LiveStatsBand,
   },
   "fit-report": {
-    // 28/10/2026, Paul 1a 2a 3a on product-page-fit-report.md: the book first,
-    // then free beside full, then five real pages and the sample PDF, then the
-    // buying steps, then who interviews you.
-    heroWide: FitBookHero,
+    // 28/10/2026, round 2 (fit-report-page-v2.md, Paul 1a 2a): one real page
+    // flat on the lime band instead of the book, then free and full as two
+    // equal cards, then five pages and the sample PDF, then the buying steps,
+    // then Paul on both sides of the interview table.
+    heroWide: FitHeroNone,
     afterHero: FitAfterHero,
     hideHowMedia: true,
     afterHow: FitExpertCard,

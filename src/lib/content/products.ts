@@ -1,5 +1,4 @@
 import type { Copy } from "./copy";
-import { CATALOGUE_FREE, CATALOGUE_PAID } from "./home";
 
 /**
  * One page per product. Added 23/08/2026, Paul's call to build all of them
@@ -76,6 +75,8 @@ export interface Product {
   audience: Copy;
   /** One line under "how this works", before the steps. */
   howLede: Copy;
+  /** Overrides HOW_HEADING on this product's page. 28/10/2026. */
+  howHeading?: Copy;
   name: Copy;
   /** Search title where the name alone would collide with another page's. */
   seoTitle?: Copy;
@@ -201,15 +202,15 @@ export const FULL_CTA: Copy = {
 };
 
 export const HOW_HEADING: Copy = {
-  en: "How it works",
+  en: "How to start",
   // Paul's wording, 23/08/2026.
-  th: "บริการนี้ทำงานอย่างไร",
+  th: "เริ่มต้นอย่างไร",
 };
 
 export const LIMIT_HEADING: Copy = {
-  en: "What it does not do",
+  en: "Worth knowing before you decide",
   // Drafted 23/08/2026, read back and approved unchanged.
-  th: "สิ่งที่บริการนี้ไม่ได้ทำ",
+  th: "สิ่งที่ควรรู้ก่อนตัดสินใจ",
 };
 
 export const PRODUCTS: readonly Product[] = [
@@ -403,8 +404,8 @@ export const PRODUCTS: readonly Product[] = [
     slug: "fit-report",
     // Read back 25/08/2026. Draft for `PROD-01-fit-report`.
     audience: {
-      en: "For anyone who wants the full read, not the summary",
-      th: "คนที่อยากได้ผลแบบเต็ม ไม่ใช่แค่สรุป",
+      en: "For anyone who has done the EU Fit Check and wants to know what to work on next",
+      th: "สำหรับคนที่ทำ EU Fit Check แล้ว และอยากรู้ว่าควรพัฒนาอะไรต่อ",
     },
     // Read back 25/08/2026. Draft for `PROD-02-fit-report`.
     howLede: {
@@ -414,11 +415,11 @@ export const PRODUCTS: readonly Product[] = [
     name: { en: "Fit Report", th: "Fit Report" },
     status: "live",
     headline: {
-      en: "You know which stage you are at. The next question is what to do first.",
+      en: "You have your first result. Where should you start?",
       // Drafted 23/08/2026, read back and approved unchanged. `อยู่ขั้นไหน` is Paul's own correction on the
       // pinned post of 14/08/2026, where he changed อยู่ตรงไหน to อยู่ขั้นไหน:
       // progress is a stage you are at, not a place you are in.
-      th: "รู้ว่าตัวเองอยู่ขั้นไหนแล้ว คำถามต่อไปคือควรลงมือทำอะไรก่อน",
+      th: "รู้ผลเบื้องต้นแล้ว ควรเริ่มพัฒนาตรงไหนก่อน?",
     },
     lede: {
       en: "The full report: all four areas scored competency by competency, completed in a 30-minute interview with an expert.",
@@ -446,22 +447,18 @@ export const PRODUCTS: readonly Product[] = [
       },
     ],
     limit: {
-      en: "The document tells you what to do. It does not do it for you.",
+      en: "The Fit Report tells you what to work on and where to start. If you want me to help with your CV and LinkedIn, or to practise interviews together, that continues in 1:1 coaching.",
       // Drafted 23/08/2026, read back and approved unchanged.
-      th: "เอกสารนี้บอกว่าควรทำอะไร แต่ไม่ได้ลงมือทำแทนคุณ",
+      th: "Fit Report ช่วยให้คุณรู้ว่าควรพัฒนาอะไรและเริ่มจากตรงไหน หากต้องการให้ผมช่วยปรับ CV และ LinkedIn หรือฝึกสัมภาษณ์ด้วยกัน สามารถทำต่อได้ใน Coaching 1:1",
     },
     faq: [
       {
-        q: { en: "How is this different from the free result?", th: "ต่างจากผลเบื้องต้นที่ได้ฟรีอย่างไร" },
-        a: {
-          en: "The free result reads your answers on four areas. The Fit Report adds a 30-minute interview, scores every competency in all four, and tells you what to do first.",
-          // Paul's wording, 23/08/2026.
-          th: "ผลประเมินเบื้องต้นที่ดูได้ฟรีมาจากคำตอบของคุณใน 4 ด้าน ส่วน Fit Report เพิ่มการสัมภาษณ์ 30 นาที ประเมินครบทุกทักษะในทั้ง 4 ด้าน และบอกว่าควรเริ่มทำอะไรก่อน",
-        },
-      },
-      {
         q: { en: "Do I need to do the EU Fit Check first?", th: "ต้องทำ EU Fit Check ก่อนไหม" },
-        a: { en: "We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet.", th: "แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้" },
+        a: {
+          en: "We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet.",
+          // Paul's wording, 23/08/2026.
+          th: "แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้",
+        },
       },
       {
         q: { en: "Which language is the interview in?", th: "สัมภาษณ์เป็นภาษาอะไร" },
@@ -472,6 +469,7 @@ export const PRODUCTS: readonly Product[] = [
         a: { en: "The same day as the interview.", th: "ภายในวันเดียวกับที่สัมภาษณ์" },
       },
     ],
+    howHeading: { en: "How to get your Fit Report", th: "ขั้นตอนการรับ Fit Report" },
     actionsKey: "/products/fit-report",
   },
 
@@ -802,9 +800,9 @@ export const COL_COST: Copy = {
 
 /** The chip on a product that is open. The counterpart of `COMING_SOON`. */
 export const STATUS_LIVE: Copy = {
-  en: "Open now",
+  en: "Available now",
   // Read back 06/09/2026.
-  th: "เปิดให้ใช้งานแล้ว",
+  th: "พร้อมให้บริการ",
 };
 
 /** The link at the foot of a card on the catalogue page. */
@@ -875,9 +873,9 @@ export const CLOSE_BODY: Copy = {
  * word for this and is imported rather than restated.
  */
 export const RELATED_HEADING: Copy = {
-  en: "The rest of the catalogue",
+  en: "More from PunProfile",
   // Read back 06/09/2026.
-  th: "บริการอื่นในชุดเดียวกัน",
+  th: "บริการอื่นของ PunProfile",
 };
 
 /* ---------------------------------------------------------------------------
@@ -887,16 +885,6 @@ export const RELATED_HEADING: Copy = {
  * ------------------------------------------------------------------------- */
 
 export const FIT_COMPARE_HEADING: Copy = { en: "EU Fit Check and the Fit Report, side by side", th: "EU Fit Check และ Fit Report ต่างกันอย่างไร" };
-
-/** `null` is drawn as a dash: the free check has no such thing. The cost row reuses the catalogue's own two labels. */
-export const FIT_COMPARE_ROWS: readonly { label: Copy; free: Copy | null; full: Copy | null }[] = [
-  { label: { en: "Based on", th: "ประเมินจาก" }, free: { en: "Your answers", th: "คำตอบของคุณ" }, full: { en: "Your answers + a 30-minute interview with an expert", th: "คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับผู้เชี่ยวชาญ" } },
-  { label: { en: "What you get", th: "ผลที่ได้" }, free: { en: "4 areas", th: "4 ด้าน" }, full: { en: "4 areas, all 34 competencies", th: "4 ด้าน ครบ 34 ทักษะ" } },
-  { label: { en: "The market's bar", th: "เกณฑ์ของตลาด" }, free: null, full: { en: "On every chart", th: "ทุกกราฟ" } },
-  { label: { en: "What to do next", th: "สิ่งที่ควรทำต่อ" }, free: { en: "One step", th: "1 ข้อ" }, full: { en: "Every competency below the bar, in order", th: "ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ" } },
-  { label: { en: "Roles that fit you", th: "ตำแหน่งงานที่ตรงกับคุณ" }, free: null, full: { en: "Included", th: "มี" } },
-  { label: { en: "Cost", th: "ค่าใช้จ่าย" }, free: CATALOGUE_FREE, full: CATALOGUE_PAID },
-];
 
 export const FIT_INSIDE_HEADING: Copy = { en: "What is in the Fit Report", th: "ใน Fit Report มีอะไรบ้าง" };
 
@@ -912,3 +900,52 @@ export const FIT_TILES: readonly { section: string; titleKey?: string; title?: C
 export const FIT_SAMPLE_PDF: Copy = { en: "Download a sample Fit Report (PDF)", th: "ดาวน์โหลดตัวอย่าง Fit Report ฉบับเต็ม (PDF)" };
 
 export const FIT_EXPERT_HEADING: Copy = { en: "Who will interview you", th: "ใครจะเป็นผู้สัมภาษณ์คุณ" };
+
+/** The two comparison cards, 28/10/2026 (Paul, 2a). `on` false draws a dash. */
+export const FIT_PLAN_FREE = {
+  pill: { en: "Free", th: "ฟรี" },
+  sub: { en: "17 questions, about 2 minutes", th: "แบบประเมิน 17 ข้อ ประมาณ 2 นาที" },
+  rows: [
+    { text: { en: "4 area scores, from your answers", th: "คะแนน 4 ด้าน จากคำตอบของคุณ" }, on: true },
+    { text: { en: "One next step", th: "สิ่งที่ควรทำต่อ 1 ข้อ" }, on: true },
+    { text: { en: "The market's bar on every chart", th: "เกณฑ์ของตลาดบนทุกกราฟ" }, on: false },
+    { text: { en: "All 34 competencies", th: "ครบ 34 ทักษะ" }, on: false },
+    { text: { en: "Roles that fit you", th: "ตำแหน่งงานที่ตรงกับคุณ" }, on: false },
+  ],
+} as const;
+
+export const FIT_PLAN_FULL = {
+  sub: { en: "Your answers + a 30-minute interview with an expert", th: "คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับผู้เชี่ยวชาญ" },
+  rows: [
+    { text: { en: "All 4 areas, all 34 competencies", th: "คะแนน 4 ด้าน ครบ 34 ทักษะ" }, on: true },
+    { text: { en: "A next step for every competency below the bar, in order", th: "สิ่งที่ควรทำต่อ ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ" }, on: true },
+    { text: { en: "The market's bar on every chart", th: "เกณฑ์ของตลาดบนทุกกราฟ" }, on: true },
+    { text: { en: "The order to work in", th: "ลำดับที่ควรลงมือ" }, on: true },
+    { text: { en: "Roles that fit you", th: "ตำแหน่งงานที่ตรงกับคุณ" }, on: true },
+  ],
+} as const;
+
+/** The three notes beside the big page in the showcase band, 28/10/2026 (Paul, 1a). */
+export const FIT_CALLOUTS: readonly { mark: string; title: Copy; body: Copy }[] = [
+  { mark: "bar", title: { en: "The job market's bar on every chart", th: "เทียบเกณฑ์ตลาดงานในทุกกราฟ" }, body: { en: "See clearly which skills clear the bar and which still need work.", th: "เห็นชัดว่าทักษะไหนผ่านเกณฑ์ และทักษะไหนยังต้องพัฒนา" } },
+  { mark: "34", title: { en: "All 4 areas, skill by skill", th: "ครบทั้ง 4 ด้าน แยกเป็นรายทักษะ" }, body: { en: "Eight to ten skills per area, assessed from your answers and a 30-minute interview.", th: "ด้านละ 8–10 ทักษะ ประเมินจากคำตอบของคุณและการสัมภาษณ์ 30 นาที" } },
+  { mark: "check", title: { en: "How to develop each skill", th: "รู้ว่าควรพัฒนาแต่ละทักษะอย่างไร" }, body: { en: "Advice for you, with things you can act on next.", th: "คำแนะนำเฉพาะคุณ พร้อมสิ่งที่นำไปลงมือทำต่อได้" } },
+];
+
+/** Paul as the expert, from his own facts of 28/10/2026. No hire counts, by his choice. */
+export const FIT_EXPERT = {
+  title: { en: "I have sat on both sides of the interview table", th: "ผมเคยนั่งอยู่ทั้งสองฝั่งของโต๊ะสัมภาษณ์" },
+  role: { en: "Paul · founder of PunProfile · Marketing Director in Europe", th: "พอล · ผู้ก่อตั้ง PunProfile · Marketing Director ในยุโรป" },
+  applicantHeading: { en: "As an applicant", th: "ฝั่งผู้สมัคร" },
+  applicant: { en: "I moved to Spain to work in 2016. Since then I have sent thousands of applications and sat hundreds of interviews, so I know what it is like to send a CV and hear nothing back.", th: "ผมย้ายมาทำงานที่สเปนตั้งแต่ปี 2016 ตลอดเส้นทางนี้ผมสมัครงานไปหลายพันตำแหน่ง และผ่านการสัมภาษณ์มาหลายร้อยครั้ง ผมจึงเข้าใจดีว่าการส่ง CV ออกไปแล้วไม่มีใครตอบกลับเป็นอย่างไร" },
+  hiringHeading: { en: "As a hiring manager", th: "ฝั่งผู้จ้าง" },
+  hiring: { en: "Today I am a Marketing Director. The CVs that reach me have already passed the AI screen and the Talent Acquisition manager, and I have read hundreds of them, so I have seen not just good CVs but the ones that actually get the job. I also hire remote workers and freelancers in Marketing and MarTech for several employers.", th: "วันนี้ผมเป็น Marketing Director CV ที่มาถึงผมผ่านการคัดกรองจาก AI และ Talent Acquisition Manager มาแล้ว ผมอ่าน CV ระดับนี้มาหลายร้อยฉบับ จึงได้เห็นไม่ใช่แค่ CV ที่ดี แต่เป็น CV ที่ได้งานจริง นอกจากนี้ผมยังคัดเลือก remote worker และ freelancer ด้าน Marketing และ MarTech ให้กับหลายบริษัท" },
+  bridge: { en: "In the 30-minute interview I read your profile the way a hiring manager in Europe would, and bring a marketer's eye to how you present yourself.", th: "ในการสัมภาษณ์ 30 นาที ผมจะอ่านโปรไฟล์ของคุณด้วยมุมมองเดียวกับ hiring manager ในยุโรป และใช้มุมมองด้านการตลาดช่วยให้คุณนำเสนอตัวเองได้ชัดขึ้น" },
+  facts: [
+    { en: "Working in Europe since 2016", th: "ทำงานในยุโรปตั้งแต่ปี 2016" },
+    { en: "Based in Spain, clients across Europe, mostly the UK", th: "ประจำที่สเปน ดูแลลูกค้าทั่วยุโรป โดยเฉพาะ UK" },
+    { en: "Marketing and MarTech hiring", th: "คัดเลือกคนด้าน Marketing และ MarTech" },
+    { en: "Runs the “Jobs at companies in Europe” group", th: "ผู้ดูแลกลุ่ม “งานบริษัทในยุโรป”" },
+  ],
+  link: { en: "Read my story", th: "อ่านเรื่องราวของผม" },
+} as const;

@@ -178,7 +178,7 @@ export default function ProductPage({ product }: { product: Product }) {
           at, which is what the reference does on every page that has to say
           what a product actually does. */}
       <Band block="B2" ground="soft" width="wide">
-        <h2 className={SECTION_HEADING(locale)}>{pick(HOW_HEADING)}</h2>
+        <h2 className={SECTION_HEADING(locale)}>{pick(product.howHeading ?? HOW_HEADING)}</h2>
         {/* The reference puts a line under this heading before the checklist. */}
         <p className="mt-4 max-w-2xl text-body-large text-on-surface-variant">
           {pick(product.howLede)}
