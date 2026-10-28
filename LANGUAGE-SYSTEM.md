@@ -986,6 +986,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/blog.ts::TOPICS[4].label`
+
+```yaml
+id: src/lib/content/blog.ts::TOPICS[4].label
+source: src/lib/content/blog.ts
+path: TOPICS[4].label
+render: 'Blog topic label: real stories'
+narrative_slot: utility
+en: "Real stories"
+th: "เรื่องจริง"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for the new topic that holds real people's stories, first used by Cara's story. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 29c2412e80ddbad4aa8fac7d94decf899d807df7b965746dfda56b1e2dfafca7
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/blog.ts::UNSUBSCRIBE_BODY`
 
 ```yaml
@@ -10834,6 +10856,952 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.title`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.title
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.title
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.title'
+narrative_slot: utility
+en: "A thousand applications, 800 wasted: six things Cara wants you to know before you move to Europe for work"
+th: "สมัครงานพันที่ เสียเปล่า 800: 6 เรื่องที่คาร่าอยากให้รู้ก่อนย้ายมาทำงานยุโรป"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 846fcb3f02ba72f10ff3f1cb69636846c1a436f92df08116be486053df3611e2
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.seoTitle`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.seoTitle
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.seoTitle
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.seoTitle'
+narrative_slot: utility
+en: "A real story of a Thai working in Spain"
+th: "เรื่องจริงคนไทยทำงานที่สเปน"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: a4a66fe0a6e2724a8da445dbbbceaa67f00fe99a0a5dbbfa4079ea43801fd79b
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.summary`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.summary
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.summary
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.summary'
+narrative_slot: utility
+en: "You can work in a company without a third language, age is not the main problem, and a CV photo does not help the way you think. Cara on six things from her route from Thai student to working in Spain."
+th: "ไม่ต้องพูดภาษาที่ 3 ก็ทำงานในบริษัทได้ อายุไม่ใช่ปัญหาหลัก และรูปในเรซูเม่ไม่ได้ช่วยอย่างที่คิด คาร่าเล่า 6 เรื่องจากเส้นทางนักเรียนไทยสู่คนทำงานในสเปน"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: ecb57e7e57e966ec7b37ee1c012f6512fff030e93a6834dab19e2ee88fc2ee3d
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.person`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.person
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.person
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.person'
+narrative_slot: utility
+en: "Cara"
+th: "คาร่า"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: aab2de75390a9e452dd5dcbdaba9176c820b4d9dd7e8abcd9ec124bc00599895
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.image.alt`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.image.alt
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.image.alt
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.image.alt'
+narrative_slot: utility
+en: "Cara smiling as she talks with Paul at a café table under an arcade in Barcelona"
+th: "คาร่ายิ้มขณะนั่งคุยกับพอลที่โต๊ะคาเฟ่ใต้ซุ้มทางเดินในบาร์เซโลนา"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it unchanged on 26/10/2026."
+review:
+  structural_calque: pass
+  text_hash: aee79d947aff224199dba4759641388002a8f7e8b5968ae125d676c882b2effe
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item unchanged on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.question`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.question
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.question
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.question'
+narrative_slot: symptom
+en: "Of these six, which one did you believe?"
+th: "ใน 6 เรื่องนี้ เรื่องไหนที่คุณเคยเชื่อ?"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 92b17bfffc8a79d738cdec72bd5e4089aff3cce2fe7f335710a13d5f9f8877d8
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[0].heading`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[0].heading
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[0].heading
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[0].heading'
+narrative_slot: utility
+en: "In short"
+th: "สรุปสั้น ๆ"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 374fe2a22b8ee3e8e5258f04555c18cc495f7e98cd81f38c658fcd36b432e16b
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[0].body[0].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[0].body[0].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[0].body[0].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[0].body[0].text'
+narrative_slot: utility
+en: "In Cara's experience, a third language, your age or knowing nobody do not decide whether you get a job in Europe. What decides it is an application that matches the role, and a plan that starts before you graduate."
+th: "จากประสบการณ์ของคาร่า ภาษาที่ 3 อายุ หรือการไม่รู้จักใคร ไม่ได้ตัดสินว่าคุณจะได้งานในยุโรป สิ่งที่ตัดสินคือใบสมัครที่ตรงกับตำแหน่ง และแผนที่เริ่มก่อนเรียนจบ"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: d341c03f95a6f3baa90ed63753059c984e254393a32b43f24cd052ac1bcf1c77
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[1].body[0].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[1].body[0].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[1].body[0].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[0].text'
+narrative_slot: audience
+en: "Cara is Thai and moved to Spain to study. After graduating she sent about a thousand applications before landing a job at a company there. Today she works mostly in English."
+th: "คาร่าเป็นคนไทยที่ย้ายมาเรียนต่อที่สเปน หลังเรียนจบเธอส่งใบสมัครไปราวพันที่ กว่าจะได้งานในบริษัทที่นั่น ตอนนี้เธอใช้ภาษาอังกฤษในการทำงานเป็นหลัก"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: e288d49155f0ba359e4b814a34f26e9880c4163fbe757c75cc7a5670449979e0
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[1].body[1].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[1].body[1].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[1].body[1].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[1].body[1].text'
+narrative_slot: audience
+en: "We asked her the questions Thais ask us most, and several of her answers overturn what most people believe. The quotes are her own words."
+th: "เราคุยกับเธอถึงคำถามที่คนไทยถามเราบ่อยที่สุด และคำตอบของเธอหักล้างความเชื่อเดิมหลายข้อ ข้อความในกรอบคือคำพูดของเธอเอง"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 0561d7bd3992f5c2abc1e4296edb19694daa593974a7ed157b5f709cccd8be73
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].heading`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].heading
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[2].heading
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].heading'
+narrative_slot: misread
+en: "1. “You have to speak the local language first” is not always true"
+th: "1. “ต้องพูดภาษาท้องถิ่นได้ก่อน” ไม่จริงเสมอไป"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 3241ec2bdf139f06113dda4ad75ebb560ee8844fb3b9c50a4a9f5179fd815f8d
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[0].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[0].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[2].body[0].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].body[0].text'
+narrative_slot: misread
+en: "Before she moved, Cara thought what most people think: that to work in Spain you have to speak Spanish."
+th: "ก่อนย้ายมา คาร่าก็คิดเหมือนคนส่วนใหญ่ ว่าถ้าจะทำงานที่สเปนต้องพูดภาษาสเปนได้"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: e945a472ae67b7cd285e8ab7822fa1260a1a20678aa813e398b26e7c61af1249
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[1].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[1].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[2].body[1].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].body[1].text'
+narrative_slot: misread
+en: "Actually, a third language matters for daily life too. But working in a company in Barcelona, or France, or Germany, you don't need a third language at all, because in the end we communicate in English in the corporate world."
+th: "จริงๆแล้วภาษาที่ 3 มันสำคัญต่อชีวิตประจำวันด้วย การที่ทำงานในบริษัทที่ Barcelona หรือว่าฝรั่งเศสหรือว่าเยอรมนีก็คือ ไม่จำเป็นเลยที่ต้องมีภาษาที่ 3 เพราะว่าเหมือนทั้งนี้ทั้งนั้นแล้วเราสื่อสารกันเป็นภาษาอังกฤษใน corporate world"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 737032702e599473a42b35cc9683b47c4351b8b2440170c4abab95689fdfcfcc
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[2].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[2].body[2].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[2].body[2].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[2].body[2].text'
+narrative_slot: misread
+en: "Takeaway: the local language helps with daily life, but it is not the first hurdle for a job in a company that works in English."
+th: "ข้อคิด: ภาษาท้องถิ่นช่วยชีวิตประจำวัน แต่ไม่ใช่ด่านแรกของงานในบริษัทที่ใช้ภาษาอังกฤษ"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 844b715fdd433f7c262bab475bbbaf9f828220d19a824714f7661a9da3f90aca
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].heading`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].heading
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[3].heading
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].heading'
+narrative_slot: symptom
+en: "2. A thousand applications, 800 wasted"
+th: "2. สมัครพันที่ เสียเปล่า 800"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 8c65a8f4dfc69c554ef76ba840771a669393fa3d09d90ca7807d462584c0d438
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[0].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[0].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[3].body[0].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[0].text'
+narrative_slot: symptom
+en: "Cara sent about a thousand applications and says 800 were wasted, because she used the same CV for every role."
+th: "คาร่าส่งใบสมัครไปราวพันที่ และเล่าว่า 800 ที่เสียเปล่า เพราะใช้เรซูเม่ใบเดิมกับทุกตำแหน่ง"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 60eb088aad3c301500b70024ee275ca1ea977a1065915090068292a67c47ffbb
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[1].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[1].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[3].body[1].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[1].text'
+narrative_slot: symptom
+en: "Click apply, same CV, no portfolio at all. The people who screen CVs, the recruiters, they know whether you really meant to apply."
+th: "กดสมัคร ใช้ resume ใบเดิม ไม่มี portfolio เลย คือคนที่ screen CV หรือว่าแบบ คนที่เป็น recruiter เขารู้นะว่าเราตั้งใจสมัครหรือเปล่า"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 45172b1a6f195b3f77636c5ca0d1c045efaed152f90772954df44cbccc4e3c2b
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[2].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[2].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[3].body[2].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[2].text'
+narrative_slot: symptom
+en: "These days AI might help, but it has to match the job description."
+th: "สมัยนี้อาจจะมี AI ช่วย แต่ว่าคือมันต้อง match กับ description เลย"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: ab812c5bde22b42c3a79c189199f2a0877924194dc28a861276d49a00d8e8414
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[3].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[3].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[3].body[3].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[3].text'
+narrative_slot: symptom
+en: "Takeaway: apply less, but adjust every application to the advert."
+th: "ข้อคิด: สมัครน้อยลง แต่ปรับให้ตรงกับประกาศทุกครั้ง"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 8cfaa0de96a6c08c7b33a931094194af57dc867f14d0605b9f700822ddecde4b
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[4].alt`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[3].body[4].alt
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[3].body[4].alt
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[3].body[4].alt'
+narrative_slot: utility
+en: "Cara explaining her experience, at a café table under an arcade in Barcelona"
+th: "คาร่ากำลังเล่าประสบการณ์ ขณะนั่งคุยกันที่โต๊ะคาเฟ่ใต้ซุ้มทางเดินในบาร์เซโลนา"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it unchanged on 26/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 1989f2603cb7ff185ef1a4709dd7ba6ca620152019323058c42db197fceeb040
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item unchanged on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].heading`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].heading
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[4].heading
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].heading'
+narrative_slot: mechanism
+en: "3. An internship is the easiest door in"
+th: "3. ฝึกงานคือประตูที่เปิดง่ายที่สุด"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 3aab5532e1778c9809b9739bd79e98b7a4e2d2a4b539733bf5551495ba8f6eaa
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[0].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[0].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[4].body[0].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[0].text'
+narrative_slot: mechanism
+en: "Cara asked her school early whether an internship was required and how it worked, because nobody had told her."
+th: "คาร่าถามโรงเรียนตั้งแต่เนิ่น ๆ ว่าการฝึกงานบังคับไหมและต้องทำอย่างไร เพราะไม่มีใครบอกเธอ"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 41dac6bf18622f8babe6f1f9435de1341be45cbde29311d7907e7af2c2198771
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[1].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[1].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[4].body[1].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[1].text'
+narrative_slot: mechanism
+en: "Because it is a really easy application, you don't need experience. Basically you have the same opportunity as everyone else."
+th: "เพราะมันเป็นการสมัครที่ง่ายมากๆ เราไม่จำเป็นต้องมีประสบการณ์ คือเอาเป็นว่าเรามี opportunity เท่าเทียมกับทุกๆคน"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 775531b588866bc5620f747c7018383db82d7f12debb850341e5cf3f492646b8
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[2].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[4].body[2].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[4].body[2].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[4].body[2].text'
+narrative_slot: mechanism
+en: "Takeaway: ask about internships before the course starts, and pick your target companies in advance."
+th: "ข้อคิด: ถามเรื่องฝึกงานตั้งแต่ก่อนเริ่มเรียน และเล็งบริษัทไว้ล่วงหน้า"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 6c25cf379e576478823398ebcd84d9f1cf473cb81d14bb609d5ce62e1f48243a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].heading`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].heading
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[5].heading
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].heading'
+narrative_slot: misread
+en: "4. Age is not the problem. Mindset is"
+th: "4. อายุไม่ใช่ปัญหา mindset ต่างหากที่สำคัญ"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: eecd0df2332ba4d0d52e104c2dc10ddb48422c9f64efbafc016e0e49bcc887f8
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[0].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[0].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[5].body[0].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].body[0].text'
+narrative_slot: misread
+en: "Starting over or changing, the older we get, the smaller the window feels. But actually, in Europe they are not concerned about age at all."
+th: "การเริ่มใหม่หรือการเปลี่ยนแปลง พอเรายิ่งอายุมากขึ้น เหมือน window มันจะน้อยลง แต่จริงๆแล้วที่ยุโรปเขาไม่ได้ concern เรื่องอายุเลยนะ"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 53433b08ecea6ae9cb7d1cb763e037ae55dc9ffba1efea4a3e9210de43a8b882
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[1].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[1].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[5].body[1].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].body[1].text'
+narrative_slot: misread
+en: "She gave the example of a colleague at the same Project Manager level as her, who is 50 and still performing well."
+th: "เธอยกตัวอย่างเพื่อนร่วมงานตำแหน่ง Project Manager ระดับเดียวกับเธอ ซึ่งอายุ 50 แล้ว และยังทำงานได้ดี"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: e28332ebc3b8b94aa6b0f60bfa64a1b92d6685aebc9bd7356e8fa1202f8a8258
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[2].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[5].body[2].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[5].body[2].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[5].body[2].text'
+narrative_slot: misread
+en: "Age is not the main issue. It comes down to your own mindset, whether you can adapt."
+th: "เรื่องอายุมันไม่ได้เป็นเรื่องที่เป็นปัญหาหลัก มันอยู่ที่ mindset ตัวเอง ว่าเราจะมีความ adaptive"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 21ea8a037bd0aa87d4be8b6a5ea6cdfc3d982380a1334ab70e74e8cd48471089
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].heading`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].heading
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[6].heading
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].heading'
+narrative_slot: misread
+en: "5. You can start without knowing a single person"
+th: "5. ไม่รู้จักใครเลยสักคน ก็เริ่มได้"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 6f4f50ea8768f4ac2682875bf8fc8d9744adbba79169623c513f9485523c88d4
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[0].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[0].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[6].body[0].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].body[0].text'
+narrative_slot: misread
+en: "For a little over her first year in Spain, Cara was on her own."
+th: "ปีแรกกว่า ๆ ที่สเปน คาร่าอยู่ด้วยตัวเองมาตลอด"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 87cbb4a66639552ed9f661a0ae158021bb3a33897f59e052e65045cce1d3bb3c
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[1].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[1].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[6].body[1].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].body[1].text'
+narrative_slot: misread
+en: "Honestly? It is not a problem at all."
+th: "เอาจริงปะ มันไม่ใช่ปัญหาเลย"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 99818d4d27152eed957a49e4c8f44c2263051c1f8607e52eb63d79b75dcad7b5
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[2].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[6].body[2].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[6].body[2].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[6].body[2].text'
+narrative_slot: misread
+en: "But if you have contacts, they help get you to a point where things might be easier. But they are not everything."
+th: "แต่ถ้าเกิดเรามีไว้มันจะเป็นตัวช่วย ที่ทำให้เราเข้าไปอยู่ในจุดๆ นึง ที่อาจจะทำให้ง่ายขึ้น แต่ว่ามันไม่ใช่ทั้งหมด"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: eecf19a96f1f2d280a66f67288dfd84bff097fa40bbb26a9de1b40c708a84e2a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].heading`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].heading
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[7].heading
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].heading'
+narrative_slot: mechanism
+en: "6. A photo on your CV does not help the way you think"
+th: "6. รูปในเรซูเม่ ไม่ได้ช่วยอย่างที่คิด"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite for engagement, replacing a line Paul approved 26/10/2026. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: f52da7674fa43d536ae19c772273aad0f2a1fa96afb61c16b4e53a36afa02e7f
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[0].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[0].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[7].body[0].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[0].text'
+narrative_slot: mechanism
+en: "Here a lot of people don't put a photo, about 90%. It's about privacy."
+th: "ที่นี่คนไม่ใส่รูปเยอะเลยนะ ประมาณ 90% เลย มัน considering เรื่อง Privacy"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 0c4cf75017b40b406a54abd077e2bd47e07f2bc77e685907b8a28a1450fb645c
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[1].text`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[1].text
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[7].body[1].text
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[1].text'
+narrative_slot: mechanism
+en: "That figure is what she sees around her, not a statistic. What makes a CV stand out is your skills, most important first, because recruiters rarely read to the bottom."
+th: "ตัวเลขนี้คือสิ่งที่เธอเห็นรอบตัว ไม่ใช่สถิติ สิ่งที่ทำให้เรซูเม่โดดเด่นคือทักษะที่เรียงสำคัญที่สุดไว้บนสุด เพราะ recruiter มักอ่านไม่ถึงข้างล่าง"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: f269dca317bd5bae3c3e1870615c068b0d6dde1fce23c9a43f4219efed539216
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[2].alt`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[7].body[2].alt
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[7].body[2].alt
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[7].body[2].alt'
+narrative_slot: utility
+en: "Cara and Paul laughing together at the end of the interview"
+th: "คาร่ากับพอลหัวเราะด้วยกันตอนจบการสัมภาษณ์"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it unchanged on 26/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 4fd107a9d02ed5970fb444719073d0fc1ea0f8821a262b4e469297190788d287
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item unchanged on 26/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].heading`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].heading
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[8].heading
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].heading'
+narrative_slot: utility
+en: "Frequently asked questions"
+th: "คำถามที่พบบ่อย"
+provenance: paul-written
+date: 16/08/2026
+term_bindings: []
+decision_note: "Paul's Thai, Newsletter 1 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026. English is the queue's translation."
+review:
+  structural_calque: pass
+  text_hash: 5d2eb18e9b4a38709aefd29e1ef1986e51b9a3df1afc4be131012c2e86f4da68
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[0].q`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[0].q
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[8].body[0].q
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[0].q'
+narrative_slot: utility
+en: "Do I need a third language to work in Europe?"
+th: "ไปทำงานยุโรปต้องพูดภาษาที่ 3 ได้ไหม"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 240c22c21b65190e0c0840a0d7fa9058dfa7e30669f3986e1c3ce62b3d1bb86c
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[0].a[0]'
+narrative_slot: utility
+en: "Not always. Many roles in companies that work in English do not require the local language, but some do. Check real adverts in the country you are aiming at."
+th: "ไม่เสมอไป หลายตำแหน่งในบริษัทที่ใช้ภาษาอังกฤษไม่กำหนดภาษาท้องถิ่น แต่บางตำแหน่งกำหนด เช็กจากประกาศงานจริงในประเทศที่คุณเล็ง"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 2c7eb4304f3e680e6395adef8e42edab9ca0aeb6a17834f31053beadf55c94b8
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[1].q`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[1].q
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[8].body[1].q
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[1].q'
+narrative_slot: utility
+en: "Do I need a photo on a CV for a job in Europe?"
+th: "เรซูเม่สำหรับงานในยุโรปต้องใส่รูปไหม"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 5167ba96e30f2048b71e572d82ed020dd3c02f72e21d5276444b129727e88399
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[1].a[0]'
+narrative_slot: utility
+en: "Mostly not, and many people leave it out for privacy, though some countries still expect one. Follow the custom of the market you apply to."
+th: "ส่วนใหญ่ไม่จำเป็น และหลายคนไม่ใส่เพราะเรื่องความเป็นส่วนตัว แต่บางประเทศยังนิยม ดูธรรมเนียมของตลาดที่คุณสมัคร"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: b8d41b35b50e544bc160b118deaa666ec64985dea5b66ebea6e22bf25c06f902
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[2].q`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[2].q
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[8].body[2].q
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[2].q'
+narrative_slot: utility
+en: "Can I find a job in Europe if I know nobody there?"
+th: "ถ้าไม่รู้จักใครในยุโรปเลย จะหางานได้ไหม"
+provenance: paul-approved
+date: 26/10/2026
+term_bindings: []
+decision_note: "Claude's draft, 26/10/2026, for Cara's story; a quote is Cara's own words from the corrected clip captions and is never reworded. Paul approved it 26/10/2026, with Cara written คาร่า in Thai."
+review:
+  structural_calque: pass
+  text_hash: 1193757e928da76aa18ae9494a5f3fb46e187198c8a52b185c94856d35cea55b
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 26/10/2026, with Cara written คาร่า in Thai.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]`
+
+```yaml
+id: src/lib/content/posts/cara-working-in-spain.ts::CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]
+source: src/lib/content/posts/cara-working-in-spain.ts
+path: CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]
+render: 'Blog article: Cara, real story, CARA_WORKING_IN_SPAIN.sections[8].body[2].a[0]'
+narrative_slot: utility
+en: "Yes. Contacts make it easier, but they are not a condition. What matters more is an application that matches the role."
+th: "ได้ คนรู้จักช่วยให้ง่ายขึ้น แต่ไม่ใช่เงื่อนไข สิ่งที่สำคัญกว่าคือใบสมัครที่ตรงกับตำแหน่ง"
+provenance: paul-approved
+date: 27/10/2026
+term_bindings: []
+decision_note: "Claude's 27/10/2026 rewrite: more engaging and about 10% shorter, on Paul's ask. Paul approved it 27/10/2026."
+review:
+  structural_calque: pass
+  text_hash: f88795af59f98eb660948f1d54f32861fc3bc442a523ac9fc5e9902857695b2a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item on 27/10/2026.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/posts/half-true-europe-needs-talent.ts::HALF_TRUE_EUROPE_NEEDS_TALENT.title`
 
 ```yaml
@@ -11085,16 +12053,16 @@ path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text
 render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[3].text'
 narrative_slot: mechanism
 en: "So instead of asking broadly whether Europe needs your profession, the question that helps you plan is this."
-th: "แทนที่จะถามกว้าง ๆ ว่า “ยุโรปต้องการอาชีพของฉันไหม” คำถามที่ช่วยให้วางแผนได้มากกว่าคือ"
-provenance: paul-written
+th: "แทนที่จะถามกว้าง ๆ ว่า “ยุโรปต้องการอาชีพของเราไหม” คำถามที่ช่วยให้วางแผนได้มากกว่าคือ"
+provenance: paul-approved
 date: 16/08/2026
 term_bindings: []
-decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: bce48043af816a4ad4eb7795984bfd071ddb36e747c20606a0c14e9b7b734ecb
+  text_hash: f0ef68b2b391c9e5c834dbb4f1be4747a0585a4e5df6387a423d349a74e93d3a
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -11107,16 +12075,16 @@ path: HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text
 render: 'Blog article: Europe needs skilled people, half true, HALF_TRUE_EUROPE_NEEDS_TALENT.sections[1].body[4].text'
 narrative_slot: mechanism
 en: "Which country needs my skills, and do I meet that country's conditions for working there?"
-th: "ประเทศใดกำลังต้องการทักษะของฉัน และฉันผ่านเงื่อนไขการทำงานของประเทศนั้นหรือไม่?"
-provenance: paul-written
+th: "ประเทศใดกำลังต้องการทักษะของเรา และเราผ่านเงื่อนไขการทำงานของประเทศนั้นหรือไม่?"
+provenance: paul-approved
 date: 16/08/2026
 term_bindings: []
-decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
+decision_note: "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: a5fc4708b19640a3372750c194360a59b066a0cb334b117e8d8a536b2bdcb98b
+  text_hash: a316db9b5b38287d168755370e8b853ae3f4783ea09abbd5033f918c759e7e76
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -14227,18 +15195,16 @@ narrative_slot: mechanism
 en: >-
   That number does not tell you whether Europe has jobs or does not. It tells you that “does Europe need my
   profession?” is too broad a question to plan with.
-th: >-
-  ตัวเลขนี้ไม่ได้บอกว่ายุโรปมีหรือไม่มีงาน แต่มันบอกว่าคำว่า “ยุโรปต้องการอาชีพของฉันไหม”
-  เป็นคำถามที่กว้างเกินกว่าจะใช้วางแผนได้
-provenance: paul-written
+th: "ตัวเลขนี้ไม่ได้บอกว่ายุโรปมีหรือไม่มีงาน แต่มันบอกว่าคำว่า “ยุโรปต้องการอาชีพของเราไหม” เป็นคำถามที่กว้างเกินกว่าจะใช้วางแผนได้"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: 7ab21b1525fe93e6ce4dd9fb525b960f5e660a505e7d963fc59b9d067292ddd5
+  text_hash: 2aa0f46837c235acc44984eec7597a50a0095676c1cf3cc466ff7cc1fd404fed
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -14273,16 +15239,16 @@ path: START_IN_EUROPE.sections[3].body[4].items[0]
 render: 'Blog article: Start in Europe, START_IN_EUROPE.sections[3].body[4].items[0]'
 narrative_slot: mechanism
 en: Which country needs my skills?
-th: ประเทศไหนกำลังต้องการทักษะของฉัน
-provenance: paul-written
+th: "ประเทศไหนกำลังต้องการทักษะของเรา"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: 5d7919997b1a5d0d94d4094c0e904ac5f21c31fb85e87c81b0ad9f7d69cd1f8b
+  text_hash: b45d44d2ffa15285716648e3f5c0e713be59b20b995e7fc3a6a57c5a94abed33
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -14295,16 +15261,16 @@ path: START_IN_EUROPE.sections[3].body[4].items[1]
 render: 'Blog article: Start in Europe, START_IN_EUROPE.sections[3].body[4].items[1]'
 narrative_slot: mechanism
 en: And do I meet that country's conditions for working there?
-th: และฉันผ่านเงื่อนไขที่จะทำงานในประเทศนั้นหรือไม่
-provenance: paul-written
+th: "และเราผ่านเงื่อนไขที่จะทำงานในประเทศนั้นหรือไม่"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: 169f59e6afc9b17879fc7843367200e9ddd73f67223636454e43c77566d8c711
+  text_hash: fa4426035e891d845774894109924d3cdd1432ad4ca2cca946e99cdc02663b77
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -15156,16 +16122,16 @@ narrative_slot: mechanism
 en: >-
   The turn comes when the question in your head changes from “how do I describe myself?” to “what problem is
   the market hiring someone to solve?”
-th: จุดเปลี่ยนเกิดขึ้นเมื่อคำถามในหัวเปลี่ยนจาก “ฉันจะอธิบายตัวเองอย่างไร” เป็น “ตลาดกำลังจ้างคนมาแก้ปัญหาอะไร”
-provenance: paul-written
+th: "จุดเปลี่ยนเกิดขึ้นเมื่อคำถามในหัวเปลี่ยนจาก “เราจะอธิบายตัวเองอย่างไร” เป็น “ตลาดกำลังจ้างคนมาแก้ปัญหาอะไร”"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: a533b2a1edb6a1e27bdbc5866561af999aa7afcdd1add4021086f68b29e84c42
+  text_hash: f9c964a716e955f622a784d6ab7f82d6ea7e9ba40791ffce0a8a22ce2c5cc2eb
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -15623,16 +16589,16 @@ path: START_IN_EUROPE.sections[8].body[3].items[1]
 render: 'Blog article: Start in Europe, START_IN_EUROPE.sections[8].body[3].items[1]'
 narrative_slot: mechanism
 en: My experience proves I can do it
-th: ประสบการณ์ของฉันพิสูจน์ได้ว่าทำเรื่องนี้เป็น
-provenance: paul-written
+th: "ประสบการณ์ของเราพิสูจน์ได้ว่าทำเรื่องนี้เป็น"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: 91b4e0f7ad7424e778527dcc9d2e04a5f4ab932007fa9cef1cc0231a8e77837f
+  text_hash: 120af574a22072fd79b7ee759fb08f23bbdcfd45b9ba3cafaff9d8115964388e
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
@@ -15645,16 +16611,16 @@ path: START_IN_EUROPE.sections[8].body[3].items[2]
 render: 'Blog article: Start in Europe, START_IN_EUROPE.sections[8].body[3].items[2]'
 narrative_slot: mechanism
 en: And this company has a way of actually hiring me
-th: และบริษัทนี้มีทางจ้างฉันได้จริง
-provenance: paul-written
+th: "และบริษัทนี้มีทางจ้างเราได้จริง"
+provenance: paul-approved
 date: 18/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "No string-local reasoning comment was present at migration. 23/10/2026: ฉัน changed to เรา on Paul's rule."
 review:
   structural_calque: pass
-  text_hash: e203c69e118dd23693bc2f4e452868176df11f2b1d5abb2de51e42dfa30ed48e
+  text_hash: b828897d1c3b16a793990ebeedd9df830fa7fc559d18fa1ee8b5e29d4fb45c2c
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's rule of 23/10/2026, เรา not ฉัน in every blog article, applied to his own Thai.
 ```
 
 <!-- COPY-ENTRY -->
