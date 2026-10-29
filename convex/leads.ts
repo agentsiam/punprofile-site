@@ -4,6 +4,7 @@ import type { QueryCtx, MutationCtx } from "./_generated/server";
 import type { Doc } from "./_generated/dataModel";
 import { getAuthUserId } from "@convex-dev/auth/server";
 import { v, ConvexError } from "convex/values";
+import type { ObjectType } from "convex/values";
 import { scoresFor } from "./scoring";
 import { isValidAnswer } from "../src/lib/content/questions";
 import { EUROPEAN_LANGUAGES } from "../src/lib/country-english";
@@ -474,8 +475,7 @@ export async function requireAdmin(ctx: QueryCtx | MutationCtx): Promise<string>
  * they consented to, how far they got. Not their answers, which is what the
  * detail view is for.
  */
-export const listForAdmin = query({
-  args: {
+const listForAdminArgs = {
     limit: v.optional(v.number()),
     includeAbandoned: v.optional(v.boolean()),
     /**
@@ -550,10 +550,20 @@ export const listForAdmin = query({
     onlyStatus: v.optional(
       v.union(v.literal("partial"), v.literal("email_captured"), v.literal("completed")),
     ),
-  },
-  handler: async (ctx, args) => {
+};
+
+/**
+ * The body of `listForAdmin`, shared with `listTotalsForAdmin` so the list and
+ * the counts above it can never filter differently. `all` skips the display
+ * limit: the counts are of everyone the filters keep, not of the rows shown.
+ */
+async function listForAdminRows(
+  ctx: QueryCtx,
+  args: ObjectType<typeof listForAdminArgs>,
+  all = false,
+) {
     await requireAdmin(ctx);
-    const limit = Math.min(args.limit ?? 100, 500);
+    const limit = all ? Infinity : Math.min(args.limit ?? 100, 500);
 
     // FR-010 and FR-012: a session that never reached contact capture is noise,
     // not a lead, and stays out of the default view. That matters more since
@@ -821,6 +831,31 @@ export const listForAdmin = query({
         createdAt: l.createdAt,
         lastActivityAt: l.lastActivityAt,
       }));
+}
+
+export const listForAdmin = query({
+  args: listForAdminArgs,
+  handler: (ctx, args) => listForAdminRows(ctx, args),
+});
+
+/**
+ * The headline counts over the lead list: people, reachable, with a CV.
+ *
+ * Counted on the server over every row the list's filters keep, not over the
+ * hundred rows the list displays. Counting in the browser read the display
+ * limit back as the population: 100 people, 100 reachable, whatever the table
+ * actually held. A Convex query, so the numbers move the moment a lead
+ * arrives or a CV is ticked, with nothing to refresh.
+ */
+export const listTotalsForAdmin = query({
+  args: listForAdminArgs,
+  handler: async (ctx, args) => {
+    const rows = await listForAdminRows(ctx, args, true);
+    return {
+      people: rows.length,
+      reachable: rows.filter((l) => l.lineId || l.phone).length,
+      withCv: rows.filter((l) => l.cvReceivedAt).length,
+    };
   },
 });
 
