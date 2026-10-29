@@ -129,6 +129,16 @@ export default function LeadList() {
     q: q.trim() || undefined,
   });
 
+  // Same filters as the list, minus sort and limit, so the sentence above the
+  // table counts everyone the list would keep rather than the rows it shows.
+  const totals = useQuery(api.leads.listTotalsForAdmin, {
+    includeAbandoned,
+    includeDisqualified: includeDisqualified || stage === "disqualified",
+    view: "crm" as const,
+    onlyCrmStatus: stage ?? undefined,
+    q: q.trim() || undefined,
+  });
+
   const rows = useMemo(() => {
     if (!leads) return [];
     // Server order is authoritative. Readiness is attached for display only;
@@ -143,8 +153,10 @@ export default function LeadList() {
 
   if (leads === undefined) return <p className="text-body-large text-on-surface-variant">Loading leads...</p>;
 
-  const contactable = rows.filter((l) => l.lineId || l.phone).length;
-  const withCv = rows.filter((l) => l.cvReceivedAt).length;
+  // Until the totals arrive, fall back to the rows on screen rather than blank.
+  const people = totals?.people ?? rows.length;
+  const contactable = totals?.reachable ?? rows.filter((l) => l.lineId || l.phone).length;
+  const withCv = totals?.withCv ?? rows.filter((l) => l.cvReceivedAt).length;
 
   return (
     <div className="w-full">
@@ -156,12 +168,12 @@ export default function LeadList() {
         <p className="text-body-medium text-on-surface-variant">
           {searching ? (
             <>
-              {rows.length} {rows.length === 1 ? "match" : "matches"} for “{q.trim()}”, searched
+              {people} {people === 1 ? "match" : "matches"} for “{q.trim()}”, searched
               across everyone including abandoned and judged out
             </>
           ) : (
             <>
-              {rows.length} {rows.length === 1 ? "person" : "people"}, {contactable} reachable on
+              {people} {people === 1 ? "person" : "people"}, {contactable} reachable on
               LINE or phone, {withCv} with a CV
             </>
           )}
