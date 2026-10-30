@@ -353,6 +353,7 @@ export const sendMatchedRole = mutation({
     salary: v.optional(v.string()),
     deadlineAt: v.optional(v.number()),
     matchReason: v.optional(v.string()),
+    jobDescription: v.optional(v.string()),
     jobLogId: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
@@ -386,6 +387,7 @@ export const sendMatchedRole = mutation({
       ...(args.salary?.trim() ? { salary: args.salary.trim() } : {}),
       ...(args.deadlineAt ? { deadlineAt: args.deadlineAt } : {}),
       ...(args.matchReason?.trim() ? { matchReason: args.matchReason.trim() } : {}),
+      ...(args.jobDescription?.trim() ? { jobDescription: args.jobDescription.trim().slice(0, 20000) } : {}),
       status: "interested",
       // Coach-recorded so the coach can correct it; once the candidate moves
       // it on their page the row becomes theirs. See `portal.setJobStatus`.
@@ -614,5 +616,100 @@ export const forLead = query({
         : null,
       heldCode,
     };
+  },
+});
+
+/* ------------------------------------------------------------------ queue */
+
+/**
+ * Everyone who has paid, with what is owed to them, for the top of the coach
+ * dashboard. The delivery counterpart of `ConsultationQueues`: things already
+ * promised and not yet done, soonest first, so nothing paid for waits unseen.
+ */
+export const queue = query({
+  args: {},
+  handler: async (ctx) => {
+    await requireAdmin(ctx);
+    const now = Date.now();
+    const live = (await ctx.db.query("engagements").collect()).filter(
+      (e) => e.status === "agreed" || e.status === "active",
+    );
+    const byLead = new Map<Id<"leads">, typeof live>();
+    for (const e of live) byLead.set(e.leadId, [...(byLead.get(e.leadId) ?? []), e]);
+
+    type Row = {
+      leadId: Id<"leads">;
+      name: string;
+      modules: string[];
+      tokens: number;
+      open: { _id: Id<"deliverables">; kind: string; title: string | null; status: string; dueAt: number | null; overdue: boolean }[];
+      heldCode: { code: string; expiresAt: number } | null;
+      hasAccess: boolean;
+      lastSignInAt: number | null;
+      jobsLive: number;
+      interviewing: number;
+    };
+    const rows: Row[] = [];
+    for (const [leadId, engagements] of byLead) {
+      const lead = await ctx.db.get(leadId);
+      if (!lead) continue;
+      const ids = new Set(engagements.map((e) => e._id as string));
+      const open = (
+        await ctx.db
+          .query("deliverables")
+          .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+          .collect()
+      )
+        .filter((d) => ids.has(d.engagementId) && d.status !== "delivered")
+        .sort((a, b) => (a.dueAt ?? Infinity) - (b.dueAt ?? Infinity));
+      const { balance } = await tokenBalance(ctx, leadId);
+      const access = (
+        await ctx.db
+          .query("candidateAccess")
+          .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+          .collect()
+      ).find((g) => g.revokedAt === undefined);
+      const held = access
+        ? (
+            await ctx.db
+              .query("pendingSignInCodes")
+              .withIndex("by_email", (q) => q.eq("email", access.email))
+              .collect()
+          ).find((c) => c.expiresAt > now)
+        : undefined;
+      const apps = await ctx.db
+        .query("applications")
+        .withIndex("by_lead_time", (q) => q.eq("leadId", leadId))
+        .collect();
+      const live = apps.filter((a) => !["rejected", "withdrawn", "accepted"].includes(a.status));
+      const interviewing = live.filter((a) => a.status === "interviewing" || a.status === "offer").length;
+      rows.push({
+        leadId,
+        name: lead.firstName ?? lead.fullName ?? lead.email ?? "Unnamed",
+        modules: engagements.map((e) => e.module),
+        tokens: balance,
+        open: open.map((d) => ({
+          _id: d._id,
+          kind: d.kind,
+          title: d.title ?? null,
+          status: d.status,
+          dueAt: d.dueAt ?? null,
+          overdue: d.dueAt !== undefined && d.dueAt < now,
+        })),
+        heldCode: held ? { code: held.code, expiresAt: held.expiresAt } : null,
+        hasAccess: !!access,
+        lastSignInAt: access?.lastSignInAt ?? null,
+        jobsLive: live.length,
+        interviewing,
+      });
+    }
+    // Held codes first (they expire in minutes), then overdue, then soonest due.
+    const firstDue = (r: Row) => r.open[0]?.dueAt ?? Infinity;
+    return rows.sort(
+      (a, b) =>
+        Number(!!b.heldCode) - Number(!!a.heldCode) ||
+        Number(b.open.some((d) => d.overdue)) - Number(a.open.some((d) => d.overdue)) ||
+        firstDue(a) - firstDue(b),
+    );
   },
 });

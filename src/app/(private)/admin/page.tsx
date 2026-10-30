@@ -4,6 +4,7 @@ import { useAuthActions } from "@convex-dev/auth/react";
 import AdminGate, { DEV_ADMIN_BYPASS } from "@/components/AdminGate";
 import LeadList from "@/components/features/dashboard/LeadList";
 import ConsultationQueues from "@/components/features/dashboard/ConsultationQueues";
+import DeliveryQueue from "@/components/features/dashboard/DeliveryQueue";
 import BookingCutReadout from "@/components/features/dashboard/BookingCutReadout";
 
 /**
@@ -44,7 +45,12 @@ export default function AdminPage() {
               which is a question the coach chooses to ask; these four buckets
               are things already promised to someone and not yet done, and the
               reminder among them expires whether or not anyone scrolls. */}
+          {/* First: these people have paid. What is owed to them outranks
+              everything that is still a prospect. */}
           <div className="mt-8 max-w-3xl">
+            <DeliveryQueue />
+          </div>
+          <div className="mt-4 max-w-3xl">
             <ConsultationQueues />
           </div>
           {/* Below the queues and above the list: it is a thing to read
