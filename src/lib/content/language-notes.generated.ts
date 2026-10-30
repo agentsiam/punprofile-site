@@ -7485,8 +7485,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Fit Report page, how it works step 2",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
+    "date": "30/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[2].how[2]": {
     "source": "src/lib/content/products.ts",
@@ -7512,8 +7512,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Fit Report page, hero lede",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
+    "date": "30/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[2].limit": {
     "source": "src/lib/content/products.ts",
@@ -9240,8 +9240,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Result screen, Fit Report card body",
     "narrativeSlot": "ask",
     "provenance": "paul-written",
-    "date": "26/10/2026",
-    "decisionNote": "Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 27/10/2026."
+    "date": "30/10/2026",
+    "decisionNote": "Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 27/10/2026. The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026."
   },
   "src/lib/content/copy.ts::COPY.result.download": {
     "source": "src/lib/content/copy.ts",
@@ -9618,8 +9618,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "EU Fit Check product page, full-version section lede",
     "narrativeSlot": "artefact",
     "provenance": "paul-written",
-    "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer."
+    "date": "30/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026."
   },
   "src/lib/content/products.ts::FULL_CTA": {
     "source": "src/lib/content/products.ts",
@@ -9708,8 +9708,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate PDF, full-version section body",
     "narrativeSlot": "ask",
     "provenance": "paul-written",
-    "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Last sentence (message on LINE or email) deleted on Paul's 1a, 27/10/2026, because the report's button now leads to the Fit Report page, which asks for the conversation."
+    "date": "30/10/2026",
+    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Last sentence (message on LINE or email) deleted on Paul's 1a, 27/10/2026, because the report's button now leads to the Fit Report page, which asks for the conversation. The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026."
   },
   "src/lib/content/copy.ts::COPY.report.full.example": {
     "source": "src/lib/content/copy.ts",
@@ -9996,8 +9996,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Fit Report page, comparison card, Fit Report",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
+    "date": "30/10/2026",
+    "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026."
   },
   "src/lib/content/products.ts::FIT_PLAN_FULL.rows[0]": {
     "source": "src/lib/content/products.ts",

@@ -20064,15 +20064,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].how[1]
 render: Fit Report page, how it works step 2
 narrative_slot: mechanism
-en: A 30-minute video interview with an expert about your CV, your work experience and the roles you are interested in, in Thai or English.
-th: สัมภาษณ์ผ่านวิดีโอคอล 30 นาทีกับผู้เชี่ยวชาญ พูดคุยเกี่ยวกับ CV ประสบการณ์ทำงาน และตำแหน่งที่คุณสนใจ โดยเลือกสัมภาษณ์เป็นภาษาไทยหรืออังกฤษได้
+en: A 30-minute video interview with a coach about your CV, your work experience and the roles you are interested in, in Thai or English.
+th: สัมภาษณ์ผ่านวิดีโอคอล 30 นาทีกับโค้ช พูดคุยเกี่ยวกับ CV ประสบการณ์ทำงาน และตำแหน่งที่คุณสนใจ โดยเลือกสัมภาษณ์เป็นภาษาไทยหรืออังกฤษได้
 provenance: paul-approved
-date: 28/10/2026
+date: 30/10/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026.
 review:
   structural_calque: pass
-  text_hash: eb69787e5782fde6d7521b3d9e2757ef248010a3e777481acc7088c023b52017
+  text_hash: d93f03c585492766466f2266c0ef7959285486e6137b390dd962c8108bfee6af
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 28/10/2026.
 ```
@@ -20130,15 +20130,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].lede
 render: Fit Report page, hero lede
 narrative_slot: utility
-en: 'The full report: all four areas scored competency by competency, completed in a 30-minute interview with an expert.'
-th: ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับผู้เชี่ยวชาญ
+en: 'The full report: all four areas scored competency by competency, completed in a 30-minute interview with a coach.'
+th: ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับโค้ช
 provenance: paul-approved
-date: 28/10/2026
+date: 30/10/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026.
 review:
   structural_calque: pass
-  text_hash: 9bdfed55720436358b43ab59f3fc63c5db1c1c635d124e0d08ae01c21311b387
+  text_hash: 4859173ff55117d904ce386c795d8fe2083b5cec8cc11c7559ca473db2cc7d0f
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 28/10/2026.
 ```
@@ -24817,15 +24817,15 @@ source: src/lib/content/copy.ts
 path: COPY.result.fitReport.body
 render: Result screen, Fit Report card body
 narrative_slot: ask
-en: The Fit Report builds on the result you just got, with a 30-minute interview with an expert, to score every competency in each area, like this example.
-th: Fit Report ต่อยอดจากผลที่คุณเพิ่งได้รับ ด้วยการสัมภาษณ์ 30 นาทีกับ Expert เพื่อประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างนี้
+en: The Fit Report builds on the result you just got, with a 30-minute interview with a coach, to score every competency in each area, like this example.
+th: Fit Report ต่อยอดจากผลที่คุณเพิ่งได้รับ ด้วยการสัมภาษณ์ 30 นาทีกับโค้ช เพื่อประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างนี้
 provenance: paul-written
-date: 26/10/2026
+date: 30/10/2026
 term_bindings: []
-decision_note: Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 27/10/2026.
+decision_note: Result screen Fit Report card and self-download, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 27/10/2026. The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026.
 review:
   structural_calque: pass
-  text_hash: 691922b15486b58e6532dc6717c21628a4ab14f5055867b3bf1f46ee7e1e42ef
+  text_hash: c9843b590912f17b5bffbc46bf1c8823944f67f574f4187745ceed3ad74594cb
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -25741,15 +25741,15 @@ source: src/lib/content/products.ts
 path: FULL_LEDE
 render: EU Fit Check product page, full-version section lede
 narrative_slot: artefact
-en: The free check scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and opens each area up like this, eight to ten competencies at a time.
-th: EU Fit Check แบบฟรีให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และแสดงผลแต่ละด้านเป็นกราฟแบบนี้ โดยแยกเป็นด้านละ 8–10 ทักษะ
+en: The free check scores four areas from your answers. The Fit Report adds a 30-minute interview with a coach and opens each area up like this, eight to ten competencies at a time.
+th: EU Fit Check แบบฟรีให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับโค้ช และแสดงผลแต่ละด้านเป็นกราฟแบบนี้ โดยแยกเป็นด้านละ 8–10 ทักษะ
 provenance: paul-written
-date: 26/10/2026
+date: 30/10/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026.
 review:
   structural_calque: pass
-  text_hash: 24d9e3a67b340b8ad00f4e2f0b51911aea51e321f49a4d87f86e5b574f5134ef
+  text_hash: 940d2e2cbd65be057fa2e651f5fae619af4bd333a1d4dfc99b3736a8313b4282
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -25961,15 +25961,15 @@ source: src/lib/content/copy.ts
 path: COPY.report.full.body
 render: Candidate PDF, full-version section body
 narrative_slot: ask
-en: This report scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and scores every competency in each area, like the example below.
-th: รายงานนี้ให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างด้านล่าง
+en: This report scores four areas from your answers. The Fit Report adds a 30-minute interview with a coach and scores every competency in each area, like the example below.
+th: รายงานนี้ให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับโค้ช และประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างด้านล่าง
 provenance: paul-written
-date: 26/10/2026
+date: 30/10/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Last sentence (message on LINE or email) deleted on Paul's 1a, 27/10/2026, because the report's button now leads to the Fit Report page, which asks for the conversation.
+decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Last sentence (message on LINE or email) deleted on Paul's 1a, 27/10/2026, because the report's button now leads to the Fit Report page, which asks for the conversation. The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026.
 review:
   structural_calque: pass
-  text_hash: 567332cb1b476732b3f00cd1b04652e5fdaa734a91ded2ef04cc16f1f4bb7199
+  text_hash: 9fb50c9ed2c2f2eadd0635ea99f391bd59214ea0d6c9af39b289c616091a9bd6
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -26665,15 +26665,15 @@ source: src/lib/content/products.ts
 path: FIT_PLAN_FULL.sub
 render: Fit Report page, comparison card, Fit Report
 narrative_slot: mechanism
-en: Your answers + a 30-minute interview with an expert
-th: คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับผู้เชี่ยวชาญ
+en: Your answers + a 30-minute interview with a coach
+th: คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับโค้ช
 provenance: paul-approved
-date: 28/10/2026
+date: 30/10/2026
 term_bindings: []
-decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. The interviewer is โค้ช / a coach everywhere, on Paul's instruction of 30/10/2026.
 review:
   structural_calque: pass
-  text_hash: 3beb10a61406110c71e7f2d62fa273b416b4c1d36b427afdcb57bd42115b4f81
+  text_hash: 450294f414dc3d6d78639be6518a58f1236a21a699703d9b5380362c69480470
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 28/10/2026.
 ```

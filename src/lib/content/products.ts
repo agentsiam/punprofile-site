@@ -192,8 +192,8 @@ export const FULL_HEADING: Copy = {
 };
 
 export const FULL_LEDE: Copy = {
-  en: "The free check scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and opens each area up like this, eight to ten competencies at a time.",
-  th: "EU Fit Check แบบฟรีให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และแสดงผลแต่ละด้านเป็นกราฟแบบนี้ โดยแยกเป็นด้านละ 8–10 ทักษะ",
+  en: "The free check scores four areas from your answers. The Fit Report adds a 30-minute interview with a coach and opens each area up like this, eight to ten competencies at a time.",
+  th: "EU Fit Check แบบฟรีให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับโค้ช และแสดงผลแต่ละด้านเป็นกราฟแบบนี้ โดยแยกเป็นด้านละ 8–10 ทักษะ",
 };
 
 export const FULL_CTA: Copy = {
@@ -422,9 +422,9 @@ export const PRODUCTS: readonly Product[] = [
       th: "รู้ผลเบื้องต้นแล้ว ควรเริ่มพัฒนาตรงไหนก่อน?",
     },
     lede: {
-      en: "The full report: all four areas scored competency by competency, completed in a 30-minute interview with an expert.",
+      en: "The full report: all four areas scored competency by competency, completed in a 30-minute interview with a coach.",
       // Rebuilt from Paul's own Thai of 23/08/2026 on the pricing sheet.
-      th: "ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับผู้เชี่ยวชาญ",
+      th: "ผลประเมินฉบับเต็ม ครบทั้ง 4 ด้าน แยกคะแนนเป็นรายทักษะ โดยใช้ทั้งคำตอบของคุณและการสัมภาษณ์ 30 นาทีกับโค้ช",
     },
     how: [
       {
@@ -434,11 +434,11 @@ export const PRODUCTS: readonly Product[] = [
         th: "ทักมาทาง LINE ผมจะแจ้งรายละเอียดการชำระเงิน และนัดเวลาสัมภาษณ์ที่สะดวก",
       },
       {
-        en: "A 30-minute video interview with an expert about your CV, your work experience and the roles you are interested in, in Thai or English.",
+        en: "A 30-minute video interview with a coach about your CV, your work experience and the roles you are interested in, in Thai or English.",
         // Paul's wording, 23/08/2026. Gates are cleared in dependency order, not
         // score order, and the lowest uncleared one is the only one that matters
         // this month.
-        th: "สัมภาษณ์ผ่านวิดีโอคอล 30 นาทีกับผู้เชี่ยวชาญ พูดคุยเกี่ยวกับ CV ประสบการณ์ทำงาน และตำแหน่งที่คุณสนใจ โดยเลือกสัมภาษณ์เป็นภาษาไทยหรืออังกฤษได้",
+        th: "สัมภาษณ์ผ่านวิดีโอคอล 30 นาทีกับโค้ช พูดคุยเกี่ยวกับ CV ประสบการณ์ทำงาน และตำแหน่งที่คุณสนใจ โดยเลือกสัมภาษณ์เป็นภาษาไทยหรืออังกฤษได้",
       },
       {
         en: "Your Fit Report arrives as a PDF the same day, yours to keep and plan from.",
@@ -915,7 +915,7 @@ export const FIT_PLAN_FREE = {
 } as const;
 
 export const FIT_PLAN_FULL = {
-  sub: { en: "Your answers + a 30-minute interview with an expert", th: "คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับผู้เชี่ยวชาญ" },
+  sub: { en: "Your answers + a 30-minute interview with a coach", th: "คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับโค้ช" },
   rows: [
     { text: { en: "All 4 areas, all 34 competencies", th: "คะแนน 4 ด้าน ครบ 34 ทักษะ" }, on: true },
     { text: { en: "A next step for every competency below the bar, in order", th: "สิ่งที่ควรทำต่อ ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ" }, on: true },

@@ -1049,8 +1049,8 @@ export const COPY = {
   },
   "report.full.body": {
     screen: "Candidate PDF, full-version section body",
-    en: "This report scores four areas from your answers. The Fit Report adds a 30-minute interview with an expert and scores every competency in each area, like the example below.",
-    th: "รายงานนี้ให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับ Expert และประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างด้านล่าง",
+    en: "This report scores four areas from your answers. The Fit Report adds a 30-minute interview with a coach and scores every competency in each area, like the example below.",
+    th: "รายงานนี้ให้คะแนน 4 ด้านจากคำตอบของคุณ ส่วน Fit Report จะเพิ่มการสัมภาษณ์ 30 นาทีกับโค้ช และประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างด้านล่าง",
   },
   "report.full.example": {
     screen: "Candidate PDF, label over the example chart",
@@ -1244,8 +1244,8 @@ export const COPY = {
   },
   "result.fitReport.body": {
     screen: "Result screen, Fit Report card body",
-    en: "The Fit Report builds on the result you just got, with a 30-minute interview with an expert, to score every competency in each area, like this example.",
-    th: "Fit Report ต่อยอดจากผลที่คุณเพิ่งได้รับ ด้วยการสัมภาษณ์ 30 นาทีกับ Expert เพื่อประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างนี้",
+    en: "The Fit Report builds on the result you just got, with a 30-minute interview with a coach, to score every competency in each area, like this example.",
+    th: "Fit Report ต่อยอดจากผลที่คุณเพิ่งได้รับ ด้วยการสัมภาษณ์ 30 นาทีกับโค้ช เพื่อประเมินครบทุกทักษะในแต่ละด้าน ตามตัวอย่างนี้",
   },
   "result.download": {
     screen: "Result screen, button that opens the candidate's own PDF",

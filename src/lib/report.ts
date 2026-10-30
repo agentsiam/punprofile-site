@@ -70,9 +70,12 @@ import { buildNarrative } from "./narrative";
 import { assertCandidateSafe, itemName, dimensionName, dimensionNameByLabel } from "./views";
 import { t, type Locale } from "./locale";
 import { BAND_COPY, DIMENSIONS, GATES } from "./model";
-import { topStrengths, developmentPriorities } from "./scoring";
+import { topStrengths, developmentPriorities, scoreResponse, scoreFull } from "./scoring";
+import { ECRA } from "./ecra";
+import { FIT_SAMPLE_INPUT, fitSampleRatings } from "./fit-sample-core";
+import { SAMPLE_LABEL } from "./content/home";
 import { projectUnlock } from "./levers";
-import { FULL_CTA, FULL_SAMPLE, HERO_SAMPLE_SCORES } from "./content/products";
+import { FIT_CALLOUTS, FULL_CTA, FULL_SAMPLE, HERO_SAMPLE_SCORES } from "./content/products";
 import type { ProfileScore } from "./scoring";
 import type { Tier } from "./model";
 
@@ -683,10 +686,10 @@ ${rows}
   // pages is the Fit Report's own copy, so nothing here is new wording.
   // Was a single 8-axis chart, 26/10/2026; the book, 27/10/2026.
   // The cover carries the reader's own name, as the real cover does. Paul 1a, 27/10/2026.
-  const fullSample = bookShowcase(locale, s, dimLabel, {
-    name: meta.coverName ?? meta.candidate,
-    sub: [meta.targetRole, meta.targetCountries?.join(", ")].filter(Boolean).join(" · "),
-  });
+  // 30/10/2026 (Paul, 2a): the book gave way to the Fit Report page's own
+  // picture, one real page of the sample report, flat on the lime ground, with
+  // the same three notes beside it. The book's builder stays for its history.
+  const fullSample = flatShowcase(locale);
 
   const body = `  <header class="top">
     <p class="eyebrow">PunProfile · EU Fit Check</p>
@@ -747,7 +750,7 @@ ${dimSections}
     printLabel: s("report.savePdf"),
     body,
     autoPrint: opts.autoPrint ?? false,
-  }).replace("</style>", `${BOOK_STYLES}\n</style>`);
+  }).replace("</style>", `${FLAT_STYLES}\n${FIT_STYLES}\n</style>`);
 
   // The check that makes the whitelist rule enforceable rather than aspirational.
   // Run against the rendered document, so a word hard-coded into a template here
@@ -855,6 +858,62 @@ function bookShowcase(
     </div>
   </div>`;
 }
+
+/**
+ * The free report's last picture, the same as the top of the Fit Report page:
+ * page 04 of the sample Fit Report, flat on the lime ground, and the three
+ * notes beside it. The page is the real renderer's output, cut out by section
+ * id and scaled, so it cannot drift from the paid report. 30/10/2026.
+ */
+function flatShowcase(locale: Locale): string {
+  const profile = scoreResponse(FIT_SAMPLE_INPUT);
+  const html = renderFitReport(
+    {
+      profile,
+      full: scoreFull(profile, fitSampleRatings(), (k) => ECRA[k]?.formula),
+      moves: [],
+      roles: { inCountries: 0, matching: 0, examples: [] },
+    },
+    { candidate: SAMPLE_LABEL[locale] },
+    { locale, sampleNotes: true },
+  );
+  const m = html.match(/<section class="fit-sec" id="employability">([\s\S]*?)<\/section>/);
+  const page = m ? m[1] : "";
+  const pick = (c: { en: string; th: string }) => (locale === "th" ? c.th : c.en);
+  const mark = (k: string) =>
+    k === "bar" ? `<span class="fl-bar"></span>` : `<span class="fl-dot">${k === "check" ? "✓" : esc(k)}</span>`;
+  return `<div class="flat">
+    <div class="fl-sheet"><div class="fl-page is-fit"><div class="fit-sec">${page}</div></div></div>
+    <ul class="fl-notes">${FIT_CALLOUTS.map(
+      (c) => `<li>${mark(c.mark)}<div><p class="fl-t">${esc(pick(c.title))}</p><p class="fl-b">${esc(pick(c.body))}</p></div></li>`,
+    ).join("")}</ul>
+  </div>`;
+}
+
+const FLAT_STYLES = `
+  .flat {
+    display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 14px; align-items: start;
+    margin: 1.25rem 0 .5rem; padding: 18px; border-radius: 22px; background: var(--color-canvas-brand);
+    break-inside: avoid;
+  }
+  .fl-sheet { --k: .5; position: relative; background: #fff; border-radius: 16px; overflow: hidden; height: calc(760px * var(--k)); }
+  .fl-page { position: absolute; top: 0; left: 0; width: 794px; padding: 40px 48px; transform: scale(var(--k)); transform-origin: top left; }
+  .fl-page .sec-foot { display: none; }
+  .fl-page .fit-sec { break-before: auto !important; margin: 0; }
+  ul.fl-notes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  ul.fl-notes li { display: flex; gap: 12px; background: #fff; border-radius: 16px; padding: 14px 16px; }
+  .fl-t { margin: 0; font-weight: 700; font-size: .92rem; color: #163300; }
+  .fl-b { margin: .2rem 0 0; font-size: .84rem; color: #163300; }
+  .fl-dot { flex: none; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #163300; color: #9fe870; font-weight: 700; font-size: .75rem; }
+  .fl-bar { flex: none; width: 26px; margin-top: 10px; border-top: 3px dashed #b86700; height: 0; }
+  @media (max-width: 640px) {
+    .flat { grid-template-columns: 1fr; }
+    .fl-sheet { --k: .4; }
+  }
+  @media print {
+    .fl-sheet { --k: .48; }
+  }
+`;
 
 /** The book's stylesheet. Scoped under `.book`, used only by the free report. */
 const BOOK_STYLES = `
