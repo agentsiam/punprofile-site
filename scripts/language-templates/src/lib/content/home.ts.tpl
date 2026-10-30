@@ -560,9 +560,11 @@ export const WHO_BODY: Copy = {
 // ------------------------------------------------------------------- results
 
 /**
- * **Three client quotes, supplied by Paul on 22/09/2026 as real clients' own
- * words**, one each from 1-on-1 coaching, customised job alerts and AI
- * training. They are quoted as supplied and never edited for voice.
+ * **Seven client quotes, all real clients' own words.** Three supplied by Paul
+ * on 22/09/2026, one each from 1-on-1 coaching, customised job alerts and AI
+ * training. Four placement stories supplied on 30/10/2026, each confirmed by
+ * Paul as a real client with written consent who got the job named. All are
+ * quoted as supplied and never edited for voice; the English is a translation.
  *
  * None carries a portrait. A stock face beside a real client's name would say
  * that stranger is the client, so a portrait goes in only when the client
@@ -576,7 +578,7 @@ export const WHO_BODY: Copy = {
 export interface Result {
   id: string;
   quote: Copy;
-  /** First name only, and only with written consent. */
+  /** Nickname and first name, never a surname, and only with written consent. */
   who: Copy;
   /** What they do, in the client's own terms. */
   role: Copy;
@@ -585,6 +587,17 @@ export interface Result {
 export const RESULTS_HEADING: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNfSEVBRElORw:EN%%,
   th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNfSEVBRElORw:TH%%,
+};
+
+/** Accessible names for the carousel's two arrows. Never shown as text. */
+export const RESULTS_PREV: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNfUFJFVg:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNfUFJFVg:TH%%,
+};
+
+export const RESULTS_NEXT: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNfTkVYVA:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNfTkVYVA:TH%%,
 };
 
 export const RESULTS: readonly Result[] = [
@@ -631,6 +644,66 @@ export const RESULTS: readonly Result[] = [
     role: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMl0ucm9sZQ:EN%%,
       th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbMl0ucm9sZQ:TH%%,
+    },
+  },
+  {
+    id: "placed-hotel-germany",
+    quote: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbM10ucXVvdGU:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbM10ucXVvdGU:TH%%,
+    },
+    who: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbM10ud2hv:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbM10ud2hv:TH%%,
+    },
+    role: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbM10ucm9sZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbM10ucm9sZQ:TH%%,
+    },
+  },
+  {
+    id: "placed-chef-netherlands",
+    quote: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNF0ucXVvdGU:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNF0ucXVvdGU:TH%%,
+    },
+    who: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNF0ud2hv:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNF0ud2hv:TH%%,
+    },
+    role: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNF0ucm9sZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNF0ucm9sZQ:TH%%,
+    },
+  },
+  {
+    id: "placed-it-ireland",
+    quote: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNV0ucXVvdGU:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNV0ucXVvdGU:TH%%,
+    },
+    who: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNV0ud2hv:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNV0ud2hv:TH%%,
+    },
+    role: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNV0ucm9sZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNV0ucm9sZQ:TH%%,
+    },
+  },
+  {
+    id: "placed-logistics-sweden",
+    quote: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNl0ucXVvdGU:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNl0ucXVvdGU:TH%%,
+    },
+    who: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNl0ud2hv:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNl0ud2hv:TH%%,
+    },
+    role: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNl0ucm9sZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OlJFU1VMVFNbNl0ucm9sZQ:TH%%,
     },
   },
 ];

@@ -2970,6 +2970,132 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "22/09/2026",
     "decisionNote": "The client's line of work, as Paul supplied it on 22/09/2026."
   },
+  "src/lib/content/home.ts::RESULTS_PREV": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS_PREV",
+    "render": "Home page, RESULTS_PREV",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Accessible name of the carousel's back arrow. Never shown as text. Added 30/10/2026 with the carousel."
+  },
+  "src/lib/content/home.ts::RESULTS_NEXT": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS_NEXT",
+    "render": "Home page, RESULTS_NEXT",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Accessible name of the carousel's forward arrow. Never shown as text. Added 30/10/2026 with the carousel."
+  },
+  "src/lib/content/home.ts::RESULTS[3].quote": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[3].quote",
+    "render": "Home page, RESULTS[3].quote",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Paul supplied the Thai on 30/10/2026 as a real client's words, a placement story, confirmed with written consent. Quoted as supplied, never edited for voice. The English is a translation for /en.\n\nNot part of the clean corpus: this is the client's voice, not PunProfile's."
+  },
+  "src/lib/content/home.ts::RESULTS[3].who": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[3].who",
+    "render": "Home page, RESULTS[3].who",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Nickname and first name, as Paul supplied them on 30/10/2026. No surname."
+  },
+  "src/lib/content/home.ts::RESULTS[3].role": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[3].role",
+    "render": "Home page, RESULTS[3].role",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "The job and country the client got, as Paul supplied it on 30/10/2026."
+  },
+  "src/lib/content/home.ts::RESULTS[4].quote": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[4].quote",
+    "render": "Home page, RESULTS[4].quote",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Paul supplied the Thai on 30/10/2026 as a real client's words, a placement story, confirmed with written consent. Quoted as supplied, never edited for voice. The English is a translation for /en.\n\nNot part of the clean corpus: this is the client's voice, not PunProfile's."
+  },
+  "src/lib/content/home.ts::RESULTS[4].who": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[4].who",
+    "render": "Home page, RESULTS[4].who",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Nickname and first name, as Paul supplied them on 30/10/2026. No surname."
+  },
+  "src/lib/content/home.ts::RESULTS[4].role": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[4].role",
+    "render": "Home page, RESULTS[4].role",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "The job and country the client got, as Paul supplied it on 30/10/2026."
+  },
+  "src/lib/content/home.ts::RESULTS[5].quote": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[5].quote",
+    "render": "Home page, RESULTS[5].quote",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Paul supplied the Thai on 30/10/2026 as a real client's words, a placement story, confirmed with written consent. Quoted as supplied, never edited for voice. The English is a translation for /en.\n\nNot part of the clean corpus: this is the client's voice, not PunProfile's."
+  },
+  "src/lib/content/home.ts::RESULTS[5].who": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[5].who",
+    "render": "Home page, RESULTS[5].who",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Nickname and first name, as Paul supplied them on 30/10/2026. No surname."
+  },
+  "src/lib/content/home.ts::RESULTS[5].role": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[5].role",
+    "render": "Home page, RESULTS[5].role",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "The job and country the client got, as Paul supplied it on 30/10/2026."
+  },
+  "src/lib/content/home.ts::RESULTS[6].quote": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[6].quote",
+    "render": "Home page, RESULTS[6].quote",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Paul supplied the Thai on 30/10/2026 as a real client's words, a placement story, confirmed with written consent. Quoted as supplied, never edited for voice. The English is a translation for /en.\n\nNot part of the clean corpus: this is the client's voice, not PunProfile's."
+  },
+  "src/lib/content/home.ts::RESULTS[6].who": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[6].who",
+    "render": "Home page, RESULTS[6].who",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Nickname and first name, as Paul supplied them on 30/10/2026. No surname."
+  },
+  "src/lib/content/home.ts::RESULTS[6].role": {
+    "source": "src/lib/content/home.ts",
+    "path": "RESULTS[6].role",
+    "render": "Home page, RESULTS[6].role",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "The job and country the client got, as Paul supplied it on 30/10/2026."
+  },
   "src/lib/content/home.ts::SAMPLE_HEADING": {
     "source": "src/lib/content/home.ts",
     "path": "SAMPLE_HEADING",

@@ -29,7 +29,7 @@ Result: **429 Paul-written clean-corpus records**, **788 records approved to bui
    - DO: `ปัญหาส่วนใหญ่ไม่ใช่ว่าคุณเก่งไม่พอ แต่เป็นเพราะตลาดงานยุโรปเล่นด้วยกติกาคนละชุดกับไทย` (Paul's wording, home page).
    - DON'T: translate each English clause and reconnect it with `จึง`, `ที่`, and `ไม่ใช่จาก` in the same order.
 3. Name the reader's lived symptom before diagnosing it. In short-form use the observed `มี X แต่ Y...` stack, then hand the floor back. Long-form answers the question the reader deliberately opened and does not inherit feed padding.
-4. Relocate blame from the reader to the rules without promising an outcome. State limits in the same breath as the offer. PunProfile has no placed-client claim.
+4. Relocate blame from the reader to the rules without promising an outcome. State limits in the same breath as the offer. A placed-client claim appears only as a real client's own quote, with written consent, in the home page's results.
 5. Keep Thai rhythm short enough to scan, but do not chop it to hit a metric. Register bands are triage only. They do not prove idiomatic Thai.
 6. Apply termbase decisions exactly. Product names, navigation labels, LINE, and fixed calls to action are decisions, not untranslated gaps. An exact English-to-Thai pass-through without a termbase entry fails unless its record already carries a current Paul-approved verdict; that verdict is per-string evidence, not inference.
 7. Use `เรา` for broadcast and app copy, `ผม` for one-to-one messages, and state `คุณ` when addressing the reader. The termbase records deliberate exceptions.
@@ -8310,6 +8310,336 @@ review:
   text_hash: 421572bcb3a3c6cf194aa551b4ff2662788a28a90cdd073f95e68c84b95dad5e
   prompt_version: structural-calque-v1
   basis: Paul supplied this text on 22/09/2026 as a real client's words. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS_PREV`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS_PREV
+source: src/lib/content/home.ts
+path: RESULTS_PREV
+render: Home page, RESULTS_PREV
+narrative_slot: utility
+en: Previous quote
+th: รีวิวก่อนหน้า
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  Accessible name of the carousel's back arrow. Never shown as text. Added 30/10/2026 with the carousel.
+review:
+  structural_calque: pass
+  text_hash: 1e61d41e0f7379910df39fd932f97aa2d4226c599a8ce01ff98425cda3895603
+  prompt_version: structural-calque-v1
+  basis: Accessible label only, written with the carousel on 30/10/2026; Thai is Paul-approved by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS_NEXT`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS_NEXT
+source: src/lib/content/home.ts
+path: RESULTS_NEXT
+render: Home page, RESULTS_NEXT
+narrative_slot: utility
+en: Next quote
+th: รีวิวถัดไป
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  Accessible name of the carousel's forward arrow. Never shown as text. Added 30/10/2026 with the carousel.
+review:
+  structural_calque: pass
+  text_hash: 2bc123e65703afbcea3d0d91cd589d031206399833059a6ba11616bfb4354c4d
+  prompt_version: structural-calque-v1
+  basis: Accessible label only, written with the carousel on 30/10/2026; Thai is Paul-approved by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[3].quote`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[3].quote
+source: src/lib/content/home.ts
+path: RESULTS[3].quote
+render: Home page, RESULTS[3].quote
+narrative_slot: proof
+en: At first I had no idea how to start applying for jobs in Germany. The CV advice and interview practice made me far more confident. Today I have the hotel job I was aiming for, and I have started a new life in Europe.
+th: ตอนแรกไม่รู้เลยว่าจะเริ่มสมัครงานในเยอรมนียังไง พอได้คำแนะนำเรื่องเรซูเม่และฝึกสัมภาษณ์ ก็มั่นใจขึ้นมาก วันนี้ได้งานโรงแรมตามที่ตั้งใจ และเริ่มต้นชีวิตใหม่ในยุโรปแล้วค่ะ
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  Paul supplied the Thai on 30/10/2026 as a real client's words, a placement story, confirmed with written consent. Quoted as supplied, never edited for voice. The English is a translation for /en.
+
+  Not part of the clean corpus: this is the client's voice, not PunProfile's.
+review:
+  structural_calque: pass
+  text_hash: 6f7e126332e2cfe5f245e51fb79e2f10e45dcb4be181dd0f6bdb16878008357e
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[3].who`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[3].who
+source: src/lib/content/home.ts
+path: RESULTS[3].who
+render: Home page, RESULTS[3].who
+narrative_slot: utility
+en: May Pimchanok
+th: เมย์ พิมพ์ชนก
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  Nickname and first name, as Paul supplied them on 30/10/2026. No surname.
+review:
+  structural_calque: pass
+  text_hash: 7879ceb45a9d8266eae142a5a3ec1bd431c771e317075c9a21fd0326deeb6b14
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[3].role`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[3].role
+source: src/lib/content/home.ts
+path: RESULTS[3].role
+render: Home page, RESULTS[3].role
+narrative_slot: utility
+en: Hotel job in Germany
+th: ได้งานด้านโรงแรม ประเทศเยอรมนี
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  The job and country the client got, as Paul supplied it on 30/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 7090ac354fee0946f239a52323e4b7759e92a8b95375f511174bedba45eacebb
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[4].quote`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[4].quote
+source: src/lib/content/home.ts
+path: RESULTS[4].quote
+render: Home page, RESULTS[4].quote
+narrative_slot: proof
+en: I had kitchen experience in Thailand but had never applied for a job abroad. Reworking my CV so it told my experience clearly, and preparing before the interview, helped me land a chef job in the Netherlands.
+th: ผมมีประสบการณ์ทำครัวในไทย แต่ไม่เคยสมัครงานต่างประเทศมาก่อน การได้ปรับเรซูเม่ให้เล่าประสบการณ์ได้ชัดเจน และเตรียมตัวก่อนสัมภาษณ์ ช่วยให้ผมคว้าโอกาสทำงานเชฟในเนเธอร์แลนด์ได้ครับ
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  Paul supplied the Thai on 30/10/2026 as a real client's words, a placement story, confirmed with written consent. Quoted as supplied, never edited for voice. The English is a translation for /en.
+
+  Not part of the clean corpus: this is the client's voice, not PunProfile's.
+review:
+  structural_calque: pass
+  text_hash: 55d5a2a1bad927017ee82aade55b16e61b1e569a950084d33c87aca4bc981189
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[4].who`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[4].who
+source: src/lib/content/home.ts
+path: RESULTS[4].who
+render: Home page, RESULTS[4].who
+narrative_slot: utility
+en: Ton Thanakorn
+th: ต้น ธนกร
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  Nickname and first name, as Paul supplied them on 30/10/2026. No surname.
+review:
+  structural_calque: pass
+  text_hash: 9adaca855d8c026f6253d41dd13b65ed1bab0de3218ba3c01bbfe75f6c269707
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[4].role`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[4].role
+source: src/lib/content/home.ts
+path: RESULTS[4].role
+render: Home page, RESULTS[4].role
+narrative_slot: utility
+en: Chef in the Netherlands
+th: ได้งานเชฟ ประเทศเนเธอร์แลนด์
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  The job and country the client got, as Paul supplied it on 30/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 026a3a235960d75049241d53e0709d2fc364e5b5460ba7b53c444edca1498203
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[5].quote`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[5].quote
+source: src/lib/content/home.ts
+path: RESULTS[5].quote
+render: Home page, RESULTS[5].quote
+narrative_slot: proof
+en: I had dreamed of working in IT in Europe for a long time, but application after application went unanswered. Once I changed how I presented my work and practised answering interview questions, the chance came, and I got the job in Ireland I was aiming for.
+th: ฝันอยากทำงานไอทีในยุโรปมานาน แต่ส่งใบสมัครแล้วเงียบหลายครั้ง พอปรับวิธีนำเสนอผลงานและฝึกตอบคำถามสัมภาษณ์ ก็ได้รับโอกาส จนได้งานที่ไอร์แลนด์ตามเป้าหมายค่ะ
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  Paul supplied the Thai on 30/10/2026 as a real client's words, a placement story, confirmed with written consent. Quoted as supplied, never edited for voice. The English is a translation for /en.
+
+  Not part of the clean corpus: this is the client's voice, not PunProfile's.
+review:
+  structural_calque: pass
+  text_hash: 6c0c039008dfb91543c34d7c22a11a4cd620c0c16e59a60afc1bd7960aa3f0bc
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[5].who`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[5].who
+source: src/lib/content/home.ts
+path: RESULTS[5].who
+render: Home page, RESULTS[5].who
+narrative_slot: utility
+en: Nat Natthida
+th: แนท ณัฐธิดา
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  Nickname and first name, as Paul supplied them on 30/10/2026. No surname.
+review:
+  structural_calque: pass
+  text_hash: e4b188c76a7cf1881c95656d19ff0a0f9abb8f88846526b80890ac01d007209a
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[5].role`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[5].role
+source: src/lib/content/home.ts
+path: RESULTS[5].role
+render: Home page, RESULTS[5].role
+narrative_slot: utility
+en: IT job in Ireland
+th: ได้งานด้านไอที ประเทศไอร์แลนด์
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  The job and country the client got, as Paul supplied it on 30/10/2026.
+review:
+  structural_calque: pass
+  text_hash: 775968a28cadbbe98bd226b63914e9fc9129f89a6ca6f2503202b268f19c5fcc
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[6].quote`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[6].quote
+source: src/lib/content/home.ts
+path: RESULTS[6].quote
+render: Home page, RESULTS[6].quote
+narrative_slot: proof
+en: The hardest part for me was not knowing which roles my experience fitted. With a clear way to choose jobs and a clear application, I applied where it counted, and in the end I got a logistics job in Sweden.
+th: สิ่งที่ยากที่สุดสำหรับผมคือไม่รู้ว่าประสบการณ์ของตัวเองเหมาะกับตำแหน่งไหน พอมีแนวทางเลือกงานและเตรียมใบสมัครที่ชัดเจน ก็สมัครได้ตรงจุดขึ้น สุดท้ายได้งานด้านโลจิสติกส์ในสวีเดนครับ
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  Paul supplied the Thai on 30/10/2026 as a real client's words, a placement story, confirmed with written consent. Quoted as supplied, never edited for voice. The English is a translation for /en.
+
+  Not part of the clean corpus: this is the client's voice, not PunProfile's.
+review:
+  structural_calque: pass
+  text_hash: a97e754775c205a28c5c266a151172667b4210418b599b5fd2347066ad44e183
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[6].who`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[6].who
+source: src/lib/content/home.ts
+path: RESULTS[6].who
+render: Home page, RESULTS[6].who
+narrative_slot: utility
+en: Nut Natthaphong
+th: นัท นัทธพงษ์
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  Nickname and first name, as Paul supplied them on 30/10/2026. No surname.
+review:
+  structural_calque: pass
+  text_hash: fc657f72cbea9a57eee28762a66ca5db3490b2772267ce9bbc87eb404e0b86c1
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/home.ts::RESULTS[6].role`
+
+```yaml
+id: src/lib/content/home.ts::RESULTS[6].role
+source: src/lib/content/home.ts
+path: RESULTS[6].role
+render: Home page, RESULTS[6].role
+narrative_slot: utility
+en: Logistics job in Sweden
+th: ได้งานด้านโลจิสติกส์ ประเทศสวีเดน
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: |-
+  The job and country the client got, as Paul supplied it on 30/10/2026.
+review:
+  structural_calque: pass
+  text_hash: ffe57b6cec66e76f3f42f2fec2adbaeb45b4d12b17497f261566d7c58da44b8f
+  prompt_version: structural-calque-v1
+  basis: Paul supplied the Thai on 30/10/2026 as a real client's words, with written consent and the job confirmed. A quote is not rewritten, so it is recorded as authoritative.
 ```
 
 <!-- COPY-ENTRY -->

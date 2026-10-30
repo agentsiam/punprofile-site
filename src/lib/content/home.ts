@@ -560,9 +560,11 @@ export const WHO_BODY: Copy = {
 // ------------------------------------------------------------------- results
 
 /**
- * **Three client quotes, supplied by Paul on 22/09/2026 as real clients' own
- * words**, one each from 1-on-1 coaching, customised job alerts and AI
- * training. They are quoted as supplied and never edited for voice.
+ * **Seven client quotes, all real clients' own words.** Three supplied by Paul
+ * on 22/09/2026, one each from 1-on-1 coaching, customised job alerts and AI
+ * training. Four placement stories supplied on 30/10/2026, each confirmed by
+ * Paul as a real client with written consent who got the job named. All are
+ * quoted as supplied and never edited for voice; the English is a translation.
  *
  * None carries a portrait. A stock face beside a real client's name would say
  * that stranger is the client, so a portrait goes in only when the client
@@ -576,7 +578,7 @@ export const WHO_BODY: Copy = {
 export interface Result {
   id: string;
   quote: Copy;
-  /** First name only, and only with written consent. */
+  /** Nickname and first name, never a surname, and only with written consent. */
   who: Copy;
   /** What they do, in the client's own terms. */
   role: Copy;
@@ -642,6 +644,66 @@ export const RESULTS: readonly Result[] = [
     role: {
       en: "Business Professional",
       th: "สายงานธุรกิจ",
+    },
+  },
+  {
+    id: "placed-hotel-germany",
+    quote: {
+      en: "At first I had no idea how to start applying for jobs in Germany. The CV advice and interview practice made me far more confident. Today I have the hotel job I was aiming for, and I have started a new life in Europe.",
+      th: "ตอนแรกไม่รู้เลยว่าจะเริ่มสมัครงานในเยอรมนียังไง พอได้คำแนะนำเรื่องเรซูเม่และฝึกสัมภาษณ์ ก็มั่นใจขึ้นมาก วันนี้ได้งานโรงแรมตามที่ตั้งใจ และเริ่มต้นชีวิตใหม่ในยุโรปแล้วค่ะ",
+    },
+    who: {
+      en: "May Pimchanok",
+      th: "เมย์ พิมพ์ชนก",
+    },
+    role: {
+      en: "Hotel job in Germany",
+      th: "ได้งานด้านโรงแรม ประเทศเยอรมนี",
+    },
+  },
+  {
+    id: "placed-chef-netherlands",
+    quote: {
+      en: "I had kitchen experience in Thailand but had never applied for a job abroad. Reworking my CV so it told my experience clearly, and preparing before the interview, helped me land a chef job in the Netherlands.",
+      th: "ผมมีประสบการณ์ทำครัวในไทย แต่ไม่เคยสมัครงานต่างประเทศมาก่อน การได้ปรับเรซูเม่ให้เล่าประสบการณ์ได้ชัดเจน และเตรียมตัวก่อนสัมภาษณ์ ช่วยให้ผมคว้าโอกาสทำงานเชฟในเนเธอร์แลนด์ได้ครับ",
+    },
+    who: {
+      en: "Ton Thanakorn",
+      th: "ต้น ธนกร",
+    },
+    role: {
+      en: "Chef in the Netherlands",
+      th: "ได้งานเชฟ ประเทศเนเธอร์แลนด์",
+    },
+  },
+  {
+    id: "placed-it-ireland",
+    quote: {
+      en: "I had dreamed of working in IT in Europe for a long time, but application after application went unanswered. Once I changed how I presented my work and practised answering interview questions, the chance came, and I got the job in Ireland I was aiming for.",
+      th: "ฝันอยากทำงานไอทีในยุโรปมานาน แต่ส่งใบสมัครแล้วเงียบหลายครั้ง พอปรับวิธีนำเสนอผลงานและฝึกตอบคำถามสัมภาษณ์ ก็ได้รับโอกาส จนได้งานที่ไอร์แลนด์ตามเป้าหมายค่ะ",
+    },
+    who: {
+      en: "Nat Natthida",
+      th: "แนท ณัฐธิดา",
+    },
+    role: {
+      en: "IT job in Ireland",
+      th: "ได้งานด้านไอที ประเทศไอร์แลนด์",
+    },
+  },
+  {
+    id: "placed-logistics-sweden",
+    quote: {
+      en: "The hardest part for me was not knowing which roles my experience fitted. With a clear way to choose jobs and a clear application, I applied where it counted, and in the end I got a logistics job in Sweden.",
+      th: "สิ่งที่ยากที่สุดสำหรับผมคือไม่รู้ว่าประสบการณ์ของตัวเองเหมาะกับตำแหน่งไหน พอมีแนวทางเลือกงานและเตรียมใบสมัครที่ชัดเจน ก็สมัครได้ตรงจุดขึ้น สุดท้ายได้งานด้านโลจิสติกส์ในสวีเดนครับ",
+    },
+    who: {
+      en: "Nut Natthaphong",
+      th: "นัท นัทธพงษ์",
+    },
+    role: {
+      en: "Logistics job in Sweden",
+      th: "ได้งานด้านโลจิสติกส์ ประเทศสวีเดน",
     },
   },
 ];
