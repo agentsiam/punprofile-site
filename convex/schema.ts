@@ -917,6 +917,10 @@ export default defineSchema({
         }),
       ),
     ),
+    /** The posting's text, pasted by the candidate or the coach, so the job's
+     *  keywords can be read off it (Teal's "Job Description & Keywords") after
+     *  the posting itself is taken down. @absent none — not pasted */
+    jobDescription: v.optional(v.string()),
     /** Ids of the checklist steps the candidate has ticked, from
      *  `src/lib/content/checklist.ts`. Ids, not text, so rewording a step
      *  keeps the tick. @absent none — nothing ticked */

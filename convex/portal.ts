@@ -128,6 +128,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         interviews: a.interviews ?? [],
         contacts: a.contacts ?? [],
         checklist: a.checklist ?? [],
+        jobDescription: a.jobDescription ?? null,
         // Only a CV they can see. A coach may link an unshared draft; that link
         // stays on the coach's side.
         cvDocumentId: a.cvDocumentId && sharedCvIds.has(a.cvDocumentId) ? a.cvDocumentId : null,
@@ -296,6 +297,7 @@ export const updateJob = mutation({
       ),
     ),
     checklist: v.optional(v.array(v.string())),
+    jobDescription: v.optional(v.string()),
     contacts: v.optional(
       v.array(
         v.object({
@@ -325,6 +327,9 @@ export const updateJob = mutation({
       }
       patch.cvDocumentId = args.cvDocumentId ?? undefined;
     }
+    // The posting text is the candidate's to paste on any row; on a role we
+    // sent they may add it if we did not.
+    if (args.jobDescription !== undefined) patch.jobDescription = clean(args.jobDescription, 20000);
     if (args.checklist !== undefined) {
       if (args.checklist.length > 60) throw new ConvexError("too_many");
       patch.checklist = [...new Set(args.checklist.map((id) => id.slice(0, 40)))];

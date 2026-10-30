@@ -33,6 +33,7 @@ import { useCopy } from "@/components/LocaleProvider";
 import type { Copy } from "@/lib/content/copy";
 import * as C from "@/lib/content/portal";
 import { CHECKLIST, CHECKLIST_OTHER, CHECKLIST_PROGRESS, CHECKLIST_TAB } from "@/lib/content/checklist";
+import { keywordsOf } from "@/lib/keywords";
 
 type Job = PortalView["jobs"][number];
 const PIPELINE = ["interested", "applied", "screening", "interviewing", "offer", "accepted"] as const;
@@ -759,6 +760,7 @@ function JobDetail({
                 </div>
               </div>
               {own && !readOnly && <EditOwnJob job={job} onSave={(p) => act.update(job._id, p)} />}
+              <JobDescription key={job._id} job={job} readOnly={readOnly} onSave={(jobDescription) => act.update(job._id, { jobDescription })} />
               {job.jobUrl && (
                 <a href={job.jobUrl} target="_blank" rel="noreferrer" className="inline-flex h-11 items-center btn-outlined px-5 text-label-large">
                   {pick(C.JOBS_POSTING)}
@@ -873,6 +875,59 @@ function JobDetail({
         {act.error && <p className="field-support-error mt-3">{pick(C.ERROR_GENERIC)}</p>}
       </div>
     </div>
+  );
+}
+
+/** Teal's "Job Description & Keywords": the pasted posting and the words it repeats. */
+function JobDescription({ job, readOnly, onSave }: { job: Job; readOnly: boolean; onSave: (t: string) => void }) {
+  const { pick } = useFormat();
+  const [text, setText] = useState(job.jobDescription ?? "");
+  const [dirty, setDirty] = useState(false);
+  const keywords = useMemo(() => keywordsOf(text), [text]);
+  return (
+    <section>
+      <h3 className="text-label-large text-on-surface-variant">{pick(C.JD_HEADING)}</h3>
+      {readOnly ? (
+        !text && <p className="mt-2 text-body-medium text-on-surface-variant">{pick(C.JD_EMPTY)}</p>
+      ) : (
+        <>
+          <p className="mt-1 text-body-medium text-on-surface-variant">{pick(C.JD_HELP)}</p>
+          <textarea
+            rows={6}
+            className="field mt-2"
+            value={text}
+            onChange={(e) => {
+              setText(e.target.value);
+              setDirty(true);
+            }}
+          />
+          {dirty && (
+            <button
+              type="button"
+              className="mt-2 h-11 btn-tonal px-5 text-label-large"
+              onClick={() => {
+                onSave(text);
+                setDirty(false);
+              }}
+            >
+              {pick(C.JOBS_SAVE)}
+            </button>
+          )}
+        </>
+      )}
+      {keywords.length > 0 && (
+        <div className="mt-4">
+          <p className="text-label-large text-on-surface-variant">{pick(C.JD_KEYWORDS)}</p>
+          <ul className="mt-2 flex flex-wrap gap-2">
+            {keywords.map((k) => (
+              <li key={k.term} className="rounded-sm border border-line px-2 py-1 text-body-medium text-ink">
+                {k.term} <span className="text-on-surface-variant">{k.count}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
   );
 }
 

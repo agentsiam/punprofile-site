@@ -227,6 +227,13 @@ export const CT_ROLE: Copy = { en: "Role", th: "ตำแหน่ง" };
 export const CT_ROLE_HINT: Copy = { en: "e.g. Recruiter, Hiring manager", th: "เช่น Recruiter, Hiring manager" };
 export const CT_EMAIL: Copy = { en: "Email", th: "อีเมล" };
 export const CT_LINKEDIN: Copy = { en: "LinkedIn link", th: "ลิงก์ LinkedIn" };
+export const JD_HEADING: Copy = { en: "Job description and keywords", th: "Job description และคำสำคัญ" };
+export const JD_HELP: Copy = {
+  en: "Paste the posting here. It stays even if the posting is taken down, and the words it repeats show underneath.",
+  th: "วางข้อความประกาศงานไว้ตรงนี้ เก็บไว้ได้แม้ประกาศจะถูกลบ และคำที่ประกาศพูดซ้ำบ่อย ๆ จะขึ้นด้านล่างครับ",
+};
+export const JD_KEYWORDS: Copy = { en: "Words this posting repeats", th: "คำที่ประกาศนี้พูดซ้ำ" };
+export const JD_EMPTY: Copy = { en: "No job description pasted yet.", th: "ยังไม่ได้วาง job description" };
 export const LIST_REMOVE: Copy = { en: "Remove", th: "ลบ" };
 export const DETAIL_DATES: Copy = { en: "Dates", th: "วันที่" };
 export const DETAIL_OURS: Copy = {

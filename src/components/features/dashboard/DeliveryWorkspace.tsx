@@ -992,6 +992,7 @@ function JobTracker({
     salary: string;
     deadline: string;
     matchReason: string;
+    jobDescription: string;
     status: string;
   };
   const [draft, setDraft] = useState<Draft | null>(null);
@@ -1035,7 +1036,11 @@ function JobTracker({
     };
     const ok = await run(() =>
       draft.mode === "matched"
-        ? sendMatched({ ...base, ...(draft.matchReason.trim() ? { matchReason: draft.matchReason } : {}) })
+        ? sendMatched({
+            ...base,
+            ...(draft.matchReason.trim() ? { matchReason: draft.matchReason } : {}),
+            ...(draft.jobDescription.trim() ? { jobDescription: draft.jobDescription } : {}),
+          })
         : recordApp({ ...base, status: draft.status as Doc<"applications">["status"] }),
     );
     if (ok) setDraft(null);
@@ -1051,6 +1056,7 @@ function JobTracker({
     salary: "",
     deadline: "",
     matchReason: "",
+    jobDescription: "",
     status: "applied",
   });
 
@@ -1268,6 +1274,11 @@ function JobTracker({
               <Label text="Why it matches them, in Thai (they see this)">
                 <textarea rows={3} className={INPUT} value={draft.matchReason} onChange={(e) => setDraft({ ...draft, matchReason: e.target.value })} />
               </Label>
+              <div className="mt-3">
+                <Label text="The posting's text (optional, so it survives the posting being taken down)">
+                  <textarea rows={5} className={INPUT} value={draft.jobDescription} onChange={(e) => setDraft({ ...draft, jobDescription: e.target.value })} />
+                </Label>
+              </div>
             </div>
           )}
           <ErrorLine error={error} />
