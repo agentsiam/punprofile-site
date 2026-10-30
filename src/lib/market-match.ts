@@ -11,7 +11,16 @@ import { MARKET_ROLES, type MarketRole } from "./content/market-roles.generated"
 
 /** Lower-case title keywords per role category, from `questions.ts` ROLE_CATEGORIES. */
 const ROLE_KEYWORDS: Record<string, string[]> = {
-  "IT & Software": ["software", "developer", "engineer", "devops", "frontend", "backend", "full stack", "fullstack", "cloud", "it ", "sre", "qa", "security", "mobile", "web"],
+  // No bare "engineer" or "security": both pulled aerospace, mechanical and
+  // site-security roles into an IT feed (Paul, 30/10/2026). A title counts
+  // only on a word that is about software, systems or IT support itself.
+  "IT & Software": [
+    "software", "developer", "devops", "frontend", "front-end", "backend", "back-end", "full stack", "fullstack",
+    "cloud", " it ", "sre", "site reliability", "qa ", "test automation", "mobile", " ios", "android", "web",
+    "platform engineer", "infrastructure", "sysadmin", "system administrator", "systems administrator", "network",
+    "cyber", "security engineer", "application security", "data engineer", "machine learning", " api",
+    "support engineer", "technical support", "it support", "helpdesk", "help desk", "solutions engineer",
+  ],
   "Engineering & Technical": ["engineer", "mechanical", "electrical", "civil", "technician", "hardware", "manufacturing", "process"],
   "Data & Analytics": ["data", "analyst", "analytics", "machine learning", "ml ", "bi ", "scientist"],
   "Finance & Accounting": ["finance", "financial", "accountant", "accounting", "controller", "audit", "tax", "treasury"],
