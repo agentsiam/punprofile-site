@@ -498,7 +498,7 @@ function Stars({ value, onChange, disabled }: { value: number | null; onChange?:
             e.stopPropagation();
             onChange?.(value === n ? null : n);
           }}
-          className={`px-0.5 text-title-medium leading-none ${value !== null && n <= value ? "text-ink-deep" : "text-mute-strong opacity-40"}`}
+          className={`px-0.5 text-title-medium leading-none ${value !== null && n <= value ? "text-ink-deep" : "text-mute"}`}
         >
           ★
         </button>
