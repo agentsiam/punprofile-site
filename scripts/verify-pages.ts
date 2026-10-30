@@ -47,6 +47,7 @@ import * as method from "../src/lib/content/method.js";
 // The paying candidate's own page, `/me/<token>`. Reached only by a link a
 // coach sends, which is no reason to skip the Thai checks every page gets.
 import * as portal from "../src/lib/content/portal.js";
+import * as checklist from "../src/lib/content/checklist.js";
 
 const MODULES: Record<string, Record<string, unknown>> = {
   pricing,
@@ -58,6 +59,7 @@ const MODULES: Record<string, Record<string, unknown>> = {
   footer,
   method,
   portal,
+  checklist,
 };
 
 /*

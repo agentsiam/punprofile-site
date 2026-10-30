@@ -127,6 +127,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         excitement: a.excitement ?? null,
         interviews: a.interviews ?? [],
         contacts: a.contacts ?? [],
+        checklist: a.checklist ?? [],
         // Only a CV they can see. A coach may link an unshared draft; that link
         // stays on the coach's side.
         cvDocumentId: a.cvDocumentId && sharedCvIds.has(a.cvDocumentId) ? a.cvDocumentId : null,
@@ -294,6 +295,7 @@ export const updateJob = mutation({
         }),
       ),
     ),
+    checklist: v.optional(v.array(v.string())),
     contacts: v.optional(
       v.array(
         v.object({
@@ -322,6 +324,10 @@ export const updateJob = mutation({
         if (!cv || cv.leadId !== row.leadId || cv.sharedAt === undefined) throw new ConvexError("bad_value");
       }
       patch.cvDocumentId = args.cvDocumentId ?? undefined;
+    }
+    if (args.checklist !== undefined) {
+      if (args.checklist.length > 60) throw new ConvexError("too_many");
+      patch.checklist = [...new Set(args.checklist.map((id) => id.slice(0, 40)))];
     }
     // Rounds and contacts are the candidate's notebook on any row, ours or theirs.
     if (args.interviews !== undefined) {

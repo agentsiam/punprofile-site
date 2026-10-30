@@ -32,6 +32,7 @@ import type { PortalView } from "../../../../convex/portal";
 import { useCopy } from "@/components/LocaleProvider";
 import type { Copy } from "@/lib/content/copy";
 import * as C from "@/lib/content/portal";
+import { CHECKLIST, CHECKLIST_OTHER, CHECKLIST_PROGRESS, CHECKLIST_TAB } from "@/lib/content/checklist";
 
 type Job = PortalView["jobs"][number];
 const PIPELINE = ["interested", "applied", "screening", "interviewing", "offer", "accepted"] as const;
@@ -592,7 +593,9 @@ function JobDetail({
   const job = data.jobs.find((j) => j._id === jobId)!;
   const act = useJobActions(readOnly);
   const remove = useMutation(api.portal.removeJob);
-  const [tab, setTab] = useState<"info" | "interviews" | "contacts" | "notes" | "cv" | "coach">("info");
+  const [tab, setTab] = useState<"info" | "checklist" | "interviews" | "contacts" | "notes" | "cv" | "coach">("info");
+  const stageItems = CHECKLIST[job.status as keyof typeof CHECKLIST] ?? [];
+  const stageDone = stageItems.filter((i) => job.checklist.includes(i.id)).length;
   const [notes, setNotes] = useState(job.notes ?? "");
   const [savedNotes, setSavedNotes] = useState(false);
   const [confirm, setConfirm] = useState(false);
@@ -673,6 +676,22 @@ function JobDetail({
           )}
         </div>
 
+        {/* Teal's "Guidance" line: progress through this stage's steps. */}
+        {stageItems.length > 0 && (
+          <button
+            type="button"
+            onClick={() => setTab("checklist")}
+            className="mt-4 flex w-full items-center gap-3 rounded-xl bg-canvas-soft px-4 py-2.5 text-left"
+          >
+            <span className="text-label-large text-ink">
+              {fill(pick(CHECKLIST_PROGRESS), { stage: pick(C.JOBS_STATUS[job.status]), done: stageDone, total: stageItems.length })}
+            </span>
+            <span className="h-2 flex-1 overflow-hidden rounded-full bg-canvas">
+              <span className="block h-full rounded-full bg-primary" style={{ width: `${(stageDone / stageItems.length) * 100}%` }} />
+            </span>
+          </button>
+        )}
+
         {job.fromUs && job.matchReason && (
           <p className="mt-4 rounded-xl bg-primary-pale px-4 py-3 text-body-large text-on-primary-pale">
             <span className="text-label-large">{pick(C.JOBS_WHY)}</span>
@@ -685,6 +704,7 @@ function JobDetail({
           {(
             [
               ["info", C.DTAB_INFO],
+              ["checklist", CHECKLIST_TAB],
               ["interviews", C.DTAB_INTERVIEWS],
               ["contacts", C.DTAB_CONTACTS],
               ["notes", C.DTAB_NOTES],
@@ -764,6 +784,10 @@ function JobDetail({
                 </div>
               )}
             </div>
+          )}
+
+          {tab === "checklist" && (
+            <Checklist job={job} readOnly={readOnly} onSave={(checklist) => act.update(job._id, { checklist })} />
           )}
 
           {tab === "interviews" && (
@@ -848,6 +872,63 @@ function JobDetail({
         </div>
         {act.error && <p className="field-support-error mt-3">{pick(C.ERROR_GENERIC)}</p>}
       </div>
+    </div>
+  );
+}
+
+/**
+ * Teal's Check List: this stage's steps first, the others folded underneath.
+ * A tick saves at once; there is nothing to lose by saving it.
+ */
+function Checklist({ job, readOnly, onSave }: { job: Job; readOnly: boolean; onSave: (ids: string[]) => void }) {
+  const { pick } = useFormat();
+  const [done, setDone] = useState<string[]>(job.checklist);
+  const [showOthers, setShowOthers] = useState(false);
+  const stages = Object.keys(CHECKLIST) as (keyof typeof CHECKLIST)[];
+  const current = stages.includes(job.status as keyof typeof CHECKLIST) ? (job.status as keyof typeof CHECKLIST) : null;
+  const toggle = (id: string) => {
+    const next = done.includes(id) ? done.filter((x) => x !== id) : [...done, id];
+    setDone(next);
+    onSave(next);
+  };
+  const list = (stage: keyof typeof CHECKLIST) => (
+    <ul className="space-y-2">
+      {CHECKLIST[stage].map((item) => (
+        <li key={item.id}>
+          <label className="flex cursor-pointer items-start gap-3 text-body-large text-ink">
+            <input
+              type="checkbox"
+              className="mt-1.5 h-4 w-4 shrink-0"
+              disabled={readOnly}
+              checked={done.includes(item.id)}
+              onChange={() => toggle(item.id)}
+            />
+            <span className={done.includes(item.id) ? "text-on-surface-variant line-through" : ""}>{pick(item.label)}</span>
+          </label>
+        </li>
+      ))}
+    </ul>
+  );
+  return (
+    <div className="max-w-2xl space-y-5">
+      {current && (
+        <section>
+          <h3 className="text-label-large text-on-surface-variant">{pick(C.JOBS_STATUS[current])}</h3>
+          <div className="mt-2">{list(current)}</div>
+        </section>
+      )}
+      <button type="button" className="text-body-medium text-ink-deep underline" onClick={() => setShowOthers((o) => !o)}>
+        {pick(CHECKLIST_OTHER)}
+      </button>
+      {showOthers &&
+        stages
+          .filter((st) => st !== current)
+          .map((st) => (
+            <section key={st}>
+              <h3 className="text-label-large text-on-surface-variant">{pick(C.JOBS_STATUS[st])}</h3>
+              <div className="mt-2">{list(st)}</div>
+            </section>
+          ))}
     </div>
   );
 }

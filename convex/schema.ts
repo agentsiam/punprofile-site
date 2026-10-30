@@ -917,6 +917,10 @@ export default defineSchema({
         }),
       ),
     ),
+    /** Ids of the checklist steps the candidate has ticked, from
+     *  `src/lib/content/checklist.ts`. Ids, not text, so rewording a step
+     *  keeps the tick. @absent none — nothing ticked */
+    checklist: v.optional(v.array(v.string())),
     /** Teal's People: who the candidate is talking to about this job.
      *  @absent none — no contact recorded */
     contacts: v.optional(
