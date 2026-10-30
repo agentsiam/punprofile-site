@@ -769,3 +769,155 @@ export const handleTokenRequest = mutation({
     await ctx.db.patch(args.requestId, { handledAt: Date.now(), ...(args.note?.trim() ? { note: args.note.trim() } : {}) });
   },
 });
+
+/**
+ * Everything delivery holds about one person, for the subject-access export.
+ *
+ * The export predates delivery, so without this a request answered today would
+ * leave out what they bought, their token history, every CV version, the coach's
+ * delivery notes, the job tracker and their sign-in access. The 15/08/2026 rule
+ * for call notes applies here too: coach notes are included, shared or not,
+ * because they are a written record of an identified person.
+ *
+ * Held back, and none of it is about the person: who on the staff did each
+ * thing (`by`), storage ids, and a placement's attribution, which is a judgement
+ * about the business like `moduleFit` is. Internal ids are resolved to the name
+ * the person would recognise. CV files are listed here; the files themselves
+ * are sent alongside, downloaded from the CRM.
+ */
+export const exportForLead = query({
+  args: { leadId: v.id("leads") },
+  handler: async (ctx, { leadId }) => {
+    await requireAdmin(ctx);
+    const lead = await ctx.db.get(leadId);
+    if (!lead) return null;
+    const [engagements, deliverables, applications, placements, ledger, cvs, notes, access, requests] =
+      await Promise.all([
+        ctx.db.query("engagements").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+        ctx.db.query("deliverables").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+        ctx.db.query("applications").withIndex("by_lead_time", (q) => q.eq("leadId", leadId)).collect(),
+        ctx.db.query("placements").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+        ctx.db.query("tokenLedger").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+        ctx.db.query("cvDocuments").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+        ctx.db.query("deliveryNotes").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+        ctx.db.query("candidateAccess").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+        ctx.db.query("tokenRequests").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+      ]);
+
+    const deliverableName = new Map(
+      deliverables.map((d) => [d._id, d.title ?? d.kind]),
+    );
+    const cvName = new Map(
+      cvs.map((c) => [c._id, `Version ${c.version} · ${c.label}`]),
+    );
+    const roleName = new Map(
+      applications.map((a) => [a._id, `${a.roleTitle}, ${a.employer}`]),
+    );
+
+    return {
+      fitReportSharedAt: lead.fitReportSharedAt ?? null,
+      weeklyApplicationGoal: lead.weeklyApplicationGoal ?? null,
+      purchases: engagements.map((e) => ({
+        module: e.module,
+        status: e.status,
+        quotedThb: e.quotedThb ?? null,
+        agreedThb: e.agreedThb ?? null,
+        agreedAt: e.agreedAt ?? null,
+        startedAt: e.startedAt ?? null,
+        completedAt: e.completedAt ?? null,
+        notes: e.notes ?? null,
+      })),
+      deliverables: deliverables.map((d) => ({
+        name: d.title ?? d.kind,
+        kind: d.kind,
+        stage: d.methodStage,
+        status: d.status,
+        dueAt: d.dueAt ?? null,
+        deliveredAt: d.deliveredAt ?? null,
+        notes: d.notes ?? null,
+      })),
+      tokens: ledger
+        .sort((a, b) => a.at - b.at)
+        .map((t) => ({
+          at: t.at,
+          delta: t.delta,
+          reason: t.reason,
+          forWhat:
+            (t.deliverableId && deliverableName.get(t.deliverableId)) ||
+            (t.applicationId && roleName.get(t.applicationId)) ||
+            null,
+          note: t.note ?? null,
+        })),
+      tokenRequests: requests.map((r) => ({
+        at: r.at,
+        handledAt: r.handledAt ?? null,
+      })),
+      cvs: cvs
+        .sort((a, b) => a.version - b.version)
+        .map((c) => ({
+          version: c.version,
+          label: c.label,
+          author: c.author,
+          fileName: c.fileName,
+          bytes: c.bytes,
+          basedOn: c.basedOn ? (cvName.get(c.basedOn) ?? null) : null,
+          changeNote: c.changeNote ?? null,
+          forDeliverable: c.deliverableId ? (deliverableName.get(c.deliverableId) ?? null) : null,
+          uploadedAt: c.uploadedAt,
+          sharedAt: c.sharedAt ?? null,
+          cvConsentAt: c.cvConsentAt,
+        })),
+      notes: notes
+        .sort((a, b) => a.at - b.at)
+        .map((n) => ({
+          at: n.at,
+          body: n.body,
+          shownToYou: n.shared,
+          about:
+            (n.deliverableId && deliverableName.get(n.deliverableId)) ||
+            (n.applicationId && roleName.get(n.applicationId)) ||
+            null,
+        })),
+      applications: applications.map((a) => ({
+        roleTitle: a.roleTitle,
+        employer: a.employer,
+        country: a.country,
+        location: a.location ?? null,
+        jobUrl: a.jobUrl ?? null,
+        salary: a.salary ?? null,
+        status: a.status,
+        origin: a.origin ?? a.recordedBy,
+        matchReason: a.matchReason ?? null,
+        savedAt: a.savedAt,
+        appliedAt: a.appliedAt ?? null,
+        deadlineAt: a.deadlineAt ?? null,
+        followUpAt: a.followUpAt ?? null,
+        excitement: a.excitement ?? null,
+        cvUsed: a.cvDocumentId ? (cvName.get(a.cvDocumentId) ?? null) : null,
+        notes: a.notes ?? null,
+        interviews: a.interviews ?? [],
+        contacts: a.contacts ?? [],
+        checklistDone: (a.checklist ?? []).length,
+        jobDescription: a.jobDescription ?? null,
+      })),
+      placements: placements.map((p) => ({
+        employer: p.employer,
+        roleTitle: p.roleTitle,
+        country: p.country,
+        offerAt: p.offerAt ?? null,
+        signedAt: p.signedAt ?? null,
+        startAt: p.startAt ?? null,
+        salary: p.salary ?? null,
+        visaRoute: p.visaRoute ?? null,
+        storyConsentAt: p.storyConsentAt ?? null,
+        notes: p.notes ?? null,
+      })),
+      signIn: access.map((g) => ({
+        email: g.email,
+        grantedAt: g.grantedAt,
+        revokedAt: g.revokedAt ?? null,
+        lastSignInAt: g.lastSignInAt ?? null,
+      })),
+    };
+  },
+});

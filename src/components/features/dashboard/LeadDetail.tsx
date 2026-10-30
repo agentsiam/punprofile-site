@@ -29,7 +29,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { useMutation, useQuery } from "convex/react";
+import { useConvex, useMutation, useQuery } from "convex/react";
 import { useRouter } from "next/navigation";
 import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
@@ -139,6 +139,7 @@ function download(contents: string, filename: string, mime: string) {
 
 export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
   const router = useRouter();
+  const convex = useConvex();
   const lead = useQuery(api.leads.getForAdmin, { leadId });
   // The same query `CallLog` runs. Convex dedupes identical subscriptions, so
   // this costs nothing extra and keeps the grade and the log reading one
@@ -306,12 +307,17 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
             are the first half of that. Corrections are ours, and they are
             disclosed in the conversations section rather than silently swapped
             in over the top of what they said. */}
+        {/* Delivery is included since 30/10/2026; the CV files themselves are
+            downloaded from the CV versions panel and sent with this copy. */}
         <button
           type="button"
           onClick={async () => {
             const { renderSubjectExportHtml } = await import("@/lib/subjectExport");
+            // Fetched at click time: delivery spans nine tables, and the
+            // screen has no other use for this shape.
+            const delivery = await convex.query(api.workspace.exportForLead, { leadId });
             download(
-              renderSubjectExportHtml(lead, calls ?? [], lead.consentEvents ?? []),
+              renderSubjectExportHtml(lead, calls ?? [], lead.consentEvents ?? [], delivery),
               `punprofile-data-${slug(lead.fullName ?? "record")}.html`,
               "text/html;charset=utf-8",
             );
@@ -324,9 +330,10 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
           type="button"
           onClick={async () => {
             const { buildSubjectExport } = await import("@/lib/subjectExport");
+            const delivery = await convex.query(api.workspace.exportForLead, { leadId });
             download(
               JSON.stringify(
-                buildSubjectExport(lead, calls ?? [], lead.consentEvents ?? []),
+                buildSubjectExport(lead, calls ?? [], lead.consentEvents ?? [], delivery),
                 null,
                 2,
               ),
