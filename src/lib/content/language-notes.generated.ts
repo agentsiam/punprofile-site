@@ -383,18 +383,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "FOUNDER_AFTER[1]",
     "render": "Coaching page, FOUNDER_AFTER[1]",
     "narrativeSlot": "proof",
-    "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Read back 06/09/2026, and `ผม` to `เรา` held.\n\nThe minimum change. This paragraph is the one Dew changes most and not by\n\nwording: ten years in US placement means one of them did the recruiting\n\njob before choosing not to do it here. That is his to write.\n\nPaul's wording, 06/09/2026. `นายหน้าจัดหางาน` became `บริษัทจัดหางาน`,\n\nwhich is the form the published disclaimer in `footer.ts` already uses, so\n\nthe page and the legal line now name the same thing. Both quoted questions\n\nwere opened out: \"อะไรเหมาะกับคุณ\" to \"งานแบบไหนเหมาะกับคุณ\", and\n\n\"จะนำคุณไปใส่ในตำแหน่งไหนได้บ้าง\" to\n\n\"มีตำแหน่งว่างไหนที่เราจะส่งคุณเข้าไปได้บ้าง\"."
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
   "src/lib/content/coaching.ts::FOUNDER_AFTER[2]": {
     "source": "src/lib/content/coaching.ts",
     "path": "FOUNDER_AFTER[2]",
     "render": "Coaching page, FOUNDER_AFTER[2]",
     "narrativeSlot": "proof",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
   "src/lib/content/coaching.ts::FOUNDER_AFTER[3]": {
     "source": "src/lib/content/coaching.ts",
@@ -405,59 +405,14 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "06/09/2026",
     "decisionNote": "Read back 06/09/2026, and `ผม` to `เรา` held."
   },
-  "src/lib/content/coaching.ts::FOUNDER_BEFORE[0]": {
-    "source": "src/lib/content/coaching.ts",
-    "path": "FOUNDER_BEFORE[0]",
-    "render": "Coaching page, FOUNDER_BEFORE[0]",
-    "narrativeSlot": "proof",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/coaching.ts::FOUNDER_BEFORE[1]": {
-    "source": "src/lib/content/coaching.ts",
-    "path": "FOUNDER_BEFORE[1]",
-    "render": "Coaching page, FOUNDER_BEFORE[1]",
-    "narrativeSlot": "proof",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/coaching.ts::FOUNDER_BEFORE[2]": {
-    "source": "src/lib/content/coaching.ts",
-    "path": "FOUNDER_BEFORE[2]",
-    "render": "Coaching page, FOUNDER_BEFORE[2]",
-    "narrativeSlot": "proof",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/coaching.ts::FOUNDER_BEFORE[3]": {
-    "source": "src/lib/content/coaching.ts",
-    "path": "FOUNDER_BEFORE[3]",
-    "render": "Coaching page, FOUNDER_BEFORE[3]",
-    "narrativeSlot": "proof",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/coaching.ts::FOUNDER_HEADING": {
-    "source": "src/lib/content/coaching.ts",
-    "path": "FOUNDER_HEADING",
-    "render": "Coaching page, FOUNDER_HEADING",
-    "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
   "src/lib/content/coaching.ts::FOUNDER_TURN": {
     "source": "src/lib/content/coaching.ts",
     "path": "FOUNDER_TURN",
     "render": "Coaching page, FOUNDER_TURN",
     "narrativeSlot": "proof",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
   "src/lib/content/coaching.ts::HOOK_BODY[0]": {
     "source": "src/lib/content/coaching.ts",
@@ -769,15 +724,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "source": "src/lib/content/coaching.ts",
     "path": "PERSONAS[3]",
     "render": "Coaching page, PERSONAS[3]",
-    "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/coaching.ts::PORTRAIT_ALT": {
-    "source": "src/lib/content/coaching.ts",
-    "path": "PORTRAIT_ALT",
-    "render": "Coaching page, PORTRAIT_ALT",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
     "date": "14/08/2026",
@@ -3201,8 +3147,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Home page, WHO_BODY",
     "narrativeSlot": "house.not",
     "provenance": "paul-approved",
-    "date": "10/09/2026",
-    "decisionNote": "**Two people since 25/08/2026, and this is a factual correction.** Dew\njoined, so \"run by one person\" is wrong rather than dated. The argument\nsurvives the change intact, which is the point worth keeping: what mattered\nwas never the headcount, it was who pays. `Narrative_System.md` § the house\nnarrative carries the slot this line fills.\nHe is not named here yet. His name, the ten-year claim and why US placement\nis evidence for reading a European market are all his to write, and\n`dew-tatiy-review.md` is waiting on them.\n\nRead back 25/08/2026. Drafted.\n\nRead back 25/08/2026. The second sentence is Paul's own, from\n\n`FOUNDER_AFTER` in `coaching.ts`, which he wrote and reviewed.\n\nReworked 10/09/2026 after Paul said WHO_BODY still needed work. The new\ncandidate removes abstract agency and rebuilds the contrast around what we\ndo when talking with the reader. It remains pending until Paul approves the\nfinal Thai wording.\n\nApproved 10/09/2026. Paul chose a second rework over the pending candidate.\nIt drops the remaining `จึง` and the closing `ที่` clause, carries the\ncontrast by Thai topic order (`บริษัทไหนจะรีบหาคนแค่ไหนก็ไม่ใช่โจทย์ของเรา`),\nand ends on the reader's goal. Model-drafted and approved unchanged, so it\nships but stays out of the clean corpus."
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
   "src/lib/content/home.ts::WHO_HEADING": {
     "source": "src/lib/content/home.ts",
@@ -10205,5 +10151,266 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "28/10/2026",
     "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].name": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].name",
+    "render": "Home and coaching pages, Paul's name",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].role": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].role",
+    "render": "Home and coaching pages, Paul's role",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].summary": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].summary",
+    "render": "Home and coaching pages, Paul's summary",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].pills[0]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].pills[0]",
+    "render": "Home page, Paul's card, fact pill",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].pills[1]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].pills[1]",
+    "render": "Home page, Paul's card, fact pill",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].link": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].link",
+    "render": "Home and coaching pages, Paul's link",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].pill": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].pill",
+    "render": "Home and coaching pages, Paul's pill",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].heading": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].heading",
+    "render": "Home and coaching pages, Paul's heading",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].pull": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].pull",
+    "render": "Home and coaching pages, Paul's pull",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].story[0]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].story[0]",
+    "render": "Coaching page, Paul's story",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].story[1]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].story[1]",
+    "render": "Coaching page, Paul's story",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].story[2]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].story[2]",
+    "render": "Coaching page, Paul's story",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].story[3]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].story[3]",
+    "render": "Coaching page, Paul's story",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].story[4]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].story[4]",
+    "render": "Coaching page, Paul's story",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].alt": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].alt",
+    "render": "Home and coaching pages, Paul's portrait alt text",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].name": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].name",
+    "render": "Home and coaching pages, Tatiya's name",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].role": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].role",
+    "render": "Home and coaching pages, Tatiya's role",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].summary": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].summary",
+    "render": "Home and coaching pages, Tatiya's summary",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].pills[0]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].pills[0]",
+    "render": "Home page, Tatiya's card, fact pill",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].pills[1]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].pills[1]",
+    "render": "Home page, Tatiya's card, fact pill",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].link": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].link",
+    "render": "Home and coaching pages, Tatiya's link",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].pill": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].pill",
+    "render": "Home and coaching pages, Tatiya's pill",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].heading": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].heading",
+    "render": "Home and coaching pages, Tatiya's heading",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].pull": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].pull",
+    "render": "Home and coaching pages, Tatiya's pull",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].story[0]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].story[0]",
+    "render": "Coaching page, Tatiya's story",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].story[1]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].story[1]",
+    "render": "Coaching page, Tatiya's story",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].story[2]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].story[2]",
+    "render": "Coaching page, Tatiya's story",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].story[3]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].story[3]",
+    "render": "Coaching page, Tatiya's story",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].alt": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].alt",
+    "render": "Home and coaching pages, Tatiya's portrait alt text",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "30/10/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
   }
 } as const;

@@ -13,7 +13,7 @@ import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
 import Band from "@/components/Band";
 import { SECTION_HEADING } from "@/lib/content/footer";
-import { PORTRAIT_ALT } from "@/lib/content/coaching";
+import { COACHES } from "@/lib/content/coaching";
 import { FIT_EXPERT, FIT_EXPERT_HEADING } from "@/lib/content/products";
 
 export default function FitExpertCard() {
@@ -23,11 +23,11 @@ export default function FitExpertCard() {
       <h2 className={SECTION_HEADING(locale)}>{pick(FIT_EXPERT_HEADING)}</h2>
       <div className="ground-dark mt-8 grid gap-8 rounded-[30px] bg-canvas-dark px-6 py-8 text-on-canvas-dark medium:grid-cols-[12rem_1fr] medium:px-10 medium:py-10">
         <Image
-          src="/paul-portrait.png"
-          alt={pick(PORTRAIT_ALT)}
-          width={421}
-          height={421}
-          className="size-28 rounded-full bg-primary object-cover medium:size-48"
+          src="/coach-paul.jpg"
+          alt={pick(COACHES[0].alt)}
+          width={1200}
+          height={900}
+          className="size-28 rounded-full bg-primary object-cover object-[50%_20%] medium:size-48"
         />
         <div>
           <h3 className="text-[1.75rem] font-semibold leading-snug text-white">{pick(FIT_EXPERT.title)}</h3>

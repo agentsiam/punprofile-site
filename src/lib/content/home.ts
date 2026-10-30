@@ -550,21 +550,11 @@ export const WHO_HEADING: Copy = {
 
 export const WHO_BODY: Copy = {
   /*
-   * **Two people since 25/08/2026, and this is a factual correction.** Dew
-   * joined, so "run by one person" is wrong rather than dated. The argument
-   * survives the change intact, which is the point worth keeping: what mattered
-   * was never the headcount, it was who pays. `Narrative_System.md` § the house
-   * narrative carries the slot this line fills.
-   *
-   * He is not named here yet. His name, the ten-year claim and why US placement
-   * is evidence for reading a European market are all his to write, and
-   * `dew-tatiy-review.md` is waiting on them.
+   * Rewritten 30/10/2026 with the coach cards (`COACHES` in `coaching.ts`).
+   * It says PunProfile, not "we", is not paid by employers: Tatiya's day job is.
    */
-  // Read back 25/08/2026. Drafted.
-  en: "PunProfile is two people, and you talk to both of them. Neither is paid by an employer, so the advice starts from your goals rather than from a vacancy somebody is rushing to fill.",
-  // Read back 25/08/2026. The second sentence is Paul's own, from
-  // `FOUNDER_AFTER` in `coaching.ts`, which he wrote and reviewed.
-  th: "PunProfile มีกันสองคน และคุณจะได้คุยกับเราทั้งคู่ เราไม่ได้รับเงินจากนายจ้าง บริษัทไหนจะรีบหาคนแค่ไหนก็ไม่ใช่โจทย์ของเรา เราเริ่มจากเป้าหมายของคุณ",
+  en: "We are two coaches who also hire for a living, reading CVs and deciding who goes forward. PunProfile is paid by you, not by employers, so our advice starts from your goals, not from a vacancy a company is rushing to fill.",
+  th: "เราเป็นโค้ชสองคนที่ทำงานคัดเลือกคนเข้าทำงาน ทั้งอ่าน CV และตัดสินใจว่าใครจะได้ไปต่อ ส่วน PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำของเราจึงเริ่มจากเป้าหมายของคุณ ไม่ใช่จากตำแหน่งว่างที่บริษัทกำลังเร่งหาคน",
 };
 
 // ------------------------------------------------------------------- results

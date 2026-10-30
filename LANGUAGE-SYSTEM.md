@@ -1189,40 +1189,17 @@ source: src/lib/content/coaching.ts
 path: FOUNDER_AFTER[1]
 render: Coaching page, FOUNDER_AFTER[1]
 narrative_slot: proof
-en: >-
-  We chose career coaching over being recruiters because the first question should be “what suits you”, not
-  “which vacancy can I put you into”.
-th: >-
-  เราเลือกทำ Career Coaching แทนการเป็นบริษัทจัดหางาน เพราะคำถามแรกควรเป็น “งานแบบไหนเหมาะกับคุณ” ไม่ใช่
-  “มีตำแหน่งว่างไหนที่เราจะส่งคุณเข้าไปได้บ้าง”
-provenance: paul-written
-date: 06/09/2026
+en: "In our career coaching work, we start by asking “what kind of work suits you?” and then look at how to get there. PunProfile is not a recruitment agency, so we do not start from vacancies we need to fill."
+th: "ในงาน Career Coaching เราเริ่มจากคำถามว่า “งานแบบไหนเหมาะกับคุณ” แล้วค่อยดูว่าจะไปถึงงานนั้นได้อย่างไร ส่วน PunProfile ไม่ใช่บริษัทจัดหางาน เราจึงไม่ได้เริ่มจากตำแหน่งว่างที่ต้องหาคนไปลง"
+provenance: paul-approved
+date: 30/10/2026
 term_bindings: []
-decision_note: |-
-  Read back 06/09/2026, and `ผม` to `เรา` held.
-
-  The minimum change. This paragraph is the one Dew changes most and not by
-
-  wording: ten years in US placement means one of them did the recruiting
-
-  job before choosing not to do it here. That is his to write.
-
-  Paul's wording, 06/09/2026. `นายหน้าจัดหางาน` became `บริษัทจัดหางาน`,
-
-  which is the form the published disclaimer in `footer.ts` already uses, so
-
-  the page and the legal line now name the same thing. Both quoted questions
-
-  were opened out: "อะไรเหมาะกับคุณ" to "งานแบบไหนเหมาะกับคุณ", and
-
-  "จะนำคุณไปใส่ในตำแหน่งไหนได้บ้าง" to
-
-  "มีตำแหน่งว่างไหนที่เราจะส่งคุณเข้าไปได้บ้าง".
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
 review:
   structural_calque: pass
-  text_hash: df8c07fc412dfe92d947dd533f622e5aaf63f59079a396c1271447ccf619aab3
+  text_hash: f9cc19913650dad69bfddab6af98c6f18a068da45f8420c6f604746ea582df5e
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 30/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -1234,21 +1211,17 @@ source: src/lib/content/coaching.ts
 path: FOUNDER_AFTER[2]
 render: Coaching page, FOUNDER_AFTER[2]
 narrative_slot: proof
-en: >-
-  PunProfile is paid by you, not by an employer. So the advice starts from your goals and your situation, not
-  from a role somebody is rushing to fill.
-th: >-
-  PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำจึงเริ่มจากเป้าหมายและความเป็นจริงของคุณ
-  ไม่ใช่จากตำแหน่งที่ใครกำลังรีบหาคนไปใส่
-provenance: paul-written
-date: 14/08/2026
+en: "PunProfile is paid by you, not by an employer. Our advice therefore starts from your goals and circumstances, not from the needs of a company rushing to hire."
+th: "ปั้นโปรไฟล์ (PunProfile) รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำจึงยึดเป้าหมายและสถานการณ์ของคุณเป็นหลัก ไม่ใช่ความต้องการของบริษัทที่กำลังเร่งหาคน"
+provenance: paul-approved
+date: 30/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
 review:
   structural_calque: pass
-  text_hash: 5fadc4683df16362441a13cc08efc9b0ae9c15da256a853a501b7977565ec262
+  text_hash: 3fa3bb12a1dc3a3763ee9754139c587ac3c0520ae023ad4b55e8b25217a8d692
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 30/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -1278,139 +1251,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/coaching.ts::FOUNDER_BEFORE[0]`
-
-```yaml
-id: src/lib/content/coaching.ts::FOUNDER_BEFORE[0]
-source: src/lib/content/coaching.ts
-path: FOUNDER_BEFORE[0]
-render: Coaching page, FOUNDER_BEFORE[0]
-narrative_slot: proof
-en: >-
-  I run PunProfile and the “Jobs at companies in Europe” group. Most people meet me through that group first.
-  My day job is in Marketing Operations, here in Europe.
-th: >-
-  ผมดูแล PunProfile และกลุ่ม “งานบริษัทในยุโรป” หลายคนรู้จักผมครั้งแรกผ่านกลุ่มนี้ ส่วนงานประจำ ผมทำด้าน
-  Marketing Operations อยู่ในยุโรป
-provenance: paul-written
-date: 14/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 160a0d97bcf92bb5789938c55e3598a8b5907c749570aa964b34d1080d88189a
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/coaching.ts::FOUNDER_BEFORE[1]`
-
-```yaml
-id: src/lib/content/coaching.ts::FOUNDER_BEFORE[1]
-source: src/lib/content/coaching.ts
-path: FOUNDER_BEFORE[1]
-render: Coaching page, FOUNDER_BEFORE[1]
-narrative_slot: proof
-en: >-
-  The longer I work here, the clearer one thing becomes: good people are not always seen, especially when
-  their experience comes from another country.
-th: >-
-  การทำงานอยู่ในยุโรปทำให้ผมเห็นเรื่องหนึ่งชัดขึ้นเรื่อย ๆ ว่า คนเก่งไม่ได้ถูกมองเห็นเสมอไป
-  โดยเฉพาะเมื่อประสบการณ์ของเขามาจากอีกประเทศ
-provenance: paul-written
-date: 14/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 6d84224cb4d50c773ea8719a594208aae4882ea43221366c5af58900fd622282
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/coaching.ts::FOUNDER_BEFORE[2]`
-
-```yaml
-id: src/lib/content/coaching.ts::FOUNDER_BEFORE[2]
-source: src/lib/content/coaching.ts
-path: FOUNDER_BEFORE[2]
-render: Coaching page, FOUNDER_BEFORE[2]
-narrative_slot: proof
-en: >-
-  A company name every Thai person knows may be a name a European hiring manager has never heard. Work we know
-  was large and difficult can become one unremarkable line on a CV. And years of accumulated experience can be
-  passed over, not because it has no value, but because the person reading it does not have enough context to
-  see that value.
-th: >-
-  ชื่อบริษัทที่คนไทยรู้จักดี อาจเป็นเพียงชื่อที่ผู้จัดการฝ่ายสรรหาในยุโรปไม่เคยได้ยิน
-  งานที่เรารู้ว่าใหญ่และยาก อาจกลายเป็นเพียงหนึ่งบรรทัดธรรมดาใน CV และประสบการณ์ที่สั่งสมมาหลายปีอาจถูกมองข้าม
-  ไม่ใช่เพราะมันไม่มีค่า แต่เพราะคนอ่านยังไม่มีบริบทมากพอที่จะเห็นคุณค่านั้น
-provenance: paul-written
-date: 14/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 4b9965e8376aa019acd4fb0df7e00131467ffc314df057eb349c95d6ffa81f9e
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/coaching.ts::FOUNDER_BEFORE[3]`
-
-```yaml
-id: src/lib/content/coaching.ts::FOUNDER_BEFORE[3]
-source: src/lib/content/coaching.ts
-path: FOUNDER_BEFORE[3]
-render: Coaching page, FOUNDER_BEFORE[3]
-narrative_slot: proof
-en: >-
-  I have watched this happen again and again to Thai people in the group. When applications go unanswered,
-  many of them try harder: send more, revise the CV again, read more advice. But in a cross-border job market,
-  effort does not automatically turn into opportunity. If the market still cannot read you, applying more is
-  just sending the same unclear story out over and over.
-th: >-
-  ผมเห็นเรื่องนี้เกิดขึ้นซ้ำ ๆ กับคนไทยในกลุ่ม เมื่อสมัครงานแล้วไม่ได้รับคำตอบ หลายคนจึงพยายามมากขึ้น
-  สมัครมากขึ้น แก้ CV อีกรอบ และอ่านคำแนะนำเพิ่มอีก แต่ในตลาดงานข้ามประเทศ
-  ความพยายามไม่ได้กลายเป็นโอกาสโดยอัตโนมัติ ถ้าตลาดยังอ่านเราไม่ออก
-  การสมัครเพิ่มก็เป็นเพียงการส่งเรื่องเดิมที่ยังไม่ชัดออกไปซ้ำ ๆ
-provenance: paul-written
-date: 14/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 0418561fe097a31771ca0523b8bf877da05397344d351dee77394e39ac331a03
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/coaching.ts::FOUNDER_HEADING`
-
-```yaml
-id: src/lib/content/coaching.ts::FOUNDER_HEADING
-source: src/lib/content/coaching.ts
-path: FOUNDER_HEADING
-render: Coaching page, FOUNDER_HEADING
-narrative_slot: utility
-en: Hi, I'm Paul
-th: สวัสดีครับ ผมพอล
-provenance: paul-written
-date: 14/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 0dde2e273e25a7fa00ed9ed1cf87260b255ab0b02269d47b84c2d45b1f41a469
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/coaching.ts::FOUNDER_TURN`
 
 ```yaml
@@ -1419,17 +1259,17 @@ source: src/lib/content/coaching.ts
 path: FOUNDER_TURN
 render: Coaching page, FOUNDER_TURN
 narrative_slot: proof
-en: That is why I started PunProfile.
-th: นี่คือเหตุผลที่ผมเริ่มทำ PunProfile
-provenance: paul-written
-date: 14/08/2026
+en: "That is why we do PunProfile."
+th: "นี่คือเหตุผลที่เราทำ PunProfile"
+provenance: paul-approved
+date: 30/10/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
 review:
   structural_calque: pass
-  text_hash: 79c9b495f8542da0f703d62c82de5775725ddc392957035b550fbb7e0aa97e43
+  text_hash: 288cf00a0b178d0eb85ecabd5ab6146eb82cfaf4183262aada21f92d9d434103
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul approved this item in review on 30/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -2260,28 +2100,6 @@ decision_note: No string-local reasoning comment was present at migration.
 review:
   structural_calque: pass
   text_hash: da83df4ea6997f0d164a853488b11b7015bcd5c30539ad6238b93a17776a2825
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/coaching.ts::PORTRAIT_ALT`
-
-```yaml
-id: src/lib/content/coaching.ts::PORTRAIT_ALT
-source: src/lib/content/coaching.ts
-path: PORTRAIT_ALT
-render: Coaching page, PORTRAIT_ALT
-narrative_slot: utility
-en: Portrait of Paul Bussabong
-th: พอล บุษบง ผู้ดูแล PunProfile
-provenance: paul-written
-date: 14/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: dcfac03e49b46cfb84dccf0d9cbf8c43da73fb5f80071ea52220266525a8c5ed
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -8987,46 +8805,17 @@ source: src/lib/content/home.ts
 path: WHO_BODY
 render: Home page, WHO_BODY
 narrative_slot: house.not
-en: >-
-  PunProfile is two people, and you talk to both of them. Neither is paid by an employer, so the advice starts
-  from your goals rather than from a vacancy somebody is rushing to fill.
-th: >-
-  PunProfile มีกันสองคน และคุณจะได้คุยกับเราทั้งคู่ เราไม่ได้รับเงินจากนายจ้าง
-  บริษัทไหนจะรีบหาคนแค่ไหนก็ไม่ใช่โจทย์ของเรา เราเริ่มจากเป้าหมายของคุณ
+en: "We are two coaches who also hire for a living, reading CVs and deciding who goes forward. PunProfile is paid by you, not by employers, so our advice starts from your goals, not from a vacancy a company is rushing to fill."
+th: "เราเป็นโค้ชสองคนที่ทำงานคัดเลือกคนเข้าทำงาน ทั้งอ่าน CV และตัดสินใจว่าใครจะได้ไปต่อ ส่วน PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำของเราจึงเริ่มจากเป้าหมายของคุณ ไม่ใช่จากตำแหน่งว่างที่บริษัทกำลังเร่งหาคน"
 provenance: paul-approved
-date: 10/09/2026
+date: 30/10/2026
 term_bindings: []
-decision_note: |-
-  **Two people since 25/08/2026, and this is a factual correction.** Dew
-  joined, so "run by one person" is wrong rather than dated. The argument
-  survives the change intact, which is the point worth keeping: what mattered
-  was never the headcount, it was who pays. `Narrative_System.md` § the house
-  narrative carries the slot this line fills.
-  He is not named here yet. His name, the ten-year claim and why US placement
-  is evidence for reading a European market are all his to write, and
-  `dew-tatiy-review.md` is waiting on them.
-
-  Read back 25/08/2026. Drafted.
-
-  Read back 25/08/2026. The second sentence is Paul's own, from
-
-  `FOUNDER_AFTER` in `coaching.ts`, which he wrote and reviewed.
-
-  Reworked 10/09/2026 after Paul said WHO_BODY still needed work. The new
-  candidate removes abstract agency and rebuilds the contrast around what we
-  do when talking with the reader. It remains pending until Paul approves the
-  final Thai wording.
-
-  Approved 10/09/2026. Paul chose a second rework over the pending candidate.
-  It drops the remaining `จึง` and the closing `ที่` clause, carries the
-  contrast by Thai topic order (`บริษัทไหนจะรีบหาคนแค่ไหนก็ไม่ใช่โจทย์ของเรา`),
-  and ends on the reader's goal. Model-drafted and approved unchanged, so it
-  ships but stays out of the clean corpus.
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
 review:
   structural_calque: pass
-  text_hash: 056429264ae04257ed203a9e53050d8247efd04c363ea4ad7332b2ae8a99d3c0
+  text_hash: b0614a6735568de2f5c37f4faefb720cfb4a86fd776b1ee3ce73f3732c94cd91
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: Paul approved this item in review on 30/10/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -27184,3 +26973,640 @@ review:
   basis: Paul approved this item in review on 28/10/2026.
 ```
 
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].name`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].name
+source: src/lib/content/coaching.ts
+path: COACHES[0].name
+render: Home and coaching pages, Paul's name
+narrative_slot: proof
+en: "Paul"
+th: "พอล"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 03d99b60ae4a26028a7bfab6de27630489b5af73003e4ff8469c5c5779c6ce00
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].role`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].role
+source: src/lib/content/coaching.ts
+path: COACHES[0].role
+render: Home and coaching pages, Paul's role
+narrative_slot: proof
+en: "Marketing Director in Europe · Founder of PunProfile"
+th: "Marketing Director ในยุโรป · ผู้ก่อตั้ง PunProfile"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: aeca74fe76814b4cabc962fa3378cbb7ee2f1eaf3df4790f4d39c777d4418c93
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].summary`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].summary
+source: src/lib/content/coaching.ts
+path: COACHES[0].summary
+render: Home and coaching pages, Paul's summary
+narrative_slot: proof
+en: "Once a Thai applicant sending CVs into Europe, now the person who reads the CVs that pass the screen and selects people for his team."
+th: "เคยเป็นผู้สมัครชาวไทยที่ส่ง CV หางานในยุโรป วันนี้เป็นคนอ่าน CV ที่ผ่านการคัดกรองมาแล้ว และเลือกคนเข้าทีม"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 46a81cc8f06d82e603c4700ec9ec75c79991d2f011e292a0d9660d5a717a9af1
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].pills[0]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].pills[0]
+source: src/lib/content/coaching.ts
+path: COACHES[0].pills[0]
+render: Home page, Paul's card, fact pill
+narrative_slot: proof
+en: "Working in Europe since 2016"
+th: "ทำงานในยุโรปตั้งแต่ปี 2016"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: f8022e5152f55de4a8434b794832b63f44d80e580afc4d948dc48bec6be7b20c
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].pills[1]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].pills[1]
+source: src/lib/content/coaching.ts
+path: COACHES[0].pills[1]
+render: Home page, Paul's card, fact pill
+narrative_slot: proof
+en: "Marketing and MarTech hiring"
+th: "คัดเลือกคนด้าน Marketing และ MarTech"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: b6a1c2974f3960c233a068da638b748a738c8a226c0af993b61dbe0eb1aaaf12
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].link`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].link
+source: src/lib/content/coaching.ts
+path: COACHES[0].link
+render: Home and coaching pages, Paul's link
+narrative_slot: proof
+en: "Read Paul's story"
+th: "อ่านเรื่องราวของพอล"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 40836b388a92cfdf16abbde4f3cb0186fe42245802c190dbe24931ace8cf8e46
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].pill`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].pill
+source: src/lib/content/coaching.ts
+path: COACHES[0].pill
+render: Home and coaching pages, Paul's pill
+narrative_slot: proof
+en: "Founder · Marketing Director"
+th: "ผู้ก่อตั้ง · Marketing Director"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: cf3ab40e46f8812e61c0a971c74d41b1d62fc27341b546bc0a555426a8b54f01
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].heading`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].heading
+source: src/lib/content/coaching.ts
+path: COACHES[0].heading
+render: Home and coaching pages, Paul's heading
+narrative_slot: proof
+en: "Hi, I'm Paul"
+th: "สวัสดีครับ ผมพอล"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 0dde2e273e25a7fa00ed9ed1cf87260b255ab0b02269d47b84c2d45b1f41a469
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].pull`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].pull
+source: src/lib/content/coaching.ts
+path: COACHES[0].pull
+render: Home and coaching pages, Paul's pull
+narrative_slot: proof
+en: "I have sat on both sides of the interview table."
+th: "ผมเคยนั่งอยู่ทั้งสองฝั่งของโต๊ะสัมภาษณ์"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 44e74642b74e2e025be5962a956da41290bc9af9d1c3b1b207e4ed943f4f2f8e
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].story[0]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].story[0]
+source: src/lib/content/coaching.ts
+path: COACHES[0].story[0]
+render: Coaching page, Paul's story
+narrative_slot: proof
+en: "I moved to Spain to work in 2016 and work with clients in countries across Europe, especially the UK. I have sent thousands of job applications and sat hundreds of interviews, so I know what it is like to send a CV and receive no reply."
+th: "ผมย้ายมาทำงานที่สเปนในปี 2016 และทำงานกับลูกค้าในหลายประเทศทั่วยุโรป โดยเฉพาะใน UK ที่ผ่านมาผมสมัครงานไปหลายพันตำแหน่ง และสัมภาษณ์งานมาหลายร้อยครั้ง ผมจึงเข้าใจดีว่าการส่ง CV ไปแล้วไม่ได้รับคำตอบเป็นอย่างไร"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 9259bda98847d8a72c8e237c2c233c602d66e3706896fc1aef452dcdd1eda76c
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].story[1]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].story[1]
+source: src/lib/content/coaching.ts
+path: COACHES[0].story[1]
+render: Coaching page, Paul's story
+narrative_slot: proof
+en: "Today I am a Marketing Director. The CVs that reach me have already passed the AI screen and the Talent Acquisition Manager, and I have read hundreds of them, so I have seen not just good CVs but the ones that actually get the job. I also hire remote workers and freelancers in Marketing and MarTech for several employers."
+th: "วันนี้ผมเป็น Marketing Director CV ที่มาถึงผมผ่านการคัดกรองจาก AI และ Talent Acquisition Manager มาแล้ว ผมอ่าน CV ระดับนี้มาหลายร้อยฉบับ จึงได้เห็นไม่ใช่แค่ CV ที่ดี แต่เป็น CV ที่ได้งานจริง นอกจากนี้ผมยังคัดเลือก remote worker และ freelancer ด้าน Marketing และ MarTech ให้กับหลายบริษัท"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: c67320763e5a521872bb8a5e6608ef65fbb3e0bf939dfd2763491d1e8ca4f789
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].story[2]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].story[2]
+source: src/lib/content/coaching.ts
+path: COACHES[0].story[2]
+render: Coaching page, Paul's story
+narrative_slot: proof
+en: "I work in marketing, so when I look at a candidate’s profile, I ask similar questions to those I ask about a brand: what makes it stand out, what it wants to be known for, and whether the story is consistent. I also run the “Jobs at companies in Europe” group, where many people first get to know me."
+th: "ผมทำงานด้านการตลาด เวลาดูโปรไฟล์ผู้สมัคร ผมจึงดูคล้ายกับเวลาดูแบรนด์ว่า จุดเด่นคืออะไร อยากให้คนจดจำในเรื่องไหน และสิ่งที่เล่ามาสอดคล้องกันหรือเปล่า ผมยังดูแลกลุ่ม “งานบริษัทในยุโรป” ด้วย หลายคนรู้จักผมครั้งแรกผ่านกลุ่มนี้"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 3f747b997aeee02d0877fbba049c4f7981fd8f9d1e65342f3eb5cc3f5371b189
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].story[3]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].story[3]
+source: src/lib/content/coaching.ts
+path: COACHES[0].story[3]
+render: Coaching page, Paul's story
+narrative_slot: proof
+en: "A company name every Thai person knows may be a name a European hiring manager has never heard. Work we know was large and difficult can become one unremarkable line on a CV. And years of accumulated experience can be passed over, not because it has no value, but because the person reading it does not have enough context to see that value."
+th: "ชื่อบริษัทที่คนไทยรู้จักดี อาจเป็นเพียงชื่อที่ผู้จัดการฝ่ายสรรหาในยุโรปไม่เคยได้ยิน งานที่เรารู้ว่าใหญ่และยาก อาจกลายเป็นเพียงหนึ่งบรรทัดธรรมดาใน CV และประสบการณ์ที่สั่งสมมาหลายปีอาจถูกมองข้าม ไม่ใช่เพราะมันไม่มีค่า แต่เพราะคนอ่านยังไม่มีบริบทมากพอที่จะเห็นคุณค่านั้น"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 4b9965e8376aa019acd4fb0df7e00131467ffc314df057eb349c95d6ffa81f9e
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].story[4]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].story[4]
+source: src/lib/content/coaching.ts
+path: COACHES[0].story[4]
+render: Coaching page, Paul's story
+narrative_slot: proof
+en: "I have watched this happen again and again to Thai people in the group. When applications go unanswered, many of them try harder: send more, revise the CV again, read more advice. But in a cross-border job market, effort does not automatically turn into opportunity. If the market still cannot read you, applying more is just sending the same unclear story out over and over."
+th: "ผมเห็นเรื่องนี้เกิดขึ้นซ้ำ ๆ กับคนไทยในกลุ่ม เมื่อสมัครงานแล้วไม่ได้รับคำตอบ หลายคนจึงพยายามมากขึ้น สมัครมากขึ้น แก้ CV อีกรอบ และอ่านคำแนะนำเพิ่มอีก แต่ในตลาดงานข้ามประเทศ ความพยายามไม่ได้กลายเป็นโอกาสโดยอัตโนมัติ ถ้าตลาดยังอ่านเราไม่ออก การสมัครเพิ่มก็เป็นเพียงการส่งเรื่องเดิมที่ยังไม่ชัดออกไปซ้ำ ๆ"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 0418561fe097a31771ca0523b8bf877da05397344d351dee77394e39ac331a03
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].alt`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].alt
+source: src/lib/content/coaching.ts
+path: COACHES[0].alt
+render: Home and coaching pages, Paul's portrait alt text
+narrative_slot: proof
+en: "Portrait of Paul Bussabong, coach and founder of PunProfile"
+th: "พอล บุษบง โค้ชและผู้ก่อตั้ง PunProfile"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+review:
+  structural_calque: pass
+  text_hash: 03fe98f29251db4d68276fa5fce09538a4bbd1eca2ddfd0b07251a4c06ebcf18
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].name`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].name
+source: src/lib/content/coaching.ts
+path: COACHES[1].name
+render: Home and coaching pages, Tatiya's name
+narrative_slot: proof
+en: "Dew"
+th: "ดิว"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: ebbf8e9d8d9e6c2272ceaf789497191594606aff698e1d95b9ca72249f2ca85a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].role`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].role
+source: src/lib/content/coaching.ts
+path: COACHES[1].role
+render: Home and coaching pages, Tatiya's role
+narrative_slot: proof
+en: "Principal Consultant, Executive Search, United States · Co-founder of PunProfile"
+th: "Principal Consultant ด้าน Executive Search ในสหรัฐอเมริกา · ผู้ร่วมก่อตั้ง PunProfile"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: 9c2b9e57d7ad5b7177d5906c3bcc003979b67d680b314de4225814a5d79fd05a
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].summary`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].summary
+source: src/lib/content/coaching.ts
+path: COACHES[1].summary
+render: Home and coaching pages, Tatiya's summary
+narrative_slot: proof
+en: "In recruitment and HR for more than 10 years, from Bangkok to the United States, and today selecting CVs to put forward to hiring managers."
+th: "ทำงานด้าน recruitment และ HR มากว่า 10 ปี เริ่มจากกรุงเทพฯ จนมาถึงสหรัฐอเมริกา วันนี้เป็นคนคัดเลือก CV เพื่อส่งต่อให้ hiring manager"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: 9ff6a7de06a9ebfb18a60b58f4318d7fe12808017923529c7284e90bb05ecc7b
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].pills[0]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].pills[0]
+source: src/lib/content/coaching.ts
+path: COACHES[1].pills[0]
+render: Home page, Tatiya's card, fact pill
+narrative_slot: proof
+en: "Recruitment and HR, 10+ years"
+th: "สาย recruitment และ HR กว่า 10 ปี"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: 6cfd014e43d1e5ac221749db13d9fcd74db0ce51955690e1d9130c75746e4654
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].pills[1]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].pills[1]
+source: src/lib/content/coaching.ts
+path: COACHES[1].pills[1]
+render: Home page, Tatiya's card, fact pill
+narrative_slot: proof
+en: "BA Chulalongkorn · MA in HR, US"
+th: "ป.ตรี จุฬาฯ · ป.โท HR ที่สหรัฐฯ"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: 83a39a7b90d04fb79848724a08592460c230890011732da0a3dfc6197bd74597
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].link`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].link
+source: src/lib/content/coaching.ts
+path: COACHES[1].link
+render: Home and coaching pages, Tatiya's link
+narrative_slot: proof
+en: "Read Dew's story"
+th: "อ่านเรื่องราวของดิว"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: ff4bea20ef639fb28d6f01796dc6d24bc74656323c31bbd624f102f15a6ce698
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].pill`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].pill
+source: src/lib/content/coaching.ts
+path: COACHES[1].pill
+render: Home and coaching pages, Tatiya's pill
+narrative_slot: proof
+en: "Co-founder · Executive Search"
+th: "ผู้ร่วมก่อตั้ง · Executive Search"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: a1a34f202cdd6d8ebf80ac58f90b6717c42d3eab44a834f3b3d7cb7c8960b997
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].heading`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].heading
+source: src/lib/content/coaching.ts
+path: COACHES[1].heading
+render: Home and coaching pages, Tatiya's heading
+narrative_slot: proof
+en: "Hi, I'm Dew"
+th: "สวัสดีค่ะ ชื่อดิวค่ะ"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: 74325f6d8d0e8a29389f22ffb1eec2e3c9b7136d8299b0c290212fca09b34967
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].pull`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].pull
+source: src/lib/content/coaching.ts
+path: COACHES[1].pull
+render: Home and coaching pages, Tatiya's pull
+narrative_slot: proof
+en: "I select the CVs that go forward to the hiring manager."
+th: "ดิวเป็นคนคัดเลือก CV เพื่อส่งต่อให้ hiring manager"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: 644c5f6df66ab381efa1edf856ffa5b77bac2de55055f76a44a3dfa47111c51f
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].story[0]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].story[0]
+source: src/lib/content/coaching.ts
+path: COACHES[1].story[0]
+render: Coaching page, Tatiya's story
+narrative_slot: proof
+en: "I am currently a Principal Consultant in Executive Search in the United States. I joined the firm as a recruitment consultant before progressing to my current role. My work involves finding candidates for clients, reading CVs, and selecting suitable candidates to put forward to the hiring manager."
+th: "ปัจจุบันดิวเป็น Principal Consultant ดูแลงาน Executive Search หรือการสรรหาผู้บริหาร อยู่ที่สหรัฐอเมริกา ดิวเริ่มทำงานกับบริษัทนี้ในตำแหน่ง recruitment consultant ก่อนเติบโตมารับหน้าที่ปัจจุบัน งานของดิวคือหาผู้สมัครให้ลูกค้า อ่าน CV และคัดเลือกคนที่เหมาะสมเพื่อส่งต่อให้ hiring manager พิจารณา"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: 19e1982f260641722c02bbeb0039cfed67438e5762e25f01de018a6c2746e4b7
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].story[1]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].story[1]
+source: src/lib/content/coaching.ts
+path: COACHES[1].story[1]
+render: Coaching page, Tatiya's story
+narrative_slot: proof
+en: "I have worked in recruitment and HR for more than 10 years. I started in IT recruitment in Bangkok, then worked in change management consulting and HR at a Thai company, before moving to the United States to study and work in 2017."
+th: "ดิวทำงานด้าน recruitment และ HR มากว่า 10 ปี เริ่มจากงานสรรหาคนสาย IT ที่กรุงเทพฯ จากนั้นทำงานที่ปรึกษาด้านการบริหารการเปลี่ยนแปลง และงาน HR ในบริษัทไทย ก่อนย้ายมาเรียนต่อและทำงานที่สหรัฐอเมริกาในปี 2017"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: a30d81457f4e27e349d8fb60a0bf8f665ff2aeb11b386f89acc9d41c39de0294
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].story[2]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].story[2]
+source: src/lib/content/coaching.ts
+path: COACHES[1].story[2]
+render: Coaching page, Tatiya's story
+narrative_slot: proof
+en: "I read Thai candidates’ CVs when I worked in recruitment in Bangkok and have applied for jobs abroad myself. Today I read CVs and select candidates to put forward to clients. From that experience, I have seen that what Thai applicants write in their CVs does not always give recruiters the information they need to make a decision. In my view, this is something we can make clearer; it does not mean you are not good enough."
+th: "ดิวเคยอ่าน CV ของผู้สมัครชาวไทยตั้งแต่ทำงาน recruitment ที่กรุงเทพฯ และเคยส่ง CV สมัครงานในต่างประเทศด้วยตัวเอง วันนี้ดิวเป็นคนอ่าน CV และคัดเลือกผู้สมัครเพื่อส่งต่อให้ลูกค้า จากประสบการณ์นี้ ดิวเห็นว่าบางครั้งสิ่งที่ผู้สมัครชาวไทยเขียนใน CV ยังไม่ตรงกับข้อมูลที่ recruiter ต้องการใช้ตัดสินใจ ในมุมของดิว นี่เป็นเรื่องที่ปรับให้ชัดขึ้นได้ ไม่ได้แปลว่าคุณเก่งไม่พอ"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: d33ec2e66508a8450c22cd16301076b30aba371101e6fa4dae89b3bebf3cb4d5
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].story[3]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].story[3]
+source: src/lib/content/coaching.ts
+path: COACHES[1].story[3]
+render: Coaching page, Tatiya's story
+narrative_slot: proof
+en: "My studies are in psychology and HR: a BA in Industrial and Organisational Psychology from Chulalongkorn University, and an MA in Human Resources Management from a university in San Diego."
+th: "ดิวเรียนมาทางด้านจิตวิทยาและ HR โดยตรง จบปริญญาตรีด้านจิตวิทยาอุตสาหกรรมและองค์การจากจุฬาลงกรณ์มหาวิทยาลัย และปริญญาโทด้านการบริหารทรัพยากรบุคคลจากมหาวิทยาลัยในซานดิเอโก"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: 9ec8e7ff4605daf4e6997ac73fca2df45a2d963967b9c32d1310e155e9f11c28
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].alt`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[1].alt
+source: src/lib/content/coaching.ts
+path: COACHES[1].alt
+render: Home and coaching pages, Tatiya's portrait alt text
+narrative_slot: proof
+en: "Portrait of Tatiya (Dew) Doyle, coach and co-founder of PunProfile"
+th: "ดิว ทาทิยา ดอยล์ โค้ชและผู้ร่วมก่อตั้ง PunProfile"
+provenance: paul-approved
+date: 30/10/2026
+term_bindings: []
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+review:
+  structural_calque: pass
+  text_hash: 75f70154c6193f04e9a7472f33331de41eabab314517f77c0200d7d372d5fa69
+  prompt_version: structural-calque-v1
+  basis: Paul approved this item in review on 30/10/2026.
+```

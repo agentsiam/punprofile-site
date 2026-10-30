@@ -276,32 +276,82 @@ export const NOT_FOR: readonly Copy[] = [
   },
 ];
 
-// ------------------------------------------------------------------ the founder
+// ------------------------------------------------------------------ the coaches
 
-export const FOUNDER_HEADING: Copy = {
-  en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpGT1VOREVSX0hFQURJTkc:EN%%,
-  th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpGT1VOREVSX0hFQURJTkc:TH%%,
-};
+/**
+ * The two coaches, Paul and Tatiya (Dew), 30/10/2026. One record per person
+ * feeds both places they appear: the two cards on the home page (name, role,
+ * summary, pills, link) and their row on /coaching (pill, heading, pull line,
+ * story). Copy from `founder-copy.md` in the coaching repo, Paul's review.
+ *
+ * **Tatiya's facts are not yet confirmed by her**: the name she uses, the
+ * co-founder title, the years, 2017, Chulalongkorn by name and having job-hunted
+ * abroad. Do not take this live until she has answered the questions at the
+ * end of `founder-copy.md`.
+ *
+ * `id` is the anchor the home card links to on /coaching.
+ */
+export interface Coach {
+  id: string;
+  name: Copy;
+  role: Copy;
+  summary: Copy;
+  pills: readonly Copy[];
+  link: Copy;
+  pill: Copy;
+  heading: Copy;
+  pull: Copy;
+  story: readonly Copy[];
+  alt: Copy;
+}
 
-/** Before the turn. What he sees, and why it happens. */
-export const FOUNDER_BEFORE: readonly Copy[] = [
+export const COACHES: readonly Coach[] = [
   {
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpGT1VOREVSX0JFRk9SRVswXQ:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpGT1VOREVSX0JFRk9SRVswXQ:TH%%,
+    id: "paul",
+    name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLm5hbWU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLm5hbWU:TH%% },
+    role: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnJvbGU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnJvbGU:TH%% },
+    summary: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN1bW1hcnk:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN1bW1hcnk:TH%% },
+    pills: [
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzBd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzBd:TH%% },
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzFd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzFd:TH%% },
+    ],
+    link: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLmxpbms:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLmxpbms:TH%% },
+    pill: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGw:TH%% },
+    heading: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLmhlYWRpbmc:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLmhlYWRpbmc:TH%% },
+    pull: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnB1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnB1bGw:TH%% },
+    story: [
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN0b3J5WzBd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN0b3J5WzBd:TH%% },
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN0b3J5WzFd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN0b3J5WzFd:TH%% },
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN0b3J5WzJd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN0b3J5WzJd:TH%% },
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN0b3J5WzNd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN0b3J5WzNd:TH%% },
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN0b3J5WzRd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN0b3J5WzRd:TH%% },
+    ],
+    alt: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLmFsdA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLmFsdA:TH%% },
   },
   {
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpGT1VOREVSX0JFRk9SRVsxXQ:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpGT1VOREVSX0JFRk9SRVsxXQ:TH%%,
-  },
-  {
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpGT1VOREVSX0JFRk9SRVsyXQ:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpGT1VOREVSX0JFRk9SRVsyXQ:TH%%,
-  },
-  {
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpGT1VOREVSX0JFRk9SRVszXQ:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpGT1VOREVSX0JFRk9SRVszXQ:TH%%,
+    id: "dew",
+    name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLm5hbWU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLm5hbWU:TH%% },
+    role: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnJvbGU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnJvbGU:TH%% },
+    summary: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN1bW1hcnk:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN1bW1hcnk:TH%% },
+    pills: [
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnBpbGxzWzBd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnBpbGxzWzBd:TH%% },
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnBpbGxzWzFd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnBpbGxzWzFd:TH%% },
+    ],
+    link: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLmxpbms:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLmxpbms:TH%% },
+    pill: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnBpbGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnBpbGw:TH%% },
+    heading: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLmhlYWRpbmc:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLmhlYWRpbmc:TH%% },
+    pull: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnB1bGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnB1bGw:TH%% },
+    story: [
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN0b3J5WzBd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN0b3J5WzBd:TH%% },
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN0b3J5WzFd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN0b3J5WzFd:TH%% },
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN0b3J5WzJd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN0b3J5WzJd:TH%% },
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN0b3J5WzNd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN0b3J5WzNd:TH%% },
+    ],
+    alt: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLmFsdA:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLmFsdA:TH%% },
   },
 ];
+
+// ------------------------------------------------------- why we do this
 
 /** The hinge of the section, set apart from the paragraphs on either side. */
 export const FOUNDER_TURN: Copy = {
@@ -364,7 +414,3 @@ export const MASCOT_ALT: Copy = {
   th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpNQVNDT1RfQUxU:TH%%,
 };
 
-export const PORTRAIT_ALT: Copy = {
-  en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpQT1JUUkFJVF9BTFQ:EN%%,
-  th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpQT1JUUkFJVF9BTFQ:TH%%,
-};

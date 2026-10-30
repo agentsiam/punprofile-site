@@ -550,20 +550,10 @@ export const WHO_HEADING: Copy = {
 
 export const WHO_BODY: Copy = {
   /*
-   * **Two people since 25/08/2026, and this is a factual correction.** Dew
-   * joined, so "run by one person" is wrong rather than dated. The argument
-   * survives the change intact, which is the point worth keeping: what mattered
-   * was never the headcount, it was who pays. `Narrative_System.md` § the house
-   * narrative carries the slot this line fills.
-   *
-   * He is not named here yet. His name, the ten-year claim and why US placement
-   * is evidence for reading a European market are all his to write, and
-   * `dew-tatiy-review.md` is waiting on them.
+   * Rewritten 30/10/2026 with the coach cards (`COACHES` in `coaching.ts`).
+   * It says PunProfile, not "we", is not paid by employers: Tatiya's day job is.
    */
-  // Read back 25/08/2026. Drafted.
   en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OldIT19CT0RZ:EN%%,
-  // Read back 25/08/2026. The second sentence is Paul's own, from
-  // `FOUNDER_AFTER` in `coaching.ts`, which he wrote and reviewed.
   th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OldIT19CT0RZ:TH%%,
 };
 

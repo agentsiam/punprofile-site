@@ -276,37 +276,87 @@ export const NOT_FOR: readonly Copy[] = [
   },
 ];
 
-// ------------------------------------------------------------------ the founder
+// ------------------------------------------------------------------ the coaches
 
-export const FOUNDER_HEADING: Copy = {
-  en: "Hi, I'm Paul",
-  th: "สวัสดีครับ ผมพอล",
-};
+/**
+ * The two coaches, Paul and Tatiya (Dew), 30/10/2026. One record per person
+ * feeds both places they appear: the two cards on the home page (name, role,
+ * summary, pills, link) and their row on /coaching (pill, heading, pull line,
+ * story). Copy from `founder-copy.md` in the coaching repo, Paul's review.
+ *
+ * **Tatiya's facts are not yet confirmed by her**: the name she uses, the
+ * co-founder title, the years, 2017, Chulalongkorn by name and having job-hunted
+ * abroad. Do not take this live until she has answered the questions at the
+ * end of `founder-copy.md`.
+ *
+ * `id` is the anchor the home card links to on /coaching.
+ */
+export interface Coach {
+  id: string;
+  name: Copy;
+  role: Copy;
+  summary: Copy;
+  pills: readonly Copy[];
+  link: Copy;
+  pill: Copy;
+  heading: Copy;
+  pull: Copy;
+  story: readonly Copy[];
+  alt: Copy;
+}
 
-/** Before the turn. What he sees, and why it happens. */
-export const FOUNDER_BEFORE: readonly Copy[] = [
+export const COACHES: readonly Coach[] = [
   {
-    en: "I run PunProfile and the “Jobs at companies in Europe” group. Most people meet me through that group first. My day job is in Marketing Operations, here in Europe.",
-    th: "ผมดูแล PunProfile และกลุ่ม “งานบริษัทในยุโรป” หลายคนรู้จักผมครั้งแรกผ่านกลุ่มนี้ ส่วนงานประจำ ผมทำด้าน Marketing Operations อยู่ในยุโรป",
+    id: "paul",
+    name: { en: "Paul", th: "พอล" },
+    role: { en: "Marketing Director in Europe · Founder of PunProfile", th: "Marketing Director ในยุโรป · ผู้ก่อตั้ง PunProfile" },
+    summary: { en: "Once a Thai applicant sending CVs into Europe, now the person who reads the CVs that pass the screen and selects people for his team.", th: "เคยเป็นผู้สมัครชาวไทยที่ส่ง CV หางานในยุโรป วันนี้เป็นคนอ่าน CV ที่ผ่านการคัดกรองมาแล้ว และเลือกคนเข้าทีม" },
+    pills: [
+      { en: "Working in Europe since 2016", th: "ทำงานในยุโรปตั้งแต่ปี 2016" },
+      { en: "Marketing and MarTech hiring", th: "คัดเลือกคนด้าน Marketing และ MarTech" },
+    ],
+    link: { en: "Read Paul's story", th: "อ่านเรื่องราวของพอล" },
+    pill: { en: "Founder · Marketing Director", th: "ผู้ก่อตั้ง · Marketing Director" },
+    heading: { en: "Hi, I'm Paul", th: "สวัสดีครับ ผมพอล" },
+    pull: { en: "I have sat on both sides of the interview table.", th: "ผมเคยนั่งอยู่ทั้งสองฝั่งของโต๊ะสัมภาษณ์" },
+    story: [
+      { en: "I moved to Spain to work in 2016 and work with clients in countries across Europe, especially the UK. I have sent thousands of job applications and sat hundreds of interviews, so I know what it is like to send a CV and receive no reply.", th: "ผมย้ายมาทำงานที่สเปนในปี 2016 และทำงานกับลูกค้าในหลายประเทศทั่วยุโรป โดยเฉพาะใน UK ที่ผ่านมาผมสมัครงานไปหลายพันตำแหน่ง และสัมภาษณ์งานมาหลายร้อยครั้ง ผมจึงเข้าใจดีว่าการส่ง CV ไปแล้วไม่ได้รับคำตอบเป็นอย่างไร" },
+      { en: "Today I am a Marketing Director. The CVs that reach me have already passed the AI screen and the Talent Acquisition Manager, and I have read hundreds of them, so I have seen not just good CVs but the ones that actually get the job. I also hire remote workers and freelancers in Marketing and MarTech for several employers.", th: "วันนี้ผมเป็น Marketing Director CV ที่มาถึงผมผ่านการคัดกรองจาก AI และ Talent Acquisition Manager มาแล้ว ผมอ่าน CV ระดับนี้มาหลายร้อยฉบับ จึงได้เห็นไม่ใช่แค่ CV ที่ดี แต่เป็น CV ที่ได้งานจริง นอกจากนี้ผมยังคัดเลือก remote worker และ freelancer ด้าน Marketing และ MarTech ให้กับหลายบริษัท" },
+      { en: "I work in marketing, so when I look at a candidate’s profile, I ask similar questions to those I ask about a brand: what makes it stand out, what it wants to be known for, and whether the story is consistent. I also run the “Jobs at companies in Europe” group, where many people first get to know me.", th: "ผมทำงานด้านการตลาด เวลาดูโปรไฟล์ผู้สมัคร ผมจึงดูคล้ายกับเวลาดูแบรนด์ว่า จุดเด่นคืออะไร อยากให้คนจดจำในเรื่องไหน และสิ่งที่เล่ามาสอดคล้องกันหรือเปล่า ผมยังดูแลกลุ่ม “งานบริษัทในยุโรป” ด้วย หลายคนรู้จักผมครั้งแรกผ่านกลุ่มนี้" },
+      { en: "A company name every Thai person knows may be a name a European hiring manager has never heard. Work we know was large and difficult can become one unremarkable line on a CV. And years of accumulated experience can be passed over, not because it has no value, but because the person reading it does not have enough context to see that value.", th: "ชื่อบริษัทที่คนไทยรู้จักดี อาจเป็นเพียงชื่อที่ผู้จัดการฝ่ายสรรหาในยุโรปไม่เคยได้ยิน งานที่เรารู้ว่าใหญ่และยาก อาจกลายเป็นเพียงหนึ่งบรรทัดธรรมดาใน CV และประสบการณ์ที่สั่งสมมาหลายปีอาจถูกมองข้าม ไม่ใช่เพราะมันไม่มีค่า แต่เพราะคนอ่านยังไม่มีบริบทมากพอที่จะเห็นคุณค่านั้น" },
+      { en: "I have watched this happen again and again to Thai people in the group. When applications go unanswered, many of them try harder: send more, revise the CV again, read more advice. But in a cross-border job market, effort does not automatically turn into opportunity. If the market still cannot read you, applying more is just sending the same unclear story out over and over.", th: "ผมเห็นเรื่องนี้เกิดขึ้นซ้ำ ๆ กับคนไทยในกลุ่ม เมื่อสมัครงานแล้วไม่ได้รับคำตอบ หลายคนจึงพยายามมากขึ้น สมัครมากขึ้น แก้ CV อีกรอบ และอ่านคำแนะนำเพิ่มอีก แต่ในตลาดงานข้ามประเทศ ความพยายามไม่ได้กลายเป็นโอกาสโดยอัตโนมัติ ถ้าตลาดยังอ่านเราไม่ออก การสมัครเพิ่มก็เป็นเพียงการส่งเรื่องเดิมที่ยังไม่ชัดออกไปซ้ำ ๆ" },
+    ],
+    alt: { en: "Portrait of Paul Bussabong, coach and founder of PunProfile", th: "พอล บุษบง โค้ชและผู้ก่อตั้ง PunProfile" },
   },
   {
-    en: "The longer I work here, the clearer one thing becomes: good people are not always seen, especially when their experience comes from another country.",
-    th: "การทำงานอยู่ในยุโรปทำให้ผมเห็นเรื่องหนึ่งชัดขึ้นเรื่อย ๆ ว่า คนเก่งไม่ได้ถูกมองเห็นเสมอไป โดยเฉพาะเมื่อประสบการณ์ของเขามาจากอีกประเทศ",
-  },
-  {
-    en: "A company name every Thai person knows may be a name a European hiring manager has never heard. Work we know was large and difficult can become one unremarkable line on a CV. And years of accumulated experience can be passed over, not because it has no value, but because the person reading it does not have enough context to see that value.",
-    th: "ชื่อบริษัทที่คนไทยรู้จักดี อาจเป็นเพียงชื่อที่ผู้จัดการฝ่ายสรรหาในยุโรปไม่เคยได้ยิน งานที่เรารู้ว่าใหญ่และยาก อาจกลายเป็นเพียงหนึ่งบรรทัดธรรมดาใน CV และประสบการณ์ที่สั่งสมมาหลายปีอาจถูกมองข้าม ไม่ใช่เพราะมันไม่มีค่า แต่เพราะคนอ่านยังไม่มีบริบทมากพอที่จะเห็นคุณค่านั้น",
-  },
-  {
-    en: "I have watched this happen again and again to Thai people in the group. When applications go unanswered, many of them try harder: send more, revise the CV again, read more advice. But in a cross-border job market, effort does not automatically turn into opportunity. If the market still cannot read you, applying more is just sending the same unclear story out over and over.",
-    th: "ผมเห็นเรื่องนี้เกิดขึ้นซ้ำ ๆ กับคนไทยในกลุ่ม เมื่อสมัครงานแล้วไม่ได้รับคำตอบ หลายคนจึงพยายามมากขึ้น สมัครมากขึ้น แก้ CV อีกรอบ และอ่านคำแนะนำเพิ่มอีก แต่ในตลาดงานข้ามประเทศ ความพยายามไม่ได้กลายเป็นโอกาสโดยอัตโนมัติ ถ้าตลาดยังอ่านเราไม่ออก การสมัครเพิ่มก็เป็นเพียงการส่งเรื่องเดิมที่ยังไม่ชัดออกไปซ้ำ ๆ",
+    id: "dew",
+    name: { en: "Dew", th: "ดิว" },
+    role: { en: "Principal Consultant, Executive Search, United States · Co-founder of PunProfile", th: "Principal Consultant ด้าน Executive Search ในสหรัฐอเมริกา · ผู้ร่วมก่อตั้ง PunProfile" },
+    summary: { en: "In recruitment and HR for more than 10 years, from Bangkok to the United States, and today selecting CVs to put forward to hiring managers.", th: "ทำงานด้าน recruitment และ HR มากว่า 10 ปี เริ่มจากกรุงเทพฯ จนมาถึงสหรัฐอเมริกา วันนี้เป็นคนคัดเลือก CV เพื่อส่งต่อให้ hiring manager" },
+    pills: [
+      { en: "Recruitment and HR, 10+ years", th: "สาย recruitment และ HR กว่า 10 ปี" },
+      { en: "BA Chulalongkorn · MA in HR, US", th: "ป.ตรี จุฬาฯ · ป.โท HR ที่สหรัฐฯ" },
+    ],
+    link: { en: "Read Dew's story", th: "อ่านเรื่องราวของดิว" },
+    pill: { en: "Co-founder · Executive Search", th: "ผู้ร่วมก่อตั้ง · Executive Search" },
+    heading: { en: "Hi, I'm Dew", th: "สวัสดีค่ะ ชื่อดิวค่ะ" },
+    pull: { en: "I select the CVs that go forward to the hiring manager.", th: "ดิวเป็นคนคัดเลือก CV เพื่อส่งต่อให้ hiring manager" },
+    story: [
+      { en: "I am currently a Principal Consultant in Executive Search in the United States. I joined the firm as a recruitment consultant before progressing to my current role. My work involves finding candidates for clients, reading CVs, and selecting suitable candidates to put forward to the hiring manager.", th: "ปัจจุบันดิวเป็น Principal Consultant ดูแลงาน Executive Search หรือการสรรหาผู้บริหาร อยู่ที่สหรัฐอเมริกา ดิวเริ่มทำงานกับบริษัทนี้ในตำแหน่ง recruitment consultant ก่อนเติบโตมารับหน้าที่ปัจจุบัน งานของดิวคือหาผู้สมัครให้ลูกค้า อ่าน CV และคัดเลือกคนที่เหมาะสมเพื่อส่งต่อให้ hiring manager พิจารณา" },
+      { en: "I have worked in recruitment and HR for more than 10 years. I started in IT recruitment in Bangkok, then worked in change management consulting and HR at a Thai company, before moving to the United States to study and work in 2017.", th: "ดิวทำงานด้าน recruitment และ HR มากว่า 10 ปี เริ่มจากงานสรรหาคนสาย IT ที่กรุงเทพฯ จากนั้นทำงานที่ปรึกษาด้านการบริหารการเปลี่ยนแปลง และงาน HR ในบริษัทไทย ก่อนย้ายมาเรียนต่อและทำงานที่สหรัฐอเมริกาในปี 2017" },
+      { en: "I read Thai candidates’ CVs when I worked in recruitment in Bangkok and have applied for jobs abroad myself. Today I read CVs and select candidates to put forward to clients. From that experience, I have seen that what Thai applicants write in their CVs does not always give recruiters the information they need to make a decision. In my view, this is something we can make clearer; it does not mean you are not good enough.", th: "ดิวเคยอ่าน CV ของผู้สมัครชาวไทยตั้งแต่ทำงาน recruitment ที่กรุงเทพฯ และเคยส่ง CV สมัครงานในต่างประเทศด้วยตัวเอง วันนี้ดิวเป็นคนอ่าน CV และคัดเลือกผู้สมัครเพื่อส่งต่อให้ลูกค้า จากประสบการณ์นี้ ดิวเห็นว่าบางครั้งสิ่งที่ผู้สมัครชาวไทยเขียนใน CV ยังไม่ตรงกับข้อมูลที่ recruiter ต้องการใช้ตัดสินใจ ในมุมของดิว นี่เป็นเรื่องที่ปรับให้ชัดขึ้นได้ ไม่ได้แปลว่าคุณเก่งไม่พอ" },
+      { en: "My studies are in psychology and HR: a BA in Industrial and Organisational Psychology from Chulalongkorn University, and an MA in Human Resources Management from a university in San Diego.", th: "ดิวเรียนมาทางด้านจิตวิทยาและ HR โดยตรง จบปริญญาตรีด้านจิตวิทยาอุตสาหกรรมและองค์การจากจุฬาลงกรณ์มหาวิทยาลัย และปริญญาโทด้านการบริหารทรัพยากรบุคคลจากมหาวิทยาลัยในซานดิเอโก" },
+    ],
+    alt: { en: "Portrait of Tatiya (Dew) Doyle, coach and co-founder of PunProfile", th: "ดิว ทาทิยา ดอยล์ โค้ชและผู้ร่วมก่อตั้ง PunProfile" },
   },
 ];
 
+// ------------------------------------------------------- why we do this
+
 /** The hinge of the section, set apart from the paragraphs on either side. */
 export const FOUNDER_TURN: Copy = {
-  en: "That is why I started PunProfile.",
-  th: "นี่คือเหตุผลที่ผมเริ่มทำ PunProfile",
+  en: "That is why we do PunProfile.",
+  th: "นี่คือเหตุผลที่เราทำ PunProfile",
 };
 
 /** After the turn. What he does about it, and what he will not do. */
@@ -331,18 +381,18 @@ export const FOUNDER_AFTER: readonly Copy[] = [
     // The minimum change. This paragraph is the one Dew changes most and not by
     // wording: ten years in US placement means one of them did the recruiting
     // job before choosing not to do it here. That is his to write.
-    en: "We chose career coaching over being recruiters because the first question should be “what suits you”, not “which vacancy can I put you into”.",
+    en: "In our career coaching work, we start by asking “what kind of work suits you?” and then look at how to get there. PunProfile is not a recruitment agency, so we do not start from vacancies we need to fill.",
     // Paul's wording, 06/09/2026. `นายหน้าจัดหางาน` became `บริษัทจัดหางาน`,
     // which is the form the published disclaimer in `footer.ts` already uses, so
     // the page and the legal line now name the same thing. Both quoted questions
     // were opened out: "อะไรเหมาะกับคุณ" to "งานแบบไหนเหมาะกับคุณ", and
     // "จะนำคุณไปใส่ในตำแหน่งไหนได้บ้าง" to
     // "มีตำแหน่งว่างไหนที่เราจะส่งคุณเข้าไปได้บ้าง".
-    th: "เราเลือกทำ Career Coaching แทนการเป็นบริษัทจัดหางาน เพราะคำถามแรกควรเป็น “งานแบบไหนเหมาะกับคุณ” ไม่ใช่ “มีตำแหน่งว่างไหนที่เราจะส่งคุณเข้าไปได้บ้าง”",
+    th: "ในงาน Career Coaching เราเริ่มจากคำถามว่า “งานแบบไหนเหมาะกับคุณ” แล้วค่อยดูว่าจะไปถึงงานนั้นได้อย่างไร ส่วน PunProfile ไม่ใช่บริษัทจัดหางาน เราจึงไม่ได้เริ่มจากตำแหน่งว่างที่ต้องหาคนไปลง",
   },
   {
-    en: "PunProfile is paid by you, not by an employer. So the advice starts from your goals and your situation, not from a role somebody is rushing to fill.",
-    th: "PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำจึงเริ่มจากเป้าหมายและความเป็นจริงของคุณ ไม่ใช่จากตำแหน่งที่ใครกำลังรีบหาคนไปใส่",
+    en: "PunProfile is paid by you, not by an employer. Our advice therefore starts from your goals and circumstances, not from the needs of a company rushing to hire.",
+    th: "ปั้นโปรไฟล์ (PunProfile) รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำจึงยึดเป้าหมายและสถานการณ์ของคุณเป็นหลัก ไม่ใช่ความต้องการของบริษัทที่กำลังเร่งหาคน",
   },
   {
     // Read back 06/09/2026, and `ผม` to `เรา` held.
@@ -364,7 +414,3 @@ export const MASCOT_ALT: Copy = {
   th: "ภาพการ์ตูน PunProfile เดินขึ้นบันไดไปยังป้ายบอกทาง",
 };
 
-export const PORTRAIT_ALT: Copy = {
-  en: "Portrait of Paul Bussabong",
-  th: "พอล บุษบง ผู้ดูแล PunProfile",
-};

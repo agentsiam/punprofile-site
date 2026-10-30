@@ -64,13 +64,12 @@ import Catalogue from "@/components/features/home/Catalogue";
 import { SERVICES } from "@/lib/content/services";
 import { DESTINATIONS } from "@/lib/content/cta";
 import Band from "@/components/Band";
-import SplitFeature from "@/components/blocks/SplitFeature";
 import MarketStats from "@/components/blocks/MarketStats";
 import Testimonials from "@/components/blocks/Testimonials";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 import { METHOD_PROOF } from "@/lib/content/method";
 import { FAQ, FAQ_HEADING } from "@/lib/content/faq";
-import { PORTRAIT_ALT } from "@/lib/content/coaching";
+import CoachCards from "@/components/features/coaches/CoachCards";
 import {
   CATALOGUE_HEADING,
   CATALOGUE_LEAD,
@@ -585,28 +584,27 @@ export default function Home() {
 
             The alt text is still the one `/coaching` uses, because it names who
             is in the picture and nothing about the setting. */}
-        <SplitFeature
-          reverse
-          src="/paul-portrait-wide.jpg"
-          alt={pick(PORTRAIT_ALT)}
+        {/* 30/10/2026: two equal coach cards, Paul and Tatiya, replacing
+            the one wide photo of Paul. See `CoachCards`. */}
+        <h2 className={SECTION_HEADING(locale)}>{pick(WHO_HEADING)}</h2>
+        <p className="mt-3 max-w-3xl text-body-large text-on-surface-variant">
+          {pick(WHO_BODY)}
+        </p>
+        <div className="mt-8">
+          <CoachCards />
+        </div>
+        <Link
+          href={path(DESTINATIONS.contact.href)}
+          className="group mt-8 inline-flex items-center gap-2 text-body-md-strong underline underline-offset-4"
         >
-          <h2 className={SECTION_HEADING(locale)}>{pick(WHO_HEADING)}</h2>
-          <p className="mt-3 max-w-2xl text-body-large text-on-surface-variant">
-            {pick(WHO_BODY)}
-          </p>
-          <Link
-            href={path(DESTINATIONS.contact.href)}
-            className="group mt-6 inline-flex items-center gap-2 text-body-md-strong underline underline-offset-4"
+          {pick(DESTINATIONS.contact.label)}
+          <span
+            aria-hidden
+            className="duration-[350ms] ease-nav transition-transform group-hover:translate-x-1"
           >
-            {pick(DESTINATIONS.contact.label)}
-            <span
-              aria-hidden
-              className="duration-[350ms] ease-nav transition-transform group-hover:translate-x-1"
-            >
-              &rarr;
-            </span>
-          </Link>
-        </SplitFeature>
+            &rarr;
+          </span>
+        </Link>
       </Band>
 
         {/* -------------------------------------------------- testimonials

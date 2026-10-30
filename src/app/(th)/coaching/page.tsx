@@ -28,12 +28,11 @@ import { useCopy } from "@/components/LocaleProvider";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 import Band from "@/components/Band";
 import CallToAction from "@/components/CallToAction";
+import CoachRows from "@/components/features/coaches/CoachRows";
 import ServiceCards from "@/components/features/services/ServiceCards";
 import {
   CLOSE_LEAD,
   FOUNDER_AFTER,
-  FOUNDER_BEFORE,
-  FOUNDER_HEADING,
   FOUNDER_TURN,
   HOOK_BODY,
   HOOK_CTA_SUB,
@@ -50,7 +49,6 @@ import {
   PAIN_HEADING,
   PERSONAS,
   PERSONA_HEADING,
-  PORTRAIT_ALT,
   PROOF_CONCLUSION,
   PROOF_FOOT,
   PROOF_HEADING,
@@ -215,45 +213,23 @@ export default function CoachingPage() {
           are before they have a reason to; this asks a reader who has just
           agreed with six things.
 
-          Full-bleed on the lime band, which is the page's one unmissable
-          ground. `ground-fixed` pins the content colours, so the running text
-          is `ink-deep` at 9.45 rather than a role that would follow the scheme
-          and vanish. This is the longest piece of running text on the site, so
-          the ratio is the reason the label is not white. */}
-      <Band block="B7" ground="brand">
-          <div className="flex flex-col gap-8 medium:flex-row medium:items-start">
-            <Image
-              src="/paul-portrait.png"
-              alt={pick(PORTRAIT_ALT)}
-              width={421}
-              height={421}
-              className="size-32 shrink-0 rounded-full bg-canvas object-cover medium:size-40"
-            />
-            <div>
-              <h2 className={SECTION_HEADING(locale)}>{pick(FOUNDER_HEADING)}</h2>
-              <div className="mt-5 flex flex-col gap-4">
-                {FOUNDER_BEFORE.map((p, i) => (
-                  <p key={i} className="text-body-large">
-                    {pick(p)}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* The hinge of the section, given its own line and its own weight.
-              In Paul's draft it sits alone between two blocks of paragraphs,
-              and running it in as another paragraph would lose the beat. */}
-          <p className="mt-10 text-heading-sm">{pick(FOUNDER_TURN)}</p>
-
-          <div className="mt-6 flex max-w-2xl flex-col gap-4">
+          30/10/2026: white ground, one row per coach (`CoachRows`), then the
+          shared "why we do this" in one soft-grey card. It was a full-bleed
+          lime band, which Paul found overwhelming; lime is now the accent
+          only. */}
+      <Band block="B7" ground="canvas" width="wide">
+        <CoachRows />
+        <div className="mt-14 rounded-[30px] bg-canvas-soft px-6 py-9 medium:px-10">
+          <p className="text-heading-sm text-on-surface">{pick(FOUNDER_TURN)}</p>
+          <div className="mt-5 flex max-w-3xl flex-col gap-4">
             {FOUNDER_AFTER.map((p, i) => (
-              <p key={i} className="text-body-large">
+              <p key={i} className="text-body-large text-on-surface">
                 {pick(p)}
               </p>
             ))}
           </div>
-    </Band>
+        </div>
+      </Band>
 
       {/* The three services, folded in from `/services` on 23/08/2026. They sit
           after the case for coaching and before the close, which is where "and
