@@ -41,7 +41,7 @@ import CallLog from "./CallLog";
 import AnswerSheet from "./AnswerSheet";
 import CoachPanel from "./CoachPanel";
 import ConsentPanel from "./ConsentPanel";
-import EngagementPanel from "./EngagementPanel";
+import DeliveryWorkspace from "./DeliveryWorkspace";
 import OutcomePanel from "./OutcomePanel";
 import RatingsPanel from "./RatingsPanel";
 import { stateFor, meetsBookingGate, LIFECYCLE_LABELS } from "@/lib/lifecycle";
@@ -500,15 +500,18 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
           {/* Right column is "what we did about it", so the commercial record
               belongs under the call log: invitation, call, sale, work, outcome,
               in the order they happen. */}
-          <Section title="Engagement and delivery">
-            <EngagementPanel leadId={leadId} />
-          </Section>
-
           <Section title="Applications and outcome">
             <OutcomePanel leadId={leadId} />
           </Section>
         </div>
       </div>
+
+      {/* Full width, below both columns: the delivery workspace is a working
+          surface with a table in it, and half of a 64rem page is too narrow
+          for a job tracker. Everything after the sale lives here. */}
+      <Section title="Delivery">
+        <DeliveryWorkspace leadId={leadId} />
+      </Section>
 
       {/* The judgement, kept well away from Delete. One is about whether to
           work with someone, the other erases them, and putting them side by
