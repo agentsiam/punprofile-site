@@ -4,7 +4,7 @@ import { Email } from "@convex-dev/auth/providers/Email";
 import { ConvexError } from "convex/values";
 import { adminEmails, isAdminEmail } from "./adminEmails";
 import { internal } from "./_generated/api";
-import { liveGrant, normaliseEmail } from "./candidateAccess";
+import { clearHeldCodes, liveGrant, normaliseEmail } from "./candidateAccess";
 
 /**
  * TASK-004: coach authentication, allowlisted.
@@ -65,12 +65,16 @@ const CandidateCode = Email({
     const key = process.env.RESEND_API_KEY;
     const from = process.env.MAIL_FROM;
     if (!key || !from) {
-      // Loud in the log, generic to the person: a missing sender is our fault
-      // and the page should not explain our configuration to a candidate.
-      console.error(
-        `candidate-code not sent: ${!key ? "RESEND_API_KEY" : "MAIL_FROM"} is not set on this deployment.`,
-      );
-      throw new ConvexError("code_not_sent");
+      // No sender yet (parked by Paul, 30/10/2026). Hold the code for the coach
+      // to pass on by LINE instead; the Candidate 360 shows it for fifteen
+      // minutes. The moment both variables are set, this branch stops running.
+      const runMutation = (ctx as { runMutation: (f: unknown, a: unknown) => Promise<unknown> }).runMutation;
+      await runMutation(internal.candidateAccess.holdCode, {
+        email: identifier,
+        code: token,
+        expiresAt: Date.now() + CODE_MINUTES * 60 * 1000,
+      });
+      return;
     }
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -119,6 +123,7 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
         : null;
       if (!grant) throw new ConvexError("no_access");
       await ctx.db.patch(grant._id, { lastSignInAt: Date.now() });
+      await clearHeldCodes(ctx as unknown as Parameters<typeof clearHeldCodes>[0], email);
     },
   },
 });

@@ -589,6 +589,15 @@ export const forLead = query({
         .withIndex("by_lead", (q) => q.eq("leadId", args.leadId))
         .collect()
     ).find((g) => g.revokedAt === undefined);
+    const held = access
+      ? (
+          await ctx.db
+            .query("pendingSignInCodes")
+            .withIndex("by_email", (q) => q.eq("email", access.email))
+            .collect()
+        ).find((c) => c.expiresAt > Date.now())
+      : undefined;
+    const heldCode = held ? { code: held.code, expiresAt: held.expiresAt } : null;
 
     return {
       tokens: {
@@ -603,6 +612,7 @@ export const forLead = query({
       access: access
         ? { email: access.email, grantedAt: access.grantedAt, lastSignInAt: access.lastSignInAt ?? null }
         : null,
+      heldCode,
     };
   },
 });

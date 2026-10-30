@@ -12,7 +12,7 @@
  * refuses them exactly as it refuses a stranger.
  */
 
-import { internalQuery, type QueryCtx, type MutationCtx } from "./_generated/server";
+import { internalMutation, internalQuery, type QueryCtx, type MutationCtx } from "./_generated/server";
 import type { Doc } from "./_generated/dataModel";
 import { v } from "convex/values";
 import { getAuthUserId } from "@convex-dev/auth/server";
@@ -56,4 +56,31 @@ export async function signedInCandidate(
   const lead = await ctx.db.get(grant.leadId);
   if (!lead) return { state: "no_access", email };
   return { state: "candidate", lead, grant };
+}
+
+/**
+ * Hold a code for the coach to send on LINE, when no mail sender is set.
+ * One live code per address: a new request replaces the old one.
+ */
+export const holdCode = internalMutation({
+  args: { email: v.string(), code: v.string(), expiresAt: v.number() },
+  handler: async (ctx, args) => {
+    const email = normaliseEmail(args.email);
+    if (!(await liveGrant(ctx, email))) return;
+    const old = await ctx.db
+      .query("pendingSignInCodes")
+      .withIndex("by_email", (q) => q.eq("email", email))
+      .collect();
+    for (const o of old) await ctx.db.delete(o._id);
+    await ctx.db.insert("pendingSignInCodes", { email, code: args.code, expiresAt: args.expiresAt, at: Date.now() });
+  },
+});
+
+/** Drop any held code for this address. Called on sign-in and on erasure. */
+export async function clearHeldCodes(ctx: MutationCtx, email: string) {
+  const rows = await ctx.db
+    .query("pendingSignInCodes")
+    .withIndex("by_email", (q) => q.eq("email", normaliseEmail(email)))
+    .collect();
+  for (const r of rows) await ctx.db.delete(r._id);
 }

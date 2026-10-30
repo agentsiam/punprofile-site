@@ -260,6 +260,14 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
               <p className="mt-1 text-body-medium text-on-surface">
                 {ws.access.email} can sign in at {pageUrl} with a code sent to that address.
               </p>
+              {ws.heldCode && (
+                <p className="mt-2 rounded-medium bg-primary-container px-3 py-2 text-body-medium text-on-primary-container">
+                  Sign-in code waiting: <strong className="tracking-widest">{ws.heldCode.code}</strong>, valid
+                  until{" "}
+                  {new Date(ws.heldCode.expiresAt).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}.
+                  Email is not set up yet, so send it to them on LINE.
+                </p>
+              )}
               <p className="text-body-medium text-on-surface-variant">
                 Access since {day(ws.access.grantedAt)}
                 {ws.access.lastSignInAt ? `, last signed in ${day(ws.access.lastSignInAt)}` : ", not signed in yet"}
@@ -1161,6 +1169,20 @@ function JobTracker({
                           {a.appliedAt && <span>Applied {day(a.appliedAt)}</span>}
                           {a.matchReason && <span className="medium:col-span-2">Why it matched: {a.matchReason}</span>}
                           {a.notes && <span className="medium:col-span-2 whitespace-pre-line">Notes: {a.notes}</span>}
+                          {(a.interviews ?? []).length > 0 && (
+                            <span className="medium:col-span-2">
+                              Interviews:{" "}
+                              {(a.interviews ?? [])
+                                .map((r) => [r.round, r.at ? day(r.at) : null, r.interviewers].filter(Boolean).join(", "))
+                                .join("; ")}
+                            </span>
+                          )}
+                          {(a.contacts ?? []).length > 0 && (
+                            <span className="medium:col-span-2">
+                              Contacts:{" "}
+                              {(a.contacts ?? []).map((c) => [c.name, c.role, c.email].filter(Boolean).join(", ")).join("; ")}
+                            </span>
+                          )}
                           <label className="flex items-center gap-2">
                             CV sent
                             <select
