@@ -140,6 +140,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         contacts: a.contacts ?? [],
         checklist: a.checklist ?? [],
         jobDescription: a.jobDescription ?? null,
+        jobLogId: a.jobLogId ?? null,
         // Only a CV they can see. A coach may link an unshared draft; that link
         // stays on the coach's side.
         cvDocumentId: a.cvDocumentId && sharedCvIds.has(a.cvDocumentId) ? a.cvDocumentId : null,
@@ -156,7 +157,12 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
 
     const matchedSent = rows.filter((r) => r.reason === "matched_role").reduce((s, r) => s - r.delta, 0);
 
+    const resp = (lead.responses ?? {}) as Record<string, unknown>;
     return {
+      target: {
+        countries: Array.isArray(resp.targetCountries) ? (resp.targetCountries as string[]) : [],
+        role: typeof resp.targetRole === "string" ? resp.targetRole : null,
+      },
       firstName: lead.firstName ?? null,
       tokens: { balance, bought, matchedSent, requestedAt: openTokenRequest?.at ?? null },
       goal: { perWeek: lead.weeklyApplicationGoal ?? null, appliedThisWeek },
@@ -223,6 +229,8 @@ export const addJob = mutation({
     salary: v.optional(v.string()),
     status: statusValidator,
     notes: v.optional(v.string()),
+    /** Set when saved from the "Jobs for you" feed. */
+    jobLogId: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const lead = await requireLead(ctx);
@@ -249,6 +257,7 @@ export const addJob = mutation({
       ...(clean(args.location, 120) ? { location: clean(args.location, 120) } : {}),
       ...(url && /^https?:\/\//i.test(url) ? { jobUrl: url } : {}),
       ...(clean(args.salary, 80) ? { salary: clean(args.salary, 80) } : {}),
+      ...(args.jobLogId ? { jobLogId: args.jobLogId.slice(0, 200) } : {}),
       status: args.status,
       recordedBy: "candidate",
       origin: "candidate",

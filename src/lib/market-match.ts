@@ -50,3 +50,29 @@ export function matchRoles(countries: string[], roleCategory: string | null | un
     : [];
   return { inCountries: inCountries.length, matching: matching.length, examples: matching.slice(0, 3) };
 }
+
+/**
+ * Every published role in the candidate's countries whose title matches their
+ * role category, newest first, from the last `days` days. The candidate's
+ * "Jobs for you" feed. Transparent by construction: country is equal, and a
+ * title contains one of the category's words. Not a recommender.
+ *
+ * Recent only: Paul's rule for the pipeline is that an aged entry is not worth
+ * resurfacing, whatever the reason it aged.
+ */
+export function rolesFor(
+  countries: string[],
+  roleCategory: string | null | undefined,
+  days = 30,
+  now = Date.now(),
+): MarketRole[] {
+  const wanted = new Set(countries.map((c) => (c === "UK" ? "United Kingdom" : c)));
+  const words = roleCategory ? ROLE_KEYWORDS[roleCategory] ?? [] : [];
+  if (!words.length || !wanted.size) return [];
+  const since = new Date(now - days * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  return MARKET_ROLES.filter((r) => {
+    if (!wanted.has(r.country) || r.firstSeen < since) return false;
+    const t = ` ${r.title.toLowerCase()} `;
+    return words.some((w) => t.includes(w));
+  });
+}

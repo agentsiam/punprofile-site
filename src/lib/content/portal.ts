@@ -70,6 +70,22 @@ export const SIGN_OUT: Copy = { en: "Sign out", th: "ออกจากระบ
 
 export const TAB_OVERVIEW: Copy = { en: "Overview", th: "ภาพรวม" };
 export const TAB_TRACKER: Copy = { en: "Job tracker", th: "ติดตามงาน" };
+export const TAB_FEED: Copy = { en: "Jobs for you", th: "งานสำหรับคุณ" };
+export const FEED_INTRO: Copy = {
+  en: "Roles our team screened in the last 30 days, in {countries}, matching {role}. The same jobs we post in the group, filtered to your target. Save one to put it in your job list.",
+  th: "ตำแหน่งที่ทีมเราคัดใน 30 วันที่ผ่านมา ใน {countries} ตรงกับสาย {role} เป็นงานชุดเดียวกับที่โพสต์ในกลุ่ม แต่กรองตาม target ของคุณ กดบันทึกเพื่อเพิ่มเข้าลิสต์งานได้เลยครับ",
+};
+export const FEED_EMPTY: Copy = {
+  en: "Nothing in your target in the last 30 days. A narrow target can go quiet for a while; this fills as new roles are screened.",
+  th: "ช่วง 30 วันที่ผ่านมายังไม่มีตำแหน่งที่ตรงกับ target ของคุณ target ที่เฉพาะเจาะจงอาจเงียบไปบ้าง ตรงนี้จะขึ้นเมื่อมีตำแหน่งใหม่ที่ผ่านการคัดครับ",
+};
+export const FEED_NO_TARGET: Copy = {
+  en: "We do not have your target country and role yet. Tell your coach, and this list fills.",
+  th: "เรายังไม่มีข้อมูลประเทศและสายงานที่คุณตั้งเป้าไว้ บอกโค้ชได้เลยครับ แล้วลิสต์นี้จะขึ้น",
+};
+export const FEED_SAVE: Copy = { en: "Save to my list", th: "บันทึกเข้าลิสต์" };
+export const FEED_SAVED: Copy = { en: "In your list", th: "อยู่ในลิสต์แล้ว" };
+export const FEED_SEEN: Copy = { en: "Screened {date}", th: "คัดเมื่อ {date}" };
 export const TAB_CV: Copy = { en: "CV", th: "ไฟล์ CV" };
 export const TAB_COACH: Copy = { en: "Your coach", th: "โค้ชของคุณ" };
 

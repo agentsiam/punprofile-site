@@ -35,12 +35,13 @@ import type { Copy } from "@/lib/content/copy";
 import * as C from "@/lib/content/portal";
 import { CHECKLIST, CHECKLIST_OTHER, CHECKLIST_PROGRESS, CHECKLIST_TAB } from "@/lib/content/checklist";
 import { keywordsOf } from "@/lib/keywords";
+import { rolesFor } from "@/lib/market-match";
 
 type Job = PortalView["jobs"][number];
 const PIPELINE = ["interested", "applied", "screening", "interviewing", "offer", "accepted"] as const;
 const CLOSED = ["rejected", "withdrawn"] as const;
 type Status = (typeof PIPELINE)[number] | (typeof CLOSED)[number];
-type Tab = "overview" | "tracker" | "cv" | "coach";
+type Tab = "overview" | "tracker" | "feed" | "cv" | "coach";
 
 const fill = (s: string, vars: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? ""));
@@ -77,6 +78,7 @@ export default function CandidateApp({
   const tabs: [Tab, Copy][] = [
     ["overview", C.TAB_OVERVIEW],
     ["tracker", C.TAB_TRACKER],
+    ["feed", C.TAB_FEED],
     ["cv", C.TAB_CV],
     ["coach", C.TAB_COACH],
   ];
@@ -139,6 +141,7 @@ export default function CandidateApp({
           ) : (
             <Tracker data={data} onOpen={setOpenJob} readOnly={readOnly} />
           ))}
+        {tab === "feed" && <Feed data={data} readOnly={readOnly} />}
         {tab === "cv" && <CvTab data={data} />}
         {tab === "coach" && <CoachTab data={data} readOnly={readOnly} />}
       </div>
@@ -1474,6 +1477,85 @@ function AddJob({ onDone }: { onDone: () => void }) {
           {pick(C.JOBS_CANCEL)}
         </button>
       </div>
+    </div>
+  );
+}
+
+/* ============================================================= feed */
+
+/**
+ * The jobs the pipeline published, filtered to the candidate's own target:
+ * `rolesFor` in `market-match.ts`, country equal and a category word in the
+ * title, last 30 days. Free, because it is the same set the group sees for
+ * free; a coach's hand-matched role is what a token buys.
+ */
+function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
+  const { pick, t, date } = useFormat();
+  const add = useMutation(api.portal.addJob);
+  const [busy, setBusy] = useState<string | null>(null);
+  const [now] = useState(() => Date.now());
+  const roles = useMemo(() => rolesFor(data.target.countries, data.target.role, 30, now), [data.target, now]);
+  const saved = new Set(data.jobs.flatMap((j) => [j.jobLogId ?? "", j.jobUrl ?? ""]).filter(Boolean));
+
+  if (!data.target.countries.length || !data.target.role) {
+    return <p className="max-w-xl text-body-large text-on-surface-variant">{pick(C.FEED_NO_TARGET)}</p>;
+  }
+  return (
+    <div>
+      <p className="max-w-2xl text-body-large text-on-surface-variant">
+        {t(C.FEED_INTRO, { countries: data.target.countries.join(", "), role: data.target.role })}
+      </p>
+      {roles.length === 0 ? (
+        <p className="mt-6 max-w-xl text-body-large text-on-surface-variant">{pick(C.FEED_EMPTY)}</p>
+      ) : (
+        <ul className="mt-5 grid gap-3 large:grid-cols-2">
+          {roles.map((r) => {
+            const isSaved = saved.has(r.id) || (r.url !== "" && saved.has(r.url));
+            return (
+              <li key={r.id} className="card-outlined flex flex-col gap-2 px-5 py-4">
+                <div>
+                  <p className="text-heading-sm">{r.title}</p>
+                  <p className="text-body-medium text-on-surface-variant">
+                    {r.employer} · {r.country} · {t(C.FEED_SEEN, { date: date(Date.parse(`${r.firstSeen}T12:00:00Z`)) })}
+                  </p>
+                </div>
+                <div className="mt-auto flex flex-wrap items-center gap-4">
+                  {r.url && (
+                    <a href={r.url} target="_blank" rel="noreferrer" className="text-body-medium text-ink-deep underline">
+                      {pick(C.JOBS_POSTING)}
+                    </a>
+                  )}
+                  <span className="flex-1" />
+                  {isSaved ? (
+                    <span className="text-label-large text-on-surface-variant">✓ {pick(C.FEED_SAVED)}</span>
+                  ) : (
+                    !readOnly && (
+                      <button
+                        type="button"
+                        disabled={busy === r.id}
+                        className="h-10 btn-tonal px-4 text-label-large"
+                        onClick={() => {
+                          setBusy(r.id);
+                          void add({
+                            employer: r.employer,
+                            roleTitle: r.title,
+                            country: r.country,
+                            ...(r.url ? { jobUrl: r.url } : {}),
+                            status: "interested",
+                            jobLogId: r.id,
+                          }).finally(() => setBusy(null));
+                        }}
+                      >
+                        {pick(C.FEED_SAVE)}
+                      </button>
+                    )
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 }
