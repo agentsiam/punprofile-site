@@ -112,7 +112,7 @@ sibling repo by the exporter that makes them.
 | **R13** | Run `npx tsx scripts/audit.ts <responses.json>` after touching `src/lib/normalize.ts`. It reports per-question parse rates, prints every rejected value, and asserts the scoring invariants. |
 | **R14 LAW** | `src/app/tokens.generated.css` and `src/lib/design-tokens.generated.ts` are generated. Never hand-edit either: change the token in `design.md`, run `npm run tokens`, commit both. |
 | **R15** | `globals.css` holds only what is not a token: the base layer, the chart styles, the animations. `src/lib/design-tokens.ts` is a re-export and nothing more. |
-| **R16** | One accent. `primary` is a fill, never type. Text that has to say what the lime says takes `ink`, `ink-deep`, or the `-deep` member of a semantic pair. `positive` and `accent-cyan` are fills for the same reason. |
+| **R16** | One action colour. `primary` is a fill, never type, and the only colour that marks what can be pressed. The secondary palette's tints (`orange-pale`, `cyan-pale`, `yellow-pale`) are decorative card grounds with their own `on-` roles, never an action. Text that has to say what the lime says takes `ink`, `ink-deep`, or the `-deep` member of a semantic pair. `positive` and `accent-cyan` are fills for the same reason. |
 | **R17** | `mute` is not a text colour under 19px. Captions, chart ticks and field hints take `mute-strong`. |
 | **R18** | `canvas` is the card, `canvas-soft` is the band it sits in. A sage card on a white page is backwards. |
 | **R19** | The aliases in `design.md > aliases` are read, never written. An alias leaves the map when nothing references it. |
@@ -129,7 +129,7 @@ sibling repo by the exporter that makes them.
 | **R30** | No spacing tokens in the app. The deck preset is the one consumer that needs them named. |
 | **R31** | `src/lib/radar.ts` holds no colours. |
 | **R32** | Never rename `--viz-*`, `--ink-*` or `--border`. `scripts/build-report-book.ts` reads them out of a rendered report's stylesheet. |
-| **R33** | Do not reintroduce a backdrop filter, a fifth easing curve, or a second accent colour. |
+| **R33** | Do not reintroduce a backdrop filter, a fifth easing curve, or a second action colour. |
 | **R34** | Thai is unprefixed at the root and English is prefixed `/en`. Never `/th`, and `/admin` is in neither tree. |
 | **R35** | Every internal link is written as its Thai path and passed through `path()` from `useCopy()`, or `localePath(href, locale)` in a server component. The link tables in `nav.ts`, `footer.ts`, `cta.ts` and `faq.ts` hold no locale. |
 | **R36** | Adding a page means the real file under `(th)/`, an `(en)/en/…/page.tsx` re-exporting its default with its own `pageMetadata({ …, locale: "en" })`, and a `PUBLIC_ROUTES` entry. |

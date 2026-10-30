@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Slot from "@/components/blocks/Slot";
 
 /**
- * B13: quote cards as a social-post carousel, grounds alternating.
+ * B13: quote cards as a social-post carousel, grounds rotating.
  *
  * Each card reads like a post: a round avatar, the name and role beside it,
  * then the quote. Cards sit in one horizontal track that scrolls and snaps, so
@@ -100,9 +100,19 @@ export default function Testimonials({
 
   if (items.length === 0 && placeholders === 0) return null;
 
-  const dark = (i: number) => i % 2 === 0;
-  const ground = (i: number) =>
-    dark(i) ? "ground-dark bg-canvas-dark" : "bg-primary-pale text-on-primary-pale";
+  /*
+   * Grounds rotate dark green, then the secondary palette's tints (design.md,
+   * 30/10/2026). Each tint carries its own text role. Lime-pale sits out: the
+   * drawn avatars already bring the lime, and lime stays the action colour.
+   */
+  const GROUNDS = [
+    "ground-dark bg-canvas-dark",
+    "bg-orange-pale text-on-orange-pale",
+    "bg-cyan-pale text-on-cyan-pale",
+    "bg-yellow-pale text-on-yellow-pale",
+  ] as const;
+  const dark = (i: number) => i % GROUNDS.length === 0;
+  const ground = (i: number) => GROUNDS[i % GROUNDS.length];
   // The avatar sits on the opposite fixed ground, so it reads in both schemes.
   const avatarGround = (i: number) =>
     dark(i) ? "ground-fixed bg-canvas-brand text-ink" : "ground-dark bg-canvas-dark text-ink";

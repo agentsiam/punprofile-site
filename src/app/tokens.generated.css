@@ -39,6 +39,12 @@
   --color-negative-bg: #320707;
   --color-accent-orange: #ffc091;
   --color-accent-cyan: #38c8ff;
+  --color-orange-pale: #ffecde;
+  --color-on-orange-pale: #163300;
+  --color-cyan-pale: #c3eeff;
+  --color-on-cyan-pale: #163300;
+  --color-yellow-pale: #fff1ba;
+  --color-on-yellow-pale: #163300;
 
   --color-primary-container: #e2f6d5;
   --color-on-primary-container: #163300;
@@ -331,6 +337,12 @@
     --color-negative-bg: #320707;
     --color-accent-orange: #ffc091;
     --color-accent-cyan: #38c8ff;
+    --color-orange-pale: #392f24;
+    --color-on-orange-pale: #e8ebe6;
+    --color-cyan-pale: #163038;
+    --color-on-cyan-pale: #e8ebe6;
+    --color-yellow-pale: #39320f;
+    --color-on-yellow-pale: #e8ebe6;
 
     --color-primary-container: #1e3313;
     --color-on-primary-container: #cdffad;

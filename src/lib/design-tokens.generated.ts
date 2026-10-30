@@ -60,6 +60,12 @@ export const BRAND_TOKENS_CSS = `  :root {
     --color-negative-bg: #320707;
     --color-accent-orange: #ffc091;
     --color-accent-cyan: #38c8ff;
+    --color-orange-pale: #ffecde;
+    --color-on-orange-pale: #163300;
+    --color-cyan-pale: #c3eeff;
+    --color-on-cyan-pale: #163300;
+    --color-yellow-pale: #fff1ba;
+    --color-on-yellow-pale: #163300;
 
     --color-primary-container: #e2f6d5;
     --color-on-primary-container: #163300;
