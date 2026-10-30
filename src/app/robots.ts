@@ -64,7 +64,7 @@ const AI_RETRIEVAL = [
   "Perplexity-User",
 ];
 
-const CLOSED = ["/admin", "/admin/", "/login", "/api/"];
+const CLOSED = ["/admin", "/admin/", "/login", "/api/", "/me/"];
 
 export default function robots(): MetadataRoute.Robots {
   return {

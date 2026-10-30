@@ -44,6 +44,9 @@ import * as footer from "../src/lib/content/footer.js";
 // most likely to carry an LR failure, and it ships behind NOT_YET_INDEXED
 // rather than not shipping.
 import * as method from "../src/lib/content/method.js";
+// The paying candidate's own page, `/me/<token>`. Reached only by a link a
+// coach sends, which is no reason to skip the Thai checks every page gets.
+import * as portal from "../src/lib/content/portal.js";
 
 const MODULES: Record<string, Record<string, unknown>> = {
   pricing,
@@ -54,6 +57,7 @@ const MODULES: Record<string, Record<string, unknown>> = {
   faq,
   footer,
   method,
+  portal,
 };
 
 /*
@@ -91,6 +95,7 @@ const FLOORS: Record<string, number> = {
   footer: 12,
   // Set just under the real count, per the note above.
   method: 18,
+  portal: 70,
 };
 
 const perModule = Object.fromEntries(
