@@ -17,9 +17,9 @@ import Slot from "@/components/blocks/Slot";
  * its own end.
  *
  * **No stock faces.** These are real clients. A stock photograph beside a real
- * client's name would present a stranger as that client, so the avatar is the
- * client's initial on a fixed ground until the client supplies a portrait, at
- * which point `portrait` replaces it.
+ * client's name would present a stranger as that client. `portrait` takes a
+ * drawn avatar or the client's own photo; without one the avatar is the
+ * client's initial on a fixed ground.
  *
  * **Ours renders slots until there is a real quote.** A slot is a coded
  * question with a dashed border round it, and it cannot be mistaken for a

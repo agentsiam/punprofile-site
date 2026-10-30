@@ -566,9 +566,10 @@ export const WHO_BODY: Copy = {
  * Paul as a real client with written consent who got the job named. All are
  * quoted as supplied and never edited for voice; the English is a translation.
  *
- * None carries a portrait. A stock face beside a real client's name would say
- * that stranger is the client, so a portrait goes in only when the client
- * supplies it.
+ * No stock photograph. A stock face beside a real client's name would say that
+ * stranger is the client. Each card carries a drawn clay avatar instead, in the
+ * blog art's style and never a likeness, Paul's call of 30/10/2026; a client's
+ * own photo replaces it only if the client supplies one.
  *
  * **The rules for every result.** A real person's consent in writing, and their
  * own words rather than a paraphrase. One real result outranks three polished
