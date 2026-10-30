@@ -441,13 +441,6 @@ export default defineSchema({
     /** @absent notyet — the link has not been followed. absent IS the unused state */
     usedAt: v.optional(v.number()),
     createdAt: v.number(),
-    /** What the link opens. `portal` is a paying candidate's own page,
-     *  `/me/<token>`, issued by a coach from the Candidate 360.
-     *  @absent unmeasured — a result-resume link from before portals existed */
-    purpose: v.optional(v.literal("portal")),
-    /** Set when a newer link replaced this one or a coach withdrew it.
-     *  @absent notyet — still valid until `expiresAt` */
-    revokedAt: v.optional(v.number()),
   })
     .index("by_token", ["token"])
     .index("by_lead", ["leadId"]),
@@ -491,6 +484,7 @@ export default defineSchema({
       tokenLedger: v.optional(v.number()),
       cvDocuments: v.optional(v.number()),
       deliveryNotes: v.optional(v.number()),
+      candidateAccess: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -900,6 +894,9 @@ export default defineSchema({
     /** Why a matched role was picked for this person, shown to them.
      *  @absent none — not a matched role, or no reason written */
     matchReason: v.optional(v.string()),
+    /** How much the candidate wants this one, 1 to 5, their own mark. Teal's
+     *  "excitement" column. @absent none — not marked */
+    excitement: v.optional(v.number()),
   })
     .index("by_lead_time", ["leadId", "savedAt"])
     .index("by_lead_status", ["leadId", "status", "statusChangedAt"]),
@@ -1129,4 +1126,29 @@ export default defineSchema({
     at: v.number(),
     by: v.string(),
   }).index("by_lead", ["leadId", "at"]),
+  /**
+   * Who may sign in to their own page at `/me`. `lifecycle-data-model.md`
+   * § 10, option (b): a real candidate account, email and a one-time code, no
+   * password.
+   *
+   * Access is a grant a coach makes from the Candidate 360, never a side
+   * effect of having an email on a lead. `leads.email` is not unique, so
+   * resolving a signed-in person by email alone could open the wrong record;
+   * this row names the lead explicitly. A code is only ever emailed to an
+   * address with a live grant, so the sign-in form cannot be used to mail
+   * strangers.
+   */
+  candidateAccess: defineTable({
+    leadId: v.id("leads"),
+    /** Lower-cased. The address the code goes to. */
+    email: v.string(),
+    grantedAt: v.number(),
+    by: v.string(),
+    /** @absent notyet — still live */
+    revokedAt: v.optional(v.number()),
+    /** @absent notyet — never signed in */
+    lastSignInAt: v.optional(v.number()),
+  })
+    .index("by_email", ["email"])
+    .index("by_lead", ["leadId"]),
 });

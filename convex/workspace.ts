@@ -7,16 +7,18 @@
  * `lifecycle-data-model.md` §§ 7 to 9 own `engagements`, `deliverables` and
  * `applications`, and `delivery.ts` and `outcomes.ts` keep their mutations.
  * This module adds the tables those sections left open: `tokenLedger`,
- * `cvDocuments`, `deliveryNotes`, and the `portal` purpose on `magicLinks`.
+ * `cvDocuments`, `deliveryNotes`, and `candidateAccess`.
  *
  * Every function here is admin-only. The candidate's side is `portal.ts`, which
- * authenticates by link token instead and exposes a deliberately smaller view.
+ * reads the signed-in candidate's own record and exposes a smaller view.
  */
 
 import { mutation, query, type QueryCtx } from "./_generated/server";
 import type { Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
+import { isAdminEmail } from "./adminEmails";
+import { liveGrant, normaliseEmail } from "./candidateAccess";
 
 /* ------------------------------------------------------------------ tokens */
 
@@ -495,64 +497,53 @@ export const updateApplicationDetails = mutation({
   },
 });
 
-/* ------------------------------------------------------------- portal link */
-
-const PORTAL_DAYS = 30;
-
-function newToken(): string {
-  const bytes = new Uint8Array(24);
-  crypto.getRandomValues(bytes);
-  let s = "";
-  for (const b of bytes) s += String.fromCharCode(b);
-  return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
-}
+/* ------------------------------------------------------------ sign-in */
 
 /**
- * Issue the candidate's link to their own page, revoking any earlier one.
- * `magicLinks` keeps one live token per lead and keeps the old rows as history,
- * as its schema note says.
- *
- * Thirty days, the table's existing contract. A coach reissues from the 360
- * page; the candidate never needs a password.
+ * Let this candidate sign in to their own page at `/me`, with the address
+ * given or the lead's own. One live grant per lead: a new address replaces the
+ * old one, and the old row is kept, revoked, as history.
  */
-export const issuePortalLink = mutation({
-  args: { leadId: v.id("leads") },
+export const grantAccess = mutation({
+  args: { leadId: v.id("leads"), email: v.optional(v.string()) },
   handler: async (ctx, args) => {
-    await requireAdmin(ctx);
+    const by = await requireAdmin(ctx);
     const lead = await ctx.db.get(args.leadId);
     if (!lead) throw new ConvexError("Lead not found.");
+    const email = normaliseEmail(args.email ?? lead.email ?? "");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new ConvexError("That is not an email address.");
+    if (isAdminEmail(email)) throw new ConvexError("That address is a coach account.");
+
+    const taken = await liveGrant(ctx, email);
+    if (taken && taken.leadId !== args.leadId) {
+      throw new ConvexError("That address already opens another candidate's page. Switch that one off first.");
+    }
+
     const now = Date.now();
-    const links = await ctx.db
-      .query("magicLinks")
+    const mine = await ctx.db
+      .query("candidateAccess")
       .withIndex("by_lead", (q) => q.eq("leadId", args.leadId))
       .collect();
-    for (const l of links) {
-      if (l.purpose === "portal" && l.revokedAt === undefined) await ctx.db.patch(l._id, { revokedAt: now });
+    for (const g of mine) {
+      if (g.revokedAt === undefined) {
+        if (g.email === email) return g._id;
+        await ctx.db.patch(g._id, { revokedAt: now });
+      }
     }
-    const token = newToken();
-    await ctx.db.insert("magicLinks", {
-      leadId: args.leadId,
-      token,
-      purpose: "portal",
-      createdAt: now,
-      expiresAt: now + PORTAL_DAYS * 24 * 60 * 60 * 1000,
-    });
-    return token;
+    return await ctx.db.insert("candidateAccess", { leadId: args.leadId, email, grantedAt: now, by });
   },
 });
 
-export const revokePortalLink = mutation({
+export const revokeAccess = mutation({
   args: { leadId: v.id("leads") },
   handler: async (ctx, args) => {
     await requireAdmin(ctx);
     const now = Date.now();
-    const links = await ctx.db
-      .query("magicLinks")
+    const mine = await ctx.db
+      .query("candidateAccess")
       .withIndex("by_lead", (q) => q.eq("leadId", args.leadId))
       .collect();
-    for (const l of links) {
-      if (l.purpose === "portal" && l.revokedAt === undefined) await ctx.db.patch(l._id, { revokedAt: now });
-    }
+    for (const g of mine) if (g.revokedAt === undefined) await ctx.db.patch(g._id, { revokedAt: now });
   },
 });
 
@@ -592,15 +583,12 @@ export const forLead = query({
         .collect()
     ).sort((a, b) => b.statusChangedAt - a.statusChangedAt);
 
-    const now = Date.now();
-    const link = (
+    const access = (
       await ctx.db
-        .query("magicLinks")
+        .query("candidateAccess")
         .withIndex("by_lead", (q) => q.eq("leadId", args.leadId))
         .collect()
-    )
-      .filter((l) => l.purpose === "portal" && l.revokedAt === undefined && l.expiresAt > now)
-      .sort((a, b) => b.createdAt - a.createdAt)[0];
+    ).find((g) => g.revokedAt === undefined);
 
     return {
       tokens: {
@@ -612,8 +600,8 @@ export const forLead = query({
       cvs,
       notes,
       applications,
-      portal: link
-        ? { token: link.token, expiresAt: link.expiresAt, usedAt: link.usedAt ?? null }
+      access: access
+        ? { email: access.email, grantedAt: access.grantedAt, lastSignInAt: access.lastSignInAt ?? null }
         : null,
     };
   },

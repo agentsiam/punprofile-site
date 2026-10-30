@@ -1,43 +1,34 @@
 /**
- * The paying candidate's own page, `/me/<token>`.
+ * The paying candidate's own page, `/me`, signed in with email and a code.
  *
- * `lifecycle-data-model.md` § 10 leaves the account question open between a
- * revived magic link and a real login. This is the magic link: no password, no
- * `users` row, the token is the credential and a coach issues and revokes it
- * from the Candidate 360 (`workspace.issuePortalLink`). Moving to a real
- * account later replaces `leadForToken` and nothing else.
+ * `lifecycle-data-model.md` § 10 option (b): a real candidate account. Who the
+ * candidate is comes from the session (`candidateAccess.signedInCandidate`),
+ * never from an argument, so no call here can be pointed at somebody else's
+ * record.
  *
  * **What crosses this boundary is deliberately small.** No scores, no grade, no
- * temperature, no coach-only notes, no internal ids beyond the row ids the page
- * needs to act on. Everything returned here is something the candidate either
- * gave us or was given by us.
+ * temperature, no coach-only notes, no unshared CV. Everything returned here is
+ * something the candidate either gave us or was given by us. `viewAsCoach`
+ * returns the identical shape for the coach's preview, so what a coach checks
+ * is exactly what the candidate sees.
  *
  * TASK-059's rule holds on this side too: the job list is the candidate's
  * notebook. Nothing infers a status, and a row they move becomes theirs.
  */
 
-import { mutation, query, type QueryCtx } from "./_generated/server";
-import type { Doc } from "./_generated/dataModel";
+import { mutation, query, type QueryCtx, type MutationCtx } from "./_generated/server";
+import type { Doc, Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { tokenBalance } from "./workspace";
+import { signedInCandidate } from "./candidateAccess";
+import { requireAdmin } from "./leads";
+import { isAdminEmail } from "./adminEmails";
+import { getAuthUserId } from "@convex-dev/auth/server";
 
-/** A live portal link's lead, or null. Never says why a link failed. */
-async function leadForToken(ctx: QueryCtx, token: string): Promise<Doc<"leads"> | null> {
-  if (token.length < 20) return null;
-  const link = await ctx.db
-    .query("magicLinks")
-    .withIndex("by_token", (q) => q.eq("token", token))
-    .unique();
-  if (!link || link.purpose !== "portal") return null;
-  if (link.revokedAt !== undefined || link.expiresAt < Date.now()) return null;
-  return await ctx.db.get(link.leadId);
-}
-
-async function requireLead(ctx: QueryCtx, token: string): Promise<Doc<"leads">> {
-  const lead = await leadForToken(ctx, token);
-  // One message for every failure, so a guessed token learns nothing.
-  if (!lead) throw new ConvexError("link_invalid");
-  return lead;
+async function requireLead(ctx: MutationCtx): Promise<Doc<"leads">> {
+  const who = await signedInCandidate(ctx);
+  if (who.state !== "candidate") throw new ConvexError("not_signed_in");
+  return who.lead;
 }
 
 const statusValidator = v.union(
@@ -51,12 +42,7 @@ const statusValidator = v.union(
   v.literal("accepted"),
 );
 
-export const view = query({
-  args: { token: v.string() },
-  handler: async (ctx, args) => {
-    const lead = await leadForToken(ctx, args.token);
-    if (!lead) return null;
-
+async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
     const { balance, bought, rows } = await tokenBalance(ctx, lead._id);
 
     const engagements = await ctx.db
@@ -112,6 +98,7 @@ export const view = query({
       .filter((n) => n.shared)
       .sort((a, b) => b.at - a.at)
       .map((n) => ({ _id: n._id, body: n.body, at: n.at, applicationId: n.applicationId ?? null }));
+    const sharedCvIds = new Set(cvs.map((c) => c._id as string));
 
     const jobs = (
       await ctx.db
@@ -137,6 +124,10 @@ export const view = query({
         deadlineAt: a.deadlineAt ?? null,
         followUpAt: a.followUpAt ?? null,
         notes: a.notes ?? null,
+        excitement: a.excitement ?? null,
+        // Only a CV they can see. A coach may link an unshared draft; that link
+        // stays on the coach's side.
+        cvDocumentId: a.cvDocumentId && sharedCvIds.has(a.cvDocumentId) ? a.cvDocumentId : null,
       }));
 
     const matchedSent = rows.filter((r) => r.reason === "matched_role").reduce((s, r) => s - r.delta, 0);
@@ -150,21 +141,44 @@ export const view = query({
       notes,
       jobs,
     };
+}
+
+export type PortalView = Awaited<ReturnType<typeof buildView>>;
+
+/**
+ * Who is looking, and their page if they may see it. `state` lets the page
+ * tell signed-out from signed-in-without-access from a coach, so each gets its
+ * own screen rather than one vague error.
+ */
+export const view = query({
+  args: {},
+  handler: async (ctx) => {
+    const who = await signedInCandidate(ctx);
+    if (who.state === "candidate") {
+      return { state: "candidate" as const, data: await buildView(ctx, who.lead) };
+    }
+    if (who.state === "no_access" && isAdminEmail(who.email)) {
+      return { state: "coach" as const, data: null };
+    }
+    return { state: who.state, data: null };
   },
 });
 
-/** Stamp the first open. A query cannot write, so the page calls this once. */
-export const opened = mutation({
-  args: { token: v.string() },
+/** The coach's preview of one candidate's page, read-only, same shape. */
+export const viewAsCoach = query({
+  args: { leadId: v.id("leads") },
   handler: async (ctx, args) => {
-    const link = await ctx.db
-      .query("magicLinks")
-      .withIndex("by_token", (q) => q.eq("token", args.token))
-      .unique();
-    if (!link || link.purpose !== "portal" || link.usedAt !== undefined) return;
-    if (link.revokedAt !== undefined || link.expiresAt < Date.now()) return;
-    await ctx.db.patch(link._id, { usedAt: Date.now() });
+    await requireAdmin(ctx);
+    const lead = await ctx.db.get(args.leadId);
+    if (!lead) return null;
+    return await buildView(ctx, lead);
   },
+});
+
+/** Whether anyone is signed in at all; used by the sign-in screen. */
+export const signedIn = query({
+  args: {},
+  handler: async (ctx) => (await getAuthUserId(ctx)) !== null,
 });
 
 const clean = (s: string | undefined, max = 300) => {
@@ -175,7 +189,6 @@ const clean = (s: string | undefined, max = 300) => {
 /** A job the candidate found themselves. */
 export const addJob = mutation({
   args: {
-    token: v.string(),
     employer: v.string(),
     roleTitle: v.string(),
     country: v.string(),
@@ -186,7 +199,7 @@ export const addJob = mutation({
     notes: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
-    const lead = await requireLead(ctx, args.token);
+    const lead = await requireLead(ctx);
     const employer = clean(args.employer, 120);
     const roleTitle = clean(args.roleTitle, 160);
     const country = clean(args.country, 80);
@@ -221,8 +234,8 @@ export const addJob = mutation({
   },
 });
 
-async function ownRow(ctx: QueryCtx, token: string, applicationId: Doc<"applications">["_id"]) {
-  const lead = await requireLead(ctx, token);
+async function ownRow(ctx: MutationCtx, applicationId: Id<"applications">) {
+  const lead = await requireLead(ctx);
   const row = await ctx.db.get(applicationId);
   if (!row || row.leadId !== lead._id) throw new ConvexError("link_invalid");
   return row;
@@ -234,9 +247,9 @@ async function ownRow(ctx: QueryCtx, token: string, applicationId: Doc<"applicat
  * longer move it for them (`outcomes.updateApplicationStatus` refuses).
  */
 export const setJobStatus = mutation({
-  args: { token: v.string(), applicationId: v.id("applications"), status: statusValidator },
+  args: { applicationId: v.id("applications"), status: statusValidator },
   handler: async (ctx, args) => {
-    const row = await ownRow(ctx, args.token, args.applicationId);
+    const row = await ownRow(ctx, args.applicationId);
     if (row.status === args.status) return;
     const now = Date.now();
     await ctx.db.patch(row._id, {
@@ -248,27 +261,72 @@ export const setJobStatus = mutation({
   },
 });
 
+/**
+ * The candidate's own fields on any row in their list: notes, follow-up date,
+ * how much they want it, and which shared CV they sent. The job's own details
+ * (employer, title, where, salary, closing date) are editable only on a row
+ * they added; on a role we sent, those are what we sent.
+ */
 export const updateJob = mutation({
   args: {
-    token: v.string(),
     applicationId: v.id("applications"),
     notes: v.optional(v.string()),
     followUpAt: v.optional(v.union(v.number(), v.null())),
+    excitement: v.optional(v.union(v.number(), v.null())),
+    cvDocumentId: v.optional(v.union(v.id("cvDocuments"), v.null())),
+    employer: v.optional(v.string()),
+    roleTitle: v.optional(v.string()),
+    country: v.optional(v.string()),
+    location: v.optional(v.string()),
+    jobUrl: v.optional(v.string()),
+    salary: v.optional(v.string()),
+    deadlineAt: v.optional(v.union(v.number(), v.null())),
   },
   handler: async (ctx, args) => {
-    const row = await ownRow(ctx, args.token, args.applicationId);
-    await ctx.db.patch(row._id, {
-      ...(args.notes !== undefined ? { notes: clean(args.notes, 2000) } : {}),
-      ...(args.followUpAt !== undefined ? { followUpAt: args.followUpAt ?? undefined } : {}),
-    });
+    const row = await ownRow(ctx, args.applicationId);
+    const patch: Record<string, unknown> = {};
+    if (args.notes !== undefined) patch.notes = clean(args.notes, 2000);
+    if (args.followUpAt !== undefined) patch.followUpAt = args.followUpAt ?? undefined;
+    if (args.excitement !== undefined) {
+      if (args.excitement !== null && (!Number.isInteger(args.excitement) || args.excitement < 1 || args.excitement > 5)) {
+        throw new ConvexError("bad_value");
+      }
+      patch.excitement = args.excitement ?? undefined;
+    }
+    if (args.cvDocumentId !== undefined) {
+      if (args.cvDocumentId) {
+        const cv = await ctx.db.get(args.cvDocumentId);
+        if (!cv || cv.leadId !== row.leadId || cv.sharedAt === undefined) throw new ConvexError("bad_value");
+      }
+      patch.cvDocumentId = args.cvDocumentId ?? undefined;
+    }
+    const details = ["employer", "roleTitle", "country", "location", "jobUrl", "salary", "deadlineAt"] as const;
+    if (details.some((k) => args[k] !== undefined)) {
+      if (row.origin !== "candidate") throw new ConvexError("not_yours");
+      for (const k of ["employer", "roleTitle", "country"] as const) {
+        if (args[k] !== undefined) {
+          const t = clean(args[k], 160);
+          if (!t) throw new ConvexError("fields_required");
+          patch[k] = t;
+        }
+      }
+      if (args.location !== undefined) patch.location = clean(args.location, 120);
+      if (args.salary !== undefined) patch.salary = clean(args.salary, 80);
+      if (args.jobUrl !== undefined) {
+        const u = clean(args.jobUrl, 500);
+        patch.jobUrl = u && /^https?:\/\//i.test(u) ? u : undefined;
+      }
+      if (args.deadlineAt !== undefined) patch.deadlineAt = args.deadlineAt ?? undefined;
+    }
+    await ctx.db.patch(row._id, patch);
   },
 });
 
 /** Only a job they added themselves. A role we sent stays on the record. */
 export const removeJob = mutation({
-  args: { token: v.string(), applicationId: v.id("applications") },
+  args: { applicationId: v.id("applications") },
   handler: async (ctx, args) => {
-    const row = await ownRow(ctx, args.token, args.applicationId);
+    const row = await ownRow(ctx, args.applicationId);
     if (row.origin !== "candidate") throw new ConvexError("not_yours");
     await ctx.db.delete(row._id);
   },

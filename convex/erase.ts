@@ -29,6 +29,7 @@ export type EraseCounts = {
   tokenLedger: number;
   cvDocuments: number;
   deliveryNotes: number;
+  candidateAccess: number;
 };
 
 /**
@@ -191,6 +192,11 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     await ctx.storage.delete(c.storageId);
     await ctx.db.delete(c._id);
   }
+  const access = await ctx.db
+    .query("candidateAccess")
+    .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+    .collect();
+  for (const a of access) await ctx.db.delete(a._id);
   for (const n of notes) await ctx.db.delete(n._id);
   for (const t of ledger) await ctx.db.delete(t._id);
   for (const d of deliverables) await ctx.db.delete(d._id);
@@ -216,5 +222,6 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     tokenLedger: ledger.length,
     cvDocuments: cvs.length,
     deliveryNotes: notes.length,
+    candidateAccess: access.length,
   };
 }
