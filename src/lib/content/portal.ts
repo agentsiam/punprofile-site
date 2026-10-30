@@ -86,6 +86,7 @@ export const FEED_NO_TARGET: Copy = {
 export const FEED_SAVE: Copy = { en: "Save to my list", th: "บันทึกเข้าลิสต์" };
 export const FEED_SAVED: Copy = { en: "In your list", th: "อยู่ในลิสต์แล้ว" };
 export const FEED_SEEN: Copy = { en: "Screened {date}", th: "คัดเมื่อ {date}" };
+export const FEED_UPDATED: Copy = { en: "List updated {date}", th: "อัปเดตลิสต์ล่าสุด {date}" };
 export const TAB_CV: Copy = { en: "CV", th: "ไฟล์ CV" };
 export const TAB_COACH: Copy = { en: "Your coach", th: "โค้ชของคุณ" };
 

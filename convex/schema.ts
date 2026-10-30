@@ -1236,4 +1236,31 @@ export default defineSchema({
     /** @absent none — handled without a note */
     note: v.optional(v.string()),
   }).index("by_lead", ["leadId", "at"]),
+
+  /**
+   * The roles the job pipeline published, for the candidate's "Jobs for you"
+   * feed. Added 30/10/2026 so the feed is as fresh as the last pipeline run
+   * rather than the last deploy.
+   *
+   * Written only by `market.replaceRoles`, which `scripts/push-market-roles.ts`
+   * calls after the evening run. Each push is the whole recent published set,
+   * so a role the pipeline stopped publishing goes on the next push. Holds
+   * nothing about any person. When it is empty the feed falls back to the list
+   * built into the app.
+   */
+  marketRoles: defineTable({
+    /** The job-log id, stored as applications.jobLogId when a candidate saves it. */
+    roleId: v.string(),
+    employer: v.string(),
+    title: v.string(),
+    country: v.string(),
+    /** YYYY-MM-DD, as the job log has it. */
+    firstSeen: v.string(),
+    /** Empty when the log has no link. */
+    url: v.string(),
+    /** When the push that last wrote this row ran. */
+    syncedAt: v.number(),
+  })
+    .index("by_role_id", ["roleId"])
+    .index("by_first_seen", ["firstSeen"]),
 });

@@ -19,6 +19,7 @@
 import { mutation, query, type QueryCtx, type MutationCtx } from "./_generated/server";
 import type { Doc, Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
+import { feedFor } from "./market";
 import { tokenBalance } from "./workspace";
 import { signedInCandidate } from "./candidateAccess";
 import { requireAdmin } from "./leads";
@@ -158,11 +159,14 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
     const matchedSent = rows.filter((r) => r.reason === "matched_role").reduce((s, r) => s - r.delta, 0);
 
     const resp = (lead.responses ?? {}) as Record<string, unknown>;
+    const target = {
+      countries: Array.isArray(resp.targetCountries) ? (resp.targetCountries as string[]) : [],
+      role: typeof resp.targetRole === "string" ? resp.targetRole : null,
+    };
     return {
-      target: {
-        countries: Array.isArray(resp.targetCountries) ? (resp.targetCountries as string[]) : [],
-        role: typeof resp.targetRole === "string" ? resp.targetRole : null,
-      },
+      target,
+      /** From the pushed table; null until the first push, and the page then uses the built-in list. */
+      feed: await feedFor(ctx, target.countries, target.role),
       firstName: lead.firstName ?? null,
       tokens: { balance, bought, matchedSent, requestedAt: openTokenRequest?.at ?? null },
       goal: { perWeek: lead.weeklyApplicationGoal ?? null, appliedThisWeek },

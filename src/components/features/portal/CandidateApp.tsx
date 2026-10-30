@@ -1485,8 +1485,9 @@ function AddJob({ onDone }: { onDone: () => void }) {
 
 /**
  * The jobs the pipeline published, filtered to the candidate's own target:
- * `rolesFor` in `market-match.ts`, country equal and a category word in the
- * title, last 30 days. Free, because it is the same set the group sees for
+ * country equal and a category word in the title, last 30 days. Read from the
+ * `marketRoles` table, pushed after each evening run, and from the built-in
+ * list until the first push. Free, because it is the same set the group sees for
  * free; a coach's hand-matched role is what a token buys.
  */
 function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
@@ -1494,7 +1495,12 @@ function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
   const add = useMutation(api.portal.addJob);
   const [busy, setBusy] = useState<string | null>(null);
   const [now] = useState(() => Date.now());
-  const roles = useMemo(() => rolesFor(data.target.countries, data.target.role, 30, now), [data.target, now]);
+  // The pushed table when it has been filled, otherwise the list built into
+  // this deploy. Same filter either way: `titleMatches` in `role-keywords.ts`.
+  const roles = useMemo(
+    () => data.feed?.roles ?? rolesFor(data.target.countries, data.target.role, 30, now),
+    [data.feed, data.target, now],
+  );
   const saved = new Set(data.jobs.flatMap((j) => [j.jobLogId ?? "", j.jobUrl ?? ""]).filter(Boolean));
 
   if (!data.target.countries.length || !data.target.role) {
@@ -1505,6 +1511,11 @@ function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
       <p className="max-w-2xl text-body-large text-on-surface-variant">
         {t(C.FEED_INTRO, { countries: data.target.countries.join(", "), role: data.target.role })}
       </p>
+      {data.feed && (
+        <p className="mt-1 text-body-medium text-on-surface-variant">
+          {t(C.FEED_UPDATED, { date: date(data.feed.syncedAt) })}
+        </p>
+      )}
       {roles.length === 0 ? (
         <p className="mt-6 max-w-xl text-body-large text-on-surface-variant">{pick(C.FEED_EMPTY)}</p>
       ) : (

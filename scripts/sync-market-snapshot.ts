@@ -30,12 +30,12 @@
 
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 
-const SOURCE = "../punprofile-career-coaching/punprofile-work/work-pipeline/job-log.json";
+export const SOURCE = "../punprofile-career-coaching/punprofile-work/work-pipeline/job-log.json";
 const OUT = "src/lib/content/market-snapshot.generated.ts";
 /** The published roles themselves, for the paid Fit Report's matched-roles page. Added 26/10/2026. */
 const ROLES_OUT = "src/lib/content/market-roles.generated.ts";
 
-interface JobRow {
+export interface JobRow {
   id?: string;
   url?: string;
   title?: string;
@@ -81,6 +81,28 @@ export function summarise(rows: JobRow[]): MarketSnapshot {
   };
 }
 
+/**
+ * Published roles only, newest first: the same set the group sees, and the only
+ * verdict that says a role cleared the sponsorship and credibility bar. Shared
+ * with `push-market-roles.ts`, so the built-in list and the pushed table can
+ * never disagree about what a role is.
+ */
+export function publishedRoles(rows: JobRow[]) {
+  return rows
+    .filter((r) => r.verdict === "publish")
+    .map((r) => ({
+      id: r.id ?? "",
+      employer: r.employer,
+      title: r.title ?? "",
+      country: r.country === "UK" ? "United Kingdom" : r.country,
+      firstSeen: r.first_seen,
+      // The posting itself, for the candidate's "Jobs for you" feed. Already
+      // public in the group; the internal `reason` stays out.
+      url: r.url ?? "",
+    }))
+    .sort((a, b) => b.firstSeen.localeCompare(a.firstSeen));
+}
+
 function main() {
   if (!existsSync(SOURCE)) {
     console.error(`FAIL cannot read ${SOURCE}`);
@@ -108,21 +130,7 @@ export const MARKET: MarketSnapshot = ${JSON.stringify(snap, null, 2)} as const;
 
   writeFileSync(OUT, body);
 
-  // Published roles only: the same set the group sees, and the only verdict
-  // that says a role cleared the sponsorship and credibility bar.
-  const roles = rows
-    .filter((r) => r.verdict === "publish")
-    .map((r) => ({
-      id: r.id ?? "",
-      employer: r.employer,
-      title: r.title ?? "",
-      country: r.country === "UK" ? "United Kingdom" : r.country,
-      firstSeen: r.first_seen,
-      // The posting itself, for the candidate's "Jobs for you" feed. Already
-      // public in the group; the internal `reason` stays out.
-      url: r.url ?? "",
-    }))
-    .sort((a, b) => b.firstSeen.localeCompare(a.firstSeen));
+  const roles = publishedRoles(rows);
   writeFileSync(
     ROLES_OUT,
     `/**

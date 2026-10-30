@@ -8,35 +8,7 @@
  * as an eligibility check, which is the coach's job in the interview.
  */
 import { MARKET_ROLES, type MarketRole } from "./content/market-roles.generated";
-
-/** Lower-case title keywords per role category, from `questions.ts` ROLE_CATEGORIES. */
-const ROLE_KEYWORDS: Record<string, string[]> = {
-  // No bare "engineer" or "security": both pulled aerospace, mechanical and
-  // site-security roles into an IT feed (Paul, 30/10/2026). A title counts
-  // only on a word that is about software, systems or IT support itself.
-  "IT & Software": [
-    "software", "developer", "devops", "frontend", "front-end", "backend", "back-end", "full stack", "fullstack",
-    "cloud", " it ", "sre", "site reliability", "qa ", "test automation", "mobile", " ios", "android", "web",
-    "platform engineer", "infrastructure", "sysadmin", "system administrator", "systems administrator", "network",
-    "cyber", "security engineer", "application security", "data engineer", "machine learning", " api",
-    "support engineer", "technical support", "it support", "helpdesk", "help desk", "solutions engineer",
-  ],
-  "Engineering & Technical": ["engineer", "mechanical", "electrical", "civil", "technician", "hardware", "manufacturing", "process"],
-  "Data & Analytics": ["data", "analyst", "analytics", "machine learning", "ml ", "bi ", "scientist"],
-  "Finance & Accounting": ["finance", "financial", "accountant", "accounting", "controller", "audit", "tax", "treasury"],
-  Marketing: ["marketing", "seo", "content", "brand", "growth", "crm", "social media", "communications"],
-  "Sales & Business Development": ["sales", "business development", "account executive", "bdr", "sdr"],
-  "Customer Success & Account Management": ["customer success", "account manager", "customer support", "customer service", "client"],
-  "HR & People": ["hr", "human resources", "people", "recruiter", "talent"],
-  "Design & Creative": ["designer", "design", "ux", "ui", "creative"],
-  "Procurement, Supply Chain & Operations": ["procurement", "supply chain", "logistics", "operations", "purchasing", "buyer"],
-  "Business, Strategy & Project": ["project", "program", "product manager", "strategy", "business analyst", "consultant"],
-  "Education & Training": ["teacher", "trainer", "education", "tutor", "instructor"],
-  "Healthcare & Life Sciences": ["nurse", "doctor", "clinical", "medical", "pharma", "health", "biotech"],
-  "Hospitality & Tourism": ["hotel", "chef", "cook", "hospitality", "restaurant", "tourism", "travel"],
-  "Legal & Compliance": ["legal", "lawyer", "compliance", "counsel", "paralegal"],
-  "Research & Science": ["research", "scientist", "phd", "postdoc", "laboratory", "lab "],
-};
+import { ROLE_KEYWORDS, logCountry, titleMatches } from "./role-keywords";
 
 export interface RoleMatch {
   /** Published roles in the candidate's countries. */
@@ -48,14 +20,10 @@ export interface RoleMatch {
 }
 
 export function matchRoles(countries: string[], roleCategory: string | null | undefined): RoleMatch {
-  const wanted = new Set(countries.map((c) => (c === "UK" ? "United Kingdom" : c)));
+  const wanted = new Set(countries.map(logCountry));
   const inCountries = MARKET_ROLES.filter((r) => wanted.has(r.country));
-  const words = roleCategory ? ROLE_KEYWORDS[roleCategory] ?? [] : [];
-  const matching = words.length
-    ? inCountries.filter((r) => {
-        const t = ` ${r.title.toLowerCase()} `;
-        return words.some((w) => t.includes(w));
-      })
+  const matching = roleCategory && ROLE_KEYWORDS[roleCategory]?.length
+    ? inCountries.filter((r) => titleMatches(r.title, roleCategory))
     : [];
   return { inCountries: inCountries.length, matching: matching.length, examples: matching.slice(0, 3) };
 }
@@ -75,13 +43,11 @@ export function rolesFor(
   days = 30,
   now = Date.now(),
 ): MarketRole[] {
-  const wanted = new Set(countries.map((c) => (c === "UK" ? "United Kingdom" : c)));
-  const words = roleCategory ? ROLE_KEYWORDS[roleCategory] ?? [] : [];
-  if (!words.length || !wanted.size) return [];
+  const wanted = new Set(countries.map(logCountry));
+  if (!roleCategory || !ROLE_KEYWORDS[roleCategory]?.length || !wanted.size) return [];
   const since = new Date(now - days * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
   return MARKET_ROLES.filter((r) => {
     if (!wanted.has(r.country) || r.firstSeen < since) return false;
-    const t = ` ${r.title.toLowerCase()} `;
-    return words.some((w) => t.includes(w));
+    return titleMatches(r.title, roleCategory);
   });
 }

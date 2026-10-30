@@ -21,6 +21,7 @@ import type * as erase from "../erase.js";
 import type * as http from "../http.js";
 import type * as importLeads from "../importLeads.js";
 import type * as leads from "../leads.js";
+import type * as market from "../market.js";
 import type * as marketing from "../marketing.js";
 import type * as marketingSend from "../marketingSend.js";
 import type * as merge from "../merge.js";
@@ -55,6 +56,7 @@ declare const fullApi: ApiFromModules<{
   http: typeof http;
   importLeads: typeof importLeads;
   leads: typeof leads;
+  market: typeof market;
   marketing: typeof marketing;
   marketingSend: typeof marketingSend;
   merge: typeof merge;
