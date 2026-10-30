@@ -96,6 +96,27 @@ import {
   WHO_HEADING,
 } from "@/lib/content/home";
 
+/**
+ * Display order of the results, by id. Paul's call of 30/10/2026: the most
+ * impactful first, which is a placement story, and products mixed so no two
+ * neighbours come from the same offer. `RESULTS` keeps its own order because
+ * its indices are the language system's record ids.
+ */
+const RESULT_ORDER = [
+  "placed-hotel-germany",
+  "coaching",
+  "placed-chef-netherlands",
+  "job-alerts",
+  "placed-it-ireland",
+  "ai-training",
+  "placed-logistics-sweden",
+] as const;
+const RESULTS_IN_ORDER = [...RESULTS].sort(
+  (a, b) =>
+    RESULT_ORDER.indexOf(a.id as (typeof RESULT_ORDER)[number]) -
+    RESULT_ORDER.indexOf(b.id as (typeof RESULT_ORDER)[number]),
+);
+
 /** Drawn avatar per result id, files under `public/home/testimonials/`. */
 const RESULT_AVATARS: Record<string, string> = {
   coaching: "/home/testimonials/testimonial-avatar-min-marketing.png",
@@ -641,7 +662,7 @@ export default function Home() {
           </div>
           <div className="mt-10">
             <Testimonials
-              items={RESULTS.map((r) => ({
+              items={RESULTS_IN_ORDER.map((r) => ({
                 quote: pick(r.quote),
                 who: pick(r.who),
                 role: pick(r.role),
