@@ -184,8 +184,9 @@ type Engs = NonNullable<ReturnType<typeof useQuery<typeof api.delivery.forLead>>
 
 function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; engagements: Engs }) {
   const record = useMutation(api.workspace.recordTokens);
-  const issue = useMutation(api.workspace.issuePortalLink);
-  const revoke = useMutation(api.workspace.revokePortalLink);
+  const grant = useMutation(api.workspace.grantAccess);
+  const revoke = useMutation(api.workspace.revokeAccess);
+  const [accessEmail, setAccessEmail] = useState<string | null>(null);
   const [form, setForm] = useState<null | {
     reason: "purchase" | "fit_report" | "cash_refund" | "adjustment";
     amount: string;
@@ -194,11 +195,18 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
     note: string;
   }>(null);
   const [error, setError] = useState<string | null>(null);
-  const [copied, setCopied] = useState(false);
   const [showLedger, setShowLedger] = useState(false);
+  const pageUrl = typeof window !== "undefined" ? `${window.location.origin}/me` : "/me";
 
-  const portalUrl =
-    ws.portal && typeof window !== "undefined" ? `${window.location.origin}/me/${ws.portal.token}` : null;
+  const giveAccess = async (email?: string) => {
+    setError(null);
+    try {
+      await grant({ leadId, ...(email ? { email } : {}) });
+      setAccessEmail(null);
+    } catch (e) {
+      setError(errText(e));
+    }
+  };
 
   const save = async () => {
     if (!form) return;
@@ -247,30 +255,21 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
 
         <div>
           <p className="text-label-large text-on-surface-variant">Their own page</p>
-          {portalUrl ? (
+          {ws.access ? (
             <>
-              <p className="mt-1 break-all text-body-medium text-on-surface">{portalUrl}</p>
+              <p className="mt-1 text-body-medium text-on-surface">
+                {ws.access.email} can sign in at {pageUrl} with a code sent to that address.
+              </p>
               <p className="text-body-medium text-on-surface-variant">
-                Valid to {day(ws.portal!.expiresAt)}
-                {ws.portal!.usedAt ? `, first opened ${day(ws.portal!.usedAt)}` : ", not opened yet"}
+                Access since {day(ws.access.grantedAt)}
+                {ws.access.lastSignInAt ? `, last signed in ${day(ws.access.lastSignInAt)}` : ", not signed in yet"}
               </p>
               <div className="mt-2 flex flex-wrap gap-4">
-                <button
-                  type="button"
-                  className={LINK}
-                  onClick={() => {
-                    void navigator.clipboard.writeText(portalUrl);
-                    setCopied(true);
-                    setTimeout(() => setCopied(false), 1500);
-                  }}
-                >
-                  {copied ? "Copied" : "Copy link"}
-                </button>
-                <a className={LINK} href={portalUrl} target="_blank" rel="noreferrer">
-                  Open as them
+                <a className={LINK} href={`/admin/leads/${leadId}/as-candidate`} target="_blank" rel="noreferrer">
+                  See their page
                 </a>
-                <button type="button" className={LINK} onClick={() => void issue({ leadId })}>
-                  New link
+                <button type="button" className={LINK} onClick={() => setAccessEmail(ws.access!.email)}>
+                  Change address
                 </button>
                 <button type="button" className={LINK} onClick={() => void revoke({ leadId })}>
                   Switch off
@@ -280,14 +279,34 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
           ) : (
             <>
               <p className="mt-1 text-body-medium text-on-surface-variant">
-                No live link. Their page shows what they bought, what is done, the CVs and notes you
-                share, and a job list they keep themselves. The link is the only key, valid 30 days.
+                No access yet. Their page shows what they bought, what is done, the CVs and notes you
+                share, and a Teal-style job tracker they keep themselves. They sign in at {pageUrl} with
+                their email and a code; no password.
               </p>
-              <button type="button" className={`${BTN} mt-3`} onClick={() => void issue({ leadId })}>
-                Create their link
-              </button>
+              <div className="mt-3 flex flex-wrap gap-4">
+                <button type="button" className={BTN} onClick={() => setAccessEmail("")}>
+                  Give access
+                </button>
+                <a className={`${LINK} self-center`} href={`/admin/leads/${leadId}/as-candidate`} target="_blank" rel="noreferrer">
+                  Preview their page
+                </a>
+              </div>
             </>
           )}
+          {accessEmail !== null && (
+            <div className="mt-3 flex flex-wrap items-end gap-3">
+              <Label text="Address they sign in with (blank uses the one on file)">
+                <input className={INPUT} value={accessEmail} onChange={(e) => setAccessEmail(e.target.value)} />
+              </Label>
+              <button type="button" className={BTN} onClick={() => void giveAccess(accessEmail.trim() || undefined)}>
+                Save
+              </button>
+              <button type="button" className={LINK} onClick={() => setAccessEmail(null)}>
+                Cancel
+              </button>
+            </div>
+          )}
+          {!form && <ErrorLine error={error} />}
         </div>
       </div>
 
@@ -455,7 +474,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                   </span>
                   <select
                     aria-label="Engagement status"
-                    className="field h-9 py-0"
+                    className="field field-dense w-auto"
                     value={e.status}
                     onChange={(ev) =>
                       void run(() =>
@@ -526,7 +545,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                           Due
                           <input
                             type="date"
-                            className="field h-9 py-0"
+                            className="field field-dense w-auto"
                             value={toIso(d.dueAt)}
                             onChange={(ev) =>
                               void run(() =>
@@ -1100,7 +1119,7 @@ function JobTracker({
                       ) : (
                         <select
                           aria-label="Status"
-                          className="field h-9 py-0"
+                          className="field field-dense w-auto"
                           value={a.status}
                           onChange={(e) =>
                             void run(() =>
@@ -1122,7 +1141,7 @@ function JobTracker({
                       <input
                         type="date"
                         aria-label="Follow up"
-                        className="field h-9 py-0"
+                        className="field field-dense w-auto"
                         value={toIso(a.followUpAt)}
                         onChange={(e) => void run(() => updateDetails({ applicationId: a._id, followUpAt: toMs(e.target.value) ?? null }))}
                       />
@@ -1145,7 +1164,7 @@ function JobTracker({
                           <label className="flex items-center gap-2">
                             CV sent
                             <select
-                              className="field h-9 py-0"
+                              className="field field-dense w-auto"
                               value={a.cvDocumentId ?? ""}
                               onChange={(e) =>
                                 void run(() =>
@@ -1260,7 +1279,7 @@ function TitleEdit({ value, onSave }: { value: string; onSave: (title: string) =
   }
   return (
     <span className="mt-1 flex items-center gap-2">
-      <input className="field h-9 py-0" value={draft} onChange={(e) => setDraft(e.target.value)} />
+      <input className="field field-dense w-auto" value={draft} onChange={(e) => setDraft(e.target.value)} />
       <button type="button" className="underline" onClick={() => void onSave(draft).then(() => setDraft(null))}>
         Save
       </button>
@@ -1363,7 +1382,7 @@ function Notes({
           onChange={(e) => setBody(e.target.value)}
         />
         <div className="mt-3 flex flex-wrap items-center gap-4">
-          <select className="field h-9 max-w-xs py-0" value={about} onChange={(e) => setAbout(e.target.value)} aria-label="About">
+          <select className="field field-dense max-w-xs" value={about} onChange={(e) => setAbout(e.target.value)} aria-label="About">
             <option value="">About the whole engagement</option>
             {deliverables.map((d) => (
               <option key={d._id} value={`d:${d._id}`}>
