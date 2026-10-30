@@ -27,6 +27,6 @@ Unused today are marked below.
 | `EditorialGrid.tsx` | B19 | blog index |
 | `AudienceChip.tsx` | B22 | product pages |
 | `AssuranceTriad.tsx` | B12 | unused |
-| `Testimonials.tsx` | B13 | unused, waiting on `RESULTS` |
+| `Testimonials.tsx` | B13 | home page, social-card carousel over `RESULTS` |
 | `ConversionBand.tsx` | B17 | unused |
 | `EmptyState.tsx` | B18 | unused |

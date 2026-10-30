@@ -1,87 +1,202 @@
+"use client";
+
 import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Slot from "@/components/blocks/Slot";
 
 /**
- * B13: quote cards, grounds alternating.
+ * B13: quote cards as a social-post carousel, grounds alternating.
  *
- * The reference runs these as a carousel with a heading on the left and a pair
- * of circular arrows on the right. Cards alternate dark green and pale green,
- * each carrying a round portrait, the quote, a name, a role, and a button into
- * that person's story.
+ * Each card reads like a post: a round avatar, the name and role beside it,
+ * then the quote. Cards sit in one horizontal track that scrolls and snaps, so
+ * it swipes on a phone and pages with the two round arrows on a desktop.
  *
- * **Ours renders slots until there is a real quote.** `home.ts` has said since
- * 14/08/2026 that a visible placeholder for social proof is itself a claim that
- * social proof is imminent, and that rule has not changed: a slot is not a
- * placeholder pretending to be a testimonial, it is a coded question with a
- * dashed border round it, and it cannot be mistaken for a client saying
- * something. The day `RESULTS` has a row, `items` gets it and the slots go.
+ * **The arrows only exist while there is somewhere to go.** With three cards on
+ * a wide screen the track fits and the controls are not drawn, because a
+ * control that does nothing is worse than no control. Each arrow is disabled at
+ * its own end.
  *
- * There is no per-card button yet. The reference's leads to a case study and
- * this product has none; a button with nowhere to go is worse than no button.
+ * **No stock faces.** These are real clients. A stock photograph beside a real
+ * client's name would present a stranger as that client, so the avatar is the
+ * client's initial on a fixed ground until the client supplies a portrait, at
+ * which point `portrait` replaces it.
+ *
+ * **Ours renders slots until there is a real quote.** A slot is a coded
+ * question with a dashed border round it, and it cannot be mistaken for a
+ * client saying something.
  */
 
 export interface Quote {
   quote: React.ReactNode;
   who: React.ReactNode;
   role?: React.ReactNode;
+  /** The letter in the avatar. Omit to take it from `who` when that is text. */
+  initial?: string;
   portrait?: { src: string; alt: string };
+}
+
+/**
+ * The first letter worth showing. Thai writes some vowels before the consonant
+ * they follow (เ แ โ ใ ไ), and an avatar reading เ for เจ is wrong, so those
+ * are skipped.
+ */
+function initialOf(who: React.ReactNode): string {
+  if (typeof who !== "string") return "";
+  const chars = Array.from(who.trim());
+  const first = chars.find((c) => !/[เ-ไ]/.test(c));
+  return (first ?? "").toUpperCase();
 }
 
 export default function Testimonials({
   items,
   placeholders = 0,
   codePrefix = "TESTIMONIAL",
+  prevLabel = "Previous",
+  nextLabel = "Next",
 }: {
   items: readonly Quote[];
   /** How many slotted cards to draw while `items` is empty. */
   placeholders?: number;
   /** Slot codes are `${codePrefix}-${n}-quote` and `-who`. */
   codePrefix?: string;
+  /** Accessible names for the arrows, picked by the caller (R49). */
+  prevLabel?: string;
+  nextLabel?: string;
 }) {
+  const track = useRef<HTMLUListElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(true);
+
+  const measure = useCallback(() => {
+    const el = track.current;
+    if (!el) return;
+    // A pixel of slack: fractional widths leave scrollLeft one short of the end.
+    setAtStart(el.scrollLeft <= 1);
+    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 1);
+  }, []);
+
+  useEffect(() => {
+    const el = track.current;
+    if (!el) return;
+    measure();
+    el.addEventListener("scroll", measure, { passive: true });
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", measure);
+      ro.disconnect();
+    };
+  }, [measure, items.length]);
+
+  const page = (dir: 1 | -1) => {
+    const el = track.current;
+    if (!el) return;
+    const card = el.querySelector("li");
+    const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
+    const step = card ? card.getBoundingClientRect().width + gap : el.clientWidth;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el.scrollBy({ left: dir * step, behavior: reduce ? "auto" : "smooth" });
+  };
+
   if (items.length === 0 && placeholders === 0) return null;
 
+  const dark = (i: number) => i % 2 === 0;
   const ground = (i: number) =>
-    i % 2 === 0 ? "ground-dark bg-canvas-dark" : "bg-primary-pale text-on-primary-pale";
+    dark(i) ? "ground-dark bg-canvas-dark" : "bg-primary-pale text-on-primary-pale";
+  // The avatar sits on the opposite fixed ground, so it reads in both schemes.
+  const avatarGround = (i: number) =>
+    dark(i) ? "ground-fixed bg-canvas-brand text-ink" : "ground-dark bg-canvas-dark text-ink";
+
+  const card =
+    "flex w-[85%] shrink-0 snap-start flex-col rounded-2xl px-7 py-8 medium:w-[360px] large:w-[calc((100%-3rem)/3)]";
+
+  const arrow =
+    "inline-flex size-12 items-center justify-center rounded-full border border-line-strong text-ink duration-[350ms] ease-nav transition-colors hover:bg-primary-pale disabled:cursor-default disabled:opacity-35 disabled:hover:bg-transparent";
+
+  const scrolls = !(atStart && atEnd);
 
   return (
-    <ul className="grid gap-6 large:grid-cols-3">
-      {items.map((item, i) => (
-        <li key={`q${i}`} className={`rounded-2xl px-8 py-9 ${ground(i)}`}>
-          {item.portrait && (
-            <Image
-              src={item.portrait.src}
-              alt={item.portrait.alt}
-              width={96}
-              height={96}
-              className="mb-5 size-14 rounded-full object-cover"
-            />
-          )}
-          <p className="text-body-md-strong">&ldquo;{item.quote}&rdquo;</p>
-          <p className="mt-4 text-body-sm-strong">{item.who}</p>
-          {item.role && <p className="text-body-sm">{item.role}</p>}
-        </li>
-      ))}
+    <div>
+      <ul
+        ref={track}
+        className="-mx-1 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-1 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {items.map((item, i) => {
+          const letter = item.initial ?? initialOf(item.who);
+          return (
+            <li key={`q${i}`} className={`${card} ${ground(i)}`}>
+              <div className="flex items-center gap-3">
+                {item.portrait ? (
+                  <Image
+                    src={item.portrait.src}
+                    alt={item.portrait.alt}
+                    width={96}
+                    height={96}
+                    className="size-12 shrink-0 rounded-full object-cover"
+                  />
+                ) : (
+                  <span
+                    aria-hidden
+                    className={`flex size-12 shrink-0 items-center justify-center rounded-full text-body-md-strong ${avatarGround(i)}`}
+                  >
+                    {letter}
+                  </span>
+                )}
+                <div className="min-w-0">
+                  <p className="text-body-sm-strong">{item.who}</p>
+                  {item.role && <p className="text-body-sm opacity-80">{item.role}</p>}
+                </div>
+              </div>
+              <p className="mt-5 text-body-md-strong">&ldquo;{item.quote}&rdquo;</p>
+            </li>
+          );
+        })}
 
-      {items.length === 0 &&
-        Array.from({ length: placeholders }, (_, i) => (
-          <li key={`s${i}`} className={`rounded-2xl px-8 py-9 ${ground(i)}`}>
-            {/* The portrait's own box, so the card is the height it will be. */}
-            <span
-              aria-hidden
-              className="mb-5 flex size-14 items-center justify-center rounded-full border border-dashed border-line-strong text-caption text-mute-strong"
-            >
-              {i + 1}
-            </span>
-            <Slot code={`${codePrefix}-${i + 1}-quote`} block>
-              the quote, in their words, two or three lines
-            </Slot>
-            <div className="mt-4">
-              <Slot code={`${codePrefix}-${i + 1}-who`} block>
-                who said it: a name, and what they were doing at the time
-              </Slot>
-            </div>
-          </li>
-        ))}
-    </ul>
+        {items.length === 0 &&
+          Array.from({ length: placeholders }, (_, i) => (
+            <li key={`s${i}`} className={`${card} ${ground(i)}`}>
+              <div className="flex items-center gap-3">
+                <span
+                  aria-hidden
+                  className="flex size-12 shrink-0 items-center justify-center rounded-full border border-dashed border-line-strong text-caption text-mute-strong"
+                >
+                  {i + 1}
+                </span>
+                <Slot code={`${codePrefix}-${i + 1}-who`} block>
+                  who said it: a name, and what they were doing at the time
+                </Slot>
+              </div>
+              <div className="mt-5">
+                <Slot code={`${codePrefix}-${i + 1}-quote`} block>
+                  the quote, in their words, two or three lines
+                </Slot>
+              </div>
+            </li>
+          ))}
+      </ul>
+
+      {scrolls && (
+        <div className="mt-6 flex justify-end gap-3">
+          <button
+            type="button"
+            className={arrow}
+            onClick={() => page(-1)}
+            disabled={atStart}
+            aria-label={prevLabel}
+          >
+            <span aria-hidden>&larr;</span>
+          </button>
+          <button
+            type="button"
+            className={arrow}
+            onClick={() => page(1)}
+            disabled={atEnd}
+            aria-label={nextLabel}
+          >
+            <span aria-hidden>&rarr;</span>
+          </button>
+        </div>
+      )}
+    </div>
   );
 }

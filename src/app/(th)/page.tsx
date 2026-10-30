@@ -85,6 +85,8 @@ import {
   PROBLEM_HEADING,
   RESULTS,
   RESULTS_HEADING,
+  RESULTS_NEXT,
+  RESULTS_PREV,
   SAMPLE_HEADING,
   SAMPLE_LEAD,
   TRIAGE_HEADING,
@@ -615,10 +617,10 @@ export default function Home() {
             No line under the heading and no variability disclaimer, Paul's
             call of 22/09/2026: the heading and the three cards, nothing else.
 
-            The reference's version runs as a carousel with arrows and a story
-            link per card. Neither is here: there is one screen of cards and no
-            case study to link to, and a control that does nothing is worse than
-            no control. */}
+            Social-post cards in a swipeable track, Paul's call of 30/10/2026.
+            The arrows appear only once there are more cards than fit, so with
+            three on a wide screen there are none. No per-card story link: there
+            is no case study to link to. */}
         <Band block="B13" ground="canvas" width="wide">
           <div className="max-w-3xl">
             <h2 className={SECTION_HEADING(locale)}>{pick(RESULTS_HEADING)}</h2>
@@ -632,6 +634,8 @@ export default function Home() {
               }))}
               placeholders={3}
               codePrefix="HOME-07"
+              prevLabel={pick(RESULTS_PREV)}
+              nextLabel={pick(RESULTS_NEXT)}
             />
           </div>
         </Band>

@@ -587,6 +587,17 @@ export const RESULTS_HEADING: Copy = {
   th: "ผลลัพธ์ที่เกิดขึ้นจริง",
 };
 
+/** Accessible names for the carousel's two arrows. Never shown as text. */
+export const RESULTS_PREV: Copy = {
+  en: "Previous quote",
+  th: "รีวิวก่อนหน้า",
+};
+
+export const RESULTS_NEXT: Copy = {
+  en: "Next quote",
+  th: "รีวิวถัดไป",
+};
+
 export const RESULTS: readonly Result[] = [
   {
     id: "coaching",
