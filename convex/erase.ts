@@ -31,6 +31,7 @@ export type EraseCounts = {
   cvDocuments: number;
   deliveryNotes: number;
   candidateAccess: number;
+  tokenRequests: number;
 };
 
 /**
@@ -193,6 +194,11 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     await ctx.storage.delete(c.storageId);
     await ctx.db.delete(c._id);
   }
+  const tokenReqs = await ctx.db
+    .query("tokenRequests")
+    .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+    .collect();
+  for (const t of tokenReqs) await ctx.db.delete(t._id);
   const access = await ctx.db
     .query("candidateAccess")
     .withIndex("by_lead", (q) => q.eq("leadId", leadId))
@@ -227,5 +233,6 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     cvDocuments: cvs.length,
     deliveryNotes: notes.length,
     candidateAccess: access.length,
+    tokenRequests: tokenReqs.length,
   };
 }

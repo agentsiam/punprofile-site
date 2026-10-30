@@ -129,6 +129,43 @@ export const WORK_KIND: Record<string, Copy> = {
   contract_review: { en: "Contract review", th: "ดูสัญญาจ้างด้วยกัน" },
 };
 
+export const BOOK_TIME: Copy = { en: "Book a time", th: "จองเวลา" };
+export const TOKENS_MORE: Copy = { en: "Ask for more tokens", th: "ขอโทเคนเพิ่ม" };
+export const TOKENS_LOW: Copy = { en: "You are running low on tokens.", th: "โทเคนใกล้หมดแล้วครับ" };
+export const TOKENS_REQUESTED: Copy = {
+  en: "Request sent. Your coach will get back to you on LINE.",
+  th: "ส่งคำขอแล้วครับ โค้ชจะติดต่อกลับทาง LINE",
+};
+
+/* ----------------------------------------------------------- Fit Report */
+
+export const FIT_HEADING: Copy = { en: "Your Fit Report", th: "Fit Report ของคุณ" };
+export const FIT_BODY: Copy = {
+  en: "Every area your coach rated, where you stand against the market, and what to do next in each. It opens in a new tab, ready to save as a PDF.",
+  th: "ทุกด้านที่โค้ชประเมิน ตำแหน่งของคุณเทียบกับตลาด และสิ่งที่ควรทำต่อในแต่ละด้าน เปิดในแท็บใหม่ บันทึกเป็น PDF ได้เลยครับ",
+};
+export const FIT_OPEN: Copy = { en: "Open the Fit Report", th: "เปิด Fit Report" };
+export const FIT_POPUP: Copy = {
+  en: "Your browser blocked the new tab. Allow pop-ups for this site and try again.",
+  th: "เบราว์เซอร์บล็อกแท็บใหม่ไว้ อนุญาต pop-up ของเว็บนี้แล้วลองกดอีกครั้งนะครับ",
+};
+
+/* --------------------------------------------------------------- goal */
+
+export const GOAL_HEADING: Copy = { en: "This week's goal", th: "เป้าหมายสัปดาห์นี้" };
+export const GOAL_PROGRESS: Copy = { en: "{done} of {goal} applications sent", th: "สมัครแล้ว {done} จาก {goal} ตำแหน่ง" };
+export const GOAL_NONE: Copy = {
+  en: "Set how many applications you aim to send each week, and see your progress here.",
+  th: "ตั้งจำนวนใบสมัครที่อยากส่งในแต่ละสัปดาห์ แล้วดูความคืบหน้าได้ที่นี่ครับ",
+};
+export const GOAL_PROMPT: Copy = { en: "Applications per week", th: "จำนวนใบสมัครต่อสัปดาห์" };
+export const GOAL_SET: Copy = { en: "Set a goal", th: "ตั้งเป้าหมาย" };
+export const GOAL_CHANGE: Copy = { en: "Change", th: "เปลี่ยน" };
+export const GOAL_WEEK_NOTE: Copy = {
+  en: "The week starts on Monday, Thailand time.",
+  th: "สัปดาห์เริ่มวันจันทร์ ตามเวลาไทย",
+};
+
 /* -------------------------------------------------------------- notes */
 
 export const NOTES_HEADING: Copy = { en: "From your coach", th: "จากโค้ช" };

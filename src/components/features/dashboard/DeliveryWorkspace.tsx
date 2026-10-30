@@ -185,6 +185,8 @@ type Engs = NonNullable<ReturnType<typeof useQuery<typeof api.delivery.forLead>>
 function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; engagements: Engs }) {
   const record = useMutation(api.workspace.recordTokens);
   const grant = useMutation(api.workspace.grantAccess);
+  const shareReport = useMutation(api.workspace.shareFitReport);
+  const handleRequest = useMutation(api.workspace.handleTokenRequest);
   const revoke = useMutation(api.workspace.revokeAccess);
   const [accessEmail, setAccessEmail] = useState<string | null>(null);
   const [form, setForm] = useState<null | {
@@ -235,6 +237,16 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
           <p className="text-body-medium text-on-surface-variant">
             {ws.tokens.bought} bought, {ws.tokens.spent} spent
           </p>
+          {ws.tokenRequest && (
+            <p className="mt-2 rounded-medium bg-primary-container px-3 py-2 text-body-medium text-on-primary-container">
+              Asked for more tokens on {day(ws.tokenRequest.at)}. Send the transfer details on LINE, record the
+              purchase when it lands, then{" "}
+              <button type="button" className="underline" onClick={() => void handleRequest({ requestId: ws.tokenRequest!._id })}>
+                mark handled
+              </button>
+              .
+            </p>
+          )}
           <div className="mt-3 flex flex-wrap gap-4">
             <button
               type="button"
@@ -314,6 +326,32 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
               </button>
             </div>
           )}
+          <div className="mt-4 border-t border-outline-variant pt-3">
+            <p className="text-label-large text-on-surface-variant">Fit Report on their page</p>
+            {ws.fitReport.shared ? (
+              <p className="mt-1 text-body-medium text-on-surface">
+                Shared. They open it from their page, built live from the answers and your ratings.{" "}
+                <button type="button" className={LINK} onClick={() => void shareReport({ leadId, shared: false })}>
+                  Take it off
+                </button>
+              </p>
+            ) : (
+              <p className="mt-1 text-body-medium text-on-surface-variant">
+                {ws.fitReport.rated
+                  ? `${ws.fitReport.rated} competencies rated. `
+                  : "Nothing rated yet; rate the interview first. "}
+                {ws.fitReport.rated > 0 && (
+                  <button
+                    type="button"
+                    className={LINK}
+                    onClick={() => void shareReport({ leadId, shared: true }).catch((e) => setError(errText(e)))}
+                  >
+                    Share it on their page
+                  </button>
+                )}
+              </p>
+            )}
+          </div>
           {!form && <ErrorLine error={error} />}
         </div>
       </div>
@@ -543,6 +581,14 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                           value={d.title ?? ""}
                           onSave={(title) => run(() => updateDeliverable({ deliverableId: d._id, title }))}
                         />
+                        {d.status !== "delivered" && (
+                          <TitleEdit
+                            label="Booking link"
+                            empty="none, booked by message"
+                            value={d.bookingUrl ?? ""}
+                            onSave={(bookingUrl) => run(() => updateDeliverable({ deliverableId: d._id, bookingUrl }))}
+                          />
+                        )}
                       </span>
                     </span>
                     <span className="flex items-center gap-3 text-body-medium text-on-surface-variant">
@@ -1298,14 +1344,24 @@ function JobTracker({
 }
 
 /** The candidate-facing name, edited in place. Blank shows the kind's own name. */
-function TitleEdit({ value, onSave }: { value: string; onSave: (title: string) => Promise<unknown> }) {
+function TitleEdit({
+  value,
+  onSave,
+  label = "Their page",
+  empty = "standard name",
+}: {
+  value: string;
+  onSave: (title: string) => Promise<unknown>;
+  label?: string;
+  empty?: string;
+}) {
   const [draft, setDraft] = useState<string | null>(null);
   if (draft === null) {
     return (
       <span className="block text-on-surface-variant">
-        Their page: {value || "standard name"}{" "}
+        {label}: {value || empty}{" "}
         <button type="button" className="underline" onClick={() => setDraft(value)}>
-          rename
+          {value ? "change" : "set"}
         </button>
       </span>
     );

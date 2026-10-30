@@ -25,7 +25,8 @@
  */
 
 import { useMemo, useState } from "react";
-import { useMutation } from "convex/react";
+import { useConvex, useMutation } from "convex/react";
+import { openFitReport } from "@/components/features/report/openFitReport";
 import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
 import type { PortalView } from "../../../../convex/portal";
@@ -129,6 +130,7 @@ export default function CandidateApp({
               setOpenJob(id);
             }}
             onTab={setTab}
+            readOnly={readOnly}
           />
         )}
         {tab === "tracker" &&
@@ -138,7 +140,7 @@ export default function CandidateApp({
             <Tracker data={data} onOpen={setOpenJob} readOnly={readOnly} />
           ))}
         {tab === "cv" && <CvTab data={data} />}
-        {tab === "coach" && <CoachTab data={data} />}
+        {tab === "coach" && <CoachTab data={data} readOnly={readOnly} />}
       </div>
     </div>
   );
@@ -150,8 +152,10 @@ function Overview({
   data,
   onOpenJob,
   onTab,
+  readOnly,
 }: {
   data: PortalView;
+  readOnly: boolean;
   onOpenJob: (id: Id<"applications">) => void;
   onTab: (t: Tab) => void;
 }) {
@@ -186,6 +190,7 @@ function Overview({
           {data.tokens.bought > 0 && (
             <Stat label={pick(C.TOKENS_HEADING)} big={String(data.tokens.balance)} small={t(C.TOKENS_OF, { n: data.tokens.bought })}>
               {t(C.TOKENS_MATCHED, { n: data.tokens.matchedSent })}
+              <TokenRequest data={data} readOnly={readOnly} />
             </Stat>
           )}
           {data.deliverables.length > 0 && (
@@ -221,11 +226,13 @@ function Overview({
 
         <section className="card-outlined px-6 py-5">
           <h2 className="text-heading-sm">{pick(C.WORK_HEADING)}</h2>
-          <Deliverables data={data} />
+          <Deliverables data={data} readOnly={readOnly} />
         </section>
       </div>
 
       <div className="space-y-5">
+        {data.fitReportShared && <FitReportCard readOnly={readOnly} />}
+        <GoalCard data={data} readOnly={readOnly} />
         <section className="card-outlined px-6 py-5">
           <h2 className="text-heading-sm">{pick(C.DATES_HEADING)}</h2>
           {upcoming.length === 0 ? (
@@ -267,6 +274,129 @@ function Overview({
         )}
       </div>
     </div>
+  );
+}
+
+/** The paid report, built in the browser from the same inputs the coach uses. */
+function FitReportCard({ readOnly }: { readOnly: boolean }) {
+  const { pick, locale } = useFormat();
+  const convex = useConvex();
+  const [state, setState] = useState<"idle" | "busy" | "blocked">("idle");
+  return (
+    <section className="rounded-xl bg-primary-pale px-6 py-5 text-on-primary-pale">
+      <h2 className="text-heading-sm">{pick(C.FIT_HEADING)}</h2>
+      <p className="mt-2 text-body-medium">{pick(C.FIT_BODY)}</p>
+      {!readOnly && (
+        <button
+          type="button"
+          disabled={state === "busy"}
+          className="mt-4 h-11 btn-filled px-5 text-label-large"
+          onClick={async () => {
+            setState("busy");
+            const input = await convex.query(api.portal.fitReport, {});
+            if (!input) return setState("idle");
+            const ok = await openFitReport(input, input.ratings, locale === "en" ? "en" : "th");
+            setState(ok ? "idle" : "blocked");
+          }}
+        >
+          {pick(C.FIT_OPEN)}
+        </button>
+      )}
+      {state === "blocked" && <p className="mt-2 text-body-medium">{pick(C.FIT_POPUP)}</p>}
+    </section>
+  );
+}
+
+/** Teal's goal ring: applications sent this week against the candidate's own target. */
+function GoalCard({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
+  const { pick, t } = useFormat();
+  const setGoal = useMutation(api.portal.setGoal);
+  const [editing, setEditing] = useState(false);
+  const [n, setN] = useState(String(data.goal.perWeek ?? 5));
+  const { perWeek, appliedThisWeek } = data.goal;
+  const pct = perWeek ? Math.min(1, appliedThisWeek / perWeek) : 0;
+  const R = 34;
+  const C2 = 2 * Math.PI * R;
+  return (
+    <section className="card-outlined px-6 py-5">
+      <h2 className="text-heading-sm">{pick(C.GOAL_HEADING)}</h2>
+      {perWeek && !editing ? (
+        <div className="mt-3 flex items-center gap-5">
+          <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden className="shrink-0">
+            <circle cx="42" cy="42" r={R} fill="none" strokeWidth="9" className="stroke-canvas-soft" />
+            <circle
+              cx="42"
+              cy="42"
+              r={R}
+              fill="none"
+              strokeWidth="9"
+              strokeLinecap="round"
+              strokeDasharray={`${C2 * pct} ${C2}`}
+              transform="rotate(-90 42 42)"
+              className="stroke-primary"
+            />
+            <text x="42" y="47" textAnchor="middle" className="fill-ink text-title-medium">
+              {appliedThisWeek}/{perWeek}
+            </text>
+          </svg>
+          <div>
+            <p className="text-body-large text-ink">{t(C.GOAL_PROGRESS, { done: appliedThisWeek, goal: perWeek })}</p>
+            <p className="text-body-small text-on-surface-variant">{pick(C.GOAL_WEEK_NOTE)}</p>
+            {!readOnly && (
+              <button type="button" className="mt-1 text-body-medium text-ink-deep underline" onClick={() => setEditing(true)}>
+                {pick(C.GOAL_CHANGE)}
+              </button>
+            )}
+          </div>
+        </div>
+      ) : editing ? (
+        <div className="mt-3 flex flex-wrap items-end gap-3">
+          <label className="field-label block">
+            {pick(C.GOAL_PROMPT)}
+            <input inputMode="numeric" className="field field-dense mt-1 w-24" value={n} onChange={(e) => setN(e.target.value.replace(/\D/g, ""))} />
+          </label>
+          <button
+            type="button"
+            className="h-10 btn-tonal px-4 text-label-large"
+            onClick={() => {
+              const v = Number(n);
+              if (v >= 1 && v <= 50) void setGoal({ perWeek: v }).then(() => setEditing(false));
+            }}
+          >
+            {pick(C.JOBS_SAVE)}
+          </button>
+          <button type="button" className="text-body-medium text-ink-deep underline" onClick={() => setEditing(false)}>
+            {pick(C.JOBS_CANCEL)}
+          </button>
+        </div>
+      ) : (
+        <>
+          <p className="mt-2 text-body-medium text-on-surface-variant">{pick(C.GOAL_NONE)}</p>
+          {!readOnly && (
+            <button type="button" className="mt-3 h-10 btn-tonal px-4 text-label-large" onClick={() => setEditing(true)}>
+              {pick(C.GOAL_SET)}
+            </button>
+          )}
+        </>
+      )}
+    </section>
+  );
+}
+
+function TokenRequest({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
+  const { pick } = useFormat();
+  const request = useMutation(api.portal.requestTokens);
+  if (data.tokens.requestedAt) return <span className="mt-2 block text-ink">{pick(C.TOKENS_REQUESTED)}</span>;
+  const low = data.tokens.balance <= 3;
+  return (
+    <span className="mt-2 block">
+      {low && <span className="block text-ink">{pick(C.TOKENS_LOW)}</span>}
+      {!readOnly && (
+        <button type="button" className="text-ink-deep underline" onClick={() => void request({})}>
+          {pick(C.TOKENS_MORE)}
+        </button>
+      )}
+    </span>
   );
 }
 
@@ -1387,7 +1517,7 @@ function CvTab({ data }: { data: PortalView }) {
 
 /* ============================================================= coach tab */
 
-function Deliverables({ data }: { data: PortalView }) {
+function Deliverables({ data, readOnly = false }: { data: PortalView; readOnly?: boolean }) {
   const { pick, t, date } = useFormat();
   if (data.deliverables.length === 0) return <p className="mt-3 text-body-medium text-on-surface-variant">{pick(C.WORK_EMPTY)}</p>;
   return (
@@ -1395,7 +1525,7 @@ function Deliverables({ data }: { data: PortalView }) {
       {data.deliverables.map((d) => (
         <li key={d._id} className="flex items-center gap-3">
           <StepMark status={d.status} />
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <p className="text-body-large text-ink">{d.title ?? pick(C.WORK_KIND[d.kind] ?? { en: d.kind, th: d.kind })}</p>
             <p className="text-body-small text-on-surface-variant">
               {pick(C.WORK_STATUS[d.status])}
@@ -1406,6 +1536,11 @@ function Deliverables({ data }: { data: PortalView }) {
                   : ""}
             </p>
           </div>
+          {d.bookingUrl && d.status !== "delivered" && !readOnly && (
+            <a href={d.bookingUrl} target="_blank" rel="noreferrer" className="h-10 shrink-0 btn-filled inline-flex items-center px-4 text-label-large">
+              {pick(C.BOOK_TIME)}
+            </a>
+          )}
         </li>
       ))}
     </ol>
@@ -1430,13 +1565,18 @@ function StepMark({ status }: { status: "not_started" | "in_progress" | "deliver
   );
 }
 
-function CoachTab({ data }: { data: PortalView }) {
+function CoachTab({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
   const { pick, date } = useFormat();
   return (
     <div className="grid gap-6 large:grid-cols-2">
+      {data.fitReportShared && (
+        <div className="large:col-span-2">
+          <FitReportCard readOnly={readOnly} />
+        </div>
+      )}
       <section className="card-outlined px-6 py-5">
         <h2 className="text-heading-sm">{pick(C.WORK_HEADING)}</h2>
-        <Deliverables data={data} />
+        <Deliverables data={data} readOnly={readOnly} />
         {data.tokens.bought > 0 && <p className="mt-4 text-body-medium text-on-surface-variant">{pick(C.TOKENS_RULE)}</p>}
       </section>
       <section>

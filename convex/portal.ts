@@ -24,6 +24,16 @@ import { signedInCandidate } from "./candidateAccess";
 import { requireAdmin } from "./leads";
 import { isAdminEmail } from "./adminEmails";
 import { getAuthUserId } from "@convex-dev/auth/server";
+import { applyCorrections } from "../src/lib/corrections";
+
+/** Monday 00:00 in Bangkok, as a timestamp: the candidate's week, not ours. */
+function weekStartBangkok(now: number): number {
+  const BKK = 7 * 60 * 60 * 1000;
+  const local = new Date(now + BKK);
+  const daysSinceMonday = (local.getUTCDay() + 6) % 7;
+  const midnight = Date.UTC(local.getUTCFullYear(), local.getUTCMonth(), local.getUTCDate());
+  return midnight - daysSinceMonday * 24 * 60 * 60 * 1000 - BKK;
+}
 
 async function requireLead(ctx: MutationCtx): Promise<Doc<"leads">> {
   const who = await signedInCandidate(ctx);
@@ -63,6 +73,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         _id: d._id,
         kind: d.kind,
         title: d.title ?? null,
+        bookingUrl: d.bookingUrl ?? null,
         status: d.status,
         dueAt: d.dueAt ?? null,
         deliveredAt: d.deliveredAt ?? null,
@@ -134,11 +145,22 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         cvDocumentId: a.cvDocumentId && sharedCvIds.has(a.cvDocumentId) ? a.cvDocumentId : null,
       }));
 
+    const weekStart = weekStartBangkok(Date.now());
+    const appliedThisWeek = jobs.filter((j) => j.appliedAt !== null && j.appliedAt >= weekStart).length;
+    const openTokenRequest = (
+      await ctx.db
+        .query("tokenRequests")
+        .withIndex("by_lead", (q) => q.eq("leadId", lead._id))
+        .collect()
+    ).find((r) => r.handledAt === undefined);
+
     const matchedSent = rows.filter((r) => r.reason === "matched_role").reduce((s, r) => s - r.delta, 0);
 
     return {
       firstName: lead.firstName ?? null,
-      tokens: { balance, bought, matchedSent },
+      tokens: { balance, bought, matchedSent, requestedAt: openTokenRequest?.at ?? null },
+      goal: { perWeek: lead.weeklyApplicationGoal ?? null, appliedThisWeek },
+      fitReportShared: lead.fitReportSharedAt !== undefined,
       packs: sold.map((e) => ({ module: e.module, status: e.status })),
       deliverables,
       cvs,
@@ -390,5 +412,77 @@ export const removeJob = mutation({
     const row = await ownRow(ctx, args.applicationId);
     if (row.origin !== "candidate") throw new ConvexError("not_yours");
     await ctx.db.delete(row._id);
+  },
+});
+
+/**
+ * What the Fit Report needs, for the signed-in candidate, once a coach has
+ * shared it. The same inputs the Candidate 360 builds it from: the answers
+ * with the coach's corrections applied, and the latest rating per competency.
+ */
+export const fitReport = query({
+  args: {},
+  handler: async (ctx) => {
+    const who = await signedInCandidate(ctx);
+    if (who.state !== "candidate") return null;
+    const lead = who.lead;
+    if (lead.fitReportSharedAt === undefined) return null;
+    const corrections = (
+      await ctx.db
+        .query("assessments")
+        .withIndex("by_lead_time", (q) => q.eq("leadId", lead._id))
+        .collect()
+    ).filter((r) => r.source === "coach");
+    const ratings = await ctx.db
+      .query("competencyRatings")
+      .withIndex("by_lead_item", (q) => q.eq("leadId", lead._id))
+      .collect();
+    const latest = new Map<string, (typeof ratings)[number]>();
+    for (const r of ratings) {
+      const seen = latest.get(r.itemKey);
+      if (!seen || r.ratedAt > seen.ratedAt) latest.set(r.itemKey, r);
+    }
+    return {
+      fullName: lead.fullName ?? null,
+      createdAt: lead.createdAt,
+      responses: applyCorrections(
+        (lead.responses ?? {}) as Record<string, unknown>,
+        corrections as unknown as Parameters<typeof applyCorrections>[1],
+      ).effective,
+      ratings: [...latest.values()].map((r) => ({
+        itemKey: r.itemKey,
+        value: r.value,
+        score: r.score,
+        ...(r.note ? { note: r.note } : {}),
+      })),
+    };
+  },
+});
+
+/** The candidate's own weekly target. 1 to 50, or null to clear. */
+export const setGoal = mutation({
+  args: { perWeek: v.union(v.number(), v.null()) },
+  handler: async (ctx, args) => {
+    const lead = await requireLead(ctx);
+    if (args.perWeek !== null && (!Number.isInteger(args.perWeek) || args.perWeek < 1 || args.perWeek > 50)) {
+      throw new ConvexError("bad_value");
+    }
+    await ctx.db.patch(lead._id, { weeklyApplicationGoal: args.perWeek ?? undefined });
+  },
+});
+
+/** Ask the coach for more tokens. One open request at a time. */
+export const requestTokens = mutation({
+  args: {},
+  handler: async (ctx) => {
+    const lead = await requireLead(ctx);
+    const open = (
+      await ctx.db
+        .query("tokenRequests")
+        .withIndex("by_lead", (q) => q.eq("leadId", lead._id))
+        .collect()
+    ).find((r) => r.handledAt === undefined);
+    if (open) return open._id;
+    return await ctx.db.insert("tokenRequests", { leadId: lead._id, at: Date.now() });
   },
 });

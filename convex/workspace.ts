@@ -600,6 +600,21 @@ export const forLead = query({
         ).find((c) => c.expiresAt > Date.now())
       : undefined;
     const heldCode = held ? { code: held.code, expiresAt: held.expiresAt } : null;
+    const openRequest = (
+      await ctx.db
+        .query("tokenRequests")
+        .withIndex("by_lead", (q) => q.eq("leadId", args.leadId))
+        .collect()
+    ).find((r) => r.handledAt === undefined);
+    const lead = await ctx.db.get(args.leadId);
+    const ratedCount = new Set(
+      (
+        await ctx.db
+          .query("competencyRatings")
+          .withIndex("by_lead_item", (q) => q.eq("leadId", args.leadId))
+          .collect()
+      ).map((r) => r.itemKey),
+    ).size;
 
     return {
       tokens: {
@@ -615,6 +630,8 @@ export const forLead = query({
         ? { email: access.email, grantedAt: access.grantedAt, lastSignInAt: access.lastSignInAt ?? null }
         : null,
       heldCode,
+      tokenRequest: openRequest ? { _id: openRequest._id, at: openRequest.at } : null,
+      fitReport: { shared: lead?.fitReportSharedAt !== undefined, rated: ratedCount },
     };
   },
 });
@@ -648,6 +665,7 @@ export const queue = query({
       lastSignInAt: number | null;
       jobsLive: number;
       interviewing: number;
+      tokenRequestedAt: number | null;
     };
     const rows: Row[] = [];
     for (const [leadId, engagements] of byLead) {
@@ -701,6 +719,13 @@ export const queue = query({
         lastSignInAt: access?.lastSignInAt ?? null,
         jobsLive: live.length,
         interviewing,
+        tokenRequestedAt:
+          (
+            await ctx.db
+              .query("tokenRequests")
+              .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+              .collect()
+          ).find((t) => t.handledAt === undefined)?.at ?? null,
       });
     }
     // Held codes first (they expire in minutes), then overdue, then soonest due.
@@ -708,8 +733,39 @@ export const queue = query({
     return rows.sort(
       (a, b) =>
         Number(!!b.heldCode) - Number(!!a.heldCode) ||
+        Number(!!b.tokenRequestedAt) - Number(!!a.tokenRequestedAt) ||
         Number(b.open.some((d) => d.overdue)) - Number(a.open.some((d) => d.overdue)) ||
         firstDue(a) - firstDue(b),
     );
+  },
+});
+
+/* ------------------------------------------------------- report + requests */
+
+/** Put the Fit Report on the candidate's page, or take it off. */
+export const shareFitReport = mutation({
+  args: { leadId: v.id("leads"), shared: v.boolean() },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const lead = await ctx.db.get(args.leadId);
+    if (!lead) throw new ConvexError("Lead not found.");
+    if (args.shared) {
+      const rated = await ctx.db
+        .query("competencyRatings")
+        .withIndex("by_lead_item", (q) => q.eq("leadId", args.leadId))
+        .first();
+      if (!rated) throw new ConvexError("Rate the interview first; the report has nothing coach-scored yet.");
+    }
+    await ctx.db.patch(args.leadId, { fitReportSharedAt: args.shared ? (lead.fitReportSharedAt ?? Date.now()) : undefined });
+  },
+});
+
+export const handleTokenRequest = mutation({
+  args: { requestId: v.id("tokenRequests"), note: v.optional(v.string()) },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const row = await ctx.db.get(args.requestId);
+    if (!row || row.handledAt !== undefined) return;
+    await ctx.db.patch(args.requestId, { handledAt: Date.now(), ...(args.note?.trim() ? { note: args.note.trim() } : {}) });
   },
 });

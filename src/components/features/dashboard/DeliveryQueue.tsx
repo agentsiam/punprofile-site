@@ -48,6 +48,11 @@ export default function DeliveryQueue() {
                     {new Date(r.heldCode.expiresAt).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}
                   </p>
                 )}
+                {r.tokenRequestedAt && (
+                  <p className="mt-1 text-body-medium text-ink-deep">
+                    Asked for more tokens on {day(r.tokenRequestedAt)}: send the transfer details on LINE.
+                  </p>
+                )}
                 <p className="mt-1 text-body-medium text-on-surface-variant">
                   {next ? (
                     <>

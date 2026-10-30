@@ -35,6 +35,7 @@ import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
 import { latestCoachIcp } from "@/lib/leadGrade";
 import { applyCorrections } from "@/lib/corrections";
+import { openFitReport } from "@/components/features/report/openFitReport";
 import { CRM_STATUS_LABELS } from "@/lib/crm";
 import LeadBriefing from "./LeadBriefing";
 import CallLog from "./CallLog";
@@ -121,52 +122,6 @@ async function openReport(
     { variant, locale: "en", autoPrint: true },
   );
 
-  win.document.open();
-  win.document.write(html);
-  win.document.close();
-}
-
-/**
- * The paid Fit Report, built the same way as `openReport`: at click time, from
- * the stored answers plus the coach's interview ratings, nothing persisted.
- * Added 26/10/2026.
- */
-async function openFitReport(
-  lead: { fullName: string | null; responses: Record<string, unknown>; createdAt: number },
-  ratings: { itemKey: string; value: number; score: number; note?: string }[],
-  locale: "th" | "en",
-) {
-  const win = window.open("", "_blank");
-  if (!win) {
-    alert("The report opens in a new tab. Allow popups for this site and press the button again.");
-    return;
-  }
-  win.document.write("<!doctype html><title>Building…</title><p>Building the Fit Report…");
-  const [{ renderFitReport }, { scoreResponse, scoreFull }, { toScoringInputForLead }, { rankMoves }, { matchRoles }, { ECRA }] =
-    await Promise.all([
-      import("@/lib/report"),
-      import("@/lib/scoring"),
-      import("@/lib/content/mapping"),
-      import("@/lib/levers"),
-      import("@/lib/market-match"),
-      import("@/lib/ecra"),
-    ]);
-  const input = toScoringInputForLead(lead.responses);
-  const profile = scoreResponse(input);
-  const html = renderFitReport(
-    {
-      profile,
-      full: scoreFull(profile, ratings, (k) => ECRA[k]?.formula),
-      moves: rankMoves(input),
-      roles: matchRoles(input.targetCountries ?? [], input.targetRole),
-    },
-    {
-      candidate: lead.fullName ?? "Anonymous lead",
-      targetCountries: input.targetCountries,
-      targetRole: input.targetRole ?? undefined,
-    },
-    { locale, autoPrint: true },
-  );
   win.document.open();
   win.document.write(html);
   win.document.close();
@@ -330,7 +285,9 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
             onClick={async () => {
               setBuilding(`fit-${loc}`);
               try {
-                await openFitReport({ ...lead, responses: corrected.effective }, ratings ?? [], loc);
+                if (!(await openFitReport({ ...lead, responses: corrected.effective }, ratings ?? [], loc))) {
+                  alert("The report opens in a new tab. Allow popups for this site and press the button again.");
+                }
               } finally {
                 setBuilding(null);
               }

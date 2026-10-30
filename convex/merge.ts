@@ -97,7 +97,13 @@ async function movePersonalRecords(
     .withIndex("by_lead", (q) => q.eq("leadId", dropId))
     .collect();
 
+  const tokenReqs = await ctx.db
+    .query("tokenRequests")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+
   for (const row of [
+    ...tokenReqs,
     ...access,
     ...ledger,
     ...cvs,

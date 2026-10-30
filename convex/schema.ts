@@ -266,6 +266,14 @@ export default defineSchema({
      */
     /** @absent notyet — no CV has arrived, or nobody has ticked it */
     cvReceivedAt: v.optional(v.number()),
+    /** When a coach put the paid Fit Report on the candidate's own page.
+     *  Built at click time from the answers and the coach's ratings, as on the
+     *  Candidate 360; nothing is stored but this switch.
+     *  @absent notyet — not shared */
+    fitReportSharedAt: v.optional(v.number()),
+    /** The candidate's own weekly target for applications sent, Teal's goal
+     *  ring. Set by them on their page. @absent none — no goal set */
+    weeklyApplicationGoal: v.optional(v.number()),
     /** @absent none — only present alongside a received CV */
     cvReceivedBy: v.optional(v.string()),
 
@@ -485,6 +493,7 @@ export default defineSchema({
       cvDocuments: v.optional(v.number()),
       deliveryNotes: v.optional(v.number()),
       candidateAccess: v.optional(v.number()),
+      tokenRequests: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -788,6 +797,9 @@ export default defineSchema({
 
     /** @absent none — no date agreed yet */
     dueAt: v.optional(v.number()),
+    /** A booking page for this session, shown to the candidate as a button
+     *  while it is not yet delivered. @absent none — booked by message */
+    bookingUrl: v.optional(v.string()),
     /** The name the candidate sees on their own page, in their language, e.g.
      *  "คุยทำความรู้จัก 30 นาที". Two sessions of the same kind are otherwise
      *  indistinguishable to them. `notes` stays the coach's own words.
@@ -1211,4 +1223,17 @@ export default defineSchema({
     expiresAt: v.number(),
     at: v.number(),
   }).index("by_email", ["email"]),
+  /**
+   * A candidate asking for more tokens from their page. Payment stays one to
+   * one by transfer (`pricing.ts`); this only tells the coach to send the
+   * details. One open request per candidate.
+   */
+  tokenRequests: defineTable({
+    leadId: v.id("leads"),
+    at: v.number(),
+    /** @absent notyet — not handled yet */
+    handledAt: v.optional(v.number()),
+    /** @absent none — handled without a note */
+    note: v.optional(v.string()),
+  }).index("by_lead", ["leadId", "at"]),
 });

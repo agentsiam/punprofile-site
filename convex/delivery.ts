@@ -183,6 +183,8 @@ export const updateDeliverable = mutation({
     dueAt: v.optional(v.union(v.number(), v.null())),
     /** Empty string clears it. */
     title: v.optional(v.string()),
+    /** Empty string clears it. Must be https. */
+    bookingUrl: v.optional(v.string()),
     notes: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
@@ -210,6 +212,13 @@ export const updateDeliverable = mutation({
       ...(args.notes !== undefined ? { notes: args.notes } : {}),
       ...(args.dueAt !== undefined ? { dueAt: args.dueAt ?? undefined } : {}),
       ...(args.title !== undefined ? { title: args.title.trim() || undefined } : {}),
+      ...(args.bookingUrl !== undefined
+        ? (() => {
+            const u = args.bookingUrl.trim();
+            if (u && !/^https:\/\//i.test(u)) throw new ConvexError("A booking link starts with https://");
+            return { bookingUrl: u || undefined };
+          })()
+        : {}),
       updatedAt: now,
     });
   },
