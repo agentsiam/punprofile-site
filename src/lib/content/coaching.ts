@@ -314,6 +314,7 @@ export const COACHES: readonly Coach[] = [
     pills: [
       { en: "Working in Europe since 2016", th: "ทำงานในยุโรปตั้งแต่ปี 2016" },
       { en: "Marketing and MarTech hiring", th: "คัดเลือกคนด้าน Marketing และ MarTech" },
+      { en: "BA Srinakharinwirot · MA, Spain", th: "ป.ตรี มศว · ป.โท สเปน" },
     ],
     link: { en: "Read Paul's story", th: "อ่านเรื่องราวของพอล" },
     pill: { en: "Founder · Marketing Director", th: "ผู้ก่อตั้ง · Marketing Director" },

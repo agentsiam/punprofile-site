@@ -314,6 +314,7 @@ export const COACHES: readonly Coach[] = [
     pills: [
       { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzBd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzBd:TH%% },
       { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzFd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzFd:TH%% },
+      { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzJd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzJd:TH%% },
     ],
     link: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLmxpbms:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLmxpbms:TH%% },
     pill: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGw:TH%% },

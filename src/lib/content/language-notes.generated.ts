@@ -10412,5 +10412,14 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "30/10/2026",
     "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[0].pills[2]": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].pills[2]",
+    "render": "Home page, Paul's card, fact pill",
+    "narrativeSlot": "proof",
+    "provenance": "paul-written",
+    "date": "30/10/2026",
+    "decisionNote": "Paul's tag, 30/10/2026: his degrees, in the same form as Tatiya's education pill."
   }
 } as const;

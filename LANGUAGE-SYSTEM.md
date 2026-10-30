@@ -27610,3 +27610,25 @@ review:
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 30/10/2026.
 ```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].pills[2]`
+
+```yaml
+id: src/lib/content/coaching.ts::COACHES[0].pills[2]
+source: src/lib/content/coaching.ts
+path: COACHES[0].pills[2]
+render: Home page, Paul's card, fact pill
+narrative_slot: proof
+en: "BA Srinakharinwirot · MA, Spain"
+th: "ป.ตรี มศว · ป.โท สเปน"
+provenance: paul-written
+date: 30/10/2026
+term_bindings: []
+decision_note: "Paul's tag, 30/10/2026: his degrees, in the same form as Tatiya's education pill."
+review:
+  structural_calque: pass
+  text_hash: cb0015dc18c6e8d95ab0ec69e69ebe6a2c924534f1daf7f4ddbfe3cf549ddfbd
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
