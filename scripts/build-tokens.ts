@@ -318,6 +318,11 @@ ${motion}
 ${state}
 }
 
+/* Light is the base, so \`color-scheme\` is declared here, before the dark block
+   that overrides it. Both are \`:root\`, so whichever comes later wins: declared
+   after the dark block, it kept form controls light in dark mode. */
+:root { color-scheme: light }
+
 /*
  * Dark. The same names redefined, so every utility in the app switches without a
  * single \`dark:\` variant anywhere: a component that has to name both schemes is
@@ -347,9 +352,6 @@ ${contrastVars(d["colors-contrast"], "    ")}
 ${contrastVars(d["colors-contrast-dark"], "    ")}
   }
 }
-
-/* Light is the base, so \`color-scheme\` is declared here and overridden above. */
-:root { color-scheme: light }
 
 /* Names that code outside the design system owns. \`build-report-book.ts\` reads
    them out of a rendered stylesheet and \`radar.ts\` draws through them, so
