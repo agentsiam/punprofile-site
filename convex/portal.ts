@@ -125,6 +125,8 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         followUpAt: a.followUpAt ?? null,
         notes: a.notes ?? null,
         excitement: a.excitement ?? null,
+        interviews: a.interviews ?? [],
+        contacts: a.contacts ?? [],
         // Only a CV they can see. A coach may link an unshared draft; that link
         // stays on the coach's side.
         cvDocumentId: a.cvDocumentId && sharedCvIds.has(a.cvDocumentId) ? a.cvDocumentId : null,
@@ -281,6 +283,27 @@ export const updateJob = mutation({
     jobUrl: v.optional(v.string()),
     salary: v.optional(v.string()),
     deadlineAt: v.optional(v.union(v.number(), v.null())),
+    interviews: v.optional(
+      v.array(
+        v.object({
+          round: v.string(),
+          at: v.optional(v.number()),
+          format: v.optional(v.union(v.literal("video"), v.literal("phone"), v.literal("onsite"))),
+          interviewers: v.optional(v.string()),
+          notes: v.optional(v.string()),
+        }),
+      ),
+    ),
+    contacts: v.optional(
+      v.array(
+        v.object({
+          name: v.string(),
+          role: v.optional(v.string()),
+          email: v.optional(v.string()),
+          linkedin: v.optional(v.string()),
+        }),
+      ),
+    ),
   },
   handler: async (ctx, args) => {
     const row = await ownRow(ctx, args.applicationId);
@@ -299,6 +322,33 @@ export const updateJob = mutation({
         if (!cv || cv.leadId !== row.leadId || cv.sharedAt === undefined) throw new ConvexError("bad_value");
       }
       patch.cvDocumentId = args.cvDocumentId ?? undefined;
+    }
+    // Rounds and contacts are the candidate's notebook on any row, ours or theirs.
+    if (args.interviews !== undefined) {
+      if (args.interviews.length > 20) throw new ConvexError("too_many");
+      patch.interviews = args.interviews
+        .map((i) => ({
+          round: clean(i.round, 80) ?? "",
+          ...(i.at !== undefined ? { at: i.at } : {}),
+          ...(i.format ? { format: i.format } : {}),
+          ...(clean(i.interviewers, 200) ? { interviewers: clean(i.interviewers, 200) } : {}),
+          ...(clean(i.notes, 2000) ? { notes: clean(i.notes, 2000) } : {}),
+        }))
+        .filter((i) => i.round);
+    }
+    if (args.contacts !== undefined) {
+      if (args.contacts.length > 20) throw new ConvexError("too_many");
+      patch.contacts = args.contacts
+        .map((c) => {
+          const li = clean(c.linkedin, 300);
+          return {
+            name: clean(c.name, 120) ?? "",
+            ...(clean(c.role, 80) ? { role: clean(c.role, 80) } : {}),
+            ...(clean(c.email, 200) ? { email: clean(c.email, 200) } : {}),
+            ...(li && /^https?:\/\//i.test(li) ? { linkedin: li } : {}),
+          };
+        })
+        .filter((c) => c.name);
     }
     const details = ["employer", "roleTitle", "country", "location", "jobUrl", "salary", "deadlineAt"] as const;
     if (details.some((k) => args[k] !== undefined)) {

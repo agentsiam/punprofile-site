@@ -41,8 +41,8 @@ export const SIGNIN_BODY: Copy = {
 export const SIGNIN_EMAIL: Copy = { en: "Email", th: "อีเมล" };
 export const SIGNIN_SEND: Copy = { en: "Send me a code", th: "ส่งรหัส" };
 export const SIGNIN_SENT: Copy = {
-  en: "If this address has access, a code is on its way. It can take a minute.",
-  th: "ถ้าอีเมลนี้มีสิทธิ์เข้าใช้ รหัสกำลังส่งไปครับ อาจใช้เวลาประมาณหนึ่งนาที",
+  en: "If this address has access, your code is on its way, by email or from your coach on LINE. It can take a few minutes.",
+  th: "ถ้าอีเมลนี้มีสิทธิ์เข้าใช้ รหัสกำลังส่งไปครับ ทางอีเมล หรือโค้ชจะส่งให้ทาง LINE อาจใช้เวลาสักครู่",
 };
 export const SIGNIN_CODE: Copy = { en: "6-digit code", th: "รหัส 6 หลัก" };
 export const SIGNIN_VERIFY: Copy = { en: "Sign in", th: "เข้าสู่ระบบ" };
@@ -199,6 +199,35 @@ export const DTAB_INFO: Copy = { en: "Job info", th: "ข้อมูลงา�
 export const DTAB_NOTES: Copy = { en: "Notes", th: "โน้ต" };
 export const DTAB_CV: Copy = { en: "CV sent", th: "CV ที่ใช้สมัคร" };
 export const DTAB_COACH: Copy = { en: "From your coach", th: "จากโค้ช" };
+export const DTAB_INTERVIEWS: Copy = { en: "Interviews", th: "สัมภาษณ์" };
+export const DTAB_CONTACTS: Copy = { en: "Contacts", th: "ผู้ติดต่อ" };
+export const IV_EMPTY: Copy = {
+  en: "No interview recorded yet. Add each round as it is booked, so you can prepare and look back.",
+  th: "ยังไม่มีรอบสัมภาษณ์ เพิ่มแต่ละรอบเมื่อได้นัด จะได้เตรียมตัวและย้อนดูได้ครับ",
+};
+export const IV_ADD: Copy = { en: "Add a round", th: "เพิ่มรอบสัมภาษณ์" };
+export const IV_ROUND: Copy = { en: "Round", th: "รอบ" };
+export const IV_ROUND_HINT: Copy = { en: "e.g. Recruiter screen, Technical, Final", th: "เช่น คุยกับ recruiter, technical, รอบสุดท้าย" };
+export const IV_DATE: Copy = { en: "Date", th: "วันที่" };
+export const IV_FORMAT: Copy = { en: "Format", th: "รูปแบบ" };
+export const IV_FORMATS: Record<"video" | "phone" | "onsite", Copy> = {
+  video: { en: "Video call", th: "วิดีโอคอล" },
+  phone: { en: "Phone", th: "โทรศัพท์" },
+  onsite: { en: "In person", th: "ที่บริษัท" },
+};
+export const IV_INTERVIEWERS: Copy = { en: "Interviewers", th: "ผู้สัมภาษณ์" };
+export const IV_NOTES: Copy = { en: "How it went, what they asked", th: "เป็นอย่างไรบ้าง ถูกถามอะไร" };
+export const CT_EMPTY: Copy = {
+  en: "No contact yet. Add the recruiter or hiring manager you are talking to.",
+  th: "ยังไม่มีผู้ติดต่อ เพิ่ม recruiter หรือ hiring manager ที่คุณคุยด้วยได้เลยครับ",
+};
+export const CT_ADD: Copy = { en: "Add a contact", th: "เพิ่มผู้ติดต่อ" };
+export const CT_NAME: Copy = { en: "Name", th: "ชื่อ" };
+export const CT_ROLE: Copy = { en: "Role", th: "ตำแหน่ง" };
+export const CT_ROLE_HINT: Copy = { en: "e.g. Recruiter, Hiring manager", th: "เช่น Recruiter, Hiring manager" };
+export const CT_EMAIL: Copy = { en: "Email", th: "อีเมล" };
+export const CT_LINKEDIN: Copy = { en: "LinkedIn link", th: "ลิงก์ LinkedIn" };
+export const LIST_REMOVE: Copy = { en: "Remove", th: "ลบ" };
 export const DETAIL_DATES: Copy = { en: "Dates", th: "วันที่" };
 export const DETAIL_OURS: Copy = {
   en: "We picked this role for you, so its details stay as we sent them. Your notes, follow-up date, interest and the CV you sent are yours to change.",

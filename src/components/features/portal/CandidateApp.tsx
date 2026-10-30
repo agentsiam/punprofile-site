@@ -592,7 +592,7 @@ function JobDetail({
   const job = data.jobs.find((j) => j._id === jobId)!;
   const act = useJobActions(readOnly);
   const remove = useMutation(api.portal.removeJob);
-  const [tab, setTab] = useState<"info" | "notes" | "cv" | "coach">("info");
+  const [tab, setTab] = useState<"info" | "interviews" | "contacts" | "notes" | "cv" | "coach">("info");
   const [notes, setNotes] = useState(job.notes ?? "");
   const [savedNotes, setSavedNotes] = useState(false);
   const [confirm, setConfirm] = useState(false);
@@ -685,6 +685,8 @@ function JobDetail({
           {(
             [
               ["info", C.DTAB_INFO],
+              ["interviews", C.DTAB_INTERVIEWS],
+              ["contacts", C.DTAB_CONTACTS],
               ["notes", C.DTAB_NOTES],
               ["cv", C.DTAB_CV],
               ["coach", C.DTAB_COACH],
@@ -703,6 +705,8 @@ function JobDetail({
             >
               {pick(label)}
               {id === "coach" && coachNotes.length ? ` ${coachNotes.length}` : ""}
+              {id === "interviews" && job.interviews.length ? ` ${job.interviews.length}` : ""}
+              {id === "contacts" && job.contacts.length ? ` ${job.contacts.length}` : ""}
             </button>
           ))}
         </nav>
@@ -760,6 +764,14 @@ function JobDetail({
                 </div>
               )}
             </div>
+          )}
+
+          {tab === "interviews" && (
+            <Interviews key={job._id} job={job} readOnly={readOnly} onSave={(interviews) => act.update(job._id, { interviews })} />
+          )}
+
+          {tab === "contacts" && (
+            <Contacts key={job._id} job={job} readOnly={readOnly} onSave={(contacts) => act.update(job._id, { contacts })} />
           )}
 
           {tab === "notes" && (
@@ -835,6 +847,209 @@ function JobDetail({
             ))}
         </div>
         {act.error && <p className="field-support-error mt-3">{pick(C.ERROR_GENERIC)}</p>}
+      </div>
+    </div>
+  );
+}
+
+type Round = Job["interviews"][number];
+type Contact = Job["contacts"][number];
+
+/**
+ * Teal's Interview Tracking: one card per round, edited as a list and saved
+ * together, so a half-typed round never lands on its own.
+ */
+function Interviews({ job, readOnly, onSave }: { job: Job; readOnly: boolean; onSave: (r: Round[]) => void }) {
+  const { pick, date } = useFormat();
+  const [rows, setRows] = useState<Round[]>(job.interviews);
+  const [dirty, setDirty] = useState(false);
+  const set = (i: number, patch: Partial<Round>) => {
+    setRows(rows.map((r, j) => (j === i ? { ...r, ...patch } : r)));
+    setDirty(true);
+  };
+  if (readOnly) {
+    return rows.length === 0 ? (
+      <p className="text-body-medium text-on-surface-variant">{pick(C.IV_EMPTY)}</p>
+    ) : (
+      <ul className="space-y-3">
+        {rows.map((r, i) => (
+          <li key={i} className="card-outlined px-5 py-4">
+            <p className="text-heading-sm">{r.round}</p>
+            <p className="text-body-medium text-on-surface-variant">
+              {[r.at ? date(r.at) : null, r.format ? pick(C.IV_FORMATS[r.format]) : null, r.interviewers].filter(Boolean).join(" · ")}
+            </p>
+            {r.notes && <p className="mt-2 whitespace-pre-line text-body-large text-ink">{r.notes}</p>}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  return (
+    <div className="space-y-4">
+      {rows.length === 0 && <p className="text-body-medium text-on-surface-variant">{pick(C.IV_EMPTY)}</p>}
+      {rows.map((r, i) => (
+        <div key={i} className="card-outlined px-5 py-4">
+          <div className="grid gap-3 medium:grid-cols-4">
+            <label className="field-label block medium:col-span-2">
+              {pick(C.IV_ROUND)}
+              <input className="field mt-1" placeholder={pick(C.IV_ROUND_HINT)} value={r.round} onChange={(e) => set(i, { round: e.target.value })} />
+            </label>
+            <label className="field-label block">
+              {pick(C.IV_DATE)}
+              <input type="date" className="field mt-1" value={toIso(r.at ?? null)} onChange={(e) => set(i, { at: toMs(e.target.value) ?? undefined })} />
+            </label>
+            <label className="field-label block">
+              {pick(C.IV_FORMAT)}
+              <select
+                className="field mt-1"
+                value={r.format ?? ""}
+                onChange={(e) => set(i, { format: (e.target.value || undefined) as Round["format"] })}
+              >
+                <option value="">–</option>
+                {(["video", "phone", "onsite"] as const).map((f) => (
+                  <option key={f} value={f}>
+                    {pick(C.IV_FORMATS[f])}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="field-label block medium:col-span-4">
+              {pick(C.IV_INTERVIEWERS)}
+              <input className="field mt-1" value={r.interviewers ?? ""} onChange={(e) => set(i, { interviewers: e.target.value })} />
+            </label>
+            <label className="field-label block medium:col-span-4">
+              {pick(C.IV_NOTES)}
+              <textarea rows={3} className="field mt-1" value={r.notes ?? ""} onChange={(e) => set(i, { notes: e.target.value })} />
+            </label>
+          </div>
+          <button
+            type="button"
+            className="mt-2 text-body-medium text-on-surface-variant underline"
+            onClick={() => {
+              setRows(rows.filter((_, j) => j !== i));
+              setDirty(true);
+            }}
+          >
+            {pick(C.LIST_REMOVE)}
+          </button>
+        </div>
+      ))}
+      <div className="flex flex-wrap items-center gap-4">
+        <button
+          type="button"
+          className="text-body-medium text-ink-deep underline"
+          onClick={() => {
+            setRows([...rows, { round: "" }]);
+            setDirty(true);
+          }}
+        >
+          + {pick(C.IV_ADD)}
+        </button>
+        {dirty && (
+          <button
+            type="button"
+            className="h-11 btn-tonal px-5 text-label-large"
+            onClick={() => {
+              onSave(rows.filter((r) => r.round.trim()));
+              setDirty(false);
+            }}
+          >
+            {pick(C.JOBS_SAVE)}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/** Teal's People, per job: who the candidate is talking to. */
+function Contacts({ job, readOnly, onSave }: { job: Job; readOnly: boolean; onSave: (c: Contact[]) => void }) {
+  const { pick } = useFormat();
+  const [rows, setRows] = useState<Contact[]>(job.contacts);
+  const [dirty, setDirty] = useState(false);
+  const set = (i: number, patch: Partial<Contact>) => {
+    setRows(rows.map((r, j) => (j === i ? { ...r, ...patch } : r)));
+    setDirty(true);
+  };
+  if (readOnly) {
+    return rows.length === 0 ? (
+        <p className="text-body-medium text-on-surface-variant">{pick(C.CT_EMPTY)}</p>
+      ) : (
+        <ul className="grid gap-3 medium:grid-cols-2">
+          {rows.map((c, i) => (
+            <li key={i} className="card-outlined px-5 py-4">
+              <p className="text-heading-sm">{c.name}</p>
+              <p className="text-body-medium text-on-surface-variant">{[c.role, c.email].filter(Boolean).join(" · ")}</p>
+            </li>
+          ))}
+        </ul>
+      );
+  }
+  return (
+    <div className="space-y-4">
+      {rows.length === 0 && <p className="text-body-medium text-on-surface-variant">{pick(C.CT_EMPTY)}</p>}
+      {rows.map((c, i) => (
+        <div key={i} className="card-outlined px-5 py-4">
+          <div className="grid gap-3 medium:grid-cols-2">
+            <label className="field-label block">
+              {pick(C.CT_NAME)}
+              <input className="field mt-1" value={c.name} onChange={(e) => set(i, { name: e.target.value })} />
+            </label>
+            <label className="field-label block">
+              {pick(C.CT_ROLE)}
+              <input className="field mt-1" placeholder={pick(C.CT_ROLE_HINT)} value={c.role ?? ""} onChange={(e) => set(i, { role: e.target.value })} />
+            </label>
+            <label className="field-label block">
+              {pick(C.CT_EMAIL)}
+              <input type="email" className="field mt-1" value={c.email ?? ""} onChange={(e) => set(i, { email: e.target.value })} />
+            </label>
+            <label className="field-label block">
+              {pick(C.CT_LINKEDIN)}
+              <input type="url" className="field mt-1" value={c.linkedin ?? ""} onChange={(e) => set(i, { linkedin: e.target.value })} />
+            </label>
+          </div>
+          <div className="mt-2 flex gap-4">
+            {c.linkedin && /^https?:\/\//i.test(c.linkedin) && (
+              <a href={c.linkedin} target="_blank" rel="noreferrer" className="text-body-medium text-ink-deep underline">
+                LinkedIn
+              </a>
+            )}
+            <button
+              type="button"
+              className="text-body-medium text-on-surface-variant underline"
+              onClick={() => {
+                setRows(rows.filter((_, j) => j !== i));
+                setDirty(true);
+              }}
+            >
+              {pick(C.LIST_REMOVE)}
+            </button>
+          </div>
+        </div>
+      ))}
+      <div className="flex flex-wrap items-center gap-4">
+        <button
+          type="button"
+          className="text-body-medium text-ink-deep underline"
+          onClick={() => {
+            setRows([...rows, { name: "" }]);
+            setDirty(true);
+          }}
+        >
+          + {pick(C.CT_ADD)}
+        </button>
+        {dirty && (
+          <button
+            type="button"
+            className="h-11 btn-tonal px-5 text-label-large"
+            onClick={() => {
+              onSave(rows.filter((c) => c.name.trim()));
+              setDirty(false);
+            }}
+          >
+            {pick(C.JOBS_SAVE)}
+          </button>
+        )}
       </div>
     </div>
   );

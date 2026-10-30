@@ -897,6 +897,41 @@ export default defineSchema({
     /** How much the candidate wants this one, 1 to 5, their own mark. Teal's
      *  "excitement" column. @absent none — not marked */
     excitement: v.optional(v.number()),
+    /** Teal's interview tracking: one entry per round, the candidate's own
+     *  record. A list on the row rather than a table, because a round has no
+     *  life apart from its application and twenty is a generous ceiling.
+     *  @absent none — no round recorded */
+    interviews: v.optional(
+      v.array(
+        v.object({
+          /** e.g. "Recruiter screen", "Technical", "Final". */
+          round: v.string(),
+          /** @absent none — no date yet */
+          at: v.optional(v.number()),
+          /** @absent none — not recorded */
+          format: v.optional(v.union(v.literal("video"), v.literal("phone"), v.literal("onsite"))),
+          /** Names, as the candidate writes them. @absent none — not recorded */
+          interviewers: v.optional(v.string()),
+          /** @absent none — nothing written */
+          notes: v.optional(v.string()),
+        }),
+      ),
+    ),
+    /** Teal's People: who the candidate is talking to about this job.
+     *  @absent none — no contact recorded */
+    contacts: v.optional(
+      v.array(
+        v.object({
+          name: v.string(),
+          /** e.g. "Recruiter", "Hiring manager". @absent none — not recorded */
+          role: v.optional(v.string()),
+          /** @absent none — not recorded */
+          email: v.optional(v.string()),
+          /** @absent none — not recorded */
+          linkedin: v.optional(v.string()),
+        }),
+      ),
+    ),
   })
     .index("by_lead_time", ["leadId", "savedAt"])
     .index("by_lead_status", ["leadId", "status", "statusChangedAt"]),
@@ -1151,4 +1186,21 @@ export default defineSchema({
   })
     .index("by_email", ["email"])
     .index("by_lead", ["leadId"]),
+  /**
+   * A sign-in code held for the coach to pass on by LINE, because no mail
+   * sender is configured on this deployment. `auth.ts` writes here instead of
+   * emailing only when `RESEND_API_KEY` or `MAIL_FROM` is missing, and only for
+   * an address with a live `candidateAccess` grant.
+   *
+   * Plain text on purpose and for fifteen minutes at most: the coach has to be
+   * able to read it out. Only `requireAdmin` reads it, a successful sign-in
+   * deletes it, and an expired row is ignored and overwritten. Once email is
+   * configured this table stays empty.
+   */
+  pendingSignInCodes: defineTable({
+    email: v.string(),
+    code: v.string(),
+    expiresAt: v.number(),
+    at: v.number(),
+  }).index("by_email", ["email"]),
 });
