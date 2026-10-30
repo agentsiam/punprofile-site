@@ -15,7 +15,7 @@
  * on its own.
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export default function ReportFrame({
   html,
@@ -34,12 +34,25 @@ export default function ReportFrame({
   const [height, setHeight] = useState<number | null>(null);
   const SHEET_W = 794;
 
+  // Measured once before paint, then on every resize. The first measure must
+  // not wait for ResizeObserver: a tab rendered in the background (a preview
+  // pane, a prerender) can hold its callbacks back, and the page then sat at
+  // the 0.3 starting scale. Found testing the live page 30/10/2026.
+  useLayoutEffect(() => {
+    if (sheetHeight && wrap.current?.clientWidth) setScale(wrap.current.clientWidth / SHEET_W);
+  }, [sheetHeight, html]);
+
   useEffect(() => {
     if (!sheetHeight || !wrap.current) return;
     const el = wrap.current;
-    const ro = new ResizeObserver(() => setScale(el.clientWidth / SHEET_W));
+    const onResize = () => setScale(el.clientWidth / SHEET_W);
+    window.addEventListener("resize", onResize);
+    const ro = new ResizeObserver(onResize);
     ro.observe(el);
-    return () => ro.disconnect();
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", onResize);
+    };
   }, [sheetHeight]);
 
   useEffect(() => {

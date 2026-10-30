@@ -60,8 +60,8 @@ function Card({
 }) {
   const { pick } = useCopy();
   return (
-    <div className={`flex flex-col rounded-[30px] bg-white px-6 py-7 large:px-8 large:py-8 ${featured ? "ring-[3px] ring-primary" : ""}`}>
-      <span className={`self-start rounded-full px-3 py-1 text-body-sm-strong text-ink-deep ${featured ? "bg-primary" : "bg-canvas-soft"}`}>
+    <div className={`flex flex-col rounded-[30px] bg-canvas px-6 py-7 large:px-8 large:py-8 ${featured ? "ring-[3px] ring-primary" : ""}`}>
+      <span className={`self-start rounded-full px-3 py-1 text-body-sm-strong ${featured ? "bg-primary text-on-primary" : "bg-canvas-soft text-ink-deep"}`}>
         {pill}
       </span>
       <h3 className="mt-4 text-[1.5rem] font-semibold leading-tight text-ink-deep">{pick(product.name)}</h3>
