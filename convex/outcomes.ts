@@ -45,6 +45,11 @@ export const recordApplication = mutation({
     jobUrl: v.optional(v.string()),
     status: applicationStatusValidator,
     notes: v.optional(v.string()),
+    location: v.optional(v.string()),
+    salary: v.optional(v.string()),
+    deadlineAt: v.optional(v.number()),
+    followUpAt: v.optional(v.number()),
+    cvDocumentId: v.optional(v.id("cvDocuments")),
   },
   handler: async (ctx, args) => {
     await requireAdmin(ctx);
@@ -76,6 +81,12 @@ export const recordApplication = mutation({
       ...(args.jobUrl ? { jobUrl: args.jobUrl } : {}),
       status: args.status,
       recordedBy: "coach",
+      origin: "coach",
+      ...(args.location?.trim() ? { location: args.location.trim() } : {}),
+      ...(args.salary?.trim() ? { salary: args.salary.trim() } : {}),
+      ...(args.deadlineAt ? { deadlineAt: args.deadlineAt } : {}),
+      ...(args.followUpAt ? { followUpAt: args.followUpAt } : {}),
+      ...(args.cvDocumentId ? { cvDocumentId: args.cvDocumentId } : {}),
       savedAt: now,
       // Only when they have actually applied. `interested` is a bookmark and
       // stamping it would make the application count wrong from the first row.

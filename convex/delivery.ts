@@ -23,6 +23,7 @@ const moduleValidator = v.union(
   v.literal("profile_optimization"),
   v.literal("job_application_lifecycle"),
   v.literal("bundle"),
+  v.literal("token_pack"),
 );
 
 const engagementStatusValidator = v.union(
@@ -45,6 +46,7 @@ const deliverableKindValidator = v.union(
   v.literal("offer_review"),
   v.literal("contract_review"),
   v.literal("coaching_session"),
+  v.literal("fit_report"),
 );
 
 const methodStageValidator = v.union(
@@ -92,6 +94,8 @@ export const createEngagement = mutation({
 export const updateEngagement = mutation({
   args: {
     engagementId: v.id("engagements"),
+    /** Correcting what was sold, e.g. a token pack first logged as a bundle. */
+    module: v.optional(moduleValidator),
     status: v.optional(engagementStatusValidator),
     agreedThb: v.optional(v.number()),
     notes: v.optional(v.string()),
@@ -112,6 +116,7 @@ export const updateEngagement = mutation({
     }
 
     await ctx.db.patch(args.engagementId, {
+      ...(args.module ? { module: args.module } : {}),
       ...(args.status ? { status: args.status } : {}),
       ...(args.agreedThb !== undefined ? { agreedThb: args.agreedThb } : {}),
       ...(args.notes !== undefined ? { notes: args.notes } : {}),
@@ -129,6 +134,8 @@ export const addDeliverable = mutation({
     status: v.optional(
       v.union(v.literal("not_started"), v.literal("in_progress"), v.literal("delivered")),
     ),
+    dueAt: v.optional(v.number()),
+    title: v.optional(v.string()),
     notes: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
@@ -147,6 +154,8 @@ export const addDeliverable = mutation({
       methodStage: args.methodStage,
       status,
       ...(status === "delivered" ? { deliveredAt: now } : {}),
+      ...(args.dueAt !== undefined ? { dueAt: args.dueAt } : {}),
+      ...(args.title?.trim() ? { title: args.title.trim() } : {}),
       ...(args.notes ? { notes: args.notes } : {}),
       by: adminEmail,
       createdAt: now,
@@ -170,6 +179,10 @@ export const updateDeliverable = mutation({
      * "delivered" is how a service starts silently moving a score.
      */
     producedAssessment: v.optional(v.id("assessments")),
+    /** Null clears it. */
+    dueAt: v.optional(v.union(v.number(), v.null())),
+    /** Empty string clears it. */
+    title: v.optional(v.string()),
     notes: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
@@ -195,6 +208,8 @@ export const updateDeliverable = mutation({
         : {}),
       ...(args.producedAssessment ? { producedAssessment: args.producedAssessment } : {}),
       ...(args.notes !== undefined ? { notes: args.notes } : {}),
+      ...(args.dueAt !== undefined ? { dueAt: args.dueAt ?? undefined } : {}),
+      ...(args.title !== undefined ? { title: args.title.trim() || undefined } : {}),
       updatedAt: now,
     });
   },

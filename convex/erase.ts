@@ -26,6 +26,9 @@ export type EraseCounts = {
   deliverables: number;
   applications: number;
   placements: number;
+  tokenLedger: number;
+  cvDocuments: number;
+  deliveryNotes: number;
 };
 
 /**
@@ -118,6 +121,12 @@ export async function lastContactAt(ctx: MutationCtx, lead: { _id: Id<"leads">; 
     .collect();
   for (const a of applications) bump(a.statusChangedAt);
 
+  const notes = await ctx.db
+    .query("deliveryNotes")
+    .withIndex("by_lead", (q) => q.eq("leadId", lead._id))
+    .collect();
+  for (const n of notes) bump(n.at);
+
   return latest;
 }
 
@@ -163,6 +172,27 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     .withIndex("by_lead", (q) => q.eq("leadId", leadId))
     .collect();
 
+  const ledger = await ctx.db
+    .query("tokenLedger")
+    .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+    .collect();
+  const cvs = await ctx.db
+    .query("cvDocuments")
+    .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+    .collect();
+  const notes = await ctx.db
+    .query("deliveryNotes")
+    .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+    .collect();
+
+  // The CV file itself, not only its row. TASK-063: "a deletion that actually
+  // removes the stored file".
+  for (const c of cvs) {
+    await ctx.storage.delete(c.storageId);
+    await ctx.db.delete(c._id);
+  }
+  for (const n of notes) await ctx.db.delete(n._id);
+  for (const t of ledger) await ctx.db.delete(t._id);
   for (const d of deliverables) await ctx.db.delete(d._id);
   for (const p of placements) await ctx.db.delete(p._id);
   for (const a of applications) await ctx.db.delete(a._id);
@@ -183,5 +213,8 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     deliverables: deliverables.length,
     applications: applications.length,
     placements: placements.length,
+    tokenLedger: ledger.length,
+    cvDocuments: cvs.length,
+    deliveryNotes: notes.length,
   };
 }
