@@ -27973,19 +27973,20 @@ path: PORTAL_TITLE
 render: Candidate page /me, PORTAL_TITLE
 narrative_slot: utility
 en: Your page
-th: หน้าของคุณ
-provenance: draft
+th: "หน้าของคุณ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 598d22521b256853394f95f85953caab36977ec9cfe0c1e648d31a22d288c477
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -27998,19 +27999,20 @@ path: PORTAL_GREETING
 render: Candidate page /me, PORTAL_GREETING
 narrative_slot: utility
 en: Hi {name}
-th: สวัสดีครับ {name}
-provenance: draft
+th: "สวัสดีครับ {name}"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 59479fe5621210860d34491e5c2d615cc5139c3f1f2a3b408b0af3783cff98bd
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28023,19 +28025,20 @@ path: PORTAL_GREETING_NONAME
 render: Candidate page /me, PORTAL_GREETING_NONAME
 narrative_slot: utility
 en: Hi
-th: สวัสดีครับ
-provenance: draft
+th: "สวัสดีครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 389cee7350d0fd2fdf413f51b404bd87c00360465b5c175070ea53324551b55f
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28050,21 +28053,21 @@ narrative_slot: utility
 en: >-
   Everything we are working on together is here: what has been delivered, your CV files, and the jobs you are
   going for. Bookmark this page, it is yours.
-th: >-
-  ทุกอย่างที่เราทำด้วยกันอยู่ในหน้านี้ ทั้งงานที่ส่งมอบแล้ว ไฟล์ CV และงานที่คุณกำลังสมัคร
-  เก็บลิงก์นี้ไว้ได้เลยครับ เป็นหน้าของคุณเอง
-provenance: draft
+th: "หน้านี้เป็นพื้นที่ทำงานร่วมกันของเรา คุณดูงานที่เราส่งให้แล้ว ไฟล์ CV และตำแหน่งที่กำลังสมัครได้ที่นี่ เก็บลิงก์ไว้กลับมาใช้ต่อได้เลยครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Replaces the translated everything-in-one-place opening and repetitive ownership claim with the reader’s actions and shared work. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 1495ac817170fe7f8ae4a6483f9af26ad8c454d3a4347afd9a2a36cbc2162b47
+  structural_calque: pass
+  text_hash: 858a66d4412e48fe2f60fb238b028c24585a88b41ad6a361173b3f094255b071
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28077,19 +28080,21 @@ path: PORTAL_INTRO_SHORT
 render: Candidate page /me, PORTAL_INTRO_SHORT
 narrative_slot: utility
 en: Everything we are working on together, in one place.
-th: ทุกอย่างที่เราทำด้วยกัน อยู่ในที่เดียว
-provenance: draft
+th: "ดูทุกอย่างที่เราทำร่วมกันได้ในหน้านี้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Uses the reader’s action rather than a floating translated everything-in-one-place fragment. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: c904f025af128a659b69701f5274b5cea936fc2f70a20d3fa3aa5783e295e73b
+  structural_calque: pass
+  text_hash: bc113b397525fbbd4b61eb95a57356b488cea74607841c11809246ba474a0b92
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28102,19 +28107,20 @@ path: SIGNIN_HEADING
 render: Candidate page /me, SIGNIN_HEADING
 narrative_slot: utility
 en: Sign in to your page
-th: เข้าสู่หน้าของคุณ
-provenance: draft
+th: "เข้าสู่หน้าของคุณ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e969af8b3d0ee01cda39880317ec0f4027005a3712c6440a574aa70b6ddc2b30
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28127,19 +28133,20 @@ path: SIGNIN_BODY
 render: Candidate page /me, SIGNIN_BODY
 narrative_slot: utility
 en: Enter the email you use with PunProfile and we will send you a 6-digit code. No password needed.
-th: กรอกอีเมลที่คุณใช้กับ PunProfile แล้วเราจะส่งรหัส 6 หลักไปให้ ไม่ต้องตั้งรหัสผ่านครับ
-provenance: draft
+th: "กรอกอีเมลที่คุณใช้กับ PunProfile แล้วเราจะส่งรหัส 6 หลักไปให้ ไม่ต้องตั้งรหัสผ่านครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4beb4c2ab3186a2581a310044e5fbf567435229202fd191a930dda72dec9bd78
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28152,19 +28159,20 @@ path: SIGNIN_EMAIL
 render: Candidate page /me, SIGNIN_EMAIL
 narrative_slot: utility
 en: Email
-th: อีเมล
-provenance: draft
+th: "อีเมล"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a84c4b8c0704df5c212c7bb1f7ab937e0d90bb602645a37b99a6fb7e5235735f
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28177,19 +28185,20 @@ path: SIGNIN_SEND
 render: Candidate page /me, SIGNIN_SEND
 narrative_slot: utility
 en: Send me a code
-th: ส่งรหัส
-provenance: draft
+th: "ส่งรหัส"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 22cfd79266979df629d378c6193c51fb9e782703d1221216ba1c9b6a3f198531
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28204,19 +28213,21 @@ narrative_slot: utility
 en: >-
   If this address has access, your code is on its way, by email or from your coach on LINE. It can take a few
   minutes.
-th: ถ้าอีเมลนี้มีสิทธิ์เข้าใช้ รหัสกำลังส่งไปครับ ทางอีเมล หรือโค้ชจะส่งให้ทาง LINE อาจใช้เวลาสักครู่
-provenance: draft
+th: "หากคุณใช้บัญชีอีเมลนี้เข้าใช้งานได้ เราจะส่งรหัสให้ทางอีเมล หรือโค้ชจะส่งให้ทาง LINE อาจต้องรอสักครู่ครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Names who sends the code and removes the broken รหัสกำลังส่งไป clause while preserving conditional access and both delivery routes. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: f3c29ed65d796730580f381b2fa49b7bab444a5ebc8b6959831c21ab3e687d41
+  structural_calque: pass
+  text_hash: 19d612ce38de9373310d4ac0170f4a9076f4abc1afeef47065ee704c1594c227
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28229,19 +28240,20 @@ path: SIGNIN_CODE
 render: Candidate page /me, SIGNIN_CODE
 narrative_slot: utility
 en: 6-digit code
-th: รหัส 6 หลัก
-provenance: draft
+th: "รหัส 6 หลัก"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0fa884a0fc664919d5b2b9e39b7c9377034faf80092b30616f491674fdb7c315
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28254,19 +28266,20 @@ path: SIGNIN_VERIFY
 render: Candidate page /me, SIGNIN_VERIFY
 narrative_slot: utility
 en: Sign in
-th: เข้าสู่ระบบ
-provenance: draft
+th: "เข้าสู่ระบบ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d889d076c467dec34c73ce6e133e67bd786eee570b2d8903d2fbc68ee5647d41
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28279,19 +28292,20 @@ path: SIGNIN_BAD_CODE
 render: Candidate page /me, SIGNIN_BAD_CODE
 narrative_slot: utility
 en: That code is wrong or has expired. Ask for a new one.
-th: รหัสไม่ถูกต้องหรือหมดอายุแล้ว ขอรหัสใหม่ได้เลยครับ
-provenance: draft
+th: "รหัสไม่ถูกต้องหรือหมดอายุแล้ว ขอรหัสใหม่ได้เลยครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 8f385fd239229193e5facb390f37efc728fb31a8f01cdd8743cb483cc90b6fba
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28304,19 +28318,20 @@ path: SIGNIN_OTHER_EMAIL
 render: Candidate page /me, SIGNIN_OTHER_EMAIL
 narrative_slot: utility
 en: Use a different email
-th: ใช้อีเมลอื่น
-provenance: draft
+th: "ใช้อีเมลอื่น"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 77d85f1992e0a5e3afd364c40984248c58c9e21c7d6cffe4ba8595ec03b1239f
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28329,19 +28344,20 @@ path: SIGNIN_RESEND
 render: Candidate page /me, SIGNIN_RESEND
 narrative_slot: utility
 en: Send a new code
-th: ส่งรหัสใหม่
-provenance: draft
+th: "ส่งรหัสใหม่"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 231a8bc0ee6aef03bbae108196021108cb08f176d3528a110a8d9173a01e9832
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28354,19 +28370,21 @@ path: NO_ACCESS_HEADING
 render: Candidate page /me, NO_ACCESS_HEADING
 narrative_slot: utility
 en: This email does not have a page yet
-th: อีเมลนี้ยังไม่มีหน้าของคุณ
-provenance: draft
+th: "เรายังไม่ได้เปิดหน้าสำหรับอีเมลนี้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: An email does not possess a personal page; names the service actor and the access state. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 79782da8d557c4d41d4a2a1523f18376aab0016b15bc29d486d76b81eb3ed305
+  structural_calque: pass
+  text_hash: 3c9ddfab3c1509d2e889fd8a814ecc3adeb214897f6b6cc7735b4a986b8dbd33
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28379,19 +28397,21 @@ path: NO_ACCESS_BODY
 render: Candidate page /me, NO_ACCESS_BODY
 narrative_slot: utility
 en: Message your coach on LINE and they will open it for this address.
-th: ทักโค้ชทาง LINE ได้เลยครับ เดี๋ยวโค้ชเปิดสิทธิ์ให้อีเมลนี้
-provenance: draft
+th: "ทักโค้ชทาง LINE เพื่อให้โค้ชเปิดสิทธิ์เข้าใช้งานสำหรับอีเมลนี้ได้เลยครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Removes the dangling permission-for-email construction and names the next action. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: e12f269ad720353fe177531e50ccc96a9116878bf66b0fc2678ef69917d1c496
+  structural_calque: pass
+  text_hash: 74b91b57622dada10e50148c1d752706d3607cb617adb3a3e91b4f8a7aadf430
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28404,19 +28424,20 @@ path: COACH_HERE
 render: Candidate page /me, COACH_HERE
 narrative_slot: utility
 en: You are signed in as a coach. Open a candidate's page from the CRM.
-th: คุณเข้าสู่ระบบในฐานะโค้ช เปิดหน้าของผู้สมัครได้จาก CRM
-provenance: draft
+th: "คุณเข้าสู่ระบบในฐานะโค้ช เปิดหน้าของผู้สมัครได้จาก CRM"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d2dbc2eca94223374e2f02a13c6aa4ad89b777fbf548810a69e34b238861306e
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28429,19 +28450,20 @@ path: SIGN_OUT
 render: Candidate page /me, SIGN_OUT
 narrative_slot: utility
 en: Sign out
-th: ออกจากระบบ
-provenance: draft
+th: "ออกจากระบบ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b9e0a3ac6cfa63ccc261811d7e7052bd2499ab992e26619bb6a644d4293932e8
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28454,19 +28476,20 @@ path: TAB_OVERVIEW
 render: Candidate page /me, TAB_OVERVIEW
 narrative_slot: utility
 en: Overview
-th: ภาพรวม
-provenance: draft
+th: "ภาพรวม"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4e3760186ce3724a8f676006c727811e40f7376035158cb7fb314e666041576e
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28479,19 +28502,20 @@ path: TAB_TRACKER
 render: Candidate page /me, TAB_TRACKER
 narrative_slot: utility
 en: Job tracker
-th: ติดตามงาน
-provenance: draft
+th: "ติดตามงาน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a56399dbe47b1ce6733f3100e6677f1c075f326a159edb30ee5bf52fa8734055
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28504,19 +28528,20 @@ path: TAB_FEED
 render: Candidate page /me, TAB_FEED
 narrative_slot: utility
 en: Jobs for you
-th: งานสำหรับคุณ
-provenance: draft
+th: "งานสำหรับคุณ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 98885185297f22acaadb34f4e40b7b4758b058c7c904fd058a544e803081d39f
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28531,21 +28556,21 @@ narrative_slot: utility
 en: >-
   Roles our team screened in the last 30 days, in {countries}, matching {role}. The same jobs we post in the
   group, filtered to your target. Save one to put it in your job list.
-th: >-
-  ตำแหน่งที่ทีมเราคัดใน 30 วันที่ผ่านมา ใน {countries} ตรงกับสาย {role} เป็นงานชุดเดียวกับที่โพสต์ในกลุ่ม
-  แต่กรองตาม target ของคุณ กดบันทึกเพื่อเพิ่มเข้าลิสต์งานได้เลยครับ
-provenance: draft
+th: "เรารวมตำแหน่งใน {countries} สายงาน {role} ที่ทีมคัดไว้ในช่วง 30 วันที่ผ่านมาให้คุณแล้ว เป็นงานชุดเดียวกับที่เราโพสต์ในกลุ่ม โดยเลือกมาเฉพาะที่ตรงกับ target ของคุณ ลองเปิดดู แล้วกดบันทึกตำแหน่งที่สนใจเข้าลิสต์ได้เลยครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Names the team and reader as actors, breaks the stacked location/time fragments, and closes on the next action. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 4610997cf9ea32671f4db59f70f10e8c07fafdc7cfaa00beccddd1ad14947d75
+  structural_calque: pass
+  text_hash: 9ea8fa8d95ffe984fbe00cd2e2f7ba066e0bcddc54b409ef3c63042e10470ab9
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28560,21 +28585,21 @@ narrative_slot: utility
 en: >-
   Nothing in your target in the last 30 days. A narrow target can go quiet for a while; this fills as new
   roles are screened.
-th: >-
-  ช่วง 30 วันที่ผ่านมายังไม่มีตำแหน่งที่ตรงกับ target ของคุณ target ที่เฉพาะเจาะจงอาจเงียบไปบ้าง
-  ตรงนี้จะขึ้นเมื่อมีตำแหน่งใหม่ที่ผ่านการคัดครับ
-provenance: draft
+th: "ในช่วง 30 วันที่ผ่านมา เรายังไม่ได้คัดตำแหน่งที่ตรงกับ target ของคุณ หากคุณเจาะจงประเทศและสายงานไว้ อาจมีช่วงที่ยังไม่มีตำแหน่งใหม่ เมื่อทีมคัดได้แล้ว คุณจะเห็นตำแหน่งนั้นที่นี่ครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Rebuilds the empty state without making a target go quiet or an unspecified ตรงนี้ go up. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: b9049448029a407175d213287d4c95cdea63df11b58b31197e1246088684f9ba
+  structural_calque: pass
+  text_hash: c73d3e13a2f5cc149bf22e62857df774b0fbc2f8e1bd132f321ed4d4fde5b993
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28587,19 +28612,21 @@ path: FEED_NO_TARGET
 render: Candidate page /me, FEED_NO_TARGET
 narrative_slot: utility
 en: We do not have your target country and role yet. Tell your coach, and this list fills.
-th: เรายังไม่มีข้อมูลประเทศและสายงานที่คุณตั้งเป้าไว้ บอกโค้ชได้เลยครับ แล้วลิสต์นี้จะขึ้น
-provenance: draft
+th: "เรายังไม่ทราบว่าคุณตั้งเป้าหางานในประเทศไหนและสายงานอะไร แจ้งโค้ชไว้ได้เลยครับ เราจะใช้ข้อมูลนี้เลือกตำแหน่งมาแสดงให้คุณ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: States the missing inputs and next shared step instead of promising a list will magically appear. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: da9c4bdf83d737d3eb42b92702e61dc45f7611b7b425ca90e6734fd258871f41
+  structural_calque: pass
+  text_hash: d45fa7fb0bb6a83d5732d3cc36191bbd1f94b6500282188d08d3557ccd2c2219
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28612,19 +28639,20 @@ path: FEED_SAVE
 render: Candidate page /me, FEED_SAVE
 narrative_slot: utility
 en: Save to my list
-th: บันทึกเข้าลิสต์
-provenance: draft
+th: "บันทึกเข้าลิสต์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4b60608204bf0f82a90203eb7b4d7dfa832f808e5795b10f09ed61207cac58d9
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28637,19 +28665,20 @@ path: FEED_SAVED
 render: Candidate page /me, FEED_SAVED
 narrative_slot: utility
 en: In your list
-th: อยู่ในลิสต์แล้ว
-provenance: draft
+th: "อยู่ในลิสต์แล้ว"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: fe238d21e9bb458f194069d6fc24f4a1df04afc0c309e8df54224305abbebdc6
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28662,19 +28691,20 @@ path: FEED_SEEN
 render: Candidate page /me, FEED_SEEN
 narrative_slot: utility
 en: Screened {date}
-th: คัดเมื่อ {date}
-provenance: draft
+th: "คัดเมื่อ {date}"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0433212363adfc541c960716f21337dde7ff81dce764227fc9ebced93c160798
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28687,19 +28717,20 @@ path: FEED_UPDATED
 render: Candidate page /me, FEED_UPDATED
 narrative_slot: utility
 en: List updated {date}
-th: อัปเดตลิสต์ล่าสุด {date}
-provenance: draft
+th: "อัปเดตลิสต์ล่าสุด {date}"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: bc42df8822f077ee5954d0966130aea2b7cbf25970b295ab19f6d21a977fe846
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28712,19 +28743,20 @@ path: TAB_CV
 render: Candidate page /me, TAB_CV
 narrative_slot: utility
 en: CV
-th: ไฟล์ CV
-provenance: draft
+th: "ไฟล์ CV"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: ca05a8a3b4280b7af30d8773dd951b0cbf874ffeb2e3f077c5c22669c4da7e28
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28737,19 +28769,20 @@ path: TAB_COACH
 render: Candidate page /me, TAB_COACH
 narrative_slot: utility
 en: Your coach
-th: โค้ชของคุณ
-provenance: draft
+th: "โค้ชของคุณ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 69766e46bb1de18801010aa5a44e793274fb6a333399f114d28cfa7e2c78a5d2
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28762,19 +28795,20 @@ path: PIPELINE_HEADING
 render: Candidate page /me, PIPELINE_HEADING
 narrative_slot: utility
 en: Your search so far
-th: ภาพรวมการสมัครงาน
-provenance: draft
+th: "ภาพรวมการสมัครงาน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 5f50f89da3021899e36b890a47075fa81fa2bebc22b81623d529428f60677d58
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28787,19 +28821,21 @@ path: DATES_HEADING
 render: Candidate page /me, DATES_HEADING
 narrative_slot: utility
 en: Coming up
-th: วันที่ต้องจำ
-provenance: draft
+th: "กำหนดการที่กำลังจะถึง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Coming up covers service due dates and closing dates as well as follow-ups; วันที่ต้องจำ loses that context. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 985a2b93f27b3ef4e891395287d247a4022f80ec32a8cb19e89695c8d5b70b8f
+  structural_calque: pass
+  text_hash: fb9344f1afed62fbc8a2bf9f7e6e0b1f485543c98a58c60f3e83b06147b3433b
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28812,19 +28848,21 @@ path: DATES_EMPTY
 render: Candidate page /me, DATES_EMPTY
 narrative_slot: utility
 en: Nothing dated yet. Add a follow-up date to a job and it shows here.
-th: ยังไม่มีวันที่ต้องตาม ใส่วันตามผลให้งานไหนก็ได้ แล้วจะขึ้นที่นี่ครับ
-provenance: draft
+th: "ยังไม่มีกำหนดการ ลองตั้งวัน follow up ในตำแหน่งที่คุณสมัครไว้ แล้วกลับมาดูวันที่นี่ได้ครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Replaces the unnatural วันที่ต้องตาม and names the actual follow-up action and where the date appears. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: a1231c47fafe2a3c9f2390af1e2a39b5e7e20c26045693e99dc1ce67696db8a5
+  structural_calque: pass
+  text_hash: 9a6a0a54459e99569d5978302efb20ab1eb46e4167d5f0b842288aaacd32df2c
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28837,19 +28875,21 @@ path: DATE_FOLLOW
 render: Candidate page /me, DATE_FOLLOW
 narrative_slot: utility
 en: Follow up
-th: ตามผล
-provenance: draft
+th: "ติดตามผล"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Uses the natural Thai action label ติดตามผล; an English-only Follow up label fails LR-01 without a termbase entry. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: c6cec07c96dc110b8c1a56a2b63d549a72cd78ce665d6c626bc989451628f323
+  structural_calque: pass
+  text_hash: f0647ec2600d26cd4f0bcb256fdd5f1c78460ba8d679aeab54515babd1883adc
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28862,19 +28902,21 @@ path: DATE_CLOSES
 render: Candidate page /me, DATE_CLOSES
 narrative_slot: utility
 en: Closes
-th: ปิดรับ
-provenance: draft
+th: "ปิดรับสมัคร"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Completes the recruitment label instead of leaving ปิดรับ unspecified. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: a0e40c2f68cb4f4c79d827fee5ed3ecea24f4f50dbce20cc94b69779a259a62b
+  structural_calque: pass
+  text_hash: 34ca89ef361c45479066540fb3b59c67b5a987bdd50e69b9d41656a8b6f22fdd
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28887,19 +28929,21 @@ path: DATE_DUE
 render: Candidate page /me, DATE_DUE
 narrative_slot: utility
 en: Due
-th: กำหนด
-provenance: draft
+th: "กำหนดส่ง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: The adjacent item is a deliverable due date; กำหนด alone is incomplete. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 85cb655eb20f108758cebd70928ce3d08567d3fa9e11277c9cab9f7895969017
+  structural_calque: pass
+  text_hash: ee397894007c0841c5933b352852ec2ee61d04809cc7215245a43e2bb583e62e
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28912,19 +28956,20 @@ path: LATEST_NOTE
 render: Candidate page /me, LATEST_NOTE
 narrative_slot: utility
 en: Latest from your coach
-th: ข้อความล่าสุดจากโค้ช
-provenance: draft
+th: "ข้อความล่าสุดจากโค้ช"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b0989e4e67e37d6df3958696cbd0d5eae9f51cbc180758a991461f71ec32fb6a
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28937,19 +28982,20 @@ path: SEE_ALL
 render: Candidate page /me, SEE_ALL
 narrative_slot: utility
 en: See all
-th: ดูทั้งหมด
-provenance: draft
+th: "ดูทั้งหมด"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3b81632b433a01d8ca4ab123fe0bc442da87929848425c864a5830a1fc60fe63
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28962,19 +29008,20 @@ path: TOKENS_HEADING
 render: Candidate page /me, TOKENS_HEADING
 narrative_slot: utility
 en: Tokens left
-th: โทเคนคงเหลือ
-provenance: draft
+th: "โทเคนคงเหลือ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 386b1f3b1078ac911cdfd5648df65098da55c00d3e0a03ff1f01cb3a69605131
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28987,19 +29034,20 @@ path: TOKENS_OF
 render: Candidate page /me, TOKENS_OF
 narrative_slot: utility
 en: of {n} tokens
-th: จาก {n} โทเคน
-provenance: draft
+th: "จาก {n} โทเคน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: db601db6506aae6f9dee1f34728e4155ee3f563e69fc60248f7af9352f8cbaf5
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29012,19 +29060,20 @@ path: TOKENS_MATCHED
 render: Candidate page /me, TOKENS_MATCHED
 narrative_slot: utility
 en: 'Roles we have picked and sent you: {n}'
-th: ตำแหน่งงานที่เราคัดส่งให้แล้ว {n} ตำแหน่ง
-provenance: draft
+th: "ตำแหน่งงานที่เราคัดส่งให้แล้ว {n} ตำแหน่ง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2d0647ca7b957f9c5ad5965467906a255e386e8d877cef67d150f731020d6663
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29037,19 +29086,21 @@ path: TOKENS_RULE
 render: Candidate page /me, TOKENS_RULE
 narrative_slot: utility
 en: A token is only used once you have received the service. Tokens never expire.
-th: โทเคนจะถูกหักเมื่อคุณได้รับบริการแล้วเท่านั้น และไม่มีวันหมดอายุครับ
-provenance: draft
+th: "เราจะหักโทเคนเมื่อคุณได้รับบริการแล้วเท่านั้น โทเคนของคุณไม่มีวันหมดอายุครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Names the service actor who deducts tokens and separates that rule from expiry, without adding counts or prices. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 0d5ac7b7922c9efcbd33e12f41b2ae1a1b544453d80100c9ddfa7798aac7e215
+  structural_calque: pass
+  text_hash: f3243e3b96ca7ef34ec7d66102722b003125e507f9729fe485f968dabbe421a0
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29062,19 +29113,20 @@ path: WORK_HEADING
 render: Candidate page /me, WORK_HEADING
 narrative_slot: utility
 en: What you get
-th: สิ่งที่คุณจะได้รับ
-provenance: draft
+th: "สิ่งที่คุณจะได้รับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f445740cca51df070c88ea0f8662ccaeae11482bf5d493412aec20a5016bbb7c
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29087,19 +29139,21 @@ path: WORK_EMPTY
 render: Candidate page /me, WORK_EMPTY
 narrative_slot: utility
 en: Your coach will add each step here as it is planned.
-th: โค้ชจะเพิ่มแต่ละขั้นตอนไว้ที่นี่เมื่อวางแผนกันแล้วครับ
-provenance: draft
+th: "เมื่อเราวางแผนร่วมกันแล้ว โค้ชจะเพิ่มงานแต่ละขั้นตอนให้คุณดูที่นี่ครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Reorders the thought around shared planning and makes the actor of the passive เมื่อวางแผนกันแล้ว explicit. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 75a299c1ab0b45b2693944017d2d7e39a1f913a90adda81804c59993446ab1ed
+  structural_calque: pass
+  text_hash: 15c0e33d15d2ce4f392d272b157fe75dc11d3f5d48ed123df09ccc106cd02799
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29112,19 +29166,20 @@ path: WORK_STATUS.not_started
 render: Candidate page /me, WORK_STATUS.not_started
 narrative_slot: utility
 en: Not started
-th: ยังไม่เริ่ม
-provenance: draft
+th: "ยังไม่เริ่ม"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 9135645a1b1ed458d6413a46df0e69deb4f323f373b700f7e4b2e10ed07d44c8
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29137,19 +29192,20 @@ path: WORK_STATUS.in_progress
 render: Candidate page /me, WORK_STATUS.in_progress
 narrative_slot: utility
 en: In progress
-th: กำลังทำ
-provenance: draft
+th: "กำลังทำ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 342d3f693dbdf34559d6b60791409142806b69fd43610883ef0bc3401667f2d1
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29162,19 +29218,20 @@ path: WORK_STATUS.delivered
 render: Candidate page /me, WORK_STATUS.delivered
 narrative_slot: utility
 en: Delivered
-th: ส่งมอบแล้ว
-provenance: draft
+th: "ส่งมอบแล้ว"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a84e48a3ee105c8fafac28b97e2b3b6a35f70f3b21c401f5b41e4342a117faa0
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29187,19 +29244,21 @@ path: WORK_DUE
 render: Candidate page /me, WORK_DUE
 narrative_slot: utility
 en: Due {date}
-th: กำหนด {date}
-provenance: draft
+th: "กำหนดส่ง {date}"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Specifies that the displayed date is a delivery deadline. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 4eeee58a5522b3687bfbdaa6de6c2bc9e484ff929d0d577af145c84c8e8b46c4
+  structural_calque: pass
+  text_hash: 96613f9e03293e1f5aa829ee7eed0cf75e0da4b0e56f19e4e6a223d43cf7b4c6
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29212,19 +29271,21 @@ path: WORK_DONE_ON
 render: Candidate page /me, WORK_DONE_ON
 narrative_slot: utility
 en: Delivered {date}
-th: ส่งมอบ {date}
-provenance: draft
+th: "ส่งมอบเมื่อ {date}"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Adds the natural time connector for a completed delivery. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 2e74e9037bd0e609a5bab69d5674d7d92c506f513a3ac63920d59d4ec502cc0d
+  structural_calque: pass
+  text_hash: 860d069ac196a69a817e5d0b670c37d4d1298725279023e8bc0f4ba1df816fe9
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29237,19 +29298,20 @@ path: WORK_KIND.fit_report
 render: Candidate page /me, WORK_KIND.fit_report
 narrative_slot: utility
 en: Fit Report
-th: Fit Report
-provenance: draft
+th: "Fit Report"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 899b32eb43aa35737948310d7d8d389bddf837a171fb03522711b719b93178cf
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29262,19 +29324,20 @@ path: WORK_KIND.coaching_session
 render: Candidate page /me, WORK_KIND.coaching_session
 narrative_slot: utility
 en: Session with your coach
-th: คุยกับโค้ช
-provenance: draft
+th: "คุยกับโค้ช"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 650b95b663ef55eca7857112d87622918cd2acab7b62bbb16acf151b79f99fc9
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29287,19 +29350,20 @@ path: WORK_KIND.base_cv
 render: Candidate page /me, WORK_KIND.base_cv
 narrative_slot: utility
 en: Your main CV
-th: CV หลักของคุณ
-provenance: draft
+th: "CV หลักของคุณ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 9d812f653299bab9060c1fdb4ff8922602a2ebaff98f8fb92726bc735b6dc1af
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29312,19 +29376,20 @@ path: WORK_KIND.linkedin
 render: Candidate page /me, WORK_KIND.linkedin
 narrative_slot: utility
 en: LinkedIn profile
-th: โปรไฟล์ LinkedIn
-provenance: draft
+th: "โปรไฟล์ LinkedIn"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3e8fc6dfc6d57a9f150be7aff465dd112488f2baa56ff988ada2e6ce063e8db2
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29337,19 +29402,20 @@ path: WORK_KIND.portfolio
 render: Candidate page /me, WORK_KIND.portfolio
 narrative_slot: utility
 en: Portfolio
-th: พอร์ตโฟลิโอ
-provenance: draft
+th: "พอร์ตโฟลิโอ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: fe4c32fad026191c78274da9598ed90883baa7b9d0e3499cc47529c14ca7a428
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29362,19 +29428,20 @@ path: WORK_KIND.country_research
 render: Candidate page /me, WORK_KIND.country_research
 narrative_slot: utility
 en: Country research
-th: ข้อมูลประเทศเป้าหมาย
-provenance: draft
+th: "ข้อมูลประเทศเป้าหมาย"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 742285e25f32c8177bd56888d600112cbaf6b5cb7729709de31d1e5ef6b0f737
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29387,19 +29454,20 @@ path: WORK_KIND.tailored_application
 render: Candidate page /me, WORK_KIND.tailored_application
 narrative_slot: utility
 en: Application tailored to one role
-th: ใบสมัครที่ปรับให้ตรงกับตำแหน่ง
-provenance: draft
+th: "ใบสมัครที่ปรับให้ตรงกับตำแหน่ง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 62b6427630e498c508cf47c92ccb4bb6013c8d6212be7a221ad5ec80b1288ac1
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29412,19 +29480,20 @@ path: WORK_KIND.interview_prep
 render: Candidate page /me, WORK_KIND.interview_prep
 narrative_slot: utility
 en: Interview preparation
-th: เตรียมตัวสัมภาษณ์
-provenance: draft
+th: "เตรียมตัวสัมภาษณ์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 579e4807e6b8d15a9c75e751a28b338434b3120730bdb06936fb0546e0a6ec88
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29437,19 +29506,20 @@ path: WORK_KIND.mock_interview
 render: Candidate page /me, WORK_KIND.mock_interview
 narrative_slot: utility
 en: Mock interview
-th: ซ้อมสัมภาษณ์
-provenance: draft
+th: "ซ้อมสัมภาษณ์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: fcad019828d4f91426621da10ae185664f07a7f322ea528be86580c359f48391
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29462,19 +29532,20 @@ path: WORK_KIND.offer_review
 render: Candidate page /me, WORK_KIND.offer_review
 narrative_slot: utility
 en: Offer review
-th: ดูข้อเสนองานด้วยกัน
-provenance: draft
+th: "ดูข้อเสนองานด้วยกัน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: fc90f541012609a8cbbc93aad587a8af5bd54696d1629bc563fb776e8067ec1a
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29487,19 +29558,20 @@ path: WORK_KIND.contract_review
 render: Candidate page /me, WORK_KIND.contract_review
 narrative_slot: utility
 en: Contract review
-th: ดูสัญญาจ้างด้วยกัน
-provenance: draft
+th: "ดูสัญญาจ้างด้วยกัน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 654c5896946488689d1c7a2d8829f969c8de82b9df7ec652fd0a6dc4afd37da1
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29512,19 +29584,20 @@ path: BOOK_TIME
 render: Candidate page /me, BOOK_TIME
 narrative_slot: utility
 en: Book a time
-th: จองเวลา
-provenance: draft
+th: "จองเวลา"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 600cf67063f7e9be4224dec0041599a4f47d2bfb9ee33a6456ee93a2d6db7724
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29537,19 +29610,20 @@ path: TOKENS_MORE
 render: Candidate page /me, TOKENS_MORE
 narrative_slot: utility
 en: Ask for more tokens
-th: ขอโทเคนเพิ่ม
-provenance: draft
+th: "ขอโทเคนเพิ่ม"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b107364760430ccf1c7d7bc949f8e25f4dbe0deec5d4e70d2d89810201b3b4e8
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29562,19 +29636,20 @@ path: TOKENS_LOW
 render: Candidate page /me, TOKENS_LOW
 narrative_slot: utility
 en: You are running low on tokens.
-th: โทเคนใกล้หมดแล้วครับ
-provenance: draft
+th: "โทเคนใกล้หมดแล้วครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 62bb47c67bc6cd7aab2dd033db9baf2b47b0df8bfab7482535bd5de9eedf0c54
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29587,19 +29662,20 @@ path: TOKENS_REQUESTED
 render: Candidate page /me, TOKENS_REQUESTED
 narrative_slot: utility
 en: Request sent. Your coach will get back to you on LINE.
-th: ส่งคำขอแล้วครับ โค้ชจะติดต่อกลับทาง LINE
-provenance: draft
+th: "ส่งคำขอแล้วครับ โค้ชจะติดต่อกลับทาง LINE"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0ae0b44b913c94224c4bcb485908640a6f5ed71f7b3bf7bed70135bedda2ad74
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29612,19 +29688,20 @@ path: FIT_HEADING
 render: Candidate page /me, FIT_HEADING
 narrative_slot: utility
 en: Your Fit Report
-th: Fit Report ของคุณ
-provenance: draft
+th: "Fit Report ของคุณ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2e34154276ecf745b79464662bf8f3b7afa6891ef87a4505ca1a087c29fd557d
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29639,21 +29716,21 @@ narrative_slot: utility
 en: >-
   Every area your coach rated, where you stand against the market, and what to do next in each. It opens in a
   new tab, ready to save as a PDF.
-th: >-
-  ทุกด้านที่โค้ชประเมิน ตำแหน่งของคุณเทียบกับตลาด และสิ่งที่ควรทำต่อในแต่ละด้าน เปิดในแท็บใหม่ บันทึกเป็น PDF
-  ได้เลยครับ
-provenance: draft
+th: "ลองเปิดดูผลประเมินแต่ละด้านที่โค้ชประเมินให้ ว่าคุณผ่านเกณฑ์ตลาดงานตรงไหนแล้ว และควรพัฒนาอะไรต่อในแต่ละด้าน รายงานจะเปิดในแท็บใหม่ คุณบันทึกเป็น PDF เก็บไว้ได้เลยครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Replaces the mistranslated ตำแหน่งของคุณ with assessment standing and makes the reader’s next action explicit. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 03618df878e49f2153d7909505a8d7f36c6cef2e3043538232aaac33c1a3a826
+  structural_calque: pass
+  text_hash: 8de10b45455c47fca0dd9a0691513e0da1d9a763ba581a795457f4fb635165bb
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29666,19 +29743,20 @@ path: FIT_OPEN
 render: Candidate page /me, FIT_OPEN
 narrative_slot: utility
 en: Open the Fit Report
-th: เปิด Fit Report
-provenance: draft
+th: "เปิด Fit Report"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a54a6a973b56ea59a62eb377cf8b057d11d138a77788cca61c45a9bacb9a13e2
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29691,19 +29769,21 @@ path: FIT_POPUP
 render: Candidate page /me, FIT_POPUP
 narrative_slot: utility
 en: Your browser blocked the new tab. Allow pop-ups for this site and try again.
-th: เบราว์เซอร์บล็อกแท็บใหม่ไว้ อนุญาต pop-up ของเว็บนี้แล้วลองกดอีกครั้งนะครับ
-provenance: draft
+th: "เบราว์เซอร์บล็อกการเปิดแท็บใหม่ไว้ ลองอนุญาต pop-up สำหรับเว็บนี้ แล้วเปิดรายงานอีกครั้งครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Repairs the blocked-tab object and replaces the unspecified กดอีกครั้ง with the actual action. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: a81bdbf4ad9f3222a556132d16d306b6901f4c3fbb73034bbf7dd48cd4d79307
+  structural_calque: pass
+  text_hash: 34751271030f50c95af656cb0cb6ce4db8f39f55b4a993754d117482c0f4ddfa
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29716,19 +29796,20 @@ path: GOAL_HEADING
 render: Candidate page /me, GOAL_HEADING
 narrative_slot: utility
 en: This week's goal
-th: เป้าหมายสัปดาห์นี้
-provenance: draft
+th: "เป้าหมายสัปดาห์นี้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 846a16012881552ab219e1320be60fab47b1abad3ca6fb644aa2ac1442208fea
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29741,19 +29822,20 @@ path: GOAL_PROGRESS
 render: Candidate page /me, GOAL_PROGRESS
 narrative_slot: utility
 en: '{done} of {goal} applications sent'
-th: สมัครแล้ว {done} จาก {goal} ตำแหน่ง
-provenance: draft
+th: "สมัครแล้ว {done} จาก {goal} ตำแหน่ง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 90180cbf15c69d1a6041702860b7fd8d032582d5e733ef132644e478c5eee4f2
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29766,19 +29848,20 @@ path: GOAL_NONE
 render: Candidate page /me, GOAL_NONE
 narrative_slot: utility
 en: Set how many applications you aim to send each week, and see your progress here.
-th: ตั้งจำนวนใบสมัครที่อยากส่งในแต่ละสัปดาห์ แล้วดูความคืบหน้าได้ที่นี่ครับ
-provenance: draft
+th: "ตั้งจำนวนใบสมัครที่อยากส่งในแต่ละสัปดาห์ แล้วดูความคืบหน้าได้ที่นี่ครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: c8fbcd1225794b893f71ff96b5327f96078c3dff294eb20700e54b66027fcda8
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29791,19 +29874,20 @@ path: GOAL_PROMPT
 render: Candidate page /me, GOAL_PROMPT
 narrative_slot: utility
 en: Applications per week
-th: จำนวนใบสมัครต่อสัปดาห์
-provenance: draft
+th: "จำนวนใบสมัครต่อสัปดาห์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: bd446c757bbdb5a19ad1f441e96ba6ad1748f7dc7e8b2d2593c22f58b1e3e153
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29816,19 +29900,20 @@ path: GOAL_SET
 render: Candidate page /me, GOAL_SET
 narrative_slot: utility
 en: Set a goal
-th: ตั้งเป้าหมาย
-provenance: draft
+th: "ตั้งเป้าหมาย"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b89496338b895314b76dfa1d8d0ed6dd886f1b8219a6a40fefab1fbdd7d30d17
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29841,19 +29926,20 @@ path: GOAL_CHANGE
 render: Candidate page /me, GOAL_CHANGE
 narrative_slot: utility
 en: Change
-th: เปลี่ยน
-provenance: draft
+th: "เปลี่ยน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 69267a41961e43720f99b28e28055ebd609c80afb80713b97d6b324b04bb1d5b
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29866,19 +29952,20 @@ path: GOAL_WEEK_NOTE
 render: Candidate page /me, GOAL_WEEK_NOTE
 narrative_slot: utility
 en: The week starts on Monday, Thailand time.
-th: สัปดาห์เริ่มวันจันทร์ ตามเวลาไทย
-provenance: draft
+th: "สัปดาห์เริ่มวันจันทร์ ตามเวลาไทย"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 13098af0aaad66abc702bcf087215dff525d69e87fcd84923603509a599d34cd
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29891,19 +29978,20 @@ path: NOTES_HEADING
 render: Candidate page /me, NOTES_HEADING
 narrative_slot: utility
 en: From your coach
-th: จากโค้ช
-provenance: draft
+th: "จากโค้ช"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 91707d6848790c167b9224d9ec5ae603712bc4eeb6ba6ce554787634abbe0cfe
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29916,19 +30004,20 @@ path: CV_HEADING
 render: Candidate page /me, CV_HEADING
 narrative_slot: utility
 en: Your CV files
-th: ไฟล์ CV ของคุณ
-provenance: draft
+th: "ไฟล์ CV ของคุณ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 15e4ee67e0a94f6894cb47e76638c590fe44d5abdf732f9c7308f6ffbcd6242e
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29941,19 +30030,20 @@ path: CV_EMPTY
 render: Candidate page /me, CV_EMPTY
 narrative_slot: utility
 en: No file here yet. Send your latest CV to your coach on LINE or by email.
-th: ยังไม่มีไฟล์ครับ ส่ง CV ฉบับล่าสุดให้โค้ชทาง LINE หรืออีเมลได้เลย
-provenance: draft
+th: "ยังไม่มีไฟล์ครับ ส่ง CV ฉบับล่าสุดให้โค้ชทาง LINE หรืออีเมลได้เลย"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e7960bc547e5e8aabb4c2fb31666d32c5ac09ce70beb872bc724e55bf6a425d4
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29966,19 +30056,20 @@ path: CV_VERSION
 render: Candidate page /me, CV_VERSION
 narrative_slot: utility
 en: Version {n}
-th: ฉบับที่ {n}
-provenance: draft
+th: "ฉบับที่ {n}"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 10a7e09550ca0a3a6ec92a68b4c309c0670163fa8b9c1f158d20128e9d67573a
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29991,19 +30082,20 @@ path: CV_LATEST
 render: Candidate page /me, CV_LATEST
 narrative_slot: utility
 en: Latest
-th: ล่าสุด
-provenance: draft
+th: "ล่าสุด"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4e348c6769d3ac7759110d519afb31deb7a869bb9d6fe66590afe4fe272a6513
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30016,19 +30108,20 @@ path: CV_THEIRS
 render: Candidate page /me, CV_THEIRS
 narrative_slot: utility
 en: The version you sent
-th: ฉบับที่คุณส่งมา
-provenance: draft
+th: "ฉบับที่คุณส่งมา"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d704a16b1caf6c46e14a5161d80e914b88b46201016dbf7f2d56909b48d94cbb
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30041,19 +30134,20 @@ path: CV_OURS
 render: Candidate page /me, CV_OURS
 narrative_slot: utility
 en: Revised by your coach
-th: ฉบับที่โค้ชปรับให้
-provenance: draft
+th: "ฉบับที่โค้ชปรับให้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d543359a9fe7cc6fa2ea8d352e5e953aace2663cff34de23b69b2a294e4513a8
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30066,19 +30160,20 @@ path: CV_CHANGED
 render: Candidate page /me, CV_CHANGED
 narrative_slot: utility
 en: What changed
-th: สิ่งที่ปรับ
-provenance: draft
+th: "สิ่งที่ปรับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1668fead16ef790e400a037315ad09768a0ce663d441f67eb60bfddbca733318
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30091,19 +30186,20 @@ path: CV_DOWNLOAD
 render: Candidate page /me, CV_DOWNLOAD
 narrative_slot: utility
 en: Download
-th: ดาวน์โหลด
-provenance: draft
+th: "ดาวน์โหลด"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 23c88383ce157cfbc067cc994dd37f23113afd4dcc900af296a374d078cda0ad
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30116,19 +30212,21 @@ path: JOBS_HEADING
 render: Candidate page /me, JOBS_HEADING
 narrative_slot: utility
 en: Your job list
-th: งานที่คุณกำลังสมัคร
-provenance: draft
+th: "ลิสต์งานของคุณ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: The list includes saved and closed jobs, so กำลังสมัคร incorrectly limits its scope. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 80b74939d0662778ee14bb8a3c8dd710035e467fb2f8a70c8381df4a626042a2
+  structural_calque: pass
+  text_hash: db1ec2b60038f2f9ecfcc82f90f3d75ea367f9f4332916aaab05432fef1b7d6a
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30143,21 +30241,21 @@ narrative_slot: utility
 en: >-
   This list is yours. Move each job along as things happen. Roles marked Picked by PunProfile are ones we
   screened for you.
-th: >-
-  ลิสต์นี้เป็นของคุณ อัปเดตสถานะได้เองทุกครั้งที่มีความคืบหน้า ตำแหน่งที่มีป้าย คัดโดย PunProfile
-  คือตำแหน่งที่เราคัดมาให้ครับ
-provenance: draft
+th: "คุณอัปเดตสถานะแต่ละตำแหน่งในลิสต์นี้ได้เมื่อมีความคืบหน้า ส่วนตำแหน่งที่เราคัดมาให้จะมีป้าย “คัดโดย PunProfile” ครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Leads with what the candidate can do, then explains the exact decided badge without repeating list ownership. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 7bfd4527b1af3021d43bc03d212f33a3c888eb60243b107e6ea43f5fe30ee50a
+  structural_calque: pass
+  text_hash: b660d1a3b7576eff3d50014e497ec23236650a4041514cd0d3aaaa4301ecac93
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30170,19 +30268,20 @@ path: JOBS_EMPTY
 render: Candidate page /me, JOBS_EMPTY
 narrative_slot: utility
 en: Nothing on the list yet. Add a job you are interested in, or wait for the first roles we pick for you.
-th: ยังไม่มีงานในลิสต์ เพิ่มงานที่คุณสนใจได้เลย หรือรอตำแหน่งแรกที่เราคัดให้ก็ได้ครับ
-provenance: draft
+th: "ยังไม่มีงานในลิสต์ เพิ่มงานที่คุณสนใจได้เลย หรือรอตำแหน่งแรกที่เราคัดให้ก็ได้ครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 93654986052b1caaf51e3b6c55eab1c1a6fb7b731fe517ed346623de4831f165
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30195,19 +30294,20 @@ path: JOBS_ALL
 render: Candidate page /me, JOBS_ALL
 narrative_slot: utility
 en: All
-th: ทั้งหมด
-provenance: draft
+th: "ทั้งหมด"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 831a830871bff2542250db8c82cb408059ffdb0e5df5f6ccb75e7da3cb19dd14
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30220,19 +30320,20 @@ path: JOBS_STATUS.interested
 render: Candidate page /me, JOBS_STATUS.interested
 narrative_slot: utility
 en: Saved
-th: บันทึกไว้
-provenance: draft
+th: "บันทึกไว้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 5d4214e5af4c3a498b236861991ded3fa282099a5d8a0d5539b264a405b929f7
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30245,19 +30346,20 @@ path: JOBS_STATUS.applied
 render: Candidate page /me, JOBS_STATUS.applied
 narrative_slot: utility
 en: Applied
-th: สมัครแล้ว
-provenance: draft
+th: "สมัครแล้ว"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 482f2fb1e18c58441540e072af24ccac74fecfdd9aff1b06f05a9a0a9cb59692
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30270,19 +30372,21 @@ path: JOBS_STATUS.screening
 render: Candidate page /me, JOBS_STATUS.screening
 narrative_slot: utility
 en: Screening
-th: รอคัดเลือก
-provenance: draft
+th: "คัดกรองเบื้องต้น"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Screening is an active application stage, not รอคัดเลือก; keeps it distinct from the later interview stage. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: f77f1ca2ac621ac62177be1a347c652a28f3d598aae8a54235ae0c8f858af0fb
+  structural_calque: pass
+  text_hash: a7d1d9c34057528161661b16292463255c76f2e221df528f85699d14e87f2130
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30295,19 +30399,20 @@ path: JOBS_STATUS.interviewing
 render: Candidate page /me, JOBS_STATUS.interviewing
 narrative_slot: utility
 en: Interviewing
-th: สัมภาษณ์
-provenance: draft
+th: "สัมภาษณ์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e76808c604c995c4f086703d860536648e3044b1cf8e501f8bbe64744d8673b5
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30320,19 +30425,20 @@ path: JOBS_STATUS.offer
 render: Candidate page /me, JOBS_STATUS.offer
 narrative_slot: utility
 en: Offer
-th: ได้ข้อเสนอ
-provenance: draft
+th: "ได้ข้อเสนอ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a345cd5bb71fb594844b361ab595c5ea16b2835298329b081a99e702570909e3
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30345,19 +30451,20 @@ path: JOBS_STATUS.accepted
 render: Candidate page /me, JOBS_STATUS.accepted
 narrative_slot: utility
 en: Accepted
-th: ตอบรับแล้ว
-provenance: draft
+th: "ตอบรับแล้ว"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: c9eba19c4bd4650d3cb284cc49fb7d64e2dcab1c68451535fdbbdcf45a463162
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30370,19 +30477,20 @@ path: JOBS_STATUS.rejected
 render: Candidate page /me, JOBS_STATUS.rejected
 narrative_slot: utility
 en: Not this time
-th: ไม่ผ่านรอบนี้
-provenance: draft
+th: "ไม่ผ่านรอบนี้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 5e7879bba7f1b90d30def1e7e14c254436372700f7cb7be278aad1fdf211e33c
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30395,19 +30503,20 @@ path: JOBS_STATUS.withdrawn
 render: Candidate page /me, JOBS_STATUS.withdrawn
 narrative_slot: utility
 en: Withdrew
-th: ถอนตัว
-provenance: draft
+th: "ถอนตัว"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: dec20518d9a460da17d15365e6c10a0654d05b569c36905670148ff02c7eaaae
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30420,19 +30529,20 @@ path: JOBS_FROM_US
 render: Candidate page /me, JOBS_FROM_US
 narrative_slot: utility
 en: Picked by PunProfile
-th: คัดโดย PunProfile
-provenance: draft
+th: "คัดโดย PunProfile"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 9d9e54e1e6f0b15a4eaf4211a74752924c8a005225e2b39b4b36d5ff0fecfe26
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30445,19 +30555,20 @@ path: JOBS_WHY
 render: Candidate page /me, JOBS_WHY
 narrative_slot: utility
 en: Why this role
-th: ทำไมเราคัดตำแหน่งนี้
-provenance: draft
+th: "ทำไมเราคัดตำแหน่งนี้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d25c729d4f9626ec74d05b93eee681bc4e79319c160c69093678854de47ced19
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30470,19 +30581,20 @@ path: JOBS_POSTING
 render: Candidate page /me, JOBS_POSTING
 narrative_slot: utility
 en: Open the posting
-th: เปิดประกาศงาน
-provenance: draft
+th: "เปิดประกาศงาน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 39ad08b58f98fa192401d02452a4863eedd2e83d762713963e089aed8064d364
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30495,19 +30607,21 @@ path: JOBS_CLOSES
 render: Candidate page /me, JOBS_CLOSES
 narrative_slot: utility
 en: Closes {date}
-th: ปิดรับ {date}
-provenance: draft
+th: "ปิดรับสมัคร {date}"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Makes the job closing date explicit and agrees with the other deadline labels. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: aba99a7bf01ef8f9a3e55680f97790ee4079e3000283be03eea20fcf84d8a832
+  structural_calque: pass
+  text_hash: 26ebba3dc245d69d8adb708b8c50b51e1a4a58f5fb2cacbdc04bb4c8917c7853
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30520,19 +30634,20 @@ path: JOBS_APPLIED_ON
 render: Candidate page /me, JOBS_APPLIED_ON
 narrative_slot: utility
 en: Applied {date}
-th: สมัครเมื่อ {date}
-provenance: draft
+th: "สมัครเมื่อ {date}"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 65667da256e8bf22af3f6ffcf0554ae251066ca783b525d7f3486f06283da835
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30545,19 +30660,21 @@ path: JOBS_FOLLOW_UP
 render: Candidate page /me, JOBS_FOLLOW_UP
 narrative_slot: utility
 en: Follow up on
-th: วันที่จะตามผล
-provenance: draft
+th: "วันที่จะ follow up"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Keeps the established follow-up term consistent across the date label and checklist. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 04c40ae10f15ef9c37b7a15e6483fd3b217b6e9c8911ac0015ac962100177ebc
+  structural_calque: pass
+  text_hash: 794c5646215c1d566b5ccce50262fccf9a4a1f64bc83db5981d3efc2e8e47745
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30570,19 +30687,20 @@ path: JOBS_NOTES
 render: Candidate page /me, JOBS_NOTES
 narrative_slot: utility
 en: Notes
-th: โน้ต
-provenance: draft
+th: "โน้ต"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 34b98421f48d12b986e715ad9e8b731fe6570064579c13dbffeadc3c486500bb
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30595,19 +30713,20 @@ path: JOBS_SAVE
 render: Candidate page /me, JOBS_SAVE
 narrative_slot: utility
 en: Save
-th: บันทึก
-provenance: draft
+th: "บันทึก"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 6dbefabdaf9902cc28f1d240dd6d1a29befd82320a7c43f0a93cf61103185150
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30620,19 +30739,20 @@ path: JOBS_CANCEL
 render: Candidate page /me, JOBS_CANCEL
 narrative_slot: utility
 en: Cancel
-th: ยกเลิก
-provenance: draft
+th: "ยกเลิก"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: c26d3cb0485519371449192740f1d687de23da864df75a0019ecf24fe0e7dff9
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30645,19 +30765,20 @@ path: JOBS_REMOVE
 render: Candidate page /me, JOBS_REMOVE
 narrative_slot: utility
 en: Remove
-th: ลบ
-provenance: draft
+th: "ลบ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 23922b748a978d3baf672ff203698f9136f446bdd6aa2bd7fecc1b3f1263de7f
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30670,19 +30791,21 @@ path: JOBS_REMOVE_CONFIRM
 render: Candidate page /me, JOBS_REMOVE_CONFIRM
 narrative_slot: utility
 en: Remove for good
-th: ลบออกจากลิสต์
-provenance: draft
+th: "ลบออกจากลิสต์ถาวร"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Preserves the irreversible meaning of for good that the draft confirmation omitted. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 6d41cd99b3f62703f79d011a5925a4f108c9f6760d32f18fd3ad9da915376040
+  structural_calque: pass
+  text_hash: 54ec6e045dfc5849d0d1f9ff0697d8cc4a931e8dc91acc41024768cfae810aad
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30695,19 +30818,20 @@ path: JOBS_DETAILS
 render: Candidate page /me, JOBS_DETAILS
 narrative_slot: utility
 en: Details
-th: รายละเอียด
-provenance: draft
+th: "รายละเอียด"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1c94967f2f90ef1f940c6f648bae2e9f732b00b55406f4874cfeb2400e6cf7db
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30720,19 +30844,20 @@ path: JOBS_SEARCH
 render: Candidate page /me, JOBS_SEARCH
 narrative_slot: utility
 en: Search role or company
-th: ค้นหาตำแหน่งหรือบริษัท
-provenance: draft
+th: "ค้นหาตำแหน่งหรือบริษัท"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f537b24ab0e165500caa49aa40812768b933073335c66ebbeb276bf4381ee0c2
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30745,19 +30870,20 @@ path: JOBS_CLOSED
 render: Candidate page /me, JOBS_CLOSED
 narrative_slot: utility
 en: Closed
-th: ปิดแล้ว
-provenance: draft
+th: "ปิดแล้ว"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b459a36d1a1b65e6fa3ac816d62a7a38d062f508fe7594fe6de7f0a4cbab9d4c
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30770,19 +30896,20 @@ path: JOBS_NO_MATCH
 render: Candidate page /me, JOBS_NO_MATCH
 narrative_slot: utility
 en: No job matches.
-th: ไม่พบงานที่ตรงกับที่ค้นหา
-provenance: draft
+th: "ไม่พบงานที่ตรงกับที่ค้นหา"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0061544e665d299f8712c509fe851ef491f9644f60d4dd1df2f40403213ddf0a
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30795,19 +30922,20 @@ path: COL_ROLE
 render: Candidate page /me, COL_ROLE
 narrative_slot: utility
 en: Job title
-th: ตำแหน่ง
-provenance: draft
+th: "ตำแหน่ง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4da609077db99b81c41e39975b79569b93cdbd05d913bd53fa5525122ba1af0d
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30820,19 +30948,20 @@ path: COL_COMPANY
 render: Candidate page /me, COL_COMPANY
 narrative_slot: utility
 en: Company
-th: บริษัท
-provenance: draft
+th: "บริษัท"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4377230cc3a7af66f77ae811be3297baa079c3164af6c9c496ce44d26333a109
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30845,19 +30974,20 @@ path: COL_SALARY
 render: Candidate page /me, COL_SALARY
 narrative_slot: utility
 en: Salary
-th: เงินเดือน
-provenance: draft
+th: "เงินเดือน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 55479f0b0aa37061b20454a8c18718fef76ef8d7a42fea41272d96156eba53ad
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30870,19 +31000,20 @@ path: COL_LOCATION
 render: Candidate page /me, COL_LOCATION
 narrative_slot: utility
 en: Location
-th: สถานที่
-provenance: draft
+th: "สถานที่"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 726de349bd73d1adc0c578264c60df13104c2faa58fe589041b34419aafc58db
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30895,19 +31026,20 @@ path: COL_STATUS
 render: Candidate page /me, COL_STATUS
 narrative_slot: utility
 en: Status
-th: สถานะ
-provenance: draft
+th: "สถานะ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d786e2b6c377903ebdbd54784b56dadf41817fb8c1132eaea2d0bde40e5c1e12
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30920,19 +31052,20 @@ path: COL_SAVED
 render: Candidate page /me, COL_SAVED
 narrative_slot: utility
 en: Saved
-th: วันที่บันทึก
-provenance: draft
+th: "วันที่บันทึก"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 330b7f87a34ac35d3cad5d53e380e912110a1a20f414bb0be7602f1314f1fe5d
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30945,19 +31078,21 @@ path: COL_DEADLINE
 render: Candidate page /me, COL_DEADLINE
 narrative_slot: utility
 en: Closes
-th: ปิดรับ
-provenance: draft
+th: "ปิดรับสมัคร"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Completes the job deadline column label. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: a0e40c2f68cb4f4c79d827fee5ed3ecea24f4f50dbce20cc94b69779a259a62b
+  structural_calque: pass
+  text_hash: 34ca89ef361c45479066540fb3b59c67b5a987bdd50e69b9d41656a8b6f22fdd
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30970,19 +31105,20 @@ path: COL_APPLIED
 render: Candidate page /me, COL_APPLIED
 narrative_slot: utility
 en: Applied
-th: วันที่สมัคร
-provenance: draft
+th: "วันที่สมัคร"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 373ebcc2baa48f2cd01ac6a6b00a092669d42c4b990a58aa659f5764ec6558b1
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -30995,19 +31131,21 @@ path: COL_FOLLOW
 render: Candidate page /me, COL_FOLLOW
 narrative_slot: utility
 en: Follow up
-th: ตามผล
-provenance: draft
+th: "วันที่ follow up"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Names the date shown in this column and uses the same job-search term as the field and checklist. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: c6cec07c96dc110b8c1a56a2b63d549a72cd78ce665d6c626bc989451628f323
+  structural_calque: pass
+  text_hash: 40d31064a9bbac38a011200f44674564a2df84bc2e6ea5abf52872150f65b762
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31020,19 +31158,20 @@ path: COL_EXCITEMENT
 render: Candidate page /me, COL_EXCITEMENT
 narrative_slot: utility
 en: Interest
-th: ความสนใจ
-provenance: draft
+th: "ความสนใจ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 59d8e97ee19a2d24f5b6b8053fe67ba8079c09349c4e47559984f0b3a63a4444
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31045,19 +31184,20 @@ path: BACK_TO_LIST
 render: Candidate page /me, BACK_TO_LIST
 narrative_slot: utility
 en: Back to the list
-th: กลับไปที่ลิสต์
-provenance: draft
+th: "กลับไปที่ลิสต์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b755f5ca64301bbbce4d680cf7873883070e278bd4dc7ec7cdd3dddfac6b753c
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31070,19 +31210,20 @@ path: DTAB_INFO
 render: Candidate page /me, DTAB_INFO
 narrative_slot: utility
 en: Job info
-th: ข้อมูลงาน
-provenance: draft
+th: "ข้อมูลงาน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1da0f919331aa89d5c5d133b30a5b2ec90dffb140a1544ed5f5e4b96ce1f370e
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31095,19 +31236,20 @@ path: DTAB_NOTES
 render: Candidate page /me, DTAB_NOTES
 narrative_slot: utility
 en: Notes
-th: โน้ต
-provenance: draft
+th: "โน้ต"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 34b98421f48d12b986e715ad9e8b731fe6570064579c13dbffeadc3c486500bb
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31120,19 +31262,20 @@ path: DTAB_CV
 render: Candidate page /me, DTAB_CV
 narrative_slot: utility
 en: CV sent
-th: CV ที่ใช้สมัคร
-provenance: draft
+th: "CV ที่ใช้สมัคร"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f0880ecfb375ac05c71da4feb619cf83cc46c0dd7b13b1cae3f52ac4edf4cb8f
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31145,19 +31288,20 @@ path: DTAB_COACH
 render: Candidate page /me, DTAB_COACH
 narrative_slot: utility
 en: From your coach
-th: จากโค้ช
-provenance: draft
+th: "จากโค้ช"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 91707d6848790c167b9224d9ec5ae603712bc4eeb6ba6ce554787634abbe0cfe
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31170,19 +31314,20 @@ path: DTAB_INTERVIEWS
 render: Candidate page /me, DTAB_INTERVIEWS
 narrative_slot: utility
 en: Interviews
-th: สัมภาษณ์
-provenance: draft
+th: "สัมภาษณ์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 416737623e35d9b063ffb51ceb5d12d0620d522a7287dfa6f59d6234aa315522
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31195,19 +31340,20 @@ path: DTAB_CONTACTS
 render: Candidate page /me, DTAB_CONTACTS
 narrative_slot: utility
 en: Contacts
-th: ผู้ติดต่อ
-provenance: draft
+th: "ผู้ติดต่อ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 58b3289ec7d08014dcb946dbc28fa9a48b25ca257cb7ec73db0c15e5c76a68bd
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31220,19 +31366,21 @@ path: IV_EMPTY
 render: Candidate page /me, IV_EMPTY
 narrative_slot: utility
 en: No interview recorded yet. Add each round as it is booked, so you can prepare and look back.
-th: ยังไม่มีรอบสัมภาษณ์ เพิ่มแต่ละรอบเมื่อได้นัด จะได้เตรียมตัวและย้อนดูได้ครับ
-provenance: draft
+th: "ยังไม่ได้บันทึกรอบสัมภาษณ์ เมื่อได้นัดแล้ว ลองเพิ่มรายละเอียดแต่ละรอบไว้ที่นี่ จะได้เตรียมตัวและกลับมาดูย้อนหลังได้ครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Distinguishes no recorded interview from no interview and repairs the dangling เมื่อได้นัด phrase. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 446c11757da7978a8db466216bb8cafa18c91ffb490500d2905ae70d902607cd
+  structural_calque: pass
+  text_hash: 3ff7ba30590606f1908206f39a86f4e0ce9c9b0fa6c108159fee86d84fb9b737
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31245,19 +31393,20 @@ path: IV_ADD
 render: Candidate page /me, IV_ADD
 narrative_slot: utility
 en: Add a round
-th: เพิ่มรอบสัมภาษณ์
-provenance: draft
+th: "เพิ่มรอบสัมภาษณ์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: abf24cfe38b2f400a845fd27a2e26e63371eac1736564ae8437d0fa31c987c9a
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31270,19 +31419,20 @@ path: IV_ROUND
 render: Candidate page /me, IV_ROUND
 narrative_slot: utility
 en: Round
-th: รอบ
-provenance: draft
+th: "รอบ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: c1315553005971a9fb5f8144cac6ca4ede27b8df0e2c13836d8a433aa0132937
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31295,19 +31445,20 @@ path: IV_ROUND_HINT
 render: Candidate page /me, IV_ROUND_HINT
 narrative_slot: utility
 en: e.g. Recruiter screen, Technical, Final
-th: เช่น คุยกับ recruiter, technical, รอบสุดท้าย
-provenance: draft
+th: "เช่น คุยกับ recruiter, technical, รอบสุดท้าย"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 46296467c541a0138d4d565bd39cd71657140ffa7879fa4feb3650802cdf3a06
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31320,19 +31471,20 @@ path: IV_DATE
 render: Candidate page /me, IV_DATE
 narrative_slot: utility
 en: Date
-th: วันที่
-provenance: draft
+th: "วันที่"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e2968e64cb12a9aa579667241d27ee9bdf4901edf737358cc7142868db405292
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31345,19 +31497,20 @@ path: IV_FORMAT
 render: Candidate page /me, IV_FORMAT
 narrative_slot: utility
 en: Format
-th: รูปแบบ
-provenance: draft
+th: "รูปแบบ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f6c5c3e8864e551c35c935d87e4b7276fcbe41b453821e73986121688466b613
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31370,19 +31523,20 @@ path: IV_FORMATS.video
 render: Candidate page /me, IV_FORMATS.video
 narrative_slot: utility
 en: Video call
-th: วิดีโอคอล
-provenance: draft
+th: "วิดีโอคอล"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2c903e71abcea218c59178740e8badd6748a1d545e492bb36e25138f8f80f92d
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31395,19 +31549,20 @@ path: IV_FORMATS.phone
 render: Candidate page /me, IV_FORMATS.phone
 narrative_slot: utility
 en: Phone
-th: โทรศัพท์
-provenance: draft
+th: "โทรศัพท์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d90953e2936fa2a33bfccd52bc75b43ebc174eb6fe13be7cc92e67d298c7d55d
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31420,19 +31575,21 @@ path: IV_FORMATS.onsite
 render: Candidate page /me, IV_FORMATS.onsite
 narrative_slot: utility
 en: In person
-th: ที่บริษัท
-provenance: draft
+th: "พบกันโดยตรง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: In person does not necessarily mean at the company; removes an unsupported location restriction. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 7cf29792a7d1aeba8f24bd9c9aa547b5ccc5183b943f8576700abbb540de5d13
+  structural_calque: pass
+  text_hash: 4c2f5386a808a54b1b6c1164b5fc444e927e87394f561d01f3a1aad4e343e1f8
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31445,19 +31602,20 @@ path: IV_INTERVIEWERS
 render: Candidate page /me, IV_INTERVIEWERS
 narrative_slot: utility
 en: Interviewers
-th: ผู้สัมภาษณ์
-provenance: draft
+th: "ผู้สัมภาษณ์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3df928d8717265fa5808e608dc61310dfdb62875ae5105c21085027e3b7015b3
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31470,19 +31628,21 @@ path: IV_NOTES
 render: Candidate page /me, IV_NOTES
 narrative_slot: utility
 en: How it went, what they asked
-th: เป็นอย่างไรบ้าง ถูกถามอะไร
-provenance: draft
+th: "สัมภาษณ์เป็นอย่างไรบ้าง มีคำถามอะไรบ้าง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Names the interview event and avoids the passive ถูกถาม fragment. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 60a23e76c51778c6411d2eb2235027c18acfe2a26c28e1e76d9eb987d332917e
+  structural_calque: pass
+  text_hash: 4da7401f81691923554eaf65252a9bd5b68b3c749bde2630bf891f60b55ab80e
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31495,19 +31655,20 @@ path: CT_EMPTY
 render: Candidate page /me, CT_EMPTY
 narrative_slot: utility
 en: No contact yet. Add the recruiter or hiring manager you are talking to.
-th: ยังไม่มีผู้ติดต่อ เพิ่ม recruiter หรือ hiring manager ที่คุณคุยด้วยได้เลยครับ
-provenance: draft
+th: "ยังไม่มีผู้ติดต่อ เพิ่ม recruiter หรือ hiring manager ที่คุณคุยด้วยได้เลยครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d0abe65ad1ca5169932286e71abcbc49c69580436acd16a048b4a43d17d6d3c8
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31520,19 +31681,20 @@ path: CT_ADD
 render: Candidate page /me, CT_ADD
 narrative_slot: utility
 en: Add a contact
-th: เพิ่มผู้ติดต่อ
-provenance: draft
+th: "เพิ่มผู้ติดต่อ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 49c65928814649d569fbb2914645ef107acf0b1cf51c5c838f9692e51cc0c835
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31545,19 +31707,20 @@ path: CT_NAME
 render: Candidate page /me, CT_NAME
 narrative_slot: utility
 en: Name
-th: ชื่อ
-provenance: draft
+th: "ชื่อ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e33b137dfee74dd686f9b0fed9d473630545b4d46d67224e27e4a78840711d40
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31570,19 +31733,20 @@ path: CT_ROLE
 render: Candidate page /me, CT_ROLE
 narrative_slot: utility
 en: Role
-th: ตำแหน่ง
-provenance: draft
+th: "ตำแหน่ง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: c4d7298907038c14b16a743c684a63bde736d94c4f144ce8b518be2786eb1a18
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31595,19 +31759,20 @@ path: CT_ROLE_HINT
 render: Candidate page /me, CT_ROLE_HINT
 narrative_slot: utility
 en: e.g. Recruiter, Hiring manager
-th: เช่น Recruiter, Hiring manager
-provenance: draft
+th: "เช่น Recruiter, Hiring manager"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2528e8ec237382c55f5fa5e0f5f1820a4ee3dc9da5b88e477c20e30f52225193
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31620,19 +31785,20 @@ path: CT_EMAIL
 render: Candidate page /me, CT_EMAIL
 narrative_slot: utility
 en: Email
-th: อีเมล
-provenance: draft
+th: "อีเมล"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a84c4b8c0704df5c212c7bb1f7ab937e0d90bb602645a37b99a6fb7e5235735f
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31645,19 +31811,20 @@ path: CT_LINKEDIN
 render: Candidate page /me, CT_LINKEDIN
 narrative_slot: utility
 en: LinkedIn link
-th: ลิงก์ LinkedIn
-provenance: draft
+th: "ลิงก์ LinkedIn"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 393091ed62308176a6da3a93c43dca59bade29d89930f0f1702e62c613ecfb10
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31670,19 +31837,21 @@ path: JD_HEADING
 render: Candidate page /me, JD_HEADING
 narrative_slot: utility
 en: Job description and keywords
-th: Job description และคำสำคัญ
-provenance: draft
+th: "Job description และคีย์เวิร์ด"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Uses the familiar job-search term for keywords rather than a literal mixed-register label. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 98e957c6430b10dd7cfc5ef93eaa33ebcab68dd6a1f85b1315bb74e5fd5b381c
+  structural_calque: pass
+  text_hash: e830ac8179aae8669bc41f62a264c2e8078461603ad82a62f3c8899642b94d4a
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31697,19 +31866,21 @@ narrative_slot: utility
 en: >-
   Paste the posting here. It stays even if the posting is taken down, and the words it repeats show
   underneath.
-th: วางข้อความประกาศงานไว้ตรงนี้ เก็บไว้ได้แม้ประกาศจะถูกลบ และคำที่ประกาศพูดซ้ำบ่อย ๆ จะขึ้นด้านล่างครับ
-provenance: draft
+th: "ลองวาง job description ไว้ที่นี่ คุณจะกลับมาอ่านได้แม้บริษัทลบประกาศไปแล้ว และดูคำที่ใช้บ่อยในประกาศได้ด้านล่างครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Removes document speech, names the company and reader, and makes the retained-copy benefit concrete. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 4bf16f8c1dde109e4ec6423504b3d6eba1b1281e8cae957f009ed8c67c822068
+  structural_calque: pass
+  text_hash: 05f32ef286c6109a236274c6921c45c87a122e22ba642a39fd709aec2481d7c4
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31722,19 +31893,21 @@ path: JD_KEYWORDS
 render: Candidate page /me, JD_KEYWORDS
 narrative_slot: utility
 en: Words this posting repeats
-th: คำที่ประกาศนี้พูดซ้ำ
-provenance: draft
+th: "คำที่ใช้บ่อยในประกาศนี้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Removes the translated document-speaks construction พูดซ้ำ. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: e164b65da21ae1902589cf37cd4008b0725cdc3812bbdd2a2c20efb11c4df385
+  structural_calque: pass
+  text_hash: 97686828a18af62feeeff322225ea4d1c954c49f88a10643767d194624063591
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31747,19 +31920,20 @@ path: JD_EMPTY
 render: Candidate page /me, JD_EMPTY
 narrative_slot: utility
 en: No job description pasted yet.
-th: ยังไม่ได้วาง job description
-provenance: draft
+th: "ยังไม่ได้วาง job description"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2404f4b91a54aa3a5e0c37d00a576f6bb6e48ed95e17fced4ac63bf914241c36
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31772,19 +31946,20 @@ path: LIST_REMOVE
 render: Candidate page /me, LIST_REMOVE
 narrative_slot: utility
 en: Remove
-th: ลบ
-provenance: draft
+th: "ลบ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 23922b748a978d3baf672ff203698f9136f446bdd6aa2bd7fecc1b3f1263de7f
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31797,19 +31972,20 @@ path: DETAIL_DATES
 render: Candidate page /me, DETAIL_DATES
 narrative_slot: utility
 en: Dates
-th: วันที่
-provenance: draft
+th: "วันที่"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 92d941eb5ae32315eda23834c6bc5537e8f6f6459928ac84a0582158df1bf440
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31824,21 +32000,21 @@ narrative_slot: utility
 en: >-
   We picked this role for you, so its details stay as we sent them. Your notes, follow-up date, interest and
   the CV you sent are yours to change.
-th: >-
-  ตำแหน่งนี้เราคัดให้ รายละเอียดงานจึงคงไว้ตามที่ส่งมา ส่วนโน้ต วันตามผล ความสนใจ และ CV ที่ใช้สมัคร
-  แก้ได้เองครับ
-provenance: draft
+th: "เราคัดตำแหน่งนี้มาให้คุณ จึงเก็บรายละเอียดงานไว้ตามที่ส่งให้ ส่วนโน้ต วันที่ follow up ระดับความสนใจ และ CV ที่ใช้สมัคร คุณแก้ไขเองได้ครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Names who preserves the original job details and who can edit the personal fields; removes the English-controlled passive structure. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 20f2d847a8ab44f4aa22173d4912a1c8acaa99f64c19f9dbe47cc21282d12533
+  structural_calque: pass
+  text_hash: cb0531c81f4787c314688ea79ba5e7291acc162c3e75b8d89cddee11e4731b8e
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31851,19 +32027,21 @@ path: CV_SENT_HELP
 render: Candidate page /me, CV_SENT_HELP
 narrative_slot: utility
 en: Pick the CV you sent with this job, so you can see later which version worked.
-th: เลือกว่าส่ง CV ฉบับไหนไปกับงานนี้ จะได้ย้อนดูได้ว่าฉบับไหนได้ผลครับ
-provenance: draft
+th: "เลือก CV ฉบับที่คุณส่งสมัครตำแหน่งนี้ไว้ จะได้กลับมาดูว่าคุณใช้ฉบับไหนแล้วได้ผลอย่างไรครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Repairs ส่งไปกับงาน and clarifies the purpose of linking a sent CV to the application. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 3acd4836c9b37a07b51e30c4499a5fd40082742959001b609b2b9d1f5c609645
+  structural_calque: pass
+  text_hash: 6324be3441e4ee43aee21ef0f4c7b50a10f30140df47692f2b83d7ba13636758
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31876,19 +32054,20 @@ path: CV_SENT_NONE
 render: Candidate page /me, CV_SENT_NONE
 narrative_slot: utility
 en: Not chosen
-th: ยังไม่ได้เลือก
-provenance: draft
+th: "ยังไม่ได้เลือก"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 02b9b85eaeada7ccea538234b12669252e18e8c65e3dc845f7ac6a652d94c7ef
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31901,19 +32080,20 @@ path: COACH_NOTES_NONE
 render: Candidate page /me, COACH_NOTES_NONE
 narrative_slot: utility
 en: No note from your coach on this job yet.
-th: ยังไม่มีโน้ตจากโค้ชสำหรับงานนี้
-provenance: draft
+th: "ยังไม่มีโน้ตจากโค้ชสำหรับงานนี้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 05270aaadbadbfe5f226fb649813710072297bf1cc11ad6bf977e508895c962a
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31926,19 +32106,21 @@ path: CLOSE_AS
 render: Candidate page /me, CLOSE_AS
 narrative_slot: utility
 en: Close it as
-th: ปิดงานนี้เป็น
-provenance: draft
+th: "จบการสมัครตำแหน่งนี้ด้วยสถานะ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Replaces the literal ปิดงานนี้เป็น while still introducing the adjacent closed-status buttons. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 74b9e8335823e5fc4f38093596f3f11cb060309e20dec532a1a05c3dd701b337
+  structural_calque: pass
+  text_hash: 33ce3d4943d8b1b67d5b4c9d3f9d45d37ada582ced64373a7254ea01d91782e9
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31951,19 +32133,21 @@ path: REOPEN
 render: Candidate page /me, REOPEN
 narrative_slot: utility
 en: Reopen as saved
-th: เปิดกลับมาเป็นบันทึกไว้
-provenance: draft
+th: "กลับไปสถานะ “บันทึกไว้”"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Uses the exact destination status and removes the unnatural เปิดกลับมาเป็น construction. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 023c870c9046228626b53dde625cf995e15dfde9d59a13c1dee52ca79d6f4ae4
+  structural_calque: pass
+  text_hash: de623b06db98b2cf657451ba02d474f416cc164fa1cdf532522b83daa41f262b
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -31976,19 +32160,20 @@ path: SAVED_OK
 render: Candidate page /me, SAVED_OK
 narrative_slot: utility
 en: Saved
-th: บันทึกแล้ว
-provenance: draft
+th: "บันทึกแล้ว"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3960c55ec6407c77722304b33471a08c67e973a220eaf3b0c2d9e45eaa3c2cb2
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32001,19 +32186,20 @@ path: ADD_JOB
 render: Candidate page /me, ADD_JOB
 narrative_slot: utility
 en: Add a job
-th: เพิ่มงาน
-provenance: draft
+th: "เพิ่มงาน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f7836557d666ad8316ea7be32493d78644eec04449cdc676c031da1405ab6d57
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32026,19 +32212,20 @@ path: ADD_ROLE
 render: Candidate page /me, ADD_ROLE
 narrative_slot: utility
 en: Job title
-th: ตำแหน่ง
-provenance: draft
+th: "ตำแหน่ง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4da609077db99b81c41e39975b79569b93cdbd05d913bd53fa5525122ba1af0d
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32051,19 +32238,20 @@ path: ADD_EMPLOYER
 render: Candidate page /me, ADD_EMPLOYER
 narrative_slot: utility
 en: Company
-th: บริษัท
-provenance: draft
+th: "บริษัท"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4377230cc3a7af66f77ae811be3297baa079c3164af6c9c496ce44d26333a109
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32076,19 +32264,20 @@ path: ADD_COUNTRY
 render: Candidate page /me, ADD_COUNTRY
 narrative_slot: utility
 en: Country
-th: ประเทศ
-provenance: draft
+th: "ประเทศ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 92f0a137f5892949b2175a489b56b6f735623760772b79d455158abf62d2918c
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32101,19 +32290,20 @@ path: ADD_LOCATION
 render: Candidate page /me, ADD_LOCATION
 narrative_slot: utility
 en: City, or remote
-th: เมือง หรือ remote
-provenance: draft
+th: "เมือง หรือ remote"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0a61dcf13ef7bafe8c985ee1a63844e97a47dc6355af0a0d82da3a7ddf1e63ed
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32126,19 +32316,20 @@ path: ADD_URL
 render: Candidate page /me, ADD_URL
 narrative_slot: utility
 en: Link to the posting
-th: ลิงก์ประกาศงาน
-provenance: draft
+th: "ลิงก์ประกาศงาน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0f2ab0a51e22e7a6056a1c20d49d0eaabc3a3cbde59f732aca5d4f53470329d3
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32151,19 +32342,20 @@ path: ADD_SALARY
 render: Candidate page /me, ADD_SALARY
 narrative_slot: utility
 en: Salary, if stated
-th: เงินเดือน ถ้ามีระบุ
-provenance: draft
+th: "เงินเดือน ถ้ามีระบุ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e0c32b33edf6590757b4c189f557b36e97a017316bfc5bdcb222d6cbc9767996
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32176,19 +32368,20 @@ path: ADD_STATUS
 render: Candidate page /me, ADD_STATUS
 narrative_slot: utility
 en: Where you are with it
-th: ตอนนี้อยู่ขั้นไหน
-provenance: draft
+th: "ตอนนี้อยู่ขั้นไหน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3cc7f99d47fa57da233d7f06b15bc2c8fa09ef74defe718f27e4a0b8c1194606
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32201,19 +32394,20 @@ path: ERROR_FIELDS
 render: Candidate page /me, ERROR_FIELDS
 narrative_slot: utility
 en: Fill in the job title, company and country first.
-th: กรอกตำแหน่ง บริษัท และประเทศก่อนนะครับ
-provenance: draft
+th: "กรอกตำแหน่ง บริษัท และประเทศก่อนนะครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0a32aa7186290bef1c54d7b10ecafd0995b3506faacb66dcfe2652cd787507b6
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32226,19 +32420,21 @@ path: ERROR_GENERIC
 render: Candidate page /me, ERROR_GENERIC
 narrative_slot: utility
 en: That did not save. Try again in a moment.
-th: ยังบันทึกไม่สำเร็จ ลองใหม่อีกครั้งนะครับ
-provenance: draft
+th: "ยังบันทึกไม่สำเร็จ ลองใหม่อีกครั้งในอีกสักครู่นะครับ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Restores the brief wait in the English retry instruction. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 908093b43383185b10ecaf17221d14a1de14d4efd025e6a5d1a96d44a34210e6
+  structural_calque: pass
+  text_hash: 9317b451eb862b4991e253678d593c234f8fb9b2c8331e52432dd5b51d834689
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32251,19 +32447,20 @@ path: LOADING
 render: Candidate page /me, LOADING
 narrative_slot: utility
 en: Loading...
-th: กำลังโหลด...
-provenance: draft
+th: "กำลังโหลด..."
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4b50f43ab320420f64410bdf148ec36ce9864c5bbc5956136abd49a930f49cf9
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32276,19 +32473,21 @@ path: CHECKLIST.interested[0].label
 render: Candidate page /me, job checklist, Saved stage, step 1
 narrative_slot: utility
 en: Read the whole job description and note the words it repeats
-th: อ่าน job description ให้จบ แล้วจดคำที่ประกาศพูดซ้ำบ่อย ๆ
-provenance: draft
+th: "ลองอ่าน job description ให้ครบ แล้วจดคีย์เวิร์ดที่ใช้บ่อยไว้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Removes document speech and opens consultatively without losing either checklist action. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: b9ccfd262efccb5c8a139d5f14a1ae28d8e3ccbb4d8ed6dbb63e4e7b2e30c3a0
+  structural_calque: pass
+  text_hash: c8bfbd94e4019232afd2c2e03e8e7f9a6d03c9a9f9d358e32cc5a252e0bfaaa0
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32301,19 +32500,20 @@ path: CHECKLIST.interested[1].label
 render: Candidate page /me, job checklist, Saved stage, step 2
 narrative_slot: utility
 en: Choose the CV version you will send
-th: เลือก CV ฉบับที่จะใช้กับงานนี้
-provenance: draft
+th: "เลือก CV ฉบับที่จะใช้กับงานนี้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 8e5ebc84bbd1b48e49225961dd8dbefc6efdb58f41ed3f87f067bdb1318b69de
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32326,19 +32526,20 @@ path: CHECKLIST.interested[2].label
 render: Candidate page /me, job checklist, Saved stage, step 3
 narrative_slot: utility
 en: Tailor that CV to use the posting's own words
-th: ปรับ CV ให้ใช้คำเดียวกับใน job description
-provenance: draft
+th: "ปรับ CV ให้ใช้คำเดียวกับใน job description"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2192e3961c7fa9a981febb9b408c4a6d00f8e8162f1071a03b7d7f8e752f2964
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32351,19 +32552,21 @@ path: CHECKLIST.interested[3].label
 render: Candidate page /me, job checklist, Saved stage, step 4
 narrative_slot: utility
 en: Write a cover letter or short note, if the posting asks for one
-th: เขียน cover letter หรือข้อความแนะนำตัวสั้น ๆ ถ้าประกาศขอ
-provenance: draft
+th: "ถ้าบริษัทขอ cover letter หรือข้อความแนะนำตัวสั้น ๆ ลองเตรียมไว้ก่อนส่งใบสมัคร"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Names the employer making the request and places the condition before the candidate’s action. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 39b68c8f3124de95bf25e4771ba2c6f56396de3af1a3ec30477422334178f49c
+  structural_calque: pass
+  text_hash: e36224dc1c17d82641d4570ffaeae65418f79b0f7662b09950432d15b625bdad
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32376,19 +32579,20 @@ path: CHECKLIST.interested[4].label
 render: Candidate page /me, job checklist, Saved stage, step 5
 narrative_slot: utility
 en: Add the closing date, if there is one
-th: ใส่วันปิดรับสมัคร ถ้าประกาศระบุไว้
-provenance: draft
+th: "ใส่วันปิดรับสมัคร ถ้าประกาศระบุไว้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 444932b86d3b08a2418dec7eb3c099427888ce47a7dfdd25a2c3d31c7eda336f
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32401,19 +32605,20 @@ path: CHECKLIST.applied[0].label
 render: Candidate page /me, job checklist, Applied stage, step 1
 narrative_slot: utility
 en: Record which CV you sent, in the CV sent tab
-th: บันทึกว่าส่ง CV ฉบับไหนไป ในแท็บ CV ที่ใช้สมัคร
-provenance: draft
+th: "บันทึกว่าส่ง CV ฉบับไหนไป ในแท็บ CV ที่ใช้สมัคร"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 734f2b06accab1f125b5be381afbf1dc2da70b189710872f90f4d69cae2791be
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32426,19 +32631,21 @@ path: CHECKLIST.applied[1].label
 render: Candidate page /me, job checklist, Applied stage, step 2
 narrative_slot: utility
 en: Set a follow-up date 7 to 10 days from now
-th: ตั้งวันตามผล ประมาณ 7 ถึง 10 วันหลังสมัคร
-provenance: draft
+th: "ตั้งวันที่จะ follow up ไว้ประมาณ 7 ถึง 10 วันหลังสมัคร"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Uses the established follow-up term. The supplied clarification confirms 7 to 10 days after applying, not from today. English still says from now and needs a separate correction; en is unchanged under the handoff constraint. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: a6c594144d970fce02c1e033bb2b30459c2b082998f701495a1fd6a68c616e2e
+  structural_calque: pass
+  text_hash: e15718ab333da7080f3e8f3bd727c2685311687c6cdd4b4d7276cb8888c79f44
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32451,19 +32658,21 @@ path: CHECKLIST.applied[2].label
 render: Candidate page /me, job checklist, Applied stage, step 3
 narrative_slot: utility
 en: Find the recruiter or hiring manager on LinkedIn and add them as a contact
-th: หา recruiter หรือ hiring manager บน LinkedIn แล้วเพิ่มในแท็บผู้ติดต่อ
-provenance: draft
+th: "ลองหา recruiter หรือ hiring manager บน LinkedIn แล้วบันทึกไว้ในแท็บผู้ติดต่อ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Makes the in-app contact-saving action explicit. The supplied clarification confirms saving the recruiter or hiring manager in this job’s Contacts tab, not sending a LinkedIn connection request. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 43c7aeee53514d109542e61c66b13f62e4a20288761c6565d98157f22a2eb489
+  structural_calque: pass
+  text_hash: be76d5e5a94699ca38abc93903d4163a98d30d8af62b76fa72ca355118fa29e5
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32476,19 +32685,20 @@ path: CHECKLIST.applied[3].label
 render: Candidate page /me, job checklist, Applied stage, step 4
 narrative_slot: utility
 en: Send them a short message that you have applied
-th: ส่งข้อความสั้น ๆ ทาง LinkedIn ว่าคุณสมัครตำแหน่งนี้แล้ว
-provenance: draft
+th: "ส่งข้อความสั้น ๆ ทาง LinkedIn ว่าคุณสมัครตำแหน่งนี้แล้ว"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d563bf4d74b16b4420daddca02b01f377cdf8de782a78bfbdfc0f4a14fdb5eff
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32501,19 +32711,21 @@ path: CHECKLIST.applied[4].label
 render: Candidate page /me, job checklist, Applied stage, step 5
 narrative_slot: utility
 en: Follow up on the date if you have heard nothing
-th: ถ้าถึงวันตามผลแล้วยังเงียบ ทักไปถามอีกครั้ง
-provenance: draft
+th: "ถ้าถึงวันที่ตั้งไว้แล้วยังไม่ได้รับคำตอบ ลองส่งข้อความไป follow up อีกครั้ง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Replaces the vague แล้วยังเงียบ with the candidate’s observed situation and a consultative next action. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: f00b4ea46a87a84ac519239c0c11c09786dcaded1374b3e994843504dae6bed7
+  structural_calque: pass
+  text_hash: b95c7707ec8224c12972e45e93e2e356b037892cfadb3c0c151af2a58886dab4
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32526,19 +32738,20 @@ path: CHECKLIST.screening[0].label
 render: Candidate page /me, job checklist, Screening stage, step 1
 narrative_slot: utility
 en: Prepare a one-minute answer to 'tell me about yourself'
-th: เตรียมคำตอบแนะนำตัวให้จบใน 1 นาที
-provenance: draft
+th: "เตรียมคำตอบแนะนำตัวให้จบใน 1 นาที"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f03740708edb0bf68c5cd38606c44b319048ac4589e46ec15778ca76cac10e0c
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32551,19 +32764,21 @@ path: CHECKLIST.screening[1].label
 render: Candidate page /me, job checklist, Screening stage, step 2
 narrative_slot: utility
 en: Prepare your expected salary as a yearly range in the local currency
-th: เตรียมเงินเดือนที่คาดหวัง เป็นช่วงต่อปีในสกุลเงินของประเทศนั้น
-provenance: draft
+th: "เตรียมช่วงเงินเดือนที่คาดหวัง โดยคิดเป็นรายปีและใช้สกุลเงินของประเทศนั้น"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Repairs เป็นช่วงต่อปี so the candidate knows to prepare an annual salary range rather than money itself. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 4373a32742e18604c809cd22bb4cbc9327f1574cfeacc76d205942f3215de89e
+  structural_calque: pass
+  text_hash: 834295da1e6b551f7dc45ce0fb128ebdf578d0f6c9439a8e5552fd0c7fce99a3
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32576,19 +32791,21 @@ path: CHECKLIST.screening[2].label
 render: Candidate page /me, job checklist, Screening stage, step 3
 narrative_slot: utility
 en: Know your notice period and the earliest date you can start
-th: เช็ก notice period และวันที่เร็วที่สุดที่เริ่มงานได้
-provenance: draft
+th: "เช็ก notice period ของคุณ และวันที่คุณเริ่มงานได้เร็วที่สุด"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Makes the reader explicit and restores natural Thai order for earliest start date. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 71d729c610cab568af75e92fdd352373a1e1db8dec85f39570a015ee135fb0e4
+  structural_calque: pass
+  text_hash: b18bc757018a72452aab5a38b5bea55aaa3c2f8c5372e6862de780e9edc310c2
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32601,19 +32818,20 @@ path: CHECKLIST.screening[3].label
 render: Candidate page /me, job checklist, Screening stage, step 4
 narrative_slot: utility
 en: Test your microphone, camera and the call link 10 minutes before
-th: ทดสอบไมค์ กล้อง และลิงก์ก่อนเวลานัด 10 นาที
-provenance: draft
+th: "ทดสอบไมค์ กล้อง และลิงก์ก่อนเวลานัด 10 นาที"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 74c35a03b07406cf7d9e83029dd8e045f335373f2672b137da08cd7cf06e26ca
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32626,19 +32844,21 @@ path: CHECKLIST.screening[4].label
 render: Candidate page /me, job checklist, Screening stage, step 5
 narrative_slot: utility
 en: Afterwards, log who you spoke to and what they asked, in Interviews
-th: คุยเสร็จแล้ว จดชื่อคนที่คุยและสิ่งที่ถูกถามในแท็บสัมภาษณ์
-provenance: draft
+th: "หลังคุยเสร็จ ลองบันทึกว่าคุยกับใครและมีคำถามอะไรบ้างไว้ในแท็บสัมภาษณ์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Names the candidate’s action instead of using a passive สิ่งที่ถูกถาม fragment. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 58d42efd16888a5d47503298d69fcc7b479fde13680c11960a245f7baee0bec0
+  structural_calque: pass
+  text_hash: 7be5df911261e90186eee04915666990bac6ece86462b1b0be1452de209c0fee
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32651,19 +32871,20 @@ path: CHECKLIST.interviewing[0].label
 render: Candidate page /me, job checklist, Interviewing stage, step 1
 narrative_slot: utility
 en: Research the company and the people interviewing you
-th: หาข้อมูลบริษัทและคนที่จะสัมภาษณ์คุณ
-provenance: draft
+th: "หาข้อมูลบริษัทและคนที่จะสัมภาษณ์คุณ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: dcaa08d06c0716a792665819ea5ab141c7d4fd5ead95844a97c953a826e7a2b7
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32676,19 +32897,20 @@ path: CHECKLIST.interviewing[1].label
 render: Candidate page /me, job checklist, Interviewing stage, step 2
 narrative_slot: utility
 en: Prepare three examples of your work, each with a result in numbers
-th: เตรียมตัวอย่างผลงาน 3 เรื่อง แต่ละเรื่องมีผลลัพธ์เป็นตัวเลข
-provenance: draft
+th: "เตรียมตัวอย่างผลงาน 3 เรื่อง แต่ละเรื่องมีผลลัพธ์เป็นตัวเลข"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 650741e02cf308da5dbd51a3819c6ff48f61f62c7dc4f68803f0e539b5559864
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32701,19 +32923,20 @@ path: CHECKLIST.interviewing[2].label
 render: Candidate page /me, job checklist, Interviewing stage, step 3
 narrative_slot: utility
 en: Prepare three questions to ask them
-th: เตรียมคำถามถามกลับ 3 ข้อ
-provenance: draft
+th: "เตรียมคำถามถามกลับ 3 ข้อ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4ab162c8f5ab3a810017faae2a61ce7f139f0d9a0c1990190e3fc6a687575dfc
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32726,19 +32949,20 @@ path: CHECKLIST.interviewing[3].label
 render: Candidate page /me, job checklist, Interviewing stage, step 4
 narrative_slot: utility
 en: Send a thank-you email within 24 hours of each round
-th: ส่งอีเมลขอบคุณภายใน 24 ชั่วโมงหลังสัมภาษณ์แต่ละรอบ
-provenance: draft
+th: "ส่งอีเมลขอบคุณภายใน 24 ชั่วโมงหลังสัมภาษณ์แต่ละรอบ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1d45857ee20b85cdf2b0a23db2a04bc868816244d1b1d25f81fe67749a2ec9f4
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32751,19 +32975,21 @@ path: CHECKLIST.interviewing[4].label
 render: Candidate page /me, job checklist, Interviewing stage, step 5
 narrative_slot: utility
 en: Log each round and what was asked, in Interviews
-th: บันทึกแต่ละรอบและสิ่งที่ถูกถามในแท็บสัมภาษณ์
-provenance: draft
+th: "บันทึกรายละเอียดแต่ละรอบและคำถามที่เจอไว้ในแท็บสัมภาษณ์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Specifies what to record and removes the translated passive สิ่งที่ถูกถาม. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: dc44b46d48aac27418d286b78eb3b449a64be7fe724042840917e508795490bc
+  structural_calque: pass
+  text_hash: 275d83c42a8b993dd69a1686fd67642d8e36bc9c4ee8ea0f006461fd6bf539e5
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32776,19 +33002,20 @@ path: CHECKLIST.offer[0].label
 render: Candidate page /me, job checklist, Offer stage, step 1
 narrative_slot: utility
 en: Ask for the offer in writing
-th: ขอข้อเสนอเป็นลายลักษณ์อักษร
-provenance: draft
+th: "ขอข้อเสนอเป็นลายลักษณ์อักษร"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 27f7228477e549071379793c64b695f1abfd3cee53d578bcbb33eed6d51ec193
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32801,19 +33028,20 @@ path: CHECKLIST.offer[1].label
 render: Candidate page /me, job checklist, Offer stage, step 2
 narrative_slot: utility
 en: Work out the salary after tax against the city's cost of living
-th: คำนวณเงินเดือนหลังหักภาษี แล้วเทียบกับค่าครองชีพของเมืองนั้น
-provenance: draft
+th: "คำนวณเงินเดือนหลังหักภาษี แล้วเทียบกับค่าครองชีพของเมืองนั้น"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a95ee6f84d9df7c55a2e3bb5d1232dc8699518e7c595a2dca22688cb8bd9bb94
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32826,19 +33054,21 @@ path: CHECKLIST.offer[2].label
 render: Candidate page /me, job checklist, Offer stage, step 3
 narrative_slot: utility
 en: Check the start date, probation period and paid leave
-th: เช็กวันเริ่มงาน ช่วงทดลองงาน และวันลาพักร้อน
-provenance: draft
+th: "เช็กวันเริ่มงาน ระยะทดลองงาน และวันลาที่ได้รับค่าจ้าง"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Preserves paid leave, which is broader than the draft’s annual holiday alone. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: e189baaa5298c96e6865d85fc07d3d7c2cdc33780a07b558a40c85a9bf574ad2
+  structural_calque: pass
+  text_hash: c09cc1702f371cabd4cee316cc27cd5292ad4f826b4ea10da85729e1c68d863a
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32851,19 +33081,20 @@ path: CHECKLIST.offer[3].label
 render: Candidate page /me, job checklist, Offer stage, step 4
 narrative_slot: utility
 en: Accept or negotiate before the deadline they gave
-th: ตอบรับหรือต่อรองก่อนวันที่บริษัทกำหนด
-provenance: draft
+th: "ตอบรับหรือต่อรองก่อนวันที่บริษัทกำหนด"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 8578511f64e182ea2fecc40a6b80e6075fb62258103ee16b7f130724fd499275
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32876,19 +33107,20 @@ path: CHECKLIST.offer[4].label
 render: Candidate page /me, job checklist, Offer stage, step 5
 narrative_slot: utility
 en: If anything in the contract is unclear, ask your coach before you sign
-th: ถ้ามีอะไรในสัญญาที่ไม่แน่ใจ ทักโค้ชก่อนเซ็น
-provenance: draft
+th: "ถ้ามีอะไรในสัญญาที่ไม่แน่ใจ ทักโค้ชก่อนเซ็น"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 8fd38537c6ba2907c8479afb2df523551430548fbbcaf3082bea538e6ca4e35d
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32901,19 +33133,20 @@ path: CHECKLIST.accepted[0].label
 render: Candidate page /me, job checklist, Accepted stage, step 1
 narrative_slot: utility
 en: Sign the contract and keep a copy
-th: เซ็นสัญญาและเก็บสำเนาไว้
-provenance: draft
+th: "เซ็นสัญญาและเก็บสำเนาไว้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 5ef9b37ebc0c7b36fb80ccda63b707c2d8585ada728391deb30bde8f327ad699
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32926,19 +33159,20 @@ path: CHECKLIST.accepted[1].label
 render: Candidate page /me, job checklist, Accepted stage, step 2
 narrative_slot: utility
 en: Tell the other companies you are still talking to that you are withdrawing
-th: แจ้งบริษัทอื่นที่ยังคุยอยู่ว่าคุณขอถอนตัว
-provenance: draft
+th: "แจ้งบริษัทอื่นที่ยังคุยอยู่ว่าคุณขอถอนตัว"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2768537e0bfaeb6bf6d3a0db285828032ba1b2852fa7849a5057d1d4c652dcaa
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32951,19 +33185,21 @@ path: CHECKLIST.accepted[2].label
 render: Candidate page /me, job checklist, Accepted stage, step 3
 narrative_slot: utility
 en: Close your other jobs in this list as withdrawn
-th: ปิดงานอื่นในลิสต์นี้เป็น ถอนตัว
-provenance: draft
+th: "เปลี่ยนสถานะตำแหน่งอื่นในลิสต์นี้เป็น “ถอนตัว”"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Names the actual status-edit action instead of translating close jobs as ปิดงาน. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 0b2046211d9116f6641d0b10d06117d8c0a301d94b4a1375a288e0fc75bcdd06
+  structural_calque: pass
+  text_hash: 5430e670201d7e9ddf974f6620e5c0f5fd0f0ee5ab45d798f8944e4a38276bdb
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32976,19 +33212,20 @@ path: CHECKLIST.accepted[3].label
 render: Candidate page /me, job checklist, Accepted stage, step 4
 narrative_slot: utility
 en: Thank the people who referred you or gave a reference
-th: ขอบคุณคนที่ช่วยแนะนำหรือเป็น reference ให้
-provenance: draft
+th: "ขอบคุณคนที่ช่วยแนะนำหรือเป็น reference ให้"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 304e556371ad8d445f292cbea7f313134fefeb55cbef631ab62b96746fc0c8de
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -33001,19 +33238,20 @@ path: CHECKLIST.accepted[4].label
 render: Candidate page /me, job checklist, Accepted stage, step 5
 narrative_slot: utility
 en: Ask the employer which documents they need before your first day
-th: ถามบริษัทว่าต้องเตรียมเอกสารอะไรบ้างก่อนวันเริ่มงาน
-provenance: draft
+th: "ถามบริษัทว่าต้องเตรียมเอกสารอะไรบ้างก่อนวันเริ่มงาน"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 43086ef7d28d508ec3cb7ea615327b1e4de85e18e9e177341738ff87e78cd5cb
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -33026,19 +33264,20 @@ path: CHECKLIST_TAB
 render: Candidate page /me, CHECKLIST_TAB
 narrative_slot: utility
 en: Checklist
-th: เช็กลิสต์
-provenance: draft
+th: "เช็กลิสต์"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 7d859b5535ad41e6097bf7e69bb696a777bb2300630dbd99663475d8b7e95eb8
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -33051,19 +33290,21 @@ path: CHECKLIST_PROGRESS
 render: Candidate page /me, CHECKLIST_PROGRESS
 narrative_slot: utility
 en: '{stage} steps: {done} of {total} done'
-th: 'ขั้น{stage}: ทำแล้ว {done} จาก {total}'
-provenance: draft
+th: "ขั้นตอนในสถานะ {stage}: ทำแล้ว {done} จาก {total} ข้อ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Avoids joining ขั้น directly to substituted status labels and clarifies the unit of progress. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: 18483440488218bccd000d5279b252174872d11fa52ad076ef76fc2ab92a934f
+  structural_calque: pass
+  text_hash: 1d29d260eb57eb44e35d2da38f77e6fb3af88d26d17483802ddfd7921842c409
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
 
 <!-- COPY-ENTRY -->
@@ -33076,17 +33317,19 @@ path: CHECKLIST_OTHER
 render: Candidate page /me, CHECKLIST_OTHER
 narrative_slot: utility
 en: Other stages
-th: ขั้นอื่น ๆ
-provenance: draft
+th: "ขั้นตอนในสถานะอื่น ๆ"
+provenance: paul-approved
 date: 31/10/2026
 term_bindings: []
 decision_note: >-
   Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
   thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
   migration; the review may change it.
+  Thai review 31/10/2026, structural-calque-v1: Other stages refers to grouped application statuses, not individual checklist steps. Proposal accepted by the delegated final reviewer.
+  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
 review:
-  structural_calque: pending
-  text_hash: fade1cb3a7366ae49ec26f99ed0181807ca5887de9d385f76c16ea7010a565a5
+  structural_calque: pass
+  text_hash: 7e1a6342dc5e6a980d5c1dd48c18f4556627ecd78c39779da63a4bb47bf376d4
   prompt_version: structural-calque-v1
-  basis: Awaiting Paul's review in the language queue.
+  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
