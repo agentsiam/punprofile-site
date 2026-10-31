@@ -27962,3 +27962,5131 @@ review:
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PORTAL_TITLE`
+
+```yaml
+id: src/lib/content/portal.ts::PORTAL_TITLE
+source: src/lib/content/portal.ts
+path: PORTAL_TITLE
+render: Candidate page /me, PORTAL_TITLE
+narrative_slot: utility
+en: Your page
+th: หน้าของคุณ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 598d22521b256853394f95f85953caab36977ec9cfe0c1e648d31a22d288c477
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PORTAL_GREETING`
+
+```yaml
+id: src/lib/content/portal.ts::PORTAL_GREETING
+source: src/lib/content/portal.ts
+path: PORTAL_GREETING
+render: Candidate page /me, PORTAL_GREETING
+narrative_slot: utility
+en: Hi {name}
+th: สวัสดีครับ {name}
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 59479fe5621210860d34491e5c2d615cc5139c3f1f2a3b408b0af3783cff98bd
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PORTAL_GREETING_NONAME`
+
+```yaml
+id: src/lib/content/portal.ts::PORTAL_GREETING_NONAME
+source: src/lib/content/portal.ts
+path: PORTAL_GREETING_NONAME
+render: Candidate page /me, PORTAL_GREETING_NONAME
+narrative_slot: utility
+en: Hi
+th: สวัสดีครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 389cee7350d0fd2fdf413f51b404bd87c00360465b5c175070ea53324551b55f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PORTAL_INTRO`
+
+```yaml
+id: src/lib/content/portal.ts::PORTAL_INTRO
+source: src/lib/content/portal.ts
+path: PORTAL_INTRO
+render: Candidate page /me, PORTAL_INTRO
+narrative_slot: utility
+en: >-
+  Everything we are working on together is here: what has been delivered, your CV files, and the jobs you are
+  going for. Bookmark this page, it is yours.
+th: >-
+  ทุกอย่างที่เราทำด้วยกันอยู่ในหน้านี้ ทั้งงานที่ส่งมอบแล้ว ไฟล์ CV และงานที่คุณกำลังสมัคร
+  เก็บลิงก์นี้ไว้ได้เลยครับ เป็นหน้าของคุณเอง
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 1495ac817170fe7f8ae4a6483f9af26ad8c454d3a4347afd9a2a36cbc2162b47
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PORTAL_INTRO_SHORT`
+
+```yaml
+id: src/lib/content/portal.ts::PORTAL_INTRO_SHORT
+source: src/lib/content/portal.ts
+path: PORTAL_INTRO_SHORT
+render: Candidate page /me, PORTAL_INTRO_SHORT
+narrative_slot: utility
+en: Everything we are working on together, in one place.
+th: ทุกอย่างที่เราทำด้วยกัน อยู่ในที่เดียว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: c904f025af128a659b69701f5274b5cea936fc2f70a20d3fa3aa5783e295e73b
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::SIGNIN_HEADING
+source: src/lib/content/portal.ts
+path: SIGNIN_HEADING
+render: Candidate page /me, SIGNIN_HEADING
+narrative_slot: utility
+en: Sign in to your page
+th: เข้าสู่หน้าของคุณ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: e969af8b3d0ee01cda39880317ec0f4027005a3712c6440a574aa70b6ddc2b30
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_BODY`
+
+```yaml
+id: src/lib/content/portal.ts::SIGNIN_BODY
+source: src/lib/content/portal.ts
+path: SIGNIN_BODY
+render: Candidate page /me, SIGNIN_BODY
+narrative_slot: utility
+en: Enter the email you use with PunProfile and we will send you a 6-digit code. No password needed.
+th: กรอกอีเมลที่คุณใช้กับ PunProfile แล้วเราจะส่งรหัส 6 หลักไปให้ ไม่ต้องตั้งรหัสผ่านครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4beb4c2ab3186a2581a310044e5fbf567435229202fd191a930dda72dec9bd78
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_EMAIL`
+
+```yaml
+id: src/lib/content/portal.ts::SIGNIN_EMAIL
+source: src/lib/content/portal.ts
+path: SIGNIN_EMAIL
+render: Candidate page /me, SIGNIN_EMAIL
+narrative_slot: utility
+en: Email
+th: อีเมล
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a84c4b8c0704df5c212c7bb1f7ab937e0d90bb602645a37b99a6fb7e5235735f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_SEND`
+
+```yaml
+id: src/lib/content/portal.ts::SIGNIN_SEND
+source: src/lib/content/portal.ts
+path: SIGNIN_SEND
+render: Candidate page /me, SIGNIN_SEND
+narrative_slot: utility
+en: Send me a code
+th: ส่งรหัส
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 22cfd79266979df629d378c6193c51fb9e782703d1221216ba1c9b6a3f198531
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_SENT`
+
+```yaml
+id: src/lib/content/portal.ts::SIGNIN_SENT
+source: src/lib/content/portal.ts
+path: SIGNIN_SENT
+render: Candidate page /me, SIGNIN_SENT
+narrative_slot: utility
+en: >-
+  If this address has access, your code is on its way, by email or from your coach on LINE. It can take a few
+  minutes.
+th: ถ้าอีเมลนี้มีสิทธิ์เข้าใช้ รหัสกำลังส่งไปครับ ทางอีเมล หรือโค้ชจะส่งให้ทาง LINE อาจใช้เวลาสักครู่
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: f3c29ed65d796730580f381b2fa49b7bab444a5ebc8b6959831c21ab3e687d41
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_CODE`
+
+```yaml
+id: src/lib/content/portal.ts::SIGNIN_CODE
+source: src/lib/content/portal.ts
+path: SIGNIN_CODE
+render: Candidate page /me, SIGNIN_CODE
+narrative_slot: utility
+en: 6-digit code
+th: รหัส 6 หลัก
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 0fa884a0fc664919d5b2b9e39b7c9377034faf80092b30616f491674fdb7c315
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_VERIFY`
+
+```yaml
+id: src/lib/content/portal.ts::SIGNIN_VERIFY
+source: src/lib/content/portal.ts
+path: SIGNIN_VERIFY
+render: Candidate page /me, SIGNIN_VERIFY
+narrative_slot: utility
+en: Sign in
+th: เข้าสู่ระบบ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: d889d076c467dec34c73ce6e133e67bd786eee570b2d8903d2fbc68ee5647d41
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_BAD_CODE`
+
+```yaml
+id: src/lib/content/portal.ts::SIGNIN_BAD_CODE
+source: src/lib/content/portal.ts
+path: SIGNIN_BAD_CODE
+render: Candidate page /me, SIGNIN_BAD_CODE
+narrative_slot: utility
+en: That code is wrong or has expired. Ask for a new one.
+th: รหัสไม่ถูกต้องหรือหมดอายุแล้ว ขอรหัสใหม่ได้เลยครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 8f385fd239229193e5facb390f37efc728fb31a8f01cdd8743cb483cc90b6fba
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_OTHER_EMAIL`
+
+```yaml
+id: src/lib/content/portal.ts::SIGNIN_OTHER_EMAIL
+source: src/lib/content/portal.ts
+path: SIGNIN_OTHER_EMAIL
+render: Candidate page /me, SIGNIN_OTHER_EMAIL
+narrative_slot: utility
+en: Use a different email
+th: ใช้อีเมลอื่น
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 77d85f1992e0a5e3afd364c40984248c58c9e21c7d6cffe4ba8595ec03b1239f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_RESEND`
+
+```yaml
+id: src/lib/content/portal.ts::SIGNIN_RESEND
+source: src/lib/content/portal.ts
+path: SIGNIN_RESEND
+render: Candidate page /me, SIGNIN_RESEND
+narrative_slot: utility
+en: Send a new code
+th: ส่งรหัสใหม่
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 231a8bc0ee6aef03bbae108196021108cb08f176d3528a110a8d9173a01e9832
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::NO_ACCESS_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::NO_ACCESS_HEADING
+source: src/lib/content/portal.ts
+path: NO_ACCESS_HEADING
+render: Candidate page /me, NO_ACCESS_HEADING
+narrative_slot: utility
+en: This email does not have a page yet
+th: อีเมลนี้ยังไม่มีหน้าของคุณ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 79782da8d557c4d41d4a2a1523f18376aab0016b15bc29d486d76b81eb3ed305
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::NO_ACCESS_BODY`
+
+```yaml
+id: src/lib/content/portal.ts::NO_ACCESS_BODY
+source: src/lib/content/portal.ts
+path: NO_ACCESS_BODY
+render: Candidate page /me, NO_ACCESS_BODY
+narrative_slot: utility
+en: Message your coach on LINE and they will open it for this address.
+th: ทักโค้ชทาง LINE ได้เลยครับ เดี๋ยวโค้ชเปิดสิทธิ์ให้อีเมลนี้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: e12f269ad720353fe177531e50ccc96a9116878bf66b0fc2678ef69917d1c496
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COACH_HERE`
+
+```yaml
+id: src/lib/content/portal.ts::COACH_HERE
+source: src/lib/content/portal.ts
+path: COACH_HERE
+render: Candidate page /me, COACH_HERE
+narrative_slot: utility
+en: You are signed in as a coach. Open a candidate's page from the CRM.
+th: คุณเข้าสู่ระบบในฐานะโค้ช เปิดหน้าของผู้สมัครได้จาก CRM
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: d2dbc2eca94223374e2f02a13c6aa4ad89b777fbf548810a69e34b238861306e
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGN_OUT`
+
+```yaml
+id: src/lib/content/portal.ts::SIGN_OUT
+source: src/lib/content/portal.ts
+path: SIGN_OUT
+render: Candidate page /me, SIGN_OUT
+narrative_slot: utility
+en: Sign out
+th: ออกจากระบบ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: b9e0a3ac6cfa63ccc261811d7e7052bd2499ab992e26619bb6a644d4293932e8
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TAB_OVERVIEW`
+
+```yaml
+id: src/lib/content/portal.ts::TAB_OVERVIEW
+source: src/lib/content/portal.ts
+path: TAB_OVERVIEW
+render: Candidate page /me, TAB_OVERVIEW
+narrative_slot: utility
+en: Overview
+th: ภาพรวม
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4e3760186ce3724a8f676006c727811e40f7376035158cb7fb314e666041576e
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TAB_TRACKER`
+
+```yaml
+id: src/lib/content/portal.ts::TAB_TRACKER
+source: src/lib/content/portal.ts
+path: TAB_TRACKER
+render: Candidate page /me, TAB_TRACKER
+narrative_slot: utility
+en: Job tracker
+th: ติดตามงาน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a56399dbe47b1ce6733f3100e6677f1c075f326a159edb30ee5bf52fa8734055
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TAB_FEED`
+
+```yaml
+id: src/lib/content/portal.ts::TAB_FEED
+source: src/lib/content/portal.ts
+path: TAB_FEED
+render: Candidate page /me, TAB_FEED
+narrative_slot: utility
+en: Jobs for you
+th: งานสำหรับคุณ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 98885185297f22acaadb34f4e40b7b4758b058c7c904fd058a544e803081d39f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FEED_INTRO`
+
+```yaml
+id: src/lib/content/portal.ts::FEED_INTRO
+source: src/lib/content/portal.ts
+path: FEED_INTRO
+render: Candidate page /me, FEED_INTRO
+narrative_slot: utility
+en: >-
+  Roles our team screened in the last 30 days, in {countries}, matching {role}. The same jobs we post in the
+  group, filtered to your target. Save one to put it in your job list.
+th: >-
+  ตำแหน่งที่ทีมเราคัดใน 30 วันที่ผ่านมา ใน {countries} ตรงกับสาย {role} เป็นงานชุดเดียวกับที่โพสต์ในกลุ่ม
+  แต่กรองตาม target ของคุณ กดบันทึกเพื่อเพิ่มเข้าลิสต์งานได้เลยครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4610997cf9ea32671f4db59f70f10e8c07fafdc7cfaa00beccddd1ad14947d75
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FEED_EMPTY`
+
+```yaml
+id: src/lib/content/portal.ts::FEED_EMPTY
+source: src/lib/content/portal.ts
+path: FEED_EMPTY
+render: Candidate page /me, FEED_EMPTY
+narrative_slot: utility
+en: >-
+  Nothing in your target in the last 30 days. A narrow target can go quiet for a while; this fills as new
+  roles are screened.
+th: >-
+  ช่วง 30 วันที่ผ่านมายังไม่มีตำแหน่งที่ตรงกับ target ของคุณ target ที่เฉพาะเจาะจงอาจเงียบไปบ้าง
+  ตรงนี้จะขึ้นเมื่อมีตำแหน่งใหม่ที่ผ่านการคัดครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: b9049448029a407175d213287d4c95cdea63df11b58b31197e1246088684f9ba
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FEED_NO_TARGET`
+
+```yaml
+id: src/lib/content/portal.ts::FEED_NO_TARGET
+source: src/lib/content/portal.ts
+path: FEED_NO_TARGET
+render: Candidate page /me, FEED_NO_TARGET
+narrative_slot: utility
+en: We do not have your target country and role yet. Tell your coach, and this list fills.
+th: เรายังไม่มีข้อมูลประเทศและสายงานที่คุณตั้งเป้าไว้ บอกโค้ชได้เลยครับ แล้วลิสต์นี้จะขึ้น
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: da9c4bdf83d737d3eb42b92702e61dc45f7611b7b425ca90e6734fd258871f41
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FEED_SAVE`
+
+```yaml
+id: src/lib/content/portal.ts::FEED_SAVE
+source: src/lib/content/portal.ts
+path: FEED_SAVE
+render: Candidate page /me, FEED_SAVE
+narrative_slot: utility
+en: Save to my list
+th: บันทึกเข้าลิสต์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4b60608204bf0f82a90203eb7b4d7dfa832f808e5795b10f09ed61207cac58d9
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FEED_SAVED`
+
+```yaml
+id: src/lib/content/portal.ts::FEED_SAVED
+source: src/lib/content/portal.ts
+path: FEED_SAVED
+render: Candidate page /me, FEED_SAVED
+narrative_slot: utility
+en: In your list
+th: อยู่ในลิสต์แล้ว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: fe238d21e9bb458f194069d6fc24f4a1df04afc0c309e8df54224305abbebdc6
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FEED_SEEN`
+
+```yaml
+id: src/lib/content/portal.ts::FEED_SEEN
+source: src/lib/content/portal.ts
+path: FEED_SEEN
+render: Candidate page /me, FEED_SEEN
+narrative_slot: utility
+en: Screened {date}
+th: คัดเมื่อ {date}
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 0433212363adfc541c960716f21337dde7ff81dce764227fc9ebced93c160798
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FEED_UPDATED`
+
+```yaml
+id: src/lib/content/portal.ts::FEED_UPDATED
+source: src/lib/content/portal.ts
+path: FEED_UPDATED
+render: Candidate page /me, FEED_UPDATED
+narrative_slot: utility
+en: List updated {date}
+th: อัปเดตลิสต์ล่าสุด {date}
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: bc42df8822f077ee5954d0966130aea2b7cbf25970b295ab19f6d21a977fe846
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TAB_CV`
+
+```yaml
+id: src/lib/content/portal.ts::TAB_CV
+source: src/lib/content/portal.ts
+path: TAB_CV
+render: Candidate page /me, TAB_CV
+narrative_slot: utility
+en: CV
+th: ไฟล์ CV
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: ca05a8a3b4280b7af30d8773dd951b0cbf874ffeb2e3f077c5c22669c4da7e28
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TAB_COACH`
+
+```yaml
+id: src/lib/content/portal.ts::TAB_COACH
+source: src/lib/content/portal.ts
+path: TAB_COACH
+render: Candidate page /me, TAB_COACH
+narrative_slot: utility
+en: Your coach
+th: โค้ชของคุณ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 69766e46bb1de18801010aa5a44e793274fb6a333399f114d28cfa7e2c78a5d2
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PIPELINE_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::PIPELINE_HEADING
+source: src/lib/content/portal.ts
+path: PIPELINE_HEADING
+render: Candidate page /me, PIPELINE_HEADING
+narrative_slot: utility
+en: Your search so far
+th: ภาพรวมการสมัครงาน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 5f50f89da3021899e36b890a47075fa81fa2bebc22b81623d529428f60677d58
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DATES_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::DATES_HEADING
+source: src/lib/content/portal.ts
+path: DATES_HEADING
+render: Candidate page /me, DATES_HEADING
+narrative_slot: utility
+en: Coming up
+th: วันที่ต้องจำ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 985a2b93f27b3ef4e891395287d247a4022f80ec32a8cb19e89695c8d5b70b8f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DATES_EMPTY`
+
+```yaml
+id: src/lib/content/portal.ts::DATES_EMPTY
+source: src/lib/content/portal.ts
+path: DATES_EMPTY
+render: Candidate page /me, DATES_EMPTY
+narrative_slot: utility
+en: Nothing dated yet. Add a follow-up date to a job and it shows here.
+th: ยังไม่มีวันที่ต้องตาม ใส่วันตามผลให้งานไหนก็ได้ แล้วจะขึ้นที่นี่ครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a1231c47fafe2a3c9f2390af1e2a39b5e7e20c26045693e99dc1ce67696db8a5
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DATE_FOLLOW`
+
+```yaml
+id: src/lib/content/portal.ts::DATE_FOLLOW
+source: src/lib/content/portal.ts
+path: DATE_FOLLOW
+render: Candidate page /me, DATE_FOLLOW
+narrative_slot: utility
+en: Follow up
+th: ตามผล
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: c6cec07c96dc110b8c1a56a2b63d549a72cd78ce665d6c626bc989451628f323
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DATE_CLOSES`
+
+```yaml
+id: src/lib/content/portal.ts::DATE_CLOSES
+source: src/lib/content/portal.ts
+path: DATE_CLOSES
+render: Candidate page /me, DATE_CLOSES
+narrative_slot: utility
+en: Closes
+th: ปิดรับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a0e40c2f68cb4f4c79d827fee5ed3ecea24f4f50dbce20cc94b69779a259a62b
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DATE_DUE`
+
+```yaml
+id: src/lib/content/portal.ts::DATE_DUE
+source: src/lib/content/portal.ts
+path: DATE_DUE
+render: Candidate page /me, DATE_DUE
+narrative_slot: utility
+en: Due
+th: กำหนด
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 85cb655eb20f108758cebd70928ce3d08567d3fa9e11277c9cab9f7895969017
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::LATEST_NOTE`
+
+```yaml
+id: src/lib/content/portal.ts::LATEST_NOTE
+source: src/lib/content/portal.ts
+path: LATEST_NOTE
+render: Candidate page /me, LATEST_NOTE
+narrative_slot: utility
+en: Latest from your coach
+th: ข้อความล่าสุดจากโค้ช
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: b0989e4e67e37d6df3958696cbd0d5eae9f51cbc180758a991461f71ec32fb6a
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SEE_ALL`
+
+```yaml
+id: src/lib/content/portal.ts::SEE_ALL
+source: src/lib/content/portal.ts
+path: SEE_ALL
+render: Candidate page /me, SEE_ALL
+narrative_slot: utility
+en: See all
+th: ดูทั้งหมด
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 3b81632b433a01d8ca4ab123fe0bc442da87929848425c864a5830a1fc60fe63
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TOKENS_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::TOKENS_HEADING
+source: src/lib/content/portal.ts
+path: TOKENS_HEADING
+render: Candidate page /me, TOKENS_HEADING
+narrative_slot: utility
+en: Tokens left
+th: โทเคนคงเหลือ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 386b1f3b1078ac911cdfd5648df65098da55c00d3e0a03ff1f01cb3a69605131
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TOKENS_OF`
+
+```yaml
+id: src/lib/content/portal.ts::TOKENS_OF
+source: src/lib/content/portal.ts
+path: TOKENS_OF
+render: Candidate page /me, TOKENS_OF
+narrative_slot: utility
+en: of {n} tokens
+th: จาก {n} โทเคน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: db601db6506aae6f9dee1f34728e4155ee3f563e69fc60248f7af9352f8cbaf5
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TOKENS_MATCHED`
+
+```yaml
+id: src/lib/content/portal.ts::TOKENS_MATCHED
+source: src/lib/content/portal.ts
+path: TOKENS_MATCHED
+render: Candidate page /me, TOKENS_MATCHED
+narrative_slot: utility
+en: 'Roles we have picked and sent you: {n}'
+th: ตำแหน่งงานที่เราคัดส่งให้แล้ว {n} ตำแหน่ง
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 2d0647ca7b957f9c5ad5965467906a255e386e8d877cef67d150f731020d6663
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TOKENS_RULE`
+
+```yaml
+id: src/lib/content/portal.ts::TOKENS_RULE
+source: src/lib/content/portal.ts
+path: TOKENS_RULE
+render: Candidate page /me, TOKENS_RULE
+narrative_slot: utility
+en: A token is only used once you have received the service. Tokens never expire.
+th: โทเคนจะถูกหักเมื่อคุณได้รับบริการแล้วเท่านั้น และไม่มีวันหมดอายุครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 0d5ac7b7922c9efcbd33e12f41b2ae1a1b544453d80100c9ddfa7798aac7e215
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_HEADING
+source: src/lib/content/portal.ts
+path: WORK_HEADING
+render: Candidate page /me, WORK_HEADING
+narrative_slot: utility
+en: What you get
+th: สิ่งที่คุณจะได้รับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: f445740cca51df070c88ea0f8662ccaeae11482bf5d493412aec20a5016bbb7c
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_EMPTY`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_EMPTY
+source: src/lib/content/portal.ts
+path: WORK_EMPTY
+render: Candidate page /me, WORK_EMPTY
+narrative_slot: utility
+en: Your coach will add each step here as it is planned.
+th: โค้ชจะเพิ่มแต่ละขั้นตอนไว้ที่นี่เมื่อวางแผนกันแล้วครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 75a299c1ab0b45b2693944017d2d7e39a1f913a90adda81804c59993446ab1ed
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_STATUS.not_started`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_STATUS.not_started
+source: src/lib/content/portal.ts
+path: WORK_STATUS.not_started
+render: Candidate page /me, WORK_STATUS.not_started
+narrative_slot: utility
+en: Not started
+th: ยังไม่เริ่ม
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 9135645a1b1ed458d6413a46df0e69deb4f323f373b700f7e4b2e10ed07d44c8
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_STATUS.in_progress`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_STATUS.in_progress
+source: src/lib/content/portal.ts
+path: WORK_STATUS.in_progress
+render: Candidate page /me, WORK_STATUS.in_progress
+narrative_slot: utility
+en: In progress
+th: กำลังทำ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 342d3f693dbdf34559d6b60791409142806b69fd43610883ef0bc3401667f2d1
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_STATUS.delivered`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_STATUS.delivered
+source: src/lib/content/portal.ts
+path: WORK_STATUS.delivered
+render: Candidate page /me, WORK_STATUS.delivered
+narrative_slot: utility
+en: Delivered
+th: ส่งมอบแล้ว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a84e48a3ee105c8fafac28b97e2b3b6a35f70f3b21c401f5b41e4342a117faa0
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_DUE`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_DUE
+source: src/lib/content/portal.ts
+path: WORK_DUE
+render: Candidate page /me, WORK_DUE
+narrative_slot: utility
+en: Due {date}
+th: กำหนด {date}
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4eeee58a5522b3687bfbdaa6de6c2bc9e484ff929d0d577af145c84c8e8b46c4
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_DONE_ON`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_DONE_ON
+source: src/lib/content/portal.ts
+path: WORK_DONE_ON
+render: Candidate page /me, WORK_DONE_ON
+narrative_slot: utility
+en: Delivered {date}
+th: ส่งมอบ {date}
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 2e74e9037bd0e609a5bab69d5674d7d92c506f513a3ac63920d59d4ec502cc0d
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.fit_report`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.fit_report
+source: src/lib/content/portal.ts
+path: WORK_KIND.fit_report
+render: Candidate page /me, WORK_KIND.fit_report
+narrative_slot: utility
+en: Fit Report
+th: Fit Report
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 899b32eb43aa35737948310d7d8d389bddf837a171fb03522711b719b93178cf
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.coaching_session`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.coaching_session
+source: src/lib/content/portal.ts
+path: WORK_KIND.coaching_session
+render: Candidate page /me, WORK_KIND.coaching_session
+narrative_slot: utility
+en: Session with your coach
+th: คุยกับโค้ช
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 650b95b663ef55eca7857112d87622918cd2acab7b62bbb16acf151b79f99fc9
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.base_cv`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.base_cv
+source: src/lib/content/portal.ts
+path: WORK_KIND.base_cv
+render: Candidate page /me, WORK_KIND.base_cv
+narrative_slot: utility
+en: Your main CV
+th: CV หลักของคุณ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 9d812f653299bab9060c1fdb4ff8922602a2ebaff98f8fb92726bc735b6dc1af
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.linkedin`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.linkedin
+source: src/lib/content/portal.ts
+path: WORK_KIND.linkedin
+render: Candidate page /me, WORK_KIND.linkedin
+narrative_slot: utility
+en: LinkedIn profile
+th: โปรไฟล์ LinkedIn
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 3e8fc6dfc6d57a9f150be7aff465dd112488f2baa56ff988ada2e6ce063e8db2
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.portfolio`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.portfolio
+source: src/lib/content/portal.ts
+path: WORK_KIND.portfolio
+render: Candidate page /me, WORK_KIND.portfolio
+narrative_slot: utility
+en: Portfolio
+th: พอร์ตโฟลิโอ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: fe4c32fad026191c78274da9598ed90883baa7b9d0e3499cc47529c14ca7a428
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.country_research`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.country_research
+source: src/lib/content/portal.ts
+path: WORK_KIND.country_research
+render: Candidate page /me, WORK_KIND.country_research
+narrative_slot: utility
+en: Country research
+th: ข้อมูลประเทศเป้าหมาย
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 742285e25f32c8177bd56888d600112cbaf6b5cb7729709de31d1e5ef6b0f737
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.tailored_application`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.tailored_application
+source: src/lib/content/portal.ts
+path: WORK_KIND.tailored_application
+render: Candidate page /me, WORK_KIND.tailored_application
+narrative_slot: utility
+en: Application tailored to one role
+th: ใบสมัครที่ปรับให้ตรงกับตำแหน่ง
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 62b6427630e498c508cf47c92ccb4bb6013c8d6212be7a221ad5ec80b1288ac1
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.interview_prep`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.interview_prep
+source: src/lib/content/portal.ts
+path: WORK_KIND.interview_prep
+render: Candidate page /me, WORK_KIND.interview_prep
+narrative_slot: utility
+en: Interview preparation
+th: เตรียมตัวสัมภาษณ์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 579e4807e6b8d15a9c75e751a28b338434b3120730bdb06936fb0546e0a6ec88
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.mock_interview`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.mock_interview
+source: src/lib/content/portal.ts
+path: WORK_KIND.mock_interview
+render: Candidate page /me, WORK_KIND.mock_interview
+narrative_slot: utility
+en: Mock interview
+th: ซ้อมสัมภาษณ์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: fcad019828d4f91426621da10ae185664f07a7f322ea528be86580c359f48391
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.offer_review`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.offer_review
+source: src/lib/content/portal.ts
+path: WORK_KIND.offer_review
+render: Candidate page /me, WORK_KIND.offer_review
+narrative_slot: utility
+en: Offer review
+th: ดูข้อเสนองานด้วยกัน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: fc90f541012609a8cbbc93aad587a8af5bd54696d1629bc563fb776e8067ec1a
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::WORK_KIND.contract_review`
+
+```yaml
+id: src/lib/content/portal.ts::WORK_KIND.contract_review
+source: src/lib/content/portal.ts
+path: WORK_KIND.contract_review
+render: Candidate page /me, WORK_KIND.contract_review
+narrative_slot: utility
+en: Contract review
+th: ดูสัญญาจ้างด้วยกัน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 654c5896946488689d1c7a2d8829f969c8de82b9df7ec652fd0a6dc4afd37da1
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::BOOK_TIME`
+
+```yaml
+id: src/lib/content/portal.ts::BOOK_TIME
+source: src/lib/content/portal.ts
+path: BOOK_TIME
+render: Candidate page /me, BOOK_TIME
+narrative_slot: utility
+en: Book a time
+th: จองเวลา
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 600cf67063f7e9be4224dec0041599a4f47d2bfb9ee33a6456ee93a2d6db7724
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TOKENS_MORE`
+
+```yaml
+id: src/lib/content/portal.ts::TOKENS_MORE
+source: src/lib/content/portal.ts
+path: TOKENS_MORE
+render: Candidate page /me, TOKENS_MORE
+narrative_slot: utility
+en: Ask for more tokens
+th: ขอโทเคนเพิ่ม
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: b107364760430ccf1c7d7bc949f8e25f4dbe0deec5d4e70d2d89810201b3b4e8
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TOKENS_LOW`
+
+```yaml
+id: src/lib/content/portal.ts::TOKENS_LOW
+source: src/lib/content/portal.ts
+path: TOKENS_LOW
+render: Candidate page /me, TOKENS_LOW
+narrative_slot: utility
+en: You are running low on tokens.
+th: โทเคนใกล้หมดแล้วครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 62bb47c67bc6cd7aab2dd033db9baf2b47b0df8bfab7482535bd5de9eedf0c54
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TOKENS_REQUESTED`
+
+```yaml
+id: src/lib/content/portal.ts::TOKENS_REQUESTED
+source: src/lib/content/portal.ts
+path: TOKENS_REQUESTED
+render: Candidate page /me, TOKENS_REQUESTED
+narrative_slot: utility
+en: Request sent. Your coach will get back to you on LINE.
+th: ส่งคำขอแล้วครับ โค้ชจะติดต่อกลับทาง LINE
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 0ae0b44b913c94224c4bcb485908640a6f5ed71f7b3bf7bed70135bedda2ad74
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FIT_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::FIT_HEADING
+source: src/lib/content/portal.ts
+path: FIT_HEADING
+render: Candidate page /me, FIT_HEADING
+narrative_slot: utility
+en: Your Fit Report
+th: Fit Report ของคุณ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 2e34154276ecf745b79464662bf8f3b7afa6891ef87a4505ca1a087c29fd557d
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FIT_BODY`
+
+```yaml
+id: src/lib/content/portal.ts::FIT_BODY
+source: src/lib/content/portal.ts
+path: FIT_BODY
+render: Candidate page /me, FIT_BODY
+narrative_slot: utility
+en: >-
+  Every area your coach rated, where you stand against the market, and what to do next in each. It opens in a
+  new tab, ready to save as a PDF.
+th: >-
+  ทุกด้านที่โค้ชประเมิน ตำแหน่งของคุณเทียบกับตลาด และสิ่งที่ควรทำต่อในแต่ละด้าน เปิดในแท็บใหม่ บันทึกเป็น PDF
+  ได้เลยครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 03618df878e49f2153d7909505a8d7f36c6cef2e3043538232aaac33c1a3a826
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FIT_OPEN`
+
+```yaml
+id: src/lib/content/portal.ts::FIT_OPEN
+source: src/lib/content/portal.ts
+path: FIT_OPEN
+render: Candidate page /me, FIT_OPEN
+narrative_slot: utility
+en: Open the Fit Report
+th: เปิด Fit Report
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a54a6a973b56ea59a62eb377cf8b057d11d138a77788cca61c45a9bacb9a13e2
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FIT_POPUP`
+
+```yaml
+id: src/lib/content/portal.ts::FIT_POPUP
+source: src/lib/content/portal.ts
+path: FIT_POPUP
+render: Candidate page /me, FIT_POPUP
+narrative_slot: utility
+en: Your browser blocked the new tab. Allow pop-ups for this site and try again.
+th: เบราว์เซอร์บล็อกแท็บใหม่ไว้ อนุญาต pop-up ของเว็บนี้แล้วลองกดอีกครั้งนะครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a81bdbf4ad9f3222a556132d16d306b6901f4c3fbb73034bbf7dd48cd4d79307
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::GOAL_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::GOAL_HEADING
+source: src/lib/content/portal.ts
+path: GOAL_HEADING
+render: Candidate page /me, GOAL_HEADING
+narrative_slot: utility
+en: This week's goal
+th: เป้าหมายสัปดาห์นี้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 846a16012881552ab219e1320be60fab47b1abad3ca6fb644aa2ac1442208fea
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::GOAL_PROGRESS`
+
+```yaml
+id: src/lib/content/portal.ts::GOAL_PROGRESS
+source: src/lib/content/portal.ts
+path: GOAL_PROGRESS
+render: Candidate page /me, GOAL_PROGRESS
+narrative_slot: utility
+en: '{done} of {goal} applications sent'
+th: สมัครแล้ว {done} จาก {goal} ตำแหน่ง
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 90180cbf15c69d1a6041702860b7fd8d032582d5e733ef132644e478c5eee4f2
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::GOAL_NONE`
+
+```yaml
+id: src/lib/content/portal.ts::GOAL_NONE
+source: src/lib/content/portal.ts
+path: GOAL_NONE
+render: Candidate page /me, GOAL_NONE
+narrative_slot: utility
+en: Set how many applications you aim to send each week, and see your progress here.
+th: ตั้งจำนวนใบสมัครที่อยากส่งในแต่ละสัปดาห์ แล้วดูความคืบหน้าได้ที่นี่ครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: c8fbcd1225794b893f71ff96b5327f96078c3dff294eb20700e54b66027fcda8
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::GOAL_PROMPT`
+
+```yaml
+id: src/lib/content/portal.ts::GOAL_PROMPT
+source: src/lib/content/portal.ts
+path: GOAL_PROMPT
+render: Candidate page /me, GOAL_PROMPT
+narrative_slot: utility
+en: Applications per week
+th: จำนวนใบสมัครต่อสัปดาห์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: bd446c757bbdb5a19ad1f441e96ba6ad1748f7dc7e8b2d2593c22f58b1e3e153
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::GOAL_SET`
+
+```yaml
+id: src/lib/content/portal.ts::GOAL_SET
+source: src/lib/content/portal.ts
+path: GOAL_SET
+render: Candidate page /me, GOAL_SET
+narrative_slot: utility
+en: Set a goal
+th: ตั้งเป้าหมาย
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: b89496338b895314b76dfa1d8d0ed6dd886f1b8219a6a40fefab1fbdd7d30d17
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::GOAL_CHANGE`
+
+```yaml
+id: src/lib/content/portal.ts::GOAL_CHANGE
+source: src/lib/content/portal.ts
+path: GOAL_CHANGE
+render: Candidate page /me, GOAL_CHANGE
+narrative_slot: utility
+en: Change
+th: เปลี่ยน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 69267a41961e43720f99b28e28055ebd609c80afb80713b97d6b324b04bb1d5b
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::GOAL_WEEK_NOTE`
+
+```yaml
+id: src/lib/content/portal.ts::GOAL_WEEK_NOTE
+source: src/lib/content/portal.ts
+path: GOAL_WEEK_NOTE
+render: Candidate page /me, GOAL_WEEK_NOTE
+narrative_slot: utility
+en: The week starts on Monday, Thailand time.
+th: สัปดาห์เริ่มวันจันทร์ ตามเวลาไทย
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 13098af0aaad66abc702bcf087215dff525d69e87fcd84923603509a599d34cd
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::NOTES_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::NOTES_HEADING
+source: src/lib/content/portal.ts
+path: NOTES_HEADING
+render: Candidate page /me, NOTES_HEADING
+narrative_slot: utility
+en: From your coach
+th: จากโค้ช
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 91707d6848790c167b9224d9ec5ae603712bc4eeb6ba6ce554787634abbe0cfe
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::CV_HEADING
+source: src/lib/content/portal.ts
+path: CV_HEADING
+render: Candidate page /me, CV_HEADING
+narrative_slot: utility
+en: Your CV files
+th: ไฟล์ CV ของคุณ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 15e4ee67e0a94f6894cb47e76638c590fe44d5abdf732f9c7308f6ffbcd6242e
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_EMPTY`
+
+```yaml
+id: src/lib/content/portal.ts::CV_EMPTY
+source: src/lib/content/portal.ts
+path: CV_EMPTY
+render: Candidate page /me, CV_EMPTY
+narrative_slot: utility
+en: No file here yet. Send your latest CV to your coach on LINE or by email.
+th: ยังไม่มีไฟล์ครับ ส่ง CV ฉบับล่าสุดให้โค้ชทาง LINE หรืออีเมลได้เลย
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: e7960bc547e5e8aabb4c2fb31666d32c5ac09ce70beb872bc724e55bf6a425d4
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_VERSION`
+
+```yaml
+id: src/lib/content/portal.ts::CV_VERSION
+source: src/lib/content/portal.ts
+path: CV_VERSION
+render: Candidate page /me, CV_VERSION
+narrative_slot: utility
+en: Version {n}
+th: ฉบับที่ {n}
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 10a7e09550ca0a3a6ec92a68b4c309c0670163fa8b9c1f158d20128e9d67573a
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_LATEST`
+
+```yaml
+id: src/lib/content/portal.ts::CV_LATEST
+source: src/lib/content/portal.ts
+path: CV_LATEST
+render: Candidate page /me, CV_LATEST
+narrative_slot: utility
+en: Latest
+th: ล่าสุด
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4e348c6769d3ac7759110d519afb31deb7a869bb9d6fe66590afe4fe272a6513
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_THEIRS`
+
+```yaml
+id: src/lib/content/portal.ts::CV_THEIRS
+source: src/lib/content/portal.ts
+path: CV_THEIRS
+render: Candidate page /me, CV_THEIRS
+narrative_slot: utility
+en: The version you sent
+th: ฉบับที่คุณส่งมา
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: d704a16b1caf6c46e14a5161d80e914b88b46201016dbf7f2d56909b48d94cbb
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_OURS`
+
+```yaml
+id: src/lib/content/portal.ts::CV_OURS
+source: src/lib/content/portal.ts
+path: CV_OURS
+render: Candidate page /me, CV_OURS
+narrative_slot: utility
+en: Revised by your coach
+th: ฉบับที่โค้ชปรับให้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: d543359a9fe7cc6fa2ea8d352e5e953aace2663cff34de23b69b2a294e4513a8
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_CHANGED`
+
+```yaml
+id: src/lib/content/portal.ts::CV_CHANGED
+source: src/lib/content/portal.ts
+path: CV_CHANGED
+render: Candidate page /me, CV_CHANGED
+narrative_slot: utility
+en: What changed
+th: สิ่งที่ปรับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 1668fead16ef790e400a037315ad09768a0ce663d441f67eb60bfddbca733318
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_DOWNLOAD`
+
+```yaml
+id: src/lib/content/portal.ts::CV_DOWNLOAD
+source: src/lib/content/portal.ts
+path: CV_DOWNLOAD
+render: Candidate page /me, CV_DOWNLOAD
+narrative_slot: utility
+en: Download
+th: ดาวน์โหลด
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 23c88383ce157cfbc067cc994dd37f23113afd4dcc900af296a374d078cda0ad
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_HEADING
+source: src/lib/content/portal.ts
+path: JOBS_HEADING
+render: Candidate page /me, JOBS_HEADING
+narrative_slot: utility
+en: Your job list
+th: งานที่คุณกำลังสมัคร
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 80b74939d0662778ee14bb8a3c8dd710035e467fb2f8a70c8381df4a626042a2
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_INTRO`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_INTRO
+source: src/lib/content/portal.ts
+path: JOBS_INTRO
+render: Candidate page /me, JOBS_INTRO
+narrative_slot: utility
+en: >-
+  This list is yours. Move each job along as things happen. Roles marked Picked by PunProfile are ones we
+  screened for you.
+th: >-
+  ลิสต์นี้เป็นของคุณ อัปเดตสถานะได้เองทุกครั้งที่มีความคืบหน้า ตำแหน่งที่มีป้าย คัดโดย PunProfile
+  คือตำแหน่งที่เราคัดมาให้ครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 7bfd4527b1af3021d43bc03d212f33a3c888eb60243b107e6ea43f5fe30ee50a
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_EMPTY`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_EMPTY
+source: src/lib/content/portal.ts
+path: JOBS_EMPTY
+render: Candidate page /me, JOBS_EMPTY
+narrative_slot: utility
+en: Nothing on the list yet. Add a job you are interested in, or wait for the first roles we pick for you.
+th: ยังไม่มีงานในลิสต์ เพิ่มงานที่คุณสนใจได้เลย หรือรอตำแหน่งแรกที่เราคัดให้ก็ได้ครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 93654986052b1caaf51e3b6c55eab1c1a6fb7b731fe517ed346623de4831f165
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_ALL`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_ALL
+source: src/lib/content/portal.ts
+path: JOBS_ALL
+render: Candidate page /me, JOBS_ALL
+narrative_slot: utility
+en: All
+th: ทั้งหมด
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 831a830871bff2542250db8c82cb408059ffdb0e5df5f6ccb75e7da3cb19dd14
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_STATUS.interested`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_STATUS.interested
+source: src/lib/content/portal.ts
+path: JOBS_STATUS.interested
+render: Candidate page /me, JOBS_STATUS.interested
+narrative_slot: utility
+en: Saved
+th: บันทึกไว้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 5d4214e5af4c3a498b236861991ded3fa282099a5d8a0d5539b264a405b929f7
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_STATUS.applied`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_STATUS.applied
+source: src/lib/content/portal.ts
+path: JOBS_STATUS.applied
+render: Candidate page /me, JOBS_STATUS.applied
+narrative_slot: utility
+en: Applied
+th: สมัครแล้ว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 482f2fb1e18c58441540e072af24ccac74fecfdd9aff1b06f05a9a0a9cb59692
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_STATUS.screening`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_STATUS.screening
+source: src/lib/content/portal.ts
+path: JOBS_STATUS.screening
+render: Candidate page /me, JOBS_STATUS.screening
+narrative_slot: utility
+en: Screening
+th: รอคัดเลือก
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: f77f1ca2ac621ac62177be1a347c652a28f3d598aae8a54235ae0c8f858af0fb
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_STATUS.interviewing`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_STATUS.interviewing
+source: src/lib/content/portal.ts
+path: JOBS_STATUS.interviewing
+render: Candidate page /me, JOBS_STATUS.interviewing
+narrative_slot: utility
+en: Interviewing
+th: สัมภาษณ์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: e76808c604c995c4f086703d860536648e3044b1cf8e501f8bbe64744d8673b5
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_STATUS.offer`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_STATUS.offer
+source: src/lib/content/portal.ts
+path: JOBS_STATUS.offer
+render: Candidate page /me, JOBS_STATUS.offer
+narrative_slot: utility
+en: Offer
+th: ได้ข้อเสนอ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a345cd5bb71fb594844b361ab595c5ea16b2835298329b081a99e702570909e3
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_STATUS.accepted`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_STATUS.accepted
+source: src/lib/content/portal.ts
+path: JOBS_STATUS.accepted
+render: Candidate page /me, JOBS_STATUS.accepted
+narrative_slot: utility
+en: Accepted
+th: ตอบรับแล้ว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: c9eba19c4bd4650d3cb284cc49fb7d64e2dcab1c68451535fdbbdcf45a463162
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_STATUS.rejected`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_STATUS.rejected
+source: src/lib/content/portal.ts
+path: JOBS_STATUS.rejected
+render: Candidate page /me, JOBS_STATUS.rejected
+narrative_slot: utility
+en: Not this time
+th: ไม่ผ่านรอบนี้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 5e7879bba7f1b90d30def1e7e14c254436372700f7cb7be278aad1fdf211e33c
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_STATUS.withdrawn`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_STATUS.withdrawn
+source: src/lib/content/portal.ts
+path: JOBS_STATUS.withdrawn
+render: Candidate page /me, JOBS_STATUS.withdrawn
+narrative_slot: utility
+en: Withdrew
+th: ถอนตัว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: dec20518d9a460da17d15365e6c10a0654d05b569c36905670148ff02c7eaaae
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_FROM_US`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_FROM_US
+source: src/lib/content/portal.ts
+path: JOBS_FROM_US
+render: Candidate page /me, JOBS_FROM_US
+narrative_slot: utility
+en: Picked by PunProfile
+th: คัดโดย PunProfile
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 9d9e54e1e6f0b15a4eaf4211a74752924c8a005225e2b39b4b36d5ff0fecfe26
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_WHY`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_WHY
+source: src/lib/content/portal.ts
+path: JOBS_WHY
+render: Candidate page /me, JOBS_WHY
+narrative_slot: utility
+en: Why this role
+th: ทำไมเราคัดตำแหน่งนี้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: d25c729d4f9626ec74d05b93eee681bc4e79319c160c69093678854de47ced19
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_POSTING`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_POSTING
+source: src/lib/content/portal.ts
+path: JOBS_POSTING
+render: Candidate page /me, JOBS_POSTING
+narrative_slot: utility
+en: Open the posting
+th: เปิดประกาศงาน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 39ad08b58f98fa192401d02452a4863eedd2e83d762713963e089aed8064d364
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_CLOSES`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_CLOSES
+source: src/lib/content/portal.ts
+path: JOBS_CLOSES
+render: Candidate page /me, JOBS_CLOSES
+narrative_slot: utility
+en: Closes {date}
+th: ปิดรับ {date}
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: aba99a7bf01ef8f9a3e55680f97790ee4079e3000283be03eea20fcf84d8a832
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_APPLIED_ON`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_APPLIED_ON
+source: src/lib/content/portal.ts
+path: JOBS_APPLIED_ON
+render: Candidate page /me, JOBS_APPLIED_ON
+narrative_slot: utility
+en: Applied {date}
+th: สมัครเมื่อ {date}
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 65667da256e8bf22af3f6ffcf0554ae251066ca783b525d7f3486f06283da835
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_FOLLOW_UP`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_FOLLOW_UP
+source: src/lib/content/portal.ts
+path: JOBS_FOLLOW_UP
+render: Candidate page /me, JOBS_FOLLOW_UP
+narrative_slot: utility
+en: Follow up on
+th: วันที่จะตามผล
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 04c40ae10f15ef9c37b7a15e6483fd3b217b6e9c8911ac0015ac962100177ebc
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_NOTES`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_NOTES
+source: src/lib/content/portal.ts
+path: JOBS_NOTES
+render: Candidate page /me, JOBS_NOTES
+narrative_slot: utility
+en: Notes
+th: โน้ต
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 34b98421f48d12b986e715ad9e8b731fe6570064579c13dbffeadc3c486500bb
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_SAVE`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_SAVE
+source: src/lib/content/portal.ts
+path: JOBS_SAVE
+render: Candidate page /me, JOBS_SAVE
+narrative_slot: utility
+en: Save
+th: บันทึก
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 6dbefabdaf9902cc28f1d240dd6d1a29befd82320a7c43f0a93cf61103185150
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_CANCEL`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_CANCEL
+source: src/lib/content/portal.ts
+path: JOBS_CANCEL
+render: Candidate page /me, JOBS_CANCEL
+narrative_slot: utility
+en: Cancel
+th: ยกเลิก
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: c26d3cb0485519371449192740f1d687de23da864df75a0019ecf24fe0e7dff9
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_REMOVE`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_REMOVE
+source: src/lib/content/portal.ts
+path: JOBS_REMOVE
+render: Candidate page /me, JOBS_REMOVE
+narrative_slot: utility
+en: Remove
+th: ลบ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 23922b748a978d3baf672ff203698f9136f446bdd6aa2bd7fecc1b3f1263de7f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_REMOVE_CONFIRM`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_REMOVE_CONFIRM
+source: src/lib/content/portal.ts
+path: JOBS_REMOVE_CONFIRM
+render: Candidate page /me, JOBS_REMOVE_CONFIRM
+narrative_slot: utility
+en: Remove for good
+th: ลบออกจากลิสต์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 6d41cd99b3f62703f79d011a5925a4f108c9f6760d32f18fd3ad9da915376040
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_DETAILS`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_DETAILS
+source: src/lib/content/portal.ts
+path: JOBS_DETAILS
+render: Candidate page /me, JOBS_DETAILS
+narrative_slot: utility
+en: Details
+th: รายละเอียด
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 1c94967f2f90ef1f940c6f648bae2e9f732b00b55406f4874cfeb2400e6cf7db
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_SEARCH`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_SEARCH
+source: src/lib/content/portal.ts
+path: JOBS_SEARCH
+render: Candidate page /me, JOBS_SEARCH
+narrative_slot: utility
+en: Search role or company
+th: ค้นหาตำแหน่งหรือบริษัท
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: f537b24ab0e165500caa49aa40812768b933073335c66ebbeb276bf4381ee0c2
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_CLOSED`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_CLOSED
+source: src/lib/content/portal.ts
+path: JOBS_CLOSED
+render: Candidate page /me, JOBS_CLOSED
+narrative_slot: utility
+en: Closed
+th: ปิดแล้ว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: b459a36d1a1b65e6fa3ac816d62a7a38d062f508fe7594fe6de7f0a4cbab9d4c
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOBS_NO_MATCH`
+
+```yaml
+id: src/lib/content/portal.ts::JOBS_NO_MATCH
+source: src/lib/content/portal.ts
+path: JOBS_NO_MATCH
+render: Candidate page /me, JOBS_NO_MATCH
+narrative_slot: utility
+en: No job matches.
+th: ไม่พบงานที่ตรงกับที่ค้นหา
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 0061544e665d299f8712c509fe851ef491f9644f60d4dd1df2f40403213ddf0a
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COL_ROLE`
+
+```yaml
+id: src/lib/content/portal.ts::COL_ROLE
+source: src/lib/content/portal.ts
+path: COL_ROLE
+render: Candidate page /me, COL_ROLE
+narrative_slot: utility
+en: Job title
+th: ตำแหน่ง
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4da609077db99b81c41e39975b79569b93cdbd05d913bd53fa5525122ba1af0d
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COL_COMPANY`
+
+```yaml
+id: src/lib/content/portal.ts::COL_COMPANY
+source: src/lib/content/portal.ts
+path: COL_COMPANY
+render: Candidate page /me, COL_COMPANY
+narrative_slot: utility
+en: Company
+th: บริษัท
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4377230cc3a7af66f77ae811be3297baa079c3164af6c9c496ce44d26333a109
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COL_SALARY`
+
+```yaml
+id: src/lib/content/portal.ts::COL_SALARY
+source: src/lib/content/portal.ts
+path: COL_SALARY
+render: Candidate page /me, COL_SALARY
+narrative_slot: utility
+en: Salary
+th: เงินเดือน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 55479f0b0aa37061b20454a8c18718fef76ef8d7a42fea41272d96156eba53ad
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COL_LOCATION`
+
+```yaml
+id: src/lib/content/portal.ts::COL_LOCATION
+source: src/lib/content/portal.ts
+path: COL_LOCATION
+render: Candidate page /me, COL_LOCATION
+narrative_slot: utility
+en: Location
+th: สถานที่
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 726de349bd73d1adc0c578264c60df13104c2faa58fe589041b34419aafc58db
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COL_STATUS`
+
+```yaml
+id: src/lib/content/portal.ts::COL_STATUS
+source: src/lib/content/portal.ts
+path: COL_STATUS
+render: Candidate page /me, COL_STATUS
+narrative_slot: utility
+en: Status
+th: สถานะ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: d786e2b6c377903ebdbd54784b56dadf41817fb8c1132eaea2d0bde40e5c1e12
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COL_SAVED`
+
+```yaml
+id: src/lib/content/portal.ts::COL_SAVED
+source: src/lib/content/portal.ts
+path: COL_SAVED
+render: Candidate page /me, COL_SAVED
+narrative_slot: utility
+en: Saved
+th: วันที่บันทึก
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 330b7f87a34ac35d3cad5d53e380e912110a1a20f414bb0be7602f1314f1fe5d
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COL_DEADLINE`
+
+```yaml
+id: src/lib/content/portal.ts::COL_DEADLINE
+source: src/lib/content/portal.ts
+path: COL_DEADLINE
+render: Candidate page /me, COL_DEADLINE
+narrative_slot: utility
+en: Closes
+th: ปิดรับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a0e40c2f68cb4f4c79d827fee5ed3ecea24f4f50dbce20cc94b69779a259a62b
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COL_APPLIED`
+
+```yaml
+id: src/lib/content/portal.ts::COL_APPLIED
+source: src/lib/content/portal.ts
+path: COL_APPLIED
+render: Candidate page /me, COL_APPLIED
+narrative_slot: utility
+en: Applied
+th: วันที่สมัคร
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 373ebcc2baa48f2cd01ac6a6b00a092669d42c4b990a58aa659f5764ec6558b1
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COL_FOLLOW`
+
+```yaml
+id: src/lib/content/portal.ts::COL_FOLLOW
+source: src/lib/content/portal.ts
+path: COL_FOLLOW
+render: Candidate page /me, COL_FOLLOW
+narrative_slot: utility
+en: Follow up
+th: ตามผล
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: c6cec07c96dc110b8c1a56a2b63d549a72cd78ce665d6c626bc989451628f323
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COL_EXCITEMENT`
+
+```yaml
+id: src/lib/content/portal.ts::COL_EXCITEMENT
+source: src/lib/content/portal.ts
+path: COL_EXCITEMENT
+render: Candidate page /me, COL_EXCITEMENT
+narrative_slot: utility
+en: Interest
+th: ความสนใจ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 59d8e97ee19a2d24f5b6b8053fe67ba8079c09349c4e47559984f0b3a63a4444
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::BACK_TO_LIST`
+
+```yaml
+id: src/lib/content/portal.ts::BACK_TO_LIST
+source: src/lib/content/portal.ts
+path: BACK_TO_LIST
+render: Candidate page /me, BACK_TO_LIST
+narrative_slot: utility
+en: Back to the list
+th: กลับไปที่ลิสต์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: b755f5ca64301bbbce4d680cf7873883070e278bd4dc7ec7cdd3dddfac6b753c
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DTAB_INFO`
+
+```yaml
+id: src/lib/content/portal.ts::DTAB_INFO
+source: src/lib/content/portal.ts
+path: DTAB_INFO
+render: Candidate page /me, DTAB_INFO
+narrative_slot: utility
+en: Job info
+th: ข้อมูลงาน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 1da0f919331aa89d5c5d133b30a5b2ec90dffb140a1544ed5f5e4b96ce1f370e
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DTAB_NOTES`
+
+```yaml
+id: src/lib/content/portal.ts::DTAB_NOTES
+source: src/lib/content/portal.ts
+path: DTAB_NOTES
+render: Candidate page /me, DTAB_NOTES
+narrative_slot: utility
+en: Notes
+th: โน้ต
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 34b98421f48d12b986e715ad9e8b731fe6570064579c13dbffeadc3c486500bb
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DTAB_CV`
+
+```yaml
+id: src/lib/content/portal.ts::DTAB_CV
+source: src/lib/content/portal.ts
+path: DTAB_CV
+render: Candidate page /me, DTAB_CV
+narrative_slot: utility
+en: CV sent
+th: CV ที่ใช้สมัคร
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: f0880ecfb375ac05c71da4feb619cf83cc46c0dd7b13b1cae3f52ac4edf4cb8f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DTAB_COACH`
+
+```yaml
+id: src/lib/content/portal.ts::DTAB_COACH
+source: src/lib/content/portal.ts
+path: DTAB_COACH
+render: Candidate page /me, DTAB_COACH
+narrative_slot: utility
+en: From your coach
+th: จากโค้ช
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 91707d6848790c167b9224d9ec5ae603712bc4eeb6ba6ce554787634abbe0cfe
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DTAB_INTERVIEWS`
+
+```yaml
+id: src/lib/content/portal.ts::DTAB_INTERVIEWS
+source: src/lib/content/portal.ts
+path: DTAB_INTERVIEWS
+render: Candidate page /me, DTAB_INTERVIEWS
+narrative_slot: utility
+en: Interviews
+th: สัมภาษณ์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 416737623e35d9b063ffb51ceb5d12d0620d522a7287dfa6f59d6234aa315522
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DTAB_CONTACTS`
+
+```yaml
+id: src/lib/content/portal.ts::DTAB_CONTACTS
+source: src/lib/content/portal.ts
+path: DTAB_CONTACTS
+render: Candidate page /me, DTAB_CONTACTS
+narrative_slot: utility
+en: Contacts
+th: ผู้ติดต่อ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 58b3289ec7d08014dcb946dbc28fa9a48b25ca257cb7ec73db0c15e5c76a68bd
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_EMPTY`
+
+```yaml
+id: src/lib/content/portal.ts::IV_EMPTY
+source: src/lib/content/portal.ts
+path: IV_EMPTY
+render: Candidate page /me, IV_EMPTY
+narrative_slot: utility
+en: No interview recorded yet. Add each round as it is booked, so you can prepare and look back.
+th: ยังไม่มีรอบสัมภาษณ์ เพิ่มแต่ละรอบเมื่อได้นัด จะได้เตรียมตัวและย้อนดูได้ครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 446c11757da7978a8db466216bb8cafa18c91ffb490500d2905ae70d902607cd
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_ADD`
+
+```yaml
+id: src/lib/content/portal.ts::IV_ADD
+source: src/lib/content/portal.ts
+path: IV_ADD
+render: Candidate page /me, IV_ADD
+narrative_slot: utility
+en: Add a round
+th: เพิ่มรอบสัมภาษณ์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: abf24cfe38b2f400a845fd27a2e26e63371eac1736564ae8437d0fa31c987c9a
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_ROUND`
+
+```yaml
+id: src/lib/content/portal.ts::IV_ROUND
+source: src/lib/content/portal.ts
+path: IV_ROUND
+render: Candidate page /me, IV_ROUND
+narrative_slot: utility
+en: Round
+th: รอบ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: c1315553005971a9fb5f8144cac6ca4ede27b8df0e2c13836d8a433aa0132937
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_ROUND_HINT`
+
+```yaml
+id: src/lib/content/portal.ts::IV_ROUND_HINT
+source: src/lib/content/portal.ts
+path: IV_ROUND_HINT
+render: Candidate page /me, IV_ROUND_HINT
+narrative_slot: utility
+en: e.g. Recruiter screen, Technical, Final
+th: เช่น คุยกับ recruiter, technical, รอบสุดท้าย
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 46296467c541a0138d4d565bd39cd71657140ffa7879fa4feb3650802cdf3a06
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_DATE`
+
+```yaml
+id: src/lib/content/portal.ts::IV_DATE
+source: src/lib/content/portal.ts
+path: IV_DATE
+render: Candidate page /me, IV_DATE
+narrative_slot: utility
+en: Date
+th: วันที่
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: e2968e64cb12a9aa579667241d27ee9bdf4901edf737358cc7142868db405292
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_FORMAT`
+
+```yaml
+id: src/lib/content/portal.ts::IV_FORMAT
+source: src/lib/content/portal.ts
+path: IV_FORMAT
+render: Candidate page /me, IV_FORMAT
+narrative_slot: utility
+en: Format
+th: รูปแบบ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: f6c5c3e8864e551c35c935d87e4b7276fcbe41b453821e73986121688466b613
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_FORMATS.video`
+
+```yaml
+id: src/lib/content/portal.ts::IV_FORMATS.video
+source: src/lib/content/portal.ts
+path: IV_FORMATS.video
+render: Candidate page /me, IV_FORMATS.video
+narrative_slot: utility
+en: Video call
+th: วิดีโอคอล
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 2c903e71abcea218c59178740e8badd6748a1d545e492bb36e25138f8f80f92d
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_FORMATS.phone`
+
+```yaml
+id: src/lib/content/portal.ts::IV_FORMATS.phone
+source: src/lib/content/portal.ts
+path: IV_FORMATS.phone
+render: Candidate page /me, IV_FORMATS.phone
+narrative_slot: utility
+en: Phone
+th: โทรศัพท์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: d90953e2936fa2a33bfccd52bc75b43ebc174eb6fe13be7cc92e67d298c7d55d
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_FORMATS.onsite`
+
+```yaml
+id: src/lib/content/portal.ts::IV_FORMATS.onsite
+source: src/lib/content/portal.ts
+path: IV_FORMATS.onsite
+render: Candidate page /me, IV_FORMATS.onsite
+narrative_slot: utility
+en: In person
+th: ที่บริษัท
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 7cf29792a7d1aeba8f24bd9c9aa547b5ccc5183b943f8576700abbb540de5d13
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_INTERVIEWERS`
+
+```yaml
+id: src/lib/content/portal.ts::IV_INTERVIEWERS
+source: src/lib/content/portal.ts
+path: IV_INTERVIEWERS
+render: Candidate page /me, IV_INTERVIEWERS
+narrative_slot: utility
+en: Interviewers
+th: ผู้สัมภาษณ์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 3df928d8717265fa5808e608dc61310dfdb62875ae5105c21085027e3b7015b3
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::IV_NOTES`
+
+```yaml
+id: src/lib/content/portal.ts::IV_NOTES
+source: src/lib/content/portal.ts
+path: IV_NOTES
+render: Candidate page /me, IV_NOTES
+narrative_slot: utility
+en: How it went, what they asked
+th: เป็นอย่างไรบ้าง ถูกถามอะไร
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 60a23e76c51778c6411d2eb2235027c18acfe2a26c28e1e76d9eb987d332917e
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CT_EMPTY`
+
+```yaml
+id: src/lib/content/portal.ts::CT_EMPTY
+source: src/lib/content/portal.ts
+path: CT_EMPTY
+render: Candidate page /me, CT_EMPTY
+narrative_slot: utility
+en: No contact yet. Add the recruiter or hiring manager you are talking to.
+th: ยังไม่มีผู้ติดต่อ เพิ่ม recruiter หรือ hiring manager ที่คุณคุยด้วยได้เลยครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: d0abe65ad1ca5169932286e71abcbc49c69580436acd16a048b4a43d17d6d3c8
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CT_ADD`
+
+```yaml
+id: src/lib/content/portal.ts::CT_ADD
+source: src/lib/content/portal.ts
+path: CT_ADD
+render: Candidate page /me, CT_ADD
+narrative_slot: utility
+en: Add a contact
+th: เพิ่มผู้ติดต่อ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 49c65928814649d569fbb2914645ef107acf0b1cf51c5c838f9692e51cc0c835
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CT_NAME`
+
+```yaml
+id: src/lib/content/portal.ts::CT_NAME
+source: src/lib/content/portal.ts
+path: CT_NAME
+render: Candidate page /me, CT_NAME
+narrative_slot: utility
+en: Name
+th: ชื่อ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: e33b137dfee74dd686f9b0fed9d473630545b4d46d67224e27e4a78840711d40
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CT_ROLE`
+
+```yaml
+id: src/lib/content/portal.ts::CT_ROLE
+source: src/lib/content/portal.ts
+path: CT_ROLE
+render: Candidate page /me, CT_ROLE
+narrative_slot: utility
+en: Role
+th: ตำแหน่ง
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: c4d7298907038c14b16a743c684a63bde736d94c4f144ce8b518be2786eb1a18
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CT_ROLE_HINT`
+
+```yaml
+id: src/lib/content/portal.ts::CT_ROLE_HINT
+source: src/lib/content/portal.ts
+path: CT_ROLE_HINT
+render: Candidate page /me, CT_ROLE_HINT
+narrative_slot: utility
+en: e.g. Recruiter, Hiring manager
+th: เช่น Recruiter, Hiring manager
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 2528e8ec237382c55f5fa5e0f5f1820a4ee3dc9da5b88e477c20e30f52225193
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CT_EMAIL`
+
+```yaml
+id: src/lib/content/portal.ts::CT_EMAIL
+source: src/lib/content/portal.ts
+path: CT_EMAIL
+render: Candidate page /me, CT_EMAIL
+narrative_slot: utility
+en: Email
+th: อีเมล
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a84c4b8c0704df5c212c7bb1f7ab937e0d90bb602645a37b99a6fb7e5235735f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CT_LINKEDIN`
+
+```yaml
+id: src/lib/content/portal.ts::CT_LINKEDIN
+source: src/lib/content/portal.ts
+path: CT_LINKEDIN
+render: Candidate page /me, CT_LINKEDIN
+narrative_slot: utility
+en: LinkedIn link
+th: ลิงก์ LinkedIn
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 393091ed62308176a6da3a93c43dca59bade29d89930f0f1702e62c613ecfb10
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JD_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::JD_HEADING
+source: src/lib/content/portal.ts
+path: JD_HEADING
+render: Candidate page /me, JD_HEADING
+narrative_slot: utility
+en: Job description and keywords
+th: Job description และคำสำคัญ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 98e957c6430b10dd7cfc5ef93eaa33ebcab68dd6a1f85b1315bb74e5fd5b381c
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JD_HELP`
+
+```yaml
+id: src/lib/content/portal.ts::JD_HELP
+source: src/lib/content/portal.ts
+path: JD_HELP
+render: Candidate page /me, JD_HELP
+narrative_slot: utility
+en: >-
+  Paste the posting here. It stays even if the posting is taken down, and the words it repeats show
+  underneath.
+th: วางข้อความประกาศงานไว้ตรงนี้ เก็บไว้ได้แม้ประกาศจะถูกลบ และคำที่ประกาศพูดซ้ำบ่อย ๆ จะขึ้นด้านล่างครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4bf16f8c1dde109e4ec6423504b3d6eba1b1281e8cae957f009ed8c67c822068
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JD_KEYWORDS`
+
+```yaml
+id: src/lib/content/portal.ts::JD_KEYWORDS
+source: src/lib/content/portal.ts
+path: JD_KEYWORDS
+render: Candidate page /me, JD_KEYWORDS
+narrative_slot: utility
+en: Words this posting repeats
+th: คำที่ประกาศนี้พูดซ้ำ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: e164b65da21ae1902589cf37cd4008b0725cdc3812bbdd2a2c20efb11c4df385
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JD_EMPTY`
+
+```yaml
+id: src/lib/content/portal.ts::JD_EMPTY
+source: src/lib/content/portal.ts
+path: JD_EMPTY
+render: Candidate page /me, JD_EMPTY
+narrative_slot: utility
+en: No job description pasted yet.
+th: ยังไม่ได้วาง job description
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 2404f4b91a54aa3a5e0c37d00a576f6bb6e48ed95e17fced4ac63bf914241c36
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::LIST_REMOVE`
+
+```yaml
+id: src/lib/content/portal.ts::LIST_REMOVE
+source: src/lib/content/portal.ts
+path: LIST_REMOVE
+render: Candidate page /me, LIST_REMOVE
+narrative_slot: utility
+en: Remove
+th: ลบ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 23922b748a978d3baf672ff203698f9136f446bdd6aa2bd7fecc1b3f1263de7f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DETAIL_DATES`
+
+```yaml
+id: src/lib/content/portal.ts::DETAIL_DATES
+source: src/lib/content/portal.ts
+path: DETAIL_DATES
+render: Candidate page /me, DETAIL_DATES
+narrative_slot: utility
+en: Dates
+th: วันที่
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 92d941eb5ae32315eda23834c6bc5537e8f6f6459928ac84a0582158df1bf440
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::DETAIL_OURS`
+
+```yaml
+id: src/lib/content/portal.ts::DETAIL_OURS
+source: src/lib/content/portal.ts
+path: DETAIL_OURS
+render: Candidate page /me, DETAIL_OURS
+narrative_slot: utility
+en: >-
+  We picked this role for you, so its details stay as we sent them. Your notes, follow-up date, interest and
+  the CV you sent are yours to change.
+th: >-
+  ตำแหน่งนี้เราคัดให้ รายละเอียดงานจึงคงไว้ตามที่ส่งมา ส่วนโน้ต วันตามผล ความสนใจ และ CV ที่ใช้สมัคร
+  แก้ได้เองครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 20f2d847a8ab44f4aa22173d4912a1c8acaa99f64c19f9dbe47cc21282d12533
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_SENT_HELP`
+
+```yaml
+id: src/lib/content/portal.ts::CV_SENT_HELP
+source: src/lib/content/portal.ts
+path: CV_SENT_HELP
+render: Candidate page /me, CV_SENT_HELP
+narrative_slot: utility
+en: Pick the CV you sent with this job, so you can see later which version worked.
+th: เลือกว่าส่ง CV ฉบับไหนไปกับงานนี้ จะได้ย้อนดูได้ว่าฉบับไหนได้ผลครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 3acd4836c9b37a07b51e30c4499a5fd40082742959001b609b2b9d1f5c609645
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_SENT_NONE`
+
+```yaml
+id: src/lib/content/portal.ts::CV_SENT_NONE
+source: src/lib/content/portal.ts
+path: CV_SENT_NONE
+render: Candidate page /me, CV_SENT_NONE
+narrative_slot: utility
+en: Not chosen
+th: ยังไม่ได้เลือก
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 02b9b85eaeada7ccea538234b12669252e18e8c65e3dc845f7ac6a652d94c7ef
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::COACH_NOTES_NONE`
+
+```yaml
+id: src/lib/content/portal.ts::COACH_NOTES_NONE
+source: src/lib/content/portal.ts
+path: COACH_NOTES_NONE
+render: Candidate page /me, COACH_NOTES_NONE
+narrative_slot: utility
+en: No note from your coach on this job yet.
+th: ยังไม่มีโน้ตจากโค้ชสำหรับงานนี้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 05270aaadbadbfe5f226fb649813710072297bf1cc11ad6bf977e508895c962a
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CLOSE_AS`
+
+```yaml
+id: src/lib/content/portal.ts::CLOSE_AS
+source: src/lib/content/portal.ts
+path: CLOSE_AS
+render: Candidate page /me, CLOSE_AS
+narrative_slot: utility
+en: Close it as
+th: ปิดงานนี้เป็น
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 74b9e8335823e5fc4f38093596f3f11cb060309e20dec532a1a05c3dd701b337
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::REOPEN`
+
+```yaml
+id: src/lib/content/portal.ts::REOPEN
+source: src/lib/content/portal.ts
+path: REOPEN
+render: Candidate page /me, REOPEN
+narrative_slot: utility
+en: Reopen as saved
+th: เปิดกลับมาเป็นบันทึกไว้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 023c870c9046228626b53dde625cf995e15dfde9d59a13c1dee52ca79d6f4ae4
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SAVED_OK`
+
+```yaml
+id: src/lib/content/portal.ts::SAVED_OK
+source: src/lib/content/portal.ts
+path: SAVED_OK
+render: Candidate page /me, SAVED_OK
+narrative_slot: utility
+en: Saved
+th: บันทึกแล้ว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 3960c55ec6407c77722304b33471a08c67e973a220eaf3b0c2d9e45eaa3c2cb2
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::ADD_JOB`
+
+```yaml
+id: src/lib/content/portal.ts::ADD_JOB
+source: src/lib/content/portal.ts
+path: ADD_JOB
+render: Candidate page /me, ADD_JOB
+narrative_slot: utility
+en: Add a job
+th: เพิ่มงาน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: f7836557d666ad8316ea7be32493d78644eec04449cdc676c031da1405ab6d57
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::ADD_ROLE`
+
+```yaml
+id: src/lib/content/portal.ts::ADD_ROLE
+source: src/lib/content/portal.ts
+path: ADD_ROLE
+render: Candidate page /me, ADD_ROLE
+narrative_slot: utility
+en: Job title
+th: ตำแหน่ง
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4da609077db99b81c41e39975b79569b93cdbd05d913bd53fa5525122ba1af0d
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::ADD_EMPLOYER`
+
+```yaml
+id: src/lib/content/portal.ts::ADD_EMPLOYER
+source: src/lib/content/portal.ts
+path: ADD_EMPLOYER
+render: Candidate page /me, ADD_EMPLOYER
+narrative_slot: utility
+en: Company
+th: บริษัท
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4377230cc3a7af66f77ae811be3297baa079c3164af6c9c496ce44d26333a109
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::ADD_COUNTRY`
+
+```yaml
+id: src/lib/content/portal.ts::ADD_COUNTRY
+source: src/lib/content/portal.ts
+path: ADD_COUNTRY
+render: Candidate page /me, ADD_COUNTRY
+narrative_slot: utility
+en: Country
+th: ประเทศ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 92f0a137f5892949b2175a489b56b6f735623760772b79d455158abf62d2918c
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::ADD_LOCATION`
+
+```yaml
+id: src/lib/content/portal.ts::ADD_LOCATION
+source: src/lib/content/portal.ts
+path: ADD_LOCATION
+render: Candidate page /me, ADD_LOCATION
+narrative_slot: utility
+en: City, or remote
+th: เมือง หรือ remote
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 0a61dcf13ef7bafe8c985ee1a63844e97a47dc6355af0a0d82da3a7ddf1e63ed
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::ADD_URL`
+
+```yaml
+id: src/lib/content/portal.ts::ADD_URL
+source: src/lib/content/portal.ts
+path: ADD_URL
+render: Candidate page /me, ADD_URL
+narrative_slot: utility
+en: Link to the posting
+th: ลิงก์ประกาศงาน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 0f2ab0a51e22e7a6056a1c20d49d0eaabc3a3cbde59f732aca5d4f53470329d3
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::ADD_SALARY`
+
+```yaml
+id: src/lib/content/portal.ts::ADD_SALARY
+source: src/lib/content/portal.ts
+path: ADD_SALARY
+render: Candidate page /me, ADD_SALARY
+narrative_slot: utility
+en: Salary, if stated
+th: เงินเดือน ถ้ามีระบุ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: e0c32b33edf6590757b4c189f557b36e97a017316bfc5bdcb222d6cbc9767996
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::ADD_STATUS`
+
+```yaml
+id: src/lib/content/portal.ts::ADD_STATUS
+source: src/lib/content/portal.ts
+path: ADD_STATUS
+render: Candidate page /me, ADD_STATUS
+narrative_slot: utility
+en: Where you are with it
+th: ตอนนี้อยู่ขั้นไหน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 3cc7f99d47fa57da233d7f06b15bc2c8fa09ef74defe718f27e4a0b8c1194606
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::ERROR_FIELDS`
+
+```yaml
+id: src/lib/content/portal.ts::ERROR_FIELDS
+source: src/lib/content/portal.ts
+path: ERROR_FIELDS
+render: Candidate page /me, ERROR_FIELDS
+narrative_slot: utility
+en: Fill in the job title, company and country first.
+th: กรอกตำแหน่ง บริษัท และประเทศก่อนนะครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 0a32aa7186290bef1c54d7b10ecafd0995b3506faacb66dcfe2652cd787507b6
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::ERROR_GENERIC`
+
+```yaml
+id: src/lib/content/portal.ts::ERROR_GENERIC
+source: src/lib/content/portal.ts
+path: ERROR_GENERIC
+render: Candidate page /me, ERROR_GENERIC
+narrative_slot: utility
+en: That did not save. Try again in a moment.
+th: ยังบันทึกไม่สำเร็จ ลองใหม่อีกครั้งนะครับ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 908093b43383185b10ecaf17221d14a1de14d4efd025e6a5d1a96d44a34210e6
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::LOADING`
+
+```yaml
+id: src/lib/content/portal.ts::LOADING
+source: src/lib/content/portal.ts
+path: LOADING
+render: Candidate page /me, LOADING
+narrative_slot: utility
+en: Loading...
+th: กำลังโหลด...
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4b50f43ab320420f64410bdf148ec36ce9864c5bbc5956136abd49a930f49cf9
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.interested[0].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.interested[0].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.interested[0].label
+render: Candidate page /me, job checklist, Saved stage, step 1
+narrative_slot: utility
+en: Read the whole job description and note the words it repeats
+th: อ่าน job description ให้จบ แล้วจดคำที่ประกาศพูดซ้ำบ่อย ๆ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: b9ccfd262efccb5c8a139d5f14a1ae28d8e3ccbb4d8ed6dbb63e4e7b2e30c3a0
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.interested[1].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.interested[1].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.interested[1].label
+render: Candidate page /me, job checklist, Saved stage, step 2
+narrative_slot: utility
+en: Choose the CV version you will send
+th: เลือก CV ฉบับที่จะใช้กับงานนี้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 8e5ebc84bbd1b48e49225961dd8dbefc6efdb58f41ed3f87f067bdb1318b69de
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.interested[2].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.interested[2].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.interested[2].label
+render: Candidate page /me, job checklist, Saved stage, step 3
+narrative_slot: utility
+en: Tailor that CV to use the posting's own words
+th: ปรับ CV ให้ใช้คำเดียวกับใน job description
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 2192e3961c7fa9a981febb9b408c4a6d00f8e8162f1071a03b7d7f8e752f2964
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.interested[3].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.interested[3].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.interested[3].label
+render: Candidate page /me, job checklist, Saved stage, step 4
+narrative_slot: utility
+en: Write a cover letter or short note, if the posting asks for one
+th: เขียน cover letter หรือข้อความแนะนำตัวสั้น ๆ ถ้าประกาศขอ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 39b68c8f3124de95bf25e4771ba2c6f56396de3af1a3ec30477422334178f49c
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.interested[4].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.interested[4].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.interested[4].label
+render: Candidate page /me, job checklist, Saved stage, step 5
+narrative_slot: utility
+en: Add the closing date, if there is one
+th: ใส่วันปิดรับสมัคร ถ้าประกาศระบุไว้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 444932b86d3b08a2418dec7eb3c099427888ce47a7dfdd25a2c3d31c7eda336f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.applied[0].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.applied[0].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.applied[0].label
+render: Candidate page /me, job checklist, Applied stage, step 1
+narrative_slot: utility
+en: Record which CV you sent, in the CV sent tab
+th: บันทึกว่าส่ง CV ฉบับไหนไป ในแท็บ CV ที่ใช้สมัคร
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 734f2b06accab1f125b5be381afbf1dc2da70b189710872f90f4d69cae2791be
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.applied[1].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.applied[1].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.applied[1].label
+render: Candidate page /me, job checklist, Applied stage, step 2
+narrative_slot: utility
+en: Set a follow-up date 7 to 10 days from now
+th: ตั้งวันตามผล ประมาณ 7 ถึง 10 วันหลังสมัคร
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a6c594144d970fce02c1e033bb2b30459c2b082998f701495a1fd6a68c616e2e
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.applied[2].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.applied[2].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.applied[2].label
+render: Candidate page /me, job checklist, Applied stage, step 3
+narrative_slot: utility
+en: Find the recruiter or hiring manager on LinkedIn and add them as a contact
+th: หา recruiter หรือ hiring manager บน LinkedIn แล้วเพิ่มในแท็บผู้ติดต่อ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 43c7aeee53514d109542e61c66b13f62e4a20288761c6565d98157f22a2eb489
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.applied[3].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.applied[3].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.applied[3].label
+render: Candidate page /me, job checklist, Applied stage, step 4
+narrative_slot: utility
+en: Send them a short message that you have applied
+th: ส่งข้อความสั้น ๆ ทาง LinkedIn ว่าคุณสมัครตำแหน่งนี้แล้ว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: d563bf4d74b16b4420daddca02b01f377cdf8de782a78bfbdfc0f4a14fdb5eff
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.applied[4].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.applied[4].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.applied[4].label
+render: Candidate page /me, job checklist, Applied stage, step 5
+narrative_slot: utility
+en: Follow up on the date if you have heard nothing
+th: ถ้าถึงวันตามผลแล้วยังเงียบ ทักไปถามอีกครั้ง
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: f00b4ea46a87a84ac519239c0c11c09786dcaded1374b3e994843504dae6bed7
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.screening[0].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.screening[0].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.screening[0].label
+render: Candidate page /me, job checklist, Screening stage, step 1
+narrative_slot: utility
+en: Prepare a one-minute answer to 'tell me about yourself'
+th: เตรียมคำตอบแนะนำตัวให้จบใน 1 นาที
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: f03740708edb0bf68c5cd38606c44b319048ac4589e46ec15778ca76cac10e0c
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.screening[1].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.screening[1].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.screening[1].label
+render: Candidate page /me, job checklist, Screening stage, step 2
+narrative_slot: utility
+en: Prepare your expected salary as a yearly range in the local currency
+th: เตรียมเงินเดือนที่คาดหวัง เป็นช่วงต่อปีในสกุลเงินของประเทศนั้น
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4373a32742e18604c809cd22bb4cbc9327f1574cfeacc76d205942f3215de89e
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.screening[2].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.screening[2].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.screening[2].label
+render: Candidate page /me, job checklist, Screening stage, step 3
+narrative_slot: utility
+en: Know your notice period and the earliest date you can start
+th: เช็ก notice period และวันที่เร็วที่สุดที่เริ่มงานได้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 71d729c610cab568af75e92fdd352373a1e1db8dec85f39570a015ee135fb0e4
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.screening[3].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.screening[3].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.screening[3].label
+render: Candidate page /me, job checklist, Screening stage, step 4
+narrative_slot: utility
+en: Test your microphone, camera and the call link 10 minutes before
+th: ทดสอบไมค์ กล้อง และลิงก์ก่อนเวลานัด 10 นาที
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 74c35a03b07406cf7d9e83029dd8e045f335373f2672b137da08cd7cf06e26ca
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.screening[4].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.screening[4].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.screening[4].label
+render: Candidate page /me, job checklist, Screening stage, step 5
+narrative_slot: utility
+en: Afterwards, log who you spoke to and what they asked, in Interviews
+th: คุยเสร็จแล้ว จดชื่อคนที่คุยและสิ่งที่ถูกถามในแท็บสัมภาษณ์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 58d42efd16888a5d47503298d69fcc7b479fde13680c11960a245f7baee0bec0
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.interviewing[0].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.interviewing[0].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.interviewing[0].label
+render: Candidate page /me, job checklist, Interviewing stage, step 1
+narrative_slot: utility
+en: Research the company and the people interviewing you
+th: หาข้อมูลบริษัทและคนที่จะสัมภาษณ์คุณ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: dcaa08d06c0716a792665819ea5ab141c7d4fd5ead95844a97c953a826e7a2b7
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.interviewing[1].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.interviewing[1].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.interviewing[1].label
+render: Candidate page /me, job checklist, Interviewing stage, step 2
+narrative_slot: utility
+en: Prepare three examples of your work, each with a result in numbers
+th: เตรียมตัวอย่างผลงาน 3 เรื่อง แต่ละเรื่องมีผลลัพธ์เป็นตัวเลข
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 650741e02cf308da5dbd51a3819c6ff48f61f62c7dc4f68803f0e539b5559864
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.interviewing[2].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.interviewing[2].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.interviewing[2].label
+render: Candidate page /me, job checklist, Interviewing stage, step 3
+narrative_slot: utility
+en: Prepare three questions to ask them
+th: เตรียมคำถามถามกลับ 3 ข้อ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 4ab162c8f5ab3a810017faae2a61ce7f139f0d9a0c1990190e3fc6a687575dfc
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.interviewing[3].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.interviewing[3].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.interviewing[3].label
+render: Candidate page /me, job checklist, Interviewing stage, step 4
+narrative_slot: utility
+en: Send a thank-you email within 24 hours of each round
+th: ส่งอีเมลขอบคุณภายใน 24 ชั่วโมงหลังสัมภาษณ์แต่ละรอบ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 1d45857ee20b85cdf2b0a23db2a04bc868816244d1b1d25f81fe67749a2ec9f4
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.interviewing[4].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.interviewing[4].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.interviewing[4].label
+render: Candidate page /me, job checklist, Interviewing stage, step 5
+narrative_slot: utility
+en: Log each round and what was asked, in Interviews
+th: บันทึกแต่ละรอบและสิ่งที่ถูกถามในแท็บสัมภาษณ์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: dc44b46d48aac27418d286b78eb3b449a64be7fe724042840917e508795490bc
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.offer[0].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.offer[0].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.offer[0].label
+render: Candidate page /me, job checklist, Offer stage, step 1
+narrative_slot: utility
+en: Ask for the offer in writing
+th: ขอข้อเสนอเป็นลายลักษณ์อักษร
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 27f7228477e549071379793c64b695f1abfd3cee53d578bcbb33eed6d51ec193
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.offer[1].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.offer[1].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.offer[1].label
+render: Candidate page /me, job checklist, Offer stage, step 2
+narrative_slot: utility
+en: Work out the salary after tax against the city's cost of living
+th: คำนวณเงินเดือนหลังหักภาษี แล้วเทียบกับค่าครองชีพของเมืองนั้น
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: a95ee6f84d9df7c55a2e3bb5d1232dc8699518e7c595a2dca22688cb8bd9bb94
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.offer[2].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.offer[2].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.offer[2].label
+render: Candidate page /me, job checklist, Offer stage, step 3
+narrative_slot: utility
+en: Check the start date, probation period and paid leave
+th: เช็กวันเริ่มงาน ช่วงทดลองงาน และวันลาพักร้อน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: e189baaa5298c96e6865d85fc07d3d7c2cdc33780a07b558a40c85a9bf574ad2
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.offer[3].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.offer[3].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.offer[3].label
+render: Candidate page /me, job checklist, Offer stage, step 4
+narrative_slot: utility
+en: Accept or negotiate before the deadline they gave
+th: ตอบรับหรือต่อรองก่อนวันที่บริษัทกำหนด
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 8578511f64e182ea2fecc40a6b80e6075fb62258103ee16b7f130724fd499275
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.offer[4].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.offer[4].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.offer[4].label
+render: Candidate page /me, job checklist, Offer stage, step 5
+narrative_slot: utility
+en: If anything in the contract is unclear, ask your coach before you sign
+th: ถ้ามีอะไรในสัญญาที่ไม่แน่ใจ ทักโค้ชก่อนเซ็น
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 8fd38537c6ba2907c8479afb2df523551430548fbbcaf3082bea538e6ca4e35d
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.accepted[0].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.accepted[0].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.accepted[0].label
+render: Candidate page /me, job checklist, Accepted stage, step 1
+narrative_slot: utility
+en: Sign the contract and keep a copy
+th: เซ็นสัญญาและเก็บสำเนาไว้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 5ef9b37ebc0c7b36fb80ccda63b707c2d8585ada728391deb30bde8f327ad699
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.accepted[1].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.accepted[1].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.accepted[1].label
+render: Candidate page /me, job checklist, Accepted stage, step 2
+narrative_slot: utility
+en: Tell the other companies you are still talking to that you are withdrawing
+th: แจ้งบริษัทอื่นที่ยังคุยอยู่ว่าคุณขอถอนตัว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 2768537e0bfaeb6bf6d3a0db285828032ba1b2852fa7849a5057d1d4c652dcaa
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.accepted[2].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.accepted[2].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.accepted[2].label
+render: Candidate page /me, job checklist, Accepted stage, step 3
+narrative_slot: utility
+en: Close your other jobs in this list as withdrawn
+th: ปิดงานอื่นในลิสต์นี้เป็น ถอนตัว
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 0b2046211d9116f6641d0b10d06117d8c0a301d94b4a1375a288e0fc75bcdd06
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.accepted[3].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.accepted[3].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.accepted[3].label
+render: Candidate page /me, job checklist, Accepted stage, step 4
+narrative_slot: utility
+en: Thank the people who referred you or gave a reference
+th: ขอบคุณคนที่ช่วยแนะนำหรือเป็น reference ให้
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 304e556371ad8d445f292cbea7f313134fefeb55cbef631ab62b96746fc0c8de
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST.accepted[4].label`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST.accepted[4].label
+source: src/lib/content/checklist.ts
+path: CHECKLIST.accepted[4].label
+render: Candidate page /me, job checklist, Accepted stage, step 5
+narrative_slot: utility
+en: Ask the employer which documents they need before your first day
+th: ถามบริษัทว่าต้องเตรียมเอกสารอะไรบ้างก่อนวันเริ่มงาน
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 43086ef7d28d508ec3cb7ea615327b1e4de85e18e9e177341738ff87e78cd5cb
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST_TAB`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST_TAB
+source: src/lib/content/checklist.ts
+path: CHECKLIST_TAB
+render: Candidate page /me, CHECKLIST_TAB
+narrative_slot: utility
+en: Checklist
+th: เช็กลิสต์
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 7d859b5535ad41e6097bf7e69bb696a777bb2300630dbd99663475d8b7e95eb8
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST_PROGRESS`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST_PROGRESS
+source: src/lib/content/checklist.ts
+path: CHECKLIST_PROGRESS
+render: Candidate page /me, CHECKLIST_PROGRESS
+narrative_slot: utility
+en: '{stage} steps: {done} of {total} done'
+th: 'ขั้น{stage}: ทำแล้ว {done} จาก {total}'
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: 18483440488218bccd000d5279b252174872d11fa52ad076ef76fc2ab92a934f
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/checklist.ts::CHECKLIST_OTHER`
+
+```yaml
+id: src/lib/content/checklist.ts::CHECKLIST_OTHER
+source: src/lib/content/checklist.ts
+path: CHECKLIST_OTHER
+render: Candidate page /me, CHECKLIST_OTHER
+narrative_slot: utility
+en: Other stages
+th: ขั้นอื่น ๆ
+provenance: draft
+date: 31/10/2026
+term_bindings: []
+decision_note: >-
+  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
+  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
+  migration; the review may change it.
+review:
+  structural_calque: pending
+  text_hash: fade1cb3a7366ae49ec26f99ed0181807ca5887de9d385f76c16ea7010a565a5
+  prompt_version: structural-calque-v1
+  basis: Awaiting Paul's review in the language queue.
+```

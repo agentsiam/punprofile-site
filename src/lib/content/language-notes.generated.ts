@@ -10547,5 +10547,1841 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-written",
     "date": "30/10/2026",
     "decisionNote": "Paul's tag, 30/10/2026: his degrees, in the same form as Tatiya's education pill."
+  },
+  "src/lib/content/portal.ts::PORTAL_TITLE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PORTAL_TITLE",
+    "render": "Candidate page /me, PORTAL_TITLE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::PORTAL_GREETING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PORTAL_GREETING",
+    "render": "Candidate page /me, PORTAL_GREETING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::PORTAL_GREETING_NONAME": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PORTAL_GREETING_NONAME",
+    "render": "Candidate page /me, PORTAL_GREETING_NONAME",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::PORTAL_INTRO": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PORTAL_INTRO",
+    "render": "Candidate page /me, PORTAL_INTRO",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::PORTAL_INTRO_SHORT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PORTAL_INTRO_SHORT",
+    "render": "Candidate page /me, PORTAL_INTRO_SHORT",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGNIN_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_HEADING",
+    "render": "Candidate page /me, SIGNIN_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGNIN_BODY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_BODY",
+    "render": "Candidate page /me, SIGNIN_BODY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGNIN_EMAIL": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_EMAIL",
+    "render": "Candidate page /me, SIGNIN_EMAIL",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGNIN_SEND": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_SEND",
+    "render": "Candidate page /me, SIGNIN_SEND",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGNIN_SENT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_SENT",
+    "render": "Candidate page /me, SIGNIN_SENT",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGNIN_CODE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_CODE",
+    "render": "Candidate page /me, SIGNIN_CODE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGNIN_VERIFY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_VERIFY",
+    "render": "Candidate page /me, SIGNIN_VERIFY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGNIN_BAD_CODE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_BAD_CODE",
+    "render": "Candidate page /me, SIGNIN_BAD_CODE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGNIN_OTHER_EMAIL": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_OTHER_EMAIL",
+    "render": "Candidate page /me, SIGNIN_OTHER_EMAIL",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGNIN_RESEND": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_RESEND",
+    "render": "Candidate page /me, SIGNIN_RESEND",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::NO_ACCESS_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "NO_ACCESS_HEADING",
+    "render": "Candidate page /me, NO_ACCESS_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::NO_ACCESS_BODY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "NO_ACCESS_BODY",
+    "render": "Candidate page /me, NO_ACCESS_BODY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COACH_HERE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COACH_HERE",
+    "render": "Candidate page /me, COACH_HERE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SIGN_OUT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGN_OUT",
+    "render": "Candidate page /me, SIGN_OUT",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TAB_OVERVIEW": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TAB_OVERVIEW",
+    "render": "Candidate page /me, TAB_OVERVIEW",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TAB_TRACKER": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TAB_TRACKER",
+    "render": "Candidate page /me, TAB_TRACKER",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TAB_FEED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TAB_FEED",
+    "render": "Candidate page /me, TAB_FEED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FEED_INTRO": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FEED_INTRO",
+    "render": "Candidate page /me, FEED_INTRO",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FEED_EMPTY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FEED_EMPTY",
+    "render": "Candidate page /me, FEED_EMPTY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FEED_NO_TARGET": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FEED_NO_TARGET",
+    "render": "Candidate page /me, FEED_NO_TARGET",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FEED_SAVE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FEED_SAVE",
+    "render": "Candidate page /me, FEED_SAVE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FEED_SAVED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FEED_SAVED",
+    "render": "Candidate page /me, FEED_SAVED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FEED_SEEN": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FEED_SEEN",
+    "render": "Candidate page /me, FEED_SEEN",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FEED_UPDATED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FEED_UPDATED",
+    "render": "Candidate page /me, FEED_UPDATED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TAB_CV": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TAB_CV",
+    "render": "Candidate page /me, TAB_CV",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TAB_COACH": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TAB_COACH",
+    "render": "Candidate page /me, TAB_COACH",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::PIPELINE_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PIPELINE_HEADING",
+    "render": "Candidate page /me, PIPELINE_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DATES_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DATES_HEADING",
+    "render": "Candidate page /me, DATES_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DATES_EMPTY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DATES_EMPTY",
+    "render": "Candidate page /me, DATES_EMPTY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DATE_FOLLOW": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DATE_FOLLOW",
+    "render": "Candidate page /me, DATE_FOLLOW",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DATE_CLOSES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DATE_CLOSES",
+    "render": "Candidate page /me, DATE_CLOSES",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DATE_DUE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DATE_DUE",
+    "render": "Candidate page /me, DATE_DUE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::LATEST_NOTE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "LATEST_NOTE",
+    "render": "Candidate page /me, LATEST_NOTE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SEE_ALL": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SEE_ALL",
+    "render": "Candidate page /me, SEE_ALL",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TOKENS_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_HEADING",
+    "render": "Candidate page /me, TOKENS_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TOKENS_OF": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_OF",
+    "render": "Candidate page /me, TOKENS_OF",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TOKENS_MATCHED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_MATCHED",
+    "render": "Candidate page /me, TOKENS_MATCHED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TOKENS_RULE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_RULE",
+    "render": "Candidate page /me, TOKENS_RULE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_HEADING",
+    "render": "Candidate page /me, WORK_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_EMPTY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_EMPTY",
+    "render": "Candidate page /me, WORK_EMPTY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_STATUS.not_started": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_STATUS.not_started",
+    "render": "Candidate page /me, WORK_STATUS.not_started",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_STATUS.in_progress": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_STATUS.in_progress",
+    "render": "Candidate page /me, WORK_STATUS.in_progress",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_STATUS.delivered": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_STATUS.delivered",
+    "render": "Candidate page /me, WORK_STATUS.delivered",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_DUE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_DUE",
+    "render": "Candidate page /me, WORK_DUE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_DONE_ON": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_DONE_ON",
+    "render": "Candidate page /me, WORK_DONE_ON",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.fit_report": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.fit_report",
+    "render": "Candidate page /me, WORK_KIND.fit_report",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.coaching_session": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.coaching_session",
+    "render": "Candidate page /me, WORK_KIND.coaching_session",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.base_cv": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.base_cv",
+    "render": "Candidate page /me, WORK_KIND.base_cv",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.linkedin": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.linkedin",
+    "render": "Candidate page /me, WORK_KIND.linkedin",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.portfolio": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.portfolio",
+    "render": "Candidate page /me, WORK_KIND.portfolio",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.country_research": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.country_research",
+    "render": "Candidate page /me, WORK_KIND.country_research",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.tailored_application": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.tailored_application",
+    "render": "Candidate page /me, WORK_KIND.tailored_application",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.interview_prep": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.interview_prep",
+    "render": "Candidate page /me, WORK_KIND.interview_prep",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.mock_interview": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.mock_interview",
+    "render": "Candidate page /me, WORK_KIND.mock_interview",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.offer_review": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.offer_review",
+    "render": "Candidate page /me, WORK_KIND.offer_review",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::WORK_KIND.contract_review": {
+    "source": "src/lib/content/portal.ts",
+    "path": "WORK_KIND.contract_review",
+    "render": "Candidate page /me, WORK_KIND.contract_review",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::BOOK_TIME": {
+    "source": "src/lib/content/portal.ts",
+    "path": "BOOK_TIME",
+    "render": "Candidate page /me, BOOK_TIME",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TOKENS_MORE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_MORE",
+    "render": "Candidate page /me, TOKENS_MORE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TOKENS_LOW": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_LOW",
+    "render": "Candidate page /me, TOKENS_LOW",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::TOKENS_REQUESTED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_REQUESTED",
+    "render": "Candidate page /me, TOKENS_REQUESTED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FIT_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FIT_HEADING",
+    "render": "Candidate page /me, FIT_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FIT_BODY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FIT_BODY",
+    "render": "Candidate page /me, FIT_BODY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FIT_OPEN": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FIT_OPEN",
+    "render": "Candidate page /me, FIT_OPEN",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::FIT_POPUP": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FIT_POPUP",
+    "render": "Candidate page /me, FIT_POPUP",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::GOAL_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "GOAL_HEADING",
+    "render": "Candidate page /me, GOAL_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::GOAL_PROGRESS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "GOAL_PROGRESS",
+    "render": "Candidate page /me, GOAL_PROGRESS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::GOAL_NONE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "GOAL_NONE",
+    "render": "Candidate page /me, GOAL_NONE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::GOAL_PROMPT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "GOAL_PROMPT",
+    "render": "Candidate page /me, GOAL_PROMPT",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::GOAL_SET": {
+    "source": "src/lib/content/portal.ts",
+    "path": "GOAL_SET",
+    "render": "Candidate page /me, GOAL_SET",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::GOAL_CHANGE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "GOAL_CHANGE",
+    "render": "Candidate page /me, GOAL_CHANGE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::GOAL_WEEK_NOTE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "GOAL_WEEK_NOTE",
+    "render": "Candidate page /me, GOAL_WEEK_NOTE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::NOTES_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "NOTES_HEADING",
+    "render": "Candidate page /me, NOTES_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CV_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_HEADING",
+    "render": "Candidate page /me, CV_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CV_EMPTY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_EMPTY",
+    "render": "Candidate page /me, CV_EMPTY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CV_VERSION": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_VERSION",
+    "render": "Candidate page /me, CV_VERSION",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CV_LATEST": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_LATEST",
+    "render": "Candidate page /me, CV_LATEST",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CV_THEIRS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_THEIRS",
+    "render": "Candidate page /me, CV_THEIRS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CV_OURS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_OURS",
+    "render": "Candidate page /me, CV_OURS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CV_CHANGED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_CHANGED",
+    "render": "Candidate page /me, CV_CHANGED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CV_DOWNLOAD": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_DOWNLOAD",
+    "render": "Candidate page /me, CV_DOWNLOAD",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_HEADING",
+    "render": "Candidate page /me, JOBS_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_INTRO": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_INTRO",
+    "render": "Candidate page /me, JOBS_INTRO",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_EMPTY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_EMPTY",
+    "render": "Candidate page /me, JOBS_EMPTY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_ALL": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_ALL",
+    "render": "Candidate page /me, JOBS_ALL",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_STATUS.interested": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_STATUS.interested",
+    "render": "Candidate page /me, JOBS_STATUS.interested",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_STATUS.applied": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_STATUS.applied",
+    "render": "Candidate page /me, JOBS_STATUS.applied",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_STATUS.screening": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_STATUS.screening",
+    "render": "Candidate page /me, JOBS_STATUS.screening",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_STATUS.interviewing": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_STATUS.interviewing",
+    "render": "Candidate page /me, JOBS_STATUS.interviewing",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_STATUS.offer": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_STATUS.offer",
+    "render": "Candidate page /me, JOBS_STATUS.offer",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_STATUS.accepted": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_STATUS.accepted",
+    "render": "Candidate page /me, JOBS_STATUS.accepted",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_STATUS.rejected": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_STATUS.rejected",
+    "render": "Candidate page /me, JOBS_STATUS.rejected",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_STATUS.withdrawn": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_STATUS.withdrawn",
+    "render": "Candidate page /me, JOBS_STATUS.withdrawn",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_FROM_US": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_FROM_US",
+    "render": "Candidate page /me, JOBS_FROM_US",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_WHY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_WHY",
+    "render": "Candidate page /me, JOBS_WHY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_POSTING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_POSTING",
+    "render": "Candidate page /me, JOBS_POSTING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_CLOSES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_CLOSES",
+    "render": "Candidate page /me, JOBS_CLOSES",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_APPLIED_ON": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_APPLIED_ON",
+    "render": "Candidate page /me, JOBS_APPLIED_ON",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_FOLLOW_UP": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_FOLLOW_UP",
+    "render": "Candidate page /me, JOBS_FOLLOW_UP",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_NOTES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_NOTES",
+    "render": "Candidate page /me, JOBS_NOTES",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_SAVE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_SAVE",
+    "render": "Candidate page /me, JOBS_SAVE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_CANCEL": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_CANCEL",
+    "render": "Candidate page /me, JOBS_CANCEL",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_REMOVE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_REMOVE",
+    "render": "Candidate page /me, JOBS_REMOVE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_REMOVE_CONFIRM": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_REMOVE_CONFIRM",
+    "render": "Candidate page /me, JOBS_REMOVE_CONFIRM",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_DETAILS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_DETAILS",
+    "render": "Candidate page /me, JOBS_DETAILS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_SEARCH": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_SEARCH",
+    "render": "Candidate page /me, JOBS_SEARCH",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_CLOSED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_CLOSED",
+    "render": "Candidate page /me, JOBS_CLOSED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JOBS_NO_MATCH": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOBS_NO_MATCH",
+    "render": "Candidate page /me, JOBS_NO_MATCH",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COL_ROLE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COL_ROLE",
+    "render": "Candidate page /me, COL_ROLE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COL_COMPANY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COL_COMPANY",
+    "render": "Candidate page /me, COL_COMPANY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COL_SALARY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COL_SALARY",
+    "render": "Candidate page /me, COL_SALARY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COL_LOCATION": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COL_LOCATION",
+    "render": "Candidate page /me, COL_LOCATION",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COL_STATUS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COL_STATUS",
+    "render": "Candidate page /me, COL_STATUS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COL_SAVED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COL_SAVED",
+    "render": "Candidate page /me, COL_SAVED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COL_DEADLINE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COL_DEADLINE",
+    "render": "Candidate page /me, COL_DEADLINE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COL_APPLIED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COL_APPLIED",
+    "render": "Candidate page /me, COL_APPLIED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COL_FOLLOW": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COL_FOLLOW",
+    "render": "Candidate page /me, COL_FOLLOW",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COL_EXCITEMENT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COL_EXCITEMENT",
+    "render": "Candidate page /me, COL_EXCITEMENT",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::BACK_TO_LIST": {
+    "source": "src/lib/content/portal.ts",
+    "path": "BACK_TO_LIST",
+    "render": "Candidate page /me, BACK_TO_LIST",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DTAB_INFO": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DTAB_INFO",
+    "render": "Candidate page /me, DTAB_INFO",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DTAB_NOTES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DTAB_NOTES",
+    "render": "Candidate page /me, DTAB_NOTES",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DTAB_CV": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DTAB_CV",
+    "render": "Candidate page /me, DTAB_CV",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DTAB_COACH": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DTAB_COACH",
+    "render": "Candidate page /me, DTAB_COACH",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DTAB_INTERVIEWS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DTAB_INTERVIEWS",
+    "render": "Candidate page /me, DTAB_INTERVIEWS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DTAB_CONTACTS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DTAB_CONTACTS",
+    "render": "Candidate page /me, DTAB_CONTACTS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_EMPTY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_EMPTY",
+    "render": "Candidate page /me, IV_EMPTY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_ADD": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_ADD",
+    "render": "Candidate page /me, IV_ADD",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_ROUND": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_ROUND",
+    "render": "Candidate page /me, IV_ROUND",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_ROUND_HINT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_ROUND_HINT",
+    "render": "Candidate page /me, IV_ROUND_HINT",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_DATE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_DATE",
+    "render": "Candidate page /me, IV_DATE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_FORMAT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_FORMAT",
+    "render": "Candidate page /me, IV_FORMAT",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_FORMATS.video": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_FORMATS.video",
+    "render": "Candidate page /me, IV_FORMATS.video",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_FORMATS.phone": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_FORMATS.phone",
+    "render": "Candidate page /me, IV_FORMATS.phone",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_FORMATS.onsite": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_FORMATS.onsite",
+    "render": "Candidate page /me, IV_FORMATS.onsite",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_INTERVIEWERS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_INTERVIEWERS",
+    "render": "Candidate page /me, IV_INTERVIEWERS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::IV_NOTES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "IV_NOTES",
+    "render": "Candidate page /me, IV_NOTES",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CT_EMPTY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CT_EMPTY",
+    "render": "Candidate page /me, CT_EMPTY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CT_ADD": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CT_ADD",
+    "render": "Candidate page /me, CT_ADD",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CT_NAME": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CT_NAME",
+    "render": "Candidate page /me, CT_NAME",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CT_ROLE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CT_ROLE",
+    "render": "Candidate page /me, CT_ROLE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CT_ROLE_HINT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CT_ROLE_HINT",
+    "render": "Candidate page /me, CT_ROLE_HINT",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CT_EMAIL": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CT_EMAIL",
+    "render": "Candidate page /me, CT_EMAIL",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CT_LINKEDIN": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CT_LINKEDIN",
+    "render": "Candidate page /me, CT_LINKEDIN",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JD_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JD_HEADING",
+    "render": "Candidate page /me, JD_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JD_HELP": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JD_HELP",
+    "render": "Candidate page /me, JD_HELP",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JD_KEYWORDS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JD_KEYWORDS",
+    "render": "Candidate page /me, JD_KEYWORDS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::JD_EMPTY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JD_EMPTY",
+    "render": "Candidate page /me, JD_EMPTY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::LIST_REMOVE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "LIST_REMOVE",
+    "render": "Candidate page /me, LIST_REMOVE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DETAIL_DATES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DETAIL_DATES",
+    "render": "Candidate page /me, DETAIL_DATES",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::DETAIL_OURS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "DETAIL_OURS",
+    "render": "Candidate page /me, DETAIL_OURS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CV_SENT_HELP": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_SENT_HELP",
+    "render": "Candidate page /me, CV_SENT_HELP",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CV_SENT_NONE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_SENT_NONE",
+    "render": "Candidate page /me, CV_SENT_NONE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::COACH_NOTES_NONE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "COACH_NOTES_NONE",
+    "render": "Candidate page /me, COACH_NOTES_NONE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::CLOSE_AS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CLOSE_AS",
+    "render": "Candidate page /me, CLOSE_AS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::REOPEN": {
+    "source": "src/lib/content/portal.ts",
+    "path": "REOPEN",
+    "render": "Candidate page /me, REOPEN",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::SAVED_OK": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SAVED_OK",
+    "render": "Candidate page /me, SAVED_OK",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::ADD_JOB": {
+    "source": "src/lib/content/portal.ts",
+    "path": "ADD_JOB",
+    "render": "Candidate page /me, ADD_JOB",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::ADD_ROLE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "ADD_ROLE",
+    "render": "Candidate page /me, ADD_ROLE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::ADD_EMPLOYER": {
+    "source": "src/lib/content/portal.ts",
+    "path": "ADD_EMPLOYER",
+    "render": "Candidate page /me, ADD_EMPLOYER",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::ADD_COUNTRY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "ADD_COUNTRY",
+    "render": "Candidate page /me, ADD_COUNTRY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::ADD_LOCATION": {
+    "source": "src/lib/content/portal.ts",
+    "path": "ADD_LOCATION",
+    "render": "Candidate page /me, ADD_LOCATION",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::ADD_URL": {
+    "source": "src/lib/content/portal.ts",
+    "path": "ADD_URL",
+    "render": "Candidate page /me, ADD_URL",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::ADD_SALARY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "ADD_SALARY",
+    "render": "Candidate page /me, ADD_SALARY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::ADD_STATUS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "ADD_STATUS",
+    "render": "Candidate page /me, ADD_STATUS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::ERROR_FIELDS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "ERROR_FIELDS",
+    "render": "Candidate page /me, ERROR_FIELDS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::ERROR_GENERIC": {
+    "source": "src/lib/content/portal.ts",
+    "path": "ERROR_GENERIC",
+    "render": "Candidate page /me, ERROR_GENERIC",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/portal.ts::LOADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "LOADING",
+    "render": "Candidate page /me, LOADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.interested[0].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.interested[0].label",
+    "render": "Candidate page /me, job checklist, Saved stage, step 1",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.interested[1].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.interested[1].label",
+    "render": "Candidate page /me, job checklist, Saved stage, step 2",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.interested[2].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.interested[2].label",
+    "render": "Candidate page /me, job checklist, Saved stage, step 3",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.interested[3].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.interested[3].label",
+    "render": "Candidate page /me, job checklist, Saved stage, step 4",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.interested[4].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.interested[4].label",
+    "render": "Candidate page /me, job checklist, Saved stage, step 5",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.applied[0].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.applied[0].label",
+    "render": "Candidate page /me, job checklist, Applied stage, step 1",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.applied[1].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.applied[1].label",
+    "render": "Candidate page /me, job checklist, Applied stage, step 2",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.applied[2].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.applied[2].label",
+    "render": "Candidate page /me, job checklist, Applied stage, step 3",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.applied[3].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.applied[3].label",
+    "render": "Candidate page /me, job checklist, Applied stage, step 4",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.applied[4].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.applied[4].label",
+    "render": "Candidate page /me, job checklist, Applied stage, step 5",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.screening[0].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.screening[0].label",
+    "render": "Candidate page /me, job checklist, Screening stage, step 1",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.screening[1].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.screening[1].label",
+    "render": "Candidate page /me, job checklist, Screening stage, step 2",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.screening[2].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.screening[2].label",
+    "render": "Candidate page /me, job checklist, Screening stage, step 3",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.screening[3].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.screening[3].label",
+    "render": "Candidate page /me, job checklist, Screening stage, step 4",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.screening[4].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.screening[4].label",
+    "render": "Candidate page /me, job checklist, Screening stage, step 5",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.interviewing[0].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.interviewing[0].label",
+    "render": "Candidate page /me, job checklist, Interviewing stage, step 1",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.interviewing[1].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.interviewing[1].label",
+    "render": "Candidate page /me, job checklist, Interviewing stage, step 2",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.interviewing[2].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.interviewing[2].label",
+    "render": "Candidate page /me, job checklist, Interviewing stage, step 3",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.interviewing[3].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.interviewing[3].label",
+    "render": "Candidate page /me, job checklist, Interviewing stage, step 4",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.interviewing[4].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.interviewing[4].label",
+    "render": "Candidate page /me, job checklist, Interviewing stage, step 5",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.offer[0].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.offer[0].label",
+    "render": "Candidate page /me, job checklist, Offer stage, step 1",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.offer[1].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.offer[1].label",
+    "render": "Candidate page /me, job checklist, Offer stage, step 2",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.offer[2].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.offer[2].label",
+    "render": "Candidate page /me, job checklist, Offer stage, step 3",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.offer[3].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.offer[3].label",
+    "render": "Candidate page /me, job checklist, Offer stage, step 4",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.offer[4].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.offer[4].label",
+    "render": "Candidate page /me, job checklist, Offer stage, step 5",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.accepted[0].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.accepted[0].label",
+    "render": "Candidate page /me, job checklist, Accepted stage, step 1",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.accepted[1].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.accepted[1].label",
+    "render": "Candidate page /me, job checklist, Accepted stage, step 2",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.accepted[2].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.accepted[2].label",
+    "render": "Candidate page /me, job checklist, Accepted stage, step 3",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.accepted[3].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.accepted[3].label",
+    "render": "Candidate page /me, job checklist, Accepted stage, step 4",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST.accepted[4].label": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST.accepted[4].label",
+    "render": "Candidate page /me, job checklist, Accepted stage, step 5",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST_TAB": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST_TAB",
+    "render": "Candidate page /me, CHECKLIST_TAB",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST_PROGRESS": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST_PROGRESS",
+    "render": "Candidate page /me, CHECKLIST_PROGRESS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
+  },
+  "src/lib/content/checklist.ts::CHECKLIST_OTHER": {
+    "source": "src/lib/content/checklist.ts",
+    "path": "CHECKLIST_OTHER",
+    "render": "Candidate page /me, CHECKLIST_OTHER",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it."
   }
 } as const;
