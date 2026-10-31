@@ -101,7 +101,7 @@ export default function CandidateApp({
 
       {/* Tabs. Teal puts these in a left rail; on a phone a rail costs a
           quarter of the screen, so they sit on top for everyone. */}
-      <nav className="mt-5 flex gap-1 overflow-x-auto border-b border-line" role="tablist">
+      <nav className="mt-5 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-line" role="tablist">
         {tabs.map(([id, label]) => (
           <button
             key={id}
@@ -234,6 +234,7 @@ function Overview({
       </div>
 
       <div className="space-y-5">
+        {(data.titles.length > 0 || data.deliverables.length > 0) && <TitlesCard data={data} />}
         {data.fitReportShared && <FitReportCard readOnly={readOnly} />}
         <GoalCard data={data} readOnly={readOnly} />
         <section className="card-outlined px-6 py-5">
@@ -278,6 +279,60 @@ function Overview({
       </div>
     </div>
   );
+}
+
+/**
+ * The titles we are going for, in order, `lifecycle-data-model.md` § 8a. Each
+ * with how its jobs are doing, so the candidate can see which title is working.
+ */
+function TitlesCard({ data }: { data: PortalView }) {
+  const { pick, t } = useFormat();
+  return (
+    <section className="card-outlined px-6 py-5">
+      <h2 className="text-heading-sm">{pick(C.TITLES_HEADING)}</h2>
+      {data.titles.length === 0 ? (
+        <p className="mt-3 text-body-medium text-on-surface-variant">{pick(C.TITLES_EMPTY)}</p>
+      ) : (
+        <>
+          <p className="mt-1 text-body-medium text-on-surface-variant">{pick(C.TITLES_NOTE)}</p>
+          <ol className="mt-3 divide-y divide-line">
+            {data.titles.map((ti) => {
+              const s = titleStats(data.jobs, ti._id);
+              return (
+                <li key={ti._id} className="py-2.5">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <span className="text-body-large text-ink">
+                      {ti.priority}. {ti.title}
+                    </span>
+                    {ti.priority === 1 && (
+                      <span className="rounded-sm bg-primary-pale px-2 py-0.5 text-label-medium text-on-primary-pale">
+                        {pick(C.TITLES_FIRST)}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-body-small text-on-surface-variant">{t(C.TITLE_STATS, s)}</p>
+                </li>
+              );
+            })}
+          </ol>
+        </>
+      )}
+    </section>
+  );
+}
+
+/** Applied counts every stage past saved; interviewing counts it and everything after. */
+function titleStats(jobs: Job[], targetId: string) {
+  const mine = jobs.filter((j) => j.targetId === targetId);
+  return {
+    applied: mine.filter((j) => j.status !== "interested").length,
+    interviewing: mine.filter((j) => ["interviewing", "offer", "accepted"].includes(j.status)).length,
+  };
+}
+
+/** The title a job or CV is filed under, by name; null when none or unknown. */
+function titleName(data: PortalView, targetId: string | null) {
+  return targetId ? (data.titleNames[targetId] ?? null) : null;
 }
 
 /** The paid report, built in the browser from the same inputs the coach uses. */
@@ -515,12 +570,17 @@ function Tracker({ data, onOpen, readOnly }: { data: PortalView; onOpen: (id: Id
   const [showClosed, setShowClosed] = useState(false);
   const [q, setQ] = useState("");
   const [adding, setAdding] = useState(false);
+  // "all", a title id, or "none" for jobs not filed under a title.
+  const [titleFilter, setTitleFilter] = useState("all");
+  const untitled = data.jobs.filter((j) => !j.targetId || !data.titles.some((ti) => ti._id === j.targetId)).length;
   const counts = countBy(data.jobs);
   const closedCount = CLOSED.reduce((n, s) => n + (counts[s] ?? 0), 0);
 
   const shown = useMemo(() => {
     const needle = q.trim().toLowerCase();
     return data.jobs.filter((j) => {
+      if (titleFilter === "none" && j.targetId && data.titles.some((ti) => ti._id === j.targetId)) return false;
+      if (titleFilter !== "all" && titleFilter !== "none" && j.targetId !== titleFilter) return false;
       const closed = CLOSED.includes(j.status as (typeof CLOSED)[number]);
       if (filter) {
         if (j.status !== filter) return false;
@@ -528,11 +588,30 @@ function Tracker({ data, onOpen, readOnly }: { data: PortalView; onOpen: (id: Id
       if (!needle) return true;
       return `${j.roleTitle} ${j.employer} ${j.country} ${j.location ?? ""}`.toLowerCase().includes(needle);
     });
-  }, [data.jobs, filter, showClosed, q]);
+  }, [data.jobs, data.titles, titleFilter, filter, showClosed, q]);
 
   return (
     <div>
       <StageBar counts={counts} active={filter} onPick={(s) => setFilter(filter === s ? null : s)} />
+
+      {data.titles.length > 0 && (
+        <div className="mt-4 flex flex-wrap items-center gap-2" role="group" aria-label={pick(C.JOB_TITLE)}>
+          {[
+            { key: "all", label: pick(C.TITLE_ALL), n: data.jobs.length },
+            ...data.titles.map((ti) => ({ key: ti._id as string, label: ti.title, n: data.jobs.filter((j) => j.targetId === ti._id).length })),
+            ...(untitled > 0 ? [{ key: "none", label: pick(C.JOB_TITLE_NONE), n: untitled }] : []),
+          ].map((o) => (
+            <button
+              key={o.key}
+              type="button"
+              onClick={() => setTitleFilter(o.key)}
+              className={`rounded-sm border px-3 py-1.5 text-label-large ${titleFilter === o.key ? "border-ink-deep text-ink" : "border-line text-on-surface-variant"}`}
+            >
+              {o.label} {o.n}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <input
@@ -562,7 +641,13 @@ function Tracker({ data, onOpen, readOnly }: { data: PortalView; onOpen: (id: Id
         )}
       </div>
 
-      {adding && <AddJob onDone={() => setAdding(false)} />}
+      {adding && (
+        <AddJob
+          titles={data.titles}
+          defaultTitle={titleFilter !== "all" && titleFilter !== "none" ? titleFilter : (data.titles[0]?._id ?? "")}
+          onDone={() => setAdding(false)}
+        />
+      )}
 
       {data.jobs.length === 0 ? (
         <p className="mt-8 max-w-xl text-body-large text-on-surface-variant">{pick(C.JOBS_EMPTY)}</p>
@@ -570,10 +655,10 @@ function Tracker({ data, onOpen, readOnly }: { data: PortalView; onOpen: (id: Id
         <p className="mt-8 text-body-large text-on-surface-variant">{pick(C.JOBS_NO_MATCH)}</p>
       ) : (
         <>
-          <JobTable jobs={shown} onOpen={onOpen} readOnly={readOnly} />
+          <JobTable jobs={shown} onOpen={onOpen} readOnly={readOnly} titleOf={(id) => titleName(data, id)} />
           <ul className="mt-4 space-y-3 expanded:hidden">
             {shown.map((j) => (
-              <JobCard key={j._id} job={j} onOpen={onOpen} readOnly={readOnly} />
+              <JobCard key={j._id} job={j} onOpen={onOpen} readOnly={readOnly} title={titleName(data, j.targetId)} />
             ))}
           </ul>
         </>
@@ -628,7 +713,17 @@ function FromUs() {
   );
 }
 
-function JobTable({ jobs, onOpen, readOnly }: { jobs: Job[]; onOpen: (id: Id<"applications">) => void; readOnly: boolean }) {
+function JobTable({
+  jobs,
+  onOpen,
+  readOnly,
+  titleOf,
+}: {
+  jobs: Job[];
+  onOpen: (id: Id<"applications">) => void;
+  readOnly: boolean;
+  titleOf: (id: string | null) => string | null;
+}) {
   const { pick, date } = useFormat();
   const act = useJobActions(readOnly);
   const cols: Copy[] = [C.COL_ROLE, C.COL_COMPANY, C.COL_SALARY, C.COL_LOCATION, C.COL_STATUS, C.COL_SAVED, C.COL_DEADLINE, C.COL_APPLIED, C.COL_FOLLOW, C.COL_EXCITEMENT];
@@ -650,6 +745,7 @@ function JobTable({ jobs, onOpen, readOnly }: { jobs: Job[]; onOpen: (id: Id<"ap
               <td className="min-w-[14rem] max-w-[20rem] px-3 py-2.5">
                 {j.fromUs && <FromUs />}
                 <span className="block text-ink">{j.roleTitle}</span>
+                {titleOf(j.targetId) && <span className="block text-body-small text-on-surface-variant">{titleOf(j.targetId)}</span>}
               </td>
               <td className="px-3 py-2.5 text-ink">{j.employer}</td>
               <td className="px-3 py-2.5 text-on-surface-variant">{j.salary ?? ""}</td>
@@ -685,13 +781,24 @@ function JobTable({ jobs, onOpen, readOnly }: { jobs: Job[]; onOpen: (id: Id<"ap
   );
 }
 
-function JobCard({ job, onOpen, readOnly }: { job: Job; onOpen: (id: Id<"applications">) => void; readOnly: boolean }) {
+function JobCard({
+  job,
+  onOpen,
+  readOnly,
+  title,
+}: {
+  job: Job;
+  onOpen: (id: Id<"applications">) => void;
+  readOnly: boolean;
+  title: string | null;
+}) {
   const { pick, date } = useFormat();
   const act = useJobActions(readOnly);
   return (
     <li className="card-outlined px-4 py-3" onClick={() => onOpen(job._id)}>
       {job.fromUs && <FromUs />}
       <p className="text-heading-sm">{job.roleTitle}</p>
+      {title && <p className="text-body-small text-on-surface-variant">{title}</p>}
       <p className="text-body-medium text-on-surface-variant">
         {job.employer} · {job.location ? `${job.location}, ` : ""}
         {job.country}
@@ -834,7 +941,7 @@ function JobDetail({
           </p>
         )}
 
-        <nav className="mt-5 flex gap-1 overflow-x-auto border-b border-line" role="tablist">
+        <nav className="mt-5 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-line" role="tablist">
           {(
             [
               ["info", C.DTAB_INFO],
@@ -869,6 +976,24 @@ function JobDetail({
           {tab === "info" && (
             <div className="space-y-5">
               {!own && <p className="text-body-medium text-on-surface-variant">{pick(C.DETAIL_OURS)}</p>}
+              {data.titles.length > 0 && (
+                <label className="field-label block max-w-sm">
+                  {pick(C.JOB_TITLE)}
+                  <select
+                    className="field mt-1"
+                    disabled={readOnly}
+                    value={job.targetId ?? ""}
+                    onChange={(e) => act.update(job._id, { targetId: (e.target.value || null) as Id<"targets"> | null })}
+                  >
+                    <option value="">{pick(C.JOB_TITLE_NONE)}</option>
+                    {data.titles.map((ti) => (
+                      <option key={ti._id} value={ti._id}>
+                        {ti.title}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
               <div>
                 <h3 className="text-label-large text-on-surface-variant">{pick(C.DETAIL_DATES)}</h3>
                 <div className="mt-2 grid gap-4 medium:grid-cols-4">
@@ -975,7 +1100,7 @@ function JobDetail({
                 <option value="">{pick(C.CV_SENT_NONE)}</option>
                 {data.cvs.map((c) => (
                   <option key={c._id} value={c._id}>
-                    {fill(pick(C.CV_VERSION), { n: c.version })} · {c.label}
+                    {titleName(data, c.targetId) ?? pick(C.CV_BASE)} · {fill(pick(C.CV_VERSION), { n: c.version })} · {c.label}
                   </option>
                 ))}
               </select>
@@ -1409,9 +1534,18 @@ function EditOwnJob({
   );
 }
 
-function AddJob({ onDone }: { onDone: () => void }) {
+function AddJob({
+  titles,
+  defaultTitle,
+  onDone,
+}: {
+  titles: PortalView["titles"];
+  defaultTitle: string;
+  onDone: () => void;
+}) {
   const { pick } = useFormat();
   const add = useMutation(api.portal.addJob);
+  const [targetId, setTargetId] = useState(defaultTitle);
   const [f, setF] = useState({
     roleTitle: "",
     employer: "",
@@ -1432,7 +1566,7 @@ function AddJob({ onDone }: { onDone: () => void }) {
     setBusy(true);
     setError(null);
     try {
-      await add(f);
+      await add({ ...f, ...(targetId ? { targetId: targetId as Id<"targets"> } : {}) });
       onDone();
     } catch {
       setError(C.ERROR_GENERIC);
@@ -1451,6 +1585,19 @@ function AddJob({ onDone }: { onDone: () => void }) {
   return (
     <div className="card-outlined mt-4 px-6 py-5">
       <div className="grid gap-4 medium:grid-cols-3">
+        {titles.length > 0 && (
+          <label className="field-label block">
+            {pick(C.JOB_TITLE)}
+            <select className="field mt-1" value={targetId} onChange={(e) => setTargetId(e.target.value)}>
+              {titles.map((ti) => (
+                <option key={ti._id} value={ti._id}>
+                  {ti.title}
+                </option>
+              ))}
+              <option value="">{pick(C.JOB_TITLE_NONE)}</option>
+            </select>
+          </label>
+        )}
         {field("roleTitle", C.ADD_ROLE)}
         {field("employer", C.ADD_EMPLOYER)}
         {field("country", C.ADD_COUNTRY)}
@@ -1496,76 +1643,100 @@ function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
   const [busy, setBusy] = useState<string | null>(null);
   const [now] = useState(() => Date.now());
   // The pushed table when it has been filled, otherwise the list built into
-  // this deploy. Same filter either way: `titleMatches` in `role-keywords.ts`.
+  // this deploy. With titles set, the server files each role under the title
+  // it matches; the built-in list only knows the assessment's field.
   const roles = useMemo(
-    () => data.feed?.roles ?? rolesFor(data.target.countries, data.target.role, 30, now),
+    () =>
+      data.feed?.roles ??
+      rolesFor(data.target.countries, data.target.role, 30, now).map((r) => ({ ...r, targetId: null })),
     [data.feed, data.target, now],
   );
   const saved = new Set(data.jobs.flatMap((j) => [j.jobLogId ?? "", j.jobUrl ?? ""]).filter(Boolean));
+  const byTitle = data.feed?.byTitle === true;
 
-  if (!data.target.countries.length || !data.target.role) {
+  if (!byTitle && (!data.target.countries.length || !data.target.role)) {
     return <p className="max-w-xl text-body-large text-on-surface-variant">{pick(C.FEED_NO_TARGET)}</p>;
   }
+
+  const list = (rs: typeof roles) => (
+    <ul className="mt-3 grid gap-3 large:grid-cols-2">
+      {rs.map((r) => {
+        const isSaved = saved.has(r.id) || (r.url !== "" && saved.has(r.url));
+        return (
+          <li key={r.id} className="card-outlined flex flex-col gap-2 px-5 py-4">
+            <div>
+              <p className="text-heading-sm">{r.title}</p>
+              <p className="text-body-medium text-on-surface-variant">
+                {r.employer} · {r.country} · {t(C.FEED_SEEN, { date: date(Date.parse(`${r.firstSeen}T12:00:00Z`)) })}
+              </p>
+            </div>
+            <div className="mt-auto flex flex-wrap items-center gap-4">
+              {r.url && (
+                <a href={r.url} target="_blank" rel="noreferrer" className="text-body-medium text-ink-deep underline">
+                  {pick(C.JOBS_POSTING)}
+                </a>
+              )}
+              <span className="flex-1" />
+              {isSaved ? (
+                <span className="text-label-large text-on-surface-variant">✓ {pick(C.FEED_SAVED)}</span>
+              ) : (
+                !readOnly && (
+                  <button
+                    type="button"
+                    disabled={busy === r.id}
+                    className="h-10 btn-tonal px-4 text-label-large"
+                    onClick={() => {
+                      setBusy(r.id);
+                      void add({
+                        employer: r.employer,
+                        roleTitle: r.title,
+                        country: r.country,
+                        ...(r.url ? { jobUrl: r.url } : {}),
+                        status: "interested",
+                        jobLogId: r.id,
+                        ...(r.targetId ? { targetId: r.targetId } : {}),
+                      }).finally(() => setBusy(null));
+                    }}
+                  >
+                    {pick(C.FEED_SAVE)}
+                  </button>
+                )
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  );
+
   return (
     <div>
       <p className="max-w-2xl text-body-large text-on-surface-variant">
-        {t(C.FEED_INTRO, { countries: data.target.countries.join(", "), role: data.target.role })}
+        {byTitle
+          ? pick(C.FEED_INTRO_TITLES)
+          : t(C.FEED_INTRO, { countries: data.target.countries.join(", "), role: data.target.role ?? "" })}
       </p>
       {data.feed && (
-        <p className="mt-1 text-body-medium text-on-surface-variant">
-          {t(C.FEED_UPDATED, { date: date(data.feed.syncedAt) })}
-        </p>
+        <p className="mt-1 text-body-medium text-on-surface-variant">{t(C.FEED_UPDATED, { date: date(data.feed.syncedAt) })}</p>
       )}
-      {roles.length === 0 ? (
+      {byTitle ? (
+        data.titles.map((ti) => {
+          const mine = roles.filter((r) => r.targetId === ti._id);
+          return (
+            <section key={ti._id} className="mt-6">
+              <h2 className="text-heading-sm">{ti.title}</h2>
+              {mine.length === 0 ? (
+                <p className="mt-2 text-body-medium text-on-surface-variant">{pick(C.FEED_TITLE_EMPTY)}</p>
+              ) : (
+                list(mine)
+              )}
+            </section>
+          );
+        })
+      ) : roles.length === 0 ? (
         <p className="mt-6 max-w-xl text-body-large text-on-surface-variant">{pick(C.FEED_EMPTY)}</p>
       ) : (
-        <ul className="mt-5 grid gap-3 large:grid-cols-2">
-          {roles.map((r) => {
-            const isSaved = saved.has(r.id) || (r.url !== "" && saved.has(r.url));
-            return (
-              <li key={r.id} className="card-outlined flex flex-col gap-2 px-5 py-4">
-                <div>
-                  <p className="text-heading-sm">{r.title}</p>
-                  <p className="text-body-medium text-on-surface-variant">
-                    {r.employer} · {r.country} · {t(C.FEED_SEEN, { date: date(Date.parse(`${r.firstSeen}T12:00:00Z`)) })}
-                  </p>
-                </div>
-                <div className="mt-auto flex flex-wrap items-center gap-4">
-                  {r.url && (
-                    <a href={r.url} target="_blank" rel="noreferrer" className="text-body-medium text-ink-deep underline">
-                      {pick(C.JOBS_POSTING)}
-                    </a>
-                  )}
-                  <span className="flex-1" />
-                  {isSaved ? (
-                    <span className="text-label-large text-on-surface-variant">✓ {pick(C.FEED_SAVED)}</span>
-                  ) : (
-                    !readOnly && (
-                      <button
-                        type="button"
-                        disabled={busy === r.id}
-                        className="h-10 btn-tonal px-4 text-label-large"
-                        onClick={() => {
-                          setBusy(r.id);
-                          void add({
-                            employer: r.employer,
-                            roleTitle: r.title,
-                            country: r.country,
-                            ...(r.url ? { jobUrl: r.url } : {}),
-                            status: "interested",
-                            jobLogId: r.id,
-                          }).finally(() => setBusy(null));
-                        }}
-                      >
-                        {pick(C.FEED_SAVE)}
-                      </button>
-                    )
-                  )}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="mt-2">{list(roles)}</div>
       )}
     </div>
   );
@@ -1575,36 +1746,91 @@ function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
 
 function CvTab({ data }: { data: PortalView }) {
   const { pick, date, t } = useFormat();
-  if (data.cvs.length === 0) return <p className="text-body-large text-on-surface-variant">{pick(C.CV_EMPTY)}</p>;
+  const [open, setOpen] = useState<Record<string, boolean>>({});
+  if (data.cvs.length === 0 && data.titles.length === 0) {
+    return <p className="text-body-large text-on-surface-variant">{pick(C.CV_EMPTY)}</p>;
+  }
+
+  const card = (c: PortalView["cvs"][number], current: boolean) => (
+    <li key={c._id} className="card-outlined px-6 py-5">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <p className="text-heading-sm">
+          {t(C.CV_VERSION, { n: c.version })} · {c.label}
+        </p>
+        {current && (
+          <span className="rounded-sm bg-primary-pale px-2 py-0.5 text-label-medium text-on-primary-pale">{pick(C.CV_LATEST)}</span>
+        )}
+      </div>
+      <p className="mt-1 text-body-medium text-on-surface-variant">
+        {pick(c.author === "candidate" ? C.CV_THEIRS : C.CV_OURS)} · {date(c.sharedAt)}
+      </p>
+      {c.changeNote && (
+        <div className="mt-3">
+          <p className="text-label-large text-on-surface-variant">{pick(C.CV_CHANGED)}</p>
+          <p className="mt-1 whitespace-pre-line text-body-large text-ink">{c.changeNote}</p>
+        </div>
+      )}
+      {c.url && (
+        <a href={c.url} target="_blank" rel="noreferrer" download={c.fileName} className="mt-4 inline-flex h-11 items-center btn-outlined px-5 text-label-large">
+          {pick(C.CV_DOWNLOAD)}
+        </a>
+      )}
+    </li>
+  );
+
+  // Newest first within a line; the first is the CV to send for that title.
+  const line = (key: string | null) =>
+    data.cvs
+      .filter((c) => (c.targetId ?? null) === key && !c.applicationId)
+      .sort((a, b) => b.uploadedAt - a.uploadedAt);
+  const section = (key: string, heading: string, cvs: PortalView["cvs"], emptyNote?: Copy, flat = false) => {
+    const [current, ...older] = cvs;
+    if (flat) {
+      return (
+        <section key={key} className="mt-6 first:mt-0">
+          <h2 className="text-heading-sm">{heading}</h2>
+          <ul className="mt-3 grid gap-4 large:grid-cols-2">{cvs.map((c) => card(c, false))}</ul>
+        </section>
+      );
+    }
+    return (
+      <section key={key} className="mt-6 first:mt-0">
+        <h2 className="text-heading-sm">{heading}</h2>
+        {cvs.length === 0 ? (
+          emptyNote && <p className="mt-2 text-body-medium text-on-surface-variant">{pick(emptyNote)}</p>
+        ) : (
+          <ul className="mt-3 grid gap-4 large:grid-cols-2">
+            {card(current, true)}
+            {older.length > 0 &&
+              (open[key] ? (
+                older.map((c) => card(c, false))
+              ) : (
+                <li className="self-center">
+                  <button type="button" className="text-body-medium text-ink-deep underline" onClick={() => setOpen({ ...open, [key]: true })}>
+                    {t(C.CV_EARLIER, { n: older.length })}
+                  </button>
+                </li>
+              ))}
+          </ul>
+        )}
+      </section>
+    );
+  };
+
+  // Before any title is set, every CV is simply theirs, newest first.
+  if (data.titles.length === 0) {
+    return <div>{section("all", pick(C.TAB_CV), [...data.cvs].sort((a, b) => b.uploadedAt - a.uploadedAt))}</div>;
+  }
+  const live = new Set(data.titles.map((ti) => ti._id as string));
+  const others = data.cvs.filter((c) => c.targetId && !live.has(c.targetId) && !c.applicationId);
+  const tailored = data.cvs.filter((c) => c.applicationId);
   return (
-    <ul className="grid gap-4 large:grid-cols-2">
-      {data.cvs.map((c, i) => (
-        <li key={c._id} className="card-outlined px-6 py-5">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <p className="text-heading-sm">
-              {t(C.CV_VERSION, { n: c.version })} · {c.label}
-            </p>
-            {i === 0 && (
-              <span className="rounded-sm bg-primary-pale px-2 py-0.5 text-label-medium text-on-primary-pale">{pick(C.CV_LATEST)}</span>
-            )}
-          </div>
-          <p className="mt-1 text-body-medium text-on-surface-variant">
-            {pick(c.author === "candidate" ? C.CV_THEIRS : C.CV_OURS)} · {date(c.sharedAt)}
-          </p>
-          {c.changeNote && (
-            <div className="mt-3">
-              <p className="text-label-large text-on-surface-variant">{pick(C.CV_CHANGED)}</p>
-              <p className="mt-1 whitespace-pre-line text-body-large text-ink">{c.changeNote}</p>
-            </div>
-          )}
-          {c.url && (
-            <a href={c.url} target="_blank" rel="noreferrer" download={c.fileName} className="mt-4 inline-flex h-11 items-center btn-outlined px-5 text-label-large">
-              {pick(C.CV_DOWNLOAD)}
-            </a>
-          )}
-        </li>
-      ))}
-    </ul>
+    <div>
+      {data.titles.map((ti) => section(ti._id, t(C.CV_FOR_TITLE, { title: ti.title }), line(ti._id), C.CV_NONE_FOR_TITLE))}
+      {line(null).length > 0 && section("base", pick(C.CV_BASE), line(null))}
+      {tailored.length > 0 && section("tailored", pick(C.CV_TAILORED), tailored, undefined, true)}
+      {others.length > 0 && section("others", pick(C.CV_OTHER), others, undefined, true)}
+    </div>
   );
 }
 

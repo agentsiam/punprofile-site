@@ -494,6 +494,7 @@ export default defineSchema({
       deliveryNotes: v.optional(v.number()),
       candidateAccess: v.optional(v.number()),
       tokenRequests: v.optional(v.number()),
+      targets: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -913,6 +914,9 @@ export default defineSchema({
      *  record. A list on the row rather than a table, because a round has no
      *  life apart from its application and twenty is a generous ceiling.
      *  @absent none — no round recorded */
+    /** Which target title this job is for, § 8a.
+     *  @absent none — not assigned to a title */
+    targetId: v.optional(v.id("targets")),
     interviews: v.optional(
       v.array(
         v.object({
@@ -1128,12 +1132,22 @@ export default defineSchema({
    */
   cvDocuments: defineTable({
     leadId: v.id("leads"),
-    /** 1, 2, 3 per lead, in upload order. */
+    /** 1, 2, 3 per target title (or per lead for the base CV), in upload
+     *  order. Per lead before 31/10/2026; those rows keep their numbers. */
     version: v.number(),
+    /** The target title this CV is written for, `lifecycle-data-model.md`
+     *  § 8a. The latest one for a target is its current CV.
+     *  @absent none — the candidate's base CV, holding everything */
+    targetId: v.optional(v.id("targets")),
+    /** A one-off copy tailored for one job. Never a target's current CV.
+     *  @absent none — not tied to one application */
+    applicationId: v.optional(v.id("applications")),
     /** Who wrote this version. `candidate` is a file they sent us,
      *  `coach` a revision PunProfile made. */
     author: v.union(v.literal("candidate"), v.literal("coach")),
-    /** Short human name, e.g. "Ana's own, two-column, Aug 2026". */
+    /** Shown to the candidate on their own page, beside the title it is for.
+     *  Written for them, in Thai or as a CV would name itself, never as a note
+     *  about them. Defaults to the target's title. */
     label: v.string(),
     storageId: v.id("_storage"),
     fileName: v.string(),
@@ -1263,4 +1277,36 @@ export default defineSchema({
   })
     .index("by_role_id", ["roleId"])
     .index("by_first_seen", ["firstSeen"]),
+
+  /**
+   * The job titles a candidate goes for, set with the coach in the Direction
+   * conversation. `lifecycle-data-model.md` § 8a and `10_Methodology.md`
+   * Stage 0. Everything downstream hangs off the title: its CV, its feed, its
+   * applications.
+   *
+   * At most five active, enforced on write: LinkedIn Open to Work takes five
+   * titles. A dropped title keeps its CVs and applications as history.
+   */
+  targets: defineTable({
+    leadId: v.id("leads"),
+    /** As job ads write it: "Customer Success Manager", not a field. */
+    title: v.string(),
+    /** Other names recruiters search for the same role. Matching and
+     *  LinkedIn only; variants of one role share one CV. */
+    alsoCalled: v.array(v.string()),
+    /** One of ROLE_CATEGORIES. @absent none — not mapped to a field */
+    roleCategory: v.optional(v.string()),
+    /** Where this title is pursued, a subset of the candidate's countries.
+     *  @absent all — every country the candidate named */
+    countries: v.optional(v.array(v.string())),
+    /** 1 to 5 among active targets; 1 is pushed first and is the one the Fit
+     *  Report reads against. Paused and dropped rows keep their last value. */
+    priority: v.number(),
+    status: v.union(v.literal("active"), v.literal("paused"), v.literal("dropped")),
+    /** Coach-only: what in their background carries this title.
+     *  @absent none — not written down */
+    evidenceNote: v.optional(v.string()),
+    createdAt: v.number(),
+    by: v.string(),
+  }).index("by_lead", ["leadId", "priority"]),
 });

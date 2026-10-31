@@ -34,6 +34,7 @@ import type * as retention from "../retention.js";
 import type * as scoring from "../scoring.js";
 import type * as stats from "../stats.js";
 import type * as subscribe from "../subscribe.js";
+import type * as targets from "../targets.js";
 import type * as workspace from "../workspace.js";
 
 import type {
@@ -69,6 +70,7 @@ declare const fullApi: ApiFromModules<{
   scoring: typeof scoring;
   stats: typeof stats;
   subscribe: typeof subscribe;
+  targets: typeof targets;
   workspace: typeof workspace;
 }>;
 

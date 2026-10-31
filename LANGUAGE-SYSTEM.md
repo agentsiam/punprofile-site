@@ -33333,3 +33333,355 @@ review:
   prompt_version: structural-calque-v1
   basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TITLES_HEADING`
+
+```yaml
+id: "src/lib/content/portal.ts::TITLES_HEADING"
+source: "src/lib/content/portal.ts"
+path: TITLES_HEADING
+render: "Candidate page /me, overview, target titles card heading"
+narrative_slot: utility
+en: "Titles we are going for"
+th: "ตำแหน่งที่เราตั้งเป้าไว้"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: 9453bb427f5f8b0dbed8539db2f3271d0f134a6a5eeb6354031c4f889eb91435
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TITLES_NOTE`
+
+```yaml
+id: "src/lib/content/portal.ts::TITLES_NOTE"
+source: "src/lib/content/portal.ts"
+path: TITLES_NOTE
+render: "Candidate page /me, overview, target titles card, line under heading"
+narrative_slot: mechanism
+en: "We set these together. Each title has its own CV, and each job in your list belongs to one of them."
+th: "เรากำหนดตำแหน่งเป้าหมายร่วมกัน และใช้ CV แยกสำหรับแต่ละตำแหน่ง งานแต่ละรายการในลิสต์จะจัดไว้ตามตำแหน่งเป้าหมายครับ"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ใช้เราเป็นผู้กำหนดเป้าหมาย และอธิบายการแยก CV กับการจัดงานโดยไม่ใช้สำนวนแปลว่าอยู่ภายใต้ตำแหน่ง"
+review:
+  structural_calque: pass
+  text_hash: cfde558e4c177ee9aba71d39def5ad9b43d64f197aea53605b869985d7821a32
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TITLES_FIRST`
+
+```yaml
+id: "src/lib/content/portal.ts::TITLES_FIRST"
+source: "src/lib/content/portal.ts"
+path: TITLES_FIRST
+render: "Candidate page /me, chip on the title we push first"
+narrative_slot: utility
+en: "Pushed first"
+th: "เน้นก่อน"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: 7f0d119550a9ac870e6b4ef7c8bef127cd3157e0e3c6746b9b8fa9671385a12c
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TITLES_EMPTY`
+
+```yaml
+id: "src/lib/content/portal.ts::TITLES_EMPTY"
+source: "src/lib/content/portal.ts"
+path: TITLES_EMPTY
+render: "Candidate page /me, overview, target titles card when empty"
+narrative_slot: utility
+en: "We have not set your titles yet. We will set them together in our first session."
+th: "เรายังไม่ได้กำหนดตำแหน่งเป้าหมายของคุณ เราจะเลือกด้วยกันในการคุยกับโค้ชครั้งแรกครับ"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ระบุการเลือกเป้าหมายร่วมกันและนัดครั้งแรกให้ชัด"
+review:
+  structural_calque: pass
+  text_hash: f2493ee4550d8060eeabd20eb427d1ea3942e1abe33e16039b72157c3f811877
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TITLE_STATS`
+
+```yaml
+id: "src/lib/content/portal.ts::TITLE_STATS"
+source: "src/lib/content/portal.ts"
+path: TITLE_STATS
+render: "Candidate page /me, per-title counts on the overview and tracker"
+narrative_slot: utility
+en: "{applied} applied · {interviewing} interviewing"
+th: "สมัครแล้ว {applied} · สัมภาษณ์ {interviewing}"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: 7c820ccbbcc446d1daa34abcf353b1778c38aa904d1c6c797deeb162985b9c19
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_BASE`
+
+```yaml
+id: "src/lib/content/portal.ts::CV_BASE"
+source: "src/lib/content/portal.ts"
+path: CV_BASE
+render: "Candidate page /me, CV tab, heading of the base CV that holds everything"
+narrative_slot: utility
+en: "Full CV"
+th: "CV ฉบับเต็ม"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: 0749a6de51384b53b0c594a078e0584686ec03916cde54eebaabbf90da5afd3b
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_FOR_TITLE`
+
+```yaml
+id: "src/lib/content/portal.ts::CV_FOR_TITLE"
+source: "src/lib/content/portal.ts"
+path: CV_FOR_TITLE
+render: "Candidate page /me, CV tab, heading of one title's CV"
+narrative_slot: utility
+en: "CV for {title}"
+th: "CV สำหรับ {title}"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: 3cf7c3559980ae36237a3522b91df199a957cf385b413491c8405e10ab31d48d
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_EARLIER`
+
+```yaml
+id: "src/lib/content/portal.ts::CV_EARLIER"
+source: "src/lib/content/portal.ts"
+path: CV_EARLIER
+render: "Candidate page /me, CV tab, toggle for a title's older CVs"
+narrative_slot: utility
+en: "Earlier versions ({n})"
+th: "ฉบับก่อนหน้า ({n})"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: 2b6e87b94492429f508342a34eb3616757ce0b33d5ce599ff415683c0a05f0c7
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_NONE_FOR_TITLE`
+
+```yaml
+id: "src/lib/content/portal.ts::CV_NONE_FOR_TITLE"
+source: "src/lib/content/portal.ts"
+path: CV_NONE_FOR_TITLE
+render: "Candidate page /me, CV tab, a title with no CV yet"
+narrative_slot: utility
+en: "No CV for this title yet. Your coach will add it here."
+th: "ยังไม่มี CV สำหรับตำแหน่งนี้ โค้ชจะเพิ่มไว้ตรงนี้ครับ"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: 49300a382b8c42ff16b2ab636af66f623e61639114c6e87a41d97a9d90f8837d
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_TAILORED`
+
+```yaml
+id: "src/lib/content/portal.ts::CV_TAILORED"
+source: "src/lib/content/portal.ts"
+path: CV_TAILORED
+render: "Candidate page /me, CV tab, heading of CVs tailored for a single job"
+narrative_slot: utility
+en: "Tailored for one job"
+th: "CV ที่ปรับเฉพาะงาน"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ระบุให้ชัดว่าหัวข้อนี้เป็นกลุ่มไฟล์ CV ที่ปรับสำหรับงานเฉพาะ"
+review:
+  structural_calque: pass
+  text_hash: cb8dbd80e3a84a09500ac954127b3827e17c95653b9b610c731fe9da5821e47f
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::CV_OTHER`
+
+```yaml
+id: "src/lib/content/portal.ts::CV_OTHER"
+source: "src/lib/content/portal.ts"
+path: CV_OTHER
+render: "Candidate page /me, CV tab, CVs filed under a title no longer active"
+narrative_slot: utility
+en: "Other CVs"
+th: "CV อื่น ๆ"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: ebcbc15a64ed430718d72d581968fad1d3563c77759e4e8701e40df209e65809
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOB_TITLE`
+
+```yaml
+id: "src/lib/content/portal.ts::JOB_TITLE"
+source: "src/lib/content/portal.ts"
+path: JOB_TITLE
+render: "Candidate page /me, label of the title a job belongs to, in filters and forms"
+narrative_slot: utility
+en: "Title"
+th: "ตำแหน่งเป้าหมาย"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: 1fba77e82f7a6aa9f2802f0284b6cfa519b09a7c3b7da184efdb7cf578d6415e
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::JOB_TITLE_NONE`
+
+```yaml
+id: "src/lib/content/portal.ts::JOB_TITLE_NONE"
+source: "src/lib/content/portal.ts"
+path: JOB_TITLE_NONE
+render: "Candidate page /me, a job not filed under a title"
+narrative_slot: utility
+en: "No title"
+th: "ยังไม่ระบุ"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: 37b6e29605e31155431e445197dc5e1f6741aba3adda03b1e33b4c312b4d2ad4
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TITLE_ALL`
+
+```yaml
+id: "src/lib/content/portal.ts::TITLE_ALL"
+source: "src/lib/content/portal.ts"
+path: TITLE_ALL
+render: "Candidate page /me, tracker title filter, show every job"
+narrative_slot: utility
+en: "All titles"
+th: "ทุกตำแหน่ง"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+review:
+  structural_calque: pass
+  text_hash: 8337c7eef5417789aeecaf8c3a113af0bd0e2a71a675c4b40de26d3542372d5f
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FEED_INTRO_TITLES`
+
+```yaml
+id: "src/lib/content/portal.ts::FEED_INTRO_TITLES"
+source: "src/lib/content/portal.ts"
+path: FEED_INTRO_TITLES
+render: "Candidate page /me, Jobs for you intro once titles are set"
+narrative_slot: mechanism
+en: "Roles our team screened in the last 30 days that match your titles, in the countries you are going for. The same jobs we post in the group. Save one to put it in your job list."
+th: "เรารวมงานที่ทีมคัดในช่วง 30 วันที่ผ่านมาให้คุณแล้ว โดยเลือกให้ตรงกับตำแหน่งและประเทศที่คุณตั้งเป้าไว้ เป็นงานชุดเดียวกับที่เราโพสต์ในกลุ่ม ลองเปิดดู แล้วกดบันทึกงานที่สนใจเข้าลิสต์ได้เลยครับ"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ใช้เราเป็นผู้คัดงาน ลดโครงสร้างที่ซ้อนกัน และปิดด้วยขั้นตอนที่คุณทำต่อได้"
+review:
+  structural_calque: pass
+  text_hash: 9d343d13f3d4f9b18299b89584668cdab1e138a811d6080dfd8b8901c0da198d
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::FEED_TITLE_EMPTY`
+
+```yaml
+id: "src/lib/content/portal.ts::FEED_TITLE_EMPTY"
+source: "src/lib/content/portal.ts"
+path: FEED_TITLE_EMPTY
+render: "Candidate page /me, Jobs for you, a title with no roles"
+narrative_slot: utility
+en: "Nothing for this title in the last 30 days."
+th: "ในช่วง 30 วันที่ผ่านมา เรายังไม่ได้คัดงานที่ตรงกับตำแหน่งเป้าหมายนี้ครับ"
+provenance: paul-approved
+date: 31/10/2026
+term_bindings: []
+decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ระบุว่าเรายังไม่ได้คัดงานที่ตรงเป้าหมาย ไม่สื่อว่าไม่มีงานตำแหน่งนี้ในตลาด"
+review:
+  structural_calque: pass
+  text_hash: e33e92dd17edec0d9fc1339da8f999bed1879bd6f01e76f0b27bcd91c4cc4c48
+  prompt_version: structural-calque-v1
+  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```

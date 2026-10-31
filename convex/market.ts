@@ -8,6 +8,7 @@
  * page stay on the build-time snapshot, which prints its own date.
  */
 import { internalMutation, type QueryCtx } from "./_generated/server";
+import type { Doc, Id } from "./_generated/dataModel";
 import { v } from "convex/values";
 import { logCountry, titleMatches } from "../src/lib/role-keywords";
 
@@ -69,40 +70,75 @@ export const replaceRoles = internalMutation({
   },
 });
 
+/** Lower-case phrases a title answers to, matched as whole words. */
+function phrasesOf(t: { title: string; alsoCalled: string[] }) {
+  return [t.title, ...t.alsoCalled]
+    .map((p) => p.toLowerCase().trim())
+    // A one-letter name would match noise like the "d" in "(m/f/d)".
+    .filter((p) => p.length >= 2)
+    .map((p) => new RegExp(`(^|[^a-z0-9])${p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|[^a-z0-9])`));
+}
+
 /**
- * One candidate's feed: the last `days` days, their countries, a category word
- * in the title, newest first. `null` when the table has never been filled, so
- * the page can fall back to the built-in list instead of showing an empty feed.
+ * One candidate's feed: the last `days` days, newest first. `null` when the
+ * table has never been filled, so the page can fall back to the built-in list
+ * instead of showing an empty feed.
+ *
+ * With target titles (`lifecycle-data-model.md` § 8a), a role matches a title
+ * when its own title contains that title or one of its other names, as whole
+ * words, in that title's countries or else the candidate's. Each role is filed
+ * under the first title, by priority, that it matches. Without titles, the
+ * assessment's field decides, as before.
  */
 export async function feedFor(
   ctx: QueryCtx,
   countries: string[],
   category: string | null,
+  targets: Doc<"targets">[] = [],
   days = 30,
 ) {
   const newest = await ctx.db.query("marketRoles").withIndex("by_first_seen").order("desc").first();
   if (!newest) return null;
   const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
-  const wanted = new Set(countries.map(logCountry));
+  const leadCountries = new Set(countries.map(logCountry));
+  const byTitle = [...targets]
+    .sort((a, b) => a.priority - b.priority)
+    .map((t) => ({
+      id: t._id,
+      phrases: phrasesOf(t),
+      countries: t.countries?.length ? new Set(t.countries.map(logCountry)) : leadCountries,
+    }));
+  const useTitles = byTitle.length > 0;
   const rows =
-    category && wanted.size
+    useTitles || (category && leadCountries.size)
       ? await ctx.db
           .query("marketRoles")
           .withIndex("by_first_seen", (q) => q.gte("firstSeen", since))
           .order("desc")
           .collect()
       : [];
-  return {
-    syncedAt: newest.syncedAt,
-    roles: rows
-      .filter((r) => wanted.has(r.country) && titleMatches(r.title, category!))
-      .map((r) => ({
-        id: r.roleId,
-        employer: r.employer,
-        title: r.title,
-        country: r.country,
-        firstSeen: r.firstSeen,
-        url: r.url,
-      })),
-  };
+  const out = [];
+  for (const r of rows) {
+    let targetId: Id<"targets"> | null = null;
+    if (useTitles) {
+      // German postings tag gender as "(m/f/d)", "(f/m/x)" and so on; it is
+      // not part of the title and must not match a title's letters.
+      const t = ` ${r.title.toLowerCase().replace(/\((?:[mfwdx]\s*\/\s*)+[mfwdx]\)/g, " ")} `;
+      const hit = byTitle.find((x) => x.countries.has(r.country) && x.phrases.some((p) => p.test(t)));
+      if (!hit) continue;
+      targetId = hit.id;
+    } else if (!(leadCountries.has(r.country) && titleMatches(r.title, category!))) {
+      continue;
+    }
+    out.push({
+      id: r.roleId,
+      employer: r.employer,
+      title: r.title,
+      country: r.country,
+      firstSeen: r.firstSeen,
+      url: r.url,
+      targetId,
+    });
+  }
+  return { syncedAt: newest.syncedAt, byTitle: useTitles, roles: out };
 }

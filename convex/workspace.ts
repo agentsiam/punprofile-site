@@ -13,12 +13,42 @@
  * reads the signed-in candidate's own record and exposes a smaller view.
  */
 
-import { mutation, query, type QueryCtx } from "./_generated/server";
+import { mutation, query, type MutationCtx, type QueryCtx } from "./_generated/server";
 import type { Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
 import { isAdminEmail } from "./adminEmails";
 import { liveGrant, normaliseEmail } from "./candidateAccess";
+import { targetsFor } from "./targets";
+
+/** A target id passed in must belong to the same lead. */
+async function checkTarget(ctx: QueryCtx, targetId: Id<"targets"> | undefined | null, leadId: Id<"leads">) {
+  if (!targetId) return null;
+  const t = await ctx.db.get(targetId);
+  if (!t || t.leadId !== leadId) throw new ConvexError("That title belongs to a different lead.");
+  return t;
+}
+
+/**
+ * Number one CV group 1..n by upload time. A group is one target's line (or the
+ * base CV's) or one application's tailored copies, § 8a. The latest is current.
+ */
+async function renumberCvs(
+  ctx: MutationCtx,
+  leadId: Id<"leads">,
+  targetId: Id<"targets"> | undefined,
+  applicationId: Id<"applications"> | undefined,
+) {
+  const group = (
+    await ctx.db
+      .query("cvDocuments")
+      .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+      .collect()
+  )
+    .filter((c) => c.targetId === targetId && c.applicationId === applicationId)
+    .sort((a, b) => a.uploadedAt - b.uploadedAt);
+  for (const [i, c] of group.entries()) if (c.version !== i + 1) await ctx.db.patch(c._id, { version: i + 1 });
+}
 
 /* ------------------------------------------------------------------ tokens */
 
@@ -144,7 +174,12 @@ export const saveCv = mutation({
     storageId: v.id("_storage"),
     fileName: v.string(),
     author: v.union(v.literal("candidate"), v.literal("coach")),
-    label: v.string(),
+    /** Shown to the candidate. Defaults to the target's title. */
+    label: v.optional(v.string()),
+    /** The title this CV is for. Absent = the base CV. */
+    targetId: v.optional(v.id("targets")),
+    /** A one-off copy tailored for one job. */
+    applicationId: v.optional(v.id("applications")),
     basedOn: v.optional(v.id("cvDocuments")),
     changeNote: v.optional(v.string()),
     deliverableId: v.optional(v.id("deliverables")),
@@ -187,17 +222,30 @@ export const saveCv = mutation({
       }
     }
 
-    const label = args.label.trim();
-    if (!label) {
+    let target;
+    try {
+      target = await checkTarget(ctx, args.targetId, args.leadId);
+      if (args.applicationId) {
+        const a = await ctx.db.get(args.applicationId);
+        if (!a || a.leadId !== args.leadId) throw new ConvexError("That job belongs to a different lead.");
+      }
+    } catch (e) {
       await ctx.storage.delete(args.storageId);
-      throw new ConvexError("Give the version a name.");
+      throw e;
     }
+    const label =
+      args.label?.trim() || target?.title || args.fileName.trim().replace(/\.[A-Za-z0-9]+$/, "") || "CV";
 
     const existing = await ctx.db
       .query("cvDocuments")
       .withIndex("by_lead", (q) => q.eq("leadId", args.leadId))
       .collect();
-    const version = existing.reduce((m, r) => Math.max(m, r.version), 0) + 1;
+    // Versions count within the CV's own line, § 8a: one title's, the base
+    // CV's, or one job's tailored copies.
+    const version =
+      existing
+        .filter((r) => r.targetId === args.targetId && r.applicationId === args.applicationId)
+        .reduce((m, r) => Math.max(m, r.version), 0) + 1;
     const now = Date.now();
 
     const id = await ctx.db.insert("cvDocuments", {
@@ -205,6 +253,8 @@ export const saveCv = mutation({
       version,
       author: args.author,
       label,
+      ...(args.targetId ? { targetId: args.targetId } : {}),
+      ...(args.applicationId ? { applicationId: args.applicationId } : {}),
       storageId: args.storageId,
       fileName: args.fileName.trim() || `cv-v${version}`,
       contentType,
@@ -236,12 +286,23 @@ export const updateCv = mutation({
     label: v.optional(v.string()),
     changeNote: v.optional(v.string()),
     shared: v.optional(v.boolean()),
+    /** Move the CV to another title's line, or `null` for the base CV. */
+    targetId: v.optional(v.union(v.id("targets"), v.null())),
   },
   handler: async (ctx, args) => {
     await requireAdmin(ctx);
     const row = await ctx.db.get(args.cvId);
     if (!row) throw new ConvexError("CV not found.");
     const patch: Record<string, unknown> = {};
+    if (args.targetId !== undefined) {
+      await checkTarget(ctx, args.targetId, row.leadId);
+      const next = args.targetId ?? undefined;
+      if (next !== row.targetId) {
+        await ctx.db.patch(args.cvId, { targetId: next, version: Number.MAX_SAFE_INTEGER });
+        await renumberCvs(ctx, row.leadId, row.targetId, row.applicationId);
+        await renumberCvs(ctx, row.leadId, next, row.applicationId);
+      }
+    }
     if (args.label !== undefined) {
       if (!args.label.trim()) throw new ConvexError("A version needs a name.");
       patch.label = args.label.trim();
@@ -355,6 +416,8 @@ export const sendMatchedRole = mutation({
     matchReason: v.optional(v.string()),
     jobDescription: v.optional(v.string()),
     jobLogId: v.optional(v.string()),
+    /** The title this role is matched for. */
+    targetId: v.optional(v.id("targets")),
   },
   handler: async (ctx, args) => {
     const by = await requireAdmin(ctx);
@@ -371,6 +434,7 @@ export const sendMatchedRole = mutation({
       if (!e || e.leadId !== args.leadId) throw new ConvexError("That engagement belongs to a different lead.");
     }
 
+    await checkTarget(ctx, args.targetId, args.leadId);
     const { balance } = await tokenBalance(ctx, args.leadId);
     if (balance < 1) throw new ConvexError("No tokens left. Record a purchase first.");
 
@@ -379,6 +443,7 @@ export const sendMatchedRole = mutation({
       leadId: args.leadId,
       ...(args.engagementId ? { engagementId: args.engagementId } : {}),
       ...(args.jobLogId ? { jobLogId: args.jobLogId } : {}),
+      ...(args.targetId ? { targetId: args.targetId } : {}),
       employer,
       roleTitle,
       country,
@@ -461,6 +526,9 @@ export const updateApplicationDetails = mutation({
     followUpAt: v.optional(v.union(v.number(), v.null())),
     cvDocumentId: v.optional(v.union(v.id("cvDocuments"), v.null())),
     notes: v.optional(v.string()),
+    /** Which title the job is for. Allowed on the candidate's own rows too:
+     *  it files the job, it does not rewrite what they recorded. */
+    targetId: v.optional(v.union(v.id("targets"), v.null())),
   },
   handler: async (ctx, args) => {
     await requireAdmin(ctx);
@@ -495,6 +563,10 @@ export const updateApplicationDetails = mutation({
       patch.cvDocumentId = args.cvDocumentId ?? undefined;
     }
     if (args.notes !== undefined) patch.notes = args.notes.trim() || undefined;
+    if (args.targetId !== undefined) {
+      await checkTarget(ctx, args.targetId, row.leadId);
+      patch.targetId = args.targetId ?? undefined;
+    }
     await ctx.db.patch(args.applicationId, patch);
   },
 });
@@ -632,6 +704,16 @@ export const forLead = query({
       heldCode,
       tokenRequest: openRequest ? { _id: openRequest._id, at: openRequest.at } : null,
       fitReport: { shared: lead?.fitReportSharedAt !== undefined, rated: ratedCount },
+      /** Active first by priority, with how each title is doing, § 8a. */
+      targets: (await targetsFor(ctx, args.leadId)).map((t) => {
+        const mine = applications.filter((a) => a.targetId === t._id);
+        return {
+          ...t,
+          jobs: mine.length,
+          applied: mine.filter((a) => a.status !== "interested").length,
+          interviewing: mine.filter((a) => ["interviewing", "offer", "accepted"].includes(a.status)).length,
+        };
+      }),
     };
   },
 });
@@ -791,6 +873,8 @@ export const exportForLead = query({
     await requireAdmin(ctx);
     const lead = await ctx.db.get(leadId);
     if (!lead) return null;
+    const targets = await targetsFor(ctx, leadId);
+    const targetName = new Map(targets.map((t) => [t._id, t.title]));
     const [engagements, deliverables, applications, placements, ledger, cvs, notes, access, requests] =
       await Promise.all([
         ctx.db.query("engagements").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
@@ -817,6 +901,15 @@ export const exportForLead = query({
     return {
       fitReportSharedAt: lead.fitReportSharedAt ?? null,
       weeklyApplicationGoal: lead.weeklyApplicationGoal ?? null,
+      targets: targets.map((t) => ({
+        title: t.title,
+        alsoCalled: t.alsoCalled,
+        countries: t.countries ?? null,
+        priority: t.priority,
+        status: t.status,
+        createdAt: t.createdAt,
+        evidenceNote: t.evidenceNote ?? null,
+      })),
       purchases: engagements.map((e) => ({
         module: e.module,
         status: e.status,
@@ -857,6 +950,7 @@ export const exportForLead = query({
         .map((c) => ({
           version: c.version,
           label: c.label,
+          forTitle: c.targetId ? (targetName.get(c.targetId) ?? null) : null,
           author: c.author,
           fileName: c.fileName,
           bytes: c.bytes,
@@ -882,6 +976,7 @@ export const exportForLead = query({
         roleTitle: a.roleTitle,
         employer: a.employer,
         country: a.country,
+        forTitle: a.targetId ? (targetName.get(a.targetId) ?? null) : null,
         location: a.location ?? null,
         jobUrl: a.jobUrl ?? null,
         salary: a.salary ?? null,

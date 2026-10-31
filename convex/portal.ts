@@ -21,6 +21,7 @@ import type { Doc, Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { feedFor } from "./market";
 import { tokenBalance } from "./workspace";
+import { targetsFor } from "./targets";
 import { signedInCandidate } from "./candidateAccess";
 import { requireAdmin } from "./leads";
 import { isAdminEmail } from "./adminEmails";
@@ -55,6 +56,14 @@ const statusValidator = v.union(
 
 async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
     const { balance, bought, rows } = await tokenBalance(ctx, lead._id);
+
+    // § 8a. The candidate sees their active titles in order; any title, live or
+    // not, can still name a CV or job filed under it.
+    const allTargets = await targetsFor(ctx, lead._id);
+    const titles = allTargets
+      .filter((t) => t.status === "active")
+      .map((t) => ({ _id: t._id, title: t.title, priority: t.priority, countries: t.countries ?? null }));
+    const titleNames: Record<string, string> = Object.fromEntries(allTargets.map((t) => [t._id, t.title]));
 
     const engagements = await ctx.db
       .query("engagements")
@@ -97,6 +106,9 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
           fileName: c.fileName,
           changeNote: c.changeNote ?? null,
           sharedAt: c.sharedAt!,
+          uploadedAt: c.uploadedAt,
+          targetId: c.targetId ?? null,
+          applicationId: c.applicationId ?? null,
           url: await ctx.storage.getUrl(c.storageId),
         })),
     );
@@ -142,6 +154,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         checklist: a.checklist ?? [],
         jobDescription: a.jobDescription ?? null,
         jobLogId: a.jobLogId ?? null,
+        targetId: a.targetId ?? null,
         // Only a CV they can see. A coach may link an unshared draft; that link
         // stays on the coach's side.
         cvDocumentId: a.cvDocumentId && sharedCvIds.has(a.cvDocumentId) ? a.cvDocumentId : null,
@@ -166,7 +179,14 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
     return {
       target,
       /** From the pushed table; null until the first push, and the page then uses the built-in list. */
-      feed: await feedFor(ctx, target.countries, target.role),
+      feed: await feedFor(
+        ctx,
+        target.countries,
+        target.role,
+        allTargets.filter((t) => t.status === "active"),
+      ),
+      titles,
+      titleNames,
       firstName: lead.firstName ?? null,
       tokens: { balance, bought, matchedSent, requestedAt: openTokenRequest?.at ?? null },
       goal: { perWeek: lead.weeklyApplicationGoal ?? null, appliedThisWeek },
@@ -235,9 +255,15 @@ export const addJob = mutation({
     notes: v.optional(v.string()),
     /** Set when saved from the "Jobs for you" feed. */
     jobLogId: v.optional(v.string()),
+    /** Which of their titles it is for. */
+    targetId: v.optional(v.id("targets")),
   },
   handler: async (ctx, args) => {
     const lead = await requireLead(ctx);
+    if (args.targetId) {
+      const t = await ctx.db.get(args.targetId);
+      if (!t || t.leadId !== lead._id) throw new ConvexError("bad_value");
+    }
     const employer = clean(args.employer, 120);
     const roleTitle = clean(args.roleTitle, 160);
     const country = clean(args.country, 80);
@@ -262,6 +288,7 @@ export const addJob = mutation({
       ...(url && /^https?:\/\//i.test(url) ? { jobUrl: url } : {}),
       ...(clean(args.salary, 80) ? { salary: clean(args.salary, 80) } : {}),
       ...(args.jobLogId ? { jobLogId: args.jobLogId.slice(0, 200) } : {}),
+      ...(args.targetId ? { targetId: args.targetId } : {}),
       status: args.status,
       recordedBy: "candidate",
       origin: "candidate",
@@ -333,6 +360,8 @@ export const updateJob = mutation({
     ),
     checklist: v.optional(v.array(v.string())),
     jobDescription: v.optional(v.string()),
+    /** Which of their titles the job is for. Filing, so allowed on any row. */
+    targetId: v.optional(v.union(v.id("targets"), v.null())),
     contacts: v.optional(
       v.array(
         v.object({
@@ -361,6 +390,13 @@ export const updateJob = mutation({
         if (!cv || cv.leadId !== row.leadId || cv.sharedAt === undefined) throw new ConvexError("bad_value");
       }
       patch.cvDocumentId = args.cvDocumentId ?? undefined;
+    }
+    if (args.targetId !== undefined) {
+      if (args.targetId) {
+        const t = await ctx.db.get(args.targetId);
+        if (!t || t.leadId !== row.leadId) throw new ConvexError("bad_value");
+      }
+      patch.targetId = args.targetId ?? undefined;
     }
     // The posting text is the candidate's to paste on any row; on a role we
     // sent they may add it if we did not.
