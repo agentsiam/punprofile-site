@@ -25,6 +25,7 @@ import { useMemo, useState } from "react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
 import type { Doc, Id } from "../../../../convex/_generated/dataModel";
+import { ROLE_CATEGORIES } from "@/lib/content/questions";
 
 /* ---------------------------------------------------------------- helpers */
 
@@ -164,11 +165,13 @@ export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
     <div className="space-y-5">
       <WalletAndLink leadId={leadId} ws={ws} engagements={engagements} />
       <Deliverables leadId={leadId} engagements={engagements} />
-      <CvVersions leadId={leadId} cvs={ws.cvs} engagements={engagements} />
+      <TargetTitles leadId={leadId} targets={ws.targets} />
+      <CvVersions leadId={leadId} cvs={ws.cvs} targets={ws.targets} engagements={engagements} />
       <JobTracker
         leadId={leadId}
         apps={ws.applications}
         cvs={ws.cvs}
+        targets={ws.targets}
         balance={ws.tokens.balance}
         engagements={engagements}
       />
@@ -779,9 +782,248 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
   );
 }
 
-/* ====================================================== 3. CV versions */
+/* ================================================== 3. target titles */
 
-function CvVersions({ leadId, cvs, engagements }: { leadId: Id<"leads">; cvs: Ws["cvs"]; engagements: Engs }) {
+/**
+ * The job titles this candidate goes for, `lifecycle-data-model.md` § 8a. Set
+ * with them in the Direction conversation, at most five active, the first one
+ * pushed first. Everything below hangs off these: each title's CV, its jobs,
+ * its feed.
+ */
+function TargetTitles({ leadId, targets }: { leadId: Id<"leads">; targets: Ws["targets"] }) {
+  const add = useMutation(api.targets.addTarget);
+  const update = useMutation(api.targets.updateTarget);
+  const setStatus = useMutation(api.targets.setTargetStatus);
+  const move = useMutation(api.targets.moveTarget);
+  const remove = useMutation(api.targets.deleteTarget);
+
+  type Draft = { id: Id<"targets"> | null; title: string; alsoCalled: string; roleCategory: string; countries: string; evidenceNote: string };
+  const blank: Draft = { id: null, title: "", alsoCalled: "", roleCategory: "", countries: "", evidenceNote: "" };
+  const [draft, setDraft] = useState<Draft | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const active = targets.filter((t) => t.status === "active");
+  const rest = targets.filter((t) => t.status !== "active");
+  const list = (s: string) => s.split(",").map((x) => x.trim()).filter(Boolean);
+
+  const run = async (fn: () => Promise<unknown>) => {
+    setError(null);
+    try {
+      await fn();
+      return true;
+    } catch (e) {
+      setError(errText(e));
+      return false;
+    }
+  };
+
+  const save = async () => {
+    if (!draft) return;
+    const fields = {
+      title: draft.title,
+      alsoCalled: list(draft.alsoCalled),
+      evidenceNote: draft.evidenceNote,
+    };
+    const ok = await run(() =>
+      draft.id
+        ? update({
+            targetId: draft.id,
+            ...fields,
+            roleCategory: draft.roleCategory || null,
+            countries: list(draft.countries).length ? list(draft.countries) : null,
+          })
+        : add({
+            leadId,
+            ...fields,
+            ...(draft.roleCategory ? { roleCategory: draft.roleCategory } : {}),
+            ...(list(draft.countries).length ? { countries: list(draft.countries) } : {}),
+          }),
+    );
+    if (ok) setDraft(null);
+  };
+
+  // LinkedIn Open to Work takes five titles: the titles in order, then their
+  // other names, until the five slots are full.
+  const linkedIn = [...active.map((t) => t.title), ...active.flatMap((t) => t.alsoCalled)].slice(0, 5);
+
+  const row = (t: Ws["targets"][number]) => (
+    <li key={t._id} className="rounded-medium border border-outline-variant px-4 py-3">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <span className="text-body-large text-on-surface">
+          {t.status === "active" ? `${t.priority}. ` : ""}
+          {t.title}
+        </span>
+        <span className="flex flex-wrap items-center gap-2">
+          {t.status === "active" && t.priority === 1 && <Chip tone="strong">Pushed first</Chip>}
+          {t.status !== "active" && <Chip>{t.status === "paused" ? "Paused" : "Dropped"}</Chip>}
+          <Chip>
+            {t.jobs} job{t.jobs === 1 ? "" : "s"} · {t.applied} applied · {t.interviewing} interviewing
+          </Chip>
+        </span>
+      </div>
+      <p className="mt-1 text-body-medium text-on-surface-variant">
+        {t.alsoCalled.length ? `Also called ${t.alsoCalled.join(", ")} · ` : ""}
+        {t.countries?.length ? t.countries.join(", ") : "All their countries"}
+        {t.roleCategory ? ` · ${t.roleCategory}` : ""}
+      </p>
+      {t.evidenceNote && <p className="mt-1 whitespace-pre-line text-body-medium text-on-surface">{t.evidenceNote}</p>}
+      <div className="mt-2 flex flex-wrap gap-4">
+        {t.status === "active" && t.priority > 1 && (
+          <button type="button" className={LINK} onClick={() => void run(() => move({ targetId: t._id, direction: "up" }))}>
+            Move up
+          </button>
+        )}
+        {t.status === "active" && t.priority < active.length && (
+          <button type="button" className={LINK} onClick={() => void run(() => move({ targetId: t._id, direction: "down" }))}>
+            Move down
+          </button>
+        )}
+        <button
+          type="button"
+          className={LINK}
+          onClick={() =>
+            setDraft({
+              id: t._id,
+              title: t.title,
+              alsoCalled: t.alsoCalled.join(", "),
+              roleCategory: t.roleCategory ?? "",
+              countries: (t.countries ?? []).join(", "),
+              evidenceNote: t.evidenceNote ?? "",
+            })
+          }
+        >
+          Edit
+        </button>
+        {t.status === "active" ? (
+          <>
+            <button type="button" className={LINK} onClick={() => void run(() => setStatus({ targetId: t._id, status: "paused" }))}>
+              Pause
+            </button>
+            <button type="button" className={LINK} onClick={() => void run(() => setStatus({ targetId: t._id, status: "dropped" }))}>
+              Drop
+            </button>
+          </>
+        ) : (
+          <button type="button" className={LINK} onClick={() => void run(() => setStatus({ targetId: t._id, status: "active" }))}>
+            Make active again
+          </button>
+        )}
+        {confirmDelete === t._id ? (
+          <>
+            <button type="button" className="text-body-medium text-error underline" onClick={() => void run(() => remove({ targetId: t._id }))}>
+              Delete, it was a mistake
+            </button>
+            <button type="button" className={LINK} onClick={() => setConfirmDelete(null)}>
+              Keep it
+            </button>
+          </>
+        ) : (
+          <button type="button" className="text-body-medium text-on-surface-variant underline" onClick={() => setConfirmDelete(t._id)}>
+            Delete
+          </button>
+        )}
+      </div>
+    </li>
+  );
+
+  return (
+    <Panel
+      title="Target titles"
+      aside={
+        active.length < 5 ? (
+          <button type="button" className={LINK} onClick={() => setDraft(blank)}>
+            Add a title ({active.length} of 5)
+          </button>
+        ) : (
+          <span className="text-body-medium text-on-surface-variant">5 of 5 active</span>
+        )
+      }
+    >
+      <p className="text-body-medium text-on-surface-variant">
+        The titles they go for, as job ads write them, set together in the Direction conversation. One body of
+        experience has to carry every active title; each gets its own CV below. Work two or three at a time.
+      </p>
+      {targets.length === 0 && !draft && (
+        <p className="mt-3 text-body-medium text-on-surface-variant">No titles yet. Until there are, their feed matches the field they chose in the assessment.</p>
+      )}
+      <ol className="mt-3 space-y-3">{active.map(row)}</ol>
+      {rest.length > 0 && <ol className="mt-3 space-y-3">{rest.map(row)}</ol>}
+
+      {linkedIn.length > 0 && (
+        <p className="mt-3 text-body-medium text-on-surface-variant">
+          For their LinkedIn Open to Work, five slots: <span className="text-on-surface">{linkedIn.join(" · ")}</span>{" "}
+          <button
+            type="button"
+            className={LINK}
+            onClick={() => {
+              void navigator.clipboard?.writeText(linkedIn.join("\n")).then(() => setCopied(true));
+            }}
+          >
+            {copied ? "Copied" : "Copy"}
+          </button>
+        </p>
+      )}
+
+      {draft && (
+        <div className="mt-4 rounded-medium border border-outline-variant bg-surface p-4">
+          <h4 className="text-label-large text-on-surface">{draft.id ? "Edit title" : "Add a title"}</h4>
+          <div className="mt-3 grid gap-3 medium:grid-cols-2">
+            <Label text="Title, as job ads write it">
+              <input className={INPUT} placeholder="e.g. Customer Success Manager" value={draft.title} onChange={(e) => setDraft({ ...draft, title: e.target.value })} />
+            </Label>
+            <Label text="Other names recruiters use, comma between">
+              <input className={INPUT} placeholder="e.g. TAM, Customer Success Lead" value={draft.alsoCalled} onChange={(e) => setDraft({ ...draft, alsoCalled: e.target.value })} />
+            </Label>
+            <Label text="Field">
+              <select className={INPUT} value={draft.roleCategory} onChange={(e) => setDraft({ ...draft, roleCategory: e.target.value })}>
+                <option value="">Not set</option>
+                {ROLE_CATEGORIES.map((r) => (
+                  <option key={r} value={r}>
+                    {r}
+                  </option>
+                ))}
+              </select>
+            </Label>
+            <Label text="Countries for this title, comma between">
+              <input className={INPUT} placeholder="Blank = all their countries" value={draft.countries} onChange={(e) => setDraft({ ...draft, countries: e.target.value })} />
+            </Label>
+          </div>
+          <div className="mt-3">
+            <Label text="What in their background carries this title (coach only, but in their export)">
+              <textarea rows={3} className={INPUT} value={draft.evidenceNote} onChange={(e) => setDraft({ ...draft, evidenceNote: e.target.value })} />
+            </Label>
+          </div>
+          <ErrorLine error={error} />
+          <div className="mt-3 flex gap-4">
+            <button type="button" className={BTN} disabled={draft.title.trim().length < 2} onClick={() => void save()}>
+              Save
+            </button>
+            <button type="button" className={LINK} onClick={() => setDraft(null)}>
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
+      {!draft && <ErrorLine error={error} />}
+    </Panel>
+  );
+}
+
+/* ======================================================= 4. CV versions */
+
+function CvVersions({
+  leadId,
+  cvs,
+  targets,
+  engagements,
+}: {
+  leadId: Id<"leads">;
+  cvs: Ws["cvs"];
+  targets: Ws["targets"];
+  engagements: Engs;
+}) {
   const uploadUrl = useMutation(api.workspace.cvUploadUrl);
   const saveCv = useMutation(api.workspace.saveCv);
   const updateCv = useMutation(api.workspace.updateCv);
@@ -790,6 +1032,7 @@ function CvVersions({ leadId, cvs, engagements }: { leadId: Id<"leads">; cvs: Ws
   type Draft = {
     file: File | null;
     author: "candidate" | "coach";
+    targetId: string;
     label: string;
     basedOn: string;
     changeNote: string;
@@ -797,11 +1040,17 @@ function CvVersions({ leadId, cvs, engagements }: { leadId: Id<"leads">; cvs: Ws
     received: string;
     share: boolean;
   };
-  const blank = (author: "candidate" | "coach"): Draft => ({
+  const active = targets.filter((t) => t.status === "active");
+  // A line is one title's CVs, or the base CV's. Tailored copies for one job
+  // sit with that job, not in a line, § 8a.
+  const lineOf = (targetId: string) =>
+    cvs.filter((c) => (c.targetId ?? "") === targetId && !c.applicationId).sort((a, b) => b.version - a.version);
+  const blank = (author: "candidate" | "coach", targetId: string = active[0]?._id ?? ""): Draft => ({
     file: null,
     author,
+    targetId,
     label: "",
-    basedOn: author === "coach" && cvs[0] ? cvs[0]._id : "",
+    basedOn: author === "coach" ? (lineOf(targetId)[0]?._id ?? cvs[0]?._id ?? "") : "",
     changeNote: "",
     deliverableId: "",
     received: new Date().toISOString().slice(0, 10),
@@ -811,9 +1060,23 @@ function CvVersions({ leadId, cvs, engagements }: { leadId: Id<"leads">; cvs: Ws
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
+  const [renaming, setRenaming] = useState<{ id: string; label: string } | null>(null);
+  const [history, setHistory] = useState<Record<string, boolean>>({});
 
   const deliverables = engagements.flatMap((e) => e.deliverables);
   const byId = new Map(cvs.map((c) => [c._id as string, c]));
+  const titleOf = new Map(targets.map((t) => [t._id as string, t.title]));
+
+  const run = async (fn: () => Promise<unknown>) => {
+    setError(null);
+    try {
+      await fn();
+      return true;
+    } catch (e) {
+      setError(errText(e));
+      return false;
+    }
+  };
 
   const upload = async () => {
     if (!draft?.file) return;
@@ -833,7 +1096,8 @@ function CvVersions({ leadId, cvs, engagements }: { leadId: Id<"leads">; cvs: Ws
         storageId,
         fileName: draft.file.name,
         author: draft.author,
-        label: draft.label.trim() || draft.file.name.replace(/\.[^.]+$/, ""),
+        ...(draft.label.trim() ? { label: draft.label.trim() } : {}),
+        ...(draft.targetId ? { targetId: draft.targetId as Id<"targets"> } : {}),
         ...(draft.basedOn ? { basedOn: draft.basedOn as Id<"cvDocuments"> } : {}),
         ...(draft.changeNote.trim() ? { changeNote: draft.changeNote.trim() } : {}),
         ...(draft.deliverableId ? { deliverableId: draft.deliverableId as Id<"deliverables"> } : {}),
@@ -847,6 +1111,105 @@ function CvVersions({ leadId, cvs, engagements }: { leadId: Id<"leads">; cvs: Ws
       setBusy(false);
     }
   };
+
+  const card = (c: Ws["cvs"][number], current: boolean) => (
+    <li key={c._id} className="rounded-medium border border-outline-variant px-4 py-3">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        {renaming?.id === c._id ? (
+          <span className="flex flex-wrap items-center gap-2">
+            <input
+              aria-label="Name on their page"
+              className="field field-dense w-auto"
+              value={renaming.label}
+              onChange={(e) => setRenaming({ id: c._id, label: e.target.value })}
+            />
+            <button
+              type="button"
+              className={LINK}
+              onClick={() => void run(() => updateCv({ cvId: c._id, label: renaming.label })).then((ok) => ok && setRenaming(null))}
+            >
+              Save
+            </button>
+            <button type="button" className={LINK} onClick={() => setRenaming(null)}>
+              Cancel
+            </button>
+          </span>
+        ) : (
+          <span className="text-body-large text-on-surface">
+            Version {c.version} · {c.label}
+          </span>
+        )}
+        <span className="flex flex-wrap items-center gap-2">
+          {current && <Chip tone="strong">Current</Chip>}
+          <Chip>{c.author === "candidate" ? "Theirs" : "Our revision"}</Chip>
+          {c.sharedAt ? <Chip>On their page</Chip> : null}
+        </span>
+      </div>
+      <p className="mt-1 text-body-medium text-on-surface-variant">
+        {c.fileName} · {Math.max(1, Math.round(c.bytes / 1024))} KB ·{" "}
+        {c.author === "candidate" ? `received ${day(c.cvConsentAt)}` : `uploaded ${day(c.uploadedAt)}`}
+        {c.basedOn && byId.get(c.basedOn) ? ` · from "${byId.get(c.basedOn)!.label}"` : ""}
+        {c.deliverableId
+          ? ` · for ${KIND_LABEL[deliverables.find((d) => d._id === c.deliverableId)?.kind ?? ""] ?? "a deliverable"}`
+          : ""}
+      </p>
+      {c.changeNote && <p className="mt-2 whitespace-pre-line text-body-medium text-on-surface">{c.changeNote}</p>}
+      <div className="mt-2 flex flex-wrap items-center gap-4">
+        {c.url && (
+          <a className={LINK} href={c.url} target="_blank" rel="noreferrer" download={c.fileName}>
+            Download
+          </a>
+        )}
+        <button type="button" className={LINK} onClick={() => void run(() => updateCv({ cvId: c._id, shared: !c.sharedAt }))}>
+          {c.sharedAt ? "Take off their page" : "Share on their page"}
+        </button>
+        <button type="button" className={LINK} onClick={() => setRenaming({ id: c._id, label: c.label })}>
+          Rename
+        </button>
+        <label className="flex items-center gap-2 text-body-medium text-on-surface-variant">
+          For
+          <select
+            className="field field-dense w-auto"
+            value={c.targetId ?? ""}
+            onChange={(e) => void run(() => updateCv({ cvId: c._id, targetId: (e.target.value || null) as Id<"targets"> | null }))}
+          >
+            <option value="">Base CV</option>
+            {targets.map((t) => (
+              <option key={t._id} value={t._id}>
+                {t.title}
+                {t.status !== "active" ? ` (${t.status})` : ""}
+              </option>
+            ))}
+          </select>
+        </label>
+        {confirmDelete === c._id ? (
+          <>
+            <button type="button" className="text-body-medium text-error underline" onClick={() => void run(() => deleteCv({ cvId: c._id }))}>
+              Delete file for good
+            </button>
+            <button type="button" className={LINK} onClick={() => setConfirmDelete(null)}>
+              Keep it
+            </button>
+          </>
+        ) : (
+          <button type="button" className="text-body-medium text-on-surface-variant underline" onClick={() => setConfirmDelete(c._id)}>
+            Delete
+          </button>
+        )}
+      </div>
+    </li>
+  );
+
+  // Active titles in order, then the base CV, then any title no longer active
+  // that still has CVs, so nothing on file is hidden.
+  const lines: { key: string; heading: string }[] = [
+    ...active.map((t) => ({ key: t._id as string, heading: `${t.priority}. ${t.title}` })),
+    { key: "", heading: "Base CV, holding everything" },
+    ...targets
+      .filter((t) => t.status !== "active" && lineOf(t._id).length > 0)
+      .map((t) => ({ key: t._id as string, heading: `${t.title} (${t.status})` })),
+  ];
+  const tailored = cvs.filter((c) => c.applicationId);
 
   return (
     <Panel
@@ -865,69 +1228,52 @@ function CvVersions({ leadId, cvs, engagements }: { leadId: Id<"leads">; cvs: Ws
       }
     >
       <p className="text-body-medium text-on-surface-variant">
-        Stored on the Convex deployment, never overwritten. Files download, they are never displayed,
-        so a photo on a CV is never shown by the app.
+        One line per target title; the newest in a line is the current CV for that title, and earlier ones stay as
+        history because a job may point at exactly what was sent. Files download, they are never displayed.
       </p>
 
-      {cvs.length === 0 && !draft && (
-        <p className="mt-3 text-body-medium text-on-surface-variant">No CV on file.</p>
-      )}
+      {cvs.length === 0 && !draft && <p className="mt-3 text-body-medium text-on-surface-variant">No CV on file.</p>}
 
-      <ol className="mt-3 space-y-3">
-        {cvs.map((c, i) => (
-          <li key={c._id} className="rounded-medium border border-outline-variant px-4 py-3">
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <span className="text-body-large text-on-surface">
-                Version {c.version} · {c.label}
-              </span>
-              <span className="flex flex-wrap items-center gap-2">
-                {i === 0 && <Chip tone="strong">Latest</Chip>}
-                <Chip>{c.author === "candidate" ? "Theirs" : "Our revision"}</Chip>
-                {c.sharedAt ? <Chip>On their page</Chip> : null}
-              </span>
-            </div>
-            <p className="mt-1 text-body-medium text-on-surface-variant">
-              {c.fileName} · {Math.max(1, Math.round(c.bytes / 1024))} KB ·{" "}
-              {c.author === "candidate" ? `received ${day(c.cvConsentAt)}` : `uploaded ${day(c.uploadedAt)}`}
-              {c.basedOn && byId.get(c.basedOn) ? ` · from version ${byId.get(c.basedOn)!.version}` : ""}
-              {c.deliverableId
-                ? ` · for ${KIND_LABEL[deliverables.find((d) => d._id === c.deliverableId)?.kind ?? ""] ?? "a deliverable"}`
-                : ""}
-            </p>
-            {c.changeNote && (
-              <p className="mt-2 whitespace-pre-line text-body-medium text-on-surface">{c.changeNote}</p>
-            )}
-            <div className="mt-2 flex flex-wrap gap-4">
-              {c.url && (
-                <a className={LINK} href={c.url} target="_blank" rel="noreferrer" download={c.fileName}>
-                  Download
-                </a>
-              )}
-              <button
-                type="button"
-                className={LINK}
-                onClick={() => void updateCv({ cvId: c._id, shared: !c.sharedAt })}
-              >
-                {c.sharedAt ? "Take off their page" : "Share on their page"}
-              </button>
-              {confirmDelete === c._id ? (
-                <>
-                  <button type="button" className="text-body-medium text-error underline" onClick={() => void deleteCv({ cvId: c._id })}>
-                    Delete file for good
-                  </button>
-                  <button type="button" className={LINK} onClick={() => setConfirmDelete(null)}>
-                    Keep it
-                  </button>
-                </>
-              ) : (
-                <button type="button" className="text-body-medium text-on-surface-variant underline" onClick={() => setConfirmDelete(c._id)}>
-                  Delete
+      {lines.map(({ key, heading }) => {
+        const line = lineOf(key);
+        if (line.length === 0 && key === "") return null;
+        const [current, ...older] = line;
+        return (
+          <section key={key || "base"} className="mt-4">
+            <h4 className="text-label-large text-on-surface">{heading}</h4>
+            {line.length === 0 ? (
+              <p className="mt-1 text-body-medium text-on-surface-variant">
+                No CV for this title yet.{" "}
+                <button type="button" className={LINK} onClick={() => setDraft(blank("coach", key))}>
+                  Add one
                 </button>
-              )}
-            </div>
-          </li>
-        ))}
-      </ol>
+              </p>
+            ) : (
+              <ol className="mt-2 space-y-3">
+                {card(current, true)}
+                {older.length > 0 &&
+                  (history[key] ? (
+                    older.map((c) => card(c, false))
+                  ) : (
+                    <li>
+                      <button type="button" className={LINK} onClick={() => setHistory({ ...history, [key]: true })}>
+                        Earlier versions ({older.length})
+                      </button>
+                    </li>
+                  ))}
+              </ol>
+            )}
+          </section>
+        );
+      })}
+
+      {tailored.length > 0 && (
+        <section className="mt-4">
+          <h4 className="text-label-large text-on-surface">Tailored for one job</h4>
+          <ol className="mt-2 space-y-3">{tailored.map((c) => card(c, false))}</ol>
+        </section>
+      )}
+      {!draft && <ErrorLine error={error} />}
 
       {draft && (
         <div className="mt-4 rounded-medium border border-outline-variant bg-surface p-4">
@@ -943,13 +1289,36 @@ function CvVersions({ leadId, cvs, engagements }: { leadId: Id<"leads">; cvs: Ws
                 onChange={(e) => setDraft({ ...draft, file: e.target.files?.[0] ?? null })}
               />
             </Label>
-            <Label text="Name for this version">
+            <Label text="For which title">
+              <select
+                className={INPUT}
+                value={draft.targetId}
+                onChange={(e) =>
+                  setDraft({
+                    ...draft,
+                    targetId: e.target.value,
+                    basedOn: draft.author === "coach" ? (lineOf(e.target.value)[0]?._id ?? draft.basedOn) : draft.basedOn,
+                  })
+                }
+              >
+                {active.map((t) => (
+                  <option key={t._id} value={t._id}>
+                    {t.title}
+                  </option>
+                ))}
+                <option value="">Base CV, holding everything</option>
+              </select>
+            </Label>
+            <Label text="Name on their page (blank uses the title)">
               <input
                 className={INPUT}
-                placeholder={draft.author === "candidate" ? "e.g. Their own, two-column" : "e.g. Ireland IT, one column"}
+                placeholder={titleOf.get(draft.targetId) ?? "e.g. CV ฉบับเต็ม"}
                 value={draft.label}
                 onChange={(e) => setDraft({ ...draft, label: e.target.value })}
               />
+              <span className="mt-1 block text-body-small text-on-surface-variant">
+                They see this. Name the CV, never describe them: not &quot;Her own CV&quot;.
+              </span>
             </Label>
             {draft.author === "candidate" ? (
               <Label text="Date they sent it">
@@ -961,7 +1330,7 @@ function CvVersions({ leadId, cvs, engagements }: { leadId: Id<"leads">; cvs: Ws
                   <option value="">Nothing, new from scratch</option>
                   {cvs.map((c) => (
                     <option key={c._id} value={c._id}>
-                      Version {c.version} · {c.label}
+                      {c.targetId ? titleOf.get(c.targetId) : "Base CV"} · version {c.version} · {c.label}
                     </option>
                   ))}
                 </select>
@@ -1007,18 +1376,20 @@ function CvVersions({ leadId, cvs, engagements }: { leadId: Id<"leads">; cvs: Ws
   );
 }
 
-/* ====================================================== 4. job tracker */
+/* ====================================================== 5. job tracker */
 
 function JobTracker({
   leadId,
   apps,
   cvs,
+  targets,
   balance,
   engagements,
 }: {
   leadId: Id<"leads">;
   apps: Ws["applications"];
   cvs: Ws["cvs"];
+  targets: Ws["targets"];
   balance: number;
   engagements: Engs;
 }) {
@@ -1040,9 +1411,14 @@ function JobTracker({
     matchReason: string;
     jobDescription: string;
     status: string;
+    targetId: string;
   };
   const [draft, setDraft] = useState<Draft | null>(null);
   const [filter, setFilter] = useState<string>("all");
+  // "all", a target id, or "none" for jobs not filed under a title.
+  const [titleFilter, setTitleFilter] = useState<string>("all");
+  const activeTargets = targets.filter((t) => t.status === "active");
+  const titleOf = new Map(targets.map((t) => [t._id as string, t.title]));
   const [open, setOpen] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -1052,7 +1428,11 @@ function JobTracker({
     return c;
   }, [apps]);
   const matched = apps.filter((a) => a.origin === "matched").length;
-  const shown = filter === "all" ? apps : apps.filter((a) => a.status === filter);
+  const byTitle =
+    titleFilter === "all"
+      ? apps
+      : apps.filter((a) => (titleFilter === "none" ? !a.targetId : a.targetId === titleFilter));
+  const shown = filter === "all" ? byTitle : byTitle.filter((a) => a.status === filter);
   const pack = engagements.find((e) => e.module === "token_pack" && e.status !== "proposed") ?? engagements[0];
   const cvById = new Map(cvs.map((c) => [c._id as string, c]));
 
@@ -1079,6 +1459,7 @@ function JobTracker({
       ...(draft.salary.trim() ? { salary: draft.salary } : {}),
       ...(toMs(draft.deadline) ? { deadlineAt: toMs(draft.deadline) } : {}),
       ...(pack ? { engagementId: pack._id } : {}),
+      ...(draft.targetId ? { targetId: draft.targetId as Id<"targets"> } : {}),
     };
     const ok = await run(() =>
       draft.mode === "matched"
@@ -1104,6 +1485,7 @@ function JobTracker({
     matchReason: "",
     jobDescription: "",
     status: "applied",
+    targetId: activeTargets[0]?._id ?? "",
   });
 
   return (
@@ -1120,6 +1502,25 @@ function JobTracker({
         </span>
       }
     >
+      {targets.length > 0 && (
+        <div className="mb-2 flex flex-wrap items-center gap-2">
+          <span className="text-label-large text-on-surface-variant">Title</span>
+          {[
+            { key: "all", label: "All" },
+            ...activeTargets.map((t) => ({ key: t._id as string, label: t.title })),
+            { key: "none", label: "No title" },
+          ].map((o) => (
+            <button
+              key={o.key}
+              type="button"
+              onClick={() => setTitleFilter(o.key)}
+              className={`rounded-small border px-3 py-1 text-label-large ${titleFilter === o.key ? "border-ink-deep text-on-surface" : "border-outline-variant text-on-surface-variant"}`}
+            >
+              {o.label}
+            </button>
+          ))}
+        </div>
+      )}
       {/* The pipeline strip, Teal's chevron row: one count per stage, click to filter. */}
       <div className="flex flex-wrap gap-2">
         <button
@@ -1168,6 +1569,9 @@ function JobTracker({
                         {a.roleTitle}
                       </button>
                       <div className="text-on-surface-variant">{a.employer}</div>
+                      {a.targetId && titleOf.get(a.targetId) && (
+                        <div className="text-body-small text-on-surface-variant">For {titleOf.get(a.targetId)}</div>
+                      )}
                     </td>
                     <td className="py-2 pr-3 text-on-surface-variant">
                       {a.location ? `${a.location}, ` : ""}
@@ -1236,6 +1640,28 @@ function JobTracker({
                             </span>
                           )}
                           <label className="flex items-center gap-2">
+                            For title
+                            <select
+                              className="field field-dense w-auto"
+                              value={a.targetId ?? ""}
+                              onChange={(e) =>
+                                void run(() =>
+                                  updateDetails({
+                                    applicationId: a._id,
+                                    targetId: (e.target.value || null) as Id<"targets"> | null,
+                                  }),
+                                )
+                              }
+                            >
+                              <option value="">No title</option>
+                              {targets.map((t) => (
+                                <option key={t._id} value={t._id}>
+                                  {t.title}
+                                </option>
+                              ))}
+                            </select>
+                          </label>
+                          <label className="flex items-center gap-2">
                             CV sent
                             <select
                               className="field field-dense w-auto"
@@ -1252,7 +1678,7 @@ function JobTracker({
                               <option value="">Not recorded</option>
                               {cvs.map((c) => (
                                 <option key={c._id} value={c._id}>
-                                  Version {c.version} · {c.label}
+                                  {c.targetId ? titleOf.get(c.targetId) : "Base CV"} · version {c.version} · {c.label}
                                 </option>
                               ))}
                             </select>
@@ -1282,6 +1708,18 @@ function JobTracker({
             {draft.mode === "matched" ? "Send a matched role, spends 1 token" : "Log an application"}
           </h4>
           <div className="mt-3 grid gap-3 medium:grid-cols-2">
+            {targets.length > 0 && (
+              <Label text="For which of their titles">
+                <select className={INPUT} value={draft.targetId} onChange={(e) => setDraft({ ...draft, targetId: e.target.value })}>
+                  {activeTargets.map((t) => (
+                    <option key={t._id} value={t._id}>
+                      {t.title}
+                    </option>
+                  ))}
+                  <option value="">No title</option>
+                </select>
+              </Label>
+            )}
             <Label text="Role title">
               <input className={INPUT} value={draft.roleTitle} onChange={(e) => setDraft({ ...draft, roleTitle: e.target.value })} />
             </Label>
@@ -1407,7 +1845,7 @@ function WithdrawMatched({ onWithdraw }: { onWithdraw: (note: string) => Promise
   );
 }
 
-/* ====================================================== 5. notes */
+/* ====================================================== 6. notes */
 
 function Notes({
   leadId,

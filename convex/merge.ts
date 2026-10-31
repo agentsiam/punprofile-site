@@ -102,7 +102,28 @@ async function movePersonalRecords(
     .withIndex("by_lead", (q) => q.eq("leadId", dropId))
     .collect();
 
+  // Titles move as they are; if both rows had targets the survivor may end
+  // up with more than five active, which the coach resolves on the 360 page
+  // rather than a merge silently pausing someone's choice.
+  const targets = await ctx.db
+    .query("targets")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+
+  // The survivor's titles keep their order; the moved ones queue after them.
+  const keptActive = (
+    await ctx.db
+      .query("targets")
+      .withIndex("by_lead", (q) => q.eq("leadId", keepId))
+      .collect()
+  ).filter((t) => t.status === "active").length;
+  let next = keptActive;
+  for (const t of targets.filter((t) => t.status === "active").sort((a, b) => a.priority - b.priority)) {
+    await ctx.db.patch(t._id, { priority: ++next });
+  }
+
   for (const row of [
+    ...targets,
     ...tokenReqs,
     ...access,
     ...ledger,

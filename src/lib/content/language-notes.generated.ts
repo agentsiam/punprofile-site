@@ -12383,5 +12383,149 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "31/10/2026",
     "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Other stages refers to grouped application statuses, not individual checklist steps. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+  },
+  "src/lib/content/portal.ts::TITLES_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TITLES_HEADING",
+    "render": "Candidate page /me, overview, target titles card heading",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::TITLES_NOTE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TITLES_NOTE",
+    "render": "Candidate page /me, overview, target titles card, line under heading",
+    "narrativeSlot": "mechanism",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::TITLES_FIRST": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TITLES_FIRST",
+    "render": "Candidate page /me, chip on the title we push first",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::TITLES_EMPTY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TITLES_EMPTY",
+    "render": "Candidate page /me, overview, target titles card when empty",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::TITLE_STATS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TITLE_STATS",
+    "render": "Candidate page /me, per-title counts on the overview and tracker",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::CV_BASE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_BASE",
+    "render": "Candidate page /me, CV tab, heading of the base CV that holds everything",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::CV_FOR_TITLE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_FOR_TITLE",
+    "render": "Candidate page /me, CV tab, heading of one title's CV",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::CV_EARLIER": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_EARLIER",
+    "render": "Candidate page /me, CV tab, toggle for a title's older CVs",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::CV_NONE_FOR_TITLE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_NONE_FOR_TITLE",
+    "render": "Candidate page /me, CV tab, a title with no CV yet",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::CV_TAILORED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_TAILORED",
+    "render": "Candidate page /me, CV tab, heading of CVs tailored for a single job",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::CV_OTHER": {
+    "source": "src/lib/content/portal.ts",
+    "path": "CV_OTHER",
+    "render": "Candidate page /me, CV tab, CVs filed under a title no longer active",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::JOB_TITLE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOB_TITLE",
+    "render": "Candidate page /me, label of the title a job belongs to, in filters and forms",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::JOB_TITLE_NONE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "JOB_TITLE_NONE",
+    "render": "Candidate page /me, a job not filed under a title",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::TITLE_ALL": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TITLE_ALL",
+    "render": "Candidate page /me, tracker title filter, show every job",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::FEED_INTRO_TITLES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FEED_INTRO_TITLES",
+    "render": "Candidate page /me, Jobs for you intro once titles are set",
+    "narrativeSlot": "mechanism",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::FEED_TITLE_EMPTY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "FEED_TITLE_EMPTY",
+    "render": "Candidate page /me, Jobs for you, a title with no roles",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "31/10/2026",
+    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul."
   }
 } as const;

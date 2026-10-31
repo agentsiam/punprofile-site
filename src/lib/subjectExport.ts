@@ -261,6 +261,15 @@ function readableDelivery(d: SubjectDelivery) {
     note: "What you bought from us, what we delivered, and what we keep while we work together.",
     fitReportSharedWithYou: stamp(d.fitReportSharedAt),
     weeklyApplicationGoal: d.weeklyApplicationGoal,
+    titlesYouWereGoingFor: d.targets.map((t) => ({
+      title: t.title,
+      alsoCalled: t.alsoCalled,
+      countries: t.countries,
+      order: t.priority,
+      status: t.status === "active" ? "Active" : t.status === "paused" ? "Paused" : "Dropped",
+      set: stamp(t.createdAt),
+      ourNote: t.evidenceNote,
+    })),
     purchases: d.purchases.map((e) => ({
       what: MODULE_LABEL[e.module] ?? e.module,
       status: ENGAGEMENT_STATUS[e.status] ?? e.status,
@@ -289,6 +298,7 @@ function readableDelivery(d: SubjectDelivery) {
     cvs: d.cvs.map((c) => ({
       version: c.version,
       label: c.label,
+      forTitle: c.forTitle,
       writtenBy: c.author === "candidate" ? "You" : "Us",
       file: c.fileName,
       bytes: c.bytes,
@@ -313,6 +323,7 @@ function readableDelivery(d: SubjectDelivery) {
       link: a.jobUrl,
       salary: a.salary,
       status: JOB_STATUS[a.status] ?? a.status,
+      forTitle: a.forTitle,
       howItGotHere: JOB_ORIGIN[a.origin] ?? a.origin,
       whyWeMatchedIt: a.matchReason,
       saved: stamp(a.savedAt),
@@ -574,6 +585,19 @@ function deliveryHtml(x: ReturnType<typeof readableDelivery>, row: Row): string 
       ),
     ])}`,
     block(
+      "The job titles you were going for",
+      x.titlesYouWereGoingFor.map((t) =>
+        table([
+          row("Title", t.title),
+          row("Other names", t.alsoCalled.join(", ") || null),
+          row("Countries", t.countries?.join(", ") ?? null),
+          row("Status", t.status === "Active" ? `Active, number ${t.order}` : t.status),
+          row("Set", t.set),
+          row("Our note", t.ourNote),
+        ]),
+      ),
+    ),
+    block(
       "What you bought",
       x.purchases.map((p) =>
         table([
@@ -602,6 +626,7 @@ function deliveryHtml(x: ReturnType<typeof readableDelivery>, row: Row): string 
       x.cvs.map((c) =>
         table([
           row("Version", `${c.version} · ${c.label}`),
+          row("For the title", c.forTitle),
           row("Written by", c.writtenBy),
           row("File", `${c.file} (${c.bytes} bytes), sent to you with this copy`),
           row("Based on", c.basedOn),
@@ -630,6 +655,7 @@ function deliveryHtml(x: ReturnType<typeof readableDelivery>, row: Row): string 
           row("Role", `${j.role}, ${j.employer}`),
           row("Where", [j.location, j.country].filter(Boolean).join(", ")),
           row("Status", j.status),
+          row("For the title", j.forTitle),
           row("How it got on your list", j.howItGotHere),
           row("Why we matched it", j.whyWeMatchedIt),
           row("Link", j.link),
