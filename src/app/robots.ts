@@ -64,7 +64,9 @@ const AI_RETRIEVAL = [
   "Perplexity-User",
 ];
 
-const CLOSED = ["/admin", "/admin/", "/login", "/api/"];
+// `/me$`, not `/me`: a bare prefix would also close `/method`. The candidate's
+// page is behind a sign-in and carries NOT_INDEXED; this line is courtesy.
+const CLOSED = ["/admin", "/admin/", "/login", "/api/", "/me$"];
 
 export default function robots(): MetadataRoute.Robots {
   return {

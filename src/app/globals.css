@@ -406,6 +406,15 @@
     line-height: var(--text-body-large--line-height);
     transition: outline-color 120ms var(--ease-standard);
   }
+  /* The dense field, for a control inside a table row or a list line: a
+     56px field per cell made every row of a job tracker 80px tall. Same
+     border, focus and colour as `.field`; only the box shrinks. */
+  .field.field-dense {
+    min-height: 36px;
+    padding: 0 8px;
+    font-size: var(--text-body-medium);
+    line-height: var(--text-body-medium--line-height);
+  }
   /* Textareas own their own height and need symmetric padding. */
   textarea.field {
     padding: 16px;

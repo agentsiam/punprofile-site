@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.punprofile.push-market-roles</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/paulb/Documents/LTD OS/punprofile-career/punprofile-profile-app/scripts/schedule/push-market-roles.sh</string>
+    </array>
+
+    <!-- Fires hourly at :35. The script self-gates to 19:xx Europe/Berlin,
+         the same pattern as daily-jobs, so the schedule holds across DST and
+         wherever the Mac's own clock is set. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Minute</key>
+        <integer>35</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/paulb/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+
+    <!-- Outside ~/Documents on purpose: launchd cannot open a file there and
+         fails the whole spawn with EX_CONFIG (78), as daily-jobs found. -->
+    <key>StandardOutPath</key>
+    <string>/Users/paulb/Library/Logs/punprofile/push-market-roles.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/paulb/Library/Logs/punprofile/push-market-roles.err.log</string>
+</dict>
+</plist>

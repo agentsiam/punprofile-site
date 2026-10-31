@@ -29,19 +29,20 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { useMutation, useQuery } from "convex/react";
+import { useConvex, useMutation, useQuery } from "convex/react";
 import { useRouter } from "next/navigation";
 import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
 import { latestCoachIcp } from "@/lib/leadGrade";
 import { applyCorrections } from "@/lib/corrections";
+import { openFitReport } from "@/components/features/report/openFitReport";
 import { CRM_STATUS_LABELS } from "@/lib/crm";
 import LeadBriefing from "./LeadBriefing";
 import CallLog from "./CallLog";
 import AnswerSheet from "./AnswerSheet";
 import CoachPanel from "./CoachPanel";
 import ConsentPanel from "./ConsentPanel";
-import EngagementPanel from "./EngagementPanel";
+import DeliveryWorkspace from "./DeliveryWorkspace";
 import OutcomePanel from "./OutcomePanel";
 import RatingsPanel from "./RatingsPanel";
 import { stateFor, meetsBookingGate, LIFECYCLE_LABELS } from "@/lib/lifecycle";
@@ -126,52 +127,6 @@ async function openReport(
   win.document.close();
 }
 
-/**
- * The paid Fit Report, built the same way as `openReport`: at click time, from
- * the stored answers plus the coach's interview ratings, nothing persisted.
- * Added 26/10/2026.
- */
-async function openFitReport(
-  lead: { fullName: string | null; responses: Record<string, unknown>; createdAt: number },
-  ratings: { itemKey: string; value: number; score: number; note?: string }[],
-  locale: "th" | "en",
-) {
-  const win = window.open("", "_blank");
-  if (!win) {
-    alert("The report opens in a new tab. Allow popups for this site and press the button again.");
-    return;
-  }
-  win.document.write("<!doctype html><title>Building…</title><p>Building the Fit Report…");
-  const [{ renderFitReport }, { scoreResponse, scoreFull }, { toScoringInputForLead }, { rankMoves }, { matchRoles }, { ECRA }] =
-    await Promise.all([
-      import("@/lib/report"),
-      import("@/lib/scoring"),
-      import("@/lib/content/mapping"),
-      import("@/lib/levers"),
-      import("@/lib/market-match"),
-      import("@/lib/ecra"),
-    ]);
-  const input = toScoringInputForLead(lead.responses);
-  const profile = scoreResponse(input);
-  const html = renderFitReport(
-    {
-      profile,
-      full: scoreFull(profile, ratings, (k) => ECRA[k]?.formula),
-      moves: rankMoves(input),
-      roles: matchRoles(input.targetCountries ?? [], input.targetRole),
-    },
-    {
-      candidate: lead.fullName ?? "Anonymous lead",
-      targetCountries: input.targetCountries,
-      targetRole: input.targetRole ?? undefined,
-    },
-    { locale, autoPrint: true },
-  );
-  win.document.open();
-  win.document.write(html);
-  win.document.close();
-}
-
 /** Hands a generated file to the browser. Nothing is stored server-side. */
 function download(contents: string, filename: string, mime: string) {
   const url = URL.createObjectURL(new Blob([contents], { type: mime }));
@@ -184,6 +139,7 @@ function download(contents: string, filename: string, mime: string) {
 
 export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
   const router = useRouter();
+  const convex = useConvex();
   const lead = useQuery(api.leads.getForAdmin, { leadId });
   // The same query `CallLog` runs. Convex dedupes identical subscriptions, so
   // this costs nothing extra and keeps the grade and the log reading one
@@ -330,7 +286,9 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
             onClick={async () => {
               setBuilding(`fit-${loc}`);
               try {
-                await openFitReport({ ...lead, responses: corrected.effective }, ratings ?? [], loc);
+                if (!(await openFitReport({ ...lead, responses: corrected.effective }, ratings ?? [], loc))) {
+                  alert("The report opens in a new tab. Allow popups for this site and press the button again.");
+                }
               } finally {
                 setBuilding(null);
               }
@@ -349,12 +307,17 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
             are the first half of that. Corrections are ours, and they are
             disclosed in the conversations section rather than silently swapped
             in over the top of what they said. */}
+        {/* Delivery is included since 30/10/2026; the CV files themselves are
+            downloaded from the CV versions panel and sent with this copy. */}
         <button
           type="button"
           onClick={async () => {
             const { renderSubjectExportHtml } = await import("@/lib/subjectExport");
+            // Fetched at click time: delivery spans nine tables, and the
+            // screen has no other use for this shape.
+            const delivery = await convex.query(api.workspace.exportForLead, { leadId });
             download(
-              renderSubjectExportHtml(lead, calls ?? [], lead.consentEvents ?? []),
+              renderSubjectExportHtml(lead, calls ?? [], lead.consentEvents ?? [], delivery),
               `punprofile-data-${slug(lead.fullName ?? "record")}.html`,
               "text/html;charset=utf-8",
             );
@@ -367,9 +330,10 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
           type="button"
           onClick={async () => {
             const { buildSubjectExport } = await import("@/lib/subjectExport");
+            const delivery = await convex.query(api.workspace.exportForLead, { leadId });
             download(
               JSON.stringify(
-                buildSubjectExport(lead, calls ?? [], lead.consentEvents ?? []),
+                buildSubjectExport(lead, calls ?? [], lead.consentEvents ?? [], delivery),
                 null,
                 2,
               ),
@@ -500,15 +464,18 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
           {/* Right column is "what we did about it", so the commercial record
               belongs under the call log: invitation, call, sale, work, outcome,
               in the order they happen. */}
-          <Section title="Engagement and delivery">
-            <EngagementPanel leadId={leadId} />
-          </Section>
-
           <Section title="Applications and outcome">
             <OutcomePanel leadId={leadId} />
           </Section>
         </div>
       </div>
+
+      {/* Full width, below both columns: the delivery workspace is a working
+          surface with a table in it, and half of a 64rem page is too narrow
+          for a job tracker. Everything after the sale lives here. */}
+      <Section title="Delivery">
+        <DeliveryWorkspace leadId={leadId} />
+      </Section>
 
       {/* The judgement, kept well away from Delete. One is about whether to
           work with someone, the other erases them, and putting them side by

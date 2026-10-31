@@ -19,6 +19,11 @@
 import { QUESTION_INDEX } from "./content/questions";
 import { BRAND_FONT_LINK, BRAND_FONT_STACKS, BRAND_TOKENS_CSS } from "./design-tokens";
 import { ynGrid, type ConsentChannel, type ConsentPurpose, type ConsentEvent } from "./consent";
+import type { FunctionReturnType } from "convex/server";
+import type { api } from "../../convex/_generated/api";
+
+/** What delivery holds, as `workspace.exportForLead` returns it. */
+export type SubjectDelivery = NonNullable<FunctionReturnType<typeof api.workspace.exportForLead>>;
 
 export interface SubjectRecord {
   firstName: string | null;
@@ -203,10 +208,151 @@ export interface SubjectConsentEvent {
   evidence?: string | null;
 }
 
+const MODULE_LABEL: Record<string, string> = {
+  career_coaching: "Career coaching",
+  profile_optimization: "Profile optimisation",
+  job_application_lifecycle: "Job application support",
+  bundle: "Coaching bundle",
+  token_pack: "Token pack",
+};
+const ENGAGEMENT_STATUS: Record<string, string> = {
+  proposed: "Offered to you",
+  agreed: "Agreed",
+  active: "Under way",
+  completed: "Completed",
+  lapsed: "Lapsed",
+  refunded: "Refunded",
+};
+const DELIVERABLE_STATUS: Record<string, string> = {
+  not_started: "Not started",
+  in_progress: "In progress",
+  delivered: "Delivered",
+};
+const TOKEN_REASON: Record<string, string> = {
+  purchase: "Tokens you bought",
+  fit_report: "Spent on your Fit Report",
+  matched_role: "Spent on a role we matched for you",
+  cash_refund: "Refunded to you",
+  adjustment: "Adjusted by us",
+};
+const JOB_STATUS: Record<string, string> = {
+  interested: "Saved",
+  applied: "Applied",
+  screening: "Screening",
+  interviewing: "Interviewing",
+  offer: "Offer",
+  rejected: "Rejected",
+  withdrawn: "Withdrawn",
+  accepted: "Accepted",
+};
+const JOB_ORIGIN: Record<string, string> = {
+  matched: "Matched for you by us",
+  candidate: "Added by you",
+  coach: "Logged by us",
+};
+
+/**
+ * Delivery in the person's terms: codes become words and every date an ISO
+ * stamp. Coach notes are in it whether or not they were shown on the person's
+ * page, which is said next to each one.
+ */
+function readableDelivery(d: SubjectDelivery) {
+  return {
+    note: "What you bought from us, what we delivered, and what we keep while we work together.",
+    fitReportSharedWithYou: stamp(d.fitReportSharedAt),
+    weeklyApplicationGoal: d.weeklyApplicationGoal,
+    purchases: d.purchases.map((e) => ({
+      what: MODULE_LABEL[e.module] ?? e.module,
+      status: ENGAGEMENT_STATUS[e.status] ?? e.status,
+      priceQuotedThb: e.quotedThb,
+      priceAgreedThb: e.agreedThb,
+      agreed: stamp(e.agreedAt),
+      started: stamp(e.startedAt),
+      completed: stamp(e.completedAt),
+      ourNotes: e.notes,
+    })),
+    deliverables: d.deliverables.map((x) => ({
+      what: x.name,
+      status: DELIVERABLE_STATUS[x.status] ?? x.status,
+      due: stamp(x.dueAt),
+      delivered: stamp(x.deliveredAt),
+      ourNotes: x.notes,
+    })),
+    tokens: d.tokens.map((t) => ({
+      when: stamp(t.at),
+      change: t.delta,
+      why: TOKEN_REASON[t.reason] ?? t.reason,
+      forWhat: t.forWhat,
+      note: t.note,
+    })),
+    tokenRequests: d.tokenRequests.map((r) => ({ asked: stamp(r.at), handled: stamp(r.handledAt) })),
+    cvs: d.cvs.map((c) => ({
+      version: c.version,
+      label: c.label,
+      writtenBy: c.author === "candidate" ? "You" : "Us",
+      file: c.fileName,
+      bytes: c.bytes,
+      basedOn: c.basedOn,
+      whatChanged: c.changeNote,
+      forWhat: c.forDeliverable,
+      received: stamp(c.uploadedAt),
+      shownOnYourPage: stamp(c.sharedAt),
+      yourPermissionToHoldIt: stamp(c.cvConsentAt),
+    })),
+    coachNotes: d.notes.map((n) => ({
+      when: stamp(n.at),
+      about: n.about,
+      shownOnYourPage: n.shownToYou,
+      note: n.body,
+    })),
+    jobs: d.applications.map((a) => ({
+      role: a.roleTitle,
+      employer: a.employer,
+      country: a.country,
+      location: a.location,
+      link: a.jobUrl,
+      salary: a.salary,
+      status: JOB_STATUS[a.status] ?? a.status,
+      howItGotHere: JOB_ORIGIN[a.origin] ?? a.origin,
+      whyWeMatchedIt: a.matchReason,
+      saved: stamp(a.savedAt),
+      applied: stamp(a.appliedAt),
+      deadline: stamp(a.deadlineAt),
+      followUp: stamp(a.followUpAt),
+      howKeenYouWere: a.excitement,
+      cvUsed: a.cvUsed,
+      notes: a.notes,
+      interviews: a.interviews.map((i) => ({ ...i, at: stamp(i.at) })),
+      contacts: a.contacts,
+      checklistStepsDone: a.checklistDone,
+      jobDescription: a.jobDescription,
+    })),
+    jobsYouGot: d.placements.map((p) => ({
+      role: p.roleTitle,
+      employer: p.employer,
+      country: p.country,
+      offer: stamp(p.offerAt),
+      signed: stamp(p.signedAt),
+      starts: stamp(p.startAt),
+      salary: p.salary,
+      visaRoute: p.visaRoute,
+      permissionToTellYourStory: stamp(p.storyConsentAt),
+      ourNotes: p.notes,
+    })),
+    signIn: d.signIn.map((g) => ({
+      email: g.email,
+      accessGiven: stamp(g.grantedAt),
+      accessEnded: stamp(g.revokedAt),
+      lastSignedIn: stamp(g.lastSignInAt),
+    })),
+  };
+}
+
 export function buildSubjectExport(
   lead: SubjectRecord,
   calls: SubjectCall[] = [],
   consentEvents: SubjectConsentEvent[] = [],
+  delivery: SubjectDelivery | null = null,
 ) {
   const answers = Object.entries(lead.responses)
     // Underscore keys are reserved for internal bookkeeping. None exist today;
@@ -262,6 +408,7 @@ export function buildSubjectExport(
       note: "Conversations we had with you, and what we wrote down about them.",
       calls: readableCalls(calls),
     },
+    delivery: delivery ? readableDelivery(delivery) : null,
     derived: {
       note: "Computed by PunProfile from your answers. You did not provide these.",
       scores: lead.scores,
@@ -281,8 +428,9 @@ export function renderSubjectExportHtml(
   lead: SubjectRecord,
   calls: SubjectCall[] = [],
   consentEvents: SubjectConsentEvent[] = [],
+  delivery: SubjectDelivery | null = null,
 ): string {
-  const d = buildSubjectExport(lead, calls, consentEvents);
+  const d = buildSubjectExport(lead, calls, consentEvents, delivery);
   const name = d.identity.fullName ?? "your record";
 
   const row = (label: string, value: string | null) =>
@@ -385,6 +533,8 @@ ${
     .join("\n  ")}`
   }
 
+  ${d.delivery ? deliveryHtml(d.delivery, row) : ""}
+
   <h2>What we worked out from it</h2>
   <p class="note">${esc(d.derived.note)}</p>
   <table>
@@ -404,4 +554,131 @@ ${
 </main>
 </body>
 </html>`;
+}
+
+type Row = (label: string, value: string | null) => string;
+
+/** The delivery half of the readable export. Empty sections are left out. */
+function deliveryHtml(x: ReturnType<typeof readableDelivery>, row: Row): string {
+  const n = (v: number | null) => (v === null ? null : String(v));
+  const block = (title: string, items: string[]) =>
+    items.length === 0 ? "" : `<h2>${esc(title)}</h2>\n  ${items.join("\n  ")}`;
+  const table = (rows: string[]) => `<table>\n    ${rows.join("\n    ")}\n  </table>`;
+  return [
+    `<h2>Working with us</h2>\n  <p class="note">${esc(x.note)}</p>\n  ${table([
+      row("Fit Report shown on your page", x.fitReportSharedWithYou),
+      row("Your weekly application goal", n(x.weeklyApplicationGoal)),
+      row(
+        "When you asked for more tokens",
+        x.tokenRequests.map((r) => `${r.asked}${r.handled ? `, handled ${r.handled}` : ""}`).join("; ") || null,
+      ),
+    ])}`,
+    block(
+      "What you bought",
+      x.purchases.map((p) =>
+        table([
+          row("What", p.what),
+          row("Status", p.status),
+          row("Price agreed", p.priceAgreedThb === null ? null : `${p.priceAgreedThb} THB`),
+          row("Price quoted", p.priceQuotedThb === null ? null : `${p.priceQuotedThb} THB`),
+          row("Agreed", p.agreed),
+          row("Completed", p.completed),
+          row("Our notes", p.ourNotes),
+        ]),
+      ),
+    ),
+    block("What we deliver", [
+      table(
+        x.deliverables.map((v) =>
+          row(v.what, [v.status, v.due && `due ${v.due}`, v.delivered && `delivered ${v.delivered}`, v.ourNotes].filter(Boolean).join(" · ")),
+        ),
+      ),
+    ].filter(() => x.deliverables.length > 0)),
+    block("Your tokens", [
+      table(x.tokens.map((t) => row(t.when ?? "", `${t.change > 0 ? "+" : ""}${t.change} · ${t.why}${t.forWhat ? `: ${t.forWhat}` : ""}${t.note ? ` (${t.note})` : ""}`))),
+    ].filter(() => x.tokens.length > 0)),
+    block(
+      "Your CV versions",
+      x.cvs.map((c) =>
+        table([
+          row("Version", `${c.version} · ${c.label}`),
+          row("Written by", c.writtenBy),
+          row("File", `${c.file} (${c.bytes} bytes), sent to you with this copy`),
+          row("Based on", c.basedOn),
+          row("What changed", c.whatChanged),
+          row("Received", c.received),
+          row("Shown on your page", c.shownOnYourPage),
+          row("Your permission to hold it", c.yourPermissionToHoldIt),
+        ]),
+      ),
+    ),
+    block(
+      "What your coach wrote down",
+      x.coachNotes.map((c) =>
+        table([
+          row("When", c.when),
+          row("About", c.about),
+          row("Shown on your page", c.shownOnYourPage ? "Yes" : "No"),
+          row("Note", c.note),
+        ]),
+      ),
+    ),
+    block(
+      "Your job tracker",
+      x.jobs.map((j) =>
+        table([
+          row("Role", `${j.role}, ${j.employer}`),
+          row("Where", [j.location, j.country].filter(Boolean).join(", ")),
+          row("Status", j.status),
+          row("How it got on your list", j.howItGotHere),
+          row("Why we matched it", j.whyWeMatchedIt),
+          row("Link", j.link),
+          row("Salary", j.salary),
+          row("Saved", j.saved),
+          row("Applied", j.applied),
+          row("Deadline", j.deadline),
+          row("Follow up", j.followUp),
+          row("How keen you were", j.howKeenYouWere === null ? null : `${j.howKeenYouWere} out of 5`),
+          row("CV used", j.cvUsed),
+          row("Checklist steps done", j.checklistStepsDone ? String(j.checklistStepsDone) : null),
+          row("Notes", j.notes),
+          row(
+            "Interviews",
+            j.interviews
+              .map((i) => [i.round, i.at, i.format, i.interviewers, i.notes].filter(Boolean).join(" · "))
+              .join("; ") || null,
+          ),
+          row(
+            "Contacts",
+            j.contacts.map((c) => [c.name, c.role, c.email, c.linkedin].filter(Boolean).join(" · ")).join("; ") || null,
+          ),
+          row("Job description you saved", j.jobDescription),
+        ]),
+      ),
+    ),
+    block(
+      "Jobs you got",
+      x.jobsYouGot.map((p) =>
+        table([
+          row("Role", `${p.role}, ${p.employer}, ${p.country}`),
+          row("Offer", p.offer),
+          row("Signed", p.signed),
+          row("Starts", p.starts),
+          row("Salary", p.salary),
+          row("Visa route", p.visaRoute),
+          row("Permission to tell your story", p.permissionToTellYourStory),
+          row("Our notes", p.ourNotes),
+        ]),
+      ),
+    ),
+    block("Signing in to your page", [
+      table(
+        x.signIn.map((g) =>
+          row(g.email, [`access given ${g.accessGiven}`, g.accessEnded && `ended ${g.accessEnded}`, g.lastSignedIn && `last signed in ${g.lastSignedIn}`].filter(Boolean).join(" · ")),
+        ),
+      ),
+    ].filter(() => x.signIn.length > 0)),
+  ]
+    .filter(Boolean)
+    .join("\n\n  ");
 }

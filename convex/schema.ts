@@ -266,6 +266,14 @@ export default defineSchema({
      */
     /** @absent notyet — no CV has arrived, or nobody has ticked it */
     cvReceivedAt: v.optional(v.number()),
+    /** When a coach put the paid Fit Report on the candidate's own page.
+     *  Built at click time from the answers and the coach's ratings, as on the
+     *  Candidate 360; nothing is stored but this switch.
+     *  @absent notyet — not shared */
+    fitReportSharedAt: v.optional(v.number()),
+    /** The candidate's own weekly target for applications sent, Teal's goal
+     *  ring. Set by them on their page. @absent none — no goal set */
+    weeklyApplicationGoal: v.optional(v.number()),
     /** @absent none — only present alongside a received CV */
     cvReceivedBy: v.optional(v.string()),
 
@@ -481,6 +489,11 @@ export default defineSchema({
       deliverables: v.optional(v.number()),
       applications: v.optional(v.number()),
       placements: v.optional(v.number()),
+      tokenLedger: v.optional(v.number()),
+      cvDocuments: v.optional(v.number()),
+      deliveryNotes: v.optional(v.number()),
+      candidateAccess: v.optional(v.number()),
+      tokenRequests: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -703,6 +716,11 @@ export default defineSchema({
       v.literal("profile_optimization"),
       v.literal("job_application_lifecycle"),
       v.literal("bundle"),
+      /** A self-serve token pack from `pricing.ts`, sold one to one by
+       *  transfer before the wallet exists. The pack's tokens live in
+       *  `tokenLedger`, never in a field here, so the balance is a sum and
+       *  cannot drift from the history that produced it. */
+      v.literal("token_pack"),
     ),
 
     status: v.union(
@@ -772,7 +790,21 @@ export default defineSchema({
       v.literal("offer_review"),
       v.literal("contract_review"),
       v.literal("coaching_session"),
+      /** The paid Fit Report: the interview, the coach panel and the PDF. One
+       *  row, delivered when the PDF goes out, because that is what was paid for. */
+      v.literal("fit_report"),
     ),
+
+    /** @absent none — no date agreed yet */
+    dueAt: v.optional(v.number()),
+    /** A booking page for this session, shown to the candidate as a button
+     *  while it is not yet delivered. @absent none — booked by message */
+    bookingUrl: v.optional(v.string()),
+    /** The name the candidate sees on their own page, in their language, e.g.
+     *  "คุยทำความรู้จัก 30 นาที". Two sessions of the same kind are otherwise
+     *  indistinguishable to them. `notes` stays the coach's own words.
+     *  @absent none — their page shows the kind's standard name */
+    title: v.optional(v.string()),
 
     /** From `10_Methodology.md` § 4. It labels which stage's work this was. It
      *  never decides what the candidate does next: that is the gates, and two
@@ -851,6 +883,75 @@ export default defineSchema({
     statusChangedAt: v.number(),
     /** @absent none — nothing further to record */
     notes: v.optional(v.string()),
+
+    /** Where the row came from. `matched` is a role PunProfile screened and
+     *  sent, which is what a Matched Jobs token pays for; its token is
+     *  deducted in the same transaction that inserts the row.
+     *  @absent unmeasured — written before this field existed */
+    origin: v.optional(
+      v.union(v.literal("matched"), v.literal("candidate"), v.literal("coach")),
+    ),
+    /** Free text with currency and period, as `placements.salary`.
+     *  @absent none — not stated on the posting */
+    salary: v.optional(v.string()),
+    /** City or remote, beside `country`. @absent none — not recorded */
+    location: v.optional(v.string()),
+    /** @absent none — the posting gave no closing date */
+    deadlineAt: v.optional(v.number()),
+    /** When someone should chase it. @absent none — no follow-up set */
+    followUpAt: v.optional(v.number()),
+    /** The CV version sent with this application, so a reply can be read
+     *  against the document that earned it. @absent none — not recorded */
+    cvDocumentId: v.optional(v.id("cvDocuments")),
+    /** Why a matched role was picked for this person, shown to them.
+     *  @absent none — not a matched role, or no reason written */
+    matchReason: v.optional(v.string()),
+    /** How much the candidate wants this one, 1 to 5, their own mark. Teal's
+     *  "excitement" column. @absent none — not marked */
+    excitement: v.optional(v.number()),
+    /** Teal's interview tracking: one entry per round, the candidate's own
+     *  record. A list on the row rather than a table, because a round has no
+     *  life apart from its application and twenty is a generous ceiling.
+     *  @absent none — no round recorded */
+    interviews: v.optional(
+      v.array(
+        v.object({
+          /** e.g. "Recruiter screen", "Technical", "Final". */
+          round: v.string(),
+          /** @absent none — no date yet */
+          at: v.optional(v.number()),
+          /** @absent none — not recorded */
+          format: v.optional(v.union(v.literal("video"), v.literal("phone"), v.literal("onsite"))),
+          /** Names, as the candidate writes them. @absent none — not recorded */
+          interviewers: v.optional(v.string()),
+          /** @absent none — nothing written */
+          notes: v.optional(v.string()),
+        }),
+      ),
+    ),
+    /** The posting's text, pasted by the candidate or the coach, so the job's
+     *  keywords can be read off it (Teal's "Job Description & Keywords") after
+     *  the posting itself is taken down. @absent none — not pasted */
+    jobDescription: v.optional(v.string()),
+    /** Ids of the checklist steps the candidate has ticked, from
+     *  `src/lib/content/checklist.ts`. Ids, not text, so rewording a step
+     *  keeps the tick. @absent none — nothing ticked */
+    checklist: v.optional(v.array(v.string())),
+    /** Teal's People: who the candidate is talking to about this job.
+     *  @absent none — no contact recorded */
+    contacts: v.optional(
+      v.array(
+        v.object({
+          name: v.string(),
+          /** e.g. "Recruiter", "Hiring manager". @absent none — not recorded */
+          role: v.optional(v.string()),
+          /** @absent none — not recorded */
+          email: v.optional(v.string()),
+          /** @absent none — not recorded */
+          linkedin: v.optional(v.string()),
+        }),
+      ),
+    ),
   })
     .index("by_lead_time", ["leadId", "savedAt"])
     .index("by_lead_status", ["leadId", "status", "statusChangedAt"]),
@@ -977,4 +1078,189 @@ export default defineSchema({
     /** Which admin rated it. Their own data, not the candidate's. */
     by: v.string(),
   }).index("by_lead_item", ["leadId", "itemKey"]),
+  /**
+   * Every token a person has bought, spent or been refunded, one row per
+   * movement. `pricing.ts`: one currency, a token is deducted only once the
+   * service has actually been received, tokens never expire, unused ones are
+   * refundable.
+   *
+   * **The balance is never stored.** It is the sum of `delta` over the rows,
+   * computed by `tokenBalance` in `convex/portal.ts`, for the reason
+   * `lifecycle-data-model.md` § 11 gives for every derived value: a stored
+   * verdict drifts.
+   */
+  tokenLedger: defineTable({
+    leadId: v.id("leads"),
+    /** Positive for a purchase or a refund back into the wallet, negative for a
+     *  service delivered or tokens paid out in cash. Never zero. */
+    delta: v.number(),
+    reason: v.union(
+      v.literal("purchase"),
+      v.literal("fit_report"),
+      v.literal("matched_role"),
+      v.literal("cash_refund"),
+      v.literal("adjustment"),
+    ),
+    /** @absent none — not tied to a sale */
+    engagementId: v.optional(v.id("engagements")),
+    /** @absent none — not tied to one piece of work */
+    deliverableId: v.optional(v.id("deliverables")),
+    /** @absent none — not a matched role */
+    applicationId: v.optional(v.id("applications")),
+    /** @absent none — nothing further to record */
+    note: v.optional(v.string()),
+    at: v.number(),
+    by: v.string(),
+  })
+    .index("by_lead", ["leadId", "at"])
+    .index("by_application", ["applicationId"]),
+
+  /**
+   * A candidate's CV, every version, never overwritten. TASK-064.
+   *
+   * The file sits in Convex file storage on this deployment, not on anyone's
+   * laptop. A re-upload is a new row with the next `version`; the old one stays
+   * readable, because "what did we change" is answered by comparing two rows.
+   *
+   * TASK-063's rules hold: the file is offered for download and never rendered
+   * inline, so a photograph on it is never displayed by the app, and nothing is
+   * extracted from it here.
+   */
+  cvDocuments: defineTable({
+    leadId: v.id("leads"),
+    /** 1, 2, 3 per lead, in upload order. */
+    version: v.number(),
+    /** Who wrote this version. `candidate` is a file they sent us,
+     *  `coach` a revision PunProfile made. */
+    author: v.union(v.literal("candidate"), v.literal("coach")),
+    /** Short human name, e.g. "Ana's own, two-column, Aug 2026". */
+    label: v.string(),
+    storageId: v.id("_storage"),
+    fileName: v.string(),
+    contentType: v.string(),
+    bytes: v.number(),
+    /** The version this one was made from. @absent none — an original */
+    basedOn: v.optional(v.id("cvDocuments")),
+    /** What changed against `basedOn` and why, coach's words. This is the
+     *  delivery note a candidate reads beside the file.
+     *  @absent none — an original, nothing changed */
+    changeNote: v.optional(v.string()),
+    /** The piece of paid work this revision belongs to.
+     *  @absent none — not part of a deliverable */
+    deliverableId: v.optional(v.id("deliverables")),
+    /** Visible on the candidate's own page. Coach drafts stay off it until
+     *  they are ready. @absent notyet — not shared with the candidate */
+    sharedAt: v.optional(v.number()),
+    /** TASK-063's interim basis. A CV arriving by message is `coach_direct`
+     *  and its date is the day they sent it. Never backfilled to `app`. */
+    consentSource: v.union(v.literal("coach_direct"), v.literal("app")),
+    cvConsentAt: v.number(),
+    /** How the file was attached to this lead, TASK-064. */
+    linkedBy: v.union(v.literal("manual"), v.literal("self_upload"), v.literal("email_match")),
+    uploadedAt: v.number(),
+    by: v.string(),
+  }).index("by_lead", ["leadId", "version"]),
+
+  /**
+   * The coach's working notes on delivery, one row per entry, newest first on
+   * the page. Not `leads.notes`, which is one overwritten field.
+   *
+   * `shared` notes appear on the candidate's own page, so a coach can leave
+   * "what to do before our next session" where the candidate will see it. The
+   * default is private: a note written about someone is not a note written to
+   * them.
+   */
+  deliveryNotes: defineTable({
+    leadId: v.id("leads"),
+    body: v.string(),
+    shared: v.boolean(),
+    /** @absent none — a note about the whole engagement */
+    deliverableId: v.optional(v.id("deliverables")),
+    /** @absent none — not about one application */
+    applicationId: v.optional(v.id("applications")),
+    at: v.number(),
+    by: v.string(),
+  }).index("by_lead", ["leadId", "at"]),
+  /**
+   * Who may sign in to their own page at `/me`. `lifecycle-data-model.md`
+   * § 10, option (b): a real candidate account, email and a one-time code, no
+   * password.
+   *
+   * Access is a grant a coach makes from the Candidate 360, never a side
+   * effect of having an email on a lead. `leads.email` is not unique, so
+   * resolving a signed-in person by email alone could open the wrong record;
+   * this row names the lead explicitly. A code is only ever emailed to an
+   * address with a live grant, so the sign-in form cannot be used to mail
+   * strangers.
+   */
+  candidateAccess: defineTable({
+    leadId: v.id("leads"),
+    /** Lower-cased. The address the code goes to. */
+    email: v.string(),
+    grantedAt: v.number(),
+    by: v.string(),
+    /** @absent notyet — still live */
+    revokedAt: v.optional(v.number()),
+    /** @absent notyet — never signed in */
+    lastSignInAt: v.optional(v.number()),
+  })
+    .index("by_email", ["email"])
+    .index("by_lead", ["leadId"]),
+  /**
+   * A sign-in code held for the coach to pass on by LINE, because no mail
+   * sender is configured on this deployment. `auth.ts` writes here instead of
+   * emailing only when `RESEND_API_KEY` or `MAIL_FROM` is missing, and only for
+   * an address with a live `candidateAccess` grant.
+   *
+   * Plain text on purpose and for fifteen minutes at most: the coach has to be
+   * able to read it out. Only `requireAdmin` reads it, a successful sign-in
+   * deletes it, and an expired row is ignored and overwritten. Once email is
+   * configured this table stays empty.
+   */
+  pendingSignInCodes: defineTable({
+    email: v.string(),
+    code: v.string(),
+    expiresAt: v.number(),
+    at: v.number(),
+  }).index("by_email", ["email"]),
+  /**
+   * A candidate asking for more tokens from their page. Payment stays one to
+   * one by transfer (`pricing.ts`); this only tells the coach to send the
+   * details. One open request per candidate.
+   */
+  tokenRequests: defineTable({
+    leadId: v.id("leads"),
+    at: v.number(),
+    /** @absent notyet — not handled yet */
+    handledAt: v.optional(v.number()),
+    /** @absent none — handled without a note */
+    note: v.optional(v.string()),
+  }).index("by_lead", ["leadId", "at"]),
+
+  /**
+   * The roles the job pipeline published, for the candidate's "Jobs for you"
+   * feed. Added 30/10/2026 so the feed is as fresh as the last pipeline run
+   * rather than the last deploy.
+   *
+   * Written only by `market.replaceRoles`, which `scripts/push-market-roles.ts`
+   * calls after the evening run. Each push is the whole recent published set,
+   * so a role the pipeline stopped publishing goes on the next push. Holds
+   * nothing about any person. When it is empty the feed falls back to the list
+   * built into the app.
+   */
+  marketRoles: defineTable({
+    /** The job-log id, stored as applications.jobLogId when a candidate saves it. */
+    roleId: v.string(),
+    employer: v.string(),
+    title: v.string(),
+    country: v.string(),
+    /** YYYY-MM-DD, as the job log has it. */
+    firstSeen: v.string(),
+    /** Empty when the log has no link. */
+    url: v.string(),
+    /** When the push that last wrote this row ran. */
+    syncedAt: v.number(),
+  })
+    .index("by_role_id", ["roleId"])
+    .index("by_first_seen", ["firstSeen"]),
 });

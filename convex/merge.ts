@@ -79,7 +79,35 @@ async function movePersonalRecords(
     .withIndex("by_lead", (q) => q.eq("leadId", dropId))
     .collect();
 
+  const ledger = await ctx.db
+    .query("tokenLedger")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+  const cvs = await ctx.db
+    .query("cvDocuments")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+  const notes = await ctx.db
+    .query("deliveryNotes")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+
+  const access = await ctx.db
+    .query("candidateAccess")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+
+  const tokenReqs = await ctx.db
+    .query("tokenRequests")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+
   for (const row of [
+    ...tokenReqs,
+    ...access,
+    ...ledger,
+    ...cvs,
+    ...notes,
     ...assessments,
     ...links,
     ...calls,

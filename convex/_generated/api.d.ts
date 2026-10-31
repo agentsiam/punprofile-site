@@ -10,6 +10,7 @@
 
 import type * as adminEmails from "../adminEmails.js";
 import type * as auth from "../auth.js";
+import type * as candidateAccess from "../candidateAccess.js";
 import type * as consent from "../consent.js";
 import type * as consentDb from "../consentDb.js";
 import type * as consultations from "../consultations.js";
@@ -20,17 +21,20 @@ import type * as erase from "../erase.js";
 import type * as http from "../http.js";
 import type * as importLeads from "../importLeads.js";
 import type * as leads from "../leads.js";
+import type * as market from "../market.js";
 import type * as marketing from "../marketing.js";
 import type * as marketingSend from "../marketingSend.js";
 import type * as merge from "../merge.js";
 import type * as notify from "../notify.js";
 import type * as outcomes from "../outcomes.js";
+import type * as portal from "../portal.js";
 import type * as rateLimits from "../rateLimits.js";
 import type * as ratings from "../ratings.js";
 import type * as retention from "../retention.js";
 import type * as scoring from "../scoring.js";
 import type * as stats from "../stats.js";
 import type * as subscribe from "../subscribe.js";
+import type * as workspace from "../workspace.js";
 
 import type {
   ApiFromModules,
@@ -41,6 +45,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   adminEmails: typeof adminEmails;
   auth: typeof auth;
+  candidateAccess: typeof candidateAccess;
   consent: typeof consent;
   consentDb: typeof consentDb;
   consultations: typeof consultations;
@@ -51,17 +56,20 @@ declare const fullApi: ApiFromModules<{
   http: typeof http;
   importLeads: typeof importLeads;
   leads: typeof leads;
+  market: typeof market;
   marketing: typeof marketing;
   marketingSend: typeof marketingSend;
   merge: typeof merge;
   notify: typeof notify;
   outcomes: typeof outcomes;
+  portal: typeof portal;
   rateLimits: typeof rateLimits;
   ratings: typeof ratings;
   retention: typeof retention;
   scoring: typeof scoring;
   stats: typeof stats;
   subscribe: typeof subscribe;
+  workspace: typeof workspace;
 }>;
 
 /**
