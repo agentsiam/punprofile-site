@@ -101,7 +101,7 @@ export default function CandidateApp({
 
       {/* Tabs. Teal puts these in a left rail; on a phone a rail costs a
           quarter of the screen, so they sit on top for everyone. */}
-      <nav className="mt-5 flex gap-1 overflow-x-auto border-b border-line" role="tablist">
+      <nav className="mt-5 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-line" role="tablist">
         {tabs.map(([id, label]) => (
           <button
             key={id}
@@ -834,7 +834,7 @@ function JobDetail({
           </p>
         )}
 
-        <nav className="mt-5 flex gap-1 overflow-x-auto border-b border-line" role="tablist">
+        <nav className="mt-5 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-line" role="tablist">
           {(
             [
               ["info", C.DTAB_INFO],
