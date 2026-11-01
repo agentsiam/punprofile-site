@@ -153,6 +153,9 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
   const engagements = useQuery(api.delivery.forLead, { leadId });
   const outcomes = useQuery(api.outcomes.forLead, { leadId });
   const ratings = useQuery(api.ratings.latestForLead, { leadId });
+  // The workspace knows about tokens bought and dashboard access, which the
+  // lifecycle state does not read; a token purchase makes someone a client.
+  const ws = useQuery(api.workspace.forLead, { leadId });
   const deleteLead = useMutation(api.leads.deleteLeadOnRequest);
   const setCrmStatus = useMutation(api.leads.setCrmStatus);
   const [dispReason, setDispReason] = useState("");
@@ -198,7 +201,13 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
       ),
   });
 
-  const isClient = lifecycle === "client" || lifecycle === "placed" || (engagements ?? []).some((e) => e.status !== "proposed");
+  const isClient =
+    lifecycle === "client" ||
+    lifecycle === "placed" ||
+    lead.crmStatus === "closed_won" ||
+    (ws?.tokens.bought ?? 0) > 0 ||
+    !!ws?.access ||
+    (engagements ?? []).some((e) => e.status !== "proposed");
   const current: LeadTab = tab ?? (isClient ? "delivery" : "assessment");
   const lineOk = lead.consent.service.line.status === "opted_in";
   const emailOk = lead.consent.service.email.status === "opted_in";
