@@ -28127,27 +28127,24 @@ review:
 ### `src/lib/content/portal.ts::SIGNIN_BODY`
 
 ```yaml
-id: src/lib/content/portal.ts::SIGNIN_BODY
-source: src/lib/content/portal.ts
+id: "src/lib/content/portal.ts::SIGNIN_BODY"
+source: "src/lib/content/portal.ts"
 path: SIGNIN_BODY
-render: Candidate page /me, SIGNIN_BODY
+render: "Candidate page /me, sign-in, line under the heading"
 narrative_slot: utility
-en: Enter the email you use with PunProfile and we will send you a 6-digit code. No password needed.
-th: "กรอกอีเมลที่คุณใช้กับ PunProfile แล้วเราจะส่งรหัส 6 หลักไปให้ ไม่ต้องตั้งรหัสผ่านครับ"
-provenance: paul-approved
-date: 31/10/2026
+en: "Enter your email and the 6-digit code we emailed you when we opened your page. The code does not change, so keep that email."
+th: "กรอกอีเมลและรหัส 6 หลักที่เราส่งให้ทางอีเมลตอนเปิดหน้านี้ให้คุณ รหัสนี้ใช้ได้ตลอด เก็บอีเมลนั้นไว้ได้เลยครับ"
+provenance: draft
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten by Claude 01/11/2026 for the permanent sign-in code (Paul's decision): the code is emailed once and does not change. Unread by Paul."
 review:
-  structural_calque: pass
-  text_hash: 4beb4c2ab3186a2581a310044e5fbf567435229202fd191a930dda72dec9bd78
+  structural_calque: pending
+  text_hash: 19b2cb24efa3f4c608351c2444e82ca1a157948986729ad3080ced9d90f84a81
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Awaiting Paul's review in the language queue."
 ```
+
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::SIGNIN_EMAIL`
@@ -28171,61 +28168,6 @@ decision_note: >-
 review:
   structural_calque: pass
   text_hash: a84c4b8c0704df5c212c7bb1f7ab937e0d90bb602645a37b99a6fb7e5235735f
-  prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/portal.ts::SIGNIN_SEND`
-
-```yaml
-id: src/lib/content/portal.ts::SIGNIN_SEND
-source: src/lib/content/portal.ts
-path: SIGNIN_SEND
-render: Candidate page /me, SIGNIN_SEND
-narrative_slot: utility
-en: Send me a code
-th: "ส่งรหัส"
-provenance: paul-approved
-date: 31/10/2026
-term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
-review:
-  structural_calque: pass
-  text_hash: 22cfd79266979df629d378c6193c51fb9e782703d1221216ba1c9b6a3f198531
-  prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/portal.ts::SIGNIN_SENT`
-
-```yaml
-id: src/lib/content/portal.ts::SIGNIN_SENT
-source: src/lib/content/portal.ts
-path: SIGNIN_SENT
-render: Candidate page /me, SIGNIN_SENT
-narrative_slot: utility
-en: >-
-  If this address has access, your code is on its way, by email or from your coach on LINE. It can take a few
-  minutes.
-th: "หากคุณใช้บัญชีอีเมลนี้เข้าใช้งานได้ เราจะส่งรหัสให้ทางอีเมล หรือโค้ชจะส่งให้ทาง LINE อาจต้องรอสักครู่ครับ"
-provenance: paul-approved
-date: 31/10/2026
-term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Names who sends the code and removes the broken รหัสกำลังส่งไป clause while preserving conditional access and both delivery routes. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
-review:
-  structural_calque: pass
-  text_hash: 19d612ce38de9373310d4ac0170f4a9076f4abc1afeef47065ee704c1594c227
   prompt_version: structural-calque-v1
   basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
@@ -28286,79 +28228,24 @@ review:
 ### `src/lib/content/portal.ts::SIGNIN_BAD_CODE`
 
 ```yaml
-id: src/lib/content/portal.ts::SIGNIN_BAD_CODE
-source: src/lib/content/portal.ts
+id: "src/lib/content/portal.ts::SIGNIN_BAD_CODE"
+source: "src/lib/content/portal.ts"
 path: SIGNIN_BAD_CODE
-render: Candidate page /me, SIGNIN_BAD_CODE
+render: "Candidate page /me, sign-in, wrong email or code"
 narrative_slot: utility
-en: That code is wrong or has expired. Ask for a new one.
-th: "รหัสไม่ถูกต้องหรือหมดอายุแล้ว ขอรหัสใหม่ได้เลยครับ"
-provenance: paul-approved
-date: 31/10/2026
+en: "That email and code do not match. Check the code in the email we sent you."
+th: "อีเมลกับรหัสไม่ตรงกัน ลองเช็กรหัสในอีเมลที่เราส่งให้อีกครั้งครับ"
+provenance: draft
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten by Claude 01/11/2026 for the permanent sign-in code (Paul's decision): the code is emailed once and does not change. Unread by Paul."
 review:
-  structural_calque: pass
-  text_hash: 8f385fd239229193e5facb390f37efc728fb31a8f01cdd8743cb483cc90b6fba
+  structural_calque: pending
+  text_hash: c47e195314c1fcbcc9694ee4684a38d3a9061be09539668836ae4b21115ce7e7
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Awaiting Paul's review in the language queue."
 ```
 
-<!-- COPY-ENTRY -->
-### `src/lib/content/portal.ts::SIGNIN_OTHER_EMAIL`
-
-```yaml
-id: src/lib/content/portal.ts::SIGNIN_OTHER_EMAIL
-source: src/lib/content/portal.ts
-path: SIGNIN_OTHER_EMAIL
-render: Candidate page /me, SIGNIN_OTHER_EMAIL
-narrative_slot: utility
-en: Use a different email
-th: "ใช้อีเมลอื่น"
-provenance: paul-approved
-date: 31/10/2026
-term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
-review:
-  structural_calque: pass
-  text_hash: 77d85f1992e0a5e3afd364c40984248c58c9e21c7d6cffe4ba8595ec03b1239f
-  prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/portal.ts::SIGNIN_RESEND`
-
-```yaml
-id: src/lib/content/portal.ts::SIGNIN_RESEND
-source: src/lib/content/portal.ts
-path: SIGNIN_RESEND
-render: Candidate page /me, SIGNIN_RESEND
-narrative_slot: utility
-en: Send a new code
-th: "ส่งรหัสใหม่"
-provenance: paul-approved
-date: 31/10/2026
-term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
-review:
-  structural_calque: pass
-  text_hash: 231a8bc0ee6aef03bbae108196021108cb08f176d3528a110a8d9173a01e9832
-  prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
-```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::NO_ACCESS_HEADING`
@@ -33684,4 +33571,48 @@ review:
   text_hash: e33e92dd17edec0d9fc1339da8f999bed1879bd6f01e76f0b27bcd91c4cc4c48
   prompt_version: structural-calque-v1
   basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_LOST`
+
+```yaml
+id: "src/lib/content/portal.ts::SIGNIN_LOST"
+source: "src/lib/content/portal.ts"
+path: SIGNIN_LOST
+render: "Candidate page /me, sign-in, line under the form"
+narrative_slot: utility
+en: "Lost your code? Tell your coach on LINE and we will send you a new one."
+th: "ลืมรหัสหรือหาอีเมลไม่เจอ บอกโค้ชทาง LINE แล้วเราจะส่งรหัสใหม่ให้ครับ"
+provenance: draft
+date: 01/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 01/11/2026 for the permanent sign-in code. Unread by Paul."
+review:
+  structural_calque: pending
+  text_hash: bc09dffaa19e4ac57afc4b9342772dc466c2730a2b6f6222eef018de61439c63
+  prompt_version: structural-calque-v1
+  basis: "Awaiting Paul's review in the language queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_LOCKED`
+
+```yaml
+id: "src/lib/content/portal.ts::SIGNIN_LOCKED"
+source: "src/lib/content/portal.ts"
+path: SIGNIN_LOCKED
+render: "Candidate page /me, sign-in, after too many wrong codes"
+narrative_slot: utility
+en: "Too many wrong tries. Wait an hour, or ask your coach for a new code."
+th: "ใส่รหัสผิดหลายครั้งเกินไป รอสักหนึ่งชั่วโมง หรือขอรหัสใหม่จากโค้ชได้ครับ"
+provenance: draft
+date: 01/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 01/11/2026 for the permanent sign-in code. Unread by Paul."
+review:
+  structural_calque: pending
+  text_hash: a9dd73d87d3d2f5df8c95c08a3de696a74e33b18c329e42df792928a08f9255d
+  prompt_version: structural-calque-v1
+  basis: "Awaiting Paul's review in the language queue."
 ```

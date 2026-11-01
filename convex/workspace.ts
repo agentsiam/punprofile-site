@@ -15,6 +15,7 @@
 
 import { mutation, query, type MutationCtx, type QueryCtx } from "./_generated/server";
 import type { Id } from "./_generated/dataModel";
+import { internal } from "./_generated/api";
 import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
 import { isAdminEmail } from "./adminEmails";
@@ -604,7 +605,10 @@ export const grantAccess = mutation({
         await ctx.db.patch(g._id, { revokedAt: now });
       }
     }
-    return await ctx.db.insert("candidateAccess", { leadId: args.leadId, email, grantedAt: now, by });
+    const id = await ctx.db.insert("candidateAccess", { leadId: args.leadId, email, grantedAt: now, by });
+    // Their permanent code, made and emailed once (candidateCode.ts).
+    await ctx.scheduler.runAfter(0, internal.candidateCode.issueCode, { leadId: args.leadId });
+    return id;
   },
 });
 
@@ -699,7 +703,14 @@ export const forLead = query({
       notes,
       applications,
       access: access
-        ? { email: access.email, grantedAt: access.grantedAt, lastSignInAt: access.lastSignInAt ?? null }
+        ? {
+            email: access.email,
+            grantedAt: access.grantedAt,
+            lastSignInAt: access.lastSignInAt ?? null,
+            codeIssuedAt: access.codeIssuedAt ?? null,
+            codeDelivery: access.codeDelivery ?? null,
+            codeDeliveryNote: access.codeDeliveryNote ?? null,
+          }
         : null,
       heldCode,
       tokenRequest: openRequest ? { _id: openRequest._id, at: openRequest.at } : null,

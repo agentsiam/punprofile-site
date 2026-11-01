@@ -33,6 +33,9 @@ const day = (ms: number | null | undefined) =>
   ms === null || ms === undefined
     ? ""
     : new Date(ms).toLocaleDateString("en-GB", { day: "2-digit", month: "2-digit", year: "numeric" });
+/** DD/MM/YYYY HH:MM, for moments that matter to the hour. */
+const stamp = (ms: number) =>
+  `${day(ms)} ${new Date(ms).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}`;
 
 /** `<input type="date">` holds YYYY-MM-DD; stored as midday UTC so no timezone moves the day. */
 const toMs = (iso: string) => (iso ? Date.parse(`${iso}T12:00:00Z`) : undefined);
@@ -191,6 +194,8 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
   const shareReport = useMutation(api.workspace.shareFitReport);
   const handleRequest = useMutation(api.workspace.handleTokenRequest);
   const revoke = useMutation(api.workspace.revokeAccess);
+  const sendNewCode = useMutation(api.candidateCode.sendNewCode);
+  const [confirmNewCode, setConfirmNewCode] = useState(false);
   const [accessEmail, setAccessEmail] = useState<string | null>(null);
   const [form, setForm] = useState<null | {
     reason: "purchase" | "fit_report" | "cash_refund" | "adjustment";
@@ -273,15 +278,21 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
           {ws.access ? (
             <>
               <p className="mt-1 text-body-medium text-on-surface">
-                {ws.access.email} can sign in at {pageUrl} with a 6-digit code. When they ask for one it is
-                emailed if email sending is set up; otherwise it appears here, to send them on LINE.
+                {ws.access.email} signs in at {pageUrl} with their email and a permanent 6-digit code.
+              </p>
+              <p className="text-body-medium text-on-surface-variant">
+                {ws.access.codeIssuedAt === null
+                  ? "No code made yet. Send one below."
+                  : ws.access.codeDelivery === "emailed"
+                    ? `Code emailed ${stamp(ws.access.codeIssuedAt)}.`
+                    : ws.access.codeDelivery === "failed"
+                      ? `Code made ${stamp(ws.access.codeIssuedAt)}, but the email failed: ${ws.access.codeDeliveryNote ?? "no reason given"}.`
+                      : `Code made ${stamp(ws.access.codeIssuedAt)}; email is not set up, so it was not sent.`}
               </p>
               {ws.heldCode && (
                 <p className="mt-2 rounded-medium bg-primary-container px-3 py-2 text-body-medium text-on-primary-container">
-                  Sign-in code waiting: <strong className="tracking-widest">{ws.heldCode.code}</strong>, valid
-                  until{" "}
-                  {new Date(ws.heldCode.expiresAt).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}.
-                  Email is not set up yet, so send it to them on LINE.
+                  Their code: <strong className="tracking-widest">{ws.heldCode.code}</strong>. Send it to them on LINE;
+                  it shows here until {stamp(ws.heldCode.expiresAt)} or until they sign in, and keeps working after.
                 </p>
               )}
               <p className="text-body-medium text-on-surface-variant">
@@ -295,6 +306,27 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
                 <button type="button" className={LINK} onClick={() => setAccessEmail(ws.access!.email)}>
                   Change address
                 </button>
+                {confirmNewCode ? (
+                  <>
+                    <button
+                      type="button"
+                      className={LINK}
+                      onClick={() => {
+                        setConfirmNewCode(false);
+                        void sendNewCode({ leadId });
+                      }}
+                    >
+                      Yes, replace their code
+                    </button>
+                    <button type="button" className={LINK} onClick={() => setConfirmNewCode(false)}>
+                      Keep the old one
+                    </button>
+                  </>
+                ) : (
+                  <button type="button" className={LINK} onClick={() => setConfirmNewCode(true)}>
+                    Send a new code
+                  </button>
+                )}
                 <button type="button" className={LINK} onClick={() => void revoke({ leadId })}>
                   Switch off
                 </button>

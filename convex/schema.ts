@@ -1217,19 +1217,28 @@ export default defineSchema({
     revokedAt: v.optional(v.number()),
     /** @absent notyet — never signed in */
     lastSignInAt: v.optional(v.number()),
+    /** When the current permanent code was made, 01/11/2026 design.
+     *  @absent none — granted before permanent codes, or not issued yet */
+    codeIssuedAt: v.optional(v.number()),
+    /** How the current code reached them: emailed, held for the coach to send
+     *  on LINE (no mail sender), or failed to email and held.
+     *  @absent none — no code issued yet */
+    codeDelivery: v.optional(v.union(v.literal("emailed"), v.literal("held"), v.literal("failed"))),
+    /** Why it was held or failed. @absent none — emailed or not issued */
+    codeDeliveryNote: v.optional(v.string()),
   })
     .index("by_email", ["email"])
     .index("by_lead", ["leadId"]),
   /**
-   * A sign-in code held for the coach to pass on by LINE, because no mail
-   * sender is configured on this deployment. `auth.ts` writes here instead of
-   * emailing only when `RESEND_API_KEY` or `MAIL_FROM` is missing, and only for
-   * an address with a live `candidateAccess` grant.
+   * A candidate's permanent code held for the coach to pass on by LINE,
+   * because it could not be emailed: no mail sender is configured, or the send
+   * failed. `candidateCode.ts` writes here, only for an address with a live
+   * `candidateAccess` grant.
    *
-   * Plain text on purpose and for fifteen minutes at most: the coach has to be
-   * able to read it out. Only `requireAdmin` reads it, a successful sign-in
-   * deletes it, and an expired row is ignored and overwritten. Once email is
-   * configured this table stays empty.
+   * Plain text on purpose and for 24 hours at most: the coach has to be able
+   * to read it out. Only `requireAdmin` reads it, a successful sign-in or an
+   * emailed code deletes it, and an expired row is ignored and overwritten.
+   * Once email is configured this table stays empty.
    */
   pendingSignInCodes: defineTable({
     email: v.string(),

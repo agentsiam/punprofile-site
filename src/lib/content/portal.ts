@@ -35,23 +35,18 @@ export const PORTAL_INTRO_SHORT: Copy = {
 
 export const SIGNIN_HEADING: Copy = { en: "Sign in to your page", th: "เข้าสู่หน้าของคุณ" };
 export const SIGNIN_BODY: Copy = {
-  en: "Enter the email you use with PunProfile and we will send you a 6-digit code. No password needed.",
-  th: "กรอกอีเมลที่คุณใช้กับ PunProfile แล้วเราจะส่งรหัส 6 หลักไปให้ ไม่ต้องตั้งรหัสผ่านครับ",
+  en: "Enter your email and the 6-digit code we emailed you when we opened your page. The code does not change, so keep that email.",
+  th: "กรอกอีเมลและรหัส 6 หลักที่เราส่งให้ทางอีเมลตอนเปิดหน้านี้ให้คุณ รหัสนี้ใช้ได้ตลอด เก็บอีเมลนั้นไว้ได้เลยครับ",
 };
 export const SIGNIN_EMAIL: Copy = { en: "Email", th: "อีเมล" };
-export const SIGNIN_SEND: Copy = { en: "Send me a code", th: "ส่งรหัส" };
-export const SIGNIN_SENT: Copy = {
-  en: "If this address has access, your code is on its way, by email or from your coach on LINE. It can take a few minutes.",
-  th: "หากคุณใช้บัญชีอีเมลนี้เข้าใช้งานได้ เราจะส่งรหัสให้ทางอีเมล หรือโค้ชจะส่งให้ทาง LINE อาจต้องรอสักครู่ครับ",
-};
 export const SIGNIN_CODE: Copy = { en: "6-digit code", th: "รหัส 6 หลัก" };
+export const SIGNIN_LOST: Copy = { en: "Lost your code? Tell your coach on LINE and we will send you a new one.", th: "ลืมรหัสหรือหาอีเมลไม่เจอ บอกโค้ชทาง LINE แล้วเราจะส่งรหัสใหม่ให้ครับ" };
+export const SIGNIN_LOCKED: Copy = { en: "Too many wrong tries. Wait an hour, or ask your coach for a new code.", th: "ใส่รหัสผิดหลายครั้งเกินไป รอสักหนึ่งชั่วโมง หรือขอรหัสใหม่จากโค้ชได้ครับ" };
 export const SIGNIN_VERIFY: Copy = { en: "Sign in", th: "เข้าสู่ระบบ" };
 export const SIGNIN_BAD_CODE: Copy = {
-  en: "That code is wrong or has expired. Ask for a new one.",
-  th: "รหัสไม่ถูกต้องหรือหมดอายุแล้ว ขอรหัสใหม่ได้เลยครับ",
+  en: "That email and code do not match. Check the code in the email we sent you.",
+  th: "อีเมลกับรหัสไม่ตรงกัน ลองเช็กรหัสในอีเมลที่เราส่งให้อีกครั้งครับ",
 };
-export const SIGNIN_OTHER_EMAIL: Copy = { en: "Use a different email", th: "ใช้อีเมลอื่น" };
-export const SIGNIN_RESEND: Copy = { en: "Send a new code", th: "ส่งรหัสใหม่" };
 export const NO_ACCESS_HEADING: Copy = {
   en: "This email does not have a page yet",
   th: "เรายังไม่ได้เปิดหน้าสำหรับอีเมลนี้",

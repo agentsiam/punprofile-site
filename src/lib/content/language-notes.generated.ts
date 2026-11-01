@@ -10605,11 +10605,11 @@ export const LANGUAGE_DECISION_NOTES = {
   "src/lib/content/portal.ts::SIGNIN_BODY": {
     "source": "src/lib/content/portal.ts",
     "path": "SIGNIN_BODY",
-    "render": "Candidate page /me, SIGNIN_BODY",
+    "render": "Candidate page /me, sign-in, line under the heading",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "provenance": "draft",
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten by Claude 01/11/2026 for the permanent sign-in code (Paul's decision): the code is emailed once and does not change. Unread by Paul."
   },
   "src/lib/content/portal.ts::SIGNIN_EMAIL": {
     "source": "src/lib/content/portal.ts",
@@ -10619,24 +10619,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "31/10/2026",
     "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
-  },
-  "src/lib/content/portal.ts::SIGNIN_SEND": {
-    "source": "src/lib/content/portal.ts",
-    "path": "SIGNIN_SEND",
-    "render": "Candidate page /me, SIGNIN_SEND",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
-  },
-  "src/lib/content/portal.ts::SIGNIN_SENT": {
-    "source": "src/lib/content/portal.ts",
-    "path": "SIGNIN_SENT",
-    "render": "Candidate page /me, SIGNIN_SENT",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Names who sends the code and removes the broken รหัสกำลังส่งไป clause while preserving conditional access and both delivery routes. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
   },
   "src/lib/content/portal.ts::SIGNIN_CODE": {
     "source": "src/lib/content/portal.ts",
@@ -10659,29 +10641,11 @@ export const LANGUAGE_DECISION_NOTES = {
   "src/lib/content/portal.ts::SIGNIN_BAD_CODE": {
     "source": "src/lib/content/portal.ts",
     "path": "SIGNIN_BAD_CODE",
-    "render": "Candidate page /me, SIGNIN_BAD_CODE",
+    "render": "Candidate page /me, sign-in, wrong email or code",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
-  },
-  "src/lib/content/portal.ts::SIGNIN_OTHER_EMAIL": {
-    "source": "src/lib/content/portal.ts",
-    "path": "SIGNIN_OTHER_EMAIL",
-    "render": "Candidate page /me, SIGNIN_OTHER_EMAIL",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
-  },
-  "src/lib/content/portal.ts::SIGNIN_RESEND": {
-    "source": "src/lib/content/portal.ts",
-    "path": "SIGNIN_RESEND",
-    "render": "Candidate page /me, SIGNIN_RESEND",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "provenance": "draft",
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten by Claude 01/11/2026 for the permanent sign-in code (Paul's decision): the code is emailed once and does not change. Unread by Paul."
   },
   "src/lib/content/portal.ts::NO_ACCESS_HEADING": {
     "source": "src/lib/content/portal.ts",
@@ -12527,5 +12491,23 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "31/10/2026",
     "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ระบุว่าเรายังไม่ได้คัดงานที่ตรงเป้าหมาย ไม่สื่อว่าไม่มีงานตำแหน่งนี้ในตลาด"
+  },
+  "src/lib/content/portal.ts::SIGNIN_LOST": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_LOST",
+    "render": "Candidate page /me, sign-in, line under the form",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "01/11/2026",
+    "decisionNote": "Drafted by Claude 01/11/2026 for the permanent sign-in code. Unread by Paul."
+  },
+  "src/lib/content/portal.ts::SIGNIN_LOCKED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "SIGNIN_LOCKED",
+    "render": "Candidate page /me, sign-in, after too many wrong codes",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "01/11/2026",
+    "decisionNote": "Drafted by Claude 01/11/2026 for the permanent sign-in code. Unread by Paul."
   }
 } as const;

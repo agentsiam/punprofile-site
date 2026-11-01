@@ -13,7 +13,8 @@
  */
 
 import { internalMutation, internalQuery, type QueryCtx, type MutationCtx } from "./_generated/server";
-import type { Doc } from "./_generated/dataModel";
+import type { Doc, Id } from "./_generated/dataModel";
+import { isAdminEmail } from "./adminEmails";
 import { v } from "convex/values";
 import { getAuthUserId } from "@convex-dev/auth/server";
 
@@ -83,4 +84,53 @@ export async function clearHeldCodes(ctx: MutationCtx, email: string) {
     .withIndex("by_email", (q) => q.eq("email", normaliseEmail(email)))
     .collect();
   for (const r of rows) await ctx.db.delete(r._id);
+}
+
+/**
+ * Remove the login behind a candidate's address, for erasure. Their sign-in
+ * accounts (the permanent-code one and the older email-code one), anything
+ * hanging off them, and the user itself once it has no other way in. An admin
+ * user is never touched: a coach's own address is not a candidate's.
+ * Returns how many auth rows went, for the deletion log's own arithmetic.
+ */
+export async function removeCandidateLogin(ctx: MutationCtx, email: string): Promise<number> {
+  const id = normaliseEmail(email);
+  let removed = 0;
+  const userIds = new Set<Id<"users">>();
+  for (const provider of ["candidate-static", "candidate-code"]) {
+    const accounts = await ctx.db
+      .query("authAccounts")
+      .withIndex("providerAndAccountId", (q) => q.eq("provider", provider).eq("providerAccountId", id))
+      .collect();
+    for (const a of accounts) {
+      userIds.add(a.userId);
+      for (const c of await ctx.db.query("authVerificationCodes").withIndex("accountId", (q) => q.eq("accountId", a._id)).collect()) {
+        await ctx.db.delete(c._id);
+        removed++;
+      }
+      for (const r of await ctx.db.query("authRateLimits").withIndex("identifier", (q) => q.eq("identifier", a._id)).collect()) {
+        await ctx.db.delete(r._id);
+        removed++;
+      }
+      await ctx.db.delete(a._id);
+      removed++;
+    }
+  }
+  for (const userId of userIds) {
+    const user = await ctx.db.get(userId);
+    if (!user || (typeof user.email === "string" && isAdminEmail(user.email))) continue;
+    const others = await ctx.db.query("authAccounts").withIndex("userIdAndProvider", (q) => q.eq("userId", userId)).first();
+    if (others) continue;
+    for (const s of await ctx.db.query("authSessions").withIndex("userId", (q) => q.eq("userId", userId)).collect()) {
+      for (const t of await ctx.db.query("authRefreshTokens").withIndex("sessionId", (q) => q.eq("sessionId", s._id)).collect()) {
+        await ctx.db.delete(t._id);
+        removed++;
+      }
+      await ctx.db.delete(s._id);
+      removed++;
+    }
+    await ctx.db.delete(userId);
+    removed++;
+  }
+  return removed;
 }
