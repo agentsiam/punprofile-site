@@ -43,8 +43,8 @@ export function GET() {
     "# PunProfile",
     "",
     "> Career coaching for Thai professionals who want to work in Europe, and a free",
-    "> self-serve readiness check. Written and delivered in Thai. One person, not an",
-    "> agency.",
+    "> self-serve readiness check. Written and delivered in Thai. A small team, not",
+    "> an agency.",
     "",
     "The core claim: for most candidates the obstacle is not ability, it is that a",
     "European employer cannot read what their experience is worth, and that the",
@@ -84,7 +84,7 @@ export function GET() {
     route(
       "/coaching",
       "Coaching 1:1",
-      "The case for the coaching rather than the catalogue of it: the method, the proof, who it is not for, and the founder. The `/services` route folded in here between 23/08/2026 and 06/09/2026 and now has its own page again",
+      "The case for the coaching rather than the catalogue of it: the method, the proof, who it is not for, and the people behind it. The `/services` route folded in here between 23/08/2026 and 06/09/2026 and now has its own page again",
     ),
     route(
       "/pricing",
