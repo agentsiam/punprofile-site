@@ -92,10 +92,20 @@ export const EN_PREFIX = "/en";
  * is a real link the result screen builds, and losing its parameter would send
  * a candidate to a page that no longer points at their own chart.
  */
+/**
+ * Paths outside both language trees: the candidate's dashboard and the coach's
+ * CRM. They read the locale from the cookie and have no `/en` twin, so a
+ * prefix on them is a 404. Fixed 01/11/2026: switching to English on `/me`
+ * pushed to `/en/me`.
+ */
+const UNPREFIXED = ["/me", "/admin", "/login"];
+const isUnprefixed = (href: string) =>
+  UNPREFIXED.some((p) => href === p || href.startsWith(`${p}/`) || href.startsWith(`${p}?`) || href.startsWith(`${p}#`));
+
 export function localePath(href: string, locale: Locale): string {
   // Anything that is not a path of ours is returned untouched: mailto, tel, a
   // LINE deep link, an absolute URL. A prefix on any of those is a broken link.
-  if (locale === DEFAULT_LOCALE || !href.startsWith("/")) return href;
+  if (locale === DEFAULT_LOCALE || !href.startsWith("/") || isUnprefixed(href)) return href;
   return `${EN_PREFIX}${href === "/" ? "" : href}`;
 }
 

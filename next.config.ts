@@ -50,6 +50,9 @@ const nextConfig: NextConfig = {
     return [
       { source: "/assess", destination: "/efc-assessment", permanent: true },
       { source: "/en/assess", destination: "/en/efc-assessment", permanent: true },
+      // The dashboard has no `/en` twin; its language comes from the cookie.
+      // Temporary, so nothing is cached if `/en/me` ever becomes a real page.
+      { source: "/en/me", destination: "/me", permanent: false },
       ...(movedTo
         ? [
             {
