@@ -23,6 +23,7 @@
     "src/lib/content/privacy.ts",
     "src/lib/content/products.ts",
     "src/lib/content/questions.ts",
+    "src/lib/content/search.ts",
     "src/lib/content/services.ts",
     "src/lib/levers.ts"
   ]

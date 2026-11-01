@@ -12509,5 +12509,41 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-written",
     "date": "01/11/2026",
     "decisionNote": "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
+  },
+  "src/lib/content/search.ts::EFC_ASSESSMENT_SEARCH": {
+    "source": "src/lib/content/search.ts",
+    "path": "EFC_ASSESSMENT_SEARCH",
+    "render": "Search result description for /efc-assessment (never shown on the page)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "01/11/2026",
+    "decisionNote": "Search-only description from seo-meta-copy-handoff.md, approved 01/11/2026 by the reviewer Paul delegated to; Paul shipped it the same day."
+  },
+  "src/lib/content/search.ts::HOME_SEARCH": {
+    "source": "src/lib/content/search.ts",
+    "path": "HOME_SEARCH",
+    "render": "Search result description for the home page; the Thai is the home subhead, unchanged",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "01/11/2026",
+    "decisionNote": "Search-only description from seo-meta-copy-handoff.md, approved 01/11/2026 by the reviewer Paul delegated to; Paul shipped it the same day."
+  },
+  "src/lib/content/search.ts::ARTICLE_SEARCH.cara-working-in-spain": {
+    "source": "src/lib/content/search.ts",
+    "path": "ARTICLE_SEARCH.cara-working-in-spain",
+    "render": "Search result description for the Cara article; the Thai is its summary, unchanged",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "01/11/2026",
+    "decisionNote": "Search-only description from seo-meta-copy-handoff.md, approved 01/11/2026 by the reviewer Paul delegated to; Paul shipped it the same day."
+  },
+  "src/lib/content/search.ts::ARTICLE_SEARCH.start-in-europe": {
+    "source": "src/lib/content/search.ts",
+    "path": "ARTICLE_SEARCH.start-in-europe",
+    "render": "Search result description for the start-in-europe article",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "01/11/2026",
+    "decisionNote": "Search-only description from seo-meta-copy-handoff.md, approved 01/11/2026 by the reviewer Paul delegated to; Paul shipped it the same day."
   }
 } as const;

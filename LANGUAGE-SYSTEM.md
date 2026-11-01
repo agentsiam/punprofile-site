@@ -33271,3 +33271,91 @@ review:
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/search.ts::EFC_ASSESSMENT_SEARCH`
+
+```yaml
+id: "src/lib/content/search.ts::EFC_ASSESSMENT_SEARCH"
+source: "src/lib/content/search.ts"
+path: "EFC_ASSESSMENT_SEARCH"
+render: "Search result description for /efc-assessment (never shown on the page)"
+narrative_slot: utility
+en: "Take the free EU Fit Check on your phone in about two minutes. Assess four areas of readiness for work in Europe and see initial results without signing up."
+th: "ทำ EU Fit Check ได้ฟรีบนมือถือ ใช้เวลาประมาณ 2 นาที ประเมินความพร้อมทำงานในยุโรปทั้ง 4 ด้าน ดูผลเบื้องต้นได้โดยไม่ต้องสมัครสมาชิก"
+provenance: paul-approved
+date: 01/11/2026
+term_bindings: []
+decision_note: "Search-only description from seo-meta-copy-handoff.md, approved 01/11/2026 by the reviewer Paul delegated to; Paul shipped it the same day."
+review:
+  structural_calque: pass
+  text_hash: efbaf6443373f94903ed4d096cdb57211d0b3bc4add3837d603bfc47911217fa
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/search.ts::HOME_SEARCH`
+
+```yaml
+id: "src/lib/content/search.ts::HOME_SEARCH"
+source: "src/lib/content/search.ts"
+path: "HOME_SEARCH"
+render: "Search result description for the home page; the Thai is the home subhead, unchanged"
+narrative_slot: utility
+en: "PunProfile works with Thai professionals targeting Europe on career direction, profile refinement and applications, one role at a time."
+th: "PunProfile ทำงานร่วมกับคนไทยที่ตัดสินใจแล้วว่าจะมุ่งสู่ตลาดงานยุโรป ตั้งแต่การวางทิศทางอาชีพและปรับโปรไฟล์ ไปจนถึงการสมัครงานทีละตำแหน่ง"
+provenance: paul-approved
+date: 01/11/2026
+term_bindings: []
+decision_note: "Search-only description from seo-meta-copy-handoff.md, approved 01/11/2026 by the reviewer Paul delegated to; Paul shipped it the same day."
+review:
+  structural_calque: pass
+  text_hash: 385e911b8154c014396fe0c3d522d920a55a51e8a6e137032b22bd91dd9c48cb
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/search.ts::ARTICLE_SEARCH.cara-working-in-spain`
+
+```yaml
+id: "src/lib/content/search.ts::ARTICLE_SEARCH.cara-working-in-spain"
+source: "src/lib/content/search.ts"
+path: "ARTICLE_SEARCH.cara-working-in-spain"
+render: "Search result description for the Cara article; the Thai is its summary, unchanged"
+narrative_slot: utility
+en: "Cara's 6 lessons from Thai student to work in Spain: a third language is not always needed, age is not the main issue, and CV photos help less than you think."
+th: "ไม่ต้องพูดภาษาที่ 3 ก็ทำงานในบริษัทได้ อายุไม่ใช่ปัญหาหลัก และรูปในเรซูเม่ไม่ได้ช่วยอย่างที่คิด คาร่าเล่า 6 เรื่องจากเส้นทางนักเรียนไทยสู่คนทำงานในสเปน"
+provenance: paul-approved
+date: 01/11/2026
+term_bindings: []
+decision_note: "Search-only description from seo-meta-copy-handoff.md, approved 01/11/2026 by the reviewer Paul delegated to; Paul shipped it the same day."
+review:
+  structural_calque: pass
+  text_hash: d66b902df3f9d45b933ce0090c1eaa8a72374f2c055905154218e31e29701c98
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/search.ts::ARTICLE_SEARCH.start-in-europe`
+
+```yaml
+id: "src/lib/content/search.ts::ARTICLE_SEARCH.start-in-europe"
+source: "src/lib/content/search.ts"
+path: "ARTICLE_SEARCH.start-in-europe"
+render: "Search result description for the start-in-europe article"
+narrative_slot: utility
+en: "Plan three things before applying in Europe: which market to target, how to relocate and how to show employers the value of your experience in Thailand."
+th: "วางแผน 3 เรื่องก่อนสมัครงานในยุโรป: จะเจาะตลาดไหน ย้ายประเทศด้วยเส้นทางใด และจะทำให้นายจ้างเห็นคุณค่าของประสบการณ์จากไทยอย่างไร"
+provenance: paul-approved
+date: 01/11/2026
+term_bindings: []
+decision_note: "Search-only description from seo-meta-copy-handoff.md, approved 01/11/2026 by the reviewer Paul delegated to; Paul shipped it the same day."
+review:
+  structural_calque: pass
+  text_hash: 3b096a5bd00b521c6d42c597286aac73c431e35f68258fa37935b70e1cb3efbf
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
