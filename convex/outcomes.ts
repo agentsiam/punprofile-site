@@ -29,10 +29,8 @@ const applicationStatusValidator = v.union(
 );
 
 /**
- * Coach-entered for now. The candidate-facing half arrives with TASK-059, which
- * needs an account first (`lifecycle-data-model.md` § 10): with no login there
- * is no way for a candidate's own list to follow them to another device, and a
- * job list that vanishes is worse than none.
+ * A job the coach logs on the candidate's behalf. The candidate's own list is
+ * `portal.addJob` on their page at /me; both land in the same table.
  */
 export const recordApplication = mutation({
   args: {
@@ -50,11 +48,17 @@ export const recordApplication = mutation({
     deadlineAt: v.optional(v.number()),
     followUpAt: v.optional(v.number()),
     cvDocumentId: v.optional(v.id("cvDocuments")),
+    /** Which of their target titles the job is for, `lifecycle-data-model.md` § 8a. */
+    targetId: v.optional(v.id("targets")),
   },
   handler: async (ctx, args) => {
     await requireAdmin(ctx);
     const lead = await ctx.db.get(args.leadId);
     if (!lead) throw new ConvexError("Lead not found.");
+    if (args.targetId) {
+      const target = await ctx.db.get(args.targetId);
+      if (!target || target.leadId !== args.leadId) throw new ConvexError("That title belongs to a different lead.");
+    }
     if (args.engagementId) {
       const engagement = await ctx.db.get(args.engagementId);
       if (!engagement) throw new ConvexError("Engagement not found.");
@@ -87,6 +91,7 @@ export const recordApplication = mutation({
       ...(args.deadlineAt ? { deadlineAt: args.deadlineAt } : {}),
       ...(args.followUpAt ? { followUpAt: args.followUpAt } : {}),
       ...(args.cvDocumentId ? { cvDocumentId: args.cvDocumentId } : {}),
+      ...(args.targetId ? { targetId: args.targetId } : {}),
       savedAt: now,
       // Only when they have actually applied. `interested` is a bookmark and
       // stamping it would make the application count wrong from the first row.

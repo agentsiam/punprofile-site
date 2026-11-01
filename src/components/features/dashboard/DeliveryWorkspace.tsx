@@ -273,7 +273,8 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
           {ws.access ? (
             <>
               <p className="mt-1 text-body-medium text-on-surface">
-                {ws.access.email} can sign in at {pageUrl} with a code sent to that address.
+                {ws.access.email} can sign in at {pageUrl} with a 6-digit code. When they ask for one it is
+                emailed if email sending is set up; otherwise it appears here, to send them on LINE.
               </p>
               {ws.heldCode && (
                 <p className="mt-2 rounded-medium bg-primary-container px-3 py-2 text-body-medium text-on-primary-container">
