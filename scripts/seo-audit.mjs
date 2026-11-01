@@ -17,7 +17,8 @@
  * - the organisation node, with name, url, sameAs, and a phone or the email the
  *   site publishes instead (public contact is LINE and email only)
  * - every `FAQPage` question and answer present in the page's own text
- * - a lead link in the main content, except on the lead form's own page
+ * - a lead link in the main content (the EU Fit Check, or /contact for paid
+ *   work), except on the lead form's own page and on /privacy
  * - `/llms.txt` serving, and every site link in it resolving to 200
  *
  * Run it against a local build, a Vercel preview, or production:
@@ -42,6 +43,10 @@ const BASE = (process.argv[2] || "http://localhost:3100").replace(/\/$/, "");
 const ORIGIN = (process.argv[3] || "https://punprofile.app").replace(/\/$/, "");
 // Path of the one lead form, Thai tree. Its own page is exempt from the link check.
 const LEAD_FORM = process.env.LEAD_FORM ?? "/efc-assessment";
+// Pages with no lead link by decision: /privacy is a legal notice (Paul, 2a,
+// 01/11/2026). Paid work starts on /contact by LINE or email, so /contact
+// counts as a lead link alongside the EU Fit Check.
+const EXEMPT = (process.env.LEAD_EXEMPT ?? "/privacy").split(",");
 const toLocal = (u) => u.replace(ORIGIN, BASE);
 
 const sm = await (await fetch(BASE + "/sitemap.xml")).text();
@@ -160,7 +165,8 @@ for (const url of urls) {
   notes.push(`lead links in main: ${ctas.join(" ") || "NONE"}`);
   // The lead form's own page is the destination, not a page that needs a link to it.
   const isForm = LEAD_FORM && new URL(url).pathname.replace(/^\/en/, "") === LEAD_FORM;
-  if (!ctas.length && !isForm) fails.push("no lead link in main content");
+  const isExempt = EXEMPT.includes(new URL(url).pathname.replace(/^\/en(?=\/|$)/, "") || "/");
+  if (!ctas.length && !isForm && !isExempt) fails.push("no lead link in main content");
 
   results.push({ url, status, title: d.title, tl, dl, fails, notes });
   await page.close();
