@@ -25,6 +25,7 @@
  */
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { useConvex, useMutation } from "convex/react";
 import { openFitReport } from "@/components/features/report/openFitReport";
 import { api } from "../../../../convex/_generated/api";
@@ -47,6 +48,80 @@ const fill = (s: string, vars: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? ""));
 const toMs = (iso: string) => (iso ? Date.parse(`${iso}T12:00:00Z`) : null);
 const toIso = (ms: number | null) => (ms === null ? "" : new Date(ms).toISOString().slice(0, 10));
+
+/*
+ * Colour, 01/11/2026. The secondary tints (design.md § The secondary palette)
+ * decorate and tell like things apart: one per target role, one per summary
+ * card, one per tab icon. They never mark a state. State uses the system's own
+ * roles: the open tab is `secondary` (ink-deep with lime text), counts are
+ * lime, and the stage colours are chart series, which the accents are for.
+ */
+const TINTS = [
+  { bg: "bg-cyan-pale", fg: "text-on-cyan-pale", dot: "bg-accent-cyan", edge: "border-l-accent-cyan" },
+  { bg: "bg-orange-pale", fg: "text-on-orange-pale", dot: "bg-accent-orange", edge: "border-l-accent-orange" },
+  { bg: "bg-yellow-pale", fg: "text-on-yellow-pale", dot: "bg-warning", edge: "border-l-warning" },
+  { bg: "bg-primary-pale", fg: "text-on-primary-pale", dot: "bg-primary", edge: "border-l-primary" },
+  { bg: "bg-canvas-soft", fg: "text-ink", dot: "bg-line-strong", edge: "border-l-line-strong" },
+] as const;
+type Tint = (typeof TINTS)[number];
+/** A target role keeps one tint everywhere it appears, by its place in the list. */
+function roleTint(data: PortalView, targetId: string | null): Tint | null {
+  const i = data.titles.findIndex((ti) => ti._id === targetId);
+  return i < 0 ? null : TINTS[i % TINTS.length];
+}
+/** Chart series for the stages, light to strong as a job moves on. */
+const STAGE_COLOR: Record<string, string> = {
+  interested: "bg-line-strong",
+  applied: "bg-accent-cyan",
+  screening: "bg-accent-orange",
+  interviewing: "bg-warning",
+  offer: "bg-primary",
+  accepted: "bg-ink-deep",
+  rejected: "bg-mute",
+  withdrawn: "bg-mute",
+};
+const DAY = 24 * 60 * 60 * 1000;
+/** Overdue is red, within a week is amber; the rest is plain. */
+function urgency(at: number | null | undefined, now: number): "late" | "soon" | null {
+  if (!at) return null;
+  if (at < now - DAY / 2) return "late";
+  if (at < now + 7 * DAY) return "soon";
+  return null;
+}
+const URGENT_CHIP = {
+  late: "rounded-full bg-error px-2 py-0.5 text-on-error",
+  soon: "rounded-full bg-warning px-2 py-0.5 text-warning-content",
+} as const;
+
+function Dot({ className }: { className: string }) {
+  return <span aria-hidden className={`inline-block h-2.5 w-2.5 shrink-0 rounded-full ${className}`} />;
+}
+
+/** The mascot over an empty state's sentence. Decorative, so no alt text. */
+function Empty({ text, art = "laptop", className = "" }: { text: string; art?: "laptop" | "magnifier" | "stepping"; className?: string }) {
+  return (
+    <div className={`flex flex-col items-center rounded-2xl bg-canvas-soft px-6 py-8 text-center ${className}`}>
+      <Image src={`/mascot-${art}.png`} alt="" width={1442} height={720} sizes="240px" className="h-auto w-56" />
+      <p className="mt-4 max-w-md text-body-large text-on-surface-variant">{text}</p>
+    </div>
+  );
+}
+
+/* Line icons for the tabs, 20px, currentColor. */
+const TAB_ICON: Record<string, React.ReactNode> = {
+  overview: <path d="M4 13h6V4H4zM14 20h6v-9h-6zM4 20h6v-4H4zM14 7h6V4h-6z" />,
+  tracker: <path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01" />,
+  feed: <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 12h.01" />,
+  cv: <path d="M14 3H6v18h12V7zM14 3v4h4M9 12h6M9 16h6" />,
+  coach: <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z" />,
+};
+function TabIcon({ id }: { id: string }) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      {TAB_ICON[id]}
+    </svg>
+  );
+}
 
 function useFormat() {
   const { pick, locale } = useCopy();
@@ -72,7 +147,7 @@ export default function CandidateApp({
   onSignOut?: () => void;
 }) {
   const { pick, t } = useFormat();
-  const [tab, setTab] = useState<Tab>("tracker");
+  const [tab, setTab] = useState<Tab>("overview");
   const [openJob, setOpenJob] = useState<Id<"applications"> | null>(null);
 
   const tabs: [Tab, Copy][] = [
@@ -85,15 +160,16 @@ export default function CandidateApp({
 
   return (
     <div className="mx-auto w-full max-w-7xl px-4 pb-16 pt-6 medium:px-6">
-      <div className="flex flex-wrap items-end justify-between gap-3">
+      <div className="flex flex-wrap items-end justify-between gap-3 rounded-3xl bg-canvas-dark px-6 py-6 medium:px-8 medium:py-7">
         <div>
-          <h1 className="text-headline-sm text-ink">
+          <p className="text-label-large text-on-canvas-dark">{pick(C.PORTAL_TITLE)}</p>
+          <h1 className="mt-1 text-headline-md text-primary-active">
             {data.firstName ? t(C.PORTAL_GREETING, { name: data.firstName }) : pick(C.PORTAL_GREETING_NONAME)}
           </h1>
-          <p className="text-body-medium text-on-surface-variant">{pick(C.PORTAL_INTRO_SHORT)}</p>
+          <p className="mt-1 text-body-large text-on-canvas-dark">{pick(C.PORTAL_INTRO_SHORT)}</p>
         </div>
         {onSignOut && (
-          <button type="button" className="text-body-medium text-ink-deep underline" onClick={onSignOut}>
+          <button type="button" className="text-body-medium text-primary-active underline" onClick={onSignOut}>
             {pick(C.SIGN_OUT)}
           </button>
         )}
@@ -101,26 +177,37 @@ export default function CandidateApp({
 
       {/* Tabs. Teal puts these in a left rail; on a phone a rail costs a
           quarter of the screen, so they sit on top for everyone. */}
-      <nav className="mt-5 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-line" role="tablist">
-        {tabs.map(([id, label]) => (
-          <button
-            key={id}
-            type="button"
-            role="tab"
-            aria-selected={tab === id}
-            onClick={() => {
-              setTab(id);
-              setOpenJob(null);
-            }}
-            className={
-              "-mb-px shrink-0 border-b-2 px-4 py-2.5 text-label-large " +
-              (tab === id ? "border-ink-deep text-ink" : "border-transparent text-on-surface-variant")
-            }
-          >
-            {pick(label)}
-            {id === "tracker" && data.jobs.length > 0 ? ` ${data.jobs.length}` : ""}
-          </button>
-        ))}
+      <nav className="mt-5 flex gap-2 overflow-x-auto overflow-y-hidden border-b border-line pb-3" role="tablist">
+        {tabs.map(([id, label], i) => {
+          const on = tab === id;
+          const tint = TINTS[i % TINTS.length];
+          return (
+            <button
+              key={id}
+              type="button"
+              role="tab"
+              aria-selected={on}
+              onClick={() => {
+                setTab(id);
+                setOpenJob(null);
+              }}
+              className={
+                "flex shrink-0 items-center gap-2 rounded-full py-1.5 pl-1.5 pr-4 text-label-large transition-colors " +
+                (on ? "bg-secondary text-on-secondary" : "text-on-surface-variant hover:bg-canvas-soft")
+              }
+            >
+              <span className={`grid h-8 w-8 place-items-center rounded-full ${on ? "bg-primary-active text-ink-deep" : `${tint.bg} ${tint.fg}`}`}>
+                <TabIcon id={id} />
+              </span>
+              {pick(label)}
+              {id === "tracker" && data.jobs.length > 0 && (
+                <span className={`rounded-full px-2 text-label-medium ${on ? "bg-primary-active text-ink-deep" : "bg-primary text-on-primary"}`}>
+                  {data.jobs.length}
+                </span>
+              )}
+            </button>
+          );
+        })}
       </nav>
 
       <div className="mt-6">
@@ -191,17 +278,17 @@ function Overview({
       <div className="space-y-5 large:col-span-2">
         <div className="grid gap-4 medium:grid-cols-3">
           {data.tokens.bought > 0 && (
-            <Stat label={pick(C.TOKENS_HEADING)} big={String(data.tokens.balance)} small={t(C.TOKENS_OF, { n: data.tokens.bought })}>
+            <Stat tint={TINTS[1]} label={pick(C.TOKENS_HEADING)} big={String(data.tokens.balance)} small={t(C.TOKENS_OF, { n: data.tokens.bought })}>
               {t(C.TOKENS_MATCHED, { n: data.tokens.matchedSent })}
               <TokenRequest data={data} readOnly={readOnly} />
             </Stat>
           )}
           {data.deliverables.length > 0 && (
-            <Stat label={pick(C.WORK_HEADING)} big={String(delivered)} small={`/ ${data.deliverables.length}`}>
+            <Stat tint={TINTS[2]} label={pick(C.WORK_HEADING)} big={String(delivered)} small={`/ ${data.deliverables.length}`}>
               <Bar value={delivered} max={data.deliverables.length} />
             </Stat>
           )}
-          <Stat label={pick(C.JOBS_HEADING)} big={String(data.jobs.length)} small="">
+          <Stat tint={TINTS[0]} label={pick(C.JOBS_HEADING)} big={String(data.jobs.length)} small="">
             {PIPELINE.filter((s) => s !== "interested" && (counts[s] ?? 0) > 0)
               .map((s) => `${pick(C.JOBS_STATUS[s])} ${counts[s]}`)
               .join(" · ")}
@@ -213,11 +300,14 @@ function Overview({
           <h2 className="text-heading-sm">{pick(C.PIPELINE_HEADING)}</h2>
           <ul className="mt-4 space-y-3">
             {PIPELINE.map((s) => (
-              <li key={s} className="grid grid-cols-[7rem_1fr_2rem] items-center gap-3">
-                <span className="text-body-medium text-on-surface-variant">{pick(C.JOBS_STATUS[s])}</span>
+              <li key={s} className="grid grid-cols-[10rem_1fr_2rem] items-center gap-3">
+                <span className="flex items-center gap-2 text-body-medium text-on-surface-variant">
+                  <Dot className={STAGE_COLOR[s]} />
+                  {pick(C.JOBS_STATUS[s])}
+                </span>
                 <span className="h-3 overflow-hidden rounded-full bg-canvas-soft">
                   <span
-                    className="block h-full rounded-full bg-ink-deep"
+                    className={`block h-full rounded-full ${STAGE_COLOR[s]}`}
                     style={{ width: `${((counts[s] ?? 0) / max) * 100}%` }}
                   />
                 </span>
@@ -245,8 +335,8 @@ function Overview({
             <ul className="mt-3 divide-y divide-line">
               {upcoming.map((x, i) => (
                 <li key={i} className="flex items-baseline gap-3 py-2.5">
-                  <span className={`w-20 shrink-0 text-label-large ${x.at < now ? "text-error" : "text-ink"}`}>
-                    {date(x.at)}
+                  <span className="w-24 shrink-0 text-label-large">
+                    {urgency(x.at, now) ? <span className={URGENT_CHIP[urgency(x.at, now)!]}>{date(x.at)}</span> : <span className="text-ink">{date(x.at)}</span>}
                   </span>
                   <span className="min-w-0 text-body-medium">
                     <span className="text-on-surface-variant">{pick(x.label)} · </span>
@@ -301,16 +391,19 @@ function TitlesCard({ data }: { data: PortalView }) {
               return (
                 <li key={ti._id} className="py-2.5">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <span className="text-body-large text-ink">
-                      {ti.priority}. {ti.title}
+                    <span className="flex items-center gap-2 text-body-large text-ink">
+                      <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-label-large ${TINTS[data.titles.indexOf(ti) % TINTS.length].bg} ${TINTS[data.titles.indexOf(ti) % TINTS.length].fg}`}>
+                        {ti.priority}
+                      </span>
+                      {ti.title}
                     </span>
                     {ti.priority === 1 && (
-                      <span className="rounded-sm bg-primary-pale px-2 py-0.5 text-label-medium text-on-primary-pale">
+                      <span className="rounded-full bg-primary px-2.5 py-0.5 text-label-medium text-on-primary">
                         {pick(C.TITLES_FIRST)}
                       </span>
                     )}
                   </div>
-                  <p className="text-body-small text-on-surface-variant">{t(C.TITLE_STATS, s)}</p>
+                  <p className="pl-9 text-body-small text-on-surface-variant">{t(C.TITLE_STATS, s)}</p>
                 </li>
               );
             })}
@@ -458,22 +551,22 @@ function TokenRequest({ data, readOnly }: { data: PortalView; readOnly: boolean 
   );
 }
 
-function Stat({ label, big, small, children }: { label: string; big: string; small: string; children?: React.ReactNode }) {
+function Stat({ label, big, small, tint, children }: { label: string; big: string; small: string; tint: Tint; children?: React.ReactNode }) {
   return (
-    <div className="card-outlined px-5 py-4">
-      <p className="text-label-large text-on-surface-variant">{label}</p>
-      <p className="mt-1 text-display-sm text-ink">
-        {big} <span className="text-body-large text-on-surface-variant">{small}</span>
+    <div className={`rounded-3xl px-5 py-4 ${tint.bg} ${tint.fg}`}>
+      <p className="text-label-large">{label}</p>
+      <p className="mt-1 text-display-sm">
+        {big} <span className="text-body-large">{small}</span>
       </p>
-      <div className="mt-2 text-body-medium text-on-surface-variant">{children}</div>
+      <div className="mt-2 text-body-medium">{children}</div>
     </div>
   );
 }
 
 function Bar({ value, max }: { value: number; max: number }) {
   return (
-    <div className="h-2 w-full overflow-hidden rounded-full bg-canvas-soft" aria-hidden>
-      <div className="h-full rounded-full bg-primary" style={{ width: `${max ? (value / max) * 100 : 0}%` }} />
+    <div className="h-2 w-full overflow-hidden rounded-full bg-canvas" aria-hidden>
+      <div className="h-full rounded-full bg-ink-deep" style={{ width: `${max ? (value / max) * 100 : 0}%` }} />
     </div>
   );
 }
@@ -598,16 +691,21 @@ function Tracker({ data, onOpen, readOnly }: { data: PortalView; onOpen: (id: Id
         <div className="mt-4 flex flex-wrap items-center gap-2" role="group" aria-label={pick(C.JOB_TITLE)}>
           {[
             { key: "all", label: pick(C.TITLE_ALL), n: data.jobs.length },
-            ...data.titles.map((ti) => ({ key: ti._id as string, label: ti.title, n: data.jobs.filter((j) => j.targetId === ti._id).length })),
+            ...data.titles.map((ti, i) => ({ key: ti._id as string, label: ti.title, n: data.jobs.filter((j) => j.targetId === ti._id).length, tint: TINTS[i % TINTS.length] })),
             ...(untitled > 0 ? [{ key: "none", label: pick(C.JOB_TITLE_NONE), n: untitled }] : []),
-          ].map((o) => (
+          ].map((o: { key: string; label: string; n: number; tint?: Tint }) => (
             <button
               key={o.key}
               type="button"
               onClick={() => setTitleFilter(o.key)}
-              className={`rounded-sm border px-3 py-1.5 text-label-large ${titleFilter === o.key ? "border-ink-deep text-ink" : "border-line text-on-surface-variant"}`}
+              aria-pressed={titleFilter === o.key}
+              className={`flex items-center gap-2 rounded-full px-3.5 py-1.5 text-label-large ${
+                titleFilter === o.key ? "bg-secondary text-on-secondary" : o.tint ? `${o.tint.bg} ${o.tint.fg}` : "bg-canvas-soft text-ink"
+              }`}
             >
-              {o.label} {o.n}
+              {o.tint && <Dot className={o.tint.dot} />}
+              {o.label}
+              <span className="opacity-70">{o.n}</span>
             </button>
           ))}
         </div>
@@ -650,15 +748,15 @@ function Tracker({ data, onOpen, readOnly }: { data: PortalView; onOpen: (id: Id
       )}
 
       {data.jobs.length === 0 ? (
-        <p className="mt-8 max-w-xl text-body-large text-on-surface-variant">{pick(C.JOBS_EMPTY)}</p>
+        <Empty className="mt-8" art="stepping" text={pick(C.JOBS_EMPTY)} />
       ) : shown.length === 0 ? (
         <p className="mt-8 text-body-large text-on-surface-variant">{pick(C.JOBS_NO_MATCH)}</p>
       ) : (
         <>
-          <JobTable jobs={shown} onOpen={onOpen} readOnly={readOnly} titleOf={(id) => titleName(data, id)} />
+          <JobTable jobs={shown} onOpen={onOpen} readOnly={readOnly} titleOf={(id) => titleName(data, id)} tintOf={(id) => roleTint(data, id)} />
           <ul className="mt-4 space-y-3 expanded:hidden">
             {shown.map((j) => (
-              <JobCard key={j._id} job={j} onOpen={onOpen} readOnly={readOnly} title={titleName(data, j.targetId)} />
+              <JobCard key={j._id} job={j} onOpen={onOpen} readOnly={readOnly} title={titleName(data, j.targetId)} tint={roleTint(data, j.targetId)} />
             ))}
           </ul>
         </>
@@ -686,7 +784,17 @@ function useJobActions(readOnly: boolean) {
 
 function StatusSelect({ job, readOnly, onChange }: { job: Job; readOnly: boolean; onChange: (s: Status) => void }) {
   const { pick } = useFormat();
+  if (readOnly) {
+    return (
+      <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-canvas-soft px-3 py-1 text-label-large text-ink">
+        <Dot className={STAGE_COLOR[job.status]} />
+        {pick(C.JOBS_STATUS[job.status])}
+      </span>
+    );
+  }
   return (
+    <span className="inline-flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+      <Dot className={STAGE_COLOR[job.status]} />
     <select
       aria-label={pick(C.COL_STATUS)}
       className="field field-dense w-auto"
@@ -701,13 +809,14 @@ function StatusSelect({ job, readOnly, onChange }: { job: Job; readOnly: boolean
         </option>
       ))}
     </select>
+    </span>
   );
 }
 
 function FromUs() {
   const { pick } = useFormat();
   return (
-    <span className="inline-block whitespace-nowrap rounded-sm bg-primary-pale px-1.5 py-0.5 text-label-small text-on-primary-pale">
+    <span className="inline-block whitespace-nowrap rounded-full bg-primary px-2 py-0.5 text-label-small text-on-primary">
       {pick(C.JOBS_FROM_US)}
     </span>
   );
@@ -718,14 +827,18 @@ function JobTable({
   onOpen,
   readOnly,
   titleOf,
+  tintOf,
 }: {
   jobs: Job[];
   onOpen: (id: Id<"applications">) => void;
   readOnly: boolean;
   titleOf: (id: string | null) => string | null;
+  tintOf: (id: string | null) => Tint | null;
 }) {
   const { pick, date } = useFormat();
   const act = useJobActions(readOnly);
+  const [now] = useState(() => Date.now());
+  const open = (j: Job) => !CLOSED.includes(j.status as (typeof CLOSED)[number]) && j.status !== "accepted";
   const cols: Copy[] = [C.COL_ROLE, C.COL_COMPANY, C.COL_SALARY, C.COL_LOCATION, C.COL_STATUS, C.COL_SAVED, C.COL_DEADLINE, C.COL_APPLIED, C.COL_FOLLOW, C.COL_EXCITEMENT];
   return (
     <div className="mt-4 hidden overflow-x-auto rounded-xl border border-line expanded:block">
@@ -745,7 +858,12 @@ function JobTable({
               <td className="min-w-[14rem] max-w-[20rem] px-3 py-2.5">
                 {j.fromUs && <FromUs />}
                 <span className="block text-ink">{j.roleTitle}</span>
-                {titleOf(j.targetId) && <span className="block text-body-small text-on-surface-variant">{titleOf(j.targetId)}</span>}
+                {titleOf(j.targetId) && (
+                  <span className="mt-0.5 flex items-center gap-1.5 text-body-small text-on-surface-variant">
+                    <Dot className={tintOf(j.targetId)?.dot ?? "bg-line-strong"} />
+                    {titleOf(j.targetId)}
+                  </span>
+                )}
               </td>
               <td className="px-3 py-2.5 text-ink">{j.employer}</td>
               <td className="px-3 py-2.5 text-on-surface-variant">{j.salary ?? ""}</td>
@@ -757,13 +875,19 @@ function JobTable({
                 <StatusSelect job={j} readOnly={readOnly} onChange={(s) => act.status(j._id, s)} />
               </td>
               <td className="whitespace-nowrap px-3 py-2.5 text-on-surface-variant">{date(j.savedAt)}</td>
-              <td className="whitespace-nowrap px-3 py-2.5 text-on-surface-variant">{j.deadlineAt ? date(j.deadlineAt) : "–"}</td>
+              <td className="whitespace-nowrap px-3 py-2.5 text-on-surface-variant">
+                {!j.deadlineAt ? "–" : j.status === "interested" && urgency(j.deadlineAt, now) ? (
+                  <span className={`text-label-medium ${URGENT_CHIP[urgency(j.deadlineAt, now)!]}`}>{date(j.deadlineAt)}</span>
+                ) : (
+                  date(j.deadlineAt)
+                )}
+              </td>
               <td className="whitespace-nowrap px-3 py-2.5 text-on-surface-variant">{j.appliedAt ? date(j.appliedAt) : "–"}</td>
               <td className="px-3 py-2.5" onClick={(e) => e.stopPropagation()}>
                 <input
                   type="date"
                   aria-label={pick(C.COL_FOLLOW)}
-                  className="field field-dense w-[8.75rem]"
+                  className={`field field-dense w-[8.75rem] ${open(j) && urgency(j.followUpAt, now) === "late" ? "!border-error !text-error" : open(j) && urgency(j.followUpAt, now) === "soon" ? "!border-warning-deep" : ""}`}
                   disabled={readOnly}
                   value={toIso(j.followUpAt)}
                   onChange={(e) => act.update(j._id, { followUpAt: toMs(e.target.value) })}
@@ -786,19 +910,26 @@ function JobCard({
   onOpen,
   readOnly,
   title,
+  tint,
 }: {
   job: Job;
   onOpen: (id: Id<"applications">) => void;
   readOnly: boolean;
   title: string | null;
+  tint: Tint | null;
 }) {
   const { pick, date } = useFormat();
   const act = useJobActions(readOnly);
   return (
-    <li className="card-outlined px-4 py-3" onClick={() => onOpen(job._id)}>
+    <li className={`card-outlined border-l-4 px-4 py-3 ${tint ? tint.edge : ""}`} onClick={() => onOpen(job._id)}>
       {job.fromUs && <FromUs />}
       <p className="text-heading-sm">{job.roleTitle}</p>
-      {title && <p className="text-body-small text-on-surface-variant">{title}</p>}
+      {title && (
+        <p className="flex items-center gap-1.5 text-body-small text-on-surface-variant">
+          <Dot className={tint?.dot ?? "bg-line-strong"} />
+          {title}
+        </p>
+      )}
       <p className="text-body-medium text-on-surface-variant">
         {job.employer} · {job.location ? `${job.location}, ` : ""}
         {job.country}
@@ -941,7 +1072,7 @@ function JobDetail({
           </p>
         )}
 
-        <nav className="mt-5 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-line" role="tablist">
+        <nav className="mt-5 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-line pb-3" role="tablist">
           {(
             [
               ["info", C.DTAB_INFO],
@@ -960,8 +1091,8 @@ function JobDetail({
               aria-selected={tab === id}
               onClick={() => setTab(id)}
               className={
-                "-mb-px shrink-0 border-b-2 px-4 py-2 text-label-large " +
-                (tab === id ? "border-ink-deep text-ink" : "border-transparent text-on-surface-variant")
+                "shrink-0 rounded-full px-4 py-2 text-label-large transition-colors " +
+                (tab === id ? "bg-secondary text-on-secondary" : "text-on-surface-variant hover:bg-canvas-soft")
               }
             >
               {pick(label)}
@@ -1655,7 +1786,7 @@ function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
   const byTitle = data.feed?.byTitle === true;
 
   if (!byTitle && (!data.target.countries.length || !data.target.role)) {
-    return <p className="max-w-xl text-body-large text-on-surface-variant">{pick(C.FEED_NO_TARGET)}</p>;
+    return <Empty art="magnifier" text={pick(C.FEED_NO_TARGET)} />;
   }
 
   const list = (rs: typeof roles) => (
@@ -1734,7 +1865,7 @@ function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
           );
         })
       ) : roles.length === 0 ? (
-        <p className="mt-6 max-w-xl text-body-large text-on-surface-variant">{pick(C.FEED_EMPTY)}</p>
+        <Empty className="mt-6" art="magnifier" text={pick(C.FEED_EMPTY)} />
       ) : (
         <div className="mt-2">{list(roles)}</div>
       )}
@@ -1748,17 +1879,24 @@ function CvTab({ data }: { data: PortalView }) {
   const { pick, date, t } = useFormat();
   const [open, setOpen] = useState<Record<string, boolean>>({});
   if (data.cvs.length === 0 && data.titles.length === 0) {
-    return <p className="text-body-large text-on-surface-variant">{pick(C.CV_EMPTY)}</p>;
+    return <Empty art="laptop" text={pick(C.CV_EMPTY)} />;
   }
 
   const card = (c: PortalView["cvs"][number], current: boolean) => (
-    <li key={c._id} className="card-outlined px-6 py-5">
+    <li key={c._id} className={`card-outlined px-6 py-5 ${current ? "ring-2 ring-primary" : ""}`}>
+      <div className="flex items-start gap-4">
+        <span aria-hidden className={`grid h-12 w-10 shrink-0 place-items-center rounded-lg ${current ? "bg-primary-pale text-on-primary-pale" : "bg-canvas-soft text-on-surface-variant"}`}>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M14 3H6v18h12V7zM14 3v4h4M9 12h6M9 16h6" />
+          </svg>
+        </span>
+        <div className="min-w-0 flex-1">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <p className="text-heading-sm">
           {t(C.CV_VERSION, { n: c.version })} · {c.label}
         </p>
         {current && (
-          <span className="rounded-sm bg-primary-pale px-2 py-0.5 text-label-medium text-on-primary-pale">{pick(C.CV_LATEST)}</span>
+          <span className="rounded-full bg-primary px-2.5 py-0.5 text-label-medium text-on-primary">{pick(C.CV_LATEST)}</span>
         )}
       </div>
       <p className="mt-1 text-body-medium text-on-surface-variant">
@@ -1775,6 +1913,8 @@ function CvTab({ data }: { data: PortalView }) {
           {pick(C.CV_DOWNLOAD)}
         </a>
       )}
+        </div>
+      </div>
     </li>
   );
 
