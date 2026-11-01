@@ -18,17 +18,17 @@ import type { Copy } from "./copy";
 
 export const PORTAL_TITLE: Copy = { en: "Job Search Dashboard", th: "แดชบอร์ดหางาน" };
 
-export const PORTAL_GREETING: Copy = { en: "Hi {name}", th: "สวัสดีครับ {name}" };
-export const PORTAL_GREETING_NONAME: Copy = { en: "Hi", th: "สวัสดีครับ" };
+export const PORTAL_GREETING: Copy = { en: "Hello {name}", th: "สวัสดีคุณ {name}" };
+export const PORTAL_GREETING_NONAME: Copy = { en: "Hello", th: "สวัสดี" };
 
 export const PORTAL_INTRO: Copy = {
-  en: "Everything we are working on together is here: what has been delivered, your CV files, and the jobs you are going for. Bookmark this page, it is yours.",
-  th: "หน้านี้เป็นพื้นที่ทำงานร่วมกันของเรา คุณดูงานที่เราส่งให้แล้ว ไฟล์ CV และตำแหน่งที่กำลังสมัครได้ที่นี่ เก็บลิงก์ไว้กลับมาใช้ต่อได้เลยครับ",
+  en: "Your target roles, the CV for each, the jobs PunProfile picks for you and the progress of every application, all on this page.",
+  th: "ตำแหน่งเป้าหมาย CV สำหรับแต่ละตำแหน่ง ตำแหน่งงานที่ PunProfile คัดให้ และความคืบหน้าของทุกใบสมัคร ดูได้ในหน้านี้",
 };
 
 export const PORTAL_INTRO_SHORT: Copy = {
-  en: "Everything we are working on together, in one place.",
-  th: "ดูทุกอย่างที่เราทำร่วมกันได้ในหน้านี้",
+  en: "Track your job search with PunProfile on this page.",
+  th: "ติดตามการสมัครงานของคุณกับ PunProfile ได้ในหน้านี้",
 };
 
 /* ------------------------------------------------------------- sign-in */
@@ -64,55 +64,55 @@ export const SIGN_OUT: Copy = { en: "Sign out", th: "ออกจากระบ
 /* ---------------------------------------------------------------- tabs */
 
 export const TAB_OVERVIEW: Copy = { en: "Overview", th: "ภาพรวม" };
-export const TAB_TRACKER: Copy = { en: "Job tracker", th: "ติดตามงาน" };
-export const TAB_FEED: Copy = { en: "Jobs for you", th: "งานสำหรับคุณ" };
+export const TAB_TRACKER: Copy = { en: "Applications", th: "การสมัครงาน" };
+export const TAB_FEED: Copy = { en: "Jobs picked for you", th: "ตำแหน่งที่คัดให้" };
 export const FEED_INTRO: Copy = {
-  en: "Roles our team screened in the last 30 days, in {countries}, matching {role}. The same jobs we post in the group, filtered to your target. Save one to put it in your job list.",
-  th: "เรารวมตำแหน่งใน {countries} สายงาน {role} ที่ทีมคัดไว้ในช่วง 30 วันที่ผ่านมาให้คุณแล้ว เป็นงานชุดเดียวกับที่เราโพสต์ในกลุ่ม โดยเลือกมาเฉพาะที่ตรงกับ target ของคุณ ลองเปิดดู แล้วกดบันทึกตำแหน่งที่สนใจเข้าลิสต์ได้เลยครับ",
+  en: "Jobs PunProfile screened in the last 30 days in {countries}, matching {role}. Save one to add it to your applications.",
+  th: "ตำแหน่งงานสาย {role} ใน {countries} ที่ PunProfile คัดไว้ในช่วง 30 วันที่ผ่านมา กดบันทึกเพื่อเพิ่มเข้ารายการสมัครงาน",
 };
 export const FEED_EMPTY: Copy = {
-  en: "Nothing in your target in the last 30 days. A narrow target can go quiet for a while; this fills as new roles are screened.",
-  th: "ในช่วง 30 วันที่ผ่านมา เรายังไม่ได้คัดตำแหน่งที่ตรงกับ target ของคุณ หากคุณเจาะจงประเทศและสายงานไว้ อาจมีช่วงที่ยังไม่มีตำแหน่งใหม่ เมื่อทีมคัดได้แล้ว คุณจะเห็นตำแหน่งนั้นที่นี่ครับ",
+  en: "No new jobs for your target in the last 30 days. New ones appear here once PunProfile screens them.",
+  th: "ในช่วง 30 วันที่ผ่านมา PunProfile ยังไม่ได้คัดตำแหน่งที่ตรงกับเป้าหมายของคุณ เมื่อมีตำแหน่งใหม่ที่ผ่านการคัดแล้ว จะแสดงที่นี่",
 };
 export const FEED_NO_TARGET: Copy = {
-  en: "We do not have your target country and role yet. Tell your coach, and this list fills.",
-  th: "เรายังไม่ทราบว่าคุณตั้งเป้าหางานในประเทศไหนและสายงานอะไร แจ้งโค้ชไว้ได้เลยครับ เราจะใช้ข้อมูลนี้เลือกตำแหน่งมาแสดงให้คุณ",
+  en: "Your target country and role are not set yet. Contact PunProfile on LINE to set them.",
+  th: "ยังไม่ได้ระบุประเทศและสายงานเป้าหมาย โปรดติดต่อ PunProfile ทาง LINE เพื่อระบุประเทศและสายงานที่ต้องการสมัคร",
 };
-export const FEED_SAVE: Copy = { en: "Save to my list", th: "บันทึกเข้าลิสต์" };
-export const FEED_SAVED: Copy = { en: "In your list", th: "อยู่ในลิสต์แล้ว" };
+export const FEED_SAVE: Copy = { en: "Save", th: "บันทึก" };
+export const FEED_SAVED: Copy = { en: "Saved", th: "บันทึกแล้ว" };
 export const FEED_SEEN: Copy = { en: "Screened {date}", th: "คัดเมื่อ {date}" };
-export const FEED_UPDATED: Copy = { en: "List updated {date}", th: "อัปเดตลิสต์ล่าสุด {date}" };
-export const TITLES_HEADING: Copy = { en: "Titles we are going for", th: "ตำแหน่งที่เราตั้งเป้าไว้" };
-export const TITLES_NOTE: Copy = { en: "We set these together. Each title has its own CV, and each job in your list belongs to one of them.", th: "เรากำหนดตำแหน่งเป้าหมายร่วมกัน และใช้ CV แยกสำหรับแต่ละตำแหน่ง งานแต่ละรายการในลิสต์จะจัดไว้ตามตำแหน่งเป้าหมายครับ" };
-export const TITLES_FIRST: Copy = { en: "Pushed first", th: "เน้นก่อน" };
-export const TITLES_EMPTY: Copy = { en: "We have not set your titles yet. We will set them together in our first session.", th: "เรายังไม่ได้กำหนดตำแหน่งเป้าหมายของคุณ เราจะเลือกด้วยกันในการคุยกับโค้ชครั้งแรกครับ" };
+export const FEED_UPDATED: Copy = { en: "Updated {date}", th: "อัปเดตล่าสุด {date}" };
+export const TITLES_HEADING: Copy = { en: "Target roles", th: "ตำแหน่งเป้าหมาย" };
+export const TITLES_NOTE: Copy = { en: "Each target role has its own CV, and each job in your applications belongs to one of them.", th: "แต่ละตำแหน่งเป้าหมายใช้ CV แยกกัน ส่วนตำแหน่งงานในรายการสมัครงานจะจัดกลุ่มตามตำแหน่งเป้าหมาย" };
+export const TITLES_FIRST: Copy = { en: "Priority", th: "ลำดับแรก" };
+export const TITLES_EMPTY: Copy = { en: "No target roles yet. They are set with PunProfile in your first session.", th: "ยังไม่มีตำแหน่งเป้าหมาย คุณจะกำหนดร่วมกับ PunProfile ในการพูดคุยครั้งแรก" };
 export const TITLE_STATS: Copy = { en: "{applied} applied · {interviewing} interviewing", th: "สมัครแล้ว {applied} · สัมภาษณ์ {interviewing}" };
-export const CV_BASE: Copy = { en: "Full CV", th: "CV ฉบับเต็ม" };
+export const CV_BASE: Copy = { en: "Main CV", th: "CV หลัก" };
 export const CV_FOR_TITLE: Copy = { en: "CV for {title}", th: "CV สำหรับ {title}" };
 export const CV_EARLIER: Copy = { en: "Earlier versions ({n})", th: "ฉบับก่อนหน้า ({n})" };
-export const CV_NONE_FOR_TITLE: Copy = { en: "No CV for this title yet. Your coach will add it here.", th: "ยังไม่มี CV สำหรับตำแหน่งนี้ โค้ชจะเพิ่มไว้ตรงนี้ครับ" };
-export const CV_TAILORED: Copy = { en: "Tailored for one job", th: "CV ที่ปรับเฉพาะงาน" };
+export const CV_NONE_FOR_TITLE: Copy = { en: "No CV for this role yet. PunProfile adds it here.", th: "ยังไม่มี CV สำหรับตำแหน่งนี้ PunProfile จะเพิ่มไว้ที่นี่" };
+export const CV_TAILORED: Copy = { en: "Tailored to a job ad", th: "CV ที่ปรับตามประกาศรับสมัคร" };
 export const CV_OTHER: Copy = { en: "Other CVs", th: "CV อื่น ๆ" };
-export const JOB_TITLE: Copy = { en: "Title", th: "ตำแหน่งเป้าหมาย" };
-export const JOB_TITLE_NONE: Copy = { en: "No title", th: "ยังไม่ระบุ" };
-export const TITLE_ALL: Copy = { en: "All titles", th: "ทุกตำแหน่ง" };
-export const FEED_INTRO_TITLES: Copy = { en: "Roles our team screened in the last 30 days that match your titles, in the countries you are going for. The same jobs we post in the group. Save one to put it in your job list.", th: "เรารวมงานที่ทีมคัดในช่วง 30 วันที่ผ่านมาให้คุณแล้ว โดยเลือกให้ตรงกับตำแหน่งและประเทศที่คุณตั้งเป้าไว้ เป็นงานชุดเดียวกับที่เราโพสต์ในกลุ่ม ลองเปิดดู แล้วกดบันทึกงานที่สนใจเข้าลิสต์ได้เลยครับ" };
-export const FEED_TITLE_EMPTY: Copy = { en: "Nothing for this title in the last 30 days.", th: "ในช่วง 30 วันที่ผ่านมา เรายังไม่ได้คัดงานที่ตรงกับตำแหน่งเป้าหมายนี้ครับ" };
-export const TAB_CV: Copy = { en: "CV", th: "ไฟล์ CV" };
+export const JOB_TITLE: Copy = { en: "Target role", th: "ตำแหน่งเป้าหมาย" };
+export const JOB_TITLE_NONE: Copy = { en: "Not set", th: "ยังไม่ระบุ" };
+export const TITLE_ALL: Copy = { en: "All roles", th: "ทุกตำแหน่ง" };
+export const FEED_INTRO_TITLES: Copy = { en: "Jobs PunProfile screened in the last 30 days that match your target roles and countries. Save one to add it to your applications.", th: "ตำแหน่งงานที่ PunProfile คัดไว้ใน 30 วันที่ผ่านมา ตรงกับตำแหน่งและประเทศเป้าหมายของคุณ กดบันทึกเพื่อเพิ่มเข้ารายการสมัครงาน" };
+export const FEED_TITLE_EMPTY: Copy = { en: "No new jobs for this role in the last 30 days.", th: "ในช่วง 30 วันที่ผ่านมา PunProfile ยังไม่ได้คัดตำแหน่งงานที่ตรงกับตำแหน่งเป้าหมายนี้" };
+export const TAB_CV: Copy = { en: "CV files", th: "ไฟล์ CV" };
 export const TAB_COACH: Copy = { en: "Your coach", th: "โค้ชของคุณ" };
 
 /* ------------------------------------------------------------ overview */
 
-export const PIPELINE_HEADING: Copy = { en: "Your search so far", th: "ภาพรวมการสมัครงาน" };
-export const DATES_HEADING: Copy = { en: "Coming up", th: "กำหนดการที่กำลังจะถึง" };
+export const PIPELINE_HEADING: Copy = { en: "Applications so far", th: "ภาพรวมการสมัครงาน" };
+export const DATES_HEADING: Copy = { en: "Coming up", th: "วันสำคัญที่ใกล้จะถึง" };
 export const DATES_EMPTY: Copy = {
-  en: "Nothing dated yet. Add a follow-up date to a job and it shows here.",
-  th: "ยังไม่มีกำหนดการ ลองตั้งวัน follow up ในตำแหน่งที่คุณสมัครไว้ แล้วกลับมาดูวันที่นี่ได้ครับ",
+  en: "Nothing dated yet. Add a follow-up date in your applications and it shows here.",
+  th: "ยังไม่มีกำหนดการ เพิ่มวันติดตามผลในรายการสมัครงาน แล้วดูวันที่กำหนดไว้ได้ที่นี่",
 };
 export const DATE_FOLLOW: Copy = { en: "Follow up", th: "ติดตามผล" };
 export const DATE_CLOSES: Copy = { en: "Closes", th: "ปิดรับสมัคร" };
 export const DATE_DUE: Copy = { en: "Due", th: "กำหนดส่ง" };
-export const LATEST_NOTE: Copy = { en: "Latest from your coach", th: "ข้อความล่าสุดจากโค้ช" };
+export const LATEST_NOTE: Copy = { en: "Latest note from PunProfile", th: "ข้อความล่าสุดจาก PunProfile" };
 export const SEE_ALL: Copy = { en: "See all", th: "ดูทั้งหมด" };
 
 /* ------------------------------------------------------------- tokens */
@@ -120,24 +120,24 @@ export const SEE_ALL: Copy = { en: "See all", th: "ดูทั้งหมด" 
 export const TOKENS_HEADING: Copy = { en: "Tokens left", th: "โทเคนคงเหลือ" };
 export const TOKENS_OF: Copy = { en: "of {n} tokens", th: "จาก {n} โทเคน" };
 export const TOKENS_MATCHED: Copy = {
-  en: "Roles we have picked and sent you: {n}",
-  th: "ตำแหน่งงานที่เราคัดส่งให้แล้ว {n} ตำแหน่ง",
+  en: "Jobs picked for you: {n}",
+  th: "ตำแหน่งงานที่คัดให้แล้ว {n} ตำแหน่ง",
 };
 export const TOKENS_RULE: Copy = {
-  en: "A token is only used once you have received the service. Tokens never expire.",
-  th: "เราจะหักโทเคนเมื่อคุณได้รับบริการแล้วเท่านั้น โทเคนของคุณไม่มีวันหมดอายุครับ",
+  en: "A token is used only once a service is delivered. Tokens never expire.",
+  th: "โทเคนจะถูกหักเมื่อได้รับบริการแล้วเท่านั้น และไม่มีวันหมดอายุ",
 };
 
 /* ------------------------------------------------------- deliverables */
 
-export const WORK_HEADING: Copy = { en: "What you get", th: "สิ่งที่คุณจะได้รับ" };
+export const WORK_HEADING: Copy = { en: "Your services", th: "บริการของคุณ" };
 export const WORK_EMPTY: Copy = {
-  en: "Your coach will add each step here as it is planned.",
-  th: "เมื่อเราวางแผนร่วมกันแล้ว โค้ชจะเพิ่มงานแต่ละขั้นตอนให้คุณดูที่นี่ครับ",
+  en: "Each service appears here once it is planned with PunProfile.",
+  th: "บริการแต่ละรายการจะแสดงที่นี่เมื่อวางแผนร่วมกับ PunProfile แล้ว",
 };
 export const WORK_STATUS: Record<"not_started" | "in_progress" | "delivered", Copy> = {
   not_started: { en: "Not started", th: "ยังไม่เริ่ม" },
-  in_progress: { en: "In progress", th: "กำลังทำ" },
+  in_progress: { en: "In progress", th: "กำลังดำเนินการ" },
   delivered: { en: "Delivered", th: "ส่งมอบแล้ว" },
 };
 export const WORK_DUE: Copy = { en: "Due {date}", th: "กำหนดส่ง {date}" };
@@ -145,37 +145,37 @@ export const WORK_DONE_ON: Copy = { en: "Delivered {date}", th: "ส่งมอ
 
 export const WORK_KIND: Record<string, Copy> = {
   fit_report: { en: "Fit Report", th: "Fit Report" },
-  coaching_session: { en: "Session with your coach", th: "คุยกับโค้ช" },
-  base_cv: { en: "Your main CV", th: "CV หลักของคุณ" },
+  coaching_session: { en: "Session with PunProfile", th: "การพูดคุยกับ PunProfile" },
+  base_cv: { en: "Main CV", th: "CV หลัก" },
   linkedin: { en: "LinkedIn profile", th: "โปรไฟล์ LinkedIn" },
   portfolio: { en: "Portfolio", th: "พอร์ตโฟลิโอ" },
   country_research: { en: "Country research", th: "ข้อมูลประเทศเป้าหมาย" },
-  tailored_application: { en: "Application tailored to one role", th: "ใบสมัครที่ปรับให้ตรงกับตำแหน่ง" },
+  tailored_application: { en: "Application tailored to a job ad", th: "ใบสมัครที่ปรับตามประกาศรับสมัคร" },
   interview_prep: { en: "Interview preparation", th: "เตรียมตัวสัมภาษณ์" },
   mock_interview: { en: "Mock interview", th: "ซ้อมสัมภาษณ์" },
-  offer_review: { en: "Offer review", th: "ดูข้อเสนองานด้วยกัน" },
-  contract_review: { en: "Contract review", th: "ดูสัญญาจ้างด้วยกัน" },
+  offer_review: { en: "Offer review", th: "ตรวจข้อเสนองาน" },
+  contract_review: { en: "Contract review", th: "ตรวจสัญญาจ้าง" },
 };
 
 export const BOOK_TIME: Copy = { en: "Book a time", th: "จองเวลา" };
 export const TOKENS_MORE: Copy = { en: "Ask for more tokens", th: "ขอโทเคนเพิ่ม" };
-export const TOKENS_LOW: Copy = { en: "You are running low on tokens.", th: "โทเคนใกล้หมดแล้วครับ" };
+export const TOKENS_LOW: Copy = { en: "Running low on tokens.", th: "โทเคนใกล้หมด" };
 export const TOKENS_REQUESTED: Copy = {
-  en: "Request sent. Your coach will get back to you on LINE.",
-  th: "ส่งคำขอแล้วครับ โค้ชจะติดต่อกลับทาง LINE",
+  en: "Request sent. PunProfile will reply on LINE.",
+  th: "ส่งคำขอแล้ว PunProfile จะติดต่อกลับทาง LINE",
 };
 
 /* ----------------------------------------------------------- Fit Report */
 
 export const FIT_HEADING: Copy = { en: "Your Fit Report", th: "Fit Report ของคุณ" };
 export const FIT_BODY: Copy = {
-  en: "Every area your coach rated, where you stand against the market, and what to do next in each. It opens in a new tab, ready to save as a PDF.",
-  th: "ลองเปิดดูผลประเมินแต่ละด้านที่โค้ชประเมินให้ ว่าคุณผ่านเกณฑ์ตลาดงานตรงไหนแล้ว และควรพัฒนาอะไรต่อในแต่ละด้าน รายงานจะเปิดในแท็บใหม่ คุณบันทึกเป็น PDF เก็บไว้ได้เลยครับ",
+  en: "Your rating in each area against the market, and what to work on next. Opens in a new tab, ready to save as a PDF.",
+  th: "ผลประเมินแต่ละด้านเทียบกับเกณฑ์ตลาดงาน และสิ่งที่ควรพัฒนาต่อ รายงานเปิดในแท็บใหม่และบันทึกเป็น PDF ได้",
 };
 export const FIT_OPEN: Copy = { en: "Open the Fit Report", th: "เปิด Fit Report" };
 export const FIT_POPUP: Copy = {
   en: "Your browser blocked the new tab. Allow pop-ups for this site and try again.",
-  th: "เบราว์เซอร์บล็อกการเปิดแท็บใหม่ไว้ ลองอนุญาต pop-up สำหรับเว็บนี้ แล้วเปิดรายงานอีกครั้งครับ",
+  th: "เบราว์เซอร์บล็อกการเปิดแท็บใหม่ โปรดอนุญาต pop-up สำหรับเว็บไซต์นี้ แล้วเปิดรายงานอีกครั้ง",
 };
 
 /* --------------------------------------------------------------- goal */
@@ -183,72 +183,72 @@ export const FIT_POPUP: Copy = {
 export const GOAL_HEADING: Copy = { en: "This week's goal", th: "เป้าหมายสัปดาห์นี้" };
 export const GOAL_PROGRESS: Copy = { en: "{done} of {goal} applications sent", th: "สมัครแล้ว {done} จาก {goal} ตำแหน่ง" };
 export const GOAL_NONE: Copy = {
-  en: "Set how many applications you aim to send each week, and see your progress here.",
-  th: "ตั้งจำนวนใบสมัครที่อยากส่งในแต่ละสัปดาห์ แล้วดูความคืบหน้าได้ที่นี่ครับ",
+  en: "Set how many applications to send each week and track it here.",
+  th: "กำหนดจำนวนใบสมัครที่จะส่งในแต่ละสัปดาห์ แล้วติดตามความคืบหน้าได้ที่นี่",
 };
 export const GOAL_PROMPT: Copy = { en: "Applications per week", th: "จำนวนใบสมัครต่อสัปดาห์" };
 export const GOAL_SET: Copy = { en: "Set a goal", th: "ตั้งเป้าหมาย" };
 export const GOAL_CHANGE: Copy = { en: "Change", th: "เปลี่ยน" };
 export const GOAL_WEEK_NOTE: Copy = {
-  en: "The week starts on Monday, Thailand time.",
-  th: "สัปดาห์เริ่มวันจันทร์ ตามเวลาไทย",
+  en: "Weeks start on Monday, Thailand time.",
+  th: "สัปดาห์เริ่มวันจันทร์ ตามเวลาประเทศไทย",
 };
 
 /* -------------------------------------------------------------- notes */
 
-export const NOTES_HEADING: Copy = { en: "From your coach", th: "จากโค้ช" };
+export const NOTES_HEADING: Copy = { en: "Notes from PunProfile", th: "ข้อความจาก PunProfile" };
 
 /* ---------------------------------------------------------------- CVs */
 
-export const CV_HEADING: Copy = { en: "Your CV files", th: "ไฟล์ CV ของคุณ" };
+export const CV_HEADING: Copy = { en: "Your CVs", th: "CV ของคุณ" };
 export const CV_EMPTY: Copy = {
-  en: "No file here yet. Send your latest CV to your coach on LINE or by email.",
-  th: "ยังไม่มีไฟล์ครับ ส่ง CV ฉบับล่าสุดให้โค้ชทาง LINE หรืออีเมลได้เลย",
+  en: "No CV yet. Send your latest CV to PunProfile on LINE or by email.",
+  th: "ยังไม่มี CV โปรดส่ง CV ฉบับล่าสุดให้ PunProfile ทาง LINE หรืออีเมล",
 };
 export const CV_VERSION: Copy = { en: "Version {n}", th: "ฉบับที่ {n}" };
 export const CV_LATEST: Copy = { en: "Latest", th: "ล่าสุด" };
-export const CV_THEIRS: Copy = { en: "The version you sent", th: "ฉบับที่คุณส่งมา" };
-export const CV_OURS: Copy = { en: "Revised by your coach", th: "ฉบับที่โค้ชปรับให้" };
-export const CV_CHANGED: Copy = { en: "What changed", th: "สิ่งที่ปรับ" };
+export const CV_THEIRS: Copy = { en: "Your version", th: "ฉบับของคุณ" };
+export const CV_OURS: Copy = { en: "Revised by PunProfile", th: "ฉบับที่ PunProfile ปรับแก้" };
+export const CV_CHANGED: Copy = { en: "What changed", th: "สิ่งที่ปรับแก้" };
 export const CV_DOWNLOAD: Copy = { en: "Download", th: "ดาวน์โหลด" };
 
 /* --------------------------------------------------------------- jobs */
 
-export const JOBS_HEADING: Copy = { en: "Your job list", th: "ลิสต์งานของคุณ" };
+export const JOBS_HEADING: Copy = { en: "Your applications", th: "รายการสมัครงาน" };
 export const JOBS_INTRO: Copy = {
-  en: "This list is yours. Move each job along as things happen. Roles marked Picked by PunProfile are ones we screened for you.",
-  th: "คุณอัปเดตสถานะแต่ละตำแหน่งในลิสต์นี้ได้เมื่อมีความคืบหน้า ส่วนตำแหน่งที่เราคัดมาให้จะมีป้าย “คัดโดย PunProfile” ครับ",
+  en: "Update each job's status as it moves. Jobs marked Picked by PunProfile were screened for you.",
+  th: "อัปเดตสถานะของแต่ละตำแหน่งเมื่อมีความคืบหน้า ตำแหน่งที่มีป้าย “คัดโดย PunProfile” คือตำแหน่งที่ PunProfile คัดมาให้",
 };
 export const JOBS_EMPTY: Copy = {
-  en: "Nothing on the list yet. Add a job you are interested in, or wait for the first roles we pick for you.",
-  th: "ยังไม่มีงานในลิสต์ เพิ่มงานที่คุณสนใจได้เลย หรือรอตำแหน่งแรกที่เราคัดให้ก็ได้ครับ",
+  en: "No jobs yet. Add one yourself, or wait for the first jobs PunProfile picks for you.",
+  th: "ยังไม่มีตำแหน่งงานในรายการสมัครงาน คุณเพิ่มตำแหน่งที่สนใจได้เอง หรือรอตำแหน่งแรกที่ PunProfile คัดให้",
 };
 export const JOBS_ALL: Copy = { en: "All", th: "ทั้งหมด" };
 export const JOBS_STATUS: Record<string, Copy> = {
   interested: { en: "Saved", th: "บันทึกไว้" },
   applied: { en: "Applied", th: "สมัครแล้ว" },
   screening: { en: "Screening", th: "คัดกรองเบื้องต้น" },
-  interviewing: { en: "Interviewing", th: "สัมภาษณ์" },
+  interviewing: { en: "Interviewing", th: "อยู่ระหว่างสัมภาษณ์" },
   offer: { en: "Offer", th: "ได้ข้อเสนอ" },
   accepted: { en: "Accepted", th: "ตอบรับแล้ว" },
-  rejected: { en: "Not this time", th: "ไม่ผ่านรอบนี้" },
+  rejected: { en: "Not selected", th: "ไม่ผ่านการคัดเลือก" },
   withdrawn: { en: "Withdrew", th: "ถอนตัว" },
 };
 export const JOBS_FROM_US: Copy = { en: "Picked by PunProfile", th: "คัดโดย PunProfile" };
-export const JOBS_WHY: Copy = { en: "Why this role", th: "ทำไมเราคัดตำแหน่งนี้" };
-export const JOBS_POSTING: Copy = { en: "Open the posting", th: "เปิดประกาศงาน" };
+export const JOBS_WHY: Copy = { en: "Why this job", th: "เหตุผลที่คัดตำแหน่งนี้" };
+export const JOBS_POSTING: Copy = { en: "Open the job ad", th: "เปิดประกาศรับสมัคร" };
 export const JOBS_CLOSES: Copy = { en: "Closes {date}", th: "ปิดรับสมัคร {date}" };
 export const JOBS_APPLIED_ON: Copy = { en: "Applied {date}", th: "สมัครเมื่อ {date}" };
-export const JOBS_FOLLOW_UP: Copy = { en: "Follow up on", th: "วันที่จะ follow up" };
+export const JOBS_FOLLOW_UP: Copy = { en: "Follow-up date", th: "วันติดตามผล" };
 export const JOBS_NOTES: Copy = { en: "Notes", th: "โน้ต" };
 export const JOBS_SAVE: Copy = { en: "Save", th: "บันทึก" };
 export const JOBS_CANCEL: Copy = { en: "Cancel", th: "ยกเลิก" };
 export const JOBS_REMOVE: Copy = { en: "Remove", th: "ลบ" };
-export const JOBS_REMOVE_CONFIRM: Copy = { en: "Remove for good", th: "ลบออกจากลิสต์ถาวร" };
+export const JOBS_REMOVE_CONFIRM: Copy = { en: "Remove for good", th: "ลบถาวร" };
 export const JOBS_DETAILS: Copy = { en: "Details", th: "รายละเอียด" };
-export const JOBS_SEARCH: Copy = { en: "Search role or company", th: "ค้นหาตำแหน่งหรือบริษัท" };
+export const JOBS_SEARCH: Copy = { en: "Search job title or company", th: "ค้นหาตำแหน่งหรือบริษัท" };
 export const JOBS_CLOSED: Copy = { en: "Closed", th: "ปิดแล้ว" };
-export const JOBS_NO_MATCH: Copy = { en: "No job matches.", th: "ไม่พบงานที่ตรงกับที่ค้นหา" };
+export const JOBS_NO_MATCH: Copy = { en: "No jobs match your search.", th: "ไม่พบตำแหน่งงานที่ตรงกับคำค้นหา" };
 export const COL_ROLE: Copy = { en: "Job title", th: "ตำแหน่ง" };
 export const COL_COMPANY: Copy = { en: "Company", th: "บริษัท" };
 export const COL_SALARY: Copy = { en: "Salary", th: "เงินเดือน" };
@@ -257,22 +257,22 @@ export const COL_STATUS: Copy = { en: "Status", th: "สถานะ" };
 export const COL_SAVED: Copy = { en: "Saved", th: "วันที่บันทึก" };
 export const COL_DEADLINE: Copy = { en: "Closes", th: "ปิดรับสมัคร" };
 export const COL_APPLIED: Copy = { en: "Applied", th: "วันที่สมัคร" };
-export const COL_FOLLOW: Copy = { en: "Follow up", th: "วันที่ follow up" };
+export const COL_FOLLOW: Copy = { en: "Follow up", th: "ติดตามผล" };
 export const COL_EXCITEMENT: Copy = { en: "Interest", th: "ความสนใจ" };
-export const BACK_TO_LIST: Copy = { en: "Back to the list", th: "กลับไปที่ลิสต์" };
+export const BACK_TO_LIST: Copy = { en: "Back to applications", th: "กลับไปที่รายการสมัครงาน" };
 export const DTAB_INFO: Copy = { en: "Job info", th: "ข้อมูลงาน" };
 export const DTAB_NOTES: Copy = { en: "Notes", th: "โน้ต" };
 export const DTAB_CV: Copy = { en: "CV sent", th: "CV ที่ใช้สมัคร" };
-export const DTAB_COACH: Copy = { en: "From your coach", th: "จากโค้ช" };
+export const DTAB_COACH: Copy = { en: "From PunProfile", th: "จาก PunProfile" };
 export const DTAB_INTERVIEWS: Copy = { en: "Interviews", th: "สัมภาษณ์" };
 export const DTAB_CONTACTS: Copy = { en: "Contacts", th: "ผู้ติดต่อ" };
 export const IV_EMPTY: Copy = {
-  en: "No interview recorded yet. Add each round as it is booked, so you can prepare and look back.",
-  th: "ยังไม่ได้บันทึกรอบสัมภาษณ์ เมื่อได้นัดแล้ว ลองเพิ่มรายละเอียดแต่ละรอบไว้ที่นี่ จะได้เตรียมตัวและกลับมาดูย้อนหลังได้ครับ",
+  en: "No interviews yet. Add each round as it is booked, to prepare and look back.",
+  th: "ยังไม่ได้บันทึกรอบสัมภาษณ์ เมื่อได้รับนัดหมายแล้ว ให้เพิ่มรายละเอียดแต่ละรอบไว้เพื่อเตรียมตัวและดูย้อนหลัง",
 };
 export const IV_ADD: Copy = { en: "Add a round", th: "เพิ่มรอบสัมภาษณ์" };
 export const IV_ROUND: Copy = { en: "Round", th: "รอบ" };
-export const IV_ROUND_HINT: Copy = { en: "e.g. Recruiter screen, Technical, Final", th: "เช่น คุยกับ recruiter, technical, รอบสุดท้าย" };
+export const IV_ROUND_HINT: Copy = { en: "e.g. Recruiter screen, Technical, Final", th: "เช่น Recruiter screen, Technical, รอบสุดท้าย" };
 export const IV_DATE: Copy = { en: "Date", th: "วันที่" };
 export const IV_FORMAT: Copy = { en: "Format", th: "รูปแบบ" };
 export const IV_FORMATS: Record<"video" | "phone" | "onsite", Copy> = {
@@ -281,10 +281,10 @@ export const IV_FORMATS: Record<"video" | "phone" | "onsite", Copy> = {
   onsite: { en: "In person", th: "พบกันโดยตรง" },
 };
 export const IV_INTERVIEWERS: Copy = { en: "Interviewers", th: "ผู้สัมภาษณ์" };
-export const IV_NOTES: Copy = { en: "How it went, what they asked", th: "สัมภาษณ์เป็นอย่างไรบ้าง มีคำถามอะไรบ้าง" };
+export const IV_NOTES: Copy = { en: "How it went and what they asked", th: "รายละเอียดการสัมภาษณ์และคำถามที่ได้รับ" };
 export const CT_EMPTY: Copy = {
-  en: "No contact yet. Add the recruiter or hiring manager you are talking to.",
-  th: "ยังไม่มีผู้ติดต่อ เพิ่ม recruiter หรือ hiring manager ที่คุณคุยด้วยได้เลยครับ",
+  en: "No contacts yet. Add the recruiter or hiring manager you are in touch with.",
+  th: "ยังไม่มีผู้ติดต่อ เพิ่ม recruiter หรือ hiring manager ที่คุณติดต่ออยู่",
 };
 export const CT_ADD: Copy = { en: "Add a contact", th: "เพิ่มผู้ติดต่อ" };
 export const CT_NAME: Copy = { en: "Name", th: "ชื่อ" };
@@ -294,47 +294,47 @@ export const CT_EMAIL: Copy = { en: "Email", th: "อีเมล" };
 export const CT_LINKEDIN: Copy = { en: "LinkedIn link", th: "ลิงก์ LinkedIn" };
 export const JD_HEADING: Copy = { en: "Job description and keywords", th: "Job description และคีย์เวิร์ด" };
 export const JD_HELP: Copy = {
-  en: "Paste the posting here. It stays even if the posting is taken down, and the words it repeats show underneath.",
-  th: "ลองวาง job description ไว้ที่นี่ คุณจะกลับมาอ่านได้แม้บริษัทลบประกาศไปแล้ว และดูคำที่ใช้บ่อยในประกาศได้ด้านล่างครับ",
+  en: "Paste the job description here. It stays even if the ad is taken down, and its most repeated words show below.",
+  th: "วาง job description ไว้ที่นี่ เพื่อกลับมาอ่านได้แม้บริษัทลบประกาศแล้ว คำที่ใช้บ่อยในประกาศจะแสดงด้านล่าง",
 };
 export const JD_KEYWORDS: Copy = { en: "Words this posting repeats", th: "คำที่ใช้บ่อยในประกาศนี้" };
-export const JD_EMPTY: Copy = { en: "No job description pasted yet.", th: "ยังไม่ได้วาง job description" };
+export const JD_EMPTY: Copy = { en: "No job description yet.", th: "ยังไม่มี job description" };
 export const LIST_REMOVE: Copy = { en: "Remove", th: "ลบ" };
 export const DETAIL_DATES: Copy = { en: "Dates", th: "วันที่" };
 export const DETAIL_OURS: Copy = {
-  en: "We picked this role for you, so its details stay as we sent them. Your notes, follow-up date, interest and the CV you sent are yours to change.",
-  th: "เราคัดตำแหน่งนี้มาให้คุณ จึงเก็บรายละเอียดงานไว้ตามที่ส่งให้ ส่วนโน้ต วันที่ follow up ระดับความสนใจ และ CV ที่ใช้สมัคร คุณแก้ไขเองได้ครับ",
+  en: "PunProfile picked this job, so its details stay as sent. Your notes, follow-up date, interest and CV sent are yours to change.",
+  th: "ตำแหน่งนี้ PunProfile คัดมาให้ รายละเอียดงานจึงแก้ไขไม่ได้ ส่วนโน้ต วันติดตามผล ความสนใจ และ CV ที่ใช้สมัคร แก้ไขได้",
 };
 export const CV_SENT_HELP: Copy = {
-  en: "Pick the CV you sent with this job, so you can see later which version worked.",
-  th: "เลือก CV ฉบับที่คุณส่งสมัครตำแหน่งนี้ไว้ จะได้กลับมาดูว่าคุณใช้ฉบับไหนแล้วได้ผลอย่างไรครับ",
+  en: "Choose the CV you sent for this job, to see later which version worked.",
+  th: "เลือก CV ที่ใช้สมัครตำแหน่งนี้ เพื่อย้อนดูได้ว่าฉบับไหนได้ผล",
 };
 export const CV_SENT_NONE: Copy = { en: "Not chosen", th: "ยังไม่ได้เลือก" };
 export const COACH_NOTES_NONE: Copy = {
-  en: "No note from your coach on this job yet.",
-  th: "ยังไม่มีโน้ตจากโค้ชสำหรับงานนี้",
+  en: "No note from PunProfile on this job yet.",
+  th: "ยังไม่มีข้อความจาก PunProfile สำหรับตำแหน่งนี้",
 };
-export const CLOSE_AS: Copy = { en: "Close it as", th: "จบการสมัครตำแหน่งนี้ด้วยสถานะ" };
-export const REOPEN: Copy = { en: "Reopen as saved", th: "กลับไปสถานะ “บันทึกไว้”" };
+export const CLOSE_AS: Copy = { en: "Close this application as", th: "ปิดการสมัครตำแหน่งนี้ในสถานะ" };
+export const REOPEN: Copy = { en: "Reopen as Saved", th: "เปิดใหม่ในสถานะ “บันทึกไว้”" };
 export const SAVED_OK: Copy = { en: "Saved", th: "บันทึกแล้ว" };
 
-export const ADD_JOB: Copy = { en: "Add a job", th: "เพิ่มงาน" };
+export const ADD_JOB: Copy = { en: "Add a job", th: "เพิ่มตำแหน่งงาน" };
 export const ADD_ROLE: Copy = { en: "Job title", th: "ตำแหน่ง" };
 export const ADD_EMPLOYER: Copy = { en: "Company", th: "บริษัท" };
 export const ADD_COUNTRY: Copy = { en: "Country", th: "ประเทศ" };
 export const ADD_LOCATION: Copy = { en: "City, or remote", th: "เมือง หรือ remote" };
-export const ADD_URL: Copy = { en: "Link to the posting", th: "ลิงก์ประกาศงาน" };
-export const ADD_SALARY: Copy = { en: "Salary, if stated", th: "เงินเดือน ถ้ามีระบุ" };
-export const ADD_STATUS: Copy = { en: "Where you are with it", th: "ตอนนี้อยู่ขั้นไหน" };
+export const ADD_URL: Copy = { en: "Job ad link", th: "ลิงก์ประกาศรับสมัคร" };
+export const ADD_SALARY: Copy = { en: "Salary, if stated", th: "เงินเดือน (ถ้าระบุ)" };
+export const ADD_STATUS: Copy = { en: "Current status", th: "สถานะปัจจุบัน" };
 
 /* ------------------------------------------------------------- errors */
 
 export const ERROR_FIELDS: Copy = {
   en: "Fill in the job title, company and country first.",
-  th: "กรอกตำแหน่ง บริษัท และประเทศก่อนนะครับ",
+  th: "โปรดกรอกตำแหน่ง บริษัท และประเทศ",
 };
 export const ERROR_GENERIC: Copy = {
   en: "That did not save. Try again in a moment.",
-  th: "ยังบันทึกไม่สำเร็จ ลองใหม่อีกครั้งในอีกสักครู่นะครับ",
+  th: "บันทึกไม่สำเร็จ โปรดลองใหม่ในอีกสักครู่",
 };
 export const LOADING: Copy = { en: "Loading...", th: "กำลังโหลด..." };
