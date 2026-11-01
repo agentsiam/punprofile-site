@@ -27972,21 +27972,17 @@ source: src/lib/content/portal.ts
 path: PORTAL_TITLE
 render: Candidate page /me, PORTAL_TITLE
 narrative_slot: utility
-en: Your page
-th: "หน้าของคุณ"
+en: "Job Search Dashboard"
+th: "แดชบอร์ดหางาน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Renamed by Claude 01/11/2026 to Paul's chosen name, แดชบอร์ดหางาน / Job Search Dashboard. Approved by Paul 01/11/2026."
 review:
   structural_calque: pass
-  text_hash: 598d22521b256853394f95f85953caab36977ec9cfe0c1e648d31a22d288c477
+  text_hash: 9bde47f229c3eff7959f777501e0e951a350901f08a035996cd7c638bd727490
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28106,48 +28102,41 @@ source: src/lib/content/portal.ts
 path: SIGNIN_HEADING
 render: Candidate page /me, SIGNIN_HEADING
 narrative_slot: utility
-en: Sign in to your page
-th: "เข้าสู่หน้าของคุณ"
+en: "Sign in to your Job Search Dashboard"
+th: "เข้าสู่แดชบอร์ดหางาน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Renamed by Claude 01/11/2026 to Paul's chosen name, แดชบอร์ดหางาน / Job Search Dashboard. Approved by Paul 01/11/2026."
 review:
   structural_calque: pass
-  text_hash: e969af8b3d0ee01cda39880317ec0f4027005a3712c6440a574aa70b6ddc2b30
+  text_hash: 5ab479f55215d3fb833bec3577f6d15ba616e88a2cc8f2e5ba64678566f50e48
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::SIGNIN_BODY`
 
 ```yaml
-id: src/lib/content/portal.ts::SIGNIN_BODY
-source: src/lib/content/portal.ts
+id: "src/lib/content/portal.ts::SIGNIN_BODY"
+source: "src/lib/content/portal.ts"
 path: SIGNIN_BODY
-render: Candidate page /me, SIGNIN_BODY
+render: "Candidate page /me, sign-in, line under the heading"
 narrative_slot: utility
-en: Enter the email you use with PunProfile and we will send you a 6-digit code. No password needed.
-th: "กรอกอีเมลที่คุณใช้กับ PunProfile แล้วเราจะส่งรหัส 6 หลักไปให้ ไม่ต้องตั้งรหัสผ่านครับ"
+en: "Enter your email and the 6-digit code PunProfile emailed you when your Job Search Dashboard was activated. The code does not change, so keep that email."
+th: "กรอกอีเมลและรหัส 6 หลักที่ PunProfile ส่งให้ทางอีเมลเมื่อเปิดใช้งานแดชบอร์ดหางานของคุณ รหัสนี้ไม่เปลี่ยน โปรดเก็บอีเมลฉบับนั้นไว้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Renamed by Claude 01/11/2026 to Paul's chosen name, แดชบอร์ดหางาน / Job Search Dashboard. Approved by Paul 01/11/2026."
 review:
   structural_calque: pass
-  text_hash: 4beb4c2ab3186a2581a310044e5fbf567435229202fd191a930dda72dec9bd78
+  text_hash: dd57d3a0d3c0eba670f843004f21173f95915c910f9817e69c2fe9abdca49323
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
+
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::SIGNIN_EMAIL`
@@ -28171,61 +28160,6 @@ decision_note: >-
 review:
   structural_calque: pass
   text_hash: a84c4b8c0704df5c212c7bb1f7ab937e0d90bb602645a37b99a6fb7e5235735f
-  prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/portal.ts::SIGNIN_SEND`
-
-```yaml
-id: src/lib/content/portal.ts::SIGNIN_SEND
-source: src/lib/content/portal.ts
-path: SIGNIN_SEND
-render: Candidate page /me, SIGNIN_SEND
-narrative_slot: utility
-en: Send me a code
-th: "ส่งรหัส"
-provenance: paul-approved
-date: 31/10/2026
-term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
-review:
-  structural_calque: pass
-  text_hash: 22cfd79266979df629d378c6193c51fb9e782703d1221216ba1c9b6a3f198531
-  prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/portal.ts::SIGNIN_SENT`
-
-```yaml
-id: src/lib/content/portal.ts::SIGNIN_SENT
-source: src/lib/content/portal.ts
-path: SIGNIN_SENT
-render: Candidate page /me, SIGNIN_SENT
-narrative_slot: utility
-en: >-
-  If this address has access, your code is on its way, by email or from your coach on LINE. It can take a few
-  minutes.
-th: "หากคุณใช้บัญชีอีเมลนี้เข้าใช้งานได้ เราจะส่งรหัสให้ทางอีเมล หรือโค้ชจะส่งให้ทาง LINE อาจต้องรอสักครู่ครับ"
-provenance: paul-approved
-date: 31/10/2026
-term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Names who sends the code and removes the broken รหัสกำลังส่งไป clause while preserving conditional access and both delivery routes. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
-review:
-  structural_calque: pass
-  text_hash: 19d612ce38de9373310d4ac0170f4a9076f4abc1afeef47065ee704c1594c227
   prompt_version: structural-calque-v1
   basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
 ```
@@ -28286,79 +28220,24 @@ review:
 ### `src/lib/content/portal.ts::SIGNIN_BAD_CODE`
 
 ```yaml
-id: src/lib/content/portal.ts::SIGNIN_BAD_CODE
-source: src/lib/content/portal.ts
+id: "src/lib/content/portal.ts::SIGNIN_BAD_CODE"
+source: "src/lib/content/portal.ts"
 path: SIGNIN_BAD_CODE
-render: Candidate page /me, SIGNIN_BAD_CODE
+render: "Candidate page /me, sign-in, wrong email or code"
 narrative_slot: utility
-en: That code is wrong or has expired. Ask for a new one.
-th: "รหัสไม่ถูกต้องหรือหมดอายุแล้ว ขอรหัสใหม่ได้เลยครับ"
-provenance: paul-approved
-date: 31/10/2026
+en: "The email and code do not match. Check the code in the email from PunProfile."
+th: "อีเมลและรหัสไม่ตรงกัน โปรดตรวจสอบรหัสในอีเมลจาก PunProfile"
+provenance: paul-written
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
 review:
   structural_calque: pass
-  text_hash: 8f385fd239229193e5facb390f37efc728fb31a8f01cdd8743cb483cc90b6fba
+  text_hash: 7827972814f9c4e215aa647bfa0c353ec1f2bd951f7d467ef8ab8b59fa9b1617
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
-<!-- COPY-ENTRY -->
-### `src/lib/content/portal.ts::SIGNIN_OTHER_EMAIL`
-
-```yaml
-id: src/lib/content/portal.ts::SIGNIN_OTHER_EMAIL
-source: src/lib/content/portal.ts
-path: SIGNIN_OTHER_EMAIL
-render: Candidate page /me, SIGNIN_OTHER_EMAIL
-narrative_slot: utility
-en: Use a different email
-th: "ใช้อีเมลอื่น"
-provenance: paul-approved
-date: 31/10/2026
-term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
-review:
-  structural_calque: pass
-  text_hash: 77d85f1992e0a5e3afd364c40984248c58c9e21c7d6cffe4ba8595ec03b1239f
-  prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/portal.ts::SIGNIN_RESEND`
-
-```yaml
-id: src/lib/content/portal.ts::SIGNIN_RESEND
-source: src/lib/content/portal.ts
-path: SIGNIN_RESEND
-render: Candidate page /me, SIGNIN_RESEND
-narrative_slot: utility
-en: Send a new code
-th: "ส่งรหัสใหม่"
-provenance: paul-approved
-date: 31/10/2026
-term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
-review:
-  structural_calque: pass
-  text_hash: 231a8bc0ee6aef03bbae108196021108cb08f176d3528a110a8d9173a01e9832
-  prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
-```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::NO_ACCESS_HEADING`
@@ -28369,22 +28248,17 @@ source: src/lib/content/portal.ts
 path: NO_ACCESS_HEADING
 render: Candidate page /me, NO_ACCESS_HEADING
 narrative_slot: utility
-en: This email does not have a page yet
-th: "เรายังไม่ได้เปิดหน้าสำหรับอีเมลนี้"
+en: "This email does not have a Job Search Dashboard yet"
+th: "PunProfile ยังไม่ได้เปิดแดชบอร์ดหางานสำหรับอีเมลนี้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: An email does not possess a personal page; names the service actor and the access state. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Renamed by Claude 01/11/2026 to Paul's chosen name, แดชบอร์ดหางาน / Job Search Dashboard. Approved by Paul 01/11/2026."
 review:
   structural_calque: pass
-  text_hash: 3c9ddfab3c1509d2e889fd8a814ecc3adeb214897f6b6cc7735b4a986b8dbd33
+  text_hash: b27d26039b653093db36128016a90e0146965bae598343fc14ca73316bdaafe6
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28396,22 +28270,17 @@ source: src/lib/content/portal.ts
 path: NO_ACCESS_BODY
 render: Candidate page /me, NO_ACCESS_BODY
 narrative_slot: utility
-en: Message your coach on LINE and they will open it for this address.
-th: "ทักโค้ชทาง LINE เพื่อให้โค้ชเปิดสิทธิ์เข้าใช้งานสำหรับอีเมลนี้ได้เลยครับ"
+en: "Contact PunProfile on LINE to have it opened for this email."
+th: "โปรดติดต่อ PunProfile ทาง LINE เพื่อเปิดใช้งานสำหรับอีเมลนี้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Removes the dangling permission-for-email construction and names the next action. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Renamed by Claude 01/11/2026 to Paul's chosen name, แดชบอร์ดหางาน / Job Search Dashboard. Approved by Paul 01/11/2026."
 review:
   structural_calque: pass
-  text_hash: 74b91b57622dada10e50148c1d752706d3607cb617adb3a3e91b4f8a7aadf430
+  text_hash: a0e071fb9ae404d8e2cff0710f043d0b006eb908cc5be79fe8beca9edfaff2ef
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28423,21 +28292,17 @@ source: src/lib/content/portal.ts
 path: COACH_HERE
 render: Candidate page /me, COACH_HERE
 narrative_slot: utility
-en: You are signed in as a coach. Open a candidate's page from the CRM.
-th: "คุณเข้าสู่ระบบในฐานะโค้ช เปิดหน้าของผู้สมัครได้จาก CRM"
+en: "You are signed in as a coach. Open a candidate's Job Search Dashboard from the CRM."
+th: "คุณเข้าสู่ระบบในฐานะโค้ช เปิดแดชบอร์ดหางานของผู้สมัครได้จาก CRM"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Renamed by Claude 01/11/2026 to Paul's chosen name, แดชบอร์ดหางาน / Job Search Dashboard. Approved by Paul 01/11/2026."
 review:
   structural_calque: pass
-  text_hash: d2dbc2eca94223374e2f02a13c6aa4ad89b777fbf548810a69e34b238861306e
+  text_hash: 4d01bc2f0a2083c6e6bcbcfe27dc7df7d88f3075e1dcb107d9d9848c80333475
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -33684,4 +33549,48 @@ review:
   text_hash: e33e92dd17edec0d9fc1339da8f999bed1879bd6f01e76f0b27bcd91c4cc4c48
   prompt_version: structural-calque-v1
   basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_LOST`
+
+```yaml
+id: "src/lib/content/portal.ts::SIGNIN_LOST"
+source: "src/lib/content/portal.ts"
+path: SIGNIN_LOST
+render: "Candidate page /me, sign-in, line under the form"
+narrative_slot: utility
+en: "Can't find the code? Contact PunProfile on LINE for a new one."
+th: "หากไม่พบรหัส โปรดติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่"
+provenance: paul-written
+date: 01/11/2026
+term_bindings: []
+decision_note: "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
+review:
+  structural_calque: pass
+  text_hash: 226e386c362fdf9905ce04f4134174b49e16d1c116ffb2a2721a6608bf93e30a
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::SIGNIN_LOCKED`
+
+```yaml
+id: "src/lib/content/portal.ts::SIGNIN_LOCKED"
+source: "src/lib/content/portal.ts"
+path: SIGNIN_LOCKED
+render: "Candidate page /me, sign-in, after too many wrong codes"
+narrative_slot: utility
+en: "Too many incorrect attempts. Try again in 1 hour, or contact PunProfile on LINE for a new code."
+th: "ใส่รหัสผิดเกินจำนวนครั้งที่กำหนด โปรดลองใหม่ในอีก 1 ชั่วโมง หรือติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่"
+provenance: paul-written
+date: 01/11/2026
+term_bindings: []
+decision_note: "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
+review:
+  structural_calque: pass
+  text_hash: af5221ed4039ca4b8ecd4566ce0edb43030f635f95e430565bff5a93e7ec1857
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```

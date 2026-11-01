@@ -1,10 +1,12 @@
-import { convexAuth } from "@convex-dev/auth/server";
+import { convexAuth, retrieveAccount } from "@convex-dev/auth/server";
 import { Password } from "@convex-dev/auth/providers/Password";
-import { Email } from "@convex-dev/auth/providers/Email";
+import { ConvexCredentials } from "@convex-dev/auth/providers/ConvexCredentials";
+import { Scrypt } from "lucia";
 import { ConvexError } from "convex/values";
 import { adminEmails, isAdminEmail } from "./adminEmails";
 import { internal } from "./_generated/api";
 import { clearHeldCodes, liveGrant, normaliseEmail } from "./candidateAccess";
+import { STATIC_PROVIDER } from "./candidateCode";
 
 /**
  * TASK-004: coach authentication, allowlisted.
@@ -22,79 +24,48 @@ import { clearHeldCodes, liveGrant, normaliseEmail } from "./candidateAccess";
  * many.
  *
  * **Candidates sign in too, since the account decision in
- * `lifecycle-data-model.md` § 10 went to option (b).** Email and a six-digit
- * code, no password. Only an address a coach has granted (`candidateAccess`)
- * is ever sent a code, and only an admin or a granted address gets a session.
+ * `lifecycle-data-model.md` § 10 went to option (b).** Email and a permanent
+ * six-digit code (01/11/2026; before that, a fresh code per sign-in). Only an
+ * address a coach has granted (`candidateAccess`) is given a code, and only an
+ * admin or a granted address gets a session.
  * Admin data is still guarded by `requireAdmin` alone, which a candidate never
  * passes.
  */
 
-const CODE_MINUTES = 15;
-
-/** Six digits from the platform's CSPRNG, rejection-sampled so no digit is favoured. */
-async function sixDigits(): Promise<string> {
-  const buf = new Uint32Array(1);
-  const limit = Math.floor(0xffffffff / 1_000_000) * 1_000_000;
-  for (;;) {
-    crypto.getRandomValues(buf);
-    if (buf[0] < limit) return String(buf[0] % 1_000_000).padStart(6, "0");
-  }
-}
-
-const CandidateCode = Email({
-  id: "candidate-code",
-  maxAge: CODE_MINUTES * 60,
-  generateVerificationToken: sixDigits,
-  normalizeIdentifier: normaliseEmail,
-  // Convex Auth passes the action ctx as a second argument; Auth.js's type for
-  // this hook does not know that, hence the rest parameter.
-  async sendVerificationRequest({ identifier, token }: { identifier: string; token: string }, ...rest: unknown[]) {
-    const ctx = rest[0];
-    // Silently do nothing for an address nobody granted. The form says "if this
-    // address has access, a code is on its way" either way, so it cannot be used
-    // to find out who is a client, or to mail strangers.
-    const runQuery = (ctx as unknown as { runQuery: (f: unknown, a: unknown) => Promise<boolean> }).runQuery;
-    if (!(await runQuery(internal.candidateAccess.isGranted, { email: identifier }))) return;
-
-    // Local development: no mail goes out, the code goes to the deployment log.
-    if (process.env.DEV_LOG_SIGNIN_CODES === "1") {
-      console.log(`candidate-code for ${identifier}: ${token}`);
-      return;
-    }
-
-    const key = process.env.RESEND_API_KEY;
-    const from = process.env.MAIL_FROM;
-    if (!key || !from) {
-      // No sender yet (parked by Paul, 30/10/2026). Hold the code for the coach
-      // to pass on by LINE instead; the Candidate 360 shows it for fifteen
-      // minutes. The moment both variables are set, this branch stops running.
-      const runMutation = (ctx as { runMutation: (f: unknown, a: unknown) => Promise<unknown> }).runMutation;
-      await runMutation(internal.candidateAccess.holdCode, {
-        email: identifier,
-        code: token,
-        expiresAt: Date.now() + CODE_MINUTES * 60 * 1000,
-      });
-      return;
-    }
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from,
-        to: identifier,
-        subject: `รหัสเข้าสู่ระบบ PunProfile: ${token}`,
-        text:
-          `รหัสเข้าสู่ระบบ PunProfile ของคุณคือ ${token}\n\n` +
-          `ใช้ได้ภายใน ${CODE_MINUTES} นาที ถ้าคุณไม่ได้ขอรหัสนี้ ไม่ต้องทำอะไรครับ\n\n` +
-          `Your PunProfile sign-in code is ${token}. It works for ${CODE_MINUTES} minutes.`,
-      }),
-    });
-    if (!res.ok) {
-      console.error(`candidate-code send failed: ${res.status} ${await res.text()}`);
-      throw new ConvexError("code_not_sent");
+/**
+ * Email and the candidate's permanent code, decided 01/11/2026. The code is the
+ * account secret, scrypt-hashed like a password, and made and emailed by
+ * `candidateCode.ts` when a coach grants access. Convex Auth rate-limits wrong
+ * codes per account. An address without a live grant never authorises, and
+ * `beforeSessionCreation` checks the grant again.
+ */
+const CandidateStatic = ConvexCredentials({
+  id: STATIC_PROVIDER,
+  authorize: async (credentials, ctx) => {
+    const email = normaliseEmail(String(credentials.email ?? ""));
+    const code = String(credentials.code ?? "").replace(/\D/g, "");
+    if (!email || code.length !== 6) return null;
+    if (!(await ctx.runQuery(internal.candidateAccess.isGranted, { email }))) return null;
+    try {
+      const { user } = await retrieveAccount(ctx, { provider: STATIC_PROVIDER, account: { id: email, secret: code } });
+      return { userId: user._id };
+    } catch (e) {
+      // Convex Auth throws "TooManyFailedAttempts" once the hourly limit is
+      // spent; the page says so rather than "wrong code" again.
+      if (e instanceof Error && e.message.includes("TooManyFailedAttempts")) throw new ConvexError("locked");
+      return null;
     }
   },
+  crypto: {
+    async hashSecret(secret: string) {
+      return await new Scrypt().hash(secret);
+    },
+    async verifySecret(secret: string, hash: string) {
+      return await new Scrypt().verify(hash, secret);
+    },
+  },
 });
+
 export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
   providers: [
     Password({
@@ -109,7 +80,7 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
         return { email };
       },
     }),
-    CandidateCode,
+    CandidateStatic,
   ],
   callbacks: {
     async beforeSessionCreation(ctx, { userId }) {

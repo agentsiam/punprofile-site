@@ -11,6 +11,7 @@
 import type * as adminEmails from "../adminEmails.js";
 import type * as auth from "../auth.js";
 import type * as candidateAccess from "../candidateAccess.js";
+import type * as candidateCode from "../candidateCode.js";
 import type * as consent from "../consent.js";
 import type * as consentDb from "../consentDb.js";
 import type * as consultations from "../consultations.js";
@@ -47,6 +48,7 @@ declare const fullApi: ApiFromModules<{
   adminEmails: typeof adminEmails;
   auth: typeof auth;
   candidateAccess: typeof candidateAccess;
+  candidateCode: typeof candidateCode;
   consent: typeof consent;
   consentDb: typeof consentDb;
   consultations: typeof consultations;

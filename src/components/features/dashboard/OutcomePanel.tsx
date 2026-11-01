@@ -38,9 +38,8 @@ export default function OutcomePanel({ leadId }: { leadId: Id<"leads"> }) {
   if (applications.length === 0 && placements.length === 0) {
     return (
       <p className="text-body-large text-on-surface-variant">
-        No applications and no placement recorded. The candidate-facing job list
-        needs an account first, so today this fills up only when a coach enters
-        something.
+        No applications and no placement recorded. Jobs you log, roles you send
+        and the ones they add on their own page all appear here.
       </p>
     );
   }

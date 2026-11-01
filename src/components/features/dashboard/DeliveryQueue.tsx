@@ -67,7 +67,7 @@ export default function DeliveryQueue() {
                   {!r.hasAccess
                     ? " · no page access yet"
                     : r.lastSignInAt
-                      ? ` · last on their page ${day(r.lastSignInAt)}`
+                      ? ` · last on their dashboard ${day(r.lastSignInAt)}`
                       : " · has not signed in yet"}
                 </p>
               </li>

@@ -15,7 +15,7 @@
 
 import type { MutationCtx } from "./_generated/server";
 import type { Id } from "./_generated/dataModel";
-import { clearHeldCodes } from "./candidateAccess";
+import { clearHeldCodes, removeCandidateLogin } from "./candidateAccess";
 
 export type EraseCounts = {
   leads: number;
@@ -211,6 +211,9 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     .collect();
   for (const a of access) {
     await clearHeldCodes(ctx, a.email);
+    // The login itself, not only the grant: an erased person's address must
+    // not survive in the auth tables.
+    await removeCandidateLogin(ctx, a.email);
     await ctx.db.delete(a._id);
   }
   for (const n of notes) await ctx.db.delete(n._id);

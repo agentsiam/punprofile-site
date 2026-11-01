@@ -33,6 +33,9 @@ const day = (ms: number | null | undefined) =>
   ms === null || ms === undefined
     ? ""
     : new Date(ms).toLocaleDateString("en-GB", { day: "2-digit", month: "2-digit", year: "numeric" });
+/** DD/MM/YYYY HH:MM, for moments that matter to the hour. */
+const stamp = (ms: number) =>
+  `${day(ms)} ${new Date(ms).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}`;
 
 /** `<input type="date">` holds YYYY-MM-DD; stored as midday UTC so no timezone moves the day. */
 const toMs = (iso: string) => (iso ? Date.parse(`${iso}T12:00:00Z`) : undefined);
@@ -191,6 +194,8 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
   const shareReport = useMutation(api.workspace.shareFitReport);
   const handleRequest = useMutation(api.workspace.handleTokenRequest);
   const revoke = useMutation(api.workspace.revokeAccess);
+  const sendNewCode = useMutation(api.candidateCode.sendNewCode);
+  const [confirmNewCode, setConfirmNewCode] = useState(false);
   const [accessEmail, setAccessEmail] = useState<string | null>(null);
   const [form, setForm] = useState<null | {
     reason: "purchase" | "fit_report" | "cash_refund" | "adjustment";
@@ -273,14 +278,21 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
           {ws.access ? (
             <>
               <p className="mt-1 text-body-medium text-on-surface">
-                {ws.access.email} can sign in at {pageUrl} with a code sent to that address.
+                {ws.access.email} signs in at {pageUrl} with their email and a permanent 6-digit code.
+              </p>
+              <p className="text-body-medium text-on-surface-variant">
+                {ws.access.codeIssuedAt === null
+                  ? "No code made yet. Send one below."
+                  : ws.access.codeDelivery === "emailed"
+                    ? `Code emailed ${stamp(ws.access.codeIssuedAt)}.`
+                    : ws.access.codeDelivery === "failed"
+                      ? `Code made ${stamp(ws.access.codeIssuedAt)}, but the email failed: ${ws.access.codeDeliveryNote ?? "no reason given"}.`
+                      : `Code made ${stamp(ws.access.codeIssuedAt)}; email is not set up, so it was not sent.`}
               </p>
               {ws.heldCode && (
                 <p className="mt-2 rounded-medium bg-primary-container px-3 py-2 text-body-medium text-on-primary-container">
-                  Sign-in code waiting: <strong className="tracking-widest">{ws.heldCode.code}</strong>, valid
-                  until{" "}
-                  {new Date(ws.heldCode.expiresAt).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}.
-                  Email is not set up yet, so send it to them on LINE.
+                  Their code: <strong className="tracking-widest">{ws.heldCode.code}</strong>. Send it to them on LINE;
+                  it shows here until {stamp(ws.heldCode.expiresAt)} or until they sign in, and keeps working after.
                 </p>
               )}
               <p className="text-body-medium text-on-surface-variant">
@@ -289,11 +301,32 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
               </p>
               <div className="mt-2 flex flex-wrap gap-4">
                 <a className={LINK} href={`/admin/leads/${leadId}/as-candidate`} target="_blank" rel="noreferrer">
-                  See their page
+                  See their dashboard
                 </a>
                 <button type="button" className={LINK} onClick={() => setAccessEmail(ws.access!.email)}>
                   Change address
                 </button>
+                {confirmNewCode ? (
+                  <>
+                    <button
+                      type="button"
+                      className={LINK}
+                      onClick={() => {
+                        setConfirmNewCode(false);
+                        void sendNewCode({ leadId });
+                      }}
+                    >
+                      Yes, replace their code
+                    </button>
+                    <button type="button" className={LINK} onClick={() => setConfirmNewCode(false)}>
+                      Keep the old one
+                    </button>
+                  </>
+                ) : (
+                  <button type="button" className={LINK} onClick={() => setConfirmNewCode(true)}>
+                    Send a new code
+                  </button>
+                )}
                 <button type="button" className={LINK} onClick={() => void revoke({ leadId })}>
                   Switch off
                 </button>
@@ -311,7 +344,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
                   Give access
                 </button>
                 <a className={`${LINK} self-center`} href={`/admin/leads/${leadId}/as-candidate`} target="_blank" rel="noreferrer">
-                  Preview their page
+                  Preview their dashboard
                 </a>
               </div>
             </>
@@ -330,10 +363,10 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
             </div>
           )}
           <div className="mt-4 border-t border-outline-variant pt-3">
-            <p className="text-label-large text-on-surface-variant">Fit Report on their page</p>
+            <p className="text-label-large text-on-surface-variant">Fit Report on their dashboard</p>
             {ws.fitReport.shared ? (
               <p className="mt-1 text-body-medium text-on-surface">
-                Shared. They open it from their page, built live from the answers and your ratings.{" "}
+                Shared. They open it from their dashboard, built live from the answers and your ratings.{" "}
                 <button type="button" className={LINK} onClick={() => void shareReport({ leadId, shared: false })}>
                   Take it off
                 </button>
@@ -349,7 +382,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
                     className={LINK}
                     onClick={() => void shareReport({ leadId, shared: true }).catch((e) => setError(errText(e)))}
                   >
-                    Share it on their page
+                    Share it on their dashboard
                   </button>
                 )}
               </p>
@@ -662,7 +695,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                     </Label>
                   </div>
                   <div className="mt-3 grid gap-3 medium:grid-cols-2">
-                    <Label text="Name on their page, Thai (optional)">
+                    <Label text="Name on their dashboard, Thai (optional)">
                       <input
                         className={INPUT}
                         placeholder="e.g. คุยทำความรู้จัก 30 นาที"
@@ -1118,7 +1151,7 @@ function CvVersions({
         {renaming?.id === c._id ? (
           <span className="flex flex-wrap items-center gap-2">
             <input
-              aria-label="Name on their page"
+              aria-label="Name on their dashboard"
               className="field field-dense w-auto"
               value={renaming.label}
               onChange={(e) => setRenaming({ id: c._id, label: e.target.value })}
@@ -1142,7 +1175,7 @@ function CvVersions({
         <span className="flex flex-wrap items-center gap-2">
           {current && <Chip tone="strong">Current</Chip>}
           <Chip>{c.author === "candidate" ? "Theirs" : "Our revision"}</Chip>
-          {c.sharedAt ? <Chip>On their page</Chip> : null}
+          {c.sharedAt ? <Chip>On their dashboard</Chip> : null}
         </span>
       </div>
       <p className="mt-1 text-body-medium text-on-surface-variant">
@@ -1161,7 +1194,7 @@ function CvVersions({
           </a>
         )}
         <button type="button" className={LINK} onClick={() => void run(() => updateCv({ cvId: c._id, shared: !c.sharedAt }))}>
-          {c.sharedAt ? "Take off their page" : "Share on their page"}
+          {c.sharedAt ? "Take off their dashboard" : "Share on their dashboard"}
         </button>
         <button type="button" className={LINK} onClick={() => setRenaming({ id: c._id, label: c.label })}>
           Rename
@@ -1309,7 +1342,7 @@ function CvVersions({
                 <option value="">Base CV, holding everything</option>
               </select>
             </Label>
-            <Label text="Name on their page (blank uses the title)">
+            <Label text="Name on their dashboard (blank uses the title)">
               <input
                 className={INPUT}
                 placeholder={titleOf.get(draft.targetId) ?? "e.g. CV ฉบับเต็ม"}
@@ -1359,7 +1392,7 @@ function CvVersions({
           )}
           <label className="mt-3 flex items-center gap-2 text-body-medium text-on-surface">
             <input type="checkbox" checked={draft.share} onChange={(e) => setDraft({ ...draft, share: e.target.checked })} />
-            Show on their page
+            Show on their dashboard
           </label>
           <ErrorLine error={error} />
           <div className="mt-3 flex items-center gap-4">
@@ -1542,7 +1575,7 @@ function JobTracker({
         ))}
       </div>
       <p className="mt-2 text-body-medium text-on-surface-variant">
-        {matched} matched role{matched === 1 ? "" : "s"} sent. A row the candidate has moved on their page is theirs; you can add a note, not move it.
+        {matched} matched role{matched === 1 ? "" : "s"} sent. A row the candidate has moved on their dashboard is theirs; you can add a note, not move it.
       </p>
 
       {shown.length === 0 ? (
@@ -1925,7 +1958,7 @@ function Notes({
           </select>
           <label className="flex items-center gap-2 text-body-medium text-on-surface">
             <input type="checkbox" checked={shared} onChange={(e) => setShared(e.target.checked)} />
-            Show on their page (write it in Thai)
+            Show on their dashboard (write it in Thai)
           </label>
           <button type="button" className={BTN} disabled={!body.trim()} onClick={() => void save()}>
             Add note
@@ -1946,7 +1979,7 @@ function Notes({
                   {label(n) ? ` · ${label(n)}` : ""}
                 </span>
                 <span className="flex items-center gap-3">
-                  {n.shared ? <Chip tone="strong">On their page</Chip> : <Chip>Private</Chip>}
+                  {n.shared ? <Chip tone="strong">On their dashboard</Chip> : <Chip>Private</Chip>}
                   <button type="button" className={LINK} onClick={() => void update({ noteId: n._id, shared: !n.shared })}>
                     {n.shared ? "Make private" : "Share"}
                   </button>

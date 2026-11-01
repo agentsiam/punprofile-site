@@ -16,7 +16,7 @@ import type { Copy } from "./copy";
  * `{name}`, `{n}`, `{date}` are filled at render by `fill()` on the page.
  */
 
-export const PORTAL_TITLE: Copy = { en: "Your page", th: "หน้าของคุณ" };
+export const PORTAL_TITLE: Copy = { en: "Job Search Dashboard", th: "แดชบอร์ดหางาน" };
 
 export const PORTAL_GREETING: Copy = { en: "Hi {name}", th: "สวัสดีครับ {name}" };
 export const PORTAL_GREETING_NONAME: Copy = { en: "Hi", th: "สวัสดีครับ" };
@@ -33,36 +33,31 @@ export const PORTAL_INTRO_SHORT: Copy = {
 
 /* ------------------------------------------------------------- sign-in */
 
-export const SIGNIN_HEADING: Copy = { en: "Sign in to your page", th: "เข้าสู่หน้าของคุณ" };
+export const SIGNIN_HEADING: Copy = { en: "Sign in to your Job Search Dashboard", th: "เข้าสู่แดชบอร์ดหางาน" };
 export const SIGNIN_BODY: Copy = {
-  en: "Enter the email you use with PunProfile and we will send you a 6-digit code. No password needed.",
-  th: "กรอกอีเมลที่คุณใช้กับ PunProfile แล้วเราจะส่งรหัส 6 หลักไปให้ ไม่ต้องตั้งรหัสผ่านครับ",
+  en: "Enter your email and the 6-digit code PunProfile emailed you when your Job Search Dashboard was activated. The code does not change, so keep that email.",
+  th: "กรอกอีเมลและรหัส 6 หลักที่ PunProfile ส่งให้ทางอีเมลเมื่อเปิดใช้งานแดชบอร์ดหางานของคุณ รหัสนี้ไม่เปลี่ยน โปรดเก็บอีเมลฉบับนั้นไว้",
 };
 export const SIGNIN_EMAIL: Copy = { en: "Email", th: "อีเมล" };
-export const SIGNIN_SEND: Copy = { en: "Send me a code", th: "ส่งรหัส" };
-export const SIGNIN_SENT: Copy = {
-  en: "If this address has access, your code is on its way, by email or from your coach on LINE. It can take a few minutes.",
-  th: "หากคุณใช้บัญชีอีเมลนี้เข้าใช้งานได้ เราจะส่งรหัสให้ทางอีเมล หรือโค้ชจะส่งให้ทาง LINE อาจต้องรอสักครู่ครับ",
-};
 export const SIGNIN_CODE: Copy = { en: "6-digit code", th: "รหัส 6 หลัก" };
+export const SIGNIN_LOST: Copy = { en: "Can't find the code? Contact PunProfile on LINE for a new one.", th: "หากไม่พบรหัส โปรดติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่" };
+export const SIGNIN_LOCKED: Copy = { en: "Too many incorrect attempts. Try again in 1 hour, or contact PunProfile on LINE for a new code.", th: "ใส่รหัสผิดเกินจำนวนครั้งที่กำหนด โปรดลองใหม่ในอีก 1 ชั่วโมง หรือติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่" };
 export const SIGNIN_VERIFY: Copy = { en: "Sign in", th: "เข้าสู่ระบบ" };
 export const SIGNIN_BAD_CODE: Copy = {
-  en: "That code is wrong or has expired. Ask for a new one.",
-  th: "รหัสไม่ถูกต้องหรือหมดอายุแล้ว ขอรหัสใหม่ได้เลยครับ",
+  en: "The email and code do not match. Check the code in the email from PunProfile.",
+  th: "อีเมลและรหัสไม่ตรงกัน โปรดตรวจสอบรหัสในอีเมลจาก PunProfile",
 };
-export const SIGNIN_OTHER_EMAIL: Copy = { en: "Use a different email", th: "ใช้อีเมลอื่น" };
-export const SIGNIN_RESEND: Copy = { en: "Send a new code", th: "ส่งรหัสใหม่" };
 export const NO_ACCESS_HEADING: Copy = {
-  en: "This email does not have a page yet",
-  th: "เรายังไม่ได้เปิดหน้าสำหรับอีเมลนี้",
+  en: "This email does not have a Job Search Dashboard yet",
+  th: "PunProfile ยังไม่ได้เปิดแดชบอร์ดหางานสำหรับอีเมลนี้",
 };
 export const NO_ACCESS_BODY: Copy = {
-  en: "Message your coach on LINE and they will open it for this address.",
-  th: "ทักโค้ชทาง LINE เพื่อให้โค้ชเปิดสิทธิ์เข้าใช้งานสำหรับอีเมลนี้ได้เลยครับ",
+  en: "Contact PunProfile on LINE to have it opened for this email.",
+  th: "โปรดติดต่อ PunProfile ทาง LINE เพื่อเปิดใช้งานสำหรับอีเมลนี้",
 };
 export const COACH_HERE: Copy = {
-  en: "You are signed in as a coach. Open a candidate's page from the CRM.",
-  th: "คุณเข้าสู่ระบบในฐานะโค้ช เปิดหน้าของผู้สมัครได้จาก CRM",
+  en: "You are signed in as a coach. Open a candidate's Job Search Dashboard from the CRM.",
+  th: "คุณเข้าสู่ระบบในฐานะโค้ช เปิดแดชบอร์ดหางานของผู้สมัครได้จาก CRM",
 };
 export const SIGN_OUT: Copy = { en: "Sign out", th: "ออกจากระบบ" };
 
