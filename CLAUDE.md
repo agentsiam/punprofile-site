@@ -189,7 +189,7 @@ missing one of its eight slots, naming a destination `cta.ts` lacks, or stating 
 
 ## 7. Traps
 
-- Reading this repo in isolation produced wrong work twice. The specification is always in the sibling repo, and the workspace root `CLAUDE.md` carries the full map.
+- Reading this repo in isolation produced wrong work twice. The specification is always in the sibling repo, and the ownership table in section 2 says which document answers which question.
 - This repo's `docs/design.md` said no design tokens existed. It was wrong, and it is gone. The design system is the sibling repo's `design.md` and always was.
 - Conflating the four instruments has produced confidently wrong analysis, usually by reading the funnel's shape off a form link or a row count (R5, R6).
 - `verify:copy` had never read the per-page content modules, 91 candidate-facing strings, and the first `verify:pages` run found a real LR-04 failure in `footer.ts` that had already shipped.
