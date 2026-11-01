@@ -83,6 +83,7 @@ export default function BlockPanel({
             <Image
               key={leaving.src}
               src={leaving.src}
+              // Decorative: the outgoing photo mid-crossfade; the incoming one carries the alt.
               alt=""
               fill
               sizes="(max-width: 839px) 1px, 33vw"

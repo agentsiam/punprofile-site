@@ -3,7 +3,7 @@ import "../globals.css";
 import SiteShell from "@/components/SiteShell";
 import { DEFAULT_LOCALE, pick, t } from "@/lib/locale";
 import { HOOK_EYEBROW, HOOK_LINE_1, HOOK_LINE_2 } from "@/lib/content/coaching";
-import { SITE_URL, VERIFICATION } from "@/lib/seo";
+import { SITE_URL, VERIFICATION, brandedTitle } from "@/lib/seo";
 
 /**
  * The Thai tree, and the site's primary root layout. 16/08/2026.
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
    * Two pages sharing one title is the problem this pass was fixing.
    */
   title: {
-    default: `${t("landing.title", DEFAULT_LOCALE)} | PunProfile`,
+    default: brandedTitle(t("landing.title", DEFAULT_LOCALE)),
     template: "%s | PunProfile",
   },
   description: t("landing.subhead", DEFAULT_LOCALE),

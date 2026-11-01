@@ -259,6 +259,7 @@ export default function TopNav({ slot = "primary" }: { slot?: "primary" | "secon
             >
               <Image
                 src="/assess/mascot/welcome.jpg"
+                // Decorative: the card's own heading and lede name EU Fit Check beside it.
                 alt=""
                 width={1000}
                 height={750}

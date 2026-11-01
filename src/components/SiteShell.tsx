@@ -14,6 +14,8 @@ import { DEFAULT_LOCALE } from "@/lib/locale";
 import type { Locale } from "@/lib/locale";
 import { DISCLAIMER, FACEBOOK_PAGE } from "@/lib/content/footer";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
+import { CONTACT_EMAIL } from "@/lib/consent-copy";
+import { DESTINATIONS } from "@/lib/content/cta";
 import { pick, t } from "@/lib/locale";
 
 /**
@@ -97,7 +99,10 @@ export default function SiteShell({
               things in different languages is exactly the ambiguity an `@id` is
               there to prevent. */}
           <JsonLd
-            data={organizationJsonLd(FACEBOOK_PAGE, pick(DISCLAIMER, DEFAULT_LOCALE))}
+            data={organizationJsonLd(FACEBOOK_PAGE, pick(DISCLAIMER, DEFAULT_LOCALE), {
+              email: CONTACT_EMAIL,
+              line: DESTINATIONS.line.href,
+            })}
           />
           <JsonLd data={websiteJsonLd()} />
           {/* The `data-perf` capability gate that used to live here is gone with

@@ -346,6 +346,7 @@ export default function Home() {
             <div className="relative min-h-[280px] w-full self-stretch large:min-h-[420px]">
               <Image
                 src="/assess/blocks/understood.jpg"
+                // Decorative: mood art for the statement beside it, which carries the meaning.
                 alt=""
                 fill
                 sizes="(max-width: 1200px) 100vw, 50vw"
@@ -441,6 +442,7 @@ export default function Home() {
 
           <Image
             src="/mascot-laptop.png"
+            // Decorative: the mascot beside the call to action, which is in the text.
             alt=""
             width={1442}
             height={720}

@@ -27,7 +27,8 @@
     "review:language": "tsx scripts/export-language-review.ts",
     "blog:cards": "tsx scripts/build-share-cards.ts",
     "snapshot:leads": "tsx scripts/export-leads-snapshot.ts",
-    "verify:narrative": "tsx scripts/verify-narrative.ts"
+    "verify:narrative": "tsx scripts/verify-narrative.ts",
+    "audit:seo": "node scripts/seo-audit.mjs"
   },
   "dependencies": {
     "@auth/core": "^0.41.3",

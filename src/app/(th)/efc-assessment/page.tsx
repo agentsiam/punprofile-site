@@ -653,6 +653,7 @@ export default function AssessPage() {
               from the cropped file rather than carried over. */}
           <Image
             src="/assess/mascot/report.png"
+            // Decorative: the mascot beside the result text, which carries the meaning.
             alt=""
             width={333}
             height={299}

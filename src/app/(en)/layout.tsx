@@ -3,7 +3,7 @@ import "../globals.css";
 import SiteShell from "@/components/SiteShell";
 import { pick, t } from "@/lib/locale";
 import { HOOK_EYEBROW, HOOK_LINE_1, HOOK_LINE_2 } from "@/lib/content/coaching";
-import { SITE_URL, VERIFICATION } from "@/lib/seo";
+import { SITE_URL, VERIFICATION, brandedTitle } from "@/lib/seo";
 
 /**
  * The English tree, at `/en`. 16/08/2026.
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   // while the site is on a vercel.app subdomain.
   verification: VERIFICATION,
   title: {
-    default: `${t("landing.title", "en")} | PunProfile`,
+    default: brandedTitle(t("landing.title", "en")),
     template: "%s | PunProfile",
   },
   description: t("landing.subhead", "en"),

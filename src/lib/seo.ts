@@ -3,6 +3,7 @@ import type { Copy } from "./content/copy";
 import { DEFAULT_LOCALE, localePath, pick } from "./locale";
 import type { Locale } from "./locale";
 import { POSTS } from "./content/blog";
+import { FAQ } from "./content/faq";
 import type { Block, Section } from "./content/blog";
 
 /**
@@ -112,6 +113,39 @@ export const PUBLIC_ROUTES: readonly { path: string; priority: number }[] = [
   { path: "/privacy", priority: 0.2 },
 ];
 
+/** The site's share card, `public/og.png`, 1200x630. */
+export const SITE_CARD = "/og.png";
+
+/** Longest title a search result shows whole, in characters a reader sees. */
+export const TITLE_MAX = 60;
+
+const BRAND_SUFFIX = " | PunProfile";
+
+/** Length as a reader sees it: Thai vowel and tone marks take no width. */
+export const visibleLength = (s: string): number =>
+  [...new Intl.Segmenter("th", { granularity: "grapheme" }).segment(s)].length;
+
+/**
+ * A page title with the brand suffix when it fits, without it when it does not.
+ * 01/11/2026.
+ *
+ * The root layouts' template appends " | PunProfile" to every title. On six
+ * pages that pushed the title past 60 characters, so a search result cut it
+ * mid-word and the part lost was the page's own subject, not the brand. Dropping
+ * the suffix on those pages keeps every word of the title as written; the brand
+ * is still the site name in the result and in `og:site_name`. `absolute` is
+ * Next's way of opting one title out of the template.
+ */
+export function brandTitle(title: string): string | { absolute: string } {
+  return visibleLength(title + BRAND_SUFFIX) <= TITLE_MAX
+    ? title
+    : { absolute: title };
+}
+
+/** The same rule for a title that already carries the suffix. */
+export const brandedTitle = (title: string): string =>
+  visibleLength(title + BRAND_SUFFIX) <= TITLE_MAX ? title + BRAND_SUFFIX : title;
+
 /**
  * A page's metadata, built the same way every time.
  *
@@ -154,10 +188,16 @@ export function pageMetadata({
   // Absolute, because Line, Slack and several crawlers do not resolve a
   // relative og:image against the page URL. `metadataBase` covers Next's own
   // rendering, and this covers everything that reads the tag directly.
-  const card = image ? [{ url: absolute(image), width: 1200, height: 630 }] : undefined;
+  //
+  // Falls back to the site card rather than to nothing. Next merges metadata
+  // shallowly, so a page that sets its own `openGraph` replaces the root
+  // layout's whole `openGraph`, image included: before 01/11/2026 every page
+  // built here except the home page shipped with no `og:image` at all, and a
+  // shared link rendered as bare text. The layout's image was never inherited.
+  const card = [{ url: absolute(image ?? SITE_CARD), width: 1200, height: 630 }];
 
   return {
-    title: t,
+    title: brandTitle(t),
     description: d,
     alternates: {
       canonical: localePath(path, locale),
@@ -178,13 +218,13 @@ export function pageMetadata({
       url: localePath(path, locale),
       title: t,
       description: d,
-      ...(card ? { images: card } : {}),
+      images: card,
     },
     twitter: {
       card: "summary_large_image",
       title: t,
       description: d,
-      ...(card ? { images: card } : {}),
+      images: card,
     },
   };
 }
@@ -296,7 +336,11 @@ export const VERIFICATION: Metadata["verification"] = {
  * is still true, and a search engine reading it learns that this is a service
  * somebody buys rather than a company that exists.
  */
-export function organizationJsonLd(facebookPage: string, disclaimer: string) {
+export function organizationJsonLd(
+  facebookPage: string,
+  disclaimer: string,
+  contact: { email: string; line: string },
+) {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -307,6 +351,20 @@ export function organizationJsonLd(facebookPage: string, disclaimer: string) {
     logo: absolute("/punprofile-logo.svg"),
     image: absolute("/og.png"),
     sameAs: [facebookPage],
+    // No `telephone`, on purpose: public contact is LINE and email only, and a
+    // number in the markup would be a channel the site does not offer. Both
+    // channels below are the ones `/contact` already publishes, from
+    // `consent-copy.ts` and `cta.ts`. 01/11/2026.
+    email: contact.email,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        email: contact.email,
+        url: contact.line,
+        availableLanguage: ["th", "en"],
+      },
+    ],
     description:
       "Career coaching for Thai professionals pursuing roles in Europe, with a free self-serve readiness check.",
     // The audience and the subject, which is the whole of what makes this
@@ -464,5 +522,34 @@ export function articleJsonLd(
           ]
         : []),
     ],
+  };
+}
+
+/**
+ * `/faq` as an `FAQPage`. 01/11/2026.
+ *
+ * The page had every question and answer on it and no markup saying so, so an
+ * answer engine had to parse an accordion to find a pair the site had already
+ * written as a pair. Built from `FAQ` itself, the module the page renders, so the
+ * markup and the page cannot say different things. The answer is the paragraphs
+ * joined, the same rule `articleJsonLd` follows; the trailing link label is
+ * navigation, not part of the answer, and is left out.
+ */
+export function faqJsonLd(locale: Locale) {
+  const url = absolute(localePath("/faq", locale));
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    inLanguage: locale,
+    mainEntity: FAQ.map((item) => ({
+      "@type": "Question",
+      name: pick(item.q, locale),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a.map((p) => pick(p, locale)).join(" "),
+      },
+    })),
   };
 }
