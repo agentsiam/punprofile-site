@@ -1,3 +1,4 @@
+import { CODE_EMAIL_SUBJECT, codeEmailHtml } from "./codeEmail";
 /**
  * The candidate's permanent sign-in code. Decided by Paul 01/11/2026: one code
  * per candidate, made when a coach grants access and sent once by email from
@@ -71,25 +72,28 @@ export const recordDelivery = internalMutation({
 });
 
 function emailText(firstName: string | null, email: string, code: string) {
-  const hi = firstName ? `เรียน คุณ${firstName}` : "เรียน ผู้ใช้งาน PunProfile";
   return [
-    hi,
+    firstName ? `สวัสดีคุณ ${firstName}` : "สวัสดี",
     "",
-    "หน้าติดตามการสมัครงานของคุณพร้อมใช้งานแล้ว คุณสามารถดูแผนการทำงาน ไฟล์ CV และความคืบหน้าของแต่ละตำแหน่งที่สมัครได้ในหน้านี้",
+    "แดชบอร์ดหางานของคุณพร้อมแล้ว ตำแหน่งที่คุณเล็งไว้ CV ของแต่ละตำแหน่ง งานที่ PunProfile คัดมาให้ และความคืบหน้าของทุกใบสมัคร รวมไว้ในที่เดียว",
     "",
-    "เข้าใช้งานได้ที่ https://punprofile.app/me",
-    `อีเมล: ${email}`,
-    `รหัส: ${code}`,
+    "เข้าสู่ระบบที่ https://punprofile.app/me",
+    `อีเมลที่ใช้เข้าสู่ระบบ: ${email}`,
+    `รหัสเข้าใช้งาน: ${code}`,
     "",
-    "รหัสนี้ไม่เปลี่ยน โปรดเก็บอีเมลฉบับนี้ไว้ หากไม่พบรหัส โปรดติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่",
+    "รหัสนี้ไม่เปลี่ยนและไม่มีวันหมดอายุ โปรดเก็บอีเมลฉบับนี้ไว้ หากไม่พบรหัส โปรดติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่",
     "",
     "---",
     "",
-    "Your job application tracking page is ready. You can see your plan, your CV files and the progress of each role you applied for there: https://punprofile.app/me",
+    firstName ? `Hello ${firstName},` : "Hello,",
+    "",
+    "Your Job Search Dashboard is ready. The roles you are targeting, the CV for each one, the jobs PunProfile picks for you and the progress of every application, all in one place.",
+    "",
+    "Sign in at https://punprofile.app/me",
     `Email: ${email}`,
     `Code: ${code}`,
     "",
-    "The code does not change, so keep this email. If you can't find the code, contact PunProfile on LINE for a new one.",
+    "The code does not change or expire, so keep this email. If you can't find it, contact PunProfile on LINE for a new one.",
   ].join("\n");
 }
 
@@ -144,7 +148,8 @@ export const issueCode = internalAction({
         from,
         to: grant.email,
         ...(process.env.MAIL_REPLY_TO ? { reply_to: process.env.MAIL_REPLY_TO } : {}),
-        subject: "รหัสเข้าหน้าของคุณที่ PunProfile",
+        subject: CODE_EMAIL_SUBJECT,
+        html: codeEmailHtml(grant.firstName, grant.email, code),
         text: emailText(grant.firstName, grant.email, code),
       }),
     });

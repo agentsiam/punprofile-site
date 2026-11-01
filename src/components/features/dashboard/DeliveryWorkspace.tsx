@@ -301,7 +301,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
               </p>
               <div className="mt-2 flex flex-wrap gap-4">
                 <a className={LINK} href={`/admin/leads/${leadId}/as-candidate`} target="_blank" rel="noreferrer">
-                  See their page
+                  See their dashboard
                 </a>
                 <button type="button" className={LINK} onClick={() => setAccessEmail(ws.access!.email)}>
                   Change address
@@ -344,7 +344,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
                   Give access
                 </button>
                 <a className={`${LINK} self-center`} href={`/admin/leads/${leadId}/as-candidate`} target="_blank" rel="noreferrer">
-                  Preview their page
+                  Preview their dashboard
                 </a>
               </div>
             </>
@@ -363,10 +363,10 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
             </div>
           )}
           <div className="mt-4 border-t border-outline-variant pt-3">
-            <p className="text-label-large text-on-surface-variant">Fit Report on their page</p>
+            <p className="text-label-large text-on-surface-variant">Fit Report on their dashboard</p>
             {ws.fitReport.shared ? (
               <p className="mt-1 text-body-medium text-on-surface">
-                Shared. They open it from their page, built live from the answers and your ratings.{" "}
+                Shared. They open it from their dashboard, built live from the answers and your ratings.{" "}
                 <button type="button" className={LINK} onClick={() => void shareReport({ leadId, shared: false })}>
                   Take it off
                 </button>
@@ -382,7 +382,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
                     className={LINK}
                     onClick={() => void shareReport({ leadId, shared: true }).catch((e) => setError(errText(e)))}
                   >
-                    Share it on their page
+                    Share it on their dashboard
                   </button>
                 )}
               </p>
@@ -695,7 +695,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                     </Label>
                   </div>
                   <div className="mt-3 grid gap-3 medium:grid-cols-2">
-                    <Label text="Name on their page, Thai (optional)">
+                    <Label text="Name on their dashboard, Thai (optional)">
                       <input
                         className={INPUT}
                         placeholder="e.g. คุยทำความรู้จัก 30 นาที"
@@ -1151,7 +1151,7 @@ function CvVersions({
         {renaming?.id === c._id ? (
           <span className="flex flex-wrap items-center gap-2">
             <input
-              aria-label="Name on their page"
+              aria-label="Name on their dashboard"
               className="field field-dense w-auto"
               value={renaming.label}
               onChange={(e) => setRenaming({ id: c._id, label: e.target.value })}
@@ -1175,7 +1175,7 @@ function CvVersions({
         <span className="flex flex-wrap items-center gap-2">
           {current && <Chip tone="strong">Current</Chip>}
           <Chip>{c.author === "candidate" ? "Theirs" : "Our revision"}</Chip>
-          {c.sharedAt ? <Chip>On their page</Chip> : null}
+          {c.sharedAt ? <Chip>On their dashboard</Chip> : null}
         </span>
       </div>
       <p className="mt-1 text-body-medium text-on-surface-variant">
@@ -1194,7 +1194,7 @@ function CvVersions({
           </a>
         )}
         <button type="button" className={LINK} onClick={() => void run(() => updateCv({ cvId: c._id, shared: !c.sharedAt }))}>
-          {c.sharedAt ? "Take off their page" : "Share on their page"}
+          {c.sharedAt ? "Take off their dashboard" : "Share on their dashboard"}
         </button>
         <button type="button" className={LINK} onClick={() => setRenaming({ id: c._id, label: c.label })}>
           Rename
@@ -1342,7 +1342,7 @@ function CvVersions({
                 <option value="">Base CV, holding everything</option>
               </select>
             </Label>
-            <Label text="Name on their page (blank uses the title)">
+            <Label text="Name on their dashboard (blank uses the title)">
               <input
                 className={INPUT}
                 placeholder={titleOf.get(draft.targetId) ?? "e.g. CV ฉบับเต็ม"}
@@ -1392,7 +1392,7 @@ function CvVersions({
           )}
           <label className="mt-3 flex items-center gap-2 text-body-medium text-on-surface">
             <input type="checkbox" checked={draft.share} onChange={(e) => setDraft({ ...draft, share: e.target.checked })} />
-            Show on their page
+            Show on their dashboard
           </label>
           <ErrorLine error={error} />
           <div className="mt-3 flex items-center gap-4">
@@ -1575,7 +1575,7 @@ function JobTracker({
         ))}
       </div>
       <p className="mt-2 text-body-medium text-on-surface-variant">
-        {matched} matched role{matched === 1 ? "" : "s"} sent. A row the candidate has moved on their page is theirs; you can add a note, not move it.
+        {matched} matched role{matched === 1 ? "" : "s"} sent. A row the candidate has moved on their dashboard is theirs; you can add a note, not move it.
       </p>
 
       {shown.length === 0 ? (
@@ -1958,7 +1958,7 @@ function Notes({
           </select>
           <label className="flex items-center gap-2 text-body-medium text-on-surface">
             <input type="checkbox" checked={shared} onChange={(e) => setShared(e.target.checked)} />
-            Show on their page (write it in Thai)
+            Show on their dashboard (write it in Thai)
           </label>
           <button type="button" className={BTN} disabled={!body.trim()} onClick={() => void save()}>
             Add note
@@ -1979,7 +1979,7 @@ function Notes({
                   {label(n) ? ` · ${label(n)}` : ""}
                 </span>
                 <span className="flex items-center gap-3">
-                  {n.shared ? <Chip tone="strong">On their page</Chip> : <Chip>Private</Chip>}
+                  {n.shared ? <Chip tone="strong">On their dashboard</Chip> : <Chip>Private</Chip>}
                   <button type="button" className={LINK} onClick={() => void update({ noteId: n._id, shared: !n.shared })}>
                     {n.shared ? "Make private" : "Share"}
                   </button>
