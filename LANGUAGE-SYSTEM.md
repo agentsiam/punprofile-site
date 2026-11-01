@@ -28132,17 +28132,17 @@ source: "src/lib/content/portal.ts"
 path: SIGNIN_BODY
 render: "Candidate page /me, sign-in, line under the heading"
 narrative_slot: utility
-en: "Enter your email and the 6-digit code we emailed you when we opened your page. The code does not change, so keep that email."
-th: "กรอกอีเมลและรหัส 6 หลักที่เราส่งให้ทางอีเมลตอนเปิดหน้านี้ให้คุณ รหัสนี้ใช้ได้ตลอด เก็บอีเมลนั้นไว้ได้เลยครับ"
-provenance: draft
+en: "Enter your email and the 6-digit code PunProfile emailed you when your page was activated. The code does not change, so keep that email."
+th: "กรอกอีเมลและรหัส 6 หลักที่ PunProfile ส่งให้ทางอีเมลเมื่อเปิดใช้งานหน้าของคุณ รหัสนี้ไม่เปลี่ยน โปรดเก็บอีเมลฉบับนั้นไว้"
+provenance: paul-written
 date: 01/11/2026
 term_bindings: []
-decision_note: "Rewritten by Claude 01/11/2026 for the permanent sign-in code (Paul's decision): the code is emailed once and does not change. Unread by Paul."
+decision_note: "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
 review:
-  structural_calque: pending
-  text_hash: 19b2cb24efa3f4c608351c2444e82ca1a157948986729ad3080ced9d90f84a81
+  structural_calque: pass
+  text_hash: af65c3bdad4646ab2ba008e538e3141331025bd8dade526d1c29f5fd9b7fa95c
   prompt_version: structural-calque-v1
-  basis: "Awaiting Paul's review in the language queue."
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 
@@ -28233,17 +28233,17 @@ source: "src/lib/content/portal.ts"
 path: SIGNIN_BAD_CODE
 render: "Candidate page /me, sign-in, wrong email or code"
 narrative_slot: utility
-en: "That email and code do not match. Check the code in the email we sent you."
-th: "อีเมลกับรหัสไม่ตรงกัน ลองเช็กรหัสในอีเมลที่เราส่งให้อีกครั้งครับ"
-provenance: draft
+en: "The email and code do not match. Check the code in the email from PunProfile."
+th: "อีเมลและรหัสไม่ตรงกัน โปรดตรวจสอบรหัสในอีเมลจาก PunProfile"
+provenance: paul-written
 date: 01/11/2026
 term_bindings: []
-decision_note: "Rewritten by Claude 01/11/2026 for the permanent sign-in code (Paul's decision): the code is emailed once and does not change. Unread by Paul."
+decision_note: "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
 review:
-  structural_calque: pending
-  text_hash: c47e195314c1fcbcc9694ee4684a38d3a9061be09539668836ae4b21115ce7e7
+  structural_calque: pass
+  text_hash: 7827972814f9c4e215aa647bfa0c353ec1f2bd951f7d467ef8ab8b59fa9b1617
   prompt_version: structural-calque-v1
-  basis: "Awaiting Paul's review in the language queue."
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 
@@ -33582,17 +33582,17 @@ source: "src/lib/content/portal.ts"
 path: SIGNIN_LOST
 render: "Candidate page /me, sign-in, line under the form"
 narrative_slot: utility
-en: "Lost your code? Tell your coach on LINE and we will send you a new one."
-th: "ลืมรหัสหรือหาอีเมลไม่เจอ บอกโค้ชทาง LINE แล้วเราจะส่งรหัสใหม่ให้ครับ"
-provenance: draft
+en: "Can't find the code? Contact PunProfile on LINE for a new one."
+th: "หากไม่พบรหัส โปรดติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่"
+provenance: paul-written
 date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 01/11/2026 for the permanent sign-in code. Unread by Paul."
+decision_note: "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
 review:
-  structural_calque: pending
-  text_hash: bc09dffaa19e4ac57afc4b9342772dc466c2730a2b6f6222eef018de61439c63
+  structural_calque: pass
+  text_hash: 226e386c362fdf9905ce04f4134174b49e16d1c116ffb2a2721a6608bf93e30a
   prompt_version: structural-calque-v1
-  basis: "Awaiting Paul's review in the language queue."
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -33604,15 +33604,15 @@ source: "src/lib/content/portal.ts"
 path: SIGNIN_LOCKED
 render: "Candidate page /me, sign-in, after too many wrong codes"
 narrative_slot: utility
-en: "Too many wrong tries. Wait an hour, or ask your coach for a new code."
-th: "ใส่รหัสผิดหลายครั้งเกินไป รอสักหนึ่งชั่วโมง หรือขอรหัสใหม่จากโค้ชได้ครับ"
-provenance: draft
+en: "Too many incorrect attempts. Try again in 1 hour, or contact PunProfile on LINE for a new code."
+th: "ใส่รหัสผิดเกินจำนวนครั้งที่กำหนด โปรดลองใหม่ในอีก 1 ชั่วโมง หรือติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่"
+provenance: paul-written
 date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 01/11/2026 for the permanent sign-in code. Unread by Paul."
+decision_note: "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
 review:
-  structural_calque: pending
-  text_hash: a9dd73d87d3d2f5df8c95c08a3de696a74e33b18c329e42df792928a08f9255d
+  structural_calque: pass
+  text_hash: af5221ed4039ca4b8ecd4566ce0edb43030f635f95e430565bff5a93e7ec1857
   prompt_version: structural-calque-v1
-  basis: "Awaiting Paul's review in the language queue."
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```

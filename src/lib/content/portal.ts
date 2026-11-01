@@ -35,17 +35,17 @@ export const PORTAL_INTRO_SHORT: Copy = {
 
 export const SIGNIN_HEADING: Copy = { en: "Sign in to your page", th: "เข้าสู่หน้าของคุณ" };
 export const SIGNIN_BODY: Copy = {
-  en: "Enter your email and the 6-digit code we emailed you when we opened your page. The code does not change, so keep that email.",
-  th: "กรอกอีเมลและรหัส 6 หลักที่เราส่งให้ทางอีเมลตอนเปิดหน้านี้ให้คุณ รหัสนี้ใช้ได้ตลอด เก็บอีเมลนั้นไว้ได้เลยครับ",
+  en: "Enter your email and the 6-digit code PunProfile emailed you when your page was activated. The code does not change, so keep that email.",
+  th: "กรอกอีเมลและรหัส 6 หลักที่ PunProfile ส่งให้ทางอีเมลเมื่อเปิดใช้งานหน้าของคุณ รหัสนี้ไม่เปลี่ยน โปรดเก็บอีเมลฉบับนั้นไว้",
 };
 export const SIGNIN_EMAIL: Copy = { en: "Email", th: "อีเมล" };
 export const SIGNIN_CODE: Copy = { en: "6-digit code", th: "รหัส 6 หลัก" };
-export const SIGNIN_LOST: Copy = { en: "Lost your code? Tell your coach on LINE and we will send you a new one.", th: "ลืมรหัสหรือหาอีเมลไม่เจอ บอกโค้ชทาง LINE แล้วเราจะส่งรหัสใหม่ให้ครับ" };
-export const SIGNIN_LOCKED: Copy = { en: "Too many wrong tries. Wait an hour, or ask your coach for a new code.", th: "ใส่รหัสผิดหลายครั้งเกินไป รอสักหนึ่งชั่วโมง หรือขอรหัสใหม่จากโค้ชได้ครับ" };
+export const SIGNIN_LOST: Copy = { en: "Can't find the code? Contact PunProfile on LINE for a new one.", th: "หากไม่พบรหัส โปรดติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่" };
+export const SIGNIN_LOCKED: Copy = { en: "Too many incorrect attempts. Try again in 1 hour, or contact PunProfile on LINE for a new code.", th: "ใส่รหัสผิดเกินจำนวนครั้งที่กำหนด โปรดลองใหม่ในอีก 1 ชั่วโมง หรือติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่" };
 export const SIGNIN_VERIFY: Copy = { en: "Sign in", th: "เข้าสู่ระบบ" };
 export const SIGNIN_BAD_CODE: Copy = {
-  en: "That email and code do not match. Check the code in the email we sent you.",
-  th: "อีเมลกับรหัสไม่ตรงกัน ลองเช็กรหัสในอีเมลที่เราส่งให้อีกครั้งครับ",
+  en: "The email and code do not match. Check the code in the email from PunProfile.",
+  th: "อีเมลและรหัสไม่ตรงกัน โปรดตรวจสอบรหัสในอีเมลจาก PunProfile",
 };
 export const NO_ACCESS_HEADING: Copy = {
   en: "This email does not have a page yet",

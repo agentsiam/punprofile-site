@@ -71,25 +71,25 @@ export const recordDelivery = internalMutation({
 });
 
 function emailText(firstName: string | null, email: string, code: string) {
-  const hi = firstName ? `สวัสดีครับ ${firstName}` : "สวัสดีครับ";
+  const hi = firstName ? `เรียน คุณ${firstName}` : "เรียน ผู้ใช้งาน PunProfile";
   return [
     hi,
     "",
-    "หน้าของคุณที่ PunProfile พร้อมแล้วครับ ในหน้านี้จะมีสิ่งที่เราทำด้วยกัน ไฟล์ CV และลิสต์งานที่คุณกำลังสมัคร",
+    "หน้าติดตามการสมัครงานของคุณพร้อมใช้งานแล้ว คุณสามารถดูแผนการทำงาน ไฟล์ CV และความคืบหน้าของแต่ละตำแหน่งที่สมัครได้ในหน้านี้",
     "",
-    "เข้าได้ที่ https://punprofile.app/me",
+    "เข้าใช้งานได้ที่ https://punprofile.app/me",
     `อีเมล: ${email}`,
     `รหัส: ${code}`,
     "",
-    "รหัสนี้ใช้ได้ตลอด เก็บอีเมลนี้ไว้ได้เลยครับ ถ้าลืมหรือทำหาย บอกโค้ชทาง LINE แล้วเราจะส่งรหัสใหม่ให้",
+    "รหัสนี้ไม่เปลี่ยน โปรดเก็บอีเมลฉบับนี้ไว้ หากไม่พบรหัส โปรดติดต่อ PunProfile ทาง LINE เพื่อรับรหัสใหม่",
     "",
     "---",
     "",
-    "Your PunProfile page is ready: https://punprofile.app/me",
+    "Your job application tracking page is ready. You can see your plan, your CV files and the progress of each role you applied for there: https://punprofile.app/me",
     `Email: ${email}`,
     `Code: ${code}`,
     "",
-    "The code does not expire, so keep this email. If you lose it, tell your coach on LINE and we will send a new one.",
+    "The code does not change, so keep this email. If you can't find the code, contact PunProfile on LINE for a new one.",
   ].join("\n");
 }
 

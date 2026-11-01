@@ -10607,9 +10607,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "SIGNIN_BODY",
     "render": "Candidate page /me, sign-in, line under the heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "01/11/2026",
-    "decisionNote": "Rewritten by Claude 01/11/2026 for the permanent sign-in code (Paul's decision): the code is emailed once and does not change. Unread by Paul."
+    "decisionNote": "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
   },
   "src/lib/content/portal.ts::SIGNIN_EMAIL": {
     "source": "src/lib/content/portal.ts",
@@ -10643,9 +10643,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "SIGNIN_BAD_CODE",
     "render": "Candidate page /me, sign-in, wrong email or code",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "01/11/2026",
-    "decisionNote": "Rewritten by Claude 01/11/2026 for the permanent sign-in code (Paul's decision): the code is emailed once and does not change. Unread by Paul."
+    "decisionNote": "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
   },
   "src/lib/content/portal.ts::NO_ACCESS_HEADING": {
     "source": "src/lib/content/portal.ts",
@@ -12497,17 +12497,17 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "SIGNIN_LOST",
     "render": "Candidate page /me, sign-in, line under the form",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "01/11/2026",
-    "decisionNote": "Drafted by Claude 01/11/2026 for the permanent sign-in code. Unread by Paul."
+    "decisionNote": "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
   },
   "src/lib/content/portal.ts::SIGNIN_LOCKED": {
     "source": "src/lib/content/portal.ts",
     "path": "SIGNIN_LOCKED",
     "render": "Candidate page /me, sign-in, after too many wrong codes",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "01/11/2026",
-    "decisionNote": "Drafted by Claude 01/11/2026 for the permanent sign-in code. Unread by Paul."
+    "decisionNote": "Paul's wording, 01/11/2026: written register, no ครับ, PunProfile named in the third person. English aligned to his Thai."
   }
 } as const;
