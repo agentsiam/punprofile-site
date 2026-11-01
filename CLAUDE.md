@@ -106,6 +106,7 @@ sibling repo by the exporter that makes them.
 | **R6** | Never infer the funnel's shape from where a form link is posted, from a copy document, or from a response sheet's row count. |
 | **R7** | RETIRED. Promoted to the core block as C45, read the owning document before reasoning. |
 | **R8** | RETIRED. Promoted to the core block as C46, say what is verified, inferred and opinion. |
+| **R9** | RETIRED. Folded into the core block as C28, prose dates DD/MM/YYYY and code, filename and data dates ISO. |
 | **R10** | This app's candidate-facing product copy may use em dashes, which is the exemption C29 asks each repo to state. Chat, LINE, email and social copy may not. |
 | **R11** | `src/lib/scoring.ts` is the only scoring implementation. Never add a second, including as a spreadsheet formula. |
 | **R12** | A score is tiered `ecra` where the survey collects that competency's own defined inputs, `proxy` where it evidences part of the picture, `coach` where it does not reach. Never score a `coach` item, and never name a proxy after the competency it gestures at. |
@@ -143,9 +144,9 @@ sibling repo by the exporter that makes them.
 | **R44** | Dual-write through a migration, and let reads degrade honestly rather than merely safely. |
 | **R45** | Every backfill is idempotent, so a run that dies half way is resumed by running it again. |
 | **R46** | RETIRED. Promoted to the core block as C47, anything reading across a boundary announces a missing source. |
-| **R49** | No candidate-facing string is written inline in a component. Copy lives in `src/lib/content/`, and `consent-copy.ts`, its Thai terms reach it from `termbase.yml` through `termbase.generated.ts`, and a string written anywhere else is linted by nothing and missing in the other language. |
 | **R47** | A product story record points at the document that owns a figure and never states the figure. |
 | **R48** | An article with artwork needs a sharing card at `public/blog/share/<slug>.jpg`, at 1200x630. |
+| **R49** | No candidate-facing string is written inline in a component. Copy lives in `src/lib/content/`, and `consent-copy.ts`, its Thai terms reach it from `termbase.yml` through `termbase.generated.ts`, and a string written anywhere else is linted by nothing and missing in the other language. |
 
 ## 6. Tooling and commands
 
@@ -505,8 +506,8 @@ inherited and nothing in this repo cites one: a grep for R-numbers across src, c
 the markdown returns nothing. R1 to R49 are therefore all new and stable from here.
 
 Gaps. R7, R8 and R46 were promoted into the core block as C45, C46 and C47, and are marked RETIRED
-here. R9, a wider date rule, was deleted before the first commit, when C28 was widened to make prose
-dates DD/MM/YYYY everywhere and code, filename and data dates ISO. None of the four is reused.
+here. R9, a wider date rule, was folded into C28 when C28 was widened to make prose dates DD/MM/YYYY
+everywhere and code, filename and data dates ISO, and is marked RETIRED too. None of the four is reused.
 
 R39, R41, R43, R44 and R45 are core candidates held here under the rule of two: the first other repo
 to re-derive one earns it a scoped shipping section in the core block, and until a second repo needs
