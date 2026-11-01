@@ -21,55 +21,61 @@ export default function DeliveryQueue() {
   const rows = useQuery(api.workspace.queue, {});
   if (rows === undefined) return null;
 
+  // One tint per client card, rotating, so neighbours read apart at a glance.
+  const tints = ["bg-cyan-pale text-on-cyan-pale", "bg-orange-pale text-on-orange-pale", "bg-yellow-pale text-on-yellow-pale", "bg-primary-pale text-on-primary-pale"];
   return (
-    <section className="rounded-large border border-outline-variant p-5">
-      <h2 className="text-title-large">Delivery</h2>
+    <section>
+      <h2 className="text-title-large">Clients</h2>
       {rows.length === 0 ? (
         <p className="mt-2 text-body-medium text-on-surface-variant">Nobody with an active purchase.</p>
       ) : (
-        <ul className="mt-3 divide-y divide-outline-variant">
-          {rows.map((r) => {
+        <ul className="mt-3 grid gap-4 medium:grid-cols-2 large:grid-cols-3">
+          {rows.map((r, i) => {
             const next = r.open[0];
             const overdue = r.open.filter((d) => d.overdue).length;
             return (
-              <li key={r.leadId} className="py-3">
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <Link href={`/admin/leads/${r.leadId}`} className="text-body-large text-ink-deep underline">
-                    {r.name}
-                  </Link>
-                  <span className="text-body-medium text-on-surface-variant">
-                    {r.tokens} tokens left · {r.jobsLive} jobs open
-                    {r.interviewing ? `, ${r.interviewing} at interview or offer` : ""}
-                  </span>
-                </div>
-                {r.heldCode && (
-                  <p className="mt-1 rounded-medium bg-primary-container px-3 py-1.5 text-body-medium text-on-primary-container">
-                    Sign-in code to send on LINE: <strong className="tracking-widest">{r.heldCode.code}</strong>, until{" "}
-                    {new Date(r.heldCode.expiresAt).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}
+              <li key={r.leadId}>
+                <Link href={`/admin/leads/${r.leadId}`} className={`block h-full rounded-extra-large px-5 py-4 transition-transform hover:-translate-y-0.5 ${tints[i % tints.length]}`}>
+                  <div className="flex items-baseline justify-between gap-2">
+                    <span className="text-title-large">{r.name}</span>
+                    {overdue > 0 && <span className="rounded-full bg-error px-2.5 py-0.5 text-label-medium text-on-error">{overdue} overdue</span>}
+                  </div>
+                  <p className="mt-2 text-display-small leading-none">
+                    {r.tokens} <span className="text-body-large">tokens left</span>
                   </p>
-                )}
-                {r.tokenRequestedAt && (
-                  <p className="mt-1 text-body-medium text-ink-deep">
-                    Asked for more tokens on {day(r.tokenRequestedAt)}: send the transfer details on LINE.
+                  <p className="mt-2 text-body-medium">
+                    {r.jobsLive} jobs open{r.interviewing ? ` · ${r.interviewing} at interview or offer` : ""}
                   </p>
-                )}
-                <p className="mt-1 text-body-medium text-on-surface-variant">
-                  {next ? (
-                    <>
-                      Next: {next.title ?? KIND_LABEL[next.kind] ?? next.kind}
-                      {next.dueAt ? `, due ${day(next.dueAt)}` : ", no date set"}
-                      {overdue ? <span className="text-error"> · {overdue} overdue</span> : null}
-                      {r.open.length > 1 ? ` · ${r.open.length - 1} more open` : ""}
-                    </>
-                  ) : (
-                    "Everything sold is delivered."
+                  {r.heldCode && (
+                    <p className="mt-2 rounded-large bg-canvas px-3 py-1.5 text-body-medium text-ink">
+                      Code to send on LINE: <strong className="tracking-widest">{r.heldCode.code}</strong>, until{" "}
+                      {new Date(r.heldCode.expiresAt).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}
+                    </p>
                   )}
-                  {!r.hasAccess
-                    ? " · no page access yet"
-                    : r.lastSignInAt
-                      ? ` · last on their dashboard ${day(r.lastSignInAt)}`
-                      : " · has not signed in yet"}
-                </p>
+                  {r.tokenRequestedAt && (
+                    <p className="mt-2 rounded-large bg-canvas px-3 py-1.5 text-body-medium text-ink">
+                      Asked for more tokens on {day(r.tokenRequestedAt)}: send the transfer details on LINE.
+                    </p>
+                  )}
+                  <p className="mt-3 border-t border-current/20 pt-2 text-body-medium">
+                    {next ? (
+                      <>
+                        Next: {next.title ?? KIND_LABEL[next.kind] ?? next.kind}
+                        {next.dueAt ? `, due ${day(next.dueAt)}` : ", no date set"}
+                        {r.open.length > 1 ? ` · ${r.open.length - 1} more open` : ""}
+                      </>
+                    ) : (
+                      "Everything sold is delivered."
+                    )}
+                  </p>
+                  <p className="text-body-small opacity-80">
+                    {!r.hasAccess
+                      ? "No dashboard access yet"
+                      : r.lastSignInAt
+                        ? `Last on their dashboard ${day(r.lastSignInAt)}`
+                        : "Has not signed in yet"}
+                  </p>
+                </Link>
               </li>
             );
           })}

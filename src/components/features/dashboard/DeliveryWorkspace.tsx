@@ -237,7 +237,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
   };
 
   return (
-    <Panel title="Wallet and the candidate's page">
+    <Panel title="Wallet and their dashboard">
       <div className="grid gap-5 medium:grid-cols-2">
         <div>
           <p className="text-label-large text-on-surface-variant">Tokens left</p>
@@ -274,7 +274,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
         </div>
 
         <div>
-          <p className="text-label-large text-on-surface-variant">Their own page</p>
+          <p className="text-label-large text-on-surface-variant">Their dashboard</p>
           {ws.access ? (
             <>
               <p className="mt-1 text-body-medium text-on-surface">
