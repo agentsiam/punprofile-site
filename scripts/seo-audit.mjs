@@ -180,7 +180,7 @@ for (const m of [titles, descs]) for (const [k, u] of [...m]) {
   m.delete(k);
   for (const l of ["th", "en"]) { const x = u.filter((y) => tree(y) === l); if (x.length) m.set(`${l}\u0000${k}`, x); }
 }
-for (const [t, u] of titles) if (u.length > 1) results.filter((r) => u.includes(r.url)).forEach((r) => r.fails.push(`duplicate title with ${u.filter((x) => x !== r.url).join(", ")}`));
+for (const [, u] of titles) if (u.length > 1) results.filter((r) => u.includes(r.url)).forEach((r) => r.fails.push(`duplicate title with ${u.filter((x) => x !== r.url).join(", ")}`));
 for (const [t, u] of descs) if (!t.endsWith("\u0000null") && u.length > 1) results.filter((r) => u.includes(r.url)).forEach((r) => r.fails.push(`duplicate description with ${u.filter((x) => x !== r.url).join(", ")}`));
 
 // Step 4: llms.txt exists and every link in it resolves
