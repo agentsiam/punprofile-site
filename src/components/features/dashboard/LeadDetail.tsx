@@ -162,6 +162,7 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
   const [deleteNote, setDeleteNote] = useState("");
   const [deleting, setDeleting] = useState(false);
   const [deleteError, setDeleteError] = useState<string | null>(null);
+  const [tab, setTab] = useState<LeadTab | null>(null);
 
   if (lead === undefined) {
     return <p className="text-body-large text-on-surface-variant">Loading...</p>;
@@ -197,53 +198,79 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
       ),
   });
 
+  const isClient = lifecycle === "client" || lifecycle === "placed" || (engagements ?? []).some((e) => e.status !== "proposed");
+  const current: LeadTab = tab ?? (isClient ? "delivery" : "assessment");
+  const lineOk = lead.consent.service.line.status === "opted_in";
+  const emailOk = lead.consent.service.email.status === "opted_in";
+
   return (
-    <div className="w-full space-y-8">
-      <div>
-        <Link href="/admin" className="text-body-medium text-ink-deep underline">
+    <div className="w-full space-y-6">
+      {/* Header band, 01/11/2026: the candidate dashboard's dark band, so the
+          two surfaces read as one product. Name, stage and the three things a
+          coach reaches for most, always in view. */}
+      <div className="rounded-extra-large bg-canvas-dark px-6 py-6 text-on-canvas-dark medium:px-8">
+        <Link href="/admin" className="text-body-medium text-primary-active underline">
           Back to all leads
         </Link>
-        <h1 className="mt-2 text-headline-small">{lead.fullName ?? "Anonymous lead"}</h1>
-        {/* The derived lifecycle state leads, because it is the question the
-            coach opens this page with. `status` stays beside it rather than
-            being replaced: it is a different fact, how far through the
-            assessment they got, and the two were being read as one. */}
-        <p className="mt-2 flex flex-wrap items-center gap-2">
+        <div className="mt-2 flex flex-wrap items-center gap-3">
+          <h1 className="text-headline-small text-primary-active">{lead.fullName ?? "Anonymous lead"}</h1>
           <span
-            className={`rounded-small border px-2 py-0.5 text-body-medium ${
+            className={`rounded-full px-3 py-0.5 text-label-large ${
               lifecycle === "withdrawn"
-                ? "border-error text-error"
+                ? "bg-error text-on-error"
                 : lifecycle === "placed" || lifecycle === "client"
-                  ? "border-primary text-ink-deep"
-                  : "border-outline-variant text-on-surface-variant"
+                  ? "bg-primary text-on-primary"
+                  : "bg-cyan-pale text-on-cyan-pale"
             }`}
           >
             {lifecycle ? LIFECYCLE_LABELS[lifecycle] : "Traffic, no contact"}
           </span>
-          <span className="text-body-medium text-on-surface-variant">
-            assessment {lead.status} · started {stamp(lead.createdAt)} · last active{" "}
-            {stamp(lead.lastActivityAt)}
-          </span>
-          {/* Where they came from. Deliberately explicit when unknown: most
-              existing rows have no attribution because the client hardcoded
-              "direct" and never read the URL, and showing a confident origin
-              for those would be inventing one. */}
-          <span className="text-body-medium text-on-surface-variant">
-            {lead.attribution
-              ? `via ${
-                  // A blog newsletter sign-up is stored as channel "other" with
-                  // raw "blog_signup" (convex/subscribe.ts), so name it here
-                  // rather than showing the bare bucket.
-                  lead.attribution.raw === "blog_signup"
-                    ? "blog newsletter sign-up"
-                    : lead.attribution.channel.replace(/_/g, " ")
-                }${
-                  lead.attribution.campaign ? ` · post ${lead.attribution.campaign}` : ""
-                }`
-              : "origin unknown"}
-          </span>
+          {lead.crmStatus && (
+            <span className="rounded-full bg-orange-pale px-3 py-0.5 text-label-large text-on-orange-pale">
+              {CRM_STATUS_LABELS[lead.crmStatus]}
+            </span>
+          )}
+        </div>
+        <p className="mt-1 text-body-medium">
+          assessment {lead.status} · started {stamp(lead.createdAt)} · last active {stamp(lead.lastActivityAt)} ·{" "}
+          {lead.attribution
+            ? `via ${
+                lead.attribution.raw === "blog_signup" ? "blog newsletter sign-up" : lead.attribution.channel.replace(/_/g, " ")
+              }${lead.attribution.campaign ? ` · post ${lead.attribution.campaign}` : ""}`
+            : "origin unknown"}
         </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {lead.email && emailOk && (
+            <a href={`mailto:${lead.email}`} className="rounded-full bg-primary-active px-4 py-1.5 text-label-large text-ink-deep">
+              Email {lead.email}
+            </a>
+          )}
+          {lead.lineId && lineOk && (
+            <button
+              type="button"
+              onClick={() => void navigator.clipboard?.writeText(lead.lineId!)}
+              className="rounded-full bg-primary-active px-4 py-1.5 text-label-large text-ink-deep"
+              title="Copy"
+            >
+              Copy LINE ID {lead.lineId}
+            </button>
+          )}
+          {isClient && (
+            <a
+              href={`/admin/leads/${leadId}/as-candidate`}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-primary-active px-4 py-1.5 text-label-large text-primary-active"
+            >
+              See their dashboard
+            </a>
+          )}
+        </div>
+      </div>
 
+      {/* Reports first: they are prepared before a call and sent after it. */}
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="mr-1 text-label-large text-on-surface-variant">Reports</span>
         {/* Two documents, one scored profile. The candidate one is first and is
             the filled button, because it is the one with a recipient: it gets
             sent after the call. The coach copy is preparation for that call. */}
@@ -258,7 +285,7 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
               setBuilding(null);
             }
           }}
-          className="mt-4 h-12 btn-filled px-7 text-label-large"
+          className="h-10 btn-filled px-5 text-label-large"
         >
           {building === "limited" ? "Building..." : "Candidate PDF (English)"}
         </button>
@@ -273,7 +300,7 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
               setBuilding(null);
             }
           }}
-          className="ml-3 mt-4 btn-outlined h-12 px-5 text-label-large hover:bg-surface-container"
+          className="btn-outlined h-10 px-4 text-label-large hover:bg-surface-container"
         >
           {building === "full" ? "Building..." : "Full report PDF (coach)"}
         </button>
@@ -293,72 +320,130 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
                 setBuilding(null);
               }
             }}
-            className="ml-3 mt-4 btn-outlined h-12 px-5 text-label-large hover:bg-surface-container"
+            className="btn-outlined h-10 px-4 text-label-large hover:bg-surface-container"
           >
             {building === `fit-${loc}` ? "Building..." : `Fit Report PDF (${loc === "th" ? "Thai" : "English"})`}
           </button>
         ))}
 
-        {/* Subject-access request. Two formats: the HTML is what you send the
-            person, the JSON is the portable copy if they ask for one.
-
-            Built from `lead`, not from the corrected record: an access request
-            asks what the person told us and what we hold, and their own answers
-            are the first half of that. Corrections are ours, and they are
-            disclosed in the conversations section rather than silently swapped
-            in over the top of what they said. */}
-        {/* Delivery is included since 30/10/2026; the CV files themselves are
-            downloaded from the CV versions panel and sent with this copy. */}
-        <button
-          type="button"
-          onClick={async () => {
-            const { renderSubjectExportHtml } = await import("@/lib/subjectExport");
-            // Fetched at click time: delivery spans nine tables, and the
-            // screen has no other use for this shape.
-            const delivery = await convex.query(api.workspace.exportForLead, { leadId });
-            download(
-              renderSubjectExportHtml(lead, calls ?? [], lead.consentEvents ?? [], delivery),
-              `punprofile-data-${slug(lead.fullName ?? "record")}.html`,
-              "text/html;charset=utf-8",
-            );
-          }}
-          className="ml-3 mt-4 btn-outlined h-12 px-5 text-label-large hover:bg-surface-container"
-        >
-          Export their data (readable)
-        </button>
-        <button
-          type="button"
-          onClick={async () => {
-            const { buildSubjectExport } = await import("@/lib/subjectExport");
-            const delivery = await convex.query(api.workspace.exportForLead, { leadId });
-            download(
-              JSON.stringify(
-                buildSubjectExport(lead, calls ?? [], lead.consentEvents ?? [], delivery),
-                null,
-                2,
-              ),
-              `punprofile-data-${slug(lead.fullName ?? "record")}.json`,
-              "application/json",
-            );
-          }}
-          className="ml-3 mt-4 btn-outlined h-12 px-5 text-label-large hover:bg-surface-container"
-        >
-          Export (JSON)
-        </button>
+      </div>
         {Object.keys(lead.responses).length === 0 && (
           <p className="mt-2 text-body-medium text-on-surface-variant">
             No answers yet, so there is nothing to report on.
           </p>
         )}
-      </div>
 
-      {/* Two columns: what we know on the left, what we did about it on the
-          right. The coach opens this page for one of those two reasons and
-          almost never both, and a single scrolling stack made every visit pass
-          through the other one. Stacks on narrow screens, where there is no
-          second column to be had. */}
-      <div className="grid gap-x-10 gap-y-8 large:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] large:items-start">
-        <div className="space-y-8">
+      {/* Tabs, 01/11/2026. The page was one 8,600px scroll; each visit wants one
+          of these, so each is a tab. Paying clients open on Delivery, everyone
+          else on the assessment. Sticky, so switching never needs a scroll up. */}
+      <nav className="sticky top-0 z-10 -mx-2 flex gap-2 overflow-x-auto bg-surface px-2 py-3" role="tablist">
+        {LEAD_TABS.map(([id, label]) => (
+          <button
+            key={id}
+            type="button"
+            role="tab"
+            aria-selected={current === id}
+            onClick={() => setTab(id)}
+            className={`shrink-0 rounded-full px-4 py-2 text-label-large transition-colors ${
+              current === id ? "bg-secondary text-on-secondary" : "bg-canvas-soft text-ink hover:bg-primary-pale"
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
+
+      {current === "delivery" && (
+        <div>
+      <Section title="Delivery">
+        <DeliveryWorkspace leadId={leadId} />
+      </Section>
+
+        </div>
+      )}
+
+      {current === "calls" && (
+        <div className="grid gap-x-10 gap-y-8 large:grid-cols-2 large:items-start">
+          <div className="space-y-8">
+          {/* Above the call log on purpose. The rating and the note are what a
+              coach reads first when reopening a lead, and the LinkedIn is the
+              thing they go looking for before a call rather than after it. */}
+          <Section title="Coach">
+            <CoachPanel
+              leadId={leadId}
+              linkedinUrl={lead.linkedinUrl}
+              notes={lead.notes}
+              notesAt={lead.notesAt}
+              notesBy={lead.notesBy}
+              coachRating={lead.coachRating}
+            />
+          </Section>
+
+          <Section title="Fit Report interview">
+            <RatingsPanel leadId={leadId} />
+          </Section>
+
+          </div>
+          <div className="space-y-8">
+          <CallLog leadId={leadId} />
+
+          {/* Right column is "what we did about it", so the commercial record
+              belongs under the call log: invitation, call, sale, work, outcome,
+              in the order they happen. */}
+          <Section title="Applications and outcome">
+            <OutcomePanel leadId={leadId} />
+          </Section>
+          </div>
+        </div>
+      )}
+
+      {current === "assessment" && (
+        <div className="grid gap-x-10 gap-y-8 large:grid-cols-2 large:items-start">
+          <div className="space-y-8">
+          <LeadBriefing
+            responses={corrected.effective}
+            fullName={lead.fullName}
+            coachIcp={coachIcp}
+            correctedCount={corrected.byKey.size}
+          />
+
+          </div>
+          <div className="space-y-8">
+          {/* Your own triage from the survey sheet, imported 14/08/2026 alongside
+              the answers. Rendered here rather than left in the data, because a
+              column carried across and never shown is a column that was not really
+              imported. Absent on app-native leads, which never had it. */}
+          {(typeof lead.responses._entryPoint === "string" ||
+            typeof lead.responses._manualCheck === "string") && (
+            <Section title="From the survey sheet">
+              {/* `showConsent={false}`: these are the coach's own triage columns,
+                  not channels. Without it `Row` printed "No consent recorded, do
+                  not contact" under the suggested entry point, which is not a
+                  true statement about anything. */}
+              <Row
+                label="Suggested entry point"
+                value={String(lead.responses._entryPoint ?? "")}
+                showConsent={false}
+              />
+              {typeof lead.responses._manualCheck === "string" &&
+                lead.responses._manualCheck.trim() !== "" && (
+                  <Row
+                    label="Flagged for manual check"
+                    value={String(lead.responses._manualCheck)}
+                    showConsent={false}
+                  />
+                )}
+            </Section>
+          )}
+
+          <AnswerSheet leadId={leadId} responses={lead.responses} corrected={corrected} />
+          </div>
+        </div>
+      )}
+
+      {current === "contact" && (
+        <div className="grid gap-x-10 gap-y-8 large:grid-cols-2 large:items-start">
+          <div className="space-y-8">
           <Section title="Contact">
             {lead.consentSource === "survey_import" && (
               <p className="mb-3 rounded-small border border-warning bg-warning-container px-4 py-3 text-body-medium text-on-warning-container">
@@ -395,6 +480,8 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
             />
           </Section>
 
+          </div>
+          <div className="space-y-8">
           <Section title="Consent">
             <ConsentPanel
               leadId={leadId}
@@ -403,85 +490,67 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
             />
           </Section>
 
-          {/* Your own triage from the survey sheet, imported 14/08/2026 alongside
-              the answers. Rendered here rather than left in the data, because a
-              column carried across and never shown is a column that was not really
-              imported. Absent on app-native leads, which never had it. */}
-          {(typeof lead.responses._entryPoint === "string" ||
-            typeof lead.responses._manualCheck === "string") && (
-            <Section title="From the survey sheet">
-              {/* `showConsent={false}`: these are the coach's own triage columns,
-                  not channels. Without it `Row` printed "No consent recorded, do
-                  not contact" under the suggested entry point, which is not a
-                  true statement about anything. */}
-              <Row
-                label="Suggested entry point"
-                value={String(lead.responses._entryPoint ?? "")}
-                showConsent={false}
-              />
-              {typeof lead.responses._manualCheck === "string" &&
-                lead.responses._manualCheck.trim() !== "" && (
-                  <Row
-                    label="Flagged for manual check"
-                    value={String(lead.responses._manualCheck)}
-                    showConsent={false}
-                  />
-                )}
-            </Section>
-          )}
-
-          <AnswerSheet leadId={leadId} responses={lead.responses} corrected={corrected} />
+          </div>
         </div>
+      )}
 
+      {current === "records" && (
         <div className="space-y-8">
-          <LeadBriefing
-            responses={corrected.effective}
-            fullName={lead.fullName}
-            coachIcp={coachIcp}
-            correctedCount={corrected.byKey.size}
-          />
+          <section>
+            <h2 className="text-title-large">Their data</h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+        {/* Subject-access request. Two formats: the HTML is what you send the
+            person, the JSON is the portable copy if they ask for one.
 
-          {/* Above the call log on purpose. The rating and the note are what a
-              coach reads first when reopening a lead, and the LinkedIn is the
-              thing they go looking for before a call rather than after it. */}
-          <Section title="Coach">
-            <CoachPanel
-              leadId={leadId}
-              linkedinUrl={lead.linkedinUrl}
-              notes={lead.notes}
-              notesAt={lead.notesAt}
-              notesBy={lead.notesBy}
-              coachRating={lead.coachRating}
-            />
-          </Section>
-
-          <CallLog leadId={leadId} />
-
-          <Section title="Fit Report interview">
-            <RatingsPanel leadId={leadId} />
-          </Section>
-
-          {/* Right column is "what we did about it", so the commercial record
-              belongs under the call log: invitation, call, sale, work, outcome,
-              in the order they happen. */}
-          <Section title="Applications and outcome">
-            <OutcomePanel leadId={leadId} />
-          </Section>
-        </div>
-      </div>
-
-      {/* Full width, below both columns: the delivery workspace is a working
-          surface with a table in it, and half of a 64rem page is too narrow
-          for a job tracker. Everything after the sale lives here. */}
-      <Section title="Delivery">
-        <DeliveryWorkspace leadId={leadId} />
-      </Section>
-
-      {/* The judgement, kept well away from Delete. One is about whether to
-          work with someone, the other erases them, and putting them side by
-          side would invite the wrong click. */}
+            Built from `lead`, not from the corrected record: an access request
+            asks what the person told us and what we hold, and their own answers
+            are the first half of that. Corrections are ours, and they are
+            disclosed in the conversations section rather than silently swapped
+            in over the top of what they said. */}
+        {/* Delivery is included since 30/10/2026; the CV files themselves are
+            downloaded from the CV versions panel and sent with this copy. */}
+        <button
+          type="button"
+          onClick={async () => {
+            const { renderSubjectExportHtml } = await import("@/lib/subjectExport");
+            // Fetched at click time: delivery spans nine tables, and the
+            // screen has no other use for this shape.
+            const delivery = await convex.query(api.workspace.exportForLead, { leadId });
+            download(
+              renderSubjectExportHtml(lead, calls ?? [], lead.consentEvents ?? [], delivery),
+              `punprofile-data-${slug(lead.fullName ?? "record")}.html`,
+              "text/html;charset=utf-8",
+            );
+          }}
+          className="btn-outlined h-10 px-4 text-label-large hover:bg-surface-container"
+        >
+          Export their data (readable)
+        </button>
+        <button
+          type="button"
+          onClick={async () => {
+            const { buildSubjectExport } = await import("@/lib/subjectExport");
+            const delivery = await convex.query(api.workspace.exportForLead, { leadId });
+            download(
+              JSON.stringify(
+                buildSubjectExport(lead, calls ?? [], lead.consentEvents ?? [], delivery),
+                null,
+                2,
+              ),
+              `punprofile-data-${slug(lead.fullName ?? "record")}.json`,
+              "application/json",
+            );
+          }}
+          className="btn-outlined h-10 px-4 text-label-large hover:bg-surface-container"
+        >
+          Export (JSON)
+        </button>
+            </div>
+          </section>
       <Section title="Where this lead is">
-        <p className="text-body-large text-on-surface-variant">
+        <details className="text-body-medium text-on-surface-variant">
+          <summary className="cursor-pointer text-ink-deep underline">What the stages mean</summary>
+          <p className="mt-2">
           Blank means <strong>New</strong>: reachable, and nobody has worked
           them yet. It does not mean qualified. Nurturing and Not now are both
           live and differ in whether you are working them this month.
@@ -489,7 +558,8 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
           reason, because it will outlive whoever made it. Closed lost is
           theirs, not yours. Quoted and Closed won are not here: they are read
           off the engagement row, because that row carries the figure.
-        </p>
+          </p>
+        </details>
         {lead.crmStatus ? (
           <div className="mt-3 rounded-small border border-outline-variant bg-primary-container px-4 py-3">
             <p className="text-body-large text-on-surface">
@@ -549,19 +619,24 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
         )}
       </Section>
 
-      <Section title="Delete on request">
-        <p className="text-body-large text-on-surface-variant">
+      <section className="rounded-large border-2 border-error p-5">
+        <h2 className="text-title-large text-error">Delete on request</h2>
+        <div className="mt-3">
+        <details className="text-body-medium text-on-surface-variant">
+          <summary className="cursor-pointer text-ink-deep underline">What this erases</summary>
+        <p className="mt-2">
           Erases this person entirely: the lead, their answers, every call
           logged against them, every correction, and any saved links. This
           cannot be undone and there is no backup to restore from. A record
           that <em>a</em> deletion happened is kept, holding nothing about who
           it was.
         </p>
-        <p className="mt-2 text-body-large text-on-surface-variant">
+        <p className="mt-2">
           <strong>Every session this email has</strong>, not only the one open
           here. One person can hold several rows, because each visit starts a
           new one, and deleting a single row used to leave the rest behind.
         </p>
+        </details>
         <label className="mt-4 block text-label-large text-on-surface-variant">
           Your reference for this request
           <input
@@ -601,10 +676,22 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
         >
           {deleting ? "Deleting..." : "Delete this person permanently"}
         </button>
-      </Section>
+      </div>
+      </section>
+        </div>
+      )}
     </div>
   );
 }
+
+type LeadTab = "delivery" | "calls" | "assessment" | "contact" | "records";
+const LEAD_TABS: [LeadTab, string][] = [
+  ["delivery", "Delivery"],
+  ["calls", "Calls and notes"],
+  ["assessment", "Assessment"],
+  ["contact", "Contact and consent"],
+  ["records", "Records"],
+];
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (

@@ -30,6 +30,7 @@
  */
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
@@ -83,6 +84,7 @@ type SortKey = (typeof SORTS)[number][0];
 const SORT_LABEL = Object.fromEntries(SORTS) as Record<SortKey, string>;
 
 export default function LeadList() {
+  const router = useRouter();
   const [includeAbandoned, setIncludeAbandoned] = useState(false);
   const [includeDisqualified, setIncludeDisqualified] = useState(false);
   /**
@@ -256,7 +258,13 @@ export default function LeadList() {
               {rows.map((l) => (
                 <tr
                   key={l._id}
-                  className={`border-b border-outline-variant align-top transition-colors hover:bg-secondary-container ${
+                  // The whole row opens the lead, 01/11/2026, not only the name.
+                  // Clicks on a control inside the row stay with that control.
+                  onClick={(e) => {
+                    if ((e.target as HTMLElement).closest("a,button,select,input,label,textarea")) return;
+                    router.push(`/admin/leads/${l._id}`);
+                  }}
+                  className={`cursor-pointer border-b border-outline-variant align-top transition-colors hover:bg-primary-pale ${
                     l.crmStatus === "disqualified" ? "opacity-55" : ""
                   }`}
                 >

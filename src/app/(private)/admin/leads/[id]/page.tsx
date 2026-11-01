@@ -35,7 +35,7 @@ export default function LeadPage({ params }: { params: Promise<{ id: string }> }
     // Wider than the rest of the site on purpose. Every other page is a reading
     // column; this one is two working columns side by side, and 48rem split in
     // half leaves both too narrow to scan.
-    <div className="mx-auto w-full max-w-5xl px-6 py-16 leading-normal">
+    <div className="mx-auto w-full max-w-7xl px-6 py-10 leading-normal">
       <AdminGate>
         <ResolvedLead id={id} />
       </AdminGate>

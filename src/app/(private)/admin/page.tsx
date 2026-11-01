@@ -29,34 +29,28 @@ export default function AdminPage() {
     <div className="flex flex-1 flex-col items-center gap-4 px-4 py-10 text-center leading-normal sm:px-6">
       <div className="w-full max-w-[108rem] text-left">
         <AdminGate>
-          <div className="flex items-baseline justify-between gap-4">
-            <h1 className="text-headline-large">Coach dashboard</h1>
+          {/* Dark title band and full width, 01/11/2026: the same frame as the
+              candidate dashboard, and the three working blocks side by side
+              instead of a narrow column with the right half empty. */}
+          <div className="flex items-center justify-between gap-4 rounded-extra-large bg-canvas-dark px-6 py-6 medium:px-8">
+            <h1 className="text-headline-large text-primary-active">Coach dashboard</h1>
             {/* Nothing to sign out of when the session was never required. */}
             {!DEV_ADMIN_BYPASS && (
               <button
                 onClick={() => void signOut()}
-                className="btn-outlined shrink-0 px-5 py-2.5 text-label-large hover:bg-surface-container"
+                className="shrink-0 rounded-full border border-primary-active px-5 py-2 text-label-large text-primary-active"
               >
                 Sign out
               </button>
             )}
           </div>
-          {/* Above the list on purpose. The list answers "who is worth a call",
-              which is a question the coach chooses to ask; these four buckets
-              are things already promised to someone and not yet done, and the
-              reminder among them expires whether or not anyone scrolls. */}
           {/* First: these people have paid. What is owed to them outranks
               everything that is still a prospect. */}
-          <div className="mt-8 max-w-3xl">
+          <div className="mt-6">
             <DeliveryQueue />
           </div>
-          <div className="mt-4 max-w-3xl">
+          <div className="mt-6 grid gap-6 large:grid-cols-2 large:items-start">
             <ConsultationQueues />
-          </div>
-          {/* Below the queues and above the list: it is a thing to read
-              occasionally, not a thing to act on today, and it belongs next to
-              the rows it is computed from rather than on a page of its own. */}
-          <div className="mt-4 max-w-3xl">
             <BookingCutReadout />
           </div>
           <div className="mt-8">
