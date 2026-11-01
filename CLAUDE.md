@@ -1,4 +1,4 @@
-# CLAUDE.md — punprofile-profile-app
+# CLAUDE.md: punprofile-profile-app
 
 The PunProfile App: Next.js and Convex, implementation only. Every specification lives in the
 sibling repo `../punprofile-career-coaching/`. Nothing here defines what the app should be.
