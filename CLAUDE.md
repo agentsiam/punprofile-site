@@ -61,7 +61,7 @@ duplicate one into the other.
 | Product story slots and their destinations | `Narrative_System.md` |
 | Which candidate data exists and where it sits | `data-inventory.md` |
 | The campaign link parameters every posted URL carries | `00_Quick_Facts.md` |
-| The four similarly named instruments, in full | the sibling repo's root `CLAUDE.md` |
+| The four similarly named instruments, in full | `08_Coaching_Business.md` |
 | Roadmap and session handoff | `punprofile-work/work-projects/eu-fit-check/` |
 
 DERIVED, stale until regenerated and flagged as stale rather than built on: the two token files and
@@ -102,7 +102,7 @@ sibling repo by the exporter that makes them.
 | **R2** | Cite a sibling document by bare filename in backticks, never by path. |
 | **R3** | The product is the PunProfile App and EU Fit Check is its assessment feature. Older spec text using "EU Fit Check" for the whole product means the app. |
 | **R4** | Never hard-code a product name into user-facing copy beyond the brand "PunProfile". |
-| **R5** | Europe Readiness Check is the 6-question quiz, Lead Discovery Survey the 21-question form, ECRA the 34-competency diagnostic, EU Fit Check this app. The quiz feeds the survey. |
+| **R5** | Europe Readiness Check is the quiz, Lead Discovery Survey the long form, ECRA the in-engagement diagnostic, EU Fit Check this app's assessment feature. The quiz feeds the survey. `08_Coaching_Business.md` owns all four, including their sizes. |
 | **R6** | Never infer the funnel's shape from where a form link is posted, from a copy document, or from a response sheet's row count. |
 | **R7** | RETIRED. Promoted to the core block as C45, read the owning document before reasoning. |
 | **R8** | RETIRED. Promoted to the core block as C46, say what is verified, inferred and opinion. |
