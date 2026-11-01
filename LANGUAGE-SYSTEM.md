@@ -27994,21 +27994,17 @@ source: src/lib/content/portal.ts
 path: PORTAL_GREETING
 render: Candidate page /me, PORTAL_GREETING
 narrative_slot: utility
-en: Hi {name}
-th: "สวัสดีครับ {name}"
+en: "Hello {name}"
+th: "สวัสดีคุณ {name}"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 59479fe5621210860d34491e5c2d615cc5139c3f1f2a3b408b0af3783cff98bd
+  text_hash: 1b77d43f6fa85b59d8b1e31663335d98bb78abe21e814f61ca43ec26443def73
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28020,21 +28016,17 @@ source: src/lib/content/portal.ts
 path: PORTAL_GREETING_NONAME
 render: Candidate page /me, PORTAL_GREETING_NONAME
 narrative_slot: utility
-en: Hi
-th: "สวัสดีครับ"
+en: "Hello"
+th: "สวัสดี"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 389cee7350d0fd2fdf413f51b404bd87c00360465b5c175070ea53324551b55f
+  text_hash: 498b2a52c9d6e55769d7b2b33252f63fb8773fff20e07679f553c547f28ebe2a
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28046,24 +28038,17 @@ source: src/lib/content/portal.ts
 path: PORTAL_INTRO
 render: Candidate page /me, PORTAL_INTRO
 narrative_slot: utility
-en: >-
-  Everything we are working on together is here: what has been delivered, your CV files, and the jobs you are
-  going for. Bookmark this page, it is yours.
-th: "หน้านี้เป็นพื้นที่ทำงานร่วมกันของเรา คุณดูงานที่เราส่งให้แล้ว ไฟล์ CV และตำแหน่งที่กำลังสมัครได้ที่นี่ เก็บลิงก์ไว้กลับมาใช้ต่อได้เลยครับ"
+en: "Your target roles, the CV for each, the jobs PunProfile picks for you and the progress of every application, all on this page."
+th: "ตำแหน่งเป้าหมาย CV สำหรับแต่ละตำแหน่ง ตำแหน่งงานที่ PunProfile คัดให้ และความคืบหน้าของทุกใบสมัคร ดูได้ในหน้านี้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Replaces the translated everything-in-one-place opening and repetitive ownership claim with the reader’s actions and shared work. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 858a66d4412e48fe2f60fb238b028c24585a88b41ad6a361173b3f094255b071
+  text_hash: ab69ecdcd922cb4bfa97bd6e1df1647f7dbb563f055e2ba42f5dfd8af6d4744c
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28075,22 +28060,17 @@ source: src/lib/content/portal.ts
 path: PORTAL_INTRO_SHORT
 render: Candidate page /me, PORTAL_INTRO_SHORT
 narrative_slot: utility
-en: Everything we are working on together, in one place.
-th: "ดูทุกอย่างที่เราทำร่วมกันได้ในหน้านี้"
+en: "Track your job search with PunProfile on this page."
+th: "ติดตามการสมัครงานของคุณกับ PunProfile ได้ในหน้านี้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Uses the reader’s action rather than a floating translated everything-in-one-place fragment. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: bc113b397525fbbd4b61eb95a57356b488cea74607841c11809246ba474a0b92
+  text_hash: bc910e0df5b2bcd67b356a8dd1235be5d0e31c816009ecc63cd8e22d3b0ed0b4
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28366,21 +28346,17 @@ source: src/lib/content/portal.ts
 path: TAB_TRACKER
 render: Candidate page /me, TAB_TRACKER
 narrative_slot: utility
-en: Job tracker
-th: "ติดตามงาน"
+en: "Applications"
+th: "การสมัครงาน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: a56399dbe47b1ce6733f3100e6677f1c075f326a159edb30ee5bf52fa8734055
+  text_hash: 102a91cb485fa0976737b6ec0ec4dcd665d1cdc2513809894c21377addf6db78
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28392,21 +28368,17 @@ source: src/lib/content/portal.ts
 path: TAB_FEED
 render: Candidate page /me, TAB_FEED
 narrative_slot: utility
-en: Jobs for you
-th: "งานสำหรับคุณ"
+en: "Jobs picked for you"
+th: "ตำแหน่งที่คัดให้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 98885185297f22acaadb34f4e40b7b4758b058c7c904fd058a544e803081d39f
+  text_hash: 0fc1db7a5c36238bef0232c4a9257f1f666faca1a557b294d7a7a2e92b47cda8
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28418,24 +28390,17 @@ source: src/lib/content/portal.ts
 path: FEED_INTRO
 render: Candidate page /me, FEED_INTRO
 narrative_slot: utility
-en: >-
-  Roles our team screened in the last 30 days, in {countries}, matching {role}. The same jobs we post in the
-  group, filtered to your target. Save one to put it in your job list.
-th: "เรารวมตำแหน่งใน {countries} สายงาน {role} ที่ทีมคัดไว้ในช่วง 30 วันที่ผ่านมาให้คุณแล้ว เป็นงานชุดเดียวกับที่เราโพสต์ในกลุ่ม โดยเลือกมาเฉพาะที่ตรงกับ target ของคุณ ลองเปิดดู แล้วกดบันทึกตำแหน่งที่สนใจเข้าลิสต์ได้เลยครับ"
+en: "Jobs PunProfile screened in the last 30 days in {countries}, matching {role}. Save one to add it to your applications."
+th: "ตำแหน่งงานสาย {role} ใน {countries} ที่ PunProfile คัดไว้ในช่วง 30 วันที่ผ่านมา กดบันทึกเพื่อเพิ่มเข้ารายการสมัครงาน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Names the team and reader as actors, breaks the stacked location/time fragments, and closes on the next action. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 9ea8fa8d95ffe984fbe00cd2e2f7ba066e0bcddc54b409ef3c63042e10470ab9
+  text_hash: ced6981ae8d6bfa18e000b3535e899c77f8d6b0de32b80646d09745f58cc8682
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28447,24 +28412,17 @@ source: src/lib/content/portal.ts
 path: FEED_EMPTY
 render: Candidate page /me, FEED_EMPTY
 narrative_slot: utility
-en: >-
-  Nothing in your target in the last 30 days. A narrow target can go quiet for a while; this fills as new
-  roles are screened.
-th: "ในช่วง 30 วันที่ผ่านมา เรายังไม่ได้คัดตำแหน่งที่ตรงกับ target ของคุณ หากคุณเจาะจงประเทศและสายงานไว้ อาจมีช่วงที่ยังไม่มีตำแหน่งใหม่ เมื่อทีมคัดได้แล้ว คุณจะเห็นตำแหน่งนั้นที่นี่ครับ"
+en: "No new jobs for your target in the last 30 days. New ones appear here once PunProfile screens them."
+th: "ในช่วง 30 วันที่ผ่านมา PunProfile ยังไม่ได้คัดตำแหน่งที่ตรงกับเป้าหมายของคุณ เมื่อมีตำแหน่งใหม่ที่ผ่านการคัดแล้ว จะแสดงที่นี่"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Rebuilds the empty state without making a target go quiet or an unspecified ตรงนี้ go up. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: c73d3e13a2f5cc149bf22e62857df774b0fbc2f8e1bd132f321ed4d4fde5b993
+  text_hash: 89297a5f7abc3923e1a4ff239dc26425abfffce55f7830515f733a5782be4388
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28476,22 +28434,17 @@ source: src/lib/content/portal.ts
 path: FEED_NO_TARGET
 render: Candidate page /me, FEED_NO_TARGET
 narrative_slot: utility
-en: We do not have your target country and role yet. Tell your coach, and this list fills.
-th: "เรายังไม่ทราบว่าคุณตั้งเป้าหางานในประเทศไหนและสายงานอะไร แจ้งโค้ชไว้ได้เลยครับ เราจะใช้ข้อมูลนี้เลือกตำแหน่งมาแสดงให้คุณ"
+en: "Your target country and role are not set yet. Contact PunProfile on LINE to set them."
+th: "ยังไม่ได้ระบุประเทศและสายงานเป้าหมาย โปรดติดต่อ PunProfile ทาง LINE เพื่อระบุประเทศและสายงานที่ต้องการสมัคร"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: States the missing inputs and next shared step instead of promising a list will magically appear. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: d45fa7fb0bb6a83d5732d3cc36191bbd1f94b6500282188d08d3557ccd2c2219
+  text_hash: 6e70c4a375f1f1d08dbe28f8c9774b43c522c99cf0ee903e8fb125f674cfe412
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28503,21 +28456,17 @@ source: src/lib/content/portal.ts
 path: FEED_SAVE
 render: Candidate page /me, FEED_SAVE
 narrative_slot: utility
-en: Save to my list
-th: "บันทึกเข้าลิสต์"
+en: "Save"
+th: "บันทึก"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 4b60608204bf0f82a90203eb7b4d7dfa832f808e5795b10f09ed61207cac58d9
+  text_hash: 6dbefabdaf9902cc28f1d240dd6d1a29befd82320a7c43f0a93cf61103185150
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28529,21 +28478,17 @@ source: src/lib/content/portal.ts
 path: FEED_SAVED
 render: Candidate page /me, FEED_SAVED
 narrative_slot: utility
-en: In your list
-th: "อยู่ในลิสต์แล้ว"
+en: "Saved"
+th: "บันทึกแล้ว"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: fe238d21e9bb458f194069d6fc24f4a1df04afc0c309e8df54224305abbebdc6
+  text_hash: 3960c55ec6407c77722304b33471a08c67e973a220eaf3b0c2d9e45eaa3c2cb2
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28581,21 +28526,17 @@ source: src/lib/content/portal.ts
 path: FEED_UPDATED
 render: Candidate page /me, FEED_UPDATED
 narrative_slot: utility
-en: List updated {date}
-th: "อัปเดตลิสต์ล่าสุด {date}"
+en: "Updated {date}"
+th: "อัปเดตล่าสุด {date}"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: bc42df8822f077ee5954d0966130aea2b7cbf25970b295ab19f6d21a977fe846
+  text_hash: 2db93198fb248734d8aa74aeebf1af9f3b6bfe616f46322a0d2c720d3fa55198
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28607,21 +28548,17 @@ source: src/lib/content/portal.ts
 path: TAB_CV
 render: Candidate page /me, TAB_CV
 narrative_slot: utility
-en: CV
+en: "CV files"
 th: "ไฟล์ CV"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: ca05a8a3b4280b7af30d8773dd951b0cbf874ffeb2e3f077c5c22669c4da7e28
+  text_hash: 409c30a7ee7a35e74e46bbcc5b6338bd678abdcdcc486a52aaef6d40d869a79f
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28659,21 +28596,17 @@ source: src/lib/content/portal.ts
 path: PIPELINE_HEADING
 render: Candidate page /me, PIPELINE_HEADING
 narrative_slot: utility
-en: Your search so far
+en: "Applications so far"
 th: "ภาพรวมการสมัครงาน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 5f50f89da3021899e36b890a47075fa81fa2bebc22b81623d529428f60677d58
+  text_hash: 4cfd95778ad4b5247c880e767b9d95cf3b1e428958f280d785b349debebe178f
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28685,22 +28618,17 @@ source: src/lib/content/portal.ts
 path: DATES_HEADING
 render: Candidate page /me, DATES_HEADING
 narrative_slot: utility
-en: Coming up
-th: "กำหนดการที่กำลังจะถึง"
+en: "Coming up"
+th: "วันสำคัญที่ใกล้จะถึง"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Coming up covers service due dates and closing dates as well as follow-ups; วันที่ต้องจำ loses that context. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: fb9344f1afed62fbc8a2bf9f7e6e0b1f485543c98a58c60f3e83b06147b3433b
+  text_hash: 5f6ffcf42e87e2693bd1751a0c955242b33ee27199ba1e8c4f99e4591d5d5dd4
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28712,22 +28640,17 @@ source: src/lib/content/portal.ts
 path: DATES_EMPTY
 render: Candidate page /me, DATES_EMPTY
 narrative_slot: utility
-en: Nothing dated yet. Add a follow-up date to a job and it shows here.
-th: "ยังไม่มีกำหนดการ ลองตั้งวัน follow up ในตำแหน่งที่คุณสมัครไว้ แล้วกลับมาดูวันที่นี่ได้ครับ"
+en: "Nothing dated yet. Add a follow-up date in your applications and it shows here."
+th: "ยังไม่มีกำหนดการ เพิ่มวันติดตามผลในรายการสมัครงาน แล้วดูวันที่กำหนดไว้ได้ที่นี่"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Replaces the unnatural วันที่ต้องตาม and names the actual follow-up action and where the date appears. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 9a6a0a54459e99569d5978302efb20ab1eb46e4167d5f0b842288aaacd32df2c
+  text_hash: 56c67210959f5a1eef3db4f14b97564c19fc5f152ca5dc6afae6ac6882b9715f
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28820,21 +28743,17 @@ source: src/lib/content/portal.ts
 path: LATEST_NOTE
 render: Candidate page /me, LATEST_NOTE
 narrative_slot: utility
-en: Latest from your coach
-th: "ข้อความล่าสุดจากโค้ช"
+en: "Latest note from PunProfile"
+th: "ข้อความล่าสุดจาก PunProfile"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: b0989e4e67e37d6df3958696cbd0d5eae9f51cbc180758a991461f71ec32fb6a
+  text_hash: 38a42d6bbf8dcc557dbb66db09458883be1daefa4b64125e810f40c1d687ef0a
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28924,21 +28843,17 @@ source: src/lib/content/portal.ts
 path: TOKENS_MATCHED
 render: Candidate page /me, TOKENS_MATCHED
 narrative_slot: utility
-en: 'Roles we have picked and sent you: {n}'
-th: "ตำแหน่งงานที่เราคัดส่งให้แล้ว {n} ตำแหน่ง"
+en: "Jobs picked for you: {n}"
+th: "ตำแหน่งงานที่คัดให้แล้ว {n} ตำแหน่ง"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 2d0647ca7b957f9c5ad5965467906a255e386e8d877cef67d150f731020d6663
+  text_hash: f9b34c9f7bf81c2c164c2b42154716d66b01fe9d5b515abd7d5373612d9e71b3
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28950,22 +28865,17 @@ source: src/lib/content/portal.ts
 path: TOKENS_RULE
 render: Candidate page /me, TOKENS_RULE
 narrative_slot: utility
-en: A token is only used once you have received the service. Tokens never expire.
-th: "เราจะหักโทเคนเมื่อคุณได้รับบริการแล้วเท่านั้น โทเคนของคุณไม่มีวันหมดอายุครับ"
+en: "A token is used only once a service is delivered. Tokens never expire."
+th: "โทเคนจะถูกหักเมื่อได้รับบริการแล้วเท่านั้น และไม่มีวันหมดอายุ"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Names the service actor who deducts tokens and separates that rule from expiry, without adding counts or prices. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: f3243e3b96ca7ef34ec7d66102722b003125e507f9729fe485f968dabbe421a0
+  text_hash: 7cbedbc493cc0a10cc70897461afdbe5274cfe610f534c918c03c4df73b4318f
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28977,21 +28887,17 @@ source: src/lib/content/portal.ts
 path: WORK_HEADING
 render: Candidate page /me, WORK_HEADING
 narrative_slot: utility
-en: What you get
-th: "สิ่งที่คุณจะได้รับ"
+en: "Your services"
+th: "บริการของคุณ"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: f445740cca51df070c88ea0f8662ccaeae11482bf5d493412aec20a5016bbb7c
+  text_hash: 4932a17f407929fe0344393b928ebeb2c4ab363c44bd26e0be667ce97be2dee5
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29003,22 +28909,17 @@ source: src/lib/content/portal.ts
 path: WORK_EMPTY
 render: Candidate page /me, WORK_EMPTY
 narrative_slot: utility
-en: Your coach will add each step here as it is planned.
-th: "เมื่อเราวางแผนร่วมกันแล้ว โค้ชจะเพิ่มงานแต่ละขั้นตอนให้คุณดูที่นี่ครับ"
+en: "Each service appears here once it is planned with PunProfile."
+th: "บริการแต่ละรายการจะแสดงที่นี่เมื่อวางแผนร่วมกับ PunProfile แล้ว"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Reorders the thought around shared planning and makes the actor of the passive เมื่อวางแผนกันแล้ว explicit. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 15c0e33d15d2ce4f392d272b157fe75dc11d3f5d48ed123df09ccc106cd02799
+  text_hash: 0cd4595de98a65d55c73acf04f1418f8e08d0ce0631ac378c04e574c23b64afa
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29056,21 +28957,17 @@ source: src/lib/content/portal.ts
 path: WORK_STATUS.in_progress
 render: Candidate page /me, WORK_STATUS.in_progress
 narrative_slot: utility
-en: In progress
-th: "กำลังทำ"
+en: "In progress"
+th: "กำลังดำเนินการ"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 342d3f693dbdf34559d6b60791409142806b69fd43610883ef0bc3401667f2d1
+  text_hash: 36c551a18c5dd0e308e3de7c637167474ef446bd2b9048f0023a5b6e2fae24e0
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29188,21 +29085,17 @@ source: src/lib/content/portal.ts
 path: WORK_KIND.coaching_session
 render: Candidate page /me, WORK_KIND.coaching_session
 narrative_slot: utility
-en: Session with your coach
-th: "คุยกับโค้ช"
+en: "Session with PunProfile"
+th: "การพูดคุยกับ PunProfile"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 650b95b663ef55eca7857112d87622918cd2acab7b62bbb16acf151b79f99fc9
+  text_hash: ebaee93afe673b939b51b4899432c55cc55ebacb2eb8861367fdb82b75bdd03e
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29214,21 +29107,17 @@ source: src/lib/content/portal.ts
 path: WORK_KIND.base_cv
 render: Candidate page /me, WORK_KIND.base_cv
 narrative_slot: utility
-en: Your main CV
-th: "CV หลักของคุณ"
+en: "Main CV"
+th: "CV หลัก"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 9d812f653299bab9060c1fdb4ff8922602a2ebaff98f8fb92726bc735b6dc1af
+  text_hash: 8b150fedcc3b33e3df42ba424d88dfafd0e8967ca69c7873c6e2f75c99282b89
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29318,21 +29207,17 @@ source: src/lib/content/portal.ts
 path: WORK_KIND.tailored_application
 render: Candidate page /me, WORK_KIND.tailored_application
 narrative_slot: utility
-en: Application tailored to one role
-th: "ใบสมัครที่ปรับให้ตรงกับตำแหน่ง"
+en: "Application tailored to a job ad"
+th: "ใบสมัครที่ปรับตามประกาศรับสมัคร"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 62b6427630e498c508cf47c92ccb4bb6013c8d6212be7a221ad5ec80b1288ac1
+  text_hash: e85cb3c2589f06825d432a3665ac415efd0fac29a30b860236ba8d4455aa21b1
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29396,21 +29281,17 @@ source: src/lib/content/portal.ts
 path: WORK_KIND.offer_review
 render: Candidate page /me, WORK_KIND.offer_review
 narrative_slot: utility
-en: Offer review
-th: "ดูข้อเสนองานด้วยกัน"
+en: "Offer review"
+th: "ตรวจข้อเสนองาน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: fc90f541012609a8cbbc93aad587a8af5bd54696d1629bc563fb776e8067ec1a
+  text_hash: 1fa4bd5c4973b7dbaee8294cc0f1ce271706b30416e495daec657a7612d01334
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29422,21 +29303,17 @@ source: src/lib/content/portal.ts
 path: WORK_KIND.contract_review
 render: Candidate page /me, WORK_KIND.contract_review
 narrative_slot: utility
-en: Contract review
-th: "ดูสัญญาจ้างด้วยกัน"
+en: "Contract review"
+th: "ตรวจสัญญาจ้าง"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 654c5896946488689d1c7a2d8829f969c8de82b9df7ec652fd0a6dc4afd37da1
+  text_hash: 58eee292fdf2f4634ab7116330f3a88567d7378d3bc5646d0ec820e303888bb1
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29500,21 +29377,17 @@ source: src/lib/content/portal.ts
 path: TOKENS_LOW
 render: Candidate page /me, TOKENS_LOW
 narrative_slot: utility
-en: You are running low on tokens.
-th: "โทเคนใกล้หมดแล้วครับ"
+en: "Running low on tokens."
+th: "โทเคนใกล้หมด"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 62bb47c67bc6cd7aab2dd033db9baf2b47b0df8bfab7482535bd5de9eedf0c54
+  text_hash: 3c7de93278f497c96fddf28ac96d72aa3b4a1a28a540d1b8e8aee3ff4e2ed838
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29526,21 +29399,17 @@ source: src/lib/content/portal.ts
 path: TOKENS_REQUESTED
 render: Candidate page /me, TOKENS_REQUESTED
 narrative_slot: utility
-en: Request sent. Your coach will get back to you on LINE.
-th: "ส่งคำขอแล้วครับ โค้ชจะติดต่อกลับทาง LINE"
+en: "Request sent. PunProfile will reply on LINE."
+th: "ส่งคำขอแล้ว PunProfile จะติดต่อกลับทาง LINE"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 0ae0b44b913c94224c4bcb485908640a6f5ed71f7b3bf7bed70135bedda2ad74
+  text_hash: 9eea12a11a1ce05dff741997b46f08c8915970fd31345a460c13bf17a384d259
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29578,24 +29447,17 @@ source: src/lib/content/portal.ts
 path: FIT_BODY
 render: Candidate page /me, FIT_BODY
 narrative_slot: utility
-en: >-
-  Every area your coach rated, where you stand against the market, and what to do next in each. It opens in a
-  new tab, ready to save as a PDF.
-th: "ลองเปิดดูผลประเมินแต่ละด้านที่โค้ชประเมินให้ ว่าคุณผ่านเกณฑ์ตลาดงานตรงไหนแล้ว และควรพัฒนาอะไรต่อในแต่ละด้าน รายงานจะเปิดในแท็บใหม่ คุณบันทึกเป็น PDF เก็บไว้ได้เลยครับ"
+en: "Your rating in each area against the market, and what to work on next. Opens in a new tab, ready to save as a PDF."
+th: "ผลประเมินแต่ละด้านเทียบกับเกณฑ์ตลาดงาน และสิ่งที่ควรพัฒนาต่อ รายงานเปิดในแท็บใหม่และบันทึกเป็น PDF ได้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Replaces the mistranslated ตำแหน่งของคุณ with assessment standing and makes the reader’s next action explicit. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 8de10b45455c47fca0dd9a0691513e0da1d9a763ba581a795457f4fb635165bb
+  text_hash: 5c1facce34f072495ab047c69fe958fd5cb06c1f8733cd5088f29651fe478d8a
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29633,22 +29495,17 @@ source: src/lib/content/portal.ts
 path: FIT_POPUP
 render: Candidate page /me, FIT_POPUP
 narrative_slot: utility
-en: Your browser blocked the new tab. Allow pop-ups for this site and try again.
-th: "เบราว์เซอร์บล็อกการเปิดแท็บใหม่ไว้ ลองอนุญาต pop-up สำหรับเว็บนี้ แล้วเปิดรายงานอีกครั้งครับ"
+en: "Your browser blocked the new tab. Allow pop-ups for this site and try again."
+th: "เบราว์เซอร์บล็อกการเปิดแท็บใหม่ โปรดอนุญาต pop-up สำหรับเว็บไซต์นี้ แล้วเปิดรายงานอีกครั้ง"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Repairs the blocked-tab object and replaces the unspecified กดอีกครั้ง with the actual action. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 34751271030f50c95af656cb0cb6ce4db8f39f55b4a993754d117482c0f4ddfa
+  text_hash: b74b6b895ace00cb6f2689092d274cf75c1629ddf5b10766c4ee9b2c495d8b99
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29712,21 +29569,17 @@ source: src/lib/content/portal.ts
 path: GOAL_NONE
 render: Candidate page /me, GOAL_NONE
 narrative_slot: utility
-en: Set how many applications you aim to send each week, and see your progress here.
-th: "ตั้งจำนวนใบสมัครที่อยากส่งในแต่ละสัปดาห์ แล้วดูความคืบหน้าได้ที่นี่ครับ"
+en: "Set how many applications to send each week and track it here."
+th: "กำหนดจำนวนใบสมัครที่จะส่งในแต่ละสัปดาห์ แล้วติดตามความคืบหน้าได้ที่นี่"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: c8fbcd1225794b893f71ff96b5327f96078c3dff294eb20700e54b66027fcda8
+  text_hash: f7cd464ff912d24ded7ffb90bfe959cfb7fe6ca848fb243932d0a88bef19f06b
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29816,21 +29669,17 @@ source: src/lib/content/portal.ts
 path: GOAL_WEEK_NOTE
 render: Candidate page /me, GOAL_WEEK_NOTE
 narrative_slot: utility
-en: The week starts on Monday, Thailand time.
-th: "สัปดาห์เริ่มวันจันทร์ ตามเวลาไทย"
+en: "Weeks start on Monday, Thailand time."
+th: "สัปดาห์เริ่มวันจันทร์ ตามเวลาประเทศไทย"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 13098af0aaad66abc702bcf087215dff525d69e87fcd84923603509a599d34cd
+  text_hash: 5509521ca2f83ab82a8cc02094e60f839fc0abc520064ffb6aad5d75b232057a
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29842,21 +29691,17 @@ source: src/lib/content/portal.ts
 path: NOTES_HEADING
 render: Candidate page /me, NOTES_HEADING
 narrative_slot: utility
-en: From your coach
-th: "จากโค้ช"
+en: "Notes from PunProfile"
+th: "ข้อความจาก PunProfile"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 91707d6848790c167b9224d9ec5ae603712bc4eeb6ba6ce554787634abbe0cfe
+  text_hash: 46e299e857d62960d8894a254df68347e32552cb5ec5e1113b5f9651da73cb93
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29868,21 +29713,17 @@ source: src/lib/content/portal.ts
 path: CV_HEADING
 render: Candidate page /me, CV_HEADING
 narrative_slot: utility
-en: Your CV files
-th: "ไฟล์ CV ของคุณ"
+en: "Your CVs"
+th: "CV ของคุณ"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 15e4ee67e0a94f6894cb47e76638c590fe44d5abdf732f9c7308f6ffbcd6242e
+  text_hash: 4dc20f591aba28afb6eb7029f69d8bed860a91df26505e3b09cf9a6fd3d4a89f
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29894,21 +29735,17 @@ source: src/lib/content/portal.ts
 path: CV_EMPTY
 render: Candidate page /me, CV_EMPTY
 narrative_slot: utility
-en: No file here yet. Send your latest CV to your coach on LINE or by email.
-th: "ยังไม่มีไฟล์ครับ ส่ง CV ฉบับล่าสุดให้โค้ชทาง LINE หรืออีเมลได้เลย"
+en: "No CV yet. Send your latest CV to PunProfile on LINE or by email."
+th: "ยังไม่มี CV โปรดส่ง CV ฉบับล่าสุดให้ PunProfile ทาง LINE หรืออีเมล"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: e7960bc547e5e8aabb4c2fb31666d32c5ac09ce70beb872bc724e55bf6a425d4
+  text_hash: 35329b296c3960d878f6c6c1fe0ad3c32681f80fc31b3014df39ddced7a871f9
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29972,21 +29809,17 @@ source: src/lib/content/portal.ts
 path: CV_THEIRS
 render: Candidate page /me, CV_THEIRS
 narrative_slot: utility
-en: The version you sent
-th: "ฉบับที่คุณส่งมา"
+en: "Your version"
+th: "ฉบับของคุณ"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: d704a16b1caf6c46e14a5161d80e914b88b46201016dbf7f2d56909b48d94cbb
+  text_hash: 1a085bae7de1db6ad3d4a37d74c519769eb91b134870cacb43ace665558e31b3
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -29998,21 +29831,17 @@ source: src/lib/content/portal.ts
 path: CV_OURS
 render: Candidate page /me, CV_OURS
 narrative_slot: utility
-en: Revised by your coach
-th: "ฉบับที่โค้ชปรับให้"
+en: "Revised by PunProfile"
+th: "ฉบับที่ PunProfile ปรับแก้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: d543359a9fe7cc6fa2ea8d352e5e953aace2663cff34de23b69b2a294e4513a8
+  text_hash: 07c0c40fa6df0c60afbabf189dc9413b1bcd8ff8e00f51d492ef74301e7f8fe4
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30024,21 +29853,17 @@ source: src/lib/content/portal.ts
 path: CV_CHANGED
 render: Candidate page /me, CV_CHANGED
 narrative_slot: utility
-en: What changed
-th: "สิ่งที่ปรับ"
+en: "What changed"
+th: "สิ่งที่ปรับแก้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 1668fead16ef790e400a037315ad09768a0ce663d441f67eb60bfddbca733318
+  text_hash: 6b2b39c9f7601eae7b0b82a9cb8e26e2dbe5be14e30c600134c622e10346d579
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30076,22 +29901,17 @@ source: src/lib/content/portal.ts
 path: JOBS_HEADING
 render: Candidate page /me, JOBS_HEADING
 narrative_slot: utility
-en: Your job list
-th: "ลิสต์งานของคุณ"
+en: "Your applications"
+th: "รายการสมัครงาน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: The list includes saved and closed jobs, so กำลังสมัคร incorrectly limits its scope. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: db1ec2b60038f2f9ecfcc82f90f3d75ea367f9f4332916aaab05432fef1b7d6a
+  text_hash: 7a1df3154aaa43524ded62f19c315aeb0774f5a43da5a996e6c5852621c81492
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30103,24 +29923,17 @@ source: src/lib/content/portal.ts
 path: JOBS_INTRO
 render: Candidate page /me, JOBS_INTRO
 narrative_slot: utility
-en: >-
-  This list is yours. Move each job along as things happen. Roles marked Picked by PunProfile are ones we
-  screened for you.
-th: "คุณอัปเดตสถานะแต่ละตำแหน่งในลิสต์นี้ได้เมื่อมีความคืบหน้า ส่วนตำแหน่งที่เราคัดมาให้จะมีป้าย “คัดโดย PunProfile” ครับ"
+en: "Update each job's status as it moves. Jobs marked Picked by PunProfile were screened for you."
+th: "อัปเดตสถานะของแต่ละตำแหน่งเมื่อมีความคืบหน้า ตำแหน่งที่มีป้าย “คัดโดย PunProfile” คือตำแหน่งที่ PunProfile คัดมาให้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Leads with what the candidate can do, then explains the exact decided badge without repeating list ownership. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: b660d1a3b7576eff3d50014e497ec23236650a4041514cd0d3aaaa4301ecac93
+  text_hash: d7dde42d257692f19a9fc84963d6d8fff768764a2840fce2c3dc0c03ddb19110
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30132,21 +29945,17 @@ source: src/lib/content/portal.ts
 path: JOBS_EMPTY
 render: Candidate page /me, JOBS_EMPTY
 narrative_slot: utility
-en: Nothing on the list yet. Add a job you are interested in, or wait for the first roles we pick for you.
-th: "ยังไม่มีงานในลิสต์ เพิ่มงานที่คุณสนใจได้เลย หรือรอตำแหน่งแรกที่เราคัดให้ก็ได้ครับ"
+en: "No jobs yet. Add one yourself, or wait for the first jobs PunProfile picks for you."
+th: "ยังไม่มีตำแหน่งงานในรายการสมัครงาน คุณเพิ่มตำแหน่งที่สนใจได้เอง หรือรอตำแหน่งแรกที่ PunProfile คัดให้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 93654986052b1caaf51e3b6c55eab1c1a6fb7b731fe517ed346623de4831f165
+  text_hash: a13817024015e3140ff2b92dce896c63d5f25a4b9af2e7ce520dd4c96d6c1e81
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30263,21 +30072,17 @@ source: src/lib/content/portal.ts
 path: JOBS_STATUS.interviewing
 render: Candidate page /me, JOBS_STATUS.interviewing
 narrative_slot: utility
-en: Interviewing
-th: "สัมภาษณ์"
+en: "Interviewing"
+th: "อยู่ระหว่างสัมภาษณ์"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: e76808c604c995c4f086703d860536648e3044b1cf8e501f8bbe64744d8673b5
+  text_hash: f4a8e4e4d457f67d2d2a7ca1ec11cbb171e467cd45024312b0b944be7fd4ead6
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30341,21 +30146,17 @@ source: src/lib/content/portal.ts
 path: JOBS_STATUS.rejected
 render: Candidate page /me, JOBS_STATUS.rejected
 narrative_slot: utility
-en: Not this time
-th: "ไม่ผ่านรอบนี้"
+en: "Not selected"
+th: "ไม่ผ่านการคัดเลือก"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 5e7879bba7f1b90d30def1e7e14c254436372700f7cb7be278aad1fdf211e33c
+  text_hash: 49111373317d7f5f0a9df5a19a48e99895ec680422045b1cdfc03975290ae87d
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30419,21 +30220,17 @@ source: src/lib/content/portal.ts
 path: JOBS_WHY
 render: Candidate page /me, JOBS_WHY
 narrative_slot: utility
-en: Why this role
-th: "ทำไมเราคัดตำแหน่งนี้"
+en: "Why this job"
+th: "เหตุผลที่คัดตำแหน่งนี้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: d25c729d4f9626ec74d05b93eee681bc4e79319c160c69093678854de47ced19
+  text_hash: 7a788d64405ef41fb5f8ddba8e930aa5da13ecf3cb8c71ee82054972d0272114
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30445,21 +30242,17 @@ source: src/lib/content/portal.ts
 path: JOBS_POSTING
 render: Candidate page /me, JOBS_POSTING
 narrative_slot: utility
-en: Open the posting
-th: "เปิดประกาศงาน"
+en: "Open the job ad"
+th: "เปิดประกาศรับสมัคร"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 39ad08b58f98fa192401d02452a4863eedd2e83d762713963e089aed8064d364
+  text_hash: aac576a568be34e50a9459aa04eacdf53c928c7f50c32af9120f22423f4d3fd1
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30524,22 +30317,17 @@ source: src/lib/content/portal.ts
 path: JOBS_FOLLOW_UP
 render: Candidate page /me, JOBS_FOLLOW_UP
 narrative_slot: utility
-en: Follow up on
-th: "วันที่จะ follow up"
+en: "Follow-up date"
+th: "วันติดตามผล"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Keeps the established follow-up term consistent across the date label and checklist. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 794c5646215c1d566b5ccce50262fccf9a4a1f64bc83db5981d3efc2e8e47745
+  text_hash: 6f446f37693d22aec1b7911473ee70d646d286ac9496843e63ba3435baea2b4d
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30655,22 +30443,17 @@ source: src/lib/content/portal.ts
 path: JOBS_REMOVE_CONFIRM
 render: Candidate page /me, JOBS_REMOVE_CONFIRM
 narrative_slot: utility
-en: Remove for good
-th: "ลบออกจากลิสต์ถาวร"
+en: "Remove for good"
+th: "ลบถาวร"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Preserves the irreversible meaning of for good that the draft confirmation omitted. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 54ec6e045dfc5849d0d1f9ff0697d8cc4a931e8dc91acc41024768cfae810aad
+  text_hash: 4212a4153ff7af5a5a1fa863be542c51f2807ab0078372fa0d2aae7774638941
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30708,21 +30491,17 @@ source: src/lib/content/portal.ts
 path: JOBS_SEARCH
 render: Candidate page /me, JOBS_SEARCH
 narrative_slot: utility
-en: Search role or company
+en: "Search job title or company"
 th: "ค้นหาตำแหน่งหรือบริษัท"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: f537b24ab0e165500caa49aa40812768b933073335c66ebbeb276bf4381ee0c2
+  text_hash: e7ab0a3b5418ce35bc42c962b9407f4da3276d7e96e1ccdd1b86e0600f3628d6
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30760,21 +30539,17 @@ source: src/lib/content/portal.ts
 path: JOBS_NO_MATCH
 render: Candidate page /me, JOBS_NO_MATCH
 narrative_slot: utility
-en: No job matches.
-th: "ไม่พบงานที่ตรงกับที่ค้นหา"
+en: "No jobs match your search."
+th: "ไม่พบตำแหน่งงานที่ตรงกับคำค้นหา"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 0061544e665d299f8712c509fe851ef491f9644f60d4dd1df2f40403213ddf0a
+  text_hash: e2099fc7aab0694653b03c6d557b044242656db8b298aed620535f8f48285ff5
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30995,22 +30770,17 @@ source: src/lib/content/portal.ts
 path: COL_FOLLOW
 render: Candidate page /me, COL_FOLLOW
 narrative_slot: utility
-en: Follow up
-th: "วันที่ follow up"
+en: "Follow up"
+th: "ติดตามผล"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Names the date shown in this column and uses the same job-search term as the field and checklist. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 40d31064a9bbac38a011200f44674564a2df84bc2e6ea5abf52872150f65b762
+  text_hash: f0647ec2600d26cd4f0bcb256fdd5f1c78460ba8d679aeab54515babd1883adc
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31048,21 +30818,17 @@ source: src/lib/content/portal.ts
 path: BACK_TO_LIST
 render: Candidate page /me, BACK_TO_LIST
 narrative_slot: utility
-en: Back to the list
-th: "กลับไปที่ลิสต์"
+en: "Back to applications"
+th: "กลับไปที่รายการสมัครงาน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: b755f5ca64301bbbce4d680cf7873883070e278bd4dc7ec7cdd3dddfac6b753c
+  text_hash: a4652876a48072f453f3fa5ef61cbcb5aa46ebc63d991736431845583e27b265
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31152,21 +30918,17 @@ source: src/lib/content/portal.ts
 path: DTAB_COACH
 render: Candidate page /me, DTAB_COACH
 narrative_slot: utility
-en: From your coach
-th: "จากโค้ช"
+en: "From PunProfile"
+th: "จาก PunProfile"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 91707d6848790c167b9224d9ec5ae603712bc4eeb6ba6ce554787634abbe0cfe
+  text_hash: 91ef8a180aa06682de2b5965738a8c01fd64c9e37521adef9d7976607896233a
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31230,22 +30992,17 @@ source: src/lib/content/portal.ts
 path: IV_EMPTY
 render: Candidate page /me, IV_EMPTY
 narrative_slot: utility
-en: No interview recorded yet. Add each round as it is booked, so you can prepare and look back.
-th: "ยังไม่ได้บันทึกรอบสัมภาษณ์ เมื่อได้นัดแล้ว ลองเพิ่มรายละเอียดแต่ละรอบไว้ที่นี่ จะได้เตรียมตัวและกลับมาดูย้อนหลังได้ครับ"
+en: "No interviews yet. Add each round as it is booked, to prepare and look back."
+th: "ยังไม่ได้บันทึกรอบสัมภาษณ์ เมื่อได้รับนัดหมายแล้ว ให้เพิ่มรายละเอียดแต่ละรอบไว้เพื่อเตรียมตัวและดูย้อนหลัง"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Distinguishes no recorded interview from no interview and repairs the dangling เมื่อได้นัด phrase. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 3ff7ba30590606f1908206f39a86f4e0ce9c9b0fa6c108159fee86d84fb9b737
+  text_hash: 10ea983d6a017bd7c7af118351288e18e180f1607fbd9cdea9eea9e7dce6e6f3
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31309,21 +31066,17 @@ source: src/lib/content/portal.ts
 path: IV_ROUND_HINT
 render: Candidate page /me, IV_ROUND_HINT
 narrative_slot: utility
-en: e.g. Recruiter screen, Technical, Final
-th: "เช่น คุยกับ recruiter, technical, รอบสุดท้าย"
+en: "e.g. Recruiter screen, Technical, Final"
+th: "เช่น Recruiter screen, Technical, รอบสุดท้าย"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 46296467c541a0138d4d565bd39cd71657140ffa7879fa4feb3650802cdf3a06
+  text_hash: 34e8886ca098ca2104a0a3790e649e24a11d5e20bb23bcdd4800f0760995f83c
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31439,22 +31192,17 @@ source: src/lib/content/portal.ts
 path: IV_FORMATS.onsite
 render: Candidate page /me, IV_FORMATS.onsite
 narrative_slot: utility
-en: In person
+en: "In person"
 th: "พบกันโดยตรง"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: In person does not necessarily mean at the company; removes an unsupported location restriction. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
   text_hash: 4c2f5386a808a54b1b6c1164b5fc444e927e87394f561d01f3a1aad4e343e1f8
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31492,22 +31240,17 @@ source: src/lib/content/portal.ts
 path: IV_NOTES
 render: Candidate page /me, IV_NOTES
 narrative_slot: utility
-en: How it went, what they asked
-th: "สัมภาษณ์เป็นอย่างไรบ้าง มีคำถามอะไรบ้าง"
+en: "How it went and what they asked"
+th: "รายละเอียดการสัมภาษณ์และคำถามที่ได้รับ"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Names the interview event and avoids the passive ถูกถาม fragment. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 4da7401f81691923554eaf65252a9bd5b68b3c749bde2630bf891f60b55ab80e
+  text_hash: cad94c46efe05efd9f8543cce7bdf9abe18da36f3825e21cb2b3050ded80536b
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31519,21 +31262,17 @@ source: src/lib/content/portal.ts
 path: CT_EMPTY
 render: Candidate page /me, CT_EMPTY
 narrative_slot: utility
-en: No contact yet. Add the recruiter or hiring manager you are talking to.
-th: "ยังไม่มีผู้ติดต่อ เพิ่ม recruiter หรือ hiring manager ที่คุณคุยด้วยได้เลยครับ"
+en: "No contacts yet. Add the recruiter or hiring manager you are in touch with."
+th: "ยังไม่มีผู้ติดต่อ เพิ่ม recruiter หรือ hiring manager ที่คุณติดต่ออยู่"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: d0abe65ad1ca5169932286e71abcbc49c69580436acd16a048b4a43d17d6d3c8
+  text_hash: 0c5a759c88f9cf3742f1f54db52bf04c2073d29c95e08f513b3196f885843ce9
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31728,24 +31467,17 @@ source: src/lib/content/portal.ts
 path: JD_HELP
 render: Candidate page /me, JD_HELP
 narrative_slot: utility
-en: >-
-  Paste the posting here. It stays even if the posting is taken down, and the words it repeats show
-  underneath.
-th: "ลองวาง job description ไว้ที่นี่ คุณจะกลับมาอ่านได้แม้บริษัทลบประกาศไปแล้ว และดูคำที่ใช้บ่อยในประกาศได้ด้านล่างครับ"
+en: "Paste the job description here. It stays even if the ad is taken down, and its most repeated words show below."
+th: "วาง job description ไว้ที่นี่ เพื่อกลับมาอ่านได้แม้บริษัทลบประกาศแล้ว คำที่ใช้บ่อยในประกาศจะแสดงด้านล่าง"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Removes document speech, names the company and reader, and makes the retained-copy benefit concrete. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 05f32ef286c6109a236274c6921c45c87a122e22ba642a39fd709aec2481d7c4
+  text_hash: 3924f04c3491d5fcd3cae05adca91f69aeb9fa6db896382f8abc677054bf9a6d
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31784,21 +31516,17 @@ source: src/lib/content/portal.ts
 path: JD_EMPTY
 render: Candidate page /me, JD_EMPTY
 narrative_slot: utility
-en: No job description pasted yet.
-th: "ยังไม่ได้วาง job description"
+en: "No job description yet."
+th: "ยังไม่มี job description"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 2404f4b91a54aa3a5e0c37d00a576f6bb6e48ed95e17fced4ac63bf914241c36
+  text_hash: 48fd6ae632e650ed9602d3047dac3b2a7c7b020f8cbb2cd00ccfa5256cce5fb1
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31862,24 +31590,17 @@ source: src/lib/content/portal.ts
 path: DETAIL_OURS
 render: Candidate page /me, DETAIL_OURS
 narrative_slot: utility
-en: >-
-  We picked this role for you, so its details stay as we sent them. Your notes, follow-up date, interest and
-  the CV you sent are yours to change.
-th: "เราคัดตำแหน่งนี้มาให้คุณ จึงเก็บรายละเอียดงานไว้ตามที่ส่งให้ ส่วนโน้ต วันที่ follow up ระดับความสนใจ และ CV ที่ใช้สมัคร คุณแก้ไขเองได้ครับ"
+en: "PunProfile picked this job, so its details stay as sent. Your notes, follow-up date, interest and CV sent are yours to change."
+th: "ตำแหน่งนี้ PunProfile คัดมาให้ รายละเอียดงานจึงแก้ไขไม่ได้ ส่วนโน้ต วันติดตามผล ความสนใจ และ CV ที่ใช้สมัคร แก้ไขได้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Names who preserves the original job details and who can edit the personal fields; removes the English-controlled passive structure. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: cb0531c81f4787c314688ea79ba5e7291acc162c3e75b8d89cddee11e4731b8e
+  text_hash: 4bee292073a1e2835a2da49ddd045d8d2f96b484f5c619342b41e13705548ba7
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31891,22 +31612,17 @@ source: src/lib/content/portal.ts
 path: CV_SENT_HELP
 render: Candidate page /me, CV_SENT_HELP
 narrative_slot: utility
-en: Pick the CV you sent with this job, so you can see later which version worked.
-th: "เลือก CV ฉบับที่คุณส่งสมัครตำแหน่งนี้ไว้ จะได้กลับมาดูว่าคุณใช้ฉบับไหนแล้วได้ผลอย่างไรครับ"
+en: "Choose the CV you sent for this job, to see later which version worked."
+th: "เลือก CV ที่ใช้สมัครตำแหน่งนี้ เพื่อย้อนดูได้ว่าฉบับไหนได้ผล"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Repairs ส่งไปกับงาน and clarifies the purpose of linking a sent CV to the application. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 6324be3441e4ee43aee21ef0f4c7b50a10f30140df47692f2b83d7ba13636758
+  text_hash: 35c51c23362c55f655482b15605c5cf2e7c4410eb33177c43555713a6f7f2d61
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31944,21 +31660,17 @@ source: src/lib/content/portal.ts
 path: COACH_NOTES_NONE
 render: Candidate page /me, COACH_NOTES_NONE
 narrative_slot: utility
-en: No note from your coach on this job yet.
-th: "ยังไม่มีโน้ตจากโค้ชสำหรับงานนี้"
+en: "No note from PunProfile on this job yet."
+th: "ยังไม่มีข้อความจาก PunProfile สำหรับตำแหน่งนี้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 05270aaadbadbfe5f226fb649813710072297bf1cc11ad6bf977e508895c962a
+  text_hash: 70fca89b619dd7358cf81f3987e14ab05711a768f14f1831c60543a99fa19b32
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31970,22 +31682,17 @@ source: src/lib/content/portal.ts
 path: CLOSE_AS
 render: Candidate page /me, CLOSE_AS
 narrative_slot: utility
-en: Close it as
-th: "จบการสมัครตำแหน่งนี้ด้วยสถานะ"
+en: "Close this application as"
+th: "ปิดการสมัครตำแหน่งนี้ในสถานะ"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Replaces the literal ปิดงานนี้เป็น while still introducing the adjacent closed-status buttons. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 33ce3d4943d8b1b67d5b4c9d3f9d45d37ada582ced64373a7254ea01d91782e9
+  text_hash: 6f139e8d3c04f8e049baf293d2a1846c2eb9183a21e08bd89aa7d2a1298afe14
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -31997,22 +31704,17 @@ source: src/lib/content/portal.ts
 path: REOPEN
 render: Candidate page /me, REOPEN
 narrative_slot: utility
-en: Reopen as saved
-th: "กลับไปสถานะ “บันทึกไว้”"
+en: "Reopen as Saved"
+th: "เปิดใหม่ในสถานะ “บันทึกไว้”"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Uses the exact destination status and removes the unnatural เปิดกลับมาเป็น construction. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: de623b06db98b2cf657451ba02d474f416cc164fa1cdf532522b83daa41f262b
+  text_hash: c341706c382e17ed5f4948ab17d0a3201c3e00a689f65156f6e2086bb9fde8a4
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32050,21 +31752,17 @@ source: src/lib/content/portal.ts
 path: ADD_JOB
 render: Candidate page /me, ADD_JOB
 narrative_slot: utility
-en: Add a job
-th: "เพิ่มงาน"
+en: "Add a job"
+th: "เพิ่มตำแหน่งงาน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: f7836557d666ad8316ea7be32493d78644eec04449cdc676c031da1405ab6d57
+  text_hash: 4cc8aefe4be598b25f0b6c74c5e0372d198eee666f9bb540bb83c475c23fb564
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32180,21 +31878,17 @@ source: src/lib/content/portal.ts
 path: ADD_URL
 render: Candidate page /me, ADD_URL
 narrative_slot: utility
-en: Link to the posting
-th: "ลิงก์ประกาศงาน"
+en: "Job ad link"
+th: "ลิงก์ประกาศรับสมัคร"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 0f2ab0a51e22e7a6056a1c20d49d0eaabc3a3cbde59f732aca5d4f53470329d3
+  text_hash: 3c5cc6bb555128ddca0f429bd93708de780cb48728c1e774073810624bc07930
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32206,21 +31900,17 @@ source: src/lib/content/portal.ts
 path: ADD_SALARY
 render: Candidate page /me, ADD_SALARY
 narrative_slot: utility
-en: Salary, if stated
-th: "เงินเดือน ถ้ามีระบุ"
+en: "Salary, if stated"
+th: "เงินเดือน (ถ้าระบุ)"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: e0c32b33edf6590757b4c189f557b36e97a017316bfc5bdcb222d6cbc9767996
+  text_hash: dacfaccc385c72ee8d4bfe5d28a8030d37c6d6af185744a86abe90b1f9ccb3e5
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32232,21 +31922,17 @@ source: src/lib/content/portal.ts
 path: ADD_STATUS
 render: Candidate page /me, ADD_STATUS
 narrative_slot: utility
-en: Where you are with it
-th: "ตอนนี้อยู่ขั้นไหน"
+en: "Current status"
+th: "สถานะปัจจุบัน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 3cc7f99d47fa57da233d7f06b15bc2c8fa09ef74defe718f27e4a0b8c1194606
+  text_hash: e46c36d6c74971a3c097195b21d94b709cef392affa5b01a2a324d3670251595
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32258,21 +31944,17 @@ source: src/lib/content/portal.ts
 path: ERROR_FIELDS
 render: Candidate page /me, ERROR_FIELDS
 narrative_slot: utility
-en: Fill in the job title, company and country first.
-th: "กรอกตำแหน่ง บริษัท และประเทศก่อนนะครับ"
+en: "Fill in the job title, company and country first."
+th: "โปรดกรอกตำแหน่ง บริษัท และประเทศ"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 0a32aa7186290bef1c54d7b10ecafd0995b3506faacb66dcfe2652cd787507b6
+  text_hash: 63ab5e804ebc7d4542d8447df02eaf9d6e5527978f0c4c3e6d79f19daab68cfe
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32284,22 +31966,17 @@ source: src/lib/content/portal.ts
 path: ERROR_GENERIC
 render: Candidate page /me, ERROR_GENERIC
 narrative_slot: utility
-en: That did not save. Try again in a moment.
-th: "ยังบันทึกไม่สำเร็จ ลองใหม่อีกครั้งในอีกสักครู่นะครับ"
+en: "That did not save. Try again in a moment."
+th: "บันทึกไม่สำเร็จ โปรดลองใหม่ในอีกสักครู่"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: >-
-  Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the
-  thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at
-  migration; the review may change it.
-  Thai review 31/10/2026, structural-calque-v1: Restores the brief wait in the English retry instruction. Proposal accepted by the delegated final reviewer.
-  Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul.
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: 9317b451eb862b4991e253678d593c234f8fb9b2c8331e52432dd5b51d834689
+  text_hash: 076cbee48d09557f654a804856f46f0740d3dcc4f37e5f4e6e7d43a5080a690c
   prompt_version: structural-calque-v1
-  basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33208,17 +32885,17 @@ source: "src/lib/content/portal.ts"
 path: TITLES_HEADING
 render: "Candidate page /me, overview, target titles card heading"
 narrative_slot: utility
-en: "Titles we are going for"
-th: "ตำแหน่งที่เราตั้งเป้าไว้"
+en: "Target roles"
+th: "ตำแหน่งเป้าหมาย"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 9453bb427f5f8b0dbed8539db2f3271d0f134a6a5eeb6354031c4f889eb91435
+  text_hash: fe7303182e846e8f0c31bd84ed9a49e7e40dc8c29660e57667638a14885e8348
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33230,17 +32907,17 @@ source: "src/lib/content/portal.ts"
 path: TITLES_NOTE
 render: "Candidate page /me, overview, target titles card, line under heading"
 narrative_slot: mechanism
-en: "We set these together. Each title has its own CV, and each job in your list belongs to one of them."
-th: "เรากำหนดตำแหน่งเป้าหมายร่วมกัน และใช้ CV แยกสำหรับแต่ละตำแหน่ง งานแต่ละรายการในลิสต์จะจัดไว้ตามตำแหน่งเป้าหมายครับ"
+en: "Each target role has its own CV, and each job in your applications belongs to one of them."
+th: "แต่ละตำแหน่งเป้าหมายใช้ CV แยกกัน ส่วนตำแหน่งงานในรายการสมัครงานจะจัดกลุ่มตามตำแหน่งเป้าหมาย"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ใช้เราเป็นผู้กำหนดเป้าหมาย และอธิบายการแยก CV กับการจัดงานโดยไม่ใช้สำนวนแปลว่าอยู่ภายใต้ตำแหน่ง"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: cfde558e4c177ee9aba71d39def5ad9b43d64f197aea53605b869985d7821a32
+  text_hash: 227846113a864137422e02ffd2098afcd85813ad55acebb54190b6a904eac37b
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33252,17 +32929,17 @@ source: "src/lib/content/portal.ts"
 path: TITLES_FIRST
 render: "Candidate page /me, chip on the title we push first"
 narrative_slot: utility
-en: "Pushed first"
-th: "เน้นก่อน"
+en: "Priority"
+th: "ลำดับแรก"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 7f0d119550a9ac870e6b4ef7c8bef127cd3157e0e3c6746b9b8fa9671385a12c
+  text_hash: 44c382e9937f9c4b819c1fb78f43c086cd41c13a9a8175f2c7464f966b80378b
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33274,17 +32951,17 @@ source: "src/lib/content/portal.ts"
 path: TITLES_EMPTY
 render: "Candidate page /me, overview, target titles card when empty"
 narrative_slot: utility
-en: "We have not set your titles yet. We will set them together in our first session."
-th: "เรายังไม่ได้กำหนดตำแหน่งเป้าหมายของคุณ เราจะเลือกด้วยกันในการคุยกับโค้ชครั้งแรกครับ"
+en: "No target roles yet. They are set with PunProfile in your first session."
+th: "ยังไม่มีตำแหน่งเป้าหมาย คุณจะกำหนดร่วมกับ PunProfile ในการพูดคุยครั้งแรก"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ระบุการเลือกเป้าหมายร่วมกันและนัดครั้งแรกให้ชัด"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: f2493ee4550d8060eeabd20eb427d1ea3942e1abe33e16039b72157c3f811877
+  text_hash: 1c3124f5700b268ee33e0de4009a92f1ae4fd0ebf12869b3f65987b08b82c606
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33318,17 +32995,17 @@ source: "src/lib/content/portal.ts"
 path: CV_BASE
 render: "Candidate page /me, CV tab, heading of the base CV that holds everything"
 narrative_slot: utility
-en: "Full CV"
-th: "CV ฉบับเต็ม"
+en: "Main CV"
+th: "CV หลัก"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 0749a6de51384b53b0c594a078e0584686ec03916cde54eebaabbf90da5afd3b
+  text_hash: 8b150fedcc3b33e3df42ba424d88dfafd0e8967ca69c7873c6e2f75c99282b89
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33384,17 +33061,17 @@ source: "src/lib/content/portal.ts"
 path: CV_NONE_FOR_TITLE
 render: "Candidate page /me, CV tab, a title with no CV yet"
 narrative_slot: utility
-en: "No CV for this title yet. Your coach will add it here."
-th: "ยังไม่มี CV สำหรับตำแหน่งนี้ โค้ชจะเพิ่มไว้ตรงนี้ครับ"
+en: "No CV for this role yet. PunProfile adds it here."
+th: "ยังไม่มี CV สำหรับตำแหน่งนี้ PunProfile จะเพิ่มไว้ที่นี่"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 49300a382b8c42ff16b2ab636af66f623e61639114c6e87a41d97a9d90f8837d
+  text_hash: ea8411fa497d7a40439c6cbd744f8c1d7494e799316c770f84271b9792009b50
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33406,17 +33083,17 @@ source: "src/lib/content/portal.ts"
 path: CV_TAILORED
 render: "Candidate page /me, CV tab, heading of CVs tailored for a single job"
 narrative_slot: utility
-en: "Tailored for one job"
-th: "CV ที่ปรับเฉพาะงาน"
+en: "Tailored to a job ad"
+th: "CV ที่ปรับตามประกาศรับสมัคร"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ระบุให้ชัดว่าหัวข้อนี้เป็นกลุ่มไฟล์ CV ที่ปรับสำหรับงานเฉพาะ"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: cb8dbd80e3a84a09500ac954127b3827e17c95653b9b610c731fe9da5821e47f
+  text_hash: 13e5f089af7bf03771ef60e1c9acadde42eda6510c3262b29a0182ec54f13f49
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33450,17 +33127,17 @@ source: "src/lib/content/portal.ts"
 path: JOB_TITLE
 render: "Candidate page /me, label of the title a job belongs to, in filters and forms"
 narrative_slot: utility
-en: "Title"
+en: "Target role"
 th: "ตำแหน่งเป้าหมาย"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 1fba77e82f7a6aa9f2802f0284b6cfa519b09a7c3b7da184efdb7cf578d6415e
+  text_hash: ddc631821a3c773b39d3a1bc317a0d00de782387dc63835045e75633bdba2e87
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33472,17 +33149,17 @@ source: "src/lib/content/portal.ts"
 path: JOB_TITLE_NONE
 render: "Candidate page /me, a job not filed under a title"
 narrative_slot: utility
-en: "No title"
+en: "Not set"
 th: "ยังไม่ระบุ"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 37b6e29605e31155431e445197dc5e1f6741aba3adda03b1e33b4c312b4d2ad4
+  text_hash: eff141a09ae6bb3611aaf487f81c62c5a2bd91459177941fbc8b695bb7af8cd1
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33494,17 +33171,17 @@ source: "src/lib/content/portal.ts"
 path: TITLE_ALL
 render: "Candidate page /me, tracker title filter, show every job"
 narrative_slot: utility
-en: "All titles"
+en: "All roles"
 th: "ทุกตำแหน่ง"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 8337c7eef5417789aeecaf8c3a113af0bd0e2a71a675c4b40de26d3542372d5f
+  text_hash: 9f47ecc324b26c72ca2b6aba33dff7b2d42ebf131a68bc312c40674b296a5602
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33516,17 +33193,17 @@ source: "src/lib/content/portal.ts"
 path: FEED_INTRO_TITLES
 render: "Candidate page /me, Jobs for you intro once titles are set"
 narrative_slot: mechanism
-en: "Roles our team screened in the last 30 days that match your titles, in the countries you are going for. The same jobs we post in the group. Save one to put it in your job list."
-th: "เรารวมงานที่ทีมคัดในช่วง 30 วันที่ผ่านมาให้คุณแล้ว โดยเลือกให้ตรงกับตำแหน่งและประเทศที่คุณตั้งเป้าไว้ เป็นงานชุดเดียวกับที่เราโพสต์ในกลุ่ม ลองเปิดดู แล้วกดบันทึกงานที่สนใจเข้าลิสต์ได้เลยครับ"
+en: "Jobs PunProfile screened in the last 30 days that match your target roles and countries. Save one to add it to your applications."
+th: "ตำแหน่งงานที่ PunProfile คัดไว้ใน 30 วันที่ผ่านมา ตรงกับตำแหน่งและประเทศเป้าหมายของคุณ กดบันทึกเพื่อเพิ่มเข้ารายการสมัครงาน"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ใช้เราเป็นผู้คัดงาน ลดโครงสร้างที่ซ้อนกัน และปิดด้วยขั้นตอนที่คุณทำต่อได้"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
 review:
   structural_calque: pass
-  text_hash: 9d343d13f3d4f9b18299b89584668cdab1e138a811d6080dfd8b8901c0da198d
+  text_hash: 29cc335653fa74d6e1e05d049e6156f4d25e866eb94a5b3da56a6a9791962341
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->
@@ -33538,17 +33215,17 @@ source: "src/lib/content/portal.ts"
 path: FEED_TITLE_EMPTY
 render: "Candidate page /me, Jobs for you, a title with no roles"
 narrative_slot: utility
-en: "Nothing for this title in the last 30 days."
-th: "ในช่วง 30 วันที่ผ่านมา เรายังไม่ได้คัดงานที่ตรงกับตำแหน่งเป้าหมายนี้ครับ"
+en: "No new jobs for this role in the last 30 days."
+th: "ในช่วง 30 วันที่ผ่านมา PunProfile ยังไม่ได้คัดตำแหน่งงานที่ตรงกับตำแหน่งเป้าหมายนี้"
 provenance: paul-approved
-date: 31/10/2026
+date: 01/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ระบุว่าเรายังไม่ได้คัดงานที่ตรงเป้าหมาย ไม่สื่อว่าไม่มีงานตำแหน่งนี้ในตลาด"
+decision_note: "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
 review:
   structural_calque: pass
-  text_hash: e33e92dd17edec0d9fc1339da8f999bed1879bd6f01e76f0b27bcd91c4cc4c48
+  text_hash: 4cb38003546e29924a3fe133681366bf4d35db96cda43d79797d0abc41fd5eeb
   prompt_version: structural-calque-v1
-  basis: "Final reviewer approved this item on 31/10/2026 under Paul's explicit delegation; Paul confirmed the completed pass in chat. Paul did not personally write the corrections."
+  basis: "Final reviewer approved this item on 01/11/2026 under Paul’s explicit delegation. Paul did not personally review each item."
 ```
 
 <!-- COPY-ENTRY -->

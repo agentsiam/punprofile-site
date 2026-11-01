@@ -10563,8 +10563,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, PORTAL_GREETING",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::PORTAL_GREETING_NONAME": {
     "source": "src/lib/content/portal.ts",
@@ -10572,8 +10572,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, PORTAL_GREETING_NONAME",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::PORTAL_INTRO": {
     "source": "src/lib/content/portal.ts",
@@ -10581,8 +10581,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, PORTAL_INTRO",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Replaces the translated everything-in-one-place opening and repetitive ownership claim with the reader’s actions and shared work. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::PORTAL_INTRO_SHORT": {
     "source": "src/lib/content/portal.ts",
@@ -10590,8 +10590,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, PORTAL_INTRO_SHORT",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Uses the reader’s action rather than a floating translated everything-in-one-place fragment. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::SIGNIN_HEADING": {
     "source": "src/lib/content/portal.ts",
@@ -10698,8 +10698,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, TAB_TRACKER",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::TAB_FEED": {
     "source": "src/lib/content/portal.ts",
@@ -10707,8 +10707,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, TAB_FEED",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::FEED_INTRO": {
     "source": "src/lib/content/portal.ts",
@@ -10716,8 +10716,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, FEED_INTRO",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Names the team and reader as actors, breaks the stacked location/time fragments, and closes on the next action. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::FEED_EMPTY": {
     "source": "src/lib/content/portal.ts",
@@ -10725,8 +10725,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, FEED_EMPTY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Rebuilds the empty state without making a target go quiet or an unspecified ตรงนี้ go up. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::FEED_NO_TARGET": {
     "source": "src/lib/content/portal.ts",
@@ -10734,8 +10734,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, FEED_NO_TARGET",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: States the missing inputs and next shared step instead of promising a list will magically appear. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::FEED_SAVE": {
     "source": "src/lib/content/portal.ts",
@@ -10743,8 +10743,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, FEED_SAVE",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::FEED_SAVED": {
     "source": "src/lib/content/portal.ts",
@@ -10752,8 +10752,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, FEED_SAVED",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::FEED_SEEN": {
     "source": "src/lib/content/portal.ts",
@@ -10770,8 +10770,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, FEED_UPDATED",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::TAB_CV": {
     "source": "src/lib/content/portal.ts",
@@ -10779,8 +10779,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, TAB_CV",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::TAB_COACH": {
     "source": "src/lib/content/portal.ts",
@@ -10797,8 +10797,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, PIPELINE_HEADING",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::DATES_HEADING": {
     "source": "src/lib/content/portal.ts",
@@ -10806,8 +10806,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, DATES_HEADING",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Coming up covers service due dates and closing dates as well as follow-ups; วันที่ต้องจำ loses that context. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::DATES_EMPTY": {
     "source": "src/lib/content/portal.ts",
@@ -10815,8 +10815,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, DATES_EMPTY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Replaces the unnatural วันที่ต้องตาม and names the actual follow-up action and where the date appears. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::DATE_FOLLOW": {
     "source": "src/lib/content/portal.ts",
@@ -10851,8 +10851,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, LATEST_NOTE",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::SEE_ALL": {
     "source": "src/lib/content/portal.ts",
@@ -10887,8 +10887,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, TOKENS_MATCHED",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::TOKENS_RULE": {
     "source": "src/lib/content/portal.ts",
@@ -10896,8 +10896,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, TOKENS_RULE",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Names the service actor who deducts tokens and separates that rule from expiry, without adding counts or prices. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::WORK_HEADING": {
     "source": "src/lib/content/portal.ts",
@@ -10905,8 +10905,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, WORK_HEADING",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::WORK_EMPTY": {
     "source": "src/lib/content/portal.ts",
@@ -10914,8 +10914,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, WORK_EMPTY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Reorders the thought around shared planning and makes the actor of the passive เมื่อวางแผนกันแล้ว explicit. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::WORK_STATUS.not_started": {
     "source": "src/lib/content/portal.ts",
@@ -10932,8 +10932,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, WORK_STATUS.in_progress",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::WORK_STATUS.delivered": {
     "source": "src/lib/content/portal.ts",
@@ -10977,8 +10977,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, WORK_KIND.coaching_session",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::WORK_KIND.base_cv": {
     "source": "src/lib/content/portal.ts",
@@ -10986,8 +10986,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, WORK_KIND.base_cv",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::WORK_KIND.linkedin": {
     "source": "src/lib/content/portal.ts",
@@ -11022,8 +11022,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, WORK_KIND.tailored_application",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::WORK_KIND.interview_prep": {
     "source": "src/lib/content/portal.ts",
@@ -11049,8 +11049,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, WORK_KIND.offer_review",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::WORK_KIND.contract_review": {
     "source": "src/lib/content/portal.ts",
@@ -11058,8 +11058,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, WORK_KIND.contract_review",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::BOOK_TIME": {
     "source": "src/lib/content/portal.ts",
@@ -11085,8 +11085,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, TOKENS_LOW",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::TOKENS_REQUESTED": {
     "source": "src/lib/content/portal.ts",
@@ -11094,8 +11094,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, TOKENS_REQUESTED",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::FIT_HEADING": {
     "source": "src/lib/content/portal.ts",
@@ -11112,8 +11112,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, FIT_BODY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Replaces the mistranslated ตำแหน่งของคุณ with assessment standing and makes the reader’s next action explicit. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::FIT_OPEN": {
     "source": "src/lib/content/portal.ts",
@@ -11130,8 +11130,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, FIT_POPUP",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Repairs the blocked-tab object and replaces the unspecified กดอีกครั้ง with the actual action. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::GOAL_HEADING": {
     "source": "src/lib/content/portal.ts",
@@ -11157,8 +11157,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, GOAL_NONE",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::GOAL_PROMPT": {
     "source": "src/lib/content/portal.ts",
@@ -11193,8 +11193,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, GOAL_WEEK_NOTE",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::NOTES_HEADING": {
     "source": "src/lib/content/portal.ts",
@@ -11202,8 +11202,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, NOTES_HEADING",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CV_HEADING": {
     "source": "src/lib/content/portal.ts",
@@ -11211,8 +11211,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CV_HEADING",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CV_EMPTY": {
     "source": "src/lib/content/portal.ts",
@@ -11220,8 +11220,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CV_EMPTY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CV_VERSION": {
     "source": "src/lib/content/portal.ts",
@@ -11247,8 +11247,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CV_THEIRS",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CV_OURS": {
     "source": "src/lib/content/portal.ts",
@@ -11256,8 +11256,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CV_OURS",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CV_CHANGED": {
     "source": "src/lib/content/portal.ts",
@@ -11265,8 +11265,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CV_CHANGED",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CV_DOWNLOAD": {
     "source": "src/lib/content/portal.ts",
@@ -11283,8 +11283,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_HEADING",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: The list includes saved and closed jobs, so กำลังสมัคร incorrectly limits its scope. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::JOBS_INTRO": {
     "source": "src/lib/content/portal.ts",
@@ -11292,8 +11292,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_INTRO",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Leads with what the candidate can do, then explains the exact decided badge without repeating list ownership. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::JOBS_EMPTY": {
     "source": "src/lib/content/portal.ts",
@@ -11301,8 +11301,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_EMPTY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::JOBS_ALL": {
     "source": "src/lib/content/portal.ts",
@@ -11346,8 +11346,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_STATUS.interviewing",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::JOBS_STATUS.offer": {
     "source": "src/lib/content/portal.ts",
@@ -11373,8 +11373,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_STATUS.rejected",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::JOBS_STATUS.withdrawn": {
     "source": "src/lib/content/portal.ts",
@@ -11400,8 +11400,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_WHY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::JOBS_POSTING": {
     "source": "src/lib/content/portal.ts",
@@ -11409,8 +11409,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_POSTING",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::JOBS_CLOSES": {
     "source": "src/lib/content/portal.ts",
@@ -11436,8 +11436,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_FOLLOW_UP",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Keeps the established follow-up term consistent across the date label and checklist. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::JOBS_NOTES": {
     "source": "src/lib/content/portal.ts",
@@ -11481,8 +11481,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_REMOVE_CONFIRM",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Preserves the irreversible meaning of for good that the draft confirmation omitted. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::JOBS_DETAILS": {
     "source": "src/lib/content/portal.ts",
@@ -11499,8 +11499,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_SEARCH",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::JOBS_CLOSED": {
     "source": "src/lib/content/portal.ts",
@@ -11517,8 +11517,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JOBS_NO_MATCH",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::COL_ROLE": {
     "source": "src/lib/content/portal.ts",
@@ -11598,8 +11598,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, COL_FOLLOW",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Names the date shown in this column and uses the same job-search term as the field and checklist. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::COL_EXCITEMENT": {
     "source": "src/lib/content/portal.ts",
@@ -11616,8 +11616,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, BACK_TO_LIST",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::DTAB_INFO": {
     "source": "src/lib/content/portal.ts",
@@ -11652,8 +11652,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, DTAB_COACH",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::DTAB_INTERVIEWS": {
     "source": "src/lib/content/portal.ts",
@@ -11679,8 +11679,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, IV_EMPTY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Distinguishes no recorded interview from no interview and repairs the dangling เมื่อได้นัด phrase. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::IV_ADD": {
     "source": "src/lib/content/portal.ts",
@@ -11706,8 +11706,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, IV_ROUND_HINT",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::IV_DATE": {
     "source": "src/lib/content/portal.ts",
@@ -11751,8 +11751,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, IV_FORMATS.onsite",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: In person does not necessarily mean at the company; removes an unsupported location restriction. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::IV_INTERVIEWERS": {
     "source": "src/lib/content/portal.ts",
@@ -11769,8 +11769,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, IV_NOTES",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Names the interview event and avoids the passive ถูกถาม fragment. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::CT_EMPTY": {
     "source": "src/lib/content/portal.ts",
@@ -11778,8 +11778,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CT_EMPTY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CT_ADD": {
     "source": "src/lib/content/portal.ts",
@@ -11850,8 +11850,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JD_HELP",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Removes document speech, names the company and reader, and makes the retained-copy benefit concrete. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::JD_KEYWORDS": {
     "source": "src/lib/content/portal.ts",
@@ -11868,8 +11868,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, JD_EMPTY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::LIST_REMOVE": {
     "source": "src/lib/content/portal.ts",
@@ -11895,8 +11895,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, DETAIL_OURS",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Names who preserves the original job details and who can edit the personal fields; removes the English-controlled passive structure. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CV_SENT_HELP": {
     "source": "src/lib/content/portal.ts",
@@ -11904,8 +11904,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CV_SENT_HELP",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Repairs ส่งไปกับงาน and clarifies the purpose of linking a sent CV to the application. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CV_SENT_NONE": {
     "source": "src/lib/content/portal.ts",
@@ -11922,8 +11922,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, COACH_NOTES_NONE",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CLOSE_AS": {
     "source": "src/lib/content/portal.ts",
@@ -11931,8 +11931,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CLOSE_AS",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Replaces the literal ปิดงานนี้เป็น while still introducing the adjacent closed-status buttons. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::REOPEN": {
     "source": "src/lib/content/portal.ts",
@@ -11940,8 +11940,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, REOPEN",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Uses the exact destination status and removes the unnatural เปิดกลับมาเป็น construction. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::SAVED_OK": {
     "source": "src/lib/content/portal.ts",
@@ -11958,8 +11958,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, ADD_JOB",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::ADD_ROLE": {
     "source": "src/lib/content/portal.ts",
@@ -12003,8 +12003,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, ADD_URL",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::ADD_SALARY": {
     "source": "src/lib/content/portal.ts",
@@ -12012,8 +12012,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, ADD_SALARY",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::ADD_STATUS": {
     "source": "src/lib/content/portal.ts",
@@ -12021,8 +12021,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, ADD_STATUS",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::ERROR_FIELDS": {
     "source": "src/lib/content/portal.ts",
@@ -12030,8 +12030,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, ERROR_FIELDS",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::ERROR_GENERIC": {
     "source": "src/lib/content/portal.ts",
@@ -12039,8 +12039,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, ERROR_GENERIC",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Thai review 31/10/2026, structural-calque-v1: Restores the brief wait in the English retry instruction. Proposal accepted by the delegated final reviewer. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::LOADING": {
     "source": "src/lib/content/portal.ts",
@@ -12354,8 +12354,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, overview, target titles card heading",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::TITLES_NOTE": {
     "source": "src/lib/content/portal.ts",
@@ -12363,8 +12363,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, overview, target titles card, line under heading",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ใช้เราเป็นผู้กำหนดเป้าหมาย และอธิบายการแยก CV กับการจัดงานโดยไม่ใช้สำนวนแปลว่าอยู่ภายใต้ตำแหน่ง"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::TITLES_FIRST": {
     "source": "src/lib/content/portal.ts",
@@ -12372,8 +12372,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, chip on the title we push first",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::TITLES_EMPTY": {
     "source": "src/lib/content/portal.ts",
@@ -12381,8 +12381,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, overview, target titles card when empty",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ระบุการเลือกเป้าหมายร่วมกันและนัดครั้งแรกให้ชัด"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::TITLE_STATS": {
     "source": "src/lib/content/portal.ts",
@@ -12399,8 +12399,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CV tab, heading of the base CV that holds everything",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CV_FOR_TITLE": {
     "source": "src/lib/content/portal.ts",
@@ -12426,8 +12426,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CV tab, a title with no CV yet",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::CV_TAILORED": {
     "source": "src/lib/content/portal.ts",
@@ -12435,8 +12435,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, CV tab, heading of CVs tailored for a single job",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ระบุให้ชัดว่าหัวข้อนี้เป็นกลุ่มไฟล์ CV ที่ปรับสำหรับงานเฉพาะ"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::CV_OTHER": {
     "source": "src/lib/content/portal.ts",
@@ -12453,8 +12453,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, label of the title a job belongs to, in filters and forms",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::JOB_TITLE_NONE": {
     "source": "src/lib/content/portal.ts",
@@ -12462,8 +12462,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, a job not filed under a title",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::TITLE_ALL": {
     "source": "src/lib/content/portal.ts",
@@ -12471,8 +12471,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, tracker title filter, show every job",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Approved unchanged in review 31/10/2026: อนุมัติตามร่าง อ่านเป็นธรรมชาติและตรงกับการใช้งาน"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::FEED_INTRO_TITLES": {
     "source": "src/lib/content/portal.ts",
@@ -12480,8 +12480,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, Jobs for you intro once titles are set",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ใช้เราเป็นผู้คัดงาน ลดโครงสร้างที่ซ้อนกัน และปิดด้วยขั้นตอนที่คุณทำต่อได้"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
   "src/lib/content/portal.ts::FEED_TITLE_EMPTY": {
     "source": "src/lib/content/portal.ts",
@@ -12489,8 +12489,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate page /me, Jobs for you, a title with no roles",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "31/10/2026",
-    "decisionNote": "Drafted by Claude 31/10/2026 for target titles (lifecycle-data-model.md § 8a), in the thai-candidate-voice register. Unread by Paul. Corrected in review 31/10/2026: อนุมัติฉบับแก้ ระบุว่าเรายังไม่ได้คัดงานที่ตรงเป้าหมาย ไม่สื่อว่าไม่มีงานตำแหน่งนี้ในตลาด"
+    "date": "01/11/2026",
+    "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, wording corrected by the reviewer."
   },
   "src/lib/content/portal.ts::SIGNIN_LOST": {
     "source": "src/lib/content/portal.ts",
