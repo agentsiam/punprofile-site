@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ArticleRoute from "@/components/features/blog/ArticleRoute";
 import { POSTS, postBySlug } from "@/lib/content/blog";
 import { pageMetadata, shareCard } from "@/lib/seo";
+import { articleSearch } from "@/lib/content/search";
 
 /** `/en/blog/<slug>`. See `src/app/(en)/en/page.tsx` for why this file exists. */
 export function generateStaticParams() {
@@ -20,7 +21,7 @@ export async function generateMetadata({
   const base = pageMetadata({
     path: `/blog/${post.slug}`,
     title: post.seoTitle ?? post.title,
-    description: post.summary,
+    description: articleSearch(post),
     locale: "en",
     type: "article",
     // The same card in both trees. It is modelled clay with no text in it, so

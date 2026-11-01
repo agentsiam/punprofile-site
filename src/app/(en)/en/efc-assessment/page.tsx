@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { ALL_COPY } from "@/lib/locale";
 import { pageMetadata } from "@/lib/seo";
+import { EFC_ASSESSMENT_SEARCH } from "@/lib/content/search";
 
 /** `/en/assess`. See `src/app/(en)/en/page.tsx` for why this file exists. */
 export const metadata: Metadata = pageMetadata({
   path: "/efc-assessment",
   title: ALL_COPY["nav.assess"],
-  description: ALL_COPY["landing.subhead"],
+  description: EFC_ASSESSMENT_SEARCH,
   locale: "en",
 });
 

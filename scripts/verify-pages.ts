@@ -48,6 +48,8 @@ import * as method from "../src/lib/content/method.js";
 // coach sends, which is no reason to skip the Thai checks every page gets.
 import * as portal from "../src/lib/content/portal.js";
 import * as checklist from "../src/lib/content/checklist.js";
+// Search descriptions, 01/11/2026. Never on a page, but read by every search result.
+import * as search from "../src/lib/content/search.js";
 
 const MODULES: Record<string, Record<string, unknown>> = {
   pricing,
@@ -60,6 +62,7 @@ const MODULES: Record<string, Record<string, unknown>> = {
   method,
   portal,
   checklist,
+  search,
 };
 
 /*

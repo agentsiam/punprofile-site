@@ -4,6 +4,7 @@ import SiteShell from "@/components/SiteShell";
 import { pick, t } from "@/lib/locale";
 import { HOOK_EYEBROW, HOOK_LINE_1, HOOK_LINE_2 } from "@/lib/content/coaching";
 import { SITE_URL, VERIFICATION, brandedTitle } from "@/lib/seo";
+import { HOME_SEARCH_EN } from "@/lib/content/search";
 
 /**
  * The English tree, at `/en`. 16/08/2026.
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     default: brandedTitle(t("landing.title", "en")),
     template: "%s | PunProfile",
   },
-  description: t("landing.subhead", "en"),
+  description: HOME_SEARCH_EN,
   alternates: {
     canonical: "/en",
     languages: { th: "/", en: "/en", "x-default": "/" },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ArticleRoute from "@/components/features/blog/ArticleRoute";
 import { POSTS, postBySlug } from "@/lib/content/blog";
 import { pageMetadata, shareCard } from "@/lib/seo";
+import { articleSearch } from "@/lib/content/search";
 
 /**
  * One article, Thai. 16/08/2026.
@@ -32,7 +33,7 @@ export async function generateMetadata({
   const base = pageMetadata({
     path: `/blog/${post.slug}`,
     title: post.seoTitle ?? post.title,
-    description: post.summary,
+    description: articleSearch(post),
     type: "article",
     // The article's own sharing card, cut to the ratio every platform crops to.
     // `pageMetadata` puts it on both `og:image` and `twitter:image`, and

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ALL_COPY } from "@/lib/locale";
 import { pageMetadata } from "@/lib/seo";
+import { EFC_ASSESSMENT_SEARCH } from "@/lib/content/search";
 
 /**
  * The assessment's own title and description. Added 16/08/2026.
@@ -18,7 +19,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   path: "/efc-assessment",
   title: ALL_COPY["nav.assess"],
-  description: ALL_COPY["landing.subhead"],
+  description: EFC_ASSESSMENT_SEARCH,
 });
 
 /**
