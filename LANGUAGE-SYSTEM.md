@@ -18308,6 +18308,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].body[3]`
+
+```yaml
+id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].body[3]
+source: src/lib/content/privacy.ts
+path: PRIVACY_SECTIONS[1].body[3]
+render: Privacy notice, PRIVACY_SECTIONS[1].body[3]
+narrative_slot: utility
+en: "If you buy a PunProfile service, we also hold what you need it to work: what you bought and your token history; your CVs and the versions we prepare with you; the dates, times and our notes of your calls with us; your Fit Report ratings; your target job titles; the jobs you track on your page; the time zone you choose; anything you send us to prepare for a session; and the decisions we agree with you in a call."
+th: "หากคุณซื้อบริการของ PunProfile เราจะเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติการใช้โทเคน CV ของคุณและฉบับที่เราจัดทำร่วมกับคุณ วันเวลาและบันทึกของเราเกี่ยวกับการคุยกับคุณ ผลประเมินใน Fit Report ตำแหน่งงานเป้าหมาย งานที่คุณติดตามในหน้าของคุณ เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งมาเพื่อเตรียมตัวก่อนนัดคุย และสิ่งที่เราตกลงร่วมกันระหว่างการคุย"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 52ab981c3ccfe3cbac21431b5621edb86258d96c0a4ccf1f12d1eb28f9e03362
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].heading`
 
 ```yaml
@@ -18487,6 +18509,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[3].body[3]`
+
+```yaml
+id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[3].body[3]
+source: src/lib/content/privacy.ts
+path: PRIVACY_SECTIONS[3].body[3]
+render: Privacy notice, PRIVACY_SECTIONS[3].body[3]
+narrative_slot: utility
+en: "If you buy a service, to deliver it to you and to keep an accurate record of what you bought, what we have delivered and what is still owed."
+th: "หากคุณซื้อบริการ เราใช้ข้อมูลเพื่อให้บริการแก่คุณ และเพื่อเก็บบันทึกที่ถูกต้องว่าคุณซื้ออะไร เราส่งมอบอะไรไปแล้ว และยังค้างอะไรอยู่"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 251cc3e65391d19eb90dd929c5eadcf2c1f88414ce2de7bd832f0af85b3420b1
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[3].heading`
 
 ```yaml
@@ -18661,23 +18705,17 @@ source: src/lib/content/privacy.ts
 path: PRIVACY_SECTIONS[6].body[0]
 render: Privacy notice, PRIVACY_SECTIONS[6].body[0]
 narrative_slot: utility
-en: >-
-  Nothing that identifies you. We store no session identifier and no tracking cookie, and every visit starts
-  fresh. The only thing we keep on your device is your language choice, Thai or English, which cannot be
-  linked back to you or to your answers.
-th: >-
-  ไม่มีข้อมูลใดที่ระบุตัวตนของคุณ เราไม่จัดเก็บรหัสเซสชันและไม่มีคุกกี้ติดตาม
-  การเข้าใช้งานทุกครั้งเริ่มต้นใหม่ทั้งหมด สิ่งเดียวที่เราเก็บไว้บนอุปกรณ์ของคุณคือภาษาที่คุณเลือก
-  ไทยหรืออังกฤษ ซึ่งไม่สามารถเชื่อมโยงกลับมาถึงตัวคุณหรือคำตอบของคุณได้
-provenance: paul-approved
-date: 14/08/2026
+en: "Nothing that identifies you, unless you sign in to your page as a paying candidate. Signing in stores a sign-in cookie on your device so you stay signed in; signing out removes it. We use no tracking cookie. The only other thing we keep on your device is your language choice, Thai or English."
+th: "ไม่มีข้อมูลใดที่ระบุตัวตนของคุณ เว้นแต่คุณเข้าสู่ระบบหน้าของคุณในฐานะลูกค้าที่ชำระเงินแล้ว การเข้าสู่ระบบจะเก็บคุกกี้สำหรับการเข้าสู่ระบบไว้บนอุปกรณ์ของคุณ เพื่อให้คุณไม่ต้องเข้าสู่ระบบใหม่ทุกครั้ง และคุกกี้นี้จะถูกลบเมื่อคุณออกจากระบบ เราไม่ใช้คุกกี้ติดตาม สิ่งเดียวที่เราเก็บไว้บนอุปกรณ์ของคุณนอกจากนี้คือภาษาที่คุณเลือก ไทยหรืออังกฤษ"
+provenance: draft
+date: 02/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
 review:
-  structural_calque: pass
-  text_hash: afdd7e440077ab8d3c601f994a35809a2e3b782ef65925f563db81020f0ae032
+  structural_calque: pending
+  text_hash: 6625cef078f2ed1948e2f052e06ef5b3b2100ac6ef364e2d74f9efe266a5a155
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Not yet reviewed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -18881,23 +18919,17 @@ source: src/lib/content/privacy.ts
 path: PRIVACY_SECTIONS[8].body[6]
 render: Privacy notice, PRIVACY_SECTIONS[8].body[6]
 narrative_slot: utility
-en: >-
-  To exercise any of these, contact us using the details below. We may ask you to confirm something only the
-  person in the record would know, because we have no way to log you in and we will not hand your data to
-  someone claiming to be you.
-th: >-
-  หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อเราตามรายละเอียดด้านล่าง
-  เราอาจขอให้คุณยืนยันบางอย่างที่เฉพาะเจ้าของข้อมูลเท่านั้นที่ทราบ เนื่องจากเราไม่มีระบบให้คุณเข้าสู่ระบบ
-  และเราจะไม่ส่งมอบข้อมูลของคุณให้ผู้ที่อ้างว่าเป็นคุณ
-provenance: paul-approved
-date: 14/08/2026
+en: "To exercise any of these, contact us using the details below. We may ask you to confirm something only the person in the record would know, because we will not hand your data to someone claiming to be you."
+th: "หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อเราตามรายละเอียดด้านล่าง เราอาจขอให้คุณยืนยันบางอย่างที่เฉพาะเจ้าของข้อมูลเท่านั้นที่ทราบ เนื่องจากเราจะไม่ส่งมอบข้อมูลของคุณให้ผู้ที่อ้างว่าเป็นคุณ"
+provenance: draft
+date: 02/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
 review:
-  structural_calque: pass
-  text_hash: 0c73858b44a8457de8e3bd03df050202911729bc93a5e8b30fffabc813b3560c
+  structural_calque: pending
+  text_hash: 5658aad4a9e86864e455888773d58ea31b85b32504f8f7e83cf760905cbb97a5
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Not yet reviewed."
 ```
 
 <!-- COPY-ENTRY -->

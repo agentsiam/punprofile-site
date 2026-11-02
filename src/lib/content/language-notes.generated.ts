@@ -6840,6 +6840,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "14/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].body[3]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[1].body[3]",
+    "render": "Privacy notice, PRIVACY_SECTIONS[1].body[3]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
+  },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].heading": {
     "source": "src/lib/content/privacy.ts",
     "path": "PRIVACY_SECTIONS[1].heading",
@@ -6902,6 +6911,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "14/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
+  },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[3].body[3]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[3].body[3]",
+    "render": "Privacy notice, PRIVACY_SECTIONS[3].body[3]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
   },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[3].heading": {
     "source": "src/lib/content/privacy.ts",
@@ -6971,9 +6989,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRIVACY_SECTIONS[6].body[0]",
     "render": "Privacy notice, PRIVACY_SECTIONS[6].body[0]",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
   },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].heading": {
     "source": "src/lib/content/privacy.ts",
@@ -7052,9 +7070,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRIVACY_SECTIONS[8].body[6]",
     "render": "Privacy notice, PRIVACY_SECTIONS[8].body[6]",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
   },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[8].heading": {
     "source": "src/lib/content/privacy.ts",

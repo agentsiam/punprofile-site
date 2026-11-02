@@ -183,6 +183,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbMV0uYm9keVsyXQ:EN%%,
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbMV0uYm9keVsyXQ:TH%%,
       },
+      {
+        // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbMV0uYm9keVszXQ:EN%%,
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbMV0uYm9keVszXQ:TH%%,
+      },
     ],
   },
   {
@@ -236,6 +241,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
       {
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbM10uYm9keVsyXQ:EN%%,
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbM10uYm9keVsyXQ:TH%%,
+      },
+      {
+        // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbM10uYm9keVszXQ:EN%%,
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbM10uYm9keVszXQ:TH%%,
       },
     ],
   },

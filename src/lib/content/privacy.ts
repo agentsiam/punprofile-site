@@ -183,6 +183,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         en: "One of those questions asks about your visa and right-to-work status, which says something about your immigration position. We hold it because it changes what advice is honest, and for no other reason.",
         th: "หนึ่งในคำถามเหล่านั้นถามถึงสถานะวีซ่าและสิทธิในการทำงานของคุณ ซึ่งบ่งบอกถึงสถานะทางการเข้าเมืองของคุณ เราเก็บข้อมูลนี้เพราะมันเปลี่ยนคำแนะนำที่เราจะให้ได้อย่างตรงไปตรงมา และไม่มีเหตุผลอื่นนอกจากนี้",
       },
+      {
+        // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
+        en: "If you buy a PunProfile service, we also hold what you need it to work: what you bought and your token history; your CVs and the versions we prepare with you; the dates, times and our notes of your calls with us; your Fit Report ratings; your target job titles; the jobs you track on your page; the time zone you choose; anything you send us to prepare for a session; and the decisions we agree with you in a call.",
+        th: "หากคุณซื้อบริการของ PunProfile เราจะเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติการใช้โทเคน CV ของคุณและฉบับที่เราจัดทำร่วมกับคุณ วันเวลาและบันทึกของเราเกี่ยวกับการคุยกับคุณ ผลประเมินใน Fit Report ตำแหน่งงานเป้าหมาย งานที่คุณติดตามในหน้าของคุณ เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งมาเพื่อเตรียมตัวก่อนนัดคุย และสิ่งที่เราตกลงร่วมกันระหว่างการคุย",
+      },
     ],
   },
   {
@@ -236,6 +241,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
       {
         en: "Each contact channel is consented to separately, and each consent is recorded with the date and time you gave it. A phone number with no consent beside it is one we will not call.",
         th: "แต่ละช่องทางติดต่อต้องให้ความยินยอมแยกกัน และความยินยอมแต่ละรายการจะถูกบันทึกพร้อมวันและเวลาที่คุณให้ไว้ หมายเลขโทรศัพท์ที่ไม่มีการให้ความยินยอมกำกับไว้ คือหมายเลขที่เราจะไม่โทรหา",
+      },
+      {
+        // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
+        en: "If you buy a service, to deliver it to you and to keep an accurate record of what you bought, what we have delivered and what is still owed.",
+        th: "หากคุณซื้อบริการ เราใช้ข้อมูลเพื่อให้บริการแก่คุณ และเพื่อเก็บบันทึกที่ถูกต้องว่าคุณซื้ออะไร เราส่งมอบอะไรไปแล้ว และยังค้างอะไรอยู่",
       },
     ],
   },
@@ -302,8 +312,8 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
     },
     body: [
       {
-        en: "Nothing that identifies you. We store no session identifier and no tracking cookie, and every visit starts fresh. The only thing we keep on your device is your language choice, Thai or English, which cannot be linked back to you or to your answers.",
-        th: "ไม่มีข้อมูลใดที่ระบุตัวตนของคุณ เราไม่จัดเก็บรหัสเซสชันและไม่มีคุกกี้ติดตาม การเข้าใช้งานทุกครั้งเริ่มต้นใหม่ทั้งหมด สิ่งเดียวที่เราเก็บไว้บนอุปกรณ์ของคุณคือภาษาที่คุณเลือก ไทยหรืออังกฤษ ซึ่งไม่สามารถเชื่อมโยงกลับมาถึงตัวคุณหรือคำตอบของคุณได้",
+        en: "Nothing that identifies you, unless you sign in to your page as a paying candidate. Signing in stores a sign-in cookie on your device so you stay signed in; signing out removes it. We use no tracking cookie. The only other thing we keep on your device is your language choice, Thai or English.",
+        th: "ไม่มีข้อมูลใดที่ระบุตัวตนของคุณ เว้นแต่คุณเข้าสู่ระบบหน้าของคุณในฐานะลูกค้าที่ชำระเงินแล้ว การเข้าสู่ระบบจะเก็บคุกกี้สำหรับการเข้าสู่ระบบไว้บนอุปกรณ์ของคุณ เพื่อให้คุณไม่ต้องเข้าสู่ระบบใหม่ทุกครั้ง และคุกกี้นี้จะถูกลบเมื่อคุณออกจากระบบ เราไม่ใช้คุกกี้ติดตาม สิ่งเดียวที่เราเก็บไว้บนอุปกรณ์ของคุณนอกจากนี้คือภาษาที่คุณเลือก ไทยหรืออังกฤษ",
       },
     ],
   },
@@ -354,8 +364,8 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         th: "- คัดค้านวิธีที่เราประเมินคุณ หรือร้องเรียนต่อคณะกรรมการคุ้มครองข้อมูลส่วนบุคคลของประเทศไทย",
       },
       {
-        en: "To exercise any of these, contact us using the details below. We may ask you to confirm something only the person in the record would know, because we have no way to log you in and we will not hand your data to someone claiming to be you.",
-        th: "หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อเราตามรายละเอียดด้านล่าง เราอาจขอให้คุณยืนยันบางอย่างที่เฉพาะเจ้าของข้อมูลเท่านั้นที่ทราบ เนื่องจากเราไม่มีระบบให้คุณเข้าสู่ระบบ และเราจะไม่ส่งมอบข้อมูลของคุณให้ผู้ที่อ้างว่าเป็นคุณ",
+        en: "To exercise any of these, contact us using the details below. We may ask you to confirm something only the person in the record would know, because we will not hand your data to someone claiming to be you.",
+        th: "หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อเราตามรายละเอียดด้านล่าง เราอาจขอให้คุณยืนยันบางอย่างที่เฉพาะเจ้าของข้อมูลเท่านั้นที่ทราบ เนื่องจากเราจะไม่ส่งมอบข้อมูลของคุณให้ผู้ที่อ้างว่าเป็นคุณ",
       },
     ],
   },
