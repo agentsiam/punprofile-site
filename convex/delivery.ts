@@ -167,6 +167,8 @@ export const addDeliverable = mutation({
 export const updateDeliverable = mutation({
   args: {
     deliverableId: v.id("deliverables"),
+    /** Corrects a deliverable filed under the wrong kind. */
+    kind: v.optional(deliverableKindValidator),
     status: v.optional(
       v.union(v.literal("not_started"), v.literal("in_progress"), v.literal("delivered")),
     ),
@@ -204,6 +206,7 @@ export const updateDeliverable = mutation({
 
     const now = Date.now();
     await ctx.db.patch(args.deliverableId, {
+      ...(args.kind ? { kind: args.kind } : {}),
       ...(args.status ? { status: args.status } : {}),
       ...(args.status === "delivered" && row.deliveredAt === undefined
         ? { deliveredAt: now }
