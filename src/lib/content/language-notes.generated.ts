@@ -6993,6 +6993,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "02/11/2026",
     "decisionNote": "Drafted by Claude 02/11/2026. English approved by Paul 02/11/2026 after the live deployment was found to send sign-in codes, coach notifications and marketing email through Resend. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้ที่อยู่อีเมลแทนอีเมล เพื่อแยกข้อมูลติดต่อออกจากเนื้อหาข้อความ"
   },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[7]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[5].body[7]",
+    "render": "Privacy notice, PRIVACY_SECTIONS[5].body[7]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026. Paul chose to list Google Meet as a processor on 02/11/2026; Thai follows the pattern of his corrected Cal.com and Resend lines. Awaiting Paul's Thai verdict."
+  },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].heading": {
     "source": "src/lib/content/privacy.ts",
     "path": "PRIVACY_SECTIONS[5].heading",

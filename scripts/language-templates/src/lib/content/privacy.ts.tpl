@@ -310,6 +310,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs2XQ:TH%%,
       },
       {
+        // Video calls, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs3XQ:EN%%,
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs3XQ:TH%%,
+      },
+      {
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs0XQ:EN%%,
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs0XQ:TH%%,
       },

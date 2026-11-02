@@ -310,6 +310,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         th: "- Resend เป็นบริการส่งอีเมลที่ PunProfile ใช้ส่งรหัสเข้าสู่ระบบและข้อความอีเมลถึงคุณ โดย Resend จะได้รับที่อยู่อีเมลของคุณและเนื้อหาข้อความ",
       },
       {
+        // Video calls, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
+        en: "- Google Meet, the video service for our calls. It receives your name, email address and the call itself while it runs.",
+        th: "- Google Meet เป็นบริการวิดีโอคอลที่ PunProfile ใช้สำหรับการพูดคุย โดย Google จะได้รับชื่อ ที่อยู่อีเมลของคุณ และข้อมูลการสนทนาระหว่างที่การพูดคุยดำเนินอยู่",
+      },
+      {
         en: "These are service providers processing data on our behalf, not parties we share your information with. No one else receives it.",
         th: "ทั้งหมดนี้คือผู้ให้บริการที่ประมวลผลข้อมูลในนามของเรา ไม่ใช่บุคคลที่เราเปิดเผยข้อมูลของคุณให้ ไม่มีผู้อื่นได้รับข้อมูลนี้",
       },

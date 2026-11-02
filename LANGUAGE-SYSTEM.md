@@ -18719,6 +18719,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[7]`
+
+```yaml
+id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[7]
+source: src/lib/content/privacy.ts
+path: PRIVACY_SECTIONS[5].body[7]
+render: Privacy notice, PRIVACY_SECTIONS[5].body[7]
+narrative_slot: utility
+en: "- Google Meet, the video service for our calls. It receives your name, email address and the call itself while it runs."
+th: "- Google Meet เป็นบริการวิดีโอคอลที่ PunProfile ใช้สำหรับการพูดคุย โดย Google จะได้รับชื่อ ที่อยู่อีเมลของคุณ และข้อมูลการสนทนาระหว่างที่การพูดคุยดำเนินอยู่"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026. Paul chose to list Google Meet as a processor on 02/11/2026; Thai follows the pattern of his corrected Cal.com and Resend lines. Awaiting Paul's Thai verdict."
+review:
+  structural_calque: pending
+  text_hash: edb6742f09e021226534422e6edc3f67cbbdf1ddacca82083da49209e828ae69
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].heading`
 
 ```yaml
