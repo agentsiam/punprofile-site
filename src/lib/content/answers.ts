@@ -21,7 +21,7 @@
  */
 
 import { QUESTION_INDEX, STAGE1 } from "./questions";
-import { isImportedRecord } from "./mapping";
+import { APP_ONLY_KEYS, APP_SUPERSEDES, isImportedRecord } from "./mapping";
 import { AI_INDICATOR_LABELS } from "../normalize";
 
 type Responses = Record<string, unknown>;
@@ -288,22 +288,71 @@ const SHEET_COLUMN_LABELS: Record<string, string> = {
 /** Fields read for scoring but not shown as their own row, so they are not "extras". */
 const ACCOUNTED_FOR = new Set(["aiIndicators", "familyIndicators", "salaryText", "otherLanguages"]);
 
-export function readAnswers(responses: Responses): AnswerSheet {
+const ddmmyyyy = (ms: number) => {
+  const d = new Date(ms);
+  return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
+};
+
+/** An app answer in words, the same way the app's own sheet shows it. */
+function appAnswer(key: string, raw: unknown): string | null {
+  if (raw === undefined || raw === null) return null;
+  const values = Array.isArray(raw) ? raw.map(String) : [String(raw)];
+  return values.map((v) => optionLabel(key, v) ?? v).join(", ") || null;
+}
+
+export function readAnswers(
+  responses: Responses,
+  /** When each instrument was answered, for the "was" line on a superseded row. */
+  dates: { surveyAt?: number; appAt?: number } = {},
+): AnswerSheet {
   const seen = new Set<string>();
   const rows: AnswerRow[] = [];
 
   const instrument: AnswerSheet["instrument"] = isImportedRecord(responses) ? "survey" : "app";
 
   if (instrument === "survey") {
+    const supersededBy = new Map<string, string>();
+    for (const [app, survey] of Object.entries(APP_SUPERSEDES)) {
+      if (survey && responses[app] !== undefined && responses[app] !== null) supersededBy.set(survey, app);
+    }
+    const appWhen = dates.appAt ? `, ${ddmmyyyy(dates.appAt)}` : "";
+    const surveyWhen = dates.surveyAt ? `, ${ddmmyyyy(dates.surveyAt)}` : "";
     for (const f of SURVEY_FIELDS) {
       seen.add(f.key);
       const raw = responses[f.key];
       const answered = raw !== undefined && raw !== null && !(Array.isArray(raw) && raw.length === 0);
+      // A later answer to the same question in the app replaces this one in
+      // scoring, so the row shows it first and keeps the survey's beside it.
+      // Keyed by the app field, so a correction lands on the answer that counts.
+      const app = supersededBy.get(f.key);
+      if (app) {
+        seen.add(app);
+        const was = answered ? f.render(raw, responses) : "not answered";
+        rows.push({
+          key: app,
+          question: f.question,
+          answer: `${appAnswer(app, responses[app])} (EU Fit Check in the app${appWhen}), was ${was} (survey${surveyWhen})`,
+          ...correctable(app, "app"),
+        });
+        continue;
+      }
       rows.push({
         key: f.key,
         question: f.question,
         answer: answered || f.alwaysRender ? f.render(raw, responses) : null,
         ...correctable(f.key, "survey"),
+      });
+    }
+    for (const k of APP_ONLY_KEYS) {
+      if (seen.has(k) || responses[k] === undefined || responses[k] === null) continue;
+      const q = STAGE1.find((x) => x.key === k);
+      if (!q) continue;
+      seen.add(k);
+      rows.push({
+        key: k,
+        question: `${q.en} (EU Fit Check in the app${dates.appAt ? `, ${ddmmyyyy(dates.appAt)}` : ""})`,
+        answer: appAnswer(k, responses[k]),
+        ...correctable(k, "app"),
       });
     }
   } else {

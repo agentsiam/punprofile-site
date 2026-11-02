@@ -33,8 +33,11 @@ export default function AnswerSheet({
   leadId,
   responses,
   corrected,
+  dates,
 }: {
   leadId: Id<"leads">;
+  /** When the survey was imported and the app last answered, for superseded rows. */
+  dates?: { surveyAt?: number; appAt?: number };
   /** The candidate's own answers, uncorrected. */
   responses: Record<string, unknown>;
   corrected: CorrectedRecord;
@@ -42,7 +45,7 @@ export default function AnswerSheet({
   // Read from the candidate's own record, so every row shows the question and
   // the answer THEY gave. The correction is rendered beside it, never in place
   // of it.
-  const sheet = readAnswers(responses);
+  const sheet = readAnswers(responses, dates);
   const [editing, setEditing] = useState<string | null>(null);
 
   if (Object.keys(responses).length === 0 && corrected.byKey.size === 0) {
