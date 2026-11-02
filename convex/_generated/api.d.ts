@@ -10,6 +10,7 @@
 
 import type * as adminEmails from "../adminEmails.js";
 import type * as auth from "../auth.js";
+import type * as bookingWebhook from "../bookingWebhook.js";
 import type * as candidateAccess from "../candidateAccess.js";
 import type * as candidateCode from "../candidateCode.js";
 import type * as codeEmail from "../codeEmail.js";
@@ -48,6 +49,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   adminEmails: typeof adminEmails;
   auth: typeof auth;
+  bookingWebhook: typeof bookingWebhook;
   candidateAccess: typeof candidateAccess;
   candidateCode: typeof candidateCode;
   codeEmail: typeof codeEmail;

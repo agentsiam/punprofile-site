@@ -146,8 +146,8 @@ export function leadItems(ds: SessionDeliverable[], calls: Call[], preps: Prepar
   const prep = preparationState(ds, calls, preps, now);
   if (preview && preview.status !== "delivered") {
     if (prep.state === "not_booked") {
-      // Booked through the 60-minute Cal.com link and logged by hand: nothing reaches the call log on its own.
-      out.push({ key: "preview_not_logged", what: "Send the preview booking link and log the booking in the call log", owner: "Paul", by: null, exception: false });
+      // Booked through the 60-minute Cal.com link; the booking webhook writes the call.
+      out.push({ key: "preview_not_logged", what: "Send the preview booking link", owner: "Paul", by: null, exception: false });
     } else if (prep.state === "not_requested") {
       out.push({ key: "preparation_not_requested", what: "Send the preparation request on LINE, then tick it on the call", owner: "Paul", by: prep.deadline, exception: false });
     } else if (prep.state === "waiting") {

@@ -1093,6 +1093,21 @@ export const exportForLead = query({
         updatedAt: p.updatedAt,
       })),
       timeZone: lead.timeZone ?? null,
+      // Cal.com bookings still waiting to be placed, matched by their email.
+      unplacedBookings: lead.email
+        ? (
+            await ctx.db
+              .query("bookingInbox")
+              .withIndex("by_email", (q) => q.eq("attendeeEmail", lead.email!.trim().toLowerCase()))
+              .collect()
+          ).map((b) => ({
+            event: b.trigger,
+            startAt: b.startAt,
+            lengthMinutes: b.lengthMinutes ?? null,
+            name: b.attendeeName ?? null,
+            receivedAt: b.receivedAt,
+          }))
+        : [],
       signIn: access.map((g) => ({
         email: g.email,
         grantedAt: g.grantedAt,

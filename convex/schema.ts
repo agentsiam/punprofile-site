@@ -506,6 +506,7 @@ export default defineSchema({
       tokenRequests: v.optional(v.number()),
       targets: v.optional(v.number()),
       preparations: v.optional(v.number()),
+      bookingInbox: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -615,6 +616,10 @@ export default defineSchema({
      *  because nothing reaches the candidate on its own. § 7b.
      *  @absent notyet — not sent, or not a preview call */
     prepRequestedAt: v.optional(v.number()),
+    /** The Cal.com booking id, on a call the booking webhook wrote, so a
+     *  reschedule or cancellation finds its row. § 7b.
+     *  @absent none — logged by hand */
+    calBookingId: v.optional(v.string()),
     /** @absent unmeasured — not recorded */
     durationMinutes: v.optional(v.number()),
     /** @absent unmeasured — not recorded */
@@ -714,7 +719,42 @@ export default defineSchema({
   })
     .index("by_lead_time", ["leadId", "heldAt"])
     // The follow-up and reminder queues: what is coming up, across all leads.
-    .index("by_time", ["heldAt"]),
+    .index("by_time", ["heldAt"])
+    .index("by_cal_booking", ["calBookingId"]),
+
+  /**
+   * A Cal.com event the booking webhook could not place, waiting for Paul.
+   * `prd.md` section 8; `lifecycle-data-model.md` § 7b. Coach-only. A row
+   * exists only until Paul clears it, and clearing deletes it, because the
+   * attendee's name and email are the reason it is here and nothing else.
+   */
+  bookingInbox: defineTable({
+    calBookingId: v.string(),
+    trigger: v.union(
+      v.literal("BOOKING_CREATED"),
+      v.literal("BOOKING_RESCHEDULED"),
+      v.literal("BOOKING_CANCELLED"),
+    ),
+    startAt: v.number(),
+    /** @absent unmeasured — the event carried no length */
+    lengthMinutes: v.optional(v.number()),
+    /** @absent unmeasured — the event carried no name */
+    attendeeName: v.optional(v.string()),
+    /** Lowercased. @absent unmeasured — the event carried no email */
+    attendeeEmail: v.optional(v.string()),
+    reason: v.union(
+      v.literal("no_lead"),
+      v.literal("several_leads"),
+      v.literal("unknown_length"),
+      v.literal("no_email"),
+      v.literal("unknown_booking"),
+      v.literal("already_scheduled"),
+    ),
+    receivedAt: v.number(),
+  })
+    .index("by_booking", ["calBookingId", "trigger"])
+    .index("by_email", ["attendeeEmail"])
+    .index("by_received", ["receivedAt"]),
 
   /**
    * What was sold. Spec: `lifecycle-data-model.md` § 7, built 15/08/2026.

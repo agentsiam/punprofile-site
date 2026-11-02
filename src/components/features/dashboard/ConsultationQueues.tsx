@@ -3,7 +3,7 @@
 /**
  * What is due, across every lead. `booking-tracking.md`, 22/08/2026.
  *
- * The free Calendly tier sends no reminders and no follow-ups, so both are
+ * Nothing sends the LINE reminder or the same-day follow-up, so both are
  * messages the coach has to remember to write. Until this panel existed the
  * only record of an unsent one was a missing field on a row inside one
  * candidate's page, which cannot be a trigger list: reading it means already
@@ -27,7 +27,8 @@
  */
 
 import Link from "next/link";
-import { useQuery } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
+import type { FunctionReturnType } from "convex/server";
 import { api } from "../../../../convex/_generated/api";
 
 /** Local time, DD/MM/YYYY, per the house date rule and to match the call log. */
@@ -101,6 +102,48 @@ function Bucket({
   );
 }
 
+/**
+ * Cal.com events the booking webhook could not place. `prd.md` section 8.
+ * The one button here is honest in a way a tick on the buckets below would not
+ * be: Paul logs the call by hand, or decides it needs nothing, and clearing
+ * deletes the row, which holds the attendee's name and email and nothing else.
+ */
+function BookingsToPlace() {
+  const rows = useQuery(api.bookingWebhook.inbox, {});
+  const clear = useMutation(api.bookingWebhook.clearInbox);
+  if (!rows || rows.length === 0) return null;
+  return <BookingsToPlaceList rows={rows} onClear={(id) => void clear({ id })} />;
+}
+
+type InboxRow = NonNullable<FunctionReturnType<typeof api.bookingWebhook.inbox>>[number];
+
+export function BookingsToPlaceList({ rows, onClear }: { rows: InboxRow[]; onClear: (id: InboxRow["_id"]) => void }) {
+  const what = { BOOKING_CREATED: "Booked", BOOKING_RESCHEDULED: "Rescheduled", BOOKING_CANCELLED: "Cancelled" } as const;
+  return (
+    <div className="mb-5">
+      <h3 className="text-label-large text-on-surface">Bookings to place ({rows.length})</h3>
+      <p className="mt-0.5 text-body-medium text-on-surface-variant">
+        Cal.com sent these and the app could not place them. Log the call by hand if it needs one, then clear it.
+      </p>
+      <ul className="mt-2 flex flex-col gap-1.5">
+        {rows.map((r) => (
+          <li key={r._id} className="text-body-medium">
+            <span className="text-on-surface">{r.attendeeName ?? "No name"}</span>
+            <span className="text-on-surface-variant">
+              {" "}
+              {r.attendeeEmail ? `· ${r.attendeeEmail} ` : ""}· {what[r.trigger]}, {stamp(r.startAt)}
+              {r.lengthMinutes ? `, ${r.lengthMinutes} min` : ""} · {r.reason}
+            </span>{" "}
+            <button type="button" className="text-ink-deep underline" onClick={() => onClear(r._id)}>
+              Clear
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function ConsultationQueues() {
   const queues = useConsultationQueues();
 
@@ -117,6 +160,7 @@ export default function ConsultationQueues() {
   return (
     <section className="rounded-large border border-outline-variant bg-surface px-6 py-5">
       <h2 className="text-title-medium text-on-surface">Consultations, what is due</h2>
+      <BookingsToPlace />
       {total === 0 ? (
         <p className="mt-2 text-body-medium text-on-surface-variant">
           Nothing due. No reminder unsent, no follow-up unwritten, no call without an outcome.

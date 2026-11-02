@@ -295,8 +295,8 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
     <section>
       <h2 className="text-title-large">Calls and sessions</h2>
       <p className="mt-1 text-body-medium text-on-surface-variant">
-        Cal.com sends nothing to this log yet. Log each booking from Cal.com&apos;s email as scheduled, with the deliverable it
-        serves, and correct the time on a reschedule.
+        Cal.com bookings, reschedules and cancellations arrive here on their own. One it cannot place waits under Bookings
+        to place on the dashboard. A call booked through Calendly before 02/11/2026 is logged by hand.
       </p>
       <label className="field-label mt-2 block max-w-sm">
         Candidate time zone{session && !session.timeZone ? ": not selected, times on their page show in Madrid" : ""}
