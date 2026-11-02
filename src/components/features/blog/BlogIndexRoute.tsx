@@ -19,13 +19,13 @@ import { blogJsonLd } from "@/lib/seo";
  * The `Blog` node renders only when there is something to describe. An empty one
  * is a claim that this site publishes, made on a page that proves it does not.
  */
-export default function BlogIndexRoute({ locale }: { locale: Locale }) {
+export default function BlogIndexRoute({ locale, topic }: { locale: Locale; topic?: string }) {
   return (
     <>
       {POSTS.length > 0 && (
         <JsonLd data={blogJsonLd(locale, BLOG_HEADING, BLOG_INTRO)} />
       )}
-      <BlogIndex />
+      <BlogIndex topic={topic} />
     </>
   );
 }

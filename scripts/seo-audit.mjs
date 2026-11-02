@@ -7,7 +7,8 @@
  * - status 200, not noindex, canonical naming itself, `hreflang` th, en and
  *   x-default, `<html lang>` matching the tree
  * - exactly one visible `h1`, counted after hydration (a raw-HTML count reads
- *   React's Suspense fallback as a second heading)
+ *   React's Suspense fallback as a second heading), and an `h1` and the lead
+ *   link already present in the server HTML, which is all many AI crawlers read
  * - title of 60 or fewer and description of 160 or fewer, counted as a reader
  *   sees them (Thai vowel and tone marks take no width), neither duplicated
  *   within one language tree
@@ -61,6 +62,13 @@ const descs = new Map();
 for (const url of urls) {
   const page = await ctx.newPage();
   const fails = [];
+  // The first response, before any script runs, is all many AI crawlers read.
+  // The heading and a lead link have to be in it, not only in the hydrated page.
+  const raw = await (await fetch(toLocal(url))).text();
+  const rawShown = raw
+    .replace(/<template[\s\S]*?<\/template>/gi, "")
+    .replace(/<div hidden[^>]*>[\s\S]*?<\/div>/gi, "");
+  if (!/<h1[\s>]/i.test(rawShown)) fails.push("no h1 in the server HTML (only after hydration)");
   const notes = [];
   const res = await page.goto(toLocal(url), { waitUntil: "networkidle" });
   await page.waitForTimeout(400);
@@ -166,6 +174,8 @@ for (const url of urls) {
   // The lead form's own page is the destination, not a page that needs a link to it.
   const isForm = LEAD_FORM && new URL(url).pathname.replace(/^\/en/, "") === LEAD_FORM;
   const isExempt = EXEMPT.includes(new URL(url).pathname.replace(/^\/en(?=\/|$)/, "") || "/");
+  if (ctas.length && !isForm && !/href="[^"]*(contact|efc-assessment|line\.me|mailto)/.test(rawShown))
+    fails.push("lead link only after hydration, not in the server HTML");
   if (!ctas.length && !isForm && !isExempt) fails.push("no lead link in main content");
 
   results.push({ url, status, title: d.title, tl, dl, fails, notes });

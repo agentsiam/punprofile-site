@@ -9,17 +9,20 @@
  * page closes with.
  *
  * Filtering is `?topic=`, in the URL rather than in state, so a topic can be
- * linked to, shared and reloaded. Same mechanism and same reason as the services
- * page's `?focus=`, including the Suspense boundary: `useSearchParams` opts the
- * route out of static rendering at build time without one.
+ * linked to, shared and reloaded.
+ *
+ * **The page reads `topic` on the server and passes it in**, since 02/11/2026.
+ * It used to call `useSearchParams` here inside a Suspense boundary, and that
+ * boundary is where the server stopped: the HTML a crawler fetched held only the
+ * empty fallback, with no heading, no article links and no call to action. A
+ * browser filled it in after hydration, so it looked fine to anyone checking by
+ * eye, and an answer engine that reads the first response saw an empty page.
  *
  * An unknown or absent `topic` shows everything. A filter is a narrowing, and a
  * narrowing that fails should hand back the whole list rather than an error.
  */
 
-import { Suspense } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { useCopy } from "@/components/LocaleProvider";
 import CallToAction from "@/components/CallToAction";
 import PostCard from "@/components/features/blog/PostCard";
@@ -79,11 +82,10 @@ function Chip({
   );
 }
 
-function BlogBody() {
+export default function BlogIndex({ topic }: { topic?: string }) {
   const { pick, path, locale } = useCopy();
-  const params = useSearchParams();
   const topics = usedTopics();
-  const raw = params.get("topic");
+  const raw = topic ?? null;
   const active = topics.some((t) => t.id === raw) ? (raw as TopicId) : null;
   const posts = active ? POSTS.filter((p) => p.topic === active) : POSTS;
 
@@ -181,13 +183,5 @@ function BlogBody() {
         </div>
       </Band>
     </>
-  );
-}
-
-export default function BlogIndex() {
-  return (
-    <Suspense fallback={<div className="mx-auto w-full max-w-5xl px-6 py-16" />}>
-      <BlogBody />
-    </Suspense>
   );
 }

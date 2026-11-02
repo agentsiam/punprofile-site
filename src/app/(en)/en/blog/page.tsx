@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   ...(POSTS.length === 0 ? { robots: { index: false, follow: true } } : {}),
 };
 
-export default function BlogPageEn() {
-  return <BlogIndexRoute locale="en" />;
+export default async function BlogPageEn({
+  searchParams,
+}: {
+  searchParams: Promise<{ topic?: string | string[] }>;
+}) {
+  const { topic } = await searchParams;
+  return <BlogIndexRoute locale="en" topic={typeof topic === "string" ? topic : undefined} />;
 }
