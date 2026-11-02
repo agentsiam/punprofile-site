@@ -132,6 +132,79 @@ export const TOKENS_SPENDABLE: Copy = {
   en: "{n} available for matched jobs",
   th: "ใช้รับตำแหน่งงานที่คัดให้ได้ {n} โทเคน",
 };
+/** Appointments and the preview's preparation, `prd.md` section 8. */
+export const APPT_HEADING: Copy = {
+  en: "Your appointments",
+  th: "นัดหมายของคุณ",
+};
+export const APPT_NONE: Copy = {
+  en: "No appointment booked yet.",
+  th: "ยังไม่มีนัดหมาย",
+};
+export const APPT_ZONE_LABEL: Copy = {
+  en: "Your time zone",
+  th: "เขตเวลาของคุณ",
+};
+export const APPT_ZONE_PROMPT: Copy = {
+  en: "Times below are Madrid time. Select your time zone to also see your own time.",
+  th: "เวลาด้านล่างเป็นเวลามาดริด เลือกเขตเวลาของคุณเพื่อดูเวลาท้องถิ่นของคุณด้วย",
+};
+export const APPT_ZONE_CHOOSE: Copy = {
+  en: "Select a time zone",
+  th: "เลือกเขตเวลา",
+};
+export const APPT_MADRID: Copy = {
+  en: "Madrid time: {t}",
+  th: "เวลามาดริด: {t}",
+};
+export const APPT_YOURS: Copy = {
+  en: "Your time: {t}",
+  th: "เวลาของคุณ: {t}",
+};
+export const APPT_CALENDAR: Copy = {
+  en: "Add to calendar",
+  th: "เพิ่มลงปฏิทิน",
+};
+export const PREP_HEADING: Copy = {
+  en: "Before your coaching preview",
+  th: "ก่อนการพูดคุยกับ PunProfile",
+};
+export const PREP_DUE: Copy = {
+  en: "Send by {t}",
+  th: "ส่งภายใน {t}",
+};
+export const PREP_NOT_BOOKED: Copy = {
+  en: "Your session is not booked yet. You can send this now.",
+  th: "ยังไม่ได้นัดเวลา ส่งข้อมูลนี้ล่วงหน้าได้เลย",
+};
+export const PREP_ROLES: Copy = {
+  en: "Target roles, most wanted first (1 to 3)",
+  th: "ตำแหน่งที่ต้องการ เรียงจากที่อยากได้มากที่สุด (1 ถึง 3 ตำแหน่ง)",
+};
+export const PREP_PRIORITIES: Copy = {
+  en: "What you most want help with (1 to 3)",
+  th: "เรื่องที่อยากได้คำแนะนำมากที่สุด (1 ถึง 3 ข้อ)",
+};
+export const PREP_VACANCIES: Copy = {
+  en: "Example job ads you like (optional, up to 2 links)",
+  th: "ตัวอย่างประกาศงานที่สนใจ (ไม่บังคับ ไม่เกิน 2 ลิงก์)",
+};
+export const PREP_SEND: Copy = {
+  en: "Send",
+  th: "ส่ง",
+};
+export const PREP_SENT: Copy = {
+  en: "Sent. You can change it until the session.",
+  th: "ส่งแล้ว แก้ไขได้จนถึงวันนัด",
+};
+export const PREP_LATE: Copy = {
+  en: "The deadline has passed. You can still send it, and PunProfile will confirm whether the session stays as booked.",
+  th: "เลยกำหนดส่งแล้ว แต่ยังส่งได้ PunProfile จะยืนยันอีกครั้งว่าคงเวลานัดเดิมหรือไม่",
+};
+export const PREP_INVALID: Copy = {
+  en: "Add at least one role and one priority. Links must start with https.",
+  th: "ใส่ตำแหน่งอย่างน้อย 1 ตำแหน่ง และเรื่องที่อยากได้คำแนะนำอย่างน้อย 1 ข้อ ลิงก์ต้องขึ้นต้นด้วย https",
+};
 export const TOKENS_RULE: Copy = {
   en: "A token is used only once a service is delivered. Tokens never expire.",
   th: "โทเคนจะถูกหักเมื่อได้รับบริการแล้วเท่านั้น และไม่มีวันหมดอายุ",

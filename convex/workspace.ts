@@ -24,6 +24,15 @@ import { isAdminEmail } from "./adminEmails";
 import { liveGrant, normaliseEmail } from "./candidateAccess";
 import { targetsFor } from "./targets";
 import { computeWallet, cvEarnedBySelectionNow } from "../src/lib/wallet";
+import {
+  preparationState,
+  nextAction,
+  nextAppointment,
+  exceptions,
+  decisionsView,
+  previewOf,
+} from "../src/lib/session";
+import { isValidTimeZone } from "../src/lib/sessionTime";
 
 /** A target id passed in must belong to the same lead. */
 async function checkTarget(ctx: QueryCtx, targetId: Id<"targets"> | undefined | null, leadId: Id<"leads">) {
@@ -1059,6 +1068,17 @@ export const exportForLead = query({
         storyConsentAt: p.storyConsentAt ?? null,
         notes: p.notes ?? null,
       })),
+      preparations: (
+        await ctx.db.query("preparations").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect()
+      ).map((p) => ({
+        session: deliverableName.get(p.deliverableId) ?? null,
+        roles: p.roles,
+        priorities: p.priorities,
+        vacancyUrls: p.vacancyUrls,
+        submittedAt: p.submittedAt,
+        updatedAt: p.updatedAt,
+      })),
+      timeZone: lead.timeZone ?? null,
       signIn: access.map((g) => ({
         email: g.email,
         grantedAt: g.grantedAt,
@@ -1385,5 +1405,143 @@ export const reconcile = query({
       });
     }
     return out.sort((a, b) => b.flags.length - a.flags.length);
+  },
+});
+
+/* ------------------------------------------------- sessions and decisions */
+
+
+/** Roles to prefill the preparation with: what they sent, else their active titles, else their survey answer. */
+export async function prefillRoles(ctx: QueryCtx, lead: { _id: Id<"leads">; responses?: unknown }) {
+  const titles = (await targetsFor(ctx, lead._id)).filter((t) => t.status === "active").map((t) => t.title);
+  if (titles.length) return titles.slice(0, 3);
+  const r = (lead.responses ?? {}) as Record<string, unknown>;
+  return typeof r.targetRole === "string" && r.targetRole.trim() ? [r.targetRole.trim()] : [];
+}
+
+/** The coach records the candidate's zone on their behalf, or clears it. */
+export const setLeadTimeZone = mutation({
+  args: { leadId: v.id("leads"), timeZone: v.union(v.string(), v.null()) },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    if (args.timeZone !== null && !isValidTimeZone(args.timeZone)) throw new ConvexError("Not a time zone.");
+    await ctx.db.patch(args.leadId, { timeZone: args.timeZone ?? undefined });
+  },
+});
+
+/** Book or reschedule a session. Preparation already sent is kept; only the deadline moves. */
+export const setSessionStart = mutation({
+  args: { deliverableId: v.id("deliverables"), startsAt: v.union(v.number(), v.null()) },
+  handler: async (ctx, args) => {
+    const by = await requireAdmin(ctx);
+    const d = await ctx.db.get(args.deliverableId);
+    if (!d) throw new ConvexError("Deliverable not found.");
+    if (d.status === "delivered" || d.status === "cancelled") throw new ConvexError("That session is closed.");
+    const now = Date.now();
+    await ctx.db.patch(d._id, { startsAt: args.startsAt ?? undefined, updatedAt: now });
+    const was = d.startsAt;
+    const body =
+      args.startsAt === null
+        ? "Session time cleared."
+        : was === undefined
+          ? `Session booked for ${new Date(args.startsAt).toISOString()}.`
+          : `Session rescheduled from ${new Date(was).toISOString()} to ${new Date(args.startsAt).toISOString()}.`;
+    await ctx.db.insert("deliveryNotes", { leadId: d.leadId, body, shared: false, deliverableId: d._id, at: now, by });
+  },
+});
+
+/**
+ * Record a decision. Never edited afterwards. With `supersedes`, it explicitly
+ * replaces that one decision, which stays visible as history; without, it
+ * replaces nothing, whatever its subject.
+ */
+export const addDecision = mutation({
+  args: {
+    leadId: v.id("leads"),
+    body: v.string(),
+    deliverableId: v.optional(v.id("deliverables")),
+    supersedes: v.optional(v.id("deliveryNotes")),
+  },
+  handler: async (ctx, args) => {
+    const by = await requireAdmin(ctx);
+    const body = args.body.trim();
+    if (!body) throw new ConvexError("Write the decision.");
+    if (args.supersedes) {
+      const old = await ctx.db.get(args.supersedes);
+      if (!old || old.leadId !== args.leadId || !old.decision) throw new ConvexError("That is not a decision on this record.");
+      const notes = await ctx.db.query("deliveryNotes").withIndex("by_lead", (q) => q.eq("leadId", args.leadId)).collect();
+      if (notes.some((n) => n.supersedes === args.supersedes)) throw new ConvexError("That decision has already been replaced.");
+    }
+    if (args.deliverableId) {
+      const d = await ctx.db.get(args.deliverableId);
+      if (!d || d.leadId !== args.leadId) throw new ConvexError("That session belongs to a different lead.");
+    }
+    return await ctx.db.insert("deliveryNotes", {
+      leadId: args.leadId,
+      body,
+      shared: false,
+      decision: true,
+      ...(args.deliverableId ? { deliverableId: args.deliverableId } : {}),
+      ...(args.supersedes ? { supersedes: args.supersedes } : {}),
+      at: Date.now(),
+      by,
+    });
+  },
+});
+
+/** Everything the Session tab shows, computed from the record. */
+export const session = query({
+  args: { leadId: v.id("leads") },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const lead = await ctx.db.get(args.leadId);
+    if (!lead) return null;
+    const now = Date.now();
+    const { wallet, deliverables } = await walletFor(ctx, args.leadId);
+    const preps = await ctx.db.query("preparations").withIndex("by_lead", (q) => q.eq("leadId", args.leadId)).collect();
+    const notes = await ctx.db.query("deliveryNotes").withIndex("by_lead", (q) => q.eq("leadId", args.leadId)).collect();
+    const live = deliverables.filter((d) => d.status !== "cancelled");
+    const preview = previewOf(live);
+    const prep = preview ? preps.find((p) => p.deliverableId === preview._id) ?? null : null;
+
+    const ratings = await ctx.db
+      .query("competencyRatings")
+      .withIndex("by_lead_item", (q) => q.eq("leadId", args.leadId))
+      .collect();
+    const latest = new Map<string, (typeof ratings)[number]>();
+    for (const r of ratings) {
+      const seen = latest.get(r.itemKey);
+      if (!seen || r.ratedAt > seen.ratedAt) latest.set(r.itemKey, r);
+    }
+    const fitOpen = INTERVIEW_ITEMS.filter((k) => {
+      const r = latest.get(k);
+      return !r || (r.open?.length ?? 0) > 0;
+    });
+    const cv = (await ctx.db.query("cvDocuments").withIndex("by_lead", (q) => q.eq("leadId", args.leadId)).collect()).sort(
+      (a, b) => b.uploadedAt - a.uploadedAt,
+    )[0];
+
+    return {
+      now,
+      timeZone: lead.timeZone ?? null,
+      wallet,
+      deliverables: live.sort((a, b) => a.createdAt - b.createdAt),
+      nextAppointment: nextAppointment(live, now),
+      preview: preview
+        ? { _id: preview._id, startsAt: preview.startsAt ?? null, state: preparationState(live, preps, now), prep }
+        : null,
+      nextAction: nextAction(live, preps, wallet, now),
+      exceptions: exceptions(live, preps, wallet, now),
+      decisions: decisionsView(notes.filter((n) => n.decision)),
+      goal: (await targetsFor(ctx, args.leadId)).filter((t) => t.status === "active").map((t) => t.title),
+      evidence: {
+        cv: cv ? { label: cv.label, version: cv.version, uploadedAt: cv.uploadedAt } : null,
+        fitReportShared: lead.fitReportSharedAt !== undefined,
+        fitOpen,
+      },
+      openErrorReports: live.flatMap((d) =>
+        (d.errorReports ?? []).flatMap((e, i) => (e.resolvedAt === undefined ? [{ deliverableId: d._id, index: i, summary: e.summary }] : [])),
+      ),
+    };
   },
 });

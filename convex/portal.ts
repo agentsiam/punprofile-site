@@ -20,7 +20,9 @@ import { mutation, query, type QueryCtx, type MutationCtx } from "./_generated/s
 import type { Doc, Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { feedFor } from "./market";
-import { tokenBalance, walletFor } from "./workspace";
+import { tokenBalance, walletFor, prefillRoles } from "./workspace";
+import { preparationState, previewOf, LIMITS } from "../src/lib/session";
+import { isValidTimeZone, preparationDeadline } from "../src/lib/sessionTime";
 import { targetsFor } from "./targets";
 import { signedInCandidate } from "./candidateAccess";
 import { requireAdmin } from "./leads";
@@ -90,7 +92,35 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         status: d.status,
         dueAt: d.dueAt ?? null,
         deliveredAt: d.deliveredAt ?? null,
+        startsAt: d.startsAt ?? null,
       }));
+
+    // Appointments and the preview's preparation, `prd.md` section 8.
+    const allDeliverables = (
+      await ctx.db
+        .query("deliverables")
+        .withIndex("by_lead", (q) => q.eq("leadId", lead._id))
+        .collect()
+    ).filter((d) => soldIds.has(d.engagementId) && d.status !== "cancelled");
+    const preps = await ctx.db
+      .query("preparations")
+      .withIndex("by_lead", (q) => q.eq("leadId", lead._id))
+      .collect();
+    const previewRow = previewOf(allDeliverables);
+    const nowMs = Date.now();
+    const prepRow = previewRow ? preps.find((p) => p.deliverableId === previewRow._id) : undefined;
+    const preparation =
+      previewRow && previewRow.status !== "delivered"
+        ? {
+            deliverableId: previewRow._id,
+            state: preparationState(allDeliverables, preps, nowMs).state,
+            deadline: previewRow.startsAt ? preparationDeadline(previewRow.startsAt) : null,
+            roles: prepRow?.roles ?? (await prefillRoles(ctx, lead)),
+            priorities: prepRow?.priorities ?? [],
+            vacancyUrls: prepRow?.vacancyUrls ?? [],
+            submittedAt: prepRow?.submittedAt ?? null,
+          }
+        : null;
 
     const cvs = await Promise.all(
       (
@@ -207,6 +237,8 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       cvs,
       notes,
       jobs,
+      timeZone: lead.timeZone ?? null,
+      preparation,
     };
 }
 
@@ -546,5 +578,71 @@ export const requestTokens = mutation({
     ).find((r) => r.handledAt === undefined);
     if (open) return open._id;
     return await ctx.db.insert("tokenRequests", { leadId: lead._id, at: Date.now() });
+  },
+});
+
+/** The candidate selects their own time zone for appointment times. */
+export const setTimeZone = mutation({
+  args: { timeZone: v.string() },
+  handler: async (ctx, args) => {
+    const lead = await requireLead(ctx);
+    if (!isValidTimeZone(args.timeZone)) throw new ConvexError("bad_time_zone");
+    await ctx.db.patch(lead._id, { timeZone: args.timeZone });
+  },
+});
+
+const cleanList = (xs: string[], max: number, each = 200) =>
+  xs.map((x) => x.trim().slice(0, each)).filter(Boolean).slice(0, max);
+
+/**
+ * The preview's preparation, from the signed-in candidate only, for their own
+ * complimentary preview only. One to three roles and priorities; up to two
+ * https vacancy links, which are optional.
+ */
+export const submitPreparation = mutation({
+  args: {
+    deliverableId: v.id("deliverables"),
+    roles: v.array(v.string()),
+    priorities: v.array(v.string()),
+    vacancyUrls: v.array(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const lead = await requireLead(ctx);
+    const d = await ctx.db.get(args.deliverableId);
+    if (!d || d.leadId !== lead._id || d.entitlement !== "pack_preview" || d.status === "cancelled" || d.status === "delivered") {
+      throw new ConvexError("not_found");
+    }
+    const roles = cleanList(args.roles, LIMITS.roles[1]);
+    const priorities = cleanList(args.priorities, LIMITS.priorities[1], 300);
+    const vacancyUrls = cleanList(args.vacancyUrls, LIMITS.vacancyUrls[1], 2000);
+    if (args.roles.filter((r) => r.trim()).length > LIMITS.roles[1] || roles.length < LIMITS.roles[0]) throw new ConvexError("roles");
+    if (args.priorities.filter((r) => r.trim()).length > LIMITS.priorities[1] || priorities.length < LIMITS.priorities[0]) {
+      throw new ConvexError("priorities");
+    }
+    if (args.vacancyUrls.filter((r) => r.trim()).length > LIMITS.vacancyUrls[1]) throw new ConvexError("vacancies");
+    for (const u of vacancyUrls) {
+      let ok = false;
+      try {
+        ok = new URL(u).protocol === "https:";
+      } catch {
+        ok = false;
+      }
+      if (!ok) throw new ConvexError("vacancy_url");
+    }
+    const now = Date.now();
+    const existing = (
+      await ctx.db.query("preparations").withIndex("by_deliverable", (q) => q.eq("deliverableId", d._id)).collect()
+    )[0];
+    if (existing) await ctx.db.patch(existing._id, { roles, priorities, vacancyUrls, updatedAt: now });
+    else
+      await ctx.db.insert("preparations", {
+        leadId: lead._id,
+        deliverableId: d._id,
+        roles,
+        priorities,
+        vacancyUrls,
+        submittedAt: now,
+        updatedAt: now,
+      });
   },
 });

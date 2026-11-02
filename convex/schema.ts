@@ -44,6 +44,9 @@ export default defineSchema({
      */
     /** @absent none — the coach has not set one */
     nickname: v.optional(v.string()),
+    /** IANA zone the candidate selected for their appointments, § 7b.
+     *  @absent notyet — not selected; pages show Madrid, labelled, never a guess */
+    timeZone: v.optional(v.string()),
     /** @absent unmeasured — not captured until the contact gate clears */
     lastName: v.optional(v.string()),
     /** @absent unmeasured — composed from the two above once both exist */
@@ -502,6 +505,7 @@ export default defineSchema({
       candidateAccess: v.optional(v.number()),
       tokenRequests: v.optional(v.number()),
       targets: v.optional(v.number()),
+      preparations: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -805,6 +809,9 @@ export default defineSchema({
 
     /** @absent none — no date agreed yet */
     dueAt: v.optional(v.number()),
+    /** A session's start, as an instant, § 7b. Changing it is a reschedule.
+     *  @absent notyet — not booked, or not a session */
+    startsAt: v.optional(v.number()),
     /** A booking page for this session, shown to the candidate as a button
      *  while it is not yet delivered. @absent none — booked by message */
     bookingUrl: v.optional(v.string()),
@@ -1251,9 +1258,35 @@ export default defineSchema({
     deliverableId: v.optional(v.id("deliverables")),
     /** @absent none — not about one application */
     applicationId: v.optional(v.id("applications")),
+    /** A decision captured in the Session tab, `prd.md` section 8.
+     *  @absent none — an ordinary delivery note */
+    decision: v.optional(v.boolean()),
+    /** The decision this one explicitly replaces. Never edited afterwards.
+     *  @absent none — replaces nothing */
+    supersedes: v.optional(v.id("deliveryNotes")),
     at: v.number(),
     by: v.string(),
   }).index("by_lead", ["leadId", "at"]),
+
+  /**
+   * The candidate's preparation for the complimentary preview, § 7b. One row
+   * per session, kept through a reschedule, written only by the signed-in
+   * candidate it belongs to (`portal.submitPreparation`).
+   */
+  preparations: defineTable({
+    leadId: v.id("leads"),
+    deliverableId: v.id("deliverables"),
+    /** One to three, in the candidate's order. */
+    roles: v.array(v.string()),
+    /** One to three. */
+    priorities: v.array(v.string()),
+    /** Zero to two, https. Optional examples never block the session. */
+    vacancyUrls: v.array(v.string()),
+    submittedAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_lead", ["leadId"])
+    .index("by_deliverable", ["deliverableId"]),
   /**
    * Who may sign in to their own page at `/me`. `lifecycle-data-model.md`
    * § 10, option (b): a real candidate account, email and a one-time code, no

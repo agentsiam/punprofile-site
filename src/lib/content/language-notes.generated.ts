@@ -10908,6 +10908,168 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "02/11/2026",
     "decisionNote": "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown with TOKENS_RESERVED: what matched jobs can still use. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict."
   },
+  "src/lib/content/portal.ts::APPT_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_HEADING",
+    "render": "Candidate page /me, APPT_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::APPT_NONE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_NONE",
+    "render": "Candidate page /me, APPT_NONE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::APPT_ZONE_LABEL": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_ZONE_LABEL",
+    "render": "Candidate page /me, APPT_ZONE_LABEL",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::APPT_ZONE_PROMPT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_ZONE_PROMPT",
+    "render": "Candidate page /me, APPT_ZONE_PROMPT",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::APPT_ZONE_CHOOSE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_ZONE_CHOOSE",
+    "render": "Candidate page /me, APPT_ZONE_CHOOSE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::APPT_MADRID": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_MADRID",
+    "render": "Candidate page /me, APPT_MADRID",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::APPT_YOURS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_YOURS",
+    "render": "Candidate page /me, APPT_YOURS",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::APPT_CALENDAR": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_CALENDAR",
+    "render": "Candidate page /me, APPT_CALENDAR",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::PREP_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_HEADING",
+    "render": "Candidate page /me, PREP_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::PREP_DUE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_DUE",
+    "render": "Candidate page /me, PREP_DUE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::PREP_NOT_BOOKED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_NOT_BOOKED",
+    "render": "Candidate page /me, PREP_NOT_BOOKED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::PREP_ROLES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_ROLES",
+    "render": "Candidate page /me, PREP_ROLES",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::PREP_PRIORITIES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_PRIORITIES",
+    "render": "Candidate page /me, PREP_PRIORITIES",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::PREP_VACANCIES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_VACANCIES",
+    "render": "Candidate page /me, PREP_VACANCIES",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::PREP_SEND": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_SEND",
+    "render": "Candidate page /me, PREP_SEND",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::PREP_SENT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_SENT",
+    "render": "Candidate page /me, PREP_SENT",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::PREP_LATE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_LATE",
+    "render": "Candidate page /me, PREP_LATE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
+  "src/lib/content/portal.ts::PREP_INVALID": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_INVALID",
+    "render": "Candidate page /me, PREP_INVALID",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
   "src/lib/content/portal.ts::TOKENS_RULE": {
     "source": "src/lib/content/portal.ts",
     "path": "TOKENS_RULE",

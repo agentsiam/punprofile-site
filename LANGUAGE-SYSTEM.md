@@ -28901,6 +28901,402 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::APPT_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::APPT_HEADING
+source: src/lib/content/portal.ts
+path: APPT_HEADING
+render: Candidate page /me, APPT_HEADING
+narrative_slot: utility
+en: "Your appointments"
+th: "นัดหมายของคุณ"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 12536521a631ef48ae1376a7e761fe0852c92ea3182e006904baeffe1f36066b
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::APPT_NONE`
+
+```yaml
+id: src/lib/content/portal.ts::APPT_NONE
+source: src/lib/content/portal.ts
+path: APPT_NONE
+render: Candidate page /me, APPT_NONE
+narrative_slot: utility
+en: "No appointment booked yet."
+th: "ยังไม่มีนัดหมาย"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 22a1623d3f8c7b83cb058656752029e906e495ffbd56925ae714feb60d4b3429
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::APPT_ZONE_LABEL`
+
+```yaml
+id: src/lib/content/portal.ts::APPT_ZONE_LABEL
+source: src/lib/content/portal.ts
+path: APPT_ZONE_LABEL
+render: Candidate page /me, APPT_ZONE_LABEL
+narrative_slot: utility
+en: "Your time zone"
+th: "เขตเวลาของคุณ"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 3f9c0a87e8fb361020a4ec9046d71cace2e491fa1038d3d433a792c38abcdc6b
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::APPT_ZONE_PROMPT`
+
+```yaml
+id: src/lib/content/portal.ts::APPT_ZONE_PROMPT
+source: src/lib/content/portal.ts
+path: APPT_ZONE_PROMPT
+render: Candidate page /me, APPT_ZONE_PROMPT
+narrative_slot: utility
+en: "Times below are Madrid time. Select your time zone to also see your own time."
+th: "เวลาด้านล่างเป็นเวลามาดริด เลือกเขตเวลาของคุณเพื่อดูเวลาท้องถิ่นของคุณด้วย"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 4f103457e99a215ae680b0c3667f2419603b072c0488bcacb829be09d503b766
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::APPT_ZONE_CHOOSE`
+
+```yaml
+id: src/lib/content/portal.ts::APPT_ZONE_CHOOSE
+source: src/lib/content/portal.ts
+path: APPT_ZONE_CHOOSE
+render: Candidate page /me, APPT_ZONE_CHOOSE
+narrative_slot: utility
+en: "Select a time zone"
+th: "เลือกเขตเวลา"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 98d925674e2fbb1b4d970068edb3660fab76af173a0fc3de9f258b1d116094ec
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::APPT_MADRID`
+
+```yaml
+id: src/lib/content/portal.ts::APPT_MADRID
+source: src/lib/content/portal.ts
+path: APPT_MADRID
+render: Candidate page /me, APPT_MADRID
+narrative_slot: utility
+en: "Madrid time: {t}"
+th: "เวลามาดริด: {t}"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 7f3d244333c55fa06f47a1347dcaf86e4aedc4d9df1a488c34774f8aa269b3b8
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::APPT_YOURS`
+
+```yaml
+id: src/lib/content/portal.ts::APPT_YOURS
+source: src/lib/content/portal.ts
+path: APPT_YOURS
+render: Candidate page /me, APPT_YOURS
+narrative_slot: utility
+en: "Your time: {t}"
+th: "เวลาของคุณ: {t}"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: ab9bd646556c499ec06af0dcb443dfbc434fd33a863f37a1dfe41436587b9a45
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::APPT_CALENDAR`
+
+```yaml
+id: src/lib/content/portal.ts::APPT_CALENDAR
+source: src/lib/content/portal.ts
+path: APPT_CALENDAR
+render: Candidate page /me, APPT_CALENDAR
+narrative_slot: utility
+en: "Add to calendar"
+th: "เพิ่มลงปฏิทิน"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 1d637f275b855ba0d8f819cea9c74fe9556bc9d7391bd2bf46ad39cd47570059
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PREP_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::PREP_HEADING
+source: src/lib/content/portal.ts
+path: PREP_HEADING
+render: Candidate page /me, PREP_HEADING
+narrative_slot: utility
+en: "Before your coaching preview"
+th: "ก่อนการพูดคุยกับ PunProfile"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: f38cd6fdf16f38db424aa25399c14ddfa9932597d7db1ba4763db5c1279a797e
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PREP_DUE`
+
+```yaml
+id: src/lib/content/portal.ts::PREP_DUE
+source: src/lib/content/portal.ts
+path: PREP_DUE
+render: Candidate page /me, PREP_DUE
+narrative_slot: utility
+en: "Send by {t}"
+th: "ส่งภายใน {t}"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 58f16b59223e8fe1e782d13ae5246791f0bb8345beb531d06abfb40e8eccc24a
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PREP_NOT_BOOKED`
+
+```yaml
+id: src/lib/content/portal.ts::PREP_NOT_BOOKED
+source: src/lib/content/portal.ts
+path: PREP_NOT_BOOKED
+render: Candidate page /me, PREP_NOT_BOOKED
+narrative_slot: utility
+en: "Your session is not booked yet. You can send this now."
+th: "ยังไม่ได้นัดเวลา ส่งข้อมูลนี้ล่วงหน้าได้เลย"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 7889847191afc46cbc3a93fadf3e31572b96a8674ec43fa93c6c6cddc6bb82dc
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PREP_ROLES`
+
+```yaml
+id: src/lib/content/portal.ts::PREP_ROLES
+source: src/lib/content/portal.ts
+path: PREP_ROLES
+render: Candidate page /me, PREP_ROLES
+narrative_slot: utility
+en: "Target roles, most wanted first (1 to 3)"
+th: "ตำแหน่งที่ต้องการ เรียงจากที่อยากได้มากที่สุด (1 ถึง 3 ตำแหน่ง)"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 6b7eea8a6bec909b1723f34e9a7a767ad63c3e15317e5a2710b499acbcaadfd2
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PREP_PRIORITIES`
+
+```yaml
+id: src/lib/content/portal.ts::PREP_PRIORITIES
+source: src/lib/content/portal.ts
+path: PREP_PRIORITIES
+render: Candidate page /me, PREP_PRIORITIES
+narrative_slot: utility
+en: "What you most want help with (1 to 3)"
+th: "เรื่องที่อยากได้คำแนะนำมากที่สุด (1 ถึง 3 ข้อ)"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: b3f43ac385cc5e6e4832512f991fcabd6549c8d81ed31f39b87645c20338fd5c
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PREP_VACANCIES`
+
+```yaml
+id: src/lib/content/portal.ts::PREP_VACANCIES
+source: src/lib/content/portal.ts
+path: PREP_VACANCIES
+render: Candidate page /me, PREP_VACANCIES
+narrative_slot: utility
+en: "Example job ads you like (optional, up to 2 links)"
+th: "ตัวอย่างประกาศงานที่สนใจ (ไม่บังคับ ไม่เกิน 2 ลิงก์)"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 717f6b1c72b684f24c05961aa8919f2481d416beb49f868fc7944d858cd8983a
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PREP_SEND`
+
+```yaml
+id: src/lib/content/portal.ts::PREP_SEND
+source: src/lib/content/portal.ts
+path: PREP_SEND
+render: Candidate page /me, PREP_SEND
+narrative_slot: utility
+en: "Send"
+th: "ส่ง"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 9544a37a5a9416566f8ffc98b52e8f7d25ebe5b95042d727a9acbd6c922b8c61
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PREP_SENT`
+
+```yaml
+id: src/lib/content/portal.ts::PREP_SENT
+source: src/lib/content/portal.ts
+path: PREP_SENT
+render: Candidate page /me, PREP_SENT
+narrative_slot: utility
+en: "Sent. You can change it until the session."
+th: "ส่งแล้ว แก้ไขได้จนถึงวันนัด"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: ae751432824661c7049a9104a9f2cf9f3774e1a925b23cd82a2b06ee84ab6c57
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PREP_LATE`
+
+```yaml
+id: src/lib/content/portal.ts::PREP_LATE
+source: src/lib/content/portal.ts
+path: PREP_LATE
+render: Candidate page /me, PREP_LATE
+narrative_slot: utility
+en: "The deadline has passed. You can still send it, and PunProfile will confirm whether the session stays as booked."
+th: "เลยกำหนดส่งแล้ว แต่ยังส่งได้ PunProfile จะยืนยันอีกครั้งว่าคงเวลานัดเดิมหรือไม่"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 090168d5776db5f25862aad4b7c9eb025b9d964ae9183f1957b8cd50a25e9bf5
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::PREP_INVALID`
+
+```yaml
+id: src/lib/content/portal.ts::PREP_INVALID
+source: src/lib/content/portal.ts
+path: PREP_INVALID
+render: Candidate page /me, PREP_INVALID
+narrative_slot: utility
+en: "Add at least one role and one priority. Links must start with https."
+th: "ใส่ตำแหน่งอย่างน้อย 1 ตำแหน่ง และเรื่องที่อยากได้คำแนะนำอย่างน้อย 1 ข้อ ลิงก์ต้องขึ้นต้นด้วย https"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 2bc4d9e45932243e73612b5ee150cc33c4eb68758e9888cec779bd3e5f2eebbe
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::TOKENS_RULE`
 
 ```yaml
