@@ -1,16 +1,13 @@
 /**
  * The agreed call agendas, coach-facing. `prd.md` section 8, Session tab, owns
- * the wording; change it there first, then here.
+ * them; the assessment's run sheet itself is the Fit Report interview skill's.
  */
 export const AGENDAS: Record<"fit_report" | "coaching_session", { title: string; items: string[] }> = {
   fit_report: {
-    title: "Assessment, 30 minutes",
+    title: "Fit Report assessment, 30 minutes",
     items: [
-      "0-3: confirm purpose, identity and capture consent.",
-      "3-8: confirm work history and resolve source contradictions.",
-      "8-23: assess unresolved competencies, including appropriate English evidence.",
-      "23-27: confirm target assumptions and outstanding facts.",
-      "27-30: read back findings, confirm delivery date and next preparation.",
+      "Four blocks of 5, 12, 8 and 5 minutes, run from the Fit Report interview skill, which owns their content.",
+      "The report cannot be delivered until all eight interview items are settled.",
     ],
   },
   coaching_session: {

@@ -52,6 +52,18 @@ export default function DeliveryQueue() {
                       {new Date(r.heldCode.expiresAt).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}
                     </p>
                   )}
+                  {r.items.length > 0 && (
+                    <ul className="mt-2 space-y-1 rounded-large bg-canvas px-3 py-1.5 text-body-medium text-ink" data-testid="queue-items">
+                      {r.items.map((it) => (
+                        <li key={it.key}>
+                          {it.exception ? "Check: " : ""}
+                          {it.what}
+                          {it.owner === "candidate" ? " (waiting on them)" : ""}
+                          {it.by ? `, by ${day(it.by)}` : ""}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   {r.tokenRequestedAt && (
                     <p className="mt-2 rounded-large bg-canvas px-3 py-1.5 text-body-medium text-ink">
                       Asked for more tokens on {day(r.tokenRequestedAt)}: send the transfer details on LINE.

@@ -132,6 +132,10 @@ interface Draft {
   sentChannel: string;
   bookedAt: string;
   reminderSent: boolean;
+  /** The deliverable this call serves, § 7b. Empty for none. */
+  deliverableId: string;
+  /** Stored moment, carried like `followUpSentAt`. */
+  prepRequestedAt: number | null;
 }
 
 function emptyDraft(): Draft {
@@ -158,6 +162,8 @@ function emptyDraft(): Draft {
     sentChannel: "",
     bookedAt: "",
     reminderSent: false,
+    deliverableId: "",
+    prepRequestedAt: null,
   };
 }
 
@@ -185,6 +191,8 @@ function draftFrom(call: Call): Draft {
     sentChannel: call.sentChannel ?? "",
     bookedAt: call.bookedAt ? toLocalInput(call.bookedAt) : "",
     reminderSent: call.reminderSentAt !== undefined,
+    deliverableId: call.deliverableId ?? "",
+    prepRequestedAt: call.prepRequestedAt ?? null,
   };
 }
 
@@ -208,6 +216,16 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
   const logCall = useMutation(api.consultations.log);
   const updateCall = useMutation(api.consultations.update);
   const removeCall = useMutation(api.consultations.remove);
+  // Paid calls: what each call serves, the time zone, and decisions, § 7b.
+  const engagements = useQuery(api.delivery.forLead, { leadId });
+  const session = useQuery(api.workspace.session, { leadId });
+  const setZone = useMutation(api.workspace.setLeadTimeZone);
+  const deliverables = (engagements ?? []).flatMap((e) => e.deliverables).filter((d) => d.status !== "cancelled");
+  const servesLabel = (id: string | undefined) => {
+    const d = deliverables.find((x) => x._id === id);
+    if (!d) return null;
+    return d.entitlement === "pack_preview" ? "Complimentary preview" : d.kind === "fit_report" ? "Fit Report assessment" : (d.title ?? d.kind.replace(/_/g, " "));
+  };
 
   const [draft, setDraft] = useState<Draft | null>(null);
   const [editing, setEditing] = useState<Id<"consultations"> | null>(null);
@@ -256,6 +274,8 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
         // Stamped when ticked. The exact minute a manual reminder went out is
         // not worth typing; whether it went out at all is the whole point.
         reminderSentAt: draft.reminderSent ? (existingReminder ?? Date.now()) : undefined,
+        deliverableId: (draft.deliverableId || undefined) as Id<"deliverables"> | undefined,
+        prepRequestedAt: draft.prepRequestedAt ?? undefined,
       };
       if (editing) {
         await updateCall({ consultationId: editing, ...fields });
@@ -274,6 +294,25 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
   return (
     <section>
       <h2 className="text-title-large">Calls and sessions</h2>
+      <p className="mt-1 text-body-medium text-on-surface-variant">
+        Calendly sends nothing to this log. Log each booking from Calendly&apos;s email as scheduled, with the deliverable it
+        serves, and correct the time on a reschedule. The preview is agreed by message, since the free plan has one event type.
+      </p>
+      <label className="field-label mt-2 block max-w-sm">
+        Candidate time zone{session && !session.timeZone ? ": not selected, times on their page show in Madrid" : ""}
+        <select
+          className={INPUT}
+          value={session?.timeZone ?? ""}
+          onChange={(e) => void setZone({ leadId, timeZone: e.target.value || null })}
+        >
+          <option value="">Not selected</option>
+          {ZONES.map((z) => (
+            <option key={z} value={z}>
+              {z}
+            </option>
+          ))}
+        </select>
+      </label>
 
       {calls === undefined ? (
         <p className="mt-3 text-body-large text-on-surface-variant">Loading...</p>
@@ -304,6 +343,16 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
                 </p>
               )}
 
+              {c.deliverableId && (
+                <p className="mt-1 text-body-medium text-on-surface" data-testid="call-serves">
+                  For: {servesLabel(c.deliverableId) ?? "a removed deliverable"}
+                  {servesLabel(c.deliverableId) === "Complimentary preview"
+                    ? c.prepRequestedAt
+                      ? ` · preparation requested ${stamp(c.prepRequestedAt)}`
+                      : " · preparation not requested yet"
+                    : ""}
+                </p>
+              )}
               <Detail label="Their question" value={c.theirQuestion} />
               <Detail label="One action given" value={c.nextStep} />
               {c.nextStep && c.nextStepMatchesApp === false && (
@@ -347,6 +396,8 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
                   : ""}
                 Logged by {c.createdBy}
               </p>
+
+              {session && <Decisions leadId={leadId} callId={c._id} all={session.decisions} />}
 
               <div className="mt-3 flex gap-3">
                 <button
@@ -421,6 +472,16 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
                 onChange={(e) => set("durationMinutes", e.target.value)}
                 className={INPUT}
               />
+            </Field>
+            <Field label="Serves" hint="The paid deliverable this call is for. Links its time to the candidate's page and the preparation deadline.">
+              <select value={draft.deliverableId} onChange={(e) => set("deliverableId", e.target.value)} className={INPUT}>
+                <option value="">Nothing paid</option>
+                {deliverables.map((d) => (
+                  <option key={d._id} value={d._id}>
+                    {servesLabel(d._id)}
+                  </option>
+                ))}
+              </select>
             </Field>
             <Select
               label="Channel"
@@ -595,6 +656,14 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
               checked={draft.reminderSent}
               onChange={(x) => set("reminderSent", x)}
             />
+            {servesLabel(draft.deliverableId) === "Complimentary preview" && (
+              <Check
+                label="Preparation requested on LINE"
+                hint="Send the request with the link to their page, then tick. Nothing reaches them on its own."
+                checked={draft.prepRequestedAt !== null}
+                onChange={(x) => set("prepRequestedAt", x ? (draft.prepRequestedAt ?? Date.now()) : null)}
+              />
+            )}
           </div>
 
           <div className="mt-6">
@@ -654,6 +723,104 @@ function Field({
       {children}
       {hint && <span className="field-support font-normal">{hint}</span>}
     </label>
+  );
+}
+
+const ZONES: string[] = (() => {
+  try {
+    return (Intl as unknown as { supportedValuesOf(k: string): string[] }).supportedValuesOf("timeZone");
+  } catch {
+    return ["Europe/Madrid", "Asia/Bangkok"];
+  }
+})();
+
+type DecisionList = NonNullable<ReturnType<typeof useQuery<typeof api.workspace.session>>>["decisions"];
+
+/**
+ * Decisions made in one call, `prd.md` section 8. Never edited; replaced only
+ * by a new decision explicitly linked to the one it replaces.
+ */
+function Decisions({ leadId, callId, all }: { leadId: Id<"leads">; callId: Id<"consultations">; all: DecisionList }) {
+  const add = useMutation(api.workspace.addDecision);
+  const [draft, setDraft] = useState("");
+  const [replacing, setReplacing] = useState<null | { id: Id<"deliveryNotes">; body: string }>(null);
+  const [err, setErr] = useState<string | null>(null);
+  const current = all.current.filter((d) => d.consultationId === callId);
+  const history = all.history.filter((d) => d.consultationId === callId);
+  const run = async (f: () => Promise<unknown>) => {
+    setErr(null);
+    try {
+      await f();
+      return true;
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Could not save.");
+      return false;
+    }
+  };
+  return (
+    <div className="mt-3" data-testid="call-decisions">
+      <p className="text-label-large text-on-surface">Decisions</p>
+      {current.length > 0 && (
+        <ul className="mt-1 space-y-1 text-body-medium text-on-surface">
+          {current.map((d) => (
+            <li key={d._id}>
+              {d.body}
+              {d.supersedes ? <span className="text-on-surface-variant"> · replaces an earlier decision</span> : null}{" "}
+              <button type="button" className="text-ink-deep underline" onClick={() => setReplacing({ id: d._id as Id<"deliveryNotes">, body: "" })}>
+                Replace
+              </button>
+              {replacing?.id === d._id && (
+                <span className="mt-1 flex flex-wrap gap-2">
+                  <input
+                    className="field field-dense w-96"
+                    placeholder="The decision that replaces this one"
+                    value={replacing.body}
+                    onChange={(e) => setReplacing({ ...replacing, body: e.target.value })}
+                  />
+                  <button
+                    type="button"
+                    className="text-ink-deep underline"
+                    disabled={!replacing.body.trim()}
+                    onClick={async () => {
+                      if (await run(() => add({ leadId, consultationId: callId, body: replacing.body, supersedes: d._id as Id<"deliveryNotes"> })))
+                        setReplacing(null);
+                    }}
+                  >
+                    Save replacement
+                  </button>
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+      <div className="mt-1 flex flex-wrap gap-2">
+        <input className="field field-dense min-w-72 flex-1" placeholder="Record a decision from this call" value={draft} onChange={(e) => setDraft(e.target.value)} />
+        <button
+          type="button"
+          className="text-body-medium text-ink-deep underline"
+          disabled={!draft.trim()}
+          onClick={async () => {
+            if (await run(() => add({ leadId, consultationId: callId, body: draft }))) setDraft("");
+          }}
+        >
+          Record
+        </button>
+      </div>
+      {history.length > 0 && (
+        <details className="mt-1 text-body-medium text-on-surface-variant">
+          <summary>Replaced ({history.length})</summary>
+          <ul>
+            {history.map((d) => (
+              <li key={d._id}>
+                <s>{d.body}</s>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+      {err && <p className="text-body-medium text-error">{err}</p>}
+    </div>
   );
 }
 

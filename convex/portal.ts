@@ -20,8 +20,8 @@ import { mutation, query, type QueryCtx, type MutationCtx } from "./_generated/s
 import type { Doc, Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { feedFor } from "./market";
-import { tokenBalance, walletFor, prefillRoles } from "./workspace";
-import { preparationState, previewOf, LIMITS } from "../src/lib/session";
+import { tokenBalance, walletFor } from "./workspace";
+import { preparationState, previewOf, scheduledCallFor, LIMITS } from "../src/lib/session";
 import { isValidTimeZone, preparationDeadline } from "../src/lib/sessionTime";
 import { targetsFor } from "./targets";
 import { signedInCandidate } from "./candidateAccess";
@@ -92,32 +92,52 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         status: d.status,
         dueAt: d.dueAt ?? null,
         deliveredAt: d.deliveredAt ?? null,
-        startsAt: d.startsAt ?? null,
       }));
 
-    // Appointments and the preview's preparation, `prd.md` section 8.
+    // Appointments and the preview's preparation, `prd.md` section 8. The
+    // call log is coach-side; only a scheduled call's kind, length and time
+    // cross to the candidate, never its notes or any other field.
     const allDeliverables = (
       await ctx.db
         .query("deliverables")
         .withIndex("by_lead", (q) => q.eq("leadId", lead._id))
         .collect()
     ).filter((d) => soldIds.has(d.engagementId) && d.status !== "cancelled");
+    const calls = await ctx.db
+      .query("consultations")
+      .withIndex("by_lead_time", (q) => q.eq("leadId", lead._id))
+      .collect();
     const preps = await ctx.db
       .query("preparations")
       .withIndex("by_lead", (q) => q.eq("leadId", lead._id))
       .collect();
-    const previewRow = previewOf(allDeliverables);
     const nowMs = Date.now();
+    const appointments = calls
+      .filter((c) => c.outcome === "scheduled" && c.heldAt >= nowMs - 2 * 3600_000)
+      .sort((a, b) => a.heldAt - b.heldAt)
+      .map((c) => {
+        const d = c.deliverableId ? allDeliverables.find((x) => x._id === c.deliverableId) : undefined;
+        return {
+          _id: c._id,
+          heldAt: c.heldAt,
+          durationMinutes: c.durationMinutes ?? null,
+          kind: d?.kind ?? null,
+          title: d?.title ?? null,
+        };
+      });
+    const previewRow = previewOf(allDeliverables);
     const prepRow = previewRow ? preps.find((p) => p.deliverableId === previewRow._id) : undefined;
+    const previewCall = previewRow ? scheduledCallFor(calls, previewRow._id) : undefined;
     const preparation =
       previewRow && previewRow.status !== "delivered"
         ? {
             deliverableId: previewRow._id,
-            state: preparationState(allDeliverables, preps, nowMs).state,
-            deadline: previewRow.startsAt ? preparationDeadline(previewRow.startsAt) : null,
-            roles: prepRow?.roles ?? (await prefillRoles(ctx, lead)),
+            state: preparationState(allDeliverables, calls, preps, nowMs).state,
+            deadline: previewCall ? preparationDeadline(previewCall.heldAt) : null,
             priorities: prepRow?.priorities ?? [],
+            titleChanges: prepRow?.titleChanges ?? null,
             vacancyUrls: prepRow?.vacancyUrls ?? [],
+            question: prepRow?.question ?? null,
             submittedAt: prepRow?.submittedAt ?? null,
           }
         : null;
@@ -238,6 +258,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       notes,
       jobs,
       timeZone: lead.timeZone ?? null,
+      appointments,
       preparation,
     };
 }
@@ -596,15 +617,17 @@ const cleanList = (xs: string[], max: number, each = 200) =>
 
 /**
  * The preview's preparation, from the signed-in candidate only, for their own
- * complimentary preview only. One to three roles and priorities; up to two
- * https vacancy links, which are optional.
+ * complimentary preview only. One to three priorities; a change to their
+ * target titles, up to two https vacancy links and their question are
+ * optional. Target titles themselves stay coach-owned in `targets`.
  */
 export const submitPreparation = mutation({
   args: {
     deliverableId: v.id("deliverables"),
-    roles: v.array(v.string()),
     priorities: v.array(v.string()),
+    titleChanges: v.optional(v.string()),
     vacancyUrls: v.array(v.string()),
+    question: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const lead = await requireLead(ctx);
@@ -612,10 +635,8 @@ export const submitPreparation = mutation({
     if (!d || d.leadId !== lead._id || d.entitlement !== "pack_preview" || d.status === "cancelled" || d.status === "delivered") {
       throw new ConvexError("not_found");
     }
-    const roles = cleanList(args.roles, LIMITS.roles[1]);
     const priorities = cleanList(args.priorities, LIMITS.priorities[1], 300);
     const vacancyUrls = cleanList(args.vacancyUrls, LIMITS.vacancyUrls[1], 2000);
-    if (args.roles.filter((r) => r.trim()).length > LIMITS.roles[1] || roles.length < LIMITS.roles[0]) throw new ConvexError("roles");
     if (args.priorities.filter((r) => r.trim()).length > LIMITS.priorities[1] || priorities.length < LIMITS.priorities[0]) {
       throw new ConvexError("priorities");
     }
@@ -629,20 +650,25 @@ export const submitPreparation = mutation({
       }
       if (!ok) throw new ConvexError("vacancy_url");
     }
+    const titleChanges = args.titleChanges?.trim().slice(0, 1000) || undefined;
+    const question = args.question?.trim().slice(0, 1000) || undefined;
     const now = Date.now();
     const existing = (
       await ctx.db.query("preparations").withIndex("by_deliverable", (q) => q.eq("deliverableId", d._id)).collect()
     )[0];
-    if (existing) await ctx.db.patch(existing._id, { roles, priorities, vacancyUrls, updatedAt: now });
-    else
+    if (existing) {
+      await ctx.db.patch(existing._id, { priorities, titleChanges, vacancyUrls, question, updatedAt: now });
+    } else {
       await ctx.db.insert("preparations", {
         leadId: lead._id,
         deliverableId: d._id,
-        roles,
         priorities,
         vacancyUrls,
+        ...(titleChanges ? { titleChanges } : {}),
+        ...(question ? { question } : {}),
         submittedAt: now,
         updatedAt: now,
       });
+    }
   },
 });

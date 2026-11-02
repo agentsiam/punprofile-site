@@ -682,6 +682,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
   const createEngagement = useMutation(api.delivery.createEngagement);
   const updateEngagement = useMutation(api.delivery.updateEngagement);
   const addDeliverable = useMutation(api.delivery.addDeliverable);
+  const selectFitReport = useMutation(api.workspace.selectFitReport);
   const updateDeliverable = useMutation(api.delivery.updateDeliverable);
   const record = useMutation(api.workspace.recordTokens);
   const ws = useQuery(api.workspace.forLead, { leadId });
@@ -911,6 +912,13 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                       className={BTN}
                       onClick={() =>
                         void run(async () => {
+                          // A Fit Report is created only by selecting it, which
+                          // reserves its 20 tokens or refuses, § 7a.
+                          if (addTo.kind === "fit_report") {
+                            await selectFitReport({ leadId, engagementId: addTo.engagementId });
+                            setAddTo(null);
+                            return;
+                          }
                           await addDeliverable({
                             engagementId: addTo.engagementId,
                             kind: addTo.kind as Doc<"deliverables">["kind"],
@@ -923,7 +931,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                         })
                       }
                     >
-                      Add
+                      {addTo.kind === "fit_report" ? "Select and reserve 20 tokens" : "Add"}
                     </button>
                     <button type="button" className={LINK} onClick={() => setAddTo(null)}>
                       Cancel

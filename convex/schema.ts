@@ -607,6 +607,14 @@ export default defineSchema({
     /** Manual, because the free tier sends no reminders. Absent is the queue. */
     /** @absent notyet — absent IS the reminder queue; the free tier sends none */
     reminderSentAt: v.optional(v.number()),
+    /** The deliverable this call serves, e.g. the Fit Report or the pack's
+     *  preview. `lifecycle-data-model.md` § 7b. Appointments live here and
+     *  nowhere else. @absent none — a call not tied to one piece of work */
+    deliverableId: v.optional(v.id("deliverables")),
+    /** When Paul sent the preview's preparation request on LINE. Manual,
+     *  because nothing reaches the candidate on its own. § 7b.
+     *  @absent notyet — not sent, or not a preview call */
+    prepRequestedAt: v.optional(v.number()),
     /** @absent unmeasured — not recorded */
     durationMinutes: v.optional(v.number()),
     /** @absent unmeasured — not recorded */
@@ -809,9 +817,6 @@ export default defineSchema({
 
     /** @absent none — no date agreed yet */
     dueAt: v.optional(v.number()),
-    /** A session's start, as an instant, § 7b. Changing it is a reschedule.
-     *  @absent notyet — not booked, or not a session */
-    startsAt: v.optional(v.number()),
     /** A booking page for this session, shown to the candidate as a button
      *  while it is not yet delivered. @absent none — booked by message */
     bookingUrl: v.optional(v.string()),
@@ -1261,6 +1266,9 @@ export default defineSchema({
     /** A decision captured in the Session tab, `prd.md` section 8.
      *  @absent none — an ordinary delivery note */
     decision: v.optional(v.boolean()),
+    /** The call a decision was made in. § 7b.
+     *  @absent none — not a decision, or recorded outside a call */
+    consultationId: v.optional(v.id("consultations")),
     /** The decision this one explicitly replaces. Never edited afterwards.
      *  @absent none — replaces nothing */
     supersedes: v.optional(v.id("deliveryNotes")),
@@ -1276,12 +1284,15 @@ export default defineSchema({
   preparations: defineTable({
     leadId: v.id("leads"),
     deliverableId: v.id("deliverables"),
-    /** One to three, in the candidate's order. */
-    roles: v.array(v.string()),
     /** One to three. */
     priorities: v.array(v.string()),
+    /** A change they want to their target titles, which the coach makes in
+     *  `targets`. @absent none — no change asked for */
+    titleChanges: v.optional(v.string()),
     /** Zero to two, https. Optional examples never block the session. */
     vacancyUrls: v.array(v.string()),
+    /** What they most want answered. @absent none — not given */
+    question: v.optional(v.string()),
     submittedAt: v.number(),
     updatedAt: v.number(),
   })

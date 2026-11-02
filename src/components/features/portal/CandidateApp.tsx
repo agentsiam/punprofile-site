@@ -37,7 +37,7 @@ import * as C from "@/lib/content/portal";
 import { CHECKLIST, CHECKLIST_OTHER, CHECKLIST_PROGRESS, CHECKLIST_TAB } from "@/lib/content/checklist";
 import { keywordsOf } from "@/lib/keywords";
 import { rolesFor } from "@/lib/market-match";
-import { MADRID, SESSION_MINUTES, formatIn, icsFor } from "@/lib/sessionTime";
+import { MADRID, formatIn } from "@/lib/sessionTime";
 
 type Job = PortalView["jobs"][number];
 const PIPELINE = ["interested", "applied", "screening", "interviewing", "offer", "accepted"] as const;
@@ -332,7 +332,7 @@ function Overview({
       </div>
 
       <div className="space-y-5">
-        {(data.preparation || data.deliverables.some((d) => d.startsAt && d.status !== "delivered")) && (
+        {(data.preparation || data.appointments.length > 0) && (
           <AppointmentsCard data={data} readOnly={readOnly} />
         )}
         {(data.titles.length > 0 || data.deliverables.length > 0) && <TitlesCard data={data} />}
@@ -483,9 +483,11 @@ const ALL_ZONES: string[] = (() => {
 })();
 
 /**
- * Appointments in the candidate's selected zone and Madrid, and the preview's
- * preparation. `prd.md` section 8. Until a zone is selected, Madrid is shown,
- * labelled, with a prompt; no zone is assumed.
+ * Their scheduled calls in their selected zone and Madrid, and the preview's
+ * preparation. `prd.md` section 8. Calls come from the coach's call log, of
+ * which only kind, length and time are passed here. Until a zone is selected,
+ * Madrid is shown, labelled, with a prompt; no zone is assumed. Calendly's own
+ * confirmation is the calendar invitation, so there is no calendar file here.
  */
 function AppointmentsCard({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
   const { pick, t, locale } = useFormat();
@@ -493,13 +495,11 @@ function AppointmentsCard({ data, readOnly }: { data: PortalView; readOnly: bool
   const submit = useMutation(api.portal.submitPreparation);
   const loc = locale === "th" ? "th" : "en";
   const tz = data.timeZone;
-  const sessions = data.deliverables
-    .filter((d) => d.startsAt && d.status !== "delivered")
-    .sort((a, b) => a.startsAt! - b.startsAt!);
   const prep = data.preparation;
-  const [roles, setRoles] = useState<string[]>(() => pad(prep?.roles ?? [], 3));
   const [priorities, setPriorities] = useState<string[]>(() => pad(prep?.priorities ?? [], 3));
+  const [titleChanges, setTitleChanges] = useState(prep?.titleChanges ?? "");
   const [urls, setUrls] = useState<string[]>(() => pad(prep?.vacancyUrls ?? [], 2));
+  const [question, setQuestion] = useState(prep?.question ?? "");
   const [state, setState] = useState<"idle" | "sent" | "invalid">("idle");
   const when = (ms: number) => (
     <>
@@ -511,19 +511,18 @@ function AppointmentsCard({ data, readOnly }: { data: PortalView; readOnly: bool
       )}
     </>
   );
-  const ics = (d: (typeof sessions)[number]) => {
-    const title = d.title ?? pick(C.WORK_KIND[d.kind] ?? { en: d.kind, th: d.kind });
-    const minutes = SESSION_MINUTES[d.kind as keyof typeof SESSION_MINUTES] ?? 60;
-    const body = icsFor({ uid: d._id, title: `PunProfile: ${title}`, startsAt: d.startsAt!, minutes });
-    return `data:text/calendar;charset=utf-8,${encodeURIComponent(body)}`;
-  };
   const send = async () => {
-    const r = roles.map((x) => x.trim()).filter(Boolean);
     const p = priorities.map((x) => x.trim()).filter(Boolean);
     const u = urls.map((x) => x.trim()).filter(Boolean);
-    if (!r.length || !p.length || u.some((x) => !/^https:\/\//.test(x))) return setState("invalid");
+    if (!p.length || u.some((x) => !/^https:\/\//.test(x))) return setState("invalid");
     try {
-      await submit({ deliverableId: prep!.deliverableId, roles: r, priorities: p, vacancyUrls: u });
+      await submit({
+        deliverableId: prep!.deliverableId,
+        priorities: p,
+        vacancyUrls: u,
+        ...(titleChanges.trim() ? { titleChanges } : {}),
+        ...(question.trim() ? { question } : {}),
+      });
       setState("sent");
     } catch {
       setState("invalid");
@@ -557,17 +556,17 @@ function AppointmentsCard({ data, readOnly }: { data: PortalView; readOnly: bool
         </select>
       </label>
 
-      {sessions.length === 0 ? (
+      {data.appointments.length === 0 ? (
         <p className="mt-3 text-body-medium text-on-surface-variant">{pick(C.APPT_NONE)}</p>
       ) : (
         <ul className="mt-3 divide-y divide-line">
-          {sessions.map((d) => (
-            <li key={d._id} className="py-2.5 text-body-medium">
-              <span className="block text-label-large">{d.title ?? pick(C.WORK_KIND[d.kind] ?? { en: d.kind, th: d.kind })}</span>
-              {when(d.startsAt!)}
-              <a className="text-ink-deep underline" href={ics(d)} download={`punprofile-${d._id}.ics`}>
-                {pick(C.APPT_CALENDAR)}
-              </a>
+          {data.appointments.map((a) => (
+            <li key={a._id} className="py-2.5 text-body-medium">
+              <span className="block text-label-large">
+                {a.title ?? (a.kind ? pick(C.WORK_KIND[a.kind] ?? { en: a.kind, th: a.kind }) : pick(C.WORK_KIND.coaching_session))}
+                {a.durationMinutes ? ` · ${t(C.APPT_MINUTES, { n: a.durationMinutes })}` : ""}
+              </span>
+              {when(a.heldAt)}
             </li>
           ))}
         </ul>
@@ -583,9 +582,26 @@ function AppointmentsCard({ data, readOnly }: { data: PortalView; readOnly: bool
             )}
           </p>
           {prep.state === "missing_at_deadline" && <p className="mt-1 text-body-medium text-ink">{pick(C.PREP_LATE)}</p>}
-          <Fields label={pick(C.PREP_ROLES)} values={roles} onChange={setRoles} readOnly={readOnly} testid="me-prep-roles" />
+          <div className="mt-3" data-testid="me-prep-titles">
+            <p className="field-label">{pick(C.PREP_TITLES)}</p>
+            {data.titles.length ? (
+              <ol className="mt-1 list-decimal pl-5 text-body-medium text-ink">
+                {data.titles.map((x) => (
+                  <li key={x._id}>{x.title}</li>
+                ))}
+              </ol>
+            ) : null}
+            <label className="field-label mt-2 block">
+              {pick(C.PREP_TITLE_CHANGES)}
+              <input className="field mt-1" value={titleChanges} disabled={readOnly} onChange={(e) => setTitleChanges(e.target.value)} />
+            </label>
+          </div>
           <Fields label={pick(C.PREP_PRIORITIES)} values={priorities} onChange={setPriorities} readOnly={readOnly} testid="me-prep-priorities" />
           <Fields label={pick(C.PREP_VACANCIES)} values={urls} onChange={setUrls} readOnly={readOnly} placeholder="https://" />
+          <label className="field-label mt-3 block">
+            {pick(C.PREP_QUESTION)}
+            <input className="field mt-1" value={question} disabled={readOnly} onChange={(e) => setQuestion(e.target.value)} />
+          </label>
           {!readOnly && (
             <button type="button" className="btn-tonal mt-3 h-10 px-5 text-label-large" onClick={() => void send()}>
               {pick(C.PREP_SEND)}

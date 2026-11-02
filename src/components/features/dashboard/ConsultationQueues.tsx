@@ -110,7 +110,9 @@ export default function ConsultationQueues() {
     queues.reminder.length +
     queues.followUp.length +
     queues.outcomeMissing.length +
-    queues.staleInvite.length;
+    queues.staleInvite.length +
+    queues.prepNotRequested.length +
+    queues.prepMissing.length;
 
   return (
     <section className="rounded-large border border-outline-variant bg-surface px-6 py-5">
@@ -138,6 +140,18 @@ export default function ConsultationQueues() {
             why="The slot has passed and the row still says scheduled. Until this is answered the booking cut cannot be judged."
             rows={queues.outcomeMissing}
             detail={(row) => `· slot was ${stamp(row.heldAt)}, ${daysAgo(row.heldAt)}`}
+          />
+          <Bucket
+            title="Preparation to request"
+            why="A preview call is logged and its preparation request has not gone out on LINE. Send it with the /me link, then tick it on the call."
+            rows={queues.prepNotRequested}
+            detail={(row) => `· call ${stamp(row.heldAt)}, ${hoursUntil(row.heldAt)}`}
+          />
+          <Bucket
+            title="Preparation missing"
+            why="The preview's preparation was not in by 17:00 Madrid two weekdays before. The booking and tokens are unchanged; decide whether to reschedule."
+            rows={queues.prepMissing}
+            detail={(row) => `· call ${stamp(row.heldAt)}, ${hoursUntil(row.heldAt)}`}
           />
           <Bucket
             title="Never booked"

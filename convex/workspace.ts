@@ -24,14 +24,7 @@ import { isAdminEmail } from "./adminEmails";
 import { liveGrant, normaliseEmail } from "./candidateAccess";
 import { targetsFor } from "./targets";
 import { computeWallet, cvEarnedBySelectionNow } from "../src/lib/wallet";
-import {
-  preparationState,
-  nextAction,
-  nextAppointment,
-  exceptions,
-  decisionsView,
-  previewOf,
-} from "../src/lib/session";
+import { preparationState, nextCall, leadItems, decisionsView, previewOf, scheduledCallFor } from "../src/lib/session";
 import { isValidTimeZone } from "../src/lib/sessionTime";
 
 /** A target id passed in must belong to the same lead. */
@@ -91,6 +84,21 @@ export async function walletFor(ctx: QueryCtx, leadId: Id<"leads">) {
     ctx.db.query("engagements").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
   ]);
   return { wallet: computeWallet(ledger, deliverables, engagements, Date.now()), ledger, deliverables, engagements };
+}
+
+/**
+ * One paid candidate's wallet, deliverables, logged calls, preparation and
+ * open items, `lifecycle-data-model.md` § 7b. The delivery queue and the
+ * Session tab both read this, so they cannot disagree.
+ */
+export async function leadState(ctx: QueryCtx, leadId: Id<"leads">, now: number) {
+  const { wallet, deliverables, ledger, engagements } = await walletFor(ctx, leadId);
+  const [calls, preps] = await Promise.all([
+    ctx.db.query("consultations").withIndex("by_lead_time", (q) => q.eq("leadId", leadId)).collect(),
+    ctx.db.query("preparations").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+  ]);
+  const live = deliverables.filter((d) => d.status !== "cancelled");
+  return { wallet, ledger, engagements, deliverables: live, calls, preps, items: leadItems(live, calls, preps, wallet, now) };
 }
 
 const ledgerReason = v.union(
@@ -807,6 +815,7 @@ export const queue = query({
       jobsLive: number;
       interviewing: number;
       tokenRequestedAt: number | null;
+      items: ReturnType<typeof leadItems>;
     };
     const rows: Row[] = [];
     for (const [leadId, engagements] of byLead) {
@@ -819,8 +828,10 @@ export const queue = query({
           .withIndex("by_lead", (q) => q.eq("leadId", leadId))
           .collect()
       )
-        .filter((d) => ids.has(d.engagementId) && d.status !== "delivered")
+        .filter((d) => ids.has(d.engagementId) && d.status !== "delivered" && d.status !== "cancelled")
         .sort((a, b) => (a.dueAt ?? Infinity) - (b.dueAt ?? Infinity));
+      // Reservations, reconciliation flags, preparation and the CV owed, § 7b.
+      const { items } = await leadState(ctx, leadId, now);
       const { balance } = await tokenBalance(ctx, leadId);
       const access = (
         await ctx.db
@@ -847,6 +858,7 @@ export const queue = query({
         name: lead.firstName ?? lead.fullName ?? lead.email ?? "Unnamed",
         modules: engagements.map((e) => e.module),
         tokens: balance,
+        items,
         open: open.map((d) => ({
           _id: d._id,
           kind: d.kind,
@@ -875,6 +887,7 @@ export const queue = query({
       (a, b) =>
         Number(!!b.heldCode) - Number(!!a.heldCode) ||
         Number(!!b.tokenRequestedAt) - Number(!!a.tokenRequestedAt) ||
+        Number(b.items.some((i) => i.exception)) - Number(a.items.some((i) => i.exception)) ||
         Number(b.open.some((d) => d.overdue)) - Number(a.open.some((d) => d.overdue)) ||
         firstDue(a) - firstDue(b),
     );
@@ -1072,9 +1085,10 @@ export const exportForLead = query({
         await ctx.db.query("preparations").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect()
       ).map((p) => ({
         session: deliverableName.get(p.deliverableId) ?? null,
-        roles: p.roles,
         priorities: p.priorities,
+        titleChanges: p.titleChanges ?? null,
         vacancyUrls: p.vacancyUrls,
+        question: p.question ?? null,
         submittedAt: p.submittedAt,
         updatedAt: p.updatedAt,
       })),
@@ -1195,7 +1209,13 @@ const SOLD_STATUSES = new Set(["agreed", "active", "completed"]);
  * the same transaction, so its eligibility is fixed at selection.
  */
 export const selectFitReport = mutation({
-  args: { leadId: v.id("leads"), deliverableId: v.optional(v.id("deliverables")) },
+  args: {
+    leadId: v.id("leads"),
+    deliverableId: v.optional(v.id("deliverables")),
+    /** The sale the new report belongs to, from the Delivery tab's form.
+     *  Defaults to the latest recorded token pack. */
+    engagementId: v.optional(v.id("engagements")),
+  },
   handler: async (ctx, args) => {
     const by = await requireAdmin(ctx);
     const lead = await ctx.db.get(args.leadId);
@@ -1226,9 +1246,13 @@ export const selectFitReport = mutation({
       if (wallet.unfinishedUnselectedIds.length) {
         throw new ConvexError("An unfinished Fit Report is already on this record. Select or cancel that one first.");
       }
-      const pack = engagements
-        .filter((e) => e.module === "token_pack" && SOLD_STATUSES.has(e.status))
-        .sort((a, b) => (b.agreedAt ?? b.createdAt) - (a.agreedAt ?? a.createdAt))[0];
+      const chosen = args.engagementId ? engagements.find((e) => e._id === args.engagementId) : undefined;
+      if (args.engagementId && !chosen) throw new ConvexError("That sale belongs to a different lead.");
+      const pack =
+        chosen ??
+        engagements
+          .filter((e) => e.module === "token_pack" && SOLD_STATUSES.has(e.status))
+          .sort((a, b) => (b.agreedAt ?? b.createdAt) - (a.agreedAt ?? a.createdAt))[0];
       if (!pack) throw new ConvexError("No token pack sale is recorded. Record the sale first.");
       engagementId = pack._id;
       fitId = await ctx.db.insert("deliverables", {
@@ -1411,14 +1435,6 @@ export const reconcile = query({
 /* ------------------------------------------------- sessions and decisions */
 
 
-/** Roles to prefill the preparation with: what they sent, else their active titles, else their survey answer. */
-export async function prefillRoles(ctx: QueryCtx, lead: { _id: Id<"leads">; responses?: unknown }) {
-  const titles = (await targetsFor(ctx, lead._id)).filter((t) => t.status === "active").map((t) => t.title);
-  if (titles.length) return titles.slice(0, 3);
-  const r = (lead.responses ?? {}) as Record<string, unknown>;
-  return typeof r.targetRole === "string" && r.targetRole.trim() ? [r.targetRole.trim()] : [];
-}
-
 /** The coach records the candidate's zone on their behalf, or clears it. */
 export const setLeadTimeZone = mutation({
   args: { leadId: v.id("leads"), timeZone: v.union(v.string(), v.null()) },
@@ -1426,27 +1442,6 @@ export const setLeadTimeZone = mutation({
     await requireAdmin(ctx);
     if (args.timeZone !== null && !isValidTimeZone(args.timeZone)) throw new ConvexError("Not a time zone.");
     await ctx.db.patch(args.leadId, { timeZone: args.timeZone ?? undefined });
-  },
-});
-
-/** Book or reschedule a session. Preparation already sent is kept; only the deadline moves. */
-export const setSessionStart = mutation({
-  args: { deliverableId: v.id("deliverables"), startsAt: v.union(v.number(), v.null()) },
-  handler: async (ctx, args) => {
-    const by = await requireAdmin(ctx);
-    const d = await ctx.db.get(args.deliverableId);
-    if (!d) throw new ConvexError("Deliverable not found.");
-    if (d.status === "delivered" || d.status === "cancelled") throw new ConvexError("That session is closed.");
-    const now = Date.now();
-    await ctx.db.patch(d._id, { startsAt: args.startsAt ?? undefined, updatedAt: now });
-    const was = d.startsAt;
-    const body =
-      args.startsAt === null
-        ? "Session time cleared."
-        : was === undefined
-          ? `Session booked for ${new Date(args.startsAt).toISOString()}.`
-          : `Session rescheduled from ${new Date(was).toISOString()} to ${new Date(args.startsAt).toISOString()}.`;
-    await ctx.db.insert("deliveryNotes", { leadId: d.leadId, body, shared: false, deliverableId: d._id, at: now, by });
   },
 });
 
@@ -1459,7 +1454,8 @@ export const addDecision = mutation({
   args: {
     leadId: v.id("leads"),
     body: v.string(),
-    deliverableId: v.optional(v.id("deliverables")),
+    /** The call it was made in. */
+    consultationId: v.id("consultations"),
     supersedes: v.optional(v.id("deliveryNotes")),
   },
   handler: async (ctx, args) => {
@@ -1472,16 +1468,15 @@ export const addDecision = mutation({
       const notes = await ctx.db.query("deliveryNotes").withIndex("by_lead", (q) => q.eq("leadId", args.leadId)).collect();
       if (notes.some((n) => n.supersedes === args.supersedes)) throw new ConvexError("That decision has already been replaced.");
     }
-    if (args.deliverableId) {
-      const d = await ctx.db.get(args.deliverableId);
-      if (!d || d.leadId !== args.leadId) throw new ConvexError("That session belongs to a different lead.");
-    }
+    const call = await ctx.db.get(args.consultationId);
+    if (!call || call.leadId !== args.leadId) throw new ConvexError("That call belongs to a different lead.");
     return await ctx.db.insert("deliveryNotes", {
       leadId: args.leadId,
       body,
       shared: false,
       decision: true,
-      ...(args.deliverableId ? { deliverableId: args.deliverableId } : {}),
+      consultationId: args.consultationId,
+      ...(call.deliverableId ? { deliverableId: call.deliverableId } : {}),
       ...(args.supersedes ? { supersedes: args.supersedes } : {}),
       at: Date.now(),
       by,
@@ -1489,7 +1484,10 @@ export const addDecision = mutation({
   },
 });
 
-/** Everything the Session tab shows, computed from the record. */
+/**
+ * The Session tab, `prd.md` section 8: a read-only assembly of the call log,
+ * targets, wallet, preparation and the same open items the queues show.
+ */
 export const session = query({
   args: { leadId: v.id("leads") },
   handler: async (ctx, args) => {
@@ -1497,12 +1495,12 @@ export const session = query({
     const lead = await ctx.db.get(args.leadId);
     if (!lead) return null;
     const now = Date.now();
-    const { wallet, deliverables } = await walletFor(ctx, args.leadId);
-    const preps = await ctx.db.query("preparations").withIndex("by_lead", (q) => q.eq("leadId", args.leadId)).collect();
+    const { wallet, deliverables, calls, preps, items } = await leadState(ctx, args.leadId, now);
     const notes = await ctx.db.query("deliveryNotes").withIndex("by_lead", (q) => q.eq("leadId", args.leadId)).collect();
-    const live = deliverables.filter((d) => d.status !== "cancelled");
-    const preview = previewOf(live);
+    const preview = previewOf(deliverables);
     const prep = preview ? preps.find((p) => p.deliverableId === preview._id) ?? null : null;
+    const next = nextCall(calls, now);
+    const nextFor = next?.deliverableId ? deliverables.find((d) => d._id === next.deliverableId) ?? null : null;
 
     const ratings = await ctx.db
       .query("competencyRatings")
@@ -1525,13 +1523,25 @@ export const session = query({
       now,
       timeZone: lead.timeZone ?? null,
       wallet,
-      deliverables: live.sort((a, b) => a.createdAt - b.createdAt),
-      nextAppointment: nextAppointment(live, now),
-      preview: preview
-        ? { _id: preview._id, startsAt: preview.startsAt ?? null, state: preparationState(live, preps, now), prep }
+      deliverables: deliverables.sort((a, b) => a.createdAt - b.createdAt),
+      nextCall: next
+        ? {
+            _id: next._id,
+            type: next.type,
+            heldAt: next.heldAt,
+            durationMinutes: next.durationMinutes ?? null,
+            deliverable: nextFor ? { kind: nextFor.kind, entitlement: nextFor.entitlement ?? null, title: nextFor.title ?? null } : null,
+          }
         : null,
-      nextAction: nextAction(live, preps, wallet, now),
-      exceptions: exceptions(live, preps, wallet, now),
+      preview: preview
+        ? {
+            _id: preview._id,
+            call: scheduledCallFor(calls, preview._id)?.heldAt ?? null,
+            state: preparationState(deliverables, calls, preps, now),
+            prep,
+          }
+        : null,
+      items,
       decisions: decisionsView(notes.filter((n) => n.decision)),
       goal: (await targetsFor(ctx, args.leadId)).filter((t) => t.status === "active").map((t) => t.title),
       evidence: {
@@ -1539,7 +1549,7 @@ export const session = query({
         fitReportShared: lead.fitReportSharedAt !== undefined,
         fitOpen,
       },
-      openErrorReports: live.flatMap((d) =>
+      openErrorReports: deliverables.flatMap((d) =>
         (d.errorReports ?? []).flatMap((e, i) => (e.resolvedAt === undefined ? [{ deliverableId: d._id, index: i, summary: e.summary }] : [])),
       ),
     };

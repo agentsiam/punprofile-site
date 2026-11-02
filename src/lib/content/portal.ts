@@ -161,10 +161,6 @@ export const APPT_YOURS: Copy = {
   en: "Your time: {t}",
   th: "เวลาของคุณ: {t}",
 };
-export const APPT_CALENDAR: Copy = {
-  en: "Add to calendar",
-  th: "เพิ่มลงปฏิทิน",
-};
 export const PREP_HEADING: Copy = {
   en: "Before your coaching preview",
   th: "ก่อนการพูดคุยกับ PunProfile",
@@ -176,10 +172,6 @@ export const PREP_DUE: Copy = {
 export const PREP_NOT_BOOKED: Copy = {
   en: "Your session is not booked yet. You can send this now.",
   th: "ยังไม่ได้นัดเวลา ส่งข้อมูลนี้ล่วงหน้าได้เลย",
-};
-export const PREP_ROLES: Copy = {
-  en: "Target roles, most wanted first (1 to 3)",
-  th: "ตำแหน่งที่ต้องการ เรียงจากที่อยากได้มากที่สุด (1 ถึง 3 ตำแหน่ง)",
 };
 export const PREP_PRIORITIES: Copy = {
   en: "What you most want help with (1 to 3)",
@@ -201,9 +193,25 @@ export const PREP_LATE: Copy = {
   en: "The deadline has passed. You can still send it, and PunProfile will confirm whether the session stays as booked.",
   th: "เลยกำหนดส่งแล้ว แต่ยังส่งได้ PunProfile จะยืนยันอีกครั้งว่าคงเวลานัดเดิมหรือไม่",
 };
+export const PREP_TITLES: Copy = {
+  en: "Your target titles, as PunProfile holds them",
+  th: "ตำแหน่งเป้าหมายที่ PunProfile บันทึกไว้",
+};
+export const PREP_TITLE_CHANGES: Copy = {
+  en: "Anything to change in these titles? (optional)",
+  th: "ต้องการเปลี่ยนตำแหน่งไหนไหม (ไม่บังคับ)",
+};
+export const PREP_QUESTION: Copy = {
+  en: "What do you most want answered? (optional)",
+  th: "คำถามที่อยากได้คำตอบมากที่สุด (ไม่บังคับ)",
+};
 export const PREP_INVALID: Copy = {
-  en: "Add at least one role and one priority. Links must start with https.",
-  th: "ใส่ตำแหน่งอย่างน้อย 1 ตำแหน่ง และเรื่องที่อยากได้คำแนะนำอย่างน้อย 1 ข้อ ลิงก์ต้องขึ้นต้นด้วย https",
+  en: "Add at least one priority. Links must start with https.",
+  th: "ใส่เรื่องที่อยากได้คำแนะนำอย่างน้อย 1 ข้อ ลิงก์ต้องขึ้นต้นด้วย https",
+};
+export const APPT_MINUTES: Copy = {
+  en: "{n} minutes",
+  th: "{n} นาที",
 };
 export const TOKENS_RULE: Copy = {
   en: "A token is used only once a service is delivered. Tokens never expire.",
