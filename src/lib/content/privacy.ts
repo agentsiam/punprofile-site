@@ -305,6 +305,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         th: "- Cal.com ระบบนัดหมายของเรา หากคุณนัดคุยผ่านลิงก์ของเรา ระบบจะได้รับชื่อ อีเมล และคำตอบที่คุณกรอกตอนนัดหมาย",
       },
       {
+        // Email service, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
+        en: "- Resend, our email service. Sends your sign-in codes and the emails we send you. It receives your email address and the message.",
+        th: "- Resend ระบบส่งอีเมลของเรา ใช้ส่งรหัสเข้าสู่ระบบและอีเมลที่เราส่งถึงคุณ โดยจะได้รับอีเมลของคุณและเนื้อหาข้อความ",
+      },
+      {
         en: "These are service providers processing data on our behalf, not parties we share your information with. No one else receives it.",
         th: "ทั้งหมดนี้คือผู้ให้บริการที่ประมวลผลข้อมูลในนามของเรา ไม่ใช่บุคคลที่เราเปิดเผยข้อมูลของคุณให้ ไม่มีผู้อื่นได้รับข้อมูลนี้",
       },

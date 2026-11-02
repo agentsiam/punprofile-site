@@ -18697,6 +18697,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[6]`
+
+```yaml
+id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[6]
+source: src/lib/content/privacy.ts
+path: PRIVACY_SECTIONS[5].body[6]
+render: Privacy notice, PRIVACY_SECTIONS[5].body[6]
+narrative_slot: utility
+en: "- Resend, our email service. Sends your sign-in codes and the emails we send you. It receives your email address and the message."
+th: "- Resend ระบบส่งอีเมลของเรา ใช้ส่งรหัสเข้าสู่ระบบและอีเมลที่เราส่งถึงคุณ โดยจะได้รับอีเมลของคุณและเนื้อหาข้อความ"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026. English approved by Paul 02/11/2026 after the live deployment was found to send sign-in codes, coach notifications and marketing email through Resend. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: 937509e055ab6c113d96b5be421f1d13827a921e6a3bbcedd1ec0efd99c172ef
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].heading`
 
 ```yaml
