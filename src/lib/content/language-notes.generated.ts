@@ -6921,6 +6921,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "14/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].body[3]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[1].body[3]",
+    "render": "Privacy notice, PRIVACY_SECTIONS[1].body[3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดรายการข้อมูลให้ชัดเจน รักษาขอบเขตข้อมูลทุกประเภทตามต้นฉบับ และใช้ PunProfile ตามน้ำเสียงภาษาเขียน"
+  },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].heading": {
     "source": "src/lib/content/privacy.ts",
     "path": "PRIVACY_SECTIONS[1].heading",
@@ -6984,6 +6993,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "14/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[3].body[3]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[3].body[3]",
+    "render": "Privacy notice, PRIVACY_SECTIONS[3].body[3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: แทนคำว่ายังค้างอะไรอยู่ด้วยบริการที่ยังต้องส่งมอบ เพื่อไม่ให้สับสนกับยอดชำระ"
+  },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[3].heading": {
     "source": "src/lib/content/privacy.ts",
     "path": "PRIVACY_SECTIONS[3].heading",
@@ -7038,6 +7056,33 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "14/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[5]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[5].body[5]",
+    "render": "Privacy notice, PRIVACY_SECTIONS[5].body[5]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026. English is the processor line Paul approved (Claude outputs/privacy-notice-paid-clients-proposal.md) with Cal.com in place of Calendly, after Paul chose Cal.com on 02/11/2026. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ระบุผู้ให้บริการที่ได้รับข้อมูลและประเภทข้อมูลให้ชัดเจน โดยคงเครื่องหมายรายการเดิม"
+  },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[6]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[5].body[6]",
+    "render": "Privacy notice, PRIVACY_SECTIONS[5].body[6]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026. English approved by Paul 02/11/2026 after the live deployment was found to send sign-in codes, coach notifications and marketing email through Resend. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้ที่อยู่อีเมลแทนอีเมล เพื่อแยกข้อมูลติดต่อออกจากเนื้อหาข้อความ"
+  },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[7]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[5].body[7]",
+    "render": "Privacy notice, PRIVACY_SECTIONS[5].body[7]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026. Paul chose to list Google Meet as a processor on 02/11/2026; Thai follows the pattern of his corrected Cal.com and Resend lines. Paul approved the Thai unchanged 02/11/2026."
+  },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].heading": {
     "source": "src/lib/content/privacy.ts",
     "path": "PRIVACY_SECTIONS[5].heading",
@@ -7053,8 +7098,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Privacy notice, PRIVACY_SECTIONS[6].body[0]",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดลำดับคำอธิบายคุกกี้ให้ต่อเนื่อง ระบุชื่อหน้าตามคำที่ผู้ใช้เข้าใจ และคงข้อกล่าวอ้างตามต้นฉบับ ไม่ใช่การตรวจสอบข้อกฎหมายหรือพฤติกรรมระบบ"
   },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].heading": {
     "source": "src/lib/content/privacy.ts",
@@ -7134,8 +7179,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Privacy notice, PRIVACY_SECTIONS[8].body[6]",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้สำนวนยืนยันข้อมูลที่เป็นธรรมชาติและระบุเหตุผลในการตรวจสอบตัวตน"
   },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[8].heading": {
     "source": "src/lib/content/privacy.ts",
@@ -10970,6 +11015,204 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "01/11/2026",
     "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
+  },
+  "src/lib/content/portal.ts::TOKENS_RESERVED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_RESERVED",
+    "render": "Candidate page /me, TOKENS_RESERVED",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown under the balance while a Fit Report is selected. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict. Paul approved the Thai unchanged in review 02/11/2026."
+  },
+  "src/lib/content/portal.ts::TOKENS_SPENDABLE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_SPENDABLE",
+    "render": "Candidate page /me, TOKENS_SPENDABLE",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown with TOKENS_RESERVED: what matched jobs can still use. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict. Paul approved the Thai unchanged in review 02/11/2026."
+  },
+  "src/lib/content/portal.ts::APPT_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_HEADING",
+    "render": "Candidate page /me, APPT_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
+  },
+  "src/lib/content/portal.ts::APPT_NONE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_NONE",
+    "render": "Candidate page /me, APPT_NONE",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
+  },
+  "src/lib/content/portal.ts::APPT_ZONE_LABEL": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_ZONE_LABEL",
+    "render": "Candidate page /me, APPT_ZONE_LABEL",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
+  },
+  "src/lib/content/portal.ts::APPT_ZONE_PROMPT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_ZONE_PROMPT",
+    "render": "Candidate page /me, APPT_ZONE_PROMPT",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ระบุว่าจะแสดงเวลาท้องถิ่นเพิ่มจากเวลามาดริด"
+  },
+  "src/lib/content/portal.ts::APPT_ZONE_CHOOSE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_ZONE_CHOOSE",
+    "render": "Candidate page /me, APPT_ZONE_CHOOSE",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
+  },
+  "src/lib/content/portal.ts::APPT_MADRID": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_MADRID",
+    "render": "Candidate page /me, APPT_MADRID",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
+  },
+  "src/lib/content/portal.ts::APPT_YOURS": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_YOURS",
+    "render": "Candidate page /me, APPT_YOURS",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ระบุให้ชัดว่าเป็นเวลาท้องถิ่น ไม่ใช่เวลานัดอีกชุดหนึ่ง"
+  },
+  "src/lib/content/portal.ts::PREP_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_HEADING",
+    "render": "Candidate page /me, PREP_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: รักษาความหมายของ coaching preview ว่าเป็นการพูดคุยเบื้องต้น"
+  },
+  "src/lib/content/portal.ts::PREP_DUE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_DUE",
+    "render": "Candidate page /me, PREP_DUE",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
+  },
+  "src/lib/content/portal.ts::PREP_NOT_BOOKED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_NOT_BOOKED",
+    "render": "Candidate page /me, PREP_NOT_BOOKED",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ปรับเป็นภาษาเขียนและระบุสิ่งที่จองให้ชัดเจน"
+  },
+  "src/lib/content/portal.ts::PREP_PRIORITIES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_PRIORITIES",
+    "render": "Candidate page /me, PREP_PRIORITIES",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้ภาษาเขียนและระบุผู้อ่านให้ชัด"
+  },
+  "src/lib/content/portal.ts::PREP_VACANCIES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_VACANCIES",
+    "render": "Candidate page /me, PREP_VACANCIES",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้ประกาศรับสมัครงานให้ชัดและคงเงื่อนไขการกรอกเดิม"
+  },
+  "src/lib/content/portal.ts::PREP_SEND": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_SEND",
+    "render": "Candidate page /me, PREP_SEND",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
+  },
+  "src/lib/content/portal.ts::PREP_SENT": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_SENT",
+    "render": "Candidate page /me, PREP_SENT",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: แก้วันนัดเป็นเวลานัดหมายให้ตรงกับ until the session"
+  },
+  "src/lib/content/portal.ts::PREP_LATE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_LATE",
+    "render": "Candidate page /me, PREP_LATE",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: คงเงื่อนไขว่าต้องรอยืนยันเวลานัดและระบุข้อมูลที่ยังส่งได้"
+  },
+  "src/lib/content/portal.ts::PREP_TITLES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_TITLES",
+    "render": "Candidate page /me, PREP_TITLES",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
+  },
+  "src/lib/content/portal.ts::PREP_TITLE_CHANGES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_TITLE_CHANGES",
+    "render": "Candidate page /me, PREP_TITLE_CHANGES",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: เปิดให้แจ้งการเปลี่ยนแปลงได้ทุกด้าน ไม่จำกัดเพียงเลือกว่าตำแหน่งไหน"
+  },
+  "src/lib/content/portal.ts::PREP_QUESTION": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_QUESTION",
+    "render": "Candidate page /me, PREP_QUESTION",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้ภาษาเขียนให้สอดคล้องกับช่องเตรียมข้อมูลอื่น"
+  },
+  "src/lib/content/portal.ts::PREP_INVALID": {
+    "source": "src/lib/content/portal.ts",
+    "path": "PREP_INVALID",
+    "render": "Candidate page /me, PREP_INVALID",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ปรับข้อความแจ้งข้อผิดพลาดเป็นภาษาเขียน โดยคงจำนวนขั้นต่ำและเงื่อนไขลิงก์"
+  },
+  "src/lib/content/portal.ts::APPT_MINUTES": {
+    "source": "src/lib/content/portal.ts",
+    "path": "APPT_MINUTES",
+    "render": "Candidate page /me, APPT_MINUTES",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
   },
   "src/lib/content/portal.ts::TOKENS_RULE": {
     "source": "src/lib/content/portal.ts",

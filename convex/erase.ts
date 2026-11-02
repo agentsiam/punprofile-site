@@ -33,6 +33,8 @@ export type EraseCounts = {
   candidateAccess: number;
   tokenRequests: number;
   targets: number;
+  preparations: number;
+  bookingInbox: number;
 };
 
 /**
@@ -205,6 +207,18 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     .withIndex("by_lead", (q) => q.eq("leadId", leadId))
     .collect();
   for (const t of targets) await ctx.db.delete(t._id);
+  const preps = await ctx.db
+    .query("preparations")
+    .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+    .collect();
+  for (const p of preps) await ctx.db.delete(p._id);
+  // Bookings still waiting to be placed carry only an email to tie them to
+  // this person; they go with the person too.
+  const leadEmail = (await ctx.db.get(leadId))?.email?.trim().toLowerCase();
+  const inbox = leadEmail
+    ? await ctx.db.query("bookingInbox").withIndex("by_email", (q) => q.eq("attendeeEmail", leadEmail)).collect()
+    : [];
+  for (const b of inbox) await ctx.db.delete(b._id);
   const access = await ctx.db
     .query("candidateAccess")
     .withIndex("by_lead", (q) => q.eq("leadId", leadId))
@@ -244,5 +258,7 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     candidateAccess: access.length,
     tokenRequests: tokenReqs.length,
     targets: targets.length,
+    preparations: preps.length,
+    bookingInbox: inbox.length,
   };
 }

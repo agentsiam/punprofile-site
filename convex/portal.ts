@@ -20,7 +20,9 @@ import { mutation, query, type QueryCtx, type MutationCtx } from "./_generated/s
 import type { Doc, Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { feedFor } from "./market";
-import { tokenBalance } from "./workspace";
+import { tokenBalance, walletFor } from "./workspace";
+import { preparationState, previewOf, scheduledCallFor, LIMITS } from "../src/lib/session";
+import { isValidTimeZone, preparationDeadline } from "../src/lib/sessionTime";
 import { targetsFor } from "./targets";
 import { signedInCandidate } from "./candidateAccess";
 import { requireAdmin } from "./leads";
@@ -56,6 +58,8 @@ const statusValidator = v.union(
 
 async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
     const { balance, bought, rows } = await tokenBalance(ctx, lead._id);
+    // The same calculation the coach's CRM shows, § 7a.
+    const { wallet } = await walletFor(ctx, lead._id);
 
     // § 8a. The candidate sees their active titles in order; any title, live or
     // not, can still name a CV or job filed under it.
@@ -78,6 +82,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         .collect()
     )
       .filter((d) => soldIds.has(d.engagementId))
+      .flatMap((d) => (d.status === "cancelled" ? [] : [{ ...d, status: d.status }]))
       .sort((a, b) => a.createdAt - b.createdAt)
       .map((d) => ({
         _id: d._id,
@@ -88,6 +93,54 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         dueAt: d.dueAt ?? null,
         deliveredAt: d.deliveredAt ?? null,
       }));
+
+    // Appointments and the preview's preparation, `prd.md` section 8. The
+    // call log is coach-side; only a scheduled call's kind, length and time
+    // cross to the candidate, never its notes or any other field.
+    const allDeliverables = (
+      await ctx.db
+        .query("deliverables")
+        .withIndex("by_lead", (q) => q.eq("leadId", lead._id))
+        .collect()
+    ).filter((d) => soldIds.has(d.engagementId) && d.status !== "cancelled");
+    const calls = await ctx.db
+      .query("consultations")
+      .withIndex("by_lead_time", (q) => q.eq("leadId", lead._id))
+      .collect();
+    const preps = await ctx.db
+      .query("preparations")
+      .withIndex("by_lead", (q) => q.eq("leadId", lead._id))
+      .collect();
+    const nowMs = Date.now();
+    const appointments = calls
+      .filter((c) => c.outcome === "scheduled" && c.heldAt >= nowMs - 2 * 3600_000)
+      .sort((a, b) => a.heldAt - b.heldAt)
+      .map((c) => {
+        const d = c.deliverableId ? allDeliverables.find((x) => x._id === c.deliverableId) : undefined;
+        return {
+          _id: c._id,
+          heldAt: c.heldAt,
+          durationMinutes: c.durationMinutes ?? null,
+          kind: d?.kind ?? null,
+          title: d?.title ?? null,
+        };
+      });
+    const previewRow = previewOf(allDeliverables);
+    const prepRow = previewRow ? preps.find((p) => p.deliverableId === previewRow._id) : undefined;
+    const previewCall = previewRow ? scheduledCallFor(calls, previewRow._id) : undefined;
+    const preparation =
+      previewRow && previewRow.status !== "delivered"
+        ? {
+            deliverableId: previewRow._id,
+            state: preparationState(allDeliverables, calls, preps, nowMs).state,
+            deadline: previewCall ? preparationDeadline(previewCall.heldAt) : null,
+            priorities: prepRow?.priorities ?? [],
+            titleChanges: prepRow?.titleChanges ?? null,
+            vacancyUrls: prepRow?.vacancyUrls ?? [],
+            question: prepRow?.question ?? null,
+            submittedAt: prepRow?.submittedAt ?? null,
+          }
+        : null;
 
     const cvs = await Promise.all(
       (
@@ -189,7 +242,14 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       titleNames,
       // The name the dashboard greets them by: nickname first, 02/11/2026.
       firstName: lead.nickname ?? lead.firstName ?? null,
-      tokens: { balance, bought, matchedSent, requestedAt: openTokenRequest?.at ?? null },
+      tokens: {
+        balance,
+        bought,
+        matchedSent,
+        requestedAt: openTokenRequest?.at ?? null,
+        reserved: wallet.reserved,
+        spendable: wallet.spendable,
+      },
       goal: { perWeek: lead.weeklyApplicationGoal ?? null, appliedThisWeek },
       fitReportShared: lead.fitReportSharedAt !== undefined,
       packs: sold.map((e) => ({ module: e.module, status: e.status })),
@@ -197,6 +257,9 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       cvs,
       notes,
       jobs,
+      timeZone: lead.timeZone ?? null,
+      appointments,
+      preparation,
     };
 }
 
@@ -536,5 +599,76 @@ export const requestTokens = mutation({
     ).find((r) => r.handledAt === undefined);
     if (open) return open._id;
     return await ctx.db.insert("tokenRequests", { leadId: lead._id, at: Date.now() });
+  },
+});
+
+/** The candidate selects their own time zone for appointment times. */
+export const setTimeZone = mutation({
+  args: { timeZone: v.string() },
+  handler: async (ctx, args) => {
+    const lead = await requireLead(ctx);
+    if (!isValidTimeZone(args.timeZone)) throw new ConvexError("bad_time_zone");
+    await ctx.db.patch(lead._id, { timeZone: args.timeZone });
+  },
+});
+
+const cleanList = (xs: string[], max: number, each = 200) =>
+  xs.map((x) => x.trim().slice(0, each)).filter(Boolean).slice(0, max);
+
+/**
+ * The preview's preparation, from the signed-in candidate only, for their own
+ * complimentary preview only. One to three priorities; a change to their
+ * target titles, up to two https vacancy links and their question are
+ * optional. Target titles themselves stay coach-owned in `targets`.
+ */
+export const submitPreparation = mutation({
+  args: {
+    deliverableId: v.id("deliverables"),
+    priorities: v.array(v.string()),
+    titleChanges: v.optional(v.string()),
+    vacancyUrls: v.array(v.string()),
+    question: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const lead = await requireLead(ctx);
+    const d = await ctx.db.get(args.deliverableId);
+    if (!d || d.leadId !== lead._id || d.entitlement !== "pack_preview" || d.status === "cancelled" || d.status === "delivered") {
+      throw new ConvexError("not_found");
+    }
+    const priorities = cleanList(args.priorities, LIMITS.priorities[1], 300);
+    const vacancyUrls = cleanList(args.vacancyUrls, LIMITS.vacancyUrls[1], 2000);
+    if (args.priorities.filter((r) => r.trim()).length > LIMITS.priorities[1] || priorities.length < LIMITS.priorities[0]) {
+      throw new ConvexError("priorities");
+    }
+    if (args.vacancyUrls.filter((r) => r.trim()).length > LIMITS.vacancyUrls[1]) throw new ConvexError("vacancies");
+    for (const u of vacancyUrls) {
+      let ok = false;
+      try {
+        ok = new URL(u).protocol === "https:";
+      } catch {
+        ok = false;
+      }
+      if (!ok) throw new ConvexError("vacancy_url");
+    }
+    const titleChanges = args.titleChanges?.trim().slice(0, 1000) || undefined;
+    const question = args.question?.trim().slice(0, 1000) || undefined;
+    const now = Date.now();
+    const existing = (
+      await ctx.db.query("preparations").withIndex("by_deliverable", (q) => q.eq("deliverableId", d._id)).collect()
+    )[0];
+    if (existing) {
+      await ctx.db.patch(existing._id, { priorities, titleChanges, vacancyUrls, question, updatedAt: now });
+    } else {
+      await ctx.db.insert("preparations", {
+        leadId: lead._id,
+        deliverableId: d._id,
+        priorities,
+        vacancyUrls,
+        ...(titleChanges ? { titleChanges } : {}),
+        ...(question ? { question } : {}),
+        submittedAt: now,
+        updatedAt: now,
+      });
+    }
   },
 });

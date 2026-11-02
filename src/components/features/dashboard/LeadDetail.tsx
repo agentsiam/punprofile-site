@@ -45,6 +45,7 @@ import ConsentPanel from "./ConsentPanel";
 import DeliveryWorkspace from "./DeliveryWorkspace";
 import OutcomePanel from "./OutcomePanel";
 import FitReportTab from "./FitReportTab";
+import SessionTab from "./SessionTab";
 import { stateFor, meetsBookingGate, LIFECYCLE_LABELS } from "@/lib/lifecycle";
 import { CONSENT_CHANNELS, CONSENT_PURPOSES } from "@/lib/consent";
 
@@ -208,7 +209,7 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
     (ws?.tokens.bought ?? 0) > 0 ||
     !!ws?.access ||
     (engagements ?? []).some((e) => e.status !== "proposed");
-  const current: LeadTab = tab ?? (isClient ? "delivery" : "assessment");
+  const current: LeadTab = tab ?? (isClient ? "session" : "assessment");
   const lineOk = lead.consent.service.line.status === "opted_in";
   const emailOk = lead.consent.service.email.status === "opted_in";
 
@@ -322,7 +323,7 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
         )}
 
       {/* Tabs, 01/11/2026. The page was one 8,600px scroll; each visit wants one
-          of these, so each is a tab. Paying clients open on Delivery, everyone
+          of these, so each is a tab. Paying clients open on Session (02/11/2026), everyone
           else on the assessment. Sticky, so switching never needs a scroll up. */}
       <nav className="sticky top-0 z-10 -mx-2 flex gap-2 overflow-x-auto bg-surface px-2 py-3" role="tablist">
         {LEAD_TABS.map(([id, label]) => (
@@ -340,6 +341,12 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
           </button>
         ))}
       </nav>
+
+      {current === "session" && (
+        <Section title="Session">
+          <SessionTab leadId={leadId} />
+        </Section>
+      )}
 
       {current === "delivery" && (
         <div>
@@ -683,8 +690,9 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
   );
 }
 
-type LeadTab = "delivery" | "fit" | "calls" | "assessment" | "contact" | "records";
+type LeadTab = "session" | "delivery" | "fit" | "calls" | "assessment" | "contact" | "records";
 const LEAD_TABS: [LeadTab, string][] = [
+  ["session", "Session"],
   ["delivery", "Delivery"],
   ["fit", "Fit Report"],
   ["calls", "Calls and notes"],

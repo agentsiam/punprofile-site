@@ -139,6 +139,12 @@ export const addDeliverable = mutation({
     notes: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
+    // One way to create a Fit Report, `lifecycle-data-model.md` § 7a: the
+    // selection, which reserves its tokens or refuses. The Delivery tab's form
+    // calls `workspace.selectFitReport` for this kind.
+    if (args.kind === "fit_report") {
+      throw new ConvexError("A Fit Report is created by selecting it, which reserves its tokens.");
+    }
     const adminEmail = await requireAdmin(ctx);
     const engagement = await ctx.db.get(args.engagementId);
     if (!engagement) throw new ConvexError("Engagement not found.");
@@ -204,6 +210,19 @@ export const updateDeliverable = mutation({
       }
     }
 
+    // § 7a. A cancelled row stays cancelled, a Fit Report is delivered only by
+    // `workspace.deliverFitReport`, which charges it, and a selected report
+    // keeps its kind, so a reservation cannot end without its charge.
+    if (row.status === "cancelled" && args.status) throw new ConvexError("Cancelled. Add it again instead.");
+    if (row.kind === "fit_report" && args.status === "delivered") {
+      throw new ConvexError("Deliver the Fit Report from the Fit Report tab, which charges it.");
+    }
+    if (args.kind === "fit_report" && row.kind !== "fit_report") {
+      throw new ConvexError("A Fit Report is created by selecting it, which reserves its tokens.");
+    }
+    if (row.reservedAt !== undefined && args.kind && args.kind !== "fit_report") {
+      throw new ConvexError("This Fit Report is selected. Cancel it rather than changing its kind.");
+    }
     const now = Date.now();
     await ctx.db.patch(args.deliverableId, {
       ...(args.kind ? { kind: args.kind } : {}),

@@ -167,6 +167,7 @@ export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
   return (
     <div className="space-y-5">
       <WalletAndLink leadId={leadId} ws={ws} engagements={engagements} />
+      <EntitlementsPanel leadId={leadId} ws={ws} engagements={engagements} />
       <Deliverables leadId={leadId} engagements={engagements} />
       <TargetTitles leadId={leadId} targets={ws.targets} />
       <CvVersions leadId={leadId} cvs={ws.cvs} targets={ws.targets} engagements={engagements} />
@@ -175,7 +176,7 @@ export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
         apps={ws.applications}
         cvs={ws.cvs}
         targets={ws.targets}
-        balance={ws.tokens.balance}
+        balance={ws.wallet.spendable}
         engagements={engagements}
       />
       <Notes leadId={leadId} notes={ws.notes} engagements={engagements} apps={ws.applications} />
@@ -185,6 +186,210 @@ export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
 
 type Ws = NonNullable<ReturnType<typeof useQuery<typeof api.workspace.forLead>>>;
 type Engs = NonNullable<ReturnType<typeof useQuery<typeof api.delivery.forLead>>>;
+
+/* ============================================ 1a. entitlements + Fit Report */
+
+const PREVIEW_LABEL = {
+  not_eligible: "Not owed: no ฿1,500 pack sale recorded",
+  owed_not_scheduled: "Owed, not yet on the record",
+  scheduled: "On the record, not yet delivered",
+  delivered: "Delivered",
+} as const;
+const CV_LABEL = {
+  not_owed: "Not owed",
+  owed: "Owed, not yet delivered",
+  delivered: "Delivered",
+} as const;
+const WAITING_LABEL = {
+  preview: "the preview",
+  cv_rewrite: "the CV rewrite",
+  error_reports: "open factual-error reports",
+} as const;
+const FLAG_LABEL: Record<string, string> = {
+  unfinished_fit_report_not_selected:
+    "An unfinished Fit Report from before reservations holds no tokens. Select it to reserve, or cancel it.",
+  reservation_shortfall: "The balance is below what is reserved.",
+  delivered_fit_report_not_charged: "A delivered Fit Report was never charged.",
+  pack_purchase_without_recorded_sale:
+    "A 33-token purchase has no recorded ฿1,500 sale, so no pack entitlement is shown. Record the sale if there was one.",
+};
+
+function EntitlementsPanel({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; engagements: Engs }) {
+  const select = useMutation(api.workspace.selectFitReport);
+  const cancel = useMutation(api.workspace.cancelFitReport);
+  const addPreview = useMutation(api.workspace.addPackPreview);
+  const [error, setError] = useState<string | null>(null);
+  const [cancelling, setCancelling] = useState<null | { id: Id<"deliverables">; note: string; promise: string }>(null);
+  const w = ws.wallet;
+  const e = w.entitlements;
+  const all = engagements.flatMap((x) => x.deliverables);
+  const openFit = all.find((d) => d._id === w.openReservationId);
+  const run = async (f: () => Promise<unknown>) => {
+    setError(null);
+    try {
+      await f();
+      setCancelling(null);
+    } catch (err) {
+      setError(errText(err));
+    }
+  };
+  const closure = e.closure;
+
+  return (
+    <Panel title="Entitlements and Fit Report">
+      <dl className="grid gap-x-6 gap-y-2 text-body-medium medium:grid-cols-[max-content_1fr]">
+        <dt className="text-on-surface-variant">฿1,500 pack</dt>
+        <dd className="text-on-surface" data-testid="ent-pack">
+          {e.pack ? `Recorded${e.pack.agreedAt ? `, sold ${day(e.pack.agreedAt)}` : ""}` : "No sale recorded"}
+        </dd>
+        <dt className="text-on-surface-variant">Coaching preview</dt>
+        <dd className="text-on-surface" data-testid="ent-preview">
+          {PREVIEW_LABEL[e.preview]}
+          {e.preview === "owed_not_scheduled" && (
+            <>
+              {all
+                .filter((d) => d.kind === "coaching_session" && d.status !== "cancelled" && !d.entitlement)
+                .map((d) => (
+                  <span key={d._id}>
+                    {" · "}
+                    <button type="button" className={LINK} onClick={() => void run(() => addPreview({ leadId, deliverableId: d._id }))}>
+                      Mark &ldquo;{d.title ?? "coaching session"}&rdquo; as the preview
+                    </button>
+                  </span>
+                ))}
+              {" · "}
+              <button type="button" className={LINK} onClick={() => void run(() => addPreview({ leadId }))}>
+                Add the preview
+              </button>
+            </>
+          )}
+        </dd>
+        <dt className="text-on-surface-variant">Master CV rewrite</dt>
+        <dd className="text-on-surface" data-testid="ent-cv">
+          {CV_LABEL[e.cvRewrite]}
+          {e.cvKeptByPromise ? ` (kept by promise: ${e.cvKeptByPromise})` : ""}
+        </dd>
+        <dt className="text-on-surface-variant">Complimentary coaching</dt>
+        <dd className="text-on-surface" data-testid="ent-closure">
+          {closure.state === "not_started"
+            ? "Not started"
+            : closure.state === "open"
+              ? `Open, waiting for ${closure.waitingFor.map((k) => WAITING_LABEL[k]).join(", ")}`
+              : closure.state === "closing"
+                ? `Closes automatically ${day(closure.closesAt)}`
+                : `Closed ${day(closure.closedAt)}`}
+        </dd>
+        <dt className="text-on-surface-variant">Fit Report</dt>
+        <dd className="text-on-surface" data-testid="ent-fit">
+          {openFit ? (
+            <>
+              Selected {day(openFit.reservedAt ?? null)}, 20 tokens reserved{" · "}
+              <button
+                type="button"
+                className={LINK}
+                onClick={() => setCancelling({ id: openFit._id, note: "", promise: "" })}
+              >
+                Cancel
+              </button>
+            </>
+          ) : w.unfinishedUnselectedIds.length ? (
+            <>
+              Unfinished, not reserved{" · "}
+              <button
+                type="button"
+                className={LINK}
+                disabled={w.spendable < 20}
+                onClick={() =>
+                  void run(() => select({ leadId, deliverableId: w.unfinishedUnselectedIds[0] as Id<"deliverables"> }))
+                }
+              >
+                Select and reserve 20
+              </button>
+              {" · "}
+              <button
+                type="button"
+                className={LINK}
+                onClick={() =>
+                  setCancelling({ id: w.unfinishedUnselectedIds[0] as Id<"deliverables">, note: "", promise: "" })
+                }
+              >
+                Cancel
+              </button>
+            </>
+          ) : (
+            <>
+              Not selected{" · "}
+              <button
+                type="button"
+                className={LINK}
+                disabled={w.selectionShortfall > 0}
+                onClick={() => void run(() => select({ leadId }))}
+              >
+                Select and reserve 20
+              </button>
+            </>
+          )}
+        </dd>
+      </dl>
+
+      {w.selectionShortfall > 0 && !openFit && (
+        <p className="mt-3 text-body-medium text-on-surface-variant" data-testid="selection-shortfall">
+          To select the Fit Report: {w.selectionShortfall} more spendable tokens needed ({w.spendable} of 20).
+        </p>
+      )}
+      {w.flags.length > 0 && (
+        <ul className="mt-3 space-y-1 text-body-medium text-on-surface" data-testid="flags">
+          {w.flags.map((f) => (
+            <li key={f}>Check: {FLAG_LABEL[f] ?? f}</li>
+          ))}
+        </ul>
+      )}
+
+      {cancelling && (
+        <div className="mt-4 rounded-medium border border-outline-variant bg-surface p-4">
+          <div className="grid gap-4 medium:grid-cols-2">
+            <Label text="Why it is cancelled">
+              <input
+                className={INPUT}
+                value={cancelling.note}
+                onChange={(ev) => setCancelling({ ...cancelling, note: ev.target.value })}
+              />
+            </Label>
+            <Label text="Promise that keeps the CV rewrite (leave empty to cancel it)">
+              <input
+                className={INPUT}
+                value={cancelling.promise}
+                onChange={(ev) => setCancelling({ ...cancelling, promise: ev.target.value })}
+              />
+            </Label>
+          </div>
+          <div className="mt-3 flex gap-3">
+            <button
+              type="button"
+              className={BTN}
+              disabled={!cancelling.note.trim()}
+              onClick={() =>
+                void run(() =>
+                  cancel({
+                    deliverableId: cancelling.id,
+                    note: cancelling.note,
+                    ...(cancelling.promise.trim() ? { promiseNote: cancelling.promise } : {}),
+                  }),
+                )
+              }
+            >
+              Cancel the Fit Report, no charge
+            </button>
+            <button type="button" className={LINK} onClick={() => setCancelling(null)}>
+              Keep it
+            </button>
+          </div>
+        </div>
+      )}
+      {error && <p className="mt-3 text-body-medium text-error">{error}</p>}
+    </Panel>
+  );
+}
 
 /* ======================================================= 1. wallet + link */
 
@@ -198,7 +403,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
   const [confirmNewCode, setConfirmNewCode] = useState(false);
   const [accessEmail, setAccessEmail] = useState<string | null>(null);
   const [form, setForm] = useState<null | {
-    reason: "purchase" | "fit_report" | "cash_refund" | "adjustment";
+    reason: "purchase" | "cash_refund" | "adjustment";
     amount: string;
     direction: "add" | "remove";
     engagementId: string;
@@ -241,10 +446,22 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
       <div className="grid gap-5 medium:grid-cols-2">
         <div>
           <p className="text-label-large text-on-surface-variant">Tokens left</p>
-          <p className="text-display-small text-on-surface">{ws.tokens.balance}</p>
+          <p className="text-display-small text-on-surface" data-testid="crm-balance">{ws.wallet.balance}</p>
           <p className="text-body-medium text-on-surface-variant">
-            {ws.tokens.bought} bought, {ws.tokens.spent} spent
+            {ws.wallet.bought} bought, {ws.wallet.spent} spent
           </p>
+          <dl className="mt-2 grid grid-cols-2 gap-x-4 text-body-medium">
+            <dt className="text-on-surface-variant">Reserved for Fit Report</dt>
+            <dd className="text-on-surface" data-testid="crm-reserved">{ws.wallet.reserved}</dd>
+            <dt className="text-on-surface-variant">Spendable on matched jobs</dt>
+            <dd className="text-on-surface" data-testid="crm-spendable">{ws.wallet.spendable}</dd>
+          </dl>
+          {ws.wallet.reservationShortfall > 0 && (
+            <p className="mt-2 rounded-medium bg-error-container px-3 py-2 text-body-medium text-on-error-container">
+              Reservation short by {ws.wallet.reservationShortfall}: the balance is below what is reserved. Nothing
+              further can be spent until it is covered.
+            </p>
+          )}
           {ws.tokenRequest && (
             <p className="mt-2 rounded-medium bg-primary-container px-3 py-2 text-body-medium text-on-primary-container">
               Asked for more tokens on {day(ws.tokenRequest.at)}. Send the transfer details on LINE, record the
@@ -407,7 +624,6 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
                 onChange={(e) => setForm({ ...form, reason: e.target.value as typeof form.reason })}
               >
                 <option value="purchase">Purchase (adds)</option>
-                <option value="fit_report">Fit Report delivered (spends)</option>
                 <option value="cash_refund">Cash refund of unused (spends)</option>
                 <option value="adjustment">Adjustment</option>
               </select>
@@ -417,7 +633,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
                 className={INPUT}
                 inputMode="numeric"
                 value={form.amount}
-                placeholder={form.reason === "fit_report" ? "20" : "33"}
+                placeholder="33"
                 onChange={(e) => setForm({ ...form, amount: e.target.value.replace(/\D/g, "") })}
               />
             </Label>
@@ -476,6 +692,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
   const createEngagement = useMutation(api.delivery.createEngagement);
   const updateEngagement = useMutation(api.delivery.updateEngagement);
   const addDeliverable = useMutation(api.delivery.addDeliverable);
+  const selectFitReport = useMutation(api.workspace.selectFitReport);
   const updateDeliverable = useMutation(api.delivery.updateDeliverable);
   const record = useMutation(api.workspace.recordTokens);
   const ws = useQuery(api.workspace.forLead, { leadId });
@@ -586,6 +803,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                         type="button"
                         aria-label={`Status: ${d.status}. Move on.`}
                         title="Click to move to the next status"
+                        disabled={d.status === "cancelled"}
                         onClick={() => void run(() => updateDeliverable({ deliverableId: d._id, status: next[d.status] }))}
                         className={
                           "grid h-6 w-6 place-items-center rounded-full border text-label-medium " +
@@ -617,7 +835,9 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                       </span>
                     </span>
                     <span className="flex items-center gap-3 text-body-medium text-on-surface-variant">
-                      {d.status === "delivered" ? (
+                      {d.status === "cancelled" ? (
+                        `Cancelled ${day(d.cancelledAt)}`
+                      ) : d.status === "delivered" ? (
                         `Delivered ${day(d.deliveredAt)}`
                       ) : (
                         <label className="flex items-center gap-2">
@@ -702,6 +922,13 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                       className={BTN}
                       onClick={() =>
                         void run(async () => {
+                          // A Fit Report is created only by selecting it, which
+                          // reserves its 20 tokens or refuses, § 7a.
+                          if (addTo.kind === "fit_report") {
+                            await selectFitReport({ leadId, engagementId: addTo.engagementId });
+                            setAddTo(null);
+                            return;
+                          }
                           await addDeliverable({
                             engagementId: addTo.engagementId,
                             kind: addTo.kind as Doc<"deliverables">["kind"],
@@ -714,7 +941,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                         })
                       }
                     >
-                      Add
+                      {addTo.kind === "fit_report" ? "Select and reserve 20 tokens" : "Add"}
                     </button>
                     <button type="button" className={LINK} onClick={() => setAddTo(null)}>
                       Cancel

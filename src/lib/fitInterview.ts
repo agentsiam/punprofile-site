@@ -46,7 +46,7 @@ export const INTERVIEW_PARTS: InterviewPart[] = [
 /** The competencies the 30-minute interview must settle before the report goes out. */
 export const INTERVIEW_ITEMS: string[] = INTERVIEW_PARTS.flatMap((p) => p.items.map((i) => i.key));
 
-/** Reached in the one-hour session, not the 30-minute call. */
+/** Reached in the ฿1,500 pack's complimentary 60-minute preview, not the Fit Report's 30-minute assessment. */
 export const LATER_ITEMS: string[] = [
   "leadershipOwnership",
   "strategicThinking",

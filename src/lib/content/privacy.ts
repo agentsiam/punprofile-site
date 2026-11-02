@@ -53,7 +53,7 @@ import { MARKETING_CONSENT_COPY_REVIEWED } from "@/lib/consent-copy";
 export const PRIVACY_REVIEWED = true;
 
 /** Last substantive change to the text, DD/MM/YYYY. Shown to the reader. */
-export const PRIVACY_LAST_UPDATED = "20/08/2026";
+export const PRIVACY_LAST_UPDATED = "02/11/2026";
 
 /**
  * The marketing opt-in, 16/08/2026.
@@ -183,6 +183,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         en: "One of those questions asks about your visa and right-to-work status, which says something about your immigration position. We hold it because it changes what advice is honest, and for no other reason.",
         th: "หนึ่งในคำถามเหล่านั้นถามถึงสถานะวีซ่าและสิทธิในการทำงานของคุณ ซึ่งบ่งบอกถึงสถานะทางการเข้าเมืองของคุณ เราเก็บข้อมูลนี้เพราะมันเปลี่ยนคำแนะนำที่เราจะให้ได้อย่างตรงไปตรงมา และไม่มีเหตุผลอื่นนอกจากนี้",
       },
+      {
+        // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
+        en: "If you buy a PunProfile service, we also hold what you need it to work: what you bought and your token history; your CVs and the versions we prepare with you; the dates, times and our notes of your calls with us; your Fit Report ratings; your target job titles; the jobs you track on your page; the time zone you choose; anything you send us to prepare for a session; and the decisions we agree with you in a call.",
+        th: "หากคุณซื้อบริการจาก PunProfile จะมีการเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติโทเคน ไฟล์ CV ของคุณและฉบับที่ PunProfile จัดทำร่วมกับคุณ วัน เวลา และบันทึกการพูดคุยกับ PunProfile ผลประเมินใน Fit Report ตำแหน่งเป้าหมาย รายการตำแหน่งงานที่คุณติดตามในหน้าติดตามการสมัครงาน เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งให้ PunProfile เพื่อเตรียมการพูดคุย และข้อสรุปที่ตกลงร่วมกันระหว่างการพูดคุย",
+      },
     ],
   },
   {
@@ -237,6 +242,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         en: "Each contact channel is consented to separately, and each consent is recorded with the date and time you gave it. A phone number with no consent beside it is one we will not call.",
         th: "แต่ละช่องทางติดต่อต้องให้ความยินยอมแยกกัน และความยินยอมแต่ละรายการจะถูกบันทึกพร้อมวันและเวลาที่คุณให้ไว้ หมายเลขโทรศัพท์ที่ไม่มีการให้ความยินยอมกำกับไว้ คือหมายเลขที่เราจะไม่โทรหา",
       },
+      {
+        // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
+        en: "If you buy a service, to deliver it to you and to keep an accurate record of what you bought, what we have delivered and what is still owed.",
+        th: "หากคุณซื้อบริการ PunProfile จะใช้ข้อมูลเพื่อให้บริการแก่คุณ และบันทึกข้อมูลให้ถูกต้องว่าคุณซื้อบริการใด ส่งมอบบริการใดแล้ว และยังต้องส่งมอบบริการใดอีก",
+      },
     ],
   },
   ...(MARKETING_CONSENT_COPY_REVIEWED
@@ -290,6 +300,21 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         th: "- Sentry ระบบรายงานข้อผิดพลาดของเรา ใช้เซิร์ฟเวอร์ในยุโรป รับเฉพาะรายงานข้อผิดพลาดทางเทคนิคเท่านั้น ชื่อ ข้อมูลติดต่อ และคำตอบของคุณจะถูกตัดออกก่อนส่งทุกครั้ง",
       },
       {
+        // Booking tool, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
+        en: "- Cal.com, our booking tool, if you book a call through our link. It receives your name, email address and booking answers.",
+        th: "- Cal.com เป็นระบบนัดหมายที่ PunProfile ใช้ หากคุณนัดหมายผ่านลิงก์ของ PunProfile ทาง Cal.com จะได้รับชื่อ ที่อยู่อีเมล และคำตอบที่คุณกรอกขณะนัดหมาย",
+      },
+      {
+        // Email service, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
+        en: "- Resend, our email service. Sends your sign-in codes and the emails we send you. It receives your email address and the message.",
+        th: "- Resend เป็นบริการส่งอีเมลที่ PunProfile ใช้ส่งรหัสเข้าสู่ระบบและข้อความอีเมลถึงคุณ โดย Resend จะได้รับที่อยู่อีเมลของคุณและเนื้อหาข้อความ",
+      },
+      {
+        // Video calls, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
+        en: "- Google Meet, the video service for our calls. It receives your name, email address and the call itself while it runs.",
+        th: "- Google Meet เป็นบริการวิดีโอคอลที่ PunProfile ใช้สำหรับการพูดคุย โดย Google จะได้รับชื่อ ที่อยู่อีเมลของคุณ และข้อมูลการสนทนาระหว่างที่การพูดคุยดำเนินอยู่",
+      },
+      {
         en: "These are service providers processing data on our behalf, not parties we share your information with. No one else receives it.",
         th: "ทั้งหมดนี้คือผู้ให้บริการที่ประมวลผลข้อมูลในนามของเรา ไม่ใช่บุคคลที่เราเปิดเผยข้อมูลของคุณให้ ไม่มีผู้อื่นได้รับข้อมูลนี้",
       },
@@ -302,8 +327,8 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
     },
     body: [
       {
-        en: "Nothing that identifies you. We store no session identifier and no tracking cookie, and every visit starts fresh. The only thing we keep on your device is your language choice, Thai or English, which cannot be linked back to you or to your answers.",
-        th: "ไม่มีข้อมูลใดที่ระบุตัวตนของคุณ เราไม่จัดเก็บรหัสเซสชันและไม่มีคุกกี้ติดตาม การเข้าใช้งานทุกครั้งเริ่มต้นใหม่ทั้งหมด สิ่งเดียวที่เราเก็บไว้บนอุปกรณ์ของคุณคือภาษาที่คุณเลือก ไทยหรืออังกฤษ ซึ่งไม่สามารถเชื่อมโยงกลับมาถึงตัวคุณหรือคำตอบของคุณได้",
+        en: "Nothing that identifies you, unless you sign in to your page as a paying candidate. Signing in stores a sign-in cookie on your device so you stay signed in; signing out removes it. We use no tracking cookie. The only other thing we keep on your device is your language choice, Thai or English.",
+        th: "PunProfile ไม่เก็บข้อมูลที่ระบุตัวตนของคุณบนอุปกรณ์ เว้นแต่คุณเข้าสู่ระบบหน้าติดตามการสมัครงานในฐานะลูกค้าที่ชำระค่าบริการแล้ว เมื่อเข้าสู่ระบบ อุปกรณ์จะเก็บคุกกี้ไว้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ PunProfile ไม่ใช้คุกกี้ติดตาม นอกจากคุกกี้สำหรับเข้าสู่ระบบแล้ว ข้อมูลอื่นที่เก็บบนอุปกรณ์มีเพียงภาษาที่คุณเลือก คือภาษาไทยหรือภาษาอังกฤษ",
       },
     ],
   },
@@ -354,8 +379,8 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         th: "- คัดค้านวิธีที่เราประเมินคุณ หรือร้องเรียนต่อคณะกรรมการคุ้มครองข้อมูลส่วนบุคคลของประเทศไทย",
       },
       {
-        en: "To exercise any of these, contact us using the details below. We may ask you to confirm something only the person in the record would know, because we have no way to log you in and we will not hand your data to someone claiming to be you.",
-        th: "หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อเราตามรายละเอียดด้านล่าง เราอาจขอให้คุณยืนยันบางอย่างที่เฉพาะเจ้าของข้อมูลเท่านั้นที่ทราบ เนื่องจากเราไม่มีระบบให้คุณเข้าสู่ระบบ และเราจะไม่ส่งมอบข้อมูลของคุณให้ผู้ที่อ้างว่าเป็นคุณ",
+        en: "To exercise any of these, contact us using the details below. We may ask you to confirm something only the person in the record would know, because we will not hand your data to someone claiming to be you.",
+        th: "หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อ PunProfile ตามรายละเอียดด้านล่าง PunProfile อาจขอให้คุณยืนยันข้อมูลที่มีเพียงเจ้าของข้อมูลเท่านั้นที่ทราบ เพื่อป้องกันการเปิดเผยข้อมูลให้บุคคลที่แอบอ้างเป็นคุณ",
       },
     ],
   },

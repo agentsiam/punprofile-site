@@ -13,9 +13,11 @@
  * reading as "they got better".
  */
 
-import { mutation, query } from "./_generated/server";
+import { mutation, query, type MutationCtx } from "./_generated/server";
 import { requireAdmin } from "./leads";
 import { v, ConvexError } from "convex/values";
+import type { Id } from "./_generated/dataModel";
+import { preparationState } from "../src/lib/session";
 
 const TYPE = v.union(
   v.literal("kick_start"),
@@ -88,7 +90,22 @@ const EDITABLE = {
   sentChannel: v.optional(v.union(v.literal("line"), v.literal("email"))),
   bookedAt: v.optional(v.number()),
   reminderSentAt: v.optional(v.number()),
+  // Paid calls, `lifecycle-data-model.md` § 7b: the deliverable the call serves,
+  // and when the preview's preparation request went out on LINE.
+  deliverableId: v.optional(v.id("deliverables")),
+  prepRequestedAt: v.optional(v.number()),
 };
+
+/** A linked deliverable must belong to the same person. */
+async function checkDeliverable(
+  ctx: MutationCtx,
+  leadId: Id<"leads">,
+  deliverableId: Id<"deliverables"> | undefined,
+) {
+  if (!deliverableId) return;
+  const d = await ctx.db.get(deliverableId);
+  if (!d || d.leadId !== leadId) throw new ConvexError("That deliverable belongs to a different lead.");
+}
 
 /** One candidate's calls, most recent first. */
 export const listForLead = query({
@@ -114,6 +131,7 @@ export const log = mutation({
     // person's deletion, which is the one thing this table must never do.
     const lead = await ctx.db.get(leadId);
     if (!lead) throw new ConvexError("Lead not found.");
+    await checkDeliverable(ctx, leadId, fields.deliverableId);
 
     const now = Date.now();
     return await ctx.db.insert("consultations", {
@@ -144,6 +162,7 @@ export const update = mutation({
 
     const existing = await ctx.db.get(args.consultationId);
     if (!existing) throw new ConvexError("No such consultation.");
+    await checkDeliverable(ctx, existing.leadId, args.deliverableId);
 
     await ctx.db.patch(args.consultationId, {
       type: args.type,
@@ -170,6 +189,8 @@ export const update = mutation({
       sentChannel: args.sentChannel,
       bookedAt: args.bookedAt,
       reminderSentAt: args.reminderSentAt,
+      deliverableId: args.deliverableId,
+      prepRequestedAt: args.prepRequestedAt,
       updatedAt: Date.now(),
     });
   },
@@ -248,6 +269,25 @@ export const queues = query({
       });
     }
 
+    // Preparation state for each logged preview call, computed once.
+    let prepCache: { row: (typeof rows)[number]; state: string }[] | null = null;
+    const previewPrep = async () => {
+      if (prepCache) return prepCache;
+      prepCache = [];
+      for (const row of rows) {
+        if (row.outcome !== "scheduled" || !row.deliverableId) continue;
+        const d = await ctx.db.get(row.deliverableId);
+        if (!d || d.entitlement !== "pack_preview") continue;
+        const preps = await ctx.db
+          .query("preparations")
+          .withIndex("by_deliverable", (q) => q.eq("deliverableId", d._id))
+          .collect();
+        const calls = rows.filter((r) => r.leadId === row.leadId);
+        prepCache.push({ row, state: preparationState([d], calls, preps, now).state });
+      }
+      return prepCache;
+    };
+
     const entry = (row: (typeof rows)[number]) => ({
       consultationId: row._id,
       leadId: row.leadId,
@@ -287,6 +327,14 @@ export const queues = query({
         .filter((r) => r.outcome === "scheduled" && r.heldAt <= now)
         .sort((a, b) => a.heldAt - b.heldAt)
         .map(entry),
+
+      /** A logged preview call with preparation still to request on LINE,
+       *  before its deadline. `booking-tracking.md`, Paid calls. */
+      prepNotRequested: (await previewPrep()).filter((p) => p.state === "not_requested").map((p) => entry(p.row)),
+
+      /** A logged preview call whose preparation was not in by its deadline.
+       *  An exception for Paul to judge; the booking and tokens are unchanged. */
+      prepMissing: (await previewPrep()).filter((p) => p.state === "missing_at_deadline").map((p) => entry(p.row)),
 
       /** Invited a fortnight ago and never booked. Chase it or mark it
        *  `expired`; leaving it as `invited` reads as still live. */

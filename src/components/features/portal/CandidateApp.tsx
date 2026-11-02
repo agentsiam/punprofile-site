@@ -37,6 +37,7 @@ import * as C from "@/lib/content/portal";
 import { CHECKLIST, CHECKLIST_OTHER, CHECKLIST_PROGRESS, CHECKLIST_TAB } from "@/lib/content/checklist";
 import { keywordsOf } from "@/lib/keywords";
 import { rolesFor } from "@/lib/market-match";
+import { MADRID, formatIn } from "@/lib/sessionTime";
 
 type Job = PortalView["jobs"][number];
 const PIPELINE = ["interested", "applied", "screening", "interviewing", "offer", "accepted"] as const;
@@ -279,6 +280,13 @@ function Overview({
         <div className="grid gap-4 medium:grid-cols-3">
           {data.tokens.bought > 0 && (
             <Stat tint={TINTS[1]} label={pick(C.TOKENS_HEADING)} big={String(data.tokens.balance)} small={t(C.TOKENS_OF, { n: data.tokens.bought })}>
+              {data.tokens.reserved > 0 && (
+                <span className="block break-keep" data-testid="me-reserved">
+                  {t(C.TOKENS_RESERVED, { n: data.tokens.reserved })}
+                  <br />
+                  <span data-testid="me-spendable">{t(C.TOKENS_SPENDABLE, { n: data.tokens.spendable })}</span>
+                </span>
+              )}
               {t(C.TOKENS_MATCHED, { n: data.tokens.matchedSent })}
               <TokenRequest data={data} readOnly={readOnly} />
             </Stat>
@@ -324,6 +332,9 @@ function Overview({
       </div>
 
       <div className="space-y-5">
+        {(data.preparation || data.appointments.length > 0) && (
+          <AppointmentsCard data={data} readOnly={readOnly} />
+        )}
         {(data.titles.length > 0 || data.deliverables.length > 0) && <TitlesCard data={data} />}
         {data.fitReportShared && <FitReportCard readOnly={readOnly} />}
         <GoalCard data={data} readOnly={readOnly} />
@@ -459,6 +470,187 @@ function FitReportCard({ readOnly }: { readOnly: boolean }) {
 }
 
 /** Teal's goal ring: applications sent this week against the candidate's own target. */
+/* ===================================================== appointments + prep */
+
+/** Zones offered first; the full list follows. Nothing is preselected. */
+const COMMON_ZONES = ["Asia/Bangkok", "Europe/Madrid", "Europe/London", "Europe/Berlin", "Europe/Paris", "Europe/Amsterdam", "Europe/Dublin", "Europe/Stockholm"];
+const ALL_ZONES: string[] = (() => {
+  try {
+    return (Intl as unknown as { supportedValuesOf(k: string): string[] }).supportedValuesOf("timeZone");
+  } catch {
+    return COMMON_ZONES;
+  }
+})();
+
+/**
+ * Their scheduled calls in their selected zone and Madrid, and the preview's
+ * preparation. `prd.md` section 8. Calls come from the coach's call log, of
+ * which only kind, length and time are passed here. Until a zone is selected,
+ * Madrid is shown, labelled, with a prompt; no zone is assumed. Cal.com's own
+ * confirmation is the calendar invitation, so there is no calendar file here.
+ */
+function AppointmentsCard({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
+  const { pick, t, locale } = useFormat();
+  const setZone = useMutation(api.portal.setTimeZone);
+  const submit = useMutation(api.portal.submitPreparation);
+  const loc = locale === "th" ? "th" : "en";
+  const tz = data.timeZone;
+  const prep = data.preparation;
+  const [priorities, setPriorities] = useState<string[]>(() => pad(prep?.priorities ?? [], 3));
+  const [titleChanges, setTitleChanges] = useState(prep?.titleChanges ?? "");
+  const [urls, setUrls] = useState<string[]>(() => pad(prep?.vacancyUrls ?? [], 2));
+  const [question, setQuestion] = useState(prep?.question ?? "");
+  const [state, setState] = useState<"idle" | "sent" | "invalid">("idle");
+  const when = (ms: number) => (
+    <>
+      <span className="block" data-testid="me-time-madrid">{t(C.APPT_MADRID, { t: formatIn(ms, MADRID, loc) })}</span>
+      {tz && (
+        <span className="block" data-testid="me-time-yours">
+          {t(C.APPT_YOURS, { t: formatIn(ms, tz, loc) })}
+        </span>
+      )}
+    </>
+  );
+  const send = async () => {
+    const p = priorities.map((x) => x.trim()).filter(Boolean);
+    const u = urls.map((x) => x.trim()).filter(Boolean);
+    if (!p.length || u.some((x) => !/^https:\/\//.test(x))) return setState("invalid");
+    try {
+      await submit({
+        deliverableId: prep!.deliverableId,
+        priorities: p,
+        vacancyUrls: u,
+        ...(titleChanges.trim() ? { titleChanges } : {}),
+        ...(question.trim() ? { question } : {}),
+      });
+      setState("sent");
+    } catch {
+      setState("invalid");
+    }
+  };
+
+  return (
+    <section className="card-outlined px-6 py-5" data-testid="me-appointments">
+      <h2 className="text-heading-sm">{pick(C.APPT_HEADING)}</h2>
+      {!tz && <p className="mt-2 text-body-medium text-ink" data-testid="me-zone-prompt">{pick(C.APPT_ZONE_PROMPT)}</p>}
+      <label className="field-label mt-2 block">
+        {pick(C.APPT_ZONE_LABEL)}
+        <select
+          className="field mt-1"
+          value={tz ?? ""}
+          disabled={readOnly}
+          onChange={(e) => e.target.value && void setZone({ timeZone: e.target.value })}
+        >
+          <option value="">{pick(C.APPT_ZONE_CHOOSE)}</option>
+          {COMMON_ZONES.map((z) => (
+            <option key={`c-${z}`} value={z}>
+              {z}
+            </option>
+          ))}
+          <option disabled>──────────</option>
+          {ALL_ZONES.filter((z) => !COMMON_ZONES.includes(z)).map((z) => (
+            <option key={z} value={z}>
+              {z}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      {data.appointments.length === 0 ? (
+        <p className="mt-3 text-body-medium text-on-surface-variant">{pick(C.APPT_NONE)}</p>
+      ) : (
+        <ul className="mt-3 divide-y divide-line">
+          {data.appointments.map((a) => (
+            <li key={a._id} className="py-2.5 text-body-medium">
+              <span className="block text-label-large">
+                {a.title ?? (a.kind ? pick(C.WORK_KIND[a.kind] ?? { en: a.kind, th: a.kind }) : pick(C.WORK_KIND.coaching_session))}
+                {a.durationMinutes ? ` · ${t(C.APPT_MINUTES, { n: a.durationMinutes })}` : ""}
+              </span>
+              {when(a.heldAt)}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {prep && (
+        <div className="mt-4 border-t border-line pt-4" data-testid="me-prep">
+          <h3 className="text-label-large">{pick(C.PREP_HEADING)}</h3>
+          <p className="mt-1 text-body-medium text-ink" data-testid="me-prep-due">
+            {prep.deadline === null ? pick(C.PREP_NOT_BOOKED) : t(C.PREP_DUE, { t: formatIn(prep.deadline, MADRID, loc) })}
+            {prep.deadline !== null && tz && (
+              <span className="block text-on-surface-variant">{t(C.APPT_YOURS, { t: formatIn(prep.deadline, tz, loc) })}</span>
+            )}
+          </p>
+          {prep.state === "missing_at_deadline" && <p className="mt-1 text-body-medium text-ink">{pick(C.PREP_LATE)}</p>}
+          <div className="mt-3" data-testid="me-prep-titles">
+            <p className="field-label">{pick(C.PREP_TITLES)}</p>
+            {data.titles.length ? (
+              <ol className="mt-1 list-decimal pl-5 text-body-medium text-ink">
+                {data.titles.map((x) => (
+                  <li key={x._id}>{x.title}</li>
+                ))}
+              </ol>
+            ) : null}
+            <label className="field-label mt-2 block">
+              {pick(C.PREP_TITLE_CHANGES)}
+              <input className="field mt-1" value={titleChanges} disabled={readOnly} onChange={(e) => setTitleChanges(e.target.value)} />
+            </label>
+          </div>
+          <Fields label={pick(C.PREP_PRIORITIES)} values={priorities} onChange={setPriorities} readOnly={readOnly} testid="me-prep-priorities" />
+          <Fields label={pick(C.PREP_VACANCIES)} values={urls} onChange={setUrls} readOnly={readOnly} placeholder="https://" />
+          <label className="field-label mt-3 block">
+            {pick(C.PREP_QUESTION)}
+            <input className="field mt-1" value={question} disabled={readOnly} onChange={(e) => setQuestion(e.target.value)} />
+          </label>
+          {!readOnly && (
+            <button type="button" className="btn-tonal mt-3 h-10 px-5 text-label-large" onClick={() => void send()}>
+              {pick(C.PREP_SEND)}
+            </button>
+          )}
+          {(state === "sent" || (state === "idle" && prep.submittedAt)) && (
+            <p className="mt-2 text-body-medium text-ink" data-testid="me-prep-sent">{pick(C.PREP_SENT)}</p>
+          )}
+          {state === "invalid" && <p className="mt-2 text-body-medium text-error">{pick(C.PREP_INVALID)}</p>}
+        </div>
+      )}
+    </section>
+  );
+}
+
+const pad = (xs: string[], n: number) => [...xs, ...Array(Math.max(0, n - xs.length)).fill("")].slice(0, n);
+
+function Fields({
+  label,
+  values,
+  onChange,
+  readOnly,
+  placeholder,
+  testid,
+}: {
+  label: string;
+  values: string[];
+  onChange: (v: string[]) => void;
+  readOnly: boolean;
+  placeholder?: string;
+  testid?: string;
+}) {
+  return (
+    <fieldset className="mt-3" data-testid={testid}>
+      <legend className="field-label">{label}</legend>
+      {values.map((v, i) => (
+        <input
+          key={i}
+          className="field mt-1"
+          value={v}
+          disabled={readOnly}
+          placeholder={placeholder ?? `${i + 1}.`}
+          onChange={(e) => onChange(values.map((x, j) => (j === i ? e.target.value : x)))}
+        />
+      ))}
+    </fieldset>
+  );
+}
+
 function GoalCard({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
   const { pick, t } = useFormat();
   const setGoal = useMutation(api.portal.setGoal);
@@ -538,7 +730,7 @@ function TokenRequest({ data, readOnly }: { data: PortalView; readOnly: boolean 
   const { pick } = useFormat();
   const request = useMutation(api.portal.requestTokens);
   if (data.tokens.requestedAt) return <span className="mt-2 block text-ink">{pick(C.TOKENS_REQUESTED)}</span>;
-  const low = data.tokens.balance <= 3;
+  const low = data.tokens.spendable <= 3;
   return (
     <span className="mt-2 block">
       {low && <span className="block text-ink">{pick(C.TOKENS_LOW)}</span>}

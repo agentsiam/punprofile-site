@@ -101,6 +101,10 @@ async function movePersonalRecords(
     .query("tokenRequests")
     .withIndex("by_lead", (q) => q.eq("leadId", dropId))
     .collect();
+  const preps = await ctx.db
+    .query("preparations")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
 
   // Titles move as they are; if both rows had targets the survivor may end
   // up with more than five active, which the coach resolves on the 360 page
@@ -125,6 +129,7 @@ async function movePersonalRecords(
   for (const row of [
     ...targets,
     ...tokenReqs,
+    ...preps,
     ...access,
     ...ledger,
     ...cvs,

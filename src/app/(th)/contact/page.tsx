@@ -25,7 +25,7 @@
  * faster than they read either label.
  *
  * **The booking link is deliberately absent.** `00_Quick_Facts.md` marks
- * `calendly.com/paul-bussabong/30min` "Gated, not public. It is sent 1:1 only".
+ * the booking links "Gated, not public. It is sent 1:1 only".
  * A contact page is about as public as a link gets. TASK-046.
  *
  * The Facebook group went with the cards. It has no URL on record anywhere in

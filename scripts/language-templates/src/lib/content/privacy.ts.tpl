@@ -53,7 +53,7 @@ import { MARKETING_CONSENT_COPY_REVIEWED } from "@/lib/consent-copy";
 export const PRIVACY_REVIEWED = true;
 
 /** Last substantive change to the text, DD/MM/YYYY. Shown to the reader. */
-export const PRIVACY_LAST_UPDATED = "20/08/2026";
+export const PRIVACY_LAST_UPDATED = "02/11/2026";
 
 /**
  * The marketing opt-in, 16/08/2026.
@@ -183,6 +183,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbMV0uYm9keVsyXQ:EN%%,
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbMV0uYm9keVsyXQ:TH%%,
       },
+      {
+        // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbMV0uYm9keVszXQ:EN%%,
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbMV0uYm9keVszXQ:TH%%,
+      },
     ],
   },
   {
@@ -237,6 +242,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbM10uYm9keVsyXQ:EN%%,
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbM10uYm9keVsyXQ:TH%%,
       },
+      {
+        // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbM10uYm9keVszXQ:EN%%,
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbM10uYm9keVszXQ:TH%%,
+      },
     ],
   },
   ...(MARKETING_CONSENT_COPY_REVIEWED
@@ -288,6 +298,21 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
       {
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVszXQ:EN%%,
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVszXQ:TH%%,
+      },
+      {
+        // Booking tool, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs1XQ:EN%%,
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs1XQ:TH%%,
+      },
+      {
+        // Email service, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs2XQ:EN%%,
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs2XQ:TH%%,
+      },
+      {
+        // Video calls, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
+        en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs3XQ:EN%%,
+        th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs3XQ:TH%%,
       },
       {
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs0XQ:EN%%,

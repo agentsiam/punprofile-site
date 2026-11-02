@@ -44,6 +44,9 @@ export default defineSchema({
      */
     /** @absent none — the coach has not set one */
     nickname: v.optional(v.string()),
+    /** IANA zone the candidate selected for their appointments, § 7b.
+     *  @absent notyet — not selected; pages show Madrid, labelled, never a guess */
+    timeZone: v.optional(v.string()),
     /** @absent unmeasured — not captured until the contact gate clears */
     lastName: v.optional(v.string()),
     /** @absent unmeasured — composed from the two above once both exist */
@@ -502,6 +505,8 @@ export default defineSchema({
       candidateAccess: v.optional(v.number()),
       tokenRequests: v.optional(v.number()),
       targets: v.optional(v.number()),
+      preparations: v.optional(v.number()),
+      bookingInbox: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -603,6 +608,18 @@ export default defineSchema({
     /** Manual, because the free tier sends no reminders. Absent is the queue. */
     /** @absent notyet — absent IS the reminder queue; the free tier sends none */
     reminderSentAt: v.optional(v.number()),
+    /** The deliverable this call serves, e.g. the Fit Report or the pack's
+     *  preview. `lifecycle-data-model.md` § 7b. Appointments live here and
+     *  nowhere else. @absent none — a call not tied to one piece of work */
+    deliverableId: v.optional(v.id("deliverables")),
+    /** When Paul sent the preview's preparation request on LINE. Manual,
+     *  because nothing reaches the candidate on its own. § 7b.
+     *  @absent notyet — not sent, or not a preview call */
+    prepRequestedAt: v.optional(v.number()),
+    /** The Cal.com booking id, on a call the booking webhook wrote, so a
+     *  reschedule or cancellation finds its row. § 7b.
+     *  @absent none — logged by hand */
+    calBookingId: v.optional(v.string()),
     /** @absent unmeasured — not recorded */
     durationMinutes: v.optional(v.number()),
     /** @absent unmeasured — not recorded */
@@ -702,7 +719,42 @@ export default defineSchema({
   })
     .index("by_lead_time", ["leadId", "heldAt"])
     // The follow-up and reminder queues: what is coming up, across all leads.
-    .index("by_time", ["heldAt"]),
+    .index("by_time", ["heldAt"])
+    .index("by_cal_booking", ["calBookingId"]),
+
+  /**
+   * A Cal.com event the booking webhook could not place, waiting for Paul.
+   * `prd.md` section 8; `lifecycle-data-model.md` § 7b. Coach-only. A row
+   * exists only until Paul clears it, and clearing deletes it, because the
+   * attendee's name and email are the reason it is here and nothing else.
+   */
+  bookingInbox: defineTable({
+    calBookingId: v.string(),
+    trigger: v.union(
+      v.literal("BOOKING_CREATED"),
+      v.literal("BOOKING_RESCHEDULED"),
+      v.literal("BOOKING_CANCELLED"),
+    ),
+    startAt: v.number(),
+    /** @absent unmeasured — the event carried no length */
+    lengthMinutes: v.optional(v.number()),
+    /** @absent unmeasured — the event carried no name */
+    attendeeName: v.optional(v.string()),
+    /** Lowercased. @absent unmeasured — the event carried no email */
+    attendeeEmail: v.optional(v.string()),
+    reason: v.union(
+      v.literal("no_lead"),
+      v.literal("several_leads"),
+      v.literal("unknown_length"),
+      v.literal("no_email"),
+      v.literal("unknown_booking"),
+      v.literal("already_scheduled"),
+    ),
+    receivedAt: v.number(),
+  })
+    .index("by_booking", ["calBookingId", "trigger"])
+    .index("by_email", ["attendeeEmail"])
+    .index("by_received", ["receivedAt"]),
 
   /**
    * What was sold. Spec: `lifecycle-data-model.md` § 7, built 15/08/2026.
@@ -829,9 +881,40 @@ export default defineSchema({
       v.literal("not_started"),
       v.literal("in_progress"),
       v.literal("delivered"),
+      /** Withdrawn before delivery, `lifecycle-data-model.md` § 7a. A cancelled
+       *  Fit Report holds no reservation and is never charged. */
+      v.literal("cancelled"),
     ),
     /** @absent notyet — not delivered. absent IS the outstanding state */
     deliveredAt: v.optional(v.number()),
+    /** @absent notyet — not cancelled */
+    cancelledAt: v.optional(v.number()),
+    /** Set only by `workspace.selectFitReport` on a `fit_report`. While set,
+     *  undelivered, uncancelled and uncharged, it holds 20 tokens. § 7a.
+     *  @absent notyet — never explicitly selected; a report started before
+     *  reservations existed stays unreserved until reconciled and selected */
+    reservedAt: v.optional(v.number()),
+    /** Complimentary work of the ฿1,500 pack, `01_Project_Foundation.md`.
+     *  @absent none — paid or ordinary work */
+    entitlement: v.optional(v.union(v.literal("pack_preview"), v.literal("pack_cv_rewrite"))),
+    /** On a `pack_cv_rewrite`: the Fit Report selection that earned it.
+     *  @absent none — not a CV rewrite, or earned some other recorded way */
+    forFitReport: v.optional(v.id("deliverables")),
+    /** On a `pack_cv_rewrite` kept through its Fit Report's cancellation: the
+     *  existing promise that keeps it. @absent none — no promise recorded */
+    promiseNote: v.optional(v.string()),
+    /** Factual errors the candidate reported in a complimentary document. An
+     *  unresolved one holds the coaching open. @absent none — none reported */
+    errorReports: v.optional(
+      v.array(
+        v.object({
+          reportedAt: v.number(),
+          summary: v.string(),
+          /** @absent notyet — still open */
+          resolvedAt: v.optional(v.number()),
+        }),
+      ),
+    ),
     /** @absent none — this work produced no coach observation worth recording */
     producedAssessment: v.optional(v.id("assessments")),
 
@@ -1220,9 +1303,41 @@ export default defineSchema({
     deliverableId: v.optional(v.id("deliverables")),
     /** @absent none — not about one application */
     applicationId: v.optional(v.id("applications")),
+    /** A decision captured in the Session tab, `prd.md` section 8.
+     *  @absent none — an ordinary delivery note */
+    decision: v.optional(v.boolean()),
+    /** The call a decision was made in. § 7b.
+     *  @absent none — not a decision, or recorded outside a call */
+    consultationId: v.optional(v.id("consultations")),
+    /** The decision this one explicitly replaces. Never edited afterwards.
+     *  @absent none — replaces nothing */
+    supersedes: v.optional(v.id("deliveryNotes")),
     at: v.number(),
     by: v.string(),
   }).index("by_lead", ["leadId", "at"]),
+
+  /**
+   * The candidate's preparation for the complimentary preview, § 7b. One row
+   * per session, kept through a reschedule, written only by the signed-in
+   * candidate it belongs to (`portal.submitPreparation`).
+   */
+  preparations: defineTable({
+    leadId: v.id("leads"),
+    deliverableId: v.id("deliverables"),
+    /** One to three. */
+    priorities: v.array(v.string()),
+    /** A change they want to their target titles, which the coach makes in
+     *  `targets`. @absent none — no change asked for */
+    titleChanges: v.optional(v.string()),
+    /** Zero to two, https. Optional examples never block the session. */
+    vacancyUrls: v.array(v.string()),
+    /** What they most want answered. @absent none — not given */
+    question: v.optional(v.string()),
+    submittedAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_lead", ["leadId"])
+    .index("by_deliverable", ["deliverableId"]),
   /**
    * Who may sign in to their own page at `/me`. `lifecycle-data-model.md`
    * § 10, option (b): a real candidate account, email and a one-time code, no
