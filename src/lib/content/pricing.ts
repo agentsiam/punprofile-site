@@ -46,11 +46,11 @@ export const PRICING_HEADING: Copy = {
 };
 
 export const PRICING_INTRO: Copy = {
-  en: "One token pays for matched roles and the Fit Report. Pick the pack that fits how much you will use it.",
+  en: "Use tokens for matched roles or the Fit Report. Pick the pack that fits how much you will use it.",
   // From Paul's wording of 23/08/2026, narrowed 02/11/2026 on his call. "Every
   // service on the site" was an overclaim: coaching is priced in a conversation
   // and three products are free, so a token buys exactly two things.
-  th: "โทเคนเดียว ใช้ได้ทั้งตำแหน่งงานที่คัดให้และ Fit Report เลือกแพ็กที่พอดีกับการใช้งานของคุณได้เลย",
+  th: "คุณใช้โทเคนแลกรับตำแหน่งงานที่คัดให้หรือ Fit Report ได้ เลือกแพ็กให้เหมาะกับปริมาณการใช้งานของคุณ",
 };
 
 /* -------------------------------------------------------------------- free */
@@ -235,7 +235,7 @@ export const INCLUDES_HEADING: Copy = {
   en: "Every pack comes with the same terms",
   // 02/11/2026, on Paul's call, over his 23/08/2026 line "it works on
   // everything", which said more than a token buys.
-  th: "ทุกแพ็กได้เงื่อนไขเดียวกัน",
+  th: "ทุกแพ็กใช้เงื่อนไขเดียวกัน",
 };
 
 /**
@@ -288,10 +288,10 @@ export const TOKEN_HEADING: Copy = {
 };
 
 export const TOKEN_BODY: Copy = {
-  en: "Matched roles and the Fit Report use the same token, and we only deduct one once you have actually received the service.",
+  en: "Matched roles and the Fit Report are both paid in tokens, and PunProfile only deducts them once you have received the service.",
   // Paul's wording, 23/08/2026, with the subject narrowed 02/11/2026 for the
   // same reason as `PRICING_INTRO`.
-  th: "ตำแหน่งงานที่คัดให้และ Fit Report ใช้โทเคนเดียวกัน และเราจะหักโทเคนก็ต่อเมื่อคุณได้รับบริการจริงแล้วเท่านั้น",
+  th: "ทั้งบริการคัดตำแหน่งงานและ Fit Report ชำระด้วยโทเคน โดย PunProfile จะหักโทเคนเมื่อคุณได้รับบริการแล้วเท่านั้น",
 };
 
 export interface TokenRow {
@@ -315,7 +315,7 @@ export const TOKEN_ROWS: readonly TokenRow[] = [
     },
     detail: {
       en: "Sent to your email, with the work rights it needs stated",
-      th: "ส่งตรงถึงอีเมล พร้อมระบุสิทธิ์การทำงานที่ต้องมี",
+      th: "ส่งทางอีเมล พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี",
     },
     tokens: 1,
   },
@@ -353,7 +353,7 @@ export const TOKEN_UNIT = {
  */
 export const LIMITS_HEADING: Copy = {
   en: "What a token does not do",
-  th: "สิ่งที่โทเคนไม่ได้รวมไว้",
+  th: "ข้อจำกัดของบริการที่ใช้โทเคน",
 };
 
 /**
@@ -399,7 +399,7 @@ export const CALC_HEADING: Copy = {
 
 export const CALC_FIT_REPORT: Copy = {
   en: "Do you want the Fit Report?",
-  th: "ต้องการ Fit Report ไหม?",
+  th: "คุณต้องการ Fit Report หรือไม่?",
 };
 
 export const CALC_FIT_YES: Copy = {
@@ -409,17 +409,17 @@ export const CALC_FIT_YES: Copy = {
 
 export const CALC_FIT_NO: Copy = {
   en: "Not yet",
-  th: "ยังก่อน",
+  th: "ยังไม่ต้องการ",
 };
 
 export const CALC_PER_WEEK: Copy = {
   en: "How many matched roles a week?",
-  th: "อยากได้ตำแหน่งงานที่คัดให้สัปดาห์ละกี่ตำแหน่ง?",
+  th: "ต้องการรับตำแหน่งงานที่คัดให้สัปดาห์ละกี่ตำแหน่ง?",
 };
 
 export const CALC_HOW_LONG: Copy = {
   en: "For how long?",
-  th: "ต่อเนื่องนานแค่ไหน?",
+  th: "ต้องการรับต่อเนื่องนานเท่าใด?",
 };
 
 export const CALC_MONTHS = {
@@ -440,7 +440,7 @@ export const CALC_NEED: Copy = {
 
 export const CALC_BEST_FIT: Copy = {
   en: "The pack that fits",
-  th: "แพ็กที่พอดี",
+  th: "แพ็กที่เหมาะกับการใช้งานของคุณ",
 };
 
 export const CALC_LEFT_OVER: Copy = {

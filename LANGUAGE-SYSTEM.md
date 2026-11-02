@@ -17270,15 +17270,15 @@ render: "Pricing page, TOKEN_ROWS[0].label"
 narrative_slot: "artefact"
 en: "A role that matches your criteria"
 th: "ตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ"
-provenance: "draft"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Built 02/11/2026 from Paul's TOKEN_EXAMPLES[0] wording, which this row replaced."
+decision_note: "Approved in Paul's review pass 02/11/2026, unchanged."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 75f881fd09d1f6066e446a666608a8ea5bd7f2fd585c702205cf54b8a6631a51
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17291,16 +17291,16 @@ path: "TOKEN_ROWS[0].detail"
 render: "Pricing page, TOKEN_ROWS[0].detail"
 narrative_slot: "artefact"
 en: "Sent to your email, with the work rights it needs stated"
-th: "ส่งตรงถึงอีเมล พร้อมระบุสิทธิ์การทำงานที่ต้องมี"
-provenance: "draft"
+th: "ส่งทางอีเมล พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Built 02/11/2026 from Paul's TOKEN_EXAMPLES[0] and INCLUDES[3] wording."
+decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ระบุให้ชัดว่าเป็นสิทธิ์การทำงานที่ผู้สมัครต้องมีสำหรับตำแหน่งนั้น"
 review:
-  structural_calque: pending
-  text_hash: 4bf70e32e98470758296e47797606690e22659efde8d5f6c8444839b1fc0142c
+  structural_calque: pass
+  text_hash: 71179b3533f1781ca437b07756dfc35b193d6db56b8e5c10b63398a6e28b8f1b
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17314,15 +17314,15 @@ render: "Pricing page, TOKEN_ROWS[1].detail"
 narrative_slot: "artefact"
 en: "A 30-minute interview with a coach, and the full report the same day"
 th: "สัมภาษณ์ 30 นาทีกับโค้ช และรับรายงานฉบับเต็มภายในวันเดียวกัน"
-provenance: "draft"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Built 02/11/2026 from the Fit Report's how steps in products.ts; the old bullet omitted the interview."
+decision_note: "Approved in Paul's review pass 02/11/2026, unchanged."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: aaa431229cc503fe79ec3aaf09b9b4bf07aba0ecd85ee7aaadc8fdcb4e2e40d1
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17335,16 +17335,16 @@ path: "LIMITS_HEADING"
 render: "Pricing page, LIMITS_HEADING"
 narrative_slot: "limit"
 en: "What a token does not do"
-th: "สิ่งที่โทเคนไม่ได้รวมไว้"
-provenance: "draft"
+th: "ข้อจำกัดของบริการที่ใช้โทเคน"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Heads slot 6 above the packs, 02/11/2026 (2a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: อธิบายข้อจำกัดของบริการโดยตรง แทนการใช้โทเคนเป็นสิ่งที่รวมบริการไว้"
 review:
-  structural_calque: pending
-  text_hash: 6dfdf1819b762eec66281467a9a42538b607c2e04af7015dcac69a0e1280e336
+  structural_calque: pass
+  text_hash: d22b5c0bbea5b4865666968a5b35f2ada69aaf5a0d36bc93673cc91e244f61b6
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17357,16 +17357,16 @@ path: "CALC_FIT_REPORT"
 render: "Pricing page, CALC_FIT_REPORT"
 narrative_slot: "utility"
 en: "Do you want the Fit Report?"
-th: "ต้องการ Fit Report ไหม?"
-provenance: "draft"
+th: "คุณต้องการ Fit Report หรือไม่?"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Pack picker, 02/11/2026 (1a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ปรับคำถามให้เป็นภาษาเขียน"
 review:
-  structural_calque: pending
-  text_hash: 3fb4e5f7da1016c7bf06020d003d4cd0c69719c1fc333c3604af066a10c91662
+  structural_calque: pass
+  text_hash: d756c3859f0ca8b0bb68fd0cff1bf6287ae49aea2888970457aa729009cf1d87
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17380,15 +17380,15 @@ render: "Pricing page, CALC_FIT_YES"
 narrative_slot: "utility"
 en: "Yes"
 th: "ต้องการ"
-provenance: "draft"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Pack picker, 02/11/2026 (1a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, unchanged."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 76918b318b795adae5aebafed3f746fcff40c31f277fdc47de4a59ed7daa52f6
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17401,16 +17401,16 @@ path: "CALC_FIT_NO"
 render: "Pricing page, CALC_FIT_NO"
 narrative_slot: "utility"
 en: "Not yet"
-th: "ยังก่อน"
-provenance: "draft"
+th: "ยังไม่ต้องการ"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Pack picker, 02/11/2026 (1a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ให้สอดคล้องกับคำถามและน้ำเสียงภาษาเขียน"
 review:
-  structural_calque: pending
-  text_hash: 119b8007d6f61181904503fd8740def5fe751c8cda598000a9ab83987646685a
+  structural_calque: pass
+  text_hash: 6634f0dcbef4d42a86b7e7c6921e9a2db05d8615a6d0df5c7208e72ec8362c97
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17423,16 +17423,16 @@ path: "CALC_PER_WEEK"
 render: "Pricing page, CALC_PER_WEEK"
 narrative_slot: "utility"
 en: "How many matched roles a week?"
-th: "อยากได้ตำแหน่งงานที่คัดให้สัปดาห์ละกี่ตำแหน่ง?"
-provenance: "draft"
+th: "ต้องการรับตำแหน่งงานที่คัดให้สัปดาห์ละกี่ตำแหน่ง?"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Pack picker, 02/11/2026 (1a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ปรับเป็นภาษาเขียนและระบุการรับตำแหน่งงาน"
 review:
-  structural_calque: pending
-  text_hash: b04a289078d5998c199c281f6a3f06d8f24daeb2de3c56d06b0281b67827225b
+  structural_calque: pass
+  text_hash: 93dc0644a79954f6689e49781159ad0e854e2ef03669df978618c1d74b8d7f96
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17445,16 +17445,16 @@ path: "CALC_HOW_LONG"
 render: "Pricing page, CALC_HOW_LONG"
 narrative_slot: "utility"
 en: "For how long?"
-th: "ต่อเนื่องนานแค่ไหน?"
-provenance: "draft"
+th: "ต้องการรับต่อเนื่องนานเท่าใด?"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Pack picker, 02/11/2026 (1a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ระบุสิ่งที่ทำต่อเนื่องให้ชัดและใช้ภาษาเขียน"
 review:
-  structural_calque: pending
-  text_hash: 20012509ec04e265dd0493490e92820c6c2f6876e9688f79f79f52b2f44c5f03
+  structural_calque: pass
+  text_hash: a1cd8b60676fd8462669bad9a887597a5f4b06a625e1e1af95a072828fff0f10
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17468,15 +17468,15 @@ render: "Pricing page, CALC_MONTHS.one"
 narrative_slot: "utility"
 en: "month"
 th: "เดือน"
-provenance: "draft"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Pack picker, 02/11/2026 (1a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, unchanged."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 5b31a9b3175fa12e288cd5d71d1be274e8a8748c937466496b46dd8cd2964a89
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17490,15 +17490,15 @@ render: "Pricing page, CALC_MONTHS.many"
 narrative_slot: "utility"
 en: "months"
 th: "เดือน"
-provenance: "draft"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Pack picker, 02/11/2026 (1a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, unchanged."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 400c751d366250774a21181d2e00593e66befb5df792a517495710231b269dcc
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17512,15 +17512,15 @@ render: "Pricing page, CALC_NEED"
 narrative_slot: "utility"
 en: "You need about"
 th: "คุณต้องใช้ประมาณ"
-provenance: "draft"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Pack picker result, 02/11/2026 (1a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, unchanged."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 54c899f925779c8769fd7f4dc75cf36ae138ae9fff06a089f70db3c552a88ac2
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17533,16 +17533,16 @@ path: "CALC_BEST_FIT"
 render: "Pricing page, CALC_BEST_FIT"
 narrative_slot: "utility"
 en: "The pack that fits"
-th: "แพ็กที่พอดี"
-provenance: "draft"
+th: "แพ็กที่เหมาะกับการใช้งานของคุณ"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Pack picker result, 02/11/2026 (1a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: หลีกเลี่ยงคำว่าพอดีซึ่งอาจทำให้เข้าใจว่าไม่มีโทเคนเหลือ"
 review:
-  structural_calque: pending
-  text_hash: d6871e4229df3ddd1b7806fa6cbe70c39ffe0e90e15b3e1f6c033e362d600c96
+  structural_calque: pass
+  text_hash: 2df48766df6b269b1bc82bc0dc473a54e3098a3d0f0361bb2d0f394ca711e2b1
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17556,15 +17556,15 @@ render: "Pricing page, CALC_LEFT_OVER"
 narrative_slot: "utility"
 en: "left over, which never expire and can be refunded"
 th: "ที่เหลือไม่มีวันหมดอายุ และขอคืนเงินได้"
-provenance: "draft"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Pack picker result, 02/11/2026 (1a); restates INCLUDES[0] and [1] where the leftover appears."
+decision_note: "Approved in Paul's review pass 02/11/2026, unchanged."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 93af07ec32efc2b3d76652e9b7c4913bdcf30677b1b980927d8a926c7d20f4c9
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17578,15 +17578,15 @@ render: "Pricing page, CALC_NOTE"
 narrative_slot: "utility"
 en: "Worked out from your answers and the pack prices on this page, counting a month as four weeks. A token is only deducted when a role reaches you."
 th: "คำนวณจากคำตอบของคุณและราคาแพ็กในหน้านี้ โดยนับ 1 เดือนเป็น 4 สัปดาห์ และจะหักโทเคนก็ต่อเมื่อมีตำแหน่งงานส่งถึงคุณแล้วเท่านั้น"
-provenance: "draft"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Rewritten 02/11/2026 for the pack picker, which replaced the salary calculator on Paul's call (1a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, unchanged."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 53ce8d04e7dfdf48cbd046152b34d67ff89309dfb4c91079eadbe95a23342a3c
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17732,16 +17732,16 @@ path: "INCLUDES_HEADING"
 render: "Pricing page, INCLUDES_HEADING"
 narrative_slot: "utility"
 en: "Every pack comes with the same terms"
-th: "ทุกแพ็กได้เงื่อนไขเดียวกัน"
-provenance: "draft"
+th: "ทุกแพ็กใช้เงื่อนไขเดียวกัน"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Replaces Paul's 23/08/2026 line, which said a token works on everything, on his call 02/11/2026 (2a)."
+decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ใช้สำนวนไทยที่เป็นธรรมชาติกว่าได้เงื่อนไข"
 review:
-  structural_calque: pending
-  text_hash: 9985f2f98ccd618beb3e861c3c1045b7503755e89e9a0d8844429c3f6c97df2b
+  structural_calque: pass
+  text_hash: daeb80c77996e41e3a2936af29dd4fe64ce1129169cd04c0ef8e4e9747e62cad
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -18115,17 +18115,17 @@ source: "src/lib/content/pricing.ts"
 path: "PRICING_INTRO"
 render: "Pricing page, PRICING_INTRO"
 narrative_slot: "utility"
-en: "One token pays for matched roles and the Fit Report. Pick the pack that fits how much you will use it."
-th: "โทเคนเดียว ใช้ได้ทั้งตำแหน่งงานที่คัดให้และ Fit Report เลือกแพ็กที่พอดีกับการใช้งานของคุณได้เลย"
-provenance: "draft"
+en: "Use tokens for matched roles or the Fit Report. Pick the pack that fits how much you will use it."
+th: "คุณใช้โทเคนแลกรับตำแหน่งงานที่คัดให้หรือ Fit Report ได้ เลือกแพ็กให้เหมาะกับปริมาณการใช้งานของคุณ"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Paul's 23/08/2026 line narrowed 02/11/2026 on his call (2a): every service on the site was an overclaim, a token buys matched roles and the Fit Report."
+decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ไม่ใช้โทเคนเดียว เพราะตารางระบุว่าตำแหน่งงานใช้ 1 โทเคน แต่ Fit Report ใช้ 20 โทเคน English also needs correction: “One token pays for…” misleadingly suggests one token covers either service; use “Use tokens for matched roles or the Fit Report.” English is left unchanged for this Thai review. English aligned to the same reading on his flag."
 review:
-  structural_calque: pending
-  text_hash: 1cc54bf2191c109c2d10a713ea0c947d7fe40c59d926227df1338d0f64c36031
+  structural_calque: pass
+  text_hash: 066478527ab300f15337c7171725597e5686f0eb9645b1afd414af1fed7b0e21
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -18229,17 +18229,17 @@ source: "src/lib/content/pricing.ts"
 path: "TOKEN_BODY"
 render: "Pricing page, TOKEN_BODY"
 narrative_slot: "utility"
-en: "Matched roles and the Fit Report use the same token, and we only deduct one once you have actually received the service."
-th: "ตำแหน่งงานที่คัดให้และ Fit Report ใช้โทเคนเดียวกัน และเราจะหักโทเคนก็ต่อเมื่อคุณได้รับบริการจริงแล้วเท่านั้น"
-provenance: "draft"
+en: "Matched roles and the Fit Report are both paid in tokens, and PunProfile only deducts them once you have received the service."
+th: "ทั้งบริการคัดตำแหน่งงานและ Fit Report ชำระด้วยโทเคน โดย PunProfile จะหักโทเคนเมื่อคุณได้รับบริการแล้วเท่านั้น"
+provenance: paul-approved
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Paul's 23/08/2026 sentence with its subject narrowed 02/11/2026; the second clause is his wording unchanged."
+decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ระบุว่าทั้งสองบริการใช้ระบบโทเคนเดียวกัน ไม่ใช่ใช้ร่วมกันเพียงหนึ่งโทเคน และใช้ PunProfile เป็นผู้ดำเนินการ English aligned to the same reading on his flag."
 review:
-  structural_calque: pending
-  text_hash: 6991324eb9675ce752fec24358265f5712368551398ebab587f3dd16aa134928
+  structural_calque: pass
+  text_hash: 68f8183c43e36340e3047a715116ca0f58d32e58a9c0a6de33b69ba1916cea4f
   prompt_version: structural-calque-v1
-  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
