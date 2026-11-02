@@ -1341,9 +1341,19 @@ export const cancelFitReport = mutation({
   },
 });
 
-/** Add the ฿1,500 pack's complimentary preview. Once per customer. */
+/**
+ * Add the ฿1,500 pack's complimentary preview. Once per customer. With
+ * `deliverableId`, marks an existing coaching session as the preview instead of
+ * adding a second one, which is how a customer from before this rule is
+ * reconciled.
+ */
 export const addPackPreview = mutation({
-  args: { leadId: v.id("leads"), dueAt: v.optional(v.number()), bookingUrl: v.optional(v.string()) },
+  args: {
+    leadId: v.id("leads"),
+    deliverableId: v.optional(v.id("deliverables")),
+    dueAt: v.optional(v.number()),
+    bookingUrl: v.optional(v.string()),
+  },
   handler: async (ctx, args) => {
     const by = await requireAdmin(ctx);
     const { wallet, deliverables } = await walletFor(ctx, args.leadId);
@@ -1353,6 +1363,14 @@ export const addPackPreview = mutation({
       throw new ConvexError("The preview is once per customer and is already on this record.");
     }
     const now = Date.now();
+    if (args.deliverableId) {
+      const d = await ctx.db.get(args.deliverableId);
+      if (!d || d.leadId !== args.leadId || d.kind !== "coaching_session" || d.status === "cancelled") {
+        throw new ConvexError("Only an existing coaching session on this record can be marked as the preview.");
+      }
+      await ctx.db.patch(d._id, { entitlement: "pack_preview", updatedAt: now });
+      return d._id;
+    }
     return await ctx.db.insert("deliverables", {
       engagementId: pack.engagementId as Id<"engagements">,
       leadId: args.leadId,

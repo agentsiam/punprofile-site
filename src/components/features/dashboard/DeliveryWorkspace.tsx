@@ -247,6 +247,16 @@ function EntitlementsPanel({ leadId, ws, engagements }: { leadId: Id<"leads">; w
           {PREVIEW_LABEL[e.preview]}
           {e.preview === "owed_not_scheduled" && (
             <>
+              {all
+                .filter((d) => d.kind === "coaching_session" && d.status !== "cancelled" && !d.entitlement)
+                .map((d) => (
+                  <span key={d._id}>
+                    {" · "}
+                    <button type="button" className={LINK} onClick={() => void run(() => addPreview({ leadId, deliverableId: d._id }))}>
+                      Mark &ldquo;{d.title ?? "coaching session"}&rdquo; as the preview
+                    </button>
+                  </span>
+                ))}
               {" · "}
               <button type="button" className={LINK} onClick={() => void run(() => addPreview({ leadId }))}>
                 Add the preview
