@@ -186,7 +186,7 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
       {
         // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
         en: "If you buy a PunProfile service, we also hold what you need it to work: what you bought and your token history; your CVs and the versions we prepare with you; the dates, times and our notes of your calls with us; your Fit Report ratings; your target job titles; the jobs you track on your page; the time zone you choose; anything you send us to prepare for a session; and the decisions we agree with you in a call.",
-        th: "หากคุณซื้อบริการของ PunProfile เราจะเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติการใช้โทเคน CV ของคุณและฉบับที่เราจัดทำร่วมกับคุณ วันเวลาและบันทึกของเราเกี่ยวกับการคุยกับคุณ ผลประเมินใน Fit Report ตำแหน่งงานเป้าหมาย งานที่คุณติดตามในหน้าของคุณ เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งมาเพื่อเตรียมตัวก่อนนัดคุย และสิ่งที่เราตกลงร่วมกันระหว่างการคุย",
+        th: "หากคุณซื้อบริการจาก PunProfile จะมีการเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติโทเคน ไฟล์ CV ของคุณและฉบับที่ PunProfile จัดทำร่วมกับคุณ วัน เวลา และบันทึกการพูดคุยกับ PunProfile ผลประเมินใน Fit Report ตำแหน่งเป้าหมาย รายการตำแหน่งงานที่คุณติดตามในหน้าติดตามการสมัครงาน เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งให้ PunProfile เพื่อเตรียมการพูดคุย และข้อสรุปที่ตกลงร่วมกันระหว่างการพูดคุย",
       },
     ],
   },
@@ -245,7 +245,7 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
       {
         // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
         en: "If you buy a service, to deliver it to you and to keep an accurate record of what you bought, what we have delivered and what is still owed.",
-        th: "หากคุณซื้อบริการ เราใช้ข้อมูลเพื่อให้บริการแก่คุณ และเพื่อเก็บบันทึกที่ถูกต้องว่าคุณซื้ออะไร เราส่งมอบอะไรไปแล้ว และยังค้างอะไรอยู่",
+        th: "หากคุณซื้อบริการ PunProfile จะใช้ข้อมูลเพื่อให้บริการแก่คุณ และบันทึกข้อมูลให้ถูกต้องว่าคุณซื้อบริการใด ส่งมอบบริการใดแล้ว และยังต้องส่งมอบบริการใดอีก",
       },
     ],
   },
@@ -302,12 +302,12 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
       {
         // Booking tool, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
         en: "- Cal.com, our booking tool, if you book a call through our link. It receives your name, email address and booking answers.",
-        th: "- Cal.com ระบบนัดหมายของเรา หากคุณนัดคุยผ่านลิงก์ของเรา ระบบจะได้รับชื่อ อีเมล และคำตอบที่คุณกรอกตอนนัดหมาย",
+        th: "- Cal.com เป็นระบบนัดหมายที่ PunProfile ใช้ หากคุณนัดหมายผ่านลิงก์ของ PunProfile ทาง Cal.com จะได้รับชื่อ ที่อยู่อีเมล และคำตอบที่คุณกรอกขณะนัดหมาย",
       },
       {
         // Email service, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
         en: "- Resend, our email service. Sends your sign-in codes and the emails we send you. It receives your email address and the message.",
-        th: "- Resend ระบบส่งอีเมลของเรา ใช้ส่งรหัสเข้าสู่ระบบและอีเมลที่เราส่งถึงคุณ โดยจะได้รับอีเมลของคุณและเนื้อหาข้อความ",
+        th: "- Resend เป็นบริการส่งอีเมลที่ PunProfile ใช้ส่งรหัสเข้าสู่ระบบและข้อความอีเมลถึงคุณ โดย Resend จะได้รับที่อยู่อีเมลของคุณและเนื้อหาข้อความ",
       },
       {
         en: "These are service providers processing data on our behalf, not parties we share your information with. No one else receives it.",
@@ -323,7 +323,7 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
     body: [
       {
         en: "Nothing that identifies you, unless you sign in to your page as a paying candidate. Signing in stores a sign-in cookie on your device so you stay signed in; signing out removes it. We use no tracking cookie. The only other thing we keep on your device is your language choice, Thai or English.",
-        th: "ไม่มีข้อมูลใดที่ระบุตัวตนของคุณ เว้นแต่คุณเข้าสู่ระบบหน้าของคุณในฐานะลูกค้าที่ชำระเงินแล้ว การเข้าสู่ระบบจะเก็บคุกกี้สำหรับการเข้าสู่ระบบไว้บนอุปกรณ์ของคุณ เพื่อให้คุณไม่ต้องเข้าสู่ระบบใหม่ทุกครั้ง และคุกกี้นี้จะถูกลบเมื่อคุณออกจากระบบ เราไม่ใช้คุกกี้ติดตาม สิ่งเดียวที่เราเก็บไว้บนอุปกรณ์ของคุณนอกจากนี้คือภาษาที่คุณเลือก ไทยหรืออังกฤษ",
+        th: "PunProfile ไม่เก็บข้อมูลที่ระบุตัวตนของคุณบนอุปกรณ์ เว้นแต่คุณเข้าสู่ระบบหน้าติดตามการสมัครงานในฐานะลูกค้าที่ชำระค่าบริการแล้ว เมื่อเข้าสู่ระบบ อุปกรณ์จะเก็บคุกกี้ไว้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ PunProfile ไม่ใช้คุกกี้ติดตาม นอกจากคุกกี้สำหรับเข้าสู่ระบบแล้ว ข้อมูลอื่นที่เก็บบนอุปกรณ์มีเพียงภาษาที่คุณเลือก คือภาษาไทยหรือภาษาอังกฤษ",
       },
     ],
   },
@@ -375,7 +375,7 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
       },
       {
         en: "To exercise any of these, contact us using the details below. We may ask you to confirm something only the person in the record would know, because we will not hand your data to someone claiming to be you.",
-        th: "หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อเราตามรายละเอียดด้านล่าง เราอาจขอให้คุณยืนยันบางอย่างที่เฉพาะเจ้าของข้อมูลเท่านั้นที่ทราบ เนื่องจากเราจะไม่ส่งมอบข้อมูลของคุณให้ผู้ที่อ้างว่าเป็นคุณ",
+        th: "หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อ PunProfile ตามรายละเอียดด้านล่าง PunProfile อาจขอให้คุณยืนยันข้อมูลที่มีเพียงเจ้าของข้อมูลเท่านั้นที่ทราบ เพื่อป้องกันการเปิดเผยข้อมูลให้บุคคลที่แอบอ้างเป็นคุณ",
       },
     ],
   },

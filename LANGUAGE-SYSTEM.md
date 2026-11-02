@@ -18311,22 +18311,22 @@ review:
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].body[3]`
 
 ```yaml
-id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].body[3]
-source: src/lib/content/privacy.ts
-path: PRIVACY_SECTIONS[1].body[3]
-render: Privacy notice, PRIVACY_SECTIONS[1].body[3]
-narrative_slot: utility
+id: "src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].body[3]"
+source: "src/lib/content/privacy.ts"
+path: "PRIVACY_SECTIONS[1].body[3]"
+render: "Privacy notice, PRIVACY_SECTIONS[1].body[3]"
+narrative_slot: "utility"
 en: "If you buy a PunProfile service, we also hold what you need it to work: what you bought and your token history; your CVs and the versions we prepare with you; the dates, times and our notes of your calls with us; your Fit Report ratings; your target job titles; the jobs you track on your page; the time zone you choose; anything you send us to prepare for a session; and the decisions we agree with you in a call."
-th: "หากคุณซื้อบริการของ PunProfile เราจะเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติการใช้โทเคน CV ของคุณและฉบับที่เราจัดทำร่วมกับคุณ วันเวลาและบันทึกของเราเกี่ยวกับการคุยกับคุณ ผลประเมินใน Fit Report ตำแหน่งงานเป้าหมาย งานที่คุณติดตามในหน้าของคุณ เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งมาเพื่อเตรียมตัวก่อนนัดคุย และสิ่งที่เราตกลงร่วมกันระหว่างการคุย"
-provenance: draft
-date: 02/11/2026
+th: "หากคุณซื้อบริการจาก PunProfile จะมีการเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติโทเคน ไฟล์ CV ของคุณและฉบับที่ PunProfile จัดทำร่วมกับคุณ วัน เวลา และบันทึกการพูดคุยกับ PunProfile ผลประเมินใน Fit Report ตำแหน่งเป้าหมาย รายการตำแหน่งงานที่คุณติดตามในหน้าติดตามการสมัครงาน เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งให้ PunProfile เพื่อเตรียมการพูดคุย และข้อสรุปที่ตกลงร่วมกันระหว่างการพูดคุย"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดรายการข้อมูลให้ชัดเจน รักษาขอบเขตข้อมูลทุกประเภทตามต้นฉบับ และใช้ PunProfile ตามน้ำเสียงภาษาเขียน"
 review:
-  structural_calque: pending
-  text_hash: 52ab981c3ccfe3cbac21431b5621edb86258d96c0a4ccf1f12d1eb28f9e03362
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "12cf4683ae7db5dd38ef7e539971efe7b007c5b34ebb1b2aeb101be2bf3262c5"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -18512,22 +18512,22 @@ review:
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[3].body[3]`
 
 ```yaml
-id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[3].body[3]
-source: src/lib/content/privacy.ts
-path: PRIVACY_SECTIONS[3].body[3]
-render: Privacy notice, PRIVACY_SECTIONS[3].body[3]
-narrative_slot: utility
+id: "src/lib/content/privacy.ts::PRIVACY_SECTIONS[3].body[3]"
+source: "src/lib/content/privacy.ts"
+path: "PRIVACY_SECTIONS[3].body[3]"
+render: "Privacy notice, PRIVACY_SECTIONS[3].body[3]"
+narrative_slot: "utility"
 en: "If you buy a service, to deliver it to you and to keep an accurate record of what you bought, what we have delivered and what is still owed."
-th: "หากคุณซื้อบริการ เราใช้ข้อมูลเพื่อให้บริการแก่คุณ และเพื่อเก็บบันทึกที่ถูกต้องว่าคุณซื้ออะไร เราส่งมอบอะไรไปแล้ว และยังค้างอะไรอยู่"
-provenance: draft
-date: 02/11/2026
+th: "หากคุณซื้อบริการ PunProfile จะใช้ข้อมูลเพื่อให้บริการแก่คุณ และบันทึกข้อมูลให้ถูกต้องว่าคุณซื้อบริการใด ส่งมอบบริการใดแล้ว และยังต้องส่งมอบบริการใดอีก"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: แทนคำว่ายังค้างอะไรอยู่ด้วยบริการที่ยังต้องส่งมอบ เพื่อไม่ให้สับสนกับยอดชำระ"
 review:
-  structural_calque: pending
-  text_hash: 251cc3e65391d19eb90dd929c5eadcf2c1f88414ce2de7bd832f0af85b3420b1
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "5e44beed53ea2acc6120ed7a2c279f510dac6e1569f20832123ad63daf20862d"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -18678,44 +18678,44 @@ review:
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[5]`
 
 ```yaml
-id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[5]
-source: src/lib/content/privacy.ts
-path: PRIVACY_SECTIONS[5].body[5]
-render: Privacy notice, PRIVACY_SECTIONS[5].body[5]
-narrative_slot: utility
+id: "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[5]"
+source: "src/lib/content/privacy.ts"
+path: "PRIVACY_SECTIONS[5].body[5]"
+render: "Privacy notice, PRIVACY_SECTIONS[5].body[5]"
+narrative_slot: "utility"
 en: "- Cal.com, our booking tool, if you book a call through our link. It receives your name, email address and booking answers."
-th: "- Cal.com ระบบนัดหมายของเรา หากคุณนัดคุยผ่านลิงก์ของเรา ระบบจะได้รับชื่อ อีเมล และคำตอบที่คุณกรอกตอนนัดหมาย"
-provenance: draft
-date: 02/11/2026
+th: "- Cal.com เป็นระบบนัดหมายที่ PunProfile ใช้ หากคุณนัดหมายผ่านลิงก์ของ PunProfile ทาง Cal.com จะได้รับชื่อ ที่อยู่อีเมล และคำตอบที่คุณกรอกขณะนัดหมาย"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026. English is the processor line Paul approved (Claude outputs/privacy-notice-paid-clients-proposal.md) with Cal.com in place of Calendly, after Paul chose Cal.com on 02/11/2026. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026. English is the processor line Paul approved (Claude outputs/privacy-notice-paid-clients-proposal.md) with Cal.com in place of Calendly, after Paul chose Cal.com on 02/11/2026. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ระบุผู้ให้บริการที่ได้รับข้อมูลและประเภทข้อมูลให้ชัดเจน โดยคงเครื่องหมายรายการเดิม"
 review:
-  structural_calque: pending
-  text_hash: f72c47d622e0d732ee99a03fc016ba7a83360914167600edc3c8e26d17557bec
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "fad1a9066c7d6ef6cad86fb1bcc92ac4f554781113908552d31b218940e08b33"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[6]`
 
 ```yaml
-id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[6]
-source: src/lib/content/privacy.ts
-path: PRIVACY_SECTIONS[5].body[6]
-render: Privacy notice, PRIVACY_SECTIONS[5].body[6]
-narrative_slot: utility
+id: "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[6]"
+source: "src/lib/content/privacy.ts"
+path: "PRIVACY_SECTIONS[5].body[6]"
+render: "Privacy notice, PRIVACY_SECTIONS[5].body[6]"
+narrative_slot: "utility"
 en: "- Resend, our email service. Sends your sign-in codes and the emails we send you. It receives your email address and the message."
-th: "- Resend ระบบส่งอีเมลของเรา ใช้ส่งรหัสเข้าสู่ระบบและอีเมลที่เราส่งถึงคุณ โดยจะได้รับอีเมลของคุณและเนื้อหาข้อความ"
-provenance: draft
-date: 02/11/2026
+th: "- Resend เป็นบริการส่งอีเมลที่ PunProfile ใช้ส่งรหัสเข้าสู่ระบบและข้อความอีเมลถึงคุณ โดย Resend จะได้รับที่อยู่อีเมลของคุณและเนื้อหาข้อความ"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026. English approved by Paul 02/11/2026 after the live deployment was found to send sign-in codes, coach notifications and marketing email through Resend. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026. English approved by Paul 02/11/2026 after the live deployment was found to send sign-in codes, coach notifications and marketing email through Resend. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้ที่อยู่อีเมลแทนอีเมล เพื่อแยกข้อมูลติดต่อออกจากเนื้อหาข้อความ"
 review:
-  structural_calque: pending
-  text_hash: 937509e055ab6c113d96b5be421f1d13827a921e6a3bbcedd1ec0efd99c172ef
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "30708f2edecb5e6367c0ff41fd9518eb13bf3d6c12dda1ae1b45049f0eda5cf8"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -18744,22 +18744,22 @@ review:
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].body[0]`
 
 ```yaml
-id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].body[0]
-source: src/lib/content/privacy.ts
-path: PRIVACY_SECTIONS[6].body[0]
-render: Privacy notice, PRIVACY_SECTIONS[6].body[0]
-narrative_slot: utility
+id: "src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].body[0]"
+source: "src/lib/content/privacy.ts"
+path: "PRIVACY_SECTIONS[6].body[0]"
+render: "Privacy notice, PRIVACY_SECTIONS[6].body[0]"
+narrative_slot: "utility"
 en: "Nothing that identifies you, unless you sign in to your page as a paying candidate. Signing in stores a sign-in cookie on your device so you stay signed in; signing out removes it. We use no tracking cookie. The only other thing we keep on your device is your language choice, Thai or English."
-th: "ไม่มีข้อมูลใดที่ระบุตัวตนของคุณ เว้นแต่คุณเข้าสู่ระบบหน้าของคุณในฐานะลูกค้าที่ชำระเงินแล้ว การเข้าสู่ระบบจะเก็บคุกกี้สำหรับการเข้าสู่ระบบไว้บนอุปกรณ์ของคุณ เพื่อให้คุณไม่ต้องเข้าสู่ระบบใหม่ทุกครั้ง และคุกกี้นี้จะถูกลบเมื่อคุณออกจากระบบ เราไม่ใช้คุกกี้ติดตาม สิ่งเดียวที่เราเก็บไว้บนอุปกรณ์ของคุณนอกจากนี้คือภาษาที่คุณเลือก ไทยหรืออังกฤษ"
-provenance: draft
-date: 02/11/2026
+th: "PunProfile ไม่เก็บข้อมูลที่ระบุตัวตนของคุณบนอุปกรณ์ เว้นแต่คุณเข้าสู่ระบบหน้าติดตามการสมัครงานในฐานะลูกค้าที่ชำระค่าบริการแล้ว เมื่อเข้าสู่ระบบ อุปกรณ์จะเก็บคุกกี้ไว้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ PunProfile ไม่ใช้คุกกี้ติดตาม นอกจากคุกกี้สำหรับเข้าสู่ระบบแล้ว ข้อมูลอื่นที่เก็บบนอุปกรณ์มีเพียงภาษาที่คุณเลือก คือภาษาไทยหรือภาษาอังกฤษ"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดลำดับคำอธิบายคุกกี้ให้ต่อเนื่อง ระบุชื่อหน้าตามคำที่ผู้ใช้เข้าใจ และคงข้อกล่าวอ้างตามต้นฉบับ ไม่ใช่การตรวจสอบข้อกฎหมายหรือพฤติกรรมระบบ"
 review:
-  structural_calque: pending
-  text_hash: 6625cef078f2ed1948e2f052e06ef5b3b2100ac6ef364e2d74f9efe266a5a155
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "30d13fc9ceb22b57bf8e72cfcaa81c3a90247496019c6a1b5c6a36ab4ff79d82"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -18958,22 +18958,22 @@ review:
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[8].body[6]`
 
 ```yaml
-id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[8].body[6]
-source: src/lib/content/privacy.ts
-path: PRIVACY_SECTIONS[8].body[6]
-render: Privacy notice, PRIVACY_SECTIONS[8].body[6]
-narrative_slot: utility
+id: "src/lib/content/privacy.ts::PRIVACY_SECTIONS[8].body[6]"
+source: "src/lib/content/privacy.ts"
+path: "PRIVACY_SECTIONS[8].body[6]"
+render: "Privacy notice, PRIVACY_SECTIONS[8].body[6]"
+narrative_slot: "utility"
 en: "To exercise any of these, contact us using the details below. We may ask you to confirm something only the person in the record would know, because we will not hand your data to someone claiming to be you."
-th: "หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อเราตามรายละเอียดด้านล่าง เราอาจขอให้คุณยืนยันบางอย่างที่เฉพาะเจ้าของข้อมูลเท่านั้นที่ทราบ เนื่องจากเราจะไม่ส่งมอบข้อมูลของคุณให้ผู้ที่อ้างว่าเป็นคุณ"
-provenance: draft
-date: 02/11/2026
+th: "หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อ PunProfile ตามรายละเอียดด้านล่าง PunProfile อาจขอให้คุณยืนยันข้อมูลที่มีเพียงเจ้าของข้อมูลเท่านั้นที่ทราบ เพื่อป้องกันการเปิดเผยข้อมูลให้บุคคลที่แอบอ้างเป็นคุณ"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้สำนวนยืนยันข้อมูลที่เป็นธรรมชาติและระบุเหตุผลในการตรวจสอบตัวตน"
 review:
-  structural_calque: pending
-  text_hash: 5658aad4a9e86864e455888773d58ea31b85b32504f8f7e83cf760905cbb97a5
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "ab10a7258a1182ccb38ebd00148b1ab20b7ba9442e2d27142e4d9d18b29b7dc2"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -28936,484 +28936,484 @@ review:
 ### `src/lib/content/portal.ts::TOKENS_RESERVED`
 
 ```yaml
-id: src/lib/content/portal.ts::TOKENS_RESERVED
-source: src/lib/content/portal.ts
-path: TOKENS_RESERVED
-render: Candidate page /me, TOKENS_RESERVED
-narrative_slot: utility
+id: "src/lib/content/portal.ts::TOKENS_RESERVED"
+source: "src/lib/content/portal.ts"
+path: "TOKENS_RESERVED"
+render: "Candidate page /me, TOKENS_RESERVED"
+narrative_slot: "utility"
 en: "{n} reserved for your Fit Report"
 th: "กันไว้สำหรับ Fit Report {n} โทเคน"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown under the balance while a Fit Report is selected. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict."
+decision_note: "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown under the balance while a Fit Report is selected. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: a837cebaf23a3a61f4549dad7947c23152a7ddb148168e3e5fcbede99806116e
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "a837cebaf23a3a61f4549dad7947c23152a7ddb148168e3e5fcbede99806116e"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::TOKENS_SPENDABLE`
 
 ```yaml
-id: src/lib/content/portal.ts::TOKENS_SPENDABLE
-source: src/lib/content/portal.ts
-path: TOKENS_SPENDABLE
-render: Candidate page /me, TOKENS_SPENDABLE
-narrative_slot: utility
+id: "src/lib/content/portal.ts::TOKENS_SPENDABLE"
+source: "src/lib/content/portal.ts"
+path: "TOKENS_SPENDABLE"
+render: "Candidate page /me, TOKENS_SPENDABLE"
+narrative_slot: "utility"
 en: "{n} available for matched jobs"
 th: "ใช้รับตำแหน่งงานที่คัดให้ได้ {n} โทเคน"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown with TOKENS_RESERVED: what matched jobs can still use. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict."
+decision_note: "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown with TOKENS_RESERVED: what matched jobs can still use. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 6f2c31f4c86b7e581de1e00051add1922a698fa1a90a747279bdb456d674ccbd
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "6f2c31f4c86b7e581de1e00051add1922a698fa1a90a747279bdb456d674ccbd"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::APPT_HEADING`
 
 ```yaml
-id: src/lib/content/portal.ts::APPT_HEADING
-source: src/lib/content/portal.ts
-path: APPT_HEADING
-render: Candidate page /me, APPT_HEADING
-narrative_slot: utility
+id: "src/lib/content/portal.ts::APPT_HEADING"
+source: "src/lib/content/portal.ts"
+path: "APPT_HEADING"
+render: "Candidate page /me, APPT_HEADING"
+narrative_slot: "utility"
 en: "Your appointments"
 th: "นัดหมายของคุณ"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 12536521a631ef48ae1376a7e761fe0852c92ea3182e006904baeffe1f36066b
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "12536521a631ef48ae1376a7e761fe0852c92ea3182e006904baeffe1f36066b"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::APPT_NONE`
 
 ```yaml
-id: src/lib/content/portal.ts::APPT_NONE
-source: src/lib/content/portal.ts
-path: APPT_NONE
-render: Candidate page /me, APPT_NONE
-narrative_slot: utility
+id: "src/lib/content/portal.ts::APPT_NONE"
+source: "src/lib/content/portal.ts"
+path: "APPT_NONE"
+render: "Candidate page /me, APPT_NONE"
+narrative_slot: "utility"
 en: "No appointment booked yet."
 th: "ยังไม่มีนัดหมาย"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 22a1623d3f8c7b83cb058656752029e906e495ffbd56925ae714feb60d4b3429
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "22a1623d3f8c7b83cb058656752029e906e495ffbd56925ae714feb60d4b3429"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::APPT_ZONE_LABEL`
 
 ```yaml
-id: src/lib/content/portal.ts::APPT_ZONE_LABEL
-source: src/lib/content/portal.ts
-path: APPT_ZONE_LABEL
-render: Candidate page /me, APPT_ZONE_LABEL
-narrative_slot: utility
+id: "src/lib/content/portal.ts::APPT_ZONE_LABEL"
+source: "src/lib/content/portal.ts"
+path: "APPT_ZONE_LABEL"
+render: "Candidate page /me, APPT_ZONE_LABEL"
+narrative_slot: "utility"
 en: "Your time zone"
 th: "เขตเวลาของคุณ"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 3f9c0a87e8fb361020a4ec9046d71cace2e491fa1038d3d433a792c38abcdc6b
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "3f9c0a87e8fb361020a4ec9046d71cace2e491fa1038d3d433a792c38abcdc6b"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::APPT_ZONE_PROMPT`
 
 ```yaml
-id: src/lib/content/portal.ts::APPT_ZONE_PROMPT
-source: src/lib/content/portal.ts
-path: APPT_ZONE_PROMPT
-render: Candidate page /me, APPT_ZONE_PROMPT
-narrative_slot: utility
+id: "src/lib/content/portal.ts::APPT_ZONE_PROMPT"
+source: "src/lib/content/portal.ts"
+path: "APPT_ZONE_PROMPT"
+render: "Candidate page /me, APPT_ZONE_PROMPT"
+narrative_slot: "utility"
 en: "Times below are Madrid time. Select your time zone to also see your own time."
-th: "เวลาด้านล่างเป็นเวลามาดริด เลือกเขตเวลาของคุณเพื่อดูเวลาท้องถิ่นของคุณด้วย"
-provenance: draft
-date: 02/11/2026
+th: "เวลาที่แสดงด้านล่างเป็นเวลามาดริด เลือกเขตเวลาของคุณเพื่อดูเวลาท้องถิ่นควบคู่กัน"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ระบุว่าจะแสดงเวลาท้องถิ่นเพิ่มจากเวลามาดริด"
 review:
-  structural_calque: pending
-  text_hash: 4f103457e99a215ae680b0c3667f2419603b072c0488bcacb829be09d503b766
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "c3632d1c297b869be013060593118b465d28f51c016776ad393db57999711abc"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::APPT_ZONE_CHOOSE`
 
 ```yaml
-id: src/lib/content/portal.ts::APPT_ZONE_CHOOSE
-source: src/lib/content/portal.ts
-path: APPT_ZONE_CHOOSE
-render: Candidate page /me, APPT_ZONE_CHOOSE
-narrative_slot: utility
+id: "src/lib/content/portal.ts::APPT_ZONE_CHOOSE"
+source: "src/lib/content/portal.ts"
+path: "APPT_ZONE_CHOOSE"
+render: "Candidate page /me, APPT_ZONE_CHOOSE"
+narrative_slot: "utility"
 en: "Select a time zone"
 th: "เลือกเขตเวลา"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 98d925674e2fbb1b4d970068edb3660fab76af173a0fc3de9f258b1d116094ec
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "98d925674e2fbb1b4d970068edb3660fab76af173a0fc3de9f258b1d116094ec"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::APPT_MADRID`
 
 ```yaml
-id: src/lib/content/portal.ts::APPT_MADRID
-source: src/lib/content/portal.ts
-path: APPT_MADRID
-render: Candidate page /me, APPT_MADRID
-narrative_slot: utility
+id: "src/lib/content/portal.ts::APPT_MADRID"
+source: "src/lib/content/portal.ts"
+path: "APPT_MADRID"
+render: "Candidate page /me, APPT_MADRID"
+narrative_slot: "utility"
 en: "Madrid time: {t}"
 th: "เวลามาดริด: {t}"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 7f3d244333c55fa06f47a1347dcaf86e4aedc4d9df1a488c34774f8aa269b3b8
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "7f3d244333c55fa06f47a1347dcaf86e4aedc4d9df1a488c34774f8aa269b3b8"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::APPT_YOURS`
 
 ```yaml
-id: src/lib/content/portal.ts::APPT_YOURS
-source: src/lib/content/portal.ts
-path: APPT_YOURS
-render: Candidate page /me, APPT_YOURS
-narrative_slot: utility
+id: "src/lib/content/portal.ts::APPT_YOURS"
+source: "src/lib/content/portal.ts"
+path: "APPT_YOURS"
+render: "Candidate page /me, APPT_YOURS"
+narrative_slot: "utility"
 en: "Your time: {t}"
-th: "เวลาของคุณ: {t}"
-provenance: draft
-date: 02/11/2026
+th: "เวลาท้องถิ่นของคุณ: {t}"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ระบุให้ชัดว่าเป็นเวลาท้องถิ่น ไม่ใช่เวลานัดอีกชุดหนึ่ง"
 review:
-  structural_calque: pending
-  text_hash: ab9bd646556c499ec06af0dcb443dfbc434fd33a863f37a1dfe41436587b9a45
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "113f87bdb5f6244ec1c8634695181497ebbf6c3311dce5839d494175df4eafc7"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_HEADING`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_HEADING
-source: src/lib/content/portal.ts
-path: PREP_HEADING
-render: Candidate page /me, PREP_HEADING
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_HEADING"
+source: "src/lib/content/portal.ts"
+path: "PREP_HEADING"
+render: "Candidate page /me, PREP_HEADING"
+narrative_slot: "utility"
 en: "Before your coaching preview"
-th: "ก่อนการพูดคุยกับ PunProfile"
-provenance: draft
-date: 02/11/2026
+th: "ก่อนการพูดคุยเบื้องต้นกับ PunProfile"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: รักษาความหมายของ coaching preview ว่าเป็นการพูดคุยเบื้องต้น"
 review:
-  structural_calque: pending
-  text_hash: f38cd6fdf16f38db424aa25399c14ddfa9932597d7db1ba4763db5c1279a797e
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "b15497a3c209ff5a52da47b30ac62d456c8640414a3fa2dc0325eec0ee346161"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_DUE`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_DUE
-source: src/lib/content/portal.ts
-path: PREP_DUE
-render: Candidate page /me, PREP_DUE
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_DUE"
+source: "src/lib/content/portal.ts"
+path: "PREP_DUE"
+render: "Candidate page /me, PREP_DUE"
+narrative_slot: "utility"
 en: "Send by {t}"
 th: "ส่งภายใน {t}"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 58f16b59223e8fe1e782d13ae5246791f0bb8345beb531d06abfb40e8eccc24a
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "58f16b59223e8fe1e782d13ae5246791f0bb8345beb531d06abfb40e8eccc24a"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_NOT_BOOKED`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_NOT_BOOKED
-source: src/lib/content/portal.ts
-path: PREP_NOT_BOOKED
-render: Candidate page /me, PREP_NOT_BOOKED
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_NOT_BOOKED"
+source: "src/lib/content/portal.ts"
+path: "PREP_NOT_BOOKED"
+render: "Candidate page /me, PREP_NOT_BOOKED"
+narrative_slot: "utility"
 en: "Your session is not booked yet. You can send this now."
-th: "ยังไม่ได้นัดเวลา ส่งข้อมูลนี้ล่วงหน้าได้เลย"
-provenance: draft
-date: 02/11/2026
+th: "ยังไม่ได้จองเวลานัดหมาย คุณสามารถส่งข้อมูลนี้ล่วงหน้าได้"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ปรับเป็นภาษาเขียนและระบุสิ่งที่จองให้ชัดเจน"
 review:
-  structural_calque: pending
-  text_hash: 7889847191afc46cbc3a93fadf3e31572b96a8674ec43fa93c6c6cddc6bb82dc
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "514b87c182141b53a27ad5b445779fc6fd18de037a91963f2c00ab6c926681cb"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_PRIORITIES`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_PRIORITIES
-source: src/lib/content/portal.ts
-path: PREP_PRIORITIES
-render: Candidate page /me, PREP_PRIORITIES
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_PRIORITIES"
+source: "src/lib/content/portal.ts"
+path: "PREP_PRIORITIES"
+render: "Candidate page /me, PREP_PRIORITIES"
+narrative_slot: "utility"
 en: "What you most want help with (1 to 3)"
-th: "เรื่องที่อยากได้คำแนะนำมากที่สุด (1 ถึง 3 ข้อ)"
-provenance: draft
-date: 02/11/2026
+th: "เรื่องที่คุณต้องการคำแนะนำมากที่สุด (1 ถึง 3 ข้อ)"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้ภาษาเขียนและระบุผู้อ่านให้ชัด"
 review:
-  structural_calque: pending
-  text_hash: b3f43ac385cc5e6e4832512f991fcabd6549c8d81ed31f39b87645c20338fd5c
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "a490c5d2a87bb11c80e00082c59775ab6dbbf045ec84dac6cdcec175ba30ad46"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_VACANCIES`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_VACANCIES
-source: src/lib/content/portal.ts
-path: PREP_VACANCIES
-render: Candidate page /me, PREP_VACANCIES
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_VACANCIES"
+source: "src/lib/content/portal.ts"
+path: "PREP_VACANCIES"
+render: "Candidate page /me, PREP_VACANCIES"
+narrative_slot: "utility"
 en: "Example job ads you like (optional, up to 2 links)"
-th: "ตัวอย่างประกาศงานที่สนใจ (ไม่บังคับ ไม่เกิน 2 ลิงก์)"
-provenance: draft
-date: 02/11/2026
+th: "ตัวอย่างประกาศรับสมัครงานที่คุณสนใจ (ไม่บังคับ ไม่เกิน 2 ลิงก์)"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้ประกาศรับสมัครงานให้ชัดและคงเงื่อนไขการกรอกเดิม"
 review:
-  structural_calque: pending
-  text_hash: 717f6b1c72b684f24c05961aa8919f2481d416beb49f868fc7944d858cd8983a
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "778d8149ba4eeae8b8db189cd3b78da0f1cb8c4ba101c453183196bbecf20315"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_SEND`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_SEND
-source: src/lib/content/portal.ts
-path: PREP_SEND
-render: Candidate page /me, PREP_SEND
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_SEND"
+source: "src/lib/content/portal.ts"
+path: "PREP_SEND"
+render: "Candidate page /me, PREP_SEND"
+narrative_slot: "utility"
 en: "Send"
 th: "ส่ง"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 9544a37a5a9416566f8ffc98b52e8f7d25ebe5b95042d727a9acbd6c922b8c61
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "9544a37a5a9416566f8ffc98b52e8f7d25ebe5b95042d727a9acbd6c922b8c61"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_SENT`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_SENT
-source: src/lib/content/portal.ts
-path: PREP_SENT
-render: Candidate page /me, PREP_SENT
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_SENT"
+source: "src/lib/content/portal.ts"
+path: "PREP_SENT"
+render: "Candidate page /me, PREP_SENT"
+narrative_slot: "utility"
 en: "Sent. You can change it until the session."
-th: "ส่งแล้ว แก้ไขได้จนถึงวันนัด"
-provenance: draft
-date: 02/11/2026
+th: "ส่งข้อมูลแล้ว คุณสามารถแก้ไขได้จนถึงเวลานัดหมาย"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: แก้วันนัดเป็นเวลานัดหมายให้ตรงกับ until the session"
 review:
-  structural_calque: pending
-  text_hash: ae751432824661c7049a9104a9f2cf9f3774e1a925b23cd82a2b06ee84ab6c57
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "6c4b7fc9bee832cc2111515b58413370c7294f9b6800ade14f47e11b784a95f6"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_LATE`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_LATE
-source: src/lib/content/portal.ts
-path: PREP_LATE
-render: Candidate page /me, PREP_LATE
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_LATE"
+source: "src/lib/content/portal.ts"
+path: "PREP_LATE"
+render: "Candidate page /me, PREP_LATE"
+narrative_slot: "utility"
 en: "The deadline has passed. You can still send it, and PunProfile will confirm whether the session stays as booked."
-th: "เลยกำหนดส่งแล้ว แต่ยังส่งได้ PunProfile จะยืนยันอีกครั้งว่าคงเวลานัดเดิมหรือไม่"
-provenance: draft
-date: 02/11/2026
+th: "เลยกำหนดส่งแล้ว คุณยังส่งข้อมูลได้ โดย PunProfile จะยืนยันอีกครั้งว่าสามารถใช้เวลานัดเดิมได้หรือไม่"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for appointments and the preview's preparation, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: คงเงื่อนไขว่าต้องรอยืนยันเวลานัดและระบุข้อมูลที่ยังส่งได้"
 review:
-  structural_calque: pending
-  text_hash: 090168d5776db5f25862aad4b7c9eb025b9d964ae9183f1957b8cd50a25e9bf5
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "9d30e5aa947fbaafd1b51a4164f84d8f3ee67072eb03b7134e7215b8aeff0347"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_TITLES`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_TITLES
-source: src/lib/content/portal.ts
-path: PREP_TITLES
-render: Candidate page /me, PREP_TITLES
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_TITLES"
+source: "src/lib/content/portal.ts"
+path: "PREP_TITLES"
+render: "Candidate page /me, PREP_TITLES"
+narrative_slot: "utility"
 en: "Your target titles, as PunProfile holds them"
 th: "ตำแหน่งเป้าหมายที่ PunProfile บันทึกไว้"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 9208a5f3059e758505d9a06e5b88a7ac568eae10976237b915f696d4a1daed14
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "9208a5f3059e758505d9a06e5b88a7ac568eae10976237b915f696d4a1daed14"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_TITLE_CHANGES`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_TITLE_CHANGES
-source: src/lib/content/portal.ts
-path: PREP_TITLE_CHANGES
-render: Candidate page /me, PREP_TITLE_CHANGES
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_TITLE_CHANGES"
+source: "src/lib/content/portal.ts"
+path: "PREP_TITLE_CHANGES"
+render: "Candidate page /me, PREP_TITLE_CHANGES"
+narrative_slot: "utility"
 en: "Anything to change in these titles? (optional)"
-th: "ต้องการเปลี่ยนตำแหน่งไหนไหม (ไม่บังคับ)"
-provenance: draft
-date: 02/11/2026
+th: "ต้องการปรับเปลี่ยนตำแหน่งเป้าหมายเหล่านี้หรือไม่ (ไม่บังคับ)"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: เปิดให้แจ้งการเปลี่ยนแปลงได้ทุกด้าน ไม่จำกัดเพียงเลือกว่าตำแหน่งไหน"
 review:
-  structural_calque: pending
-  text_hash: 7008cb7870b620227cad19d2745eadc06818f46b0747df2b9eb67c8393130350
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "c0e7228e103812fceb65fd494c83382478c446ee1d10e692d4ee5b24c7fb1c1f"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_QUESTION`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_QUESTION
-source: src/lib/content/portal.ts
-path: PREP_QUESTION
-render: Candidate page /me, PREP_QUESTION
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_QUESTION"
+source: "src/lib/content/portal.ts"
+path: "PREP_QUESTION"
+render: "Candidate page /me, PREP_QUESTION"
+narrative_slot: "utility"
 en: "What do you most want answered? (optional)"
-th: "คำถามที่อยากได้คำตอบมากที่สุด (ไม่บังคับ)"
-provenance: draft
-date: 02/11/2026
+th: "คำถามที่คุณต้องการคำตอบมากที่สุด (ไม่บังคับ)"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ใช้ภาษาเขียนให้สอดคล้องกับช่องเตรียมข้อมูลอื่น"
 review:
-  structural_calque: pending
-  text_hash: 7889ba80caeb3a49c5bbc73ac8eb2d59e55c297bc257ebf099ed192bdd4f2415
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "d59134959daed58e2c253b679292a231f92752a6c14e1f63e513012879957b8e"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::PREP_INVALID`
 
 ```yaml
-id: src/lib/content/portal.ts::PREP_INVALID
-source: src/lib/content/portal.ts
-path: PREP_INVALID
-render: Candidate page /me, PREP_INVALID
-narrative_slot: utility
+id: "src/lib/content/portal.ts::PREP_INVALID"
+source: "src/lib/content/portal.ts"
+path: "PREP_INVALID"
+render: "Candidate page /me, PREP_INVALID"
+narrative_slot: "utility"
 en: "Add at least one priority. Links must start with https."
-th: "ใส่เรื่องที่อยากได้คำแนะนำอย่างน้อย 1 ข้อ ลิงก์ต้องขึ้นต้นด้วย https"
-provenance: draft
-date: 02/11/2026
+th: "โปรดระบุเรื่องที่ต้องการคำแนะนำอย่างน้อย 1 ข้อ และใช้ลิงก์ที่ขึ้นต้นด้วย https"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: ปรับข้อความแจ้งข้อผิดพลาดเป็นภาษาเขียน โดยคงจำนวนขั้นต่ำและเงื่อนไขลิงก์"
 review:
-  structural_calque: pending
-  text_hash: 125a152cbf9b1dba5049137ebc404a7db37eb9f75b904f85b3dc29573a293646
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "54a5f021a307bab2997e604b82479061ee83858d89de4cef8ca55f1ad982b972"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::APPT_MINUTES`
 
 ```yaml
-id: src/lib/content/portal.ts::APPT_MINUTES
-source: src/lib/content/portal.ts
-path: APPT_MINUTES
-render: Candidate page /me, APPT_MINUTES
-narrative_slot: utility
+id: "src/lib/content/portal.ts::APPT_MINUTES"
+source: "src/lib/content/portal.ts"
+path: "APPT_MINUTES"
+render: "Candidate page /me, APPT_MINUTES"
+narrative_slot: "utility"
 en: "{n} minutes"
 th: "{n} นาที"
-provenance: draft
-date: 02/11/2026
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review."
+decision_note: "Drafted by Claude 02/11/2026 for the revised preparation and appointments card, prd.md section 8. Dashboard voice: written register, no ครับ, PunProfile in the third person. Awaiting Paul's Thai verdict in the end-of-build review. Paul approved the Thai unchanged in review 02/11/2026."
 review:
-  structural_calque: pending
-  text_hash: b3225e92a184f193cceff3afabec36f78b4c83e8867909fe09b6b144a439771f
-  prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  structural_calque: "pass"
+  text_hash: "b3225e92a184f193cceff3afabec36f78b4c83e8867909fe09b6b144a439771f"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
