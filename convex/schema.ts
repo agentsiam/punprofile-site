@@ -37,6 +37,13 @@ export default defineSchema({
      */
     /** @absent unmeasured — not captured until the contact gate clears */
     firstName: v.optional(v.string()),
+    /**
+     * What the candidate is called, set by the coach, 02/11/2026. Thai
+     * candidates go by a nickname, and their dashboard and the coach's page
+     * lead with it. Fallback order everywhere: nickname, firstName, fullName.
+     */
+    /** @absent none — the coach has not set one */
+    nickname: v.optional(v.string()),
     /** @absent unmeasured — not captured until the contact gate clears */
     lastName: v.optional(v.string()),
     /** @absent unmeasured — composed from the two above once both exist */
@@ -1075,9 +1082,30 @@ export default defineSchema({
     itemKey: v.string(),
     value: v.number(),
     score: v.number(),
-    /** What the coach observed, in Thai, shown to the candidate under the competency. */
+    /** What to do next, in English since 02/11/2026, shown to the candidate under the competency. */
     /** @absent none — the coach left no note for this competency */
     note: v.optional(v.string()),
+    /**
+     * Who scored it, 02/11/2026. "evidence": filled before the interview by the
+     * Fit Report skill from the candidate's own answers, CVs and documents.
+     * "coach": observed or confirmed by the coach.
+     */
+    /** @absent coach — every row before 02/11/2026 was the coach's */
+    source: v.optional(v.union(v.literal("coach"), v.literal("evidence"))),
+    /** The facts behind an evidence rating, each with where it came from. */
+    /** @absent none — a coach rating needs no evidence line */
+    evidence: v.optional(v.string()),
+    /** Indicator positions met (0 to 3), for an indicators competency. */
+    /** @absent none — a lookup competency, or a row from before 02/11/2026 */
+    ticks: v.optional(v.array(v.number())),
+    /**
+     * Indicator positions the evidence could not decide, left for the
+     * interview. Non-empty makes the row a draft: it never reaches the report
+     * until the coach settles them, because an unobserved indicator is not a
+     * failed one.
+     */
+    /** @absent none — nothing left open */
+    open: v.optional(v.array(v.number())),
     ratedAt: v.number(),
     /** Which admin rated it. Their own data, not the candidate's. */
     by: v.string(),
