@@ -46,10 +46,11 @@ export const PRICING_HEADING: Copy = {
 };
 
 export const PRICING_INTRO: Copy = {
-  en: "One token, good for every service on the site. Pick the pack that fits how much you will use it.",
-  // Paul's wording, 23/08/2026. This is the one-currency decision said out loud
-  // and the sentence the rest of the page depends on.
-  th: "โทเคนเดียว ใช้ได้กับทุกบริการบนเว็บไซต์ เลือกแพ็กที่พอดีกับการใช้งานของคุณได้เลย",
+  en: "Use tokens for matched roles or the Fit Report. Pick the pack that fits how much you will use it.",
+  // From Paul's wording of 23/08/2026, narrowed 02/11/2026 on his call. "Every
+  // service on the site" was an overclaim: coaching is priced in a conversation
+  // and three products are free, so a token buys exactly two things.
+  th: "คุณใช้โทเคนแลกรับตำแหน่งงานที่คัดให้หรือ Fit Report ได้ เลือกแพ็กให้เหมาะกับปริมาณการใช้งานของคุณ",
 };
 
 /* -------------------------------------------------------------------- free */
@@ -122,6 +123,19 @@ export const FREE_ITEMS: readonly FreeItem[] = [
     },
   },
 ];
+
+/**
+ * The value column of the free rows. The free rows are spec rows (B6), the same
+ * shape as what a token buys, so free and paid read as one table in two halves.
+ *
+ * CV Check and Guided Job Hunt join the two rows above on the page itself, read
+ * from `products.ts`, because `FREE_SLUGS` there already says they are free and
+ * a second list here would be a second answer to which products are free.
+ */
+export const FREE_VALUE: Copy = {
+  en: "Free",
+  th: "ฟรี",
+};
 
 /* ------------------------------------------------------------------- packs */
 
@@ -218,9 +232,10 @@ export const RECOMMENDED_BADGE: Copy = {
 /* ---------------------------------------------------------------- includes */
 
 export const INCLUDES_HEADING: Copy = {
-  en: "Whichever pack you pick, it works on everything",
-  // Paul's wording, 23/08/2026.
-  th: "ไม่ว่าเลือกแพ็กไหน ก็ใช้ได้กับทุกบริการ",
+  en: "Every pack comes with the same terms",
+  // 02/11/2026, on Paul's call, over his 23/08/2026 line "it works on
+  // everything", which said more than a token buys.
+  th: "ทุกแพ็กใช้เงื่อนไขเดียวกัน",
 };
 
 /**
@@ -273,23 +288,73 @@ export const TOKEN_HEADING: Copy = {
 };
 
 export const TOKEN_BODY: Copy = {
-  en: "Every PunProfile service uses the same token, and we only deduct one once you have actually received the service.",
-  // Paul's wording, 23/08/2026.
-  th: "ทุกบริการบน PunProfile ใช้โทเคนเดียวกัน และเราจะหักโทเคนก็ต่อเมื่อคุณได้รับบริการจริงแล้วเท่านั้น",
+  en: "Matched roles and the Fit Report are both paid in tokens, and PunProfile only deducts them once you have received the service.",
+  // Paul's wording, 23/08/2026, with the subject narrowed 02/11/2026 for the
+  // same reason as `PRICING_INTRO`.
+  th: "ทั้งบริการคัดตำแหน่งงานและ Fit Report ชำระด้วยโทเคน โดย PunProfile จะหักโทเคนเมื่อคุณได้รับบริการแล้วเท่านั้น",
 };
 
-export const TOKEN_EXAMPLES: readonly Copy[] = [
+export interface TokenRow {
+  label: Copy;
+  detail: Copy;
+  /** Tokens, not baht. The packs are the only baht on the site. */
+  tokens: number;
+}
+
+/**
+ * Spec rows (B6) since 02/11/2026: the thing on the left, what it is in one
+ * line, the price in tokens on the right. They were two bullets, and the Fit
+ * Report bullet left out the 30-minute interview, which is what the Fit Report
+ * is since 26/10/2026.
+ */
+export const TOKEN_ROWS: readonly TokenRow[] = [
   {
-    en: "1 token is 1 role matching your criteria, sent to your email",
-    // Paul's wording, 23/08/2026.
-    th: "1 โทเคน = 1 ตำแหน่งที่ตรงกับเงื่อนไขของคุณ ส่งตรงถึงอีเมล",
+    label: {
+      en: "A role that matches your criteria",
+      th: "ตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ",
+    },
+    detail: {
+      en: "Sent to your email, with the work rights it needs stated",
+      th: "ส่งทางอีเมล พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี",
+    },
+    tokens: 1,
   },
   {
-    en: "20 tokens = 1 Fit Report",
-    // Paul's wording, 23/08/2026.
-    th: "20 โทเคน = Fit Report 1 ฉบับ",
+    label: {
+      en: "Fit Report",
+      th: "Fit Report",
+    },
+    detail: {
+      en: "A 30-minute interview with a coach, and the full report the same day",
+      // Built from the Fit Report's own `how` steps in `products.ts`.
+      th: "สัมภาษณ์ 30 นาทีกับโค้ช และรับรายงานฉบับเต็มภายในวันเดียวกัน",
+    },
+    tokens: 20,
   },
 ];
+
+/** The unit after a token count, singular and plural. */
+export const TOKEN_UNIT = {
+  one: {
+    en: "token",
+    th: "โทเคน",
+  },
+  many: {
+    en: "tokens",
+    th: "โทเคน",
+  },
+} as const;
+
+/**
+ * The group of limits under the token rows. Slot 6 of the spine, placed above
+ * the packs so the page states what a token does not buy before it asks for
+ * one. The rows are `NOTHING_FOUND` below and the `limit` of Matched Jobs and
+ * of the Fit Report, read from `products.ts` rather than copied.
+ */
+export const LIMITS_HEADING: Copy = {
+  en: "What a token does not do",
+  th: "ข้อจำกัดของบริการที่ใช้โทเคน",
+};
 
 /**
  * The rule that stops this reading like a slot machine, rewritten 23/08/2026.
@@ -317,51 +382,75 @@ export const NOTHING_FOUND: Copy = {
 
 /* ------------------------------------------------------------- calculator */
 
+/**
+ * The pack picker, rebuilt 02/11/2026 on Paul's call. It replaced a salary
+ * calculator that subtracted a THB salary from a EUR target and divided the
+ * raise by 50, which answered nothing its own heading asked.
+ *
+ * It asks how much the reader will use, and every number it shows comes from
+ * their three answers or a pack on this page. No salary, no market figure,
+ * nothing stored.
+ */
 export const CALC_HEADING: Copy = {
   en: "Work out which pack fits how much you will use it",
-  // Paul's wording, 23/08/2026.
+  // Paul's wording, 23/08/2026. The heading stayed; the tool now answers it.
   th: "ลองคำนวณดูว่าแพ็กไหนพอดีกับการใช้งานของคุณ",
 };
 
-export const CALC_NOW: Copy = {
-  en: "Salary now",
-  th: "เงินเดือนปัจจุบัน",
+export const CALC_FIT_REPORT: Copy = {
+  en: "Do you want the Fit Report?",
+  th: "คุณต้องการ Fit Report หรือไม่?",
 };
 
-export const CALC_TARGET: Copy = {
-  en: "Target salary",
-  th: "เงินเดือนเป้าหมาย",
+export const CALC_FIT_YES: Copy = {
+  en: "Yes",
+  th: "ต้องการ",
 };
 
-export const CALC_PER_MONTH: Copy = {
-  en: "Difference per month",
-  th: "ส่วนต่างเงินเดือนต่อเดือน",
+export const CALC_FIT_NO: Copy = {
+  en: "Not yet",
+  th: "ยังไม่ต้องการ",
 };
 
-export const CALC_PER_YEAR: Copy = {
-  en: "Difference per year",
-  th: "ส่วนต่างเงินเดือนต่อปี",
+export const CALC_PER_WEEK: Copy = {
+  en: "How many matched roles a week?",
+  th: "ต้องการรับตำแหน่งงานที่คัดให้สัปดาห์ละกี่ตำแหน่ง?",
 };
 
-export const CALC_IN_TOKENS: Copy = {
-  en: "How many tokens that is",
-  th: "คิดเป็นกี่โทเคน?",
+export const CALC_HOW_LONG: Copy = {
+  en: "For how long?",
+  th: "ต้องการรับต่อเนื่องนานเท่าใด?",
 };
 
-/**
- * The line that makes the calculator publishable at all.
- *
- * Careersy's equivalent defaults an uplift slider to 15%, which it can do
- * because it has 300 coached professionals behind it. PunProfile has no placed
- * clients and an empty Social Proof pillar, so **both numbers come from the
- * candidate and the page asserts nothing.** No default target salary, because a
- * default is a suggestion. No currency conversion, because a European figure
- * PunProfile supplied would be a market claim.
- */
+export const CALC_MONTHS = {
+  one: {
+    en: "month",
+    th: "เดือน",
+  },
+  many: {
+    en: "months",
+    th: "เดือน",
+  },
+} as const;
+
+export const CALC_NEED: Copy = {
+  en: "You need about",
+  th: "คุณต้องใช้ประมาณ",
+};
+
+export const CALC_BEST_FIT: Copy = {
+  en: "The pack that fits",
+  th: "แพ็กที่เหมาะกับการใช้งานของคุณ",
+};
+
+export const CALC_LEFT_OVER: Copy = {
+  en: "left over, which never expire and can be refunded",
+  th: "ที่เหลือไม่มีวันหมดอายุ และขอคืนเงินได้",
+};
+
 export const CALC_NOTE: Copy = {
-  en: "The result is worked out from what you entered. It is an estimate, not a guarantee of what you will actually earn.",
-  // Paul's wording, 23/08/2026.
-  th: "ผลคำนวณอ้างอิงจากข้อมูลที่คุณกรอก เป็นเพียงตัวเลขประมาณการ และไม่ใช่การรับประกันเงินเดือนที่คุณจะได้รับจริง",
+  en: "Worked out from your answers and the pack prices on this page, counting a month as four weeks. A token is only deducted when a role reaches you.",
+  th: "คำนวณจากคำตอบของคุณและราคาแพ็กในหน้านี้ โดยนับ 1 เดือนเป็น 4 สัปดาห์ และจะหักโทเคนก็ต่อเมื่อมีตำแหน่งงานส่งถึงคุณแล้วเท่านั้น",
 };
 
 /* --------------------------------------------------------------- questions */
@@ -372,8 +461,9 @@ export interface PricingQuestion {
 }
 
 /**
- * Two questions only. The rest of the FAQ lives in `faq.ts` and is not
- * duplicated here.
+ * One question only, since 02/11/2026: "Do tokens expire?" was answered by
+ * `INCLUDES` on the same screen. The rest of the FAQ lives in `faq.ts` and is
+ * not duplicated here.
  *
  * The first pair is Paul's rewrite of 23/08/2026 of strings that are ALREADY
  * LIVE in `faq.ts`. The same rewrite has to land there too, or one question is
@@ -393,15 +483,6 @@ export const PRICING_QUESTIONS: readonly PricingQuestion[] = [
       {
         en: "The EU Fit Check is free.",
         th: "ทำ EU Fit Check และดูผลเบื้องต้นได้ฟรี",
-      },
-    ],
-  },
-  {
-    q: { en: "Do tokens expire?", th: "โทเคนมีวันหมดอายุไหม?" },
-    a: [
-      {
-        en: "They do not. And if you have not used them, you can have the money back.",
-        th: "ไม่หมดอายุ และถ้ายังไม่ได้ใช้ ขอคืนเป็นเงินได้",
       },
     ],
   },

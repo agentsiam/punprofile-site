@@ -6408,59 +6408,176 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "23/08/2026",
     "decisionNote": "Paul's wording, 23/08/2026."
   },
-  "src/lib/content/pricing.ts::CALC_IN_TOKENS": {
+  "src/lib/content/pricing.ts::FREE_VALUE": {
     "source": "src/lib/content/pricing.ts",
-    "path": "CALC_IN_TOKENS",
-    "render": "Pricing page, CALC_IN_TOKENS",
+    "path": "FREE_VALUE",
+    "render": "Pricing page, FREE_VALUE",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "02/11/2026",
+    "decisionNote": "The same string as the Free pill on the Fit Report page (FIT_PLAN_FREE.pill), Paul-approved 28/10/2026."
+  },
+  "src/lib/content/pricing.ts::TOKEN_UNIT.one": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "TOKEN_UNIT.one",
+    "render": "Pricing page, TOKEN_UNIT.one",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "The token unit as Paul writes it throughout pricing.ts, e.g. 20 โทเคน = Fit Report 1 ฉบับ, 23/08/2026."
+  },
+  "src/lib/content/pricing.ts::TOKEN_UNIT.many": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "TOKEN_UNIT.many",
+    "render": "Pricing page, TOKEN_UNIT.many",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "The token unit as Paul writes it throughout pricing.ts, e.g. 20 โทเคน = Fit Report 1 ฉบับ, 23/08/2026."
+  },
+  "src/lib/content/pricing.ts::TOKEN_ROWS[1].label": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "TOKEN_ROWS[1].label",
+    "render": "Pricing page, TOKEN_ROWS[1].label",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Product name, fixed as Fit Report in both languages by Paul."
+  },
+  "src/lib/content/pricing.ts::TOKEN_ROWS[0].label": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "TOKEN_ROWS[0].label",
+    "render": "Pricing page, TOKEN_ROWS[0].label",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, unchanged."
+  },
+  "src/lib/content/pricing.ts::TOKEN_ROWS[0].detail": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "TOKEN_ROWS[0].detail",
+    "render": "Pricing page, TOKEN_ROWS[0].detail",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ระบุให้ชัดว่าเป็นสิทธิ์การทำงานที่ผู้สมัครต้องมีสำหรับตำแหน่งนั้น"
+  },
+  "src/lib/content/pricing.ts::TOKEN_ROWS[1].detail": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "TOKEN_ROWS[1].detail",
+    "render": "Pricing page, TOKEN_ROWS[1].detail",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, unchanged."
+  },
+  "src/lib/content/pricing.ts::LIMITS_HEADING": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "LIMITS_HEADING",
+    "render": "Pricing page, LIMITS_HEADING",
+    "narrativeSlot": "limit",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: อธิบายข้อจำกัดของบริการโดยตรง แทนการใช้โทเคนเป็นสิ่งที่รวมบริการไว้"
+  },
+  "src/lib/content/pricing.ts::CALC_FIT_REPORT": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_FIT_REPORT",
+    "render": "Pricing page, CALC_FIT_REPORT",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ปรับคำถามให้เป็นภาษาเขียน"
+  },
+  "src/lib/content/pricing.ts::CALC_FIT_YES": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_FIT_YES",
+    "render": "Pricing page, CALC_FIT_YES",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, unchanged."
+  },
+  "src/lib/content/pricing.ts::CALC_FIT_NO": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_FIT_NO",
+    "render": "Pricing page, CALC_FIT_NO",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ให้สอดคล้องกับคำถามและน้ำเสียงภาษาเขียน"
+  },
+  "src/lib/content/pricing.ts::CALC_PER_WEEK": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_PER_WEEK",
+    "render": "Pricing page, CALC_PER_WEEK",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ปรับเป็นภาษาเขียนและระบุการรับตำแหน่งงาน"
+  },
+  "src/lib/content/pricing.ts::CALC_HOW_LONG": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_HOW_LONG",
+    "render": "Pricing page, CALC_HOW_LONG",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ระบุสิ่งที่ทำต่อเนื่องให้ชัดและใช้ภาษาเขียน"
+  },
+  "src/lib/content/pricing.ts::CALC_MONTHS.one": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_MONTHS.one",
+    "render": "Pricing page, CALC_MONTHS.one",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, unchanged."
+  },
+  "src/lib/content/pricing.ts::CALC_MONTHS.many": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_MONTHS.many",
+    "render": "Pricing page, CALC_MONTHS.many",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, unchanged."
+  },
+  "src/lib/content/pricing.ts::CALC_NEED": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_NEED",
+    "render": "Pricing page, CALC_NEED",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, unchanged."
+  },
+  "src/lib/content/pricing.ts::CALC_BEST_FIT": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_BEST_FIT",
+    "render": "Pricing page, CALC_BEST_FIT",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: หลีกเลี่ยงคำว่าพอดีซึ่งอาจทำให้เข้าใจว่าไม่มีโทเคนเหลือ"
+  },
+  "src/lib/content/pricing.ts::CALC_LEFT_OVER": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_LEFT_OVER",
+    "render": "Pricing page, CALC_LEFT_OVER",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, unchanged."
   },
   "src/lib/content/pricing.ts::CALC_NOTE": {
     "source": "src/lib/content/pricing.ts",
     "path": "CALC_NOTE",
     "render": "Pricing page, CALC_NOTE",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
-  },
-  "src/lib/content/pricing.ts::CALC_NOW": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "CALC_NOW",
-    "render": "Pricing page, CALC_NOW",
-    "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/pricing.ts::CALC_PER_MONTH": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "CALC_PER_MONTH",
-    "render": "Pricing page, CALC_PER_MONTH",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/pricing.ts::CALC_PER_YEAR": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "CALC_PER_YEAR",
-    "render": "Pricing page, CALC_PER_YEAR",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/pricing.ts::CALC_TARGET": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "CALC_TARGET",
-    "render": "Pricing page, CALC_TARGET",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, unchanged."
   },
   "src/lib/content/pricing.ts::FREE_HEADING": {
     "source": "src/lib/content/pricing.ts",
@@ -6512,9 +6629,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "INCLUDES_HEADING",
     "render": "Pricing page, INCLUDES_HEADING",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ใช้สำนวนไทยที่เป็นธรรมชาติกว่าได้เงื่อนไข"
   },
   "src/lib/content/pricing.ts::INCLUDES[0]": {
     "source": "src/lib/content/pricing.ts",
@@ -6665,9 +6782,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRICING_INTRO",
     "render": "Pricing page, PRICING_INTRO",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026. This is the one-currency decision said out loud\n\nand the sentence the rest of the page depends on."
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ไม่ใช้โทเคนเดียว เพราะตารางระบุว่าตำแหน่งงานใช้ 1 โทเคน แต่ Fit Report ใช้ 20 โทเคน English also needs correction: “One token pays for…” misleadingly suggests one token covers either service; use “Use tokens for matched roles or the Fit Report.” English is left unchanged for this Thai review. English aligned to the same reading on his flag."
   },
   "src/lib/content/pricing.ts::PRICING_QUESTIONS[0].a[0]": {
     "source": "src/lib/content/pricing.ts",
@@ -6696,24 +6813,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "23/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
-  "src/lib/content/pricing.ts::PRICING_QUESTIONS[1].a[0]": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "PRICING_QUESTIONS[1].a[0]",
-    "render": "Pricing page, PRICING_QUESTIONS[1].a[0]",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/pricing.ts::PRICING_QUESTIONS[1].q": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "PRICING_QUESTIONS[1].q",
-    "render": "Pricing page, PRICING_QUESTIONS[1].q",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
   "src/lib/content/pricing.ts::RECOMMENDED_BADGE": {
     "source": "src/lib/content/pricing.ts",
     "path": "RECOMMENDED_BADGE",
@@ -6728,27 +6827,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "TOKEN_BODY",
     "render": "Pricing page, TOKEN_BODY",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
-  },
-  "src/lib/content/pricing.ts::TOKEN_EXAMPLES[0]": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "TOKEN_EXAMPLES[0]",
-    "render": "Pricing page, TOKEN_EXAMPLES[0]",
-    "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
-  },
-  "src/lib/content/pricing.ts::TOKEN_EXAMPLES[1]": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "TOKEN_EXAMPLES[1]",
-    "render": "Pricing page, TOKEN_EXAMPLES[1]",
-    "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "provenance": "paul-approved",
+    "date": "02/11/2026",
+    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ระบุว่าทั้งสองบริการใช้ระบบโทเคนเดียวกัน ไม่ใช่ใช้ร่วมกันเพียงหนึ่งโทเคน และใช้ PunProfile เป็นผู้ดำเนินการ English aligned to the same reading on his flag."
   },
   "src/lib/content/pricing.ts::TOKEN_HEADING": {
     "source": "src/lib/content/pricing.ts",

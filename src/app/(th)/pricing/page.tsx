@@ -30,24 +30,64 @@ import TokenCalculator from "@/components/features/pricing/TokenCalculator";
 import {
   FREE_HEADING,
   FREE_ITEMS,
+  FREE_VALUE,
   INCLUDES,
   INCLUDES_HEADING,
+  LIMITS_HEADING,
   NOTHING_FOUND,
   PACKS,
   PACKS_HEADING,
   PRICING_QUESTIONS,
   RECOMMENDED_BADGE,
   TOKEN_BODY,
-  TOKEN_EXAMPLES,
   TOKEN_HEADING,
+  TOKEN_ROWS,
+  TOKEN_UNIT,
   PRICING_HEADING,
   PRICING_INTRO,
 } from "@/lib/content/pricing";
+import { STATUS_SOON, isFreeProduct, productBySlug } from "@/lib/content/products";
+import type { Copy } from "@/lib/content/copy";
 import Band from "@/components/Band";
 import { HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 
+/**
+ * The page's order since 02/11/2026, and the order is the argument:
+ * what is free, what a token buys and what it does not, then the packs, then
+ * the picker. The limits sit above every ask, which is slot 6 before slot 8 in
+ * `Narrative_System.md`; before this the packs asked three times and the only
+ * limit came after them.
+ *
+ * Free products beyond the two in `FREE_ITEMS` come from `products.ts`, which
+ * owns which products are free, so this page cannot list fewer than it says.
+ */
+const FREE_PRODUCT_SLUGS = ["cv-check", "guided-job-hunt"] as const;
+
+/** One spec row (B6): label and detail left, value right, hairline between. */
+function SpecRow({ label, detail, value }: { label: string; detail?: string; value?: string }) {
+  return (
+    <div className="flex items-baseline justify-between gap-6 border-b border-outline-variant py-4 last:border-b-0">
+      <div>
+        <p className="text-heading-sm text-on-surface">{label}</p>
+        {detail && <p className="mt-1 text-body-large text-on-surface-variant">{detail}</p>}
+      </div>
+      {value && <p className="shrink-0 text-title-medium text-on-surface">{value}</p>}
+    </div>
+  );
+}
+
 export default function PricingPage() {
   const { pick, locale } = useCopy();
+  const tokens = (n: number) => `${n} ${pick(n === 1 ? TOKEN_UNIT.one : TOKEN_UNIT.many)}`;
+
+  const freeProducts = FREE_PRODUCT_SLUGS.map((slug) => productBySlug(slug))
+    .filter((p): p is NonNullable<typeof p> => !!p && isFreeProduct(p.slug));
+
+  const limits: Copy[] = [
+    NOTHING_FOUND,
+    productBySlug("matched-jobs")?.limit,
+    productBySlug("fit-report")?.limit,
+  ].filter((c): c is Copy => !!c);
 
   return (
     <div className="w-full">
@@ -59,23 +99,56 @@ export default function PricingPage() {
       </Band>
 
       {/* ------------------------------------------------------------ free */}
-      <Band block="B4" ground="soft" width="wide">
+      <Band block="B6" ground="soft" width="wide">
         <h2 className={SECTION_HEADING(locale)}>{pick(FREE_HEADING)}</h2>
-        <div className="mt-5 grid gap-4 large:grid-cols-2">
+        <div className="card-plain mt-5 px-6 py-2">
           {FREE_ITEMS.map((item) => (
-            <div
+            <SpecRow
               key={item.id}
-              className="card-plain px-6 py-5"
-            >
-              <h3 className="text-heading-sm">{pick(item.name)}</h3>
-              <p className="mt-2 text-body-large text-on-surface-variant">{pick(item.body)}</p>
-            </div>
+              label={pick(item.name)}
+              detail={pick(item.body)}
+              value={pick(FREE_VALUE)}
+            />
+          ))}
+          {freeProducts.map((p) => (
+            <SpecRow
+              key={p.slug}
+              label={p.status === "soon" ? `${pick(p.name)} · ${pick(STATUS_SOON)}` : pick(p.name)}
+              detail={pick(p.howLede)}
+              value={pick(FREE_VALUE)}
+            />
           ))}
         </div>
       </Band>
 
+      {/* ---------------------------------- what a token buys, and does not */}
+      <Band block="B6" ground="canvas" width="wide">
+        <h2 className={SECTION_HEADING(locale)}>{pick(TOKEN_HEADING)}</h2>
+        <p className="mt-3 max-w-2xl text-body-large text-on-surface-variant">{pick(TOKEN_BODY)}</p>
+        <div className="card-outlined mt-5 px-6 py-2">
+          {TOKEN_ROWS.map((row, i) => (
+            <SpecRow
+              key={i}
+              label={pick(row.label)}
+              detail={pick(row.detail)}
+              value={tokens(row.tokens)}
+            />
+          ))}
+        </div>
+
+        <h3 className="mt-10 text-heading-sm text-on-surface">{pick(LIMITS_HEADING)}</h3>
+        <ul className="mt-4 flex flex-col gap-2.5">
+          {limits.map((item, i) => (
+            <li key={i} className="flex gap-3 text-body-large text-on-surface">
+              <span aria-hidden className="mt-2 block size-1.5 shrink-0 rounded-full bg-primary" />
+              <span>{pick(item)}</span>
+            </li>
+          ))}
+        </ul>
+      </Band>
+
       {/* ----------------------------------------------------------- packs */}
-      <Band block="B4" ground="canvas" width="wide">
+      <Band block="B4" ground="soft" width="wide">
         <h2 className={SECTION_HEADING(locale)}>{pick(PACKS_HEADING)}</h2>
 
         {/* No `items-start`: the default stretch makes the three cards share
@@ -109,29 +182,20 @@ export default function PricingPage() {
                     the only place THB appears on a card. */}
                 <span className="ml-1 text-body-large text-on-surface-variant">THB</span>
               </p>
-              <p className="mt-1 text-body-large text-on-surface-variant">
-                {pack.tokens} tokens
-              </p>
+              <p className="mt-1 text-body-large text-on-surface-variant">{tokens(pack.tokens)}</p>
 
               <p className="mt-5 flex-1 text-body-large text-on-surface-variant">{pick(pack.who)}</p>
 
               {/* All three buttons are the same action to the same place, which
-                  is rule 1 in `cta.ts`: one action may repeat once per card,
-                  because a reader finishes reading at a different card than the
-                  person beside them. Three buttons to three different places
-                  would be three actions and would break it. Payment is a bank
-                  transfer arranged one to one, so one destination is also just
-                  true. */}
+                  is rule 1 in `cta.ts`: one action may repeat once per card. */}
               <CallToAction page="/pricing" className="mt-auto pt-7" show="primary" />
             </section>
           ))}
         </div>
-      </Band>
 
-      {/* -------------------------------------------------------- includes */}
-      <Band block="B3" ground="soft" width="wide">
-        <h2 className={SECTION_HEADING(locale)}>{pick(INCLUDES_HEADING)}</h2>
-        <ul className="mt-5 flex flex-col gap-2.5">
+        {/* The terms every pack shares, under the packs they qualify. */}
+        <h3 className="mt-10 text-heading-sm text-on-surface">{pick(INCLUDES_HEADING)}</h3>
+        <ul className="mt-4 grid gap-2.5 large:grid-cols-2">
           {INCLUDES.map((item, i) => (
             <li key={i} className="flex gap-3 text-body-large text-on-surface">
               <span aria-hidden className="mt-2 block size-1.5 shrink-0 rounded-full bg-primary" />
@@ -141,25 +205,12 @@ export default function PricingPage() {
         </ul>
       </Band>
 
-      {/* ----------------------------------------------- what a token buys */}
-      <Band block="B6" ground="canvas" width="wide">
-        <h2 className={SECTION_HEADING(locale)}>{pick(TOKEN_HEADING)}</h2>
-        <p className="mt-3 max-w-2xl text-body-large text-on-surface-variant">{pick(TOKEN_BODY)}</p>
-        <ul className="mt-5 flex flex-col gap-2.5">
-          {TOKEN_EXAMPLES.map((item, i) => (
-            <li key={i} className="flex gap-3 text-body-large text-on-surface">
-              <span aria-hidden className="mt-2 block size-1.5 shrink-0 rounded-full bg-primary" />
-              <span>{pick(item)}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-5 max-w-2xl text-body-large text-on-surface">{pick(NOTHING_FOUND)}</p>
+      {/* ------------------------------------------------------ pack picker */}
+      <Band block="B2" ground="canvas" width="wide">
+        <TokenCalculator />
       </Band>
 
-      {/* ------------------------------------------------------ calculator */}
-      <TokenCalculator />
-
-      {/* ------------------------------------------------------- questions */}
+      {/* ---------------------------------------- questions, then the close */}
       <Band block="B5" ground="soft" width="wide">
         {PRICING_QUESTIONS.map((item, i) => (
           <div key={i} className="border-b border-outline-variant py-6 last:border-b-0">
@@ -171,11 +222,10 @@ export default function PricingPage() {
             ))}
           </div>
         ))}
-      </Band>
-
-      {/* The page's secondary, exactly once, where a secondary belongs. */}
-      <Band block="B8" ground="dark" align="center" className="text-center">
-        <CallToAction page="/pricing" align="center" show="secondary" />
+        {/* The page's secondary, exactly once, as the text link rule 5 makes
+            it. It used to sit alone in a B8 dark panel, a block built for a
+            heading and a filled pill, holding one underlined link. */}
+        <CallToAction page="/pricing" className="mt-6" show="secondary" />
       </Band>
     </div>
   );

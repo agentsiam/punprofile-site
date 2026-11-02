@@ -47,8 +47,9 @@ export const PRICING_HEADING: Copy = {
 
 export const PRICING_INTRO: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlBSSUNJTkdfSU5UUk8:EN%%,
-  // Paul's wording, 23/08/2026. This is the one-currency decision said out loud
-  // and the sentence the rest of the page depends on.
+  // From Paul's wording of 23/08/2026, narrowed 02/11/2026 on his call. "Every
+  // service on the site" was an overclaim: coaching is priced in a conversation
+  // and three products are free, so a token buys exactly two things.
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlBSSUNJTkdfSU5UUk8:TH%%,
 };
 
@@ -122,6 +123,19 @@ export const FREE_ITEMS: readonly FreeItem[] = [
     },
   },
 ];
+
+/**
+ * The value column of the free rows. The free rows are spec rows (B6), the same
+ * shape as what a token buys, so free and paid read as one table in two halves.
+ *
+ * CV Check and Guided Job Hunt join the two rows above on the page itself, read
+ * from `products.ts`, because `FREE_SLUGS` there already says they are free and
+ * a second list here would be a second answer to which products are free.
+ */
+export const FREE_VALUE: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkZSRUVfVkFMVUU:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkZSRUVfVkFMVUU:TH%%,
+};
 
 /* ------------------------------------------------------------------- packs */
 
@@ -219,7 +233,8 @@ export const RECOMMENDED_BADGE: Copy = {
 
 export const INCLUDES_HEADING: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OklOQ0xVREVTX0hFQURJTkc:EN%%,
-  // Paul's wording, 23/08/2026.
+  // 02/11/2026, on Paul's call, over his 23/08/2026 line "it works on
+  // everything", which said more than a token buys.
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OklOQ0xVREVTX0hFQURJTkc:TH%%,
 };
 
@@ -274,22 +289,72 @@ export const TOKEN_HEADING: Copy = {
 
 export const TOKEN_BODY: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX0JPRFk:EN%%,
-  // Paul's wording, 23/08/2026.
+  // Paul's wording, 23/08/2026, with the subject narrowed 02/11/2026 for the
+  // same reason as `PRICING_INTRO`.
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX0JPRFk:TH%%,
 };
 
-export const TOKEN_EXAMPLES: readonly Copy[] = [
+export interface TokenRow {
+  label: Copy;
+  detail: Copy;
+  /** Tokens, not baht. The packs are the only baht on the site. */
+  tokens: number;
+}
+
+/**
+ * Spec rows (B6) since 02/11/2026: the thing on the left, what it is in one
+ * line, the price in tokens on the right. They were two bullets, and the Fit
+ * Report bullet left out the 30-minute interview, which is what the Fit Report
+ * is since 26/10/2026.
+ */
+export const TOKEN_ROWS: readonly TokenRow[] = [
   {
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX0VYQU1QTEVTWzBd:EN%%,
-    // Paul's wording, 23/08/2026.
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX0VYQU1QTEVTWzBd:TH%%,
+    label: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1JPV1NbMF0ubGFiZWw:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1JPV1NbMF0ubGFiZWw:TH%%,
+    },
+    detail: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1JPV1NbMF0uZGV0YWls:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1JPV1NbMF0uZGV0YWls:TH%%,
+    },
+    tokens: 1,
   },
   {
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX0VYQU1QTEVTWzFd:EN%%,
-    // Paul's wording, 23/08/2026.
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX0VYQU1QTEVTWzFd:TH%%,
+    label: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1JPV1NbMV0ubGFiZWw:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1JPV1NbMV0ubGFiZWw:TH%%,
+    },
+    detail: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1JPV1NbMV0uZGV0YWls:EN%%,
+      // Built from the Fit Report's own `how` steps in `products.ts`.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1JPV1NbMV0uZGV0YWls:TH%%,
+    },
+    tokens: 20,
   },
 ];
+
+/** The unit after a token count, singular and plural. */
+export const TOKEN_UNIT = {
+  one: {
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1VOSVQub25l:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1VOSVQub25l:TH%%,
+  },
+  many: {
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1VOSVQubWFueQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlRPS0VOX1VOSVQubWFueQ:TH%%,
+  },
+} as const;
+
+/**
+ * The group of limits under the token rows. Slot 6 of the spine, placed above
+ * the packs so the page states what a token does not buy before it asks for
+ * one. The rows are `NOTHING_FOUND` below and the `limit` of Matched Jobs and
+ * of the Fit Report, read from `products.ts` rather than copied.
+ */
+export const LIMITS_HEADING: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkxJTUlUU19IRUFESU5H:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkxJTUlUU19IRUFESU5H:TH%%,
+};
 
 /**
  * The rule that stops this reading like a slot machine, rewritten 23/08/2026.
@@ -317,50 +382,74 @@ export const NOTHING_FOUND: Copy = {
 
 /* ------------------------------------------------------------- calculator */
 
+/**
+ * The pack picker, rebuilt 02/11/2026 on Paul's call. It replaced a salary
+ * calculator that subtracted a THB salary from a EUR target and divided the
+ * raise by 50, which answered nothing its own heading asked.
+ *
+ * It asks how much the reader will use, and every number it shows comes from
+ * their three answers or a pack on this page. No salary, no market figure,
+ * nothing stored.
+ */
 export const CALC_HEADING: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfSEVBRElORw:EN%%,
-  // Paul's wording, 23/08/2026.
+  // Paul's wording, 23/08/2026. The heading stayed; the tool now answers it.
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfSEVBRElORw:TH%%,
 };
 
-export const CALC_NOW: Copy = {
-  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTk9X:EN%%,
-  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTk9X:TH%%,
+export const CALC_FIT_REPORT: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfRklUX1JFUE9SVA:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfRklUX1JFUE9SVA:TH%%,
 };
 
-export const CALC_TARGET: Copy = {
-  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfVEFSR0VU:EN%%,
-  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfVEFSR0VU:TH%%,
+export const CALC_FIT_YES: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfRklUX1lFUw:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfRklUX1lFUw:TH%%,
 };
 
-export const CALC_PER_MONTH: Copy = {
-  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfUEVSX01PTlRI:EN%%,
-  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfUEVSX01PTlRI:TH%%,
+export const CALC_FIT_NO: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfRklUX05P:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfRklUX05P:TH%%,
 };
 
-export const CALC_PER_YEAR: Copy = {
-  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfUEVSX1lFQVI:EN%%,
-  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfUEVSX1lFQVI:TH%%,
+export const CALC_PER_WEEK: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfUEVSX1dFRUs:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfUEVSX1dFRUs:TH%%,
 };
 
-export const CALC_IN_TOKENS: Copy = {
-  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfSU5fVE9LRU5T:EN%%,
-  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfSU5fVE9LRU5T:TH%%,
+export const CALC_HOW_LONG: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfSE9XX0xPTkc:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfSE9XX0xPTkc:TH%%,
 };
 
-/**
- * The line that makes the calculator publishable at all.
- *
- * Careersy's equivalent defaults an uplift slider to 15%, which it can do
- * because it has 300 coached professionals behind it. PunProfile has no placed
- * clients and an empty Social Proof pillar, so **both numbers come from the
- * candidate and the page asserts nothing.** No default target salary, because a
- * default is a suggestion. No currency conversion, because a European figure
- * PunProfile supplied would be a market claim.
- */
+export const CALC_MONTHS = {
+  one: {
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTU9OVEhTLm9uZQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTU9OVEhTLm9uZQ:TH%%,
+  },
+  many: {
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTU9OVEhTLm1hbnk:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTU9OVEhTLm1hbnk:TH%%,
+  },
+} as const;
+
+export const CALC_NEED: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTkVFRA:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTkVFRA:TH%%,
+};
+
+export const CALC_BEST_FIT: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfQkVTVF9GSVQ:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfQkVTVF9GSVQ:TH%%,
+};
+
+export const CALC_LEFT_OVER: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTEVGVF9PVkVS:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTEVGVF9PVkVS:TH%%,
+};
+
 export const CALC_NOTE: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTk9URQ:EN%%,
-  // Paul's wording, 23/08/2026.
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OkNBTENfTk9URQ:TH%%,
 };
 
@@ -372,8 +461,9 @@ export interface PricingQuestion {
 }
 
 /**
- * Two questions only. The rest of the FAQ lives in `faq.ts` and is not
- * duplicated here.
+ * One question only, since 02/11/2026: "Do tokens expire?" was answered by
+ * `INCLUDES` on the same screen. The rest of the FAQ lives in `faq.ts` and is
+ * not duplicated here.
  *
  * The first pair is Paul's rewrite of 23/08/2026 of strings that are ALREADY
  * LIVE in `faq.ts`. The same rewrite has to land there too, or one question is
@@ -393,15 +483,6 @@ export const PRICING_QUESTIONS: readonly PricingQuestion[] = [
       {
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlBSSUNJTkdfUVVFU1RJT05TWzBdLmFbMV0:EN%%,
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlBSSUNJTkdfUVVFU1RJT05TWzBdLmFbMV0:TH%%,
-      },
-    ],
-  },
-  {
-    q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlBSSUNJTkdfUVVFU1RJT05TWzFdLnE:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlBSSUNJTkdfUVVFU1RJT05TWzFdLnE:TH%% },
-    a: [
-      {
-        en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlBSSUNJTkdfUVVFU1RJT05TWzFdLmFbMF0:EN%%,
-        th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaWNpbmcudHM6OlBSSUNJTkdfUVVFU1RJT05TWzFdLmFbMF0:TH%%,
       },
     ],
   },
