@@ -17172,137 +17172,421 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::CALC_IN_TOKENS`
+### `src/lib/content/pricing.ts::FREE_VALUE`
 
 ```yaml
-id: src/lib/content/pricing.ts::CALC_IN_TOKENS
-source: src/lib/content/pricing.ts
-path: CALC_IN_TOKENS
-render: Pricing page, CALC_IN_TOKENS
-narrative_slot: utility
-en: How many tokens that is
-th: คิดเป็นกี่โทเคน?
-provenance: paul-approved
-date: 23/08/2026
+id: "src/lib/content/pricing.ts::FREE_VALUE"
+source: "src/lib/content/pricing.ts"
+path: "FREE_VALUE"
+render: "Pricing page, FREE_VALUE"
+narrative_slot: "utility"
+en: "Free"
+th: "ฟรี"
+provenance: "paul-approved"
+date: "02/11/2026"
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: "The same string as the Free pill on the Fit Report page (FIT_PLAN_FREE.pill), Paul-approved 28/10/2026."
 review:
   structural_calque: pass
-  text_hash: d7f5861348319ef3723c7ac3717bf6612186ebed90b6b5beaa8ce9609e050c2e
+  text_hash: b0eaee73460765632c0086c84f15a6473ede8252afd70225d71de7eb43aec7b2
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::TOKEN_UNIT.one`
+
+```yaml
+id: "src/lib/content/pricing.ts::TOKEN_UNIT.one"
+source: "src/lib/content/pricing.ts"
+path: "TOKEN_UNIT.one"
+render: "Pricing page, TOKEN_UNIT.one"
+narrative_slot: "utility"
+en: "token"
+th: "โทเคน"
+provenance: "paul-approved"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "The token unit as Paul writes it throughout pricing.ts, e.g. 20 โทเคน = Fit Report 1 ฉบับ, 23/08/2026."
+review:
+  structural_calque: pass
+  text_hash: a826747fe6d86869b9afe4cce05f1767f87d77ccd52a819a90e7f94e9539cdc8
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::TOKEN_UNIT.many`
+
+```yaml
+id: "src/lib/content/pricing.ts::TOKEN_UNIT.many"
+source: "src/lib/content/pricing.ts"
+path: "TOKEN_UNIT.many"
+render: "Pricing page, TOKEN_UNIT.many"
+narrative_slot: "utility"
+en: "tokens"
+th: "โทเคน"
+provenance: "paul-approved"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "The token unit as Paul writes it throughout pricing.ts, e.g. 20 โทเคน = Fit Report 1 ฉบับ, 23/08/2026."
+review:
+  structural_calque: pass
+  text_hash: cbf99e436cd60a7d9ae93d7df269589fc40937864e7dac255c5782f005708fd4
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::TOKEN_ROWS[1].label`
+
+```yaml
+id: "src/lib/content/pricing.ts::TOKEN_ROWS[1].label"
+source: "src/lib/content/pricing.ts"
+path: "TOKEN_ROWS[1].label"
+render: "Pricing page, TOKEN_ROWS[1].label"
+narrative_slot: "artefact"
+en: "Fit Report"
+th: "Fit Report"
+provenance: "paul-approved"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Product name, fixed as Fit Report in both languages by Paul."
+review:
+  structural_calque: pass
+  text_hash: 899b32eb43aa35737948310d7d8d389bddf837a171fb03522711b719b93178cf
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::TOKEN_ROWS[0].label`
+
+```yaml
+id: "src/lib/content/pricing.ts::TOKEN_ROWS[0].label"
+source: "src/lib/content/pricing.ts"
+path: "TOKEN_ROWS[0].label"
+render: "Pricing page, TOKEN_ROWS[0].label"
+narrative_slot: "artefact"
+en: "A role that matches your criteria"
+th: "ตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Built 02/11/2026 from Paul's TOKEN_EXAMPLES[0] wording, which this row replaced."
+review:
+  structural_calque: pending
+  text_hash: 75f881fd09d1f6066e446a666608a8ea5bd7f2fd585c702205cf54b8a6631a51
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::TOKEN_ROWS[0].detail`
+
+```yaml
+id: "src/lib/content/pricing.ts::TOKEN_ROWS[0].detail"
+source: "src/lib/content/pricing.ts"
+path: "TOKEN_ROWS[0].detail"
+render: "Pricing page, TOKEN_ROWS[0].detail"
+narrative_slot: "artefact"
+en: "Sent to your email, with the work rights it needs stated"
+th: "ส่งตรงถึงอีเมล พร้อมระบุสิทธิ์การทำงานที่ต้องมี"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Built 02/11/2026 from Paul's TOKEN_EXAMPLES[0] and INCLUDES[3] wording."
+review:
+  structural_calque: pending
+  text_hash: 4bf70e32e98470758296e47797606690e22659efde8d5f6c8444839b1fc0142c
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::TOKEN_ROWS[1].detail`
+
+```yaml
+id: "src/lib/content/pricing.ts::TOKEN_ROWS[1].detail"
+source: "src/lib/content/pricing.ts"
+path: "TOKEN_ROWS[1].detail"
+render: "Pricing page, TOKEN_ROWS[1].detail"
+narrative_slot: "artefact"
+en: "A 30-minute interview with a coach, and the full report the same day"
+th: "สัมภาษณ์ 30 นาทีกับโค้ช และรับรายงานฉบับเต็มภายในวันเดียวกัน"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Built 02/11/2026 from the Fit Report's how steps in products.ts; the old bullet omitted the interview."
+review:
+  structural_calque: pending
+  text_hash: aaa431229cc503fe79ec3aaf09b9b4bf07aba0ecd85ee7aaadc8fdcb4e2e40d1
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::LIMITS_HEADING`
+
+```yaml
+id: "src/lib/content/pricing.ts::LIMITS_HEADING"
+source: "src/lib/content/pricing.ts"
+path: "LIMITS_HEADING"
+render: "Pricing page, LIMITS_HEADING"
+narrative_slot: "limit"
+en: "What a token does not do"
+th: "สิ่งที่โทเคนไม่ได้รวมไว้"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Heads slot 6 above the packs, 02/11/2026 (2a)."
+review:
+  structural_calque: pending
+  text_hash: 6dfdf1819b762eec66281467a9a42538b607c2e04af7015dcac69a0e1280e336
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_FIT_REPORT`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_FIT_REPORT"
+source: "src/lib/content/pricing.ts"
+path: "CALC_FIT_REPORT"
+render: "Pricing page, CALC_FIT_REPORT"
+narrative_slot: "utility"
+en: "Do you want the Fit Report?"
+th: "ต้องการ Fit Report ไหม?"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Pack picker, 02/11/2026 (1a)."
+review:
+  structural_calque: pending
+  text_hash: 3fb4e5f7da1016c7bf06020d003d4cd0c69719c1fc333c3604af066a10c91662
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_FIT_YES`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_FIT_YES"
+source: "src/lib/content/pricing.ts"
+path: "CALC_FIT_YES"
+render: "Pricing page, CALC_FIT_YES"
+narrative_slot: "utility"
+en: "Yes"
+th: "ต้องการ"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Pack picker, 02/11/2026 (1a)."
+review:
+  structural_calque: pending
+  text_hash: 76918b318b795adae5aebafed3f746fcff40c31f277fdc47de4a59ed7daa52f6
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_FIT_NO`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_FIT_NO"
+source: "src/lib/content/pricing.ts"
+path: "CALC_FIT_NO"
+render: "Pricing page, CALC_FIT_NO"
+narrative_slot: "utility"
+en: "Not yet"
+th: "ยังก่อน"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Pack picker, 02/11/2026 (1a)."
+review:
+  structural_calque: pending
+  text_hash: 119b8007d6f61181904503fd8740def5fe751c8cda598000a9ab83987646685a
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_PER_WEEK`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_PER_WEEK"
+source: "src/lib/content/pricing.ts"
+path: "CALC_PER_WEEK"
+render: "Pricing page, CALC_PER_WEEK"
+narrative_slot: "utility"
+en: "How many matched roles a week?"
+th: "อยากได้ตำแหน่งงานที่คัดให้สัปดาห์ละกี่ตำแหน่ง?"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Pack picker, 02/11/2026 (1a)."
+review:
+  structural_calque: pending
+  text_hash: b04a289078d5998c199c281f6a3f06d8f24daeb2de3c56d06b0281b67827225b
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_HOW_LONG`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_HOW_LONG"
+source: "src/lib/content/pricing.ts"
+path: "CALC_HOW_LONG"
+render: "Pricing page, CALC_HOW_LONG"
+narrative_slot: "utility"
+en: "For how long?"
+th: "ต่อเนื่องนานแค่ไหน?"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Pack picker, 02/11/2026 (1a)."
+review:
+  structural_calque: pending
+  text_hash: 20012509ec04e265dd0493490e92820c6c2f6876e9688f79f79f52b2f44c5f03
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_MONTHS.one`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_MONTHS.one"
+source: "src/lib/content/pricing.ts"
+path: "CALC_MONTHS.one"
+render: "Pricing page, CALC_MONTHS.one"
+narrative_slot: "utility"
+en: "month"
+th: "เดือน"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Pack picker, 02/11/2026 (1a)."
+review:
+  structural_calque: pending
+  text_hash: 5b31a9b3175fa12e288cd5d71d1be274e8a8748c937466496b46dd8cd2964a89
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_MONTHS.many`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_MONTHS.many"
+source: "src/lib/content/pricing.ts"
+path: "CALC_MONTHS.many"
+render: "Pricing page, CALC_MONTHS.many"
+narrative_slot: "utility"
+en: "months"
+th: "เดือน"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Pack picker, 02/11/2026 (1a)."
+review:
+  structural_calque: pending
+  text_hash: 400c751d366250774a21181d2e00593e66befb5df792a517495710231b269dcc
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_NEED`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_NEED"
+source: "src/lib/content/pricing.ts"
+path: "CALC_NEED"
+render: "Pricing page, CALC_NEED"
+narrative_slot: "utility"
+en: "You need about"
+th: "คุณต้องใช้ประมาณ"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Pack picker result, 02/11/2026 (1a)."
+review:
+  structural_calque: pending
+  text_hash: 54c899f925779c8769fd7f4dc75cf36ae138ae9fff06a089f70db3c552a88ac2
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_BEST_FIT`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_BEST_FIT"
+source: "src/lib/content/pricing.ts"
+path: "CALC_BEST_FIT"
+render: "Pricing page, CALC_BEST_FIT"
+narrative_slot: "utility"
+en: "The pack that fits"
+th: "แพ็กที่พอดี"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Pack picker result, 02/11/2026 (1a)."
+review:
+  structural_calque: pending
+  text_hash: d6871e4229df3ddd1b7806fa6cbe70c39ffe0e90e15b3e1f6c033e362d600c96
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_LEFT_OVER`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_LEFT_OVER"
+source: "src/lib/content/pricing.ts"
+path: "CALC_LEFT_OVER"
+render: "Pricing page, CALC_LEFT_OVER"
+narrative_slot: "utility"
+en: "left over, which never expire and can be refunded"
+th: "ที่เหลือไม่มีวันหมดอายุ และขอคืนเงินได้"
+provenance: "draft"
+date: "02/11/2026"
+term_bindings: []
+decision_note: "Pack picker result, 02/11/2026 (1a); restates INCLUDES[0] and [1] where the leftover appears."
+review:
+  structural_calque: pending
+  text_hash: 93af07ec32efc2b3d76652e9b7c4913bdcf30677b1b980927d8a926c7d20f4c9
+  prompt_version: structural-calque-v1
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/pricing.ts::CALC_NOTE`
 
 ```yaml
-id: src/lib/content/pricing.ts::CALC_NOTE
-source: src/lib/content/pricing.ts
-path: CALC_NOTE
-render: Pricing page, CALC_NOTE
-narrative_slot: utility
-en: >-
-  The result is worked out from what you entered. It is an estimate, not a guarantee of what you will actually
-  earn.
-th: ผลคำนวณอ้างอิงจากข้อมูลที่คุณกรอก เป็นเพียงตัวเลขประมาณการ และไม่ใช่การรับประกันเงินเดือนที่คุณจะได้รับจริง
-provenance: paul-written
-date: 23/08/2026
+id: "src/lib/content/pricing.ts::CALC_NOTE"
+source: "src/lib/content/pricing.ts"
+path: "CALC_NOTE"
+render: "Pricing page, CALC_NOTE"
+narrative_slot: "utility"
+en: "Worked out from your answers and the pack prices on this page, counting a month as four weeks. A token is only deducted when a role reaches you."
+th: "คำนวณจากคำตอบของคุณและราคาแพ็กในหน้านี้ โดยนับ 1 เดือนเป็น 4 สัปดาห์ และจะหักโทเคนก็ต่อเมื่อมีตำแหน่งงานส่งถึงคุณแล้วเท่านั้น"
+provenance: "draft"
+date: "02/11/2026"
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: "Rewritten 02/11/2026 for the pack picker, which replaced the salary calculator on Paul's call (1a)."
 review:
-  structural_calque: pass
-  text_hash: ef643cd188f792c392e284a9f7705cfa6002fa53387f621f12bfea531418c8c3
+  structural_calque: pending
+  text_hash: 53ce8d04e7dfdf48cbd046152b34d67ff89309dfb4c91079eadbe95a23342a3c
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::CALC_NOW`
-
-```yaml
-id: src/lib/content/pricing.ts::CALC_NOW
-source: src/lib/content/pricing.ts
-path: CALC_NOW
-render: Pricing page, CALC_NOW
-narrative_slot: utility
-en: Salary now
-th: เงินเดือนปัจจุบัน
-provenance: paul-approved
-date: 23/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 12f48b41f7f2d2f9cea3698c11cb7026d899c6b584785a8f62aa6812dd358942
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::CALC_PER_MONTH`
-
-```yaml
-id: src/lib/content/pricing.ts::CALC_PER_MONTH
-source: src/lib/content/pricing.ts
-path: CALC_PER_MONTH
-render: Pricing page, CALC_PER_MONTH
-narrative_slot: utility
-en: Difference per month
-th: ส่วนต่างเงินเดือนต่อเดือน
-provenance: paul-approved
-date: 23/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: f08fa80a175ce6ed7cb2468f714a64597e4e9362d8ef09f11a3e337af5c68512
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::CALC_PER_YEAR`
-
-```yaml
-id: src/lib/content/pricing.ts::CALC_PER_YEAR
-source: src/lib/content/pricing.ts
-path: CALC_PER_YEAR
-render: Pricing page, CALC_PER_YEAR
-narrative_slot: utility
-en: Difference per year
-th: ส่วนต่างเงินเดือนต่อปี
-provenance: paul-approved
-date: 23/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 1da3ec5aceadcee18a552c28fa19ced773b72891a5a357325c088e79177b2f89
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::CALC_TARGET`
-
-```yaml
-id: src/lib/content/pricing.ts::CALC_TARGET
-source: src/lib/content/pricing.ts
-path: CALC_TARGET
-render: Pricing page, CALC_TARGET
-narrative_slot: utility
-en: Target salary
-th: เงินเดือนเป้าหมาย
-provenance: paul-approved
-date: 23/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 29a043b1c10e873844021f47c0f6d92bd2b860845f44caa176b8380f51592f6f
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17442,22 +17726,22 @@ review:
 ### `src/lib/content/pricing.ts::INCLUDES_HEADING`
 
 ```yaml
-id: src/lib/content/pricing.ts::INCLUDES_HEADING
-source: src/lib/content/pricing.ts
-path: INCLUDES_HEADING
-render: Pricing page, INCLUDES_HEADING
-narrative_slot: utility
-en: Whichever pack you pick, it works on everything
-th: ไม่ว่าเลือกแพ็กไหน ก็ใช้ได้กับทุกบริการ
-provenance: paul-written
-date: 23/08/2026
+id: "src/lib/content/pricing.ts::INCLUDES_HEADING"
+source: "src/lib/content/pricing.ts"
+path: "INCLUDES_HEADING"
+render: "Pricing page, INCLUDES_HEADING"
+narrative_slot: "utility"
+en: "Every pack comes with the same terms"
+th: "ทุกแพ็กได้เงื่อนไขเดียวกัน"
+provenance: "draft"
+date: "02/11/2026"
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: "Replaces Paul's 23/08/2026 line, which said a token works on everything, on his call 02/11/2026 (2a)."
 review:
-  structural_calque: pass
-  text_hash: b01835f3d826607a3719b5547f3cef740282e330178adadd2eddc74e02563806
+  structural_calque: pending
+  text_hash: 9985f2f98ccd618beb3e861c3c1045b7503755e89e9a0d8844429c3f6c97df2b
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17826,25 +18110,22 @@ review:
 ### `src/lib/content/pricing.ts::PRICING_INTRO`
 
 ```yaml
-id: src/lib/content/pricing.ts::PRICING_INTRO
-source: src/lib/content/pricing.ts
-path: PRICING_INTRO
-render: Pricing page, PRICING_INTRO
-narrative_slot: utility
-en: One token, good for every service on the site. Pick the pack that fits how much you will use it.
-th: โทเคนเดียว ใช้ได้กับทุกบริการบนเว็บไซต์ เลือกแพ็กที่พอดีกับการใช้งานของคุณได้เลย
-provenance: paul-written
-date: 23/08/2026
+id: "src/lib/content/pricing.ts::PRICING_INTRO"
+source: "src/lib/content/pricing.ts"
+path: "PRICING_INTRO"
+render: "Pricing page, PRICING_INTRO"
+narrative_slot: "utility"
+en: "One token pays for matched roles and the Fit Report. Pick the pack that fits how much you will use it."
+th: "โทเคนเดียว ใช้ได้ทั้งตำแหน่งงานที่คัดให้และ Fit Report เลือกแพ็กที่พอดีกับการใช้งานของคุณได้เลย"
+provenance: "draft"
+date: "02/11/2026"
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. This is the one-currency decision said out loud
-
-  and the sentence the rest of the page depends on.
+decision_note: "Paul's 23/08/2026 line narrowed 02/11/2026 on his call (2a): every service on the site was an overclaim, a token buys matched roles and the Fit Report."
 review:
-  structural_calque: pass
-  text_hash: 3c0ea85385a9319b76e87f74467495810ebd684f1dcfcbafb21dbccc3f52855e
+  structural_calque: pending
+  text_hash: 1cc54bf2191c109c2d10a713ea0c947d7fe40c59d926227df1338d0f64c36031
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17918,50 +18199,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::PRICING_QUESTIONS[1].a[0]`
-
-```yaml
-id: src/lib/content/pricing.ts::PRICING_QUESTIONS[1].a[0]
-source: src/lib/content/pricing.ts
-path: PRICING_QUESTIONS[1].a[0]
-render: Pricing page, PRICING_QUESTIONS[1].a[0]
-narrative_slot: utility
-en: They do not. And if you have not used them, you can have the money back.
-th: ไม่หมดอายุ และถ้ายังไม่ได้ใช้ ขอคืนเป็นเงินได้
-provenance: paul-approved
-date: 23/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 190af003a734833302092b256bbb69a6fe7a49ce68539d167d3e03e25da8d131
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::PRICING_QUESTIONS[1].q`
-
-```yaml
-id: src/lib/content/pricing.ts::PRICING_QUESTIONS[1].q
-source: src/lib/content/pricing.ts
-path: PRICING_QUESTIONS[1].q
-render: Pricing page, PRICING_QUESTIONS[1].q
-narrative_slot: utility
-en: Do tokens expire?
-th: โทเคนมีวันหมดอายุไหม?
-provenance: paul-approved
-date: 23/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 005d7c75f9a57178b881e8dd171e8546d0cad1ccaae99ecbe00b2774e6572275
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/pricing.ts::RECOMMENDED_BADGE`
 
 ```yaml
@@ -17987,68 +18224,22 @@ review:
 ### `src/lib/content/pricing.ts::TOKEN_BODY`
 
 ```yaml
-id: src/lib/content/pricing.ts::TOKEN_BODY
-source: src/lib/content/pricing.ts
-path: TOKEN_BODY
-render: Pricing page, TOKEN_BODY
-narrative_slot: utility
-en: >-
-  Every PunProfile service uses the same token, and we only deduct one once you have actually received the
-  service.
-th: ทุกบริการบน PunProfile ใช้โทเคนเดียวกัน และเราจะหักโทเคนก็ต่อเมื่อคุณได้รับบริการจริงแล้วเท่านั้น
-provenance: paul-written
-date: 23/08/2026
+id: "src/lib/content/pricing.ts::TOKEN_BODY"
+source: "src/lib/content/pricing.ts"
+path: "TOKEN_BODY"
+render: "Pricing page, TOKEN_BODY"
+narrative_slot: "utility"
+en: "Matched roles and the Fit Report use the same token, and we only deduct one once you have actually received the service."
+th: "ตำแหน่งงานที่คัดให้และ Fit Report ใช้โทเคนเดียวกัน และเราจะหักโทเคนก็ต่อเมื่อคุณได้รับบริการจริงแล้วเท่านั้น"
+provenance: "draft"
+date: "02/11/2026"
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: "Paul's 23/08/2026 sentence with its subject narrowed 02/11/2026; the second clause is his wording unchanged."
 review:
-  structural_calque: pass
-  text_hash: ac676335f2751b889d19e7c80e934e29ca061e61e194d43278c477429cbfef36
+  structural_calque: pending
+  text_hash: 6991324eb9675ce752fec24358265f5712368551398ebab587f3dd16aa134928
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::TOKEN_EXAMPLES[0]`
-
-```yaml
-id: src/lib/content/pricing.ts::TOKEN_EXAMPLES[0]
-source: src/lib/content/pricing.ts
-path: TOKEN_EXAMPLES[0]
-render: Pricing page, TOKEN_EXAMPLES[0]
-narrative_slot: utility
-en: 1 token is 1 role matching your criteria, sent to your email
-th: 1 โทเคน = 1 ตำแหน่งที่ตรงกับเงื่อนไขของคุณ ส่งตรงถึงอีเมล
-provenance: paul-written
-date: 23/08/2026
-term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
-review:
-  structural_calque: pass
-  text_hash: a9a392cb5c421550c3a59dfb979a07e7f6262fb8b4295622aa992fc56991d35c
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::TOKEN_EXAMPLES[1]`
-
-```yaml
-id: src/lib/content/pricing.ts::TOKEN_EXAMPLES[1]
-source: src/lib/content/pricing.ts
-path: TOKEN_EXAMPLES[1]
-render: Pricing page, TOKEN_EXAMPLES[1]
-narrative_slot: utility
-en: 20 tokens = 1 Fit Report
-th: 20 โทเคน = Fit Report 1 ฉบับ
-provenance: paul-written
-date: 23/08/2026
-term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
-review:
-  structural_calque: pass
-  text_hash: 919d238bf847379901f480cf83b4ae2a55f90f3fae46759d1d699d8c7827c8dd
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Model draft, 02/11/2026, awaiting Paul's verdict in the language review queue."
 ```
 
 <!-- COPY-ENTRY -->
