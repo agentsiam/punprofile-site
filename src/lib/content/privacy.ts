@@ -300,6 +300,11 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         th: "- Sentry ระบบรายงานข้อผิดพลาดของเรา ใช้เซิร์ฟเวอร์ในยุโรป รับเฉพาะรายงานข้อผิดพลาดทางเทคนิคเท่านั้น ชื่อ ข้อมูลติดต่อ และคำตอบของคุณจะถูกตัดออกก่อนส่งทุกครั้ง",
       },
       {
+        // Booking tool, 02/11/2026. A new id, so earlier ids keep their place; it renders before the closing line.
+        en: "- Cal.com, our booking tool, if you book a call through our link. It receives your name, email address and booking answers.",
+        th: "- Cal.com ระบบนัดหมายของเรา หากคุณนัดคุยผ่านลิงก์ของเรา ระบบจะได้รับชื่อ อีเมล และคำตอบที่คุณกรอกตอนนัดหมาย",
+      },
+      {
         en: "These are service providers processing data on our behalf, not parties we share your information with. No one else receives it.",
         th: "ทั้งหมดนี้คือผู้ให้บริการที่ประมวลผลข้อมูลในนามของเรา ไม่ใช่บุคคลที่เราเปิดเผยข้อมูลของคุณให้ ไม่มีผู้อื่นได้รับข้อมูลนี้",
       },

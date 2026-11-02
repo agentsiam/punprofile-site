@@ -6975,6 +6975,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "14/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[5]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[5].body[5]",
+    "render": "Privacy notice, PRIVACY_SECTIONS[5].body[5]",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026. English is the processor line Paul approved (Claude outputs/privacy-notice-paid-clients-proposal.md) with Cal.com in place of Calendly, after Paul chose Cal.com on 02/11/2026. Awaiting Paul's Thai verdict in the end-of-build review."
+  },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].heading": {
     "source": "src/lib/content/privacy.ts",
     "path": "PRIVACY_SECTIONS[5].heading",

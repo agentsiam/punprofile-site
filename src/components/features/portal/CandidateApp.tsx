@@ -486,7 +486,7 @@ const ALL_ZONES: string[] = (() => {
  * Their scheduled calls in their selected zone and Madrid, and the preview's
  * preparation. `prd.md` section 8. Calls come from the coach's call log, of
  * which only kind, length and time are passed here. Until a zone is selected,
- * Madrid is shown, labelled, with a prompt; no zone is assumed. Calendly's own
+ * Madrid is shown, labelled, with a prompt; no zone is assumed. Cal.com's own
  * confirmation is the calendar invitation, so there is no calendar file here.
  */
 function AppointmentsCard({ data, readOnly }: { data: PortalView; readOnly: boolean }) {

@@ -295,8 +295,8 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
     <section>
       <h2 className="text-title-large">Calls and sessions</h2>
       <p className="mt-1 text-body-medium text-on-surface-variant">
-        Calendly sends nothing to this log. Log each booking from Calendly&apos;s email as scheduled, with the deliverable it
-        serves, and correct the time on a reschedule. The preview is agreed by message, since the free plan has one event type.
+        Cal.com sends nothing to this log yet. Log each booking from Cal.com&apos;s email as scheduled, with the deliverable it
+        serves, and correct the time on a reschedule.
       </p>
       <label className="field-label mt-2 block max-w-sm">
         Candidate time zone{session && !session.timeZone ? ": not selected, times on their page show in Madrid" : ""}
@@ -599,7 +599,7 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
                 />
                 <Check
                   label="Same-day Thai follow-up sent"
-                  hint="Manual, because the free Calendly tier sends nothing."
+                  hint="Manual: no tool sends it."
                   checked={draft.followUpSentAt !== null}
                   onChange={(x) => set("followUpSentAt", x ? (draft.followUpSentAt ?? Date.now()) : null)}
                 />
@@ -609,8 +609,8 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
 
           <h4 className="mt-6 text-label-large text-on-surface-variant">The invitation</h4>
           <p className="mt-1 text-body-medium text-on-surface-variant">
-            Typed in by hand, because the free Calendly tier has no webhooks and pushes
-            nothing. What it buys is the only measurement of whether the booking rule is
+            Typed in by hand, because the booking tool pushes nothing into this log.
+            What it buys is the only measurement of whether the booking rule is
             any good: the trigger records which rule fired, so changing the rule later
             does not rewrite what the old one produced.
           </p>

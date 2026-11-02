@@ -125,7 +125,7 @@ export default function ConsultationQueues() {
         <>
           <Bucket
             title="Reminder due"
-            why="Booked inside 48 hours with no reminder written. Calendly sends none."
+            why="Booked inside 48 hours with no reminder written."
             rows={queues.reminder}
             detail={(row) => `· ${stamp(row.heldAt)}, ${hoursUntil(row.heldAt)}`}
           />

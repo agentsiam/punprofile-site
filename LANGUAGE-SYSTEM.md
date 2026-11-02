@@ -18675,6 +18675,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[5]`
+
+```yaml
+id: src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[5]
+source: src/lib/content/privacy.ts
+path: PRIVACY_SECTIONS[5].body[5]
+render: Privacy notice, PRIVACY_SECTIONS[5].body[5]
+narrative_slot: utility
+en: "- Cal.com, our booking tool, if you book a call through our link. It receives your name, email address and booking answers."
+th: "- Cal.com ระบบนัดหมายของเรา หากคุณนัดคุยผ่านลิงก์ของเรา ระบบจะได้รับชื่อ อีเมล และคำตอบที่คุณกรอกตอนนัดหมาย"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026. English is the processor line Paul approved (Claude outputs/privacy-notice-paid-clients-proposal.md) with Cal.com in place of Calendly, after Paul chose Cal.com on 02/11/2026. Awaiting Paul's Thai verdict in the end-of-build review."
+review:
+  structural_calque: pending
+  text_hash: f72c47d622e0d732ee99a03fc016ba7a83360914167600edc3c8e26d17557bec
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].heading`
 
 ```yaml

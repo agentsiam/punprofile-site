@@ -70,7 +70,7 @@ export const newLead = internalAction({
 
     const lines = [
       args.sqlGate
-        ? "This one clears the booking gate. Send the Calendly link."
+        ? "This one clears the booking gate. Send the booking link."
         : "New completed assessment.",
       "",
       `Stage: ${args.stage ?? "not answered"}`,
