@@ -445,7 +445,7 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
             </Section>
           )}
 
-          <AnswerSheet leadId={leadId} responses={lead.responses} corrected={corrected} />
+          <AnswerSheet leadId={leadId} responses={lead.responses} corrected={corrected} dates={{ surveyAt: lead.createdAt, appAt: lead.lastActivityAt }} />
           </div>
         </div>
       )}

@@ -380,5 +380,32 @@ function fromImportedRecord(responses: Responses): ScoringInput {
  * both. The scorer reads nine that are not.
  */
 export function toScoringInputForLead(responses: Responses): ScoringInput {
-  return isImportedRecord(responses) ? fromImportedRecord(responses) : toScoringInput(responses);
+  if (!isImportedRecord(responses)) return toScoringInput(responses);
+  const base = fromImportedRecord(responses);
+  // An imported lead who has since taken the EU Fit Check in the app holds both
+  // vocabularies on one record, 02/11/2026. The app's answers are the newer
+  // ones (the app came after the import), so each one that maps to a scored
+  // field wins over the survey's. Read alone, so a survey key that happens to
+  // share a name cannot leak through the app mapper.
+  const appPart: Responses = {};
+  for (const k of APP_ONLY_KEYS) if (k in responses) appPart[k] = responses[k];
+  if (Object.keys(appPart).length === 0) return base;
+  const app = toScoringInput(appPart);
+  const out: ScoringInput = { ...base };
+  for (const [k, v] of Object.entries(app)) if (v !== undefined) (out as Record<string, unknown>)[k] = v;
+  return out;
 }
+
+/**
+ * App question keys with no survey key of the same name. On an imported record
+ * they can only have come from a later EU Fit Check in the app.
+ */
+export const APP_ONLY_KEYS = ["english", "applications", "aiTools", "family", "applicationResponse", "pathway"] as const;
+
+/** The survey row each app-only answer replaces, where there is one. */
+export const APP_SUPERSEDES: Partial<Record<(typeof APP_ONLY_KEYS)[number], string>> = {
+  english: "englishCefr",
+  applications: "applicationCount",
+  aiTools: "aiIndicatorFlags",
+  family: "hasDependents",
+};
