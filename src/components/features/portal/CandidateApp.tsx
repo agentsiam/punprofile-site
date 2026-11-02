@@ -279,6 +279,13 @@ function Overview({
         <div className="grid gap-4 medium:grid-cols-3">
           {data.tokens.bought > 0 && (
             <Stat tint={TINTS[1]} label={pick(C.TOKENS_HEADING)} big={String(data.tokens.balance)} small={t(C.TOKENS_OF, { n: data.tokens.bought })}>
+              {data.tokens.reserved > 0 && (
+                <span className="block break-keep" data-testid="me-reserved">
+                  {t(C.TOKENS_RESERVED, { n: data.tokens.reserved })}
+                  <br />
+                  <span data-testid="me-spendable">{t(C.TOKENS_SPENDABLE, { n: data.tokens.spendable })}</span>
+                </span>
+              )}
               {t(C.TOKENS_MATCHED, { n: data.tokens.matchedSent })}
               <TokenRequest data={data} readOnly={readOnly} />
             </Stat>
@@ -538,7 +545,7 @@ function TokenRequest({ data, readOnly }: { data: PortalView; readOnly: boolean 
   const { pick } = useFormat();
   const request = useMutation(api.portal.requestTokens);
   if (data.tokens.requestedAt) return <span className="mt-2 block text-ink">{pick(C.TOKENS_REQUESTED)}</span>;
-  const low = data.tokens.balance <= 3;
+  const low = data.tokens.spendable <= 3;
   return (
     <span className="mt-2 block">
       {low && <span className="block text-ink">{pick(C.TOKENS_LOW)}</span>}

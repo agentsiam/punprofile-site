@@ -204,6 +204,16 @@ export const updateDeliverable = mutation({
       }
     }
 
+    // § 7a. A cancelled row stays cancelled, a Fit Report is delivered only by
+    // `workspace.deliverFitReport`, which charges it, and a selected report
+    // keeps its kind, so a reservation cannot end without its charge.
+    if (row.status === "cancelled" && args.status) throw new ConvexError("Cancelled. Add it again instead.");
+    if (row.kind === "fit_report" && args.status === "delivered") {
+      throw new ConvexError("Deliver the Fit Report from the Fit Report tab, which charges it.");
+    }
+    if (row.reservedAt !== undefined && args.kind && args.kind !== "fit_report") {
+      throw new ConvexError("This Fit Report is selected. Cancel it rather than changing its kind.");
+    }
     const now = Date.now();
     await ctx.db.patch(args.deliverableId, {
       ...(args.kind ? { kind: args.kind } : {}),

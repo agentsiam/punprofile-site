@@ -20,7 +20,7 @@ import { mutation, query, type QueryCtx, type MutationCtx } from "./_generated/s
 import type { Doc, Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { feedFor } from "./market";
-import { tokenBalance } from "./workspace";
+import { tokenBalance, walletFor } from "./workspace";
 import { targetsFor } from "./targets";
 import { signedInCandidate } from "./candidateAccess";
 import { requireAdmin } from "./leads";
@@ -56,6 +56,8 @@ const statusValidator = v.union(
 
 async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
     const { balance, bought, rows } = await tokenBalance(ctx, lead._id);
+    // The same calculation the coach's CRM shows, § 7a.
+    const { wallet } = await walletFor(ctx, lead._id);
 
     // § 8a. The candidate sees their active titles in order; any title, live or
     // not, can still name a CV or job filed under it.
@@ -78,6 +80,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         .collect()
     )
       .filter((d) => soldIds.has(d.engagementId))
+      .flatMap((d) => (d.status === "cancelled" ? [] : [{ ...d, status: d.status }]))
       .sort((a, b) => a.createdAt - b.createdAt)
       .map((d) => ({
         _id: d._id,
@@ -189,7 +192,14 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       titleNames,
       // The name the dashboard greets them by: nickname first, 02/11/2026.
       firstName: lead.nickname ?? lead.firstName ?? null,
-      tokens: { balance, bought, matchedSent, requestedAt: openTokenRequest?.at ?? null },
+      tokens: {
+        balance,
+        bought,
+        matchedSent,
+        requestedAt: openTokenRequest?.at ?? null,
+        reserved: wallet.reserved,
+        spendable: wallet.spendable,
+      },
       goal: { perWeek: lead.weeklyApplicationGoal ?? null, appliedThisWeek },
       fitReportShared: lead.fitReportSharedAt !== undefined,
       packs: sold.map((e) => ({ module: e.module, status: e.status })),

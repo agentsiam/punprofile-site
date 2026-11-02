@@ -829,9 +829,40 @@ export default defineSchema({
       v.literal("not_started"),
       v.literal("in_progress"),
       v.literal("delivered"),
+      /** Withdrawn before delivery, `lifecycle-data-model.md` § 7a. A cancelled
+       *  Fit Report holds no reservation and is never charged. */
+      v.literal("cancelled"),
     ),
     /** @absent notyet — not delivered. absent IS the outstanding state */
     deliveredAt: v.optional(v.number()),
+    /** @absent notyet — not cancelled */
+    cancelledAt: v.optional(v.number()),
+    /** Set only by `workspace.selectFitReport` on a `fit_report`. While set,
+     *  undelivered, uncancelled and uncharged, it holds 20 tokens. § 7a.
+     *  @absent notyet — never explicitly selected; a report started before
+     *  reservations existed stays unreserved until reconciled and selected */
+    reservedAt: v.optional(v.number()),
+    /** Complimentary work of the ฿1,500 pack, `01_Project_Foundation.md`.
+     *  @absent none — paid or ordinary work */
+    entitlement: v.optional(v.union(v.literal("pack_preview"), v.literal("pack_cv_rewrite"))),
+    /** On a `pack_cv_rewrite`: the Fit Report selection that earned it.
+     *  @absent none — not a CV rewrite, or earned some other recorded way */
+    forFitReport: v.optional(v.id("deliverables")),
+    /** On a `pack_cv_rewrite` kept through its Fit Report's cancellation: the
+     *  existing promise that keeps it. @absent none — no promise recorded */
+    promiseNote: v.optional(v.string()),
+    /** Factual errors the candidate reported in a complimentary document. An
+     *  unresolved one holds the coaching open. @absent none — none reported */
+    errorReports: v.optional(
+      v.array(
+        v.object({
+          reportedAt: v.number(),
+          summary: v.string(),
+          /** @absent notyet — still open */
+          resolvedAt: v.optional(v.number()),
+        }),
+      ),
+    ),
     /** @absent none — this work produced no coach observation worth recording */
     producedAssessment: v.optional(v.id("assessments")),
 

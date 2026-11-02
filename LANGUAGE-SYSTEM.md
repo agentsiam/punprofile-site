@@ -28857,6 +28857,50 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TOKENS_RESERVED`
+
+```yaml
+id: src/lib/content/portal.ts::TOKENS_RESERVED
+source: src/lib/content/portal.ts
+path: TOKENS_RESERVED
+render: Candidate page /me, TOKENS_RESERVED
+narrative_slot: utility
+en: "{n} reserved for your Fit Report"
+th: "กันไว้สำหรับ Fit Report {n} โทเคน"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown under the balance while a Fit Report is selected. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict."
+review:
+  structural_calque: pending
+  text_hash: a837cebaf23a3a61f4549dad7947c23152a7ddb148168e3e5fcbede99806116e
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::TOKENS_SPENDABLE`
+
+```yaml
+id: src/lib/content/portal.ts::TOKENS_SPENDABLE
+source: src/lib/content/portal.ts
+path: TOKENS_SPENDABLE
+render: Candidate page /me, TOKENS_SPENDABLE
+narrative_slot: utility
+en: "{n} available for matched jobs"
+th: "ใช้รับตำแหน่งงานที่คัดให้ได้ {n} โทเคน"
+provenance: draft
+date: 02/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown with TOKENS_RESERVED: what matched jobs can still use. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict."
+review:
+  structural_calque: pending
+  text_hash: 6f2c31f4c86b7e581de1e00051add1922a698fa1a90a747279bdb456d674ccbd
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::TOKENS_RULE`
 
 ```yaml

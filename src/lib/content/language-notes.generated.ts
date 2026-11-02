@@ -10890,6 +10890,24 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "01/11/2026",
     "decisionNote": "Rewritten 01/11/2026 to the dashboard voice (written register, no ครับ, PunProfile in the third person). Final review 01/11/2026 under Paul's delegation, accepted as drafted."
   },
+  "src/lib/content/portal.ts::TOKENS_RESERVED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_RESERVED",
+    "render": "Candidate page /me, TOKENS_RESERVED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown under the balance while a Fit Report is selected. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict."
+  },
+  "src/lib/content/portal.ts::TOKENS_SPENDABLE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "TOKENS_SPENDABLE",
+    "render": "Candidate page /me, TOKENS_SPENDABLE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "02/11/2026",
+    "decisionNote": "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown with TOKENS_RESERVED: what matched jobs can still use. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict."
+  },
   "src/lib/content/portal.ts::TOKENS_RULE": {
     "source": "src/lib/content/portal.ts",
     "path": "TOKENS_RULE",

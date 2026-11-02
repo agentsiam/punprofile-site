@@ -23,6 +23,7 @@ import { requireAdmin } from "./leads";
 import { isAdminEmail } from "./adminEmails";
 import { liveGrant, normaliseEmail } from "./candidateAccess";
 import { targetsFor } from "./targets";
+import { computeWallet, cvEarnedBySelectionNow } from "../src/lib/wallet";
 
 /** A target id passed in must belong to the same lead. */
 async function checkTarget(ctx: QueryCtx, targetId: Id<"targets"> | undefined | null, leadId: Id<"leads">) {
@@ -70,6 +71,19 @@ export async function tokenBalance(ctx: QueryCtx, leadId: Id<"leads">) {
   return { balance: bought - spent, bought, spent, rows };
 }
 
+/**
+ * The wallet with reservations and entitlements, `lifecycle-data-model.md`
+ * § 7a. The CRM and the candidate's page both read this, never their own sum.
+ */
+export async function walletFor(ctx: QueryCtx, leadId: Id<"leads">) {
+  const [ledger, deliverables, engagements] = await Promise.all([
+    ctx.db.query("tokenLedger").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+    ctx.db.query("deliverables").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+    ctx.db.query("engagements").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+  ]);
+  return { wallet: computeWallet(ledger, deliverables, engagements, Date.now()), ledger, deliverables, engagements };
+}
+
 const ledgerReason = v.union(
   v.literal("purchase"),
   v.literal("fit_report"),
@@ -113,10 +127,25 @@ export const recordTokens = mutation({
 
     // A wallet cannot go below zero. Tokens are prepaid, so a negative balance
     // would be work delivered on credit, which nothing in `pricing.ts` sells.
+    // Reserved tokens are not spendable here, § 7a. A Fit Report is charged
+    // through `deliverFitReport`, or here only for a delivered report that was
+    // never charged, and never twice.
     if (sign < 0) {
-      const { balance } = await tokenBalance(ctx, args.leadId);
-      if (balance < args.amount) {
-        throw new ConvexError(`Only ${balance} tokens left; this needs ${args.amount}.`);
+      const { wallet, ledger } = await walletFor(ctx, args.leadId);
+      if (args.reason === "fit_report") {
+        if (!args.deliverableId) throw new ConvexError("A Fit Report charge names the report it pays for.");
+        const d = await ctx.db.get(args.deliverableId);
+        if (!d || d.kind !== "fit_report" || d.status !== "delivered") {
+          throw new ConvexError("Charge a Fit Report with Deliver; this is only for a delivered report never charged.");
+        }
+        if (ledger.some((r) => r.deliverableId === args.deliverableId && r.delta < 0)) {
+          throw new ConvexError("This Fit Report has already been charged.");
+        }
+      }
+      if (wallet.spendable < args.amount) {
+        throw new ConvexError(
+          `Only ${wallet.spendable} tokens spendable (${wallet.reserved} reserved for the Fit Report); this needs ${args.amount}.`,
+        );
       }
     }
 
@@ -438,8 +467,14 @@ export const sendMatchedRole = mutation({
     }
 
     await checkTarget(ctx, args.targetId, args.leadId);
-    const { balance } = await tokenBalance(ctx, args.leadId);
-    if (balance < 1) throw new ConvexError("No tokens left. Record a purchase first.");
+    const { wallet } = await walletFor(ctx, args.leadId);
+    if (wallet.spendable < 1) {
+      throw new ConvexError(
+        wallet.reserved
+          ? `No spendable tokens: ${wallet.reserved} are reserved for the Fit Report.`
+          : "No tokens left. Record a purchase first.",
+      );
+    }
 
     const now = Date.now();
     const applicationId = await ctx.db.insert("applications", {
@@ -638,6 +673,7 @@ export const forLead = query({
   handler: async (ctx, args) => {
     await requireAdmin(ctx);
     const { balance, bought, spent, rows: ledger } = await tokenBalance(ctx, args.leadId);
+    const { wallet } = await walletFor(ctx, args.leadId);
 
     const cvRows = await ctx.db
       .query("cvDocuments")
@@ -701,6 +737,7 @@ export const forLead = query({
         spent,
         ledger: ledger.sort((a, b) => b.at - a.at),
       },
+      wallet,
       cvs,
       notes,
       applications,
@@ -1067,7 +1104,12 @@ export const deliverFitReport = mutation({
       .query("deliverables")
       .withIndex("by_lead", (q) => q.eq("leadId", args.leadId))
       .collect();
-    const fit = deliverables.find((d) => d.kind === "fit_report" && d.status !== "delivered");
+    // The selected report first; an unselected unfinished one still delivers,
+    // paid from spendable tokens, because it holds no reservation.
+    const open = deliverables.filter(
+      (d) => d.kind === "fit_report" && d.status !== "delivered" && d.status !== "cancelled",
+    );
+    const fit = open.find((d) => d.reservedAt !== undefined) ?? open[0];
     const already = deliverables.find((d) => d.kind === "fit_report" && d.status === "delivered");
     const now = Date.now();
 
@@ -1079,9 +1121,15 @@ export const deliverFitReport = mutation({
           .collect()
       ).some((t) => t.deliverableId === fit._id && t.delta < 0);
       if (!charged) {
-        const { balance } = await tokenBalance(ctx, args.leadId);
-        if (balance < TOKEN_PRICE.fitReport) {
-          throw new ConvexError(`Only ${balance} tokens left; the Fit Report needs ${TOKEN_PRICE.fitReport}.`);
+        // A reserved report pays from its own reservation; an unreserved one
+        // from what is spendable, so it cannot take another report's tokens.
+        const { wallet } = await walletFor(ctx, args.leadId);
+        const reservedForThis = wallet.openReservationId === fit._id;
+        const available = reservedForThis ? wallet.spendable + TOKEN_PRICE.fitReport : wallet.spendable;
+        if (Math.min(available, wallet.balance) < TOKEN_PRICE.fitReport) {
+          throw new ConvexError(
+            `Only ${Math.min(available, wallet.balance)} tokens available for this report; it needs ${TOKEN_PRICE.fitReport}.`,
+          );
         }
         await ctx.db.insert("tokenLedger", {
           leadId: args.leadId,
@@ -1108,5 +1156,234 @@ export const deliverFitReport = mutation({
       at: now,
       by,
     });
+  },
+});
+
+/* ------------------------------------------- reservations and entitlements */
+
+const SOLD_STATUSES = new Set(["agreed", "active", "completed"]);
+
+/**
+ * Select the Fit Report: reserve its 20 tokens, `01_Project_Foundation.md`,
+ * Fit Report and the token wallet. The only way a reservation is made.
+ *
+ * With `deliverableId`, marks an existing unfinished report once Paul has
+ * reconciled it. Without, creates the report on the lead's recorded token
+ * pack sale. Refuses below 20 spendable, stating what is missing, and refuses
+ * while another selection is open. If the lead holds a recorded ฿1,500 pack
+ * and the complimentary coaching has not closed, the CV rewrite is created in
+ * the same transaction, so its eligibility is fixed at selection.
+ */
+export const selectFitReport = mutation({
+  args: { leadId: v.id("leads"), deliverableId: v.optional(v.id("deliverables")) },
+  handler: async (ctx, args) => {
+    const by = await requireAdmin(ctx);
+    const lead = await ctx.db.get(args.leadId);
+    if (!lead) throw new ConvexError("Lead not found.");
+    const { wallet, ledger, engagements } = await walletFor(ctx, args.leadId);
+    if (wallet.openReservationId) throw new ConvexError("A Fit Report is already selected for this candidate.");
+    if (wallet.spendable < TOKEN_PRICE.fitReport) {
+      throw new ConvexError(
+        `Needs ${wallet.selectionShortfall} more spendable tokens to select the Fit Report (${wallet.spendable} of ${TOKEN_PRICE.fitReport}).`,
+      );
+    }
+    const now = Date.now();
+    let fitId: Id<"deliverables">;
+    let engagementId: Id<"engagements">;
+    if (args.deliverableId) {
+      const d = await ctx.db.get(args.deliverableId);
+      if (!d || d.leadId !== args.leadId || d.kind !== "fit_report") {
+        throw new ConvexError("That is not a Fit Report on this record.");
+      }
+      if (d.status === "delivered" || d.status === "cancelled") throw new ConvexError("That report is already closed.");
+      if (ledger.some((r) => r.deliverableId === d._id && r.delta < 0)) {
+        throw new ConvexError("That report has already been charged.");
+      }
+      await ctx.db.patch(d._id, { reservedAt: now, updatedAt: now });
+      fitId = d._id;
+      engagementId = d.engagementId;
+    } else {
+      if (wallet.unfinishedUnselectedIds.length) {
+        throw new ConvexError("An unfinished Fit Report is already on this record. Select or cancel that one first.");
+      }
+      const pack = engagements
+        .filter((e) => e.module === "token_pack" && SOLD_STATUSES.has(e.status))
+        .sort((a, b) => (b.agreedAt ?? b.createdAt) - (a.agreedAt ?? a.createdAt))[0];
+      if (!pack) throw new ConvexError("No token pack sale is recorded. Record the sale first.");
+      engagementId = pack._id;
+      fitId = await ctx.db.insert("deliverables", {
+        engagementId,
+        leadId: args.leadId,
+        kind: "fit_report",
+        // The assessment answers which roles fit, which is the Direction stage.
+        methodStage: "direction",
+        status: "not_started",
+        reservedAt: now,
+        by,
+        createdAt: now,
+        updatedAt: now,
+      });
+    }
+
+    let cv = false;
+    if (cvEarnedBySelectionNow(wallet) && wallet.entitlements.pack) {
+      await ctx.db.insert("deliverables", {
+        engagementId: wallet.entitlements.pack.engagementId as Id<"engagements">,
+        leadId: args.leadId,
+        kind: "base_cv",
+        methodStage: "legibility",
+        status: "not_started",
+        entitlement: "pack_cv_rewrite",
+        forFitReport: fitId,
+        by,
+        createdAt: now,
+        updatedAt: now,
+      });
+      cv = true;
+    }
+    await ctx.db.insert("deliveryNotes", {
+      leadId: args.leadId,
+      body: `Fit Report selected, ${TOKEN_PRICE.fitReport} tokens reserved.${cv ? " Master CV rewrite now owed." : ""}`,
+      shared: false,
+      deliverableId: fitId,
+      at: now,
+      by,
+    });
+    return fitId;
+  },
+});
+
+/**
+ * Cancel an undelivered Fit Report. Releases its reservation with no charge
+ * and cancels the undelivered CV rewrite it earned, unless `promiseNote` names
+ * an existing promise that keeps it. A delivered report is a refund, not this.
+ */
+export const cancelFitReport = mutation({
+  args: { deliverableId: v.id("deliverables"), note: v.string(), promiseNote: v.optional(v.string()) },
+  handler: async (ctx, args) => {
+    const by = await requireAdmin(ctx);
+    const d = await ctx.db.get(args.deliverableId);
+    if (!d || d.kind !== "fit_report") throw new ConvexError("That is not a Fit Report.");
+    if (d.status === "delivered") throw new ConvexError("Already delivered. A delivered report is refunded, not cancelled.");
+    if (d.status === "cancelled") return;
+    if (!args.note.trim()) throw new ConvexError("Say why it is cancelled.");
+    const { ledger } = await walletFor(ctx, d.leadId);
+    if (ledger.some((r) => r.deliverableId === d._id && r.delta < 0)) {
+      throw new ConvexError("This report has been charged. Refund it instead.");
+    }
+    const now = Date.now();
+    await ctx.db.patch(d._id, { status: "cancelled", cancelledAt: now, updatedAt: now });
+    const dependents = (
+      await ctx.db
+        .query("deliverables")
+        .withIndex("by_lead", (q) => q.eq("leadId", d.leadId))
+        .collect()
+    ).filter((c) => c.forFitReport === d._id && c.status !== "delivered" && c.status !== "cancelled");
+    const promise = args.promiseNote?.trim();
+    for (const c of dependents) {
+      if (promise) await ctx.db.patch(c._id, { promiseNote: promise, updatedAt: now });
+      else await ctx.db.patch(c._id, { status: "cancelled", cancelledAt: now, updatedAt: now });
+    }
+    await ctx.db.insert("deliveryNotes", {
+      leadId: d.leadId,
+      body:
+        `Fit Report cancelled, reservation released, no charge. ${args.note.trim()}` +
+        (dependents.length ? (promise ? ` CV rewrite kept: ${promise}` : " Its CV rewrite is cancelled.") : ""),
+      shared: false,
+      deliverableId: d._id,
+      at: now,
+      by,
+    });
+  },
+});
+
+/** Add the ฿1,500 pack's complimentary preview. Once per customer. */
+export const addPackPreview = mutation({
+  args: { leadId: v.id("leads"), dueAt: v.optional(v.number()), bookingUrl: v.optional(v.string()) },
+  handler: async (ctx, args) => {
+    const by = await requireAdmin(ctx);
+    const { wallet, deliverables } = await walletFor(ctx, args.leadId);
+    const pack = wallet.entitlements.pack;
+    if (!pack) throw new ConvexError("No ฿1,500 pack sale is recorded, so no preview is owed.");
+    if (deliverables.some((d) => d.entitlement === "pack_preview" && d.status !== "cancelled")) {
+      throw new ConvexError("The preview is once per customer and is already on this record.");
+    }
+    const now = Date.now();
+    return await ctx.db.insert("deliverables", {
+      engagementId: pack.engagementId as Id<"engagements">,
+      leadId: args.leadId,
+      kind: "coaching_session",
+      methodStage: "direction",
+      status: "not_started",
+      entitlement: "pack_preview",
+      ...(args.dueAt ? { dueAt: args.dueAt } : {}),
+      ...(args.bookingUrl?.trim() ? { bookingUrl: args.bookingUrl.trim() } : {}),
+      by,
+      createdAt: now,
+      updatedAt: now,
+    });
+  },
+});
+
+/** A factual error the candidate reported in a complimentary document. */
+export const reportDocumentError = mutation({
+  args: { deliverableId: v.id("deliverables"), summary: v.string() },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const d = await ctx.db.get(args.deliverableId);
+    if (!d || !d.entitlement) throw new ConvexError("Only a complimentary pack document takes error reports.");
+    if (!args.summary.trim()) throw new ConvexError("Say what the error is.");
+    const now = Date.now();
+    await ctx.db.patch(d._id, {
+      errorReports: [...(d.errorReports ?? []), { reportedAt: now, summary: args.summary.trim() }],
+      updatedAt: now,
+    });
+  },
+});
+
+export const resolveDocumentError = mutation({
+  args: { deliverableId: v.id("deliverables"), index: v.number() },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const d = await ctx.db.get(args.deliverableId);
+    const list = d?.errorReports ?? [];
+    if (!d || !list[args.index]) throw new ConvexError("No such error report.");
+    const now = Date.now();
+    await ctx.db.patch(d._id, {
+      errorReports: list.map((e, i) => (i === args.index && e.resolvedAt === undefined ? { ...e, resolvedAt: now } : e)),
+      updatedAt: now,
+    });
+  },
+});
+
+/**
+ * Every lead with a token ledger, with its wallet and what needs Paul's eye.
+ * Read-only: reconciliation decides nothing and writes nothing, § 7a.
+ */
+export const reconcile = query({
+  args: {},
+  handler: async (ctx) => {
+    await requireAdmin(ctx);
+    const ids = new Set<Id<"leads">>();
+    for (const r of await ctx.db.query("tokenLedger").collect()) ids.add(r.leadId);
+    const out = [];
+    for (const leadId of ids) {
+      const lead = await ctx.db.get(leadId);
+      const { wallet } = await walletFor(ctx, leadId);
+      out.push({
+        leadId,
+        name: lead?.nickname ?? lead?.firstName ?? lead?.fullName ?? null,
+        balance: wallet.balance,
+        reserved: wallet.reserved,
+        spendable: wallet.spendable,
+        reservationShortfall: wallet.reservationShortfall,
+        pack: wallet.entitlements.pack !== null,
+        preview: wallet.entitlements.preview,
+        cvRewrite: wallet.entitlements.cvRewrite,
+        closure: wallet.entitlements.closure.state,
+        flags: wallet.flags,
+      });
+    }
+    return out.sort((a, b) => b.flags.length - a.flags.length);
   },
 });
