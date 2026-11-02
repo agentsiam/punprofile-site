@@ -373,18 +373,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
               </p>
             ) : (
               <p className="mt-1 text-body-medium text-on-surface-variant">
-                {ws.fitReport.rated
-                  ? `${ws.fitReport.rated} competencies rated. `
-                  : "Nothing rated yet; rate the interview first. "}
-                {ws.fitReport.rated > 0 && (
-                  <button
-                    type="button"
-                    className={LINK}
-                    onClick={() => void shareReport({ leadId, shared: true }).catch((e) => setError(errText(e)))}
-                  >
-                    Share it on their dashboard
-                  </button>
-                )}
+                Not shared yet. Rate and deliver it from the Fit Report tab, which also marks it delivered and deducts its tokens.
               </p>
             )}
           </div>

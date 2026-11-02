@@ -890,6 +890,8 @@ export const getForAdmin = query({
       firstName: lead.firstName ?? null,
       lastName: lead.lastName ?? null,
       fullName: lead.fullName ?? null,
+      nickname: lead.nickname ?? null,
+      fitReportSharedAt: lead.fitReportSharedAt ?? null,
       email: lead.email ?? null,
       phone: lead.phone ?? null,
       lineId: lead.lineId ?? null,
@@ -1275,6 +1277,8 @@ export const setCoachFields = mutation({
     coachRating: v.optional(v.union(v.number(), v.null())),
     /** True stamps now. False clears it back to never-received. */
     cvReceived: v.optional(v.boolean()),
+    /** What they are called. Null or blank clears it. */
+    nickname: v.optional(v.union(v.string(), v.null())),
   },
   handler: async (ctx, args) => {
     const adminEmail = await requireAdmin(ctx);
@@ -1322,6 +1326,10 @@ export const setCoachFields = mutation({
         patch.notesAt = now;
         patch.notesBy = adminEmail;
       }
+    }
+
+    if (args.nickname !== undefined) {
+      patch.nickname = args.nickname?.trim() || undefined;
     }
 
     if (args.cvReceived !== undefined) {

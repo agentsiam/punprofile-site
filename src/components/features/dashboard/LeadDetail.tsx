@@ -44,7 +44,7 @@ import CoachPanel from "./CoachPanel";
 import ConsentPanel from "./ConsentPanel";
 import DeliveryWorkspace from "./DeliveryWorkspace";
 import OutcomePanel from "./OutcomePanel";
-import RatingsPanel from "./RatingsPanel";
+import FitReportTab from "./FitReportTab";
 import { stateFor, meetsBookingGate, LIFECYCLE_LABELS } from "@/lib/lifecycle";
 import { CONSENT_CHANNELS, CONSENT_PURPOSES } from "@/lib/consent";
 
@@ -222,7 +222,7 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
           Back to all leads
         </Link>
         <div className="mt-2 flex flex-wrap items-center gap-3">
-          <h1 className="text-headline-small text-primary-active">{lead.fullName ?? "Anonymous lead"}</h1>
+          <NicknameTitle leadId={leadId} nickname={lead.nickname ?? undefined} fullName={lead.fullName ?? undefined} />
           <span
             className={`rounded-full px-3 py-0.5 text-label-large ${
               lifecycle === "withdrawn"
@@ -313,27 +313,6 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
         >
           {building === "full" ? "Building..." : "Full report PDF (coach)"}
         </button>
-        {(["th", "en"] as const).map((loc) => (
-          <button
-            key={loc}
-            type="button"
-            disabled={building !== null || !ratings?.length}
-            title={ratings?.length ? undefined : "Rate the interview below first"}
-            onClick={async () => {
-              setBuilding(`fit-${loc}`);
-              try {
-                if (!(await openFitReport({ ...lead, responses: corrected.effective }, ratings ?? [], loc))) {
-                  alert("The report opens in a new tab. Allow popups for this site and press the button again.");
-                }
-              } finally {
-                setBuilding(null);
-              }
-            }}
-            className="btn-outlined h-10 px-4 text-label-large hover:bg-surface-container"
-          >
-            {building === `fit-${loc}` ? "Building..." : `Fit Report PDF (${loc === "th" ? "Thai" : "English"})`}
-          </button>
-        ))}
 
       </div>
         {Object.keys(lead.responses).length === 0 && (
@@ -371,6 +350,20 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
         </div>
       )}
 
+      {current === "fit" && (
+        <FitReportTab
+          leadId={leadId}
+          sharedAt={lead.fitReportSharedAt ?? undefined}
+          onOpenPdf={async (loc) => {
+            // Drafts are not ratings: the report reads only settled rows.
+            const usable = (ratings ?? []).filter((r) => !r.open || r.open.length === 0);
+            if (!(await openFitReport({ ...lead, responses: corrected.effective }, usable, loc))) {
+              alert("The report opens in a new tab. Allow popups for this site and press the button again.");
+            }
+          }}
+        />
+      )}
+
       {current === "calls" && (
         <div className="grid gap-x-10 gap-y-8 large:grid-cols-2 large:items-start">
           <div className="space-y-8">
@@ -388,9 +381,6 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
             />
           </Section>
 
-          <Section title="Fit Report interview">
-            <RatingsPanel leadId={leadId} />
-          </Section>
 
           </div>
           <div className="space-y-8">
@@ -693,9 +683,10 @@ export default function LeadDetail({ leadId }: { leadId: Id<"leads"> }) {
   );
 }
 
-type LeadTab = "delivery" | "calls" | "assessment" | "contact" | "records";
+type LeadTab = "delivery" | "fit" | "calls" | "assessment" | "contact" | "records";
 const LEAD_TABS: [LeadTab, string][] = [
   ["delivery", "Delivery"],
+  ["fit", "Fit Report"],
   ["calls", "Calls and notes"],
   ["assessment", "Assessment"],
   ["contact", "Contact and consent"],
@@ -769,6 +760,64 @@ function Row({
           {contactable ? "" : value ? "Do not contact on this channel" : ""}
         </p>
       )}
+    </div>
+  );
+}
+
+/**
+ * What the candidate is called, in large type, with their full name under it.
+ * Click to set or change it: it is also how their dashboard greets them.
+ */
+function NicknameTitle({
+  leadId,
+  nickname,
+  fullName,
+}: {
+  leadId: Id<"leads">;
+  nickname?: string;
+  fullName?: string;
+}) {
+  const save = useMutation(api.leads.setCoachFields);
+  const [editing, setEditing] = useState(false);
+  const [value, setValue] = useState(nickname ?? "");
+  if (editing) {
+    return (
+      <form
+        className="flex items-center gap-2"
+        onSubmit={(e) => {
+          e.preventDefault();
+          void save({ leadId, nickname: value.trim() || null }).then(() => setEditing(false));
+        }}
+      >
+        <input
+          autoFocus
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="Nickname"
+          className="h-11 rounded-full bg-canvas px-4 text-title-large text-ink"
+        />
+        <button type="submit" className="rounded-full bg-primary-active px-4 py-2 text-label-large text-ink-deep">
+          Save
+        </button>
+        <button type="button" onClick={() => setEditing(false)} className="text-label-large text-primary-active underline">
+          Cancel
+        </button>
+      </form>
+    );
+  }
+  return (
+    <div>
+      <h1 className="text-headline-small text-primary-active">
+        {nickname ?? fullName ?? "Anonymous lead"}
+        <button
+          type="button"
+          onClick={() => setEditing(true)}
+          className="ml-3 align-middle text-label-large font-normal text-primary-active underline"
+        >
+          {nickname ? "Edit nickname" : "Add nickname"}
+        </button>
+      </h1>
+      {nickname && fullName && <p className="text-body-medium">{fullName}</p>}
     </div>
   );
 }

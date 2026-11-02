@@ -13,6 +13,8 @@
  * reads the signed-in candidate's own record and exposes a smaller view.
  */
 
+import { TOKEN_PRICE } from "../src/lib/tokenPrices";
+import { INTERVIEW_ITEMS } from "../src/lib/fitInterview";
 import { mutation, query, type MutationCtx, type QueryCtx } from "./_generated/server";
 import type { Id } from "./_generated/dataModel";
 import { internal } from "./_generated/api";
@@ -843,11 +845,13 @@ export const shareFitReport = mutation({
     const lead = await ctx.db.get(args.leadId);
     if (!lead) throw new ConvexError("Lead not found.");
     if (args.shared) {
-      const rated = await ctx.db
-        .query("competencyRatings")
-        .withIndex("by_lead_item", (q) => q.eq("leadId", args.leadId))
-        .first();
-      if (!rated) throw new ConvexError("Rate the interview first; the report has nothing coach-scored yet.");
+      const rated = (
+        await ctx.db
+          .query("competencyRatings")
+          .withIndex("by_lead_item", (q) => q.eq("leadId", args.leadId))
+          .collect()
+      ).some((r) => !r.open || r.open.length === 0);
+      if (!rated) throw new ConvexError("Rate the interview first; the report has nothing scored yet.");
     }
     await ctx.db.patch(args.leadId, { fitReportSharedAt: args.shared ? (lead.fitReportSharedAt ?? Date.now()) : undefined });
   },
@@ -1025,5 +1029,84 @@ export const exportForLead = query({
         lastSignInAt: g.lastSignInAt ?? null,
       })),
     };
+  },
+});
+
+/**
+ * Deliver the Fit Report in one step, 02/11/2026: put it on their dashboard,
+ * mark the Fit Report deliverable delivered, deduct its tokens against that
+ * deliverable, and leave a note on the record. One transaction, so a half
+ * delivery (shared but not charged, charged but not shared) cannot happen.
+ *
+ * Refuses while any interview competency is still unrated or a draft, because
+ * the report would go out with holes the coach meant to fill.
+ */
+export const deliverFitReport = mutation({
+  args: { leadId: v.id("leads") },
+  handler: async (ctx, args) => {
+    const by = await requireAdmin(ctx);
+    const lead = await ctx.db.get(args.leadId);
+    if (!lead) throw new ConvexError("Lead not found.");
+
+    const rows = await ctx.db
+      .query("competencyRatings")
+      .withIndex("by_lead_item", (q) => q.eq("leadId", args.leadId))
+      .collect();
+    const latest = new Map<string, (typeof rows)[number]>();
+    for (const r of rows) {
+      const seen = latest.get(r.itemKey);
+      if (!seen || r.ratedAt > seen.ratedAt) latest.set(r.itemKey, r);
+    }
+    const missing = INTERVIEW_ITEMS.filter((k) => {
+      const r = latest.get(k);
+      return !r || (r.open?.length ?? 0) > 0;
+    });
+    if (missing.length) throw new ConvexError(`Still to rate: ${missing.join(", ")}.`);
+
+    const deliverables = await ctx.db
+      .query("deliverables")
+      .withIndex("by_lead", (q) => q.eq("leadId", args.leadId))
+      .collect();
+    const fit = deliverables.find((d) => d.kind === "fit_report" && d.status !== "delivered");
+    const already = deliverables.find((d) => d.kind === "fit_report" && d.status === "delivered");
+    const now = Date.now();
+
+    if (fit) {
+      const charged = (
+        await ctx.db
+          .query("tokenLedger")
+          .withIndex("by_lead", (q) => q.eq("leadId", args.leadId))
+          .collect()
+      ).some((t) => t.deliverableId === fit._id && t.delta < 0);
+      if (!charged) {
+        const { balance } = await tokenBalance(ctx, args.leadId);
+        if (balance < TOKEN_PRICE.fitReport) {
+          throw new ConvexError(`Only ${balance} tokens left; the Fit Report needs ${TOKEN_PRICE.fitReport}.`);
+        }
+        await ctx.db.insert("tokenLedger", {
+          leadId: args.leadId,
+          delta: -TOKEN_PRICE.fitReport,
+          reason: "fit_report",
+          engagementId: fit.engagementId,
+          deliverableId: fit._id,
+          note: "Fit Report delivered",
+          at: now,
+          by,
+        });
+      }
+      await ctx.db.patch(fit._id, { status: "delivered", deliveredAt: now });
+    } else if (!already) {
+      throw new ConvexError("No Fit Report deliverable on this record. Add one in Delivery, kind Fit Report, first.");
+    }
+
+    await ctx.db.patch(args.leadId, { fitReportSharedAt: lead.fitReportSharedAt ?? now });
+    await ctx.db.insert("deliveryNotes", {
+      leadId: args.leadId,
+      body: "Fit Report delivered and shared on the dashboard.",
+      shared: false,
+      ...(fit ? { deliverableId: fit._id } : {}),
+      at: now,
+      by,
+    });
   },
 });

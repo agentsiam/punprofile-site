@@ -187,7 +187,8 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       ),
       titles,
       titleNames,
-      firstName: lead.firstName ?? null,
+      // The name the dashboard greets them by: nickname first, 02/11/2026.
+      firstName: lead.nickname ?? lead.firstName ?? null,
       tokens: { balance, bought, matchedSent, requestedAt: openTokenRequest?.at ?? null },
       goal: { perWeek: lead.weeklyApplicationGoal ?? null, appliedThisWeek },
       fitReportShared: lead.fitReportSharedAt !== undefined,
@@ -491,6 +492,8 @@ export const fitReport = query({
       const seen = latest.get(r.itemKey);
       if (!seen || r.ratedAt > seen.ratedAt) latest.set(r.itemKey, r);
     }
+    // A draft with indicators still open is not a rating yet.
+    for (const [k, r] of latest) if (r.open && r.open.length > 0) latest.delete(k);
     return {
       fullName: lead.fullName ?? null,
       createdAt: lead.createdAt,
