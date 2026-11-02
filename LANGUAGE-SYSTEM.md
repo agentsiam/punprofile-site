@@ -18729,15 +18729,15 @@ render: Privacy notice, PRIVACY_SECTIONS[5].body[7]
 narrative_slot: utility
 en: "- Google Meet, the video service for our calls. It receives your name, email address and the call itself while it runs."
 th: "- Google Meet เป็นบริการวิดีโอคอลที่ PunProfile ใช้สำหรับการพูดคุย โดย Google จะได้รับชื่อ ที่อยู่อีเมลของคุณ และข้อมูลการสนทนาระหว่างที่การพูดคุยดำเนินอยู่"
-provenance: draft
+provenance: paul-approved
 date: 02/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026. Paul chose to list Google Meet as a processor on 02/11/2026; Thai follows the pattern of his corrected Cal.com and Resend lines. Awaiting Paul's Thai verdict."
+decision_note: "Drafted by Claude 02/11/2026. Paul chose to list Google Meet as a processor on 02/11/2026; Thai follows the pattern of his corrected Cal.com and Resend lines. Paul approved the Thai unchanged 02/11/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: edb6742f09e021226534422e6edc3f67cbbdf1ddacca82083da49209e828ae69
   prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  basis: "Paul approved this item in review on 02/11/2026."
 ```
 
 <!-- COPY-ENTRY -->

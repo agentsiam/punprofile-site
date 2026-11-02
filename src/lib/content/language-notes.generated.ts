@@ -6998,9 +6998,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRIVACY_SECTIONS[5].body[7]",
     "render": "Privacy notice, PRIVACY_SECTIONS[5].body[7]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "02/11/2026",
-    "decisionNote": "Drafted by Claude 02/11/2026. Paul chose to list Google Meet as a processor on 02/11/2026; Thai follows the pattern of his corrected Cal.com and Resend lines. Awaiting Paul's Thai verdict."
+    "decisionNote": "Drafted by Claude 02/11/2026. Paul chose to list Google Meet as a processor on 02/11/2026; Thai follows the pattern of his corrected Cal.com and Resend lines. Paul approved the Thai unchanged 02/11/2026."
   },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].heading": {
     "source": "src/lib/content/privacy.ts",
