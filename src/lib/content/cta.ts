@@ -366,10 +366,10 @@ export const PAGE_ACTIONS: Record<string, PageActions> = {
       "It is not built. The secondary goes to the prices because this is the product the tokens exist for, and a reader here is usually asking what it costs.",
   },
   "/products/guided-job-hunt": {
-    primary: "contact",
-    secondary: "pricing",
+    primary: "pricing",
+    secondary: "contact",
     because:
-      "It is not built, and it is the surface matched roles land on, so the prices are the page that explains what fills it.",
+      "It opens with a candidate's first token pack, so the ask is the packs. The packs are bought by message, so the secondary is the conversation.",
   },
   /**
    * `/products` and `/services`, added 06/09/2026 with the two pages.

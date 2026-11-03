@@ -106,6 +106,8 @@ export const PUBLIC_ROUTES: readonly { path: string; priority: number }[] = [
   { path: "/products/eu-fit-check", priority: 0.7 },
   // Live from 26/10/2026: sold by message, with a 30-minute interview.
   { path: "/products/fit-report", priority: 0.7 },
+  // Live from 03/11/2026: opened with a candidate's first token pack.
+  { path: "/products/guided-job-hunt", priority: 0.7 },
   { path: "/method", priority: 0.7 },
   ...(POSTS.length > 0 ? [{ path: "/blog", priority: 0.7 }] : []),
   { path: "/faq", priority: 0.6 },

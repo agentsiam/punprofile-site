@@ -72,6 +72,7 @@ import {
   RELATED_HEADING,
   STATUS_LIVE,
   STATUS_SOON,
+  freeCostLabel,
   isFreeProduct,
   type Product,
 } from "@/lib/content/products";
@@ -122,7 +123,12 @@ export default function ProductPage({ product }: { product: Product }) {
   const summary = [
     { label: COL_WHO, value: product.audience },
     { label: COL_WHAT, value: product.howLede },
-    { label: COL_COST, value: isFreeProduct(product.slug) ? CATALOGUE_FREE : CATALOGUE_PAID },
+    {
+      label: COL_COST,
+      value: isFreeProduct(product.slug)
+        ? freeCostLabel(product.slug, CATALOGUE_FREE)
+        : CATALOGUE_PAID,
+    },
   ];
 
   return (

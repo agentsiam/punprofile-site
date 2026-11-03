@@ -92,6 +92,13 @@ export interface Product {
   faq: readonly ProductFaq[];
   /** Key into `PAGE_ACTIONS`. Every product page has its own entry. */
   actionsKey: string;
+  /**
+   * Replaces the bare "Free" wherever this product's cost is named, for a
+   * free product that only a buyer can open. Guided Job Hunt is free, but
+   * only from a candidate's first token pack, and "Free" alone would promise
+   * it to everyone.
+   */
+  costLabel?: Copy;
 }
 
 /**
@@ -555,18 +562,21 @@ export const PRODUCTS: readonly Product[] = [
       th: "ที่เดียวที่เก็บทุกตำแหน่งที่คุณสมัคร พร้อมสถานะของแต่ละตำแหน่ง",
     },
     name: { en: "Guided Job Hunt", th: "Guided Job Hunt" },
-    status: "soon",
+    // Live 03/11/2026: built as the Job Search Dashboard, opened by hand for
+    // every candidate who buys tokens for the first time.
+    status: "live",
     headline: {
       en: "You have applied to a lot of places, and you can no longer remember which one is where.",
       // Drafted 23/08/2026, read back and approved unchanged.
       th: "สมัครไปหลายที่ จนจำไม่ได้แล้วว่าที่ไหนไปถึงขั้นไหน",
     },
     lede: {
-      en: "One place holding every role you applied for, with where each one stands. Free.",
-      // Paul's wording, 23/08/2026. Free because it is the surface paid deliveries
-      // land on, decided 23/08/2026: charging for it would be charging twice for
-      // one workflow.
-      th: "รวมทุกตำแหน่งที่คุณสมัครไว้ในที่เดียว พร้อมสถานะล่าสุดของแต่ละที่ ใช้ฟรี",
+      en: "One place holding every role you applied for, with where each one stands. Free from your first token pack.",
+      // Paul's wording, 23/08/2026, with the closing word qualified 03/11/2026:
+      // free, but opened only for candidates who have bought tokens. Free
+      // because it is the surface paid deliveries land on: charging for it
+      // would be charging twice for one workflow.
+      th: "รวมทุกตำแหน่งที่คุณสมัครไว้ในที่เดียว พร้อมสถานะล่าสุดของแต่ละที่ ใช้ฟรีตั้งแต่ซื้อโทเคนครั้งแรก",
     },
     how: [
       {
@@ -595,13 +605,28 @@ export const PRODUCTS: readonly Product[] = [
       {
         q: { en: "Does it cost anything?", th: "มีค่าใช้จ่ายไหม" },
         a: {
-          en: "No charge. It is included with Matched Jobs, because it is where those roles arrive.",
-          // Paul's wording, 23/08/2026.
-          th: "ไม่มีค่าใช้จ่าย เพราะรวมอยู่ในบริการส่งตำแหน่งงานที่ตรงกับคุณแล้ว",
+          en: "No charge. It opens with your first token pack, because it is where the roles matched to you arrive.",
+          // Paul's wording, 23/08/2026, re-pointed 03/11/2026 from Matched Jobs
+          // to the first token pack, which is what now opens it.
+          th: "ไม่มีค่าใช้จ่าย เปิดให้ใช้ตั้งแต่ซื้อโทเคนครั้งแรก เพราะเป็นที่ที่ตำแหน่งงานที่ตรงกับคุณถูกส่งเข้ามา",
+        },
+      },
+      {
+        q: { en: "How do I start using it?", th: "เริ่มใช้งานได้อย่างไร" },
+        a: {
+          en: "Buy your first token pack. PunProfile then opens your Job Search Dashboard and emails you a sign-in code.",
+          // Drafted 03/11/2026. Written register, PunProfile in the third
+          // person, as the dashboard's own sign-in copy is.
+          th: "ซื้อแพ็กเกจโทเคนครั้งแรก จากนั้น PunProfile จะเปิดแดชบอร์ดหางานให้ และส่งรหัสเข้าสู่ระบบให้ทางอีเมล",
         },
       },
     ],
     actionsKey: "/products/guided-job-hunt",
+    costLabel: {
+      en: "Free from your first token pack",
+      // Drafted 03/11/2026.
+      th: "ฟรีตั้งแต่ซื้อโทเคนครั้งแรก",
+    },
   },
 ];
 
@@ -709,6 +734,14 @@ export const FREE_SLUGS: ReadonlySet<string> = new Set([
 ]);
 
 export const isFreeProduct = (slug: string): boolean => FREE_SLUGS.has(slug);
+
+/**
+ * The cost a product page, the catalogue and `/pricing` name for a free
+ * product: its own `costLabel` where it has one, otherwise `fallback`, the
+ * plain "Free" of whichever surface is asking.
+ */
+export const freeCostLabel = (slug: string, fallback: Copy): Copy =>
+  PRODUCTS.find((p) => p.slug === slug)?.costLabel ?? fallback;
 
 /* ==========================================================================
    THE CATALOGUE PAGE, /products

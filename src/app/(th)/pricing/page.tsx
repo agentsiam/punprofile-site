@@ -48,7 +48,7 @@ import {
   PRICING_HEADING,
   PRICING_INTRO,
 } from "@/lib/content/pricing";
-import { STATUS_SOON, isFreeProduct, productBySlug } from "@/lib/content/products";
+import { STATUS_SOON, freeCostLabel, isFreeProduct, productBySlug } from "@/lib/content/products";
 import type { Copy } from "@/lib/content/copy";
 import Band from "@/components/Band";
 import { HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
@@ -167,7 +167,7 @@ export default function PricingPage() {
               key={p.slug}
               label={p.status === "soon" ? `${pick(p.name)} · ${pick(STATUS_SOON)}` : pick(p.name)}
               detail={pick(p.howLede)}
-              value={pick(FREE_VALUE)}
+              value={pick(freeCostLabel(p.slug, FREE_VALUE))}
             />
           ))}
         </div>
