@@ -497,6 +497,9 @@ function AppointmentsCard({ data, readOnly }: { data: PortalView; readOnly: bool
   const loc = locale === "th" ? "th" : "en";
   const tz = data.timeZone;
   const prep = data.preparation;
+  // The preview's booking link, while no call serving it is scheduled.
+  const previewDeliverable = prep ? data.deliverables.find((d) => d._id === prep.deliverableId) : undefined;
+  const previewUrl = previewDeliverable ? bookingUrlFor(previewDeliverable, prep) : null;
   const [priorities, setPriorities] = useState<string[]>(() => pad(prep?.priorities ?? [], 3));
   const [titleChanges, setTitleChanges] = useState(prep?.titleChanges ?? "");
   const [urls, setUrls] = useState<string[]>(() => pad(prep?.vacancyUrls ?? [], 2));
@@ -558,7 +561,14 @@ function AppointmentsCard({ data, readOnly }: { data: PortalView; readOnly: bool
       </label>
 
       {data.appointments.length === 0 ? (
-        <p className="mt-3 text-body-medium text-on-surface-variant">{pick(C.APPT_NONE)}</p>
+        <>
+          <p className="mt-3 text-body-medium text-on-surface-variant">{pick(C.APPT_NONE)}</p>
+          {previewUrl && (
+            <div className="mt-3">
+              <BookButton href={previewUrl} readOnly={readOnly} />
+            </div>
+          )}
+        </>
       ) : (
         <ul className="mt-3 divide-y divide-line">
           {data.appointments.map((a) => (
@@ -2169,6 +2179,22 @@ function CvTab({ data }: { data: PortalView }) {
 
 /* ============================================================= coach tab */
 
+/** The booking button. The coach's read-only view shows it as the candidate
+ *  sees it, but not clickable, so the coach can check what she will see. */
+function BookButton({ href, readOnly }: { href: string; readOnly: boolean }) {
+  const { pick } = useFormat();
+  const cls = "h-10 shrink-0 btn-filled inline-flex items-center px-4 text-label-large";
+  return readOnly ? (
+    <span className={cls} aria-disabled="true">
+      {pick(C.BOOK_TIME)}
+    </span>
+  ) : (
+    <a href={href} target="_blank" rel="noreferrer" className={cls}>
+      {pick(C.BOOK_TIME)}
+    </a>
+  );
+}
+
 function Deliverables({ data, readOnly = false }: { data: PortalView; readOnly?: boolean }) {
   const { pick, t, date } = useFormat();
   if (data.deliverables.length === 0) return <p className="mt-3 text-body-medium text-on-surface-variant">{pick(C.WORK_EMPTY)}</p>;
@@ -2188,10 +2214,8 @@ function Deliverables({ data, readOnly = false }: { data: PortalView; readOnly?:
                   : ""}
             </p>
           </div>
-          {bookingUrlFor(d, data.preparation) && d.status !== "delivered" && !readOnly && (
-            <a href={bookingUrlFor(d, data.preparation)!} target="_blank" rel="noreferrer" className="h-10 shrink-0 btn-filled inline-flex items-center px-4 text-label-large">
-              {pick(C.BOOK_TIME)}
-            </a>
+          {bookingUrlFor(d, data.preparation) && d.status !== "delivered" && (
+            <BookButton href={bookingUrlFor(d, data.preparation)!} readOnly={readOnly} />
           )}
         </li>
       ))}
