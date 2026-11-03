@@ -177,7 +177,12 @@ export default function PricingPage() {
       <Band block="B6" ground="canvas" width="wide">
         <h2 className={SECTION_HEADING(locale)}>{pick(TOKEN_HEADING)}</h2>
         <p className="mt-3 max-w-2xl text-body-large text-on-surface-variant">{pick(TOKEN_BODY)}</p>
-        <div className="card-outlined mt-5 px-6 py-2">
+        {/* The rows beside the Fit Report call, after Preply. The call is the
+            only priced thing on the page with people in it, so the page shows
+            them. Square art since 03/11/2026, when it was regenerated with the
+            real eight-axis Fit Report chart on the desk. */}
+        <div className="mt-5 grid items-start gap-6 large:grid-cols-[1.5fr_1fr]">
+        <div className="card-outlined px-6 py-2">
           {TOKEN_ROWS.map((row, i) => (
             <SpecRow
               key={i}
@@ -189,16 +194,13 @@ export default function PricingPage() {
           ))}
         </div>
 
-        {/* The Fit Report row is the only one with people in it, so the page
-            shows them: coach and candidate on the call, after Preply. */}
-        <div className="mt-6 overflow-hidden rounded-3xl">
           <Image
             src="/pricing/pricing-fit-report-interview.jpg"
             alt=""
-            width={1600}
-            height={533}
-            sizes="(min-width: 1200px) 1100px, 100vw"
-            className="aspect-[2/1] h-auto w-full object-cover medium:aspect-[3/1]"
+            width={1024}
+            height={1024}
+            sizes="(min-width: 1200px) 420px, 100vw"
+            className="aspect-[4/3] h-auto w-full rounded-3xl object-cover large:aspect-square"
           />
         </div>
 
