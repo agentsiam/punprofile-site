@@ -46,13 +46,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
+import type { Copy } from "@/lib/content/copy";
 import Band from "@/components/Band";
 import CallToAction from "@/components/CallToAction";
 import Checklist from "@/components/blocks/Checklist";
 import ProductDiagram from "@/components/features/products/ProductDiagram";
 import { PRODUCT_PHOTO } from "@/components/features/products/productPhotos";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
-import { CATALOGUE_FREE, CATALOGUE_PAID } from "@/lib/content/home";
+import { CATALOGUE_FREE, CATALOGUE_PAID, RESULTS } from "@/lib/content/home";
+import CoachingCards from "@/components/features/services/CoachingCards";
 import { DESTINATIONS } from "@/lib/content/cta";
 import {
   CARD_ACTION,
@@ -80,12 +82,13 @@ import {
   type Product,
 } from "@/lib/content/products";
 
-const GRID = "large:grid-cols-[0.9fr_1fr_1.3fr_1.3fr_0.7fr]";
+
 
 export default function ProductIndex() {
   const { pick, locale, path } = useCopy();
 
   const free = PRODUCTS.filter((p) => isFreeProduct(p.slug));
+  const coachingQuote = RESULTS.find((r) => r.id === "coaching");
   const paid = PRODUCTS.filter((p) => !isFreeProduct(p.slug));
 
   /* A card, with the page's own figure at the top of it. The figure is the one
@@ -148,14 +151,6 @@ export default function ProductIndex() {
     );
   };
 
-  const cell = (label: string, value: string, strong = false) => (
-    <div>
-      <p className="text-caption-strong text-mute-strong large:hidden">{label}</p>
-      <p className={`mt-1 large:mt-0 ${strong ? "text-body-md-strong text-ink-deep" : "text-body-md text-body"}`}>
-        {value}
-      </p>
-    </div>
-  );
 
   return (
     <div className="w-full">
@@ -189,12 +184,54 @@ export default function ProductIndex() {
         </div>
       </Band>
 
+      {/* -------------------------------------------------------- coaching
+
+          03/11/2026, Paul: the page sold five tools and left the coaching to
+          a small outlined box above the footer, although its own heading
+          promises "one conversation". The conversation now has a band of its
+          own straight after the tools: the three services as the same clay
+          cards the home page uses, then a client in her own words, then the
+          way in. Every string was already written and reviewed. */}
+      <Band block="B2" ground="canvas" width="wide">
+        <div className="max-w-3xl">
+          <h2 className={SECTION_HEADING(locale)}>{pick(NOT_A_TOOL_HEADING)}</h2>
+          <p className="mt-4 text-body-large text-on-surface-variant">{pick(NOT_A_TOOL_BODY)}</p>
+        </div>
+        <CoachingCards />
+        {coachingQuote && (
+          <figure className="mt-12 grid items-center gap-6 rounded-3xl bg-canvas-dark px-8 py-9 ground-dark medium:grid-cols-[auto_1fr_auto] medium:px-10">
+            <Image
+              src="/home/testimonials/testimonial-photo-min.jpg"
+              // Decorative: the name sits beside it.
+              alt=""
+              width={96}
+              height={96}
+              className="size-20 rounded-full object-cover"
+            />
+            <div>
+              <blockquote className="text-body-large text-ink">&ldquo;{pick(coachingQuote.quote)}&rdquo;</blockquote>
+              <figcaption className="mt-3 text-body-sm text-mute-strong">
+                <span className="text-body-sm-strong text-ink">{pick(coachingQuote.who)}</span>
+                {" · "}
+                {pick(coachingQuote.role)}
+              </figcaption>
+            </div>
+            <Link
+              href={path(DESTINATIONS.coaching.href)}
+              className="inline-flex min-h-12 items-center justify-self-start rounded-full bg-primary px-6 text-body-sm-strong text-on-primary duration-[350ms] ease-nav transition-colors hover:bg-primary-active"
+            >
+              {pick(DESTINATIONS.coaching.label)}
+            </Link>
+          </figure>
+        )}
+      </Band>
+
       {/* ------------------------------------------------------------ path
 
           B2 carries mechanism and artefact. The order is `PRODUCTS`' own, which
           is the order the catalogue was built in and the order the funnel runs
           in, so nothing here decides an order that is not already decided. */}
-      <Band block="B2" ground="canvas" width="wide">
+      <Band block="B2" ground="soft" width="wide">
         <h2 className={SECTION_HEADING(locale)}>{pick(INDEX_PATH_HEADING)}</h2>
         <p className="mt-4 max-w-2xl text-body-large text-on-surface-variant">
           {pick(INDEX_PATH_LEDE)}
@@ -215,58 +252,134 @@ export default function ProductIndex() {
           rather than being a band of its own: a comparison that lists what five
           things do and never what they do not is the comparison every product
           page on this site was written to avoid. */}
-      <Band block="B6" ground="soft" width="wide">
+      <Band block="B6" ground="canvas" width="wide">
         <h2 className={SECTION_HEADING(locale)}>{pick(INDEX_TABLE_HEADING)}</h2>
 
-        <div className={`mt-10 hidden gap-6 border-b border-line-strong pb-3 large:grid ${GRID}`}>
-          {[COL_PRODUCT, COL_WHO, COL_WHAT, LIMIT_HEADING, COL_COST].map((c, i) => (
-            <p key={i} className="text-caption-strong text-mute-strong">
-              {pick(c)}
-            </p>
-          ))}
-        </div>
-
-        <div className="flex flex-col">
-          {PRODUCTS.map((p) => (
-            <div
-              key={p.slug}
-              className={`grid gap-4 border-b border-line py-7 large:items-start large:gap-6 ${GRID}`}
-            >
-              <div>
-                <Link
-                  href={path(`/products/${p.slug}`)}
-                  /* `inline-flex min-h-6` for the same reason as the footer
-                     links: an inline text link is 17px tall at this size and
-                     WCAG 2.2 sets the floor at 24. */
-                  className="inline-flex min-h-6 items-center text-body-md-strong text-ink-deep underline underline-offset-4"
-                >
-                  {pick(p.name)}
-                </Link>
-                {p.status === "soon" && (
-                  <p className="mt-1 text-caption-strong text-mute-strong">{pick(STATUS_SOON)}</p>
+        {/*
+          03/11/2026, Paul's pick (1a) from the layout research: Teal's pricing
+          table. White, products as columns, the questions as rows, and the
+          place to start, EU Fit Check, picked out with a dark green outline
+          rather than a colour. Each column opens with the product's clay photo
+          as a small circle. Below `large` it becomes one block per product,
+          the first one outlined the same way. Same strings as before.
+        */}
+        {(() => {
+          const rows: { label: Copy; value: (p: Product) => string; strong?: boolean }[] = [
+            { label: COL_WHO, value: (p) => pick(p.audience) },
+            { label: COL_WHAT, value: (p) => pick(p.howLede) },
+            { label: LIMIT_HEADING, value: (p) => pick(p.limit) },
+            {
+              label: COL_COST,
+              value: (p) =>
+                pick(isFreeProduct(p.slug) ? freeCostLabel(p.slug, CATALOGUE_FREE) : CATALOGUE_PAID),
+              strong: true,
+            },
+          ];
+          const head = (p: Product) => {
+            const photo = PRODUCT_PHOTO[p.slug];
+            return (
+              <div className="flex items-center gap-3 large:flex-col large:items-start">
+                {photo && (
+                  <span className="relative block size-14 shrink-0 overflow-hidden rounded-full bg-canvas-soft">
+                    <Image src={photo.src} alt="" fill sizes="56px" className="object-cover" />
+                  </span>
                 )}
+                <div>
+                  <Link
+                    href={path(`/products/${p.slug}`)}
+                    className="inline-flex min-h-6 items-center text-body-md-strong text-ink-deep underline underline-offset-4"
+                  >
+                    {pick(p.name)}
+                  </Link>
+                  {p.status === "soon" && (
+                    <p className="mt-1 text-caption-strong text-mute-strong">{pick(STATUS_SOON)}</p>
+                  )}
+                </div>
               </div>
-              {cell(pick(COL_WHO), pick(p.audience))}
-              {cell(pick(COL_WHAT), pick(p.howLede))}
-              {cell(pick(LIMIT_HEADING), pick(p.limit))}
-              {cell(pick(COL_COST), pick(isFreeProduct(p.slug) ? freeCostLabel(p.slug, CATALOGUE_FREE) : CATALOGUE_PAID), true)}
-            </div>
-          ))}
-        </div>
-      </Band>
+            );
+          };
+          const START = "eu-fit-check";
+          return (
+            <>
+              {/* Wide: one white card, products across. */}
+              <div className="card-plain relative mt-10 hidden border border-line p-2 large:block">
+                <div
+                  className="relative grid grid-cols-[150px_repeat(5,minmax(0,1fr))]"
+                  style={{ gridTemplateRows: `repeat(${rows.length + 1}, auto)` }}
+                >
+                  <div
+                    aria-hidden
+                    className="pointer-events-none rounded-2xl border-2 border-ink-deep"
+                    style={{
+                      gridColumn: `${PRODUCTS.findIndex((p) => p.slug === START) + 2}`,
+                      gridRow: `1 / ${rows.length + 2}`,
+                    }}
+                  />
+                  <p
+                    className="self-end px-4 pb-4 text-caption-strong text-mute-strong"
+                    style={{ gridColumn: 1, gridRow: 1 }}
+                  >
+                    {pick(COL_PRODUCT)}
+                  </p>
+                  {PRODUCTS.map((p, c) => (
+                    <div key={p.slug} className="px-4 pt-5 pb-4" style={{ gridColumn: c + 2, gridRow: 1 }}>
+                      {head(p)}
+                    </div>
+                  ))}
+                  {rows.map((r, ri) => (
+                    <div key={ri} className="contents">
+                      <p
+                        className="border-t border-line px-4 py-5 text-caption-strong text-mute-strong"
+                        style={{ gridColumn: 1, gridRow: ri + 2 }}
+                      >
+                        {pick(r.label)}
+                      </p>
+                      {PRODUCTS.map((p, c) => (
+                        <p
+                          key={p.slug}
+                          className={`border-t border-line px-4 py-5 ${
+                            r.strong ? "text-body-md-strong text-ink-deep" : "text-body-sm text-body"
+                          }`}
+                          style={{ gridColumn: c + 2, gridRow: ri + 2 }}
+                        >
+                          {r.value(p)}
+                        </p>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-      {/* --------------------------------------------------- the sixth thing */}
-      <Band block="B4" ground="canvas">
-        <div className="card-outlined px-8 py-9">
-          <h2 className="text-heading-sm">{pick(NOT_A_TOOL_HEADING)}</h2>
-          <p className="mt-3 text-body-large text-on-surface-variant">{pick(NOT_A_TOOL_BODY)}</p>
-          <Link
-            href={path(DESTINATIONS.coaching.href)}
-            className="mt-6 inline-flex min-h-12 items-center rounded-full border border-line-strong px-6 text-body-sm-strong text-ink-deep duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
-          >
-            {pick(DESTINATIONS.coaching.label)}
-          </Link>
-        </div>
+              {/* Narrow: one block per product, the place to start outlined. */}
+              <ul className="mt-8 flex flex-col gap-4 large:hidden">
+                {PRODUCTS.map((p) => (
+                  <li
+                    key={p.slug}
+                    className={`card-plain px-5 py-5 ${
+                      p.slug === START ? "border-2 border-ink-deep" : "border border-line"
+                    }`}
+                  >
+                    {head(p)}
+                    <dl className="mt-4 flex flex-col gap-3">
+                      {rows.map((r, ri) => (
+                        <div key={ri} className="border-t border-line pt-3">
+                          <dt className="text-caption-strong text-mute-strong">{pick(r.label)}</dt>
+                          <dd
+                            className={`mt-1 ${
+                              r.strong ? "text-body-md-strong text-ink-deep" : "text-body-md text-body"
+                            }`}
+                          >
+                            {r.value(p)}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </li>
+                ))}
+              </ul>
+            </>
+          );
+        })()}
       </Band>
 
       {/* ----------------------------------------------------------- close */}
