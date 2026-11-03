@@ -472,8 +472,8 @@ export interface PricingQuestion {
 export const PRICING_QUESTIONS: readonly PricingQuestion[] = [
   {
     q: {
-      en: "What does Career Coaching cost?",
-      th: "บริการ Career Coaching ราคาเท่าไร?",
+      en: "What does Coaching 1:1 cost?",
+      th: "Coaching 1:1 ราคาเท่าไร?",
     },
     a: [
       {

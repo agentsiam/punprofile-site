@@ -54,7 +54,7 @@ import ProductDiagram from "@/components/features/products/ProductDiagram";
 import { PRODUCT_PHOTO } from "@/components/features/products/productPhotos";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 import { CATALOGUE_FREE, CATALOGUE_PAID, RESULTS } from "@/lib/content/home";
-import CoachingCards from "@/components/features/services/CoachingCards";
+import { SERVICES } from "@/lib/content/services";
 import { DESTINATIONS } from "@/lib/content/cta";
 import {
   CARD_ACTION,
@@ -84,11 +84,32 @@ import {
 
 
 
+/** Which coaching service picks up where each tool stops. 03/11/2026. */
+const HANDOVER: Record<string, string> = {
+  "eu-fit-check": "coaching",
+  "cv-check": "profile",
+  "fit-report": "coaching",
+  "matched-jobs": "applications",
+  "job-search-dashboard": "applications",
+};
+
+/** The service cutouts the home page's coaching cards use. */
+const CUTOUT: Record<string, string> = {
+  coaching: "/home/service-direction.png",
+  profile: "/home/service-profile.png",
+  applications: "/home/service-applications.png",
+};
+
+/** Two placements, each crediting the coaching work: CV, interviews. */
+const PROOF = [
+  { id: "placed-hotel-germany", photo: "/home/testimonials/testimonial-photo-may.jpg" },
+  { id: "placed-chef-netherlands", photo: "/home/testimonials/testimonial-photo-ton.jpg" },
+];
+
 export default function ProductIndex() {
   const { pick, locale, path } = useCopy();
 
   const free = PRODUCTS.filter((p) => isFreeProduct(p.slug));
-  const coachingQuote = RESULTS.find((r) => r.id === "coaching");
   const paid = PRODUCTS.filter((p) => !isFreeProduct(p.slug));
 
   /* A card, with the page's own figure at the top of it. The figure is the one
@@ -184,54 +205,12 @@ export default function ProductIndex() {
         </div>
       </Band>
 
-      {/* -------------------------------------------------------- coaching
-
-          03/11/2026, Paul: the page sold five tools and left the coaching to
-          a small outlined box above the footer, although its own heading
-          promises "one conversation". The conversation now has a band of its
-          own straight after the tools: the three services as the same clay
-          cards the home page uses, then a client in her own words, then the
-          way in. Every string was already written and reviewed. */}
-      <Band block="B2" ground="canvas" width="wide">
-        <div className="max-w-3xl">
-          <h2 className={SECTION_HEADING(locale)}>{pick(NOT_A_TOOL_HEADING)}</h2>
-          <p className="mt-4 text-body-large text-on-surface-variant">{pick(NOT_A_TOOL_BODY)}</p>
-        </div>
-        <CoachingCards />
-        {coachingQuote && (
-          <figure className="mt-12 grid items-center gap-6 rounded-3xl bg-canvas-dark px-8 py-9 ground-dark medium:grid-cols-[auto_1fr_auto] medium:px-10">
-            <Image
-              src="/home/testimonials/testimonial-photo-min.jpg"
-              // Decorative: the name sits beside it.
-              alt=""
-              width={96}
-              height={96}
-              className="size-20 rounded-full object-cover"
-            />
-            <div>
-              <blockquote className="text-body-large text-ink">&ldquo;{pick(coachingQuote.quote)}&rdquo;</blockquote>
-              <figcaption className="mt-3 text-body-sm text-mute-strong">
-                <span className="text-body-sm-strong text-ink">{pick(coachingQuote.who)}</span>
-                {" · "}
-                {pick(coachingQuote.role)}
-              </figcaption>
-            </div>
-            <Link
-              href={path(DESTINATIONS.coaching.href)}
-              className="inline-flex min-h-12 items-center justify-self-start rounded-full bg-primary px-6 text-body-sm-strong text-on-primary duration-[350ms] ease-nav transition-colors hover:bg-primary-active"
-            >
-              {pick(DESTINATIONS.coaching.label)}
-            </Link>
-          </figure>
-        )}
-      </Band>
-
       {/* ------------------------------------------------------------ path
 
           B2 carries mechanism and artefact. The order is `PRODUCTS`' own, which
           is the order the catalogue was built in and the order the funnel runs
           in, so nothing here decides an order that is not already decided. */}
-      <Band block="B2" ground="soft" width="wide">
+      <Band block="B2" ground="canvas" width="wide">
         <h2 className={SECTION_HEADING(locale)}>{pick(INDEX_PATH_HEADING)}</h2>
         <p className="mt-4 max-w-2xl text-body-large text-on-surface-variant">
           {pick(INDEX_PATH_LEDE)}
@@ -252,7 +231,7 @@ export default function ProductIndex() {
           rather than being a band of its own: a comparison that lists what five
           things do and never what they do not is the comparison every product
           page on this site was written to avoid. */}
-      <Band block="B6" ground="canvas" width="wide">
+      <Band block="B6" ground="soft" width="wide">
         <h2 className={SECTION_HEADING(locale)}>{pick(INDEX_TABLE_HEADING)}</h2>
 
         {/*
@@ -382,11 +361,97 @@ export default function ProductIndex() {
         })()}
       </Band>
 
+      {/* ------------------------------------------- where the tools stop
+
+          03/11/2026, Paul's pick (4a) in the copy review. Every tool's
+          "worth knowing" line already says where it stops, and each of those
+          is where a coaching service begins, so this band finishes the
+          sentence the table leaves open: the limit on the left, the service
+          that picks it up on the right. Then two clients whose placements
+          came from that work. Only the heading and the lead are new copy. */}
+      <Band block="B2" ground="canvas" width="wide">
+        <div className="max-w-3xl">
+          <h2 className={SECTION_HEADING(locale)}>{pick(NOT_A_TOOL_HEADING)}</h2>
+          <p className="mt-4 text-body-large text-on-surface-variant">{pick(NOT_A_TOOL_BODY)}</p>
+        </div>
+
+        <ul className="card-plain mt-10 border border-line">
+          {PRODUCTS.map((p) => {
+            const service = SERVICES.find((s) => s.id === HANDOVER[p.slug]);
+            if (!service) return null;
+            return (
+              <li
+                key={p.slug}
+                className="grid gap-4 border-b border-line px-6 py-6 last:border-b-0 large:grid-cols-[1fr_auto_0.8fr] large:items-center large:gap-8"
+              >
+                <div>
+                  <p className="text-caption-strong text-mute-strong">{pick(p.name)}</p>
+                  <p className="mt-1 text-body-md text-body">{pick(p.limit)}</p>
+                </div>
+                <span aria-hidden className="hidden text-heading-sm text-mute-strong large:block">
+                  &rarr;
+                </span>
+                <Link
+                  href={`${path("/coaching")}#${service.id}`}
+                  className="group flex items-center gap-4"
+                >
+                  <span className="relative block size-16 shrink-0 overflow-hidden rounded-full bg-canvas-soft">
+                    <Image
+                      src={CUTOUT[service.id]}
+                      alt=""
+                      fill
+                      sizes="64px"
+                      className="object-contain object-bottom pt-1"
+                    />
+                  </span>
+                  <span className="text-body-md-strong text-ink-deep underline underline-offset-4">
+                    {pick(service.name)}
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div className="mt-8 grid gap-6 large:grid-cols-2">
+          {PROOF.map(({ id, photo }) => {
+            const r = RESULTS.find((x) => x.id === id);
+            if (!r) return null;
+            return (
+              <figure key={id} className="card-plain flex gap-5 border border-line px-6 py-6">
+                <Image
+                  src={photo}
+                  alt=""
+                  width={64}
+                  height={64}
+                  className="size-16 shrink-0 rounded-full object-cover"
+                />
+                <div>
+                  <blockquote className="text-body-md text-body">&ldquo;{pick(r.quote)}&rdquo;</blockquote>
+                  <figcaption className="mt-3 text-body-sm text-mute-strong">
+                    <span className="text-body-sm-strong text-ink-deep">{pick(r.who)}</span>
+                    {" · "}
+                    {pick(r.role)}
+                  </figcaption>
+                </div>
+              </figure>
+            );
+          })}
+        </div>
+
+        <Link
+          href={path(DESTINATIONS.coaching.href)}
+          className="mt-8 inline-flex min-h-12 items-center rounded-full border border-line-strong px-6 text-body-sm-strong text-ink-deep duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
+        >
+          {pick(DESTINATIONS.coaching.label)}
+        </Link>
+      </Band>
+
       {/* ----------------------------------------------------------- close */}
       <Band block="B8" ground="dark" align="center" className="text-center">
         <h2 className={SECTION_HEADING(locale)}>{pick(CLOSE_HEADING)}</h2>
         <p className="mx-auto mt-4 max-w-xl text-body-large">{pick(CLOSE_BODY)}</p>
-        <CallToAction page="/products" align="center" show="primary" className="mt-8" />
+        <CallToAction page="product-close" align="center" show="primary" className="mt-8" />
       </Band>
     </div>
   );

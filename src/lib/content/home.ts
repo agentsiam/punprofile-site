@@ -526,10 +526,10 @@ export const SAMPLE_AXES: readonly SampleAxis[] = [
 ];
 
 export const SAMPLE_NOTE: Copy = {
-  en: "An example, not a real person. Your own numbers come from your own answers.",
+  en: "This chart is an example. Your own result comes from the answers you give.",
   // Read back 25/08/2026. Built on the shape of Paul's own calculator
   // disclaimer of 23/08/2026, which says the numbers come from what you typed.
-  th: "นี่เป็นเพียงตัวอย่าง ไม่ใช่ผลของคนจริง ตัวเลขของคุณจะมาจากคำตอบของคุณเอง",
+  th: "กราฟนี้เป็นตัวอย่าง ส่วนผลประเมินของคุณจะมาจากคำตอบที่คุณให้",
 };
 
 // --------------------------------------------------------------- who this is
