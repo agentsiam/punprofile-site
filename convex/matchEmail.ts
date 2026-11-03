@@ -6,8 +6,7 @@ import { C, DISPLAY, FONT, SITE, button, esc } from "./codeEmail";
  * One email lists every role sent since the last notice. Thai first, then
  * English, in the register of the sign-in code email: written, no ครับ,
  * PunProfile in the third person. The match reason is the coach's own text,
- * in the language it was written in. Draft Thai, for Paul to read before the
- * first send.
+ * in the language it was written in. Thai in Paul's wording, 03/11/2026.
  *
  * Layout from `codeEmail.ts`, so both emails look like one sender. The header
  * is the mascot handing over the roles that passed, from a pile that did not.
@@ -17,7 +16,7 @@ import { C, DISPLAY, FONT, SITE, button, esc } from "./codeEmail";
  *  mail client blocks images. Sampled from `public/email-matched-roles-header.jpg`. */
 const HEADER_GROUND = "#9dcddb";
 
-export const MATCH_EMAIL_SUBJECT = "ตำแหน่งงานใหม่ที่ PunProfile คัดให้คุณ | PunProfile";
+export const MATCH_EMAIL_SUBJECT = "ตำแหน่งงานใหม่ที่คัดให้คุณ | PunProfile";
 
 export type NoticeRole = {
   employer: string;
@@ -70,7 +69,7 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[]) {
 </style>
 </head>
 <body style="margin:0;padding:0;background:${C.soft};">
-<div style="display:none;max-height:0;overflow:hidden;opacity:0;">PunProfile คัดตำแหน่งงานให้คุณ ${n} ตำแหน่ง ดูได้ในแดชบอร์ดหางาน</div>
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">PunProfile คัดตำแหน่งงานให้คุณ ${n} ตำแหน่ง ดูได้ในหน้าติดตามการสมัครงาน</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${C.soft};">
 <tr><td align="center" style="padding:32px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
@@ -89,7 +88,7 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[]) {
     <tr><td class="px" style="background:${C.deep};padding:36px 40px 36px;">
       <p style="margin:0 0 14px;font-family:${FONT};font-size:15px;color:${C.onDeep};">${greetTh}</p>
       <h1 class="h1" style="margin:0;font-family:${DISPLAY};font-size:30px;font-weight:700;line-height:1.35;color:${C.lime};">ตำแหน่งงานใหม่ที่คัดให้คุณ ${n} ตำแหน่ง</h1>
-      <p style="margin:14px 0 0;font-family:${FONT};font-size:16px;line-height:1.7;color:${C.onDeep};">PunProfile ตรวจแล้วว่าแต่ละตำแหน่งยังเปิดรับ และตรงกับตำแหน่งที่คุณเล็งไว้ ทุกตำแหน่งอยู่ในแดชบอร์ดหางานแล้ว พร้อมเหตุผลที่เลือก</p>
+      <p style="margin:14px 0 0;font-family:${FONT};font-size:16px;line-height:1.7;color:${C.onDeep};">PunProfile ตรวจสอบแล้วว่าทุกตำแหน่งยังเปิดรับสมัครและตรงกับตำแหน่งเป้าหมายของคุณ ดูรายละเอียดและเหตุผลที่คัดแต่ละตำแหน่งได้ในหน้าติดตามการสมัครงาน</p>
     </td></tr>
 
     <tr><td style="height:28px;line-height:28px;font-size:0;">&nbsp;</td></tr>
@@ -98,7 +97,7 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[]) {
     <tr><td class="px" style="padding:12px 40px 8px;">${button(meUrl, "เปิดแดชบอร์ดหางาน")}</td></tr>
 
     <tr><td class="px" style="padding:16px 40px 32px;font-family:${FONT};font-size:14px;line-height:1.7;color:${C.body};">
-      แต่ละตำแหน่งใช้ 1 โทเคน หากต้องการปรับจำนวนตำแหน่งต่อสัปดาห์ หรือหยุดรับชั่วคราว ทำได้ในแดชบอร์ดหางาน
+      แต่ละตำแหน่งใช้ 1 โทเคน คุณสามารถปรับจำนวนตำแหน่งต่อสัปดาห์หรือหยุดรับชั่วคราวได้ในหน้าติดตามการสมัครงาน
     </td></tr>
 
     <tr><td class="px" style="padding:0 40px;"><div style="height:1px;background:${C.line};line-height:1px;font-size:0;">&nbsp;</div></td></tr>
@@ -113,7 +112,7 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[]) {
 
   <tr><td align="center" style="padding:24px 16px 8px;font-family:${FONT};font-size:12px;line-height:1.7;color:${C.mute};">
     PunProfile Career Coaching · <a href="${SITE}" style="color:${C.mute};">punprofile.app</a><br>
-    คุณได้รับอีเมลนี้เพราะ PunProfile ส่งตำแหน่งงานที่คัดให้คุณ หากมีคำถาม ตอบกลับอีเมลนี้ได้
+    PunProfile ส่งอีเมลนี้เพื่อแจ้งว่ามีตำแหน่งงานใหม่ที่คัดให้คุณ หากมีคำถาม สามารถตอบกลับอีเมลนี้ได้
   </td></tr>
 
 </table>
@@ -131,11 +130,13 @@ export function matchEmailText(firstName: string | null, roles: NoticeRole[]) {
   return [
     firstName ? `สวัสดีคุณ ${firstName}` : "สวัสดี",
     "",
-    `ตำแหน่งงานใหม่ที่คัดให้คุณ ${n} ตำแหน่ง ทุกตำแหน่งอยู่ในแดชบอร์ดหางานแล้ว: ${SITE}/me`,
+    `ตำแหน่งงานใหม่ที่คัดให้คุณ ${n} ตำแหน่ง`,
+    "",
+    `PunProfile ตรวจสอบแล้วว่าทุกตำแหน่งยังเปิดรับสมัครและตรงกับตำแหน่งเป้าหมายของคุณ ดูรายละเอียดและเหตุผลที่คัดแต่ละตำแหน่งได้ในหน้าติดตามการสมัครงาน: ${SITE}/me`,
     "",
     list,
     "",
-    "แต่ละตำแหน่งใช้ 1 โทเคน หากต้องการปรับจำนวนตำแหน่งต่อสัปดาห์ หรือหยุดรับชั่วคราว ทำได้ในแดชบอร์ดหางาน",
+    "แต่ละตำแหน่งใช้ 1 โทเคน คุณสามารถปรับจำนวนตำแหน่งต่อสัปดาห์หรือหยุดรับชั่วคราวได้ในหน้าติดตามการสมัครงาน",
     "",
     `${firstName ? `Hello ${firstName},` : "Hello,"} PunProfile has picked ${n === 1 ? "a new role" : `${n} new roles`} for you. They are on your Job Search Dashboard with the reason each was picked: ${SITE}/me`,
     "Each role uses one token. To change how many you get a week, or to pause, use your Job Search Dashboard.",

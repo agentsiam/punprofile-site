@@ -30125,16 +30125,16 @@ path: MATCH_HEADING
 render: Candidate page /me, MATCH_HEADING
 narrative_slot: utility
 en: "Jobs we pick for you each week"
-th: "ตำแหน่งงานที่เราคัดให้ในแต่ละสัปดาห์"
-provenance: draft
+th: "ตำแหน่งงานที่ PunProfile คัดให้รายสัปดาห์"
+provenance: paul-approved
 date: 03/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 89863dcad4ecb698a4a97203652a63bb366a430dccd496dc1dace86af1a5fbf2
+  structural_calque: pass
+  text_hash: 9d00c752a572c8c750de1ba6f15eb7ed3352aebf6f1efa723f81ee04d3f0f693
   prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  basis: "Paul approved this item in review on 03/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30147,16 +30147,16 @@ path: MATCH_BODY
 render: Candidate page /me, MATCH_BODY
 narrative_slot: utility
 en: "We send up to {n} a week that fit your target roles, and email you when they arrive. Each one uses one token, only once it is sent."
-th: "เราจะส่งตำแหน่งงานที่ตรงกับ target ของคุณให้ไม่เกินสัปดาห์ละ {n} ตำแหน่ง และแจ้งทางอีเมลเมื่อส่งให้แล้ว แต่ละตำแหน่งใช้ 1 โทเคน หักเมื่อส่งถึงคุณแล้วเท่านั้น"
-provenance: draft
+th: "PunProfile จะส่งตำแหน่งงานที่ตรงกับตำแหน่งเป้าหมายของคุณไม่เกินสัปดาห์ละ {n} ตำแหน่ง และแจ้งทางอีเมลเมื่อส่งแล้ว ระบบจะหัก 1 โทเคนต่อตำแหน่งหลังจากส่งถึงคุณเท่านั้น"
+provenance: paul-approved
 date: 03/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 924c17b69b88612a5171e8b1a91da17a66b70c7563983d46e2a19dcbd5371f62
+  structural_calque: pass
+  text_hash: ea00cdb5f043f2e9f44f91641b2ef85c6ed4e2e3b8b67a9d9985b3b360190a82
   prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  basis: "Paul approved this item in review on 03/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30170,15 +30170,15 @@ render: Candidate page /me, MATCH_THIS_WEEK
 narrative_slot: utility
 en: "This week: {n} sent"
 th: "สัปดาห์นี้ส่งให้แล้ว {n} ตำแหน่ง"
-provenance: draft
+provenance: paul-approved
 date: 03/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul approved the Thai unchanged in review 03/11/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 8335179e377aed681c78ddb1af3c46587d29496c1c8912e12e81c7e49ec6521a
   prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  basis: "Paul approved this item in review on 03/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30192,15 +30192,15 @@ render: Candidate page /me, MATCH_PER_WEEK
 narrative_slot: utility
 en: "A week"
 th: "ต่อสัปดาห์"
-provenance: draft
+provenance: paul-approved
 date: 03/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul approved the Thai unchanged in review 03/11/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1e9824744a99ac581df3203ce5808c61bca319ea2b87f940ff41d8f3b9b9fa59
   prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  basis: "Paul approved this item in review on 03/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30213,16 +30213,16 @@ path: MATCH_PAUSE
 render: Candidate page /me, MATCH_PAUSE
 narrative_slot: utility
 en: "Pause for now"
-th: "พักไว้ก่อน"
-provenance: draft
+th: "หยุดรับชั่วคราว"
+provenance: paul-approved
 date: 03/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 9e140679746459f352f8f4062a5da78cc0a162e5de98f27027f89a9c9ee609fc
+  structural_calque: pass
+  text_hash: d526f5693579211da3c7db808477324eaafd89e21317eb7bc947258b8ff2c217
   prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  basis: "Paul approved this item in review on 03/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30235,16 +30235,16 @@ path: MATCH_RESUME
 render: Candidate page /me, MATCH_RESUME
 narrative_slot: utility
 en: "Start again"
-th: "เริ่มส่งต่อ"
-provenance: draft
+th: "กลับมารับตำแหน่งงาน"
+provenance: paul-approved
 date: 03/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 2ba5cd1dc77688b6d85f12a9d2b1336ba03a2a0dd9421aac5132c4e31d271c87
+  structural_calque: pass
+  text_hash: bdc7dcd221ce357df1cd9b840b9df7e5633888aa9e45be026bb90c4ca7cd04e9
   prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  basis: "Paul approved this item in review on 03/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30257,16 +30257,16 @@ path: MATCH_PAUSED
 render: Candidate page /me, MATCH_PAUSED
 narrative_slot: utility
 en: "Paused. We send nothing and use no tokens until you start again."
-th: "พักไว้อยู่ เราจะยังไม่ส่งตำแหน่งงานและไม่หักโทเคน จนกว่าคุณจะกดเริ่มส่งต่อ"
-provenance: draft
+th: "หยุดรับตำแหน่งงานชั่วคราว ระหว่างนี้ PunProfile จะไม่ส่งตำแหน่งงานหรือหักโทเคนสำหรับบริการนี้ จนกว่าคุณจะเลือกกลับมารับตำแหน่งงาน"
+provenance: paul-approved
 date: 03/11/2026
 term_bindings: []
-decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 5d01658bf9fc055fea92723c56feb9949134ffa23206c568fdb9cfdd07b4afb2
+  structural_calque: pass
+  text_hash: 13fd64cfc2ee41888b183696bd15877fb200dae9f80fada1af94a9dd023282ae
   prompt_version: structural-calque-v1
-  basis: "Not yet reviewed."
+  basis: "Paul approved this item in review on 03/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
