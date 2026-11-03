@@ -9,8 +9,13 @@ import { C, DISPLAY, FONT, SITE, button, esc } from "./codeEmail";
  * in the language it was written in. Draft Thai, for Paul to read before the
  * first send.
  *
- * Layout from `codeEmail.ts`, so both emails look like one sender.
+ * Layout from `codeEmail.ts`, so both emails look like one sender. The header
+ * is the mascot handing over the roles that passed, from a pile that did not.
  */
+
+/** The header picture's own backdrop, so the slot is the same colour when a
+ *  mail client blocks images. Sampled from `public/email-matched-roles-header.jpg`. */
+const HEADER_GROUND = "#9dcddb";
 
 export const MATCH_EMAIL_SUBJECT = "ตำแหน่งงานใหม่ที่ PunProfile คัดให้คุณ | PunProfile";
 
@@ -77,7 +82,11 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[]) {
   <tr><td style="background:${C.canvas};border-radius:24px;overflow:hidden;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 
-    <tr><td class="px" style="background:${C.deep};padding:40px 40px 36px;border-radius:24px 24px 0 0;">
+    <tr><td style="background:${HEADER_GROUND};border-radius:24px 24px 0 0;line-height:0;font-size:0;">
+      <img src="${SITE}/email-matched-roles-header.jpg" width="600" height="198" alt="PunProfile คัดตำแหน่งงานให้คุณ · Roles picked for you" style="display:block;width:100%;max-width:600px;height:auto;border:0;border-radius:24px 24px 0 0;">
+    </td></tr>
+
+    <tr><td class="px" style="background:${C.deep};padding:36px 40px 36px;">
       <p style="margin:0 0 14px;font-family:${FONT};font-size:15px;color:${C.onDeep};">${greetTh}</p>
       <h1 class="h1" style="margin:0;font-family:${DISPLAY};font-size:30px;font-weight:700;line-height:1.35;color:${C.lime};">ตำแหน่งงานใหม่ที่คัดให้คุณ ${n} ตำแหน่ง</h1>
       <p style="margin:14px 0 0;font-family:${FONT};font-size:16px;line-height:1.7;color:${C.onDeep};">PunProfile ตรวจแล้วว่าแต่ละตำแหน่งยังเปิดรับ และตรงกับตำแหน่งที่คุณเล็งไว้ ทุกตำแหน่งอยู่ในแดชบอร์ดหางานแล้ว พร้อมเหตุผลที่เลือก</p>
