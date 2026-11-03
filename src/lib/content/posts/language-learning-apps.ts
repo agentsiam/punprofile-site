@@ -180,6 +180,10 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               en: "Babbel, Busuu, Memrise, Drops, Pimsleur, Rosetta Stone and Lingoda have no Thai menu yet, so you learn through English.",
             },
           ],
+          cites: [
+            { label: "Duolingo, April 2025", href: "https://investors.duolingo.com/news-releases/news-release-details/duolingo-launches-148-new-language-courses" },
+            { label: "Mondly", href: "https://www.mondly.com/faq/what-languages-can-learn-with-mondly" },
+          ],
         },
         {
           kind: "p",
@@ -226,6 +230,10 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               en: "Busuu has native speakers correct your speaking and writing exercises.",
             },
           ],
+          cites: [
+            { label: "Pimsleur", href: "https://apps.apple.com/us/app/pimsleur-language-learning-app/id1405735469" },
+            { label: "Busuu", href: "https://apps.apple.com/us/app/busuu-language-learning-app/id379968583" },
+          ],
         },
         {
           kind: "sub",
@@ -246,6 +254,9 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               en: "The Goethe-Institut's Deutsch für dich has grammar, vocabulary, reading and listening exercises from A1 to C2, free.",
             },
           ],
+          cites: [
+            { label: "Goethe-Institut", href: "https://www.goethe.de/prj/dfd/en/home.cfm" },
+          ],
         },
         {
           kind: "sub",
@@ -262,6 +273,9 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               en: "Drops focuses on vocabulary with pictures and sound, free for 5 minutes a day.",
             },
           ],
+          cites: [
+            { label: "Drops", href: "https://kahoot.com/home/learning-apps/drops/" },
+          ],
         },
         {
           kind: "p",
@@ -271,12 +285,135 @@ export const LANGUAGE_LEARNING_APPS: Post = {
           },
         },
         {
-          kind: "figure",
-          src: "/blog/language-learning-apps-fig-2-top-three.jpg",
-          alt: {
-            th: "ตารางเปรียบเทียบ Duolingo, Mondly และ italki ด้านการรองรับภาษาไทย รูปแบบการฝึก และค่าใช้จ่าย",
-            en: "A table comparing Duolingo, Mondly and italki on Thai support, how you practise, and cost",
-          },
+          kind: "table",
+          head: [
+            {
+              th: "เทียบ",
+              en: "Compared",
+            },
+            {
+              th: "Duolingo",
+              en: "Duolingo",
+            },
+            {
+              th: "Mondly",
+              en: "Mondly",
+            },
+            {
+              th: "italki",
+              en: "italki",
+            },
+          ],
+          rows: [
+            [
+              {
+                th: "เรียนจากภาษาไทย",
+                en: "Learn from Thai",
+              },
+              {
+                th: "ได้ อังกฤษ สเปน ฝรั่งเศส เยอรมัน อิตาลี",
+                en: "Yes: English, Spanish, French, German, Italian",
+              },
+              {
+                th: "ได้ ภาษาไทยเป็นภาษาแม่",
+                en: "Yes, Thai as your native language",
+              },
+              {
+                th: "เมนูภาษาไทย เรียนกับครูตัวต่อตัว",
+                en: "Thai menu, one-to-one with a teacher",
+              },
+            ],
+            [
+              {
+                th: "ภาษายุโรป",
+                en: "European languages",
+              },
+              {
+                th: "อังกฤษ และอีก 4 ภาษา",
+                en: "English and 4 more",
+              },
+              {
+                th: "ประมาณ 25 ภาษา",
+                en: "About 25",
+              },
+              {
+                th: "ครูกว่า 150 ภาษา",
+                en: "Teachers in 150+ languages",
+              },
+            ],
+            [
+              {
+                th: "เน้นอะไร",
+                en: "Focus",
+              },
+              {
+                th: "ครบ 4 ทักษะ แบบเกม",
+                en: "All four skills, game-style",
+              },
+              {
+                th: "บทเรียนสั้น จับเสียงพูด",
+                en: "Short lessons, speech recognition",
+              },
+              {
+                th: "การพูด ตัวต่อตัว",
+                en: "Speaking, one-to-one",
+              },
+            ],
+            [
+              {
+                th: "สำหรับงาน / สอบ",
+                en: "For work or exams",
+              },
+              {
+                th: "ไม่มีคอร์สธุรกิจ",
+                en: "No business course",
+              },
+              {
+                th: "บทเรียนธุรกิจกว่า 300 บท",
+                en: "300+ business lessons",
+              },
+              {
+                th: "ครูสอนธุรกิจ เตรียมสอบ และสัมภาษณ์งาน",
+                en: "Teachers for business, exam prep and job interviews",
+              },
+            ],
+            [
+              {
+                th: "ราคา",
+                en: "Price",
+              },
+              {
+                th: "ใช้ฟรีได้",
+                en: "Free to use",
+              },
+              {
+                th: "เสียเงินเป็นหลัก",
+                en: "Mainly paid",
+              },
+              {
+                th: "ครูตั้งราคาเอง",
+                en: "Teachers set their own price",
+              },
+            ],
+            [
+              {
+                th: "เหมาะกับ",
+                en: "Best for",
+              },
+              {
+                th: "เริ่มต้น สร้างนิสัยรายวัน",
+                en: "Starting out, a daily habit",
+              },
+              {
+                th: "เรียนหลายภาษา อยากได้เนื้อหาธุรกิจ",
+                en: "Several languages, business content",
+              },
+              {
+                th: "อยากพูดได้จริง",
+                en: "Actually speaking",
+              },
+            ],
+          ],
           caption: {
             th: "Duolingo และ Mondly มีบทเรียนที่เริ่มจากภาษาไทยได้ ส่วน italki มีเมนูภาษาไทยและให้คุณเลือกครูเพื่อฝึกสนทนาแบบตัวต่อตัว โดยครูแต่ละคนกำหนดค่าเรียนเอง",
             en: "Duolingo and Mondly have lessons that start from Thai, while italki has a Thai menu and lets you choose a teacher for one-to-one conversation practice, with each teacher setting their own fee.",
@@ -316,6 +453,11 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               th: "Lingoda เรียนสดเป็นกลุ่มเล็ก ไม่เกิน 5 คน มี Business English และให้ใบรับรองตามระดับ CEFR เมื่อเรียนจบแต่ละระดับ",
               en: "Lingoda runs live classes in small groups of up to 5, offers Business English, and gives a CEFR-level certificate when you finish each level.",
             },
+          ],
+          cites: [
+            { label: "Busuu", href: "https://www.busuu.com/en/languages/english/business" },
+            { label: "vhs-Lernportal", href: "https://www.vhs-lernportal.de/wws/bin/4007242-4008514-1-infoblatt_berufssprache_deutsch.pdf" },
+            { label: "Lingoda", href: "https://www.lingoda.com/en/pricing/" },
           ],
         },
         {
@@ -364,6 +506,11 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               en: "Spanish: the Instituto Cervantes' AVE Global, a paid online course from A1 to C1.",
             },
           ],
+          cites: [
+            { label: "Bundesagentur für Arbeit", href: "https://www.arbeitsagentur.de/vor-ort/datei/flyerkostenlosesprachkurse_ba200075.pdf" },
+            { label: "TV5MONDE", href: "https://www.ecml.at/en/Resources/ICT-tools/InventoryID/250" },
+            { label: "Instituto Cervantes", href: "https://ave.cervantes.es/en/content/what-ave-global" },
+          ],
         },
         {
           kind: "p",
@@ -398,6 +545,10 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               th: "Alliance Française Bangkok สอนระดับ A1 ถึง C2 เริ่มต้นชั่วโมงละ 192 บาท คอร์ส 24 ชั่วโมง 5,190 บาท และมีสอบ DELF และ DALF ปีละสามรอบ คือมีนาคม มิถุนายน และพฤศจิกายน",
               en: "Alliance Française Bangkok teaches A1 to C2 from 192 baht an hour, with a 24-hour course at 5,190 baht, and holds DELF and DALF exams three times a year, in March, June and November.",
             },
+          ],
+          cites: [
+            { label: "Goethe-Institut Thailand", href: "https://www.goethe.de/ins/th/en/spr/kur/all.html" },
+            { label: "Alliance Française Bangkok", href: "https://afthailande.org/en/faq-en/" },
           ],
         },
         {

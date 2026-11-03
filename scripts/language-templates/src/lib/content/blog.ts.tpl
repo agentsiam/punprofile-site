@@ -228,7 +228,31 @@ export type Block =
    * separate paragraphs was the alternative and it loses the stanza: paragraph
    * spacing between four one-line questions reads as four paragraphs.
    */
-  | { kind: "list"; items: readonly Copy[]; ordered?: boolean; bare?: boolean }
+  | {
+      kind: "list";
+      items: readonly Copy[];
+      ordered?: boolean;
+      bare?: boolean;
+      /**
+       * Sources for a list of factual claims, added 03/11/2026. A list cannot
+       * carry a per-item citation the way a paragraph does, and a list of facts
+       * with no source is the part an answer engine will not quote. Rendered as
+       * links under the list.
+       */
+      cites?: readonly Cite[];
+    }
+  /**
+   * A comparison as a real HTML table, added 03/11/2026. A chart drawn as an
+   * image cannot be read by a search engine or an AI assistant, and the
+   * comparison is the part of an article most likely to be quoted. `head` is
+   * the first row; each row's first cell is its label.
+   */
+  | {
+      kind: "table";
+      head: readonly Copy[];
+      rows: readonly (readonly Copy[])[];
+      caption?: Copy;
+    }
   /**
    * A subheading inside a section, added 18/08/2026 for the same article. Its
    * 30-day plan is one section with four weeks under it, and a `Section` has one

@@ -69,7 +69,7 @@ function Body({ blocks, person }: { blocks: readonly Block[]; person?: Copy }) {
               <span>{pick(item)}</span>
             </li>
           ));
-          return block.ordered ? (
+          const listEl = block.ordered ? (
             <ol key={i} className="mt-5 flex flex-col gap-3">
               {items}
             </ol>
@@ -77,6 +77,25 @@ function Body({ blocks, person }: { blocks: readonly Block[]; person?: Copy }) {
             <ul key={i} className="mt-5 flex flex-col gap-3">
               {items}
             </ul>
+          );
+          if (!block.cites?.length) return listEl;
+          return (
+            <div key={i}>
+              {listEl}
+              <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+                {block.cites.map((c) => (
+                  <a
+                    key={c.href}
+                    href={c.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-body-medium text-ink-deep underline underline-offset-2"
+                  >
+                    {c.label}↗
+                  </a>
+                ))}
+              </p>
+            </div>
           );
         }
 
@@ -86,6 +105,48 @@ function Body({ blocks, person }: { blocks: readonly Block[]; person?: Copy }) {
               <blockquote className="text-title-medium text-on-surface">{pick(block.text)}</blockquote>
               {person && (
                 <figcaption className="mt-2 text-body-medium text-on-surface-variant">{pick(person)}</figcaption>
+              )}
+            </figure>
+          );
+        }
+
+        if (block.kind === "table") {
+          return (
+            <figure key={i} className="mt-8">
+              <div className="overflow-x-auto rounded-large border border-line">
+                <table className="w-full min-w-[560px] border-collapse text-left text-body-medium">
+                  <thead>
+                    <tr className="bg-surface-container">
+                      {block.head.map((h, j) => (
+                        <th key={j} scope="col" className="px-4 py-3 font-semibold text-ink-deep">
+                          {pick(h)}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {block.rows.map((row, r) => (
+                      <tr key={r} className="border-t border-line">
+                        {row.map((cell, c) =>
+                          c === 0 ? (
+                            <th key={c} scope="row" className="px-4 py-3 align-top font-semibold text-ink-deep">
+                              {pick(cell)}
+                            </th>
+                          ) : (
+                            <td key={c} className="px-4 py-3 align-top text-on-surface">
+                              {pick(cell)}
+                            </td>
+                          ),
+                        )}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {block.caption && (
+                <figcaption className="mt-3 text-body-medium text-on-surface-variant">
+                  {pick(block.caption)}
+                </figcaption>
               )}
             </figure>
           );

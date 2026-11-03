@@ -180,6 +180,10 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbM10uYm9keVsxXS5pdGVtc1szXQ:EN%%,
             },
           ],
+          cites: [
+            { label: "Duolingo, April 2025", href: "https://investors.duolingo.com/news-releases/news-release-details/duolingo-launches-148-new-language-courses" },
+            { label: "Mondly", href: "https://www.mondly.com/faq/what-languages-can-learn-with-mondly" },
+          ],
         },
         {
           kind: "p",
@@ -226,6 +230,10 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVsyXS5pdGVtc1syXQ:EN%%,
             },
           ],
+          cites: [
+            { label: "Pimsleur", href: "https://apps.apple.com/us/app/pimsleur-language-learning-app/id1405735469" },
+            { label: "Busuu", href: "https://apps.apple.com/us/app/busuu-language-learning-app/id379968583" },
+          ],
         },
         {
           kind: "sub",
@@ -246,6 +254,9 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs0XS5pdGVtc1sxXQ:EN%%,
             },
           ],
+          cites: [
+            { label: "Goethe-Institut", href: "https://www.goethe.de/prj/dfd/en/home.cfm" },
+          ],
         },
         {
           kind: "sub",
@@ -262,6 +273,9 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs2XS5pdGVtc1swXQ:EN%%,
             },
           ],
+          cites: [
+            { label: "Drops", href: "https://kahoot.com/home/learning-apps/drops/" },
+          ],
         },
         {
           kind: "p",
@@ -271,12 +285,135 @@ export const LANGUAGE_LEARNING_APPS: Post = {
           },
         },
         {
-          kind: "figure",
-          src: "/blog/language-learning-apps-fig-2-top-three.jpg",
-          alt: {
-            th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5hbHQ:TH%%,
-            en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5hbHQ:EN%%,
-          },
+          kind: "table",
+          head: [
+            {
+              th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5oZWFkWzBd:TH%%,
+              en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5oZWFkWzBd:EN%%,
+            },
+            {
+              th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5oZWFkWzFd:TH%%,
+              en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5oZWFkWzFd:EN%%,
+            },
+            {
+              th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5oZWFkWzJd:TH%%,
+              en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5oZWFkWzJd:EN%%,
+            },
+            {
+              th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5oZWFkWzNd:TH%%,
+              en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5oZWFkWzNd:EN%%,
+            },
+          ],
+          rows: [
+            [
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzBdWzBd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzBdWzBd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzBdWzFd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzBdWzFd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzBdWzJd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzBdWzJd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzBdWzNd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzBdWzNd:EN%%,
+              },
+            ],
+            [
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzFdWzBd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzFdWzBd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzFdWzFd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzFdWzFd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzFdWzJd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzFdWzJd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzFdWzNd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzFdWzNd:EN%%,
+              },
+            ],
+            [
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzJdWzBd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzJdWzBd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzJdWzFd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzJdWzFd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzJdWzJd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzJdWzJd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzJdWzNd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzJdWzNd:EN%%,
+              },
+            ],
+            [
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzNdWzBd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzNdWzBd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzNdWzFd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzNdWzFd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzNdWzJd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzNdWzJd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzNdWzNd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzNdWzNd:EN%%,
+              },
+            ],
+            [
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzRdWzBd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzRdWzBd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzRdWzFd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzRdWzFd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzRdWzJd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzRdWzJd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzRdWzNd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzRdWzNd:EN%%,
+              },
+            ],
+            [
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzVdWzBd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzVdWzBd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzVdWzFd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzVdWzFd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzVdWzJd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzVdWzJd:EN%%,
+              },
+              {
+                th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzVdWzNd:TH%%,
+                en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5yb3dzWzVdWzNd:EN%%,
+              },
+            ],
+          ],
           caption: {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5jYXB0aW9u:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNF0uYm9keVs4XS5jYXB0aW9u:EN%%,
@@ -316,6 +453,11 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNV0uYm9keVsxXS5pdGVtc1szXQ:TH%%,
               en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNV0uYm9keVsxXS5pdGVtc1szXQ:EN%%,
             },
+          ],
+          cites: [
+            { label: "Busuu", href: "https://www.busuu.com/en/languages/english/business" },
+            { label: "vhs-Lernportal", href: "https://www.vhs-lernportal.de/wws/bin/4007242-4008514-1-infoblatt_berufssprache_deutsch.pdf" },
+            { label: "Lingoda", href: "https://www.lingoda.com/en/pricing/" },
           ],
         },
         {
@@ -364,6 +506,11 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbNl0uYm9keVsxXS5pdGVtc1syXQ:EN%%,
             },
           ],
+          cites: [
+            { label: "Bundesagentur für Arbeit", href: "https://www.arbeitsagentur.de/vor-ort/datei/flyerkostenlosesprachkurse_ba200075.pdf" },
+            { label: "TV5MONDE", href: "https://www.ecml.at/en/Resources/ICT-tools/InventoryID/250" },
+            { label: "Instituto Cervantes", href: "https://ave.cervantes.es/en/content/what-ave-global" },
+          ],
         },
         {
           kind: "p",
@@ -398,6 +545,10 @@ export const LANGUAGE_LEARNING_APPS: Post = {
               th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbN10uYm9keVsxXS5pdGVtc1sxXQ:TH%%,
               en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbN10uYm9keVsxXS5pdGVtc1sxXQ:EN%%,
             },
+          ],
+          cites: [
+            { label: "Goethe-Institut Thailand", href: "https://www.goethe.de/ins/th/en/spr/kur/all.html" },
+            { label: "Alliance Française Bangkok", href: "https://afthailande.org/en/faq-en/" },
           ],
         },
         {
