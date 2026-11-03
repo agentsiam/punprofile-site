@@ -23,7 +23,9 @@
  * `products.ts` for why a promise and a label are two strings.
  */
 
+import Image from "next/image";
 import Link from "next/link";
+import { PRODUCT_PHOTO } from "@/components/features/products/productPhotos";
 import { useCopy } from "@/components/LocaleProvider";
 import { PRODUCTS, STATUS_SOON, isFreeProduct, type Product } from "@/lib/content/products";
 import {
@@ -54,33 +56,72 @@ export default function Catalogue() {
   const free = PRODUCTS.filter((p) => isFreeProduct(p.slug));
   const paid = PRODUCTS.filter((p) => !isFreeProduct(p.slug));
 
-  const card = (slug: string, name: string, headline: string, soon: boolean, note?: Product["costLabel"]) => (
-    <li key={slug}>
-      <Link
-        href={path(`/products/${slug}`)}
-        className="card-plain group flex h-full flex-col border border-line px-6 py-7 duration-[350ms] ease-nav transition-colors hover:border-line-strong"
-      >
-        <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <span className="text-heading-sm">{name}</span>
-          {soon && (
-            <span className="text-caption-strong text-mute-strong">{pick(STATUS_SOON)}</span>
+  /*
+   * Bento cards, 03/11/2026 (Wise home in the layout research): each product
+   * shows its own clay photograph on a tinted ground, and the tints rotate so
+   * two neighbours never share one. The photographs are the product pages' own,
+   * from `productPhotos.ts`, so a product looks the same here as on its page.
+   */
+  const TINTS = [
+    "bg-cyan-pale text-on-cyan-pale",
+    "bg-orange-pale text-on-orange-pale",
+    "bg-yellow-pale text-on-yellow-pale",
+  ];
+
+  const card = (
+    slug: string,
+    name: string,
+    headline: string,
+    soon: boolean,
+    tint: string,
+    note?: Product["costLabel"],
+    side = false,
+  ) => {
+    const photo = PRODUCT_PHOTO[slug];
+    return (
+      <li key={slug}>
+        <Link
+          href={path(`/products/${slug}`)}
+          className={`group flex h-full flex-col overflow-hidden rounded-3xl ${tint} ${side ? "medium:flex-row" : ""}`}
+        >
+          {photo && (
+            <span
+              className={`relative block w-full shrink-0 overflow-hidden ${
+                side ? "aspect-[4/3] medium:aspect-square medium:w-2/5" : "aspect-[4/3]"
+              }`}
+            >
+              <Image
+                src={photo.src}
+                // Decorative: the product name under it carries the meaning.
+                alt=""
+                fill
+                sizes="(max-width: 840px) 100vw, 33vw"
+                className="object-cover duration-[350ms] ease-nav transition-transform group-hover:scale-[1.03]"
+              />
+            </span>
           )}
-          {/* A free product only a buyer can open says so under the "Free"
-              heading, rather than letting the heading promise it to everyone. */}
-          {note && <span className="text-caption-strong text-mute-strong">{pick(note)}</span>}
-        </span>
-        <span className="mt-2 text-body-md text-body">{headline}</span>
-      </Link>
-    </li>
-  );
+          <span className={`flex flex-1 flex-col px-6 py-6 ${side ? "medium:justify-center" : ""}`}>
+            <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span className="text-heading-sm">{name}</span>
+              {soon && <span className="text-caption-strong">{pick(STATUS_SOON)}</span>}
+              {/* A free product only a buyer can open says so under the "Free"
+                  heading, rather than letting the heading promise it to everyone. */}
+              {note && <span className="text-caption-strong">{pick(note)}</span>}
+            </span>
+            <span className="mt-2 text-body-md">{headline}</span>
+          </span>
+        </Link>
+      </li>
+    );
+  };
 
   return (
     <div className="mt-8 flex flex-col gap-10">
       <div>
         <h3 className="border-b border-line pb-3 text-body-md text-mute-strong">{pick(CATALOGUE_FREE)}</h3>
         <ul className="mt-4 grid gap-4 medium:grid-cols-3">
-          {free.map((p) =>
-            card(p.slug, pick(p.name), pick(p.headline), p.status === "soon", p.costLabel),
+          {free.map((p, i) =>
+            card(p.slug, pick(p.name), pick(p.headline), p.status === "soon", TINTS[i % 3], p.costLabel),
           )}
         </ul>
       </div>
@@ -88,8 +129,8 @@ export default function Catalogue() {
       <div>
         <h3 className="border-b border-line pb-3 text-body-md text-mute-strong">{pick(CATALOGUE_PAID)}</h3>
         <ul className="mt-4 grid gap-4 medium:grid-cols-2">
-          {paid.map((p) =>
-            card(p.slug, pick(p.name), pick(p.headline), p.status === "soon"),
+          {paid.map((p, i) =>
+            card(p.slug, pick(p.name), pick(p.headline), p.status === "soon", TINTS[(i + 1) % 3], undefined, true),
           )}
         </ul>
         {/* The only price on this page, and it is the unit rather than a pack.
