@@ -117,13 +117,30 @@ export default function SiteFooter({ locale }: { locale: Locale }) {
             `inverse-surface` flipped between schemes. It does not sit on that
             role now, and `canvas-soft` is light in both.
           */}
-          <Image
-            src="/punprofile-logo-mono-black.svg"
-            alt={t("nav.brand", locale)}
-            width={2421}
-            height={657}
-            className="h-10 w-auto"
-          />
+          {/*
+            Two wordmarks again, 03/11/2026: `canvas-soft` is NOT light in both
+            schemes, it is `#1a1d17` in dark, so the black lockup sat on a
+            near-black band. The light twin is the one-substitution file the
+            note above anticipated, `#F0F2E7` as in the reversed assets. The
+            span declares the ground, `globals.css` picks the file, the same
+            mechanism `BrandLockup` uses.
+          */}
+          <span data-logo-ground="surface" className="contents">
+            <Image
+              src="/punprofile-logo-mono-black.svg"
+              alt={t("nav.brand", locale)}
+              width={2421}
+              height={657}
+              className="brand-wordmark-black h-10 w-auto"
+            />
+            <Image
+              src="/punprofile-logo-mono-light.svg"
+              alt={t("nav.brand", locale)}
+              width={2421}
+              height={657}
+              className="brand-wordmark-white h-10 w-auto"
+            />
+          </span>
 
           <a
             href={FACEBOOK_PAGE}
