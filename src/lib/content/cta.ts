@@ -363,7 +363,7 @@ export const PAGE_ACTIONS: Record<string, PageActions> = {
     primary: "contact",
     secondary: "pricing",
     because:
-      "It is not built. The secondary goes to the prices because this is the product the tokens exist for, and a reader here is usually asking what it costs.",
+      "Bought in token packs by message while payment is a bank transfer arranged by hand, so the ask is a conversation. The secondary goes to the prices because this is the product the tokens exist for, and a reader here is usually asking what it costs.",
   },
   "/products/guided-job-hunt": {
     primary: "pricing",

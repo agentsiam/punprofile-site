@@ -494,16 +494,20 @@ export const PRODUCTS: readonly Product[] = [
       th: "คุณกำหนดเงื่อนไข เราคัดกรองให้ตามนั้น แล้วส่งให้ทีละตำแหน่ง",
     },
     name: { en: "Matched Jobs", th: "Matched Jobs" },
-    status: "soon",
+    // Live 03/11/2026: sold in token packs by message since 23/10/2026, and
+    // /pricing, the home page and Guided Job Hunt already sold it as open.
+    status: "live",
     headline: {
       en: "There are plenty of roles in Europe. There are not many you can actually apply for.",
       // Drafted 23/08/2026, read back and approved unchanged.
       th: "ตำแหน่งงานในยุโรปมีเยอะ แต่ที่คุณสมัครได้จริงมีไม่กี่ตำแหน่ง",
     },
     lede: {
-      en: "We screen roles against the criteria you set and send them to your email, one at a time.",
-      // Paul's own Thai of 23/08/2026, from the pricing sheet.
-      th: "เราคัดตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ แล้วส่งตรงถึงอีเมลทีละตำแหน่ง",
+      en: "We screen roles against the criteria you set and send them to your Job Search Dashboard, one at a time, with an email to let you know.",
+      // Paul's own Thai of 23/08/2026, from the pricing sheet, re-pointed
+      // 03/11/2026 to the dashboard: the PRD sends each role there, with an
+      // email notice.
+      th: "เราคัดตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ แล้วส่งเข้าแดชบอร์ดหางานของคุณทีละตำแหน่ง พร้อมแจ้งทางอีเมล",
     },
     how: [
       {

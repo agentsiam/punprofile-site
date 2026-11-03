@@ -314,8 +314,8 @@ export const TOKEN_ROWS: readonly TokenRow[] = [
       th: "ตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ",
     },
     detail: {
-      en: "Sent to your email, with the work rights it needs stated",
-      th: "ส่งทางอีเมล พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี",
+      en: "Sent to your Job Search Dashboard, with the work rights it needs stated",
+      th: "ส่งเข้าแดชบอร์ดหางาน พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี",
     },
     tokens: 1,
   },
