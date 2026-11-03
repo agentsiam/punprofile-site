@@ -93,15 +93,22 @@ function Body({ blocks, person }: { blocks: readonly Block[]; person?: Copy }) {
 
         if (block.kind === "figure") {
           return (
-            <div key={i} className="relative mt-8 aspect-[4/3] w-full overflow-hidden rounded-large">
-              <Image
-                src={block.src}
-                alt={pick(block.alt)}
-                fill
-                sizes="(max-width: 672px) 100vw, 672px"
-                className="object-cover"
-              />
-            </div>
+            <figure key={i} className="mt-8">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-large">
+                <Image
+                  src={block.src}
+                  alt={pick(block.alt)}
+                  fill
+                  sizes="(max-width: 672px) 100vw, 672px"
+                  className="object-cover"
+                />
+              </div>
+              {block.caption && (
+                <figcaption className="mt-3 text-body-medium text-on-surface-variant">
+                  {pick(block.caption)}
+                </figcaption>
+              )}
+            </figure>
           );
         }
 

@@ -4689,6 +4689,672 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "16/08/2026",
     "decisionNote": "Paul's Thai, Newsletter 2 in golden-th thai-europe-job-guide.md, queued for /blog in blog-queue.md 16/08/2026 and published 23/10/2026. English is the queue's translation and has not been read back by Paul."
   },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.image.alt": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.image.alt",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.image.alt",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, the hero alt text. Waiting on Paul."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.question": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.question",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.question",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[0].body[0].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[0].body[0].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[0].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[0].heading": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[0].heading",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[0].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].body[0].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[1].body[0].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[1].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].body[1].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[1].body[1].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[1].body[1].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].body[2].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[1].body[2].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[1].body[2].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].heading": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[1].heading",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[1].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[0].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[2].body[0].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[1].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[2].body[1].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[1].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[2].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[2].body[2].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[2].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[3].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[2].body[3].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[3].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[4].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[2].body[4].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[4].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[5].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[2].body[5].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[5].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[6].alt": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[2].body[6].alt",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[6].alt",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[6].caption": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[2].body[6].caption",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[6].caption",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].heading": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[2].heading",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[0].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[3].body[0].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[3].body[1].items[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[1].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[1]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[3].body[1].items[1]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[1].items[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[2]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[3].body[1].items[2]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[1].items[2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[3]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[3].body[1].items[3]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[1].items[3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[2].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[3].body[2].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[2].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].heading": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[3].heading",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[0].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[0].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[1].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[1].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[1].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[2].items[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[2].items[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[2].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[2].items[1]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[2].items[1]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[2].items[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[2].items[2]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[2].items[2]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[2].items[2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[3].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[3].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[3].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[4].items[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[4].items[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[4].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[4].items[1]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[4].items[1]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[4].items[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[5].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[5].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[5].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[6].items[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[6].items[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[6].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[7].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[7].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[7].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].alt": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[8].alt",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].alt",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].caption": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].body[8].caption",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].caption",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].heading": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[4].heading",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[0].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[5].body[0].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[5].body[1].items[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[1].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[1]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[5].body[1].items[1]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[1].items[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[2]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[5].body[1].items[2]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[1].items[2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[3]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[5].body[1].items[3]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[1].items[3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[2].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[5].body[2].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[2].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[3].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[5].body[3].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[3].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].heading": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[5].heading",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[0].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[6].body[0].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[1].items[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[6].body[1].items[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].body[1].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[1].items[1]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[6].body[1].items[1]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].body[1].items[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[1].items[2]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[6].body[1].items[2]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].body[1].items[2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[2].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[6].body[2].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].body[2].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].heading": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[6].heading",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[0].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[7].body[0].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[7].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[1].items[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[7].body[1].items[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[7].body[1].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[1].items[1]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[7].body[1].items[1]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[7].body[1].items[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[2].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[7].body[2].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[7].body[2].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].heading": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[7].heading",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[7].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[0].items[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[8].body[0].items[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[0].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[0].items[1]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[8].body[0].items[1]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[0].items[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[0].items[2]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[8].body[0].items[2]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[0].items[2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[1].text": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[8].body[1].text",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[1].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[2].alt": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[8].body[2].alt",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[2].alt",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[2].caption": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[8].body[2].caption",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[2].caption",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].heading": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[8].heading",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[0].a[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[9].body[0].a[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[0].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[0].q": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[9].body[0].q",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[0].q",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[1].a[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[9].body[1].a[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[1].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[1].q": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[9].body[1].q",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[1].q",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[2].a[0]": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[9].body[2].a[0]",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[2].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[2].q": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[9].body[2].q",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[2].q",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].heading": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.sections[9].heading",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.seoTitle": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.seoTitle",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.seoTitle",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.summary": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.summary",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.summary",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
+  "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.title": {
+    "source": "src/lib/content/posts/language-learning-apps.ts",
+    "path": "LANGUAGE_LEARNING_APPS.title",
+    "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.title",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+  },
   "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.image.alt": {
     "source": "src/lib/content/posts/start-in-europe.ts",
     "path": "START_IN_EUROPE.image.alt",
