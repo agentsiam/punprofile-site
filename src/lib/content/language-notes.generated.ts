@@ -6928,7 +6928,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "02/11/2026",
-    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดรายการข้อมูลให้ชัดเจน รักษาขอบเขตข้อมูลทุกประเภทตามต้นฉบับ และใช้ PunProfile ตามน้ำเสียงภาษาเขียน"
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดรายการข้อมูลให้ชัดเจน รักษาขอบเขตข้อมูลทุกประเภทตามต้นฉบับ และใช้ PunProfile ตามน้ำเสียงภาษาเขียน Page name aligned to แดชบอร์ดหางาน, the termbase term, on Paul's decision 03/11/2026."
   },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].heading": {
     "source": "src/lib/content/privacy.ts",
@@ -7099,7 +7099,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "02/11/2026",
-    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดลำดับคำอธิบายคุกกี้ให้ต่อเนื่อง ระบุชื่อหน้าตามคำที่ผู้ใช้เข้าใจ และคงข้อกล่าวอ้างตามต้นฉบับ ไม่ใช่การตรวจสอบข้อกฎหมายหรือพฤติกรรมระบบ"
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดลำดับคำอธิบายคุกกี้ให้ต่อเนื่อง ระบุชื่อหน้าตามคำที่ผู้ใช้เข้าใจ และคงข้อกล่าวอ้างตามต้นฉบับ ไม่ใช่การตรวจสอบข้อกฎหมายหรือพฤติกรรมระบบ Page name aligned to แดชบอร์ดหางาน, the termbase term, on Paul's decision 03/11/2026."
   },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].heading": {
     "source": "src/lib/content/privacy.ts",

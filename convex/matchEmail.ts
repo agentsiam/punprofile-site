@@ -69,7 +69,7 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[]) {
 </style>
 </head>
 <body style="margin:0;padding:0;background:${C.soft};">
-<div style="display:none;max-height:0;overflow:hidden;opacity:0;">PunProfile คัดตำแหน่งงานให้คุณ ${n} ตำแหน่ง ดูได้ในหน้าติดตามการสมัครงาน</div>
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">PunProfile คัดตำแหน่งงานให้คุณ ${n} ตำแหน่ง ดูได้ในแดชบอร์ดหางาน</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${C.soft};">
 <tr><td align="center" style="padding:32px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
@@ -88,7 +88,7 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[]) {
     <tr><td class="px" style="background:${C.deep};padding:36px 40px 36px;">
       <p style="margin:0 0 14px;font-family:${FONT};font-size:15px;color:${C.onDeep};">${greetTh}</p>
       <h1 class="h1" style="margin:0;font-family:${DISPLAY};font-size:30px;font-weight:700;line-height:1.35;color:${C.lime};">ตำแหน่งงานใหม่ที่คัดให้คุณ ${n} ตำแหน่ง</h1>
-      <p style="margin:14px 0 0;font-family:${FONT};font-size:16px;line-height:1.7;color:${C.onDeep};">PunProfile ตรวจสอบแล้วว่าทุกตำแหน่งยังเปิดรับสมัครและตรงกับตำแหน่งเป้าหมายของคุณ ดูรายละเอียดและเหตุผลที่คัดแต่ละตำแหน่งได้ในหน้าติดตามการสมัครงาน</p>
+      <p style="margin:14px 0 0;font-family:${FONT};font-size:16px;line-height:1.7;color:${C.onDeep};">PunProfile ตรวจสอบแล้วว่าทุกตำแหน่งยังเปิดรับสมัครและตรงกับตำแหน่งเป้าหมายของคุณ ดูรายละเอียดและเหตุผลที่คัดแต่ละตำแหน่งได้ในแดชบอร์ดหางาน</p>
     </td></tr>
 
     <tr><td style="height:28px;line-height:28px;font-size:0;">&nbsp;</td></tr>
@@ -97,7 +97,7 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[]) {
     <tr><td class="px" style="padding:12px 40px 8px;">${button(meUrl, "เปิดแดชบอร์ดหางาน")}</td></tr>
 
     <tr><td class="px" style="padding:16px 40px 32px;font-family:${FONT};font-size:14px;line-height:1.7;color:${C.body};">
-      แต่ละตำแหน่งใช้ 1 โทเคน คุณสามารถปรับจำนวนตำแหน่งต่อสัปดาห์หรือหยุดรับชั่วคราวได้ในหน้าติดตามการสมัครงาน
+      แต่ละตำแหน่งใช้ 1 โทเคน คุณสามารถปรับจำนวนตำแหน่งต่อสัปดาห์หรือหยุดรับชั่วคราวได้ในแดชบอร์ดหางาน
     </td></tr>
 
     <tr><td class="px" style="padding:0 40px;"><div style="height:1px;background:${C.line};line-height:1px;font-size:0;">&nbsp;</div></td></tr>
@@ -132,11 +132,11 @@ export function matchEmailText(firstName: string | null, roles: NoticeRole[]) {
     "",
     `ตำแหน่งงานใหม่ที่คัดให้คุณ ${n} ตำแหน่ง`,
     "",
-    `PunProfile ตรวจสอบแล้วว่าทุกตำแหน่งยังเปิดรับสมัครและตรงกับตำแหน่งเป้าหมายของคุณ ดูรายละเอียดและเหตุผลที่คัดแต่ละตำแหน่งได้ในหน้าติดตามการสมัครงาน: ${SITE}/me`,
+    `PunProfile ตรวจสอบแล้วว่าทุกตำแหน่งยังเปิดรับสมัครและตรงกับตำแหน่งเป้าหมายของคุณ ดูรายละเอียดและเหตุผลที่คัดแต่ละตำแหน่งได้ในแดชบอร์ดหางาน: ${SITE}/me`,
     "",
     list,
     "",
-    "แต่ละตำแหน่งใช้ 1 โทเคน คุณสามารถปรับจำนวนตำแหน่งต่อสัปดาห์หรือหยุดรับชั่วคราวได้ในหน้าติดตามการสมัครงาน",
+    "แต่ละตำแหน่งใช้ 1 โทเคน คุณสามารถปรับจำนวนตำแหน่งต่อสัปดาห์หรือหยุดรับชั่วคราวได้ในแดชบอร์ดหางาน",
     "",
     `${firstName ? `Hello ${firstName},` : "Hello,"} PunProfile has picked ${n === 1 ? "a new role" : `${n} new roles`} for you. They are on your Job Search Dashboard with the reason each was picked: ${SITE}/me`,
     "Each role uses one token. To change how many you get a week, or to pause, use your Job Search Dashboard.",

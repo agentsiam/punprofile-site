@@ -186,7 +186,7 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
       {
         // Paying candidates, 02/11/2026. Appended so earlier ids keep their place.
         en: "If you buy a PunProfile service, we also hold what you need it to work: what you bought and your token history; your CVs and the versions we prepare with you; the dates, times and our notes of your calls with us; your Fit Report ratings; your target job titles; the jobs you track on your page; the time zone you choose; anything you send us to prepare for a session; and the decisions we agree with you in a call.",
-        th: "หากคุณซื้อบริการจาก PunProfile จะมีการเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติโทเคน ไฟล์ CV ของคุณและฉบับที่ PunProfile จัดทำร่วมกับคุณ วัน เวลา และบันทึกการพูดคุยกับ PunProfile ผลประเมินใน Fit Report ตำแหน่งเป้าหมาย รายการตำแหน่งงานที่คุณติดตามในหน้าติดตามการสมัครงาน เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งให้ PunProfile เพื่อเตรียมการพูดคุย และข้อสรุปที่ตกลงร่วมกันระหว่างการพูดคุย",
+        th: "หากคุณซื้อบริการจาก PunProfile จะมีการเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติโทเคน ไฟล์ CV ของคุณและฉบับที่ PunProfile จัดทำร่วมกับคุณ วัน เวลา และบันทึกการพูดคุยกับ PunProfile ผลประเมินใน Fit Report ตำแหน่งเป้าหมาย รายการตำแหน่งงานที่คุณติดตามในแดชบอร์ดหางาน เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งให้ PunProfile เพื่อเตรียมการพูดคุย และข้อสรุปที่ตกลงร่วมกันระหว่างการพูดคุย",
       },
     ],
   },
@@ -328,7 +328,7 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
     body: [
       {
         en: "Nothing that identifies you, unless you sign in to your page as a paying candidate. Signing in stores a sign-in cookie on your device so you stay signed in; signing out removes it. We use no tracking cookie. The only other thing we keep on your device is your language choice, Thai or English.",
-        th: "PunProfile ไม่เก็บข้อมูลที่ระบุตัวตนของคุณบนอุปกรณ์ เว้นแต่คุณเข้าสู่ระบบหน้าติดตามการสมัครงานในฐานะลูกค้าที่ชำระค่าบริการแล้ว เมื่อเข้าสู่ระบบ อุปกรณ์จะเก็บคุกกี้ไว้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ PunProfile ไม่ใช้คุกกี้ติดตาม นอกจากคุกกี้สำหรับเข้าสู่ระบบแล้ว ข้อมูลอื่นที่เก็บบนอุปกรณ์มีเพียงภาษาที่คุณเลือก คือภาษาไทยหรือภาษาอังกฤษ",
+        th: "PunProfile ไม่เก็บข้อมูลที่ระบุตัวตนของคุณบนอุปกรณ์ เว้นแต่คุณเข้าสู่ระบบแดชบอร์ดหางานในฐานะลูกค้าที่ชำระค่าบริการแล้ว เมื่อเข้าสู่ระบบ อุปกรณ์จะเก็บคุกกี้ไว้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ PunProfile ไม่ใช้คุกกี้ติดตาม นอกจากคุกกี้สำหรับเข้าสู่ระบบแล้ว ข้อมูลอื่นที่เก็บบนอุปกรณ์มีเพียงภาษาที่คุณเลือก คือภาษาไทยหรือภาษาอังกฤษ",
       },
     ],
   },
