@@ -1358,17 +1358,17 @@ source: src/lib/content/coaching.ts
 path: HOOK_EYEBROW
 render: Coaching page, HOOK_EYEBROW
 narrative_slot: utility
-en: 1-1 career coaching for Thai professionals heading to Europe
-th: Career Coaching แบบตัวต่อตัว สำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป
-provenance: paul-approved
-date: 25/08/2026
+en: Coaching 1:1 for Thai professionals heading to Europe
+th: Coaching 1:1 สำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป
+provenance: draft
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`.
+decision_note: 'Copy review 03/11/2026, Q3: the termbase names the whole offer Coaching 1:1 and keeps Career Coaching for the first service. Was EN: "1-1 career coaching for Thai professionals heading to Europe" TH: "Career Coaching แบบตัวต่อตัว สำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป".'
 review:
-  structural_calque: pass
-  text_hash: 3d077cdfef31d98d18a2bc913dbfaabd8eedf9509f6903e4cc204d8b66ee8ea8
+  structural_calque: pending
+  text_hash: 9a5de1d6248f6ea8e0d9436b89be443dc88b6772f3d8ec347fb0e31642c39a86
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Claude draft 03/11/2026, awaiting Paul.
 ```
 
 <!-- COPY-ENTRY -->
@@ -6814,20 +6814,17 @@ source: src/lib/content/faq.ts
 path: FAQ[6].q
 render: FAQ page, FAQ[6].q
 narrative_slot: utility
-en: What does Career Coaching cost?
-th: บริการ Career Coaching ราคาเท่าไร
-provenance: paul-approved
-date: 10/09/2026
+en: What does Coaching 1:1 cost?
+th: Coaching 1:1 ราคาเท่าไร
+provenance: draft
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+decision_note: 'Copy review 03/11/2026, Q3: the question is about the whole offer, which the termbase names Coaching 1:1. Was EN: "What does Career Coaching cost?" TH: "บริการ Career Coaching ราคาเท่าไร".'
 review:
-  structural_calque: pass
-  text_hash: d41c8c27a4ef0f0aaf6a7abe5852101864c3549f74c0a23c5cbdc6b7a9ffb20a
+  structural_calque: pending
+  text_hash: d50cae181dba343000e63dbfe17df547f64c38b3bbb6900c5bc53067ca26897d
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: Claude draft 03/11/2026, awaiting Paul.
 ```
 
 <!-- COPY-ENTRY -->
@@ -18182,17 +18179,17 @@ source: src/lib/content/pricing.ts
 path: PRICING_QUESTIONS[0].q
 render: Pricing page, PRICING_QUESTIONS[0].q
 narrative_slot: utility
-en: What does Career Coaching cost?
-th: บริการ Career Coaching ราคาเท่าไร?
-provenance: paul-approved
-date: 23/08/2026
+en: What does Coaching 1:1 cost?
+th: Coaching 1:1 ราคาเท่าไร?
+provenance: draft
+date: 03/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: 'Copy review 03/11/2026, Q3: the question is about the whole offer, which the termbase names Coaching 1:1. Was EN: "What does Career Coaching cost?" TH: "บริการ Career Coaching ราคาเท่าไร?".'
 review:
-  structural_calque: pass
-  text_hash: 53465b7aa2e16683b4ebc14d96b5681c8327e346f1812208b77a0654a337f8d1
+  structural_calque: pending
+  text_hash: 54cc61815467d5764273c2d9492c990ad028795c9fac91efa748af1f82454871
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Claude draft 03/11/2026, awaiting Paul.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19536,21 +19533,17 @@ source: src/lib/content/products.ts
 path: INDEX_INTRO
 render: Product pages, INDEX_INTRO
 narrative_slot: utility
-en: >-
-  Start wherever you are. Nothing here needs the one before it, and the first two ask for nothing but your
-  answers.
-th: >-
-  เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า
-  และสองอย่างแรกต้องการเพียงคำตอบจากคุณ
-provenance: paul-written
-date: 06/09/2026
+en: Start wherever you are. Nothing here needs the one before it, and the first one asks for nothing but your answers.
+th: เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า และอย่างแรกต้องการเพียงคำตอบจากคุณ
+provenance: draft
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Copy review 03/11/2026, Q4: CV Check, the second product, asks for a CV. Was EN: "Start wherever you are. Nothing here needs the one before it, and the first two ask for nothing but your answers." TH: "เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า และสองอย่างแรกต้องการเพียงคำตอบจากคุณ".'
 review:
-  structural_calque: pass
-  text_hash: 45ac6d86c5af5db999c9cdbfbb947a706857f431a7411f62969968295e7cd9b7
+  structural_calque: pending
+  text_hash: ff424d3bef7dbb91f243cf3901af78d8017004d95c9417866b8ee562f374ab51
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Claude draft 03/11/2026, awaiting Paul.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19584,17 +19577,17 @@ source: src/lib/content/products.ts
 path: INDEX_PATH_LEDE
 render: Product pages, INDEX_PATH_LEDE
 narrative_slot: utility
-en: Each one answers the question the one before it leaves you holding.
-th: แต่ละอย่างช่วยตอบคำถามที่อันก่อนหน้าทิ้งไว้
-provenance: paul-written
-date: 06/09/2026
+en: What happens in each one.
+th: แต่ละอย่างทำอะไรให้คุณบ้าง
+provenance: draft
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Copy review 03/11/2026, Q9 (Paul chose 5a): the lead now matches the list under it, each product''s what-happens line. Was EN: "Each one answers the question the one before it leaves you holding." TH: "แต่ละอย่างช่วยตอบคำถามที่อันก่อนหน้าทิ้งไว้".'
 review:
-  structural_calque: pass
-  text_hash: 81219abc1ed0de6c2f3647577132fd2718c52ead581ce3a898d03c0c61bfaca1
+  structural_calque: pending
+  text_hash: 9b834cc41e063aeda3764d09c50d510fa0a8d2fdfc02aafbc29f92d13cf3db91
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Claude draft 03/11/2026, awaiting Paul.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19650,21 +19643,17 @@ source: src/lib/content/products.ts
 path: NOT_A_TOOL_BODY
 render: Product pages, NOT_A_TOOL_BODY
 narrative_slot: utility
-en: >-
-  Everything above reads what you already have. The coaching is where we decide what to do about it, and it is
-  the engagement every client starts with.
-th: >-
-  เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว
-  ส่วนการโค้ชคือพื้นที่ที่เราช่วยกันตัดสินใจว่าจะทำอะไรกับสิ่งที่พบ และเป็นจุดเริ่มต้นของลูกค้าทุกคน
-provenance: paul-written
-date: 06/09/2026
+en: Every tool above reads what you already have. Coaching 1:1 is where we work on it with you, and the Fit Report is the usual way in.
+th: เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว ส่วน Coaching 1:1 คือการลงมือทำไปพร้อมกับคุณ และส่วนใหญ่เริ่มต้นจาก Fit Report
+provenance: draft
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Copy review 03/11/2026, Q1: the ladder in offer-architecture.md puts the paid Fit Report before coaching, so the old claim that every client starts with coaching went. Was EN: "Everything above reads what you already have. The coaching is where we decide what to do about it, and it is the engagement every client starts with." TH: "เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว ส่วนการโค้ชคือพื้นที่ที่เราช่วยกันตัดสินใจว่าจะทำอะไรกับสิ่งที่พบ และเป็นจุดเริ่มต้นของลูกค้าทุกคน".'
 review:
-  structural_calque: pass
-  text_hash: a6e83349e3b2efb49ac3282735fe48275fe4a73c88a996426f1ca39c5a26e0d3
+  structural_calque: pending
+  text_hash: 3cd6968d9092fd708c46cf6c8fb075396fb0cd183286ebdc0a5009360e3b5f33
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Claude draft 03/11/2026, awaiting Paul.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19676,17 +19665,17 @@ source: src/lib/content/products.ts
 path: NOT_A_TOOL_HEADING
 render: Product pages, NOT_A_TOOL_HEADING
 narrative_slot: utility
-en: And the part that is not a tool
-th: และส่วนที่ไม่ใช่เครื่องมือ
-provenance: paul-approved
-date: 06/09/2026
+en: Where each tool stops, coaching carries on
+th: เครื่องมือแต่ละอย่างหยุดตรงไหน Coaching 1:1 ช่วยต่อจากตรงนั้น
+provenance: draft
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: 'Copy review 03/11/2026 (Paul chose 4a): heading of the new /products band that sets each tool''s limit beside the coaching service that picks it up. Was EN: "And the part that is not a tool" TH: "และส่วนที่ไม่ใช่เครื่องมือ".'
 review:
-  structural_calque: pass
-  text_hash: 936805a8ee892866e4740bab80385b4f8877b2e9ef86c421325a2ecf067c8cab
+  structural_calque: pending
+  text_hash: 2c6611ec056e0714b2202cd2170f6e66ffa0185742c768020d1818ce96a55d82
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Claude draft 03/11/2026, awaiting Paul.
 ```
 
 <!-- COPY-ENTRY -->
@@ -23949,21 +23938,17 @@ source: src/lib/content/services.ts
 path: SERVICES_FAQ[0].a
 render: Services page, SERVICES_FAQ[0].a
 narrative_slot: utility
-en: >-
-  No. The other two can be taken on their own. The coaching is where every client starts because the direction
-  usually turns out to be the thing that was unclear, not the documents.
-th: >-
-  ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง
-  เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร
-provenance: paul-written
-date: 06/09/2026
+en: No. The other two can be taken on their own. Clients who choose coaching start with the direction, because it usually turns out to be the thing that was unclear, not the documents.
+th: ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร
+provenance: draft
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Copy review 03/11/2026, Q1: English brought in line with Paul''s own Thai, which already says coaching clients start with the direction. Thai unchanged. Was EN: "No. The other two can be taken on their own. The coaching is where every client starts because the direction usually turns out to be the thing that was unclear, not the documents." TH: "ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร".'
 review:
-  structural_calque: pass
-  text_hash: 994bd31da86ce250066c9d4147bc1193c3ac7b445a4f211e82e753ad4d5e5ed8
+  structural_calque: pending
+  text_hash: f86d6fff6dd3f036eb5844c12644fbae120fe3a08cffb6084bf6e32c755324b1
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Claude draft 03/11/2026, awaiting Paul.
 ```
 
 <!-- COPY-ENTRY -->
@@ -24169,21 +24154,17 @@ source: src/lib/content/services.ts
 path: SERVICES_INTRO
 render: Services page, SERVICES_INTRO
 narrative_slot: utility
-en: >-
-  Career coaching is the core service every client starts with. The other two can be taken on their own,
-  depending on what you actually need.
-th: >-
-  Career Coaching เป็นบริการหลักที่ลูกค้าทุกคนเริ่มต้นด้วย
-  ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ
-provenance: paul-approved
-date: 25/08/2026
+en: Career Coaching is the core of every coaching engagement. The other two can be taken on their own, depending on what you actually need.
+th: Career Coaching เป็นแกนหลักของการโค้ชทุกครั้ง ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ
+provenance: draft
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`.
+decision_note: 'Copy review 03/11/2026, Q1: 01_Project_Foundation.md says Career Coaching is the core engagement every client goes through, not the first thing every client buys; the Fit Report comes first. Was EN: "Career coaching is the core service every client starts with. The other two can be taken on their own, depending on what you actually need." TH: "Career Coaching เป็นบริการหลักที่ลูกค้าทุกคนเริ่มต้นด้วย ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ".'
 review:
-  structural_calque: pass
-  text_hash: 714f750d8a9cb8611612d736d53dea2cae6b1e515c65f898c347e34cd9e21e50
+  structural_calque: pending
+  text_hash: 43981cb45f912156965d218d1c8af16bd8ecde6456f699c2cdf37d88676d4f52
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Claude draft 03/11/2026, awaiting Paul.
 ```
 
 <!-- COPY-ENTRY -->
@@ -24446,21 +24427,17 @@ source: src/lib/content/services.ts
 path: SERVICES[0].summary
 render: Services page, SERVICES[0].summary
 narrative_slot: utility
-en: >-
-  This is where every client starts. We get the direction clear before writing a single document, because
-  however good a CV is, sent into the wrong market it is still an application aimed at nothing.
-th: >-
-  นี่คือจุดเริ่มต้นของลูกค้าทุกคน เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน
-  ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี
-provenance: paul-written
-date: 14/08/2026
+en: This is the core of every coaching engagement. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing.
+th: นี่คือแกนหลักของการโค้ชทุกครั้ง เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี
+provenance: draft
+date: 03/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: 'Copy review 03/11/2026, Q1: only the first sentence changed; the Fit Report comes before coaching in the ladder, so coaching is the core of the engagement rather than where every client starts. Was EN: "This is where every client starts. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing." TH: "นี่คือจุดเริ่มต้นของลูกค้าทุกคน เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี".'
 review:
-  structural_calque: pass
-  text_hash: 2de07c7e7e22e03e90ef6c1b7f66936546ef3c53a9faf22cedfe1fc2e2eb9674
+  structural_calque: pending
+  text_hash: 5650d64beba24dc32a79b5437d2e9df1d243e277e0e9ee527842e032b58ef55e
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Claude draft 03/11/2026, awaiting Paul.
 ```
 
 <!-- COPY-ENTRY -->

@@ -30,9 +30,9 @@ import type { Copy } from "./copy";
 // ------------------------------------------------------------------- the hook
 
 export const HOOK_EYEBROW: Copy = {
-  en: "1-1 career coaching for Thai professionals heading to Europe",
+  en: "Coaching 1:1 for Thai professionals heading to Europe",
   // Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`.
-  th: "Career Coaching แบบตัวต่อตัว สำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป",
+  th: "Coaching 1:1 สำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป",
 };
 
 /**

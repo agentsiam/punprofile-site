@@ -446,9 +446,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "HOOK_EYEBROW",
     "render": "Coaching page, HOOK_EYEBROW",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "25/08/2026",
-    "decisionNote": "Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`."
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q3: the termbase names the whole offer Coaching 1:1 and keeps Career Coaching for the first service. Was EN: \"1-1 career coaching for Thai professionals heading to Europe\" TH: \"Career Coaching แบบตัวต่อตัว สำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป\"."
   },
   "src/lib/content/coaching.ts::HOOK_LINE_1": {
     "source": "src/lib/content/coaching.ts",
@@ -2444,9 +2444,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "FAQ[6].q",
     "render": "FAQ page, FAQ[6].q",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "10/09/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q3: the question is about the whole offer, which the termbase names Coaching 1:1. Was EN: \"What does Career Coaching cost?\" TH: \"บริการ Career Coaching ราคาเท่าไร\"."
   },
   "src/lib/content/faq.ts::FAQ[7].a[0]": {
     "source": "src/lib/content/faq.ts",
@@ -6809,9 +6809,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRICING_QUESTIONS[0].q",
     "render": "Pricing page, PRICING_QUESTIONS[0].q",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q3: the question is about the whole offer, which the termbase names Coaching 1:1. Was EN: \"What does Career Coaching cost?\" TH: \"บริการ Career Coaching ราคาเท่าไร?\"."
   },
   "src/lib/content/pricing.ts::RECOMMENDED_BADGE": {
     "source": "src/lib/content/pricing.ts",
@@ -7322,9 +7322,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "INDEX_INTRO",
     "render": "Product pages, INDEX_INTRO",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q4: CV Check, the second product, asks for a CV. Was EN: \"Start wherever you are. Nothing here needs the one before it, and the first two ask for nothing but your answers.\" TH: \"เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า และสองอย่างแรกต้องการเพียงคำตอบจากคุณ\"."
   },
   "src/lib/content/products.ts::INDEX_PATH_HEADING": {
     "source": "src/lib/content/products.ts",
@@ -7340,9 +7340,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "INDEX_PATH_LEDE",
     "render": "Product pages, INDEX_PATH_LEDE",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q9 (Paul chose 5a): the lead now matches the list under it, each product's what-happens line. Was EN: \"Each one answers the question the one before it leaves you holding.\" TH: \"แต่ละอย่างช่วยตอบคำถามที่อันก่อนหน้าทิ้งไว้\"."
   },
   "src/lib/content/products.ts::INDEX_TABLE_HEADING": {
     "source": "src/lib/content/products.ts",
@@ -7367,18 +7367,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "NOT_A_TOOL_BODY",
     "render": "Product pages, NOT_A_TOOL_BODY",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q1: the ladder in offer-architecture.md puts the paid Fit Report before coaching, so the old claim that every client starts with coaching went. Was EN: \"Everything above reads what you already have. The coaching is where we decide what to do about it, and it is the engagement every client starts with.\" TH: \"เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว ส่วนการโค้ชคือพื้นที่ที่เราช่วยกันตัดสินใจว่าจะทำอะไรกับสิ่งที่พบ และเป็นจุดเริ่มต้นของลูกค้าทุกคน\"."
   },
   "src/lib/content/products.ts::NOT_A_TOOL_HEADING": {
     "source": "src/lib/content/products.ts",
     "path": "NOT_A_TOOL_HEADING",
     "render": "Product pages, NOT_A_TOOL_HEADING",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "06/09/2026",
-    "decisionNote": "Read back 06/09/2026."
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026 (Paul chose 4a): heading of the new /products band that sets each tool's limit beside the coaching service that picks it up. Was EN: \"And the part that is not a tool\" TH: \"และส่วนที่ไม่ใช่เครื่องมือ\"."
   },
   "src/lib/content/products.ts::PRODUCT_ART.cv-check.alt": {
     "source": "src/lib/content/products.ts",
@@ -8969,9 +8969,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "SERVICES_FAQ[0].a",
     "render": "Services page, SERVICES_FAQ[0].a",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q1: English brought in line with Paul's own Thai, which already says coaching clients start with the direction. Thai unchanged. Was EN: \"No. The other two can be taken on their own. The coaching is where every client starts because the direction usually turns out to be the thing that was unclear, not the documents.\" TH: \"ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร\"."
   },
   "src/lib/content/services.ts::SERVICES_FAQ[0].q": {
     "source": "src/lib/content/services.ts",
@@ -9050,9 +9050,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "SERVICES_INTRO",
     "render": "Services page, SERVICES_INTRO",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "25/08/2026",
-    "decisionNote": "Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`."
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q1: 01_Project_Foundation.md says Career Coaching is the core engagement every client goes through, not the first thing every client buys; the Fit Report comes first. Was EN: \"Career coaching is the core service every client starts with. The other two can be taken on their own, depending on what you actually need.\" TH: \"Career Coaching เป็นบริการหลักที่ลูกค้าทุกคนเริ่มต้นด้วย ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ\"."
   },
   "src/lib/content/services.ts::SERVICES_PAGE_HEADING": {
     "source": "src/lib/content/services.ts",
@@ -9149,9 +9149,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "SERVICES[0].summary",
     "render": "Services page, SERVICES[0].summary",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q1: only the first sentence changed; the Fit Report comes before coaching in the ladder, so coaching is the core of the engagement rather than where every client starts. Was EN: \"This is where every client starts. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing.\" TH: \"นี่คือจุดเริ่มต้นของลูกค้าทุกคน เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี\"."
   },
   "src/lib/content/services.ts::SERVICES[1].image.alt": {
     "source": "src/lib/content/services.ts",

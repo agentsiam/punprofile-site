@@ -65,9 +65,9 @@ export const SERVICES_HEADING: Copy = {
 };
 
 export const SERVICES_INTRO: Copy = {
-  en: "Career coaching is the core service every client starts with. The other two can be taken on their own, depending on what you actually need.",
+  en: "Career Coaching is the core of every coaching engagement. The other two can be taken on their own, depending on what you actually need.",
   // Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`.
-  th: "Career Coaching เป็นบริการหลักที่ลูกค้าทุกคนเริ่มต้นด้วย ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ",
+  th: "Career Coaching เป็นแกนหลักของการโค้ชทุกครั้ง ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ",
 };
 
 export const SERVICES: readonly Service[] = [
@@ -82,8 +82,8 @@ export const SERVICES: readonly Service[] = [
       th: "คุณควรมุ่งไปทางไหน และเพราะอะไร",
     },
     summary: {
-      en: "This is where every client starts. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing.",
-      th: "นี่คือจุดเริ่มต้นของลูกค้าทุกคน เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี",
+      en: "This is the core of every coaching engagement. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing.",
+      th: "นี่คือแกนหลักของการโค้ชทุกครั้ง เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี",
     },
     includes: [
       {
@@ -388,7 +388,7 @@ export const SERVICES_FAQ: readonly ServiceFaq[] = [
       th: "ต้องใช้บริการโค้ชชิ่งก่อนถึงจะใช้อีกสองบริการได้ไหม",
     },
     a: {
-      en: "No. The other two can be taken on their own. The coaching is where every client starts because the direction usually turns out to be the thing that was unclear, not the documents.",
+      en: "No. The other two can be taken on their own. Clients who choose coaching start with the direction, because it usually turns out to be the thing that was unclear, not the documents.",
       // Paul's wording, 06/09/2026.
       th: "ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร",
     },

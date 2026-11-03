@@ -786,9 +786,9 @@ export const INDEX_HEADING: Copy = {
 };
 
 export const INDEX_INTRO: Copy = {
-  en: "Start wherever you are. Nothing here needs the one before it, and the first two ask for nothing but your answers.",
+  en: "Start wherever you are. Nothing here needs the one before it, and the first one asks for nothing but your answers.",
   // Paul's wording, 06/09/2026.
-  th: "เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า และสองอย่างแรกต้องการเพียงคำตอบจากคุณ",
+  th: "เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า และอย่างแรกต้องการเพียงคำตอบจากคุณ",
 };
 
 export const INDEX_PATH_HEADING: Copy = {
@@ -798,9 +798,9 @@ export const INDEX_PATH_HEADING: Copy = {
 };
 
 export const INDEX_PATH_LEDE: Copy = {
-  en: "Each one answers the question the one before it leaves you holding.",
+  en: "What happens in each one.",
   // Paul's wording, 06/09/2026.
-  th: "แต่ละอย่างช่วยตอบคำถามที่อันก่อนหน้าทิ้งไว้",
+  th: "แต่ละอย่างทำอะไรให้คุณบ้าง",
 };
 
 export const INDEX_TABLE_HEADING: Copy = {
@@ -858,15 +858,15 @@ export const CARD_ACTION: Copy = {
  * tools is a reader who should know the sixth thing exists and is not a tool.
  */
 export const NOT_A_TOOL_HEADING: Copy = {
-  en: "And the part that is not a tool",
+  en: "Where each tool stops, coaching carries on",
   // Read back 06/09/2026.
-  th: "และส่วนที่ไม่ใช่เครื่องมือ",
+  th: "เครื่องมือแต่ละอย่างหยุดตรงไหน Coaching 1:1 ช่วยต่อจากตรงนั้น",
 };
 
 export const NOT_A_TOOL_BODY: Copy = {
-  en: "Everything above reads what you already have. The coaching is where we decide what to do about it, and it is the engagement every client starts with.",
+  en: "Every tool above reads what you already have. Coaching 1:1 is where we work on it with you, and the Fit Report is the usual way in.",
   // Paul's wording, 06/09/2026.
-  th: "เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว ส่วนการโค้ชคือพื้นที่ที่เราช่วยกันตัดสินใจว่าจะทำอะไรกับสิ่งที่พบ และเป็นจุดเริ่มต้นของลูกค้าทุกคน",
+  th: "เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว ส่วน Coaching 1:1 คือการลงมือทำไปพร้อมกับคุณ และส่วนใหญ่เริ่มต้นจาก Fit Report",
 };
 
 /* ==========================================================================
