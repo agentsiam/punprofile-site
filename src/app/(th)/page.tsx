@@ -115,7 +115,20 @@ const RESULTS_IN_ORDER = [...RESULTS].sort(
     RESULT_ORDER.indexOf(b.id as (typeof RESULT_ORDER)[number]),
 );
 
-/** Drawn avatar per result id, files under `public/home/testimonials/`. */
+/**
+ * Photograph per result id, files under `public/home/testimonials/`. The client
+ * photos replaced the drawn clay stand-ins on 03/11/2026, Paul's call; he
+ * matched each photo to its client.
+ */
+const RESULT_AVATARS: Record<string, string> = {
+  coaching: "/home/testimonials/testimonial-photo-min.jpg",
+  "job-alerts": "/home/testimonials/testimonial-photo-non.jpg",
+  "ai-training": "/home/testimonials/testimonial-photo-jay.jpg",
+  "placed-hotel-germany": "/home/testimonials/testimonial-photo-may.jpg",
+  "placed-chef-netherlands": "/home/testimonials/testimonial-photo-ton.jpg",
+  "placed-it-ireland": "/home/testimonials/testimonial-photo-nat.jpg",
+  "placed-logistics-sweden": "/home/testimonials/testimonial-photo-nut.jpg",
+};
 /** Clay cutout per coaching service, files under `public/home/`. 03/11/2026. */
 const SERVICE_CUTOUT: Record<string, string> = {
   coaching: "/home/service-direction.png",
@@ -128,15 +141,6 @@ const SERVICE_TINT = [
   "bg-yellow-pale text-on-yellow-pale",
 ];
 
-const RESULT_AVATARS: Record<string, string> = {
-  coaching: "/home/testimonials/testimonial-avatar-min-marketing.png",
-  "job-alerts": "/home/testimonials/testimonial-avatar-non-it.png",
-  "ai-training": "/home/testimonials/testimonial-avatar-jay-business.png",
-  "placed-hotel-germany": "/home/testimonials/testimonial-avatar-may-hotel-germany.png",
-  "placed-chef-netherlands": "/home/testimonials/testimonial-avatar-ton-chef-netherlands.png",
-  "placed-it-ireland": "/home/testimonials/testimonial-avatar-nat-it-ireland.png",
-  "placed-logistics-sweden": "/home/testimonials/testimonial-avatar-nut-logistics-sweden.png",
-};
 
 export default function Home() {
   const { t, pick, path, locale } = useCopy();
@@ -691,9 +695,8 @@ export default function Home() {
             call of 22/09/2026: the heading and the three cards, nothing else.
 
             Social-post cards in a swipeable track, Paul's call of 30/10/2026.
-            Avatars are drawn clay stand-ins in the blog art's style, never a
-            photograph and never a likeness, so no stranger's face is presented
-            as a client. Prompt and source sheet: `avatar-image-prompt.md`.
+            Avatars are the clients' own photographs since 03/11/2026; until
+            then they were drawn clay stand-ins.
             The arrows appear only once there are more cards than fit, so with
             three on a wide screen there are none. No per-card story link: there
             is no case study to link to. */}
