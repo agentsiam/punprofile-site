@@ -365,6 +365,18 @@ export const PAGE_ACTIONS: Record<string, PageActions> = {
     because:
       "Bought in token packs by message while payment is a bank transfer arranged by hand, so the ask is a conversation. The secondary goes to the prices because this is the product the tokens exist for, and a reader here is usually asking what it costs.",
   },
+  /**
+   * The closing band on `/products` and on every product page, Paul's call of
+   * 03/11/2026 (copy review, 2b). Its words are "Tell me where you are and what
+   * you are aiming at, and I will say which of these is worth your time", which
+   * asks for a conversation, so its button is the conversation on every page.
+   * Each hero keeps its own page's primary.
+   */
+  "product-close": {
+    primary: "contact",
+    because:
+      "The closing words ask the reader to say where they are, so the button is the conversation, on every product page and the catalogue alike. The heroes keep their own primaries.",
+  },
   "/products/job-search-dashboard": {
     primary: "pricing",
     secondary: "contact",

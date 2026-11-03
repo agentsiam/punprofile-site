@@ -447,8 +447,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Coaching page, HOOK_EYEBROW",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "25/08/2026",
-    "decisionNote": "Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`."
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q3: the termbase names the whole offer Coaching 1:1 and keeps Career Coaching for the first service. Approved unchanged by Paul in the review of 03/11/2026."
   },
   "src/lib/content/coaching.ts::HOOK_LINE_1": {
     "source": "src/lib/content/coaching.ts",
@@ -2445,8 +2445,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "FAQ page, FAQ[6].q",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "10/09/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q3: the question is about the whole offer, which the termbase names Coaching 1:1. Approved unchanged by Paul in the review of 03/11/2026."
   },
   "src/lib/content/faq.ts::FAQ[7].a[0]": {
     "source": "src/lib/content/faq.ts",
@@ -3128,9 +3128,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "SAMPLE_NOTE",
     "render": "Home page, SAMPLE_NOTE",
     "narrativeSlot": "proof",
-    "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "Read back 25/08/2026. Built on the shape of Paul's own calculator\n\ndisclaimer of 23/08/2026, which says the numbers come from what you typed."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"An example, not a real person. Your own numbers come from your own answers.\" TH: \"นี่เป็นเพียงตัวอย่าง ไม่ใช่ผลของคนจริง ตัวเลขของคุณจะมาจากคำตอบของคุณเอง\"."
   },
   "src/lib/content/home.ts::TRIAGE_HEADING": {
     "source": "src/lib/content/home.ts",
@@ -7476,8 +7476,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Pricing page, PRICING_QUESTIONS[0].q",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q3: the question is about the whole offer, which the termbase names Coaching 1:1. Approved unchanged by Paul in the review of 03/11/2026."
   },
   "src/lib/content/pricing.ts::RECOMMENDED_BADGE": {
     "source": "src/lib/content/pricing.ts",
@@ -7898,18 +7898,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CLOSE_BODY",
     "render": "Product pages, CLOSE_BODY",
     "narrativeSlot": "ask",
-    "provenance": "paul-approved",
-    "date": "06/09/2026",
-    "decisionNote": "Read back 06/09/2026. First person, which is what `DESTINATIONS.contact`\n\nin `cta.ts` settled: the reader reaches a person, not a company."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Tell me where you are and what you are aiming at, and I will say which of these is worth your time and which is not.\" TH: \"บอกผมว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ แล้วผมจะบอกว่าอันไหนคุ้มกับเวลาของคุณ และอันไหนยังไม่ต้อง\"."
   },
   "src/lib/content/products.ts::CLOSE_HEADING": {
     "source": "src/lib/content/products.ts",
     "path": "CLOSE_HEADING",
     "render": "Product pages, CLOSE_HEADING",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "06/09/2026",
-    "decisionNote": "Read back 06/09/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Not sure which one you need?\" TH: \"ยังไม่แน่ใจว่าควรเริ่มจากอันไหน\"."
   },
   "src/lib/content/products.ts::COL_COST": {
     "source": "src/lib/content/products.ts",
@@ -7934,9 +7934,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COL_WHAT",
     "render": "Product pages, COL_WHAT",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "06/09/2026",
-    "decisionNote": "Read back 06/09/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"What happens\" TH: \"เกิดอะไรขึ้นบ้าง\"."
   },
   "src/lib/content/products.ts::COL_WHO": {
     "source": "src/lib/content/products.ts",
@@ -7980,8 +7980,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, INDEX_HEADING",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Five tools and one conversation, in the order most people take them\" TH: \"เครื่องมือห้าอย่างและการพูดคุยกับโค้ชอีกหนึ่งแบบ เรียงตามลำดับที่คนส่วนใหญ่มักใช้\"."
   },
   "src/lib/content/products.ts::INDEX_INTRO": {
     "source": "src/lib/content/products.ts",
@@ -7989,8 +7989,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, INDEX_INTRO",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Start wherever you are. Nothing here needs the one before it, and the first one asks for nothing but your answers.\" TH: \"เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า และอย่างแรกต้องการเพียงคำตอบจากคุณ\"."
   },
   "src/lib/content/products.ts::INDEX_PATH_HEADING": {
     "source": "src/lib/content/products.ts",
@@ -7998,8 +7998,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, INDEX_PATH_HEADING",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"How they fit together\" TH: \"แต่ละอย่างทำงานร่วมกันอย่างไร\"."
   },
   "src/lib/content/products.ts::INDEX_PATH_LEDE": {
     "source": "src/lib/content/products.ts",
@@ -8007,8 +8007,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, INDEX_PATH_LEDE",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"What happens in each one.\" TH: \"แต่ละอย่างทำอะไรให้คุณบ้าง\"."
   },
   "src/lib/content/products.ts::INDEX_TABLE_HEADING": {
     "source": "src/lib/content/products.ts",
@@ -8034,17 +8034,17 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, NOT_A_TOOL_BODY",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Every tool above reads what you already have. Coaching 1:1 is where we work on it with you, and the Fit Report is the usual way in.\" TH: \"เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว ส่วน Coaching 1:1 คือการลงมือทำไปพร้อมกับคุณ และส่วนใหญ่เริ่มต้นจาก Fit Report\"."
   },
   "src/lib/content/products.ts::NOT_A_TOOL_HEADING": {
     "source": "src/lib/content/products.ts",
     "path": "NOT_A_TOOL_HEADING",
     "render": "Product pages, NOT_A_TOOL_HEADING",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "06/09/2026",
-    "decisionNote": "Read back 06/09/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Where each tool stops, coaching carries on\" TH: \"เครื่องมือแต่ละอย่างหยุดตรงไหน Coaching 1:1 ช่วยต่อจากตรงนั้น\"."
   },
   "src/lib/content/products.ts::PRODUCT_ART.cv-check.alt": {
     "source": "src/lib/content/products.ts",
@@ -8114,63 +8114,63 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[0].faq[0].q",
     "render": "Product pages, PRODUCTS[0].faq[0].q",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"My English is not strong yet. Can I still do this?\" TH: \"ภาษาอังกฤษยังไม่แข็งแรง ทำได้ไหม\"."
   },
   "src/lib/content/products.ts::PRODUCTS[0].faq[1].a": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].faq[1].a",
     "render": "Product pages, PRODUCTS[0].faq[1].a",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"A person actually reads your answers. The system does not decide on its own who gets contacted back.\" TH: \"จะมีคนอ่านคำตอบของคุณจริง ๆ ระบบไม่ได้เป็นผู้ตัดสินเพียงลำพังว่าเราจะติดต่อใครกลับ\"."
   },
   "src/lib/content/products.ts::PRODUCTS[0].faq[1].q": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].faq[1].q",
     "render": "Product pages, PRODUCTS[0].faq[1].q",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"What happens after I finish the assessment?\" TH: \"ทำแบบประเมินเสร็จแล้วจะเกิดอะไรขึ้น\"."
   },
   "src/lib/content/products.ts::PRODUCTS[0].how[0]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].how[0]",
     "render": "Product pages, PRODUCTS[0].how[0]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"17 questions about your work experience, your English, your target country and where you are in the move. In Thai, on your phone.\" TH: \"คำถาม 17 ข้อ เกี่ยวกับประสบการณ์ทำงาน ระดับภาษาอังกฤษ ประเทศเป้าหมาย และตอนนี้คุณอยู่ขั้นไหนบนเส้นทางไปทำงานในยุโรป ตอบเป็นภาษาไทยบนมือถือได้เลย\"."
   },
   "src/lib/content/products.ts::PRODUCTS[0].how[1]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].how[1]",
     "render": "Product pages, PRODUCTS[0].how[1]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Your own chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European market. Each scored out of 5.\" TH: \"กราฟของคุณเองใน 4 ด้าน คือ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความสอดคล้องกับตลาดยุโรป แต่ละด้านมีคะแนนเต็ม 5\"."
   },
   "src/lib/content/products.ts::PRODUCTS[0].how[2]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].how[2]",
     "render": "Product pages, PRODUCTS[0].how[2]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"How you compare with everyone else who has taken it, and how many of the job adverts we checked come from employers who sponsor a visa.\" TH: \"ดูว่าคุณเทียบกับคนอื่นที่ทำแบบประเมินนี้แล้วเป็นอย่างไร และจากประกาศงานที่เราตรวจสอบ มีกี่ตำแหน่งที่บริษัทระบุว่าสปอนเซอร์วีซ่า\"."
   },
   "src/lib/content/products.ts::PRODUCTS[0].howLede": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[0].howLede",
     "render": "Product pages, PRODUCTS[0].howLede",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"What you answer, and what you see the moment you finish.\" TH: \"สิ่งที่คุณจะตอบ และสิ่งที่คุณจะเห็นทันทีที่ทำเสร็จ\"."
   },
   "src/lib/content/products.ts::PRODUCTS[0].lede": {
     "source": "src/lib/content/products.ts",
@@ -8186,9 +8186,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[0].limit",
     "render": "Product pages, PRODUCTS[0].limit",
     "narrativeSlot": "limit",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"It reads your answers, not your CV. Where a form cannot measure something reliably, the chart leaves it empty instead of guessing. Those parts need someone to read your real CV or talk with you.\" TH: \"แบบประเมินนี้อ่านจากคำตอบของคุณ ยังไม่ได้อ่าน CV ตัวจริง เรื่องไหนที่ประเมินจากคำตอบได้ไม่น่าเชื่อถือพอ กราฟจะเว้นว่างไว้แทนการเดาคะแนน ส่วนนั้นต้องมีคนอ่าน CV ตัวจริงของคุณหรือได้คุยกับคุณก่อน\"."
   },
   "src/lib/content/products.ts::PRODUCTS[0].name": {
     "source": "src/lib/content/products.ts",
@@ -8214,8 +8214,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[1].faq[0].a",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"No. The CV Check is free.\" TH: \"ไม่มีค่าใช้จ่าย CV Check ใช้ฟรี\"."
   },
   "src/lib/content/products.ts::PRODUCTS[1].faq[0].q": {
     "source": "src/lib/content/products.ts",
@@ -8232,8 +8232,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[1].headline",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"A CV that works in the Thai market can leave a European reader unable to see your strengths.\" TH: \"CV ที่ใช้ได้ดีในตลาดไทย อาจทำให้คนในตลาดยุโรปมองไม่เห็นจุดแข็งของคุณ\"."
   },
   "src/lib/content/products.ts::PRODUCTS[1].how[0]": {
     "source": "src/lib/content/products.ts",
@@ -8241,8 +8241,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[1].how[0]",
     "narrativeSlot": "mechanism",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026. The reading-order opener from the Kick-start\n\nrun sheet, which exists because the ATS artefact only shows up when a CV\n\nparses badly and the first real CV parsed cleanly."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"What the first third of the page spends itself on, because a screener and a reader both start at the top and both stop early.\" TH: \"ดูว่าหนึ่งในสามแรกของหน้าใช้พื้นที่ไปกับอะไร เพราะทั้งระบบคัดกรองและคนอ่านต่างเริ่มจากด้านบน และอาจหยุดอ่านตั้งแต่เนิ่น ๆ\"."
   },
   "src/lib/content/products.ts::PRODUCTS[1].how[1]": {
     "source": "src/lib/content/products.ts",
@@ -8250,8 +8250,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[1].how[1]",
     "narrativeSlot": "mechanism",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026. This is the core claim in `10_Methodology.md`:\n\nillegibility rather than capability. A Bangkok senior title may read as\n\nmid-level and a well-known Thai employer reads as an unknown one."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Whether your employers and job titles mean anything to someone who does not know the Thai market.\" TH: \"เช็กว่าชื่อบริษัทและชื่อตำแหน่งของคุณสื่อความหมายกับคนที่ไม่รู้จักตลาดงานไทยหรือไม่\"."
   },
   "src/lib/content/products.ts::PRODUCTS[1].how[2]": {
     "source": "src/lib/content/products.ts",
@@ -8267,9 +8267,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[1].howLede",
     "render": "Product pages, PRODUCTS[1].howLede",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "10/09/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"We read your CV the way a European reader does, and list what to fix.\" TH: \"เราอ่าน CV ของคุณแบบเดียวกับคนอ่านในยุโรป แล้วบอกว่าควรแก้จุดไหนบ้าง\"."
   },
   "src/lib/content/products.ts::PRODUCTS[1].lede": {
     "source": "src/lib/content/products.ts",
@@ -8277,8 +8277,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[1].lede",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Upload your CV and see how much of your profile a European reader can actually understand. Free.\" TH: \"อัปโหลด CV แล้วดูว่าคนในตลาดยุโรปเข้าใจโปรไฟล์ของคุณได้มากแค่ไหน ใช้ฟรี\"."
   },
   "src/lib/content/products.ts::PRODUCTS[1].limit": {
     "source": "src/lib/content/products.ts",
@@ -8312,9 +8312,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[2].faq[0].a",
     "render": "Fit Report page, FAQ answer",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet.\" TH: \"แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้\"."
   },
   "src/lib/content/products.ts::PRODUCTS[2].faq[0].q": {
     "source": "src/lib/content/products.ts",
@@ -8339,9 +8339,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[2].how[0]",
     "render": "Fit Report page, how it works step 1",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026, with his ติดต่อผมทาง LINE set back to ทักมาทาง LINE because the termbase term contact-talk-to-me bans ติดต่อผม; the English follows his Thai. Was EN: \"Contact me on LINE for the payment details and to book an interview time that suits you.\" TH: \"ติดต่อผมทาง LINE เพื่อรับรายละเอียดการชำระเงินและนัดเวลาสัมภาษณ์ที่คุณสะดวก\"."
   },
   "src/lib/content/products.ts::PRODUCTS[2].how[1]": {
     "source": "src/lib/content/products.ts",
@@ -8412,17 +8412,17 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[3].faq[0].a",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026. Deliberately does not say real time: the\n\nmechanism will be batched, and a promise of real time is a claim the\n\nsystem does not meet."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"We keep looking, and a token is only deducted once a role matching your criteria has reached you.\" TH: \"เราจะค้นหาต่อให้ และหักโทเคนเฉพาะเมื่อมีตำแหน่งที่ตรงกับเงื่อนไขส่งถึงคุณแล้ว\"."
   },
   "src/lib/content/products.ts::PRODUCTS[3].faq[0].q": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[3].faq[0].q",
     "render": "Product pages, PRODUCTS[3].faq[0].q",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"What if nothing matches?\" TH: \"ถ้ารอบไหนไม่มีตำแหน่งที่ตรงเลย\"."
   },
   "src/lib/content/products.ts::PRODUCTS[3].headline": {
     "source": "src/lib/content/products.ts",
@@ -8448,17 +8448,17 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[3].how[1]",
     "narrativeSlot": "mechanism",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026. One at a time is the method's own rule\n\nagainst handing anyone a five-item list, applied to job search."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"One role at a time, so you have the time to look at each one properly.\" TH: \"ส่งให้ทีละตำแหน่ง เพื่อให้คุณมีเวลาดูแต่ละงานจริง ๆ\"."
   },
   "src/lib/content/products.ts::PRODUCTS[3].how[2]": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[3].how[2]",
     "render": "Product pages, PRODUCTS[3].how[2]",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "22/08/2026",
-    "decisionNote": "Drafted 23/08/2026, read back and approved unchanged. Work rights sit outside the match bar and are\n\nalways stated, decided 22/08/2026, using the pipeline's own\n\n\"Publish (Work Rights Required)\" verdict whose rule is that the label is\n\nnot optional and not a footnote."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Every role says plainly whether it needs work rights you already hold, before you spend time applying.\" TH: \"ทุกตำแหน่งระบุชัดว่าต้องมีสิทธิ์ทำงานอยู่แล้วหรือไม่ ก่อนที่คุณจะเสียเวลาในการสมัคร\"."
   },
   "src/lib/content/products.ts::PRODUCTS[3].howLede": {
     "source": "src/lib/content/products.ts",
@@ -8591,9 +8591,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[4].howLede",
     "render": "Product pages, PRODUCTS[4].howLede",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
+    "provenance": "paul-written",
     "date": "03/11/2026",
-    "decisionNote": "Rewritten 03/11/2026 for the whole dashboard, after the rename from Guided Job Hunt. Paul approved this Thai unchanged in his review pass of 03/11/2026."
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"The roles picked for you, your CVs and every application you send, on one page.\" TH: \"ตำแหน่งที่ PunProfile คัดให้ CV ของคุณ และทุกตำแหน่งที่คุณสมัคร รวมไว้ในหน้าเดียว\"."
   },
   "src/lib/content/products.ts::PRODUCTS[4].lede": {
     "source": "src/lib/content/products.ts",
@@ -8610,8 +8610,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[4].limit",
     "narrativeSlot": "limit",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"We do not apply for you, and we do not chase employers on your behalf.\" TH: \"เราไม่สมัครงานแทนคุณ และไม่ติดตามนายจ้างแทนคุณ\"."
   },
   "src/lib/content/products.ts::PRODUCTS[4].name": {
     "source": "src/lib/content/products.ts",
@@ -9635,9 +9635,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "SERVICES_FAQ[0].a",
     "render": "Services page, SERVICES_FAQ[0].a",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "06/09/2026",
-    "decisionNote": "Paul's wording, 06/09/2026."
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Copy review 03/11/2026, Q1: English brought in line with Paul's own Thai, which already says coaching clients start with the direction. Thai unchanged. Approved unchanged by Paul in the review of 03/11/2026."
   },
   "src/lib/content/services.ts::SERVICES_FAQ[0].q": {
     "source": "src/lib/content/services.ts",
@@ -9716,9 +9716,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "SERVICES_INTRO",
     "render": "Services page, SERVICES_INTRO",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "25/08/2026",
-    "decisionNote": "Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Career Coaching is the core of every coaching engagement. The other two can be taken on their own, depending on what you actually need.\" TH: \"Career Coaching เป็นแกนหลักของการโค้ชทุกครั้ง ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ\"."
   },
   "src/lib/content/services.ts::SERVICES_PAGE_HEADING": {
     "source": "src/lib/content/services.ts",
@@ -9816,8 +9816,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Services page, SERVICES[0].summary",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"This is the core of every coaching engagement. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing.\" TH: \"นี่คือแกนหลักของการโค้ชทุกครั้ง เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี\"."
   },
   "src/lib/content/services.ts::SERVICES[1].image.alt": {
     "source": "src/lib/content/services.ts",
@@ -10328,9 +10328,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.fit.summary.heading",
     "render": "Fit Report, summary heading",
     "narrativeSlot": "proof",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Where you stand against the market's bar\" TH: \"คุณอยู่ตรงไหน เมื่อเทียบกับเกณฑ์ของตลาด\"."
   },
   "src/lib/content/copy.ts::COPY.fit.col.area": {
     "source": "src/lib/content/copy.ts",
@@ -10706,9 +10706,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[2].faq[2].q",
     "render": "Fit Report page, FAQ question",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"How long until I get the report?\" TH: \"นานแค่ไหนกว่าจะได้รายงาน\"."
   },
   "src/lib/content/products.ts::PRODUCTS[2].faq[2].a": {
     "source": "src/lib/content/products.ts",
@@ -10751,9 +10751,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "FIT_TILES[1].caption",
     "render": "Fit Report page, tile caption, order page",
     "narrativeSlot": "artefact",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Which bar to clear first, and where to start.\" TH: \"ควรผ่านเกณฑ์ด้านไหนก่อน และเริ่มพัฒนาจากจุดใด\"."
   },
   "src/lib/content/products.ts::FIT_TILES[2].title": {
     "source": "src/lib/content/products.ts",
@@ -10769,27 +10769,27 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "FIT_TILES[2].caption",
     "render": "Fit Report page, tile caption, area page",
     "narrativeSlot": "artefact",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"A closer look at all four areas, one chart each with eight to ten competencies, with advice on which are below the bar and how to develop them.\" TH: \"เจาะลึกทักษะทั้ง 4 ด้าน ผ่านกราฟแยกด้านละ 8–10 ทักษะ พร้อมคำแนะนำว่าทักษะไหนยังไม่ถึงเกณฑ์ และควรพัฒนาอย่างไร\"."
   },
   "src/lib/content/products.ts::FIT_TILES[3].caption": {
     "source": "src/lib/content/products.ts",
     "path": "FIT_TILES[3].caption",
     "render": "Fit Report page, tile caption, moves page",
     "narrativeSlot": "artefact",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Ranked for you: what to work on first to lift your score most, with the before and after.\" TH: \"จัดลำดับให้แล้วว่าควรพัฒนาอะไรก่อน เพื่อเพิ่มคะแนนได้มากที่สุด พร้อมเปรียบเทียบคะแนนก่อนและหลัง\"."
   },
   "src/lib/content/products.ts::FIT_TILES[4].caption": {
     "source": "src/lib/content/products.ts",
     "path": "FIT_TILES[4].caption",
     "render": "Fit Report page, tile caption, roles page",
     "narrativeSlot": "artefact",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a)."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Open roles in the countries you chose, with the job ads we have checked.\" TH: \"ตำแหน่งงานที่เปิดรับสมัครจริงในประเทศที่คุณเลือก พร้อมประกาศงานที่เราตรวจสอบแล้ว\"."
   },
   "src/lib/content/products.ts::FIT_SAMPLE_PDF": {
     "source": "src/lib/content/products.ts",
@@ -10859,9 +10859,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "FIT_PLAN_FREE.rows[2]",
     "render": "Fit Report page, comparison card row, EU Fit Check",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"The market's bar on every chart\" TH: \"เกณฑ์ของตลาดบนทุกกราฟ\"."
   },
   "src/lib/content/products.ts::FIT_PLAN_FREE.rows[3]": {
     "source": "src/lib/content/products.ts",
@@ -10904,9 +10904,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "FIT_PLAN_FULL.rows[1]",
     "render": "Fit Report page, comparison card row, Fit Report",
     "narrativeSlot": "mechanism",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"A next step for every competency below the bar, in order\" TH: \"สิ่งที่ควรทำต่อ ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ\"."
   },
   "src/lib/content/products.ts::FIT_PLAN_FULL.rows[2]": {
     "source": "src/lib/content/products.ts",
@@ -10985,9 +10985,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "FIT_CALLOUTS[2].body",
     "render": "Fit Report page, showcase callout body",
     "narrativeSlot": "artefact",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. Thai rewritten by Paul in chat 28/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"Advice for you, with things you can act on next.\" TH: \"คำแนะนำเฉพาะคุณ พร้อมสิ่งที่นำไปลงมือทำต่อได้\"."
   },
   "src/lib/content/products.ts::FIT_EXPERT.title": {
     "source": "src/lib/content/products.ts",

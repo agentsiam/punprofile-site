@@ -1358,15 +1358,15 @@ source: src/lib/content/coaching.ts
 path: HOOK_EYEBROW
 render: Coaching page, HOOK_EYEBROW
 narrative_slot: utility
-en: 1-1 career coaching for Thai professionals heading to Europe
-th: Career Coaching แบบตัวต่อตัว สำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป
+en: Coaching 1:1 for Thai professionals heading to Europe
+th: Coaching 1:1 สำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป
 provenance: paul-approved
-date: 25/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`.
+decision_note: 'Copy review 03/11/2026, Q3: the termbase names the whole offer Coaching 1:1 and keeps Career Coaching for the first service. Approved unchanged by Paul in the review of 03/11/2026.'
 review:
   structural_calque: pass
-  text_hash: 3d077cdfef31d98d18a2bc913dbfaabd8eedf9509f6903e4cc204d8b66ee8ea8
+  text_hash: 9a5de1d6248f6ea8e0d9436b89be443dc88b6772f3d8ec347fb0e31642c39a86
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -6814,20 +6814,17 @@ source: src/lib/content/faq.ts
 path: FAQ[6].q
 render: FAQ page, FAQ[6].q
 narrative_slot: utility
-en: What does Career Coaching cost?
-th: บริการ Career Coaching ราคาเท่าไร
+en: What does Coaching 1:1 cost?
+th: Coaching 1:1 ราคาเท่าไร
 provenance: paul-approved
-date: 10/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+decision_note: 'Copy review 03/11/2026, Q3: the question is about the whole offer, which the termbase names Coaching 1:1. Approved unchanged by Paul in the review of 03/11/2026.'
 review:
   structural_calque: pass
-  text_hash: d41c8c27a4ef0f0aaf6a7abe5852101864c3549f74c0a23c5cbdc6b7a9ffb20a
+  text_hash: d50cae181dba343000e63dbfe17df547f64c38b3bbb6900c5bc53067ca26897d
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -8720,18 +8717,15 @@ source: src/lib/content/home.ts
 path: SAMPLE_NOTE
 render: Home page, SAMPLE_NOTE
 narrative_slot: proof
-en: An example, not a real person. Your own numbers come from your own answers.
-th: นี่เป็นเพียงตัวอย่าง ไม่ใช่ผลของคนจริง ตัวเลขของคุณจะมาจากคำตอบของคุณเอง
-provenance: paul-approved
-date: 23/08/2026
+en: This chart is an example. Your own result comes from the answers you give.
+th: กราฟนี้เป็นตัวอย่าง ส่วนผลประเมินของคุณจะมาจากคำตอบที่คุณให้
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Read back 25/08/2026. Built on the shape of Paul's own calculator
-
-  disclaimer of 23/08/2026, which says the numbers come from what you typed.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "An example, not a real person. Your own numbers come from your own answers." TH: "นี่เป็นเพียงตัวอย่าง ไม่ใช่ผลของคนจริง ตัวเลขของคุณจะมาจากคำตอบของคุณเอง".'
 review:
   structural_calque: pass
-  text_hash: 9f6dfe5339354be893d538e3fc0bdb4d8e4984f75d2ce2f91bbaf194ec794a7e
+  text_hash: b2498e53d6ff1a3c06b5cc40999e0034f8c0a6511b989c804062d8f8989f016f
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19810,15 +19804,15 @@ source: src/lib/content/pricing.ts
 path: PRICING_QUESTIONS[0].q
 render: Pricing page, PRICING_QUESTIONS[0].q
 narrative_slot: utility
-en: What does Career Coaching cost?
-th: บริการ Career Coaching ราคาเท่าไร?
+en: What does Coaching 1:1 cost?
+th: Coaching 1:1 ราคาเท่าไร?
 provenance: paul-approved
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: 'Copy review 03/11/2026, Q3: the question is about the whole offer, which the termbase names Coaching 1:1. Approved unchanged by Paul in the review of 03/11/2026.'
 review:
   structural_calque: pass
-  text_hash: 53465b7aa2e16683b4ebc14d96b5681c8327e346f1812208b77a0654a337f8d1
+  text_hash: 54cc61815467d5764273c2d9492c990ad028795c9fac91efa748af1f82454871
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20939,20 +20933,15 @@ source: src/lib/content/products.ts
 path: CLOSE_BODY
 render: Product pages, CLOSE_BODY
 narrative_slot: ask
-en: >-
-  Tell me where you are and what you are aiming at, and I will say which of these is worth your time and which
-  is not.
-th: บอกผมว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ แล้วผมจะบอกว่าอันไหนคุ้มกับเวลาของคุณ และอันไหนยังไม่ต้อง
-provenance: paul-approved
-date: 06/09/2026
+en: Tell me where you are now and what you are aiming at, and I will suggest where to start and what you do not need yet.
+th: เล่าให้ผมฟังว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ ผมจะช่วยแนะนำว่าควรเริ่มจากอะไรและอะไรที่ยังไม่จำเป็น
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Read back 06/09/2026. First person, which is what `DESTINATIONS.contact`
-
-  in `cta.ts` settled: the reader reaches a person, not a company.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Tell me where you are and what you are aiming at, and I will say which of these is worth your time and which is not." TH: "บอกผมว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ แล้วผมจะบอกว่าอันไหนคุ้มกับเวลาของคุณ และอันไหนยังไม่ต้อง".'
 review:
   structural_calque: pass
-  text_hash: 7332baf18ac13b93e3fc84e39074b3625c6a14da6f9fd3363747bdbcf7ec0c49
+  text_hash: 64583530c8590fd317e5bd829ddf5f00030c664926144924c66f7f76e2b39995
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20966,15 +20955,15 @@ source: src/lib/content/products.ts
 path: CLOSE_HEADING
 render: Product pages, CLOSE_HEADING
 narrative_slot: utility
-en: Not sure which one you need?
-th: ยังไม่แน่ใจว่าควรเริ่มจากอันไหน
-provenance: paul-approved
-date: 06/09/2026
+en: Not sure where to start?
+th: ยังไม่แน่ใจว่าควรเริ่มจากตรงไหน?
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Not sure which one you need?" TH: "ยังไม่แน่ใจว่าควรเริ่มจากอันไหน".'
 review:
   structural_calque: pass
-  text_hash: f6d4b0ea94a707d8a12b36f27b6169105bc4a1e43510d787307cfe4ef974a51e
+  text_hash: 28fcd3fb694ff5746a62c61597f1f0b8f7e32acd3be6a9cfdf0cfddc588e2181
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21032,15 +21021,15 @@ source: src/lib/content/products.ts
 path: COL_WHAT
 render: Product pages, COL_WHAT
 narrative_slot: utility
-en: What happens
-th: เกิดอะไรขึ้นบ้าง
-provenance: paul-approved
-date: 06/09/2026
+en: Steps
+th: ขั้นตอน
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What happens" TH: "เกิดอะไรขึ้นบ้าง".'
 review:
   structural_calque: pass
-  text_hash: e38860f285d5f448ebd779805cf97b2b91a1a50337a6acb1b91ffed7f4c98d14
+  text_hash: 5c7f7df1025d4bdcff6b827948891b2a9636f09b2ca0a4f3b2c9ef2dceeb2525
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21143,14 +21132,14 @@ path: INDEX_HEADING
 render: Product pages, INDEX_HEADING
 narrative_slot: utility
 en: Five tools and one conversation, in the order most people take them
-th: เครื่องมือห้าอย่างและการพูดคุยกับโค้ชอีกหนึ่งแบบ เรียงตามลำดับที่คนส่วนใหญ่มักใช้
+th: เครื่องมือ 5 อย่างและการพูดคุยกับโค้ช เรียงตามลำดับที่คนส่วนใหญ่มักใช้
 provenance: paul-written
-date: 06/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Five tools and one conversation, in the order most people take them" TH: "เครื่องมือห้าอย่างและการพูดคุยกับโค้ชอีกหนึ่งแบบ เรียงตามลำดับที่คนส่วนใหญ่มักใช้".'
 review:
   structural_calque: pass
-  text_hash: 1fb894badf46d96455f0478e8f98c9765e9ce6bce73c1146df940aff44514595
+  text_hash: 1be7d4368b3cdd3b1f0e3fa9a5b51aaca69f7a8f1636003e64e01e236c7c4457
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21164,19 +21153,15 @@ source: src/lib/content/products.ts
 path: INDEX_INTRO
 render: Product pages, INDEX_INTRO
 narrative_slot: utility
-en: >-
-  Start wherever you are. Nothing here needs the one before it, and the first two ask for nothing but your
-  answers.
-th: >-
-  เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า
-  และสองอย่างแรกต้องการเพียงคำตอบจากคุณ
+en: Pick whichever fits you now. There is no set order, and if you start with the EU Fit Check, answering the questions is enough to see a first result.
+th: เลือกตัวที่เหมาะกับคุณตอนนี้ได้เลย ไม่ต้องใช้ตามลำดับ หากเริ่มจาก EU Fit Check เพียงตอบคำถามก็เห็นผลเบื้องต้นได้
 provenance: paul-written
-date: 06/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Start wherever you are. Nothing here needs the one before it, and the first one asks for nothing but your answers." TH: "เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า และอย่างแรกต้องการเพียงคำตอบจากคุณ".'
 review:
   structural_calque: pass
-  text_hash: 45ac6d86c5af5db999c9cdbfbb947a706857f431a7411f62969968295e7cd9b7
+  text_hash: ba501212d8aaaf8af8926712879653de8a9f0e9129e0b47432bd3a09e89b0df3
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21190,15 +21175,15 @@ source: src/lib/content/products.ts
 path: INDEX_PATH_HEADING
 render: Product pages, INDEX_PATH_HEADING
 narrative_slot: utility
-en: How they fit together
-th: แต่ละอย่างทำงานร่วมกันอย่างไร
+en: Which stage each tool helps you with
+th: เครื่องมือแต่ละอย่างช่วยคุณในขั้นไหน
 provenance: paul-written
-date: 06/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "How they fit together" TH: "แต่ละอย่างทำงานร่วมกันอย่างไร".'
 review:
   structural_calque: pass
-  text_hash: 49361297e9e302ee670156987e12e697cc7582b2848705e1ec95f153774c92e9
+  text_hash: d782c8c9bfe6ec9e9f76c34093d17d846ca4f8b4c01dc5aab5214b9a34576d74
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21212,15 +21197,15 @@ source: src/lib/content/products.ts
 path: INDEX_PATH_LEDE
 render: Product pages, INDEX_PATH_LEDE
 narrative_slot: utility
-en: Each one answers the question the one before it leaves you holding.
-th: แต่ละอย่างช่วยตอบคำถามที่อันก่อนหน้าทิ้งไว้
+en: How each one works, step by step.
+th: แต่ละตัวมีขั้นตอนอย่างไร
 provenance: paul-written
-date: 06/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What happens in each one." TH: "แต่ละอย่างทำอะไรให้คุณบ้าง".'
 review:
   structural_calque: pass
-  text_hash: 81219abc1ed0de6c2f3647577132fd2718c52ead581ce3a898d03c0c61bfaca1
+  text_hash: 77c5d802de638113add2aae5738f84aa8ea3146724596ff3ab168281098e2b5a
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21278,19 +21263,15 @@ source: src/lib/content/products.ts
 path: NOT_A_TOOL_BODY
 render: Product pages, NOT_A_TOOL_BODY
 narrative_slot: utility
-en: >-
-  Everything above reads what you already have. The coaching is where we decide what to do about it, and it is
-  the engagement every client starts with.
-th: >-
-  เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว
-  ส่วนการโค้ชคือพื้นที่ที่เราช่วยกันตัดสินใจว่าจะทำอะไรกับสิ่งที่พบ และเป็นจุดเริ่มต้นของลูกค้าทุกคน
+en: The tools above help you assess where you stand, find roles and track your applications. Coaching 1:1 is where we work through what needs changing with you, and it usually starts with the Fit Report.
+th: เครื่องมือด้านบนช่วยให้คุณประเมินความพร้อม หาตำแหน่งงาน และติดตามการสมัคร ส่วน Coaching 1:1 คือการลงมือปรับสิ่งที่จำเป็นไปกับคุณ โดยทั่วไปจะเริ่มจาก Fit Report
 provenance: paul-written
-date: 06/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Every tool above reads what you already have. Coaching 1:1 is where we work on it with you, and the Fit Report is the usual way in." TH: "เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว ส่วน Coaching 1:1 คือการลงมือทำไปพร้อมกับคุณ และส่วนใหญ่เริ่มต้นจาก Fit Report".'
 review:
   structural_calque: pass
-  text_hash: a6e83349e3b2efb49ac3282735fe48275fe4a73c88a996426f1ca39c5a26e0d3
+  text_hash: 69c8071283ecf8efcbb696e60ba0e8599b68677b7f1b0da1bafe7b10abd61537
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21304,15 +21285,15 @@ source: src/lib/content/products.ts
 path: NOT_A_TOOL_HEADING
 render: Product pages, NOT_A_TOOL_HEADING
 narrative_slot: utility
-en: And the part that is not a tool
-th: และส่วนที่ไม่ใช่เครื่องมือ
-provenance: paul-approved
-date: 06/09/2026
+en: From the assessment to the work, with Coaching 1:1
+th: จากผลประเมินสู่การลงมือทำกับ Coaching 1:1
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Where each tool stops, coaching carries on" TH: "เครื่องมือแต่ละอย่างหยุดตรงไหน Coaching 1:1 ช่วยต่อจากตรงนั้น".'
 review:
   structural_calque: pass
-  text_hash: 936805a8ee892866e4740bab80385b4f8877b2e9ef86c421325a2ecf067c8cab
+  text_hash: 2585956f41123f03e82976a851bb8c9e759d8da07388cd1678eb21db78018605
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21488,17 +21469,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].faq[0].q
 render: Product pages, PRODUCTS[0].faq[0].q
 narrative_slot: utility
-en: My English is not strong yet. Can I still do this?
-th: ภาษาอังกฤษยังไม่แข็งแรง ทำได้ไหม
-provenance: paul-approved
-date: 26/10/2026
+en: If my English is not fluent yet, can I still take the assessment?
+th: ถ้าภาษาอังกฤษยังไม่คล่อง จะทำแบบประเมินได้ไหม
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "My English is not strong yet. Can I still do this?" TH: "ภาษาอังกฤษยังไม่แข็งแรง ทำได้ไหม".'
 review:
   structural_calque: pass
-  text_hash: 9ca129a4502f1809f73354c46e3d4c4bd925c601523d468854d2c3b4c4545ec4
+  text_hash: c0d159a24954d1624eeb155acfd28f9db3a938d8e3d75575d4cf382799135bcc
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -21510,17 +21491,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].faq[1].a
 render: Product pages, PRODUCTS[0].faq[1].a
 narrative_slot: utility
-en: A person actually reads your answers. The system does not decide on its own who gets contacted back.
-th: จะมีคนอ่านคำตอบของคุณจริง ๆ ระบบไม่ได้เป็นผู้ตัดสินเพียงลำพังว่าเราจะติดต่อใครกลับ
-provenance: paul-approved
-date: 26/10/2026
+en: Our team reads your answers too, and we do not let the system decide on its own who we contact back.
+th: ทีมงานจะอ่านคำตอบของคุณด้วย และจะไม่ให้ระบบตัดสินเองว่าเราจะติดต่อใครกลับ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "A person actually reads your answers. The system does not decide on its own who gets contacted back." TH: "จะมีคนอ่านคำตอบของคุณจริง ๆ ระบบไม่ได้เป็นผู้ตัดสินเพียงลำพังว่าเราจะติดต่อใครกลับ".'
 review:
   structural_calque: pass
-  text_hash: 9cd4b6aae1b6ce40f429424a9f6624fa4bbb8dbafc7b8c001b0b3389b638831c
+  text_hash: ab026a2fb6d0468458e6c2e9d75ba0add7b2d99453ed60071faa61872ace34a8
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -21532,17 +21513,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].faq[1].q
 render: Product pages, PRODUCTS[0].faq[1].q
 narrative_slot: utility
-en: What happens after I finish the assessment?
-th: ทำแบบประเมินเสร็จแล้วจะเกิดอะไรขึ้น
-provenance: paul-approved
-date: 26/10/2026
+en: What happens next, once I finish the assessment?
+th: หลังทำแบบประเมินเสร็จแล้ว จะมีขั้นตอนอะไรต่อ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What happens after I finish the assessment?" TH: "ทำแบบประเมินเสร็จแล้วจะเกิดอะไรขึ้น".'
 review:
   structural_calque: pass
-  text_hash: 5f55bf4b9f1df6e11d6c57dd4623518783cfc80a655ad37160e3215c91554980
+  text_hash: 2b0698aef6c9a0f66bb83e7dface1b9ef83dc9a003f2c1f24289a83359f76872
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -21554,17 +21535,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].how[0]
 render: Product pages, PRODUCTS[0].how[0]
 narrative_slot: mechanism
-en: 17 questions about your work experience, your English, your target country and where you are in the move. In Thai, on your phone.
-th: คำถาม 17 ข้อ เกี่ยวกับประสบการณ์ทำงาน ระดับภาษาอังกฤษ ประเทศเป้าหมาย และตอนนี้คุณอยู่ขั้นไหนบนเส้นทางไปทำงานในยุโรป ตอบเป็นภาษาไทยบนมือถือได้เลย
-provenance: paul-approved
-date: 26/10/2026
+en: 17 questions in Thai, on your phone, about your work experience, your English, your target country and the stage you are at now.
+th: ตอบคำถาม 17 ข้อเป็นภาษาไทยบนมือถือ เกี่ยวกับประสบการณ์ทำงาน ภาษาอังกฤษ ประเทศเป้าหมาย และขั้นตอนที่คุณอยู่ตอนนี้
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "17 questions about your work experience, your English, your target country and where you are in the move. In Thai, on your phone." TH: "คำถาม 17 ข้อ เกี่ยวกับประสบการณ์ทำงาน ระดับภาษาอังกฤษ ประเทศเป้าหมาย และตอนนี้คุณอยู่ขั้นไหนบนเส้นทางไปทำงานในยุโรป ตอบเป็นภาษาไทยบนมือถือได้เลย".'
 review:
   structural_calque: pass
-  text_hash: 8c98fba595467b85eb119fbe73fbd63c519c80343328d0ac542cc63905d5d0c9
+  text_hash: c08592777ef99d40c4fa5209debb9d9c37951c8e113529ca81269cacf96673d6
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -21576,17 +21557,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].how[1]
 render: Product pages, PRODUCTS[0].how[1]
 narrative_slot: mechanism
-en: 'Your own chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European market. Each scored out of 5.'
-th: กราฟของคุณเองใน 4 ด้าน คือ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความสอดคล้องกับตลาดยุโรป แต่ละด้านมีคะแนนเต็ม 5
-provenance: paul-approved
-date: 26/10/2026
+en: 'See your result as a chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European job market. Each is scored out of 5.'
+th: ดูผลของคุณในกราฟ 4 ด้าน ได้แก่ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความเหมาะสมกับตลาดงานยุโรป คะแนนเต็มด้านละ 5
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Your own chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European market. Each scored out of 5." TH: "กราฟของคุณเองใน 4 ด้าน คือ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความสอดคล้องกับตลาดยุโรป แต่ละด้านมีคะแนนเต็ม 5".'
 review:
   structural_calque: pass
-  text_hash: 718e92f75773f970829df65960c27a4233c146daaaad9fbb2573207c85095101
+  text_hash: 4bc3ca703914b4b95ad237bba7fca4c2ea08334e2777aeca7843837496f671ff
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -21598,17 +21579,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].how[2]
 render: Product pages, PRODUCTS[0].how[2]
 narrative_slot: mechanism
-en: How you compare with everyone else who has taken it, and how many of the job adverts we checked come from employers who sponsor a visa.
-th: ดูว่าคุณเทียบกับคนอื่นที่ทำแบบประเมินนี้แล้วเป็นอย่างไร และจากประกาศงานที่เราตรวจสอบ มีกี่ตำแหน่งที่บริษัทระบุว่าสปอนเซอร์วีซ่า
-provenance: paul-approved
-date: 26/10/2026
+en: See how your result compares with others who have taken the assessment, and how many of the job adverts we checked say they sponsor a visa.
+th: ดูว่าผลของคุณเป็นอย่างไรเมื่อเทียบกับผู้ที่ทำแบบประเมิน และดูว่าจากประกาศที่เราตรวจสอบ มีตำแหน่งที่ระบุว่าสปอนเซอร์วีซ่ากี่ตำแหน่ง
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "How you compare with everyone else who has taken it, and how many of the job adverts we checked come from employers who sponsor a visa." TH: "ดูว่าคุณเทียบกับคนอื่นที่ทำแบบประเมินนี้แล้วเป็นอย่างไร และจากประกาศงานที่เราตรวจสอบ มีกี่ตำแหน่งที่บริษัทระบุว่าสปอนเซอร์วีซ่า".'
 review:
   structural_calque: pass
-  text_hash: b558f201d4d659900cebda71951e154609aaa11c63ae08f6d93117e104fd1354
+  text_hash: 77a82a824775b815e87beeb1b3ea91454ec506e511bcd2faaaca550fa86610e1
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -21620,17 +21601,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].howLede
 render: Product pages, PRODUCTS[0].howLede
 narrative_slot: mechanism
-en: What you answer, and what you see the moment you finish.
-th: สิ่งที่คุณจะตอบ และสิ่งที่คุณจะเห็นทันทีที่ทำเสร็จ
-provenance: paul-approved
-date: 26/10/2026
+en: What you will be asked, and what you see the moment you finish.
+th: ดูว่าต้องตอบอะไรบ้าง และจะได้เห็นผลอะไรทันทีที่ทำเสร็จ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What you answer, and what you see the moment you finish." TH: "สิ่งที่คุณจะตอบ และสิ่งที่คุณจะเห็นทันทีที่ทำเสร็จ".'
 review:
   structural_calque: pass
-  text_hash: 84295922a18c3d3ca9781a7a769dc3a955d38e3ec5b3490e057be9cf24695415
+  text_hash: 2ec2986907cafd17c4c13ba1ebe2ec4f886d27cdd5ffdd291d7561b167b21524
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -21664,17 +21645,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].limit
 render: Product pages, PRODUCTS[0].limit
 narrative_slot: limit
-en: It reads your answers, not your CV. Where a form cannot measure something reliably, the chart leaves it empty instead of guessing. Those parts need someone to read your real CV or talk with you.
-th: แบบประเมินนี้อ่านจากคำตอบของคุณ ยังไม่ได้อ่าน CV ตัวจริง เรื่องไหนที่ประเมินจากคำตอบได้ไม่น่าเชื่อถือพอ กราฟจะเว้นว่างไว้แทนการเดาคะแนน ส่วนนั้นต้องมีคนอ่าน CV ตัวจริงของคุณหรือได้คุยกับคุณก่อน
-provenance: paul-approved
-date: 26/10/2026
+en: The EU Fit Check works from your answers and does not look at your CV. Where your answers are not enough to score an area reliably, we leave that score blank until we have seen your CV or talked with you.
+th: EU Fit Check ประเมินจากคำตอบของคุณ โดยไม่ตรวจ CV หากคำตอบยังไม่พอให้ประเมินด้านใดได้อย่างน่าเชื่อถือ เราจะเว้นคะแนนด้านนั้นไว้จนกว่าจะได้ดู CV หรือพูดคุยกับคุณ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "It reads your answers, not your CV. Where a form cannot measure something reliably, the chart leaves it empty instead of guessing. Those parts need someone to read your real CV or talk with you." TH: "แบบประเมินนี้อ่านจากคำตอบของคุณ ยังไม่ได้อ่าน CV ตัวจริง เรื่องไหนที่ประเมินจากคำตอบได้ไม่น่าเชื่อถือพอ กราฟจะเว้นว่างไว้แทนการเดาคะแนน ส่วนนั้นต้องมีคนอ่าน CV ตัวจริงของคุณหรือได้คุยกับคุณก่อน".'
 review:
   structural_calque: pass
-  text_hash: a17b9c13ad2a6485fcfb49f1b546b98048228ea31d8d97060e54c1f574803d54
+  text_hash: 967eee727960d7a6cceac7c98d5f53c856d85eb9f65292ca5c4a9295858546af
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -21734,15 +21715,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].faq[0].a
 render: Product pages, PRODUCTS[1].faq[0].a
 narrative_slot: utility
-en: No. The CV Check is free.
-th: ไม่มีค่าใช้จ่าย CV Check ใช้ฟรี
+en: The CV Check is free to use.
+th: ใช้ CV Check ได้ฟรี
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "No. The CV Check is free." TH: "ไม่มีค่าใช้จ่าย CV Check ใช้ฟรี".'
 review:
   structural_calque: pass
-  text_hash: 45c904baa797b004d6b4accbc69d5bc383ca42dd16e9a86f12eddcbbab7c61db
+  text_hash: 21d9e3361a31b1ba17c5861fd506c52d9d6b098cf261a669be3bbf1753cd66b9
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21778,15 +21759,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].headline
 render: Product pages, PRODUCTS[1].headline
 narrative_slot: utility
-en: A CV that works in the Thai market can leave a European reader unable to see your strengths.
-th: CV ที่ใช้ได้ดีในตลาดไทย อาจทำให้คนในตลาดยุโรปมองไม่เห็นจุดแข็งของคุณ
+en: A CV that works well in Thailand may not yet get your strengths across to a reader in Europe.
+th: CV ที่ใช้ได้ดีในไทย อาจยังไม่สื่อจุดแข็งของคุณให้คนอ่านในยุโรปเข้าใจ
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "A CV that works in the Thai market can leave a European reader unable to see your strengths." TH: "CV ที่ใช้ได้ดีในตลาดไทย อาจทำให้คนในตลาดยุโรปมองไม่เห็นจุดแข็งของคุณ".'
 review:
   structural_calque: pass
-  text_hash: a301c3df3fd73f0d3c6f4523858407372f2c356c83e6176dd0e7293739ed4872
+  text_hash: 2359a982e19ba73cbee2ce5ae473b8e650740b70394310f100ed7ed7c17ebd59
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21800,24 +21781,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].how[0]
 render: Product pages, PRODUCTS[1].how[0]
 narrative_slot: mechanism
-en: >-
-  What the first third of the page spends itself on, because a screener and a reader both start at the top and
-  both stop early.
-th: >-
-  ดูว่าหนึ่งในสามแรกของหน้าใช้พื้นที่ไปกับอะไร เพราะทั้งระบบคัดกรองและคนอ่านต่างเริ่มจากด้านบน
-  และอาจหยุดอ่านตั้งแต่เนิ่น ๆ
+en: What the first third of your CV spends itself telling, because both the screening system and the person reading start at the top and may not reach the end.
+th: ตรวจว่าคุณใช้พื้นที่ช่วงหนึ่งในสามแรกของ CV เล่าเรื่องอะไร เพราะทั้งระบบคัดกรองและคนที่อ่าน CV เริ่มดูจากด้านบน และอาจอ่านไปไม่ถึงส่วนท้าย
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. The reading-order opener from the Kick-start
-
-  run sheet, which exists because the ATS artefact only shows up when a CV
-
-  parses badly and the first real CV parsed cleanly.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What the first third of the page spends itself on, because a screener and a reader both start at the top and both stop early." TH: "ดูว่าหนึ่งในสามแรกของหน้าใช้พื้นที่ไปกับอะไร เพราะทั้งระบบคัดกรองและคนอ่านต่างเริ่มจากด้านบน และอาจหยุดอ่านตั้งแต่เนิ่น ๆ".'
 review:
   structural_calque: pass
-  text_hash: 873281751a939d735b9221da3e7c2d64eca4e30f343118fc28770af2d458042e
+  text_hash: f47699cff4ac7adbded3ec7693b41403426df0c9ea34c913591c47528fa61fd7
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21831,20 +21803,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].how[1]
 render: Product pages, PRODUCTS[1].how[1]
 narrative_slot: mechanism
-en: Whether your employers and job titles mean anything to someone who does not know the Thai market.
-th: เช็กว่าชื่อบริษัทและชื่อตำแหน่งของคุณสื่อความหมายกับคนที่ไม่รู้จักตลาดงานไทยหรือไม่
+en: Whether someone who does not know the Thai job market will understand your past employers and your job titles.
+th: ดูว่าคนที่ไม่รู้จักตลาดงานไทยจะเข้าใจชื่อบริษัทเดิมและชื่อตำแหน่งของคุณหรือไม่
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. This is the core claim in `10_Methodology.md`:
-
-  illegibility rather than capability. A Bangkok senior title may read as
-
-  mid-level and a well-known Thai employer reads as an unknown one.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Whether your employers and job titles mean anything to someone who does not know the Thai market." TH: "เช็กว่าชื่อบริษัทและชื่อตำแหน่งของคุณสื่อความหมายกับคนที่ไม่รู้จักตลาดงานไทยหรือไม่".'
 review:
   structural_calque: pass
-  text_hash: 3300a62d461a434cfd000f7d225583668b327893d9165c42fe057b1b4c42ca6b
+  text_hash: 4d1fcede0b8fe35fdab5a23a52c3f5503d3973b646b3d2d3ebd9df7dfd59316d
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21880,20 +21847,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].howLede
 render: Product pages, PRODUCTS[1].howLede
 narrative_slot: mechanism
-en: We read your CV the way a European reader does, and list what to fix.
-th: เราอ่าน CV ของคุณแบบเดียวกับคนอ่านในยุโรป แล้วบอกว่าควรแก้จุดไหนบ้าง
-provenance: paul-approved
-date: 10/09/2026
+en: We read your CV the way someone shortlisting candidates in Europe does, and sum up what to fix.
+th: เราอ่าน CV ของคุณจากมุมมองของคนที่คัดผู้สมัครในยุโรป แล้วสรุปจุดที่ควรแก้
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "We read your CV the way a European reader does, and list what to fix." TH: "เราอ่าน CV ของคุณแบบเดียวกับคนอ่านในยุโรป แล้วบอกว่าควรแก้จุดไหนบ้าง".'
 review:
   structural_calque: pass
-  text_hash: 9eebbb7dc409ca7557e0b4f6122dad13a68e5d5f9ef146a22fcd677dfc0f8d6a
+  text_hash: a8f987ba07376b52df1d07015e245ce0e251941b10217d694f3b031e0dac2b3b
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -21905,15 +21869,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].lede
 render: Product pages, PRODUCTS[1].lede
 narrative_slot: utility
-en: Upload your CV and see how much of your profile a European reader can actually understand. Free.
-th: อัปโหลด CV แล้วดูว่าคนในตลาดยุโรปเข้าใจโปรไฟล์ของคุณได้มากแค่ไหน ใช้ฟรี
+en: Upload your CV to see how well someone shortlisting candidates in Europe understands your experience and skills. Free to use.
+th: อัปโหลด CV เพื่อดูว่าคนที่คัดผู้สมัครในยุโรปเข้าใจประสบการณ์และทักษะของคุณแค่ไหน ใช้ได้ฟรี
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Upload your CV and see how much of your profile a European reader can actually understand. Free." TH: "อัปโหลด CV แล้วดูว่าคนในตลาดยุโรปเข้าใจโปรไฟล์ของคุณได้มากแค่ไหน ใช้ฟรี".'
 review:
   structural_calque: pass
-  text_hash: b92cbbe7434f85d024b73e89f476c267af59701b87f7f6b0e28a837d135d51f5
+  text_hash: a8d736538f0221909458b14e7bcbd7f4534f67c89055cb00f9f7e2a57a23c823
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -22003,17 +21967,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[0].a
 render: Fit Report page, FAQ answer
 narrative_slot: utility
-en: We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet.
-th: แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้
-provenance: paul-approved
-date: 28/10/2026
+en: We recommend it. The coach uses your EU Fit Check answers so the 30-minute interview can go deep on what the assessment cannot answer yet.
+th: แนะนำให้ทำก่อน โค้ชจะใช้คำตอบจาก EU Fit Check เพื่อใช้เวลาสัมภาษณ์ 30 นาทีเจาะลึกเรื่องที่แบบประเมินยังตอบไม่ได้
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet." TH: "แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้".'
 review:
   structural_calque: pass
-  text_hash: a9e9f5cfc6700d9a56ef68208f8baf4d9f00ed52f889453cf1f2f3babf6ce6c7
+  text_hash: a061006d7fad4d837f0eddd11e5b07c107b218495923ad6dd65180f31170f161
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -22075,17 +22039,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].how[0]
 render: Fit Report page, how it works step 1
 narrative_slot: mechanism
-en: Message me on LINE. I will send the payment details and book a time that suits you.
-th: ทักมาทาง LINE ผมจะแจ้งรายละเอียดการชำระเงิน และนัดเวลาสัมภาษณ์ที่สะดวก
-provenance: paul-approved
-date: 28/10/2026
+en: Message me on LINE for the payment details and to book an interview time that suits you.
+th: ทักมาทาง LINE เพื่อรับรายละเอียดการชำระเงินและนัดเวลาสัมภาษณ์ที่คุณสะดวก
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026, with his ติดต่อผมทาง LINE set back to ทักมาทาง LINE because the termbase term contact-talk-to-me bans ติดต่อผม; the English follows his Thai. Was EN: "Contact me on LINE for the payment details and to book an interview time that suits you." TH: "ติดต่อผมทาง LINE เพื่อรับรายละเอียดการชำระเงินและนัดเวลาสัมภาษณ์ที่คุณสะดวก".'
 review:
   structural_calque: pass
-  text_hash: c25296a2524c22ea30e5e2c03ebab1bd13698c038d6b78b0da72fe701fe31c54
+  text_hash: 77e804887e3e616c11cc221fddd857a0155785366acfa9d8c814f6a56ea9498b
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -22255,20 +22219,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[3].faq[0].a
 render: Product pages, PRODUCTS[3].faq[0].a
 narrative_slot: utility
-en: We keep looking, and a token is only deducted once a role matching your criteria has reached you.
-th: เราจะค้นหาต่อให้ และหักโทเคนเฉพาะเมื่อมีตำแหน่งที่ตรงกับเงื่อนไขส่งถึงคุณแล้ว
+en: PunProfile keeps searching, and deducts a token only once a role matching your criteria has been sent to you.
+th: PunProfile จะค้นหาต่อ และหักโทเคนเมื่อส่งตำแหน่งที่ตรงกับเงื่อนไขให้คุณแล้วเท่านั้น
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. Deliberately does not say real time: the
-
-  mechanism will be batched, and a promise of real time is a claim the
-
-  system does not meet.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "We keep looking, and a token is only deducted once a role matching your criteria has reached you." TH: "เราจะค้นหาต่อให้ และหักโทเคนเฉพาะเมื่อมีตำแหน่งที่ตรงกับเงื่อนไขส่งถึงคุณแล้ว".'
 review:
   structural_calque: pass
-  text_hash: 95f4e4c75bd51b126d6f6257c7e70fa61930fe16f5b36e1d40f42f00b3b18214
+  text_hash: 7dbcc3837fb4b9591eb0b76e976cca65b0473320090573e6842391822736d8cc
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -22282,15 +22241,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[3].faq[0].q
 render: Product pages, PRODUCTS[3].faq[0].q
 narrative_slot: utility
-en: What if nothing matches?
-th: ถ้ารอบไหนไม่มีตำแหน่งที่ตรงเลย
-provenance: paul-approved
-date: 23/08/2026
+en: What if no role matches my criteria yet?
+th: ถ้ายังไม่พบตำแหน่งที่ตรงกับเงื่อนไขจะเป็นอย่างไร
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What if nothing matches?" TH: "ถ้ารอบไหนไม่มีตำแหน่งที่ตรงเลย".'
 review:
   structural_calque: pass
-  text_hash: 711b6950cea77071ed3ec1e8338a7fa2f9a3832ee73923c8d90c42e7eca670ad
+  text_hash: 0303b51e7f6cb2ed23fb40398990a401ac900338169692ef0a090a9ac19892a3
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -22348,18 +22307,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[3].how[1]
 render: Product pages, PRODUCTS[3].how[1]
 narrative_slot: mechanism
-en: One role at a time, so you have the time to look at each one properly.
-th: ส่งให้ทีละตำแหน่ง เพื่อให้คุณมีเวลาดูแต่ละงานจริง ๆ
+en: One role at a time, so you have time to weigh the details before deciding to apply.
+th: ส่งทีละตำแหน่ง เพื่อให้คุณมีเวลาพิจารณารายละเอียดก่อนตัดสินใจสมัคร
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. One at a time is the method's own rule
-
-  against handing anyone a five-item list, applied to job search.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "One role at a time, so you have the time to look at each one properly." TH: "ส่งให้ทีละตำแหน่ง เพื่อให้คุณมีเวลาดูแต่ละงานจริง ๆ".'
 review:
   structural_calque: pass
-  text_hash: 3ab0120e197f71b9975f531e9a707bd95e9ce8f56523d55104c0efa9e8bed2d9
+  text_hash: 5cab61f42a4e35ce44603f009fa894a6b8738914ec5fa1dabed4a7f4519eb285
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -22373,22 +22329,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[3].how[2]
 render: Product pages, PRODUCTS[3].how[2]
 narrative_slot: mechanism
-en: Every role says plainly whether it needs work rights you already hold, before you spend time applying.
-th: ทุกตำแหน่งระบุชัดว่าต้องมีสิทธิ์ทำงานอยู่แล้วหรือไม่ ก่อนที่คุณจะเสียเวลาในการสมัคร
-provenance: paul-approved
-date: 22/08/2026
+en: Before you apply, you see clearly whether the role requires work rights you already hold.
+th: ก่อนสมัคร คุณจะเห็นชัดเจนว่าตำแหน่งนั้นกำหนดให้มีสิทธิ์ทำงานอยู่แล้วหรือไม่
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Drafted 23/08/2026, read back and approved unchanged. Work rights sit outside the match bar and are
-
-  always stated, decided 22/08/2026, using the pipeline's own
-
-  "Publish (Work Rights Required)" verdict whose rule is that the label is
-
-  not optional and not a footnote.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Every role says plainly whether it needs work rights you already hold, before you spend time applying." TH: "ทุกตำแหน่งระบุชัดว่าต้องมีสิทธิ์ทำงานอยู่แล้วหรือไม่ ก่อนที่คุณจะเสียเวลาในการสมัคร".'
 review:
   structural_calque: pass
-  text_hash: a961b876ff46ce3d9ad8fad8286c68ad414ba4efcc15d87de1d1ced7ce58fae4
+  text_hash: a96761c0a10231139dd846383631cf833a6faeb131b15a1c03734436c9df86bd
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -22720,22 +22669,22 @@ review:
 ### `src/lib/content/products.ts::PRODUCTS[4].howLede`
 
 ```yaml
-id: "src/lib/content/products.ts::PRODUCTS[4].howLede"
-source: "src/lib/content/products.ts"
-path: "PRODUCTS[4].howLede"
-render: "Product pages, PRODUCTS[4].howLede"
-narrative_slot: "mechanism"
-en: "The roles picked for you, your CVs and every application you send, on one page."
-th: "ตำแหน่งที่ PunProfile คัดให้ CV ของคุณ และทุกตำแหน่งที่คุณสมัคร รวมไว้ในหน้าเดียว"
-provenance: paul-approved
-date: "03/11/2026"
+id: src/lib/content/products.ts::PRODUCTS[4].howLede
+source: src/lib/content/products.ts
+path: PRODUCTS[4].howLede
+render: Product pages, PRODUCTS[4].howLede
+narrative_slot: mechanism
+en: The roles PunProfile picks for you, your CV files and your applications, all on one page.
+th: ดูตำแหน่งงานที่ PunProfile คัดให้ ไฟล์ CV และรายการสมัครงานของคุณได้ในหน้าเดียว
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: "Rewritten 03/11/2026 for the whole dashboard, after the rename from Guided Job Hunt. Paul approved this Thai unchanged in his review pass of 03/11/2026."
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "The roles picked for you, your CVs and every application you send, on one page." TH: "ตำแหน่งที่ PunProfile คัดให้ CV ของคุณ และทุกตำแหน่งที่คุณสมัคร รวมไว้ในหน้าเดียว".'
 review:
   structural_calque: pass
-  text_hash: f9b2295de5b74d15030443595ea96d82796c8736e75bf5c5571344a953ab37b8
+  text_hash: 2c4e7f639d55067ee5c3d5c3857e0cc8728dbaa86e30c890c9255d5ae75c68f9
   prompt_version: structural-calque-v1
-  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -22769,15 +22718,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[4].limit
 render: Product pages, PRODUCTS[4].limit
 narrative_slot: limit
-en: We do not apply for you, and we do not chase employers on your behalf.
-th: เราไม่สมัครงานแทนคุณ และไม่ติดตามนายจ้างแทนคุณ
+en: We do not apply for you, and we do not contact companies to follow up on your behalf.
+th: เราไม่สมัครงานแทนคุณ และไม่ติดต่อบริษัทเพื่อติดตามผลแทนคุณ
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "We do not apply for you, and we do not chase employers on your behalf." TH: "เราไม่สมัครงานแทนคุณ และไม่ติดตามนายจ้างแทนคุณ".'
 review:
   structural_calque: pass
-  text_hash: cadd53fe75fcce9071dd56269716c883efbc4feed2ed0372bb8c8e6e4fbbcffd
+  text_hash: 885931176bb5b95c83576e413e123f3a81309a4e93288f907dbe67b00c68a818
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -25577,19 +25526,15 @@ source: src/lib/content/services.ts
 path: SERVICES_FAQ[0].a
 render: Services page, SERVICES_FAQ[0].a
 narrative_slot: utility
-en: >-
-  No. The other two can be taken on their own. The coaching is where every client starts because the direction
-  usually turns out to be the thing that was unclear, not the documents.
-th: >-
-  ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง
-  เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร
-provenance: paul-written
-date: 06/09/2026
+en: No. The other two can be taken on their own. Clients who choose coaching start with the direction, because it usually turns out to be the thing that was unclear, not the documents.
+th: ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร
+provenance: paul-approved
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Copy review 03/11/2026, Q1: English brought in line with Paul''s own Thai, which already says coaching clients start with the direction. Thai unchanged. Approved unchanged by Paul in the review of 03/11/2026.'
 review:
   structural_calque: pass
-  text_hash: 994bd31da86ce250066c9d4147bc1193c3ac7b445a4f211e82e753ad4d5e5ed8
+  text_hash: f86d6fff6dd3f036eb5844c12644fbae120fe3a08cffb6084bf6e32c755324b1
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -25797,19 +25742,15 @@ source: src/lib/content/services.ts
 path: SERVICES_INTRO
 render: Services page, SERVICES_INTRO
 narrative_slot: utility
-en: >-
-  Career coaching is the core service every client starts with. The other two can be taken on their own,
-  depending on what you actually need.
-th: >-
-  Career Coaching เป็นบริการหลักที่ลูกค้าทุกคนเริ่มต้นด้วย
-  ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ
-provenance: paul-approved
-date: 25/08/2026
+en: Career Coaching is the main part of working with a coach. The other two can be taken on their own, depending on what you need.
+th: Career Coaching เป็นส่วนหลักของการทำงานกับโค้ช ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามความต้องการ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Career Coaching is the core of every coaching engagement. The other two can be taken on their own, depending on what you actually need." TH: "Career Coaching เป็นแกนหลักของการโค้ชทุกครั้ง ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ".'
 review:
   structural_calque: pass
-  text_hash: 714f750d8a9cb8611612d736d53dea2cae6b1e515c65f898c347e34cd9e21e50
+  text_hash: 4288de27b34fdc6491e6cf32613511ee97c60c028d712dc834d23f791c8701e8
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -26074,19 +26015,15 @@ source: src/lib/content/services.ts
 path: SERVICES[0].summary
 render: Services page, SERVICES[0].summary
 narrative_slot: utility
-en: >-
-  This is where every client starts. We get the direction clear before writing a single document, because
-  however good a CV is, sent into the wrong market it is still an application aimed at nothing.
-th: >-
-  นี่คือจุดเริ่มต้นของลูกค้าทุกคน เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน
-  ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี
+en: Finding the direction is the main part of working with a coach. We settle your target market together before writing a single document, because however good a CV is, an application in a market that does not suit you still misses.
+th: การหาทิศทางเป็นส่วนหลักของการทำงานกับโค้ช เราจะช่วยกันเลือกตลาดเป้าหมายให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าสมัครในตลาดที่ไม่เหมาะกับคุณ ใบสมัครก็ยังไม่ตรงเป้า
 provenance: paul-written
-date: 14/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "This is the core of every coaching engagement. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing." TH: "นี่คือแกนหลักของการโค้ชทุกครั้ง เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี".'
 review:
   structural_calque: pass
-  text_hash: 2de07c7e7e22e03e90ef6c1b7f66936546ef3c53a9faf22cedfe1fc2e2eb9674
+  text_hash: 2eb72bce36aa5cdc83a6853797a991c04abc984c57f46de2b63f6004ad1f0f60
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -27392,17 +27329,17 @@ source: src/lib/content/copy.ts
 path: COPY.fit.summary.heading
 render: Fit Report, summary heading
 narrative_slot: proof
-en: Where you stand against the market's bar
-th: คุณอยู่ตรงไหน เมื่อเทียบกับเกณฑ์ของตลาด
-provenance: paul-approved
-date: 26/10/2026
+en: Your scores against the job market's bar
+th: คะแนนของคุณเทียบกับเกณฑ์ตลาดงาน
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Where you stand against the market''s bar" TH: "คุณอยู่ตรงไหน เมื่อเทียบกับเกณฑ์ของตลาด".'
 review:
   structural_calque: pass
-  text_hash: 8fb60d7a9a42603be69c9fcbdea99c9f1e54fc0da0af7fb85e80f6e9784e1c41
+  text_hash: 0a064a326570234c24418b9c1dbc347c36de95bb0883d0a1174bf75df4a0eae2
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28316,17 +28253,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[2].q
 render: Fit Report page, FAQ question
 narrative_slot: utility
-en: How long until I get the report?
-th: นานแค่ไหนกว่าจะได้รายงาน
-provenance: paul-approved
-date: 28/10/2026
+en: When will I get the report?
+th: จะได้รับรายงานเมื่อไร
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "How long until I get the report?" TH: "นานแค่ไหนกว่าจะได้รายงาน".'
 review:
   structural_calque: pass
-  text_hash: ad0f5cdb2817c5bf90bd6a8d7b56e1bb8967561a2a3c94e137995409d153d938
+  text_hash: 6c02c9a9a12f7e0870d8f8259d209a17506062017ec3475fc4a0a20a50eea437
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28426,17 +28363,17 @@ source: src/lib/content/products.ts
 path: FIT_TILES[1].caption
 render: Fit Report page, tile caption, order page
 narrative_slot: artefact
-en: Which bar to clear first, and where to start.
-th: ควรผ่านเกณฑ์ด้านไหนก่อน และเริ่มพัฒนาจากจุดใด
-provenance: paul-approved
-date: 28/10/2026
+en: Which area to develop first, and what to start with.
+th: ควรเริ่มพัฒนาด้านไหนก่อน และเริ่มจากอะไร
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Which bar to clear first, and where to start." TH: "ควรผ่านเกณฑ์ด้านไหนก่อน และเริ่มพัฒนาจากจุดใด".'
 review:
   structural_calque: pass
-  text_hash: 509beee29f8335d9b3fd23a57e837e7d7615a65d773f47bc0752ea41ecb87239
+  text_hash: f33c1dfe9bed681c5592a4c605208a2d7cf6e993e328672fcfc1ff40e5507d80
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28470,17 +28407,17 @@ source: src/lib/content/products.ts
 path: FIT_TILES[2].caption
 render: Fit Report page, tile caption, area page
 narrative_slot: artefact
-en: A closer look at all four areas, one chart each with eight to ten competencies, with advice on which are below the bar and how to develop them.
-th: เจาะลึกทักษะทั้ง 4 ด้าน ผ่านกราฟแยกด้านละ 8–10 ทักษะ พร้อมคำแนะนำว่าทักษะไหนยังไม่ถึงเกณฑ์ และควรพัฒนาอย่างไร
-provenance: paul-approved
-date: 28/10/2026
+en: A chart for each of the four areas, eight to ten competencies each, with advice on which are below the bar and how to develop them.
+th: ดูกราฟแยกทั้ง 4 ด้าน ด้านละ 8–10 ทักษะ พร้อมคำแนะนำว่าทักษะไหนยังไม่ถึงเกณฑ์และควรพัฒนาอย่างไร
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "A closer look at all four areas, one chart each with eight to ten competencies, with advice on which are below the bar and how to develop them." TH: "เจาะลึกทักษะทั้ง 4 ด้าน ผ่านกราฟแยกด้านละ 8–10 ทักษะ พร้อมคำแนะนำว่าทักษะไหนยังไม่ถึงเกณฑ์ และควรพัฒนาอย่างไร".'
 review:
   structural_calque: pass
-  text_hash: a33095169c76108bb9ec8b932afc8a838627635844a1d9909ccfb28a6c22586a
+  text_hash: 0131664df77175dfdacdaa3d223cc2481b320187f0a5f7f8bca16dbcaaa4593e
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28492,17 +28429,17 @@ source: src/lib/content/products.ts
 path: FIT_TILES[3].caption
 render: Fit Report page, tile caption, moves page
 narrative_slot: artefact
-en: 'Ranked for you: what to work on first to lift your score most, with the before and after.'
-th: จัดลำดับให้แล้วว่าควรพัฒนาอะไรก่อน เพื่อเพิ่มคะแนนได้มากที่สุด พร้อมเปรียบเทียบคะแนนก่อนและหลัง
-provenance: paul-approved
-date: 28/10/2026
+en: What to work on first to lift your score most, with your current score and the score you can expect after improving.
+th: ดูว่าควรเริ่มพัฒนาอะไรเพื่อให้คะแนนดีขึ้นมากที่สุด พร้อมคะแนนปัจจุบันและคะแนนที่คาดว่าจะได้หลังปรับปรุง
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Ranked for you: what to work on first to lift your score most, with the before and after." TH: "จัดลำดับให้แล้วว่าควรพัฒนาอะไรก่อน เพื่อเพิ่มคะแนนได้มากที่สุด พร้อมเปรียบเทียบคะแนนก่อนและหลัง".'
 review:
   structural_calque: pass
-  text_hash: 4dff1e62414a7df63ba1fcac7e1030d3c965e1f4fec664cbe21afc34a91910cb
+  text_hash: f2280d7f6c3090031176263f0108ee5e1960ebb3281e4149d2fe1516628ac43c
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28514,17 +28451,17 @@ source: src/lib/content/products.ts
 path: FIT_TILES[4].caption
 render: Fit Report page, tile caption, roles page
 narrative_slot: artefact
-en: Open roles in the countries you chose, with the job ads we have checked.
-th: ตำแหน่งงานที่เปิดรับสมัครจริงในประเทศที่คุณเลือก พร้อมประกาศงานที่เราตรวจสอบแล้ว
-provenance: paul-approved
-date: 28/10/2026
+en: Job ads open in the countries you chose, each one checked.
+th: ดูประกาศงานที่เปิดรับในประเทศที่คุณเลือกและผ่านการตรวจสอบแล้ว
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Open roles in the countries you chose, with the job ads we have checked." TH: "ตำแหน่งงานที่เปิดรับสมัครจริงในประเทศที่คุณเลือก พร้อมประกาศงานที่เราตรวจสอบแล้ว".'
 review:
   structural_calque: pass
-  text_hash: 72c4ccf083bba06ffcc174c9289f11d2f5478df1560981b71d57d8c89d7a1864
+  text_hash: ba34bc7e46886a18d1d4aa2b4329a8be66be889860a83c63325e4c91f05d54f2
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28690,17 +28627,17 @@ source: src/lib/content/products.ts
 path: FIT_PLAN_FREE.rows[2]
 render: Fit Report page, comparison card row, EU Fit Check
 narrative_slot: mechanism
-en: The market's bar on every chart
-th: เกณฑ์ของตลาดบนทุกกราฟ
-provenance: paul-approved
-date: 28/10/2026
+en: The job market's bar on every chart
+th: เกณฑ์ตลาดงานในทุกกราฟ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "The market''s bar on every chart" TH: "เกณฑ์ของตลาดบนทุกกราฟ".'
 review:
   structural_calque: pass
-  text_hash: d2a65c8bdfbc72591eccd175fedcbe1f59bef190eb8ce0126aac6e46bb5affd3
+  text_hash: 6afa1f988dfce0768571a9ee40ace9af1a951891ba02cd5f6600f38823657221
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28800,17 +28737,17 @@ source: src/lib/content/products.ts
 path: FIT_PLAN_FULL.rows[1]
 render: Fit Report page, comparison card row, Fit Report
 narrative_slot: mechanism
-en: A next step for every competency below the bar, in order
-th: สิ่งที่ควรทำต่อ ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ
-provenance: paul-approved
-date: 28/10/2026
+en: Advice for every competency below the bar, in the order to develop them
+th: คำแนะนำสำหรับทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับที่ควรพัฒนา
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "A next step for every competency below the bar, in order" TH: "สิ่งที่ควรทำต่อ ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ".'
 review:
   structural_calque: pass
-  text_hash: f932364a1e05a30ff2270ad15a9ec408e7d38d47bc8014c33006282581968919
+  text_hash: b367c9d4ba1994f88ab72c008a85dbef3de0efb137268fb76b76b599de2091e3
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28998,17 +28935,17 @@ source: src/lib/content/products.ts
 path: FIT_CALLOUTS[2].body
 render: Fit Report page, showcase callout body
 narrative_slot: artefact
-en: Advice for you, with things you can act on next.
-th: คำแนะนำเฉพาะคุณ พร้อมสิ่งที่นำไปลงมือทำต่อได้
-provenance: paul-approved
-date: 28/10/2026
+en: Advice tailored to you, with steps you can take next.
+th: คำแนะนำที่ปรับให้เหมาะกับคุณ พร้อมขั้นตอนที่ทำต่อได้
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. Thai rewritten by Paul in chat 28/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Advice for you, with things you can act on next." TH: "คำแนะนำเฉพาะคุณ พร้อมสิ่งที่นำไปลงมือทำต่อได้".'
 review:
   structural_calque: pass
-  text_hash: 2611b940c5e4c5b6fde60854729c2555d876c5be22c4c4487726a218eacf73ba
+  text_hash: 078d907a28b244b3130744146389a14e748910e03c52cbaabc47f7f4b9316a35
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
