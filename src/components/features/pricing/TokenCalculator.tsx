@@ -29,6 +29,7 @@
 import { useMemo, useState } from "react";
 import { useCopy } from "@/components/LocaleProvider";
 import CallToAction from "@/components/CallToAction";
+import TokenCoin from "@/components/features/pricing/TokenCoin";
 import { SECTION_HEADING } from "@/lib/content/footer";
 import {
   CALC_BEST_FIT,
@@ -124,7 +125,9 @@ export default function TokenCalculator() {
   ) => (
     <fieldset className="flex flex-col gap-3">
       <legend className="mb-3 text-heading-sm text-on-surface">{label}</legend>
-      <div className="grid grid-cols-2 gap-2 medium:grid-cols-4">
+      <div
+        className={`grid grid-cols-2 gap-2 ${options.length === 3 ? "medium:grid-cols-3" : "medium:grid-cols-4"}`}
+      >
         {options.map((o) => {
           const on = o.value === value;
           return (
@@ -180,7 +183,10 @@ export default function TokenCalculator() {
           the choices change, which is the whole output of the tool. */}
       <div className="card-outlined flex flex-col px-6 py-7" aria-live="polite">
         <p className="text-body-large text-on-surface-variant">{pick(CALC_NEED)}</p>
-        <p className="mt-1 text-headline-small text-on-surface">{tokens(need)}</p>
+        <p className="mt-1 flex items-center gap-3 text-headline-small text-on-surface">
+          <TokenCoin size={32} />
+          {tokens(need)}
+        </p>
 
         <p className="mt-6 text-body-large text-on-surface-variant">{pick(CALC_BEST_FIT)}</p>
         <p className="mt-1 text-title-large text-on-surface">

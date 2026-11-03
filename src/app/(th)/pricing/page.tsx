@@ -24,9 +24,11 @@
  * is six places for it to drift.
  */
 
+import Image from "next/image";
 import { useCopy } from "@/components/LocaleProvider";
 import CallToAction from "@/components/CallToAction";
 import TokenCalculator from "@/components/features/pricing/TokenCalculator";
+import TokenCoin from "@/components/features/pricing/TokenCoin";
 import {
   FREE_HEADING,
   FREE_ITEMS,
@@ -63,15 +65,37 @@ import { HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
  */
 const FREE_PRODUCT_SLUGS = ["cv-check", "guided-job-hunt"] as const;
 
+/** The pile each pack opens with: the three sizes of the same coin. */
+const PACK_ART: Record<string, { src: string; w: number; h: number }> = {
+  starter: { src: "/pricing/pricing-pack-starter.png", w: 481, h: 539 },
+  standard: { src: "/pricing/pricing-pack-standard.png", w: 560, h: 365 },
+  serious: { src: "/pricing/pricing-pack-serious.png", w: 528, h: 560 },
+};
+
 /** One spec row (B6): label and detail left, value right, hairline between. */
-function SpecRow({ label, detail, value }: { label: string; detail?: string; value?: string }) {
+function SpecRow({
+  label,
+  detail,
+  value,
+  coin,
+}: {
+  label: string;
+  detail?: string;
+  value?: string;
+  coin?: boolean;
+}) {
   return (
     <div className="flex items-baseline justify-between gap-6 border-b border-outline-variant py-4 last:border-b-0">
       <div>
         <p className="text-heading-sm text-on-surface">{label}</p>
         {detail && <p className="mt-1 text-body-large text-on-surface-variant">{detail}</p>}
       </div>
-      {value && <p className="shrink-0 text-title-medium text-on-surface">{value}</p>}
+      {value && (
+        <p className="flex shrink-0 items-center gap-2 text-title-medium text-on-surface">
+          {coin && <TokenCoin />}
+          {value}
+        </p>
+      )}
     </div>
   );
 }
@@ -91,16 +115,44 @@ export default function PricingPage() {
 
   return (
     <div className="w-full">
-      <Band block="B1" ground="canvas" width="wide">
-        <h1 className={HERO_HEADING(locale)}>{pick(PRICING_HEADING)}</h1>
-        <p className="mt-4 max-w-2xl text-body-large text-on-surface-variant">
-          {pick(PRICING_INTRO)}
-        </p>
+      {/* The hero on lime since 03/11/2026, split with a clay scene, after
+          Wise's own pricing hero. The page's only fixed high-energy ground: the
+          recommended pack below is a dark CARD, not a band. Text inside takes
+          the roles `.ground-fixed` pins (`ink`, `body`). */}
+      <Band block="B2" ground="brand" width="wide">
+        <div className="grid items-center gap-10 large:grid-cols-[1fr_1fr]">
+          <div>
+            <h1 className={HERO_HEADING(locale)}>{pick(PRICING_HEADING)}</h1>
+            <p className="mt-4 max-w-xl text-body-large text-body">{pick(PRICING_INTRO)}</p>
+          </div>
+          <div className="overflow-hidden rounded-3xl">
+            <Image
+              src="/pricing/pricing-hero-candidate-tokens.jpg"
+              alt=""
+              width={1200}
+              height={896}
+              priority
+              sizes="(min-width: 1200px) 50vw, 100vw"
+              className="aspect-square h-auto w-full object-cover medium:aspect-[4/3]"
+            />
+          </div>
+        </div>
       </Band>
 
       {/* ------------------------------------------------------------ free */}
       <Band block="B6" ground="soft" width="wide">
-        <h2 className={SECTION_HEADING(locale)}>{pick(FREE_HEADING)}</h2>
+        <div className="flex items-end justify-between gap-6">
+          <h2 className={SECTION_HEADING(locale)}>{pick(FREE_HEADING)}</h2>
+          {/* Spot art, after Notion's corner illustrations: the existing
+              magnifier mascot, which is what free reading looks like. */}
+          <Image
+            src="/mascot-magnifier.png"
+            alt=""
+            width={300}
+            height={160}
+            className="-mb-3 hidden h-24 w-auto expanded:block"
+          />
+        </div>
         <div className="card-plain mt-5 px-6 py-2">
           {FREE_ITEMS.map((item) => (
             <SpecRow
@@ -132,8 +184,22 @@ export default function PricingPage() {
               label={pick(row.label)}
               detail={pick(row.detail)}
               value={tokens(row.tokens)}
+              coin
             />
           ))}
+        </div>
+
+        {/* The Fit Report row is the only one with people in it, so the page
+            shows them: coach and candidate on the call, after Preply. */}
+        <div className="mt-6 overflow-hidden rounded-3xl">
+          <Image
+            src="/pricing/pricing-fit-report-interview.jpg"
+            alt=""
+            width={1600}
+            height={533}
+            sizes="(min-width: 1200px) 1100px, 100vw"
+            className="aspect-[2/1] h-auto w-full object-cover medium:aspect-[3/1]"
+          />
         </div>
 
         <h3 className="mt-10 text-heading-sm text-on-surface">{pick(LIMITS_HEADING)}</h3>
@@ -155,42 +221,59 @@ export default function PricingPage() {
             the tallest, and the card is `flex flex-col` with an `mt-auto`
             action, so the extra height lands in the text rather than above the
             button. Same reasoning as the services grid, 17/08/2026. */}
-        <div className="mt-6 grid gap-6 large:grid-cols-3">
-          {PACKS.map((pack) => (
-            <section
-              key={pack.id}
-              className={`flex flex-col rounded-large border px-6 py-7 ${
-                pack.recommended
-                  ? "border-tertiary bg-tertiary-container"
-                  : "border-outline-variant bg-surface"
-              }`}
-            >
-              <div className="flex flex-wrap items-center gap-2">
-                <h3 className="text-title-large">{pick(pack.name)}</h3>
+        <div className="mt-10 grid gap-6 large:grid-cols-3 large:items-stretch">
+          {PACKS.map((pack) => {
+            const art = PACK_ART[pack.id];
+            /* The recommended pack is lifted, after Duolingo: a dark card in a
+               white row, with the badge as a tab on its top edge. `.ground-dark`
+               pins every role inside it, so the same classes read on it. */
+            return (
+              <section
+                key={pack.id}
+                className={`relative flex flex-col rounded-large border px-6 pb-7 pt-5 ${
+                  pack.recommended
+                    ? "ground-dark border-transparent bg-canvas-dark large:-my-4 large:pb-11 large:pt-9"
+                    : "border-outline-variant bg-surface"
+                }`}
+              >
                 {pack.recommended && (
-                  <span className="rounded-full bg-action-container px-2.5 py-0.5 text-body-medium text-on-action-container">
+                  <span className="absolute -top-3.5 left-6 rounded-full bg-yellow-pale px-3 py-1 text-body-medium text-on-yellow-pale">
                     {pick(RECOMMENDED_BADGE)}
                   </span>
                 )}
-              </div>
+                {art && (
+                  <Image
+                    src={art.src}
+                    alt=""
+                    width={art.w}
+                    height={art.h}
+                    sizes="240px"
+                    className="mx-auto h-36 w-auto object-contain"
+                  />
+                )}
+                <h3 className="mt-4 text-title-large text-on-surface">{pick(pack.name)}</h3>
 
-              <p className="mt-1 text-body-large text-on-surface-variant">{pick(pack.tagline)}</p>
+                <p className="mt-1 text-body-large text-on-surface-variant">{pick(pack.tagline)}</p>
 
-              <p className="mt-5 text-headline-small text-on-surface">
-                {pack.thb.toLocaleString("en-US")}
-                {/* The unit is spelled out rather than abbreviated, and it is
-                    the only place THB appears on a card. */}
-                <span className="ml-1 text-body-large text-on-surface-variant">THB</span>
-              </p>
-              <p className="mt-1 text-body-large text-on-surface-variant">{tokens(pack.tokens)}</p>
+                <p className="mt-5 text-headline-small text-on-surface">
+                  {pack.thb.toLocaleString("en-US")}
+                  {/* The unit is spelled out rather than abbreviated, and it is
+                      the only place THB appears on a card. */}
+                  <span className="ml-1 text-body-large text-on-surface-variant">THB</span>
+                </p>
+                <p className="mt-1 flex items-center gap-2 text-body-large text-on-surface-variant">
+                  <TokenCoin size={18} />
+                  {tokens(pack.tokens)}
+                </p>
 
-              <p className="mt-5 flex-1 text-body-large text-on-surface-variant">{pick(pack.who)}</p>
+                <p className="mt-5 flex-1 text-body-large text-on-surface-variant">{pick(pack.who)}</p>
 
-              {/* All three buttons are the same action to the same place, which
-                  is rule 1 in `cta.ts`: one action may repeat once per card. */}
-              <CallToAction page="/pricing" className="mt-auto pt-7" show="primary" />
-            </section>
-          ))}
+                {/* All three buttons are the same action to the same place, which
+                    is rule 1 in `cta.ts`: one action may repeat once per card. */}
+                <CallToAction page="/pricing" className="mt-auto pt-7" show="primary" />
+              </section>
+            );
+          })}
         </div>
 
         {/* The terms every pack shares, under the packs they qualify. */}
