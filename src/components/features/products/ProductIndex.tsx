@@ -46,6 +46,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
+import type { Copy } from "@/lib/content/copy";
 import Band from "@/components/Band";
 import CallToAction from "@/components/CallToAction";
 import Checklist from "@/components/blocks/Checklist";
@@ -81,14 +82,7 @@ import {
   type Product,
 } from "@/lib/content/products";
 
-const GRID = "large:grid-cols-[0.9fr_1fr_1.3fr_1.3fr_0.7fr]";
 
-/** Row grounds for the comparison, rotating so neighbours differ. */
-const ROW_TINT = [
-  "bg-cyan-pale text-on-cyan-pale",
-  "bg-orange-pale text-on-orange-pale",
-  "bg-yellow-pale text-on-yellow-pale",
-];
 
 export default function ProductIndex() {
   const { pick, locale, path } = useCopy();
@@ -157,14 +151,6 @@ export default function ProductIndex() {
     );
   };
 
-  const cell = (label: string, value: string, strong = false) => (
-    <div>
-      <p className="text-caption-strong large:hidden">{label}</p>
-      <p className={`mt-1 large:mt-0 ${strong ? "text-body-md-strong" : "text-body-md"}`}>
-        {value}
-      </p>
-    </div>
-  );
 
   return (
     <div className="w-full">
@@ -270,63 +256,130 @@ export default function ProductIndex() {
         <h2 className={SECTION_HEADING(locale)}>{pick(INDEX_TABLE_HEADING)}</h2>
 
         {/*
-          03/11/2026: the table was hairlines on grey and read as small print.
-          Each product is now its own tinted row with its clay photo as a
-          round thumbnail and the cost as a chip, after the comparison rows on
-          Wise and Monzo. Same five columns, same strings.
+          03/11/2026, Paul's pick (1a) from the layout research: Teal's pricing
+          table. White, products as columns, the questions as rows, and the
+          place to start, EU Fit Check, picked out with a dark green outline
+          rather than a colour. Each column opens with the product's clay photo
+          as a small circle. Below `large` it becomes one block per product,
+          the first one outlined the same way. Same strings as before.
         */}
-        <div className={`mt-10 hidden gap-6 px-6 pb-3 large:grid ${GRID}`}>
-          {[COL_PRODUCT, COL_WHO, COL_WHAT, LIMIT_HEADING, COL_COST].map((c, i) => (
-            <p key={i} className="text-caption-strong text-mute-strong">
-              {pick(c)}
-            </p>
-          ))}
-        </div>
-
-        <div className="mt-4 flex flex-col gap-4 large:mt-0">
-          {PRODUCTS.map((p, i) => {
+        {(() => {
+          const rows: { label: Copy; value: (p: Product) => string; strong?: boolean }[] = [
+            { label: COL_WHO, value: (p) => pick(p.audience) },
+            { label: COL_WHAT, value: (p) => pick(p.howLede) },
+            { label: LIMIT_HEADING, value: (p) => pick(p.limit) },
+            {
+              label: COL_COST,
+              value: (p) =>
+                pick(isFreeProduct(p.slug) ? freeCostLabel(p.slug, CATALOGUE_FREE) : CATALOGUE_PAID),
+              strong: true,
+            },
+          ];
+          const head = (p: Product) => {
             const photo = PRODUCT_PHOTO[p.slug];
-            const free = isFreeProduct(p.slug);
             return (
-              <div
-                key={p.slug}
-                className={`grid gap-4 rounded-3xl px-6 py-6 large:items-start large:gap-6 ${GRID} ${ROW_TINT[i % 3]}`}
-              >
-                <div className="flex items-center gap-4 large:flex-col large:items-start">
-                  {photo && (
-                    <span className="relative block size-16 shrink-0 overflow-hidden rounded-full">
-                      <Image src={photo.src} alt="" fill sizes="64px" className="object-cover" />
-                    </span>
-                  )}
-                  <div>
-                    <Link
-                      href={path(`/products/${p.slug}`)}
-                      className="inline-flex min-h-6 items-center text-body-md-strong underline underline-offset-4"
-                    >
-                      {pick(p.name)}
-                    </Link>
-                    {p.status === "soon" && (
-                      <p className="mt-1 text-caption-strong">{pick(STATUS_SOON)}</p>
-                    )}
-                  </div>
-                </div>
-                {cell(pick(COL_WHO), pick(p.audience))}
-                {cell(pick(COL_WHAT), pick(p.howLede))}
-                {cell(pick(LIMIT_HEADING), pick(p.limit))}
-                <div>
-                  <p className="text-caption-strong large:hidden">{pick(COL_COST)}</p>
-                  <span
-                    className={`mt-1 inline-block rounded-2xl px-3 py-1 text-caption-strong large:mt-0 ${
-                      free ? "bg-primary text-on-primary" : "bg-canvas text-ink-deep"
-                    }`}
-                  >
-                    {pick(free ? freeCostLabel(p.slug, CATALOGUE_FREE) : CATALOGUE_PAID)}
+              <div className="flex items-center gap-3 large:flex-col large:items-start">
+                {photo && (
+                  <span className="relative block size-14 shrink-0 overflow-hidden rounded-full bg-canvas-soft">
+                    <Image src={photo.src} alt="" fill sizes="56px" className="object-cover" />
                   </span>
+                )}
+                <div>
+                  <Link
+                    href={path(`/products/${p.slug}`)}
+                    className="inline-flex min-h-6 items-center text-body-md-strong text-ink-deep underline underline-offset-4"
+                  >
+                    {pick(p.name)}
+                  </Link>
+                  {p.status === "soon" && (
+                    <p className="mt-1 text-caption-strong text-mute-strong">{pick(STATUS_SOON)}</p>
+                  )}
                 </div>
               </div>
             );
-          })}
-        </div>
+          };
+          const START = "eu-fit-check";
+          return (
+            <>
+              {/* Wide: one white card, products across. */}
+              <div className="card-plain relative mt-10 hidden border border-line p-2 large:block">
+                <div
+                  className="relative grid grid-cols-[150px_repeat(5,minmax(0,1fr))]"
+                  style={{ gridTemplateRows: `repeat(${rows.length + 1}, auto)` }}
+                >
+                  <div
+                    aria-hidden
+                    className="pointer-events-none rounded-2xl border-2 border-ink-deep"
+                    style={{
+                      gridColumn: `${PRODUCTS.findIndex((p) => p.slug === START) + 2}`,
+                      gridRow: `1 / ${rows.length + 2}`,
+                    }}
+                  />
+                  <p
+                    className="self-end px-4 pb-4 text-caption-strong text-mute-strong"
+                    style={{ gridColumn: 1, gridRow: 1 }}
+                  >
+                    {pick(COL_PRODUCT)}
+                  </p>
+                  {PRODUCTS.map((p, c) => (
+                    <div key={p.slug} className="px-4 pt-5 pb-4" style={{ gridColumn: c + 2, gridRow: 1 }}>
+                      {head(p)}
+                    </div>
+                  ))}
+                  {rows.map((r, ri) => (
+                    <div key={ri} className="contents">
+                      <p
+                        className="border-t border-line px-4 py-5 text-caption-strong text-mute-strong"
+                        style={{ gridColumn: 1, gridRow: ri + 2 }}
+                      >
+                        {pick(r.label)}
+                      </p>
+                      {PRODUCTS.map((p, c) => (
+                        <p
+                          key={p.slug}
+                          className={`border-t border-line px-4 py-5 ${
+                            r.strong ? "text-body-md-strong text-ink-deep" : "text-body-sm text-body"
+                          }`}
+                          style={{ gridColumn: c + 2, gridRow: ri + 2 }}
+                        >
+                          {r.value(p)}
+                        </p>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Narrow: one block per product, the place to start outlined. */}
+              <ul className="mt-8 flex flex-col gap-4 large:hidden">
+                {PRODUCTS.map((p) => (
+                  <li
+                    key={p.slug}
+                    className={`card-plain px-5 py-5 ${
+                      p.slug === START ? "border-2 border-ink-deep" : "border border-line"
+                    }`}
+                  >
+                    {head(p)}
+                    <dl className="mt-4 flex flex-col gap-3">
+                      {rows.map((r, ri) => (
+                        <div key={ri} className="border-t border-line pt-3">
+                          <dt className="text-caption-strong text-mute-strong">{pick(r.label)}</dt>
+                          <dd
+                            className={`mt-1 ${
+                              r.strong ? "text-body-md-strong text-ink-deep" : "text-body-md text-body"
+                            }`}
+                          >
+                            {r.value(p)}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </li>
+                ))}
+              </ul>
+            </>
+          );
+        })()}
       </Band>
 
       {/* ----------------------------------------------------------- close */}
