@@ -104,7 +104,7 @@ export const PRODUCTS: readonly NavItem[] = [
   { href: "/products/cv-check", label: "nav.cvCheck" },
   { href: "/products/fit-report", label: "nav.fitReport" },
   { href: "/products/matched-jobs", label: "nav.matchedJobs" },
-  { href: "/products/guided-job-hunt", label: "nav.guidedJobHunt" },
+  { href: "/products/job-search-dashboard", label: "nav.jobSearchDashboard" },
   { href: "/coaching", label: "nav.coaching" },
   /*
    * `/services` is back, 06/09/2026, on Paul's call.

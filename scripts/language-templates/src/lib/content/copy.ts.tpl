@@ -190,10 +190,10 @@ export const COPY = {
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2Lm1hdGNoZWRKb2Jz:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2Lm1hdGNoZWRKb2Jz:TH%%,
   },
-  "nav.guidedJobHunt": {
+  "nav.jobSearchDashboard": {
     screen: "Site menu, the Products group",
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2Lmd1aWRlZEpvYkh1bnQ:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2Lmd1aWRlZEpvYkh1bnQ:TH%%,
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2LmpvYlNlYXJjaERhc2hib2FyZA:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubmF2LmpvYlNlYXJjaERhc2hib2FyZA:TH%%,
   },
   /*
    * Two entries added 06/09/2026 with `/products` and `/services`.

@@ -96,7 +96,7 @@ const PRODUCT_PHOTO: Record<string, { src: string; w: number; h: number; where: 
   "cv-check": { src: "/products/product-cv-check.jpg", w: 1200, h: 896, where: "hero" },
   "fit-report": { src: "/pricing/pricing-fit-report-interview.jpg", w: 1024, h: 1024, where: "how" },
   "matched-jobs": { src: "/products/product-matched-jobs.jpg", w: 1200, h: 896, where: "hero" },
-  "guided-job-hunt": { src: "/products/product-guided-job-hunt.jpg", w: 1200, h: 896, where: "hero" },
+  "job-search-dashboard": { src: "/products/product-job-search-dashboard.jpg", w: 1200, h: 896, where: "hero" },
 };
 
 export default function ProductPage({ product }: { product: Product }) {

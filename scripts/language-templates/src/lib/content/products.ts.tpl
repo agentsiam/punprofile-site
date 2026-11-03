@@ -92,6 +92,13 @@ export interface Product {
   faq: readonly ProductFaq[];
   /** Key into `PAGE_ACTIONS`. Every product page has its own entry. */
   actionsKey: string;
+  /**
+   * Replaces the bare "Free" wherever this product's cost is named, for a
+   * free product that only a buyer can open. The Job Search Dashboard is
+   * free, but only from a candidate's first token pack, and "Free" alone
+   * would promise it to everyone.
+   */
+  costLabel?: Copy;
 }
 
 /**
@@ -487,7 +494,9 @@ export const PRODUCTS: readonly Product[] = [
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5ob3dMZWRl:TH%%,
     },
     name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5uYW1l:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5uYW1l:TH%% },
-    status: "soon",
+    // Live 03/11/2026: sold in token packs by message since 23/10/2026, and
+    // /pricing, the home page and the Job Search Dashboard already sold it.
+    status: "live",
     headline: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5oZWFkbGluZQ:EN%%,
       // Drafted 23/08/2026, read back and approved unchanged.
@@ -495,7 +504,9 @@ export const PRODUCTS: readonly Product[] = [
     },
     lede: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5sZWRl:EN%%,
-      // Paul's own Thai of 23/08/2026, from the pricing sheet.
+      // Paul's own Thai of 23/08/2026, from the pricing sheet, re-pointed
+      // 03/11/2026 to the dashboard: the PRD sends each role there, with an
+      // email notice.
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5sZWRl:TH%%,
     },
     how: [
@@ -541,9 +552,11 @@ export const PRODUCTS: readonly Product[] = [
     actionsKey: "/products/matched-jobs",
   },
 
-  /* ------------------------------------------------------- Guided Job Hunt */
+  /* -------------------------------------------------- Job Search Dashboard */
   {
-    slug: "guided-job-hunt",
+    // Guided Job Hunt until 03/11/2026, renamed to the page it is: the
+    // candidate's own แดชบอร์ดหางาน, so a buyer meets one name throughout.
+    slug: "job-search-dashboard",
     // Read back 25/08/2026. Draft for `PROD-01-guided-job-hunt`.
     audience: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5hdWRpZW5jZQ:EN%%,
@@ -555,7 +568,9 @@ export const PRODUCTS: readonly Product[] = [
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5ob3dMZWRl:TH%%,
     },
     name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5uYW1l:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5uYW1l:TH%% },
-    status: "soon",
+    // Live 03/11/2026: opened by hand for every candidate who buys tokens for
+    // the first time.
+    status: "live",
     headline: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5oZWFkbGluZQ:EN%%,
       // Drafted 23/08/2026, read back and approved unchanged.
@@ -563,9 +578,9 @@ export const PRODUCTS: readonly Product[] = [
     },
     lede: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5sZWRl:EN%%,
-      // Paul's wording, 23/08/2026. Free because it is the surface paid deliveries
-      // land on, decided 23/08/2026: charging for it would be charging twice for
-      // one workflow.
+      // Rewritten 03/11/2026 for the whole dashboard, free from the first token
+      // pack. Free because it is the surface paid deliveries land on, decided
+      // 23/08/2026: charging for it would be charging twice for one workflow.
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5sZWRl:TH%%,
     },
     how: [
@@ -596,12 +611,24 @@ export const PRODUCTS: readonly Product[] = [
         q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMF0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMF0ucQ:TH%% },
         a: {
           en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMF0uYQ:EN%%,
-          // Paul's wording, 23/08/2026.
+          // Paul's wording, 23/08/2026, re-pointed 03/11/2026 from Matched Jobs
+          // to the first token pack, which is what now opens it.
           th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMF0uYQ:TH%%,
         },
       },
+      {
+        q: { en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMV0ucQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMV0ucQ:TH%% },
+        a: {
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMV0uYQ:EN%%,
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5mYXFbMV0uYQ:TH%%,
+        },
+      },
     ],
-    actionsKey: "/products/guided-job-hunt",
+    actionsKey: "/products/job-search-dashboard",
+    costLabel: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5jb3N0TGFiZWw:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1s0XS5jb3N0TGFiZWw:TH%%,
+    },
   },
 ];
 
@@ -676,12 +703,12 @@ export const PRODUCT_ART: Record<string, ProductArt> = {
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5tYXRjaGVkLWpvYnMuYWx0:TH%%,
     },
   },
-  "guided-job-hunt": {
+  "job-search-dashboard": {
     figure: "pipeline",
     alt: {
-      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5ndWlkZWQtam9iLWh1bnQuYWx0:EN%%,
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5qb2Itc2VhcmNoLWRhc2hib2FyZC5hbHQ:EN%%,
       // Read back 06/09/2026.
-      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5ndWlkZWQtam9iLWh1bnQuYWx0:TH%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUX0FSVC5qb2Itc2VhcmNoLWRhc2hib2FyZC5hbHQ:TH%%,
     },
   },
 };
@@ -705,10 +732,18 @@ export const PRODUCT_ART: Record<string, ProductArt> = {
 export const FREE_SLUGS: ReadonlySet<string> = new Set([
   "eu-fit-check",
   "cv-check",
-  "guided-job-hunt",
+  "job-search-dashboard",
 ]);
 
 export const isFreeProduct = (slug: string): boolean => FREE_SLUGS.has(slug);
+
+/**
+ * The cost a product page, the catalogue and `/pricing` name for a free
+ * product: its own `costLabel` where it has one, otherwise `fallback`, the
+ * plain "Free" of whichever surface is asking.
+ */
+export const freeCostLabel = (slug: string, fallback: Copy): Copy =>
+  PRODUCTS.find((p) => p.slug === slug)?.costLabel ?? fallback;
 
 /* ==========================================================================
    THE CATALOGUE PAGE, /products

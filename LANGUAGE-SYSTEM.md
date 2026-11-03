@@ -4627,29 +4627,26 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.nav.guidedJobHunt`
+### `src/lib/content/copy.ts::COPY.nav.jobSearchDashboard`
 
 ```yaml
-id: src/lib/content/copy.ts::COPY.nav.guidedJobHunt
-source: src/lib/content/copy.ts
-path: COPY.nav.guidedJobHunt
-render: Site menu, the Products group
-narrative_slot: utility
-en: Guided Job Hunt
-th: Guided Job Hunt
+id: "src/lib/content/copy.ts::COPY.nav.jobSearchDashboard"
+source: "src/lib/content/copy.ts"
+path: "COPY.nav.jobSearchDashboard"
+render: "Site menu, the Products group"
+narrative_slot: "utility"
+en: "Job Search Dashboard"
+th: "แดชบอร์ดหางาน"
 provenance: paul-approved
-date: 10/09/2026
+date: "03/11/2026"
 term_bindings:
-  - product-guided-job-hunt
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+  - page-job-search-dashboard
+decision_note: "Renamed from Guided Job Hunt on Paul's call of 03/11/2026. The Thai is the fixed term page-job-search-dashboard."
 review:
   structural_calque: pass
-  text_hash: 0306c1557b504fc623b194bbe30c6302c7f52d7e43f51c9c42965ed3747f4b9c
+  text_hash: 9bde47f229c3eff7959f777501e0e951a350901f08a035996cd7c638bd727490
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: "Paul decided this name 03/11/2026 (termbase page-job-search-dashboard); the rename was approved the same day."
 ```
 
 <!-- COPY-ENTRY -->
@@ -9130,22 +9127,22 @@ review:
 ### `src/lib/content/home.ts::WHO_BODY`
 
 ```yaml
-id: src/lib/content/home.ts::WHO_BODY
-source: src/lib/content/home.ts
-path: WHO_BODY
-render: Home page, WHO_BODY
-narrative_slot: house.not
-en: "We are two coaches who also hire for a living, reading CVs and deciding who goes forward. PunProfile is paid by you, not by employers, so our advice starts from your goals, not from a vacancy a company is rushing to fill."
-th: "เราเป็นโค้ชสองคนที่ทำงานคัดเลือกคนเข้าทำงาน ทั้งอ่าน CV และตัดสินใจว่าใครจะได้ไปต่อ ส่วน PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำของเราจึงเริ่มจากเป้าหมายของคุณ ไม่ใช่จากตำแหน่งว่างที่บริษัทกำลังเร่งหาคน"
-provenance: paul-approved
-date: 30/10/2026
+id: "src/lib/content/home.ts::WHO_BODY"
+source: "src/lib/content/home.ts"
+path: "WHO_BODY"
+render: "Home page, WHO_BODY"
+narrative_slot: "house.not"
+en: "Our coaches also hire for a living, reading CVs and deciding who goes forward. PunProfile is paid by you, not by employers, so our advice starts from your goals, not from a vacancy a company is rushing to fill."
+th: "โค้ชของเราทำงานคัดเลือกคนเข้าทำงานด้วย ทั้งอ่าน CV และตัดสินใจว่าใครจะได้ไปต่อ ส่วน PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำของเราจึงเริ่มจากเป้าหมายของคุณ ไม่ใช่จากตำแหน่งว่างที่บริษัทกำลังเร่งหาคน"
+provenance: draft
+date: "03/11/2026"
 term_bindings: []
-decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. Opening changed 03/11/2026 to name no headcount, Paul's rule of 01/11/2026."
 review:
-  structural_calque: pass
-  text_hash: b0614a6735568de2f5c37f4faefb720cfb4a86fd776b1ee3ce73f3732c94cd91
+  structural_calque: pending
+  text_hash: 722106eaa743d1534068d1faa81339d9b4d5caec5e29bc364e69b6c0f7d4d491
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17290,17 +17287,17 @@ source: "src/lib/content/pricing.ts"
 path: "TOKEN_ROWS[0].detail"
 render: "Pricing page, TOKEN_ROWS[0].detail"
 narrative_slot: "artefact"
-en: "Sent to your email, with the work rights it needs stated"
-th: "ส่งทางอีเมล พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี"
-provenance: paul-approved
-date: "02/11/2026"
+en: "Sent to your Job Search Dashboard, with the work rights it needs stated"
+th: "ส่งเข้าแดชบอร์ดหางาน พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี"
+provenance: draft
+date: "03/11/2026"
 term_bindings: []
-decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ระบุให้ชัดว่าเป็นสิทธิ์การทำงานที่ผู้สมัครต้องมีสำหรับตำแหน่งนั้น"
+decision_note: "Approved 02/11/2026 as an email delivery; re-pointed 03/11/2026 to the dashboard, where the PRD sends each role."
 review:
-  structural_calque: pass
-  text_hash: 71179b3533f1781ca437b07756dfc35b193d6db56b8e5c10b63398a6e28b8f1b
+  structural_calque: pending
+  text_hash: 6b46930734d329bfe9c4d91b70881735b7dbcd2b5444f25d5fabb2ce58d0b365
   prompt_version: structural-calque-v1
-  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
 ```
 
 <!-- COPY-ENTRY -->
@@ -19764,25 +19761,25 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::PRODUCT_ART.guided-job-hunt.alt`
+### `src/lib/content/products.ts::PRODUCT_ART.job-search-dashboard.alt`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCT_ART.guided-job-hunt.alt
-source: src/lib/content/products.ts
-path: PRODUCT_ART.guided-job-hunt.alt
-render: Product pages, PRODUCT_ART.guided-job-hunt.alt
-narrative_slot: utility
-en: Four columns of a tracker, from saved through to offer
-th: กระดานติดตามการสมัครงานสี่คอลัมน์ ตั้งแต่ตำแหน่งที่เก็บไว้จนถึงข้อเสนอจ้างงาน
+id: "src/lib/content/products.ts::PRODUCT_ART.job-search-dashboard.alt"
+source: "src/lib/content/products.ts"
+path: "PRODUCT_ART.job-search-dashboard.alt"
+render: "Product pages, PRODUCT_ART.job-search-dashboard.alt"
+narrative_slot: "utility"
+en: "Four columns of a tracker, from saved through to offer"
+th: "กระดานติดตามการสมัครงานสี่คอลัมน์ ตั้งแต่ตำแหน่งที่เก็บไว้จนถึงข้อเสนอจ้างงาน"
 provenance: paul-approved
-date: 06/09/2026
+date: "06/09/2026"
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: "Read back 06/09/2026."
 review:
   structural_calque: pass
   text_hash: 2574b14aebe721f58a5ca88f8ce03e0932ef02d0a13d48b389507b6af09fa0ce
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -20797,22 +20794,22 @@ review:
 ### `src/lib/content/products.ts::PRODUCTS[3].lede`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCTS[3].lede
-source: src/lib/content/products.ts
-path: PRODUCTS[3].lede
-render: Product pages, PRODUCTS[3].lede
-narrative_slot: utility
-en: We screen roles against the criteria you set and send them to your email, one at a time.
-th: เราคัดตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ แล้วส่งตรงถึงอีเมลทีละตำแหน่ง
-provenance: paul-written
-date: 23/08/2026
+id: "src/lib/content/products.ts::PRODUCTS[3].lede"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[3].lede"
+render: "Product pages, PRODUCTS[3].lede"
+narrative_slot: "utility"
+en: "We screen roles against the criteria you set and send them to your Job Search Dashboard, one at a time, with an email to let you know."
+th: "เราคัดตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ แล้วส่งเข้าแดชบอร์ดหางานของคุณทีละตำแหน่ง พร้อมแจ้งทางอีเมล"
+provenance: draft
+date: "03/11/2026"
 term_bindings: []
-decision_note: Paul's own Thai of 23/08/2026, from the pricing sheet.
+decision_note: "Paul's 23/08/2026 line re-pointed 03/11/2026 from email to the dashboard: the PRD sends each role there, with an email notice."
 review:
-  structural_calque: pass
-  text_hash: a0a2c48af37eb63ab0828997781391becb6af1dd7034bcb1d13b6ab8f4cb41a1
+  structural_calque: pending
+  text_hash: 9921f683e4ed51b22ef0cb95cf78d9063bda039563b6e605b43180a155fd2c0b
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
 ```
 
 <!-- COPY-ENTRY -->
@@ -20894,22 +20891,88 @@ review:
 ### `src/lib/content/products.ts::PRODUCTS[4].faq[0].a`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCTS[4].faq[0].a
-source: src/lib/content/products.ts
-path: PRODUCTS[4].faq[0].a
-render: Product pages, PRODUCTS[4].faq[0].a
-narrative_slot: utility
-en: No charge. It is included with Matched Jobs, because it is where those roles arrive.
-th: ไม่มีค่าใช้จ่าย เพราะรวมอยู่ในบริการส่งตำแหน่งงานที่ตรงกับคุณแล้ว
-provenance: paul-written
-date: 23/08/2026
+id: "src/lib/content/products.ts::PRODUCTS[4].faq[0].a"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].faq[0].a"
+render: "Product pages, PRODUCTS[4].faq[0].a"
+narrative_slot: "utility"
+en: "No charge. It opens with your first token pack, because it is where the roles matched to you arrive."
+th: "ไม่มีค่าใช้จ่าย เปิดให้ใช้ตั้งแต่ซื้อโทเคนครั้งแรก เพราะเป็นที่ที่ตำแหน่งงานที่ตรงกับคุณถูกส่งเข้ามา"
+provenance: draft
+date: "03/11/2026"
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: "Paul's 23/08/2026 answer re-pointed 03/11/2026 from Matched Jobs to the first token pack, which is what now opens it."
 review:
-  structural_calque: pass
-  text_hash: cfaf77a99b22e0f4192a0d52617d2178910a3f2c8ebe9137fa5cdb846da249d4
+  structural_calque: pending
+  text_hash: 5dcddd163776af622800c52f199be8a25204d989b0df668ca1f68af6708d744f
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[4].faq[1].a`
+
+```yaml
+id: "src/lib/content/products.ts::PRODUCTS[4].faq[1].a"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].faq[1].a"
+render: "Product pages, PRODUCTS[4].faq[1].a"
+narrative_slot: "utility"
+en: "Buy your first token pack. PunProfile then opens your Job Search Dashboard and emails you a sign-in code."
+th: "ซื้อแพ็กเกจโทเคนครั้งแรก จากนั้น PunProfile จะเปิดแดชบอร์ดหางานให้ และส่งรหัสเข้าสู่ระบบให้ทางอีเมล"
+provenance: draft
+date: "03/11/2026"
+term_bindings: []
+decision_note: "Added 03/11/2026: how access is opened. Written register, PunProfile in the third person, as the dashboard's sign-in copy."
+review:
+  structural_calque: pending
+  text_hash: 19a0d34bb88e4fd7bfd6df6f8e790e58c234449aafdf2c3fbf6cf131fe9b4d6f
+  prompt_version: structural-calque-v1
+  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[4].faq[1].q`
+
+```yaml
+id: "src/lib/content/products.ts::PRODUCTS[4].faq[1].q"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].faq[1].q"
+render: "Product pages, PRODUCTS[4].faq[1].q"
+narrative_slot: "utility"
+en: "How do I start using it?"
+th: "เริ่มใช้งานได้อย่างไร"
+provenance: draft
+date: "03/11/2026"
+term_bindings: []
+decision_note: "Added 03/11/2026 with its answer."
+review:
+  structural_calque: pending
+  text_hash: 1289e8e2fa9537d55cfd9cb738bcdfb7b190d801b4b6cd0ab02fb2655eb14adb
+  prompt_version: structural-calque-v1
+  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[4].costLabel`
+
+```yaml
+id: "src/lib/content/products.ts::PRODUCTS[4].costLabel"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].costLabel"
+render: "Product page summary card, /products, /pricing and the home catalogue, PRODUCTS[4].costLabel"
+narrative_slot: "utility"
+en: "Free from your first token pack"
+th: "ฟรีตั้งแต่ซื้อโทเคนครั้งแรก"
+provenance: draft
+date: "03/11/2026"
+term_bindings: []
+decision_note: "Added 03/11/2026: replaces the bare Free for a product only a buyer can open."
+review:
+  structural_calque: pending
+  text_hash: 595feeb9c6f1edfa9c9d09cb5b3caed1796ecca6ec104d50aa08105439173b27
+  prompt_version: structural-calque-v1
+  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
 ```
 
 <!-- COPY-ENTRY -->
@@ -21029,52 +21092,44 @@ review:
 ### `src/lib/content/products.ts::PRODUCTS[4].howLede`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCTS[4].howLede
-source: src/lib/content/products.ts
-path: PRODUCTS[4].howLede
-render: Product pages, PRODUCTS[4].howLede
-narrative_slot: mechanism
-en: One place holding every application and where each one stands.
-th: ที่เดียวที่เก็บทุกตำแหน่งที่คุณสมัคร พร้อมสถานะของแต่ละตำแหน่ง
-provenance: paul-approved
-date: 10/09/2026
+id: "src/lib/content/products.ts::PRODUCTS[4].howLede"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].howLede"
+render: "Product pages, PRODUCTS[4].howLede"
+narrative_slot: "mechanism"
+en: "The roles picked for you, your CVs and every application you send, on one page."
+th: "ตำแหน่งที่ PunProfile คัดให้ CV ของคุณ และทุกตำแหน่งที่คุณสมัคร รวมไว้ในหน้าเดียว"
+provenance: draft
+date: "03/11/2026"
 term_bindings: []
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+decision_note: "Rewritten 03/11/2026 for the whole dashboard, after the rename from Guided Job Hunt."
 review:
-  structural_calque: pass
-  text_hash: c88657832e7fe3243fe854842b5abf74aad12949c5de4260a56f802d975a96a5
+  structural_calque: pending
+  text_hash: f9b2295de5b74d15030443595ea96d82796c8736e75bf5c5571344a953ab37b8
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/products.ts::PRODUCTS[4].lede`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCTS[4].lede
-source: src/lib/content/products.ts
-path: PRODUCTS[4].lede
-render: Product pages, PRODUCTS[4].lede
-narrative_slot: utility
-en: One place holding every role you applied for, with where each one stands. Free.
-th: รวมทุกตำแหน่งที่คุณสมัครไว้ในที่เดียว พร้อมสถานะล่าสุดของแต่ละที่ ใช้ฟรี
-provenance: paul-written
-date: 23/08/2026
+id: "src/lib/content/products.ts::PRODUCTS[4].lede"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].lede"
+render: "Product pages, PRODUCTS[4].lede"
+narrative_slot: "utility"
+en: "The roles picked for you, a CV for each target role, and every application with where it stands, all in one place. Free from your first token pack."
+th: "รวมตำแหน่งที่ PunProfile คัดให้ CV สำหรับแต่ละตำแหน่งเป้าหมาย และทุกตำแหน่งที่คุณสมัครพร้อมสถานะล่าสุดไว้ในที่เดียว ใช้ฟรีตั้งแต่ซื้อโทเคนครั้งแรก"
+provenance: draft
+date: "03/11/2026"
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. Free because it is the surface paid deliveries
-
-  land on, decided 23/08/2026: charging for it would be charging twice for
-
-  one workflow.
+decision_note: "Rewritten 03/11/2026 for the whole dashboard, free from the first token pack. Replaces Paul's 23/08/2026 line for Guided Job Hunt."
 review:
-  structural_calque: pass
-  text_hash: 655f131fb61fe72dbf58205fba1592b2982f2c6e50f4ff75a2d7727a344fca25
+  structural_calque: pending
+  text_hash: 3ef5c8b101e9db055d55bd5991a51a92a1145c9c13eeff476bb86ad48663718f
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
 ```
 
 <!-- COPY-ENTRY -->
@@ -21103,23 +21158,23 @@ review:
 ### `src/lib/content/products.ts::PRODUCTS[4].name`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCTS[4].name
-source: src/lib/content/products.ts
-path: PRODUCTS[4].name
-render: Product pages, PRODUCTS[4].name
-narrative_slot: utility
-en: Guided Job Hunt
-th: Guided Job Hunt
+id: "src/lib/content/products.ts::PRODUCTS[4].name"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].name"
+render: "Product pages, PRODUCTS[4].name"
+narrative_slot: "utility"
+en: "Job Search Dashboard"
+th: "แดชบอร์ดหางาน"
 provenance: paul-approved
-date: 23/08/2026
+date: "03/11/2026"
 term_bindings:
-  - product-guided-job-hunt
-decision_note: No string-local reasoning comment was present at migration.
+  - page-job-search-dashboard
+decision_note: "Renamed from Guided Job Hunt on Paul's call of 03/11/2026, to the page's own name. The Thai is the fixed term page-job-search-dashboard, decided by Paul 03/11/2026."
 review:
   structural_calque: pass
-  text_hash: 0306c1557b504fc623b194bbe30c6302c7f52d7e43f51c9c42965ed3747f4b9c
+  text_hash: 9bde47f229c3eff7959f777501e0e951a350901f08a035996cd7c638bd727490
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Paul decided this name 03/11/2026 (termbase page-job-search-dashboard); the rename was approved the same day."
 ```
 
 <!-- COPY-ENTRY -->

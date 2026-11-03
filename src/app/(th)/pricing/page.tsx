@@ -63,7 +63,7 @@ import { HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
  * Free products beyond the two in `FREE_ITEMS` come from `products.ts`, which
  * owns which products are free, so this page cannot list fewer than it says.
  */
-const FREE_PRODUCT_SLUGS = ["cv-check", "guided-job-hunt"] as const;
+const FREE_PRODUCT_SLUGS = ["cv-check", "job-search-dashboard"] as const;
 
 /** The pile each pack opens with: the three sizes of the same coin. */
 const PACK_ART: Record<string, { src: string; w: number; h: number }> = {

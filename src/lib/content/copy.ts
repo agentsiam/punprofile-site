@@ -190,10 +190,10 @@ export const COPY = {
     en: "Matched Jobs",
     th: "Matched Jobs",
   },
-  "nav.guidedJobHunt": {
+  "nav.jobSearchDashboard": {
     screen: "Site menu, the Products group",
-    en: "Guided Job Hunt",
-    th: "Guided Job Hunt",
+    en: "Job Search Dashboard",
+    th: "แดชบอร์ดหางาน",
   },
   /*
    * Two entries added 06/09/2026 with `/products` and `/services`.
