@@ -17,6 +17,7 @@
  */
 
 import { mutation, query, type QueryCtx, type MutationCtx } from "./_generated/server";
+import { greetingName } from "./names";
 import type { Doc, Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { feedFor } from "./market";
@@ -240,8 +241,8 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       ),
       titles,
       titleNames,
-      // The name the dashboard greets them by: nickname first, 02/11/2026.
-      firstName: lead.nickname ?? lead.firstName ?? null,
+      // The name the dashboard greets them by: nickname first.
+      firstName: greetingName(lead),
       tokens: {
         balance,
         bought,
