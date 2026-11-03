@@ -43,12 +43,14 @@
  * says what it is.
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
 import Band from "@/components/Band";
 import CallToAction from "@/components/CallToAction";
 import Checklist from "@/components/blocks/Checklist";
 import ProductDiagram from "@/components/features/products/ProductDiagram";
+import { PRODUCT_PHOTO } from "@/components/features/products/productPhotos";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 import { CATALOGUE_FREE, CATALOGUE_PAID } from "@/lib/content/home";
 import { DESTINATIONS } from "@/lib/content/cta";
@@ -90,15 +92,32 @@ export default function ProductIndex() {
      taps through arrives at something they have already seen. */
   const card = (p: Product) => {
     const art = PRODUCT_ART[p.slug];
+    const photo = PRODUCT_PHOTO[p.slug];
     return (
       <li key={p.slug}>
         <Link
           href={path(`/products/${p.slug}`)}
           className="card-plain group flex h-full flex-col overflow-hidden border border-line duration-[350ms] ease-nav transition-colors hover:border-line-strong"
         >
-          <div className="aspect-[16/9] w-full bg-canvas-soft p-4">
-            <ProductDiagram figure={art.figure} title={pick(art.alt)} />
-          </div>
+          {/* The clay scene from the product's own page since 03/11/2026,
+              after Monzo's plans, where each one opens with its own object.
+              The code-drawn figure stays as the fallback for a product
+              without a scene. */}
+          {photo ? (
+            <div className="relative aspect-[16/9] w-full overflow-hidden bg-canvas-soft">
+              <Image
+                src={photo.src}
+                alt=""
+                fill
+                sizes="(min-width: 1200px) 30vw, 100vw"
+                className="object-cover duration-[350ms] ease-nav transition-transform group-hover:scale-[1.03]"
+              />
+            </div>
+          ) : (
+            <div className="aspect-[16/9] w-full bg-canvas-soft p-4">
+              <ProductDiagram figure={art.figure} title={pick(art.alt)} />
+            </div>
+          )}
           <div className="flex flex-1 flex-col px-6 py-6">
             <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
               <span className="text-heading-sm">{pick(p.name)}</span>
