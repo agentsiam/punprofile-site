@@ -3272,9 +3272,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "WHO_BODY",
     "render": "Home page, WHO_BODY",
     "narrativeSlot": "house.not",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "03/11/2026",
-    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. Opening changed 03/11/2026 to name no headcount, Paul's rule of 01/11/2026."
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. Opening changed 03/11/2026 to name no headcount, Paul's rule of 01/11/2026. Paul rewrote the Thai in his review pass of 03/11/2026."
   },
   "src/lib/content/home.ts::WHO_HEADING": {
     "source": "src/lib/content/home.ts",
@@ -7844,9 +7844,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[4].faq[0].a",
     "render": "Product pages, PRODUCTS[4].faq[0].a",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "03/11/2026",
-    "decisionNote": "Paul's 23/08/2026 answer re-pointed 03/11/2026 from Matched Jobs to the first token pack, which is what now opens it."
+    "decisionNote": "Paul's 23/08/2026 answer re-pointed 03/11/2026 from Matched Jobs to the first token pack, which is what now opens it. Paul rewrote the Thai in his review pass of 03/11/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[4].faq[1].a": {
     "source": "src/lib/content/products.ts",
@@ -7862,18 +7862,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[4].faq[1].q",
     "render": "Product pages, PRODUCTS[4].faq[1].q",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "03/11/2026",
-    "decisionNote": "Added 03/11/2026 with its answer."
+    "decisionNote": "Added 03/11/2026 with its answer. Paul approved this Thai unchanged in his review pass of 03/11/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[4].costLabel": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[4].costLabel",
     "render": "Product page summary card, /products, /pricing and the home catalogue, PRODUCTS[4].costLabel",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "03/11/2026",
-    "decisionNote": "Added 03/11/2026: replaces the bare Free for a product only a buyer can open."
+    "decisionNote": "Added 03/11/2026: replaces the bare Free for a product only a buyer can open. Paul rewrote the Thai in his review pass of 03/11/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[4].faq[0].q": {
     "source": "src/lib/content/products.ts",
@@ -7925,18 +7925,18 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[4].howLede",
     "render": "Product pages, PRODUCTS[4].howLede",
     "narrativeSlot": "mechanism",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "03/11/2026",
-    "decisionNote": "Rewritten 03/11/2026 for the whole dashboard, after the rename from Guided Job Hunt."
+    "decisionNote": "Rewritten 03/11/2026 for the whole dashboard, after the rename from Guided Job Hunt. Paul approved this Thai unchanged in his review pass of 03/11/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[4].lede": {
     "source": "src/lib/content/products.ts",
     "path": "PRODUCTS[4].lede",
     "render": "Product pages, PRODUCTS[4].lede",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "03/11/2026",
-    "decisionNote": "Rewritten 03/11/2026 for the whole dashboard, free from the first token pack. Replaces Paul's 23/08/2026 line for Guided Job Hunt."
+    "decisionNote": "Rewritten 03/11/2026 for the whole dashboard, free from the first token pack. Replaces Paul's 23/08/2026 line for Guided Job Hunt. Paul rewrote the Thai in his review pass of 03/11/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[4].limit": {
     "source": "src/lib/content/products.ts",

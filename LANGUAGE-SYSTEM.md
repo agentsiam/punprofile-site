@@ -9133,16 +9133,16 @@ path: "WHO_BODY"
 render: "Home page, WHO_BODY"
 narrative_slot: "house.not"
 en: "Our coaches also hire for a living, reading CVs and deciding who goes forward. PunProfile is paid by you, not by employers, so our advice starts from your goals, not from a vacancy a company is rushing to fill."
-th: "โค้ชของเราทำงานคัดเลือกคนเข้าทำงานด้วย ทั้งอ่าน CV และตัดสินใจว่าใครจะได้ไปต่อ ส่วน PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำของเราจึงเริ่มจากเป้าหมายของคุณ ไม่ใช่จากตำแหน่งว่างที่บริษัทกำลังเร่งหาคน"
-provenance: draft
+th: "โค้ชของ PunProfile ทำงานด้านการคัดเลือกผู้สมัครด้วย ตั้งแต่อ่าน CV ไปจนถึงตัดสินใจว่าใครจะได้ไปต่อ PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง เวลาที่โค้ชให้คำแนะนำ จึงเริ่มจากเป้าหมายของคุณ ไม่ใช่จากตำแหน่งที่บริษัทกำลังเร่งหาคน"
+provenance: paul-written
 date: "03/11/2026"
 term_bindings: []
-decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. Opening changed 03/11/2026 to name no headcount, Paul's rule of 01/11/2026."
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. Opening changed 03/11/2026 to name no headcount, Paul's rule of 01/11/2026. Paul rewrote the Thai in his review pass of 03/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 722106eaa743d1534068d1faa81339d9b4d5caec5e29bc364e69b6c0f7d4d491
+  structural_calque: pass
+  text_hash: 9a937187bea47534c89e293e1f11545d2fff3e883a1ce62730b2f668409519ac
   prompt_version: structural-calque-v1
-  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -20897,16 +20897,16 @@ path: "PRODUCTS[4].faq[0].a"
 render: "Product pages, PRODUCTS[4].faq[0].a"
 narrative_slot: "utility"
 en: "No charge. It opens with your first token pack, because it is where the roles matched to you arrive."
-th: "ไม่มีค่าใช้จ่าย เปิดให้ใช้ตั้งแต่ซื้อโทเคนครั้งแรก เพราะเป็นที่ที่ตำแหน่งงานที่ตรงกับคุณถูกส่งเข้ามา"
-provenance: draft
+th: "ไม่มีค่าบริการเพิ่มเติม เมื่อซื้อแพ็กโทเคนแรก คุณจะเข้าใช้งานหน้านี้เพื่อดูตำแหน่งงานที่ PunProfile คัดให้ได้"
+provenance: paul-written
 date: "03/11/2026"
 term_bindings: []
-decision_note: "Paul's 23/08/2026 answer re-pointed 03/11/2026 from Matched Jobs to the first token pack, which is what now opens it."
+decision_note: "Paul's 23/08/2026 answer re-pointed 03/11/2026 from Matched Jobs to the first token pack, which is what now opens it. Paul rewrote the Thai in his review pass of 03/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 5dcddd163776af622800c52f199be8a25204d989b0df668ca1f68af6708d744f
+  structural_calque: pass
+  text_hash: 3d0151f10f22c76f242de9a6cdfb28c4cb41898491e5f472c96242ef1d6763c6
   prompt_version: structural-calque-v1
-  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -20942,15 +20942,15 @@ render: "Product pages, PRODUCTS[4].faq[1].q"
 narrative_slot: "utility"
 en: "How do I start using it?"
 th: "เริ่มใช้งานได้อย่างไร"
-provenance: draft
+provenance: paul-approved
 date: "03/11/2026"
 term_bindings: []
-decision_note: "Added 03/11/2026 with its answer."
+decision_note: "Added 03/11/2026 with its answer. Paul approved this Thai unchanged in his review pass of 03/11/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1289e8e2fa9537d55cfd9cb738bcdfb7b190d801b4b6cd0ab02fb2655eb14adb
   prompt_version: structural-calque-v1
-  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -20963,16 +20963,16 @@ path: "PRODUCTS[4].costLabel"
 render: "Product page summary card, /products, /pricing and the home catalogue, PRODUCTS[4].costLabel"
 narrative_slot: "utility"
 en: "Free from your first token pack"
-th: "ฟรีตั้งแต่ซื้อโทเคนครั้งแรก"
-provenance: draft
+th: "ใช้ได้โดยไม่มีค่าใช้จ่ายเพิ่มเมื่อซื้อแพ็กโทเคนแรก"
+provenance: paul-written
 date: "03/11/2026"
 term_bindings: []
-decision_note: "Added 03/11/2026: replaces the bare Free for a product only a buyer can open."
+decision_note: "Added 03/11/2026: replaces the bare Free for a product only a buyer can open. Paul rewrote the Thai in his review pass of 03/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 595feeb9c6f1edfa9c9d09cb5b3caed1796ecca6ec104d50aa08105439173b27
+  structural_calque: pass
+  text_hash: 9d2eebbd0e40e9c09046b27b6bd7ed150c8e9a1e92fe61c134c43cf6495abbbb
   prompt_version: structural-calque-v1
-  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -21099,15 +21099,15 @@ render: "Product pages, PRODUCTS[4].howLede"
 narrative_slot: "mechanism"
 en: "The roles picked for you, your CVs and every application you send, on one page."
 th: "ตำแหน่งที่ PunProfile คัดให้ CV ของคุณ และทุกตำแหน่งที่คุณสมัคร รวมไว้ในหน้าเดียว"
-provenance: draft
+provenance: paul-approved
 date: "03/11/2026"
 term_bindings: []
-decision_note: "Rewritten 03/11/2026 for the whole dashboard, after the rename from Guided Job Hunt."
+decision_note: "Rewritten 03/11/2026 for the whole dashboard, after the rename from Guided Job Hunt. Paul approved this Thai unchanged in his review pass of 03/11/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f9b2295de5b74d15030443595ea96d82796c8736e75bf5c5571344a953ab37b8
   prompt_version: structural-calque-v1
-  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -21120,16 +21120,16 @@ path: "PRODUCTS[4].lede"
 render: "Product pages, PRODUCTS[4].lede"
 narrative_slot: "utility"
 en: "The roles picked for you, a CV for each target role, and every application with where it stands, all in one place. Free from your first token pack."
-th: "รวมตำแหน่งที่ PunProfile คัดให้ CV สำหรับแต่ละตำแหน่งเป้าหมาย และทุกตำแหน่งที่คุณสมัครพร้อมสถานะล่าสุดไว้ในที่เดียว ใช้ฟรีตั้งแต่ซื้อโทเคนครั้งแรก"
-provenance: draft
+th: "ดูตำแหน่งงานที่ PunProfile คัดให้ CV สำหรับแต่ละตำแหน่งเป้าหมาย และสถานะล่าสุดของทุกใบสมัครได้ในหน้าเดียว ใช้งานได้โดยไม่มีค่าใช้จ่ายเพิ่มเมื่อซื้อแพ็กโทเคนแรก"
+provenance: paul-written
 date: "03/11/2026"
 term_bindings: []
-decision_note: "Rewritten 03/11/2026 for the whole dashboard, free from the first token pack. Replaces Paul's 23/08/2026 line for Guided Job Hunt."
+decision_note: "Rewritten 03/11/2026 for the whole dashboard, free from the first token pack. Replaces Paul's 23/08/2026 line for Guided Job Hunt. Paul rewrote the Thai in his review pass of 03/11/2026."
 review:
-  structural_calque: pending
-  text_hash: 3ef5c8b101e9db055d55bd5991a51a92a1145c9c13eeff476bb86ad48663718f
+  structural_calque: pass
+  text_hash: 9246047c61efb64ddde83eb58c3889721fe9e04a2a60ab7a1ffb7a8b9b050233
   prompt_version: structural-calque-v1
-  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->

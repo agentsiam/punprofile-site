@@ -581,7 +581,7 @@ export const PRODUCTS: readonly Product[] = [
       // Rewritten 03/11/2026 for the whole dashboard, free from the first token
       // pack. Free because it is the surface paid deliveries land on, decided
       // 23/08/2026: charging for it would be charging twice for one workflow.
-      th: "รวมตำแหน่งที่ PunProfile คัดให้ CV สำหรับแต่ละตำแหน่งเป้าหมาย และทุกตำแหน่งที่คุณสมัครพร้อมสถานะล่าสุดไว้ในที่เดียว ใช้ฟรีตั้งแต่ซื้อโทเคนครั้งแรก",
+      th: "ดูตำแหน่งงานที่ PunProfile คัดให้ CV สำหรับแต่ละตำแหน่งเป้าหมาย และสถานะล่าสุดของทุกใบสมัครได้ในหน้าเดียว ใช้งานได้โดยไม่มีค่าใช้จ่ายเพิ่มเมื่อซื้อแพ็กโทเคนแรก",
     },
     how: [
       {
@@ -613,7 +613,7 @@ export const PRODUCTS: readonly Product[] = [
           en: "No charge. It opens with your first token pack, because it is where the roles matched to you arrive.",
           // Paul's wording, 23/08/2026, re-pointed 03/11/2026 from Matched Jobs
           // to the first token pack, which is what now opens it.
-          th: "ไม่มีค่าใช้จ่าย เปิดให้ใช้ตั้งแต่ซื้อโทเคนครั้งแรก เพราะเป็นที่ที่ตำแหน่งงานที่ตรงกับคุณถูกส่งเข้ามา",
+          th: "ไม่มีค่าบริการเพิ่มเติม เมื่อซื้อแพ็กโทเคนแรก คุณจะเข้าใช้งานหน้านี้เพื่อดูตำแหน่งงานที่ PunProfile คัดให้ได้",
         },
       },
       {
@@ -627,7 +627,7 @@ export const PRODUCTS: readonly Product[] = [
     actionsKey: "/products/job-search-dashboard",
     costLabel: {
       en: "Free from your first token pack",
-      th: "ฟรีตั้งแต่ซื้อโทเคนครั้งแรก",
+      th: "ใช้ได้โดยไม่มีค่าใช้จ่ายเพิ่มเมื่อซื้อแพ็กโทเคนแรก",
     },
   },
 ];
