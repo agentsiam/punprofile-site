@@ -65,9 +65,9 @@ export const SERVICES_HEADING: Copy = {
 };
 
 export const SERVICES_INTRO: Copy = {
-  en: "Career Coaching is the core of every coaching engagement. The other two can be taken on their own, depending on what you actually need.",
+  en: "Career Coaching is the main part of working with a coach. The other two can be taken on their own, depending on what you need.",
   // Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`.
-  th: "Career Coaching เป็นแกนหลักของการโค้ชทุกครั้ง ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ",
+  th: "Career Coaching เป็นส่วนหลักของการทำงานกับโค้ช ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามความต้องการ",
 };
 
 export const SERVICES: readonly Service[] = [
@@ -82,8 +82,8 @@ export const SERVICES: readonly Service[] = [
       th: "คุณควรมุ่งไปทางไหน และเพราะอะไร",
     },
     summary: {
-      en: "This is the core of every coaching engagement. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing.",
-      th: "นี่คือแกนหลักของการโค้ชทุกครั้ง เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี",
+      en: "Finding the direction is the main part of working with a coach. We settle your target market together before writing a single document, because however good a CV is, an application in a market that does not suit you still misses.",
+      th: "การหาทิศทางเป็นส่วนหลักของการทำงานกับโค้ช เราจะช่วยกันเลือกตลาดเป้าหมายให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าสมัครในตลาดที่ไม่เหมาะกับคุณ ใบสมัครก็ยังไม่ตรงเป้า",
     },
     includes: [
       {

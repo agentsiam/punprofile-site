@@ -237,8 +237,8 @@ export const PRODUCTS: readonly Product[] = [
     // Read back 25/08/2026. Draft for `PROD-02-eu-fit-check`.
     // Read back and approved by Paul 26/10/2026, `product-page-eu-fit-check.md`.
     howLede: {
-      en: "What you answer, and what you see the moment you finish.",
-      th: "สิ่งที่คุณจะตอบ และสิ่งที่คุณจะเห็นทันทีที่ทำเสร็จ",
+      en: "What you will be asked, and what you see the moment you finish.",
+      th: "ดูว่าต้องตอบอะไรบ้าง และจะได้เห็นผลอะไรทันทีที่ทำเสร็จ",
     },
     name: { en: "EU Fit Check", th: "EU Fit Check" },
     status: "live",
@@ -269,25 +269,25 @@ export const PRODUCTS: readonly Product[] = [
      */
     how: [
       {
-        en: "17 questions about your work experience, your English, your target country and where you are in the move. In Thai, on your phone.",
+        en: "17 questions in Thai, on your phone, about your work experience, your English, your target country and the stage you are at now.",
         // Built from Paul's approved answer to "EU Fit Check คืออะไร" in `faq.ts`.
-        th: "คำถาม 17 ข้อ เกี่ยวกับประสบการณ์ทำงาน ระดับภาษาอังกฤษ ประเทศเป้าหมาย และตอนนี้คุณอยู่ขั้นไหนบนเส้นทางไปทำงานในยุโรป ตอบเป็นภาษาไทยบนมือถือได้เลย",
+        th: "ตอบคำถาม 17 ข้อเป็นภาษาไทยบนมือถือ เกี่ยวกับประสบการณ์ทำงาน ภาษาอังกฤษ ประเทศเป้าหมาย และขั้นตอนที่คุณอยู่ตอนนี้",
       },
       {
-        en: "Your own chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European market. Each scored out of 5.",
+        en: "See your result as a chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European job market. Each is scored out of 5.",
         // The four Thai names are the chart's own axis labels in `copy.ts`.
-        th: "กราฟของคุณเองใน 4 ด้าน คือ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความสอดคล้องกับตลาดยุโรป แต่ละด้านมีคะแนนเต็ม 5",
+        th: "ดูผลของคุณในกราฟ 4 ด้าน ได้แก่ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความเหมาะสมกับตลาดงานยุโรป คะแนนเต็มด้านละ 5",
       },
       {
-        en: "How you compare with everyone else who has taken it, and how many of the job adverts we checked come from employers who sponsor a visa.",
-        th: "ดูว่าคุณเทียบกับคนอื่นที่ทำแบบประเมินนี้แล้วเป็นอย่างไร และจากประกาศงานที่เราตรวจสอบ มีกี่ตำแหน่งที่บริษัทระบุว่าสปอนเซอร์วีซ่า",
+        en: "See how your result compares with others who have taken the assessment, and how many of the job adverts we checked say they sponsor a visa.",
+        th: "ดูว่าผลของคุณเป็นอย่างไรเมื่อเทียบกับผู้ที่ทำแบบประเมิน และดูว่าจากประกาศที่เราตรวจสอบ มีตำแหน่งที่ระบุว่าสปอนเซอร์วีซ่ากี่ตำแหน่ง",
       },
     ],
     // Approved by Paul 26/10/2026, built from his approved FAQ answer on the empty parts
     // of the chart. It now answers that question, so the question left this FAQ.
     limit: {
-      en: "It reads your answers, not your CV. Where a form cannot measure something reliably, the chart leaves it empty instead of guessing. Those parts need someone to read your real CV or talk with you.",
-      th: "แบบประเมินนี้อ่านจากคำตอบของคุณ ยังไม่ได้อ่าน CV ตัวจริง เรื่องไหนที่ประเมินจากคำตอบได้ไม่น่าเชื่อถือพอ กราฟจะเว้นว่างไว้แทนการเดาคะแนน ส่วนนั้นต้องมีคนอ่าน CV ตัวจริงของคุณหรือได้คุยกับคุณก่อน",
+      en: "The EU Fit Check works from your answers and does not look at your CV. Where your answers are not enough to score an area reliably, we leave that score blank until we have seen your CV or talked with you.",
+      th: "EU Fit Check ประเมินจากคำตอบของคุณ โดยไม่ตรวจ CV หากคำตอบยังไม่พอให้ประเมินด้านใดได้อย่างน่าเชื่อถือ เราจะเว้นคะแนนด้านนั้นไว้จนกว่าจะได้ดู CV หรือพูดคุยกับคุณ",
     },
     /*
      * Four questions, 25/10/2026, chosen for the doubts that stop someone
@@ -297,8 +297,8 @@ export const PRODUCTS: readonly Product[] = [
     faq: [
       {
         q: {
-          en: "My English is not strong yet. Can I still do this?",
-          th: "ภาษาอังกฤษยังไม่แข็งแรง ทำได้ไหม",
+          en: "If my English is not fluent yet, can I still take the assessment?",
+          th: "ถ้าภาษาอังกฤษยังไม่คล่อง จะทำแบบประเมินได้ไหม",
         },
         a: {
           en: "Yes. The assessment is in Thai, and language is one of the things we assess rather than a condition for starting.",
@@ -307,12 +307,12 @@ export const PRODUCTS: readonly Product[] = [
       },
       {
         q: {
-          en: "What happens after I finish the assessment?",
-          th: "ทำแบบประเมินเสร็จแล้วจะเกิดอะไรขึ้น",
+          en: "What happens next, once I finish the assessment?",
+          th: "หลังทำแบบประเมินเสร็จแล้ว จะมีขั้นตอนอะไรต่อ",
         },
         a: {
-          en: "A person actually reads your answers. The system does not decide on its own who gets contacted back.",
-          th: "จะมีคนอ่านคำตอบของคุณจริง ๆ ระบบไม่ได้เป็นผู้ตัดสินเพียงลำพังว่าเราจะติดต่อใครกลับ",
+          en: "Our team reads your answers too, and we do not let the system decide on its own who we contact back.",
+          th: "ทีมงานจะอ่านคำตอบของคุณด้วย และจะไม่ให้ระบบตัดสินเองว่าเราจะติดต่อใครกลับ",
         },
       },
       {
@@ -346,35 +346,35 @@ export const PRODUCTS: readonly Product[] = [
     },
     // Read back 25/08/2026. Draft for `PROD-02-cv-check`.
     howLede: {
-      en: "We read your CV the way a European reader does, and list what to fix.",
-      th: "เราอ่าน CV ของคุณแบบเดียวกับคนอ่านในยุโรป แล้วบอกว่าควรแก้จุดไหนบ้าง",
+      en: "We read your CV the way someone shortlisting candidates in Europe does, and sum up what to fix.",
+      th: "เราอ่าน CV ของคุณจากมุมมองของคนที่คัดผู้สมัครในยุโรป แล้วสรุปจุดที่ควรแก้",
     },
     name: { en: "CV Check", th: "CV Check" },
     status: "soon",
     headline: {
-      en: "A CV that works in the Thai market can leave a European reader unable to see your strengths.",
+      en: "A CV that works well in Thailand may not yet get your strengths across to a reader in Europe.",
       // Paul's wording, 23/08/2026.
-      th: "CV ที่ใช้ได้ดีในตลาดไทย อาจทำให้คนในตลาดยุโรปมองไม่เห็นจุดแข็งของคุณ",
+      th: "CV ที่ใช้ได้ดีในไทย อาจยังไม่สื่อจุดแข็งของคุณให้คนอ่านในยุโรปเข้าใจ",
     },
     lede: {
-      en: "Upload your CV and see how much of your profile a European reader can actually understand. Free.",
+      en: "Upload your CV to see how well someone shortlisting candidates in Europe understands your experience and skills. Free to use.",
       // Paul's wording, 23/08/2026.
-      th: "อัปโหลด CV แล้วดูว่าคนในตลาดยุโรปเข้าใจโปรไฟล์ของคุณได้มากแค่ไหน ใช้ฟรี",
+      th: "อัปโหลด CV เพื่อดูว่าคนที่คัดผู้สมัครในยุโรปเข้าใจประสบการณ์และทักษะของคุณแค่ไหน ใช้ได้ฟรี",
     },
     how: [
       {
-        en: "What the first third of the page spends itself on, because a screener and a reader both start at the top and both stop early.",
+        en: "What the first third of your CV spends itself telling, because both the screening system and the person reading start at the top and may not reach the end.",
         // Paul's wording, 23/08/2026. The reading-order opener from the Kick-start
         // run sheet, which exists because the ATS artefact only shows up when a CV
         // parses badly and the first real CV parsed cleanly.
-        th: "ดูว่าหนึ่งในสามแรกของหน้าใช้พื้นที่ไปกับอะไร เพราะทั้งระบบคัดกรองและคนอ่านต่างเริ่มจากด้านบน และอาจหยุดอ่านตั้งแต่เนิ่น ๆ",
+        th: "ตรวจว่าคุณใช้พื้นที่ช่วงหนึ่งในสามแรกของ CV เล่าเรื่องอะไร เพราะทั้งระบบคัดกรองและคนที่อ่าน CV เริ่มดูจากด้านบน และอาจอ่านไปไม่ถึงส่วนท้าย",
       },
       {
-        en: "Whether your employers and job titles mean anything to someone who does not know the Thai market.",
+        en: "Whether someone who does not know the Thai job market will understand your past employers and your job titles.",
         // Paul's wording, 23/08/2026. This is the core claim in `10_Methodology.md`:
         // illegibility rather than capability. A Bangkok senior title may read as
         // mid-level and a well-known Thai employer reads as an unknown one.
-        th: "เช็กว่าชื่อบริษัทและชื่อตำแหน่งของคุณสื่อความหมายกับคนที่ไม่รู้จักตลาดงานไทยหรือไม่",
+        th: "ดูว่าคนที่ไม่รู้จักตลาดงานไทยจะเข้าใจชื่อบริษัทเดิมและชื่อตำแหน่งของคุณหรือไม่",
       },
       {
         en: "Where you have written duties when the market is reading for results.",
@@ -397,9 +397,9 @@ export const PRODUCTS: readonly Product[] = [
       {
         q: { en: "Does it cost anything?", th: "มีค่าใช้จ่ายไหม" },
         a: {
-          en: "No. The CV Check is free.",
+          en: "The CV Check is free to use.",
           // Paul's wording, 23/08/2026.
-          th: "ไม่มีค่าใช้จ่าย CV Check ใช้ฟรี",
+          th: "ใช้ CV Check ได้ฟรี",
         },
       },
     ],
@@ -435,10 +435,10 @@ export const PRODUCTS: readonly Product[] = [
     },
     how: [
       {
-        en: "Message me on LINE. I will send the payment details and book a time that suits you.",
+        en: "Message me on LINE for the payment details and to book an interview time that suits you.",
         // Drafted 23/08/2026, read back and approved unchanged. Thresholds rather than scores, which
         // `10_Methodology.md` calls the single most important idea in the method.
-        th: "ทักมาทาง LINE ผมจะแจ้งรายละเอียดการชำระเงิน และนัดเวลาสัมภาษณ์ที่สะดวก",
+        th: "ทักมาทาง LINE เพื่อรับรายละเอียดการชำระเงินและนัดเวลาสัมภาษณ์ที่คุณสะดวก",
       },
       {
         en: "A 30-minute video interview with a coach about your CV, your work experience and the roles you are interested in, in Thai or English.",
@@ -462,9 +462,9 @@ export const PRODUCTS: readonly Product[] = [
       {
         q: { en: "Do I need to do the EU Fit Check first?", th: "ต้องทำ EU Fit Check ก่อนไหม" },
         a: {
-          en: "We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet.",
+          en: "We recommend it. The coach uses your EU Fit Check answers so the 30-minute interview can go deep on what the assessment cannot answer yet.",
           // Paul's wording, 23/08/2026.
-          th: "แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้",
+          th: "แนะนำให้ทำก่อน โค้ชจะใช้คำตอบจาก EU Fit Check เพื่อใช้เวลาสัมภาษณ์ 30 นาทีเจาะลึกเรื่องที่แบบประเมินยังตอบไม่ได้",
         },
       },
       {
@@ -472,7 +472,7 @@ export const PRODUCTS: readonly Product[] = [
         a: { en: "Thai or English, your choice. If you want your working English assessed too, do it in English.", th: "เลือกได้ทั้งไทยและอังกฤษ ถ้าอยากให้ประเมินภาษาอังกฤษเพื่อการทำงานด้วย แนะนำให้คุยเป็นภาษาอังกฤษ" },
       },
       {
-        q: { en: "How long until I get the report?", th: "นานแค่ไหนกว่าจะได้รายงาน" },
+        q: { en: "When will I get the report?", th: "จะได้รับรายงานเมื่อไร" },
         a: { en: "The same day as the interview.", th: "ภายในวันเดียวกับที่สัมภาษณ์" },
       },
     ],
@@ -516,18 +516,18 @@ export const PRODUCTS: readonly Product[] = [
         th: "คุณเป็นคนกำหนดเงื่อนไขเอง ทั้งสายงาน ประเทศ ภาษา และระดับตำแหน่งที่ต้องการ",
       },
       {
-        en: "One role at a time, so you have the time to look at each one properly.",
+        en: "One role at a time, so you have time to weigh the details before deciding to apply.",
         // Paul's wording, 23/08/2026. One at a time is the method's own rule
         // against handing anyone a five-item list, applied to job search.
-        th: "ส่งให้ทีละตำแหน่ง เพื่อให้คุณมีเวลาดูแต่ละงานจริง ๆ",
+        th: "ส่งทีละตำแหน่ง เพื่อให้คุณมีเวลาพิจารณารายละเอียดก่อนตัดสินใจสมัคร",
       },
       {
-        en: "Every role says plainly whether it needs work rights you already hold, before you spend time applying.",
+        en: "Before you apply, you see clearly whether the role requires work rights you already hold.",
         // Drafted 23/08/2026, read back and approved unchanged. Work rights sit outside the match bar and are
         // always stated, decided 22/08/2026, using the pipeline's own
         // "Publish (Work Rights Required)" verdict whose rule is that the label is
         // not optional and not a footnote.
-        th: "ทุกตำแหน่งระบุชัดว่าต้องมีสิทธิ์ทำงานอยู่แล้วหรือไม่ ก่อนที่คุณจะเสียเวลาในการสมัคร",
+        th: "ก่อนสมัคร คุณจะเห็นชัดเจนว่าตำแหน่งนั้นกำหนดให้มีสิทธิ์ทำงานอยู่แล้วหรือไม่",
       },
     ],
     limit: {
@@ -539,13 +539,13 @@ export const PRODUCTS: readonly Product[] = [
     },
     faq: [
       {
-        q: { en: "What if nothing matches?", th: "ถ้ารอบไหนไม่มีตำแหน่งที่ตรงเลย" },
+        q: { en: "What if no role matches my criteria yet?", th: "ถ้ายังไม่พบตำแหน่งที่ตรงกับเงื่อนไขจะเป็นอย่างไร" },
         a: {
-          en: "We keep looking, and a token is only deducted once a role matching your criteria has reached you.",
+          en: "PunProfile keeps searching, and deducts a token only once a role matching your criteria has been sent to you.",
           // Paul's wording, 23/08/2026. Deliberately does not say real time: the
           // mechanism will be batched, and a promise of real time is a claim the
           // system does not meet.
-          th: "เราจะค้นหาต่อให้ และหักโทเคนเฉพาะเมื่อมีตำแหน่งที่ตรงกับเงื่อนไขส่งถึงคุณแล้ว",
+          th: "PunProfile จะค้นหาต่อ และหักโทเคนเมื่อส่งตำแหน่งที่ตรงกับเงื่อนไขให้คุณแล้วเท่านั้น",
         },
       },
     ],
@@ -564,8 +564,8 @@ export const PRODUCTS: readonly Product[] = [
     },
     // Read back 25/08/2026. Draft for `PROD-02-guided-job-hunt`.
     howLede: {
-      en: "The roles picked for you, your CVs and every application you send, on one page.",
-      th: "ตำแหน่งที่ PunProfile คัดให้ CV ของคุณ และทุกตำแหน่งที่คุณสมัคร รวมไว้ในหน้าเดียว",
+      en: "The roles PunProfile picks for you, your CV files and your applications, all on one page.",
+      th: "ดูตำแหน่งงานที่ PunProfile คัดให้ ไฟล์ CV และรายการสมัครงานของคุณได้ในหน้าเดียว",
     },
     name: { en: "Job Search Dashboard", th: "แดชบอร์ดหางาน" },
     // Live 03/11/2026: opened by hand for every candidate who buys tokens for
@@ -602,9 +602,9 @@ export const PRODUCTS: readonly Product[] = [
       },
     ],
     limit: {
-      en: "We do not apply for you, and we do not chase employers on your behalf.",
+      en: "We do not apply for you, and we do not contact companies to follow up on your behalf.",
       // Paul's wording, 23/08/2026.
-      th: "เราไม่สมัครงานแทนคุณ และไม่ติดตามนายจ้างแทนคุณ",
+      th: "เราไม่สมัครงานแทนคุณ และไม่ติดต่อบริษัทเพื่อติดตามผลแทนคุณ",
     },
     faq: [
       {
@@ -782,25 +782,25 @@ export const INDEX_TITLE: Copy = {
 export const INDEX_HEADING: Copy = {
   en: "Five tools and one conversation, in the order most people take them",
   // Paul's wording, 06/09/2026.
-  th: "เครื่องมือห้าอย่างและการพูดคุยกับโค้ชอีกหนึ่งแบบ เรียงตามลำดับที่คนส่วนใหญ่มักใช้",
+  th: "เครื่องมือ 5 อย่างและการพูดคุยกับโค้ช เรียงตามลำดับที่คนส่วนใหญ่มักใช้",
 };
 
 export const INDEX_INTRO: Copy = {
-  en: "Start wherever you are. Nothing here needs the one before it, and the first one asks for nothing but your answers.",
+  en: "Pick whichever fits you now. There is no set order, and if you start with the EU Fit Check, answering the questions is enough to see a first result.",
   // Paul's wording, 06/09/2026.
-  th: "เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า และอย่างแรกต้องการเพียงคำตอบจากคุณ",
+  th: "เลือกตัวที่เหมาะกับคุณตอนนี้ได้เลย ไม่ต้องใช้ตามลำดับ หากเริ่มจาก EU Fit Check เพียงตอบคำถามก็เห็นผลเบื้องต้นได้",
 };
 
 export const INDEX_PATH_HEADING: Copy = {
-  en: "How they fit together",
+  en: "Which stage each tool helps you with",
   // Paul's wording, 06/09/2026.
-  th: "แต่ละอย่างทำงานร่วมกันอย่างไร",
+  th: "เครื่องมือแต่ละอย่างช่วยคุณในขั้นไหน",
 };
 
 export const INDEX_PATH_LEDE: Copy = {
-  en: "What happens in each one.",
+  en: "How each one works, step by step.",
   // Paul's wording, 06/09/2026.
-  th: "แต่ละอย่างทำอะไรให้คุณบ้าง",
+  th: "แต่ละตัวมีขั้นตอนอย่างไร",
 };
 
 export const INDEX_TABLE_HEADING: Copy = {
@@ -822,9 +822,9 @@ export const COL_WHO: Copy = {
 };
 
 export const COL_WHAT: Copy = {
-  en: "What happens",
+  en: "Steps",
   // Read back 06/09/2026.
-  th: "เกิดอะไรขึ้นบ้าง",
+  th: "ขั้นตอน",
 };
 
 export const COL_COST: Copy = {
@@ -858,15 +858,15 @@ export const CARD_ACTION: Copy = {
  * tools is a reader who should know the sixth thing exists and is not a tool.
  */
 export const NOT_A_TOOL_HEADING: Copy = {
-  en: "Where each tool stops, coaching carries on",
+  en: "From the assessment to the work, with Coaching 1:1",
   // Read back 06/09/2026.
-  th: "เครื่องมือแต่ละอย่างหยุดตรงไหน Coaching 1:1 ช่วยต่อจากตรงนั้น",
+  th: "จากผลประเมินสู่การลงมือทำกับ Coaching 1:1",
 };
 
 export const NOT_A_TOOL_BODY: Copy = {
-  en: "Every tool above reads what you already have. Coaching 1:1 is where we work on it with you, and the Fit Report is the usual way in.",
+  en: "The tools above help you assess where you stand, find roles and track your applications. Coaching 1:1 is where we work through what needs changing with you, and it usually starts with the Fit Report.",
   // Paul's wording, 06/09/2026.
-  th: "เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว ส่วน Coaching 1:1 คือการลงมือทำไปพร้อมกับคุณ และส่วนใหญ่เริ่มต้นจาก Fit Report",
+  th: "เครื่องมือด้านบนช่วยให้คุณประเมินความพร้อม หาตำแหน่งงาน และติดตามการสมัคร ส่วน Coaching 1:1 คือการลงมือปรับสิ่งที่จำเป็นไปกับคุณ โดยทั่วไปจะเริ่มจาก Fit Report",
 };
 
 /* ==========================================================================
@@ -887,16 +887,16 @@ export const NOT_A_TOOL_BODY: Copy = {
  * wording of it is a second promise.
  */
 export const CLOSE_HEADING: Copy = {
-  en: "Not sure which one you need?",
+  en: "Not sure where to start?",
   // Read back 06/09/2026.
-  th: "ยังไม่แน่ใจว่าควรเริ่มจากอันไหน",
+  th: "ยังไม่แน่ใจว่าควรเริ่มจากตรงไหน?",
 };
 
 export const CLOSE_BODY: Copy = {
-  en: "Tell me where you are and what you are aiming at, and I will say which of these is worth your time and which is not.",
+  en: "Tell me where you are now and what you are aiming at, and I will suggest where to start and what you do not need yet.",
   // Read back 06/09/2026. First person, which is what `DESTINATIONS.contact`
   // in `cta.ts` settled: the reader reaches a person, not a company.
-  th: "บอกผมว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ แล้วผมจะบอกว่าอันไหนคุ้มกับเวลาของคุณ และอันไหนยังไม่ต้อง",
+  th: "เล่าให้ผมฟังว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ ผมจะช่วยแนะนำว่าควรเริ่มจากอะไรและอะไรที่ยังไม่จำเป็น",
 };
 
 /**
@@ -926,10 +926,10 @@ export const FIT_INSIDE_HEADING: Copy = { en: "What is in the Fit Report", th: "
 /** One tile per report page. `section` is the page's id in renderFitReport; the title is the page's own heading where it has one. */
 export const FIT_TILES: readonly { section: string; titleKey?: string; title?: Copy; caption: Copy }[] = [
   { section: "summary", titleKey: "fit.summary.heading", caption: { en: "See all four areas on one chart against the bar the European market expects, and how far each one still has to go.", th: "ดูคะแนนทั้ง 4 ด้านในกราฟเดียว เปรียบเทียบกับเกณฑ์ที่ตลาดงานยุโรปคาดหวัง พร้อมดูว่าแต่ละด้านยังต้องพัฒนาอีกเท่าไร" } },
-  { section: "path", titleKey: "fit.path.heading", caption: { en: "Which bar to clear first, and where to start.", th: "ควรผ่านเกณฑ์ด้านไหนก่อน และเริ่มพัฒนาจากจุดใด" } },
-  { section: "employability", title: { en: "Every competency in each area", th: "ทุกทักษะในแต่ละด้าน" }, caption: { en: "A closer look at all four areas, one chart each with eight to ten competencies, with advice on which are below the bar and how to develop them.", th: "เจาะลึกทักษะทั้ง 4 ด้าน ผ่านกราฟแยกด้านละ 8–10 ทักษะ พร้อมคำแนะนำว่าทักษะไหนยังไม่ถึงเกณฑ์ และควรพัฒนาอย่างไร" } },
-  { section: "moves", titleKey: "fit.moves.heading", caption: { en: "Ranked for you: what to work on first to lift your score most, with the before and after.", th: "จัดลำดับให้แล้วว่าควรพัฒนาอะไรก่อน เพื่อเพิ่มคะแนนได้มากที่สุด พร้อมเปรียบเทียบคะแนนก่อนและหลัง" } },
-  { section: "roles", titleKey: "fit.roles.heading", caption: { en: "Open roles in the countries you chose, with the job ads we have checked.", th: "ตำแหน่งงานที่เปิดรับสมัครจริงในประเทศที่คุณเลือก พร้อมประกาศงานที่เราตรวจสอบแล้ว" } },
+  { section: "path", titleKey: "fit.path.heading", caption: { en: "Which area to develop first, and what to start with.", th: "ควรเริ่มพัฒนาด้านไหนก่อน และเริ่มจากอะไร" } },
+  { section: "employability", title: { en: "Every competency in each area", th: "ทุกทักษะในแต่ละด้าน" }, caption: { en: "A chart for each of the four areas, eight to ten competencies each, with advice on which are below the bar and how to develop them.", th: "ดูกราฟแยกทั้ง 4 ด้าน ด้านละ 8–10 ทักษะ พร้อมคำแนะนำว่าทักษะไหนยังไม่ถึงเกณฑ์และควรพัฒนาอย่างไร" } },
+  { section: "moves", titleKey: "fit.moves.heading", caption: { en: "What to work on first to lift your score most, with your current score and the score you can expect after improving.", th: "ดูว่าควรเริ่มพัฒนาอะไรเพื่อให้คะแนนดีขึ้นมากที่สุด พร้อมคะแนนปัจจุบันและคะแนนที่คาดว่าจะได้หลังปรับปรุง" } },
+  { section: "roles", titleKey: "fit.roles.heading", caption: { en: "Job ads open in the countries you chose, each one checked.", th: "ดูประกาศงานที่เปิดรับในประเทศที่คุณเลือกและผ่านการตรวจสอบแล้ว" } },
 ];
 
 export const FIT_SAMPLE_PDF: Copy = { en: "Download a sample Fit Report (PDF)", th: "ดาวน์โหลดตัวอย่าง Fit Report ฉบับเต็ม (PDF)" };
@@ -943,7 +943,7 @@ export const FIT_PLAN_FREE = {
   rows: [
     { text: { en: "4 area scores, from your answers", th: "คะแนน 4 ด้าน จากคำตอบของคุณ" }, on: true },
     { text: { en: "One next step", th: "สิ่งที่ควรทำต่อ 1 ข้อ" }, on: true },
-    { text: { en: "The market's bar on every chart", th: "เกณฑ์ของตลาดบนทุกกราฟ" }, on: false },
+    { text: { en: "The job market's bar on every chart", th: "เกณฑ์ตลาดงานในทุกกราฟ" }, on: false },
     { text: { en: "All 34 competencies", th: "ครบ 34 ทักษะ" }, on: false },
     { text: { en: "Roles that fit you", th: "ตำแหน่งงานที่ตรงกับคุณ" }, on: false },
   ],
@@ -953,7 +953,7 @@ export const FIT_PLAN_FULL = {
   sub: { en: "Your answers + a 30-minute interview with a coach", th: "คำตอบของคุณ + สัมภาษณ์ 30 นาทีกับโค้ช" },
   rows: [
     { text: { en: "All 4 areas, all 34 competencies", th: "คะแนน 4 ด้าน ครบ 34 ทักษะ" }, on: true },
-    { text: { en: "A next step for every competency below the bar, in order", th: "สิ่งที่ควรทำต่อ ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ" }, on: true },
+    { text: { en: "Advice for every competency below the bar, in the order to develop them", th: "คำแนะนำสำหรับทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับที่ควรพัฒนา" }, on: true },
     { text: { en: "The market's bar on every chart", th: "เกณฑ์ของตลาดบนทุกกราฟ" }, on: true },
     { text: { en: "The order to work in", th: "ลำดับที่ควรลงมือ" }, on: true },
     { text: { en: "Roles that fit you", th: "ตำแหน่งงานที่ตรงกับคุณ" }, on: true },
@@ -964,7 +964,7 @@ export const FIT_PLAN_FULL = {
 export const FIT_CALLOUTS: readonly { mark: string; title: Copy; body: Copy }[] = [
   { mark: "bar", title: { en: "The job market's bar on every chart", th: "เทียบเกณฑ์ตลาดงานในทุกกราฟ" }, body: { en: "See clearly which skills clear the bar and which still need work.", th: "เห็นชัดว่าทักษะไหนผ่านเกณฑ์ และทักษะไหนยังต้องพัฒนา" } },
   { mark: "34", title: { en: "All 4 areas, skill by skill", th: "ครบทั้ง 4 ด้าน แยกเป็นรายทักษะ" }, body: { en: "Eight to ten skills per area, assessed from your answers and a 30-minute interview.", th: "ด้านละ 8–10 ทักษะ ประเมินจากคำตอบของคุณและการสัมภาษณ์ 30 นาที" } },
-  { mark: "check", title: { en: "How to develop each skill", th: "รู้ว่าควรพัฒนาแต่ละทักษะอย่างไร" }, body: { en: "Advice for you, with things you can act on next.", th: "คำแนะนำเฉพาะคุณ พร้อมสิ่งที่นำไปลงมือทำต่อได้" } },
+  { mark: "check", title: { en: "How to develop each skill", th: "รู้ว่าควรพัฒนาแต่ละทักษะอย่างไร" }, body: { en: "Advice tailored to you, with steps you can take next.", th: "คำแนะนำที่ปรับให้เหมาะกับคุณ พร้อมขั้นตอนที่ทำต่อได้" } },
 ];
 
 /** Paul as the expert, from his own facts of 28/10/2026. No hire counts, by his choice. */

@@ -1144,8 +1144,8 @@ export const COPY = {
   },
   "fit.summary.heading": {
     screen: "Fit Report, summary heading",
-    en: "Where you stand against the market's bar",
-    th: "คุณอยู่ตรงไหน เมื่อเทียบกับเกณฑ์ของตลาด",
+    en: "Your scores against the job market's bar",
+    th: "คะแนนของคุณเทียบกับเกณฑ์ตลาดงาน",
   },
   "fit.col.area": {
     screen: "Fit Report, summary table column",
