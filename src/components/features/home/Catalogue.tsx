@@ -25,7 +25,7 @@
 
 import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
-import { PRODUCTS, STATUS_SOON, isFreeProduct } from "@/lib/content/products";
+import { PRODUCTS, STATUS_SOON, isFreeProduct, type Product } from "@/lib/content/products";
 import {
   CATALOGUE_FREE,
   CATALOGUE_PAID,
@@ -54,7 +54,7 @@ export default function Catalogue() {
   const free = PRODUCTS.filter((p) => isFreeProduct(p.slug));
   const paid = PRODUCTS.filter((p) => !isFreeProduct(p.slug));
 
-  const card = (slug: string, name: string, headline: string, soon: boolean) => (
+  const card = (slug: string, name: string, headline: string, soon: boolean, note?: Product["costLabel"]) => (
     <li key={slug}>
       <Link
         href={path(`/products/${slug}`)}
@@ -65,6 +65,9 @@ export default function Catalogue() {
           {soon && (
             <span className="text-caption-strong text-mute-strong">{pick(STATUS_SOON)}</span>
           )}
+          {/* A free product only a buyer can open says so under the "Free"
+              heading, rather than letting the heading promise it to everyone. */}
+          {note && <span className="text-caption-strong text-mute-strong">{pick(note)}</span>}
         </span>
         <span className="mt-2 text-body-md text-body">{headline}</span>
       </Link>
@@ -77,7 +80,7 @@ export default function Catalogue() {
         <h3 className="border-b border-line pb-3 text-body-md text-mute-strong">{pick(CATALOGUE_FREE)}</h3>
         <ul className="mt-4 grid gap-4 medium:grid-cols-3">
           {free.map((p) =>
-            card(p.slug, pick(p.name), pick(p.headline), p.status === "soon"),
+            card(p.slug, pick(p.name), pick(p.headline), p.status === "soon", p.costLabel),
           )}
         </ul>
       </div>

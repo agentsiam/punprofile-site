@@ -75,6 +75,7 @@ import {
   PRODUCTS,
   PRODUCT_ART,
   STATUS_LIVE,
+  freeCostLabel,
   isFreeProduct,
   type Product,
 } from "@/lib/content/products";
@@ -248,7 +249,7 @@ export default function ProductIndex() {
               {cell(pick(COL_WHO), pick(p.audience))}
               {cell(pick(COL_WHAT), pick(p.howLede))}
               {cell(pick(LIMIT_HEADING), pick(p.limit))}
-              {cell(pick(COL_COST), pick(isFreeProduct(p.slug) ? CATALOGUE_FREE : CATALOGUE_PAID), true)}
+              {cell(pick(COL_COST), pick(isFreeProduct(p.slug) ? freeCostLabel(p.slug, CATALOGUE_FREE) : CATALOGUE_PAID), true)}
             </div>
           ))}
         </div>

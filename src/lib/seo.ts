@@ -75,7 +75,7 @@ export const PUBLIC_ROUTES: readonly { path: string; priority: number }[] = [
    * they sit one level below the pages that route into them.
    *
    * **Only the built one is here.** CV Check, Fit Report, Matched Jobs and
-   * Guided Job Hunt have pages and those pages say, above the fold, that the
+   * the Job Search Dashboard (then Guided Job Hunt) had pages and those pages say, above the fold, that the
    * product is not open yet. That is honest on the page and thin content in an
    * index: a crawler would file four "coming soon" pages against a site whose
    * whole argument is that it does not overstate what it can do. Each joins this
@@ -106,6 +106,10 @@ export const PUBLIC_ROUTES: readonly { path: string; priority: number }[] = [
   { path: "/products/eu-fit-check", priority: 0.7 },
   // Live from 26/10/2026: sold by message, with a 30-minute interview.
   { path: "/products/fit-report", priority: 0.7 },
+  // Live from 03/11/2026: sold in token packs by message.
+  { path: "/products/matched-jobs", priority: 0.7 },
+  // Live from 03/11/2026: opened with a candidate's first token pack.
+  { path: "/products/job-search-dashboard", priority: 0.7 },
   { path: "/method", priority: 0.7 },
   ...(POSTS.length > 0 ? [{ path: "/blog", priority: 0.7 }] : []),
   { path: "/faq", priority: 0.6 },

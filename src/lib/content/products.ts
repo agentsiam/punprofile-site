@@ -92,6 +92,13 @@ export interface Product {
   faq: readonly ProductFaq[];
   /** Key into `PAGE_ACTIONS`. Every product page has its own entry. */
   actionsKey: string;
+  /**
+   * Replaces the bare "Free" wherever this product's cost is named, for a
+   * free product that only a buyer can open. The Job Search Dashboard is
+   * free, but only from a candidate's first token pack, and "Free" alone
+   * would promise it to everyone.
+   */
+  costLabel?: Copy;
 }
 
 /**
@@ -487,16 +494,20 @@ export const PRODUCTS: readonly Product[] = [
       th: "คุณกำหนดเงื่อนไข เราคัดกรองให้ตามนั้น แล้วส่งให้ทีละตำแหน่ง",
     },
     name: { en: "Matched Jobs", th: "Matched Jobs" },
-    status: "soon",
+    // Live 03/11/2026: sold in token packs by message since 23/10/2026, and
+    // /pricing, the home page and the Job Search Dashboard already sold it.
+    status: "live",
     headline: {
       en: "There are plenty of roles in Europe. There are not many you can actually apply for.",
       // Drafted 23/08/2026, read back and approved unchanged.
       th: "ตำแหน่งงานในยุโรปมีเยอะ แต่ที่คุณสมัครได้จริงมีไม่กี่ตำแหน่ง",
     },
     lede: {
-      en: "We screen roles against the criteria you set and send them to your email, one at a time.",
-      // Paul's own Thai of 23/08/2026, from the pricing sheet.
-      th: "เราคัดตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ แล้วส่งตรงถึงอีเมลทีละตำแหน่ง",
+      en: "We screen roles against the criteria you set and send them to your Job Search Dashboard, one at a time, with an email to let you know.",
+      // Paul's own Thai of 23/08/2026, from the pricing sheet, re-pointed
+      // 03/11/2026 to the dashboard: the PRD sends each role there, with an
+      // email notice.
+      th: "เราคัดตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ แล้วส่งเข้าแดชบอร์ดหางานของคุณทีละตำแหน่ง พร้อมแจ้งทางอีเมล",
     },
     how: [
       {
@@ -541,9 +552,11 @@ export const PRODUCTS: readonly Product[] = [
     actionsKey: "/products/matched-jobs",
   },
 
-  /* ------------------------------------------------------- Guided Job Hunt */
+  /* -------------------------------------------------- Job Search Dashboard */
   {
-    slug: "guided-job-hunt",
+    // Guided Job Hunt until 03/11/2026, renamed to the page it is: the
+    // candidate's own แดชบอร์ดหางาน, so a buyer meets one name throughout.
+    slug: "job-search-dashboard",
     // Read back 25/08/2026. Draft for `PROD-01-guided-job-hunt`.
     audience: {
       en: "For anyone applying to several roles at once",
@@ -551,22 +564,24 @@ export const PRODUCTS: readonly Product[] = [
     },
     // Read back 25/08/2026. Draft for `PROD-02-guided-job-hunt`.
     howLede: {
-      en: "One place holding every application and where each one stands.",
-      th: "ที่เดียวที่เก็บทุกตำแหน่งที่คุณสมัคร พร้อมสถานะของแต่ละตำแหน่ง",
+      en: "The roles picked for you, your CVs and every application you send, on one page.",
+      th: "ตำแหน่งที่ PunProfile คัดให้ CV ของคุณ และทุกตำแหน่งที่คุณสมัคร รวมไว้ในหน้าเดียว",
     },
-    name: { en: "Guided Job Hunt", th: "Guided Job Hunt" },
-    status: "soon",
+    name: { en: "Job Search Dashboard", th: "แดชบอร์ดหางาน" },
+    // Live 03/11/2026: opened by hand for every candidate who buys tokens for
+    // the first time.
+    status: "live",
     headline: {
       en: "You have applied to a lot of places, and you can no longer remember which one is where.",
       // Drafted 23/08/2026, read back and approved unchanged.
       th: "สมัครไปหลายที่ จนจำไม่ได้แล้วว่าที่ไหนไปถึงขั้นไหน",
     },
     lede: {
-      en: "One place holding every role you applied for, with where each one stands. Free.",
-      // Paul's wording, 23/08/2026. Free because it is the surface paid deliveries
-      // land on, decided 23/08/2026: charging for it would be charging twice for
-      // one workflow.
-      th: "รวมทุกตำแหน่งที่คุณสมัครไว้ในที่เดียว พร้อมสถานะล่าสุดของแต่ละที่ ใช้ฟรี",
+      en: "The roles picked for you, a CV for each target role, and every application with where it stands, all in one place. Free from your first token pack.",
+      // Rewritten 03/11/2026 for the whole dashboard, free from the first token
+      // pack. Free because it is the surface paid deliveries land on, decided
+      // 23/08/2026: charging for it would be charging twice for one workflow.
+      th: "รวมตำแหน่งที่ PunProfile คัดให้ CV สำหรับแต่ละตำแหน่งเป้าหมาย และทุกตำแหน่งที่คุณสมัครพร้อมสถานะล่าสุดไว้ในที่เดียว ใช้ฟรีตั้งแต่ซื้อโทเคนครั้งแรก",
     },
     how: [
       {
@@ -595,13 +610,25 @@ export const PRODUCTS: readonly Product[] = [
       {
         q: { en: "Does it cost anything?", th: "มีค่าใช้จ่ายไหม" },
         a: {
-          en: "No charge. It is included with Matched Jobs, because it is where those roles arrive.",
-          // Paul's wording, 23/08/2026.
-          th: "ไม่มีค่าใช้จ่าย เพราะรวมอยู่ในบริการส่งตำแหน่งงานที่ตรงกับคุณแล้ว",
+          en: "No charge. It opens with your first token pack, because it is where the roles matched to you arrive.",
+          // Paul's wording, 23/08/2026, re-pointed 03/11/2026 from Matched Jobs
+          // to the first token pack, which is what now opens it.
+          th: "ไม่มีค่าใช้จ่าย เปิดให้ใช้ตั้งแต่ซื้อโทเคนครั้งแรก เพราะเป็นที่ที่ตำแหน่งงานที่ตรงกับคุณถูกส่งเข้ามา",
+        },
+      },
+      {
+        q: { en: "How do I start using it?", th: "เริ่มใช้งานได้อย่างไร" },
+        a: {
+          en: "Buy your first token pack. PunProfile then opens your Job Search Dashboard and emails you a sign-in code.",
+          th: "ซื้อแพ็กเกจโทเคนครั้งแรก จากนั้น PunProfile จะเปิดแดชบอร์ดหางานให้ และส่งรหัสเข้าสู่ระบบให้ทางอีเมล",
         },
       },
     ],
-    actionsKey: "/products/guided-job-hunt",
+    actionsKey: "/products/job-search-dashboard",
+    costLabel: {
+      en: "Free from your first token pack",
+      th: "ฟรีตั้งแต่ซื้อโทเคนครั้งแรก",
+    },
   },
 ];
 
@@ -676,7 +703,7 @@ export const PRODUCT_ART: Record<string, ProductArt> = {
       th: "การ์ดตำแหน่งงานสามใบ โดยใบหนึ่งถูกทำเครื่องหมายว่าตรงกับโปรไฟล์",
     },
   },
-  "guided-job-hunt": {
+  "job-search-dashboard": {
     figure: "pipeline",
     alt: {
       en: "Four columns of a tracker, from saved through to offer",
@@ -705,10 +732,18 @@ export const PRODUCT_ART: Record<string, ProductArt> = {
 export const FREE_SLUGS: ReadonlySet<string> = new Set([
   "eu-fit-check",
   "cv-check",
-  "guided-job-hunt",
+  "job-search-dashboard",
 ]);
 
 export const isFreeProduct = (slug: string): boolean => FREE_SLUGS.has(slug);
+
+/**
+ * The cost a product page, the catalogue and `/pricing` name for a free
+ * product: its own `costLabel` where it has one, otherwise `fallback`, the
+ * plain "Free" of whichever surface is asking.
+ */
+export const freeCostLabel = (slug: string, fallback: Copy): Copy =>
+  PRODUCTS.find((p) => p.slug === slug)?.costLabel ?? fallback;
 
 /* ==========================================================================
    THE CATALOGUE PAGE, /products
