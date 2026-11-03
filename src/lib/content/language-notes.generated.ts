@@ -6458,9 +6458,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "TOKEN_ROWS[0].detail",
     "render": "Pricing page, TOKEN_ROWS[0].detail",
     "narrativeSlot": "artefact",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "03/11/2026",
-    "decisionNote": "Approved 02/11/2026 as an email delivery; re-pointed 03/11/2026 to the dashboard, where the PRD sends each role."
+    "decisionNote": "Approved 02/11/2026 as an email delivery; re-pointed 03/11/2026 to the dashboard, where the PRD sends each role. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
   },
   "src/lib/content/pricing.ts::TOKEN_ROWS[1].detail": {
     "source": "src/lib/content/pricing.ts",
@@ -7808,9 +7808,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[3].lede",
     "render": "Product pages, PRODUCTS[3].lede",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "03/11/2026",
-    "decisionNote": "Paul's 23/08/2026 line re-pointed 03/11/2026 from email to the dashboard: the PRD sends each role there, with an email notice."
+    "decisionNote": "Paul's 23/08/2026 line re-pointed 03/11/2026 from email to the dashboard: the PRD sends each role there, with an email notice. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
   },
   "src/lib/content/products.ts::PRODUCTS[3].limit": {
     "source": "src/lib/content/products.ts",
@@ -7853,9 +7853,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRODUCTS[4].faq[1].a",
     "render": "Product pages, PRODUCTS[4].faq[1].a",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-written",
     "date": "03/11/2026",
-    "decisionNote": "Added 03/11/2026: how access is opened. Written register, PunProfile in the third person, as the dashboard's sign-in copy."
+    "decisionNote": "Added 03/11/2026: how access is opened. Written register, PunProfile in the third person, as the dashboard's sign-in copy. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
   },
   "src/lib/content/products.ts::PRODUCTS[4].faq[1].q": {
     "source": "src/lib/content/products.ts",

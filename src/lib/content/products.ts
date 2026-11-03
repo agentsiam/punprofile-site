@@ -507,7 +507,7 @@ export const PRODUCTS: readonly Product[] = [
       // Paul's own Thai of 23/08/2026, from the pricing sheet, re-pointed
       // 03/11/2026 to the dashboard: the PRD sends each role there, with an
       // email notice.
-      th: "เราคัดตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ แล้วส่งเข้าแดชบอร์ดหางานของคุณทีละตำแหน่ง พร้อมแจ้งทางอีเมล",
+      th: "PunProfile คัดตำแหน่งงานตามเงื่อนไขที่คุณกำหนด แล้วส่งไปยังแดชบอร์ดหางานทีละตำแหน่ง พร้อมแจ้งทางอีเมล",
     },
     how: [
       {
@@ -620,7 +620,7 @@ export const PRODUCTS: readonly Product[] = [
         q: { en: "How do I start using it?", th: "เริ่มใช้งานได้อย่างไร" },
         a: {
           en: "Buy your first token pack. PunProfile then opens your Job Search Dashboard and emails you a sign-in code.",
-          th: "ซื้อแพ็กเกจโทเคนครั้งแรก จากนั้น PunProfile จะเปิดแดชบอร์ดหางานให้ และส่งรหัสเข้าสู่ระบบให้ทางอีเมล",
+          th: "เมื่อคุณซื้อแพ็กโทเคนแรก PunProfile จะเปิดใช้งานแดชบอร์ดหางานให้คุณและส่งรหัสเข้าสู่ระบบทางอีเมล",
         },
       },
     ],

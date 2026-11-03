@@ -17288,16 +17288,16 @@ path: "TOKEN_ROWS[0].detail"
 render: "Pricing page, TOKEN_ROWS[0].detail"
 narrative_slot: "artefact"
 en: "Sent to your Job Search Dashboard, with the work rights it needs stated"
-th: "ส่งเข้าแดชบอร์ดหางาน พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี"
-provenance: draft
+th: "ส่งไปยังแดชบอร์ดหางานของคุณ พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี"
+provenance: paul-written
 date: "03/11/2026"
 term_bindings: []
-decision_note: "Approved 02/11/2026 as an email delivery; re-pointed 03/11/2026 to the dashboard, where the PRD sends each role."
+decision_note: "Approved 02/11/2026 as an email delivery; re-pointed 03/11/2026 to the dashboard, where the PRD sends each role. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
 review:
-  structural_calque: pending
-  text_hash: 6b46930734d329bfe9c4d91b70881735b7dbcd2b5444f25d5fabb2ce58d0b365
+  structural_calque: pass
+  text_hash: 89435083120fb6fc5a530f7e580611ceab4321d264909b4a85e83a0e4953df76
   prompt_version: structural-calque-v1
-  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -20800,16 +20800,16 @@ path: "PRODUCTS[3].lede"
 render: "Product pages, PRODUCTS[3].lede"
 narrative_slot: "utility"
 en: "We screen roles against the criteria you set and send them to your Job Search Dashboard, one at a time, with an email to let you know."
-th: "เราคัดตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ แล้วส่งเข้าแดชบอร์ดหางานของคุณทีละตำแหน่ง พร้อมแจ้งทางอีเมล"
-provenance: draft
+th: "PunProfile คัดตำแหน่งงานตามเงื่อนไขที่คุณกำหนด แล้วส่งไปยังแดชบอร์ดหางานทีละตำแหน่ง พร้อมแจ้งทางอีเมล"
+provenance: paul-written
 date: "03/11/2026"
 term_bindings: []
-decision_note: "Paul's 23/08/2026 line re-pointed 03/11/2026 from email to the dashboard: the PRD sends each role there, with an email notice."
+decision_note: "Paul's 23/08/2026 line re-pointed 03/11/2026 from email to the dashboard: the PRD sends each role there, with an email notice. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
 review:
-  structural_calque: pending
-  text_hash: 9921f683e4ed51b22ef0cb95cf78d9063bda039563b6e605b43180a155fd2c0b
+  structural_calque: pass
+  text_hash: 22fd296b4196a134d3c2dbd8dc7700c2b09585a2b5b605d5d7343e3e780f9b4b
   prompt_version: structural-calque-v1
-  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -20919,16 +20919,16 @@ path: "PRODUCTS[4].faq[1].a"
 render: "Product pages, PRODUCTS[4].faq[1].a"
 narrative_slot: "utility"
 en: "Buy your first token pack. PunProfile then opens your Job Search Dashboard and emails you a sign-in code."
-th: "ซื้อแพ็กเกจโทเคนครั้งแรก จากนั้น PunProfile จะเปิดแดชบอร์ดหางานให้ และส่งรหัสเข้าสู่ระบบให้ทางอีเมล"
-provenance: draft
+th: "เมื่อคุณซื้อแพ็กโทเคนแรก PunProfile จะเปิดใช้งานแดชบอร์ดหางานให้คุณและส่งรหัสเข้าสู่ระบบทางอีเมล"
+provenance: paul-written
 date: "03/11/2026"
 term_bindings: []
-decision_note: "Added 03/11/2026: how access is opened. Written register, PunProfile in the third person, as the dashboard's sign-in copy."
+decision_note: "Added 03/11/2026: how access is opened. Written register, PunProfile in the third person, as the dashboard's sign-in copy. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
 review:
-  structural_calque: pending
-  text_hash: 19a0d34bb88e4fd7bfd6df6f8e790e58c234449aafdf2c3fbf6cf131fe9b4d6f
+  structural_calque: pass
+  text_hash: a2c848a40f2004887da039fd2fc7417670e0ee99b7af60180fa68d9c042972e3
   prompt_version: structural-calque-v1
-  basis: "Drafted by Claude 03/11/2026; waiting for Paul's review pass."
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->

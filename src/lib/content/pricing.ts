@@ -315,7 +315,7 @@ export const TOKEN_ROWS: readonly TokenRow[] = [
     },
     detail: {
       en: "Sent to your Job Search Dashboard, with the work rights it needs stated",
-      th: "ส่งเข้าแดชบอร์ดหางาน พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี",
+      th: "ส่งไปยังแดชบอร์ดหางานของคุณ พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี",
     },
     tokens: 1,
   },
