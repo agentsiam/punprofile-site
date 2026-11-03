@@ -384,9 +384,9 @@ export const PAGE_ACTIONS: Record<string, PageActions> = {
    */
   "/products": {
     primary: "assess",
-    secondary: "pricing",
+    secondary: "coaching",
     because:
-      "A reader looking at all five at once has chosen none of them. The check is the cheapest thing we can ask for and the only one that hands something back the same minute, which is the landing page's reasoning and holds here for the same reason.",
+      "A reader looking at all five at once has chosen none of them. The check is the cheapest thing we can ask for and the only one that hands something back the same minute, which is the landing page's reasoning and holds here for the same reason. The secondary is the coaching since 03/11/2026, Paul's call that this page was not selling it; the prices stay one tap away in the menu.",
   },
   "/services": {
     primary: "contact",

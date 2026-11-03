@@ -61,7 +61,7 @@ import CallToAction from "@/components/CallToAction";
 import SampleRead from "@/components/features/home/SampleRead";
 import Triage from "@/components/features/home/Triage";
 import Catalogue from "@/components/features/home/Catalogue";
-import { SERVICES } from "@/lib/content/services";
+import CoachingCards from "@/components/features/services/CoachingCards";
 import { DESTINATIONS } from "@/lib/content/cta";
 import Band from "@/components/Band";
 import MarketStats from "@/components/blocks/MarketStats";
@@ -129,17 +129,6 @@ const RESULT_AVATARS: Record<string, string> = {
   "placed-it-ireland": "/home/testimonials/testimonial-photo-nat.jpg",
   "placed-logistics-sweden": "/home/testimonials/testimonial-photo-nut.jpg",
 };
-/** Clay cutout per coaching service, files under `public/home/`. 03/11/2026. */
-const SERVICE_CUTOUT: Record<string, string> = {
-  coaching: "/home/service-direction.png",
-  profile: "/home/service-profile.png",
-  applications: "/home/service-applications.png",
-};
-const SERVICE_TINT = [
-  "bg-orange-pale text-on-orange-pale",
-  "bg-cyan-pale text-on-cyan-pale",
-  "bg-yellow-pale text-on-yellow-pale",
-];
 
 
 export default function Home() {
@@ -550,49 +539,7 @@ export default function Home() {
             to the anchor `/coaching` already gives each service, so nothing here
             is written twice or can drift.
           */}
-          {/*
-            03/11/2026: the three coaching services as clay cutouts standing on
-            tinted cards, the head breaking above the card's top edge. Three
-            different cast members, so the row stops being one woman three
-            times. Same copy and same links as before, out of `services.ts`.
-          */}
-          <ul className="mt-24 grid gap-x-6 gap-y-24 large:grid-cols-3">
-            {SERVICES.map((s, i) => (
-              <li key={s.id} className="flex">
-                <Link
-                  href={`${path("/coaching")}#${s.id}`}
-                  className={`group flex w-full flex-col rounded-3xl ${SERVICE_TINT[i % 3]}`}
-                >
-                  <span className="relative -mt-20 block h-72 w-full">
-                    <Image
-                      src={SERVICE_CUTOUT[s.id] ?? s.image.src}
-                      alt={pick(s.image.alt)}
-                      fill
-                      sizes="(max-width: 1200px) 60vw, 300px"
-                      className="object-contain object-bottom duration-[350ms] ease-nav transition-transform group-hover:-translate-y-1"
-                    />
-                  </span>
-                  <span className="flex flex-1 flex-col px-6 pt-4 pb-7">
-                    <span className="text-heading-sm">{pick(s.name)}</span>
-                    {/* The client's question, not a tagline. A service described
-                        by the problem it answers is checkable. */}
-                    <span className="mt-3 flex-1 text-body-md">
-                      &ldquo;{pick(s.question)}&rdquo;
-                    </span>
-                    <span className="mt-5 flex items-center gap-2 text-body-sm-strong underline underline-offset-4">
-                      {pick(DESTINATIONS.coaching.label)}
-                      <span
-                        aria-hidden
-                        className="duration-[350ms] ease-nav transition-transform group-hover:translate-x-1"
-                      >
-                        &rarr;
-                      </span>
-                    </span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <CoachingCards />
 
           <Catalogue />
       </Band>

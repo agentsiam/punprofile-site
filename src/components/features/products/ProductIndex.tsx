@@ -52,7 +52,8 @@ import Checklist from "@/components/blocks/Checklist";
 import ProductDiagram from "@/components/features/products/ProductDiagram";
 import { PRODUCT_PHOTO } from "@/components/features/products/productPhotos";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
-import { CATALOGUE_FREE, CATALOGUE_PAID } from "@/lib/content/home";
+import { CATALOGUE_FREE, CATALOGUE_PAID, RESULTS } from "@/lib/content/home";
+import CoachingCards from "@/components/features/services/CoachingCards";
 import { DESTINATIONS } from "@/lib/content/cta";
 import {
   CARD_ACTION,
@@ -82,10 +83,18 @@ import {
 
 const GRID = "large:grid-cols-[0.9fr_1fr_1.3fr_1.3fr_0.7fr]";
 
+/** Row grounds for the comparison, rotating so neighbours differ. */
+const ROW_TINT = [
+  "bg-cyan-pale text-on-cyan-pale",
+  "bg-orange-pale text-on-orange-pale",
+  "bg-yellow-pale text-on-yellow-pale",
+];
+
 export default function ProductIndex() {
   const { pick, locale, path } = useCopy();
 
   const free = PRODUCTS.filter((p) => isFreeProduct(p.slug));
+  const coachingQuote = RESULTS.find((r) => r.id === "coaching");
   const paid = PRODUCTS.filter((p) => !isFreeProduct(p.slug));
 
   /* A card, with the page's own figure at the top of it. The figure is the one
@@ -150,8 +159,8 @@ export default function ProductIndex() {
 
   const cell = (label: string, value: string, strong = false) => (
     <div>
-      <p className="text-caption-strong text-mute-strong large:hidden">{label}</p>
-      <p className={`mt-1 large:mt-0 ${strong ? "text-body-md-strong text-ink-deep" : "text-body-md text-body"}`}>
+      <p className="text-caption-strong large:hidden">{label}</p>
+      <p className={`mt-1 large:mt-0 ${strong ? "text-body-md-strong" : "text-body-md"}`}>
         {value}
       </p>
     </div>
@@ -189,12 +198,54 @@ export default function ProductIndex() {
         </div>
       </Band>
 
+      {/* -------------------------------------------------------- coaching
+
+          03/11/2026, Paul: the page sold five tools and left the coaching to
+          a small outlined box above the footer, although its own heading
+          promises "one conversation". The conversation now has a band of its
+          own straight after the tools: the three services as the same clay
+          cards the home page uses, then a client in her own words, then the
+          way in. Every string was already written and reviewed. */}
+      <Band block="B2" ground="canvas" width="wide">
+        <div className="max-w-3xl">
+          <h2 className={SECTION_HEADING(locale)}>{pick(NOT_A_TOOL_HEADING)}</h2>
+          <p className="mt-4 text-body-large text-on-surface-variant">{pick(NOT_A_TOOL_BODY)}</p>
+        </div>
+        <CoachingCards />
+        {coachingQuote && (
+          <figure className="mt-12 grid items-center gap-6 rounded-3xl bg-canvas-dark px-8 py-9 ground-dark medium:grid-cols-[auto_1fr_auto] medium:px-10">
+            <Image
+              src="/home/testimonials/testimonial-photo-min.jpg"
+              // Decorative: the name sits beside it.
+              alt=""
+              width={96}
+              height={96}
+              className="size-20 rounded-full object-cover"
+            />
+            <div>
+              <blockquote className="text-body-large text-ink">&ldquo;{pick(coachingQuote.quote)}&rdquo;</blockquote>
+              <figcaption className="mt-3 text-body-sm text-mute-strong">
+                <span className="text-body-sm-strong text-ink">{pick(coachingQuote.who)}</span>
+                {" · "}
+                {pick(coachingQuote.role)}
+              </figcaption>
+            </div>
+            <Link
+              href={path(DESTINATIONS.coaching.href)}
+              className="inline-flex min-h-12 items-center justify-self-start rounded-full bg-primary px-6 text-body-sm-strong text-on-primary duration-[350ms] ease-nav transition-colors hover:bg-primary-active"
+            >
+              {pick(DESTINATIONS.coaching.label)}
+            </Link>
+          </figure>
+        )}
+      </Band>
+
       {/* ------------------------------------------------------------ path
 
           B2 carries mechanism and artefact. The order is `PRODUCTS`' own, which
           is the order the catalogue was built in and the order the funnel runs
           in, so nothing here decides an order that is not already decided. */}
-      <Band block="B2" ground="canvas" width="wide">
+      <Band block="B2" ground="soft" width="wide">
         <h2 className={SECTION_HEADING(locale)}>{pick(INDEX_PATH_HEADING)}</h2>
         <p className="mt-4 max-w-2xl text-body-large text-on-surface-variant">
           {pick(INDEX_PATH_LEDE)}
@@ -215,10 +266,16 @@ export default function ProductIndex() {
           rather than being a band of its own: a comparison that lists what five
           things do and never what they do not is the comparison every product
           page on this site was written to avoid. */}
-      <Band block="B6" ground="soft" width="wide">
+      <Band block="B6" ground="canvas" width="wide">
         <h2 className={SECTION_HEADING(locale)}>{pick(INDEX_TABLE_HEADING)}</h2>
 
-        <div className={`mt-10 hidden gap-6 border-b border-line-strong pb-3 large:grid ${GRID}`}>
+        {/*
+          03/11/2026: the table was hairlines on grey and read as small print.
+          Each product is now its own tinted row with its clay photo as a
+          round thumbnail and the cost as a chip, after the comparison rows on
+          Wise and Monzo. Same five columns, same strings.
+        */}
+        <div className={`mt-10 hidden gap-6 px-6 pb-3 large:grid ${GRID}`}>
           {[COL_PRODUCT, COL_WHO, COL_WHAT, LIMIT_HEADING, COL_COST].map((c, i) => (
             <p key={i} className="text-caption-strong text-mute-strong">
               {pick(c)}
@@ -226,46 +283,49 @@ export default function ProductIndex() {
           ))}
         </div>
 
-        <div className="flex flex-col">
-          {PRODUCTS.map((p) => (
-            <div
-              key={p.slug}
-              className={`grid gap-4 border-b border-line py-7 large:items-start large:gap-6 ${GRID}`}
-            >
-              <div>
-                <Link
-                  href={path(`/products/${p.slug}`)}
-                  /* `inline-flex min-h-6` for the same reason as the footer
-                     links: an inline text link is 17px tall at this size and
-                     WCAG 2.2 sets the floor at 24. */
-                  className="inline-flex min-h-6 items-center text-body-md-strong text-ink-deep underline underline-offset-4"
-                >
-                  {pick(p.name)}
-                </Link>
-                {p.status === "soon" && (
-                  <p className="mt-1 text-caption-strong text-mute-strong">{pick(STATUS_SOON)}</p>
-                )}
+        <div className="mt-4 flex flex-col gap-4 large:mt-0">
+          {PRODUCTS.map((p, i) => {
+            const photo = PRODUCT_PHOTO[p.slug];
+            const free = isFreeProduct(p.slug);
+            return (
+              <div
+                key={p.slug}
+                className={`grid gap-4 rounded-3xl px-6 py-6 large:items-start large:gap-6 ${GRID} ${ROW_TINT[i % 3]}`}
+              >
+                <div className="flex items-center gap-4 large:flex-col large:items-start">
+                  {photo && (
+                    <span className="relative block size-16 shrink-0 overflow-hidden rounded-full">
+                      <Image src={photo.src} alt="" fill sizes="64px" className="object-cover" />
+                    </span>
+                  )}
+                  <div>
+                    <Link
+                      href={path(`/products/${p.slug}`)}
+                      className="inline-flex min-h-6 items-center text-body-md-strong underline underline-offset-4"
+                    >
+                      {pick(p.name)}
+                    </Link>
+                    {p.status === "soon" && (
+                      <p className="mt-1 text-caption-strong">{pick(STATUS_SOON)}</p>
+                    )}
+                  </div>
+                </div>
+                {cell(pick(COL_WHO), pick(p.audience))}
+                {cell(pick(COL_WHAT), pick(p.howLede))}
+                {cell(pick(LIMIT_HEADING), pick(p.limit))}
+                <div>
+                  <p className="text-caption-strong large:hidden">{pick(COL_COST)}</p>
+                  <span
+                    className={`mt-1 inline-block rounded-2xl px-3 py-1 text-caption-strong large:mt-0 ${
+                      free ? "bg-primary text-on-primary" : "bg-canvas text-ink-deep"
+                    }`}
+                  >
+                    {pick(free ? freeCostLabel(p.slug, CATALOGUE_FREE) : CATALOGUE_PAID)}
+                  </span>
+                </div>
               </div>
-              {cell(pick(COL_WHO), pick(p.audience))}
-              {cell(pick(COL_WHAT), pick(p.howLede))}
-              {cell(pick(LIMIT_HEADING), pick(p.limit))}
-              {cell(pick(COL_COST), pick(isFreeProduct(p.slug) ? freeCostLabel(p.slug, CATALOGUE_FREE) : CATALOGUE_PAID), true)}
-            </div>
-          ))}
-        </div>
-      </Band>
-
-      {/* --------------------------------------------------- the sixth thing */}
-      <Band block="B4" ground="canvas">
-        <div className="card-outlined px-8 py-9">
-          <h2 className="text-heading-sm">{pick(NOT_A_TOOL_HEADING)}</h2>
-          <p className="mt-3 text-body-large text-on-surface-variant">{pick(NOT_A_TOOL_BODY)}</p>
-          <Link
-            href={path(DESTINATIONS.coaching.href)}
-            className="mt-6 inline-flex min-h-12 items-center rounded-full border border-line-strong px-6 text-body-sm-strong text-ink-deep duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
-          >
-            {pick(DESTINATIONS.coaching.label)}
-          </Link>
+            );
+          })}
         </div>
       </Band>
 
