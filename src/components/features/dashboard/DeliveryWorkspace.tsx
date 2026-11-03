@@ -21,6 +21,7 @@
  * English only, like every admin surface (`copy.ts`).
  */
 
+import { MAX_WEEKLY_MAX, MIN_WEEKLY_MAX, sendBlock } from "@/lib/matching";
 import { useMemo, useState } from "react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
@@ -178,6 +179,7 @@ export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
         targets={ws.targets}
         balance={ws.wallet.spendable}
         engagements={engagements}
+        matching={ws.matching}
       />
       <Notes leadId={leadId} notes={ws.notes} engagements={engagements} apps={ws.applications} />
     </div>
@@ -1634,6 +1636,7 @@ function JobTracker({
   targets,
   balance,
   engagements,
+  matching,
 }: {
   leadId: Id<"leads">;
   apps: Ws["applications"];
@@ -1641,8 +1644,10 @@ function JobTracker({
   targets: Ws["targets"];
   balance: number;
   engagements: Engs;
+  matching: Ws["matching"];
 }) {
   const sendMatched = useMutation(api.workspace.sendMatchedRole);
+  const block = sendBlock(matching);
   const withdraw = useMutation(api.workspace.withdrawMatchedRole);
   const recordApp = useMutation(api.outcomes.recordApplication);
   const setStatus = useMutation(api.outcomes.updateApplicationStatus);
@@ -1742,7 +1747,13 @@ function JobTracker({
       title="Job tracker"
       aside={
         <span className="flex gap-4">
-          <button type="button" className={LINK} disabled={balance < 1} onClick={() => setDraft(blank("matched"))}>
+          <button
+            type="button"
+            className={LINK}
+            disabled={balance < 1 || block !== null}
+            title={block === "paused" ? "Matched roles are paused" : block === "weekly_max" ? "This week's maximum is reached" : undefined}
+            onClick={() => setDraft(blank("matched"))}
+          >
             Send a matched role ({balance} left)
           </button>
           <button type="button" className={LINK} onClick={() => setDraft(blank("coach"))}>
@@ -1751,6 +1762,7 @@ function JobTracker({
         </span>
       }
     >
+      <MatchingRow leadId={leadId} matching={matching} />
       {targets.length > 0 && (
         <div className="mb-2 flex flex-wrap items-center gap-2">
           <span className="text-label-large text-on-surface-variant">Title</span>
@@ -2068,6 +2080,36 @@ function TitleEdit({
 
 function FragmentRow({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
+}
+
+/** Matched roles this week against the maximum, and the pause, `prd.md` § 8. */
+function MatchingRow({ leadId, matching }: { leadId: Id<"leads">; matching: Ws["matching"] }) {
+  const set = useMutation(api.workspace.setMatching);
+  return (
+    <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-body-medium" data-testid="coach-matching">
+      <span className="text-ink">
+        Matched roles this week: {matching.sentThisWeek} of {matching.weeklyMax}
+        {matching.paused ? ", paused by request" : ""}
+      </span>
+      <label className="flex items-center gap-2 text-on-surface-variant">
+        Per week
+        <select
+          className="field h-9 w-20"
+          value={matching.weeklyMax}
+          onChange={(e) => void set({ leadId, weeklyMax: Number(e.target.value) })}
+        >
+          {Array.from({ length: MAX_WEEKLY_MAX - MIN_WEEKLY_MAX + 1 }, (_, i) => i + MIN_WEEKLY_MAX).map((n) => (
+            <option key={n} value={n}>
+              {n}
+            </option>
+          ))}
+        </select>
+      </label>
+      <button type="button" className={LINK} onClick={() => void set({ leadId, paused: !matching.paused })}>
+        {matching.paused ? "Resume" : "Pause"}
+      </button>
+    </div>
+  );
 }
 
 function WithdrawMatched({ onWithdraw }: { onWithdraw: (note: string) => Promise<boolean> }) {

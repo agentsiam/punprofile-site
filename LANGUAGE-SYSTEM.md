@@ -30116,6 +30116,160 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_HEADING
+source: src/lib/content/portal.ts
+path: MATCH_HEADING
+render: Candidate page /me, MATCH_HEADING
+narrative_slot: utility
+en: "Jobs we pick for you each week"
+th: "ตำแหน่งงานที่เราคัดให้ในแต่ละสัปดาห์"
+provenance: draft
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+review:
+  structural_calque: pending
+  text_hash: 89863dcad4ecb698a4a97203652a63bb366a430dccd496dc1dace86af1a5fbf2
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_BODY`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_BODY
+source: src/lib/content/portal.ts
+path: MATCH_BODY
+render: Candidate page /me, MATCH_BODY
+narrative_slot: utility
+en: "We send up to {n} a week that fit your target roles, and email you when they arrive. Each one uses one token, only once it is sent."
+th: "เราจะส่งตำแหน่งงานที่ตรงกับ target ของคุณให้ไม่เกินสัปดาห์ละ {n} ตำแหน่ง และแจ้งทางอีเมลเมื่อส่งให้แล้ว แต่ละตำแหน่งใช้ 1 โทเคน หักเมื่อส่งถึงคุณแล้วเท่านั้น"
+provenance: draft
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+review:
+  structural_calque: pending
+  text_hash: 924c17b69b88612a5171e8b1a91da17a66b70c7563983d46e2a19dcbd5371f62
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_THIS_WEEK`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_THIS_WEEK
+source: src/lib/content/portal.ts
+path: MATCH_THIS_WEEK
+render: Candidate page /me, MATCH_THIS_WEEK
+narrative_slot: utility
+en: "This week: {n} sent"
+th: "สัปดาห์นี้ส่งให้แล้ว {n} ตำแหน่ง"
+provenance: draft
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+review:
+  structural_calque: pending
+  text_hash: 8335179e377aed681c78ddb1af3c46587d29496c1c8912e12e81c7e49ec6521a
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_PER_WEEK`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_PER_WEEK
+source: src/lib/content/portal.ts
+path: MATCH_PER_WEEK
+render: Candidate page /me, MATCH_PER_WEEK
+narrative_slot: utility
+en: "A week"
+th: "ต่อสัปดาห์"
+provenance: draft
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+review:
+  structural_calque: pending
+  text_hash: 1e9824744a99ac581df3203ce5808c61bca319ea2b87f940ff41d8f3b9b9fa59
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_PAUSE`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_PAUSE
+source: src/lib/content/portal.ts
+path: MATCH_PAUSE
+render: Candidate page /me, MATCH_PAUSE
+narrative_slot: utility
+en: "Pause for now"
+th: "พักไว้ก่อน"
+provenance: draft
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+review:
+  structural_calque: pending
+  text_hash: 9e140679746459f352f8f4062a5da78cc0a162e5de98f27027f89a9c9ee609fc
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_RESUME`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_RESUME
+source: src/lib/content/portal.ts
+path: MATCH_RESUME
+render: Candidate page /me, MATCH_RESUME
+narrative_slot: utility
+en: "Start again"
+th: "เริ่มส่งต่อ"
+provenance: draft
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+review:
+  structural_calque: pending
+  text_hash: 2ba5cd1dc77688b6d85f12a9d2b1336ba03a2a0dd9421aac5132c4e31d271c87
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_PAUSED`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_PAUSED
+source: src/lib/content/portal.ts
+path: MATCH_PAUSED
+render: Candidate page /me, MATCH_PAUSED
+narrative_slot: utility
+en: "Paused. We send nothing and use no tokens until you start again."
+th: "พักไว้อยู่ เราจะยังไม่ส่งตำแหน่งงานและไม่หักโทเคน จนกว่าคุณจะกดเริ่มส่งต่อ"
+provenance: draft
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+review:
+  structural_calque: pending
+  text_hash: 5d01658bf9fc055fea92723c56feb9949134ffa23206c568fdb9cfdd07b4afb2
+  prompt_version: structural-calque-v1
+  basis: "Not yet reviewed."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::TOKENS_MORE`
 
 ```yaml

@@ -24,6 +24,7 @@
  * Every string comes from `src/lib/content/portal.ts` (R49).
  */
 
+import { MAX_WEEKLY_MAX, MIN_WEEKLY_MAX } from "@/lib/matching";
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { useConvex, useMutation } from "convex/react";
@@ -303,6 +304,8 @@ function Overview({
               .join(" · ")}
           </Stat>
         </div>
+
+        {data.tokens.bought > 0 && <MatchSettings data={data} readOnly={readOnly} />}
 
         {/* Teal's "Job Search Pipeline": one bar per stage. */}
         <section className="card-outlined px-6 py-5">
@@ -733,6 +736,44 @@ function GoalCard({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
           )}
         </>
       )}
+    </section>
+  );
+}
+
+/** The weekly maximum and the pause on matched roles, `prd.md` § 8. */
+function MatchSettings({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
+  const { pick, t } = useFormat();
+  const set = useMutation(api.portal.setMatching);
+  const m = data.matching;
+  return (
+    <section className="card-outlined px-6 py-5" data-testid="me-matching">
+      <h2 className="text-heading-sm">{pick(C.MATCH_HEADING)}</h2>
+      <p className="mt-2 text-body-medium text-on-surface-variant">{t(C.MATCH_BODY, { n: m.weeklyMax })}</p>
+      {m.paused && <p className="mt-2 text-body-medium text-ink">{pick(C.MATCH_PAUSED)}</p>}
+      <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-body-medium">
+        <span className="text-ink">{t(C.MATCH_THIS_WEEK, { n: m.sentThisWeek })}</span>
+        {!readOnly && (
+          <>
+            <label className="flex items-center gap-2 text-on-surface-variant">
+              <select
+                className="field h-10 w-20"
+                value={m.weeklyMax}
+                onChange={(e) => void set({ weeklyMax: Number(e.target.value) })}
+              >
+                {Array.from({ length: MAX_WEEKLY_MAX - MIN_WEEKLY_MAX + 1 }, (_, i) => i + MIN_WEEKLY_MAX).map((n) => (
+                  <option key={n} value={n}>
+                    {n}
+                  </option>
+                ))}
+              </select>
+              {pick(C.MATCH_PER_WEEK)}
+            </label>
+            <button type="button" className="h-10 btn-tonal px-4 text-label-large" onClick={() => void set({ paused: !m.paused })}>
+              {pick(m.paused ? C.MATCH_RESUME : C.MATCH_PAUSE)}
+            </button>
+          </>
+        )}
+      </div>
     </section>
   );
 }

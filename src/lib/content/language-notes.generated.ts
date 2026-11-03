@@ -11394,6 +11394,69 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "31/10/2026",
     "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
   },
+  "src/lib/content/portal.ts::MATCH_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_HEADING",
+    "render": "Candidate page /me, MATCH_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+  },
+  "src/lib/content/portal.ts::MATCH_BODY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_BODY",
+    "render": "Candidate page /me, MATCH_BODY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+  },
+  "src/lib/content/portal.ts::MATCH_THIS_WEEK": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_THIS_WEEK",
+    "render": "Candidate page /me, MATCH_THIS_WEEK",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+  },
+  "src/lib/content/portal.ts::MATCH_PER_WEEK": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_PER_WEEK",
+    "render": "Candidate page /me, MATCH_PER_WEEK",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+  },
+  "src/lib/content/portal.ts::MATCH_PAUSE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_PAUSE",
+    "render": "Candidate page /me, MATCH_PAUSE",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+  },
+  "src/lib/content/portal.ts::MATCH_RESUME": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_RESUME",
+    "render": "Candidate page /me, MATCH_RESUME",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+  },
+  "src/lib/content/portal.ts::MATCH_PAUSED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_PAUSED",
+    "render": "Candidate page /me, MATCH_PAUSED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Awaiting Paul's Thai verdict."
+  },
   "src/lib/content/portal.ts::TOKENS_MORE": {
     "source": "src/lib/content/portal.ts",
     "path": "TOKENS_MORE",

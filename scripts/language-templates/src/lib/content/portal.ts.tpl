@@ -248,6 +248,16 @@ export const WORK_KIND: Record<string, Copy> = {
 };
 
 export const BOOK_TIME: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6Qk9PS19USU1F:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6Qk9PS19USU1F:TH%% };
+
+/* ------------------------------------------------- matched roles, weekly */
+
+export const MATCH_HEADING: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfSEVBRElORw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfSEVBRElORw:TH%% };
+export const MATCH_BODY: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfQk9EWQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfQk9EWQ:TH%% };
+export const MATCH_THIS_WEEK: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfVEhJU19XRUVL:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfVEhJU19XRUVL:TH%% };
+export const MATCH_PER_WEEK: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfUEVSX1dFRUs:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfUEVSX1dFRUs:TH%% };
+export const MATCH_PAUSE: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfUEFVU0U:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfUEFVU0U:TH%% };
+export const MATCH_RESUME: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfUkVTVU1F:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfUkVTVU1F:TH%% };
+export const MATCH_PAUSED: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfUEFVU0VE:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6TUFUQ0hfUEFVU0VE:TH%% };
 export const TOKENS_MORE: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6VE9LRU5TX01PUkU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6VE9LRU5TX01PUkU:TH%% };
 export const TOKENS_LOW: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6VE9LRU5TX0xPVw:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3BvcnRhbC50czo6VE9LRU5TX0xPVw:TH%% };
 export const TOKENS_REQUESTED: Copy = {

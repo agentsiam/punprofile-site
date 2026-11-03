@@ -26,6 +26,16 @@ import { targetsFor } from "./targets";
 import { computeWallet, cvEarnedBySelectionNow } from "../src/lib/wallet";
 import { preparationState, nextCall, leadItems, decisionsView, previewOf, scheduledCallFor } from "../src/lib/session";
 import { isValidTimeZone } from "../src/lib/sessionTime";
+import {
+  NOTICE_DELAY_MS,
+  isValidWeeklyMax,
+  nextMadridMorning,
+  sameMadridDay,
+  sendBlock,
+  sentThisWeek,
+  weeklyMaxOf,
+  type MatchingState,
+} from "../src/lib/matching";
 
 /** A target id passed in must belong to the same lead. */
 async function checkTarget(ctx: QueryCtx, targetId: Id<"targets"> | undefined | null, leadId: Id<"leads">) {
@@ -71,6 +81,34 @@ export async function tokenBalance(ctx: QueryCtx, leadId: Id<"leads">) {
     else spent += -r.delta;
   }
   return { balance: bought - spent, bought, spent, rows };
+}
+
+/** The weekly maximum, the pause and this week's count, `prd.md` § 8. */
+export async function matchingFor(ctx: QueryCtx, leadId: Id<"leads">): Promise<MatchingState> {
+  const lead = await ctx.db.get(leadId);
+  const { rows } = await tokenBalance(ctx, leadId);
+  return {
+    weeklyMax: weeklyMaxOf(lead),
+    paused: lead?.matchPausedAt !== undefined,
+    sentThisWeek: sentThisWeek(rows, Date.now()),
+  };
+}
+
+/**
+ * Schedule the matched-role notice unless one is already waiting. One email a
+ * day at most: a role sent after today's notice went waits for 09:00 Madrid
+ * tomorrow, and that email lists everything not yet notified.
+ */
+export async function scheduleMatchNotice(ctx: MutationCtx, leadId: Id<"leads">, now: number) {
+  const lead = await ctx.db.get(leadId);
+  if (!lead?.email) return;
+  if (lead.matchNoticeAt !== undefined && lead.matchNoticeAt > now - 60 * 60 * 1000) return;
+  const at =
+    lead.matchNoticeSentAt !== undefined && sameMadridDay(lead.matchNoticeSentAt, now)
+      ? nextMadridMorning(now)
+      : now + NOTICE_DELAY_MS;
+  await ctx.db.patch(leadId, { matchNoticeAt: at });
+  await ctx.scheduler.runAt(at, internal.matchNotice.send, { leadId, attempt: 1 });
 }
 
 /**
@@ -493,6 +531,16 @@ export const sendMatchedRole = mutation({
       );
     }
 
+    const block = sendBlock(await matchingFor(ctx, args.leadId));
+    if (block === "paused") {
+      throw new ConvexError("Matched roles are paused for this candidate. Nothing was sent or charged.");
+    }
+    if (block === "weekly_max") {
+      throw new ConvexError(
+        `This week's maximum of ${weeklyMaxOf(lead)} matched roles is reached. Nothing was sent or charged.`,
+      );
+    }
+
     const now = Date.now();
     const applicationId = await ctx.db.insert("applications", {
       leadId: args.leadId,
@@ -525,7 +573,29 @@ export const sendMatchedRole = mutation({
       at: now,
       by,
     });
+    await scheduleMatchNotice(ctx, args.leadId, now);
     return applicationId;
+  },
+});
+
+/** The coach sets a candidate's weekly maximum or pause, `prd.md` § 8. */
+export const setMatching = mutation({
+  args: {
+    leadId: v.id("leads"),
+    weeklyMax: v.optional(v.number()),
+    paused: v.optional(v.boolean()),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const lead = await ctx.db.get(args.leadId);
+    if (!lead) throw new ConvexError("Lead not found.");
+    if (args.weeklyMax !== undefined && !isValidWeeklyMax(args.weeklyMax)) {
+      throw new ConvexError("The weekly maximum is a whole number from 1 to 10.");
+    }
+    await ctx.db.patch(args.leadId, {
+      ...(args.weeklyMax !== undefined ? { matchWeeklyMax: args.weeklyMax } : {}),
+      ...(args.paused !== undefined ? { matchPausedAt: args.paused ? (lead.matchPausedAt ?? Date.now()) : undefined } : {}),
+    });
   },
 });
 
@@ -755,6 +825,7 @@ export const forLead = query({
         ledger: ledger.sort((a, b) => b.at - a.at),
       },
       wallet,
+      matching: await matchingFor(ctx, args.leadId),
       cvs,
       notes,
       applications,

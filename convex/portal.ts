@@ -21,7 +21,8 @@ import { greetingName } from "./names";
 import type { Doc, Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { feedFor } from "./market";
-import { tokenBalance, walletFor } from "./workspace";
+import { matchingFor, tokenBalance, walletFor } from "./workspace";
+import { isValidWeeklyMax } from "../src/lib/matching";
 import { preparationState, previewOf, scheduledCallFor, LIMITS } from "../src/lib/session";
 import { isValidTimeZone, preparationDeadline } from "../src/lib/sessionTime";
 import { targetsFor } from "./targets";
@@ -251,6 +252,8 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
         reserved: wallet.reserved,
         spendable: wallet.spendable,
       },
+      /** The weekly maximum, the pause and this week's count, `prd.md` § 8. */
+      matching: await matchingFor(ctx, lead._id),
       goal: { perWeek: lead.weeklyApplicationGoal ?? null, appliedThisWeek },
       fitReportShared: lead.fitReportSharedAt !== undefined,
       packs: sold.map((e) => ({ module: e.module, status: e.status })),
@@ -584,6 +587,19 @@ export const setGoal = mutation({
       throw new ConvexError("bad_value");
     }
     await ctx.db.patch(lead._id, { weeklyApplicationGoal: args.perWeek ?? undefined });
+  },
+});
+
+/** The candidate's own weekly maximum and pause for matched roles, `prd.md` § 8. */
+export const setMatching = mutation({
+  args: { weeklyMax: v.optional(v.number()), paused: v.optional(v.boolean()) },
+  handler: async (ctx, args) => {
+    const lead = await requireLead(ctx);
+    if (args.weeklyMax !== undefined && !isValidWeeklyMax(args.weeklyMax)) throw new ConvexError("bad_value");
+    await ctx.db.patch(lead._id, {
+      ...(args.weeklyMax !== undefined ? { matchWeeklyMax: args.weeklyMax } : {}),
+      ...(args.paused !== undefined ? { matchPausedAt: args.paused ? (lead.matchPausedAt ?? Date.now()) : undefined } : {}),
+    });
   },
 });
 
