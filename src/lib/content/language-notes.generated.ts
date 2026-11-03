@@ -1647,14 +1647,14 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "10/09/2026",
     "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
   },
-  "src/lib/content/copy.ts::COPY.nav.guidedJobHunt": {
+  "src/lib/content/copy.ts::COPY.nav.jobSearchDashboard": {
     "source": "src/lib/content/copy.ts",
-    "path": "COPY.nav.guidedJobHunt",
+    "path": "COPY.nav.jobSearchDashboard",
     "render": "Site menu, the Products group",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "10/09/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
+    "date": "03/11/2026",
+    "decisionNote": "Renamed from Guided Job Hunt on Paul's call of 03/11/2026. The Thai is the fixed term page-job-search-dashboard."
   },
   "src/lib/content/copy.ts::COPY.nav.language": {
     "source": "src/lib/content/copy.ts",
@@ -3272,9 +3272,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "WHO_BODY",
     "render": "Home page, WHO_BODY",
     "narrativeSlot": "house.not",
-    "provenance": "paul-approved",
-    "date": "30/10/2026",
-    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. Opening changed 03/11/2026 to name no headcount, Paul's rule of 01/11/2026. Paul rewrote the Thai in his review pass of 03/11/2026."
   },
   "src/lib/content/home.ts::WHO_HEADING": {
     "source": "src/lib/content/home.ts",
@@ -6458,9 +6458,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "TOKEN_ROWS[0].detail",
     "render": "Pricing page, TOKEN_ROWS[0].detail",
     "narrativeSlot": "artefact",
-    "provenance": "paul-approved",
-    "date": "02/11/2026",
-    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ระบุให้ชัดว่าเป็นสิทธิ์การทำงานที่ผู้สมัครต้องมีสำหรับตำแหน่งนั้น"
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Approved 02/11/2026 as an email delivery; re-pointed 03/11/2026 to the dashboard, where the PRD sends each role. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
   },
   "src/lib/content/pricing.ts::TOKEN_ROWS[1].detail": {
     "source": "src/lib/content/pricing.ts",
@@ -7407,10 +7407,10 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "06/09/2026",
     "decisionNote": "Paul's wording, 06/09/2026."
   },
-  "src/lib/content/products.ts::PRODUCT_ART.guided-job-hunt.alt": {
+  "src/lib/content/products.ts::PRODUCT_ART.job-search-dashboard.alt": {
     "source": "src/lib/content/products.ts",
-    "path": "PRODUCT_ART.guided-job-hunt.alt",
-    "render": "Product pages, PRODUCT_ART.guided-job-hunt.alt",
+    "path": "PRODUCT_ART.job-search-dashboard.alt",
+    "render": "Product pages, PRODUCT_ART.job-search-dashboard.alt",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "06/09/2026",
@@ -7809,8 +7809,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[3].lede",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's own Thai of 23/08/2026, from the pricing sheet."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's 23/08/2026 line re-pointed 03/11/2026 from email to the dashboard: the PRD sends each role there, with an email notice. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
   },
   "src/lib/content/products.ts::PRODUCTS[3].limit": {
     "source": "src/lib/content/products.ts",
@@ -7845,8 +7845,35 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[4].faq[0].a",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "date": "03/11/2026",
+    "decisionNote": "Paul's 23/08/2026 answer re-pointed 03/11/2026 from Matched Jobs to the first token pack, which is what now opens it. Paul rewrote the Thai in his review pass of 03/11/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[4].faq[1].a": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[4].faq[1].a",
+    "render": "Product pages, PRODUCTS[4].faq[1].a",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Added 03/11/2026: how access is opened. Written register, PunProfile in the third person, as the dashboard's sign-in copy. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
+  },
+  "src/lib/content/products.ts::PRODUCTS[4].faq[1].q": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[4].faq[1].q",
+    "render": "Product pages, PRODUCTS[4].faq[1].q",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Added 03/11/2026 with its answer. Paul approved this Thai unchanged in his review pass of 03/11/2026."
+  },
+  "src/lib/content/products.ts::PRODUCTS[4].costLabel": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[4].costLabel",
+    "render": "Product page summary card, /products, /pricing and the home catalogue, PRODUCTS[4].costLabel",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "03/11/2026",
+    "decisionNote": "Added 03/11/2026: replaces the bare Free for a product only a buyer can open. Paul rewrote the Thai in his review pass of 03/11/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[4].faq[0].q": {
     "source": "src/lib/content/products.ts",
@@ -7899,8 +7926,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[4].howLede",
     "narrativeSlot": "mechanism",
     "provenance": "paul-approved",
-    "date": "10/09/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
+    "date": "03/11/2026",
+    "decisionNote": "Rewritten 03/11/2026 for the whole dashboard, after the rename from Guided Job Hunt. Paul approved this Thai unchanged in his review pass of 03/11/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[4].lede": {
     "source": "src/lib/content/products.ts",
@@ -7908,8 +7935,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[4].lede",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026. Free because it is the surface paid deliveries\n\nland on, decided 23/08/2026: charging for it would be charging twice for\n\none workflow."
+    "date": "03/11/2026",
+    "decisionNote": "Rewritten 03/11/2026 for the whole dashboard, free from the first token pack. Replaces Paul's 23/08/2026 line for Guided Job Hunt. Paul rewrote the Thai in his review pass of 03/11/2026."
   },
   "src/lib/content/products.ts::PRODUCTS[4].limit": {
     "source": "src/lib/content/products.ts",
@@ -7926,8 +7953,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Product pages, PRODUCTS[4].name",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "03/11/2026",
+    "decisionNote": "Renamed from Guided Job Hunt on Paul's call of 03/11/2026, to the page's own name. The Thai is the fixed term page-job-search-dashboard, decided by Paul 03/11/2026."
   },
   "src/lib/content/products.ts::RELATED_HEADING": {
     "source": "src/lib/content/products.ts",

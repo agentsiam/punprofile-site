@@ -552,6 +552,7 @@ export const WHO_BODY: Copy = {
   /*
    * Rewritten 30/10/2026 with the coach cards (`COACHES` in `coaching.ts`).
    * It says PunProfile, not "we", is not paid by employers: Tatiya's day job is.
+   * No headcount since 03/11/2026: the team may grow, so it says "our coaches".
    */
   en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OldIT19CT0RZ:EN%%,
   th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OldIT19CT0RZ:TH%%,

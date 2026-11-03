@@ -552,9 +552,10 @@ export const WHO_BODY: Copy = {
   /*
    * Rewritten 30/10/2026 with the coach cards (`COACHES` in `coaching.ts`).
    * It says PunProfile, not "we", is not paid by employers: Tatiya's day job is.
+   * No headcount since 03/11/2026: the team may grow, so it says "our coaches".
    */
-  en: "We are two coaches who also hire for a living, reading CVs and deciding who goes forward. PunProfile is paid by you, not by employers, so our advice starts from your goals, not from a vacancy a company is rushing to fill.",
-  th: "เราเป็นโค้ชสองคนที่ทำงานคัดเลือกคนเข้าทำงาน ทั้งอ่าน CV และตัดสินใจว่าใครจะได้ไปต่อ ส่วน PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำของเราจึงเริ่มจากเป้าหมายของคุณ ไม่ใช่จากตำแหน่งว่างที่บริษัทกำลังเร่งหาคน",
+  en: "Our coaches also hire for a living, reading CVs and deciding who goes forward. PunProfile is paid by you, not by employers, so our advice starts from your goals, not from a vacancy a company is rushing to fill.",
+  th: "โค้ชของ PunProfile ทำงานด้านการคัดเลือกผู้สมัครด้วย ตั้งแต่อ่าน CV ไปจนถึงตัดสินใจว่าใครจะได้ไปต่อ PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง เวลาที่โค้ชให้คำแนะนำ จึงเริ่มจากเป้าหมายของคุณ ไม่ใช่จากตำแหน่งที่บริษัทกำลังเร่งหาคน",
 };
 
 // ------------------------------------------------------------------- results
