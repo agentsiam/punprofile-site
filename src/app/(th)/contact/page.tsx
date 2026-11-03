@@ -33,6 +33,7 @@
  * cannot be opened is not a channel, and this page is only for channels.
  */
 
+import Image from "next/image";
 import { useCopy } from "@/components/LocaleProvider";
 import CallToAction from "@/components/CallToAction";
 import Band from "@/components/Band";
@@ -51,21 +52,43 @@ export default function ContactPage() {
 
   return (
     <div className="w-full">
-      <Band block="B1" ground="canvas">
-        <h1 className={HERO_HEADING(locale)}>{pick(CONTACT_HEADING)}</h1>
-        <p className="mt-4 text-body-large text-on-surface-variant">{pick(CONTACT_INTRO)}</p>
-      </Band>
+      {/* One lime band with a clay scene, 03/11/2026, after the pricing hero
+          (itself after Wise and Airalo). The page was a heading on white and
+          two buttons on grey, with two thirds of the screen empty.
 
-      {/* B8, not B2. This band is the ask and the channels it can be made
-          through; nothing on this page describes a thing you buy. */}
-      <Band block="B8" ground="soft">
-        <CallToAction page="/contact" />
+          The buttons sit in a white card on the lime rather than on the lime
+          itself: LINE keeps its own green under rule 5 of `cta.ts`, and green
+          on lime is the one pairing that loses both colours. The art is
+          generated on pale cyan with no lime in it, per the brand palette for
+          images, so it does not dissolve into the band.
 
-        <p className="mt-5 text-body-medium text-on-surface-variant">{pick(CONTACT_CHANNELS)}</p>
+          Still B1 in the block map: this band asks, and nothing on the page
+          describes a thing you buy, so it owes no limit. */}
+      <Band block="B1" ground="brand" width="wide">
+        <div className="grid items-center gap-10 large:grid-cols-[1fr_1fr] large:gap-16">
+          <div>
+            <h1 className={HERO_HEADING(locale)}>{pick(CONTACT_HEADING)}</h1>
+            <p className="mt-4 max-w-xl text-body-large text-body">{pick(CONTACT_INTRO)}</p>
 
-        <p className="mt-10 text-body-medium text-on-surface-variant">
-          {pick(CONTACT_ALREADY_IN_QUEUE)}
-        </p>
+            <div className="card-plain mt-8 px-6 py-6">
+              <CallToAction page="/contact" />
+              <p className="mt-5 text-body-medium text-body">{pick(CONTACT_CHANNELS)}</p>
+              <p className="mt-4 border-t border-line pt-4 text-body-medium text-body">
+                {pick(CONTACT_ALREADY_IN_QUEUE)}
+              </p>
+            </div>
+          </div>
+
+          <Image
+            src="/contact/contact-messaging.jpg"
+            alt=""
+            width={1200}
+            height={896}
+            priority
+            sizes="(min-width: 1200px) 50vw, 100vw"
+            className="aspect-square h-auto w-full rounded-3xl object-cover medium:aspect-[4/3]"
+          />
+        </div>
       </Band>
     </div>
   );
