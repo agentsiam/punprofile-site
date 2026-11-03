@@ -66,6 +66,7 @@ export default function Band({
   width = "text",
   align = "start",
   className,
+  id,
   children,
 }: {
   block: BlockId;
@@ -85,12 +86,15 @@ export default function Band({
    */
   align?: "start" | "center";
   className?: string;
+  /** An anchor target, for a page with a jump row. Offset under the sticky header. */
+  id?: string;
   children: React.ReactNode;
 }) {
   return (
     <section
+      id={id}
       data-block={block}
-      className={`${GROUND[ground]} py-16 medium:py-20 ${className ?? ""}`}
+      className={`${GROUND[ground]} scroll-mt-20 py-16 medium:py-20 ${className ?? ""}`}
     >
       {/* `.page-container` sets the gutter and the 1440 cap, and it is the same
           one the header and the footer use, so a band's first character sits at
