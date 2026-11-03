@@ -827,7 +827,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                         {d.status !== "delivered" && (
                           <TitleEdit
                             label="Booking link"
-                            empty="none, booked by message"
+                            empty={d.entitlement === "pack_preview" ? "the 60-minute Cal.com link, until a call is booked" : "none, booked by message"}
                             value={d.bookingUrl ?? ""}
                             onSave={(bookingUrl) => run(() => updateDeliverable({ deliverableId: d._id, bookingUrl }))}
                           />

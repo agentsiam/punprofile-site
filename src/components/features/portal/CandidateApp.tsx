@@ -39,6 +39,7 @@ import { keywordsOf } from "@/lib/keywords";
 import { rolesFor } from "@/lib/market-match";
 import { MADRID, formatIn } from "@/lib/sessionTime";
 
+import { bookingUrlFor } from "@/lib/booking";
 type Job = PortalView["jobs"][number];
 const PIPELINE = ["interested", "applied", "screening", "interviewing", "offer", "accepted"] as const;
 const CLOSED = ["rejected", "withdrawn"] as const;
@@ -2187,8 +2188,8 @@ function Deliverables({ data, readOnly = false }: { data: PortalView; readOnly?:
                   : ""}
             </p>
           </div>
-          {d.bookingUrl && d.status !== "delivered" && !readOnly && (
-            <a href={d.bookingUrl} target="_blank" rel="noreferrer" className="h-10 shrink-0 btn-filled inline-flex items-center px-4 text-label-large">
+          {bookingUrlFor(d, data.preparation) && d.status !== "delivered" && !readOnly && (
+            <a href={bookingUrlFor(d, data.preparation)!} target="_blank" rel="noreferrer" className="h-10 shrink-0 btn-filled inline-flex items-center px-4 text-label-large">
               {pick(C.BOOK_TIME)}
             </a>
           )}
