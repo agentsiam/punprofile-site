@@ -17,6 +17,7 @@ import { CODE_EMAIL_SUBJECT, codeEmailHtml } from "./codeEmail";
  */
 
 import { internalAction, internalMutation, internalQuery, mutation } from "./_generated/server";
+import { greetingName } from "./names";
 import { internal } from "./_generated/api";
 import type { Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
@@ -49,7 +50,7 @@ export const grantForLead = internalQuery({
     ).find((g) => g.revokedAt === undefined);
     if (!grant) return null;
     const lead = await ctx.db.get(leadId);
-    return { grantId: grant._id, email: grant.email, firstName: lead?.firstName ?? null };
+    return { grantId: grant._id, email: grant.email, firstName: greetingName(lead) };
   },
 });
 
