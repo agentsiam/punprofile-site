@@ -27,6 +27,8 @@ import type * as leads from "../leads.js";
 import type * as market from "../market.js";
 import type * as marketing from "../marketing.js";
 import type * as marketingSend from "../marketingSend.js";
+import type * as matchEmail from "../matchEmail.js";
+import type * as matchNotice from "../matchNotice.js";
 import type * as merge from "../merge.js";
 import type * as notify from "../notify.js";
 import type * as outcomes from "../outcomes.js";
@@ -66,6 +68,8 @@ declare const fullApi: ApiFromModules<{
   market: typeof market;
   marketing: typeof marketing;
   marketingSend: typeof marketingSend;
+  matchEmail: typeof matchEmail;
+  matchNotice: typeof matchNotice;
   merge: typeof merge;
   notify: typeof notify;
   outcomes: typeof outcomes;

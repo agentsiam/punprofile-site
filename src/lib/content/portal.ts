@@ -248,6 +248,16 @@ export const WORK_KIND: Record<string, Copy> = {
 };
 
 export const BOOK_TIME: Copy = { en: "Book a time", th: "จองเวลา" };
+
+/* ------------------------------------------------- matched roles, weekly */
+
+export const MATCH_HEADING: Copy = { en: "Jobs we pick for you each week", th: "ตำแหน่งงานที่ PunProfile คัดให้รายสัปดาห์" };
+export const MATCH_BODY: Copy = { en: "We send up to {n} a week that fit your target roles, and email you when they arrive. Each one uses one token, only once it is sent.", th: "PunProfile จะส่งตำแหน่งงานที่ตรงกับตำแหน่งเป้าหมายของคุณไม่เกินสัปดาห์ละ {n} ตำแหน่ง และแจ้งทางอีเมลเมื่อส่งแล้ว ระบบจะหัก 1 โทเคนต่อตำแหน่งหลังจากส่งถึงคุณเท่านั้น" };
+export const MATCH_THIS_WEEK: Copy = { en: "This week: {n} sent", th: "สัปดาห์นี้ส่งให้แล้ว {n} ตำแหน่ง" };
+export const MATCH_PER_WEEK: Copy = { en: "A week", th: "ต่อสัปดาห์" };
+export const MATCH_PAUSE: Copy = { en: "Pause for now", th: "หยุดรับชั่วคราว" };
+export const MATCH_RESUME: Copy = { en: "Start again", th: "กลับมารับตำแหน่งงาน" };
+export const MATCH_PAUSED: Copy = { en: "Paused. We send nothing and use no tokens until you start again.", th: "หยุดรับตำแหน่งงานชั่วคราว ระหว่างนี้ PunProfile จะไม่ส่งตำแหน่งงานหรือหักโทเคนสำหรับบริการนี้ จนกว่าคุณจะเลือกกลับมารับตำแหน่งงาน" };
 export const TOKENS_MORE: Copy = { en: "Ask for more tokens", th: "ขอโทเคนเพิ่ม" };
 export const TOKENS_LOW: Copy = { en: "Running low on tokens.", th: "โทเคนใกล้หมด" };
 export const TOKENS_REQUESTED: Copy = {

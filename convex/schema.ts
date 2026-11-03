@@ -284,6 +284,17 @@ export default defineSchema({
     /** The candidate's own weekly target for applications sent, Teal's goal
      *  ring. Set by them on their page. @absent none — no goal set */
     weeklyApplicationGoal: v.optional(v.number()),
+    /** Matched roles: the most sent in a Madrid Monday-to-Sunday week, set by
+     *  the candidate or the coach, `prd.md` § 8. @absent default — 3 */
+    matchWeeklyMax: v.optional(v.number()),
+    /** When matched roles were paused. Nothing is sent while it is set.
+     *  @absent none — not paused */
+    matchPausedAt: v.optional(v.number()),
+    /** When the next matched-role notice is scheduled to go, so a second send
+     *  the same day does not schedule another. @absent none — nothing pending */
+    matchNoticeAt: v.optional(v.number()),
+    /** When the last matched-role notice went. @absent notyet — never sent */
+    matchNoticeSentAt: v.optional(v.number()),
     /** @absent none — only present alongside a received CV */
     cvReceivedBy: v.optional(v.string()),
 
@@ -997,6 +1008,9 @@ export default defineSchema({
     /** Why a matched role was picked for this person, shown to them.
      *  @absent none — not a matched role, or no reason written */
     matchReason: v.optional(v.string()),
+    /** When the email telling the candidate about this matched role went.
+     *  @absent notyet — not a matched role, or its notice has not gone */
+    notifiedAt: v.optional(v.number()),
     /** How much the candidate wants this one, 1 to 5, their own mark. Teal's
      *  "excitement" column. @absent none — not marked */
     excitement: v.optional(v.number()),

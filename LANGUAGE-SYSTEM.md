@@ -18508,14 +18508,14 @@ path: "PRIVACY_SECTIONS[1].body[3]"
 render: "Privacy notice, PRIVACY_SECTIONS[1].body[3]"
 narrative_slot: "utility"
 en: "If you buy a PunProfile service, we also hold what you need it to work: what you bought and your token history; your CVs and the versions we prepare with you; the dates, times and our notes of your calls with us; your Fit Report ratings; your target job titles; the jobs you track on your page; the time zone you choose; anything you send us to prepare for a session; and the decisions we agree with you in a call."
-th: "หากคุณซื้อบริการจาก PunProfile จะมีการเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติโทเคน ไฟล์ CV ของคุณและฉบับที่ PunProfile จัดทำร่วมกับคุณ วัน เวลา และบันทึกการพูดคุยกับ PunProfile ผลประเมินใน Fit Report ตำแหน่งเป้าหมาย รายการตำแหน่งงานที่คุณติดตามในหน้าติดตามการสมัครงาน เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งให้ PunProfile เพื่อเตรียมการพูดคุย และข้อสรุปที่ตกลงร่วมกันระหว่างการพูดคุย"
+th: "หากคุณซื้อบริการจาก PunProfile จะมีการเก็บข้อมูลที่จำเป็นต่อการให้บริการเพิ่มเติม ได้แก่ บริการที่คุณซื้อและประวัติโทเคน ไฟล์ CV ของคุณและฉบับที่ PunProfile จัดทำร่วมกับคุณ วัน เวลา และบันทึกการพูดคุยกับ PunProfile ผลประเมินใน Fit Report ตำแหน่งเป้าหมาย รายการตำแหน่งงานที่คุณติดตามในแดชบอร์ดหางาน เขตเวลาที่คุณเลือก ข้อมูลที่คุณส่งให้ PunProfile เพื่อเตรียมการพูดคุย และข้อสรุปที่ตกลงร่วมกันระหว่างการพูดคุย"
 provenance: "paul-approved"
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดรายการข้อมูลให้ชัดเจน รักษาขอบเขตข้อมูลทุกประเภทตามต้นฉบับ และใช้ PunProfile ตามน้ำเสียงภาษาเขียน"
+decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดรายการข้อมูลให้ชัดเจน รักษาขอบเขตข้อมูลทุกประเภทตามต้นฉบับ และใช้ PunProfile ตามน้ำเสียงภาษาเขียน Page name aligned to แดชบอร์ดหางาน, the termbase term, on Paul's decision 03/11/2026."
 review:
   structural_calque: "pass"
-  text_hash: "12cf4683ae7db5dd38ef7e539971efe7b007c5b34ebb1b2aeb101be2bf3262c5"
+  text_hash: "98ae0c7b013bd99509aacea745c8089a720ced1680e73c6369aad38d33103449"
   prompt_version: "structural-calque-v1"
   basis: "Paul approved this item in review on 02/11/2026."
 ```
@@ -18963,14 +18963,14 @@ path: "PRIVACY_SECTIONS[6].body[0]"
 render: "Privacy notice, PRIVACY_SECTIONS[6].body[0]"
 narrative_slot: "utility"
 en: "Nothing that identifies you, unless you sign in to your page as a paying candidate. Signing in stores a sign-in cookie on your device so you stay signed in; signing out removes it. We use no tracking cookie. The only other thing we keep on your device is your language choice, Thai or English."
-th: "PunProfile ไม่เก็บข้อมูลที่ระบุตัวตนของคุณบนอุปกรณ์ เว้นแต่คุณเข้าสู่ระบบหน้าติดตามการสมัครงานในฐานะลูกค้าที่ชำระค่าบริการแล้ว เมื่อเข้าสู่ระบบ อุปกรณ์จะเก็บคุกกี้ไว้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ PunProfile ไม่ใช้คุกกี้ติดตาม นอกจากคุกกี้สำหรับเข้าสู่ระบบแล้ว ข้อมูลอื่นที่เก็บบนอุปกรณ์มีเพียงภาษาที่คุณเลือก คือภาษาไทยหรือภาษาอังกฤษ"
+th: "PunProfile ไม่เก็บข้อมูลที่ระบุตัวตนของคุณบนอุปกรณ์ เว้นแต่คุณเข้าสู่ระบบแดชบอร์ดหางานในฐานะลูกค้าที่ชำระค่าบริการแล้ว เมื่อเข้าสู่ระบบ อุปกรณ์จะเก็บคุกกี้ไว้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ PunProfile ไม่ใช้คุกกี้ติดตาม นอกจากคุกกี้สำหรับเข้าสู่ระบบแล้ว ข้อมูลอื่นที่เก็บบนอุปกรณ์มีเพียงภาษาที่คุณเลือก คือภาษาไทยหรือภาษาอังกฤษ"
 provenance: "paul-approved"
 date: "02/11/2026"
 term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดลำดับคำอธิบายคุกกี้ให้ต่อเนื่อง ระบุชื่อหน้าตามคำที่ผู้ใช้เข้าใจ และคงข้อกล่าวอ้างตามต้นฉบับ ไม่ใช่การตรวจสอบข้อกฎหมายหรือพฤติกรรมระบบ"
+decision_note: "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดลำดับคำอธิบายคุกกี้ให้ต่อเนื่อง ระบุชื่อหน้าตามคำที่ผู้ใช้เข้าใจ และคงข้อกล่าวอ้างตามต้นฉบับ ไม่ใช่การตรวจสอบข้อกฎหมายหรือพฤติกรรมระบบ Page name aligned to แดชบอร์ดหางาน, the termbase term, on Paul's decision 03/11/2026."
 review:
   structural_calque: "pass"
-  text_hash: "30d13fc9ceb22b57bf8e72cfcaa81c3a90247496019c6a1b5c6a36ab4ff79d82"
+  text_hash: "335c5fa5fcce78f543fb9fe77c0e13513f512c3bd96404ffa85df1bba9685724"
   prompt_version: "structural-calque-v1"
   basis: "Paul approved this item in review on 02/11/2026."
 ```
@@ -30113,6 +30113,160 @@ review:
   text_hash: 600cf67063f7e9be4224dec0041599a4f47d2bfb9ee33a6456ee93a2d6db7724
   prompt_version: structural-calque-v1
   basis: Final reviewer approved this item on 31/10/2026 under Paul’s explicit delegation in chat. Paul did not personally review each item.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_HEADING`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_HEADING
+source: src/lib/content/portal.ts
+path: MATCH_HEADING
+render: Candidate page /me, MATCH_HEADING
+narrative_slot: utility
+en: "Jobs we pick for you each week"
+th: "ตำแหน่งงานที่ PunProfile คัดให้รายสัปดาห์"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 9d00c752a572c8c750de1ba6f15eb7ed3352aebf6f1efa723f81ee04d3f0f693
+  prompt_version: structural-calque-v1
+  basis: "Paul approved this item in review on 03/11/2026."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_BODY`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_BODY
+source: src/lib/content/portal.ts
+path: MATCH_BODY
+render: Candidate page /me, MATCH_BODY
+narrative_slot: utility
+en: "We send up to {n} a week that fit your target roles, and email you when they arrive. Each one uses one token, only once it is sent."
+th: "PunProfile จะส่งตำแหน่งงานที่ตรงกับตำแหน่งเป้าหมายของคุณไม่เกินสัปดาห์ละ {n} ตำแหน่ง และแจ้งทางอีเมลเมื่อส่งแล้ว ระบบจะหัก 1 โทเคนต่อตำแหน่งหลังจากส่งถึงคุณเท่านั้น"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
+review:
+  structural_calque: pass
+  text_hash: ea00cdb5f043f2e9f44f91641b2ef85c6ed4e2e3b8b67a9d9985b3b360190a82
+  prompt_version: structural-calque-v1
+  basis: "Paul approved this item in review on 03/11/2026."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_THIS_WEEK`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_THIS_WEEK
+source: src/lib/content/portal.ts
+path: MATCH_THIS_WEEK
+render: Candidate page /me, MATCH_THIS_WEEK
+narrative_slot: utility
+en: "This week: {n} sent"
+th: "สัปดาห์นี้ส่งให้แล้ว {n} ตำแหน่ง"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul approved the Thai unchanged in review 03/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 8335179e377aed681c78ddb1af3c46587d29496c1c8912e12e81c7e49ec6521a
+  prompt_version: structural-calque-v1
+  basis: "Paul approved this item in review on 03/11/2026."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_PER_WEEK`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_PER_WEEK
+source: src/lib/content/portal.ts
+path: MATCH_PER_WEEK
+render: Candidate page /me, MATCH_PER_WEEK
+narrative_slot: utility
+en: "A week"
+th: "ต่อสัปดาห์"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul approved the Thai unchanged in review 03/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 1e9824744a99ac581df3203ce5808c61bca319ea2b87f940ff41d8f3b9b9fa59
+  prompt_version: structural-calque-v1
+  basis: "Paul approved this item in review on 03/11/2026."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_PAUSE`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_PAUSE
+source: src/lib/content/portal.ts
+path: MATCH_PAUSE
+render: Candidate page /me, MATCH_PAUSE
+narrative_slot: utility
+en: "Pause for now"
+th: "หยุดรับชั่วคราว"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
+review:
+  structural_calque: pass
+  text_hash: d526f5693579211da3c7db808477324eaafd89e21317eb7bc947258b8ff2c217
+  prompt_version: structural-calque-v1
+  basis: "Paul approved this item in review on 03/11/2026."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_RESUME`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_RESUME
+source: src/lib/content/portal.ts
+path: MATCH_RESUME
+render: Candidate page /me, MATCH_RESUME
+narrative_slot: utility
+en: "Start again"
+th: "กลับมารับตำแหน่งงาน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
+review:
+  structural_calque: pass
+  text_hash: bdc7dcd221ce357df1cd9b840b9df7e5633888aa9e45be026bb90c4ca7cd04e9
+  prompt_version: structural-calque-v1
+  basis: "Paul approved this item in review on 03/11/2026."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/portal.ts::MATCH_PAUSED`
+
+```yaml
+id: src/lib/content/portal.ts::MATCH_PAUSED
+source: src/lib/content/portal.ts
+path: MATCH_PAUSED
+render: Candidate page /me, MATCH_PAUSED
+narrative_slot: utility
+en: "Paused. We send nothing and use no tokens until you start again."
+th: "หยุดรับตำแหน่งงานชั่วคราว ระหว่างนี้ PunProfile จะไม่ส่งตำแหน่งงานหรือหักโทเคนสำหรับบริการนี้ จนกว่าคุณจะเลือกกลับมารับตำแหน่งงาน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 13fd64cfc2ee41888b183696bd15877fb200dae9f80fada1af94a9dd023282ae
+  prompt_version: structural-calque-v1
+  basis: "Paul approved this item in review on 03/11/2026."
 ```
 
 <!-- COPY-ENTRY -->

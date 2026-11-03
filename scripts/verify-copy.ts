@@ -26,6 +26,8 @@ import { DIMENSIONS } from "../src/lib/model.js";
 import { assertCandidateSafe } from "../src/lib/views.js";
 import { DESTINATIONS } from "../src/lib/content/cta.js";
 import { lintThai, type LintTarget } from "./lint-thai.js";
+import { matchEmailHtml, matchEmailText } from "../convex/matchEmail.js";
+import { codeEmailHtml } from "../convex/codeEmail.js";
 import { readSource, hashOf } from "./sync-termbase.js";
 import { TERMBASE } from "../src/lib/content/termbase.generated.js";
 
@@ -295,6 +297,13 @@ for (const used of sources.matchAll(/\bt\(\s*"([a-z][a-zA-Z.]+)"/g)) {
       })),
     ]),
     { id: "privacy intro", th: PRIVACY_INTRO.th, en: PRIVACY_INTRO.en, surface: "system" as const },
+    // The emails sit outside the language system, so they are rendered here
+    // and held to the same terms: the page they point to has one name.
+    ...[
+      { id: "email matched-role html", body: matchEmailHtml("A", [{ employer: "E", roleTitle: "R", country: "C", location: null, jobUrl: null, matchReason: null }]).replace(/<head>[\s\S]*?<\/head>/, "").replace(/<[^>]+>/g, " ") },
+      { id: "email matched-role", body: matchEmailText("A", [{ employer: "E", roleTitle: "R", country: "C", location: null, jobUrl: null, matchReason: null }]) },
+      { id: "email sign-in code", body: codeEmailHtml("A", "a@b.c", "123456", null).replace(/<head>[\s\S]*?<\/head>/, "").replace(/<[^>]+>/g, " ") },
+    ].map((e) => ({ id: e.id, th: e.body, en: "", surface: "message" as const })),
   ];
 
   const findings = lintThai(targets);

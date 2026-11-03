@@ -6928,7 +6928,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "02/11/2026",
-    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดรายการข้อมูลให้ชัดเจน รักษาขอบเขตข้อมูลทุกประเภทตามต้นฉบับ และใช้ PunProfile ตามน้ำเสียงภาษาเขียน"
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดรายการข้อมูลให้ชัดเจน รักษาขอบเขตข้อมูลทุกประเภทตามต้นฉบับ และใช้ PunProfile ตามน้ำเสียงภาษาเขียน Page name aligned to แดชบอร์ดหางาน, the termbase term, on Paul's decision 03/11/2026."
   },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[1].heading": {
     "source": "src/lib/content/privacy.ts",
@@ -7099,7 +7099,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "02/11/2026",
-    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดลำดับคำอธิบายคุกกี้ให้ต่อเนื่อง ระบุชื่อหน้าตามคำที่ผู้ใช้เข้าใจ และคงข้อกล่าวอ้างตามต้นฉบับ ไม่ใช่การตรวจสอบข้อกฎหมายหรือพฤติกรรมระบบ"
+    "decisionNote": "Drafted by Claude 02/11/2026 from the privacy additions Paul approved for paying candidates (Claude outputs/privacy-notice-paid-clients-proposal.md). Awaiting Paul's Thai verdict in the end-of-build review. Paul corrected the Thai in review 02/11/2026: จัดลำดับคำอธิบายคุกกี้ให้ต่อเนื่อง ระบุชื่อหน้าตามคำที่ผู้ใช้เข้าใจ และคงข้อกล่าวอ้างตามต้นฉบับ ไม่ใช่การตรวจสอบข้อกฎหมายหรือพฤติกรรมระบบ Page name aligned to แดชบอร์ดหางาน, the termbase term, on Paul's decision 03/11/2026."
   },
   "src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].heading": {
     "source": "src/lib/content/privacy.ts",
@@ -11393,6 +11393,69 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "31/10/2026",
     "decisionNote": "Drafted by Claude 30/10/2026 for the candidate page and its job checklist, written to the thai-candidate-voice notes. Migrated into this file 31/10/2026, unread by Paul. Slot set to utility at migration; the review may change it. Final review 31/10/2026: Accepted by the final reviewer under Paul’s explicit delegation; not a personal read-back by Paul."
+  },
+  "src/lib/content/portal.ts::MATCH_HEADING": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_HEADING",
+    "render": "Candidate page /me, MATCH_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
+  },
+  "src/lib/content/portal.ts::MATCH_BODY": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_BODY",
+    "render": "Candidate page /me, MATCH_BODY",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
+  },
+  "src/lib/content/portal.ts::MATCH_THIS_WEEK": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_THIS_WEEK",
+    "render": "Candidate page /me, MATCH_THIS_WEEK",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul approved the Thai unchanged in review 03/11/2026."
+  },
+  "src/lib/content/portal.ts::MATCH_PER_WEEK": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_PER_WEEK",
+    "render": "Candidate page /me, MATCH_PER_WEEK",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul approved the Thai unchanged in review 03/11/2026."
+  },
+  "src/lib/content/portal.ts::MATCH_PAUSE": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_PAUSE",
+    "render": "Candidate page /me, MATCH_PAUSE",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
+  },
+  "src/lib/content/portal.ts::MATCH_RESUME": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_RESUME",
+    "render": "Candidate page /me, MATCH_RESUME",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
+  },
+  "src/lib/content/portal.ts::MATCH_PAUSED": {
+    "source": "src/lib/content/portal.ts",
+    "path": "MATCH_PAUSED",
+    "render": "Candidate page /me, MATCH_PAUSED",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "03/11/2026",
+    "decisionNote": "Drafted by Claude 03/11/2026 for the weekly maximum and pause on matched roles, prd.md § 8. App register: เรา for PunProfile, คุณ for the reader. Paul corrected the Thai in review 03/11/2026."
   },
   "src/lib/content/portal.ts::TOKENS_MORE": {
     "source": "src/lib/content/portal.ts",

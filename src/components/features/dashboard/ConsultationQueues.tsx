@@ -26,6 +26,7 @@
  * message being sent.
  */
 
+import { madridDaysBetween } from "@/lib/sessionTime";
 import Link from "next/link";
 import { useMutation, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
@@ -41,12 +42,13 @@ const stamp = (ms: number) =>
     minute: "2-digit",
   });
 
-/** Whole days, floored, and never negative: "2 days ago" on something sent 60
- *  hours back is the honest read for a queue measured in days. */
+/** Calendar days in Madrid, where Paul works: a call held at 15:00 yesterday
+ *  is "yesterday" this morning, not "today" because 24 hours have not passed. */
 function daysAgo(ms: number): string {
-  const days = Math.floor((Date.now() - ms) / 86400000);
+  const days = madridDaysBetween(ms, Date.now());
   if (days <= 0) return "today";
-  return `${days} day${days === 1 ? "" : "s"} ago`;
+  if (days === 1) return "yesterday";
+  return `${days} days ago`;
 }
 
 /** Hours until, for the one bucket where the question is how soon, not how late. */

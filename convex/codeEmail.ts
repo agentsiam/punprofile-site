@@ -17,9 +17,9 @@ import { POSTS, TOPICS, type Post } from "../src/lib/content/blog";
  * article changes the next email with no edit here.
  */
 
-const SITE = "https://punprofile.app";
+export const SITE = "https://punprofile.app";
 
-const C = {
+export const C = {
   canvas: "#ffffff",
   soft: "#ecefeb",
   ink: "#0e0f0c",
@@ -34,14 +34,14 @@ const C = {
   lime: "#cdffad",
 };
 
-const FONT =
+export const FONT =
   "Anuphan, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Thai', Tahoma, Arial, sans-serif";
-const DISPLAY =
+export const DISPLAY =
   "Archivo, Anuphan, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Thai', Tahoma, Arial, sans-serif";
 
 export const CODE_EMAIL_SUBJECT = "แดชบอร์ดหางานของคุณพร้อมแล้ว | PunProfile";
 
-const esc = (s: string) =>
+export const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 export function latestPost(): Post | null {
@@ -51,7 +51,7 @@ export function latestPost(): Post | null {
 
 const ddmmyyyy = (iso: string) => iso.split("-").reverse().join("/");
 
-function button(href: string, label: string) {
+export function button(href: string, label: string) {
   return `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:9999px;background:${C.primary};">
 <a href="${href}" style="display:inline-block;padding:15px 30px;font-family:${FONT};font-size:16px;font-weight:600;line-height:20px;color:${C.onPrimary};text-decoration:none;border-radius:9999px;">${label}</a>
 </td></tr></table>`;

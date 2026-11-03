@@ -57,6 +57,13 @@ export function wallParts(instant: number, tz: string): Parts {
   };
 }
 
+/** Calendar days between `then` and `now` in Madrid: 0 today, 1 yesterday. */
+export function madridDaysBetween(then: number, now: number): number {
+  const a = wallParts(then, MADRID);
+  const b = wallParts(now, MADRID);
+  return Math.round((Date.UTC(b.y, b.m - 1, b.d) - Date.UTC(a.y, a.m - 1, a.d)) / 86400000);
+}
+
 /** Offset of `tz` from UTC at `instant`, in milliseconds. */
 export function offsetAt(instant: number, tz: string): number {
   const w = wallParts(instant, tz);
