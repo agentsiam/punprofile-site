@@ -4694,9 +4694,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "LANGUAGE_LEARNING_APPS.image.alt",
     "render": "Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.image.alt",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "03/11/2026",
-    "decisionNote": "Claude's draft, 03/11/2026, the hero alt text. Waiting on Paul."
+    "decisionNote": "Claude's draft, 03/11/2026, the hero alt text. Paul approved it unchanged 03/11/2026."
   },
   "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.question": {
     "source": "src/lib/content/posts/language-learning-apps.ts",

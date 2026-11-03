@@ -12676,15 +12676,15 @@ render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.image.alt'
 narrative_slot: utility
 en: "A young Thai man in a train window seat holds his phone and points to one of three language-app icons floating beside him"
 th: "ชายไทยนั่งริมหน้าต่างรถไฟ ถือโทรศัพท์ และชี้เลือกหนึ่งในไอคอนแอปเรียนภาษาสามตัวที่ลอยอยู่ข้าง ๆ"
-provenance: draft
+provenance: paul-approved
 date: 03/11/2026
 term_bindings: []
-decision_note: "Claude's draft, 03/11/2026, the hero alt text. Waiting on Paul."
+decision_note: "Claude's draft, 03/11/2026, the hero alt text. Paul approved it unchanged 03/11/2026."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: dd80306c96f8ffbfe9e59f09050a2d0fc02b761d6e433f14d7e7b427e975b5a9
   prompt_version: structural-calque-v1
-  basis: Draft awaiting Paul's approval of the Thai.
+  basis: Paul approved this item unchanged on 03/11/2026.
 ```
 
 <!-- COPY-ENTRY -->
