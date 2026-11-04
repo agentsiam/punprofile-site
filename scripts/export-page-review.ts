@@ -176,7 +176,6 @@ const SECTIONS: Record<string, { title: string; items: Item[] }[]> = {
         { key: "@copy:stats.market.screened", where: "Under the number 230", from: "paul" },
         { key: "@copy:stats.market.published", where: "Under the number 84", from: "paul" },
         { key: "@copy:stats.market.employers", where: "Under the number 40", from: "paul" },
-        { key: "MARKET_FOOT", where: "The small line under the three numbers", from: "new" },
       ],
     },
     {

@@ -7941,41 +7941,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/home.ts::MARKET_FOOT`
-
-```yaml
-id: src/lib/content/home.ts::MARKET_FOOT
-source: src/lib/content/home.ts
-path: MARKET_FOOT
-render: Home page, MARKET_FOOT
-narrative_slot: utility
-en: Figures from {from} to {to}. We post these roles in the Thai Jobs in Europe group.
-th: ระหว่าง {from} ถึง {to} เราได้ประกาศตำแหน่งเหล่านี้ในกลุ่ม Thai Jobs in Europe
-provenance: paul-approved
-date: 17/08/2026
-term_bindings: []
-decision_note: |-
-  The free-and-public clause was here and came out on 17/08/2026, for two
-  reasons that landed together.
-  The first is a rule. It was `เปิดฟรีและเป็นสาธารณะ`, reused verbatim from
-  `FOLLOW_BODY` in `footer.ts` on the reasoning that an approved collocation
-  beats a fresh one. Running `lint-thai` over the page modules, which
-  `verify-copy.ts` does not reach, **failed it under LR-04**: ฟรี is attached
-  to เปิด, and LR-04 allows ฟรี only on a word that already denotes a valuable
-  service. The reuse was sound and the string it reused had simply never been
-  linted. `footer.ts` still carries it and that is Paul's to decide; see
-  `npm run verify:pages`.
-  The second is better than the first. The claim belongs in `COST_ROWS`, which
-  is a whole section about what is free, and a footnote about dates is not
-  where a reader looks for it. Removing it removed a duplicate.
-review:
-  structural_calque: pass
-  text_hash: 6f4b625e9986eebcde2daa2b054c88bc331d7856b7ab51c72a979693aeaacd70
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/home.ts::MARKET_HEADING`
 
 ```yaml

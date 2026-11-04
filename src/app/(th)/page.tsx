@@ -194,9 +194,9 @@ export default function Home() {
 
             It was also on this page twice. The same figure under the same
             `stats.market.screened` label renders again in the B3 band below,
-            where it has the sentence that explains what screening means and the
-            date window under it. That band earns it; this one had the number
-            with nothing around it. Paul's call, 26/08/2026.
+            where it has the sentence that explains what screening means. That
+            band earns it; this one had the number with nothing around it.
+            Paul's call, 26/08/2026.
 
             What is left is the EU Fit Check's own proof, and it is a proof
             rather than an adjective because the reader can check it by taking
@@ -297,8 +297,7 @@ export default function Home() {
 
         {/* The one section about PunProfile doing work rather than making a
             claim, which is why it comes before anything the page asserts about
-            itself. Every figure is read from the generated snapshot and the
-            window is printed: a screening number with no window is a boast. */}
+            itself. Every figure is read from the generated snapshot. */}
       {/*
         The trust row, on the reference's own construction: a hairline, then the
         facts side by side in the open with a small chip each. Not cards.

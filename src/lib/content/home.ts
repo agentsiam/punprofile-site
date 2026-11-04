@@ -131,8 +131,10 @@ export const HERO_MASCOT_ALT: Copy = {
  * claim, which is why it sits directly under the hero.
  *
  * Figures come from `market-snapshot.generated.ts` and nothing here restates
- * them. The window is printed rather than implied, for the reason
- * `MarketProof.tsx` already gives: a screening figure with no window is a boast.
+ * them. The window the figures cover is not printed on this page: it was a
+ * footnote naming its own dates under a strip of counts, which told a reader
+ * nothing they could act on. `MarketProof.tsx` still dates its two counts,
+ * where the figure is the claim being made.
  *
  * Nothing refreshes it. `npm run market`, then commit both files.
  */
@@ -188,28 +190,6 @@ export const MARKET_STATS: readonly MarketStat[] = [
   { field: "published", label: "stats.market.published" },
   { field: "employers", label: "stats.market.employers" },
 ];
-
-export const MARKET_FOOT: Copy = {
-  en: "Figures from {from} to {to}. We post these roles in the Thai Jobs in Europe group.",
-  /*
-   * The free-and-public clause was here and came out on 17/08/2026, for two
-   * reasons that landed together.
-   *
-   * The first is a rule. It was `เปิดฟรีและเป็นสาธารณะ`, reused verbatim from
-   * `FOLLOW_BODY` in `footer.ts` on the reasoning that an approved collocation
-   * beats a fresh one. Running `lint-thai` over the page modules, which
-   * `verify-copy.ts` does not reach, **failed it under LR-04**: ฟรี is attached
-   * to เปิด, and LR-04 allows ฟรี only on a word that already denotes a valuable
-   * service. The reuse was sound and the string it reused had simply never been
-   * linted. `footer.ts` still carries it and that is Paul's to decide; see
-   * `npm run verify:pages`.
-   *
-   * The second is better than the first. The claim belongs in `COST_ROWS`, which
-   * is a whole section about what is free, and a footnote about dates is not
-   * where a reader looks for it. Removing it removed a duplicate.
-   */
-  th: "ระหว่าง {from} ถึง {to} เราได้ประกาศตำแหน่งเหล่านี้ในกลุ่ม Thai Jobs in Europe",
-};
 
 
 // ------------------------------------------------------------- the problem

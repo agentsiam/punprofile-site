@@ -2844,15 +2844,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "17/08/2026",
     "decisionNote": "*`สปอนเซอร์วีซ่า`, decided by Paul 17/08/2026**, overriding the\n\n`สนับสนุนวีซ่า` this line briefly carried. He used it as a verb three\n\ntimes in one review pass, here, on the stat label below and in\n\n`VISA_BODY`, which settles a term that had never actually been decided.\n\nIt belongs in `termbase.yml`.\n\n`ไล่ดู` and `คัดมา` rather than `อ่าน` and `ประกาศ`: the first pair\n\ndescribes sifting, the second described reading and republishing, and\n\nsifting is what the pipeline does. `สมัครได้จริง` closes on the reader."
   },
-  "src/lib/content/home.ts::MARKET_FOOT": {
-    "source": "src/lib/content/home.ts",
-    "path": "MARKET_FOOT",
-    "render": "Home page, MARKET_FOOT",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "17/08/2026",
-    "decisionNote": "The free-and-public clause was here and came out on 17/08/2026, for two\nreasons that landed together.\nThe first is a rule. It was `เปิดฟรีและเป็นสาธารณะ`, reused verbatim from\n`FOLLOW_BODY` in `footer.ts` on the reasoning that an approved collocation\nbeats a fresh one. Running `lint-thai` over the page modules, which\n`verify-copy.ts` does not reach, **failed it under LR-04**: ฟรี is attached\nto เปิด, and LR-04 allows ฟรี only on a word that already denotes a valuable\nservice. The reuse was sound and the string it reused had simply never been\nlinted. `footer.ts` still carries it and that is Paul's to decide; see\n`npm run verify:pages`.\nThe second is better than the first. The claim belongs in `COST_ROWS`, which\nis a whole section about what is free, and a footnote about dates is not\nwhere a reader looks for it. Removing it removed a duplicate."
-  },
   "src/lib/content/home.ts::MARKET_HEADING": {
     "source": "src/lib/content/home.ts",
     "path": "MARKET_HEADING",
