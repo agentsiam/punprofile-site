@@ -21494,6 +21494,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::DASH_EXAMPLE_NOTE`
+
+```yaml
+id: src/lib/content/products.ts::DASH_EXAMPLE_NOTE
+source: src/lib/content/products.ts
+path: DASH_EXAMPLE_NOTE
+render: Job Search Dashboard product page, the note under the screenshots
+narrative_slot: utility
+en: An example account with made-up data, not a real candidate's.
+th: บัญชีตัวอย่างที่ใช้ข้อมูลสมมติ ไม่ใช่ข้อมูลของผู้สมัครจริง
+provenance: paul-approved
+date: 04/11/2026
+term_bindings: []
+decision_note: Claude draft 04/11/2026 for the dashboard product page. The screenshots are the real dashboard with an invented account, and this line says so. Approved unchanged by Paul in the review of 04/11/2026.
+review:
+  structural_calque: pass
+  text_hash: db252ccea514f141500a675debec4acfbab9f2787cdb914937b1f8fe05ee43cb
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/products.ts::CARD_ACTION`
 
 ```yaml

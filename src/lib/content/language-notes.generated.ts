@@ -8127,6 +8127,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "10/09/2026",
     "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
   },
+  "src/lib/content/products.ts::DASH_EXAMPLE_NOTE": {
+    "source": "src/lib/content/products.ts",
+    "path": "DASH_EXAMPLE_NOTE",
+    "render": "Job Search Dashboard product page, the note under the screenshots",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "04/11/2026",
+    "decisionNote": "Claude draft 04/11/2026 for the dashboard product page. The screenshots are the real dashboard with an invented account, and this line says so. Approved unchanged by Paul in the review of 04/11/2026."
+  },
   "src/lib/content/products.ts::CARD_ACTION": {
     "source": "src/lib/content/products.ts",
     "path": "CARD_ACTION",

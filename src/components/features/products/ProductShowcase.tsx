@@ -17,6 +17,7 @@ import FullReportBand from "@/components/features/products/FullReportBand";
 import FitHeroNone from "@/components/features/products/fit/FitHeroNone";
 import FitAfterHero from "@/components/features/products/fit/FitAfterHero";
 import FitExpertCard from "@/components/features/products/fit/FitExpertCard";
+import { DashboardHero, DashboardHow } from "@/components/features/products/dashboard/DashboardShowcase";
 
 export interface Showcase {
   /** Replaces the summary card in the hero's right column. */
@@ -27,6 +28,8 @@ export interface Showcase {
   hideHowMedia?: boolean;
   /** A band between the hero and "how it works". */
   afterHero?: ComponentType;
+  /** Replaces the steps and their illustration inside "how it works". */
+  how?: ComponentType;
   /** A band between "how it works" and "what it does not do". */
   afterHow?: ComponentType;
 }
@@ -51,5 +54,12 @@ export const SHOWCASE: Partial<Record<string, Showcase>> = {
     afterHero: FitAfterHero,
     hideHowMedia: true,
     afterHow: FitExpertCard,
+  },
+  "job-search-dashboard": {
+    // 04/11/2026, Paul: the real product, staged. The hero is the dashboard
+    // itself in a browser and on a phone, and each "how" step sits beside the
+    // screen it happens on. Screenshots use an example account.
+    heroWide: DashboardHero,
+    how: DashboardHow,
   },
 };

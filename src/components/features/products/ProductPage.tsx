@@ -207,7 +207,9 @@ export default function ProductPage({ product }: { product: Product }) {
           {pick(product.howLede)}
         </p>
         <div className="mt-10">
-          {photo?.where === "how" ? (
+          {showcase.how ? (
+            <showcase.how />
+          ) : photo?.where === "how" ? (
             <SplitFeature reverse src={photo.src} alt="">
               <Checklist items={product.how.map((item) => ({ lead: pick(item) }))} />
             </SplitFeature>

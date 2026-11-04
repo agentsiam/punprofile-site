@@ -797,6 +797,12 @@ export const INDEX_PATH_HEADING: Copy = {
   th: "เครื่องมือแต่ละอย่างช่วยคุณในขั้นไหน",
 };
 
+/** Under the Job Search Dashboard's screenshots: the account in them is invented. 04/11/2026. */
+export const DASH_EXAMPLE_NOTE: Copy = {
+  en: "An example account with made-up data, not a real candidate's.",
+  th: "บัญชีตัวอย่างที่ใช้ข้อมูลสมมติ ไม่ใช่ข้อมูลของผู้สมัครจริง",
+};
+
 export const INDEX_PATH_LEDE: Copy = {
   en: "How each one works, step by step.",
   // Paul's wording, 06/09/2026.
