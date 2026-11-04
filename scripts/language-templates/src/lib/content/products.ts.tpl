@@ -797,6 +797,12 @@ export const INDEX_PATH_HEADING: Copy = {
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9QQVRIX0hFQURJTkc:TH%%,
 };
 
+/** Under the Job Search Dashboard's screenshots: the account in them is invented. 04/11/2026. */
+export const DASH_EXAMPLE_NOTE: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpEQVNIX0VYQU1QTEVfTk9URQ:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpEQVNIX0VYQU1QTEVfTk9URQ:TH%%,
+};
+
 export const INDEX_PATH_LEDE: Copy = {
   en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpJTkRFWF9QQVRIX0xFREU:EN%%,
   // Paul's wording, 06/09/2026.
