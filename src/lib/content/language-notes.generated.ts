@@ -8132,9 +8132,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "DASH_EXAMPLE_NOTE",
     "render": "Job Search Dashboard product page, the note under the screenshots",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "04/11/2026",
-    "decisionNote": "Claude draft 04/11/2026 for the dashboard product page. The screenshots are the real dashboard with an invented account, and this line says so."
+    "decisionNote": "Claude draft 04/11/2026 for the dashboard product page. The screenshots are the real dashboard with an invented account, and this line says so. Approved unchanged by Paul in the review of 04/11/2026."
   },
   "src/lib/content/products.ts::CARD_ACTION": {
     "source": "src/lib/content/products.ts",
