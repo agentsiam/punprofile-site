@@ -215,6 +215,12 @@ export const AI_NOTE: Copy = {
   th: %%LANG:c3JjL2xpYi9jb250ZW50L3NlcnZpY2VzLnRzOjpBSV9OT1RF:TH%%,
 };
 
+/** The fold over each service card's list on /coaching and /services. 04/11/2026. */
+export const INCLUDES_LABEL: Copy = {
+  en: %%LANG:c3JjL2xpYi9jb250ZW50L3NlcnZpY2VzLnRzOjpJTkNMVURFU19MQUJFTA:EN%%,
+  th: %%LANG:c3JjL2xpYi9jb250ZW50L3NlcnZpY2VzLnRzOjpJTkNMVURFU19MQUJFTA:TH%%,
+};
+
 export const CORE_BADGE: Copy = { en: %%LANG:c3JjL2xpYi9jb250ZW50L3NlcnZpY2VzLnRzOjpDT1JFX0JBREdF:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L3NlcnZpY2VzLnRzOjpDT1JFX0JBREdF:TH%% };
 
 /**

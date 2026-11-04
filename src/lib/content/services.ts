@@ -215,6 +215,12 @@ export const AI_NOTE: Copy = {
   th: "AI เป็นส่วนหนึ่งของทั้ง 3 บริการ คุณจะได้เรียนรู้วิธีใช้ AI ด้วยตัวเองเพื่อช่วยร่าง เตรียมตัว และค้นคว้าข้อมูล ส่วน PunProfile ใช้ AI ช่วยงานเบื้องหลังให้รวดเร็วขึ้น โดยยังใช้การคิดและการตัดสินใจของคนเป็นหลัก",
 };
 
+/** The fold over each service card's list on /coaching and /services. 04/11/2026. */
+export const INCLUDES_LABEL: Copy = {
+  en: "What is included",
+  th: "บริการนี้มีอะไรบ้าง",
+};
+
 export const CORE_BADGE: Copy = { en: "Core service", th: "บริการหลัก" };
 
 /**
