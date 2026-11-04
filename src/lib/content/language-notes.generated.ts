@@ -783,15 +783,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "14/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
-  "src/lib/content/contact.ts::CONTACT_ALREADY_IN_QUEUE": {
-    "source": "src/lib/content/contact.ts",
-    "path": "CONTACT_ALREADY_IN_QUEUE",
-    "render": "Contact page, CONTACT_ALREADY_IN_QUEUE",
-    "narrativeSlot": "ask",
-    "provenance": "paul-approved",
-    "date": "17/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
   "src/lib/content/contact.ts::CONTACT_CHANNELS": {
     "source": "src/lib/content/contact.ts",
     "path": "CONTACT_CHANNELS",
@@ -1358,15 +1349,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "15/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/copy.ts::COPY.landing.eyebrow": {
-    "source": "src/lib/content/copy.ts",
-    "path": "COPY.landing.eyebrow",
-    "render": "Landing, above the headline",
-    "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "17/08/2026",
-    "decisionNote": "Names the business, not the assessment. Same phrasing as the footer's\n\nCoaching column heading, which is Paul's.\n\n*Paul's wording, 17/08/2026**, from the review sheet. He took\n\n`แคเรียร์` off the front: `โค้ชชิ่งด้านอาชีพ` reads as the category, and\n\n`แคเรียร์โค้ชชิ่ง` is the service name, which belongs on the card in\n\nsection 3 rather than in the line that says who this site is for."
   },
   "src/lib/content/copy.ts::COPY.landing.headline": {
     "source": "src/lib/content/copy.ts",

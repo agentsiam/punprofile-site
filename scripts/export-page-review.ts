@@ -160,7 +160,6 @@ const SECTIONS: Record<string, { title: string; items: Item[] }[]> = {
     {
       title: "1. Hero",
       items: [
-        { key: "@copy:landing.eyebrow", where: "The small line above the headline", from: "paul" },
         { key: "@copy:landing.headline", where: "The headline, and the browser tab on every page", from: "paul" },
         { key: "HERO_STANDING", where: "Hero, first paragraph", from: "paul" },
         { key: "HERO_REFRAME", where: "Hero, second paragraph", from: "paul" },

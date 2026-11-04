@@ -2249,28 +2249,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/contact.ts::CONTACT_ALREADY_IN_QUEUE`
-
-```yaml
-id: src/lib/content/contact.ts::CONTACT_ALREADY_IN_QUEUE
-source: src/lib/content/contact.ts
-path: CONTACT_ALREADY_IN_QUEUE
-render: Contact page, CONTACT_ALREADY_IN_QUEUE
-narrative_slot: ask
-en: If you have already taken the check and left your details, you are in the queue. No need to write as well.
-th: ถ้าคุณทำแบบประเมินและฝากช่องทางติดต่อไว้แล้ว คุณอยู่ในคิวเรียบร้อย ไม่ต้องส่งข้อความมาซ้ำ
-provenance: paul-approved
-date: 17/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 17da3af3c1ebac6cdb25e3a85bc239d0b22852c290e7fec14eb0fd3d8bb1464b
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/contact.ts::CONTACT_CHANNELS`
 
 ```yaml
@@ -3763,39 +3741,6 @@ decision_note: No string-local reasoning comment was present at migration.
 review:
   structural_calque: pass
   text_hash: d4925e7fb5f72f21416895a90e5cb2e759e0a5e88fe9d57cc4cc14022179621c
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.landing.eyebrow`
-
-```yaml
-id: src/lib/content/copy.ts::COPY.landing.eyebrow
-source: src/lib/content/copy.ts
-path: COPY.landing.eyebrow
-render: Landing, above the headline
-narrative_slot: utility
-en: Career coaching for Thai professionals heading to Europe
-th: โค้ชชิ่งด้านอาชีพสำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป
-provenance: paul-written
-date: 17/08/2026
-term_bindings: []
-decision_note: |-
-  Names the business, not the assessment. Same phrasing as the footer's
-
-  Coaching column heading, which is Paul's.
-
-  *Paul's wording, 17/08/2026**, from the review sheet. He took
-
-  `แคเรียร์` off the front: `โค้ชชิ่งด้านอาชีพ` reads as the category, and
-
-  `แคเรียร์โค้ชชิ่ง` is the service name, which belongs on the card in
-
-  section 3 rather than in the line that says who this site is for.
-review:
-  structural_calque: pass
-  text_hash: 93c8099802f295120e5c1ed3474bf8e2c1fa358fc709b205d3ac75da2e3b7b79
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```

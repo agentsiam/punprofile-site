@@ -39,7 +39,6 @@ import CallToAction from "@/components/CallToAction";
 import Band from "@/components/Band";
 import { HERO_HEADING } from "@/lib/content/footer";
 import {
-  CONTACT_ALREADY_IN_QUEUE,
   CONTACT_CHANNELS,
   CONTACT_HEADING,
   CONTACT_INTRO,
@@ -73,9 +72,6 @@ export default function ContactPage() {
             <div className="card-plain mt-8 px-6 py-6">
               <CallToAction page="/contact" />
               <p className="mt-5 text-body-medium text-body">{pick(CONTACT_CHANNELS)}</p>
-              <p className="mt-4 border-t border-line pt-4 text-body-medium text-body">
-                {pick(CONTACT_ALREADY_IN_QUEUE)}
-              </p>
             </div>
           </div>
 
