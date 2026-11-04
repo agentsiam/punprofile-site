@@ -979,7 +979,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "15/08/2026",
-    "decisionNote": "Not translated. The brand name, the year and a rights line read the same\n\nto both audiences, and a Thai transliteration of a legal formula reads\n\nas a mistake rather than as a courtesy."
+    "decisionNote": "Not translated. The brand name reads the same to both audiences, and a Thai\ntransliteration of a legal formula reads as a mistake rather than a courtesy.\n\nThe year and the rights formula came off on 04/11/2026, Paul's call. 2026 was\ntyped into the string, so the line was wrong from 01/01/2027 with nothing in\nthe app able to notice, and All Rights Reserved grants nothing that copyright\ndoes not grant without it. `footer-legal` in `termbase.yml` carries the old\nline as banned so it cannot come back from the English."
   },
   "src/lib/content/copy.ts::COPY.gate.body": {
     "source": "src/lib/content/copy.ts",
