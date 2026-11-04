@@ -25714,9 +25714,9 @@ narrative_slot: utility
 en: What is included
 th: บริการนี้มีอะไรบ้าง
 provenance: paul-approved
-date: 03/11/2026
+date: 04/11/2026
 term_bindings: []
-decision_note: Claude draft 04/11/2026 for the /coaching revamp (Paul chose 1a), the label that opens each service card's list. Approved unchanged by Paul in the review of 03/11/2026.
+decision_note: Claude draft 04/11/2026 for the /coaching revamp (Paul chose 1a), the label that opens each service card's list. Approved unchanged by Paul in the review of 04/11/2026.
 review:
   structural_calque: pass
   text_hash: dadc9d90de9aeefee41900a265fcd751800a2dec89f268e5bc7e839c77b33dab

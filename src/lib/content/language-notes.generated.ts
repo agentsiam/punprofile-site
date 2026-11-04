@@ -9725,9 +9725,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "INCLUDES_LABEL",
     "render": "Coaching and services pages, the fold over each service card's list",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "04/11/2026",
-    "decisionNote": "Claude draft 04/11/2026 for the /coaching revamp (Paul chose 1a), the label that opens each service card's list."
+    "decisionNote": "Claude draft 04/11/2026 for the /coaching revamp (Paul chose 1a), the label that opens each service card's list. Approved unchanged by Paul in the review of 04/11/2026."
   },
   "src/lib/content/services.ts::AI_NOTE": {
     "source": "src/lib/content/services.ts",
