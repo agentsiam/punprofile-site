@@ -7476,8 +7476,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Pricing page, FREE_ITEMS[0].body",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "04/11/2026",
+    "decisionNote": "No string-local reasoning comment was present at migration.\n\nThe group named out of the line on Paul's instruction of 04/11/2026:\n`ในกลุ่ม Thai Jobs in Europe` is deleted and nothing is added.\n\nIt went into the language queue expected to need new words, because the row\nnow says the screened jobs are free to read and no longer says where they are\nread. He ticked it unchanged in the pass of 04/11/2026, so the row names no\ndestination by decision rather than by omission."
   },
   "src/lib/content/pricing.ts::FREE_ITEMS[0].name": {
     "source": "src/lib/content/pricing.ts",
@@ -11313,15 +11313,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "28/10/2026",
     "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
   },
-  "src/lib/content/products.ts::FIT_EXPERT.facts[3]": {
-    "source": "src/lib/content/products.ts",
-    "path": "FIT_EXPERT.facts[3]",
-    "render": "Fit Report page, who interviews you",
-    "narrativeSlot": "proof",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
-  },
   "src/lib/content/products.ts::FIT_EXPERT.link": {
     "source": "src/lib/content/products.ts",
     "path": "FIT_EXPERT.link",
@@ -11435,9 +11426,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COACHES[0].story[2]",
     "render": "Coaching page, Paul's story",
     "narrativeSlot": "proof",
-    "provenance": "paul-approved",
-    "date": "30/10/2026",
-    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+    "provenance": "paul-written",
+    "date": "04/11/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026.\n\nThe closing sentence about running the group came out on his instruction of\n04/11/2026, when the group stopped being named anywhere on the site, and the\nshortened paragraph went into the language queue.\n\n**He rewrote it there rather than ticking it**, in the pass of 04/11/2026:\n`อ่านโปรไฟล์` for `ดูโปรไฟล์`, `ตั้งคำถามคล้ายกับ` for `ดูคล้ายกับ`, and\n`สิ่งที่เล่าทั้งหมดสอดคล้องกันไหม` for `สิ่งที่เล่ามาสอดคล้องกันหรือเปล่า`. The\nEnglish follows: he reads a profile rather than looks at one, and it is the\nwhole story that has to hold together."
   },
   "src/lib/content/coaching.ts::COACHES[0].story[3]": {
     "source": "src/lib/content/coaching.ts",

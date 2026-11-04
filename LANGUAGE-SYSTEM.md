@@ -19749,17 +19749,26 @@ source: src/lib/content/pricing.ts
 path: FREE_ITEMS[0].body
 render: Pricing page, FREE_ITEMS[0].body
 narrative_slot: utility
-en: Posted in the Thai Jobs in Europe group, free for anyone to read.
-th: ประกาศงานในกลุ่ม Thai Jobs in Europe เปิดให้ทุกคนอ่านฟรี
+en: "Free for anyone to read."
+th: "ประกาศงาน เปิดให้ทุกคนอ่านฟรี"
 provenance: paul-approved
-date: 23/08/2026
+date: 04/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: |-
+  No string-local reasoning comment was present at migration.
+
+  The group named out of the line on Paul's instruction of 04/11/2026:
+  `ในกลุ่ม Thai Jobs in Europe` is deleted and nothing is added.
+
+  It went into the language queue expected to need new words, because the row
+  now says the screened jobs are free to read and no longer says where they are
+  read. He ticked it unchanged in the pass of 04/11/2026, so the row names no
+  destination by decision rather than by omission.
 review:
   structural_calque: pass
-  text_hash: 694c3a27553f363da36fca9ba82c1e94d1c5ee06c88e4dd2ab487cdd81f707b0
+  text_hash: 616da56074d8b5bd4130a8e3b146ca18952ce75595387d7f1190b1f6bd91d2c3
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul read this in the language queue on 04/11/2026 and ticked it unchanged.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29720,28 +29729,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_EXPERT.facts[3]`
-
-```yaml
-id: src/lib/content/products.ts::FIT_EXPERT.facts[3]
-source: src/lib/content/products.ts
-path: FIT_EXPERT.facts[3]
-render: Fit Report page, who interviews you
-narrative_slot: proof
-en: Runs the “Jobs at companies in Europe” group
-th: ผู้ดูแลกลุ่ม “งานบริษัทในยุโรป”
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
-review:
-  structural_calque: pass
-  text_hash: 44df12fa1df246716ef695bab6f427589f05ab172cf726eb91be815401228bde
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/products.ts::FIT_EXPERT.link`
 
 ```yaml
@@ -30014,17 +30001,28 @@ source: src/lib/content/coaching.ts
 path: COACHES[0].story[2]
 render: Coaching page, Paul's story
 narrative_slot: proof
-en: "I work in marketing, so when I look at a candidate’s profile, I ask similar questions to those I ask about a brand: what makes it stand out, what it wants to be known for, and whether the story is consistent. I also run the “Jobs at companies in Europe” group, where many people first get to know me."
-th: "ผมทำงานด้านการตลาด เวลาดูโปรไฟล์ผู้สมัคร ผมจึงดูคล้ายกับเวลาดูแบรนด์ว่า จุดเด่นคืออะไร อยากให้คนจดจำในเรื่องไหน และสิ่งที่เล่ามาสอดคล้องกันหรือเปล่า ผมยังดูแลกลุ่ม “งานบริษัทในยุโรป” ด้วย หลายคนรู้จักผมครั้งแรกผ่านกลุ่มนี้"
-provenance: paul-approved
-date: 30/10/2026
+en: "I work in marketing, so when I read a candidate’s profile, I ask similar questions to those I ask about a brand: what makes it stand out, what it wants to be known for, and whether the whole story is consistent."
+th: "ผมทำงานด้านการตลาด เวลาอ่านโปรไฟล์ผู้สมัคร ผมจึงตั้งคำถามคล้ายกับเวลาดูแบรนด์ว่า อะไรคือจุดเด่น อยากให้คนจดจำเรื่องอะไร และสิ่งที่เล่าทั้งหมดสอดคล้องกันไหม"
+provenance: paul-written
+date: 04/11/2026
 term_bindings: []
-decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+decision_note: |-
+  Coach section redesign (founder-copy.md), Paul's review of 30/10/2026.
+
+  The closing sentence about running the group came out on his instruction of
+  04/11/2026, when the group stopped being named anywhere on the site, and the
+  shortened paragraph went into the language queue.
+
+  **He rewrote it there rather than ticking it**, in the pass of 04/11/2026:
+  `อ่านโปรไฟล์` for `ดูโปรไฟล์`, `ตั้งคำถามคล้ายกับ` for `ดูคล้ายกับ`, and
+  `สิ่งที่เล่าทั้งหมดสอดคล้องกันไหม` for `สิ่งที่เล่ามาสอดคล้องกันหรือเปล่า`. The
+  English follows: he reads a profile rather than looks at one, and it is the
+  whole story that has to hold together.
 review:
   structural_calque: pass
-  text_hash: 3f747b997aeee02d0877fbba049c4f7981fd8f9d1e65342f3eb5cc3f5371b189
+  text_hash: 14ffb57a6a491d852405cf243460838fc1d5eea816869026438f524a05e77061
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: Paul wrote this Thai in the language queue on 04/11/2026.
 ```
 
 <!-- COPY-ENTRY -->
