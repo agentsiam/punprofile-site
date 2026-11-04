@@ -1689,8 +1689,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Site menu, the Products group",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "date": "04/11/2026",
+    "decisionNote": "**In the Thai menu this heading sat above a row saying \"Our Services\"**, the\nsame two words once in each language, one above the other. The English menu\nnever clashed, because its heading is Products. It came about by sequence: the\nrow went English with the rest of the navigation on 15/08/2026 and the heading\nwas rewritten to `บริการของเรา` eight days later.\n\n`our-services` says the fix is the term. Paul's call of 04/11/2026 is the\nheading instead, because moving the row reopens one decision that covers Menu,\nClose menu, Our Services, FAQ and Contact together.\n\n**`เครื่องมือและบริการ` is his**, written in the language pass of 04/11/2026\nover a draft of `เครื่องมือและการโค้ช` that he did not take. His reason:\n`ครอบคลุมทั้งเครื่องมือและบริการในเมนู โดยไม่จำกัดบริการไว้เฉพาะการโค้ช`. The\ndraft named the coaching and so spoke for one row out of eight.\n\nThe English heading stays Products, which is his word of 23/08/2026 and\ncollides with nothing. The two headings now say different things, which is a\nthing to look at if the English menu is ever reworked, not a drift to correct\nhere."
   },
   "src/lib/content/copy.ts::COPY.nav.services": {
     "source": "src/lib/content/copy.ts",

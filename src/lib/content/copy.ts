@@ -165,7 +165,7 @@ export const COPY = {
     screen: "Site menu, the Products group",
     en: "Products",
     // Paul's wording, 23/08/2026.
-    th: "บริการของเรา",
+    th: "เครื่องมือและบริการ",
   },
   /*
    * The four product names, added 23/08/2026 with the product pages.

@@ -4723,16 +4723,35 @@ path: COPY.nav.products
 render: Site menu, the Products group
 narrative_slot: utility
 en: Products
-th: บริการของเรา
+th: เครื่องมือและบริการ
 provenance: paul-written
-date: 23/08/2026
+date: 04/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: |-
+  **In the Thai menu this heading sat above a row saying "Our Services"**, the
+  same two words once in each language, one above the other. The English menu
+  never clashed, because its heading is Products. It came about by sequence: the
+  row went English with the rest of the navigation on 15/08/2026 and the heading
+  was rewritten to `บริการของเรา` eight days later.
+
+  `our-services` says the fix is the term. Paul's call of 04/11/2026 is the
+  heading instead, because moving the row reopens one decision that covers Menu,
+  Close menu, Our Services, FAQ and Contact together.
+
+  **`เครื่องมือและบริการ` is his**, written in the language pass of 04/11/2026
+  over a draft of `เครื่องมือและการโค้ช` that he did not take. His reason:
+  `ครอบคลุมทั้งเครื่องมือและบริการในเมนู โดยไม่จำกัดบริการไว้เฉพาะการโค้ช`. The
+  draft named the coaching and so spoke for one row out of eight.
+
+  The English heading stays Products, which is his word of 23/08/2026 and
+  collides with nothing. The two headings now say different things, which is a
+  thing to look at if the English menu is ever reworked, not a drift to correct
+  here.
 review:
   structural_calque: pass
-  text_hash: ad0cfdfc55a7f7c9d7415c9d49ca8ead59c54aeeffb1a27144d46dfbc062f406
+  text_hash: 86b5908bd703a03e4f37998044dcbf8c66e9c897ee0cfa18269c2cbd4881225b
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul wrote this Thai in the language queue on 04/11/2026.
 ```
 
 <!-- COPY-ENTRY -->
