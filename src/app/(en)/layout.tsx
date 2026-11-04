@@ -67,5 +67,9 @@ export const metadata: Metadata = {
 export default function EnglishRootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return <SiteShell locale="en">{children}</SiteShell>;
+  return (
+    <SiteShell locale="en" analytics>
+      {children}
+    </SiteShell>
+  );
 }

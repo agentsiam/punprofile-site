@@ -111,5 +111,9 @@ export const metadata: Metadata = {
 export default function ThaiRootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return <SiteShell locale="th">{children}</SiteShell>;
+  return (
+    <SiteShell locale="th" analytics>
+      {children}
+    </SiteShell>
+  );
 }

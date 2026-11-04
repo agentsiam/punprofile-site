@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 import { localePath, pick, t } from "@/lib/locale";
 import type { Locale } from "@/lib/locale";
 import {
@@ -37,7 +38,18 @@ import {
  * link inside the consent copy, which is the screen where it is actually needed
  * and the only screen in the flow that collects anything.
  */
-export default function SiteFooter({ locale }: { locale: Locale }) {
+export default function SiteFooter({
+  locale,
+  analytics = false,
+}: {
+  locale: Locale;
+  /**
+   * Whether this tree runs the Google tag, which is the only reason the cookie
+   * control is here. `(private)` passes nothing and gets no control, because
+   * `/admin` and `/me` carry no tag and there is no cookie to withdraw.
+   */
+  analytics?: boolean;
+}) {
 
   /*
    * The top hairline is ours and not the reference's. Its pages end on white,
@@ -173,12 +185,18 @@ export default function SiteFooter({ locale }: { locale: Locale }) {
               languages by his decision: a Thai transliteration of a legal
               formula reads as a mistake rather than as a courtesy. */}
           <span>{t("footer.brand", locale)}</span>
-          <Link
-            href={localePath("/privacy", locale)}
-            className="underline underline-offset-4 duration-[350ms] ease-nav transition-colors hover:text-ink-deep"
-          >
-            {t("consent.privacyLink", locale)}
-          </Link>
+          {/* Two peers in one row: the notice that says what the cookie does,
+              and the control that changes the answer to it. Same type and same
+              underline, because withdrawing has to be as easy as agreeing. */}
+          <span className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link
+              href={localePath("/privacy", locale)}
+              className="underline underline-offset-4 duration-[350ms] ease-nav transition-colors hover:text-ink-deep"
+            >
+              {t("consent.privacyLink", locale)}
+            </Link>
+            {analytics ? <CookieSettingsButton /> : null}
+          </span>
         </div>
       </div>
       </div>
