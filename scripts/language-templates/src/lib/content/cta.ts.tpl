@@ -363,13 +363,25 @@ export const PAGE_ACTIONS: Record<string, PageActions> = {
     primary: "contact",
     secondary: "pricing",
     because:
-      "It is not built. The secondary goes to the prices because this is the product the tokens exist for, and a reader here is usually asking what it costs.",
+      "Bought in token packs by message while payment is a bank transfer arranged by hand, so the ask is a conversation. The secondary goes to the prices because this is the product the tokens exist for, and a reader here is usually asking what it costs.",
   },
-  "/products/guided-job-hunt": {
+  /**
+   * The closing band on `/products` and on every product page, Paul's call of
+   * 03/11/2026 (copy review, 2b). Its words are "Tell me where you are and what
+   * you are aiming at, and I will say which of these is worth your time", which
+   * asks for a conversation, so its button is the conversation on every page.
+   * Each hero keeps its own page's primary.
+   */
+  "product-close": {
     primary: "contact",
-    secondary: "pricing",
     because:
-      "It is not built, and it is the surface matched roles land on, so the prices are the page that explains what fills it.",
+      "The closing words ask the reader to say where they are, so the button is the conversation, on every product page and the catalogue alike. The heroes keep their own primaries.",
+  },
+  "/products/job-search-dashboard": {
+    primary: "pricing",
+    secondary: "contact",
+    because:
+      "It opens with a candidate's first token pack, so the ask is the packs. The packs are bought by message, so the secondary is the conversation.",
   },
   /**
    * `/products` and `/services`, added 06/09/2026 with the two pages.
@@ -384,9 +396,9 @@ export const PAGE_ACTIONS: Record<string, PageActions> = {
    */
   "/products": {
     primary: "assess",
-    secondary: "pricing",
+    secondary: "coaching",
     because:
-      "A reader looking at all five at once has chosen none of them. The check is the cheapest thing we can ask for and the only one that hands something back the same minute, which is the landing page's reasoning and holds here for the same reason.",
+      "A reader looking at all five at once has chosen none of them. The check is the cheapest thing we can ask for and the only one that hands something back the same minute, which is the landing page's reasoning and holds here for the same reason. The secondary is the coaching since 03/11/2026, Paul's call that this page was not selling it; the prices stay one tap away in the menu.",
   },
   "/services": {
     primary: "contact",

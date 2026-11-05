@@ -1358,15 +1358,15 @@ source: src/lib/content/coaching.ts
 path: HOOK_EYEBROW
 render: Coaching page, HOOK_EYEBROW
 narrative_slot: utility
-en: 1-1 career coaching for Thai professionals heading to Europe
-th: Career Coaching แบบตัวต่อตัว สำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป
+en: Coaching 1:1 for Thai professionals heading to Europe
+th: Coaching 1:1 สำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป
 provenance: paul-approved
-date: 25/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`.
+decision_note: 'Copy review 03/11/2026, Q3: the termbase names the whole offer Coaching 1:1 and keeps Career Coaching for the first service. Approved unchanged by Paul in the review of 03/11/2026.'
 review:
   structural_calque: pass
-  text_hash: 3d077cdfef31d98d18a2bc913dbfaabd8eedf9509f6903e4cc204d8b66ee8ea8
+  text_hash: 9a5de1d6248f6ea8e0d9436b89be443dc88b6772f3d8ec347fb0e31642c39a86
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -2249,28 +2249,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/contact.ts::CONTACT_ALREADY_IN_QUEUE`
-
-```yaml
-id: src/lib/content/contact.ts::CONTACT_ALREADY_IN_QUEUE
-source: src/lib/content/contact.ts
-path: CONTACT_ALREADY_IN_QUEUE
-render: Contact page, CONTACT_ALREADY_IN_QUEUE
-narrative_slot: ask
-en: If you have already taken the check and left your details, you are in the queue. No need to write as well.
-th: ถ้าคุณทำแบบประเมินและฝากช่องทางติดต่อไว้แล้ว คุณอยู่ในคิวเรียบร้อย ไม่ต้องส่งข้อความมาซ้ำ
-provenance: paul-approved
-date: 17/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 17da3af3c1ebac6cdb25e3a85bc239d0b22852c290e7fec14eb0fd3d8bb1464b
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/contact.ts::CONTACT_CHANNELS`
 
 ```yaml
@@ -2782,23 +2760,26 @@ source: src/lib/content/copy.ts
 path: COPY.footer.brand
 render: Footer, every screen
 narrative_slot: utility
-en: PunProfile Career Coaching | 2026 | All Rights Reserved
-th: PunProfile Career Coaching | 2026 | All Rights Reserved
+en: PunProfile Career Coaching
+th: PunProfile Career Coaching
 provenance: paul-approved
 date: 15/08/2026
 term_bindings:
   - footer-legal
 decision_note: |-
-  Not translated. The brand name, the year and a rights line read the same
+  Not translated. The brand name reads the same to both audiences, and a Thai
+  transliteration of a legal formula reads as a mistake rather than a courtesy.
 
-  to both audiences, and a Thai transliteration of a legal formula reads
-
-  as a mistake rather than as a courtesy.
+  The year and the rights formula came off on 04/11/2026, Paul's call. 2026 was
+  typed into the string, so the line was wrong from 01/01/2027 with nothing in
+  the app able to notice, and All Rights Reserved grants nothing that copyright
+  does not grant without it. `footer-legal` in `termbase.yml` carries the old
+  line as banned so it cannot come back from the English.
 review:
   structural_calque: pass
-  text_hash: ab71364fdb2ecfd18c43e03e9d669036160c160c5eafd6e940e6a0f3380df2bf
+  text_hash: a035c2fda65583df2f180e27552d057c2f393753916d85ec413c579313959f46
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's call of 04/11/2026, cutting the year and the rights formula. The name that remains is unchanged and untranslated.
 ```
 
 <!-- COPY-ENTRY -->
@@ -3765,39 +3746,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.landing.eyebrow`
-
-```yaml
-id: src/lib/content/copy.ts::COPY.landing.eyebrow
-source: src/lib/content/copy.ts
-path: COPY.landing.eyebrow
-render: Landing, above the headline
-narrative_slot: utility
-en: Career coaching for Thai professionals heading to Europe
-th: โค้ชชิ่งด้านอาชีพสำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป
-provenance: paul-written
-date: 17/08/2026
-term_bindings: []
-decision_note: |-
-  Names the business, not the assessment. Same phrasing as the footer's
-
-  Coaching column heading, which is Paul's.
-
-  *Paul's wording, 17/08/2026**, from the review sheet. He took
-
-  `แคเรียร์` off the front: `โค้ชชิ่งด้านอาชีพ` reads as the category, and
-
-  `แคเรียร์โค้ชชิ่ง` is the service name, which belongs on the card in
-
-  section 3 rather than in the line that says who this site is for.
-review:
-  structural_calque: pass
-  text_hash: 93c8099802f295120e5c1ed3474bf8e2c1fa358fc709b205d3ac75da2e3b7b79
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/copy.ts::COPY.landing.headline`
 
 ```yaml
@@ -4627,29 +4575,26 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.nav.guidedJobHunt`
+### `src/lib/content/copy.ts::COPY.nav.jobSearchDashboard`
 
 ```yaml
-id: src/lib/content/copy.ts::COPY.nav.guidedJobHunt
-source: src/lib/content/copy.ts
-path: COPY.nav.guidedJobHunt
-render: Site menu, the Products group
-narrative_slot: utility
-en: Guided Job Hunt
-th: Guided Job Hunt
+id: "src/lib/content/copy.ts::COPY.nav.jobSearchDashboard"
+source: "src/lib/content/copy.ts"
+path: "COPY.nav.jobSearchDashboard"
+render: "Site menu, the Products group"
+narrative_slot: "utility"
+en: "Job Search Dashboard"
+th: "แดชบอร์ดหางาน"
 provenance: paul-approved
-date: 10/09/2026
+date: "03/11/2026"
 term_bindings:
-  - product-guided-job-hunt
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+  - page-job-search-dashboard
+decision_note: "Renamed from Guided Job Hunt on Paul's call of 03/11/2026. The Thai is the fixed term page-job-search-dashboard."
 review:
   structural_calque: pass
-  text_hash: 0306c1557b504fc623b194bbe30c6302c7f52d7e43f51c9c42965ed3747f4b9c
+  text_hash: 9bde47f229c3eff7959f777501e0e951a350901f08a035996cd7c638bd727490
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: "Paul decided this name 03/11/2026 (termbase page-job-search-dashboard); the rename was approved the same day."
 ```
 
 <!-- COPY-ENTRY -->
@@ -4778,16 +4723,35 @@ path: COPY.nav.products
 render: Site menu, the Products group
 narrative_slot: utility
 en: Products
-th: บริการของเรา
+th: เครื่องมือและบริการ
 provenance: paul-written
-date: 23/08/2026
+date: 04/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: |-
+  **In the Thai menu this heading sat above a row saying "Our Services"**, the
+  same two words once in each language, one above the other. The English menu
+  never clashed, because its heading is Products. It came about by sequence: the
+  row went English with the rest of the navigation on 15/08/2026 and the heading
+  was rewritten to `บริการของเรา` eight days later.
+
+  `our-services` says the fix is the term. Paul's call of 04/11/2026 is the
+  heading instead, because moving the row reopens one decision that covers Menu,
+  Close menu, Our Services, FAQ and Contact together.
+
+  **`เครื่องมือและบริการ` is his**, written in the language pass of 04/11/2026
+  over a draft of `เครื่องมือและการโค้ช` that he did not take. His reason:
+  `ครอบคลุมทั้งเครื่องมือและบริการในเมนู โดยไม่จำกัดบริการไว้เฉพาะการโค้ช`. The
+  draft named the coaching and so spoke for one row out of eight.
+
+  The English heading stays Products, which is his word of 23/08/2026 and
+  collides with nothing. The two headings now say different things, which is a
+  thing to look at if the English menu is ever reworked, not a drift to correct
+  here.
 review:
   structural_calque: pass
-  text_hash: ad0cfdfc55a7f7c9d7415c9d49ca8ead59c54aeeffb1a27144d46dfbc062f406
+  text_hash: 86b5908bd703a03e4f37998044dcbf8c66e9c897ee0cfa18269c2cbd4881225b
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul wrote this Thai in the language queue on 04/11/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -6817,20 +6781,17 @@ source: src/lib/content/faq.ts
 path: FAQ[6].q
 render: FAQ page, FAQ[6].q
 narrative_slot: utility
-en: What does Career Coaching cost?
-th: บริการ Career Coaching ราคาเท่าไร
+en: What does Coaching 1:1 cost?
+th: Coaching 1:1 ราคาเท่าไร
 provenance: paul-approved
-date: 10/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+decision_note: 'Copy review 03/11/2026, Q3: the question is about the whole offer, which the termbase names Coaching 1:1. Approved unchanged by Paul in the review of 03/11/2026.'
 review:
   structural_calque: pass
-  text_hash: d41c8c27a4ef0f0aaf6a7abe5852101864c3549f74c0a23c5cbdc6b7a9ffb20a
+  text_hash: d50cae181dba343000e63dbfe17df547f64c38b3bbb6900c5bc53067ca26897d
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -7947,41 +7908,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/home.ts::MARKET_FOOT`
-
-```yaml
-id: src/lib/content/home.ts::MARKET_FOOT
-source: src/lib/content/home.ts
-path: MARKET_FOOT
-render: Home page, MARKET_FOOT
-narrative_slot: utility
-en: Figures from {from} to {to}. We post these roles in the Thai Jobs in Europe group.
-th: ระหว่าง {from} ถึง {to} เราได้ประกาศตำแหน่งเหล่านี้ในกลุ่ม Thai Jobs in Europe
-provenance: paul-approved
-date: 17/08/2026
-term_bindings: []
-decision_note: |-
-  The free-and-public clause was here and came out on 17/08/2026, for two
-  reasons that landed together.
-  The first is a rule. It was `เปิดฟรีและเป็นสาธารณะ`, reused verbatim from
-  `FOLLOW_BODY` in `footer.ts` on the reasoning that an approved collocation
-  beats a fresh one. Running `lint-thai` over the page modules, which
-  `verify-copy.ts` does not reach, **failed it under LR-04**: ฟรี is attached
-  to เปิด, and LR-04 allows ฟรี only on a word that already denotes a valuable
-  service. The reuse was sound and the string it reused had simply never been
-  linted. `footer.ts` still carries it and that is Paul's to decide; see
-  `npm run verify:pages`.
-  The second is better than the first. The claim belongs in `COST_ROWS`, which
-  is a whole section about what is free, and a footnote about dates is not
-  where a reader looks for it. Removing it removed a duplicate.
-review:
-  structural_calque: pass
-  text_hash: 6f4b625e9986eebcde2daa2b054c88bc331d7856b7ab51c72a979693aeaacd70
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/home.ts::MARKET_HEADING`
 
 ```yaml
@@ -8723,18 +8649,15 @@ source: src/lib/content/home.ts
 path: SAMPLE_NOTE
 render: Home page, SAMPLE_NOTE
 narrative_slot: proof
-en: An example, not a real person. Your own numbers come from your own answers.
-th: นี่เป็นเพียงตัวอย่าง ไม่ใช่ผลของคนจริง ตัวเลขของคุณจะมาจากคำตอบของคุณเอง
-provenance: paul-approved
-date: 23/08/2026
+en: This chart is an example. Your own result comes from the answers you give.
+th: กราฟนี้เป็นตัวอย่าง ส่วนผลประเมินของคุณจะมาจากคำตอบที่คุณให้
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Read back 25/08/2026. Built on the shape of Paul's own calculator
-
-  disclaimer of 23/08/2026, which says the numbers come from what you typed.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "An example, not a real person. Your own numbers come from your own answers." TH: "นี่เป็นเพียงตัวอย่าง ไม่ใช่ผลของคนจริง ตัวเลขของคุณจะมาจากคำตอบของคุณเอง".'
 review:
   structural_calque: pass
-  text_hash: 9f6dfe5339354be893d538e3fc0bdb4d8e4984f75d2ce2f91bbaf194ec794a7e
+  text_hash: b2498e53d6ff1a3c06b5cc40999e0034f8c0a6511b989c804062d8f8989f016f
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -9130,22 +9053,22 @@ review:
 ### `src/lib/content/home.ts::WHO_BODY`
 
 ```yaml
-id: src/lib/content/home.ts::WHO_BODY
-source: src/lib/content/home.ts
-path: WHO_BODY
-render: Home page, WHO_BODY
-narrative_slot: house.not
-en: "We are two coaches who also hire for a living, reading CVs and deciding who goes forward. PunProfile is paid by you, not by employers, so our advice starts from your goals, not from a vacancy a company is rushing to fill."
-th: "เราเป็นโค้ชสองคนที่ทำงานคัดเลือกคนเข้าทำงาน ทั้งอ่าน CV และตัดสินใจว่าใครจะได้ไปต่อ ส่วน PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง คำแนะนำของเราจึงเริ่มจากเป้าหมายของคุณ ไม่ใช่จากตำแหน่งว่างที่บริษัทกำลังเร่งหาคน"
-provenance: paul-approved
-date: 30/10/2026
+id: "src/lib/content/home.ts::WHO_BODY"
+source: "src/lib/content/home.ts"
+path: "WHO_BODY"
+render: "Home page, WHO_BODY"
+narrative_slot: "house.not"
+en: "Our coaches also hire for a living, reading CVs and deciding who goes forward. PunProfile is paid by you, not by employers, so our advice starts from your goals, not from a vacancy a company is rushing to fill."
+th: "โค้ชของ PunProfile ทำงานด้านการคัดเลือกผู้สมัครด้วย ตั้งแต่อ่าน CV ไปจนถึงตัดสินใจว่าใครจะได้ไปต่อ PunProfile รับค่าบริการจากคุณ ไม่ใช่นายจ้าง เวลาที่โค้ชให้คำแนะนำ จึงเริ่มจากเป้าหมายของคุณ ไม่ใช่จากตำแหน่งที่บริษัทกำลังเร่งหาคน"
+provenance: paul-written
+date: "03/11/2026"
 term_bindings: []
-decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. Opening changed 03/11/2026 to name no headcount, Paul's rule of 01/11/2026. Paul rewrote the Thai in his review pass of 03/11/2026."
 review:
   structural_calque: pass
-  text_hash: b0614a6735568de2f5c37f4faefb720cfb4a86fd776b1ee3ce73f3732c94cd91
+  text_hash: 9a937187bea47534c89e293e1f11545d2fff3e883a1ce62730b2f668409519ac
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -12666,6 +12589,2228 @@ review:
   text_hash: 8e098b2f5603f9271fc7a62cb6736ca3dafbd26cf03859b6976b3a3b2feaae11
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.image.alt`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.image.alt
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.image.alt
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.image.alt'
+narrative_slot: utility
+en: "A young Thai man in a train window seat holds his phone and points to one of three language-app icons floating beside him"
+th: "ชายไทยนั่งริมหน้าต่างรถไฟ ถือโทรศัพท์ และชี้เลือกหนึ่งในไอคอนแอปเรียนภาษาสามตัวที่ลอยอยู่ข้าง ๆ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: dd80306c96f8ffbfe9e59f09050a2d0fc02b761d6e433f14d7e7b427e975b5a9
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.question`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.question
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.question
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.question'
+narrative_slot: utility
+en: "How are you learning a European language right now, and is it getting you to the level the job you are aiming for asks for?"
+th: "ตอนนี้คุณเรียนภาษายุโรปด้วยวิธีไหน และวิธีนั้นพาคุณไปถึงระดับที่งานที่คุณเล็งต้องการหรือยัง?"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: f142b49d8a253140df7919d3857e8031358ce10096c238d9275f14b99cd362bf
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[0].body[0].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[0].body[0].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[0].body[0].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[0].body[0].text'
+narrative_slot: utility
+en: "If you are learning a European language to work there, do not pick an app because it is popular. Pick it on three questions: can you learn from Thai, does it train speaking or grammar, and does it get you to the level the work asks for. Free apps are a good start, but the certificates employers and embassies accept come from real exams such as the Goethe-Zertifikat or DELF."
+th: "ถ้าจะเรียนภาษายุโรปเพื่อไปทำงาน อย่าเลือกแอปจากความดัง ให้เลือกจาก 3 ข้อ คือเรียนจากภาษาไทยได้ไหม เน้นพูดหรือเน้นไวยากรณ์ และพาไปถึงระดับที่งานต้องการหรือเปล่า แอปฟรีช่วยเริ่มต้นได้ดี แต่ใบรับรองที่นายจ้างและสถานทูตยอมรับมาจากการสอบจริง เช่น Goethe-Zertifikat หรือ DELF"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: be28520ff2a0e38fcc4480a838e1ff09fbd3455842a98d0797374cf13538ff48
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[0].heading`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[0].heading
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[0].heading
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[0].heading'
+narrative_slot: utility
+en: "In short"
+th: "สรุปสั้น ๆ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 374fe2a22b8ee3e8e5258f04555c18cc495f7e98cd81f38c658fcd36b432e16b
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].body[0].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].body[0].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[1].body[0].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[1].body[0].text'
+narrative_slot: utility
+en: "Jobs and visas in Europe measure language as a level, not as a streak of days. In Germany, for example, the vocational training (Ausbildung) visa normally needs German at B1, and the Chancenkarte, for applicants on the points route, needs at least A1 German or at least B2 English, according to Make it in Germany."
+th: "งานและวีซ่าในยุโรปวัดภาษาเป็นระดับ ไม่ได้วัดจากจำนวนวันที่เรียนต่อเนื่อง ตัวอย่างจากเยอรมนี วีซ่าเรียนสายอาชีพ (Ausbildung) โดยทั่วไปต้องมีภาษาเยอรมันระดับ B1 ส่วน Chancenkarte สำหรับผู้สมัครผ่านระบบคะแนนต้องมีภาษาเยอรมันอย่างน้อย A1 หรือภาษาอังกฤษอย่างน้อย B2 ตามข้อมูลของ Make it in Germany"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 2e28507f43611d83ab53b9cc22ea3de393a2c089149a4bb476a53d6f24fad739
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].body[1].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].body[1].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[1].body[1].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[1].body[1].text'
+narrative_slot: utility
+en: "Language also goes with having work. Eurostat's 2022 data found that 78.5% of working-age people in the EU who have a job know at least one foreign language, against 65.0% of the unemployed."
+th: "ภาษายังสัมพันธ์กับการมีงานทำด้วย ข้อมูล Eurostat ปี 2022 พบว่าคนวัยทำงานใน EU ที่มีงานทำ 78.5% รู้ภาษาต่างประเทศอย่างน้อยหนึ่งภาษา เทียบกับ 65.0% ในกลุ่มคนว่างงาน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 227063931c7d90fb78b7477686443ceb13cba2ded647755f9533faf7a8b5b5f6
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].body[2].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].body[2].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[1].body[2].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[1].body[2].text'
+narrative_slot: utility
+en: "Takeaway: set your goal as a level, such as B1 within so many months, then choose the tools that get you there."
+th: "ข้อคิด: ตั้งเป้าเป็นระดับ เช่น B1 ภายในกี่เดือน แล้วค่อยเลือกเครื่องมือที่พาไปถึง"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: edb0ea7eba8421a90cdf1a7708fc95c620e7b085646df8a8c832ca288c355242
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].heading`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[1].heading
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[1].heading
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[1].heading'
+narrative_slot: utility
+en: "1. Why studying in an app every day may not be enough for work"
+th: "1. ทำไมเรียนในแอปทุกวัน อาจยังไม่พอสำหรับงาน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: e2b4c6d67e6cbb42266e1a38a0c8c8e0bb8676881edd34bf74fc3b64c97b95ce
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[0].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[0].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[2].body[0].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[0].text'
+narrative_slot: utility
+en: "Research shows apps genuinely help with reading and listening, but speaking lags behind, and the levels reached are mostly still below what work asks for."
+th: "งานวิจัยชี้ว่าแอปช่วยด้านการอ่านและการฟังได้จริง แต่การพูดยังตามหลัง และระดับที่ได้ส่วนใหญ่ยังต่ำกว่าที่งานต้องการ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: d451f35ed66e3bd24e3d16e7adcd7faff35d76d99683f5142eceaed21db415d4
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[1].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[1].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[2].body[1].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[1].text'
+narrative_slot: utility
+en: "Reading and listening: a 2021 study in the journal Foreign Language Annals found that 225 people who learned Spanish or French with Duolingo alone, to the end of the beginner level, read and listened about as well as university students after 4 semesters."
+th: "การอ่านและการฟัง: งานวิจัยในวารสาร Foreign Language Annals ปี 2021 พบว่าผู้เรียน 225 คนที่เรียนภาษาสเปนหรือฝรั่งเศสด้วย Duolingo อย่างเดียวจนจบระดับเริ่มต้น อ่านและฟังได้ใกล้เคียงนักศึกษามหาวิทยาลัยที่เรียนมา 4 เทอม"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: dfc925487b9dc9a3185e1d24a1ad7c7b44a3068b5ad7a74ff59b1671e30b5f5c
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[2].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[2].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[2].body[2].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[2].text'
+narrative_slot: utility
+en: "Speaking: a 2024 study in the journal Language Learning & Technology followed 48 self-study learners of Spanish for 3 months. After about 27 hours on Duolingo on average, their reading, listening, writing and speaking scores all improved."
+th: "การพูด: งานวิจัยในวารสาร Language Learning & Technology ปี 2024 ติดตามผู้เรียนภาษาสเปนด้วยตนเอง 48 คนเป็นเวลา 3 เดือน หลังใช้ Duolingo เฉลี่ยประมาณ 27 ชั่วโมง คะแนนด้านการอ่าน ฟัง เขียน และพูดดีขึ้น"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: ad3d700a3724345e4ee219898791e2f76aeedfeb40b7f227e7a828d8deb20a57
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[3].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[3].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[2].body[3].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[3].text'
+narrative_slot: utility
+en: "Duolingo's own published study: of learners who finished the A2 part of the course, about 66% in Spanish and 53% in French spoke at A2 or above."
+th: "ผลการศึกษาที่ Duolingo เผยแพร่: ผู้เรียนที่จบช่วงระดับ A2 ของคอร์ส พูดได้ถึง A2 ขึ้นไปราว 66% ในภาษาสเปน และ 53% ในภาษาฝรั่งเศส"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 423ac762289b9264f307f9b369bada72788c96545387801369915897ce9c7eb6
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[4].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[4].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[2].body[4].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[4].text'
+narrative_slot: utility
+en: "These studies looked at Duolingo learners in particular courses and samples, so they do not say that everyone will reach A2, or that A2 is the highest level an app can take you. If your goal is B1, assess your speaking separately from your progress in the app, then add conversation practice and grammar review where you still get stuck."
+th: "งานที่ยกมาศึกษาผู้เรียน Duolingo ในคอร์สและกลุ่มตัวอย่างที่กำหนด ผลจึงไม่ได้บอกว่าทุกคนจะเรียนถึง A2 หรือว่า A2 เป็นระดับสูงสุดที่เรียนด้วยแอปได้ ถ้าเป้าหมายคือ B1 ให้ประเมินการพูดแยกจากความคืบหน้าในแอป แล้วเสริมการฝึกสนทนาและทบทวนไวยากรณ์ในจุดที่ยังติดขัด"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 03f0322ebc6636f9c7f8f4ea9917da89638fe33fbd6b7721b947ddaad4e9284f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[5].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[5].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[2].body[5].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[5].text'
+narrative_slot: utility
+en: "Takeaway: use the app as the first stage of the plan, not the whole plan."
+th: "ข้อคิด: ใช้แอปเป็นช่วงแรกของแผน ไม่ใช่ทั้งแผน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: e9c158f181bb5d8495bf324fc3d076dfbb6520bc6b4a75165dc84423995501aa
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[6].alt`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[6].alt
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[2].body[6].alt
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[6].alt'
+narrative_slot: utility
+en: "A ladder of language levels from A1 to B2, showing speaking results from the research and examples of the language requirements for German visas"
+th: "บันไดระดับภาษา A1 ถึง B2 แสดงผลการฝึกพูดจากงานวิจัยและตัวอย่างเกณฑ์ภาษาของวีซ่าเยอรมนี"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: b59bf71176f3a6cac369aa67578f35544c6abb42fa284b46fe964d0f0636538f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[6].caption`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].body[6].caption
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[2].body[6].caption
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].body[6].caption'
+narrative_slot: utility
+en: "Some learners in Duolingo's study spoke at A2 or higher, while Germany's vocational training visa normally sets German at B1. The two figures come from different contexts: compare them to set a goal, not as a measure that every app learner is one level short."
+th: "ผู้เรียนบางส่วนในงานศึกษาของ Duolingo พูดได้ถึง A2 หรือสูงกว่า ส่วนวีซ่าเรียนสายอาชีพในเยอรมนีโดยทั่วไปกำหนดภาษาเยอรมันระดับ B1 ตัวเลขทั้งสองมาจากคนละบริบท ใช้เทียบเพื่อวางเป้าหมายได้ แต่ไม่ใช่การวัดว่าผู้เรียนแอปทุกคนขาดอีกหนึ่งระดับ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: b1c6a4508d68ab8b19fb0c173119e0018ac9412b1a8325beb116d7deede31585
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].heading`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[2].heading
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[2].heading
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[2].heading'
+narrative_slot: utility
+en: "2. How far can an app take you? What the research says"
+th: "2. แอปพาไปได้ไกลแค่ไหน งานวิจัยบอกอะไร"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 02606e859d4f7736ce88d4199dd512e9a22aa7032fbcc37f450bd4837ea684a9
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[0].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[0].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[3].body[0].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[0].text'
+narrative_slot: utility
+en: "Most apps teach European languages through English. If your English is not yet solid, learning from Thai keeps you from losing the thread in the very first lesson."
+th: "แอปส่วนใหญ่สอนภาษายุโรปผ่านภาษาอังกฤษ ถ้าภาษาอังกฤษของคุณยังไม่แน่น การเรียนจากภาษาไทยจะช่วยให้ไม่หลุดตั้งแต่บทแรก"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: ea78a459aed0b94fdc06ebb59513eb332b18ce125880a7fdbc4a4cc36a55417d
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[3].body[1].items[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[1].items[0]'
+narrative_slot: utility
+en: "Duolingo announced in April 2025 that Thai speakers can now learn Spanish, French, German and Italian from Thai, where before most could only learn English."
+th: "Duolingo ประกาศเมื่อเมษายน 2025 ว่าคนไทยเรียนภาษาสเปน ฝรั่งเศส เยอรมัน และอิตาลี จากภาษาไทยได้แล้ว จากเดิมที่ส่วนใหญ่มีแค่ภาษาอังกฤษ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 0f0549dbbe88948727644e8793277ca144c7759bed0645e00ef183a0f1b67401
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[3].body[1].items[1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[1].items[1]'
+narrative_slot: utility
+en: "Mondly lists Thai as one of the native languages you can learn other languages from."
+th: "Mondly ระบุว่าภาษาไทยเป็นหนึ่งในภาษาแม่ที่ใช้เรียนภาษาอื่นได้"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 009f003adc3969618f7ca9fab1e6aa5eb9c0dae66ff53e8a3bf131d7eb4e0483
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[3].body[1].items[2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[1].items[2]'
+narrative_slot: utility
+en: "LingoDeer, italki and Preply have a Thai menu in the app."
+th: "LingoDeer, italki และ Preply มีเมนูภาษาไทยในแอป"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: c3db0bd9b12f91ab1dbaa7cac4b2128f1c47e5d814d1850a2b69d4efcd3cf086
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[3]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[1].items[3]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[3].body[1].items[3]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[1].items[3]'
+narrative_slot: utility
+en: "Babbel, Busuu, Memrise, Drops, Pimsleur, Rosetta Stone and Lingoda have no Thai menu yet, so you learn through English."
+th: "Babbel, Busuu, Memrise, Drops, Pimsleur, Rosetta Stone และ Lingoda ยังไม่มีเมนูภาษาไทย ต้องเรียนผ่านภาษาอังกฤษ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: d4955a20280d8ff028bb9aacad29a933fd1d7c3a20c2da2ceeb953c3c99899c8
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[2].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].body[2].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[3].body[2].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].body[2].text'
+narrative_slot: utility
+en: "Takeaway: if your English is below B1, start with an app that teaches from Thai, then move to learning through English, which trains two languages at once."
+th: "ข้อคิด: ถ้าภาษาอังกฤษยังไม่ถึง B1 เริ่มจากแอปที่สอนจากภาษาไทยก่อน แล้วค่อยเปลี่ยนไปเรียนผ่านภาษาอังกฤษ ซึ่งได้ฝึกสองภาษาไปพร้อมกัน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 9cc1e0dfb767f00516664f3b4aa00bd082b6ab7afcdd8aeb529d64cca8bc09f1
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].heading`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[3].heading
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[3].heading
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[3].heading'
+narrative_slot: utility
+en: "3. First question: can you learn from Thai?"
+th: "3. ข้อแรก: เรียนจากภาษาไทยได้ไหม"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 58c8492d88d3da7131be74f59b6dd22996a8133d360d8e1566b67d1ca4eab4b1
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[0].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[0].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[0].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[0].text'
+narrative_slot: utility
+en: "Each app is good at something different. A common problem is studying for hundreds of days in a row and still not being able to say a simple sentence, because the app chosen does not train speaking."
+th: "แต่ละแอปเก่งคนละด้าน ปัญหาที่พบบ่อยคือเรียนต่อเนื่องมาหลายร้อยวันแต่ยังพูดประโยคง่าย ๆ ไม่ออก เพราะเลือกแอปที่ไม่ได้ฝึกพูด"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: a980ecbbad963e1d863580bc3faaded86cbfa3d34fd2f0639b344e67b6f860ac
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[1].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[1].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[1].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[1].text'
+narrative_slot: utility
+en: "If you want to speak"
+th: "ถ้าอยากพูดได้"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 49ce61c1d6fcef58e3b8d39bb3abbdcfd4c45fd921346c2a632752337c82846d
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[2].items[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[2].items[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[2].items[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[2].items[0]'
+narrative_slot: utility
+en: "Pimsleur teaches through audio only, with the focus on speaking and pronunciation."
+th: "Pimsleur สอนผ่านเสียงล้วน เน้นการพูดและการออกเสียง"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 85e97549cbb4ffb5c2f6bd56f3e8753a4eb62126e53fdf836f94ec408975d900
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[2].items[1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[2].items[1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[2].items[1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[2].items[1]'
+narrative_slot: utility
+en: "italki and Preply are one-to-one video lessons with a teacher, who sets their own price."
+th: "italki และ Preply คือเรียนตัวต่อตัวกับครูผ่านวิดีโอ ครูตั้งราคาเอง"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 4e9247bf417906e3966ca9999b1a3ad677b8fd1051d7fc84f2ae7b561317a307
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[2].items[2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[2].items[2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[2].items[2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[2].items[2]'
+narrative_slot: utility
+en: "Busuu has native speakers correct your speaking and writing exercises."
+th: "Busuu ให้คนที่เป็นเจ้าของภาษาช่วยแก้แบบฝึกพูดและเขียนของคุณ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: c8634cc3dcf70460cc89917306be280bef6f178be892fa6a14b4561b9f85f4a2
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[3].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[3].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[3].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[3].text'
+narrative_slot: utility
+en: "If you want solid grammar and writing"
+th: "ถ้าอยากแน่นไวยากรณ์และการเขียน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 9b15f37ab7da21f743a62cd13bb5e0eda82eab789dae804d7a9c7055d4961593
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[4].items[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[4].items[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[4].items[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[4].items[0]'
+narrative_slot: utility
+en: "LingoDeer orders its lessons systematically by grammar."
+th: "LingoDeer เรียงบทเรียนตามไวยากรณ์อย่างเป็นระบบ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 6d3e375644decafbb0e9e424b150ffcaae60a159536a48249ead582a6d51110d
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[4].items[1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[4].items[1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[4].items[1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[4].items[1]'
+narrative_slot: utility
+en: "The Goethe-Institut's Deutsch für dich has grammar, vocabulary, reading and listening exercises from A1 to C2, free."
+th: "Deutsch für dich ของ Goethe-Institut มีแบบฝึกไวยากรณ์ คำศัพท์ การอ่าน และการฟัง ตั้งแต่ A1 ถึง C2 ฟรี"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: e96b416aa26ac5542451e0471595076c27cad8e36766e469c75794a63fc468ff
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[5].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[5].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[5].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[5].text'
+narrative_slot: utility
+en: "If you only want more vocabulary"
+th: "ถ้าแค่อยากเพิ่มคำศัพท์"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 2fefd1c9b87d80a17542005b12f6b0d01515b01a0e78fd0dd1a00840acf00e23
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[6].items[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[6].items[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[6].items[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[6].items[0]'
+narrative_slot: utility
+en: "Drops focuses on vocabulary with pictures and sound, free for 5 minutes a day."
+th: "Drops เน้นคำศัพท์ด้วยภาพและเสียง เล่นฟรีวันละ 5 นาที"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: cfb5e1ce812ad93ef5c482feebb53dfb641dd12c6ff6716658f62c4c5fac35e8
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[7].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[7].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[7].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[7].text'
+narrative_slot: utility
+en: "Takeaway: use one app for grammar and another channel for speaking with real people. One app is almost never enough."
+th: "ข้อคิด: ใช้แอปหนึ่งตัวสำหรับไวยากรณ์ และอีกช่องทางหนึ่งสำหรับพูดกับคนจริง แอปเดียวแทบไม่เคยพอ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 62f3cbee5d3564f41c67a858fd0623a374d47c9ea656d43808bc74a49b3d0203
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].caption`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].caption
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].caption
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].caption'
+narrative_slot: utility
+en: "Duolingo and Mondly have lessons that start from Thai, while italki has a Thai menu and lets you choose a teacher for one-to-one conversation practice, with each teacher setting their own fee."
+th: "Duolingo และ Mondly มีบทเรียนที่เริ่มจากภาษาไทยได้ ส่วน italki มีเมนูภาษาไทยและให้คุณเลือกครูเพื่อฝึกสนทนาแบบตัวต่อตัว โดยครูแต่ละคนกำหนดค่าเรียนเอง"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 1de6481e3f07fbe6b23bcf67fb8c3ec387a4e7bd3b76b662acc8fcd56f8fc6fa
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].head[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].head[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].head[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].head[0]'
+narrative_slot: utility
+en: "Compared"
+th: "เทียบ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 6a2598abcf439cca5469e8b10eca1e889e4e48b4b49c020b295bd23a8d7b311b
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].head[1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].head[1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].head[1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].head[1]'
+narrative_slot: utility
+en: "Duolingo"
+th: "Duolingo"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: e0d033ed6a8bb6645a0c7009c85a5361c48cf6a9f62db45408095a1583838c01
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].head[2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].head[2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].head[2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].head[2]'
+narrative_slot: utility
+en: "Mondly"
+th: "Mondly"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 71356bdde43a1d9672ea0c78fb753f2322b11eddcb00f1bf9598968713f7db85
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].head[3]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].head[3]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].head[3]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].head[3]'
+narrative_slot: utility
+en: "italki"
+th: "italki"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 11cb9c77c6d3e2058cc731e53c45298062e41a0a28f9aed70ddee52fc46cd4b9
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][0]'
+narrative_slot: utility
+en: "Learn from Thai"
+th: "เรียนจากภาษาไทย"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: ec7edbe84f05632c88769c086fe8640718c5923bfe18f92419ca4f2fbe0ec653
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][1]'
+narrative_slot: utility
+en: "Yes: English, Spanish, French, German, Italian"
+th: "ได้ อังกฤษ สเปน ฝรั่งเศส เยอรมัน อิตาลี"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 54feb8cb8f838784693ba10ac50ace9713458f080c5a9e4f0c5fdf73df11ba63
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][2]'
+narrative_slot: utility
+en: "Yes, Thai as your native language"
+th: "ได้ ภาษาไทยเป็นภาษาแม่"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 55b2e98c66fc223d6013d6d3a456d5a7b960817ef01a432d885860038368f47d
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][3]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][3]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][3]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[0][3]'
+narrative_slot: utility
+en: "Thai menu, one-to-one with a teacher"
+th: "เมนูภาษาไทย เรียนกับครูตัวต่อตัว"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 80c7864d1e1acf36c3aa98fc11edf4b4045ca7b377a4ab012c8397166a2bc0f3
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][0]'
+narrative_slot: utility
+en: "European languages"
+th: "ภาษายุโรป"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 18a14cbdc604d0bea302202c83bab75be016e7ebf55e546eb893086f41a73c97
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][1]'
+narrative_slot: utility
+en: "English and 4 more"
+th: "อังกฤษ และอีก 4 ภาษา"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 4706ffd427c68383c851ff60d03a5f1c6a30617e6d0338cc922935a53dc51875
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][2]'
+narrative_slot: utility
+en: "About 25"
+th: "ประมาณ 25 ภาษา"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 7115c29ba4806d1c1db352143c5e5451b36eff3883d963cd49a775f4230ff7a2
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][3]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][3]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][3]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[1][3]'
+narrative_slot: utility
+en: "Teachers in 150+ languages"
+th: "ครูกว่า 150 ภาษา"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: ad32422e7e1173256beda169ddf4d356700da1e994690652909d16da77b290e4
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][0]'
+narrative_slot: utility
+en: "Focus"
+th: "เน้นอะไร"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: d86fdd3221151b983250a96cbdceb801543ee611f45f79b6139b4520781cdc83
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][1]'
+narrative_slot: utility
+en: "All four skills, game-style"
+th: "ครบ 4 ทักษะ แบบเกม"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: f10bd7fb5e71ebe1c3ed85578883b219e38455d0096d44307a8988acf221ae2c
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][2]'
+narrative_slot: utility
+en: "Short lessons, speech recognition"
+th: "บทเรียนสั้น จับเสียงพูด"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 0ff98b2b1337a5d969977fc3bb1ecea2017d7b0b230405c6f300bc55abc712fd
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][3]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][3]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][3]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[2][3]'
+narrative_slot: utility
+en: "Speaking, one-to-one"
+th: "การพูด ตัวต่อตัว"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 698efe455623257693ff1bed3bcbff80f672824416457e379797dc07ccce2175
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][0]'
+narrative_slot: utility
+en: "For work or exams"
+th: "สำหรับงาน / สอบ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: e453856a0365f8946c2efbd8a86b522c37f11a8555abfb49a6b767f8da4570d6
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][1]'
+narrative_slot: utility
+en: "No business course"
+th: "ไม่มีคอร์สธุรกิจ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: dc57d54f50c5449b84a313151962393fd6750868a2f544a5044abe3460b73d13
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][2]'
+narrative_slot: utility
+en: "300+ business lessons"
+th: "บทเรียนธุรกิจกว่า 300 บท"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: b2151f0b99fe141b28fc5ff9aeaed04c7d2b392f095ac3e8832467763cb28548
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][3]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][3]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][3]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[3][3]'
+narrative_slot: utility
+en: "Teachers for business, exam prep and job interviews"
+th: "ครูสอนธุรกิจ เตรียมสอบ และสัมภาษณ์งาน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: b154cf2cefd11002cedd1752ad166b265de2934a05b6c645bda03f47030576cf
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][0]'
+narrative_slot: utility
+en: "Price"
+th: "ราคา"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 701306e196c9076ba6650f404ca994d62e5d289e70c17bbf8a468284e7a9c12c
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][1]'
+narrative_slot: utility
+en: "Free to use"
+th: "ใช้ฟรีได้"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 2cd4ebfbd503a34f04883174a6ead8410ce1b1be60d66d352f5d26d91031d463
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][2]'
+narrative_slot: utility
+en: "Mainly paid"
+th: "เสียเงินเป็นหลัก"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: b745205946c40394a11f5fe51f75e107d0f4237b86a68d510f2767826f85e1a7
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][3]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][3]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][3]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[4][3]'
+narrative_slot: utility
+en: "Teachers set their own price"
+th: "ครูตั้งราคาเอง"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 6f3eb2919be1cdd01d03bbdb92ef98a855ee4163b5f611bb2cbe0fdaa9c3831b
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][0]'
+narrative_slot: utility
+en: "Best for"
+th: "เหมาะกับ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: fe886d3993266189936b69626b0bea6c6683214ee2c4c13acc54fbed22992ed1
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][1]'
+narrative_slot: utility
+en: "Starting out, a daily habit"
+th: "เริ่มต้น สร้างนิสัยรายวัน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 687b52f6a41b442c3e4deb4cfb0cd9de4055ec13e96e5b3751e83e2180b4e76f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][2]'
+narrative_slot: utility
+en: "Several languages, business content"
+th: "เรียนหลายภาษา อยากได้เนื้อหาธุรกิจ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 7a6afd5426613b3896648c8201b8714c5e3c0d044a49476025ace406f819ec3b
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][3]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][3]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][3]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].body[8].rows[5][3]'
+narrative_slot: utility
+en: "Actually speaking"
+th: "อยากพูดได้จริง"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 2700c3c1e1217bd3612707c8a6987a8ed230463dfb38302596e99c87a851aaee
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].heading`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[4].heading
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[4].heading
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[4].heading'
+narrative_slot: utility
+en: "4. Second question: speaking or grammar?"
+th: "4. ข้อสอง: เน้นพูด หรือเน้นไวยากรณ์"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 88c57f12f3d96203759beab4b2e90e72b936cbc7895e1cbf1a1516aed522a92f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[0].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[0].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[5].body[0].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[0].text'
+narrative_slot: utility
+en: "If your goal is work, look for content in the language of the workplace, and for levels that go further than A2."
+th: "ถ้าเป้าหมายคือทำงาน ให้มองหาเนื้อหาภาษาที่ใช้ในที่ทำงาน และระดับที่ไปได้ไกลกว่า A2"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: f342f5cfd480835be8513d7343e9408265d3eb1ca29165a6446cf77a6e1cef86
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[5].body[1].items[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[1].items[0]'
+narrative_slot: utility
+en: "Busuu has Business English from A2 to C1, covering job applications, interviews, emails and meetings, plus French and Dutch for business."
+th: "Busuu มี Business English ระดับ A2 ถึง C1 เรื่องสมัครงาน สัมภาษณ์ อีเมล และการประชุม และมีภาษาฝรั่งเศสกับดัตช์สำหรับธุรกิจ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: fea275a0bb7ac9720d843e6a41854c0bb127291df31dbb4b287d5610dfa1d973
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[5].body[1].items[1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[1].items[1]'
+narrative_slot: utility
+en: "Mondly has more than 300 lessons with business content."
+th: "Mondly มีบทเรียนเนื้อหาธุรกิจกว่า 300 บท"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 45ae72475b954356891245eec88e734e41d4fd54f9450a446fbacddeb877390b
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[5].body[1].items[2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[1].items[2]'
+narrative_slot: utility
+en: "Germany's vhs-Lernportal has Berufssprache Deutsch, German for work, at A2 to B1 and B2, free, covering job applications, interviews and talking to customers."
+th: "vhs-Lernportal ของเยอรมนีมีคอร์ส Berufssprache Deutsch หรือภาษาเยอรมันสำหรับการทำงาน ระดับ A2 ถึง B1 และ B2 ฟรี มีเรื่องการสมัครงาน การสัมภาษณ์ และการคุยกับลูกค้า"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 5580f51e24ed8781d32b76745241ef402696096440bb082c534cd3473762366e
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[3]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[1].items[3]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[5].body[1].items[3]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[1].items[3]'
+narrative_slot: utility
+en: "Lingoda runs live classes in small groups of up to 5, offers Business English, and gives a CEFR-level certificate when you finish each level."
+th: "Lingoda เรียนสดเป็นกลุ่มเล็ก ไม่เกิน 5 คน มี Business English และให้ใบรับรองตามระดับ CEFR เมื่อเรียนจบแต่ละระดับ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 30f0b5267e383f4f0d1ef3ef78b3dd72473cc9754a43329242fff0310dc5e700
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[2].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[2].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[5].body[2].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[2].text'
+narrative_slot: utility
+en: "One more thing to know: most app certificates are not official certificates. Babbel itself says its course certificates are not formally recognised. If you need one for a visa or a job application, plan for a real exam, such as the Goethe-Zertifikat for German, DELF or DALF for French, and DELE for Spanish."
+th: "อีกเรื่องที่ควรรู้: ใบรับรองจากแอปส่วนใหญ่ไม่ใช่ใบรับรองทางการ Babbel เองก็ระบุว่าใบรับรองคอร์สของตนไม่ได้รับการรับรองอย่างเป็นทางการ ถ้าต้องยื่นวีซ่าหรือสมัครงาน ให้วางแผนสอบจริง เช่น Goethe-Zertifikat สำหรับภาษาเยอรมัน DELF หรือ DALF สำหรับภาษาฝรั่งเศส และ DELE สำหรับภาษาสเปน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 652f245bbe23a08ca79a16a9a064c190c86ed975ba39b52e97c92eb265feafd7
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[3].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].body[3].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[5].body[3].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].body[3].text'
+narrative_slot: utility
+en: "Takeaway: use apps to reach the level, then use a real exam to prove it."
+th: "ข้อคิด: ใช้แอปพาไปถึงระดับ แล้วใช้การสอบจริงพิสูจน์ระดับนั้น"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 0a106e0d7a7fb503e0e08bdbe2436e6c86650ce11b6348b693ae600cd619caf1
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].heading`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[5].heading
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[5].heading
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[5].heading'
+narrative_slot: utility
+en: "5. Third question: does it get you to work?"
+th: "5. ข้อสาม: พาไปถึงงานได้หรือเปล่า"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 3d178c5723c9ae88cf86a7765e10db430288bb61a055041f6e2dd9ba85964fbf
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[0].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[0].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[6].body[0].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].body[0].text'
+narrative_slot: utility
+en: "Before you pay for an app, try the free courses made by bodies in the country itself. They follow CEFR levels and carry no ads."
+th: "ก่อนจ่ายค่าแอป ลองเริ่มจากของฟรีที่ทำโดยหน่วยงานของประเทศนั้นเอง เนื้อหาตรงกับระดับ CEFR และไม่มีโฆษณา"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 138c1bb8467b6632f8fe513012391af895a390bd301c3855a1ef465c30e6e936
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[1].items[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[1].items[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[6].body[1].items[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].body[1].items[0]'
+narrative_slot: utility
+en: "German: Deutsche Welle's Nicos Weg, a video course from A1 to B1; the Goethe-Institut's Deutsch für dich, A1 to C2; and vhs-Lernportal, A1 to B2."
+th: "เยอรมัน: Nicos Weg ของ Deutsche Welle เป็นคอร์สวิดีโอระดับ A1 ถึง B1, Deutsch für dich ของ Goethe-Institut ระดับ A1 ถึง C2 และ vhs-Lernportal ระดับ A1 ถึง B2"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 934a3dfdadd0b4d2df17e8009465ca9a69e0c747abd246929833abd0488e3051
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[1].items[1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[1].items[1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[6].body[1].items[1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].body[1].items[1]'
+narrative_slot: utility
+en: "French: TV5MONDE Apprendre le français, A1 to B2, free with no sign-up, and it helps you prepare for the TCF."
+th: "ฝรั่งเศส: TV5MONDE Apprendre le français ระดับ A1 ถึง B2 ใช้ฟรีไม่ต้องสมัคร และช่วยเตรียมสอบ TCF"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: a8816043de7b8352e212ca40f9ded48f422caa32e8a5d1e1f365eeff9cdbccc8
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[1].items[2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[1].items[2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[6].body[1].items[2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].body[1].items[2]'
+narrative_slot: utility
+en: "Spanish: the Instituto Cervantes' AVE Global, a paid online course from A1 to C1."
+th: "สเปน: AVE Global ของ Instituto Cervantes เป็นคอร์สออนไลน์เสียเงิน ระดับ A1 ถึง C1"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: addf7c38d511a544f61f309ac21ced0807a8d9b0f9df9478950b9ff5fcccc9d6
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[2].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].body[2].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[6].body[2].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].body[2].text'
+narrative_slot: utility
+en: "Takeaway: most of these free courses teach through English or the target language, so they suit people who are already past the beginner stage."
+th: "ข้อคิด: ของฟรีเหล่านี้ส่วนใหญ่สอนผ่านภาษาอังกฤษหรือภาษาเป้าหมาย จึงเหมาะกับคนที่ผ่านระดับเริ่มต้นมาแล้ว"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: e8822bb60def312192159f128bc1ece89934ab2311f29034a94d6dcccc7404f2
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].heading`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[6].heading
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[6].heading
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[6].heading'
+narrative_slot: utility
+en: "6. Free courses from official bodies that many people overlook"
+th: "6. ของฟรีจากหน่วยงานทางการ ที่หลายคนมองข้าม"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: d2bf564f67ae493449876a6a5be2a2c39df4f2922a13fe972bcdeddec4613c5b
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[0].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[0].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[7].body[0].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[7].body[0].text'
+narrative_slot: utility
+en: "If you want structure and a teacher who checks your work, both of these institutes teach to CEFR levels and are exam centres too."
+th: "ถ้าต้องการโครงสร้างและครูที่ตรวจงานให้ ทั้งสองสถาบันนี้สอนตามระดับ CEFR และเป็นศูนย์สอบด้วย"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 088a5617c0518c034aa9f0551658f67baaf393dcaa9e39bc9ecd084d2e251c23
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[1].items[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[1].items[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[7].body[1].items[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[7].body[1].items[0]'
+narrative_slot: utility
+en: "Goethe-Institut Thailand teaches A1 to B2 in the classroom, at 5,500 to 10,900 baht a course, and teaches in German from the very first hour."
+th: "Goethe-Institut Thailand สอนระดับ A1 ถึง B2 ในห้องเรียน ค่าเรียนคอร์สละ 5,500 ถึง 10,900 บาท และสอนเป็นภาษาเยอรมันตั้งแต่ชั่วโมงแรก"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 8932479ca1f6d341cd4fdb4d2897cf35862cc3c5c0f5b296d29d0d3e37489c6d
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[1].items[1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[1].items[1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[7].body[1].items[1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[7].body[1].items[1]'
+narrative_slot: utility
+en: "Alliance Française Bangkok teaches A1 to C2 from 192 baht an hour, with a 24-hour course at 5,190 baht, and holds DELF and DALF exams three times a year, in March, June and November."
+th: "Alliance Française Bangkok สอนระดับ A1 ถึง C2 เริ่มต้นชั่วโมงละ 192 บาท คอร์ส 24 ชั่วโมง 5,190 บาท และมีสอบ DELF และ DALF ปีละสามรอบ คือมีนาคม มิถุนายน และพฤศจิกายน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 6dab196c26cd404da28cc36444abd0ad2a572c3bbc9162e3dbffa4d42b9413c1
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[2].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].body[2].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[7].body[2].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[7].body[2].text'
+narrative_slot: utility
+en: "Takeaway: a classroom costs more than an app, but a teacher corrects your speaking and writing, which is what apps do least."
+th: "ข้อคิด: ห้องเรียนแพงกว่าแอป แต่ได้ครูแก้การพูดและการเขียนให้ ซึ่งเป็นสิ่งที่แอปทำได้น้อยที่สุด"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 84e547963160885cd9348f272520db58b3518cc4f3f07f98ee05ca9a03a098a0
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].heading`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[7].heading
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[7].heading
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[7].heading'
+narrative_slot: utility
+en: "7. Learning with a teacher in Bangkok"
+th: "7. เรียนกับครูในกรุงเทพฯ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: d472a7a644ed1ad090e25965be2e7136d246918f172571832de3dca067bbdb58
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[0].items[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[0].items[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[8].body[0].items[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[0].items[0]'
+narrative_slot: utility
+en: "Vocational training in Germany (B1 needed): start Duolingo or Mondly from Thai, move on to Nicos Weg and vhs-Lernportal, practise speaking with a teacher on italki, then sit the Goethe-Zertifikat B1."
+th: "อยากไปเรียนสายอาชีพที่เยอรมนี (ต้องการ B1): เริ่ม Duolingo หรือ Mondly จากภาษาไทย ต่อด้วย Nicos Weg และ vhs-Lernportal ฝึกพูดกับครูบน italki แล้วสอบ Goethe-Zertifikat B1"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: d383a7672bd5b44917f75eee41cd7884a5026bfdd3d450fa95df68532e1e5f96
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[0].items[1]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[0].items[1]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[8].body[0].items[1]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[0].items[1]'
+narrative_slot: utility
+en: "A job at a company that works in English: Business English on Busuu or Lingoda and interview practice with a teacher, with the local language learned for everyday life."
+th: "อยากทำงานบริษัทที่ใช้ภาษาอังกฤษ: Business English บน Busuu หรือ Lingoda และฝึกสัมภาษณ์กับครู ส่วนภาษาท้องถิ่นเรียนไว้สำหรับชีวิตประจำวัน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 7d5388d2db7d5b16bbe6f814025d0b5ff67d3fdb16795e94b67c1f122b9cfcc6
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[0].items[2]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[0].items[2]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[8].body[0].items[2]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[0].items[2]'
+narrative_slot: utility
+en: "Moving to France: free TV5MONDE alongside classes at Alliance Française Bangkok, then sit the DELF."
+th: "อยากย้ายไปฝรั่งเศส: TV5MONDE ฟรีควบคู่กับคลาสที่ Alliance Française Bangkok แล้วสอบ DELF"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 88e86046feaacbca37eadbdf3efafa25d604db68d93f6daf373c02e27d228fff
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[1].text`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[1].text
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[8].body[1].text
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[1].text'
+narrative_slot: utility
+en: "If you are not yet sure which country to start with, read “Want to work in Europe? Where to start”, then make that country's language level the first item of your 30-day plan."
+th: "ถ้ายังไม่แน่ใจว่าจะเริ่มจากประเทศไหน อ่าน “อยากไปทำงานยุโรป เริ่มจากตรงไหน” แล้วตั้งเป้าระดับภาษาของประเทศนั้นเป็นข้อแรกของแผน 30 วัน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: dedbfe77fd5e74b3a6490dedd5f9493ed4467fae4bb1f38d250a44b8762c9268
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[2].alt`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[2].alt
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[8].body[2].alt
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[2].alt'
+narrative_slot: utility
+en: "Three goal cards, vocational training in Germany, a company job in English, and moving to France, each with its steps"
+th: "การ์ดสามเป้าหมาย เรียนสายอาชีพที่เยอรมนี ทำงานบริษัทที่ใช้ภาษาอังกฤษ และย้ายไปฝรั่งเศส พร้อมขั้นตอนของแต่ละเป้าหมาย"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 6cedaa5c2c1bf5a224a8a5ba63a0fdf1e592553ebc8de66ff4200c8c287f1a7f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[2].caption`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].body[2].caption
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[8].body[2].caption
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].body[2].caption'
+narrative_slot: utility
+en: "Three examples of a language plan matched to a goal, from preparing for vocational training, to English for work, to getting ready to move to France."
+th: "สามตัวอย่างการจัดแผนเรียนภาษาให้ตรงเป้าหมาย ตั้งแต่เตรียมเรียนสายอาชีพ ฝึกภาษาอังกฤษสำหรับงาน ไปจนถึงเตรียมตัวก่อนย้ายไปฝรั่งเศส"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 1d41a45b9ec90563763243ed2a701a1433726892305fe2e3f39d115214454737
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].heading`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[8].heading
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[8].heading
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[8].heading'
+narrative_slot: utility
+en: "8. Combinations by goal"
+th: "8. สูตรผสมตามเป้าหมาย"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 797cabab97c2fb0e47cd85d21f270a64f8fed8886f22045481475bf60d412261
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[0].a[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[0].a[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[9].body[0].a[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[0].a[0]'
+narrative_slot: utility
+en: "Yes. Duolingo announced in 2025 that Thai speakers can now learn German from Thai, and Mondly supports Thai as a native language. The free courses from official bodies mostly teach through English."
+th: "มี Duolingo ประกาศเมื่อปี 2025 ว่าคนไทยเรียนภาษาเยอรมันจากภาษาไทยได้แล้ว และ Mondly ก็รองรับภาษาไทยเป็นภาษาแม่ ส่วนของฟรีจากหน่วยงานทางการส่วนใหญ่สอนผ่านภาษาอังกฤษ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 7ca89f58186a1876a088fe97b17c449e575cbaf56a47d94555849432d5bd020f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[0].q`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[0].q
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[9].body[0].q
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[0].q'
+narrative_slot: utility
+en: "Is there a German-learning app that teaches in Thai?"
+th: "แอปเรียนภาษาเยอรมันที่สอนเป็นภาษาไทยมีไหม"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 5cbf64be9802770b36ce7c10731aa92a2889d55cf9b50164575c21fb9ce85006
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[1].a[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[1].a[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[9].body[1].a[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[1].a[0]'
+narrative_slot: utility
+en: "Mostly not. The certificates that are accepted come from standard exams such as the Goethe-Zertifikat, DELF or DELE. Use apps to prepare, then sit the real exam to confirm your level."
+th: "ส่วนใหญ่ไม่ได้ ใบรับรองที่ยอมรับกันมาจากการสอบมาตรฐาน เช่น Goethe-Zertifikat, DELF หรือ DELE ใช้แอปเพื่อเตรียมตัว แล้วสอบจริงเพื่อยืนยันระดับ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: bc743664800181e240e499b2403f4f30fecc47c7eab862e28afcac0b5d55fa1f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[1].q`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[1].q
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[9].body[1].q
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[1].q'
+narrative_slot: utility
+en: "Can I use an app certificate for a visa or a job application?"
+th: "ใบรับรองจากแอปใช้ยื่นวีซ่าหรือสมัครงานได้ไหม"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: a08d4d7c762010b922921a22ae5656c691e8d4b3470fae355df19f535a9f54f3
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[2].a[0]`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[2].a[0]
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[9].body[2].a[0]
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[2].a[0]'
+narrative_slot: utility
+en: "It depends on the route. In Germany, for example, the vocational training visa normally needs B1, and the Chancenkarte on the points route sets at least A1 German or at least B2 English. Always check the conditions for the country and the role you are aiming for before you plan."
+th: "ขึ้นกับเส้นทาง ตัวอย่างในเยอรมนี วีซ่าเรียนสายอาชีพโดยทั่วไปต้องการ B1 ส่วน Chancenkarte ในเส้นทางระบบคะแนนกำหนดภาษาเยอรมันอย่างน้อย A1 หรือภาษาอังกฤษอย่างน้อย B2 เช็กเงื่อนไขของประเทศและตำแหน่งที่คุณเล็งก่อนวางแผนเสมอ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 28aac18376da137d7db1989498ba76d5e0d1f7f3061e704877c4c0aa63b4ec9f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[2].q`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].body[2].q
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[9].body[2].q
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].body[2].q'
+narrative_slot: utility
+en: "What level of the local language do I need to work in Europe?"
+th: "ไปทำงานยุโรปต้องใช้ภาษาท้องถิ่นระดับไหน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: b11d324f5e0de9cc0b4640417a812debb58e11c19735a05ca5abfee6b8616f96
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].heading`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.sections[9].heading
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.sections[9].heading
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.sections[9].heading'
+narrative_slot: utility
+en: "Frequently asked questions"
+th: "คำถามที่พบบ่อย"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 5d2eb18e9b4a38709aefd29e1ef1986e51b9a3df1afc4be131012c2e86f4da68
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.seoTitle`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.seoTitle
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.seoTitle
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.seoTitle'
+narrative_slot: utility
+en: "Apps to learn German, French and Spanish for Thai speakers, free and paid"
+th: "แอปเรียนภาษาเยอรมัน ฝรั่งเศส สเปน สำหรับคนไทย ฟรีและเสียเงิน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 92327bea8c52bba2634743586a989d134d118d1feaf0d0c59b9bc2a51bff7fa5
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.summary`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.summary
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.summary
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.summary'
+narrative_slot: utility
+en: "Most language apps have no Thai menu, they train different skills, and few get you to the level work in Europe asks for. We compare them point by point."
+th: "แอปเรียนภาษาส่วนใหญ่ไม่มีเมนูภาษาไทย เน้นทักษะต่างกัน และมีไม่กี่ตัวที่พาไปถึงระดับที่งานในยุโรปต้องการ เราเทียบให้ทีละข้อ"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 169c90a796756042eaf54feceb73c9ce7cb040f3dcbfa6b9d0fc885e1d9a56b2
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.title`
+
+```yaml
+id: src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.title
+source: src/lib/content/posts/language-learning-apps.ts
+path: LANGUAGE_LEARNING_APPS.title
+render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.title'
+narrative_slot: utility
+en: "Language apps for Thai learners of European languages: which teach from Thai, which train speaking, which get you to work"
+th: "แอปเรียนภาษายุโรปสำหรับคนไทย: ตัวไหนเรียนจากภาษาไทยได้ ตัวไหนฝึกพูด ตัวไหนพาไปถึงงาน"
+provenance: paul-approved
+date: 03/11/2026
+term_bindings: []
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+review:
+  structural_calque: pass
+  text_hash: 6093fd5062d4e388ea5ff253d0bfadf90926051995dc14ca12365545435b7437
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
 ```
 
 <!-- COPY-ENTRY -->
@@ -17290,17 +19435,17 @@ source: "src/lib/content/pricing.ts"
 path: "TOKEN_ROWS[0].detail"
 render: "Pricing page, TOKEN_ROWS[0].detail"
 narrative_slot: "artefact"
-en: "Sent to your email, with the work rights it needs stated"
-th: "ส่งทางอีเมล พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี"
-provenance: paul-approved
-date: "02/11/2026"
+en: "Sent to your Job Search Dashboard, with the work rights it needs stated"
+th: "ส่งไปยังแดชบอร์ดหางานของคุณ พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี"
+provenance: paul-written
+date: "03/11/2026"
 term_bindings: []
-decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ระบุให้ชัดว่าเป็นสิทธิ์การทำงานที่ผู้สมัครต้องมีสำหรับตำแหน่งนั้น"
+decision_note: "Approved 02/11/2026 as an email delivery; re-pointed 03/11/2026 to the dashboard, where the PRD sends each role. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
 review:
   structural_calque: pass
-  text_hash: 71179b3533f1781ca437b07756dfc35b193d6db56b8e5c10b63398a6e28b8f1b
+  text_hash: 89435083120fb6fc5a530f7e580611ceab4321d264909b4a85e83a0e4953df76
   prompt_version: structural-calque-v1
-  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -17623,17 +19768,26 @@ source: src/lib/content/pricing.ts
 path: FREE_ITEMS[0].body
 render: Pricing page, FREE_ITEMS[0].body
 narrative_slot: utility
-en: Posted in the Thai Jobs in Europe group, free for anyone to read.
-th: ประกาศงานในกลุ่ม Thai Jobs in Europe เปิดให้ทุกคนอ่านฟรี
+en: "Free for anyone to read."
+th: "ประกาศงาน เปิดให้ทุกคนอ่านฟรี"
 provenance: paul-approved
-date: 23/08/2026
+date: 04/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: |-
+  No string-local reasoning comment was present at migration.
+
+  The group named out of the line on Paul's instruction of 04/11/2026:
+  `ในกลุ่ม Thai Jobs in Europe` is deleted and nothing is added.
+
+  It went into the language queue expected to need new words, because the row
+  now says the screened jobs are free to read and no longer says where they are
+  read. He ticked it unchanged in the pass of 04/11/2026, so the row names no
+  destination by decision rather than by omission.
 review:
   structural_calque: pass
-  text_hash: 694c3a27553f363da36fca9ba82c1e94d1c5ee06c88e4dd2ab487cdd81f707b0
+  text_hash: 616da56074d8b5bd4130a8e3b146ca18952ce75595387d7f1190b1f6bd91d2c3
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul read this in the language queue on 04/11/2026 and ticked it unchanged.
 ```
 
 <!-- COPY-ENTRY -->
@@ -18185,15 +20339,15 @@ source: src/lib/content/pricing.ts
 path: PRICING_QUESTIONS[0].q
 render: Pricing page, PRICING_QUESTIONS[0].q
 narrative_slot: utility
-en: What does Career Coaching cost?
-th: บริการ Career Coaching ราคาเท่าไร?
+en: What does Coaching 1:1 cost?
+th: Coaching 1:1 ราคาเท่าไร?
 provenance: paul-approved
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: 'Copy review 03/11/2026, Q3: the question is about the whole offer, which the termbase names Coaching 1:1. Approved unchanged by Paul in the review of 03/11/2026.'
 review:
   structural_calque: pass
-  text_hash: 53465b7aa2e16683b4ebc14d96b5681c8327e346f1812208b77a0654a337f8d1
+  text_hash: 54cc61815467d5764273c2d9492c990ad028795c9fac91efa748af1f82454871
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19281,6 +21435,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::DASH_EXAMPLE_NOTE`
+
+```yaml
+id: src/lib/content/products.ts::DASH_EXAMPLE_NOTE
+source: src/lib/content/products.ts
+path: DASH_EXAMPLE_NOTE
+render: Job Search Dashboard product page, the note under the screenshots
+narrative_slot: utility
+en: An example account with made-up data, not a real candidate's.
+th: บัญชีตัวอย่างที่ใช้ข้อมูลสมมติ ไม่ใช่ข้อมูลของผู้สมัครจริง
+provenance: paul-approved
+date: 04/11/2026
+term_bindings: []
+decision_note: Claude draft 04/11/2026 for the dashboard product page. The screenshots are the real dashboard with an invented account, and this line says so. Approved unchanged by Paul in the review of 04/11/2026.
+review:
+  structural_calque: pass
+  text_hash: db252ccea514f141500a675debec4acfbab9f2787cdb914937b1f8fe05ee43cb
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/products.ts::CARD_ACTION`
 
 ```yaml
@@ -19314,20 +21490,15 @@ source: src/lib/content/products.ts
 path: CLOSE_BODY
 render: Product pages, CLOSE_BODY
 narrative_slot: ask
-en: >-
-  Tell me where you are and what you are aiming at, and I will say which of these is worth your time and which
-  is not.
-th: บอกผมว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ แล้วผมจะบอกว่าอันไหนคุ้มกับเวลาของคุณ และอันไหนยังไม่ต้อง
-provenance: paul-approved
-date: 06/09/2026
+en: Tell me where you are now and what you are aiming at, and I will suggest where to start and what you do not need yet.
+th: เล่าให้ผมฟังว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ ผมจะช่วยแนะนำว่าควรเริ่มจากอะไรและอะไรที่ยังไม่จำเป็น
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Read back 06/09/2026. First person, which is what `DESTINATIONS.contact`
-
-  in `cta.ts` settled: the reader reaches a person, not a company.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Tell me where you are and what you are aiming at, and I will say which of these is worth your time and which is not." TH: "บอกผมว่าตอนนี้คุณอยู่ตรงไหนและตั้งเป้าอะไรไว้ แล้วผมจะบอกว่าอันไหนคุ้มกับเวลาของคุณ และอันไหนยังไม่ต้อง".'
 review:
   structural_calque: pass
-  text_hash: 7332baf18ac13b93e3fc84e39074b3625c6a14da6f9fd3363747bdbcf7ec0c49
+  text_hash: 64583530c8590fd317e5bd829ddf5f00030c664926144924c66f7f76e2b39995
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19341,15 +21512,15 @@ source: src/lib/content/products.ts
 path: CLOSE_HEADING
 render: Product pages, CLOSE_HEADING
 narrative_slot: utility
-en: Not sure which one you need?
-th: ยังไม่แน่ใจว่าควรเริ่มจากอันไหน
-provenance: paul-approved
-date: 06/09/2026
+en: Not sure where to start?
+th: ยังไม่แน่ใจว่าควรเริ่มจากตรงไหน?
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Not sure which one you need?" TH: "ยังไม่แน่ใจว่าควรเริ่มจากอันไหน".'
 review:
   structural_calque: pass
-  text_hash: f6d4b0ea94a707d8a12b36f27b6169105bc4a1e43510d787307cfe4ef974a51e
+  text_hash: 28fcd3fb694ff5746a62c61597f1f0b8f7e32acd3be6a9cfdf0cfddc588e2181
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19407,15 +21578,15 @@ source: src/lib/content/products.ts
 path: COL_WHAT
 render: Product pages, COL_WHAT
 narrative_slot: utility
-en: What happens
-th: เกิดอะไรขึ้นบ้าง
-provenance: paul-approved
-date: 06/09/2026
+en: Steps
+th: ขั้นตอน
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What happens" TH: "เกิดอะไรขึ้นบ้าง".'
 review:
   structural_calque: pass
-  text_hash: e38860f285d5f448ebd779805cf97b2b91a1a50337a6acb1b91ffed7f4c98d14
+  text_hash: 5c7f7df1025d4bdcff6b827948891b2a9636f09b2ca0a4f3b2c9ef2dceeb2525
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19518,14 +21689,14 @@ path: INDEX_HEADING
 render: Product pages, INDEX_HEADING
 narrative_slot: utility
 en: Five tools and one conversation, in the order most people take them
-th: เครื่องมือห้าอย่างและการพูดคุยกับโค้ชอีกหนึ่งแบบ เรียงตามลำดับที่คนส่วนใหญ่มักใช้
+th: เครื่องมือ 5 อย่างและการพูดคุยกับโค้ช เรียงตามลำดับที่คนส่วนใหญ่มักใช้
 provenance: paul-written
-date: 06/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Five tools and one conversation, in the order most people take them" TH: "เครื่องมือห้าอย่างและการพูดคุยกับโค้ชอีกหนึ่งแบบ เรียงตามลำดับที่คนส่วนใหญ่มักใช้".'
 review:
   structural_calque: pass
-  text_hash: 1fb894badf46d96455f0478e8f98c9765e9ce6bce73c1146df940aff44514595
+  text_hash: 1be7d4368b3cdd3b1f0e3fa9a5b51aaca69f7a8f1636003e64e01e236c7c4457
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19539,19 +21710,15 @@ source: src/lib/content/products.ts
 path: INDEX_INTRO
 render: Product pages, INDEX_INTRO
 narrative_slot: utility
-en: >-
-  Start wherever you are. Nothing here needs the one before it, and the first two ask for nothing but your
-  answers.
-th: >-
-  เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า
-  และสองอย่างแรกต้องการเพียงคำตอบจากคุณ
+en: Pick whichever fits you now. There is no set order, and if you start with the EU Fit Check, answering the questions is enough to see a first result.
+th: เลือกตัวที่เหมาะกับคุณตอนนี้ได้เลย ไม่ต้องใช้ตามลำดับ หากเริ่มจาก EU Fit Check เพียงตอบคำถามก็เห็นผลเบื้องต้นได้
 provenance: paul-written
-date: 06/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Start wherever you are. Nothing here needs the one before it, and the first one asks for nothing but your answers." TH: "เริ่มจากจุดที่คุณอยู่ตอนนี้ได้เลย แต่ละอย่างใช้แยกกันได้ ไม่จำเป็นต้องทำอันก่อนหน้า และอย่างแรกต้องการเพียงคำตอบจากคุณ".'
 review:
   structural_calque: pass
-  text_hash: 45ac6d86c5af5db999c9cdbfbb947a706857f431a7411f62969968295e7cd9b7
+  text_hash: ba501212d8aaaf8af8926712879653de8a9f0e9129e0b47432bd3a09e89b0df3
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19565,15 +21732,15 @@ source: src/lib/content/products.ts
 path: INDEX_PATH_HEADING
 render: Product pages, INDEX_PATH_HEADING
 narrative_slot: utility
-en: How they fit together
-th: แต่ละอย่างทำงานร่วมกันอย่างไร
+en: Which stage each tool helps you with
+th: เครื่องมือแต่ละอย่างช่วยคุณในขั้นไหน
 provenance: paul-written
-date: 06/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "How they fit together" TH: "แต่ละอย่างทำงานร่วมกันอย่างไร".'
 review:
   structural_calque: pass
-  text_hash: 49361297e9e302ee670156987e12e697cc7582b2848705e1ec95f153774c92e9
+  text_hash: d782c8c9bfe6ec9e9f76c34093d17d846ca4f8b4c01dc5aab5214b9a34576d74
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19587,15 +21754,15 @@ source: src/lib/content/products.ts
 path: INDEX_PATH_LEDE
 render: Product pages, INDEX_PATH_LEDE
 narrative_slot: utility
-en: Each one answers the question the one before it leaves you holding.
-th: แต่ละอย่างช่วยตอบคำถามที่อันก่อนหน้าทิ้งไว้
+en: How each one works, step by step.
+th: แต่ละตัวมีขั้นตอนอย่างไร
 provenance: paul-written
-date: 06/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What happens in each one." TH: "แต่ละอย่างทำอะไรให้คุณบ้าง".'
 review:
   structural_calque: pass
-  text_hash: 81219abc1ed0de6c2f3647577132fd2718c52ead581ce3a898d03c0c61bfaca1
+  text_hash: 77c5d802de638113add2aae5738f84aa8ea3146724596ff3ab168281098e2b5a
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19653,19 +21820,15 @@ source: src/lib/content/products.ts
 path: NOT_A_TOOL_BODY
 render: Product pages, NOT_A_TOOL_BODY
 narrative_slot: utility
-en: >-
-  Everything above reads what you already have. The coaching is where we decide what to do about it, and it is
-  the engagement every client starts with.
-th: >-
-  เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว
-  ส่วนการโค้ชคือพื้นที่ที่เราช่วยกันตัดสินใจว่าจะทำอะไรกับสิ่งที่พบ และเป็นจุดเริ่มต้นของลูกค้าทุกคน
+en: The tools above help you assess where you stand, find roles and track your applications. Coaching 1:1 is where we work through what needs changing with you, and it usually starts with the Fit Report.
+th: เครื่องมือด้านบนช่วยให้คุณประเมินความพร้อม หาตำแหน่งงาน และติดตามการสมัคร ส่วน Coaching 1:1 คือการลงมือปรับสิ่งที่จำเป็นไปกับคุณ โดยทั่วไปจะเริ่มจาก Fit Report
 provenance: paul-written
-date: 06/09/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Every tool above reads what you already have. Coaching 1:1 is where we work on it with you, and the Fit Report is the usual way in." TH: "เครื่องมือทั้งหมดด้านบนอ่านสิ่งที่คุณมีอยู่แล้ว ส่วน Coaching 1:1 คือการลงมือทำไปพร้อมกับคุณ และส่วนใหญ่เริ่มต้นจาก Fit Report".'
 review:
   structural_calque: pass
-  text_hash: a6e83349e3b2efb49ac3282735fe48275fe4a73c88a996426f1ca39c5a26e0d3
+  text_hash: 69c8071283ecf8efcbb696e60ba0e8599b68677b7f1b0da1bafe7b10abd61537
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19679,15 +21842,15 @@ source: src/lib/content/products.ts
 path: NOT_A_TOOL_HEADING
 render: Product pages, NOT_A_TOOL_HEADING
 narrative_slot: utility
-en: And the part that is not a tool
-th: และส่วนที่ไม่ใช่เครื่องมือ
-provenance: paul-approved
-date: 06/09/2026
+en: From the assessment to the work, with Coaching 1:1
+th: จากผลประเมินสู่การลงมือทำกับ Coaching 1:1
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Where each tool stops, coaching carries on" TH: "เครื่องมือแต่ละอย่างหยุดตรงไหน Coaching 1:1 ช่วยต่อจากตรงนั้น".'
 review:
   structural_calque: pass
-  text_hash: 936805a8ee892866e4740bab80385b4f8877b2e9ef86c421325a2ecf067c8cab
+  text_hash: 2585956f41123f03e82976a851bb8c9e759d8da07388cd1678eb21db78018605
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19764,25 +21927,25 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::PRODUCT_ART.guided-job-hunt.alt`
+### `src/lib/content/products.ts::PRODUCT_ART.job-search-dashboard.alt`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCT_ART.guided-job-hunt.alt
-source: src/lib/content/products.ts
-path: PRODUCT_ART.guided-job-hunt.alt
-render: Product pages, PRODUCT_ART.guided-job-hunt.alt
-narrative_slot: utility
-en: Four columns of a tracker, from saved through to offer
-th: กระดานติดตามการสมัครงานสี่คอลัมน์ ตั้งแต่ตำแหน่งที่เก็บไว้จนถึงข้อเสนอจ้างงาน
+id: "src/lib/content/products.ts::PRODUCT_ART.job-search-dashboard.alt"
+source: "src/lib/content/products.ts"
+path: "PRODUCT_ART.job-search-dashboard.alt"
+render: "Product pages, PRODUCT_ART.job-search-dashboard.alt"
+narrative_slot: "utility"
+en: "Four columns of a tracker, from saved through to offer"
+th: "กระดานติดตามการสมัครงานสี่คอลัมน์ ตั้งแต่ตำแหน่งที่เก็บไว้จนถึงข้อเสนอจ้างงาน"
 provenance: paul-approved
-date: 06/09/2026
+date: "06/09/2026"
 term_bindings: []
-decision_note: Read back 06/09/2026.
+decision_note: "Read back 06/09/2026."
 review:
   structural_calque: pass
   text_hash: 2574b14aebe721f58a5ca88f8ce03e0932ef02d0a13d48b389507b6af09fa0ce
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
 ```
 
 <!-- COPY-ENTRY -->
@@ -19863,17 +22026,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].faq[0].q
 render: Product pages, PRODUCTS[0].faq[0].q
 narrative_slot: utility
-en: My English is not strong yet. Can I still do this?
-th: ภาษาอังกฤษยังไม่แข็งแรง ทำได้ไหม
-provenance: paul-approved
-date: 26/10/2026
+en: If my English is not fluent yet, can I still take the assessment?
+th: ถ้าภาษาอังกฤษยังไม่คล่อง จะทำแบบประเมินได้ไหม
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "My English is not strong yet. Can I still do this?" TH: "ภาษาอังกฤษยังไม่แข็งแรง ทำได้ไหม".'
 review:
   structural_calque: pass
-  text_hash: 9ca129a4502f1809f73354c46e3d4c4bd925c601523d468854d2c3b4c4545ec4
+  text_hash: c0d159a24954d1624eeb155acfd28f9db3a938d8e3d75575d4cf382799135bcc
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19885,17 +22048,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].faq[1].a
 render: Product pages, PRODUCTS[0].faq[1].a
 narrative_slot: utility
-en: A person actually reads your answers. The system does not decide on its own who gets contacted back.
-th: จะมีคนอ่านคำตอบของคุณจริง ๆ ระบบไม่ได้เป็นผู้ตัดสินเพียงลำพังว่าเราจะติดต่อใครกลับ
-provenance: paul-approved
-date: 26/10/2026
+en: Our team reads your answers too, and we do not let the system decide on its own who we contact back.
+th: ทีมงานจะอ่านคำตอบของคุณด้วย และจะไม่ให้ระบบตัดสินเองว่าเราจะติดต่อใครกลับ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "A person actually reads your answers. The system does not decide on its own who gets contacted back." TH: "จะมีคนอ่านคำตอบของคุณจริง ๆ ระบบไม่ได้เป็นผู้ตัดสินเพียงลำพังว่าเราจะติดต่อใครกลับ".'
 review:
   structural_calque: pass
-  text_hash: 9cd4b6aae1b6ce40f429424a9f6624fa4bbb8dbafc7b8c001b0b3389b638831c
+  text_hash: ab026a2fb6d0468458e6c2e9d75ba0add7b2d99453ed60071faa61872ace34a8
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19907,17 +22070,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].faq[1].q
 render: Product pages, PRODUCTS[0].faq[1].q
 narrative_slot: utility
-en: What happens after I finish the assessment?
-th: ทำแบบประเมินเสร็จแล้วจะเกิดอะไรขึ้น
-provenance: paul-approved
-date: 26/10/2026
+en: What happens next, once I finish the assessment?
+th: หลังทำแบบประเมินเสร็จแล้ว จะมีขั้นตอนอะไรต่อ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What happens after I finish the assessment?" TH: "ทำแบบประเมินเสร็จแล้วจะเกิดอะไรขึ้น".'
 review:
   structural_calque: pass
-  text_hash: 5f55bf4b9f1df6e11d6c57dd4623518783cfc80a655ad37160e3215c91554980
+  text_hash: 2b0698aef6c9a0f66bb83e7dface1b9ef83dc9a003f2c1f24289a83359f76872
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19929,17 +22092,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].how[0]
 render: Product pages, PRODUCTS[0].how[0]
 narrative_slot: mechanism
-en: 17 questions about your work experience, your English, your target country and where you are in the move. In Thai, on your phone.
-th: คำถาม 17 ข้อ เกี่ยวกับประสบการณ์ทำงาน ระดับภาษาอังกฤษ ประเทศเป้าหมาย และตอนนี้คุณอยู่ขั้นไหนบนเส้นทางไปทำงานในยุโรป ตอบเป็นภาษาไทยบนมือถือได้เลย
-provenance: paul-approved
-date: 26/10/2026
+en: 17 questions in Thai, on your phone, about your work experience, your English, your target country and the stage you are at now.
+th: ตอบคำถาม 17 ข้อเป็นภาษาไทยบนมือถือ เกี่ยวกับประสบการณ์ทำงาน ภาษาอังกฤษ ประเทศเป้าหมาย และขั้นตอนที่คุณอยู่ตอนนี้
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "17 questions about your work experience, your English, your target country and where you are in the move. In Thai, on your phone." TH: "คำถาม 17 ข้อ เกี่ยวกับประสบการณ์ทำงาน ระดับภาษาอังกฤษ ประเทศเป้าหมาย และตอนนี้คุณอยู่ขั้นไหนบนเส้นทางไปทำงานในยุโรป ตอบเป็นภาษาไทยบนมือถือได้เลย".'
 review:
   structural_calque: pass
-  text_hash: 8c98fba595467b85eb119fbe73fbd63c519c80343328d0ac542cc63905d5d0c9
+  text_hash: c08592777ef99d40c4fa5209debb9d9c37951c8e113529ca81269cacf96673d6
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19951,17 +22114,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].how[1]
 render: Product pages, PRODUCTS[0].how[1]
 narrative_slot: mechanism
-en: 'Your own chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European market. Each scored out of 5.'
-th: กราฟของคุณเองใน 4 ด้าน คือ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความสอดคล้องกับตลาดยุโรป แต่ละด้านมีคะแนนเต็ม 5
-provenance: paul-approved
-date: 26/10/2026
+en: 'See your result as a chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European job market. Each is scored out of 5.'
+th: ดูผลของคุณในกราฟ 4 ด้าน ได้แก่ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความเหมาะสมกับตลาดงานยุโรป คะแนนเต็มด้านละ 5
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Your own chart across four areas: skills in your field, readiness to apply, readiness to relocate, and fit with the European market. Each scored out of 5." TH: "กราฟของคุณเองใน 4 ด้าน คือ ทักษะในสายงาน ความพร้อมในการสมัครงาน ความพร้อมในการย้ายประเทศ และความสอดคล้องกับตลาดยุโรป แต่ละด้านมีคะแนนเต็ม 5".'
 review:
   structural_calque: pass
-  text_hash: 718e92f75773f970829df65960c27a4233c146daaaad9fbb2573207c85095101
+  text_hash: 4bc3ca703914b4b95ad237bba7fca4c2ea08334e2777aeca7843837496f671ff
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19973,17 +22136,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].how[2]
 render: Product pages, PRODUCTS[0].how[2]
 narrative_slot: mechanism
-en: How you compare with everyone else who has taken it, and how many of the job adverts we checked come from employers who sponsor a visa.
-th: ดูว่าคุณเทียบกับคนอื่นที่ทำแบบประเมินนี้แล้วเป็นอย่างไร และจากประกาศงานที่เราตรวจสอบ มีกี่ตำแหน่งที่บริษัทระบุว่าสปอนเซอร์วีซ่า
-provenance: paul-approved
-date: 26/10/2026
+en: See how your result compares with others who have taken the assessment, and how many of the job adverts we checked say they sponsor a visa.
+th: ดูว่าผลของคุณเป็นอย่างไรเมื่อเทียบกับผู้ที่ทำแบบประเมิน และดูว่าจากประกาศที่เราตรวจสอบ มีตำแหน่งที่ระบุว่าสปอนเซอร์วีซ่ากี่ตำแหน่ง
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "How you compare with everyone else who has taken it, and how many of the job adverts we checked come from employers who sponsor a visa." TH: "ดูว่าคุณเทียบกับคนอื่นที่ทำแบบประเมินนี้แล้วเป็นอย่างไร และจากประกาศงานที่เราตรวจสอบ มีกี่ตำแหน่งที่บริษัทระบุว่าสปอนเซอร์วีซ่า".'
 review:
   structural_calque: pass
-  text_hash: b558f201d4d659900cebda71951e154609aaa11c63ae08f6d93117e104fd1354
+  text_hash: 77a82a824775b815e87beeb1b3ea91454ec506e511bcd2faaaca550fa86610e1
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -19995,17 +22158,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].howLede
 render: Product pages, PRODUCTS[0].howLede
 narrative_slot: mechanism
-en: What you answer, and what you see the moment you finish.
-th: สิ่งที่คุณจะตอบ และสิ่งที่คุณจะเห็นทันทีที่ทำเสร็จ
-provenance: paul-approved
-date: 26/10/2026
+en: What you will be asked, and what you see the moment you finish.
+th: ดูว่าต้องตอบอะไรบ้าง และจะได้เห็นผลอะไรทันทีที่ทำเสร็จ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What you answer, and what you see the moment you finish." TH: "สิ่งที่คุณจะตอบ และสิ่งที่คุณจะเห็นทันทีที่ทำเสร็จ".'
 review:
   structural_calque: pass
-  text_hash: 84295922a18c3d3ca9781a7a769dc3a955d38e3ec5b3490e057be9cf24695415
+  text_hash: 2ec2986907cafd17c4c13ba1ebe2ec4f886d27cdd5ffdd291d7561b167b21524
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -20039,17 +22202,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[0].limit
 render: Product pages, PRODUCTS[0].limit
 narrative_slot: limit
-en: It reads your answers, not your CV. Where a form cannot measure something reliably, the chart leaves it empty instead of guessing. Those parts need someone to read your real CV or talk with you.
-th: แบบประเมินนี้อ่านจากคำตอบของคุณ ยังไม่ได้อ่าน CV ตัวจริง เรื่องไหนที่ประเมินจากคำตอบได้ไม่น่าเชื่อถือพอ กราฟจะเว้นว่างไว้แทนการเดาคะแนน ส่วนนั้นต้องมีคนอ่าน CV ตัวจริงของคุณหรือได้คุยกับคุณก่อน
-provenance: paul-approved
-date: 26/10/2026
+en: The EU Fit Check works from your answers and does not look at your CV. Where your answers are not enough to score an area reliably, we leave that score blank until we have seen your CV or talked with you.
+th: EU Fit Check ประเมินจากคำตอบของคุณ โดยไม่ตรวจ CV หากคำตอบยังไม่พอให้ประเมินด้านใดได้อย่างน่าเชื่อถือ เราจะเว้นคะแนนด้านนั้นไว้จนกว่าจะได้ดู CV หรือพูดคุยกับคุณ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Rewritten for the EU Fit Check page v2, `product-page-eu-fit-check.md`. Paul read back every Thai line and approved it on 26/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "It reads your answers, not your CV. Where a form cannot measure something reliably, the chart leaves it empty instead of guessing. Those parts need someone to read your real CV or talk with you." TH: "แบบประเมินนี้อ่านจากคำตอบของคุณ ยังไม่ได้อ่าน CV ตัวจริง เรื่องไหนที่ประเมินจากคำตอบได้ไม่น่าเชื่อถือพอ กราฟจะเว้นว่างไว้แทนการเดาคะแนน ส่วนนั้นต้องมีคนอ่าน CV ตัวจริงของคุณหรือได้คุยกับคุณก่อน".'
 review:
   structural_calque: pass
-  text_hash: a17b9c13ad2a6485fcfb49f1b546b98048228ea31d8d97060e54c1f574803d54
+  text_hash: 967eee727960d7a6cceac7c98d5f53c856d85eb9f65292ca5c4a9295858546af
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -20109,15 +22272,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].faq[0].a
 render: Product pages, PRODUCTS[1].faq[0].a
 narrative_slot: utility
-en: No. The CV Check is free.
-th: ไม่มีค่าใช้จ่าย CV Check ใช้ฟรี
+en: The CV Check is free to use.
+th: ใช้ CV Check ได้ฟรี
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "No. The CV Check is free." TH: "ไม่มีค่าใช้จ่าย CV Check ใช้ฟรี".'
 review:
   structural_calque: pass
-  text_hash: 45c904baa797b004d6b4accbc69d5bc383ca42dd16e9a86f12eddcbbab7c61db
+  text_hash: 21d9e3361a31b1ba17c5861fd506c52d9d6b098cf261a669be3bbf1753cd66b9
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20153,15 +22316,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].headline
 render: Product pages, PRODUCTS[1].headline
 narrative_slot: utility
-en: A CV that works in the Thai market can leave a European reader unable to see your strengths.
-th: CV ที่ใช้ได้ดีในตลาดไทย อาจทำให้คนในตลาดยุโรปมองไม่เห็นจุดแข็งของคุณ
+en: A CV that works well in Thailand may not yet get your strengths across to a reader in Europe.
+th: CV ที่ใช้ได้ดีในไทย อาจยังไม่สื่อจุดแข็งของคุณให้คนอ่านในยุโรปเข้าใจ
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "A CV that works in the Thai market can leave a European reader unable to see your strengths." TH: "CV ที่ใช้ได้ดีในตลาดไทย อาจทำให้คนในตลาดยุโรปมองไม่เห็นจุดแข็งของคุณ".'
 review:
   structural_calque: pass
-  text_hash: a301c3df3fd73f0d3c6f4523858407372f2c356c83e6176dd0e7293739ed4872
+  text_hash: 2359a982e19ba73cbee2ce5ae473b8e650740b70394310f100ed7ed7c17ebd59
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20175,24 +22338,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].how[0]
 render: Product pages, PRODUCTS[1].how[0]
 narrative_slot: mechanism
-en: >-
-  What the first third of the page spends itself on, because a screener and a reader both start at the top and
-  both stop early.
-th: >-
-  ดูว่าหนึ่งในสามแรกของหน้าใช้พื้นที่ไปกับอะไร เพราะทั้งระบบคัดกรองและคนอ่านต่างเริ่มจากด้านบน
-  และอาจหยุดอ่านตั้งแต่เนิ่น ๆ
+en: What the first third of your CV spends itself telling, because both the screening system and the person reading start at the top and may not reach the end.
+th: ตรวจว่าคุณใช้พื้นที่ช่วงหนึ่งในสามแรกของ CV เล่าเรื่องอะไร เพราะทั้งระบบคัดกรองและคนที่อ่าน CV เริ่มดูจากด้านบน และอาจอ่านไปไม่ถึงส่วนท้าย
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. The reading-order opener from the Kick-start
-
-  run sheet, which exists because the ATS artefact only shows up when a CV
-
-  parses badly and the first real CV parsed cleanly.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What the first third of the page spends itself on, because a screener and a reader both start at the top and both stop early." TH: "ดูว่าหนึ่งในสามแรกของหน้าใช้พื้นที่ไปกับอะไร เพราะทั้งระบบคัดกรองและคนอ่านต่างเริ่มจากด้านบน และอาจหยุดอ่านตั้งแต่เนิ่น ๆ".'
 review:
   structural_calque: pass
-  text_hash: 873281751a939d735b9221da3e7c2d64eca4e30f343118fc28770af2d458042e
+  text_hash: f47699cff4ac7adbded3ec7693b41403426df0c9ea34c913591c47528fa61fd7
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20206,20 +22360,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].how[1]
 render: Product pages, PRODUCTS[1].how[1]
 narrative_slot: mechanism
-en: Whether your employers and job titles mean anything to someone who does not know the Thai market.
-th: เช็กว่าชื่อบริษัทและชื่อตำแหน่งของคุณสื่อความหมายกับคนที่ไม่รู้จักตลาดงานไทยหรือไม่
+en: Whether someone who does not know the Thai job market will understand your past employers and your job titles.
+th: ดูว่าคนที่ไม่รู้จักตลาดงานไทยจะเข้าใจชื่อบริษัทเดิมและชื่อตำแหน่งของคุณหรือไม่
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. This is the core claim in `10_Methodology.md`:
-
-  illegibility rather than capability. A Bangkok senior title may read as
-
-  mid-level and a well-known Thai employer reads as an unknown one.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Whether your employers and job titles mean anything to someone who does not know the Thai market." TH: "เช็กว่าชื่อบริษัทและชื่อตำแหน่งของคุณสื่อความหมายกับคนที่ไม่รู้จักตลาดงานไทยหรือไม่".'
 review:
   structural_calque: pass
-  text_hash: 3300a62d461a434cfd000f7d225583668b327893d9165c42fe057b1b4c42ca6b
+  text_hash: 4d1fcede0b8fe35fdab5a23a52c3f5503d3973b646b3d2d3ebd9df7dfd59316d
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20255,20 +22404,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].howLede
 render: Product pages, PRODUCTS[1].howLede
 narrative_slot: mechanism
-en: We read your CV the way a European reader does, and list what to fix.
-th: เราอ่าน CV ของคุณแบบเดียวกับคนอ่านในยุโรป แล้วบอกว่าควรแก้จุดไหนบ้าง
-provenance: paul-approved
-date: 10/09/2026
+en: We read your CV the way someone shortlisting candidates in Europe does, and sum up what to fix.
+th: เราอ่าน CV ของคุณจากมุมมองของคนที่คัดผู้สมัครในยุโรป แล้วสรุปจุดที่ควรแก้
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "We read your CV the way a European reader does, and list what to fix." TH: "เราอ่าน CV ของคุณแบบเดียวกับคนอ่านในยุโรป แล้วบอกว่าควรแก้จุดไหนบ้าง".'
 review:
   structural_calque: pass
-  text_hash: 9eebbb7dc409ca7557e0b4f6122dad13a68e5d5f9ef146a22fcd677dfc0f8d6a
+  text_hash: a8f987ba07376b52df1d07015e245ce0e251941b10217d694f3b031e0dac2b3b
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -20280,15 +22426,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[1].lede
 render: Product pages, PRODUCTS[1].lede
 narrative_slot: utility
-en: Upload your CV and see how much of your profile a European reader can actually understand. Free.
-th: อัปโหลด CV แล้วดูว่าคนในตลาดยุโรปเข้าใจโปรไฟล์ของคุณได้มากแค่ไหน ใช้ฟรี
+en: Upload your CV to see how well someone shortlisting candidates in Europe understands your experience and skills. Free to use.
+th: อัปโหลด CV เพื่อดูว่าคนที่คัดผู้สมัครในยุโรปเข้าใจประสบการณ์และทักษะของคุณแค่ไหน ใช้ได้ฟรี
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Upload your CV and see how much of your profile a European reader can actually understand. Free." TH: "อัปโหลด CV แล้วดูว่าคนในตลาดยุโรปเข้าใจโปรไฟล์ของคุณได้มากแค่ไหน ใช้ฟรี".'
 review:
   structural_calque: pass
-  text_hash: b92cbbe7434f85d024b73e89f476c267af59701b87f7f6b0e28a837d135d51f5
+  text_hash: a8d736538f0221909458b14e7bcbd7f4534f67c89055cb00f9f7e2a57a23c823
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20378,17 +22524,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[0].a
 render: Fit Report page, FAQ answer
 narrative_slot: utility
-en: We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet.
-th: แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้
-provenance: paul-approved
-date: 28/10/2026
+en: We recommend it. The coach uses your EU Fit Check answers so the 30-minute interview can go deep on what the assessment cannot answer yet.
+th: แนะนำให้ทำก่อน โค้ชจะใช้คำตอบจาก EU Fit Check เพื่อใช้เวลาสัมภาษณ์ 30 นาทีเจาะลึกเรื่องที่แบบประเมินยังตอบไม่ได้
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026. Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "We recommend it. The Fit Report takes your EU Fit Check answers further, so the 30-minute interview can go deep on what the assessment cannot tell us yet." TH: "แนะนำให้ทำก่อนครับ เพราะ Fit Report จะนำคำตอบจาก EU Fit Check มาวิเคราะห์ต่อ ทำให้การสัมภาษณ์ 30 นาทีเน้นเจาะลึกในสิ่งที่แบบประเมินยังบอกเราไม่ได้".'
 review:
   structural_calque: pass
-  text_hash: a9e9f5cfc6700d9a56ef68208f8baf4d9f00ed52f889453cf1f2f3babf6ce6c7
+  text_hash: a061006d7fad4d837f0eddd11e5b07c107b218495923ad6dd65180f31170f161
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -20450,17 +22596,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].how[0]
 render: Fit Report page, how it works step 1
 narrative_slot: mechanism
-en: Message me on LINE. I will send the payment details and book a time that suits you.
-th: ทักมาทาง LINE ผมจะแจ้งรายละเอียดการชำระเงิน และนัดเวลาสัมภาษณ์ที่สะดวก
-provenance: paul-approved
-date: 28/10/2026
+en: Message me on LINE for the payment details and to book an interview time that suits you.
+th: ทักมาทาง LINE เพื่อรับรายละเอียดการชำระเงินและนัดเวลาสัมภาษณ์ที่คุณสะดวก
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. 'กับผม' became 'กับ Expert' on Paul's 1a, 27/10/2026, so every surface names the same interviewer. Rewritten for the Fit Report page on 28/10/2026, fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026, with his ติดต่อผมทาง LINE set back to ทักมาทาง LINE because the termbase term contact-talk-to-me bans ติดต่อผม; the English follows his Thai. Was EN: "Contact me on LINE for the payment details and to book an interview time that suits you." TH: "ติดต่อผมทาง LINE เพื่อรับรายละเอียดการชำระเงินและนัดเวลาสัมภาษณ์ที่คุณสะดวก".'
 review:
   structural_calque: pass
-  text_hash: c25296a2524c22ea30e5e2c03ebab1bd13698c038d6b78b0da72fe701fe31c54
+  text_hash: 77e804887e3e616c11cc221fddd857a0155785366acfa9d8c814f6a56ea9498b
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -20630,20 +22776,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[3].faq[0].a
 render: Product pages, PRODUCTS[3].faq[0].a
 narrative_slot: utility
-en: We keep looking, and a token is only deducted once a role matching your criteria has reached you.
-th: เราจะค้นหาต่อให้ และหักโทเคนเฉพาะเมื่อมีตำแหน่งที่ตรงกับเงื่อนไขส่งถึงคุณแล้ว
+en: PunProfile keeps searching, and deducts a token only once a role matching your criteria has been sent to you.
+th: PunProfile จะค้นหาต่อ และหักโทเคนเมื่อส่งตำแหน่งที่ตรงกับเงื่อนไขให้คุณแล้วเท่านั้น
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. Deliberately does not say real time: the
-
-  mechanism will be batched, and a promise of real time is a claim the
-
-  system does not meet.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "We keep looking, and a token is only deducted once a role matching your criteria has reached you." TH: "เราจะค้นหาต่อให้ และหักโทเคนเฉพาะเมื่อมีตำแหน่งที่ตรงกับเงื่อนไขส่งถึงคุณแล้ว".'
 review:
   structural_calque: pass
-  text_hash: 95f4e4c75bd51b126d6f6257c7e70fa61930fe16f5b36e1d40f42f00b3b18214
+  text_hash: 7dbcc3837fb4b9591eb0b76e976cca65b0473320090573e6842391822736d8cc
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20657,15 +22798,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[3].faq[0].q
 render: Product pages, PRODUCTS[3].faq[0].q
 narrative_slot: utility
-en: What if nothing matches?
-th: ถ้ารอบไหนไม่มีตำแหน่งที่ตรงเลย
-provenance: paul-approved
-date: 23/08/2026
+en: What if no role matches my criteria yet?
+th: ถ้ายังไม่พบตำแหน่งที่ตรงกับเงื่อนไขจะเป็นอย่างไร
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "What if nothing matches?" TH: "ถ้ารอบไหนไม่มีตำแหน่งที่ตรงเลย".'
 review:
   structural_calque: pass
-  text_hash: 711b6950cea77071ed3ec1e8338a7fa2f9a3832ee73923c8d90c42e7eca670ad
+  text_hash: 0303b51e7f6cb2ed23fb40398990a401ac900338169692ef0a090a9ac19892a3
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20723,18 +22864,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[3].how[1]
 render: Product pages, PRODUCTS[3].how[1]
 narrative_slot: mechanism
-en: One role at a time, so you have the time to look at each one properly.
-th: ส่งให้ทีละตำแหน่ง เพื่อให้คุณมีเวลาดูแต่ละงานจริง ๆ
+en: One role at a time, so you have time to weigh the details before deciding to apply.
+th: ส่งทีละตำแหน่ง เพื่อให้คุณมีเวลาพิจารณารายละเอียดก่อนตัดสินใจสมัคร
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. One at a time is the method's own rule
-
-  against handing anyone a five-item list, applied to job search.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "One role at a time, so you have the time to look at each one properly." TH: "ส่งให้ทีละตำแหน่ง เพื่อให้คุณมีเวลาดูแต่ละงานจริง ๆ".'
 review:
   structural_calque: pass
-  text_hash: 3ab0120e197f71b9975f531e9a707bd95e9ce8f56523d55104c0efa9e8bed2d9
+  text_hash: 5cab61f42a4e35ce44603f009fa894a6b8738914ec5fa1dabed4a7f4519eb285
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20748,22 +22886,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[3].how[2]
 render: Product pages, PRODUCTS[3].how[2]
 narrative_slot: mechanism
-en: Every role says plainly whether it needs work rights you already hold, before you spend time applying.
-th: ทุกตำแหน่งระบุชัดว่าต้องมีสิทธิ์ทำงานอยู่แล้วหรือไม่ ก่อนที่คุณจะเสียเวลาในการสมัคร
-provenance: paul-approved
-date: 22/08/2026
+en: Before you apply, you see clearly whether the role requires work rights you already hold.
+th: ก่อนสมัคร คุณจะเห็นชัดเจนว่าตำแหน่งนั้นกำหนดให้มีสิทธิ์ทำงานอยู่แล้วหรือไม่
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  Drafted 23/08/2026, read back and approved unchanged. Work rights sit outside the match bar and are
-
-  always stated, decided 22/08/2026, using the pipeline's own
-
-  "Publish (Work Rights Required)" verdict whose rule is that the label is
-
-  not optional and not a footnote.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Every role says plainly whether it needs work rights you already hold, before you spend time applying." TH: "ทุกตำแหน่งระบุชัดว่าต้องมีสิทธิ์ทำงานอยู่แล้วหรือไม่ ก่อนที่คุณจะเสียเวลาในการสมัคร".'
 review:
   structural_calque: pass
-  text_hash: a961b876ff46ce3d9ad8fad8286c68ad414ba4efcc15d87de1d1ced7ce58fae4
+  text_hash: a96761c0a10231139dd846383631cf833a6faeb131b15a1c03734436c9df86bd
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -20797,22 +22928,22 @@ review:
 ### `src/lib/content/products.ts::PRODUCTS[3].lede`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCTS[3].lede
-source: src/lib/content/products.ts
-path: PRODUCTS[3].lede
-render: Product pages, PRODUCTS[3].lede
-narrative_slot: utility
-en: We screen roles against the criteria you set and send them to your email, one at a time.
-th: เราคัดตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ แล้วส่งตรงถึงอีเมลทีละตำแหน่ง
+id: "src/lib/content/products.ts::PRODUCTS[3].lede"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[3].lede"
+render: "Product pages, PRODUCTS[3].lede"
+narrative_slot: "utility"
+en: "We screen roles against the criteria you set and send them to your Job Search Dashboard, one at a time, with an email to let you know."
+th: "PunProfile คัดตำแหน่งงานตามเงื่อนไขที่คุณกำหนด แล้วส่งไปยังแดชบอร์ดหางานทีละตำแหน่ง พร้อมแจ้งทางอีเมล"
 provenance: paul-written
-date: 23/08/2026
+date: "03/11/2026"
 term_bindings: []
-decision_note: Paul's own Thai of 23/08/2026, from the pricing sheet.
+decision_note: "Paul's 23/08/2026 line re-pointed 03/11/2026 from email to the dashboard: the PRD sends each role there, with an email notice. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
 review:
   structural_calque: pass
-  text_hash: a0a2c48af37eb63ab0828997781391becb6af1dd7034bcb1d13b6ab8f4cb41a1
+  text_hash: 22fd296b4196a134d3c2dbd8dc7700c2b09585a2b5b605d5d7343e3e780f9b4b
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -20894,22 +23025,88 @@ review:
 ### `src/lib/content/products.ts::PRODUCTS[4].faq[0].a`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCTS[4].faq[0].a
-source: src/lib/content/products.ts
-path: PRODUCTS[4].faq[0].a
-render: Product pages, PRODUCTS[4].faq[0].a
-narrative_slot: utility
-en: No charge. It is included with Matched Jobs, because it is where those roles arrive.
-th: ไม่มีค่าใช้จ่าย เพราะรวมอยู่ในบริการส่งตำแหน่งงานที่ตรงกับคุณแล้ว
+id: "src/lib/content/products.ts::PRODUCTS[4].faq[0].a"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].faq[0].a"
+render: "Product pages, PRODUCTS[4].faq[0].a"
+narrative_slot: "utility"
+en: "No charge. It opens with your first token pack, because it is where the roles matched to you arrive."
+th: "ไม่มีค่าบริการเพิ่มเติม เมื่อซื้อแพ็กโทเคนแรก คุณจะเข้าใช้งานหน้านี้เพื่อดูตำแหน่งงานที่ PunProfile คัดให้ได้"
 provenance: paul-written
-date: 23/08/2026
+date: "03/11/2026"
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: "Paul's 23/08/2026 answer re-pointed 03/11/2026 from Matched Jobs to the first token pack, which is what now opens it. Paul rewrote the Thai in his review pass of 03/11/2026."
 review:
   structural_calque: pass
-  text_hash: cfaf77a99b22e0f4192a0d52617d2178910a3f2c8ebe9137fa5cdb846da249d4
+  text_hash: 3d0151f10f22c76f242de9a6cdfb28c4cb41898491e5f472c96242ef1d6763c6
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[4].faq[1].a`
+
+```yaml
+id: "src/lib/content/products.ts::PRODUCTS[4].faq[1].a"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].faq[1].a"
+render: "Product pages, PRODUCTS[4].faq[1].a"
+narrative_slot: "utility"
+en: "Buy your first token pack. PunProfile then opens your Job Search Dashboard and emails you a sign-in code."
+th: "เมื่อคุณซื้อแพ็กโทเคนแรก PunProfile จะเปิดใช้งานแดชบอร์ดหางานให้คุณและส่งรหัสเข้าสู่ระบบทางอีเมล"
+provenance: paul-written
+date: "03/11/2026"
+term_bindings: []
+decision_note: "Added 03/11/2026: how access is opened. Written register, PunProfile in the third person, as the dashboard's sign-in copy. Paul rewrote the Thai in his review pass of 03/11/2026; the page name set to แดชบอร์ดหางาน on his call the same day."
+review:
+  structural_calque: pass
+  text_hash: a2c848a40f2004887da039fd2fc7417670e0ee99b7af60180fa68d9c042972e3
+  prompt_version: structural-calque-v1
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[4].faq[1].q`
+
+```yaml
+id: "src/lib/content/products.ts::PRODUCTS[4].faq[1].q"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].faq[1].q"
+render: "Product pages, PRODUCTS[4].faq[1].q"
+narrative_slot: "utility"
+en: "How do I start using it?"
+th: "เริ่มใช้งานได้อย่างไร"
+provenance: paul-approved
+date: "03/11/2026"
+term_bindings: []
+decision_note: "Added 03/11/2026 with its answer. Paul approved this Thai unchanged in his review pass of 03/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 1289e8e2fa9537d55cfd9cb738bcdfb7b190d801b4b6cd0ab02fb2655eb14adb
+  prompt_version: structural-calque-v1
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[4].costLabel`
+
+```yaml
+id: "src/lib/content/products.ts::PRODUCTS[4].costLabel"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].costLabel"
+render: "Product page summary card, /products, /pricing and the home catalogue, PRODUCTS[4].costLabel"
+narrative_slot: "utility"
+en: "Free from your first token pack"
+th: "ใช้ได้โดยไม่มีค่าใช้จ่ายเพิ่มเมื่อซื้อแพ็กโทเคนแรก"
+provenance: paul-written
+date: "03/11/2026"
+term_bindings: []
+decision_note: "Added 03/11/2026: replaces the bare Free for a product only a buyer can open. Paul rewrote the Thai in his review pass of 03/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 9d2eebbd0e40e9c09046b27b6bd7ed150c8e9a1e92fe61c134c43cf6495abbbb
+  prompt_version: structural-calque-v1
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -21034,47 +23231,39 @@ source: src/lib/content/products.ts
 path: PRODUCTS[4].howLede
 render: Product pages, PRODUCTS[4].howLede
 narrative_slot: mechanism
-en: One place holding every application and where each one stands.
-th: ที่เดียวที่เก็บทุกตำแหน่งที่คุณสมัคร พร้อมสถานะของแต่ละตำแหน่ง
-provenance: paul-approved
-date: 10/09/2026
+en: The roles PunProfile picks for you, your CV files and your applications, all on one page.
+th: ดูตำแหน่งงานที่ PunProfile คัดให้ ไฟล์ CV และรายการสมัครงานของคุณได้ในหน้าเดียว
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: |-
-  No string-local reasoning comment was present at migration.
-
-  Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "The roles picked for you, your CVs and every application you send, on one page." TH: "ตำแหน่งที่ PunProfile คัดให้ CV ของคุณ และทุกตำแหน่งที่คุณสมัคร รวมไว้ในหน้าเดียว".'
 review:
   structural_calque: pass
-  text_hash: c88657832e7fe3243fe854842b5abf74aad12949c5de4260a56f802d975a96a5
+  text_hash: 2c4e7f639d55067ee5c3d5c3857e0cc8728dbaa86e30c890c9255d5ae75c68f9
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
 ### `src/lib/content/products.ts::PRODUCTS[4].lede`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCTS[4].lede
-source: src/lib/content/products.ts
-path: PRODUCTS[4].lede
-render: Product pages, PRODUCTS[4].lede
-narrative_slot: utility
-en: One place holding every role you applied for, with where each one stands. Free.
-th: รวมทุกตำแหน่งที่คุณสมัครไว้ในที่เดียว พร้อมสถานะล่าสุดของแต่ละที่ ใช้ฟรี
+id: "src/lib/content/products.ts::PRODUCTS[4].lede"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].lede"
+render: "Product pages, PRODUCTS[4].lede"
+narrative_slot: "utility"
+en: "The roles picked for you, a CV for each target role, and every application with where it stands, all in one place. Free from your first token pack."
+th: "ดูตำแหน่งงานที่ PunProfile คัดให้ CV สำหรับแต่ละตำแหน่งเป้าหมาย และสถานะล่าสุดของทุกใบสมัครได้ในหน้าเดียว ใช้งานได้โดยไม่มีค่าใช้จ่ายเพิ่มเมื่อซื้อแพ็กโทเคนแรก"
 provenance: paul-written
-date: 23/08/2026
+date: "03/11/2026"
 term_bindings: []
-decision_note: |-
-  Paul's wording, 23/08/2026. Free because it is the surface paid deliveries
-
-  land on, decided 23/08/2026: charging for it would be charging twice for
-
-  one workflow.
+decision_note: "Rewritten 03/11/2026 for the whole dashboard, free from the first token pack. Replaces Paul's 23/08/2026 line for Guided Job Hunt. Paul rewrote the Thai in his review pass of 03/11/2026."
 review:
   structural_calque: pass
-  text_hash: 655f131fb61fe72dbf58205fba1592b2982f2c6e50f4ff75a2d7727a344fca25
+  text_hash: 9246047c61efb64ddde83eb58c3889721fe9e04a2a60ab7a1ffb7a8b9b050233
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Paul's review pass of 03/11/2026, through LANGUAGE-REVIEW-QUEUE.md."
 ```
 
 <!-- COPY-ENTRY -->
@@ -21086,15 +23275,15 @@ source: src/lib/content/products.ts
 path: PRODUCTS[4].limit
 render: Product pages, PRODUCTS[4].limit
 narrative_slot: limit
-en: We do not apply for you, and we do not chase employers on your behalf.
-th: เราไม่สมัครงานแทนคุณ และไม่ติดตามนายจ้างแทนคุณ
+en: We do not apply for you, and we do not contact companies to follow up on your behalf.
+th: เราไม่สมัครงานแทนคุณ และไม่ติดต่อบริษัทเพื่อติดตามผลแทนคุณ
 provenance: paul-written
-date: 23/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "We do not apply for you, and we do not chase employers on your behalf." TH: "เราไม่สมัครงานแทนคุณ และไม่ติดตามนายจ้างแทนคุณ".'
 review:
   structural_calque: pass
-  text_hash: cadd53fe75fcce9071dd56269716c883efbc4feed2ed0372bb8c8e6e4fbbcffd
+  text_hash: 885931176bb5b95c83576e413e123f3a81309a4e93288f907dbe67b00c68a818
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -21103,23 +23292,23 @@ review:
 ### `src/lib/content/products.ts::PRODUCTS[4].name`
 
 ```yaml
-id: src/lib/content/products.ts::PRODUCTS[4].name
-source: src/lib/content/products.ts
-path: PRODUCTS[4].name
-render: Product pages, PRODUCTS[4].name
-narrative_slot: utility
-en: Guided Job Hunt
-th: Guided Job Hunt
+id: "src/lib/content/products.ts::PRODUCTS[4].name"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[4].name"
+render: "Product pages, PRODUCTS[4].name"
+narrative_slot: "utility"
+en: "Job Search Dashboard"
+th: "แดชบอร์ดหางาน"
 provenance: paul-approved
-date: 23/08/2026
+date: "03/11/2026"
 term_bindings:
-  - product-guided-job-hunt
-decision_note: No string-local reasoning comment was present at migration.
+  - page-job-search-dashboard
+decision_note: "Renamed from Guided Job Hunt on Paul's call of 03/11/2026, to the page's own name. The Thai is the fixed term page-job-search-dashboard, decided by Paul 03/11/2026."
 review:
   structural_calque: pass
-  text_hash: 0306c1557b504fc623b194bbe30c6302c7f52d7e43f51c9c42965ed3747f4b9c
+  text_hash: 9bde47f229c3eff7959f777501e0e951a350901f08a035996cd7c638bd727490
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Paul decided this name 03/11/2026 (termbase page-job-search-dashboard); the rename was approved the same day."
 ```
 
 <!-- COPY-ENTRY -->
@@ -23477,6 +25666,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/services.ts::INCLUDES_LABEL`
+
+```yaml
+id: src/lib/content/services.ts::INCLUDES_LABEL
+source: src/lib/content/services.ts
+path: INCLUDES_LABEL
+render: Coaching and services pages, the fold over each service card's list
+narrative_slot: utility
+en: What is included
+th: บริการนี้มีอะไรบ้าง
+provenance: paul-approved
+date: 04/11/2026
+term_bindings: []
+decision_note: Claude draft 04/11/2026 for the /coaching revamp (Paul chose 1a), the label that opens each service card's list. Approved unchanged by Paul in the review of 04/11/2026.
+review:
+  structural_calque: pass
+  text_hash: dadc9d90de9aeefee41900a265fcd751800a2dec89f268e5bc7e839c77b33dab
+  prompt_version: structural-calque-v1
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/services.ts::AI_NOTE`
 
 ```yaml
@@ -23894,19 +26105,15 @@ source: src/lib/content/services.ts
 path: SERVICES_FAQ[0].a
 render: Services page, SERVICES_FAQ[0].a
 narrative_slot: utility
-en: >-
-  No. The other two can be taken on their own. The coaching is where every client starts because the direction
-  usually turns out to be the thing that was unclear, not the documents.
-th: >-
-  ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง
-  เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร
-provenance: paul-written
-date: 06/09/2026
+en: No. The other two can be taken on their own. Clients who choose coaching start with the direction, because it usually turns out to be the thing that was unclear, not the documents.
+th: ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร
+provenance: paul-approved
+date: 03/11/2026
 term_bindings: []
-decision_note: Paul's wording, 06/09/2026.
+decision_note: 'Copy review 03/11/2026, Q1: English brought in line with Paul''s own Thai, which already says coaching clients start with the direction. Thai unchanged. Approved unchanged by Paul in the review of 03/11/2026.'
 review:
   structural_calque: pass
-  text_hash: 994bd31da86ce250066c9d4147bc1193c3ac7b445a4f211e82e753ad4d5e5ed8
+  text_hash: f86d6fff6dd3f036eb5844c12644fbae120fe3a08cffb6084bf6e32c755324b1
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -24114,19 +26321,15 @@ source: src/lib/content/services.ts
 path: SERVICES_INTRO
 render: Services page, SERVICES_INTRO
 narrative_slot: utility
-en: >-
-  Career coaching is the core service every client starts with. The other two can be taken on their own,
-  depending on what you actually need.
-th: >-
-  Career Coaching เป็นบริการหลักที่ลูกค้าทุกคนเริ่มต้นด้วย
-  ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ
-provenance: paul-approved
-date: 25/08/2026
+en: Career Coaching is the main part of working with a coach. The other two can be taken on their own, depending on what you need.
+th: Career Coaching เป็นส่วนหลักของการทำงานกับโค้ช ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามความต้องการ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Career Coaching is the core of every coaching engagement. The other two can be taken on their own, depending on what you actually need." TH: "Career Coaching เป็นแกนหลักของการโค้ชทุกครั้ง ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ".'
 review:
   structural_calque: pass
-  text_hash: 714f750d8a9cb8611612d736d53dea2cae6b1e515c65f898c347e34cd9e21e50
+  text_hash: 4288de27b34fdc6491e6cf32613511ee97c60c028d712dc834d23f791c8701e8
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -24391,19 +26594,15 @@ source: src/lib/content/services.ts
 path: SERVICES[0].summary
 render: Services page, SERVICES[0].summary
 narrative_slot: utility
-en: >-
-  This is where every client starts. We get the direction clear before writing a single document, because
-  however good a CV is, sent into the wrong market it is still an application aimed at nothing.
-th: >-
-  นี่คือจุดเริ่มต้นของลูกค้าทุกคน เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน
-  ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี
+en: Finding the direction is the main part of working with a coach. We settle your target market together before writing a single document, because however good a CV is, an application in a market that does not suit you still misses.
+th: การหาทิศทางเป็นส่วนหลักของการทำงานกับโค้ช เราจะช่วยกันเลือกตลาดเป้าหมายให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าสมัครในตลาดที่ไม่เหมาะกับคุณ ใบสมัครก็ยังไม่ตรงเป้า
 provenance: paul-written
-date: 14/08/2026
+date: 03/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "This is the core of every coaching engagement. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing." TH: "นี่คือแกนหลักของการโค้ชทุกครั้ง เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี".'
 review:
   structural_calque: pass
-  text_hash: 2de07c7e7e22e03e90ef6c1b7f66936546ef3c53a9faf22cedfe1fc2e2eb9674
+  text_hash: 2eb72bce36aa5cdc83a6853797a991c04abc984c57f46de2b63f6004ad1f0f60
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -25709,17 +27908,17 @@ source: src/lib/content/copy.ts
 path: COPY.fit.summary.heading
 render: Fit Report, summary heading
 narrative_slot: proof
-en: Where you stand against the market's bar
-th: คุณอยู่ตรงไหน เมื่อเทียบกับเกณฑ์ของตลาด
-provenance: paul-approved
-date: 26/10/2026
+en: Your scores against the job market's bar
+th: คะแนนของคุณเทียบกับเกณฑ์ตลาดงาน
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Where you stand against the market''s bar" TH: "คุณอยู่ตรงไหน เมื่อเทียบกับเกณฑ์ของตลาด".'
 review:
   structural_calque: pass
-  text_hash: 8fb60d7a9a42603be69c9fcbdea99c9f1e54fc0da0af7fb85e80f6e9784e1c41
+  text_hash: 0a064a326570234c24418b9c1dbc347c36de95bb0883d0a1174bf75df4a0eae2
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -26633,17 +28832,17 @@ source: src/lib/content/products.ts
 path: PRODUCTS[2].faq[2].q
 render: Fit Report page, FAQ question
 narrative_slot: utility
-en: How long until I get the report?
-th: นานแค่ไหนกว่าจะได้รายงาน
-provenance: paul-approved
-date: 28/10/2026
+en: When will I get the report?
+th: จะได้รับรายงานเมื่อไร
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a). Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "How long until I get the report?" TH: "นานแค่ไหนกว่าจะได้รายงาน".'
 review:
   structural_calque: pass
-  text_hash: ad0f5cdb2817c5bf90bd6a8d7b56e1bb8967561a2a3c94e137995409d153d938
+  text_hash: 6c02c9a9a12f7e0870d8f8259d209a17506062017ec3475fc4a0a20a50eea437
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -26743,17 +28942,17 @@ source: src/lib/content/products.ts
 path: FIT_TILES[1].caption
 render: Fit Report page, tile caption, order page
 narrative_slot: artefact
-en: Which bar to clear first, and where to start.
-th: ควรผ่านเกณฑ์ด้านไหนก่อน และเริ่มพัฒนาจากจุดใด
-provenance: paul-approved
-date: 28/10/2026
+en: Which area to develop first, and what to start with.
+th: ควรเริ่มพัฒนาด้านไหนก่อน และเริ่มจากอะไร
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Which bar to clear first, and where to start." TH: "ควรผ่านเกณฑ์ด้านไหนก่อน และเริ่มพัฒนาจากจุดใด".'
 review:
   structural_calque: pass
-  text_hash: 509beee29f8335d9b3fd23a57e837e7d7615a65d773f47bc0752ea41ecb87239
+  text_hash: f33c1dfe9bed681c5592a4c605208a2d7cf6e993e328672fcfc1ff40e5507d80
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -26787,17 +28986,17 @@ source: src/lib/content/products.ts
 path: FIT_TILES[2].caption
 render: Fit Report page, tile caption, area page
 narrative_slot: artefact
-en: A closer look at all four areas, one chart each with eight to ten competencies, with advice on which are below the bar and how to develop them.
-th: เจาะลึกทักษะทั้ง 4 ด้าน ผ่านกราฟแยกด้านละ 8–10 ทักษะ พร้อมคำแนะนำว่าทักษะไหนยังไม่ถึงเกณฑ์ และควรพัฒนาอย่างไร
-provenance: paul-approved
-date: 28/10/2026
+en: A chart for each of the four areas, eight to ten competencies each, with advice on which are below the bar and how to develop them.
+th: ดูกราฟแยกทั้ง 4 ด้าน ด้านละ 8–10 ทักษะ พร้อมคำแนะนำว่าทักษะไหนยังไม่ถึงเกณฑ์และควรพัฒนาอย่างไร
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "A closer look at all four areas, one chart each with eight to ten competencies, with advice on which are below the bar and how to develop them." TH: "เจาะลึกทักษะทั้ง 4 ด้าน ผ่านกราฟแยกด้านละ 8–10 ทักษะ พร้อมคำแนะนำว่าทักษะไหนยังไม่ถึงเกณฑ์ และควรพัฒนาอย่างไร".'
 review:
   structural_calque: pass
-  text_hash: a33095169c76108bb9ec8b932afc8a838627635844a1d9909ccfb28a6c22586a
+  text_hash: 0131664df77175dfdacdaa3d223cc2481b320187f0a5f7f8bca16dbcaaa4593e
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -26809,17 +29008,17 @@ source: src/lib/content/products.ts
 path: FIT_TILES[3].caption
 render: Fit Report page, tile caption, moves page
 narrative_slot: artefact
-en: 'Ranked for you: what to work on first to lift your score most, with the before and after.'
-th: จัดลำดับให้แล้วว่าควรพัฒนาอะไรก่อน เพื่อเพิ่มคะแนนได้มากที่สุด พร้อมเปรียบเทียบคะแนนก่อนและหลัง
-provenance: paul-approved
-date: 28/10/2026
+en: What to work on first to lift your score most, with your current score and the score you can expect after improving.
+th: ดูว่าควรเริ่มพัฒนาอะไรเพื่อให้คะแนนดีขึ้นมากที่สุด พร้อมคะแนนปัจจุบันและคะแนนที่คาดว่าจะได้หลังปรับปรุง
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Ranked for you: what to work on first to lift your score most, with the before and after." TH: "จัดลำดับให้แล้วว่าควรพัฒนาอะไรก่อน เพื่อเพิ่มคะแนนได้มากที่สุด พร้อมเปรียบเทียบคะแนนก่อนและหลัง".'
 review:
   structural_calque: pass
-  text_hash: 4dff1e62414a7df63ba1fcac7e1030d3c965e1f4fec664cbe21afc34a91910cb
+  text_hash: f2280d7f6c3090031176263f0108ee5e1960ebb3281e4149d2fe1516628ac43c
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -26831,17 +29030,17 @@ source: src/lib/content/products.ts
 path: FIT_TILES[4].caption
 render: Fit Report page, tile caption, roles page
 narrative_slot: artefact
-en: Open roles in the countries you chose, with the job ads we have checked.
-th: ตำแหน่งงานที่เปิดรับสมัครจริงในประเทศที่คุณเลือก พร้อมประกาศงานที่เราตรวจสอบแล้ว
-provenance: paul-approved
-date: 28/10/2026
+en: Job ads open in the countries you chose, each one checked.
+th: ดูประกาศงานที่เปิดรับในประเทศที่คุณเลือกและผ่านการตรวจสอบแล้ว
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report product page rebuilt on Paul's 1a/2a/3a, 28/10/2026. Thai rewritten or approved by Paul in chat 28/10/2026; ผู้เชี่ยวชาญ in place of Expert on this page (Paul, 1a).
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Open roles in the countries you chose, with the job ads we have checked." TH: "ตำแหน่งงานที่เปิดรับสมัครจริงในประเทศที่คุณเลือก พร้อมประกาศงานที่เราตรวจสอบแล้ว".'
 review:
   structural_calque: pass
-  text_hash: 72c4ccf083bba06ffcc174c9289f11d2f5478df1560981b71d57d8c89d7a1864
+  text_hash: ba34bc7e46886a18d1d4aa2b4329a8be66be889860a83c63325e4c91f05d54f2
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -27007,17 +29206,17 @@ source: src/lib/content/products.ts
 path: FIT_PLAN_FREE.rows[2]
 render: Fit Report page, comparison card row, EU Fit Check
 narrative_slot: mechanism
-en: The market's bar on every chart
-th: เกณฑ์ของตลาดบนทุกกราฟ
-provenance: paul-approved
-date: 28/10/2026
+en: The job market's bar on every chart
+th: เกณฑ์ตลาดงานในทุกกราฟ
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "The market''s bar on every chart" TH: "เกณฑ์ของตลาดบนทุกกราฟ".'
 review:
   structural_calque: pass
-  text_hash: d2a65c8bdfbc72591eccd175fedcbe1f59bef190eb8ce0126aac6e46bb5affd3
+  text_hash: 6afa1f988dfce0768571a9ee40ace9af1a951891ba02cd5f6600f38823657221
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -27117,17 +29316,17 @@ source: src/lib/content/products.ts
 path: FIT_PLAN_FULL.rows[1]
 render: Fit Report page, comparison card row, Fit Report
 narrative_slot: mechanism
-en: A next step for every competency below the bar, in order
-th: สิ่งที่ควรทำต่อ ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ
-provenance: paul-approved
-date: 28/10/2026
+en: Advice for every competency below the bar, in the order to develop them
+th: คำแนะนำสำหรับทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับที่ควรพัฒนา
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "A next step for every competency below the bar, in order" TH: "สิ่งที่ควรทำต่อ ทุกทักษะที่ยังไม่ถึงเกณฑ์ พร้อมลำดับ".'
 review:
   structural_calque: pass
-  text_hash: f932364a1e05a30ff2270ad15a9ec408e7d38d47bc8014c33006282581968919
+  text_hash: b367c9d4ba1994f88ab72c008a85dbef3de0efb137268fb76b76b599de2091e3
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -27315,17 +29514,17 @@ source: src/lib/content/products.ts
 path: FIT_CALLOUTS[2].body
 render: Fit Report page, showcase callout body
 narrative_slot: artefact
-en: Advice for you, with things you can act on next.
-th: คำแนะนำเฉพาะคุณ พร้อมสิ่งที่นำไปลงมือทำต่อได้
-provenance: paul-approved
-date: 28/10/2026
+en: Advice tailored to you, with steps you can take next.
+th: คำแนะนำที่ปรับให้เหมาะกับคุณ พร้อมขั้นตอนที่ทำต่อได้
+provenance: paul-written
+date: 03/11/2026
 term_bindings: []
-decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026. Thai rewritten by Paul in chat 28/10/2026.
+decision_note: 'Paul''s Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: "Advice for you, with things you can act on next." TH: "คำแนะนำเฉพาะคุณ พร้อมสิ่งที่นำไปลงมือทำต่อได้".'
 review:
   structural_calque: pass
-  text_hash: 2611b940c5e4c5b6fde60854729c2555d876c5be22c4c4487726a218eacf73ba
+  text_hash: 078d907a28b244b3130744146389a14e748910e03c52cbaabc47f7f4b9316a35
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
 
 <!-- COPY-ENTRY -->
@@ -27544,28 +29743,6 @@ decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers o
 review:
   structural_calque: pass
   text_hash: b6a1c2974f3960c233a068da638b748a738c8a226c0af993b61dbe0eb1aaaf12
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_EXPERT.facts[3]`
-
-```yaml
-id: src/lib/content/products.ts::FIT_EXPERT.facts[3]
-source: src/lib/content/products.ts
-path: FIT_EXPERT.facts[3]
-render: Fit Report page, who interviews you
-narrative_slot: proof
-en: Runs the “Jobs at companies in Europe” group
-th: ผู้ดูแลกลุ่ม “งานบริษัทในยุโรป”
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
-review:
-  structural_calque: pass
-  text_hash: 44df12fa1df246716ef695bab6f427589f05ab172cf726eb91be815401228bde
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 28/10/2026.
 ```
@@ -27843,17 +30020,28 @@ source: src/lib/content/coaching.ts
 path: COACHES[0].story[2]
 render: Coaching page, Paul's story
 narrative_slot: proof
-en: "I work in marketing, so when I look at a candidate’s profile, I ask similar questions to those I ask about a brand: what makes it stand out, what it wants to be known for, and whether the story is consistent. I also run the “Jobs at companies in Europe” group, where many people first get to know me."
-th: "ผมทำงานด้านการตลาด เวลาดูโปรไฟล์ผู้สมัคร ผมจึงดูคล้ายกับเวลาดูแบรนด์ว่า จุดเด่นคืออะไร อยากให้คนจดจำในเรื่องไหน และสิ่งที่เล่ามาสอดคล้องกันหรือเปล่า ผมยังดูแลกลุ่ม “งานบริษัทในยุโรป” ด้วย หลายคนรู้จักผมครั้งแรกผ่านกลุ่มนี้"
-provenance: paul-approved
-date: 30/10/2026
+en: "I work in marketing, so when I read a candidate’s profile, I ask similar questions to those I ask about a brand: what makes it stand out, what it wants to be known for, and whether the whole story is consistent."
+th: "ผมทำงานด้านการตลาด เวลาอ่านโปรไฟล์ผู้สมัคร ผมจึงตั้งคำถามคล้ายกับเวลาดูแบรนด์ว่า อะไรคือจุดเด่น อยากให้คนจดจำเรื่องอะไร และสิ่งที่เล่าทั้งหมดสอดคล้องกันไหม"
+provenance: paul-written
+date: 04/11/2026
 term_bindings: []
-decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+decision_note: |-
+  Coach section redesign (founder-copy.md), Paul's review of 30/10/2026.
+
+  The closing sentence about running the group came out on his instruction of
+  04/11/2026, when the group stopped being named anywhere on the site, and the
+  shortened paragraph went into the language queue.
+
+  **He rewrote it there rather than ticking it**, in the pass of 04/11/2026:
+  `อ่านโปรไฟล์` for `ดูโปรไฟล์`, `ตั้งคำถามคล้ายกับ` for `ดูคล้ายกับ`, and
+  `สิ่งที่เล่าทั้งหมดสอดคล้องกันไหม` for `สิ่งที่เล่ามาสอดคล้องกันหรือเปล่า`. The
+  English follows: he reads a profile rather than looks at one, and it is the
+  whole story that has to hold together.
 review:
   structural_calque: pass
-  text_hash: 3f747b997aeee02d0877fbba049c4f7981fd8f9d1e65342f3eb5cc3f5371b189
+  text_hash: 14ffb57a6a491d852405cf243460838fc1d5eea816869026438f524a05e77061
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: Paul wrote this Thai in the language queue on 04/11/2026.
 ```
 
 <!-- COPY-ENTRY -->

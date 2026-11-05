@@ -101,8 +101,14 @@ const span = (f: LintFinding) => (f.at ? f.at[1] - f.at[0] : 0);
  * `แบบ` added 26/10/2026, from Paul's own rewrite of the EU Fit Check page's
  * full-version section: `EU Fit Check แบบฟรี` names the free version of a
  * product beside its paid one, which is a tier and not a casual verb.
+ *
+ * `ของ`, `แอป` and `เล่น` added 03/11/2026, from Paul's approved Thai for
+ * `language-learning-apps`, which compares free and paid apps: `ของฟรี` and
+ * `แอปฟรี` name free products beside paid ones, the same tier sense as `แบบฟรี`,
+ * and `เล่นฟรีวันละ 5 นาที` is using a learning app, which is the `ใช้ฟรี` case.
+ * None of them is a casual verb, and `CASUAL_VERBS` is still checked first.
  */
-const FREE_STEMS = ["ปรึกษา", "ทดลอง", "ตรวจ", "เรียน", "ส่ง", "จัดส่ง", "อบรม", "อ่าน", "เปิด", "ใช้", "แบบ"];
+const FREE_STEMS = ["ปรึกษา", "ทดลอง", "ตรวจ", "เรียน", "ส่ง", "จัดส่ง", "อบรม", "อ่าน", "เปิด", "ใช้", "แบบ", "ของ", "แอป", "เล่น"];
 
 /** Casual verbs that must stay separate from ฟรี. LR-04. */
 const CASUAL_VERBS = ["คุย", "แชท", "ทัก", "แอด", "เม้าท์", "ถาม"];

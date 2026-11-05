@@ -17,6 +17,13 @@
  * the services, and the only mention of the check is as the source of the
  * numbers, which is a citation rather than an invitation.
  *
+ * **Revamped 04/11/2026** (Paul chose 1a; plan in `Claude outputs/coaching-images/
+ * coaching-plan.md`). Same words, new order and layout: a clay hero, the pains
+ * as ticked tiles, the placements as proof, the services moved up with their
+ * lists folded, the method as four steps in a row, who it is for and not for
+ * side by side, the coaches as two cards with their stories folded, and the
+ * "why we do this" as a two-column panel.
+ *
  * One accent button per view, per `design.md`. The quiet link to /contact under
  * it is text, not a second button.
  */
@@ -28,7 +35,9 @@ import { useCopy } from "@/components/LocaleProvider";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 import Band from "@/components/Band";
 import CallToAction from "@/components/CallToAction";
-import CoachRows from "@/components/features/coaches/CoachRows";
+import CoachFold from "@/components/features/coaches/CoachFold";
+import Testimonials from "@/components/blocks/Testimonials";
+import { RESULTS, RESULTS_HEADING, RESULTS_NEXT, RESULTS_PREV } from "@/lib/content/home";
 import ServiceCards from "@/components/features/services/ServiceCards";
 import {
   CLOSE_LEAD,
@@ -39,7 +48,6 @@ import {
   HOOK_EYEBROW,
   HOOK_LINE_1,
   HOOK_LINE_2,
-  MASCOT_ALT,
   METHOD,
   METHOD_HEADING,
   METHOD_INTRO,
@@ -85,28 +93,27 @@ function ProofPanel() {
   );
 }
 
+/** The four placements, each crediting coaching work. Photos as on the home page. */
+const PLACEMENTS: { id: string; photo: string }[] = [
+  { id: "placed-hotel-germany", photo: "/home/testimonials/testimonial-photo-may.jpg" },
+  { id: "placed-chef-netherlands", photo: "/home/testimonials/testimonial-photo-ton.jpg" },
+  { id: "placed-it-ireland", photo: "/home/testimonials/testimonial-photo-nat.jpg" },
+  { id: "placed-logistics-sweden", photo: "/home/testimonials/testimonial-photo-nut.jpg" },
+];
+
 export default function CoachingPage() {
   const { pick, locale } = useCopy();
 
   return (
     <div className="w-full">
-      {/* Full-bleed hero on `primary-container`, the successor to the cream
-          wash the mascot illustration was drawn on. `design.md` rotates one
-          container tone per major section and says each mascot gets its own.
-
-          Deliberately NOT brand lime, even though this is the page's opening
-          section: the founder section below is already on brand orange, and the
-          system allows one fixed high-energy ground per page. Two of them is two
-          things claiming to be the loudest. 16/08/2026. */}
+      {/* ------------------------------------------------------------ hero
+          04/11/2026: the clay scene replaces the flat mascot, which the brand
+          guide keeps for small moments. The loose line under the buttons is
+          now what it always meant to be, a jump to the services. */}
       <Band block="B3" ground="canvas" width="wide">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 large:grid-cols-[1.15fr_1fr]">
+        <div className="grid items-center gap-10 large:grid-cols-[1.1fr_1fr] large:gap-14">
           <div>
-            {/* Same rule as the footer: tracked and uppercased in English,
-                neither in Thai. See `EYEBROW` in `content/footer.ts`. */}
             <p className={`text-on-surface-variant ${EYEBROW(locale)}`}>{pick(HOOK_EYEBROW)}</p>
-            {/* Two lines, second in Teal. `text-balance` because the break
-                between them is meaningful and a ragged first line reads as a
-                mistake rather than as a beat. */}
             <h1 className={`mt-5 text-balance ${HERO_HEADING(locale)}`}>
               {pick(HOOK_LINE_1)}
               <br />
@@ -120,126 +127,160 @@ export default function CoachingPage() {
               ))}
             </div>
             <CallToAction page="/coaching" className="mt-8" />
-            <p className="mt-3 text-body-medium text-on-surface-variant">{pick(HOOK_CTA_SUB)}</p>
+            <a
+              href="#services"
+              className="group mt-5 inline-flex min-h-6 items-center gap-2 text-body-md text-on-surface-variant underline underline-offset-4"
+            >
+              {pick(HOOK_CTA_SUB)}
+              <span aria-hidden className="duration-[350ms] ease-nav transition-transform group-hover:translate-y-0.5">
+                &darr;
+              </span>
+            </a>
           </div>
-
-          {/* The asset carries its own cream, a shade off `cream-wash`, so the
-              panel is set to the illustration's exact background and rounded.
-              A deliberate panel reads as design; a near-match rectangle reads
-              as a mistake. Hidden below `lg` rather than shrunk: on a phone it
-              would push the headline and the button below the fold, and the
-              button is the entire job of this section. */}
-          <div className="hidden overflow-hidden rounded-large bg-surface-container large:block">
-            <Image
-              src="/mascot-stepping.png"
-              alt={pick(MASCOT_ALT)}
-              width={1442}
-              height={720}
-              priority
-              className="h-auto w-full"
-            />
-          </div>
+          <Image
+            src="/coaching/coaching-hero.jpg"
+            // Decorative: the headline beside it carries the meaning.
+            alt=""
+            width={1200}
+            height={900}
+            priority
+            sizes="(max-width: 1200px) 92vw, 560px"
+            className="mx-auto h-auto w-full max-w-[640px] rounded-3xl"
+          />
         </div>
       </Band>
 
-        {/* Recognition before argument. A reader who has ticked three of these
-            off in their head reads the rest of the page differently. */}
-        <Band block="B5" ground="canvas">
-          <h2 className={SECTION_HEADING(locale)}>{pick(PAIN_HEADING)}</h2>
-          <div className="mt-6 grid gap-3 medium:grid-cols-2">
-            {PAINS.map((p, i) => (
-              <p key={i} className="card-plain px-8 py-6 text-body-large text-on-surface">
-                {pick(p)}
-              </p>
-            ))}
-          </div>
-        </Band>
+      {/* ---------------------------------------------- does this sound like you
+          Six tiles with a tick each, the full width. Recognition before
+          argument. */}
+      <Band block="B5" ground="canvas" width="wide">
+        <h2 className={SECTION_HEADING(locale)}>{pick(PAIN_HEADING)}</h2>
+        <ul className="mt-8 grid gap-4 medium:grid-cols-2 large:grid-cols-3">
+          {PAINS.map((p, i) => (
+            <li key={i} className="card-plain flex gap-4 border border-line px-6 py-6">
+              <span
+                aria-hidden
+                className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-body-sm-strong text-on-primary"
+              >
+                &#10003;
+              </span>
+              <span className="text-body-md text-on-surface">{pick(p)}</span>
+            </li>
+          ))}
+        </ul>
+      </Band>
 
-        <ProofPanel />
+      <ProofPanel />
 
-        {/* The machine. The section this business is best placed to write,
-            because the framework genuinely does say what it cannot do. */}
-        <Band block="B2" ground="soft">
-          <h2 className={SECTION_HEADING(locale)}>{pick(METHOD_HEADING)}</h2>
-          <p className="mt-3 text-body-large text-on-surface-variant">{pick(METHOD_INTRO)}</p>
-          <div className="mt-8 grid gap-4 medium:grid-cols-2">
-            {METHOD.map((step) => (
-              <div key={step.n} className="card-plain px-8 py-9">
-                <p className="text-headline-small text-ink-deep">{step.n}</p>
-                <h3 className="mt-2 text-heading-sm">{pick(step.heading)}</h3>
-                <div className="mt-3 flex flex-col gap-3">
-                  {step.body.map((b, i) => (
-                    <p key={i} className="text-body-large text-on-surface-variant">
-                      {pick(b)}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Band>
-
-        {/* B10 rather than B5: this band holds "who it is for" and then "who it
-            is NOT for", and the second half is the limit slot. Labelled B5 for
-            an afternoon, which made `verify:narrative` say this page asks
-            without limiting when it does the opposite. */}
-        <Band block="B10" ground="canvas">
-          <h2 className={SECTION_HEADING(locale)}>{pick(PERSONA_HEADING)}</h2>
-          <ul className="mt-6 flex flex-col gap-3">
-            {PERSONAS.map((p, i) => (
-              <li key={i} className="flex gap-3 text-body-large text-on-surface">
-                <span aria-hidden className="mt-2.5 block size-2 shrink-0 rounded-full bg-primary" />
-                <span>{pick(p)}</span>
-              </li>
-            ))}
-          </ul>
-
-          {/* Saying who you turn away is the cheapest credibility on the page. */}
-          <h3 className="mt-10 text-heading-sm">{pick(NOT_FOR_HEADING)}</h3>
-          <ul className="mt-4 flex flex-col gap-3">
-            {NOT_FOR.map((p, i) => (
-              <li key={i} className="flex gap-3 text-body-large text-on-surface-variant">
-                <span
-                  aria-hidden
-                  className="mt-2.5 block size-2 shrink-0 rounded-full bg-surface-container-highest"
-                />
-                <span>{pick(p)}</span>
-              </li>
-            ))}
-          </ul>
-        </Band>
-
-      {/* Last, and only now. An About page asks a stranger to care who you
-          are before they have a reason to; this asks a reader who has just
-          agreed with six things.
-
-          30/10/2026: white ground, one row per coach (`CoachRows`), then the
-          shared "why we do this" in one soft-grey card. It was a full-bleed
-          lime band, which Paul found overwhelming; lime is now the accent
-          only. */}
-      <Band block="B7" ground="canvas" width="wide">
-        <CoachRows />
-        <div className="mt-14 rounded-[30px] bg-canvas-soft px-6 py-9 medium:px-10">
-          <p className="text-heading-sm text-on-surface">{pick(FOUNDER_TURN)}</p>
-          <div className="mt-5 flex max-w-3xl flex-col gap-4">
-            {FOUNDER_AFTER.map((p, i) => (
-              <p key={i} className="text-body-large text-on-surface">
-                {pick(p)}
-              </p>
-            ))}
-          </div>
+      {/* --------------------------------------------------------- placements
+          New on this page 04/11/2026: the page that sells the coaching had no
+          proof, and the four placement stories credit coaching work. */}
+      <Band block="B13" ground="soft" width="wide">
+        <h2 className={SECTION_HEADING(locale)}>{pick(RESULTS_HEADING)}</h2>
+        <div className="mt-10">
+          <Testimonials
+            items={PLACEMENTS.flatMap(({ id, photo }) => {
+              const r = RESULTS.find((x) => x.id === id);
+              return r
+                ? [{ quote: pick(r.quote), who: pick(r.who), role: pick(r.role), portrait: { src: photo, alt: "" } }]
+                : [];
+            })}
+            codePrefix="COACHING-PROOF"
+            prevLabel={pick(RESULTS_PREV)}
+            nextLabel={pick(RESULTS_NEXT)}
+          />
         </div>
       </Band>
 
-      {/* The three services, folded in from `/services` on 23/08/2026. They sit
-          after the case for coaching and before the close, which is where "and
-          here is what that actually is" belongs: a reader who has got this far
-          has agreed there is a problem and now wants the shape of the work.
-
-          It carries the `?focus=` contract the result screen depends on. See the
-          note at the top of `ServiceCards`. */}
-      <Band block="B4" ground="soft" width="wide">
+      {/* ----------------------------------------------------------- services
+          Moved up from the foot of the page. It carries the `?focus=` contract
+          the result screen depends on; see the note at the top of
+          `ServiceCards`. */}
+      <Band block="B4" ground="canvas" width="wide" id="services">
         <ServiceCards />
+      </Band>
+
+      {/* ------------------------------------------------------------- method
+          Four steps in a row on the wide screen, with large numbers. */}
+      <Band block="B2" ground="soft" width="wide">
+        <div className="max-w-3xl">
+          <h2 className={SECTION_HEADING(locale)}>{pick(METHOD_HEADING)}</h2>
+          <p className="mt-4 text-body-large text-on-surface-variant">{pick(METHOD_INTRO)}</p>
+        </div>
+        <ol className="mt-10 grid gap-4 medium:grid-cols-2 large:grid-cols-4">
+          {METHOD.map((step) => (
+            <li key={step.n} className="card-plain flex flex-col px-6 py-7">
+              <p className="text-display-sm text-ink-deep">{step.n}</p>
+              <h3 className="mt-3 text-heading-xs">{pick(step.heading)}</h3>
+              <div className="mt-3 flex flex-col gap-3">
+                {step.body.map((b, i) => (
+                  <p key={i} className="text-body-md text-on-surface-variant">
+                    {pick(b)}
+                  </p>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </Band>
+
+      {/* ---------------------------------------------- who it is for, and not
+          B10: the second half is the limit slot. Side by side since
+          04/11/2026, ticks against crosses. */}
+      <Band block="B10" ground="canvas" width="wide">
+        <div className="grid gap-6 large:grid-cols-2">
+          <div className="card-plain border-2 border-ink-deep px-6 py-7 medium:px-8">
+            <h2 className="text-headline-sm">{pick(PERSONA_HEADING)}</h2>
+            <ul className="mt-6 flex flex-col gap-4">
+              {PERSONAS.map((p, i) => (
+                <li key={i} className="flex gap-3 text-body-md text-on-surface">
+                  <span
+                    aria-hidden
+                    className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary text-caption-strong text-on-primary"
+                  >
+                    &#10003;
+                  </span>
+                  <span>{pick(p)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Saying who you turn away is the cheapest credibility on the page. */}
+          <div className="card-plain border border-line px-6 py-7 medium:px-8">
+            <h2 className="text-headline-sm">{pick(NOT_FOR_HEADING)}</h2>
+            <ul className="mt-6 flex flex-col gap-4">
+              {NOT_FOR.map((p, i) => (
+                <li key={i} className="flex gap-3 text-body-md text-on-surface-variant">
+                  <span
+                    aria-hidden
+                    className="flex size-6 shrink-0 items-center justify-center rounded-full bg-canvas-soft text-caption-strong text-ink-deep"
+                  >
+                    &#10005;
+                  </span>
+                  <span>{pick(p)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Band>
+
+      {/* ------------------------------------------------------------ coaches
+          Two equal cards, stories folded (`CoachFold`), then the shared "why
+          we do this" as a two-column panel: the line on the left, the four
+          paragraphs on the right. */}
+      <Band block="B7" ground="canvas" width="wide">
+        <CoachFold />
+        <div className="mt-10 grid gap-8 rounded-[30px] bg-primary-pale px-6 py-9 text-on-primary-pale medium:px-10 large:grid-cols-[1fr_2fr]">
+          <p className="text-headline-sm">{pick(FOUNDER_TURN)}</p>
+          <div className="flex flex-col gap-4">
+            {FOUNDER_AFTER.map((p, i) => (
+              <p key={i} className="text-body-md">
+                {pick(p)}
+              </p>
+            ))}
+          </div>
+        </div>
       </Band>
 
       <Band block="B8" ground="dark" align="center" className="text-center">

@@ -18,6 +18,150 @@ export interface MarketRole {
 
 export const MARKET_ROLES: readonly MarketRole[] = [
   {
+    "id": "2026-11-04-resonance-graduate-ai-transformation-lead-germany",
+    "employer": "Resonance",
+    "title": "Graduate AI Transformation Lead",
+    "country": "Germany",
+    "firstSeen": "2026-11-04",
+    "url": "https://jobs.ashbyhq.com/resonance/684fcdd8-ec22-4d86-87cd-086bc0239703"
+  },
+  {
+    "id": "2026-11-04-resonance-graduate-applied-ai-engineer-germany",
+    "employer": "Resonance",
+    "title": "Graduate Applied AI Engineer",
+    "country": "Germany",
+    "firstSeen": "2026-11-04",
+    "url": "https://jobs.ashbyhq.com/resonance/86a46eb4-01f7-4d92-b06b-b8276b6d25f6"
+  },
+  {
+    "id": "2026-11-04-catawiki-platform-engineer-netherlands",
+    "employer": "Catawiki",
+    "title": "Platform Engineer",
+    "country": "Netherlands",
+    "firstSeen": "2026-11-04",
+    "url": "https://job-boards.greenhouse.io/catawiki/jobs/8346092"
+  },
+  {
+    "id": "2026-11-04-n8n-senior-product-manager-ai-gateway-germany",
+    "employer": "n8n",
+    "title": "Senior Product Manager - AI Gateway",
+    "country": "Germany",
+    "firstSeen": "2026-11-04",
+    "url": "https://jobs.ashbyhq.com/n8n/473bcbae-ad3e-4611-8ca3-3499040e5f22"
+  },
+  {
+    "id": "2026-11-04-payrails-content-strategist-germany",
+    "employer": "Payrails",
+    "title": "Content Strategist",
+    "country": "Germany",
+    "firstSeen": "2026-11-04",
+    "url": "https://jobs.ashbyhq.com/payrails/e92abbe8-6f51-4cdb-8227-20c54c0677c8"
+  },
+  {
+    "id": "2026-11-03-jetbrains-head-of-data-science-and-analytics-jetbrains-air-germany",
+    "employer": "JetBrains",
+    "title": "Head of Data Science and Analytics (JetBrains Air)",
+    "country": "Germany",
+    "firstSeen": "2026-11-03",
+    "url": "https://job-boards.eu.greenhouse.io/jetbrains/jobs/4888300101"
+  },
+  {
+    "id": "2026-11-03-nubank-senior-software-engineer-data-platform-germany",
+    "employer": "Nubank",
+    "title": "Senior Software Engineer - Data Platform (m/w/d)",
+    "country": "Germany",
+    "firstSeen": "2026-11-03",
+    "url": "https://jobs.ashbyhq.com/nubank/c068dd98-f487-4231-9c36-d12707c930da"
+  },
+  {
+    "id": "2026-11-02-anthropic-senior-data-center-pre-construction-and-capacity-delivery-manager-emea-united-kingdom",
+    "employer": "Anthropic",
+    "title": "Senior Data Center Pre-Construction and Capacity Delivery Manager, EMEA",
+    "country": "United Kingdom",
+    "firstSeen": "2026-11-02",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5469367008"
+  },
+  {
+    "id": "2026-11-02-genesis-growth-engineer-recruiting-people-france",
+    "employer": "Genesis",
+    "title": "Growth Engineer, Recruiting & People",
+    "country": "France",
+    "firstSeen": "2026-11-02",
+    "url": "https://jobs.ashbyhq.com/genesis/28d3e46c-69f0-4aa6-8113-9117407e964e"
+  },
+  {
+    "id": "2026-11-01-n8n-forward-deployed-engineer-emea",
+    "employer": "n8n",
+    "title": "Forward Deployed Engineer - EMEA",
+    "country": "Germany",
+    "firstSeen": "2026-11-01",
+    "url": "https://jobs.ashbyhq.com/n8n/c9fc97fa-a473-4133-b3cb-502785649ecd"
+  },
+  {
+    "id": "2026-11-01-the-exploration-company-mait-electrical-and-test-engineer",
+    "employer": "The Exploration Company",
+    "title": "MAIT Electrical and Test Engineer",
+    "country": "Germany",
+    "firstSeen": "2026-11-01",
+    "url": "https://jobs.ashbyhq.com/the-exploration-company/5560b779-1857-4cb2-a588-8494f75b819e"
+  },
+  {
+    "id": "2026-11-01-the-exploration-company-senior-mait-electrical-and-test-engineer",
+    "employer": "The Exploration Company",
+    "title": "Senior MAIT Electrical and Test Engineer",
+    "country": "Germany",
+    "firstSeen": "2026-11-01",
+    "url": "https://jobs.ashbyhq.com/the-exploration-company/3345366b-a39f-4522-bc43-afc06e76ae0a"
+  },
+  {
+    "id": "2026-11-01-adjoe-senior-ios-developer",
+    "employer": "adjoe",
+    "title": "Senior iOS Developer (f/m/d)",
+    "country": "Germany",
+    "firstSeen": "2026-11-01",
+    "url": "https://jobs.ashbyhq.com/adjoe/c15f29cb-e992-4888-a6be-b5f86dfc82ec"
+  },
+  {
+    "id": "2026-11-01-hellofresh-senior-manager-corporate-strategy-development",
+    "employer": "HelloFresh",
+    "title": "Senior Manager, Corporate Strategy & Development (all genders)",
+    "country": "Germany",
+    "firstSeen": "2026-11-01",
+    "url": "https://careers.hellofresh.com/global/en/job/8305457?gh_jid=8305457"
+  },
+  {
+    "id": "2026-11-01-hellofresh-associate-director-corporate-strategy-development",
+    "employer": "HelloFresh",
+    "title": "Associate Director, Corporate Strategy & Development (all genders)",
+    "country": "Germany",
+    "firstSeen": "2026-11-01",
+    "url": "https://careers.hellofresh.com/global/en/job/8334134?gh_jid=8334134"
+  },
+  {
+    "id": "2026-10-31-n8n-low-touch-customer-success-manager-remote-emea",
+    "employer": "n8n",
+    "title": "Low-touch Customer Success Manager (Remote - EMEA)",
+    "country": "Germany",
+    "firstSeen": "2026-10-31",
+    "url": "https://jobs.ashbyhq.com/n8n/588577b5-f7c6-4b46-9f07-4250000a40ed"
+  },
+  {
+    "id": "2026-10-31-justplay-senior-product-manager-ad-traffic-quality",
+    "employer": "JustPlay GmbH",
+    "title": "Senior Product Manager - Ad Traffic Quality (all genders)",
+    "country": "Germany",
+    "firstSeen": "2026-10-31",
+    "url": "https://jobs.ashbyhq.com/justplay-gmbh/04dd4991-68fb-46c3-97e1-9b372bef4074"
+  },
+  {
+    "id": "2026-10-31-orbem-staff-technical-program-manager",
+    "employer": "Orbem",
+    "title": "Staff Technical Program Manager (f/m/d)",
+    "country": "Germany",
+    "firstSeen": "2026-10-31",
+    "url": "https://jobs.ashbyhq.com/orbem/4d8b273c-27f1-44d5-9072-0c003b7f2103"
+  },
+  {
     "id": "2026-10-30-n8n-support-engineer-emea",
     "employer": "n8n",
     "title": "Support Engineer (EMEA)",

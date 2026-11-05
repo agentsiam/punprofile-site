@@ -1,6 +1,7 @@
 import type { Copy } from "./copy";
 import { AI_IS_BECOMING_A_BASELINE_SKILL } from "./posts/ai-is-becoming-a-baseline-skill";
 import { CARA_WORKING_IN_SPAIN } from "./posts/cara-working-in-spain";
+import { LANGUAGE_LEARNING_APPS } from "./posts/language-learning-apps";
 import { HALF_TRUE_EUROPE_NEEDS_TALENT } from "./posts/half-true-europe-needs-talent";
 import { START_IN_EUROPE } from "./posts/start-in-europe";
 
@@ -227,7 +228,31 @@ export type Block =
    * separate paragraphs was the alternative and it loses the stanza: paragraph
    * spacing between four one-line questions reads as four paragraphs.
    */
-  | { kind: "list"; items: readonly Copy[]; ordered?: boolean; bare?: boolean }
+  | {
+      kind: "list";
+      items: readonly Copy[];
+      ordered?: boolean;
+      bare?: boolean;
+      /**
+       * Sources for a list of factual claims, added 03/11/2026. A list cannot
+       * carry a per-item citation the way a paragraph does, and a list of facts
+       * with no source is the part an answer engine will not quote. Rendered as
+       * links under the list.
+       */
+      cites?: readonly Cite[];
+    }
+  /**
+   * A comparison as a real HTML table, added 03/11/2026. A chart drawn as an
+   * image cannot be read by a search engine or an AI assistant, and the
+   * comparison is the part of an article most likely to be quoted. `head` is
+   * the first row; each row's first cell is its label.
+   */
+  | {
+      kind: "table";
+      head: readonly Copy[];
+      rows: readonly (readonly Copy[])[];
+      caption?: Copy;
+    }
   /**
    * A subheading inside a section, added 18/08/2026 for the same article. Its
    * 30-day plan is one section with four weeks under it, and a `Section` has one
@@ -252,7 +277,18 @@ export type Block =
    * Same shape as the hero: one `src`, a translated `alt` describing the scene.
    * Files follow `<slug>-fig-<n>-<what>.jpg`, numbered in reading order.
    */
-  | { kind: "figure"; src: string; alt: Copy };
+  | {
+      kind: "figure";
+      src: string;
+      alt: Copy;
+      /**
+       * Optional line under the picture, added 03/11/2026 for
+       * `language-learning-apps`, whose charts need a sentence that says what
+       * the figures do and do not show. The alt text describes the picture;
+       * the caption is read by everyone.
+       */
+      caption?: Copy;
+    };
 
 export interface Section {
   /** Absent on the opening section, which runs straight on from the title. */
@@ -316,6 +352,7 @@ export interface Post {
  * order is editable here rather than being a property of the dates.
  */
 export const POSTS: readonly Post[] = [
+  LANGUAGE_LEARNING_APPS,
   // The fourth article, the first real story: Cara, in her own words.
   CARA_WORKING_IN_SPAIN,
   //

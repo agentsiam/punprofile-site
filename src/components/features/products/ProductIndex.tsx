@@ -46,13 +46,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
+import type { Copy } from "@/lib/content/copy";
 import Band from "@/components/Band";
 import CallToAction from "@/components/CallToAction";
 import Checklist from "@/components/blocks/Checklist";
 import ProductDiagram from "@/components/features/products/ProductDiagram";
 import { PRODUCT_PHOTO } from "@/components/features/products/productPhotos";
 import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
-import { CATALOGUE_FREE, CATALOGUE_PAID } from "@/lib/content/home";
+import { CATALOGUE_FREE, CATALOGUE_PAID, RESULTS } from "@/lib/content/home";
+import { SERVICES } from "@/lib/content/services";
 import { DESTINATIONS } from "@/lib/content/cta";
 import {
   CARD_ACTION,
@@ -75,11 +77,34 @@ import {
   PRODUCTS,
   PRODUCT_ART,
   STATUS_LIVE,
+  freeCostLabel,
   isFreeProduct,
   type Product,
 } from "@/lib/content/products";
 
-const GRID = "large:grid-cols-[0.9fr_1fr_1.3fr_1.3fr_0.7fr]";
+
+
+/** Which coaching service picks up where each tool stops. 03/11/2026. */
+const HANDOVER: Record<string, string> = {
+  "eu-fit-check": "coaching",
+  "cv-check": "profile",
+  "fit-report": "coaching",
+  "matched-jobs": "applications",
+  "job-search-dashboard": "applications",
+};
+
+/** The service cutouts the home page's coaching cards use. */
+const CUTOUT: Record<string, string> = {
+  coaching: "/home/service-direction.png",
+  profile: "/home/service-profile.png",
+  applications: "/home/service-applications.png",
+};
+
+/** Two placements, each crediting the coaching work: CV, interviews. */
+const PROOF = [
+  { id: "placed-hotel-germany", photo: "/home/testimonials/testimonial-photo-may.jpg" },
+  { id: "placed-chef-netherlands", photo: "/home/testimonials/testimonial-photo-ton.jpg" },
+];
 
 export default function ProductIndex() {
   const { pick, locale, path } = useCopy();
@@ -147,14 +172,6 @@ export default function ProductIndex() {
     );
   };
 
-  const cell = (label: string, value: string, strong = false) => (
-    <div>
-      <p className="text-caption-strong text-mute-strong large:hidden">{label}</p>
-      <p className={`mt-1 large:mt-0 ${strong ? "text-body-md-strong text-ink-deep" : "text-body-md text-body"}`}>
-        {value}
-      </p>
-    </div>
-  );
 
   return (
     <div className="w-full">
@@ -217,62 +234,224 @@ export default function ProductIndex() {
       <Band block="B6" ground="soft" width="wide">
         <h2 className={SECTION_HEADING(locale)}>{pick(INDEX_TABLE_HEADING)}</h2>
 
-        <div className={`mt-10 hidden gap-6 border-b border-line-strong pb-3 large:grid ${GRID}`}>
-          {[COL_PRODUCT, COL_WHO, COL_WHAT, LIMIT_HEADING, COL_COST].map((c, i) => (
-            <p key={i} className="text-caption-strong text-mute-strong">
-              {pick(c)}
-            </p>
-          ))}
-        </div>
-
-        <div className="flex flex-col">
-          {PRODUCTS.map((p) => (
-            <div
-              key={p.slug}
-              className={`grid gap-4 border-b border-line py-7 large:items-start large:gap-6 ${GRID}`}
-            >
-              <div>
-                <Link
-                  href={path(`/products/${p.slug}`)}
-                  /* `inline-flex min-h-6` for the same reason as the footer
-                     links: an inline text link is 17px tall at this size and
-                     WCAG 2.2 sets the floor at 24. */
-                  className="inline-flex min-h-6 items-center text-body-md-strong text-ink-deep underline underline-offset-4"
-                >
-                  {pick(p.name)}
-                </Link>
-                {p.status === "soon" && (
-                  <p className="mt-1 text-caption-strong text-mute-strong">{pick(STATUS_SOON)}</p>
+        {/*
+          03/11/2026, Paul's pick (1a) from the layout research: Teal's pricing
+          table. White, products as columns, the questions as rows, and the
+          place to start, EU Fit Check, picked out with a dark green outline
+          rather than a colour. Each column opens with the product's clay photo
+          as a small circle. Below `large` it becomes one block per product,
+          the first one outlined the same way. Same strings as before.
+        */}
+        {(() => {
+          const rows: { label: Copy; value: (p: Product) => string; strong?: boolean }[] = [
+            { label: COL_WHO, value: (p) => pick(p.audience) },
+            { label: COL_WHAT, value: (p) => pick(p.howLede) },
+            { label: LIMIT_HEADING, value: (p) => pick(p.limit) },
+            {
+              label: COL_COST,
+              value: (p) =>
+                pick(isFreeProduct(p.slug) ? freeCostLabel(p.slug, CATALOGUE_FREE) : CATALOGUE_PAID),
+              strong: true,
+            },
+          ];
+          const head = (p: Product) => {
+            const photo = PRODUCT_PHOTO[p.slug];
+            return (
+              <div className="flex items-center gap-3 large:flex-col large:items-start">
+                {photo && (
+                  <span className="relative block size-14 shrink-0 overflow-hidden rounded-full bg-canvas-soft">
+                    <Image src={photo.src} alt="" fill sizes="56px" className="object-cover" />
+                  </span>
                 )}
+                <div>
+                  <Link
+                    href={path(`/products/${p.slug}`)}
+                    className="inline-flex min-h-6 items-center text-body-md-strong text-ink-deep underline underline-offset-4"
+                  >
+                    {pick(p.name)}
+                  </Link>
+                  {p.status === "soon" && (
+                    <p className="mt-1 text-caption-strong text-mute-strong">{pick(STATUS_SOON)}</p>
+                  )}
+                </div>
               </div>
-              {cell(pick(COL_WHO), pick(p.audience))}
-              {cell(pick(COL_WHAT), pick(p.howLede))}
-              {cell(pick(LIMIT_HEADING), pick(p.limit))}
-              {cell(pick(COL_COST), pick(isFreeProduct(p.slug) ? CATALOGUE_FREE : CATALOGUE_PAID), true)}
-            </div>
-          ))}
-        </div>
+            );
+          };
+          const START = "eu-fit-check";
+          return (
+            <>
+              {/* Wide: one white card, products across. */}
+              <div className="card-plain relative mt-10 hidden border border-line p-2 large:block">
+                <div
+                  className="relative grid grid-cols-[150px_repeat(5,minmax(0,1fr))]"
+                  style={{ gridTemplateRows: `repeat(${rows.length + 1}, auto)` }}
+                >
+                  <div
+                    aria-hidden
+                    className="pointer-events-none rounded-2xl border-2 border-ink-deep"
+                    style={{
+                      gridColumn: `${PRODUCTS.findIndex((p) => p.slug === START) + 2}`,
+                      gridRow: `1 / ${rows.length + 2}`,
+                    }}
+                  />
+                  <p
+                    className="self-end px-4 pb-4 text-caption-strong text-mute-strong"
+                    style={{ gridColumn: 1, gridRow: 1 }}
+                  >
+                    {pick(COL_PRODUCT)}
+                  </p>
+                  {PRODUCTS.map((p, c) => (
+                    <div key={p.slug} className="px-4 pt-5 pb-4" style={{ gridColumn: c + 2, gridRow: 1 }}>
+                      {head(p)}
+                    </div>
+                  ))}
+                  {rows.map((r, ri) => (
+                    <div key={ri} className="contents">
+                      <p
+                        className="border-t border-line px-4 py-5 text-caption-strong text-mute-strong"
+                        style={{ gridColumn: 1, gridRow: ri + 2 }}
+                      >
+                        {pick(r.label)}
+                      </p>
+                      {PRODUCTS.map((p, c) => (
+                        <p
+                          key={p.slug}
+                          className={`border-t border-line px-4 py-5 ${
+                            r.strong ? "text-body-md-strong text-ink-deep" : "text-body-sm text-body"
+                          }`}
+                          style={{ gridColumn: c + 2, gridRow: ri + 2 }}
+                        >
+                          {r.value(p)}
+                        </p>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Narrow: one block per product, the place to start outlined. */}
+              <ul className="mt-8 flex flex-col gap-4 large:hidden">
+                {PRODUCTS.map((p) => (
+                  <li
+                    key={p.slug}
+                    className={`card-plain px-5 py-5 ${
+                      p.slug === START ? "border-2 border-ink-deep" : "border border-line"
+                    }`}
+                  >
+                    {head(p)}
+                    <dl className="mt-4 flex flex-col gap-3">
+                      {rows.map((r, ri) => (
+                        <div key={ri} className="border-t border-line pt-3">
+                          <dt className="text-caption-strong text-mute-strong">{pick(r.label)}</dt>
+                          <dd
+                            className={`mt-1 ${
+                              r.strong ? "text-body-md-strong text-ink-deep" : "text-body-md text-body"
+                            }`}
+                          >
+                            {r.value(p)}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </li>
+                ))}
+              </ul>
+            </>
+          );
+        })()}
       </Band>
 
-      {/* --------------------------------------------------- the sixth thing */}
-      <Band block="B4" ground="canvas">
-        <div className="card-outlined px-8 py-9">
-          <h2 className="text-heading-sm">{pick(NOT_A_TOOL_HEADING)}</h2>
-          <p className="mt-3 text-body-large text-on-surface-variant">{pick(NOT_A_TOOL_BODY)}</p>
-          <Link
-            href={path(DESTINATIONS.coaching.href)}
-            className="mt-6 inline-flex min-h-12 items-center rounded-full border border-line-strong px-6 text-body-sm-strong text-ink-deep duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
-          >
-            {pick(DESTINATIONS.coaching.label)}
-          </Link>
+      {/* ------------------------------------------- where the tools stop
+
+          03/11/2026, Paul's pick (4a) in the copy review. Every tool's
+          "worth knowing" line already says where it stops, and each of those
+          is where a coaching service begins, so this band finishes the
+          sentence the table leaves open: the limit on the left, the service
+          that picks it up on the right. Then two clients whose placements
+          came from that work. Only the heading and the lead are new copy. */}
+      <Band block="B2" ground="canvas" width="wide">
+        <div className="max-w-3xl">
+          <h2 className={SECTION_HEADING(locale)}>{pick(NOT_A_TOOL_HEADING)}</h2>
+          <p className="mt-4 text-body-large text-on-surface-variant">{pick(NOT_A_TOOL_BODY)}</p>
         </div>
+
+        <ul className="card-plain mt-10 border border-line">
+          {PRODUCTS.map((p) => {
+            const service = SERVICES.find((s) => s.id === HANDOVER[p.slug]);
+            if (!service) return null;
+            return (
+              <li
+                key={p.slug}
+                className="grid gap-4 border-b border-line px-6 py-6 last:border-b-0 large:grid-cols-[1fr_auto_0.8fr] large:items-center large:gap-8"
+              >
+                <div>
+                  <p className="text-caption-strong text-mute-strong">{pick(p.name)}</p>
+                  <p className="mt-1 text-body-md text-body">{pick(p.limit)}</p>
+                </div>
+                <span aria-hidden className="hidden text-heading-sm text-mute-strong large:block">
+                  &rarr;
+                </span>
+                <Link
+                  href={`${path("/coaching")}#${service.id}`}
+                  className="group flex items-center gap-4"
+                >
+                  <span className="relative block size-16 shrink-0 overflow-hidden rounded-full bg-canvas-soft">
+                    <Image
+                      src={CUTOUT[service.id]}
+                      alt=""
+                      fill
+                      sizes="64px"
+                      className="object-contain object-bottom pt-1"
+                    />
+                  </span>
+                  <span className="text-body-md-strong text-ink-deep underline underline-offset-4">
+                    {pick(service.name)}
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div className="mt-8 grid gap-6 large:grid-cols-2">
+          {PROOF.map(({ id, photo }) => {
+            const r = RESULTS.find((x) => x.id === id);
+            if (!r) return null;
+            return (
+              <figure key={id} className="card-plain flex gap-5 border border-line px-6 py-6">
+                <Image
+                  src={photo}
+                  alt=""
+                  width={64}
+                  height={64}
+                  className="size-16 shrink-0 rounded-full object-cover"
+                />
+                <div>
+                  <blockquote className="text-body-md text-body">&ldquo;{pick(r.quote)}&rdquo;</blockquote>
+                  <figcaption className="mt-3 text-body-sm text-mute-strong">
+                    <span className="text-body-sm-strong text-ink-deep">{pick(r.who)}</span>
+                    {" · "}
+                    {pick(r.role)}
+                  </figcaption>
+                </div>
+              </figure>
+            );
+          })}
+        </div>
+
+        <Link
+          href={path(DESTINATIONS.coaching.href)}
+          className="mt-8 inline-flex min-h-12 items-center rounded-full border border-line-strong px-6 text-body-sm-strong text-ink-deep duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
+        >
+          {pick(DESTINATIONS.coaching.label)}
+        </Link>
       </Band>
 
       {/* ----------------------------------------------------------- close */}
       <Band block="B8" ground="dark" align="center" className="text-center">
         <h2 className={SECTION_HEADING(locale)}>{pick(CLOSE_HEADING)}</h2>
         <p className="mx-auto mt-4 max-w-xl text-body-large">{pick(CLOSE_BODY)}</p>
-        <CallToAction page="/products" align="center" show="primary" className="mt-8" />
+        <CallToAction page="product-close" align="center" show="primary" className="mt-8" />
       </Band>
     </div>
   );

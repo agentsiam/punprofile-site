@@ -85,8 +85,8 @@ export const FREE_ITEMS: readonly FreeItem[] = [
       th: "ตำแหน่งงานที่เราคัดมาให้",
     },
     body: {
-      en: "Posted in the Thai Jobs in Europe group, free for anyone to read.",
-      th: "ประกาศงานในกลุ่ม Thai Jobs in Europe เปิดให้ทุกคนอ่านฟรี",
+      en: "Free for anyone to read.",
+      th: "ประกาศงาน เปิดให้ทุกคนอ่านฟรี",
     },
   },
   {
@@ -128,7 +128,7 @@ export const FREE_ITEMS: readonly FreeItem[] = [
  * The value column of the free rows. The free rows are spec rows (B6), the same
  * shape as what a token buys, so free and paid read as one table in two halves.
  *
- * CV Check and Guided Job Hunt join the two rows above on the page itself, read
+ * CV Check and the Job Search Dashboard join the two rows above on the page itself, read
  * from `products.ts`, because `FREE_SLUGS` there already says they are free and
  * a second list here would be a second answer to which products are free.
  */
@@ -314,8 +314,8 @@ export const TOKEN_ROWS: readonly TokenRow[] = [
       th: "ตำแหน่งงานที่ตรงกับเงื่อนไขของคุณ",
     },
     detail: {
-      en: "Sent to your email, with the work rights it needs stated",
-      th: "ส่งทางอีเมล พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี",
+      en: "Sent to your Job Search Dashboard, with the work rights it needs stated",
+      th: "ส่งไปยังแดชบอร์ดหางานของคุณ พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี",
     },
     tokens: 1,
   },
@@ -472,8 +472,8 @@ export interface PricingQuestion {
 export const PRICING_QUESTIONS: readonly PricingQuestion[] = [
   {
     q: {
-      en: "What does Career Coaching cost?",
-      th: "บริการ Career Coaching ราคาเท่าไร?",
+      en: "What does Coaching 1:1 cost?",
+      th: "Coaching 1:1 ราคาเท่าไร?",
     },
     a: [
       {
