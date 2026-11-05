@@ -85,8 +85,8 @@ export const FREE_ITEMS: readonly FreeItem[] = [
       th: "ตำแหน่งงานที่เราคัดมาให้",
     },
     body: {
-      en: "Posted in the Thai Jobs in Europe group, free for anyone to read.",
-      th: "ประกาศงานในกลุ่ม Thai Jobs in Europe เปิดให้ทุกคนอ่านฟรี",
+      en: "Free for anyone to read.",
+      th: "ประกาศงาน เปิดให้ทุกคนอ่านฟรี",
     },
   },
   {

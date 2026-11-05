@@ -1,18 +1,20 @@
 "use client";
 
 /**
- * The job pipeline's three figures, with the window they cover. Lifted out of
- * the home page on 25/10/2026 so the EU Fit Check product page can carry the
- * same strip without a second copy of the marks or the markup.
+ * The job pipeline's three figures. Lifted out of the home page on 25/10/2026
+ * so the EU Fit Check product page can carry the same strip without a second
+ * copy of the marks or the markup.
  *
- * The figures come from `market-snapshot.generated.ts` and nowhere else, and the
- * foot always prints the window, because a stale figure that names its own date
- * is honest and one that does not is not.
+ * The figures come from `market-snapshot.generated.ts` and nowhere else. The
+ * strip carries no footnote: the window the counts cover was printed under them
+ * until 04/11/2026, and Paul's call is that a reader of this section has no use
+ * for it. The first read still dates its own two counts in `MarketProof.tsx`,
+ * where the figure is the claim rather than the background.
  */
 
 import { useCopy } from "@/components/LocaleProvider";
 import { MARKET } from "@/lib/content/market-snapshot.generated";
-import { MARKET_FOOT, MARKET_STATS } from "@/lib/content/home";
+import { MARKET_STATS } from "@/lib/content/home";
 
 /**
  * One mark per pipeline figure. `screened` is a document, `published` is a
@@ -28,32 +30,24 @@ const STAT_MARK: Record<string, string> = {
 };
 
 export default function MarketStats() {
-  const { t, pick } = useCopy();
+  const { t } = useCopy();
 
   return (
-    <>
-      <div className="grid gap-10 medium:grid-cols-3">
-        {MARKET_STATS.map((stat) => (
-          <div key={stat.field}>
-            <span
-              aria-hidden
-              className="flex size-10 items-center justify-center rounded-full bg-primary-pale text-on-primary-pale"
-            >
-              <svg viewBox="0 0 24 24" className="size-5" fill="currentColor">
-                <path d={STAT_MARK[stat.field] ?? STAT_MARK.screened} />
-              </svg>
-            </span>
-            <p className="mt-4 text-display-md text-ink-deep">{MARKET[stat.field]}</p>
-            <p className="mt-2 text-body-large text-body">{t(stat.label)}</p>
-          </div>
-        ))}
-      </div>
-      {/* One sentence in both languages rather than fragments joined here:
-          Thai puts the dates in its own place and only the whole sentence can
-          carry that. */}
-      <p className="mt-4 text-body-medium text-on-surface-variant">
-        {pick(MARKET_FOOT).replaceAll("{from}", MARKET.from).replaceAll("{to}", MARKET.to)}
-      </p>
-    </>
+    <div className="grid gap-10 medium:grid-cols-3">
+      {MARKET_STATS.map((stat) => (
+        <div key={stat.field}>
+          <span
+            aria-hidden
+            className="flex size-10 items-center justify-center rounded-full bg-primary-pale text-on-primary-pale"
+          >
+            <svg viewBox="0 0 24 24" className="size-5" fill="currentColor">
+              <path d={STAT_MARK[stat.field] ?? STAT_MARK.screened} />
+            </svg>
+          </span>
+          <p className="mt-4 text-display-md text-ink-deep">{MARKET[stat.field]}</p>
+          <p className="mt-2 text-body-large text-body">{t(stat.label)}</p>
+        </div>
+      ))}
+    </div>
   );
 }

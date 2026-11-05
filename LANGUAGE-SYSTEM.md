@@ -2249,28 +2249,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/contact.ts::CONTACT_ALREADY_IN_QUEUE`
-
-```yaml
-id: src/lib/content/contact.ts::CONTACT_ALREADY_IN_QUEUE
-source: src/lib/content/contact.ts
-path: CONTACT_ALREADY_IN_QUEUE
-render: Contact page, CONTACT_ALREADY_IN_QUEUE
-narrative_slot: ask
-en: If you have already taken the check and left your details, you are in the queue. No need to write as well.
-th: ถ้าคุณทำแบบประเมินและฝากช่องทางติดต่อไว้แล้ว คุณอยู่ในคิวเรียบร้อย ไม่ต้องส่งข้อความมาซ้ำ
-provenance: paul-approved
-date: 17/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 17da3af3c1ebac6cdb25e3a85bc239d0b22852c290e7fec14eb0fd3d8bb1464b
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/contact.ts::CONTACT_CHANNELS`
 
 ```yaml
@@ -2782,23 +2760,26 @@ source: src/lib/content/copy.ts
 path: COPY.footer.brand
 render: Footer, every screen
 narrative_slot: utility
-en: PunProfile Career Coaching | 2026 | All Rights Reserved
-th: PunProfile Career Coaching | 2026 | All Rights Reserved
+en: PunProfile Career Coaching
+th: PunProfile Career Coaching
 provenance: paul-approved
 date: 15/08/2026
 term_bindings:
   - footer-legal
 decision_note: |-
-  Not translated. The brand name, the year and a rights line read the same
+  Not translated. The brand name reads the same to both audiences, and a Thai
+  transliteration of a legal formula reads as a mistake rather than a courtesy.
 
-  to both audiences, and a Thai transliteration of a legal formula reads
-
-  as a mistake rather than as a courtesy.
+  The year and the rights formula came off on 04/11/2026, Paul's call. 2026 was
+  typed into the string, so the line was wrong from 01/01/2027 with nothing in
+  the app able to notice, and All Rights Reserved grants nothing that copyright
+  does not grant without it. `footer-legal` in `termbase.yml` carries the old
+  line as banned so it cannot come back from the English.
 review:
   structural_calque: pass
-  text_hash: ab71364fdb2ecfd18c43e03e9d669036160c160c5eafd6e940e6a0f3380df2bf
+  text_hash: a035c2fda65583df2f180e27552d057c2f393753916d85ec413c579313959f46
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul's call of 04/11/2026, cutting the year and the rights formula. The name that remains is unchanged and untranslated.
 ```
 
 <!-- COPY-ENTRY -->
@@ -3760,39 +3741,6 @@ decision_note: No string-local reasoning comment was present at migration.
 review:
   structural_calque: pass
   text_hash: d4925e7fb5f72f21416895a90e5cb2e759e0a5e88fe9d57cc4cc14022179621c
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.landing.eyebrow`
-
-```yaml
-id: src/lib/content/copy.ts::COPY.landing.eyebrow
-source: src/lib/content/copy.ts
-path: COPY.landing.eyebrow
-render: Landing, above the headline
-narrative_slot: utility
-en: Career coaching for Thai professionals heading to Europe
-th: โค้ชชิ่งด้านอาชีพสำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป
-provenance: paul-written
-date: 17/08/2026
-term_bindings: []
-decision_note: |-
-  Names the business, not the assessment. Same phrasing as the footer's
-
-  Coaching column heading, which is Paul's.
-
-  *Paul's wording, 17/08/2026**, from the review sheet. He took
-
-  `แคเรียร์` off the front: `โค้ชชิ่งด้านอาชีพ` reads as the category, and
-
-  `แคเรียร์โค้ชชิ่ง` is the service name, which belongs on the card in
-
-  section 3 rather than in the line that says who this site is for.
-review:
-  structural_calque: pass
-  text_hash: 93c8099802f295120e5c1ed3474bf8e2c1fa358fc709b205d3ac75da2e3b7b79
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -4775,16 +4723,35 @@ path: COPY.nav.products
 render: Site menu, the Products group
 narrative_slot: utility
 en: Products
-th: บริการของเรา
+th: เครื่องมือและบริการ
 provenance: paul-written
-date: 23/08/2026
+date: 04/11/2026
 term_bindings: []
-decision_note: Paul's wording, 23/08/2026.
+decision_note: |-
+  **In the Thai menu this heading sat above a row saying "Our Services"**, the
+  same two words once in each language, one above the other. The English menu
+  never clashed, because its heading is Products. It came about by sequence: the
+  row went English with the rest of the navigation on 15/08/2026 and the heading
+  was rewritten to `บริการของเรา` eight days later.
+
+  `our-services` says the fix is the term. Paul's call of 04/11/2026 is the
+  heading instead, because moving the row reopens one decision that covers Menu,
+  Close menu, Our Services, FAQ and Contact together.
+
+  **`เครื่องมือและบริการ` is his**, written in the language pass of 04/11/2026
+  over a draft of `เครื่องมือและการโค้ช` that he did not take. His reason:
+  `ครอบคลุมทั้งเครื่องมือและบริการในเมนู โดยไม่จำกัดบริการไว้เฉพาะการโค้ช`. The
+  draft named the coaching and so spoke for one row out of eight.
+
+  The English heading stays Products, which is his word of 23/08/2026 and
+  collides with nothing. The two headings now say different things, which is a
+  thing to look at if the English menu is ever reworked, not a drift to correct
+  here.
 review:
   structural_calque: pass
-  text_hash: ad0cfdfc55a7f7c9d7415c9d49ca8ead59c54aeeffb1a27144d46dfbc062f406
+  text_hash: 86b5908bd703a03e4f37998044dcbf8c66e9c897ee0cfa18269c2cbd4881225b
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul wrote this Thai in the language queue on 04/11/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -7936,41 +7903,6 @@ decision_note: |-
 review:
   structural_calque: pass
   text_hash: a44f6cfbbb13f60f6b31b2e409c756b11cfb8753ca8f8a9bc31ff4ba214505f5
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/home.ts::MARKET_FOOT`
-
-```yaml
-id: src/lib/content/home.ts::MARKET_FOOT
-source: src/lib/content/home.ts
-path: MARKET_FOOT
-render: Home page, MARKET_FOOT
-narrative_slot: utility
-en: Figures from {from} to {to}. We post these roles in the Thai Jobs in Europe group.
-th: ระหว่าง {from} ถึง {to} เราได้ประกาศตำแหน่งเหล่านี้ในกลุ่ม Thai Jobs in Europe
-provenance: paul-approved
-date: 17/08/2026
-term_bindings: []
-decision_note: |-
-  The free-and-public clause was here and came out on 17/08/2026, for two
-  reasons that landed together.
-  The first is a rule. It was `เปิดฟรีและเป็นสาธารณะ`, reused verbatim from
-  `FOLLOW_BODY` in `footer.ts` on the reasoning that an approved collocation
-  beats a fresh one. Running `lint-thai` over the page modules, which
-  `verify-copy.ts` does not reach, **failed it under LR-04**: ฟรี is attached
-  to เปิด, and LR-04 allows ฟรี only on a word that already denotes a valuable
-  service. The reuse was sound and the string it reused had simply never been
-  linted. `footer.ts` still carries it and that is Paul's to decide; see
-  `npm run verify:pages`.
-  The second is better than the first. The claim belongs in `COST_ROWS`, which
-  is a whole section about what is free, and a footnote about dates is not
-  where a reader looks for it. Removing it removed a duplicate.
-review:
-  structural_calque: pass
-  text_hash: 6f4b625e9986eebcde2daa2b054c88bc331d7856b7ab51c72a979693aeaacd70
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
@@ -19836,17 +19768,26 @@ source: src/lib/content/pricing.ts
 path: FREE_ITEMS[0].body
 render: Pricing page, FREE_ITEMS[0].body
 narrative_slot: utility
-en: Posted in the Thai Jobs in Europe group, free for anyone to read.
-th: ประกาศงานในกลุ่ม Thai Jobs in Europe เปิดให้ทุกคนอ่านฟรี
+en: "Free for anyone to read."
+th: "ประกาศงาน เปิดให้ทุกคนอ่านฟรี"
 provenance: paul-approved
-date: 23/08/2026
+date: 04/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: |-
+  No string-local reasoning comment was present at migration.
+
+  The group named out of the line on Paul's instruction of 04/11/2026:
+  `ในกลุ่ม Thai Jobs in Europe` is deleted and nothing is added.
+
+  It went into the language queue expected to need new words, because the row
+  now says the screened jobs are free to read and no longer says where they are
+  read. He ticked it unchanged in the pass of 04/11/2026, so the row names no
+  destination by decision rather than by omission.
 review:
   structural_calque: pass
-  text_hash: 694c3a27553f363da36fca9ba82c1e94d1c5ee06c88e4dd2ab487cdd81f707b0
+  text_hash: 616da56074d8b5bd4130a8e3b146ca18952ce75595387d7f1190b1f6bd91d2c3
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: Paul read this in the language queue on 04/11/2026 and ticked it unchanged.
 ```
 
 <!-- COPY-ENTRY -->
@@ -29807,28 +29748,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/products.ts::FIT_EXPERT.facts[3]`
-
-```yaml
-id: src/lib/content/products.ts::FIT_EXPERT.facts[3]
-source: src/lib/content/products.ts
-path: FIT_EXPERT.facts[3]
-render: Fit Report page, who interviews you
-narrative_slot: proof
-en: Runs the “Jobs at companies in Europe” group
-th: ผู้ดูแลกลุ่ม “งานบริษัทในยุโรป”
-provenance: paul-approved
-date: 28/10/2026
-term_bindings: []
-decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
-review:
-  structural_calque: pass
-  text_hash: 44df12fa1df246716ef695bab6f427589f05ab172cf726eb91be815401228bde
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/products.ts::FIT_EXPERT.link`
 
 ```yaml
@@ -30101,17 +30020,28 @@ source: src/lib/content/coaching.ts
 path: COACHES[0].story[2]
 render: Coaching page, Paul's story
 narrative_slot: proof
-en: "I work in marketing, so when I look at a candidate’s profile, I ask similar questions to those I ask about a brand: what makes it stand out, what it wants to be known for, and whether the story is consistent. I also run the “Jobs at companies in Europe” group, where many people first get to know me."
-th: "ผมทำงานด้านการตลาด เวลาดูโปรไฟล์ผู้สมัคร ผมจึงดูคล้ายกับเวลาดูแบรนด์ว่า จุดเด่นคืออะไร อยากให้คนจดจำในเรื่องไหน และสิ่งที่เล่ามาสอดคล้องกันหรือเปล่า ผมยังดูแลกลุ่ม “งานบริษัทในยุโรป” ด้วย หลายคนรู้จักผมครั้งแรกผ่านกลุ่มนี้"
-provenance: paul-approved
-date: 30/10/2026
+en: "I work in marketing, so when I read a candidate’s profile, I ask similar questions to those I ask about a brand: what makes it stand out, what it wants to be known for, and whether the whole story is consistent."
+th: "ผมทำงานด้านการตลาด เวลาอ่านโปรไฟล์ผู้สมัคร ผมจึงตั้งคำถามคล้ายกับเวลาดูแบรนด์ว่า อะไรคือจุดเด่น อยากให้คนจดจำเรื่องอะไร และสิ่งที่เล่าทั้งหมดสอดคล้องกันไหม"
+provenance: paul-written
+date: 04/11/2026
 term_bindings: []
-decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+decision_note: |-
+  Coach section redesign (founder-copy.md), Paul's review of 30/10/2026.
+
+  The closing sentence about running the group came out on his instruction of
+  04/11/2026, when the group stopped being named anywhere on the site, and the
+  shortened paragraph went into the language queue.
+
+  **He rewrote it there rather than ticking it**, in the pass of 04/11/2026:
+  `อ่านโปรไฟล์` for `ดูโปรไฟล์`, `ตั้งคำถามคล้ายกับ` for `ดูคล้ายกับ`, and
+  `สิ่งที่เล่าทั้งหมดสอดคล้องกันไหม` for `สิ่งที่เล่ามาสอดคล้องกันหรือเปล่า`. The
+  English follows: he reads a profile rather than looks at one, and it is the
+  whole story that has to hold together.
 review:
   structural_calque: pass
-  text_hash: 3f747b997aeee02d0877fbba049c4f7981fd8f9d1e65342f3eb5cc3f5371b189
+  text_hash: 14ffb57a6a491d852405cf243460838fc1d5eea816869026438f524a05e77061
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: Paul wrote this Thai in the language queue on 04/11/2026.
 ```
 
 <!-- COPY-ENTRY -->

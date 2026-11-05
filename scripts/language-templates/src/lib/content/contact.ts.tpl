@@ -48,8 +48,3 @@ export const CONTACT_CHANNELS: Copy = {
   th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvbnRhY3QudHM6OkNPTlRBQ1RfQ0hBTk5FTFM:TH%%,
 };
 
-/** For the person who already left their details and is about to do it twice. */
-export const CONTACT_ALREADY_IN_QUEUE: Copy = {
-  en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvbnRhY3QudHM6OkNPTlRBQ1RfQUxSRUFEWV9JTl9RVUVVRQ:EN%%,
-  th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvbnRhY3QudHM6OkNPTlRBQ1RfQUxSRUFEWV9JTl9RVUVVRQ:TH%%,
-};

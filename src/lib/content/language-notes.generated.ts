@@ -783,15 +783,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "14/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
-  "src/lib/content/contact.ts::CONTACT_ALREADY_IN_QUEUE": {
-    "source": "src/lib/content/contact.ts",
-    "path": "CONTACT_ALREADY_IN_QUEUE",
-    "render": "Contact page, CONTACT_ALREADY_IN_QUEUE",
-    "narrativeSlot": "ask",
-    "provenance": "paul-approved",
-    "date": "17/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
   "src/lib/content/contact.ts::CONTACT_CHANNELS": {
     "source": "src/lib/content/contact.ts",
     "path": "CONTACT_CHANNELS",
@@ -979,7 +970,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "15/08/2026",
-    "decisionNote": "Not translated. The brand name, the year and a rights line read the same\n\nto both audiences, and a Thai transliteration of a legal formula reads\n\nas a mistake rather than as a courtesy."
+    "decisionNote": "Not translated. The brand name reads the same to both audiences, and a Thai\ntransliteration of a legal formula reads as a mistake rather than a courtesy.\n\nThe year and the rights formula came off on 04/11/2026, Paul's call. 2026 was\ntyped into the string, so the line was wrong from 01/01/2027 with nothing in\nthe app able to notice, and All Rights Reserved grants nothing that copyright\ndoes not grant without it. `footer-legal` in `termbase.yml` carries the old\nline as banned so it cannot come back from the English."
   },
   "src/lib/content/copy.ts::COPY.gate.body": {
     "source": "src/lib/content/copy.ts",
@@ -1359,15 +1350,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "15/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
-  "src/lib/content/copy.ts::COPY.landing.eyebrow": {
-    "source": "src/lib/content/copy.ts",
-    "path": "COPY.landing.eyebrow",
-    "render": "Landing, above the headline",
-    "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "17/08/2026",
-    "decisionNote": "Names the business, not the assessment. Same phrasing as the footer's\n\nCoaching column heading, which is Paul's.\n\n*Paul's wording, 17/08/2026**, from the review sheet. He took\n\n`แคเรียร์` off the front: `โค้ชชิ่งด้านอาชีพ` reads as the category, and\n\n`แคเรียร์โค้ชชิ่ง` is the service name, which belongs on the card in\n\nsection 3 rather than in the line that says who this site is for."
-  },
   "src/lib/content/copy.ts::COPY.landing.headline": {
     "source": "src/lib/content/copy.ts",
     "path": "COPY.landing.headline",
@@ -1707,8 +1689,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Site menu, the Products group",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "23/08/2026",
-    "decisionNote": "Paul's wording, 23/08/2026."
+    "date": "04/11/2026",
+    "decisionNote": "**In the Thai menu this heading sat above a row saying \"Our Services\"**, the\nsame two words once in each language, one above the other. The English menu\nnever clashed, because its heading is Products. It came about by sequence: the\nrow went English with the rest of the navigation on 15/08/2026 and the heading\nwas rewritten to `บริการของเรา` eight days later.\n\n`our-services` says the fix is the term. Paul's call of 04/11/2026 is the\nheading instead, because moving the row reopens one decision that covers Menu,\nClose menu, Our Services, FAQ and Contact together.\n\n**`เครื่องมือและบริการ` is his**, written in the language pass of 04/11/2026\nover a draft of `เครื่องมือและการโค้ช` that he did not take. His reason:\n`ครอบคลุมทั้งเครื่องมือและบริการในเมนู โดยไม่จำกัดบริการไว้เฉพาะการโค้ช`. The\ndraft named the coaching and so spoke for one row out of eight.\n\nThe English heading stays Products, which is his word of 23/08/2026 and\ncollides with nothing. The two headings now say different things, which is a\nthing to look at if the English menu is ever reworked, not a drift to correct\nhere."
   },
   "src/lib/content/copy.ts::COPY.nav.services": {
     "source": "src/lib/content/copy.ts",
@@ -2843,15 +2825,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "17/08/2026",
     "decisionNote": "*`สปอนเซอร์วีซ่า`, decided by Paul 17/08/2026**, overriding the\n\n`สนับสนุนวีซ่า` this line briefly carried. He used it as a verb three\n\ntimes in one review pass, here, on the stat label below and in\n\n`VISA_BODY`, which settles a term that had never actually been decided.\n\nIt belongs in `termbase.yml`.\n\n`ไล่ดู` and `คัดมา` rather than `อ่าน` and `ประกาศ`: the first pair\n\ndescribes sifting, the second described reading and republishing, and\n\nsifting is what the pipeline does. `สมัครได้จริง` closes on the reader."
-  },
-  "src/lib/content/home.ts::MARKET_FOOT": {
-    "source": "src/lib/content/home.ts",
-    "path": "MARKET_FOOT",
-    "render": "Home page, MARKET_FOOT",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "17/08/2026",
-    "decisionNote": "The free-and-public clause was here and came out on 17/08/2026, for two\nreasons that landed together.\nThe first is a rule. It was `เปิดฟรีและเป็นสาธารณะ`, reused verbatim from\n`FOLLOW_BODY` in `footer.ts` on the reasoning that an approved collocation\nbeats a fresh one. Running `lint-thai` over the page modules, which\n`verify-copy.ts` does not reach, **failed it under LR-04**: ฟรี is attached\nto เปิด, and LR-04 allows ฟรี only on a word that already denotes a valuable\nservice. The reuse was sound and the string it reused had simply never been\nlinted. `footer.ts` still carries it and that is Paul's to decide; see\n`npm run verify:pages`.\nThe second is better than the first. The claim belongs in `COST_ROWS`, which\nis a whole section about what is free, and a footnote about dates is not\nwhere a reader looks for it. Removing it removed a duplicate."
   },
   "src/lib/content/home.ts::MARKET_HEADING": {
     "source": "src/lib/content/home.ts",
@@ -7503,8 +7476,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Pricing page, FREE_ITEMS[0].body",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "date": "04/11/2026",
+    "decisionNote": "No string-local reasoning comment was present at migration.\n\nThe group named out of the line on Paul's instruction of 04/11/2026:\n`ในกลุ่ม Thai Jobs in Europe` is deleted and nothing is added.\n\nIt went into the language queue expected to need new words, because the row\nnow says the screened jobs are free to read and no longer says where they are\nread. He ticked it unchanged in the pass of 04/11/2026, so the row names no\ndestination by decision rather than by omission."
   },
   "src/lib/content/pricing.ts::FREE_ITEMS[0].name": {
     "source": "src/lib/content/pricing.ts",
@@ -11340,15 +11313,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "28/10/2026",
     "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
   },
-  "src/lib/content/products.ts::FIT_EXPERT.facts[3]": {
-    "source": "src/lib/content/products.ts",
-    "path": "FIT_EXPERT.facts[3]",
-    "render": "Fit Report page, who interviews you",
-    "narrativeSlot": "proof",
-    "provenance": "paul-approved",
-    "date": "28/10/2026",
-    "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
-  },
   "src/lib/content/products.ts::FIT_EXPERT.link": {
     "source": "src/lib/content/products.ts",
     "path": "FIT_EXPERT.link",
@@ -11462,9 +11426,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COACHES[0].story[2]",
     "render": "Coaching page, Paul's story",
     "narrativeSlot": "proof",
-    "provenance": "paul-approved",
-    "date": "30/10/2026",
-    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
+    "provenance": "paul-written",
+    "date": "04/11/2026",
+    "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026.\n\nThe closing sentence about running the group came out on his instruction of\n04/11/2026, when the group stopped being named anywhere on the site, and the\nshortened paragraph went into the language queue.\n\n**He rewrote it there rather than ticking it**, in the pass of 04/11/2026:\n`อ่านโปรไฟล์` for `ดูโปรไฟล์`, `ตั้งคำถามคล้ายกับ` for `ดูคล้ายกับ`, and\n`สิ่งที่เล่าทั้งหมดสอดคล้องกันไหม` for `สิ่งที่เล่ามาสอดคล้องกันหรือเปล่า`. The\nEnglish follows: he reads a profile rather than looks at one, and it is the\nwhole story that has to hold together."
   },
   "src/lib/content/coaching.ts::COACHES[0].story[3]": {
     "source": "src/lib/content/coaching.ts",
