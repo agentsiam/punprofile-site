@@ -139,7 +139,7 @@ export const FAQ: readonly FaqItem[] = [
   {
     // Paul's rewrite, 23/08/2026, from the pricing review sheet. Applied here
     // too so one question is not answered two ways on two pages.
-    q: { en: "What does Career Coaching cost?", th: "บริการ Career Coaching ราคาเท่าไร" },
+    q: { en: "What does Coaching 1:1 cost?", th: "Coaching 1:1 ราคาเท่าไร" },
     a: [
       {
         en: "It depends what you want help with and how far that help goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide whether to go ahead.",

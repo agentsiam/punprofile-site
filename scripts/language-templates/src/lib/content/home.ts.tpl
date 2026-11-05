@@ -131,8 +131,10 @@ export const HERO_MASCOT_ALT: Copy = {
  * claim, which is why it sits directly under the hero.
  *
  * Figures come from `market-snapshot.generated.ts` and nothing here restates
- * them. The window is printed rather than implied, for the reason
- * `MarketProof.tsx` already gives: a screening figure with no window is a boast.
+ * them. The window the figures cover is not printed on this page: it was a
+ * footnote naming its own dates under a strip of counts, which told a reader
+ * nothing they could act on. `MarketProof.tsx` still dates its two counts,
+ * where the figure is the claim being made.
  *
  * Nothing refreshes it. `npm run market`, then commit both files.
  */
@@ -188,28 +190,6 @@ export const MARKET_STATS: readonly MarketStat[] = [
   { field: "published", label: "stats.market.published" },
   { field: "employers", label: "stats.market.employers" },
 ];
-
-export const MARKET_FOOT: Copy = {
-  en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6Ok1BUktFVF9GT09U:EN%%,
-  /*
-   * The free-and-public clause was here and came out on 17/08/2026, for two
-   * reasons that landed together.
-   *
-   * The first is a rule. It was `เปิดฟรีและเป็นสาธารณะ`, reused verbatim from
-   * `FOLLOW_BODY` in `footer.ts` on the reasoning that an approved collocation
-   * beats a fresh one. Running `lint-thai` over the page modules, which
-   * `verify-copy.ts` does not reach, **failed it under LR-04**: ฟรี is attached
-   * to เปิด, and LR-04 allows ฟรี only on a word that already denotes a valuable
-   * service. The reuse was sound and the string it reused had simply never been
-   * linted. `footer.ts` still carries it and that is Paul's to decide; see
-   * `npm run verify:pages`.
-   *
-   * The second is better than the first. The claim belongs in `COST_ROWS`, which
-   * is a whole section about what is free, and a footnote about dates is not
-   * where a reader looks for it. Removing it removed a duplicate.
-   */
-  th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6Ok1BUktFVF9GT09U:TH%%,
-};
 
 
 // ------------------------------------------------------------- the problem
@@ -552,6 +532,7 @@ export const WHO_BODY: Copy = {
   /*
    * Rewritten 30/10/2026 with the coach cards (`COACHES` in `coaching.ts`).
    * It says PunProfile, not "we", is not paid by employers: Tatiya's day job is.
+   * No headcount since 03/11/2026: the team may grow, so it says "our coaches".
    */
   en: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OldIT19CT0RZ:EN%%,
   th: %%LANG:c3JjL2xpYi9jb250ZW50L2hvbWUudHM6OldIT19CT0RZ:TH%%,

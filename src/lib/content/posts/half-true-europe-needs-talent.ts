@@ -195,6 +195,7 @@ export const HALF_TRUE_EUROPE_NEEDS_TALENT: Post = {
             th: "ในเดือนมีนาคม 2026 สภาแห่งสหภาพยุโรปให้ความเห็นชอบขั้นสุดท้ายแก่ EU Talent Pool แพลตฟอร์มนี้จะช่วยเชื่อมผู้สมัครจากนอก EU กับนายจ้างในประเทศสมาชิกที่สมัครใจเข้าร่วม และคาดว่าจะเปิดใช้งานเต็มรูปแบบในปี 2027",
             en: "In March 2026 the Council of the EU gave its final approval to the EU Talent Pool. The platform will connect applicants from outside the EU with employers in member states that opt in, and is expected to be fully in use in 2027.",
           },
+          cite: { label: "Council of the EU", href: "https://www.consilium.europa.eu/en/press/press-releases/2026/03/30/council-gives-final-go-ahead-to-eu-talent-platform-for-non-eu-jobseekers/" },
         },
         {
           kind: "p",

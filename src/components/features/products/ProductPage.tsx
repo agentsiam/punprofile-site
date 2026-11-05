@@ -49,6 +49,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
 import CallToAction from "@/components/CallToAction";
+import { SERVICES } from "@/lib/content/services";
 import Band from "@/components/Band";
 import SplitFeature from "@/components/blocks/SplitFeature";
 import Checklist from "@/components/blocks/Checklist";
@@ -73,12 +74,13 @@ import {
   RELATED_HEADING,
   STATUS_LIVE,
   STATUS_SOON,
+  freeCostLabel,
   isFreeProduct,
   type Product,
 } from "@/lib/content/products";
 
 export default function ProductPage({ product }: { product: Product }) {
-  const { pick, locale, path } = useCopy();
+  const { t, pick, locale, path } = useCopy();
   const soon = product.status === "soon";
   const art = PRODUCT_ART[product.slug];
   const photo = PRODUCT_PHOTO[product.slug];
@@ -101,7 +103,12 @@ export default function ProductPage({ product }: { product: Product }) {
   const summary = [
     { label: COL_WHO, value: product.audience },
     { label: COL_WHAT, value: product.howLede },
-    { label: COL_COST, value: isFreeProduct(product.slug) ? CATALOGUE_FREE : CATALOGUE_PAID },
+    {
+      label: COL_COST,
+      value: isFreeProduct(product.slug)
+        ? freeCostLabel(product.slug, CATALOGUE_FREE)
+        : CATALOGUE_PAID,
+    },
   ];
 
   return (
@@ -200,7 +207,9 @@ export default function ProductPage({ product }: { product: Product }) {
           {pick(product.howLede)}
         </p>
         <div className="mt-10">
-          {photo?.where === "how" ? (
+          {showcase.how ? (
+            <showcase.how />
+          ) : photo?.where === "how" ? (
             <SplitFeature reverse src={photo.src} alt="">
               <Checklist items={product.how.map((item) => ({ lead: pick(item) }))} />
             </SplitFeature>
@@ -268,7 +277,7 @@ export default function ProductPage({ product }: { product: Product }) {
             &rsaquo;
           </span>
         </Link>
-        <ul className="mt-8 grid gap-4 medium:grid-cols-2 large:grid-cols-4">
+        <ul className="mt-8 grid gap-4 medium:grid-cols-2 large:grid-cols-5">
           {others.map((p) => (
             <li key={p.slug}>
               <Link
@@ -285,6 +294,18 @@ export default function ProductPage({ product }: { product: Product }) {
               </Link>
             </li>
           ))}
+          {/* Coaching as the last card, 03/11/2026 (copy review, 3a): until
+              then no product page linked to the coaching at all. Its line is
+              the service's own question from `services.ts`. */}
+          <li>
+            <Link
+              href={path("/coaching")}
+              className="card-plain flex h-full flex-col border-2 border-ink-deep px-6 py-6 duration-[350ms] ease-nav transition-colors hover:bg-canvas-soft"
+            >
+              <span className="text-heading-sm">{t("nav.coaching")}</span>
+              <span className="mt-3 text-body-md text-body">&ldquo;{pick(SERVICES[0].question)}&rdquo;</span>
+            </Link>
+          </li>
         </ul>
       </Band>
 
@@ -295,7 +316,7 @@ export default function ProductPage({ product }: { product: Product }) {
       <Band block="B8" ground="dark" align="center" className="text-center">
         <h2 className={SECTION_HEADING(locale)}>{pick(CLOSE_HEADING)}</h2>
         <p className="mx-auto mt-4 max-w-xl text-body-large">{pick(CLOSE_BODY)}</p>
-        <CallToAction page={product.actionsKey} align="center" show="primary" className="mt-8" />
+        <CallToAction page="product-close" align="center" show="primary" className="mt-8" />
       </Band>
     </div>
   );

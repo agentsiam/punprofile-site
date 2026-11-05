@@ -65,9 +65,9 @@ export const SERVICES_HEADING: Copy = {
 };
 
 export const SERVICES_INTRO: Copy = {
-  en: "Career coaching is the core service every client starts with. The other two can be taken on their own, depending on what you actually need.",
+  en: "Career Coaching is the main part of working with a coach. The other two can be taken on their own, depending on what you need.",
   // Read back 25/08/2026. `Career Coaching` for `แคเรียร์โค้ชชิ่ง`.
-  th: "Career Coaching เป็นบริการหลักที่ลูกค้าทุกคนเริ่มต้นด้วย ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามสิ่งที่คุณต้องการ",
+  th: "Career Coaching เป็นส่วนหลักของการทำงานกับโค้ช ส่วนอีกสองบริการเลือกใช้แยกกันได้ตามความต้องการ",
 };
 
 export const SERVICES: readonly Service[] = [
@@ -82,8 +82,8 @@ export const SERVICES: readonly Service[] = [
       th: "คุณควรมุ่งไปทางไหน และเพราะอะไร",
     },
     summary: {
-      en: "This is where every client starts. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing.",
-      th: "นี่คือจุดเริ่มต้นของลูกค้าทุกคน เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี",
+      en: "Finding the direction is the main part of working with a coach. We settle your target market together before writing a single document, because however good a CV is, an application in a market that does not suit you still misses.",
+      th: "การหาทิศทางเป็นส่วนหลักของการทำงานกับโค้ช เราจะช่วยกันเลือกตลาดเป้าหมายให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าสมัครในตลาดที่ไม่เหมาะกับคุณ ใบสมัครก็ยังไม่ตรงเป้า",
     },
     includes: [
       {
@@ -213,6 +213,12 @@ export const SERVICES: readonly Service[] = [
 export const AI_NOTE: Copy = {
   en: "AI is part of all three services. You learn to use it yourself, for drafting, preparing and researching, and PunProfile uses it behind the scenes to work faster without lowering the quality of the thinking.",
   th: "AI เป็นส่วนหนึ่งของทั้ง 3 บริการ คุณจะได้เรียนรู้วิธีใช้ AI ด้วยตัวเองเพื่อช่วยร่าง เตรียมตัว และค้นคว้าข้อมูล ส่วน PunProfile ใช้ AI ช่วยงานเบื้องหลังให้รวดเร็วขึ้น โดยยังใช้การคิดและการตัดสินใจของคนเป็นหลัก",
+};
+
+/** The fold over each service card's list on /coaching and /services. 04/11/2026. */
+export const INCLUDES_LABEL: Copy = {
+  en: "What is included",
+  th: "บริการนี้มีอะไรบ้าง",
 };
 
 export const CORE_BADGE: Copy = { en: "Core service", th: "บริการหลัก" };
@@ -388,7 +394,7 @@ export const SERVICES_FAQ: readonly ServiceFaq[] = [
       th: "ต้องใช้บริการโค้ชชิ่งก่อนถึงจะใช้อีกสองบริการได้ไหม",
     },
     a: {
-      en: "No. The other two can be taken on their own. The coaching is where every client starts because the direction usually turns out to be the thing that was unclear, not the documents.",
+      en: "No. The other two can be taken on their own. Clients who choose coaching start with the direction, because it usually turns out to be the thing that was unclear, not the documents.",
       // Paul's wording, 06/09/2026.
       th: "ไม่ต้อง อีกสองบริการเลือกใช้แยกกันได้ ส่วนลูกค้าที่เลือกโค้ชชิ่งจะเริ่มจากการหาทิศทาง เพราะส่วนใหญ่สิ่งที่ยังไม่ชัดคือทิศทาง ไม่ใช่เอกสาร",
     },

@@ -24,24 +24,38 @@ import { Suspense } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useCopy } from "@/components/LocaleProvider";
+import { SECTION_HEADING } from "@/lib/content/footer";
 import {
   AI_NOTE,
   CORE_BADGE,
   FOCUS_NOTE,
+  INCLUDES_LABEL,
   SERVICES,
   SERVICES_HEADING,
   SERVICES_INTRO,
   serviceForDimension,
 } from "@/lib/content/services";
 
+/** Clay cutout and tint per service, shared with the home page's cards. */
+const CUTOUT: Record<string, string> = {
+  coaching: "/home/service-direction.png",
+  profile: "/home/service-profile.png",
+  applications: "/home/service-applications.png",
+};
+const TINT: Record<string, string> = {
+  coaching: "bg-orange-pale",
+  profile: "bg-cyan-pale",
+  applications: "bg-yellow-pale",
+};
+
 function Body() {
-  const { pick } = useCopy();
+  const { pick, locale } = useCopy();
   const focus = useSearchParams().get("focus");
   const focused = focus ? serviceForDimension(focus) : null;
 
   return (
     <div className="w-full">
-      <h2 className="text-heading-sm">{pick(SERVICES_HEADING)}</h2>
+      <h2 className={SECTION_HEADING(locale)}>{pick(SERVICES_HEADING)}</h2>
       <p className="mt-4 max-w-2xl text-body-large text-on-surface-variant">{pick(SERVICES_INTRO)}</p>
 
       {/* No `items-start`, removed 17/08/2026 on Paul's screenshot: it sized
@@ -61,19 +75,17 @@ function Body() {
                 on ? "border-on-primary-pale bg-primary-pale" : "border-line"
               }`}
             >
-              {/* A fixed 4:3 band, filled. The three illustrations became
-                  photographs on 17/08/2026: studio renders on a soft grey with a
-                  gradient and a cast shadow, so there is no single colour for a
-                  panel to match and the image fills the band edge to edge
-                  instead. `object-cover` in a fixed-ratio box also makes all
-                  three bands exactly the same height. */}
-              <div className="relative aspect-[4/3] w-full">
+              {/* The clay cutout on the card's own tint, 04/11/2026: the 3D
+                  mascot renders this band held are retired by the brand guide,
+                  and these are the same three cutouts the home page and
+                  /products use. The person stands on the band's floor. */}
+              <div className={`relative aspect-[4/3] w-full ${TINT[s.id]}`}>
                 <Image
-                  src={s.image.src}
+                  src={CUTOUT[s.id]}
                   alt={pick(s.image.alt)}
                   fill
-                  sizes="(max-width: 1200px) 100vw, 33vw"
-                  className="object-cover"
+                  sizes="(max-width: 1200px) 60vw, 360px"
+                  className="object-contain object-bottom px-6 pt-6"
                 />
               </div>
 
@@ -97,20 +109,33 @@ function Body() {
                     the problem it answers is checkable; one described by its
                     benefits is not. */}
                 <p className="mt-3 text-heading-xs text-ink-deep">&ldquo;{pick(s.question)}&rdquo;</p>
-                <p className="mt-3 text-body-large text-on-surface-variant">{pick(s.summary)}</p>
+                <p className="mt-3 text-body-md text-on-surface-variant">{pick(s.summary)}</p>
 
-                <ul className="mt-5 flex flex-col gap-2.5">
-                  {s.includes.map((item, i) => (
-                    <li key={i} className="flex gap-3 text-body-large text-on-surface">
-                      <span
-                        aria-hidden
-                        className="mt-2 block size-1.5 shrink-0 rounded-full bg-ink-deep"
-                      />
-                      <span>{pick(item)}</span>
-                    </li>
-                  ))}
-                </ul>
-
+                {/* The list folds, 04/11/2026: open, the three cards were the
+                    longest section on /coaching. Open by default on a focused
+                    card, which a candidate reached from their own result. */}
+                <details className="group mt-auto pt-5" open={on}>
+                  <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 border-t border-line pt-4 text-body-md-strong text-ink-deep [&::-webkit-details-marker]:hidden">
+                    {pick(INCLUDES_LABEL)}
+                    <span
+                      aria-hidden
+                      className="flex size-8 items-center justify-center rounded-full bg-primary-pale text-on-primary-pale duration-[350ms] ease-nav transition-transform group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <ul className="mt-3 flex flex-col gap-2.5">
+                    {s.includes.map((item, i) => (
+                      <li key={i} className="flex gap-3 text-body-md text-on-surface">
+                        <span
+                          aria-hidden
+                          className="mt-2 block size-1.5 shrink-0 rounded-full bg-ink-deep"
+                        />
+                        <span>{pick(item)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
               </div>
             </section>
           );

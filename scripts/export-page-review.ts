@@ -160,7 +160,6 @@ const SECTIONS: Record<string, { title: string; items: Item[] }[]> = {
     {
       title: "1. Hero",
       items: [
-        { key: "@copy:landing.eyebrow", where: "The small line above the headline", from: "paul" },
         { key: "@copy:landing.headline", where: "The headline, and the browser tab on every page", from: "paul" },
         { key: "HERO_STANDING", where: "Hero, first paragraph", from: "paul" },
         { key: "HERO_REFRAME", where: "Hero, second paragraph", from: "paul" },
@@ -176,7 +175,6 @@ const SECTIONS: Record<string, { title: string; items: Item[] }[]> = {
         { key: "@copy:stats.market.screened", where: "Under the number 230", from: "paul" },
         { key: "@copy:stats.market.published", where: "Under the number 84", from: "paul" },
         { key: "@copy:stats.market.employers", where: "Under the number 40", from: "paul" },
-        { key: "MARKET_FOOT", where: "The small line under the three numbers", from: "new" },
       ],
     },
     {

@@ -50,6 +50,9 @@ const nextConfig: NextConfig = {
     return [
       { source: "/assess", destination: "/efc-assessment", permanent: true },
       { source: "/en/assess", destination: "/en/efc-assessment", permanent: true },
+      // Guided Job Hunt was renamed the Job Search Dashboard on 03/11/2026.
+      { source: "/products/guided-job-hunt", destination: "/products/job-search-dashboard", permanent: true },
+      { source: "/en/products/guided-job-hunt", destination: "/en/products/job-search-dashboard", permanent: true },
       // The dashboard has no `/en` twin; its language comes from the cookie.
       // Temporary, so nothing is cached if `/en/me` ever becomes a real page.
       { source: "/en/me", destination: "/me", permanent: false },

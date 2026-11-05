@@ -61,21 +61,19 @@ import CallToAction from "@/components/CallToAction";
 import SampleRead from "@/components/features/home/SampleRead";
 import Triage from "@/components/features/home/Triage";
 import Catalogue from "@/components/features/home/Catalogue";
-import { SERVICES } from "@/lib/content/services";
+import CoachingCards from "@/components/features/services/CoachingCards";
 import { DESTINATIONS } from "@/lib/content/cta";
 import Band from "@/components/Band";
 import MarketStats from "@/components/blocks/MarketStats";
 import Testimonials from "@/components/blocks/Testimonials";
-import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
+import { HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 import { METHOD_PROOF } from "@/lib/content/method";
-import { FAQ, FAQ_HEADING } from "@/lib/content/faq";
+import { FAQ_HEADING } from "@/lib/content/faq";
 import CoachCards from "@/components/features/coaches/CoachCards";
 import {
   CATALOGUE_HEADING,
   CATALOGUE_LEAD,
   CLOSE_LEAD,
-  FAQ_TEASER_HEADING,
-  HERO_MASCOT_ALT,
   HERO_STANDING,
   HOW_HEADING,
   HOW_STEPS,
@@ -117,16 +115,21 @@ const RESULTS_IN_ORDER = [...RESULTS].sort(
     RESULT_ORDER.indexOf(b.id as (typeof RESULT_ORDER)[number]),
 );
 
-/** Drawn avatar per result id, files under `public/home/testimonials/`. */
+/**
+ * Photograph per result id, files under `public/home/testimonials/`. The client
+ * photos replaced the drawn clay stand-ins on 03/11/2026, Paul's call; he
+ * matched each photo to its client.
+ */
 const RESULT_AVATARS: Record<string, string> = {
-  coaching: "/home/testimonials/testimonial-avatar-min-marketing.png",
-  "job-alerts": "/home/testimonials/testimonial-avatar-non-it.png",
-  "ai-training": "/home/testimonials/testimonial-avatar-jay-business.png",
-  "placed-hotel-germany": "/home/testimonials/testimonial-avatar-may-hotel-germany.png",
-  "placed-chef-netherlands": "/home/testimonials/testimonial-avatar-ton-chef-netherlands.png",
-  "placed-it-ireland": "/home/testimonials/testimonial-avatar-nat-it-ireland.png",
-  "placed-logistics-sweden": "/home/testimonials/testimonial-avatar-nut-logistics-sweden.png",
+  coaching: "/home/testimonials/testimonial-photo-min.jpg",
+  "job-alerts": "/home/testimonials/testimonial-photo-non.jpg",
+  "ai-training": "/home/testimonials/testimonial-photo-jay.jpg",
+  "placed-hotel-germany": "/home/testimonials/testimonial-photo-may.jpg",
+  "placed-chef-netherlands": "/home/testimonials/testimonial-photo-ton.jpg",
+  "placed-it-ireland": "/home/testimonials/testimonial-photo-nat.jpg",
+  "placed-logistics-sweden": "/home/testimonials/testimonial-photo-nut.jpg",
 };
+
 
 export default function Home() {
   const { t, pick, path, locale } = useCopy();
@@ -147,27 +150,29 @@ export default function Home() {
         transparent and the ground is white here, so the panel was only ever
         there to fill a column.
       */}
-      <Band block="B1" ground="canvas" width="wide" align="center" className="text-center">
-        <div className="mx-auto max-w-3xl">
+      {/*
+        03/11/2026: split again, words left and the clay scene right, on wide
+        screens only; a phone still gets the words first and the picture under
+        them. The mascot moved out because the brand guide keeps it for small
+        moments and gives page heroes to clay scenes ("Where clay and where the
+        mascot", Brand_Guidelines.md). The scene is cast member C walking from a
+        Thai shophouse to a row of European houses.
+      */}
+      <Band block="B1" ground="canvas" width="wide">
+        <div className="grid items-center gap-10 large:grid-cols-[1.05fr_1fr] large:gap-14">
+        <div className="mx-auto max-w-3xl text-center large:mx-0 large:text-left">
           {/*
             The credibility row, which is the reference's first element and the
             one this page never had. Two items, each a chip, a claim in bold and
             a quieter number beside it. Theirs are store ratings; ours are
             unwritten, so they are slots.
 
-            `landing.eyebrow` used to sit here and does not fit the shape: it is
-            a sentence describing the service, where this row is two short
-            proofs. It moves nowhere for now and is listed in the handover.
+            `landing.eyebrow` sat directly above this row until 04/11/2026 and
+            is gone on Paul's call: a sentence saying the site is for Thai
+            professionals heading to Europe, stacked on a headline and a subhead
+            that both say it again. The proofs now sit where the block wants
+            them, immediately above the headline.
           */}
-          {/*
-            `landing.eyebrow` is one element more than the reference's hero has,
-            and it is here because deleting it is not mine to do: it is Paul's
-            own wording from the 17/08/2026 review sheet, and it says who the
-            site is for, which nothing else on this page says. The block wants
-            the proofs directly above the headline. Left as a decision.
-          */}
-          <p className={`text-mute-strong ${EYEBROW(locale)}`}>{t("landing.eyebrow")}</p>
-
           {/*
             Two proofs, and since 26/08/2026 neither of them is the pipeline
             count.
@@ -182,9 +187,9 @@ export default function Home() {
 
             It was also on this page twice. The same figure under the same
             `stats.market.screened` label renders again in the B3 band below,
-            where it has the sentence that explains what screening means and the
-            date window under it. That band earns it; this one had the number
-            with nothing around it. Paul's call, 26/08/2026.
+            where it has the sentence that explains what screening means. That
+            band earns it; this one had the number with nothing around it.
+            Paul's call, 26/08/2026.
 
             What is left is the EU Fit Check's own proof, and it is a proof
             rather than an adjective because the reader can check it by taking
@@ -198,7 +203,7 @@ export default function Home() {
             was built on 26/08/2026 to close it, and the second chip is the link
             to it: the claim is checkable because the reader can go and check it.
           */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-body-sm">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-body-sm large:justify-start">
             <span className="inline-flex items-center gap-2">
               <span
                 aria-hidden
@@ -241,7 +246,7 @@ export default function Home() {
           <h1 className={`mt-8 text-balance ${HERO_HEADING(locale)}`}>{t("landing.headline")}</h1>
 
           {/* One paragraph, centred, two lines on the reference. */}
-          <p className="mx-auto mt-6 max-w-xl text-body-large text-body">
+          <p className="mx-auto mt-6 max-w-xl text-body-large text-body large:mx-0">
             {t("landing.subhead")}
           </p>
 
@@ -254,7 +259,7 @@ export default function Home() {
             `landing.reassurance` had no slot in this block and is not rendered
             here any more. It is listed in the handover rather than deleted.
           */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 large:justify-start">
             <Link
               href={path(DESTINATIONS.assess.href)}
               className="flex min-h-12 items-center rounded-full bg-primary px-6 text-body-md-strong text-on-primary duration-[350ms] ease-nav transition-colors hover:bg-primary-active"
@@ -271,20 +276,21 @@ export default function Home() {
         </div>
 
         <Image
-          src="/mascot-magnifier.png"
-          alt={pick(HERO_MASCOT_ALT)}
-          width={1442}
-          height={720}
+          src="/home/home-hero.jpg"
+          // Decorative: the headline beside it carries the meaning.
+          alt=""
+          width={1200}
+          height={896}
           priority
-          sizes="(max-width: 840px) 92vw, 720px"
-          className="mx-auto mt-12 h-auto w-full max-w-[720px]"
+          sizes="(max-width: 1200px) 92vw, 560px"
+          className="mx-auto h-auto w-full max-w-[640px] rounded-3xl"
         />
+        </div>
       </Band>
 
         {/* The one section about PunProfile doing work rather than making a
             claim, which is why it comes before anything the page asserts about
-            itself. Every figure is read from the generated snapshot and the
-            window is printed: a screening number with no window is a boast. */}
+            itself. Every figure is read from the generated snapshot. */}
       {/*
         The trust row, on the reference's own construction: a hairline, then the
         facts side by side in the open with a small chip each. Not cards.
@@ -382,7 +388,7 @@ export default function Home() {
             Report is and should not have to. Five of the six lines are answer
             options out of `questions.ts`, so this is the words candidates
             actually use rather than personas invented to sell something. */}
-      <Band block="B5" ground="canvas">
+      <Band block="B5" ground="canvas" width="wide">
           <h2 className={SECTION_HEADING(locale)}>{pick(TRIAGE_HEADING)}</h2>
           <p className="mt-3 text-body-large text-on-surface-variant">{pick(TRIAGE_LEAD)}</p>
           <Triage />
@@ -525,43 +531,7 @@ export default function Home() {
             to the anchor `/coaching` already gives each service, so nothing here
             is written twice or can drift.
           */}
-          <ul className="mt-10 grid gap-6 large:grid-cols-3">
-            {SERVICES.map((s) => (
-              <li key={s.id} className="flex">
-                <Link
-                  href={`${path("/coaching")}#${s.id}`}
-                  className="card-plain group flex w-full flex-col overflow-hidden border border-line duration-[350ms] ease-nav transition-colors hover:border-line-strong"
-                >
-                  <span className="relative block aspect-[4/3] w-full">
-                    <Image
-                      src={s.image.src}
-                      alt={pick(s.image.alt)}
-                      fill
-                      sizes="(max-width: 1200px) 100vw, 33vw"
-                      className="object-cover"
-                    />
-                  </span>
-                  <span className="flex flex-1 flex-col px-6 py-7">
-                    <span className="text-heading-sm">{pick(s.name)}</span>
-                    {/* The client's question, not a tagline. A service described
-                        by the problem it answers is checkable. */}
-                    <span className="mt-3 flex-1 text-body-md text-body">
-                      &ldquo;{pick(s.question)}&rdquo;
-                    </span>
-                    <span className="mt-5 flex items-center gap-2 text-body-sm-strong underline underline-offset-4">
-                      {pick(DESTINATIONS.coaching.label)}
-                      <span
-                        aria-hidden
-                        className="duration-[350ms] ease-nav transition-transform group-hover:translate-x-1"
-                      >
-                        &rarr;
-                      </span>
-                    </span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <CoachingCards />
 
           <Catalogue />
       </Band>
@@ -588,6 +558,11 @@ export default function Home() {
           paragraph is the section, set one tier up in `headline-small`. */}
       <Band block="B10" ground="canvas">
         <p className={`max-w-3xl ${SECTION_HEADING(locale)}`}>{pick(VISA_BODY)}</p>
+        {/* The FAQ teaser band is gone, 03/11/2026, Paul's call: three questions
+            that could not be opened were a second, worse FAQ. Its one useful
+            part, the way to /faq, sits here, beside the objection the FAQ
+            answers most. */}
+        <div className="flex flex-wrap items-center gap-x-8">
         <Link
             href={path(DESTINATIONS.assess.href)}
             className="group mt-6 inline-flex items-center gap-2 text-body-md-strong underline underline-offset-4"
@@ -600,6 +575,13 @@ export default function Home() {
               &rarr;
             </span>
           </Link>
+        <Link
+          href={path("/faq")}
+          className="mt-6 inline-flex min-h-6 items-center text-body-md-strong underline underline-offset-4"
+        >
+          {pick(FAQ_HEADING)}
+        </Link>
+        </div>
       </Band>
 
         {/* --------------------------------------------------- who this is
@@ -652,9 +634,8 @@ export default function Home() {
             call of 22/09/2026: the heading and the three cards, nothing else.
 
             Social-post cards in a swipeable track, Paul's call of 30/10/2026.
-            Avatars are drawn clay stand-ins in the blog art's style, never a
-            photograph and never a likeness, so no stranger's face is presented
-            as a client. Prompt and source sheet: `avatar-image-prompt.md`.
+            Avatars are the clients' own photographs since 03/11/2026; until
+            then they were drawn clay stand-ins.
             The arrows appear only once there are more cards than fit, so with
             three on a wide screen there are none. No per-card story link: there
             is no case study to link to. */}
@@ -680,41 +661,6 @@ export default function Home() {
             />
           </div>
         </Band>
-
-        {/* --------------------------------------------------- FAQ teaser
-
-            Three questions and a link, which is what the reference product
-            does. Read from `faq.ts` rather than restated, and deliberately not
-            expandable: an accordion here would be a second FAQ to maintain. */}
-      <Band block="B5" ground="soft">
-          <h2 className={SECTION_HEADING(locale)}>{pick(FAQ_TEASER_HEADING)}</h2>
-          <ul className="mt-6 flex flex-col gap-4">
-            {FAQ.slice(0, 3).map((item, i) => (
-              <li
-                key={i}
-                className="flex items-center justify-between gap-4 border-b border-line pb-4 text-body-large"
-              >
-                {pick(item.q)}
-                {/* Every row on the reference's list carries the chip, which is
-                    what says a row is a place to go rather than a line to read.
-                    These rows are not links yet; the section's own link below
-                    is still the way in. */}
-                <span
-                  aria-hidden
-                  className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary-pale text-caption text-on-primary-pale"
-                >
-                  &rarr;
-                </span>
-              </li>
-            ))}
-          </ul>
-          <Link
-            href={path("/faq")}
-            className="mt-6 inline-block text-body-large text-ink-deep underline underline-offset-2"
-          >
-            {pick(FAQ_HEADING)}
-          </Link>
-      </Band>
 
         {/*
           The close is a PANEL, not a band. 25/08/2026.

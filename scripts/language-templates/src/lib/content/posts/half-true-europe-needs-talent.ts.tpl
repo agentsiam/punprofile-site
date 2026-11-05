@@ -195,6 +195,7 @@ export const HALF_TRUE_EUROPE_NEEDS_TALENT: Post = {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2hhbGYtdHJ1ZS1ldXJvcGUtbmVlZHMtdGFsZW50LnRzOjpIQUxGX1RSVUVfRVVST1BFX05FRURTX1RBTEVOVC5zZWN0aW9uc1szXS5ib2R5WzBdLnRleHQ:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2hhbGYtdHJ1ZS1ldXJvcGUtbmVlZHMtdGFsZW50LnRzOjpIQUxGX1RSVUVfRVVST1BFX05FRURTX1RBTEVOVC5zZWN0aW9uc1szXS5ib2R5WzBdLnRleHQ:EN%%,
           },
+          cite: { label: "Council of the EU", href: "https://www.consilium.europa.eu/en/press/press-releases/2026/03/30/council-gives-final-go-ahead-to-eu-talent-platform-for-non-eu-jobseekers/" },
         },
         {
           kind: "p",

@@ -273,7 +273,7 @@ function Roles() {
 /**
  * A tracker, four columns wide.
  *
- * Guided Job Hunt is the surface matched roles land on, and the one thing its
+ * The Job Search Dashboard is the surface matched roles land on, and the one thing its
  * limit says plainly is that it does not chase employers. A board with columns
  * says that better than a list does: the cards move because the candidate moves
  * them.

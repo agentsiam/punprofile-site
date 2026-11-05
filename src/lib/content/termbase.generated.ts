@@ -301,18 +301,20 @@ export const TERMBASE: Termbase = {
     },
     {
       "id": "footer-legal",
-      "en": "PunProfile Career Coaching | 2026 | All Rights Reserved",
+      "en": "PunProfile Career Coaching",
       "th": [
+        "PunProfile Career Coaching"
+      ],
+      "banned": [
         "PunProfile Career Coaching | 2026 | All Rights Reserved"
       ],
-      "banned": [],
       "surfaces": [
         "app"
       ],
       "fixed": true,
       "rule": "LR-01",
-      "decided": "09/08/2026",
-      "why": "A Thai transliteration of a legal formula reads as a mistake, not a courtesy."
+      "decided": "04/11/2026",
+      "why": "The trading name and nothing else. Not translated, because a Thai transliteration of a company name reads as a mistake rather than a courtesy, which is the reasoning this entry has carried since 09/08/2026.\nThe year and the rights formula came off on 04/11/2026 (Paul). The year was typed into the string, so it was wrong from 01/01/2027 onward with nothing in the app able to notice, and All Rights Reserved grants nothing that copyright does not grant without it. The old line is banned rather than dropped, so it cannot come back from the English.\n"
     },
     {
       "id": "nav-menu",
@@ -420,21 +422,6 @@ export const TERMBASE: Termbase = {
       "why": "A product name, passed through rather than translated. See `nav-blog`."
     },
     {
-      "id": "product-guided-job-hunt",
-      "en": "Guided Job Hunt",
-      "th": [
-        "Guided Job Hunt"
-      ],
-      "banned": [],
-      "surfaces": [
-        "app"
-      ],
-      "fixed": true,
-      "rule": "LR-01",
-      "decided": "23/08/2026",
-      "why": "A product name, passed through rather than translated. See `nav-blog`."
-    },
-    {
       "id": "page-job-search-dashboard",
       "en": "Job Search Dashboard",
       "th": [
@@ -449,7 +436,7 @@ export const TERMBASE: Termbase = {
       "fixed": true,
       "rule": "LR-08",
       "decided": "03/11/2026",
-      "why": "The paying candidate's own page at punprofile.app/me has one name in every place it is mentioned: the page title, the emails, LINE and the privacy notice. หน้าติดตามการสมัครงาน was written for the same page in the matched-role email and the privacy notice and corrected. Describing what someone does there, ติดตามการสมัครงาน as a verb, is not the name and is not banned.\n"
+      "why": "The paying candidate's own page at punprofile.app/me has one name in every place it is mentioned: the page title, the emails, LINE and the privacy notice. หน้าติดตามการสมัครงาน was written for the same page in the matched-role email and the privacy notice and corrected. Describing what someone does there, ติดตามการสมัครงาน as a verb, is not the name and is not banned. It is also the product's name on its product page, in the menu and in the catalogue, decided 03/11/2026, replacing Guided Job Hunt, so a buyer meets one name from the product page to sign-in.\n"
     },
     {
       "id": "nav-blog",
@@ -507,7 +494,7 @@ export const TERMBASE: Termbase = {
     "reader": "คุณ",
     "why": "เรา for the brand in broadcast copy, ผม in 1:1 messages where a brand plural reads evasive, คุณ for the reader always and stated rather than implied. The contact button คุยกับผม is first person on an app surface on purpose: it is the one string that opens a 1:1, so it speaks in the register of what it starts. Listed in `terms` above rather than treated as a person violation.\n"
   },
-  "sourceHash": "fa1b9515d1b2e31f"
+  "sourceHash": "554c11bf57d5ab24"
 } as const;
 
 export const TERMS = TERMBASE.terms;

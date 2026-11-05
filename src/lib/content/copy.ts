@@ -165,7 +165,7 @@ export const COPY = {
     screen: "Site menu, the Products group",
     en: "Products",
     // Paul's wording, 23/08/2026.
-    th: "บริการของเรา",
+    th: "เครื่องมือและบริการ",
   },
   /*
    * The four product names, added 23/08/2026 with the product pages.
@@ -190,10 +190,10 @@ export const COPY = {
     en: "Matched Jobs",
     th: "Matched Jobs",
   },
-  "nav.guidedJobHunt": {
+  "nav.jobSearchDashboard": {
     screen: "Site menu, the Products group",
-    en: "Guided Job Hunt",
-    th: "Guided Job Hunt",
+    en: "Job Search Dashboard",
+    th: "แดชบอร์ดหางาน",
   },
   /*
    * Two entries added 06/09/2026 with `/products` and `/services`.
@@ -281,11 +281,11 @@ export const COPY = {
   },
   "footer.brand": {
     screen: "Footer, every screen",
-    // Not translated. The brand name, the year and a rights line read the same
-    // to both audiences, and a Thai transliteration of a legal formula reads
-    // as a mistake rather than as a courtesy.
-    en: "PunProfile Career Coaching | 2026 | All Rights Reserved",
-    th: "PunProfile Career Coaching | 2026 | All Rights Reserved",
+    // Not translated: the trading name reads the same to both audiences. The
+    // year and the rights formula came off on 04/11/2026, and `footer-legal`
+    // in `termbase.yml` bans the old line so it cannot come back.
+    en: "PunProfile Career Coaching",
+    th: "PunProfile Career Coaching",
   },
 
   // ---------------------------------------------------------------- landing
@@ -297,7 +297,7 @@ export const COPY = {
    * feature of it. Paul made the same correction to the share card on
    * 16/08/2026; the page the card points at had not caught up.
    *
-   * These four stay here rather than moving to `home.ts` with the rest of the
+   * These stay here rather than moving to `home.ts` with the rest of the
    * page, and the split is not arbitrary. `verify-copy.ts` runs `lint-thai`
    * over this file and not over the per-page content modules, and the headline
    * and subhead are also the site's default `<title>` and meta description in
@@ -307,17 +307,6 @@ export const COPY = {
    * Reasoning for the page itself is `home-page.md` in the coaching repo's
    * `work-projects/eu-fit-check/`.
    */
-  "landing.eyebrow": {
-    screen: "Landing, above the headline",
-    // Names the business, not the assessment. Same phrasing as the footer's
-    // Coaching column heading, which is Paul's.
-    en: "Career coaching for Thai professionals heading to Europe",
-    // **Paul's wording, 17/08/2026**, from the review sheet. He took
-    // `แคเรียร์` off the front: `โค้ชชิ่งด้านอาชีพ` reads as the category, and
-    // `แคเรียร์โค้ชชิ่ง` is the service name, which belongs on the card in
-    // section 3 rather than in the line that says who this site is for.
-    th: "โค้ชชิ่งด้านอาชีพสำหรับคนไทยที่ตั้งเป้าไปทำงานในยุโรป",
-  },
   "landing.title": {
     screen: "The home page's title in search results and the browser tab",
     en: "Work in Europe: career coaching for Thai professionals",
@@ -1144,8 +1133,8 @@ export const COPY = {
   },
   "fit.summary.heading": {
     screen: "Fit Report, summary heading",
-    en: "Where you stand against the market's bar",
-    th: "คุณอยู่ตรงไหน เมื่อเทียบกับเกณฑ์ของตลาด",
+    en: "Your scores against the job market's bar",
+    th: "คะแนนของคุณเทียบกับเกณฑ์ตลาดงาน",
   },
   "fit.col.area": {
     screen: "Fit Report, summary table column",
