@@ -5603,873 +5603,873 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "LINKEDIN_EUROPE_READY.image.alt",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.image.alt",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.question": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.question",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.question",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[0].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[0].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[0].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[0].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[0].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[0].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[0].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[0].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[0].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[10].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[10].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[10].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[10].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[10].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[10].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[10].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[10].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[10].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[10].body[3].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[10].body[3].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[10].body[3].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[10].body[4].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[10].body[4].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[10].body[4].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[10].body[5].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[10].body[5].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[10].body[5].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[10].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[10].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[10].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[1].items[0]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[1].items[0]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[1].items[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[1].items[1]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[1].items[1]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[1].items[1]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[1].items[2]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[1].items[2]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[1].items[2]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[1].items[3]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[1].items[3]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[1].items[3]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[1].items[4]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[1].items[4]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[1].items[4]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[1].items[5]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[1].items[5]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[1].items[5]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[1].items[6]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[1].items[6]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[1].items[6]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[1].items[7]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[1].items[7]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[1].items[7]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[1].items[8]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[1].items[8]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[1].items[8]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[11].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[11].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[11].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].body[0].a[0]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].body[0].a[0]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].body[0].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].body[0].q": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].body[0].q",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].body[0].q",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].body[1].a[0]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].body[1].a[0]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].body[1].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].body[1].q": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].body[1].q",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].body[1].q",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].body[2].a[0]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].body[2].a[0]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].body[2].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].body[2].q": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].body[2].q",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].body[2].q",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].body[3].a[0]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].body[3].a[0]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].body[3].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].body[3].q": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].body[3].q",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].body[3].q",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].body[4].a[0]": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].body[4].a[0]",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].body[4].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].body[4].q": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].body[4].q",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].body[4].q",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[12].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[12].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[12].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[3].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[3].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[3].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[4].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[4].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[4].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].alt": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[5].alt",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[5].alt",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].caption": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[5].caption",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[5].caption",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[6].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[6].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[6].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[7].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[7].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[7].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[2].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[2].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[2].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[2].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[2].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[2].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[2].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[2].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[2].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[2].body[3].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[2].body[3].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[2].body[3].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[2].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[2].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[2].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[3].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[3].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[3].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[3].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[3].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[3].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[3].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[3].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[3].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[3].body[3].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[3].body[3].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[3].body[3].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[3].body[4].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[3].body[4].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[3].body[4].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[3].body[5].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[3].body[5].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[3].body[5].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[3].body[6].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[3].body[6].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[3].body[6].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[3].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[3].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[3].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[4].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[4].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[4].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[4].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[4].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[4].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[4].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[4].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[4].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[4].body[3].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[4].body[3].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[4].body[3].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[4].body[4].alt": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[4].body[4].alt",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[4].body[4].alt",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[4].body[4].caption": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[4].body[4].caption",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[4].body[4].caption",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[4].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[4].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[4].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[5].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[5].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[5].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].body[3].alt": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[5].body[3].alt",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].body[3].alt",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].body[3].caption": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[5].body[3].caption",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].body[3].caption",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].body[4].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[5].body[4].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].body[4].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].body[5].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[5].body[5].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].body[5].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].body[6].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[5].body[6].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].body[6].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[5].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[6].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[6].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[6].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[6].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[6].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[6].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[6].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[6].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[6].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[6].body[3].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[6].body[3].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[6].body[3].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[6].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[6].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[6].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[7].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[7].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[7].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[7].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[7].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[7].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[7].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[7].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[7].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[7].body[3].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[7].body[3].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[7].body[3].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[7].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[7].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[7].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[8].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[8].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[8].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[8].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[8].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[8].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[8].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[8].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[8].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[8].body[3].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[8].body[3].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[8].body[3].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[8].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[8].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[8].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[9].body[0].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[9].body[0].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[9].body[0].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[9].body[1].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[9].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[9].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[9].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[9].body[2].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[9].body[2].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[9].body[3].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[9].body[3].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[9].body[3].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[9].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[9].heading",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[9].heading",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.seoTitle": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.seoTitle",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.seoTitle",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.summary": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.summary",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.summary",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.title": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.title",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.title",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "10/11/2026",
-    "decisionNote": "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
   "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.image.alt": {
     "source": "src/lib/content/posts/start-in-europe.ts",

@@ -14887,15 +14887,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "A clay figure standing beside a tablet showing an example LinkedIn profile"
 th: "ตัวละครดินปั้นยืนข้างแท็บเล็ตที่แสดงโปรไฟล์ LinkedIn ตัวอย่าง"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1e327e024ceafad2f3115927767dffe47479e0f5550e09b3c06f8f67ef34df39
   prompt_version: structural-calque-v1
-  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -14909,15 +14909,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Read the first two lines of your own profile as a recruiter would, one who does not know your former employer. Would they understand what field you work in, what you are good at, and what kind of role you are looking for?"
 th: "ลองอ่านสองบรรทัดแรกของโปรไฟล์ตัวเองในมุมของ recruiter ที่ไม่รู้จักบริษัทเดิมของคุณ เขาจะเข้าใจไหมว่าคุณทำงานด้านไหน มีจุดเด่นอะไร และกำลังมองหาตำแหน่งแบบไหน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d82ce70318dcf5d3a46330ff05ce550e7580702badc3cde7bed5b97a24cbac2f
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -14931,15 +14931,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Before a recruiter reads your profile, they may search for candidates on things like job title, skills, or preferred work location. Writing it well is only half the job. The other half is filling in the fields so they match the work you are aiming at."
 th: "ก่อนที่ recruiter จะได้อ่านโปรไฟล์ของคุณ เขาอาจค้นหาผู้สมัครจากข้อมูลอย่างชื่อตำแหน่ง ทักษะ หรือสถานที่ทำงานที่ต้องการ การเขียนให้ดีจึงเป็นเพียงครึ่งหนึ่งของงาน อีกครึ่งคือการกรอกข้อมูลให้ตรงกับงานที่คุณเล็งไว้"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d913a65036268648c0179fa7cec01e4819d86bcff459a8ec00a54f5e8c8261c5
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -14953,15 +14953,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you are applying from Thailand, start with the fields that help people find you, such as your target role and country, and only then adjust how you describe your experience for a reader who does not know the Thai market."
 th: "ถ้าคุณสมัครจากไทย ลองเริ่มจากช่องที่ช่วยให้คนค้นเจอคุณ เช่น ตำแหน่งและประเทศเป้าหมาย แล้วค่อยปรับคำอธิบายประสบการณ์ให้คนที่ไม่รู้จักตลาดไทยอ่านเข้าใจ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 6df8c925a09631e7432b5232302a63c3a1258a3de68b0bf60b5a94a77cd3009a
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -14975,15 +14975,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Short summary"
 th: "สรุปสั้น ๆ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 47c30d30e2af7b12612a0eedab722c23b09432b8f62a5fb3e83f446a77e4215a
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -14997,15 +14997,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "LinkedIn Premium has tools that show how well you match a role you are interested in, such as Top Applicant and How you match."
 th: "LinkedIn Premium มีเครื่องมือช่วยดูว่าคุณตรงกับตำแหน่งที่สนใจแค่ไหน เช่น Top Applicant และ How you match"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: cf2063448ec9b41cf2ab790f9cf9e66ca631ddba0829be383e0a4efe57b1a528
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15019,15 +15019,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Top Applicant uses your profile information, the criteria in the job ad, and recruiter feedback on applicants to similar roles. LinkedIn says the feature appears when you are in the top half of applicants for at least one role, and that role has at least 10 applicants."
 th: "Top Applicant ใช้ข้อมูลโปรไฟล์ เกณฑ์ในประกาศ และความเห็นของ recruiter ต่อผู้สมัครตำแหน่งใกล้เคียงเพื่อประเมินความเหมาะสม LinkedIn ระบุว่าฟีเจอร์จะแสดงเมื่อคุณอยู่ในกลุ่มครึ่งบนของผู้สมัครอย่างน้อยหนึ่งตำแหน่ง และตำแหน่งนั้นมีผู้สมัครอย่างน้อย 10 คน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 42346a6a12a59ef48935be16b00265e374c60d6db4005e63017e9465be6ca748
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15041,15 +15041,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "How you match shows which skills the ad lists, which of them are already on your profile, and which are not."
 th: "How you match ให้ดูว่าประกาศระบุทักษะอะไร โปรไฟล์ของคุณมีทักษะไหนแล้ว และทักษะไหนยังไม่ได้ระบุ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d484ae41ba66dee48a0d7fe8620ac513d893fb1f7942eae86af7c06b6e26ad17
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15063,15 +15063,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "You can do everything in this guide without Premium"
 th: "ปรับโปรไฟล์ตามคู่มือนี้ได้โดยไม่ต้องใช้ Premium"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: fd0c92880548063b22eed7f5575a983004ce1d28265522df79601491e2b8700f
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15085,15 +15085,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "You start with your job preferences and your visibility, fix your location, adjust your job titles and company descriptions, write a clear headline and About section, then choose skills that match the work. All of that is possible without buying Premium."
 th: "คุณเริ่มจากตั้งค่างานที่สนใจและการมองเห็น แก้ตำแหน่งที่ตั้ง ปรับชื่อตำแหน่งและคำอธิบายบริษัท เขียน headline และส่วนแนะนำตัวให้ชัด แล้วเลือกทักษะที่ตรงกับงาน ทั้งหมดนี้ทำได้โดยไม่ต้องซื้อ Premium"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: de7a59bb63aeef282d121c4f0e22c007bb9d12645bb77cfc534d17d5d6465bec
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15107,15 +15107,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you have not done those basics yet, start there, and then decide whether the comparison data in Premium is useful for the applications you are making."
 th: "ถ้ายังไม่ได้ทำเรื่องพื้นฐานเหล่านี้ ให้เริ่มจากตรงนี้ก่อน แล้วค่อยพิจารณาว่าข้อมูลเปรียบเทียบจาก Premium มีประโยชน์กับการสมัครของคุณไหม"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: da37a6142bf6697924f6ffea4f27202b3d3bc8c1cccf173fdf68cc8ac86ab8b0
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15129,15 +15129,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "10. What LinkedIn Premium actually helps with"
 th: "10. LinkedIn Premium ช่วยอะไรได้บ้าง"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 787c7ff7906c3d524b25d5a267babc53c84972079d8e2de93d15e371688e4bd5
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15151,15 +15151,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Nine things, in order of what matters most"
 th: "เก้าข้อ เรียงตามลำดับความสำคัญ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 46a5cd142b2a58f7a9d10d8df134bdb79084987c2d3f6388de8e80d7b623eeb9
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15173,15 +15173,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Enter your job titles, target country and type of work under Open to Work"
 th: "ระบุชื่อตำแหน่ง ประเทศเป้าหมาย และรูปแบบการทำงานใน Open to Work"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: c5f15e2048d3bff0b1b5a282cca6820ba18e0d4c69a98cf7c813134d3b88b842
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15195,15 +15195,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Decide clearly who can see your Open to Work status"
 th: "เลือกให้ชัดว่าใครเห็นสถานะ Open to Work ของคุณได้"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 75ae40c6ad26832ccc9c4ffc443e418b3620357a3df5dfdd0f5c79c8b30d3959
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15217,15 +15217,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Put the place you actually live on your profile"
 th: "ระบุสถานที่ที่คุณอยู่จริงบนโปรไฟล์"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 8ad59590bd7e7761f786d5bb495f6449fcbccca8d4dc4bfb7ed7ea5cd921f662
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15239,15 +15239,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Keep your real job titles, and describe the scope in words the target market understands"
 th: "เก็บชื่อตำแหน่งจริงไว้ และอธิบายขอบเขตงานด้วยคำที่คนในตลาดเป้าหมายเข้าใจ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 41dc92355eec7649db3cdd4cbfd95b5d3a1907ecb1224bead0622dafb3f36d2c
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15261,15 +15261,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Add a short line about what each former employer does"
 th: "เพิ่มคำอธิบายสั้น ๆ ว่าบริษัทเดิมทำอะไร"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: faf507d9aa96aa736a74d1011ad7110af6d8d3bdf399453573d20e4abd3eec62
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15283,15 +15283,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Use the headline to say your field or the role you are looking for, without reading as your current job"
 th: "ใช้ headline บอกสายงานหรือตำแหน่งที่กำลังมองหาโดยไม่สื่อว่าเป็นตำแหน่งปัจจุบัน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f5de7c12e864935b0a8745bd4897e731da2e30d56c1c70d1e1c745baaa3abe0c
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15305,15 +15305,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Put checkable examples of your results in the About section, and your right-to-work status if you are ready to share it"
 th: "ใส่ตัวอย่างผลงานที่ตรวจสอบได้ในส่วนแนะนำตัว และระบุสถานะสิทธิ์ทำงานหากพร้อมเปิดเผย"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2ff4925e7220575ffddd40fd7b66122d9bf4153b4d7135cc39dbc9ed16a7657c
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15327,15 +15327,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Compare the skills on your profile against three real job ads"
 th: "เทียบทักษะในโปรไฟล์กับประกาศงานจริง 3 ตำแหน่ง"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 792801a9ffa210c17688eae15e24d144f3e7c8cc965af49677e6189cff68d91f
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15349,15 +15349,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Check what on your profile you are able to verify"
 th: "ตรวจว่ามีข้อมูลใดให้ยืนยันบนโปรไฟล์ได้บ้าง"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 13d52d363bb2e49be2f687ae408f43e00669e17a3fe29f039d121ee79d9afb1b
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15371,15 +15371,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "You can start checking without buying Premium"
 th: "เริ่มตรวจได้เลยโดยไม่ต้องซื้อ Premium"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e0e5db194b0c79f0b9918b4f3d5a1d3c206c95a161942df49ede31fd8cc2c70d
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15393,15 +15393,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "11. Check this before you close the tab"
 th: "11. ตรวจก่อนปิดหน้าจอ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 440e6bf116bc44e37d053fe9eac12bdaced8337b77aca0a1b5bb1a783a82b718
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15415,15 +15415,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you share it with all members, people at your current company may see it. The Recruiters only option narrows that, but LinkedIn does not guarantee it can hide your status from your current employer completely. If you are not ready to carry that risk, keep your job preferences visible only to yourself."
 th: "ถ้าเปิดให้สมาชิกทุกคนเห็น คนที่บริษัทปัจจุบันก็อาจเห็นได้ ตัวเลือก Recruiters only จำกัดการมองเห็น แต่ LinkedIn ไม่รับประกันว่าจะซ่อนสถานะจากบริษัทปัจจุบันได้ทั้งหมด ถ้าไม่พร้อมรับความเสี่ยงนี้ ให้เก็บการตั้งค่างานไว้ดูเอง"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 9613e96c8ba21670cb7f220774157e8c8d576d50f7d97567c4df9378855195d4
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15437,15 +15437,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Will my current employer see that I am looking?"
 th: "บริษัทที่ทำงานอยู่จะเห็นไหมว่ากำลังหางาน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 7f6b4aacbaafd4e0a9ae546e9c40c1de286ecf259e2d261b93ac4e05b5c5c95a
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15459,15 +15459,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you have not moved yet, state where you actually are, and put the city you want to work in under Open to Work."
 th: "ถ้ายังไม่ได้ย้าย ให้ระบุสถานที่ที่คุณอยู่จริง แล้วใส่เมืองที่อยากทำงานใน Open to Work"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f35c9ee78e0dd6beff408d692e53be70000fb6d11ec165031358657a2c9b795e
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15481,15 +15481,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Should I change my profile location to a European city?"
 th: "ควรเปลี่ยนตำแหน่งที่ตั้งบนโปรไฟล์เป็นเมืองในยุโรปไหม"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b25fb4ac956d82f914d87c327fece25afc3d0108cea9551cebc7bdbbd7513ea9
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15503,15 +15503,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If all you want is to set your profile up the way this guide describes, not yet. Top Applicant and How you match are information to help you choose what to apply for. They do not tell you whether you will get an interview or the job."
 th: "ถ้าต้องการเพียงปรับโปรไฟล์ตามคู่มือนี้ ยังไม่จำเป็น ส่วน Top Applicant และ How you match เป็นข้อมูลประกอบการเลือกสมัคร ไม่ได้บอกว่าคุณจะได้สัมภาษณ์หรือได้งาน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3ed385d3c929f99319f87fff86be23526db7abb9847d1125cf5f6773264a34d3
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15525,15 +15525,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Is LinkedIn Premium worth it?"
 th: "LinkedIn Premium คุ้มไหม"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 086271629dd36f56f222f9109170db1e6ea08d1fe541ef56a93f61546007ec47
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15547,15 +15547,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If the roles you are aiming at are in English, you should have an English version. You can keep the Thai one, but you have to translate and update both yourself."
 th: "ถ้าตำแหน่งที่คุณเล็งใช้ภาษาอังกฤษ ควรมีฉบับภาษาอังกฤษ คุณเก็บฉบับภาษาไทยไว้ได้ แต่ต้องแปลและอัปเดตทั้งสองฉบับเอง"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f823dc573365133abc7bd337371d503e48c329a73276600317d724b09d1069c4
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15569,15 +15569,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "My profile is in Thai. Do I need an English one too?"
 th: "โปรไฟล์เป็นภาษาไทย ต้องทำภาษาอังกฤษด้วยไหม"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: cee3c84352112af2ee67c900fbe1e47368303ba9a2a8f4b5db87a133801d9fef
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15591,15 +15591,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you are about to send applications, deal with the CV first. Among the Thai professionals who have taken PunProfile's check, about half have the CV as the first thing to fix, against roughly one in six for whom it is LinkedIn."
 th: "ถ้าคุณกำลังจะส่งใบสมัคร ให้จัดการ CV ก่อน ในกลุ่มคนไทยที่ทำแบบประเมินของ PunProfile ประมาณครึ่งหนึ่งมี CV เป็นเรื่องที่ต้องแก้ก่อน เทียบกับราวหนึ่งในหกที่มี LinkedIn เป็นเรื่องแรก"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 9985a98cc9b9d44d61b7ae549b3dba09e3ff489434268198ee28746c21e653cb
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15613,15 +15613,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If my CV is not ready, should I fix LinkedIn first?"
 th: "ถ้า CV ยังไม่พร้อม ควรปรับ LinkedIn ก่อนไหม"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0f2f44a290155eca8a48f62c7ef0fa768c3062a61fbac79ff31ad58576ba696d
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15635,15 +15635,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Questions people ask"
 th: "คำถามที่คนมักถาม"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 9e1fec2c486060de8a22848f06ffa4fc21584b4bdd777508477235a3c1f18542
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15657,15 +15657,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "A CV shows a reader how you fit the role you applied for. On LinkedIn you also have to fill in the information that helps a recruiter find your profile in the first place."
 th: "เรซูเม่ช่วยให้คนอ่านเห็นว่าคุณเหมาะกับตำแหน่งที่สมัครอย่างไร ส่วนบน LinkedIn คุณยังต้องกรอกข้อมูลที่ช่วยให้ recruiter ค้นเจอโปรไฟล์ด้วย"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 6469c9ba03e06d1a3e0606c1e78bbeddde755d0fb9871bc7bc09aaae63dc6b55
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15679,15 +15679,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "LinkedIn explains in its Open to Work guide that specifying the types of job you want and your preferred work location helps your profile appear when recruiters search for candidates. That is fixed in the settings, not by writing a longer About section."
 th: "LinkedIn อธิบายไว้ในคู่มือ Open to Work ว่าการระบุประเภทงานและสถานที่ทำงานที่ต้องการช่วยให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนคำแนะนำตัวให้ยาวขึ้น"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 72784c9324250c8780482b4f34f7bb06bc5fc133276c5d01ed5b61a1ecc806df
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15701,15 +15701,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "LinkedIn says Hiring Assistant runs searches for recruiters to assemble a list of people matching a role. The figures LinkedIn publishes for that product, dated July 2026, say recruiters using the tool view 83% fewer profiles."
 th: "LinkedIn ระบุว่า Hiring Assistant ช่วย recruiter ค้นหาผู้สมัครหลายครั้งเพื่อจัดทำรายชื่อคนที่ตรงกับตำแหน่ง ข้อมูลที่ LinkedIn เผยแพร่สำหรับผลิตภัณฑ์นี้ ลงวันที่กรกฎาคม 2026 ระบุว่า recruiter ที่ใช้เครื่องมือเปิดดูโปรไฟล์น้อยลง 83%"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2b962477504429fb7e33bd35bed718088d1a46f7ae91666ddf6b10a50cb78b45
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15723,15 +15723,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "That number comes from LinkedIn reporting on its own product, not from an independent study, and it does not mean every recruiter views fewer profiles to the same degree."
 th: "ตัวเลขนี้มาจาก LinkedIn ซึ่งรายงานผลของผลิตภัณฑ์ตัวเอง ไม่ใช่งานศึกษาอิสระ และไม่ได้หมายความว่า recruiter ทุกคนเปิดดูโปรไฟล์น้อยลงเท่ากัน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3073211f5647f8883c10bc04591db1a37d2e16bff1e7149bfa6987d643602299
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15745,15 +15745,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "What you can do is fill in your job titles, skills and preferred work location clearly, so the information on your profile matches the work you are looking for."
 th: "สิ่งที่คุณทำได้คือกรอกชื่อตำแหน่ง ทักษะ และสถานที่ทำงานที่ต้องการให้ชัด เพื่อให้ข้อมูลในโปรไฟล์ตรงกับงานที่คุณกำลังมองหา"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 472dea944e032f511d5435d88c6072c09f0fc5a0e5189d02bfb6b1f2c2845186
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15767,15 +15767,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "A bar chart of the share for each thing to fix first. The CV bar is the longest and LinkedIn is third."
 th: "กราฟแท่งแสดงสัดส่วนของเรื่องที่ควรแก้ก่อน แถบ CV ยาวที่สุด ส่วน LinkedIn อยู่ลำดับที่ 3"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3e4f25ae3b41bfd214f2004f1764430b2b8ac939efbe2ba01d8faef81b6763b7
   prompt_version: structural-calque-v1
-  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15789,15 +15789,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "The share of each first step PunProfile assigns to the people who completed its readiness check."
 th: "สัดส่วนของขั้นตอนแรกที่ PunProfile แนะนำแก่ผู้ที่ทำแบบประเมินความพร้อมเสร็จ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: bf175e00a9ed37a3700cc81da1d5f16e6d39ffb3099a630717d893100647a1b8
   prompt_version: structural-calque-v1
-  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15811,15 +15811,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Among the Thai professionals who have taken PunProfile's readiness check, LinkedIn is the third thing on the list of what to fix first."
 th: "ในกลุ่มคนไทยที่ทำแบบประเมินความพร้อมของ PunProfile นั้น LinkedIn อยู่ลำดับที่สามของเรื่องที่ต้องแก้ก่อน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 5acd05e267643ba3b3912b3722270aea415f2a8b7f1c5bdb77cefd166847fd33
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15833,15 +15833,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you have not chosen a target market yet, or your CV is not ready, deal with those two first and come back to LinkedIn afterwards."
 th: "ถ้ายังไม่ได้เลือกตลาดเป้าหมายหรือ CV ยังไม่พร้อม ให้จัดการสองเรื่องนั้นก่อน แล้วค่อยกลับมาปรับ LinkedIn"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: acc071856adabba54d009af420c1c836c5a9bee1b219d6936b40c5f69ce82bf2
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15855,15 +15855,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "1. Be findable first, then be understood"
 th: "1. ปรับให้ค้นเจอก่อน แล้วเขียนให้คนอ่านเข้าใจ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0d65dff4b4eb19f171361483ee9b1b618d86483491442527f7c0269b96000c21
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15877,15 +15877,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Start by being able to answer what role you want to apply for, and in which country."
 th: "เริ่มจากตอบให้ได้ก่อนว่าคุณอยากสมัครตำแหน่งอะไรและในประเทศไหน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 04936c8d6c1d1007454e21843b7eb1d3dd30966621c3e56af899e9c7432ed7ba
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15899,15 +15899,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you cannot name the target yet, changing your job title on LinkedIn may feel like progress, but you do not know who you are editing it for. Once the target is clear, you can choose which job title to use, which skills to add, and how to describe your previous work."
 th: "ถ้ายังเลือกเป้าหมายไม่ได้ การเปลี่ยนชื่อตำแหน่งบน LinkedIn อาจดูเหมือนคืบหน้า แต่ยังไม่รู้ว่ากำลังปรับให้ใครอ่าน เมื่อเป้าหมายชัดแล้ว คุณจะเลือกได้ว่าควรใช้ชื่อตำแหน่งไหน ใส่ทักษะอะไร และอธิบายงานเดิมอย่างไร"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1055bc34727eb6f7c37273c960195003d4053d140ae43d63ee629f1005f765fc
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15921,15 +15921,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you cannot decide yet, start with the guide “Where to start if you want to work in Europe” and plan the first 30 days."
 th: "ถ้ายังตัดสินใจไม่ได้ ให้เริ่มจากคู่มือ «อยากไปทำงานยุโรป เริ่มจากตรงไหน» เพื่อวางแผน 30 วันแรก"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e87e87a1b665e782b675141edb7feed6bc72d61b2caf7756749eaafa010d35b9
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15943,15 +15943,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Before the next step, try completing this sentence: “I am looking for a [job title] role in [country].”"
 th: "ก่อนทำขั้นต่อไป ลองเติมประโยคนี้ให้ครบ: «กำลังมองหาตำแหน่ง [ชื่อตำแหน่ง] ในประเทศ [ชื่อประเทศ]»"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b065d895e748a507479bc4d106e9f758c0dc0b4f5a81e630a5a6af5e88b3df68
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15965,15 +15965,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "2. Choose your target country and role before you edit the profile"
 th: "2. เลือกประเทศและตำแหน่งเป้าหมายก่อนปรับโปรไฟล์"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 669fb39e6259d7cdcc1fe5415243c041809588773b983859750ce5e488277aaa
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15987,15 +15987,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Start with two things: your job preferences, and the location on your profile."
 th: "เริ่มจากสองจุด: การตั้งค่างานที่สนใจและตำแหน่งที่ตั้งบนโปรไฟล์"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a752b2ae8b2c98396cc7501282631da5bc65472c75a9b65ea28e35706f8d127b
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16009,15 +16009,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Open your job preferences under Open to Work and enter your job titles, your preferred work location, the type of work such as on-site, hybrid or remote, along with when you can start and the employment types. This is what LinkedIn uses to match your profile to the jobs you are interested in."
 th: "เปิดการตั้งค่างานที่สนใจใน Open to Work แล้วระบุชื่อตำแหน่ง สถานที่ทำงานที่ต้องการ รูปแบบการทำงาน เช่น เข้าออฟฟิศ ไฮบริด หรือทำงานทางไกล รวมถึงเวลาที่เริ่มงานได้และประเภทการจ้างงาน ข้อมูลเหล่านี้ช่วยให้ LinkedIn จับคู่โปรไฟล์กับงานที่คุณสนใจ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b7f92097e4a96c168c6b122da7c02f4cc862fb38202b0d62d9a47986e14fc04a
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16031,15 +16031,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "The other one is the location on your profile. Choose the country or region you actually live in. Whether a city, district or postal code field appears depends on the country you pick."
 th: "อีกจุดคือตำแหน่งที่ตั้งบนโปรไฟล์ ให้เลือกประเทศหรือภูมิภาคที่คุณอยู่จริง ส่วนช่องเมือง เขต หรือรหัสไปรษณีย์ที่ระบบแสดงจะขึ้นอยู่กับประเทศที่เลือก"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a8690a985afaa54121ded5bbea0a1b968e64dfa907d7e5ac5dae710d9a743128
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16053,15 +16053,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Should you set your profile location to the city you want to move to?"
 th: "ควรตั้งตำแหน่งที่ตั้งบนโปรไฟล์เป็นเมืองที่อยากไปไหม"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 8ef1d68bf5566af9bc0b59f14f1c4916448aa8777b11df07befed986602b83d3
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16075,15 +16075,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you have not moved yet, do not set your profile to a city you do not live in. When a recruiter asks where you are now, or whether you need visa sponsorship, you want to answer without also having to explain why your profile says something else."
 th: "ถ้ายังไม่ได้ย้าย ไม่ควรตั้งโปรไฟล์เป็นเมืองที่ไม่ได้อยู่จริง หาก recruiter ถามว่าตอนนี้คุณอยู่ที่ไหนหรือต้องการสปอนเซอร์วีซ่าหรือไม่ คุณจะได้ตอบโดยไม่ต้องอธิบายว่าทำไมข้อมูลบนโปรไฟล์ไม่ตรงกัน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b8929b7d8c4a0b41280110b594ad944ca9519a9ee2f54ed763bb8e37d770dcdd
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16097,15 +16097,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Put the place you actually live on your profile, and put the city or country you want to work in under Open to Work."
 th: "ใส่สถานที่ที่คุณอยู่จริงบนโปรไฟล์ แล้วระบุเมืองหรือประเทศที่อยากไปทำงานใน Open to Work"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: aff15f68cb8db88de59ef1e74a82a5f0ad0acf7c8ea22e0b77f5ee93fc46a4c6
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16119,15 +16119,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Look at real job ads to find the job titles that market uses, and use those in the target role field. State the type of work honestly too, such as remote from Bangkok, or ready to relocate."
 th: "ลองดูประกาศงานจริงเพื่อหาว่าตลาดนั้นใช้ชื่อตำแหน่งอะไร แล้วนำมาใช้ในช่องตำแหน่งเป้าหมาย ระบุรูปแบบการทำงานตามจริงด้วย เช่น รับงานทางไกลจากกรุงเทพฯ หรือพร้อมย้ายประเทศ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 925964238779c53ebfaf08daead4e4f21e6399ac5fd9ddea1b0a8fd9338fbfd6
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16141,15 +16141,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "3. Set your target role and location to match the plan"
 th: "3. ตั้งค่าตำแหน่งเป้าหมายและสถานที่ให้ตรงกับแผน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: c26875070dee3ca415d33ce108522cd02fafdb4369daef4026e7b5771781343b
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16163,15 +16163,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you are still employed, decide first who you want to be able to see your Open to Work status."
 th: "ถ้ายังทำงานอยู่ ให้เลือกก่อนว่าอยากให้ใครเห็นสถานะ Open to Work ของคุณ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e0b55412e039a87ac7cea87c577b488b0301bf815b681f8fcdf341b9b354f2a9
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16185,15 +16185,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "LinkedIn lets you choose to keep your job preferences visible only to yourself, to share them with LinkedIn Recruiter users, or to share them with all members. The last option also adds the #OpenToWork frame to your profile photo."
 th: "LinkedIn ให้เลือกได้ ว่าจะเก็บการตั้งค่างานไว้ดูเอง เปิดให้ผู้ใช้ LinkedIn Recruiter เห็น หรือเปิดให้สมาชิกทุกคนเห็น ตัวเลือกสุดท้ายจะแสดงกรอบ #OpenToWork บนรูปโปรไฟล์ด้วย"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 5f59591bebc5bca3f2961dd7dd02dcf7854ad2ad5191d51429df2be3fe9b9af9
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16207,15 +16207,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you choose Recruiters only, LinkedIn Recruiter users may see what you have shared, such as the roles you are interested in and the employment types. LinkedIn tries to hide this from recruiters at your current employer, but does not guarantee it can hide it completely."
 th: "ถ้าเลือก Recruiters only ผู้ใช้ LinkedIn Recruiter อาจเห็นข้อมูลที่คุณแชร์ เช่น ตำแหน่งที่สนใจและประเภทการจ้างงาน LinkedIn พยายามซ่อนข้อมูลนี้จาก recruiter ที่บริษัทปัจจุบันของคุณ แต่ ไม่ได้รับประกันว่าจะซ่อนได้ทั้งหมด"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: ae3ef82bae3bc623cf5ff075b116a1fc777307629a8f6b2af8415e2239cba1a1
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16229,15 +16229,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you are not ready to carry the risk that your current employer may see it, keep your job preferences visible only to yourself and use them to get job recommendations."
 th: "ถ้าไม่พร้อมรับความเสี่ยงที่บริษัทปัจจุบันอาจเห็น ให้เก็บการตั้งค่างานไว้ดูเองและใช้สำหรับรับคำแนะนำงาน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1637a44d2c5ef8e502e0053f16b9be93a6f65ae13609171436c8d938fa44a4ca
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16251,15 +16251,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "A clay figure holds a desk lamp over a row of cards on a table. The cards in the middle are green and the ones to each side are cream."
 th: "ตัวละครดินปั้นถือโคมไฟเหนือแถวการ์ดบนโต๊ะ การ์ดตรงกลางเป็นสีเขียว ส่วนการ์ดด้านข้างเป็นสีครีม"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: bdfc6c3a3e944c8c34a03dd1529bbc445b62382d3cbcb8c7886834f387039c59
   prompt_version: structural-calque-v1
-  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16273,15 +16273,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Open to Work has three settings: keep it to yourself, show it to LinkedIn Recruiter users, or show it to every member. The recruiters-only setting lowers the chance your current employer sees it, but it is not a guarantee."
 th: "Open to Work มี 3 ตัวเลือก: เก็บการตั้งค่าไว้ดูเอง ให้เฉพาะผู้ใช้ LinkedIn Recruiter เห็น หรือให้สมาชิกทุกคนเห็น ตัวเลือกเฉพาะ recruiter ช่วยลดโอกาสที่บริษัทปัจจุบันจะเห็น แต่ไม่ได้รับประกันว่าจะซ่อนได้ทั้งหมด"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 7aeadda3a416022d848de5f4f6e9e3fbee463eedd5aa9de6a7c009d71f616ce5
   prompt_version: structural-calque-v1
-  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16295,15 +16295,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "4. Who sees that you are open to work"
 th: "4. ใครเห็นว่าคุณกำลังเปิดรับงาน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4e0c479ec8569078aa17de6df82a11c1b98e9fb34517e625a99308904979f4be
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16317,15 +16317,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Once a recruiter opens your profile, the next question is whether they can tell what you were responsible for and how well you did it, especially if they do not know your previous employer."
 th: "เมื่อ recruiter เปิดโปรไฟล์แล้ว คำถามต่อไปคือเขาเข้าใจไหมว่าคุณเคยรับผิดชอบอะไรและทำได้ดีแค่ไหน โดยเฉพาะถ้าเขาไม่รู้จักบริษัทเดิมของคุณ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: e2fd62e653677236bfd1162b467378a7482282f0812162156080138e2de979ee
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16339,15 +16339,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "A job title used by a Thai company does not necessarily signal the same level in Europe, and a company Thai people know well may be unknown in that market. Add the context a reader needs in order to understand the scope of the work."
 th: "ชื่อตำแหน่งที่บริษัทไทยใช้ไม่จำเป็นต้องสื่อระดับงานเดียวกันในยุโรป ส่วนบริษัทที่คนไทยรู้จักดีอาจไม่เป็นที่รู้จักในตลาดนั้น ให้เติมบริบทที่คนอ่านต้องใช้เพื่อเข้าใจขอบเขตงาน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f24fd650caeeec5b893385a59e0c9d5e583d477012e53f37b3d0d4410d128906
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16361,15 +16361,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Keep your real job title, and describe the scope of the work in words the target market understands. If the title is Assistant Vice President, Customer Operations, say in the description that you ran a 12-person contact centre team. The reader then sees the size of the team and the responsibility without having to guess from the title."
 th: "เก็บชื่อตำแหน่งจริงไว้ แล้วอธิบายขอบเขตงานด้วยคำที่คนในตลาดเป้าหมายเข้าใจ เช่น ถ้าชื่อตำแหน่งคือ Assistant Vice President, Customer Operations ให้ระบุในคำอธิบายว่าคุณดูแลทีมศูนย์บริการลูกค้า 12 คน คนอ่านจะเห็นขนาดทีมและหน้าที่โดยไม่ต้องเดาจากชื่อตำแหน่ง"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 1e63463193b8a832ec16f0092a82229d82e5cf3835fd92279d865495467e8da3
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16383,15 +16383,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Two cards side by side with the same job title. The one on the right adds a description of the work and context on the employer."
 th: "การ์ดสองใบวางเทียบกัน ทั้งสองใบใช้ชื่อตำแหน่งเดียวกัน ส่วนการ์ดด้านขวามีคำอธิบายงานและข้อมูลบริษัทเพิ่ม"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 25ce8d8deb23ef92a8bda9e044eeede61b32f202cda597b86a57c3127462bb7e
   prompt_version: structural-calque-v1
-  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16405,15 +16405,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "An invented example with the same job title on both sides. The right side adds the scope of the work and context on the employer."
 th: "ตัวอย่างสมมติที่ใช้ชื่อตำแหน่งเดียวกันทั้งสองฝั่ง ฝั่งขวาอธิบายขอบเขตงานและบริบทบริษัทเพิ่ม"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: c7f278cde150568718627396025a980f93ceaf07a26dbba2e08d77dbf48fdc81
   prompt_version: structural-calque-v1
-  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16427,15 +16427,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Under each former employer, add a short line about what the company does, which market it is in, and roughly how big it is. If you use a number, use one that can be checked."
 th: "ใต้ชื่อบริษัทเดิม เพิ่มคำอธิบายสั้น ๆ ว่าบริษัททำอะไร อยู่ในตลาดไหน และมีขนาดประมาณเท่าไร ถ้าใช้ตัวเลข ให้ใช้ตัวเลขที่ตรวจสอบได้"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 8f4aaa0334e30665bec9ceee156e2c4bae31ac51d63b3d94b7b21706805c110d
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16449,15 +16449,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Choose your skills from the jobs you want to apply for. Read three real ads and see which skills come up repeatedly. If you genuinely have that skill, use the same wording as the ad on your profile, so a reader can see that it matches."
 th: "เลือกทักษะจากงานที่คุณอยากสมัคร ลองอ่านประกาศจริง 3 ตำแหน่งแล้วดูว่าทักษะไหนปรากฏซ้ำ หากคุณมีทักษะนั้นจริง ให้ใช้คำเดียวกับประกาศในโปรไฟล์ เพื่อให้คนอ่านเข้าใจว่าตรงกัน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a5a54ffddbc92f026ff0c3426f4213d3abf37c5f18989146f10da8adfa1887a1
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16471,15 +16471,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "LinkedIn says that adding skills and setting the jobs you are interested in are both connected to whether the Top Applicant feature appears. You can update both of those without buying Premium."
 th: "LinkedIn ระบุ ว่าการเพิ่มทักษะและระบุงานที่สนใจเกี่ยวข้องกับการแสดงผลของ Top Applicant คุณอัปเดตข้อมูลสองส่วนนี้ได้โดยไม่ต้องซื้อ Premium"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2edb19cdd522acba2c62aed96755ac7c1255f32348434e1f7e7109a730b216ab
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16493,15 +16493,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "5. Write so a recruiter understands the work you did"
 th: "5. เขียนให้ recruiter เข้าใจงานที่คุณเคยทำ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: f1b2bdc9ec7422ed03878fb58ea9bd50b4460cca702ea36bc0e5fd1b0dd30e3d
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16515,15 +16515,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you do not yet have the right to work in your target country, be ready to explain your status and the conditions an employer needs to know about."
 th: "ถ้ายังไม่มีสิทธิ์ทำงานในประเทศเป้าหมาย ให้เตรียมอธิบายสถานะของคุณและเงื่อนไขที่นายจ้างต้องทราบ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 3b85c40bd6eb7a9d7fbd615eb4823d9bdf877f305b6863345c93f3e827bb026b
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16537,15 +16537,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you need an employer to sponsor a visa, say so plainly. If you are looking at a route such as the EU Blue Card, check the conditions for that country and that role first. Do not write that you qualify on the strength of your degree or your salary alone."
 th: "ถ้าต้องให้นายจ้างสปอนเซอร์วีซ่า ให้บอกตามจริง หากกำลังดูเส้นทางอย่าง EU Blue Card ให้ตรวจเงื่อนไขของประเทศและตำแหน่งนั้นก่อน อย่าเขียนว่าคุณเข้าเกณฑ์จากวุฒิหรือเงินเดือนอย่างเดียว"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a0271de4f280dd5a3fe369782a4956840a30f415c71799044d719f64d402f412
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16559,15 +16559,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "In your About section you can put one line saying where you are, whether you are ready to relocate, and whether you would need an employer's help with a visa. Put in only what you are ready to have on a public profile."
 th: "ในส่วนแนะนำตัว (About) คุณอาจใส่หนึ่งบรรทัดว่าอยู่ที่ไหน พร้อมย้ายหรือไม่ และต้องให้นายจ้างช่วยเรื่องวีซ่าหรือเปล่า ให้ระบุเฉพาะข้อมูลที่คุณพร้อมเปิดเผยบนโปรไฟล์"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 855de740c648ae779e103df7dc9f2eab50bda48c357f27b17d53ef5d5e5f9f84
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16581,15 +16581,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you would rather not have this on your profile, prepare your answer and tell the recruiter early in the conversation when a role comes up."
 th: "ถ้าไม่อยากเปิดเผยเรื่องนี้บนโปรไฟล์ ให้เตรียมคำตอบไว้และแจ้ง recruiter ตั้งแต่เริ่มคุยเมื่อมีตำแหน่งที่สนใจ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 439360d7fc16dbfb9a4d030163d9416fc7b52b61ba9a404315854d4e60056339
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16603,15 +16603,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "6. State your right to work and whether you need visa sponsorship"
 th: "6. ระบุสิทธิ์ทำงานและความจำเป็นเรื่องสปอนเซอร์วีซ่า"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 578b9578560cee6aa75e2b2e323b5e3ffff2667d3eceb29fc977a9a86c138d4f
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16625,15 +16625,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "A verification mark shows a reader which parts of your profile have been checked."
 th: "เครื่องหมายยืนยันช่วยให้คนอ่านเห็นว่าข้อมูลส่วนใดบนโปรไฟล์ผ่านการตรวจสอบแล้ว"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: d6c11175c4ad0b00808494d97bd2bdf8ad00d60bccbd9ba551a8b5fc0ee0fab7
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16647,15 +16647,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you are applying from Thailand, an employer may not know your university or your former employer. Adding context, and verifying what you can, makes your profile easier for them to read."
 th: "ถ้าคุณสมัครจากไทย นายจ้างอาจไม่รู้จักมหาวิทยาลัยหรือบริษัทเดิมของคุณ การเติมบริบทและยืนยันข้อมูลที่ทำได้จึงช่วยให้เขาเข้าใจโปรไฟล์ได้ง่ายขึ้น"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 9b81fa88a69c6e6f4edcc73d976aa47e66a94a925f0b35977cecb92f2c56a233
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16669,15 +16669,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "LinkedIn says Hiring Assistant uses LinkedIn data along with supporting signals such as verifications on a profile. That does not tell you how much verification improves your chances of an interview."
 th: "LinkedIn ระบุว่า Hiring Assistant ใช้ข้อมูลจาก LinkedIn และสัญญาณประกอบ เช่น การยืนยันบนโปรไฟล์ ข้อมูลนี้ไม่ได้บอกว่าการยืนยันจะเพิ่มโอกาสได้สัมภาษณ์เท่าไร"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: b7a9ada86bd17dbb8b3964f4672467cb2ebe8bceef6d696cc6b4d30b642dd269
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16691,15 +16691,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Check whether your profile offers the option to verify your identity, your workplace or your education, and verify only what is true of you."
 th: "ลองดูว่าโปรไฟล์ของคุณมีตัวเลือกยืนยันตัวตน สถานที่ทำงาน หรือการศึกษาหรือไม่ แล้วเลือกยืนยันเฉพาะข้อมูลที่ตรงกับคุณ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4cfe38bc147c9ab2bf3cefcbd22ba3bf75c5eb6cc1dadd5feecf0447654f3329
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16713,15 +16713,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "7. Add verification to your profile, where the option exists"
 th: "7. เพิ่มการยืนยันบนโปรไฟล์ หากมีตัวเลือกให้ใช้"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 54ede8148008dff6f29ac875c2cb85eb70b0e675723bf9130cce23fa6393e501
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16735,15 +16735,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If your About section still does not tell a reader what you do, look at whether you have spent the space describing duties, or describing the team's results rather than your own part in them."
 th: "ถ้าส่วนแนะนำตัวยังอ่านแล้วไม่รู้ว่าคุณทำอะไร ลองดูว่าคุณใช้พื้นที่ไปกับการอธิบายหน้าที่หรือเล่าผลงานของทีมมากกว่าบทบาทของตัวเองหรือเปล่า"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 2ca45228a22212d740f7958e979682427ad5e5eaae84bf361e13cea2e8bf5ea8
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16757,15 +16757,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "When you mention a team result, also say which part you were responsible for and how you changed the outcome. A reader who does not know your old team can then see what your contribution was."
 th: "เวลาพูดถึงผลงานของทีม ให้ระบุด้วยว่าคุณรับผิดชอบส่วนไหนและช่วยให้ผลลัพธ์เปลี่ยนไปอย่างไร คนอ่านที่ไม่รู้จักทีมเดิมของคุณจะได้เห็นว่าคุณมีส่วนอย่างไร"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 789a8ab2aa1bcfe2ef4f8582017b3a619725f4292231104d2592a8317c13df2e
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16779,15 +16779,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Instead of writing only “was part of a team that improved the process”, say which step you changed, how the result changed, and what number backs it up."
 th: "แทนที่จะเขียนเพียงว่า «เป็นส่วนหนึ่งของทีมที่ปรับปรุงกระบวนการ» ให้ระบุว่าคุณปรับขั้นตอนไหน ผลเปลี่ยนไปอย่างไร และมีตัวเลขอะไรที่ใช้ยืนยันได้"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4291c257762c3e3783111ce7bb7deab8da9329a2d071ecc56c1bc54ed3876aa0
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16801,15 +16801,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Give the team credit where it is due, and still make your own part clear."
 th: "ให้เครดิตทีมตามจริง พร้อมอธิบายส่วนที่คุณรับผิดชอบให้ชัด"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 36ee69393edb263e3c5ce7c5726c21f7f2192a850aeef4ee6fe7953ff49de2f1
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16823,15 +16823,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "8. Write an About section that shows your role and your results"
 th: "8. เขียนส่วนแนะนำตัวให้เห็นบทบาทและผลงาน"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: dee3db12969f62dcd90d92114eb3c89f1ab5c2693089b24588955eacd1f080a5
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16845,15 +16845,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "LinkedIn supports more than one profile language, so you can keep a Thai version and an English version separately."
 th: "LinkedIn รองรับโปรไฟล์มากกว่าหนึ่งภาษา คุณจึงแยกฉบับภาษาไทยและภาษาอังกฤษได้"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 5027b98f0ec7f569ecb159c787f599cdb24f8bdf35c4666950f6f2f087053a74
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16867,15 +16867,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Add the other language through LinkedIn on a computer, and put the content in that language yourself. It does not translate for you, and it does not update the second language when you change the primary profile."
 th: "เพิ่มโปรไฟล์ภาษาอื่นผ่าน LinkedIn บนคอมพิวเตอร์ แล้วใส่เนื้อหาในภาษานั้นเอง ระบบไม่ได้แปลหรืออัปเดตเนื้อหาอีกภาษาให้ตามโปรไฟล์หลัก"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: af3712a5316f8361ceb328a84c4abe16180e20ac6b9206e7a048a74b01af7165
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16889,15 +16889,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you keep both, edit both whenever you change jobs or add work, so a recruiter does not open the out-of-date one."
 th: "ถ้าทำสองภาษา ให้แก้ทั้งสองฉบับเมื่อเปลี่ยนงานหรือเพิ่มผลงาน เพื่อไม่ให้ recruiter เปิดเจอข้อมูลเก่า"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 9a270d6bcc4a811f54facfcc2cb2bf4857d9f0626d8882c8383ceb0a920a1d29
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16911,15 +16911,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If the roles you are aiming at are in English, make English your primary profile, and add a Thai version if you also use LinkedIn to stay in touch with your network in Thailand."
 th: "ถ้าตำแหน่งที่คุณเล็งใช้ภาษาอังกฤษ ให้ใช้ภาษาอังกฤษเป็นโปรไฟล์หลัก และเพิ่มฉบับภาษาไทยถ้าคุณยังใช้ LinkedIn ติดต่อกับเครือข่ายในไทย"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: bb0c6e44c971da260c067e438f69c54575bbe6c892a4611d233e7ec94c471013
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16933,15 +16933,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "9. A Thai profile, an English one, or both"
 th: "9. โปรไฟล์ภาษาไทย ภาษาอังกฤษ หรือทั้งสองภาษา"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 79715c0e7d4f3b608c56abf6869418bea602942930f21e722aacf12917353de2
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16955,15 +16955,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Make your LinkedIn profile findable by European recruiters"
 th: "ปรับโปรไฟล์ LinkedIn ให้ recruiter ในยุโรปค้นเจอ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: a7ee2ed8eb9d70202a0b8b049f457a47510b9b003df66d9328609554a29ab4d3
   prompt_version: structural-calque-v1
-  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16977,15 +16977,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "If you are applying for jobs in Europe, treat LinkedIn as two jobs rather than one: set it up so that someone looking for candidates can find you, then write it so they understand what you have done."
 th: "ถ้าคุณกำลังสมัครงานในยุโรป ลองแยกการปรับ LinkedIn เป็นสองเรื่อง: ตั้งค่าให้คนที่กำลังหาผู้สมัครมีโอกาสค้นเจอคุณ แล้วเขียนให้เขาเข้าใจว่าคุณทำอะไรมา"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 9f563040e983d7c8ad79ed7e4ca1acb27fe9fb0c57fe427b7b0bf44a2e4c5403
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16999,15 +16999,15 @@ render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_
 narrative_slot: utility
 en: "Make your LinkedIn profile something a European recruiter can find, and understand"
 th: "ปรับโปรไฟล์ LinkedIn ให้ recruiter ในยุโรปค้นเจอและเข้าใจประสบการณ์ของคุณ"
-provenance: draft
+provenance: paul-approved
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 9dfda906f3e54b6e7bec6364dd879f828ace308f160034c0e854038dd5633f76
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
 ```
 
 <!-- COPY-ENTRY -->
