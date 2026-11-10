@@ -53,6 +53,17 @@ export const send = internalAction({
     body: v.string(),
     /** Log what would happen and send nothing. The default, deliberately. */
     dryRun: v.optional(v.boolean()),
+    /**
+     * Send to this one address instead of the whole list, for a real test of
+     * the path before a real send.
+     *
+     * It filters the consented list; it does not replace it. An address that
+     * has not opted in matches nothing and the run reports zero attempted, so
+     * a typo here cannot email somebody who never asked to hear from us. That
+     * is also why it is not a `to` argument: there is no way to name a
+     * recipient this function would not otherwise have reached.
+     */
+    only: v.optional(v.string()),
   },
   returns: v.object({ attempted: v.number(), sent: v.number(), failed: v.number() }),
   handler: async (ctx, args): Promise<SendResult> => {
@@ -60,8 +71,21 @@ export const send = internalAction({
     const from = process.env.MAIL_FROM;
     const site = process.env.SITE_URL ?? "https://punprofile.app";
 
-    const list: Recipient[] = await ctx.runQuery(internal.marketing.recipients, {});
+    const everyone: Recipient[] = await ctx.runQuery(internal.marketing.recipients, {});
+    const only = args.only?.trim().toLowerCase();
+    const list = only ? everyone.filter((r) => r.email.toLowerCase() === only) : everyone;
     const dryRun = args.dryRun ?? true;
+
+    if (only && list.length === 0) {
+      console.warn(
+        `marketing.send refused: the address given to \`only\` holds no live opt-in, ` +
+          `so there is nobody to send to. ${everyone.length} recipient(s) were untouched.`,
+      );
+      return { attempted: 0, sent: 0, failed: 0 };
+    }
+    if (only) {
+      console.log(`marketing.send: restricted to one consented address, ${everyone.length} on the full list`);
+    }
 
     if (!key || !from) {
       console.warn(
