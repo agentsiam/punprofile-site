@@ -11,7 +11,9 @@
  *
  * Safe to re-run: it simply rotates the keys, which signs the admin out
  * everywhere until the next sign-in. That property is also the recovery path
- * if a key is ever exposed: re-run, and the exposed one signs nothing.
+ * if a key is ever exposed: re-run, and the exposed one signs nothing. It does
+ * not touch SITE_URL on the deployment the live site reads, for the reason
+ * written beside PROD_SITE_URL below.
  *
  * **Never run `npx convex env list` to check this worked.** It prints every
  * value in full, including JWT_PRIVATE_KEY, so a routine "did that land?"
@@ -42,11 +44,20 @@ const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "paul.bussabong@gmail.com";
 // Since 07/09/2026 the primary domain is punprofile.app and the old
 // vercel.app addresses 308 to it, so this follows the domain.
 const PROD_SITE_URL = "https://punprofile.app";
-// 3100, not 3000: another project owns 3000 on Paul's machine. This has to
-// match the port `npm run dev` actually serves on, because Convex Auth builds
-// its redirects from SITE_URL, so a mismatch breaks admin sign-in locally with
-// an error that points at auth rather than at a port number.
-const DEV_SITE_URL = "http://localhost:3100";
+// There is no DEV_SITE_URL any more, and this is the reason.
+//
+// `quiet-mule-251` is the deployment the Convex CLI calls dev, and it is also
+// the one the live site reads: the deployed bundle builds its client from
+// `https://quiet-mule-251.eu-west-1.convex.cloud`. One deployment cannot hold
+// two values of SITE_URL, and two things read it to build links that reach
+// real people: the new-lead alert in `convex/notify.ts` and the marketing mail
+// in `convex/marketingSend.ts`, the unsubscribe link included. A localhost
+// value there puts localhost links in somebody's inbox.
+//
+// So this script no longer writes SITE_URL to anything but prod. Paul's call:
+// it stays `https://punprofile.app` on both. The price is that admin sign-in
+// from a laptop redirects to the live site, because Convex Auth builds its
+// redirects from the same value.
 
 function setEnv(name, value, prod) {
   const args = ["convex", "env", "set"];
@@ -75,7 +86,10 @@ async function configure(prod) {
   setEnv("JWKS", jwks, prod);
   setEnv("ADMIN_EMAILS", ADMIN_EMAILS, prod);
   setEnv("ADMIN_EMAIL", ADMIN_EMAIL, prod);
-  setEnv("SITE_URL", prod ? PROD_SITE_URL : DEV_SITE_URL, prod);
+  // Only prod, and only because a fresh prod deployment has no value at all.
+  // On the deployment the live site reads, SITE_URL is left exactly as it is:
+  // rotating a key must never silently repoint the links inside email.
+  if (prod) setEnv("SITE_URL", PROD_SITE_URL, prod);
   console.log(`[${label}] auth environment configured.`);
 }
 
