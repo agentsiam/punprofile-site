@@ -135,11 +135,11 @@ sibling repo by the exporter that makes them.
 | **R35** | Every internal link is written as its Thai path and passed through `path()` from `useCopy()`, or `localePath(href, locale)` in a server component. The link tables in `nav.ts`, `footer.ts`, `cta.ts` and `faq.ts` hold no locale. |
 | **R36** | Adding a page means the real file under `(th)/`, an `(en)/en/…/page.tsx` re-exporting its default with its own `pageMetadata({ …, locale: "en" })`, and a `PUBLIC_ROUTES` entry. |
 | **R37 LAW** | A push to `master` is the production deploy, not a step before one, and it is gated by the pre-push list in section 6. Never deploy from a laptop and never run `npx convex deploy --prod`. |
-| **R38** | Every CLI command without `--prod` hits dev, which holds real personal data and is not a scratch environment. PDPA applies to it. |
+| **R38** | Every CLI command without `--prod` hits `quiet-mule-251`, which is the deployment the live site reads. It holds the real lead data, it is not a scratch environment, and PDPA applies to it. `--prod` reaches `dashing-shepherd-41`, which nothing public reads. |
 | **R39** | Commit before deploying anything. `git status --short` empty is the gate, because Convex pushes the working tree and not a commit. |
-| **R40** | Dev may drift. Keep it reproducible instead: from a clean tree, `npx convex dev --once` rebuilds it from what is committed. |
+| **R40** | `quiet-mule-251` may drift, and it is the one candidates reach, so drift there is visible rather than private. Keep it reproducible: from a clean tree, `npx convex dev --once` rebuilds its functions from what is committed. |
 | **R41** | A deploy that changed nothing means the wrong deployment was targeted. Re-check the target rather than deploying again. |
-| **R42** | Watch the Vercel build run `convex deploy` before `next build`, then run any pending backfill against `--prod`. |
+| **R42** | Watch the Vercel build run `convex deploy` before `next build`, then run any pending backfill against the deployment the live site reads, which a command reaches without `--prod` (R38). A backfill sent to `--prod` rewrites rows nothing serves and leaves the real ones untouched. |
 | **R43** | Write a code-and-data change so that any interleaving of the two steps is safe. A backfill is not part of a deploy and never will be. |
 | **R44** | Dual-write through a migration, and let reads degrade honestly rather than merely safely. |
 | **R45** | Every backfill is idempotent, so a run that dies half way is resumed by running it again. |
@@ -153,11 +153,12 @@ sibling repo by the exporter that makes them.
 Cloned as siblings in one parent folder, from two accounts, `agentsiam/punprofile-site`
 and `paulthinks/punprofile-career-coaching`. Eleven scripts read across by relative path, and each says so when the sibling is missing (C47), so a
 lone clone runs but cannot regenerate its colours or its termbase. The site is
-`punprofile.app`, on the Vercel team `agent-siam`; `punprofile.vercel.app` 308s to it. The Convex
-production deployment is `dashing-shepherd-41` and development is `quiet-mule-251`, named in
-`.env.local`, holding real lead data (R38). Which one the live site reads is set by Vercel's
-environment, not by this file: read the `convex.cloud` URL out of the deployed bundle before
-touching data in either dashboard.
+`punprofile.app`, on the Vercel team `agent-siam`; `punprofile.vercel.app` 308s to it. **The live site reads
+`quiet-mule-251`**, the deployment the Convex CLI calls dev and `.env.local` names. It holds the
+real lead data and a command without `--prod` goes there (R38). `dashing-shepherd-41` is the one
+the CLI calls production and nothing public reads it. Those names are the CLI's own and describe
+neither deployment's job, so read the `convex.cloud` URL out of the deployed bundle rather than
+trusting a name before touching data in either dashboard.
 
 | Command | Does |
 |---|---|
@@ -198,7 +199,8 @@ missing one of its eight slots, naming a destination `cta.ts` lacks, or stating 
 - A story record holding its own copy of a figure is a fourth place for a stale number to hide, which is why `verify:narrative` exists rather than a document being enough.
 - The consent migration is the worked example of R43 to R45: `captureContact` dual-writes, `resolveConsent` returns `never_asked` rather than guessing, and the backfill reported 200 written then 0 written on an immediate re-run.
 - A deploy that appeared to change nothing was a different deployment, not a failed push (R41).
-- A coach account was deleted from the production dashboard while the live site was reading dev, so the deletion did nothing anyone could see and the production rows were lost. Check which deployment the bundle reads first.
+- A coach account was deleted from the production dashboard while the live site was reading dev, so the deletion did nothing anyone could see and the production rows were lost. That is not a past misconfiguration: the live bundle still builds its client from `quiet-mule-251`, so the dashboard labelled production is the wrong one to open. Check the bundle first, every time.
+- `npx convex env list` prints every value in full, the signing key included. Filtering it with `cut -d=` does not save you, because `JWT_PRIVATE_KEY` is multi-line and its body prints as if each line were a name. Two sessions have dumped a live signing key into a terminal that way. List names only, with `grep -oE '^[A-Z_]+='`, and if a key does escape, `scripts/setup-auth.mjs` rotates the pair, which is the recovery path it was written for.
 - The Now pill shipped dark green on dark green, because `bg-primary` was paired with `.ground-fixed` and that pairing cancels itself out. On a lime ground the lime is the ground and the pill on it is the dark one (R21).
 
 ## 8. Cadence
