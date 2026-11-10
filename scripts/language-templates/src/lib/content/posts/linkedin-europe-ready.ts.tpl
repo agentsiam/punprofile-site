@@ -11,7 +11,7 @@ export const LINKEDIN_EUROPE_READY: Post = {
   slug: "linkedin-europe-ready",
   topic: "how-to",
   playbook: true,
-  published: "2026-11-10",
+  published: "2026-11-11",
   related: "start-in-europe",
 
   title: {
