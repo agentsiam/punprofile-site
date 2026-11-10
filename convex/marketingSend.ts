@@ -3,6 +3,7 @@
 import { v } from "convex/values";
 import { internalAction } from "./_generated/server";
 import { internal } from "./_generated/api";
+import { renderMarketingEmail } from "../src/lib/email/marketing-html";
 import type { Id } from "./_generated/dataModel";
 
 /**
@@ -46,6 +47,15 @@ type SendResult = { attempted: number; sent: number; failed: number };
  * every address from the event log before this ever sees one, so there is no
  * path from this file to an address that has not opted in.
  */
+/**
+ * The unsubscribe line, in both languages, because one body goes to everyone.
+ * It sits here rather than in `src/lib/content/` because it is not editorial:
+ * it is the legal exit this function is obliged to put on every message, and it
+ * has to exist even if a caller passes nothing but a subject and a body.
+ */
+const STOP_TH = "หยุดรับอีเมลนี้";
+const STOP_EN = "Stop these emails";
+
 export const send = internalAction({
   args: {
     subject: v.string(),
@@ -124,7 +134,16 @@ export const send = internalAction({
             from,
             to: [r.email],
             subject: args.subject,
-            text: `${args.body}\n\n---\nหยุดรับอีเมลนี้: ${stop}\nStop these emails: ${stop}`,
+            text: `${args.body}\n\n---\n${STOP_TH}: ${stop}\n${STOP_EN}: ${stop}`,
+            // Both parts, from the one body. A text-only marketing email reads
+            // as a system notice, and an html-only one is blank wherever html
+            // is refused.
+            html: renderMarketingEmail({
+              subject: args.subject,
+              body: args.body,
+              stopUrl: stop,
+              stopLabels: { th: STOP_TH, en: STOP_EN },
+            }),
             // The header every mail client reads to offer its own one-click
             // stop. A list that only offers a link at the bottom is a list
             // people report as spam instead of leaving.
