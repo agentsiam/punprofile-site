@@ -986,7 +986,6 @@ export const FIT_EXPERT = {
     { en: "Working in Europe since 2016", th: "ทำงานในยุโรปตั้งแต่ปี 2016" },
     { en: "Based in Spain, clients across Europe, mostly the UK", th: "ประจำที่สเปน ดูแลลูกค้าทั่วยุโรป โดยเฉพาะ UK" },
     { en: "Marketing and MarTech hiring", th: "คัดเลือกคนด้าน Marketing และ MarTech" },
-    { en: "Runs the “Jobs at companies in Europe” group", th: "ผู้ดูแลกลุ่ม “งานบริษัทในยุโรป”" },
   ],
   link: { en: "Read my story", th: "อ่านเรื่องราวของผม" },
 } as const;

@@ -281,10 +281,9 @@ export const COPY = {
   },
   "footer.brand": {
     screen: "Footer, every screen",
-    // Not translated. The trading name reads the same to both audiences, and a
-    // Thai transliteration of a company name reads as a mistake rather than as
-    // a courtesy. The term is `footer-legal` in `termbase.yml`, fixed, and it
-    // bans the older line that carried a year and a rights formula.
+    // Not translated: the trading name reads the same to both audiences. The
+    // year and the rights formula came off on 04/11/2026, and `footer-legal`
+    // in `termbase.yml` bans the old line so it cannot come back.
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZm9vdGVyLmJyYW5k:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZm9vdGVyLmJyYW5k:TH%%,
   },
@@ -298,7 +297,7 @@ export const COPY = {
    * feature of it. Paul made the same correction to the share card on
    * 16/08/2026; the page the card points at had not caught up.
    *
-   * These four stay here rather than moving to `home.ts` with the rest of the
+   * These stay here rather than moving to `home.ts` with the rest of the
    * page, and the split is not arbitrary. `verify-copy.ts` runs `lint-thai`
    * over this file and not over the per-page content modules, and the headline
    * and subhead are also the site's default `<title>` and meta description in
@@ -308,17 +307,6 @@ export const COPY = {
    * Reasoning for the page itself is `home-page.md` in the coaching repo's
    * `work-projects/eu-fit-check/`.
    */
-  "landing.eyebrow": {
-    screen: "Landing, above the headline",
-    // Names the business, not the assessment. Same phrasing as the footer's
-    // Coaching column heading, which is Paul's.
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubGFuZGluZy5leWVicm93:EN%%,
-    // **Paul's wording, 17/08/2026**, from the review sheet. He took
-    // `แคเรียร์` off the front: `โค้ชชิ่งด้านอาชีพ` reads as the category, and
-    // `แคเรียร์โค้ชชิ่ง` is the service name, which belongs on the card in
-    // section 3 rather than in the line that says who this site is for.
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubGFuZGluZy5leWVicm93:TH%%,
-  },
   "landing.title": {
     screen: "The home page's title in search results and the browser tab",
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkubGFuZGluZy50aXRsZQ:EN%%,

@@ -48,8 +48,3 @@ export const CONTACT_CHANNELS: Copy = {
   th: "ปกติเราตอบทาง LINE ได้เร็วกว่า ส่วนอีเมลเหมาะกับคำถามที่มีรายละเอียดเยอะหรือเมื่อต้องการแนบ CV มาด้วย",
 };
 
-/** For the person who already left their details and is about to do it twice. */
-export const CONTACT_ALREADY_IN_QUEUE: Copy = {
-  en: "If you have already taken the check and left your details, you are in the queue. No need to write as well.",
-  th: "ถ้าคุณทำแบบประเมินและฝากช่องทางติดต่อไว้แล้ว คุณอยู่ในคิวเรียบร้อย ไม่ต้องส่งข้อความมาซ้ำ",
-};

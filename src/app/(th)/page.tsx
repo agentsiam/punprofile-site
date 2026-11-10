@@ -66,7 +66,7 @@ import { DESTINATIONS } from "@/lib/content/cta";
 import Band from "@/components/Band";
 import MarketStats from "@/components/blocks/MarketStats";
 import Testimonials from "@/components/blocks/Testimonials";
-import { EYEBROW, HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
+import { HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 import { METHOD_PROOF } from "@/lib/content/method";
 import { FAQ_HEADING } from "@/lib/content/faq";
 import CoachCards from "@/components/features/coaches/CoachCards";
@@ -167,19 +167,12 @@ export default function Home() {
             a quieter number beside it. Theirs are store ratings; ours are
             unwritten, so they are slots.
 
-            `landing.eyebrow` used to sit here and does not fit the shape: it is
-            a sentence describing the service, where this row is two short
-            proofs. It moves nowhere for now and is listed in the handover.
+            `landing.eyebrow` sat directly above this row until 04/11/2026 and
+            is gone on Paul's call: a sentence saying the site is for Thai
+            professionals heading to Europe, stacked on a headline and a subhead
+            that both say it again. The proofs now sit where the block wants
+            them, immediately above the headline.
           */}
-          {/*
-            `landing.eyebrow` is one element more than the reference's hero has,
-            and it is here because deleting it is not mine to do: it is Paul's
-            own wording from the 17/08/2026 review sheet, and it says who the
-            site is for, which nothing else on this page says. The block wants
-            the proofs directly above the headline. Left as a decision.
-          */}
-          <p className={`text-mute-strong ${EYEBROW(locale)}`}>{t("landing.eyebrow")}</p>
-
           {/*
             Two proofs, and since 26/08/2026 neither of them is the pipeline
             count.
@@ -194,9 +187,9 @@ export default function Home() {
 
             It was also on this page twice. The same figure under the same
             `stats.market.screened` label renders again in the B3 band below,
-            where it has the sentence that explains what screening means and the
-            date window under it. That band earns it; this one had the number
-            with nothing around it. Paul's call, 26/08/2026.
+            where it has the sentence that explains what screening means. That
+            band earns it; this one had the number with nothing around it.
+            Paul's call, 26/08/2026.
 
             What is left is the EU Fit Check's own proof, and it is a proof
             rather than an adjective because the reader can check it by taking
@@ -297,8 +290,7 @@ export default function Home() {
 
         {/* The one section about PunProfile doing work rather than making a
             claim, which is why it comes before anything the page asserts about
-            itself. Every figure is read from the generated snapshot and the
-            window is printed: a screening number with no window is a boast. */}
+            itself. Every figure is read from the generated snapshot. */}
       {/*
         The trust row, on the reference's own construction: a hairline, then the
         facts side by side in the open with a small chip each. Not cards.
