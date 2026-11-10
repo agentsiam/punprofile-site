@@ -5605,7 +5605,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.question": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -5965,7 +5965,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].caption": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -5974,7 +5974,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[6].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -6163,7 +6163,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[4].body[4].caption": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -6172,7 +6172,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[4].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -6217,7 +6217,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].body[3].caption": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -6226,7 +6226,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[5].body[4].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -6451,7 +6451,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.summary": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",

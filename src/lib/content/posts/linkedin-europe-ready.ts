@@ -29,8 +29,8 @@ export const LINKEDIN_EUROPE_READY: Post = {
   image: {
     src: "/blog/linkedin-europe-ready.jpg",
     alt: {
-      th: "ชายดินปั้นยืนข้างแท็บเล็ตที่แสดงหน้าโปรไฟล์ LinkedIn",
-      en: "A clay figure standing beside a tablet showing a LinkedIn profile",
+      th: "ตัวละครดินปั้นยืนข้างแท็บเล็ตที่แสดงโปรไฟล์ LinkedIn ตัวอย่าง",
+      en: "A clay figure standing beside a tablet showing an example LinkedIn profile",
     },
   },
   question: {
@@ -109,12 +109,12 @@ export const LINKEDIN_EUROPE_READY: Post = {
         kind: "figure",
         src: "/blog/linkedin-europe-ready-fig-1-first-action.jpg",
         alt: {
-          th: "แผนภูมิแท่งแสดงเรื่องที่ต้องแก้ก่อน CV มีสัดส่วนมากที่สุด ส่วน LinkedIn อยู่อันดับสาม",
-          en: "A bar chart of what needs fixing first. The CV is the largest share and LinkedIn is third.",
+          th: "กราฟแท่งแสดงสัดส่วนของเรื่องที่ควรแก้ก่อน แถบ CV ยาวที่สุด ส่วน LinkedIn อยู่ลำดับที่ 3",
+          en: "A bar chart of the share for each thing to fix first. The CV bar is the longest and LinkedIn is third.",
         },
         caption: {
-          th: "สัดส่วนของเรื่องที่ต้องแก้ก่อน จากคนไทยที่ทำแบบประเมินความพร้อมของ PunProfile",
-          en: "The share of people for whom each item is the first thing to fix, from PunProfile's readiness check.",
+          th: "สัดส่วนของขั้นตอนแรกที่ PunProfile แนะนำแก่ผู้ที่ทำแบบประเมินความพร้อมเสร็จ",
+          en: "The share of each first step PunProfile assigns to the people who completed its readiness check.",
         },
       },
       {
@@ -263,12 +263,12 @@ export const LINKEDIN_EUROPE_READY: Post = {
         kind: "figure",
         src: "/blog/linkedin-europe-ready-fig-2-who-can-see.jpg",
         alt: {
-          th: "ชายดินปั้นเอียงโคมไฟบนโต๊ะ แสงตกลงบนการ์ดกลางแถว การ์ดที่โดนแสงเป็นสีเขียว ส่วนที่อยู่นอกแสงยังเป็นสีครีม",
-          en: "A clay figure tilts a desk lamp so its light falls on the middle of a row of cards. The lit ones are green.",
+          th: "ตัวละครดินปั้นถือโคมไฟเหนือแถวการ์ดบนโต๊ะ การ์ดตรงกลางเป็นสีเขียว ส่วนการ์ดด้านข้างเป็นสีครีม",
+          en: "A clay figure holds a desk lamp over a row of cards on a table. The cards in the middle are green and the ones to each side are cream.",
         },
         caption: {
-          th: "สามตัวเลือกว่าจะให้ใครเห็นสถานะ Open to Work ของคุณ เก็บไว้ดูเอง เปิดให้ผู้ใช้ LinkedIn Recruiter เห็น หรือเปิดให้สมาชิกทุกคนเห็น",
-          en: "Three settings for who sees your Open to Work status: only you, LinkedIn Recruiter users, or all members.",
+          th: "Open to Work มี 3 ตัวเลือก: เก็บการตั้งค่าไว้ดูเอง ให้เฉพาะผู้ใช้ LinkedIn Recruiter เห็น หรือให้สมาชิกทุกคนเห็น ตัวเลือกเฉพาะ recruiter ช่วยลดโอกาสที่บริษัทปัจจุบันจะเห็น แต่ไม่ได้รับประกันว่าจะซ่อนได้ทั้งหมด",
+          en: "Open to Work has three settings: keep it to yourself, show it to LinkedIn Recruiter users, or show it to every member. The recruiters-only setting lowers the chance your current employer sees it, but it is not a guarantee.",
         },
       },
       ],
@@ -304,12 +304,12 @@ export const LINKEDIN_EUROPE_READY: Post = {
         kind: "figure",
         src: "/blog/linkedin-europe-ready-fig-3-title-rewrite.jpg",
         alt: {
-          th: "การ์ดสองใบวางเทียบกัน ชื่อตำแหน่งเหมือนกัน ต่างกันที่คำอธิบายขอบเขตงาน",
-          en: "Two cards side by side with the same job title, differing only in how the scope is described.",
+          th: "การ์ดสองใบวางเทียบกัน ทั้งสองใบใช้ชื่อตำแหน่งเดียวกัน ส่วนการ์ดด้านขวามีคำอธิบายงานและข้อมูลบริษัทเพิ่ม",
+          en: "Two cards side by side with the same job title. The one on the right adds a description of the work and context on the employer.",
         },
         caption: {
-          th: "ชื่อตำแหน่งเหมือนกันทั้งสองฝั่ง สิ่งที่ต่างคือคำอธิบายขอบเขตงาน ตัวอย่างสมมติ",
-          en: "The job title is identical on both sides. Only the description of the scope changes. An invented example.",
+          th: "ตัวอย่างสมมติที่ใช้ชื่อตำแหน่งเดียวกันทั้งสองฝั่ง ฝั่งขวาอธิบายขอบเขตงานและบริบทบริษัทเพิ่ม",
+          en: "An invented example with the same job title on both sides. The right side adds the scope of the work and context on the employer.",
         },
       },
       {

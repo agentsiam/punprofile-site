@@ -14885,17 +14885,17 @@ source: src/lib/content/posts/linkedin-europe-ready.ts
 path: LINKEDIN_EUROPE_READY.image.alt
 render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.image.alt'
 narrative_slot: utility
-en: "A clay figure standing beside a tablet showing a LinkedIn profile"
-th: "ชายดินปั้นยืนข้างแท็บเล็ตที่แสดงหน้าโปรไฟล์ LinkedIn"
+en: "A clay figure standing beside a tablet showing an example LinkedIn profile"
+th: "ตัวละครดินปั้นยืนข้างแท็บเล็ตที่แสดงโปรไฟล์ LinkedIn ตัวอย่าง"
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
 review:
   structural_calque: pending
-  text_hash: 82c0e484f8ab8d817455fc6e63b678edcc85c1981cade281b2bed00b9ef5d652
+  text_hash: 1e327e024ceafad2f3115927767dffe47479e0f5550e09b3c06f8f67ef34df39
   prompt_version: structural-calque-v1
-  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
+  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15765,17 +15765,17 @@ source: src/lib/content/posts/linkedin-europe-ready.ts
 path: LINKEDIN_EUROPE_READY.sections[1].body[5].alt
 render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[5].alt'
 narrative_slot: utility
-en: "A bar chart of what needs fixing first. The CV is the largest share and LinkedIn is third."
-th: "แผนภูมิแท่งแสดงเรื่องที่ต้องแก้ก่อน CV มีสัดส่วนมากที่สุด ส่วน LinkedIn อยู่อันดับสาม"
+en: "A bar chart of the share for each thing to fix first. The CV bar is the longest and LinkedIn is third."
+th: "กราฟแท่งแสดงสัดส่วนของเรื่องที่ควรแก้ก่อน แถบ CV ยาวที่สุด ส่วน LinkedIn อยู่ลำดับที่ 3"
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
 review:
   structural_calque: pending
-  text_hash: 62dd3d60fabf372e2a78dda345f8a6f974ecc23639f38e1ffd8cb6d69ade6203
+  text_hash: 3e4f25ae3b41bfd214f2004f1764430b2b8ac939efbe2ba01d8faef81b6763b7
   prompt_version: structural-calque-v1
-  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
+  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15787,17 +15787,17 @@ source: src/lib/content/posts/linkedin-europe-ready.ts
 path: LINKEDIN_EUROPE_READY.sections[1].body[5].caption
 render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[5].caption'
 narrative_slot: utility
-en: "The share of people for whom each item is the first thing to fix, from PunProfile's readiness check."
-th: "สัดส่วนของเรื่องที่ต้องแก้ก่อน จากคนไทยที่ทำแบบประเมินความพร้อมของ PunProfile"
+en: "The share of each first step PunProfile assigns to the people who completed its readiness check."
+th: "สัดส่วนของขั้นตอนแรกที่ PunProfile แนะนำแก่ผู้ที่ทำแบบประเมินความพร้อมเสร็จ"
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
 review:
   structural_calque: pending
-  text_hash: ddd1895b711f37e7c00ebce4dc0fc7791a9ebd5c394200abd3c30b4b53f816d6
+  text_hash: bf175e00a9ed37a3700cc81da1d5f16e6d39ffb3099a630717d893100647a1b8
   prompt_version: structural-calque-v1
-  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
+  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16249,17 +16249,17 @@ source: src/lib/content/posts/linkedin-europe-ready.ts
 path: LINKEDIN_EUROPE_READY.sections[4].body[4].alt
 render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[4].body[4].alt'
 narrative_slot: utility
-en: "A clay figure tilts a desk lamp so its light falls on the middle of a row of cards. The lit ones are green."
-th: "ชายดินปั้นเอียงโคมไฟบนโต๊ะ แสงตกลงบนการ์ดกลางแถว การ์ดที่โดนแสงเป็นสีเขียว ส่วนที่อยู่นอกแสงยังเป็นสีครีม"
+en: "A clay figure holds a desk lamp over a row of cards on a table. The cards in the middle are green and the ones to each side are cream."
+th: "ตัวละครดินปั้นถือโคมไฟเหนือแถวการ์ดบนโต๊ะ การ์ดตรงกลางเป็นสีเขียว ส่วนการ์ดด้านข้างเป็นสีครีม"
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
 review:
   structural_calque: pending
-  text_hash: 22814b6f9ae5275faac1264a4c419ce9df403ce0fef9cff1fec476cc317f7686
+  text_hash: bdfc6c3a3e944c8c34a03dd1529bbc445b62382d3cbcb8c7886834f387039c59
   prompt_version: structural-calque-v1
-  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
+  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16271,17 +16271,17 @@ source: src/lib/content/posts/linkedin-europe-ready.ts
 path: LINKEDIN_EUROPE_READY.sections[4].body[4].caption
 render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[4].body[4].caption'
 narrative_slot: utility
-en: "Three settings for who sees your Open to Work status: only you, LinkedIn Recruiter users, or all members."
-th: "สามตัวเลือกว่าจะให้ใครเห็นสถานะ Open to Work ของคุณ เก็บไว้ดูเอง เปิดให้ผู้ใช้ LinkedIn Recruiter เห็น หรือเปิดให้สมาชิกทุกคนเห็น"
+en: "Open to Work has three settings: keep it to yourself, show it to LinkedIn Recruiter users, or show it to every member. The recruiters-only setting lowers the chance your current employer sees it, but it is not a guarantee."
+th: "Open to Work มี 3 ตัวเลือก: เก็บการตั้งค่าไว้ดูเอง ให้เฉพาะผู้ใช้ LinkedIn Recruiter เห็น หรือให้สมาชิกทุกคนเห็น ตัวเลือกเฉพาะ recruiter ช่วยลดโอกาสที่บริษัทปัจจุบันจะเห็น แต่ไม่ได้รับประกันว่าจะซ่อนได้ทั้งหมด"
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
 review:
   structural_calque: pending
-  text_hash: 6a9de8e65a386a2c7928ae55c9f0b97f62c9336faa48f9f133c4389c53a22c3a
+  text_hash: 7aeadda3a416022d848de5f4f6e9e3fbee463eedd5aa9de6a7c009d71f616ce5
   prompt_version: structural-calque-v1
-  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
+  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16381,17 +16381,17 @@ source: src/lib/content/posts/linkedin-europe-ready.ts
 path: LINKEDIN_EUROPE_READY.sections[5].body[3].alt
 render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].body[3].alt'
 narrative_slot: utility
-en: "Two cards side by side with the same job title, differing only in how the scope is described."
-th: "การ์ดสองใบวางเทียบกัน ชื่อตำแหน่งเหมือนกัน ต่างกันที่คำอธิบายขอบเขตงาน"
+en: "Two cards side by side with the same job title. The one on the right adds a description of the work and context on the employer."
+th: "การ์ดสองใบวางเทียบกัน ทั้งสองใบใช้ชื่อตำแหน่งเดียวกัน ส่วนการ์ดด้านขวามีคำอธิบายงานและข้อมูลบริษัทเพิ่ม"
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
 review:
   structural_calque: pending
-  text_hash: 69c3b643ec6180a9c50b332c03f54df70c42b2fe521028bf50916fe8133475c3
+  text_hash: 25ce8d8deb23ef92a8bda9e044eeede61b32f202cda597b86a57c3127462bb7e
   prompt_version: structural-calque-v1
-  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
+  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16403,17 +16403,17 @@ source: src/lib/content/posts/linkedin-europe-ready.ts
 path: LINKEDIN_EUROPE_READY.sections[5].body[3].caption
 render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[5].body[3].caption'
 narrative_slot: utility
-en: "The job title is identical on both sides. Only the description of the scope changes. An invented example."
-th: "ชื่อตำแหน่งเหมือนกันทั้งสองฝั่ง สิ่งที่ต่างคือคำอธิบายขอบเขตงาน ตัวอย่างสมมติ"
+en: "An invented example with the same job title on both sides. The right side adds the scope of the work and context on the employer."
+th: "ตัวอย่างสมมติที่ใช้ชื่อตำแหน่งเดียวกันทั้งสองฝั่ง ฝั่งขวาอธิบายขอบเขตงานและบริบทบริษัทเพิ่ม"
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
 review:
   structural_calque: pending
-  text_hash: 529cf4025410dbd15f39f4d155d7533108d72562e20b8d9525e1dc791ea7e80f
+  text_hash: c7f278cde150568718627396025a980f93ceaf07a26dbba2e08d77dbf48fdc81
   prompt_version: structural-calque-v1
-  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
+  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16958,12 +16958,12 @@ th: "ปรับโปรไฟล์ LinkedIn ให้ recruiter ในยุ
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
+decision_note: "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a separate agent pass the same day, which the article body's own copy review had not covered. Paul has not read it back, so it is neither paul-written nor paul-approved. The English follows that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after his read-back."
 review:
   structural_calque: pending
   text_hash: a7ee2ed8eb9d70202a0b8b049f457a47510b9b003df66d9328609554a29ab4d3
   prompt_version: structural-calque-v1
-  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
+  basis: "Composed and then reviewed in an agent pass, both 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
