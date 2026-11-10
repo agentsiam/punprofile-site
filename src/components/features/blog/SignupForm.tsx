@@ -64,7 +64,7 @@ import {
 type State = "idle" | "sending" | "done" | "bad_email" | "busy";
 
 export default function SignupForm() {
-  const { pick, path } = useCopy();
+  const { pick, path, locale } = useCopy();
   const subscribe = useMutation(api.subscribe.subscribe);
   const [email, setEmail] = useState("");
   const [state, setState] = useState<State>("idle");
@@ -76,7 +76,11 @@ export default function SignupForm() {
     if (state === "sending") return;
     setState("sending");
     try {
-      await subscribe({ email });
+      // The locale goes with the address so the consent record can hold the
+      // sentence this reader actually saw, rather than the English one by
+      // default. `convex/subscribe.ts` picks the string; the client only says
+      // which language was on screen.
+      await subscribe({ email, locale });
       setState("done");
     } catch (err) {
       // `email_invalid` is the one the reader can fix, so it gets its own

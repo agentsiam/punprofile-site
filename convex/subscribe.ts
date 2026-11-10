@@ -91,7 +91,20 @@ export const isBlogOnlySubscriber = (lead: {
 const looksLikeEmail = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.trim());
 
 export const subscribe = mutation({
-  args: { email: v.string() },
+  args: {
+    email: v.string(),
+    /**
+     * Which language the subscriber was reading when they agreed, so the
+     * evidence can be the sentence they actually saw.
+     *
+     * Optional, and absent means English, which is what every row written
+     * before this argument existed attests. It has to stay optional because a
+     * browser holding the previous bundle calls this function for as long as
+     * that tab is open, and a required argument would reject their signup
+     * rather than record it in the older form.
+     */
+    locale: v.optional(v.union(v.literal("th"), v.literal("en"))),
+  },
   returns: v.null(),
   handler: async (ctx, args) => {
     // Keyed globally rather than per lead, because there is no session here and
@@ -104,10 +117,15 @@ export const subscribe = mutation({
 
     const now = Date.now();
 
-    // The English sentence, from the server's own copy of the module, never
-    // from the client. Same rule and same reason as `captureContact`: what was
-    // agreed to is not something the person agreeing gets to describe.
-    const evidence = SIGNUP_CONSENT.en;
+    // The sentence from the server's own copy of the module, never from the
+    // client: what was agreed to is not something the person agreeing gets to
+    // describe. The client chooses the language, which is all it is trusted
+    // with, and `locale` is a closed union so it can only name one that exists.
+    //
+    // `captureContact` still stores English for every locale, because the
+    // assessment's contact step genuinely does not know what was on screen.
+    // This form does, so a Thai reader's record says what a Thai reader read.
+    const evidence = SIGNUP_CONSENT[args.locale ?? "en"];
 
     const existing = await ctx.db
       .query("leads")
