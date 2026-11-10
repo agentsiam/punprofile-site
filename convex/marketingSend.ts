@@ -48,13 +48,14 @@ type SendResult = { attempted: number; sent: number; failed: number };
  * path from this file to an address that has not opted in.
  */
 /**
- * The unsubscribe line, in both languages, because one body goes to everyone.
+ * The word the unsubscribe link is written on. Thai only: the list is Thai and
+ * one body goes to everyone, so a second language is a second line nobody
+ * needs.
  * It sits here rather than in `src/lib/content/` because it is not editorial:
  * it is the legal exit this function is obliged to put on every message, and it
  * has to exist even if a caller passes nothing but a subject and a body.
  */
 const STOP_TH = "หยุดรับอีเมลนี้";
-const STOP_EN = "Stop these emails";
 
 export const send = internalAction({
   args: {
@@ -74,6 +75,12 @@ export const send = internalAction({
      * recipient this function would not otherwise have reached.
      */
     only: v.optional(v.string()),
+    /**
+     * An image for the top of the HTML part, at a public URL, with the alt text
+     * that already describes it. The caller supplies both, because which
+     * picture an email carries is an editorial decision like the words.
+     */
+    image: v.optional(v.object({ src: v.string(), alt: v.string() })),
   },
   returns: v.object({ attempted: v.number(), sent: v.number(), failed: v.number() }),
   handler: async (ctx, args): Promise<SendResult> => {
@@ -134,7 +141,9 @@ export const send = internalAction({
             from,
             to: [r.email],
             subject: args.subject,
-            text: `${args.body}\n\n---\n${STOP_TH}: ${stop}\n${STOP_EN}: ${stop}`,
+            // Plain text cannot carry a link on a word, so this part alone
+            // prints the address.
+            text: `${args.body}\n\n---\n${STOP_TH}: ${stop}`,
             // Both parts, from the one body. A text-only marketing email reads
             // as a system notice, and an html-only one is blank wherever html
             // is refused.
@@ -142,7 +151,8 @@ export const send = internalAction({
               subject: args.subject,
               body: args.body,
               stopUrl: stop,
-              stopLabels: { th: STOP_TH, en: STOP_EN },
+              stopLabel: STOP_TH,
+              image: args.image,
             }),
             // The header every mail client reads to offer its own one-click
             // stop. A list that only offers a link at the bottom is a list

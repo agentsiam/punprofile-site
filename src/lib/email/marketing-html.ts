@@ -113,8 +113,14 @@ export function renderMarketingEmail(args: {
   body: string;
   /** The recipient's own one-click stop link. */
   stopUrl: string;
-  /** The unsubscribe line, Thai then English, passed in rather than written here. */
-  stopLabels: { th: string; en: string };
+  /** The word the stop link is written on, passed in rather than written here. */
+  stopLabel: string;
+  /**
+   * The article's own image, at a public URL, with the alt text that already
+   * describes it. Optional: an email that announces nothing visual does not
+   * need one, and a broken image is worse than no image.
+   */
+  image?: { src: string; alt: string };
 }): string {
   const preheader = args.body.trim().split(/\n\s*\n/)[1] ?? args.subject;
   const stop = escape(args.stopUrl);
@@ -138,7 +144,12 @@ export function renderMarketingEmail(args: {
     <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
       <tr><td style="padding:0 8px 20px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;letter-spacing:0.1px;color:${INK_DEEP};">PunProfile</td></tr>
 
-      <tr><td style="background:${CANVAS};border-radius:30px;padding:48px 32px;">
+      <tr><td style="background:${CANVAS};border-radius:30px;padding:${args.image ? "32px 32px 48px" : "48px 32px"};">
+        ${
+          args.image
+            ? `<img src="${escape(args.image.src)}" alt="${escape(args.image.alt)}" width="536" style="display:block;width:100%;max-width:536px;height:auto;border-radius:20px;margin:0 0 32px;">`
+            : ""
+        }
         ${blocks(args.body)}
       </td></tr>
 
@@ -146,9 +157,7 @@ export function renderMarketingEmail(args: {
 
       <tr><td style="background:${CANVAS_DARK};border-radius:30px;padding:28px 32px;">
         <p style="margin:0 0 18px;font-family:${FONT};font-size:14px;line-height:22px;color:${ON_CANVAS_DARK};">
-          <a href="${stop}" style="${link}">${escape(args.stopLabels.th)}</a>
-          &nbsp;&middot;&nbsp;
-          <a href="${stop}" style="${link}">${escape(args.stopLabels.en)}</a>
+          <a href="${stop}" style="${link}">${escape(args.stopLabel)}</a>
         </p>
         <p style="margin:0;font-family:${FONT};font-size:16px;line-height:24px;font-weight:600;color:${PRIMARY};">punprofile.app</p>
       </td></tr>
