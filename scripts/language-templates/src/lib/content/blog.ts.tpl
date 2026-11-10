@@ -1,6 +1,7 @@
 import type { Copy } from "./copy";
 import { AI_IS_BECOMING_A_BASELINE_SKILL } from "./posts/ai-is-becoming-a-baseline-skill";
 import { CARA_WORKING_IN_SPAIN } from "./posts/cara-working-in-spain";
+import { LINKEDIN_EUROPE_READY } from "./posts/linkedin-europe-ready";
 import { LANGUAGE_LEARNING_APPS } from "./posts/language-learning-apps";
 import { HALF_TRUE_EUROPE_NEEDS_TALENT } from "./posts/half-true-europe-needs-talent";
 import { START_IN_EUROPE } from "./posts/start-in-europe";
@@ -352,6 +353,11 @@ export interface Post {
  * order is editable here rather than being a property of the dates.
  */
 export const POSTS: readonly Post[] = [
+  // The sixth article, the LinkedIn playbook. Thai from a delegated copy
+  // review 10/11/2026, not personally read back by Paul, so its strings are
+  // `draft` and it must not go live before that read-back.
+  LINKEDIN_EUROPE_READY,
+  //
   LANGUAGE_LEARNING_APPS,
   // The fourth article, the first real story: Cara, in her own words.
   CARA_WORKING_IN_SPAIN,
