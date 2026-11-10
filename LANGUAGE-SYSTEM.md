@@ -2782,21 +2782,16 @@ source: src/lib/content/copy.ts
 path: COPY.footer.brand
 render: Footer, every screen
 narrative_slot: utility
-en: PunProfile Career Coaching | 2026 | All Rights Reserved
-th: PunProfile Career Coaching | 2026 | All Rights Reserved
+en: PunProfile Career Coaching
+th: PunProfile Career Coaching
 provenance: paul-approved
-date: 15/08/2026
+date: 04/11/2026
 term_bindings:
   - footer-legal
-decision_note: |-
-  Not translated. The brand name, the year and a rights line read the same
-
-  to both audiences, and a Thai transliteration of a legal formula reads
-
-  as a mistake rather than as a courtesy.
+decision_note: "Not translated. The trading name reads the same to both audiences, and a Thai transliteration of a company name reads as a mistake rather than as a courtesy. The term is `footer-legal` in `termbase.yml`, fixed, and it bans the older line that carried a year and a rights formula."
 review:
   structural_calque: pass
-  text_hash: ab71364fdb2ecfd18c43e03e9d669036160c160c5eafd6e940e6a0f3380df2bf
+  text_hash: a035c2fda65583df2f180e27552d057c2f393753916d85ec413c579313959f46
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```

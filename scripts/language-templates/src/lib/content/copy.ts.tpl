@@ -281,9 +281,10 @@ export const COPY = {
   },
   "footer.brand": {
     screen: "Footer, every screen",
-    // Not translated. The brand name, the year and a rights line read the same
-    // to both audiences, and a Thai transliteration of a legal formula reads
-    // as a mistake rather than as a courtesy.
+    // Not translated. The trading name reads the same to both audiences, and a
+    // Thai transliteration of a company name reads as a mistake rather than as
+    // a courtesy. The term is `footer-legal` in `termbase.yml`, fixed, and it
+    // bans the older line that carried a year and a rights formula.
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZm9vdGVyLmJyYW5k:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZm9vdGVyLmJyYW5k:TH%%,
   },

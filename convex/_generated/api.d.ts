@@ -30,6 +30,7 @@ import type * as marketingSend from "../marketingSend.js";
 import type * as matchEmail from "../matchEmail.js";
 import type * as matchNotice from "../matchNotice.js";
 import type * as merge from "../merge.js";
+import type * as names from "../names.js";
 import type * as notify from "../notify.js";
 import type * as outcomes from "../outcomes.js";
 import type * as portal from "../portal.js";
@@ -71,6 +72,7 @@ declare const fullApi: ApiFromModules<{
   matchEmail: typeof matchEmail;
   matchNotice: typeof matchNotice;
   merge: typeof merge;
+  names: typeof names;
   notify: typeof notify;
   outcomes: typeof outcomes;
   portal: typeof portal;

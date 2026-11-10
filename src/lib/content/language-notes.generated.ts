@@ -978,8 +978,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Footer, every screen",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "15/08/2026",
-    "decisionNote": "Not translated. The brand name, the year and a rights line read the same\n\nto both audiences, and a Thai transliteration of a legal formula reads\n\nas a mistake rather than as a courtesy."
+    "date": "04/11/2026",
+    "decisionNote": "Not translated. The trading name reads the same to both audiences, and a Thai transliteration of a company name reads as a mistake rather than as a courtesy. The term is `footer-legal` in `termbase.yml`, fixed, and it bans the older line that carried a year and a rights formula."
   },
   "src/lib/content/copy.ts::COPY.gate.body": {
     "source": "src/lib/content/copy.ts",

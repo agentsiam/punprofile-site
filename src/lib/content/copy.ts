@@ -281,11 +281,12 @@ export const COPY = {
   },
   "footer.brand": {
     screen: "Footer, every screen",
-    // Not translated. The brand name, the year and a rights line read the same
-    // to both audiences, and a Thai transliteration of a legal formula reads
-    // as a mistake rather than as a courtesy.
-    en: "PunProfile Career Coaching | 2026 | All Rights Reserved",
-    th: "PunProfile Career Coaching | 2026 | All Rights Reserved",
+    // Not translated. The trading name reads the same to both audiences, and a
+    // Thai transliteration of a company name reads as a mistake rather than as
+    // a courtesy. The term is `footer-legal` in `termbase.yml`, fixed, and it
+    // bans the older line that carried a year and a rights formula.
+    en: "PunProfile Career Coaching",
+    th: "PunProfile Career Coaching",
   },
 
   // ---------------------------------------------------------------- landing
