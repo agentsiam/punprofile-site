@@ -14890,12 +14890,12 @@ th: "ชายดินปั้นยืนข้างแท็บเล็ต
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
 review:
   structural_calque: pending
   text_hash: 82c0e484f8ab8d817455fc6e63b678edcc85c1981cade281b2bed00b9ef5d652
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15770,12 +15770,12 @@ th: "แผนภูมิแท่งแสดงเรื่องที่ต
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
 review:
   structural_calque: pending
   text_hash: 62dd3d60fabf372e2a78dda345f8a6f974ecc23639f38e1ffd8cb6d69ade6203
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15792,12 +15792,12 @@ th: "สัดส่วนของเรื่องที่ต้องแก
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
 review:
   structural_calque: pending
   text_hash: ddd1895b711f37e7c00ebce4dc0fc7791a9ebd5c394200abd3c30b4b53f816d6
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16254,12 +16254,12 @@ th: "ชายดินปั้นเอียงโคมไฟบนโต๊
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
 review:
   structural_calque: pending
   text_hash: 22814b6f9ae5275faac1264a4c419ce9df403ce0fef9cff1fec476cc317f7686
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16276,12 +16276,12 @@ th: "สามตัวเลือกว่าจะให้ใครเห็
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
 review:
   structural_calque: pending
   text_hash: 6a9de8e65a386a2c7928ae55c9f0b97f62c9336faa48f9f133c4389c53a22c3a
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16386,12 +16386,12 @@ th: "การ์ดสองใบวางเทียบกัน ชื่�
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
 review:
   structural_calque: pending
   text_hash: 69c3b643ec6180a9c50b332c03f54df70c42b2fe521028bf50916fe8133475c3
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16408,12 +16408,12 @@ th: "ชื่อตำแหน่งเหมือนกันทั้งส
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
 review:
   structural_calque: pending
   text_hash: 529cf4025410dbd15f39f4d155d7533108d72562e20b8d9525e1dc791ea7e80f
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
@@ -16958,12 +16958,12 @@ th: "ปรับโปรไฟล์ LinkedIn ให้ recruiter ในยุ
 provenance: draft
 date: 10/11/2026
 term_bindings: []
-decision_note: "Thai edited in a delegated copy review on 10/11/2026 and NOT personally read back by Paul, so it is neither paul-written nor paul-approved. English translated from that reviewed Thai. Upgrade provenance and set a structural_calque verdict only after he reads it back."
+decision_note: "Figure, alt and title Thai composed by the agent on 10/11/2026. The delegated copy review of that day covered the article body and NOT this line, and Paul has not read it back, so it is neither reviewed nor approved. English is the agent's own. It is row F in the coaching repo's review sheet for this slug, out for a review pass. Upgrade provenance and set a structural_calque verdict only after that pass and his read-back."
 review:
   structural_calque: pending
   text_hash: a7ee2ed8eb9d70202a0b8b049f457a47510b9b003df66d9328609554a29ab4d3
   prompt_version: structural-calque-v1
-  basis: "Delegated copy review 10/11/2026. No personal read-back by Paul, so no verdict is claimed."
+  basis: "Composed 10/11/2026 and not covered by that day's copy review. No review pass and no read-back, so no verdict is claimed."
 ```
 
 <!-- COPY-ENTRY -->
