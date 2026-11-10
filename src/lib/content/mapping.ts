@@ -397,10 +397,20 @@ export function toScoringInputForLead(responses: Responses): ScoringInput {
 }
 
 /**
- * App question keys with no survey key of the same name. On an imported record
- * they can only have come from a later EU Fit Check in the app.
+ * App question keys the app override reads off an imported record. Every one
+ * but `salary` has no survey key of the same name, so on an imported record it
+ * can only have come from a later EU Fit Check in the app.
+ *
+ * `salary` does share its name, and is listed anyway. The survey's own key is
+ * `salaryText`; the normalised object it also stores under `salary` is read by
+ * `fromImportedRecord`, while the app stores a band string. Listing it is safe
+ * because `toScoringInput` reads it through `str()`, which ignores an object:
+ * a survey-shaped value maps to undefined, the merge skips it, and the
+ * imported mapper's value stands. Leaving it out loses the item outright for
+ * an imported lead who answered salary in the app, because neither mapper
+ * reads a band string on that path.
  */
-export const APP_ONLY_KEYS = ["english", "applications", "aiTools", "family", "applicationResponse", "pathway"] as const;
+export const APP_ONLY_KEYS = ["english", "applications", "aiTools", "family", "applicationResponse", "pathway", "salary"] as const;
 
 /** The survey row each app-only answer replaces, where there is one. */
 export const APP_SUPERSEDES: Partial<Record<(typeof APP_ONLY_KEYS)[number], string>> = {
@@ -408,4 +418,5 @@ export const APP_SUPERSEDES: Partial<Record<(typeof APP_ONLY_KEYS)[number], stri
   applications: "applicationCount",
   aiTools: "aiIndicatorFlags",
   family: "hasDependents",
+  salary: "salaryText",
 };
