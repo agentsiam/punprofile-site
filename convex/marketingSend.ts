@@ -140,6 +140,12 @@ export const send = internalAction({
           body: JSON.stringify({
             from,
             to: [r.email],
+            // The close of this email asks for a reply, and `from` is a
+            // no-reply address on a domain with no MX records, so without this
+            // every reply bounces. `candidateCode.ts` and `matchNotice.ts` have
+            // always set it; this file was the one that asks for replies and
+            // did not.
+            ...(process.env.MAIL_REPLY_TO ? { reply_to: process.env.MAIL_REPLY_TO } : {}),
             subject: args.subject,
             // Plain text cannot carry a link on a word, so this part alone
             // prints the address.
