@@ -13,6 +13,7 @@ import type * as auth from "../auth.js";
 import type * as bookingWebhook from "../bookingWebhook.js";
 import type * as candidateAccess from "../candidateAccess.js";
 import type * as candidateCode from "../candidateCode.js";
+import type * as checklist from "../checklist.js";
 import type * as codeEmail from "../codeEmail.js";
 import type * as consent from "../consent.js";
 import type * as consentDb from "../consentDb.js";
@@ -55,6 +56,7 @@ declare const fullApi: ApiFromModules<{
   bookingWebhook: typeof bookingWebhook;
   candidateAccess: typeof candidateAccess;
   candidateCode: typeof candidateCode;
+  checklist: typeof checklist;
   codeEmail: typeof codeEmail;
   consent: typeof consent;
   consentDb: typeof consentDb;

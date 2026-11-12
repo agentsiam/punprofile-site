@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * The Session tab: one read-only view for a call, `prd.md` section 8. It is
+ * The Session tab: one view for a call, `prd.md` section 8. It is
  * assembled from records that already exist, the call log, target titles,
  * the wallet, the candidate's preparation and the same open items the coach
  * queues show, through `workspace.session`. It holds nothing of its own and
@@ -9,9 +9,14 @@
  * Calls and notes tab, the wallet and deliverables in the Delivery tab.
  *
  * The brief is a summary of recorded information. Nothing here is generated.
+ *
+ * The one place it acts is the delivery checklist at the top: the coach's two
+ * ticks for steps outside the app, and the roles the evening run found, sent or
+ * dismissed from here with the same rules as the Delivery tab.
  */
 
-import { useQuery } from "convex/react";
+import { useState } from "react";
+import { useMutation, useQuery } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
 import { AGENDAS } from "@/lib/agendas";
@@ -48,7 +53,142 @@ export default function SessionTab({ leadId }: { leadId: Id<"leads"> }) {
   const s = useQuery(api.workspace.session, { leadId });
   if (s === undefined) return <p className="text-body-medium text-on-surface-variant">Loading...</p>;
   if (s === null) return <p className="text-body-medium text-error">No lead with that id.</p>;
-  return <SessionView s={s} />;
+  return (
+    <div className="space-y-5">
+      <DeliveryChecklist leadId={leadId} />
+      <SessionView s={s} />
+    </div>
+  );
+}
+
+const ddmmyyyy = (ms: number) =>
+  new Intl.DateTimeFormat("en-GB", { timeZone: MADRID, day: "2-digit", month: "2-digit", year: "numeric" }).format(new Date(ms));
+
+const MARK: Record<string, { sign: string; cls: string; label: string }> = {
+  done: { sign: "✓", cls: "bg-primary-pale text-on-primary-pale", label: "Done" },
+  todo: { sign: "", cls: "border border-outline", label: "To do" },
+  na: { sign: "–", cls: "bg-canvas-soft text-on-surface-variant", label: "Does not apply" },
+  ongoing: { sign: "↻", cls: "bg-cyan-pale text-on-cyan-pale", label: "Ongoing" },
+};
+
+/** The coach's view of every delivery step, and the evening run's roles, `prd.md` § 8. */
+function DeliveryChecklist({ leadId }: { leadId: Id<"leads"> }) {
+  const c = useQuery(api.checklist.forLead, { leadId });
+  const tick = useMutation(api.checklist.tick);
+  if (!c) return null;
+  return (
+    <>
+      <Panel
+        title="Delivery checklist"
+        aside={<span className="text-label-medium text-on-surface-variant">Ticked by the records; two by you</span>}
+        testid="sx-checklist"
+      >
+        <ol className="divide-y divide-outline-variant">
+          {c.rows.map((r) => {
+            const m = MARK[r.state];
+            const isNext = c.next === r.key;
+            return (
+              <li key={r.key} className="flex flex-wrap items-center gap-x-3 gap-y-1 py-2" data-testid={`check-${r.key}`}>
+                <span
+                  aria-label={m.label}
+                  className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-label-medium ${m.cls}`}
+                >
+                  {m.sign}
+                </span>
+                <span className={`text-body-medium ${r.state === "na" ? "text-on-surface-variant" : "text-on-surface"}`}>{r.label}</span>
+                {isNext && <span className="rounded-full bg-canvas-brand px-2 py-0.5 text-label-small text-on-brand-lime">Next</span>}
+                <span className="text-body-small text-on-surface-variant">
+                  {[r.at ? ddmmyyyy(r.at) : null, r.detail].filter(Boolean).join(" · ")}
+                </span>
+                {r.manual && (
+                  <button
+                    type="button"
+                    className="ml-auto text-body-medium text-ink-deep underline"
+                    onClick={() => void tick({ leadId, key: r.key as "summary_email" | "timeline_shared", done: r.state !== "done" })}
+                  >
+                    {r.state === "done" ? "Undo" : "Mark done"}
+                  </button>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </Panel>
+      <Panel
+        title="Roles found by the evening run"
+        aside={<span className="text-label-medium text-on-surface-variant">{c.spendable} tokens spendable</span>}
+        testid="sx-found"
+      >
+        {c.found.length === 0 ? (
+          <p className="text-body-medium text-on-surface-variant">None waiting.</p>
+        ) : (
+          <ul className="space-y-4">
+            {c.found.map((f) => (
+              <FoundRole key={f._id} f={f} />
+            ))}
+          </ul>
+        )}
+      </Panel>
+    </>
+  );
+}
+
+type Found = NonNullable<ReturnType<typeof useQuery<typeof api.checklist.forLead>>>["found"][number];
+
+function FoundRole({ f }: { f: Found }) {
+  const send = useMutation(api.checklist.sendFound);
+  const dismiss = useMutation(api.checklist.dismissFound);
+  const [confirming, setConfirming] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const run = async (fn: () => Promise<unknown>) => {
+    setBusy(true);
+    setError(null);
+    try {
+      await fn();
+    } catch (e) {
+      setError(e instanceof Error ? e.message.replace(/^.*ConvexError: /, "").split("\n")[0] : "Something went wrong.");
+    } finally {
+      setBusy(false);
+      setConfirming(false);
+    }
+  };
+  return (
+    <li className="rounded-medium border border-outline-variant px-4 py-3" data-testid="found-role">
+      <p className="text-title-small text-on-surface">
+        {f.roleTitle}, {f.employer}
+      </p>
+      <p className="text-body-small text-on-surface-variant">
+        {[[f.location, f.country].filter(Boolean).join(", "), `for ${f.targetTitle}`, f.postedOn ? `posted ${f.postedOn.split("-").reverse().join("/")}` : "no posting date", f.salary ?? "salary not stated", `found ${f.foundOn.split("-").reverse().join("/")}`].join(" · ")}
+      </p>
+      <p className="mt-2 text-body-medium text-on-surface">{f.matchReason}</p>
+      <div className="mt-3 flex flex-wrap items-center gap-4">
+        <a href={f.jobUrl} target="_blank" rel="noreferrer" className="text-body-medium text-ink-deep underline">
+          Open the posting
+        </a>
+        {confirming ? (
+          <>
+            <button type="button" disabled={busy} className="btn-filled h-9 px-4 text-label-large" onClick={() => void run(() => send({ id: f._id }))}>
+              Confirm: send and spend 1 token
+            </button>
+            <button type="button" className="text-body-medium text-ink-deep underline" onClick={() => setConfirming(false)}>
+              Cancel
+            </button>
+          </>
+        ) : (
+          <>
+            <button type="button" disabled={busy} className="btn-outlined h-9 px-4 text-label-large" onClick={() => setConfirming(true)}>
+              Send
+            </button>
+            <button type="button" disabled={busy} className="text-body-medium text-ink-deep underline" onClick={() => void run(() => dismiss({ id: f._id }))}>
+              Dismiss
+            </button>
+          </>
+        )}
+      </div>
+      {error && <p className="mt-2 text-body-medium text-error">{error}</p>}
+    </li>
+  );
 }
 
 type S = NonNullable<ReturnType<typeof useQuery<typeof api.workspace.session>>>;
@@ -77,7 +217,7 @@ export function SessionView({ s }: { s: S }) {
   return (
     <div className="space-y-5">
       <p className="text-body-medium text-on-surface-variant">
-        Read-only. Bookings, decisions and the time zone change in Calls and notes; the wallet and deliverables in Delivery.
+        Below the checklist, read-only. Bookings, decisions and the time zone change in Calls and notes; the wallet and deliverables in Delivery.
       </p>
       <Panel title="Next call" testid="sx-next-call">
         {call ? (
