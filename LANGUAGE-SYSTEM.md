@@ -6037,10 +6037,10 @@ decision_note: |-
   The verdict is pending because the PAIR is what a structural-calque pass
   reads, and the English half of it is new.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 73a70e34ec0484da773da6209f7cfecfd16c3ac2cdde7dca709d82220da2c9aa
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: "Judge structural-calque-v1 returned pass on 12/11/2026, run as a separate review pass and not by the session that wrote the Thai. Categories: none. Paul approved this Thai unchanged through the consolidated language review on 10/09/2026; it returned here only because the English half of the pair changed on 12/11/2026, and the judge re-read the pair. The Thai is the termbase-fixed string character for character and carries no banned form. It is composed as Thai rather than mapped from the English: no pronoun, the directional มา carrying what English puts in a pronoun, no abstract-noun actor, no clause-for-clause mirroring and no imported connector. ทัก is this surface's own word for messaging, so the channel still reads in the Thai, and มา and กัน are unmarked for number, so the plural sender sits no further from the Thai than the singular did."
 ```
 
 <!-- COPY-ENTRY -->
@@ -22396,6 +22396,7 @@ render: "Pricing page, Serious pack card, the time-limited extra under the list"
 narrative_slot: "utility"
 en: "We add one free hour of Coaching 1:1 to this pack, until 31 December 2026"
 th: "เราแถม Coaching 1:1 ฟรี 1 ชั่วโมงให้ด้วย ถึงวันที่ 31 ธันวาคม 2026"
+proposal_th: "แพ็กนี้เราแถม Coaching 1:1 ฟรี 1 ชั่วโมง ถึง 31 ธันวาคม 2026"
 provenance: "draft"
 date: "12/11/2026"
 term_bindings: []
@@ -22404,7 +22405,7 @@ review:
   structural_calque: pending
   text_hash: f5196cca0873c312ca20c40f3bafd8e18b37e2961e779e5c48bd5caebbdc5819
   prompt_version: structural-calque-v1
-  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. แถม…ให้ is the Thai commercial verb for a thrown-in extra, ฟรี sits after the service name Coaching 1:1 so LR-04 is satisfied, and the deadline tail is ordinary Thai promotional order rather than a grafted English clause. The judge noted slack it did not fail on: the pile-up ฟรี 1 ชั่วโมงให้ด้วย, and the dropped to this pack, which the card's position supplies but the sentence does not. Its tighter draft is recorded in proposal_th and is NOT applied."
 ```
 
 <!-- COPY-ENTRY -->
@@ -22426,7 +22427,7 @@ review:
   structural_calque: pending
   text_hash: 137d40c24c7bc0589ac7d02b1e9b181eeb8472d498b0cbd8f08eb3de5e73c574
   prompt_version: structural-calque-v1
-  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. Noun plus count plus classifier is the right Thai order, so a substituted 1 reads ตำแหน่งงานที่คัดให้ 1 ตำแหน่ง and never 1 roles. หรือ and พร้อมอีก keep the two uses as alternatives on one balance rather than inclusions, and ตำแหน่งงานที่คัดให้ is the phrase the neighbouring PRICING_INTRO already uses."
 ```
 
 <!-- COPY-ENTRY -->
@@ -22448,7 +22449,7 @@ review:
   structural_calque: pending
   text_hash: 6770cb76a364ab5aa90cc02737e9803fc4c3924af3b2d30e710a09a39efcef28
   prompt_version: structural-calque-v1
-  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. Reads as a Thai count phrase rather than an English fragment: the classifier follows the number, so 1 and 9 both render correctly, and ที่คัดให้ carries the screening claim without adding one. Consistent with the wording already live in PRICING_INTRO on the same page."
 ```
 
 <!-- COPY-ENTRY -->
@@ -22470,7 +22471,7 @@ review:
   structural_calque: pending
   text_hash: ab9f463fefb270b81214f0f32f01308ef1258abfa2e9839105c41a71485fb15e
   prompt_version: structural-calque-v1
-  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. ตำแหน่ง is the classifier a Thai job board uses after a count, and is the decided rendering for a job opening under LR-05, so {count} ตำแหน่ง reads naturally at 1 as well as at 9."
 ```
 
 <!-- COPY-ENTRY -->
@@ -22492,7 +22493,7 @@ review:
   structural_calque: pending
   text_hash: 340f9fade63a5fcd930c7475c6e71a10bef5a64f2e4773824e5a357c73cb70cd
   prompt_version: structural-calque-v1
-  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. The same word is the correct one here rather than a shortcut: Thai marks number with the numeral, and ตำแหน่ง is the classifier in both members, so no rendered count can read as 1 roles."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32140,7 +32141,7 @@ review:
   structural_calque: pending
   text_hash: 9a6f1e00764ede5592842ce99c1e6c78251dbd857c8c13a7952a3e2e1f76500e
   prompt_version: structural-calque-v1
-  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. The line is the approved COACHES[0].summary's tail with เป็นคน dropped, leaving a bare verb phrase under the name, the pattern the card's own pills already use, so agency reads off the name rather than going missing. One relative clause, no stacking, และ coordinates two native verb phrases, and ในยุโรป attaches to ทีม the way Thai attaches it. The claim rests on a document and an action, not an adjective."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32503,7 +32504,7 @@ review:
   structural_calque: pending
   text_hash: 45d1d41acfdd202e06f4bc028cf4e6ba525662ea820d2ad54625694312d06b9c
   prompt_version: structural-calque-v1
-  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. The Thai renders the English relative clause as a purpose clause with เพื่อ, the native move rather than an imported clause order, and คัดเลือก keeps a live verb whose actor is the name above it. The line points at a document and the gate it passes through rather than at praise. Judge noted that hiring manager and CV carry no termbase entry, but are the form the approved COACHES[1].summary and the neighbouring pills already use."
 ```
 
 <!-- COPY-ENTRY -->
