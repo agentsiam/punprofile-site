@@ -12,6 +12,7 @@
     "src/lib/content/faq.ts",
     "src/lib/content/footer.ts",
     "src/lib/content/home.ts",
+    "src/lib/content/matchFeedback.ts",
     "src/lib/content/method.ts",
     "src/lib/content/narrative-copy.ts",
     "src/lib/content/portal.ts",

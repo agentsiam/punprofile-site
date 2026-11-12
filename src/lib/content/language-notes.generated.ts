@@ -14795,5 +14795,149 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "01/11/2026",
     "decisionNote": "Search-only description from seo-meta-copy-handoff.md, approved 01/11/2026 by the reviewer Paul delegated to; Paul shipped it the same day."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_WORKING": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_WORKING",
+    "render": "Match feedback page, MATCH_FEEDBACK_WORKING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "The holding line while the verdict posts. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_UP_HEADING": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_UP_HEADING",
+    "render": "Match feedback page, MATCH_FEEDBACK_UP_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Confirms that a like was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_DOWN_HEADING": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_DOWN_HEADING",
+    "render": "Match feedback page, MATCH_FEEDBACK_DOWN_HEADING",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Confirms that a dislike was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_BODY": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_BODY",
+    "render": "Match feedback page, MATCH_FEEDBACK_BODY",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Says what PunProfile does with the answer. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASON_ASK": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_REASON_ASK",
+    "render": "Match feedback page, MATCH_FEEDBACK_REASON_ASK",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Asks for the optional reason. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASON_SAVED": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_REASON_SAVED",
+    "render": "Match feedback page, MATCH_FEEDBACK_REASON_SAVED",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Confirms that the reason was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_SWITCH": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_SWITCH",
+    "render": "Match feedback page, MATCH_FEEDBACK_SWITCH",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Offers to change a verdict tapped by mistake. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_DASHBOARD": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_DASHBOARD",
+    "render": "Match feedback page, MATCH_FEEDBACK_DASHBOARD",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Sends the reader to their Job Search Dashboard. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[0].label": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_REASONS[0].label",
+    "render": "Match feedback page, MATCH_FEEDBACK_REASONS[0].label",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Reason closed on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[1].label": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_REASONS[1].label",
+    "render": "Match feedback page, MATCH_FEEDBACK_REASONS[1].label",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Reason title_level on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[2].label": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_REASONS[2].label",
+    "render": "Match feedback page, MATCH_FEEDBACK_REASONS[2].label",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Reason location on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[3].label": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_REASONS[3].label",
+    "render": "Match feedback page, MATCH_FEEDBACK_REASONS[3].label",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Reason pay on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[4].label": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_REASONS[4].label",
+    "render": "Match feedback page, MATCH_FEEDBACK_REASONS[4].label",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Reason permit on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[5].label": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_REASONS[5].label",
+    "render": "Match feedback page, MATCH_FEEDBACK_REASONS[5].label",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Reason language on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[6].label": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_REASONS[6].label",
+    "render": "Match feedback page, MATCH_FEEDBACK_REASONS[6].label",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Reason applied on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[7].label": {
+    "source": "src/lib/content/matchFeedback.ts",
+    "path": "MATCH_FEEDBACK_REASONS[7].label",
+    "render": "Match feedback page, MATCH_FEEDBACK_REASONS[7].label",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Reason other on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   }
 } as const;

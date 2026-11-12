@@ -38804,3 +38804,355 @@ review:
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_WORKING`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_WORKING"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_WORKING"
+render: "Match feedback page, MATCH_FEEDBACK_WORKING"
+narrative_slot: utility
+en: "One moment."
+th: "รอสักครู่"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "The holding line while the verdict posts. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: bac1c6afe6938cf6014f7b9706530f70d661187489145db86cb10390f977e011
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_UP_HEADING`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_UP_HEADING"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_UP_HEADING"
+render: "Match feedback page, MATCH_FEEDBACK_UP_HEADING"
+narrative_slot: utility
+en: "Thanks. PunProfile has recorded that this role fits what you are looking for."
+th: "ขอบคุณ PunProfile บันทึกแล้วว่าตำแหน่งนี้ตรงกับที่คุณมองหา"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Confirms that a like was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: bc7b5e9cf46aa8452dfe1021014437b89e1aead4e76204f78111e91b82924a25
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_DOWN_HEADING`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_DOWN_HEADING"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_DOWN_HEADING"
+render: "Match feedback page, MATCH_FEEDBACK_DOWN_HEADING"
+narrative_slot: utility
+en: "Thanks. PunProfile has recorded that this role misses."
+th: "ขอบคุณ PunProfile บันทึกแล้วว่าตำแหน่งนี้ยังไม่ตรง"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Confirms that a dislike was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: 5325c683eca1168b2792b3eeed40f940c249beaf49c607a7e215498b0f1dce8b
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_BODY`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_BODY"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_BODY"
+render: "Match feedback page, MATCH_FEEDBACK_BODY"
+narrative_slot: utility
+en: "PunProfile uses your answer to pick your next roles."
+th: "PunProfile ใช้คำตอบนี้คัดตำแหน่งถัดไปให้ตรงกับคุณมากขึ้น"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Says what PunProfile does with the answer. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: d9a704e147e5386b247dceeb65e3cb329d5c5b2e9522d04ea3529ed33edc2df9
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASON_ASK`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASON_ASK"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_REASON_ASK"
+render: "Match feedback page, MATCH_FEEDBACK_REASON_ASK"
+narrative_slot: utility
+en: "What was the main reason? (optional)"
+th: "เหตุผลหลักคืออะไร (ไม่บังคับ)"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Asks for the optional reason. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: 53707c227f83fb85f67025c4cadbb991d3b25a19ddd0a907086138dc3048175f
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASON_SAVED`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASON_SAVED"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_REASON_SAVED"
+render: "Match feedback page, MATCH_FEEDBACK_REASON_SAVED"
+narrative_slot: utility
+en: "Reason recorded."
+th: "บันทึกเหตุผลแล้ว"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Confirms that the reason was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: 4ffe414b4ca5967e4fa188091f17bf37ab2d396782019452cd197f0fc8f66988
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_SWITCH`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_SWITCH"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_SWITCH"
+render: "Match feedback page, MATCH_FEEDBACK_SWITCH"
+narrative_slot: utility
+en: "Tapped the wrong one? Change your answer"
+th: "กดผิด? เปลี่ยนคำตอบ"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Offers to change a verdict tapped by mistake. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: d03e191a70428413feb4c1cf47746b7e109c997f19a4a9e77fe85fc19530edf5
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_DASHBOARD`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_DASHBOARD"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_DASHBOARD"
+render: "Match feedback page, MATCH_FEEDBACK_DASHBOARD"
+narrative_slot: utility
+en: "Open your Job Search Dashboard"
+th: "เปิดแดชบอร์ดหางาน"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Sends the reader to their Job Search Dashboard. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: bbc18683d4b3dc4d65171b6237c473faedac39abca715d267ad30526190847a8
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[0].label`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[0].label"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_REASONS[0].label"
+render: "Match feedback page, MATCH_FEEDBACK_REASONS[0].label"
+narrative_slot: utility
+en: "The posting has closed"
+th: "ประกาศปิดรับแล้ว"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Reason closed on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: 11146c4169a0d4be3ac5ecec6b9fbe9391f62b1b5bb0252ae44373503fa426b0
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[1].label`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[1].label"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_REASONS[1].label"
+render: "Match feedback page, MATCH_FEEDBACK_REASONS[1].label"
+narrative_slot: utility
+en: "Wrong title or level"
+th: "ตำแหน่งหรือระดับไม่ตรง"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Reason title_level on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: 219d4de9c146c5f36371a64396a9966a5ead6db1b4f8083495fc4f219047fab4
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[2].label`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[2].label"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_REASONS[2].label"
+render: "Match feedback page, MATCH_FEEDBACK_REASONS[2].label"
+narrative_slot: utility
+en: "Wrong location"
+th: "สถานที่ทำงานไม่ตรง"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Reason location on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: ab8f26d572c9ee3ebb2a7c23a3d26e16c084308cde9b3ee167c876356f6688dc
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[3].label`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[3].label"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_REASONS[3].label"
+render: "Match feedback page, MATCH_FEEDBACK_REASONS[3].label"
+narrative_slot: utility
+en: "Pay too low"
+th: "ค่าตอบแทนต่ำเกินไป"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Reason pay on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: eca5f2e3808e85880a751b2edaf58a28918f4180c12b1de6c4058d4a0b54a7be
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[4].label`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[4].label"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_REASONS[4].label"
+render: "Match feedback page, MATCH_FEEDBACK_REASONS[4].label"
+narrative_slot: utility
+en: "No work permit sponsorship"
+th: "ไม่สนับสนุนใบอนุญาตทำงาน"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Reason permit on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: e89237f6ad444de42a3bf8e0f22345218ffb47ed144a82fb8303ebdbda481608
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[5].label`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[5].label"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_REASONS[5].label"
+render: "Match feedback page, MATCH_FEEDBACK_REASONS[5].label"
+narrative_slot: utility
+en: "Needs a language you do not speak"
+th: "ต้องใช้ภาษาที่คุณไม่ได้ใช้"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Reason language on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: 39e59ce71d09df0be0e7219e13e747163789b0116dfd51cf6ef1584b2fbba486
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[6].label`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[6].label"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_REASONS[6].label"
+render: "Match feedback page, MATCH_FEEDBACK_REASONS[6].label"
+narrative_slot: utility
+en: "Already applied"
+th: "เคยสมัครไปแล้ว"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Reason applied on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: 4e30c29bb6fd9cf353f867f89a4b34e8cb501d38316d61ce276ef0c436e2525d
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[7].label`
+
+```yaml
+id: "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[7].label"
+source: "src/lib/content/matchFeedback.ts"
+path: "MATCH_FEEDBACK_REASONS[7].label"
+render: "Match feedback page, MATCH_FEEDBACK_REASONS[7].label"
+narrative_slot: utility
+en: "Something else"
+th: "เหตุผลอื่น"
+provenance: draft
+date: 12/11/2026
+term_bindings: []
+decision_note: "Reason other on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+review:
+  structural_calque: pending
+  text_hash: de416c86c103801c636e82fb7967e8128abdffcc902d746eac65c33137914666
+  prompt_version: structural-calque-v1
+  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+```
