@@ -2,7 +2,8 @@ import { internalAction, internalMutation, internalQuery } from "./_generated/se
 import { internal } from "./_generated/api";
 import { v } from "convex/values";
 import { greetingName } from "./names";
-import { MATCH_EMAIL_SUBJECT, matchEmailHtml, matchEmailText, type NoticeRole } from "./matchEmail";
+import { matchEmailSubject, matchEmailHtml, matchEmailText, type NoticeRole } from "./matchEmail";
+import { walletFor } from "./workspace";
 
 /**
  * The matched-role notice, `prd.md` § 8, Matched roles. Scheduled by
@@ -29,9 +30,11 @@ export const pending = internalQuery({
     const roles = apps
       .filter((a) => a.origin === "matched" && a.notifiedAt === undefined && a.savedAt > Date.now() - FRESH_MS)
       .sort((a, b) => a.savedAt - b.savedAt);
+    const { wallet } = await walletFor(ctx, leadId);
     return {
       email: lead.email ?? null,
       firstName: greetingName(lead),
+      tokensLeft: wallet.spendable,
       roles: roles.map((a) => ({
         _id: a._id,
         employer: a.employer,
@@ -40,8 +43,29 @@ export const pending = internalQuery({
         location: a.location ?? null,
         jobUrl: a.jobUrl ?? null,
         matchReason: a.matchReason ?? null,
+        salary: a.salary ?? null,
+        feedbackToken: a.feedbackToken ?? null,
       })),
     };
+  },
+});
+
+/**
+ * Give every role about to be announced its like and dislike capability.
+ * Done here rather than in `sendMatchedRole` so roles sent before the field
+ * existed get one too. Idempotent: a row that has a token keeps it.
+ */
+export const ensureFeedbackTokens = internalMutation({
+  args: { ids: v.array(v.id("applications")) },
+  handler: async (ctx, { ids }) => {
+    for (const id of ids) {
+      const row = await ctx.db.get(id);
+      if (!row || row.feedbackToken) continue;
+      // Two UUIDs, as the unsubscribe token: it sits in plain text in an
+      // email that gets forwarded.
+      const token = `${crypto.randomUUID()}${crypto.randomUUID()}`.replace(/-/g, "");
+      await ctx.db.patch(id, { feedbackToken: token });
+    }
   },
 });
 
@@ -71,7 +95,13 @@ export const retryLater = internalMutation({
 export const send = internalAction({
   args: { leadId: v.id("leads"), attempt: v.number() },
   handler: async (ctx, { leadId, attempt }): Promise<void> => {
-    const p = await ctx.runQuery(internal.matchNotice.pending, { leadId });
+    const first = await ctx.runQuery(internal.matchNotice.pending, { leadId });
+    if (first && first.roles.some((r) => !r.feedbackToken)) {
+      await ctx.runMutation(internal.matchNotice.ensureFeedbackTokens, { ids: first.roles.map((r) => r._id) });
+    }
+    const p = first && first.roles.some((r) => !r.feedbackToken)
+      ? await ctx.runQuery(internal.matchNotice.pending, { leadId })
+      : first;
     if (!p || !p.email || p.roles.length === 0) {
       await ctx.runMutation(internal.matchNotice.finish, { leadId, notified: [] });
       return;
@@ -91,7 +121,10 @@ export const send = internalAction({
       location: r.location,
       jobUrl: r.jobUrl,
       matchReason: r.matchReason,
+      salary: r.salary,
+      feedbackToken: r.feedbackToken,
     }));
+    const receipt = { used: roles.length, left: p.tokensLeft };
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
@@ -99,9 +132,9 @@ export const send = internalAction({
         from,
         to: p.email,
         ...(process.env.MAIL_REPLY_TO ? { reply_to: process.env.MAIL_REPLY_TO } : {}),
-        subject: MATCH_EMAIL_SUBJECT,
-        html: matchEmailHtml(p.firstName, roles),
-        text: matchEmailText(p.firstName, roles),
+        subject: matchEmailSubject(roles.length),
+        html: matchEmailHtml(p.firstName, roles, receipt),
+        text: matchEmailText(p.firstName, roles, receipt),
       }),
     });
     if (res.ok) {

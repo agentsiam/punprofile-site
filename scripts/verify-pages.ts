@@ -50,6 +50,8 @@ import * as portal from "../src/lib/content/portal.js";
 import * as checklist from "../src/lib/content/checklist.js";
 // Search descriptions, 01/11/2026. Never on a page, but read by every search result.
 import * as search from "../src/lib/content/search.js";
+// The page a matched-role email's like and dislike links land on, 12/11/2026.
+import * as matchFeedback from "../src/lib/content/matchFeedback.js";
 
 const MODULES: Record<string, Record<string, unknown>> = {
   pricing,
@@ -63,6 +65,7 @@ const MODULES: Record<string, Record<string, unknown>> = {
   portal,
   checklist,
   search,
+  matchFeedback,
 };
 
 /*
