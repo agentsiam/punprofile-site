@@ -108,7 +108,7 @@ export function checkOverwrite(path: string): GuardResult {
     );
 
   if (marked.length) {
-    reasons.push("  Corrections and notes found:");
+    reasons.push("  Handwritten lines, which the view's one-writer rule makes Paul's:");
     for (const { line, no } of marked) reasons.push(`    line ${no}: ${line.slice(0, 88)}`);
     reasons.push("");
   }
