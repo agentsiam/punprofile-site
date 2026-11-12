@@ -59,7 +59,7 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[]) {
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
 <title>${MATCH_EMAIL_SUBJECT}</title>
-<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700&family=Archivo:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
   @media (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important}

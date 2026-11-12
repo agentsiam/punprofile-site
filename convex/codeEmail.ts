@@ -37,7 +37,7 @@ export const C = {
 export const FONT =
   "Anuphan, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Thai', Tahoma, Arial, sans-serif";
 export const DISPLAY =
-  "Archivo, Anuphan, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Thai', Tahoma, Arial, sans-serif";
+  "Inter, Anuphan, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans Thai', Tahoma, Arial, sans-serif";
 
 export const CODE_EMAIL_SUBJECT = "แดชบอร์ดหางานของคุณพร้อมแล้ว | PunProfile";
 
@@ -101,7 +101,7 @@ export function codeEmailHtml(firstName: string | null, email: string, code: str
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
 <title>${CODE_EMAIL_SUBJECT}</title>
-<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700&family=Archivo:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
   @media (max-width:620px){
     .px{padding-left:24px!important;padding-right:24px!important}

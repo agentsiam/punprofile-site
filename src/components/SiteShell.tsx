@@ -1,4 +1,4 @@
-import { Anuphan, Archivo, Inter } from "next/font/google";
+import { Anuphan, Inter } from "next/font/google";
 import ConvexClientProvider from "@/app/ConvexClientProvider";
 import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
 import JsonLd from "@/components/JsonLd";
@@ -36,15 +36,18 @@ import { pick, t } from "@/lib/locale";
  */
 
 /**
- * The three faces the design system names: Archivo and Inter for Latin,
- * Anuphan for Thai. `globals.css` composes them into one stack per tier, so
- * Thai and Latin coexist in a single string without a language switch. See
- * `design.md` in the sibling coaching repo.
+ * The two faces the design system names: Inter for Latin, Anuphan for Thai.
+ * `globals.css` composes them into one stack per tier, so Thai and Latin
+ * coexist in a single string without a language switch. See `design.md` in the
+ * sibling coaching repo.
  *
  * Loaded here rather than per layout: `next/font` deduplicates by call site, and
- * three call sites would be three preload sets in the head of one page.
+ * two call sites would be two preload sets in the head of one page.
+ *
+ * Archivo was the third, carrying `display-*`, and came out on 12/11/2026 when
+ * display moved to Inter. Dropping the import is the point of the change and
+ * not a tidy-up: it is a font file and a preload the page no longer fetches.
  */
-const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin"] });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 /**
  * Thai, one family for both tiers. Changed 16/08/2026 from Noto Serif Thai plus
@@ -56,15 +59,15 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
  * audience, and the second one existed only to make Thai headlines a serif.
  *
  * A loopless geometric sans is what a Thai reader parses as modern and
- * professional, which is also what Archivo and Inter are doing on the Latin
- * side, so both scripts now say the same thing about the brand.
+ * professional, which is also what Inter is doing on the Latin side, so both
+ * scripts now say the same thing about the brand.
  */
 const anuphan = Anuphan({
   variable: "--font-anuphan",
   subsets: ["thai", "latin"],
 });
 
-const fontVars = [archivo.variable, inter.variable, anuphan.variable].join(" ");
+const fontVars = [inter.variable, anuphan.variable].join(" ");
 
 export default function SiteShell({
   locale,

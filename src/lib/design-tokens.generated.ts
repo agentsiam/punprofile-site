@@ -135,7 +135,7 @@ export const BRAND_TOKENS_CSS = `  :root {
  */
 export const BRAND_FONT_LINK = `<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Anuphan:wght@400;500;600;700;800;900&display=swap">`;
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Anuphan:wght@400;500;600;700;800;900&display=swap">`;
 
 export const BRAND_FONT_STACKS = `  --font-display: Inter, Anuphan, system-ui, sans-serif;
   --font-sans: Inter, Anuphan, system-ui, -apple-system, "Segoe UI", sans-serif;`;

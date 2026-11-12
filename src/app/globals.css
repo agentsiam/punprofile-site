@@ -25,15 +25,19 @@
 
 @theme inline {
   /*
-   * One stack per tier serves both scripts. Archivo and Inter carry no Thai
-   * glyphs, so the browser falls through per glyph to Anuphan; no conditional
-   * class and no language detection anywhere in the app.
+   * One stack per tier serves both scripts. Inter carries no Thai glyphs, so
+   * the browser falls through per glyph to Anuphan; no conditional class and
+   * no language detection anywhere in the app.
+   *
+   * Both stacks are Inter since 12/11/2026. They stay two stacks, not one,
+   * because they differ in their Thai weight and in what a revert would cost:
+   * one display face swap is this line.
    *
    * Anuphan appears in both stacks on purpose. It is variable, so the display
    * stack takes it at weight 700 and the body stack at 400, which is one file
    * doing what two Noto families used to.
    */
-  --font-display: var(--font-archivo), var(--font-anuphan), system-ui, sans-serif;
+  --font-display: var(--font-inter), var(--font-anuphan), system-ui, sans-serif;
   --font-sans: var(--font-inter), var(--font-anuphan), system-ui, sans-serif;
 }
 
@@ -296,12 +300,14 @@
    * remembering. In the components layer, so an explicit `font-sans` utility at
    * a call site still wins.
    *
-   * Only the `display-*` roles are here. `headline-*` and `heading-*` are Inter
-   * by design and must NOT take the display face.
+   * Only the `display-*` roles are here. Since the display face became Inter
+   * this rule changes nothing visually, and it stays because it is where the
+   * display stack is applied: the day display takes its own face again, this
+   * is the one place that has to know.
    *
    * The `thai-*` roles are here too: `--font-display` falls through per glyph to
    * Anuphan, so a Thai headline is Anuphan at 700 while the Latin beside it is
-   * Archivo at 900.
+   * Inter at 900.
    */
   .text-display-mega,
   .text-display-xxl,

@@ -59,9 +59,9 @@ export const EYEBROW = (locale: string) =>
 /**
  * The two heading tiers, per script. 25/08/2026, with the `wise-1` system.
  *
- * The system has three families and only one of them carries Thai, so a single
+ * The system has two families and only one of them carries Thai, so a single
  * class cannot serve both scripts here the way `EYEBROW` nearly does. Latin
- * takes the brand's own metrics: `display-*` is Archivo at 900 on a line box
+ * takes the brand's own metrics: `display-*` is Inter at 900 on a line box
  * 0.85 of the size, and `headline-*` is Inter at 600 with 3% negative tracking.
  * Thai takes Anuphan on a line box nearly 1.4 of the size, because an 0.85 box
  * clips tone marks and vowels outright.

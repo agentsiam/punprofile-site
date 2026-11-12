@@ -122,7 +122,7 @@ sibling repo by the exporter that makes them.
 | **R22** | Hover is a state layer, 8% of the element's own content colour over its own background. There is no second, brighter token per interactive colour. |
 | **R23** | The page is white and structure comes from `<Band ground="canvas\|soft\|brand\|dark">` in `src/components/Band.tsx`. Do not tint the page and do not stack tinted cards in one white column. |
 | **R24** | `.card-plain` is the card on a band, `.card-outlined` the card on white, and a page needing many of those wanted a band. Content cards are `.card-outlined` and `.card-tonal`. |
-| **R25** | Three type tiers: `display-*` once per page, `headline-*` for section headings, `heading-*` for card and group titles, `body-lg` for copy. Never set a Thai heading in Archivo or Inter; `HERO_HEADING(locale)` and `SECTION_HEADING(locale)` pick the tier per script. |
+| **R25** | Three type tiers: `display-*` once per page, `headline-*` for section headings, `heading-*` for card and group titles, `body-lg` for copy. Never set a Thai heading in Inter; `HERO_HEADING(locale)` and `SECTION_HEADING(locale)` pick the tier per script. |
 | **R26** | A button is always `pill`. `rounded-2xl` is the card, `3xl` the large feature panel, `md` dense controls, `sm` the smallest chips. Never mix in Tailwind's own `rounded-sm\|md\|lg`. |
 | **R27** | Breakpoints are window size classes: `medium:` 600, `expanded:` 840, `large:` 1200, `xlarge:` 1600. Never Tailwind's `sm\|md\|lg\|xl`. |
 | **R28** | A page's columns belong at `large:`. The shell and the assessment are the two exceptions and use `expanded:`. |

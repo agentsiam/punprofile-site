@@ -294,9 +294,9 @@ function css(): string {
      are real values, so an un-rebuilt screen renders in this system's colours. */
 ${colourVars(d.colors, "  ")}
 
-  /* Type scale. Archivo 900 carries \`display-*\`, Inter 600 carries
-     \`headline-*\` and \`heading-*\`, Inter carries copy, and Anuphan carries all
-     Thai on a much taller line box. */
+  /* Type scale. Inter carries every Latin tier: 900 for \`display-*\`, 600 for
+     \`headline-*\` and \`heading-*\`, 400 for copy. Anuphan carries all Thai on a
+     much taller line box. */
 ${type}
 
   /* Window size classes, as \`medium:\`, \`expanded:\`, \`large:\` and \`xlarge:\`
@@ -413,7 +413,7 @@ export const BRAND_FONT_LINK = \`<link rel="preconnect" href="https://fonts.goog
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?${query}&display=swap">\`;
 
-export const BRAND_FONT_STACKS = \`  --font-display: Archivo, Anuphan, system-ui, sans-serif;
+export const BRAND_FONT_STACKS = \`  --font-display: Inter, Anuphan, system-ui, sans-serif;
   --font-sans: Inter, Anuphan, system-ui, -apple-system, "Segoe UI", sans-serif;\`;
 `;
 }
@@ -466,20 +466,25 @@ function deck(): string {
 ${colours}
 
     /* --- Typography families, from design.md > typography --- */
-    --font-display: 'Archivo', system-ui, sans-serif;
+    /* The deck takes the WEBSITE's display face, not the one this preset's own
+       design.md names (Fraunces). Decided 12/11/2026 and left deliberately: the
+       deck is one brand with the site. The preset still loads Fraunces and its
+       design.md, layouts.md and preview.md still describe it, which is stale
+       and known. Do not "fix" it by restoring Fraunces here. */
+    --font-display: 'Inter', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
     --font-thai: 'Anuphan', sans-serif;
 
     /* --- Deck-specific type scale. Not derived; see the note above. --- */
-    --deck-display: 140px;   /* cover hero, Archivo 900 */
-    --deck-h1: 88px;         /* section headline, Archivo 900 */
+    --deck-display: 140px;   /* cover hero, Inter 900 */
+    --deck-h1: 88px;         /* section headline, Inter 900 */
     --deck-h2: 56px;         /* primary slide headline, Inter 600, -3% */
     --deck-h3: 36px;         /* sub-headline / panel title, Inter 600 */
     --deck-lede: 28px;       /* supporting paragraph, Inter 400 */
     --deck-body: 22px;       /* standard copy, Inter 400 */
     --deck-caption: 18px;    /* caption, Inter 400 */
     --deck-label: 16px;      /* eyebrow, Inter 600, tracked uppercase */
-    --deck-stat: 72px;       /* stat-callout numeral, Archivo 900 */
+    --deck-stat: 72px;       /* stat-callout numeral, Inter 900 */
 
     /* --- Spacing, from design.md > spacing --- */
 ${spacing}
