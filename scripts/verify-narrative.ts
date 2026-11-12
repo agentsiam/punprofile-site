@@ -47,6 +47,7 @@ import { load } from "js-yaml";
 import { PRODUCTS } from "../src/lib/content/products.js";
 import { SERVICES } from "../src/lib/content/services.js";
 import { DESTINATIONS } from "../src/lib/content/cta.js";
+import { COACHES } from "../src/lib/content/coaching.js";
 
 const SOURCE =
   "../punprofile-career-coaching/punprofile-context/ctxt-content/Narrative_System.md";
@@ -71,11 +72,29 @@ interface Offer {
   [slot: string]: string | undefined;
 }
 
+/**
+ * Something given with an offer that the reader does not pay for. Not a slot,
+ * and `Narrative_System.md` § 5 says why it may never become one.
+ */
+interface Promotion {
+  id: string;
+  offer: string;
+  page: string;
+  gives: string;
+  /**
+   * `YYYY-MM-DD`. Quoted in the YAML so js-yaml hands it over as a string; the
+   * `Date` is here because an unquoted one parses as a timestamp and the check
+   * below should not turn into a bug report about a missing pair of quotes.
+   */
+  ends: string | Date;
+}
+
 interface Narrative {
   version: string;
   spine: Spine[];
   blocks: Record<string, string[]>;
   offers: Offer[];
+  promotions?: Promotion[];
   house: {
     slots: { id: string; rule: string }[];
     not: string;
@@ -203,7 +222,55 @@ for (const page of PAGES) {
 }
 
 /*
- * 7. The house narrative.
+ * 7. Promotions: real offer, real page, one per page, and not expired.
+ *
+ * The date is the whole reason this check exists. Every other field in a
+ * promotion is a judgement somebody made on purpose and can defend. `ends` is
+ * the one that goes wrong by itself, overnight, with nobody present: the panel
+ * still reads "until the end of 2026" on a page no one has opened since
+ * November. A promotion that has run out fails the build, because a failing
+ * build is the only mechanism that has ever reliably taken one off a site.
+ *
+ * It compares UTC dates. A promotion is not a train timetable and the day it
+ * ends is not worth a timezone argument.
+ */
+const promoPages = new Set<string>();
+const TODAY = new Date().toISOString().slice(0, 10);
+for (const promo of n.promotions ?? []) {
+  if (!recorded.has(promo.offer)) {
+    fail(
+      `promotion ${promo.id} hangs off "${promo.offer}", which is not an offer ` +
+        `record. A promotion with no offer is a giveaway.`,
+    );
+  }
+  if (!PAGES.some((f) => f.includes(`(th)${promo.page}/page.tsx`))) {
+    fail(`promotion ${promo.id} names page ${promo.page}, which is not in the page list.`);
+  }
+  if (promoPages.has(promo.page)) {
+    fail(`${promo.page} carries more than one promotion. One per page: a second one is a sale.`);
+  }
+  promoPages.add(promo.page);
+  if (!promo.gives || !promo.gives.trim()) {
+    fail(`promotion ${promo.id} does not say what it gives.`);
+  }
+  // A date left unquoted in the YAML arrives as a Date; both are accepted and
+  // compared as plain `YYYY-MM-DD`, which sorts correctly as a string.
+  const ends =
+    promo.ends instanceof Date
+      ? promo.ends.toISOString().slice(0, 10)
+      : String(promo.ends ?? "");
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(ends)) {
+    fail(`promotion ${promo.id} has no end date in YYYY-MM-DD form.`);
+  } else if (ends < TODAY) {
+    fail(
+      `promotion ${promo.id} ended on ${ends}. Take the panel off ${promo.page}, ` +
+        `delete the record, and delete the copy that states the date.`,
+    );
+  }
+}
+
+/*
+ * 8. The house narrative.
  *
  * Its people are checked differently from an offer, and the difference is the
  * point. An offer with an empty slot is broken, because the page it feeds will
@@ -215,6 +282,22 @@ for (const page of PAGES) {
  * slot means somebody wrote it and forgot to say so, and an empty slot with no
  * pending marker means the site is one edit away from claiming nothing.
  */
+/*
+ * The markets the bridge may not name, and nothing else is listed here.
+ *
+ * `Narrative_System.md` § 4: the reader of every page is going to Europe, so a
+ * credential earned somewhere else belongs in `who` or `done`, where it is
+ * biography. In the bridge it stops being evidence and becomes a difference,
+ * because the sentence is now about a market the reader is not entering.
+ *
+ * Short on purpose, and the same discipline `termbase.yml` states for its own
+ * ban list: these are forms that were written and corrected, not every wrong
+ * one imaginable. Dew's line on the pricing panel read "in the United States"
+ * until Paul struck it on 12/11/2026.
+ */
+const NOT_THE_READERS_MARKET =
+  /\b(the United States|United States|the US\b|USA|U\.S\.|America|Americas|Canada|Australia)/i;
+
 const HOUSE_PERSON_SLOTS = ["who", "done", "relevance"] as const;
 let pendingCount = 0;
 for (const person of n.house.people) {
@@ -230,6 +313,33 @@ for (const person of n.house.people) {
     if (pending) pendingCount += 1;
   }
 }
+for (const person of n.house.people) {
+  if (person.relevance && NOT_THE_READERS_MARKET.test(person.relevance)) {
+    fail(
+      `house › ${person.id} › relevance names a market the reader is not entering. ` +
+        `It belongs in "who" or "done", where it is biography.`,
+    );
+  }
+}
+
+/*
+ * And the same rule where it actually gets broken: the one-line version each
+ * coach carries into a card. The YAML above is written once and read by people;
+ * `COACHES[n].relevance` is written again every time a block needs a shorter
+ * one, which is where the United States got back in.
+ */
+for (const c of COACHES) {
+  for (const lang of ["en", "th"] as const) {
+    if (NOT_THE_READERS_MARKET.test(c.relevance[lang])) {
+      fail(
+        `COACHES[${c.id}].relevance.${lang} names a market the reader is not ` +
+          `entering. Say what the person does; name where only when where is ` +
+          `the reader's own destination.`,
+      );
+    }
+  }
+}
+
 for (const slot of ["not", "consequence"] as const) {
   if (!n.house[slot] || !n.house[slot].trim()) {
     fail(`house › "${slot}" is empty. It belongs to the business and is never pending.`);
@@ -252,7 +362,8 @@ if (failures.length) {
 
 console.log(
   `narrative ${n.version}: ${n.offers.length} offers, ${slots.length} slots, ` +
-    `${Object.keys(n.blocks).length} blocks mapped, ${n.house.people.length} people. OK`,
+    `${Object.keys(n.blocks).length} blocks mapped, ${n.house.people.length} people, ` +
+      `${(n.promotions ?? []).length} promotion(s) live. OK`,
 );
 if (pendingCount) {
   console.log(
