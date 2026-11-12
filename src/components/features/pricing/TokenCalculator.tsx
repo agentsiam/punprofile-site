@@ -41,6 +41,7 @@ import {
   CALC_LEFT_OVER,
   CALC_MONTHS,
   CALC_NEED,
+  CALC_NEARLY,
   CALC_NOTE,
   CALC_PER_WEEK,
   PACKS,
@@ -103,6 +104,40 @@ function cheapestPlan(need: number): Plan {
   return best as Plan;
 }
 
+/**
+ * The most tokens any set of packs can reach for less than `thb`.
+ *
+ * It exists to answer the question the recommendation raises and cannot answer
+ * by itself: why two packs. For 44 tokens the finder says Standard + Serious at
+ * 2,500 THB and looks like an upsell, when in fact the most 2,000 THB can buy
+ * is 43, one short. Showing that turns the extra 500 from a choice somebody
+ * made into arithmetic the reader can check.
+ *
+ * Same enumeration as `cheapestPlan`, and deliberately not folded into it: that
+ * function answers what to buy, this one answers what the step below does not
+ * cover, and a single function returning both would be read as neither.
+ */
+function mostTokensUnder(thb: number): { thb: number; tokens: number } {
+  const [a, b, c] = PACKS;
+  const cap = (p: Pack) => Math.ceil(thb / p.thb);
+  let best = { thb: 0, tokens: 0 };
+  for (let i = 0; i <= cap(a); i++) {
+    for (let j = 0; j <= cap(b); j++) {
+      for (let k = 0; k <= cap(c); k++) {
+        const spend = i * a.thb + j * b.thb + k * c.thb;
+        if (spend === 0 || spend >= thb) continue;
+        const tokens = i * a.tokens + j * b.tokens + k * c.tokens;
+        // Most tokens wins; at equal tokens the cheaper way to them wins, so
+        // the line names the least a reader could spend and still fall short.
+        if (tokens > best.tokens || (tokens === best.tokens && spend < best.thb)) {
+          best = { thb: spend, tokens };
+        }
+      }
+    }
+  }
+  return best;
+}
+
 export default function TokenCalculator() {
   const { pick, locale } = useCopy();
   const [fitReport, setFitReport] = useState(true);
@@ -113,8 +148,15 @@ export default function TokenCalculator() {
     (fitReport ? FIT_REPORT_TOKENS : 0) + perWeek * WEEKS_PER_MONTH * months * ROLE_TOKENS;
   const plan = useMemo(() => cheapestPlan(need), [need]);
   const leftOver = plan.tokens - need;
+  /* Only shown when the step below genuinely falls short. At the smallest need
+     the plan is already the cheapest pack and there is nothing under it. */
+  const under = useMemo(() => mostTokensUnder(plan.thb), [plan.thb]);
+  const nearly = under.tokens > 0 && under.tokens < need;
 
   const tokens = (n: number) => `${n} ${pick(n === 1 ? TOKEN_UNIT.one : TOKEN_UNIT.many)}`;
+  /** `{name}` in a reviewed string, filled here. The copy never holds a figure. */
+  const fill = (str: string, vars: Record<string, string | number>) =>
+    str.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? ""));
 
   /** One group of choices. The `.tile` is the assessment's own option tile. */
   const group = <T,>(
@@ -197,6 +239,14 @@ export default function TokenCalculator() {
         <p className="mt-1 text-body-large text-on-surface">
           {tokens(plan.tokens)}, {plan.thb.toLocaleString("en-US")} THB
         </p>
+        {nearly && (
+          <p className="mt-3 text-body-medium text-on-surface-variant">
+            {fill(pick(CALC_NEARLY), {
+              thb: under.thb.toLocaleString("en-US"),
+              tokens: tokens(under.tokens),
+            })}
+          </p>
+        )}
         {leftOver > 0 && (
           <p className="mt-3 text-body-large text-on-surface-variant">
             {tokens(leftOver)} {pick(CALC_LEFT_OVER)}

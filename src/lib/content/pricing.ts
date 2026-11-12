@@ -155,6 +155,19 @@ export interface Pack {
   who: Copy;
   /** Exactly one pack carries it. */
   recommended?: boolean;
+  /**
+   * One extra that is NOT bought with tokens, and the reason it is its own
+   * field rather than a clause in the line above it.
+   *
+   * Every other line on a card is what the pack's tokens buy. This is added on
+   * top of them, so saying the two in one breath would have the card claim that
+   * a token buys coaching, which is false: coaching is priced in a conversation
+   * and `services.ts` refuses to print a figure for it at all.
+   *
+   * It is also time-limited, and the end date is in the copy rather than here.
+   * See the record's decision note in `LANGUAGE-SYSTEM.md`.
+   */
+  bonus?: Copy;
 }
 
 /**
@@ -210,8 +223,55 @@ export const PACKS: readonly Pack[] = [
       en: "For someone set on moving to Europe within the year, searching steadily over the months ahead.",
       th: "เหมาะกับคนที่ตั้งใจย้ายไปยุโรปภายในปีนี้ และวางแผนหางานอย่างต่อเนื่องในช่วงหลายเดือนข้างหน้า",
     },
+    bonus: {
+      en: "We add one free hour of Coaching 1:1 to this pack, until 31 December 2026",
+      th: "เราแถม Coaching 1:1 ฟรี 1 ชั่วโมงให้ด้วย ถึงวันที่ 31 ธันวาคม 2026",
+    },
   },
 ];
+
+/**
+ * What a pack's tokens buy, said once for every pack rather than itemised on the
+ * one card that had to sell. Added 12/11/2026 from a UX review Paul accepted.
+ *
+ * **The two uses are alternatives, not inclusions.** A pack is a balance, and
+ * the same 33 tokens are either 33 roles or a Fit Report and 13 roles. The line
+ * says `or` for that reason, and a card that listed both as things you get would
+ * be claiming twice what the pack holds.
+ *
+ * `PACK_BUYS_ROLES` is the line for a pack that cannot reach the Fit Report's
+ * price at all. Which pack that is comes out of the arithmetic rather than out
+ * of an id, so a price change moves it without anyone editing this file.
+ *
+ * `{count}`, `{rest}` and the figures in them are substituted at render from
+ * `TOKEN_PRICE`. Nothing here is typed, so no card can contradict the token
+ * table printed above it.
+ */
+export const PACK_BUYS: Copy = {
+  en: "{count} matched roles, or a Fit Report and {rest}",
+  th: "ตำแหน่งงานที่คัดให้ {count} ตำแหน่ง หรือ Fit Report พร้อมอีก {rest}",
+};
+
+export const PACK_BUYS_ROLES: Copy = {
+  en: "{count} matched roles",
+  th: "ตำแหน่งงานที่คัดให้ {count} ตำแหน่ง",
+};
+
+/**
+ * The unit after a count of roles, singular and plural, exactly as `TOKEN_UNIT`
+ * does it for tokens. It exists because the Standard pack leaves one role after
+ * a Fit Report and `1 roles` is the kind of thing that ships.
+ */
+export const ROLE_UNIT = {
+  one: {
+    en: "role",
+    th: "ตำแหน่ง",
+  },
+  many: {
+    en: "roles",
+    th: "ตำแหน่ง",
+  },
+} as const;
 
 /**
  * The badge on the recommended pack.
@@ -446,6 +506,19 @@ export const CALC_BEST_FIT: Copy = {
 export const CALC_LEFT_OVER: Copy = {
   en: "left over, which never expire and can be refunded",
   th: "ที่เหลือไม่มีวันหมดอายุ และขอคืนเงินได้",
+};
+
+/**
+ * Why the recommended set is the recommended set, shown rather than asserted.
+ *
+ * The finder answers a need no single pack covers by naming two, which reads as
+ * an upsell until you check it. For 44 tokens the most 2,000 THB can buy is 43,
+ * one short, and that is the fact that makes the extra 500 obviously necessary
+ * rather than apparently optional. Both figures are computed at render.
+ */
+export const CALC_NEARLY: Copy = {
+  en: "The cheapest set that covers it: {thb} THB would buy only {tokens}.",
+  th: "นี่คือชุดที่ถูกที่สุดที่เพียงพอ ถ้าจ่าย {thb} THB จะได้เพียง {tokens}",
 };
 
 export const CALC_NOTE: Copy = {

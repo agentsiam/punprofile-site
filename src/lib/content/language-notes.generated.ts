@@ -2131,7 +2131,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "10/09/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
+    "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged.\n\nThe English was \"Talk to me\" until 12/11/2026, Paul's call on a UX review that\ncaught the button naming neither a channel nor a next step. The Thai is\nuntouched and still approved: ทัก already says message me, and it was the\nEnglish that had dropped it, so this applies the rule in cta.ts rather than\noverruling it. The termbase entry contact-talk-to-me carries the same change.\nPlural the same day, Paul's call. The note above argues for the singular, that\na promise in the plural is a promise from a company; the business answered\nthat argument by hiring, and a reader who gets a reply from Dew was promised\nsomebody else. The Thai takes no side and never did: ทักมาคุยกัน names no\nperson, so the plural sits no further from it than the singular did.\n\nThe singular is still spoken elsewhere on the site, by the house rather than\nby the reader: FAQ_INTRO says message me and ask, the pricing limits say if\nyou want me to help with your CV, and coaching's METHOD_HEADING says before I\ngive you advice. They are not wrong, but they no longer agree with this\nbutton, and the sweep is a separate decision.\n\nThe verdict is pending because the PAIR is what a structural-calque pass\nreads, and the English half of it is new."
   },
   "src/lib/content/cta.ts::DESTINATIONS.cvcheck.label": {
     "source": "src/lib/content/cta.ts",
@@ -8523,6 +8523,60 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "23/08/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
+  "src/lib/content/pricing.ts::PACKS[2].bonus": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "PACKS[2].bonus",
+    "render": "Pricing page, Serious pack card, the time-limited extra under the list",
+    "narrativeSlot": "utility",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Drafted 12/11/2026 from Paul's instruction that the Serious pack carries a free hour of one-to-one coaching until the end of 2026. It is a SEPARATE field from includes, and rendered apart from that list, because the list is what the 33 tokens cover and this is not bought with tokens at all; folding it in would make the card claim a token buys coaching. THREE THINGS FOR REVIEW. One, this is the first free call on the site since 26/10/2026, when Paul removed every free consultation; it is defensible as a 1,500 THB pack perk rather than a public free entry point, but it reads as a reversal to anyone holding only the 26/10 decision, and remove-free-call-proposal.md in the sibling repo is still unapplied. Two, ฟรี sits after the service name Coaching 1:1, which is what LR-04 asks for, and the banned นัดปรึกษาฟรี 30 นาที and คุยฟรี forms are not used. Three, the clause order was reversed on 12/11/2026, Paul's call: the first version led with the deadline, so the first thing a lead read was an expiry rather than the gift. Four, the end date is written into the copy AND declared in Narrative_System.md > promotions, which is what verify:narrative fails on once the date is past. Two places on purpose: the reader needs the limit in words, and the build needs it in a field. Change one and change the other. AWAITING A NATIVE VERDICT."
+  },
+  "src/lib/content/pricing.ts::PACK_BUYS": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "PACK_BUYS",
+    "render": "Pricing page, pack card, what the pack's tokens buy",
+    "narrativeSlot": "artefact",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Added 12/11/2026, from a UX review Paul accepted: the cards printed a price and a token count and left the reader to work out what the tokens were for. The two uses are ALTERNATIVES on one balance, not inclusions, which is why the line says or. Both figures are substituted from TOKEN_PRICE at render, never typed, so the sentence cannot contradict the token table above it. It replaces PACKS[2].includes, which said the same arithmetic on one card only and said it as if the reader got both. AWAITING A NATIVE VERDICT."
+  },
+  "src/lib/content/pricing.ts::PACK_BUYS_ROLES": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "PACK_BUYS_ROLES",
+    "render": "Pricing page, pack card, what the pack's tokens buy when it cannot reach a Fit Report",
+    "narrativeSlot": "artefact",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Added 12/11/2026. The line for a pack whose tokens do not reach the Fit Report's price, which today is the Starter pack alone. It is chosen by arithmetic rather than by pack id, so a price change moves it on its own. AWAITING A NATIVE VERDICT."
+  },
+  "src/lib/content/pricing.ts::ROLE_UNIT.one": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "ROLE_UNIT.one",
+    "render": "Pricing page, the unit after a count of roles, singular",
+    "narrativeSlot": "artefact",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Added 12/11/2026, the same shape as TOKEN_UNIT and for the same reason: the Standard pack leaves exactly one role after a Fit Report, so a hard-coded plural would print 1 roles. Thai has no plural form and both members are the same word. AWAITING A NATIVE VERDICT."
+  },
+  "src/lib/content/pricing.ts::ROLE_UNIT.many": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "ROLE_UNIT.many",
+    "render": "Pricing page, the unit after a count of roles, plural",
+    "narrativeSlot": "artefact",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Added 12/11/2026, the plural member of ROLE_UNIT. Thai has no plural form, so it is the same word as the singular. AWAITING A NATIVE VERDICT."
+  },
+  "src/lib/content/pricing.ts::CALC_NEARLY": {
+    "source": "src/lib/content/pricing.ts",
+    "path": "CALC_NEARLY",
+    "render": "Pricing page, pack finder, why the recommended set is the cheapest",
+    "narrativeSlot": "artefact",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Added 12/11/2026, from a UX review Paul accepted. The finder recommended two packs for a need one pack could not cover and looked like an upsell; it is not, and the arithmetic is checkable: for 44 tokens the most 2,000 THB can buy is 43. The rule the finder already follows is cheapest price, then most tokens at that price, then fewest packs, and this line is that rule shown rather than stated. Both figures are computed. AWAITING A NATIVE VERDICT."
+  },
   "src/lib/content/pricing.ts::PRICING_HEADING": {
     "source": "src/lib/content/pricing.ts",
     "path": "PRICING_HEADING",
@@ -12222,6 +12276,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "30/10/2026",
     "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
+  "src/lib/content/coaching.ts::COACHES[0].relevance": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[0].relevance",
+    "render": "Pricing page, the promotional panel: the one line under Paul's name",
+    "narrativeSlot": "proof",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Added 12/11/2026, Paul's call: the promotional panel first carried COACHES[n].pill, which is a TITLE line, and a lead has no reason to care that we are founders. The house narrative's own rule is the argument: slot 1 asks for names and what each one actually is, not titles nobody can check, and slot 3 is the bridge, which it calls the only part a reader actually acts on. So this field is that slot compressed to the one line a card has room for: what this person does to a CV like the reader's. Built from Paul's own approved COACHES[0].summary, which already says he reads the CVs that pass the screen and selects people for his team; this is that line cut to what fits one row and given the market. It is deliberately not a new claim — every clause here is already approved somewhere on the site — but the RECOMBINATION is new Thai and is not self-certified. AWAITING A NATIVE VERDICT."
+  },
   "src/lib/content/coaching.ts::COACHES[0].pills[0]": {
     "source": "src/lib/content/coaching.ts",
     "path": "COACHES[0].pills[0]",
@@ -12356,6 +12419,15 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "30/10/2026",
     "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026. UNCONFIRMED BY TATIYA: hold from going live until she confirms her facts (founder-copy.md, questions for Tatiya)."
+  },
+  "src/lib/content/coaching.ts::COACHES[1].relevance": {
+    "source": "src/lib/content/coaching.ts",
+    "path": "COACHES[1].relevance",
+    "render": "Pricing page, the promotional panel: the one line under Dew's name",
+    "narrativeSlot": "proof",
+    "provenance": "draft",
+    "date": "12/11/2026",
+    "decisionNote": "Added 12/11/2026, Paul's call: the promotional panel first carried COACHES[n].pill, which is a TITLE line, and a lead has no reason to care that we are founders. The house narrative's own rule is the argument: slot 1 asks for names and what each one actually is, not titles nobody can check, and slot 3 is the bridge, which it calls the only part a reader actually acts on. So this field is that slot compressed to the one line a card has room for: what this person does to a CV like the reader's. Built from her approved COACHES[1].summary and pull line, both of which already say she selects the CVs put forward to hiring managers; the Thai is theirs character for character. It named the United States until 12/11/2026, when Paul struck it: the reader is moving to Europe, and a bridge line that names a market the reader is not entering argues against itself, however real the credential. Where she works is biography and stays on /coaching, in who and done. Narrative_System.md section 4 now carries the rule. It is deliberately not a new claim — every clause here is already approved somewhere on the site — but the RECOMBINATION is new Thai and is not self-certified. AWAITING A NATIVE VERDICT."
   },
   "src/lib/content/coaching.ts::COACHES[1].pills[0]": {
     "source": "src/lib/content/coaching.ts",

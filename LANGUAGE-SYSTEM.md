@@ -22366,6 +22366,138 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::PACKS[2].bonus`
+
+```yaml
+id: "src/lib/content/pricing.ts::PACKS[2].bonus"
+source: "src/lib/content/pricing.ts"
+path: "PACKS[2].bonus"
+render: "Pricing page, Serious pack card, the time-limited extra under the list"
+narrative_slot: "utility"
+en: "We add one free hour of Coaching 1:1 to this pack, until 31 December 2026"
+th: "เราแถม Coaching 1:1 ฟรี 1 ชั่วโมงให้ด้วย ถึงวันที่ 31 ธันวาคม 2026"
+provenance: "draft"
+date: "12/11/2026"
+term_bindings: []
+decision_note: "Drafted 12/11/2026 from Paul's instruction that the Serious pack carries a free hour of one-to-one coaching until the end of 2026. It is a SEPARATE field from includes, and rendered apart from that list, because the list is what the 33 tokens cover and this is not bought with tokens at all; folding it in would make the card claim a token buys coaching. THREE THINGS FOR REVIEW. One, this is the first free call on the site since 26/10/2026, when Paul removed every free consultation; it is defensible as a 1,500 THB pack perk rather than a public free entry point, but it reads as a reversal to anyone holding only the 26/10 decision, and remove-free-call-proposal.md in the sibling repo is still unapplied. Two, ฟรี sits after the service name Coaching 1:1, which is what LR-04 asks for, and the banned นัดปรึกษาฟรี 30 นาที and คุยฟรี forms are not used. Three, the clause order was reversed on 12/11/2026, Paul's call: the first version led with the deadline, so the first thing a lead read was an expiry rather than the gift. Four, the end date is written into the copy AND declared in Narrative_System.md > promotions, which is what verify:narrative fails on once the date is past. Two places on purpose: the reader needs the limit in words, and the build needs it in a field. Change one and change the other. AWAITING A NATIVE VERDICT."
+review:
+  structural_calque: pending
+  text_hash: f5196cca0873c312ca20c40f3bafd8e18b37e2961e779e5c48bd5caebbdc5819
+  prompt_version: structural-calque-v1
+  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::PACK_BUYS`
+
+```yaml
+id: "src/lib/content/pricing.ts::PACK_BUYS"
+source: "src/lib/content/pricing.ts"
+path: "PACK_BUYS"
+render: "Pricing page, pack card, what the pack's tokens buy"
+narrative_slot: "artefact"
+en: "{count} matched roles, or a Fit Report and {rest}"
+th: "ตำแหน่งงานที่คัดให้ {count} ตำแหน่ง หรือ Fit Report พร้อมอีก {rest}"
+provenance: "draft"
+date: "12/11/2026"
+term_bindings: []
+decision_note: "Added 12/11/2026, from a UX review Paul accepted: the cards printed a price and a token count and left the reader to work out what the tokens were for. The two uses are ALTERNATIVES on one balance, not inclusions, which is why the line says or. Both figures are substituted from TOKEN_PRICE at render, never typed, so the sentence cannot contradict the token table above it. It replaces PACKS[2].includes, which said the same arithmetic on one card only and said it as if the reader got both. AWAITING A NATIVE VERDICT."
+review:
+  structural_calque: pending
+  text_hash: 137d40c24c7bc0589ac7d02b1e9b181eeb8472d498b0cbd8f08eb3de5e73c574
+  prompt_version: structural-calque-v1
+  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::PACK_BUYS_ROLES`
+
+```yaml
+id: "src/lib/content/pricing.ts::PACK_BUYS_ROLES"
+source: "src/lib/content/pricing.ts"
+path: "PACK_BUYS_ROLES"
+render: "Pricing page, pack card, what the pack's tokens buy when it cannot reach a Fit Report"
+narrative_slot: "artefact"
+en: "{count} matched roles"
+th: "ตำแหน่งงานที่คัดให้ {count} ตำแหน่ง"
+provenance: "draft"
+date: "12/11/2026"
+term_bindings: []
+decision_note: "Added 12/11/2026. The line for a pack whose tokens do not reach the Fit Report's price, which today is the Starter pack alone. It is chosen by arithmetic rather than by pack id, so a price change moves it on its own. AWAITING A NATIVE VERDICT."
+review:
+  structural_calque: pending
+  text_hash: 6770cb76a364ab5aa90cc02737e9803fc4c3924af3b2d30e710a09a39efcef28
+  prompt_version: structural-calque-v1
+  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::ROLE_UNIT.one`
+
+```yaml
+id: "src/lib/content/pricing.ts::ROLE_UNIT.one"
+source: "src/lib/content/pricing.ts"
+path: "ROLE_UNIT.one"
+render: "Pricing page, the unit after a count of roles, singular"
+narrative_slot: "artefact"
+en: "role"
+th: "ตำแหน่ง"
+provenance: "draft"
+date: "12/11/2026"
+term_bindings: []
+decision_note: "Added 12/11/2026, the same shape as TOKEN_UNIT and for the same reason: the Standard pack leaves exactly one role after a Fit Report, so a hard-coded plural would print 1 roles. Thai has no plural form and both members are the same word. AWAITING A NATIVE VERDICT."
+review:
+  structural_calque: pending
+  text_hash: ab9f463fefb270b81214f0f32f01308ef1258abfa2e9839105c41a71485fb15e
+  prompt_version: structural-calque-v1
+  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::ROLE_UNIT.many`
+
+```yaml
+id: "src/lib/content/pricing.ts::ROLE_UNIT.many"
+source: "src/lib/content/pricing.ts"
+path: "ROLE_UNIT.many"
+render: "Pricing page, the unit after a count of roles, plural"
+narrative_slot: "artefact"
+en: "roles"
+th: "ตำแหน่ง"
+provenance: "draft"
+date: "12/11/2026"
+term_bindings: []
+decision_note: "Added 12/11/2026, the plural member of ROLE_UNIT. Thai has no plural form, so it is the same word as the singular. AWAITING A NATIVE VERDICT."
+review:
+  structural_calque: pending
+  text_hash: 340f9fade63a5fcd930c7475c6e71a10bef5a64f2e4773824e5a357c73cb70cd
+  prompt_version: structural-calque-v1
+  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/pricing.ts::CALC_NEARLY`
+
+```yaml
+id: "src/lib/content/pricing.ts::CALC_NEARLY"
+source: "src/lib/content/pricing.ts"
+path: "CALC_NEARLY"
+render: "Pricing page, pack finder, why the recommended set is the cheapest"
+narrative_slot: "artefact"
+en: "The cheapest set that covers it: {thb} THB would buy only {tokens}."
+th: "นี่คือชุดที่ถูกที่สุดที่เพียงพอ ถ้าจ่าย {thb} THB จะได้เพียง {tokens}"
+provenance: "draft"
+date: "12/11/2026"
+term_bindings: []
+decision_note: "Added 12/11/2026, from a UX review Paul accepted. The finder recommended two packs for a need one pack could not cover and looked like an upsell; it is not, and the arithmetic is checkable: for 44 tokens the most 2,000 THB can buy is 43. The rule the finder already follows is cheapest price, then most tokens at that price, then fewest packs, and this line is that rule shown rather than stated. Both figures are computed. AWAITING A NATIVE VERDICT."
+review:
+  structural_calque: pending
+  text_hash: d379852e138ff9336b1ae267514504a7ee1ec659c6dc8314fce9ad9fafbeea24
+  prompt_version: structural-calque-v1
+  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/pricing.ts::PRICING_HEADING`
 
 ```yaml
