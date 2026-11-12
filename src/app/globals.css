@@ -331,7 +331,11 @@
    * means when it says a container defines its own on-colours; ours just have to
    * do it by hand, because the container is not a role.
    *
-   * Put this on any element that sets `bg-brand-lime` or `bg-brand-orange`.
+   * Put this on any element that sets `bg-brand-lime`, `bg-brand-orange` or
+   * `bg-canvas-promo`, the gold promotional ground. All three are fixed values
+   * that do not rotate with the scheme. Measured on the gold: ink-deep 8.79,
+   * ink 12.17, body 5.91, mute-strong 3.34 — below AA, so a caption on that
+   * ground takes `body`. See `design.md > The promotional ground`.
    * Measured on lime: ink 14.31, on-surface-variant 8.03, primary 5.44.
    */
   .ground-fixed {

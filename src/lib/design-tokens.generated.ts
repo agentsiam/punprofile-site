@@ -47,6 +47,8 @@ export const BRAND_TOKENS_CSS = `  :root {
     --color-canvas-brand: #9fe870;
     --color-canvas-dark: #163300;
     --color-on-canvas-dark: #e8ebe6;
+    --color-canvas-promo: #f5c84b;
+    --color-on-canvas-promo: #163300;
     --color-line: #dfe3dc;
     --color-line-strong: #8b908a;
     --color-positive: #2ead4b;
@@ -135,5 +137,5 @@ export const BRAND_FONT_LINK = `<link rel="preconnect" href="https://fonts.googl
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Anuphan:wght@400;500;600;700;800;900&display=swap">`;
 
-export const BRAND_FONT_STACKS = `  --font-display: Archivo, Anuphan, system-ui, sans-serif;
+export const BRAND_FONT_STACKS = `  --font-display: Inter, Anuphan, system-ui, sans-serif;
   --font-sans: Inter, Anuphan, system-ui, -apple-system, "Segoe UI", sans-serif;`;

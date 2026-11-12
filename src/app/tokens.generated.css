@@ -26,6 +26,8 @@
   --color-canvas-brand: #9fe870;
   --color-canvas-dark: #163300;
   --color-on-canvas-dark: #e8ebe6;
+  --color-canvas-promo: #f5c84b;
+  --color-on-canvas-promo: #163300;
   --color-line: #dfe3dc;
   --color-line-strong: #8b908a;
   --color-positive: #2ead4b;
@@ -105,9 +107,9 @@
   --color-scrim: #163300;
   --color-inverse-primary: #9fe870;
 
-  /* Type scale. Archivo 900 carries `display-*`, Inter 600 carries
-     `headline-*` and `heading-*`, Inter carries copy, and Anuphan carries all
-     Thai on a much taller line box. */
+  /* Type scale. Inter carries every Latin tier: 900 for `display-*`, 600 for
+     `headline-*` and `heading-*`, 400 for copy. Anuphan carries all Thai on a
+     much taller line box. */
   --text-display-mega: 126px;
   --text-display-mega--line-height: 107px;
   --text-display-mega--font-weight: 900;
@@ -329,6 +331,8 @@
     --color-canvas-brand: #9fe870;
     --color-canvas-dark: #0a1a00;
     --color-on-canvas-dark: #e8ebe6;
+    --color-canvas-promo: #f5c84b;
+    --color-on-canvas-promo: #163300;
     --color-line: #2b2f27;
     --color-line-strong: #63695f;
     --color-positive: #6ee08a;
