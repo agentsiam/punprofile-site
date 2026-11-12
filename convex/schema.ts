@@ -1011,6 +1011,18 @@ export default defineSchema({
     /** When the email telling the candidate about this matched role went.
      *  @absent notyet — not a matched role, or its notice has not gone */
     notifiedAt: v.optional(v.number()),
+    /** The capability in the matched-role email's like and dislike links.
+     *  Random, unguessable, and it can do one thing: set the verdict below.
+     *  @absent notyet — not a matched role, or its notice has not been built */
+    feedbackToken: v.optional(v.string()),
+    /** The candidate's own verdict on a matched role, from the email.
+     *  @absent none — not given */
+    candidateVerdict: v.optional(v.union(v.literal("up"), v.literal("down"))),
+    /** @absent none — only present alongside a verdict */
+    candidateVerdictAt: v.optional(v.number()),
+    /** Why the role missed, one of `MATCH_FEEDBACK_REASONS` in
+     *  `src/lib/content/matchFeedback.ts`. @absent none — no reason picked */
+    candidateVerdictReason: v.optional(v.string()),
     /** How much the candidate wants this one, 1 to 5, their own mark. Teal's
      *  "excitement" column. @absent none — not marked */
     excitement: v.optional(v.number()),
@@ -1062,7 +1074,8 @@ export default defineSchema({
     ),
   })
     .index("by_lead_time", ["leadId", "savedAt"])
-    .index("by_lead_status", ["leadId", "status", "statusChangedAt"]),
+    .index("by_lead_status", ["leadId", "status", "statusChangedAt"])
+    .index("by_feedback_token", ["feedbackToken"]),
 
   /**
    * The outcome the whole business is measured on.
@@ -1299,6 +1312,50 @@ export default defineSchema({
     uploadedAt: v.number(),
     by: v.string(),
   }).index("by_lead", ["leadId", "version"]),
+
+  /**
+   * The coach's own ticks on the Session tab's delivery checklist, for the two
+   * steps that happen outside the app, `prd.md` § 8. One row per step ticked;
+   * undoing the tick deletes the row.
+   */
+  checklistTicks: defineTable({
+    leadId: v.id("leads"),
+    key: v.union(v.literal("summary_email"), v.literal("timeline_shared")),
+    at: v.number(),
+    by: v.string(),
+  }).index("by_lead", ["leadId"]),
+
+  /**
+   * Roles the evening run found for a paying client and that passed the
+   * matched-role gates, waiting for the coach to send or dismiss them from the
+   * Session tab, `prd.md` § 8. Sending goes through `workspace.sendMatched`,
+   * so the weekly maximum, the pause and the token rules are the same.
+   */
+  foundRoles: defineTable({
+    leadId: v.id("leads"),
+    /** The run's date, ISO. */
+    foundOn: v.string(),
+    targetTitle: v.string(),
+    employer: v.string(),
+    roleTitle: v.string(),
+    country: v.string(),
+    /** @absent none — no city on the posting */
+    location: v.optional(v.string()),
+    jobUrl: v.string(),
+    /** As stated on the posting. @absent none — not stated */
+    salary: v.optional(v.string()),
+    /** The posting's own date, ISO. @absent unmeasured — the page shows none */
+    postedOn: v.optional(v.string()),
+    matchReason: v.string(),
+    status: v.union(v.literal("waiting"), v.literal("sent"), v.literal("dismissed")),
+    /** The role row it became once sent. @absent notyet — not sent */
+    applicationId: v.optional(v.id("applications")),
+    /** @absent notyet — still waiting */
+    decidedAt: v.optional(v.number()),
+    addedAt: v.number(),
+  })
+    .index("by_lead", ["leadId", "status"])
+    .index("by_lead_url", ["leadId", "jobUrl"]),
 
   /**
    * The coach's working notes on delivery, one row per entry, newest first on

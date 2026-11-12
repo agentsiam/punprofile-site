@@ -21,6 +21,7 @@
  * English only, like every admin surface (`copy.ts`).
  */
 
+import { MATCH_FEEDBACK_REASONS } from "@/lib/content/matchFeedback";
 import { MAX_WEEKLY_MAX, MIN_WEEKLY_MAX, sendBlock } from "@/lib/matching";
 import { useMemo, useState } from "react";
 import { useMutation, useQuery } from "convex/react";
@@ -1885,6 +1886,13 @@ function JobTracker({
                           {a.deadlineAt && <span>Closes {day(a.deadlineAt)}</span>}
                           {a.appliedAt && <span>Applied {day(a.appliedAt)}</span>}
                           {a.matchReason && <span className="medium:col-span-2">Why it matched: {a.matchReason}</span>}
+                          {a.candidateVerdict && (
+                            <span className="medium:col-span-2">
+                              Candidate&apos;s verdict: {a.candidateVerdict === "up" ? "Fits" : "Misses"}
+                              {a.candidateVerdictReason ? ` (${MATCH_FEEDBACK_REASONS.find((r) => r.id === a.candidateVerdictReason)?.label.en ?? a.candidateVerdictReason})` : ""}
+                              {a.candidateVerdictAt ? `, ${day(a.candidateVerdictAt)}` : ""}
+                            </span>
+                          )}
                           {a.notes && <span className="medium:col-span-2 whitespace-pre-line">Notes: {a.notes}</span>}
                           {(a.interviews ?? []).length > 0 && (
                             <span className="medium:col-span-2">

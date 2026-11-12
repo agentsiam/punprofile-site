@@ -18,7 +18,7 @@ import { INTERVIEW_ITEMS } from "../src/lib/fitInterview";
 import { mutation, query, type MutationCtx, type QueryCtx } from "./_generated/server";
 import type { Id } from "./_generated/dataModel";
 import { internal } from "./_generated/api";
-import { v, ConvexError } from "convex/values";
+import { v, ConvexError, type ObjectType } from "convex/values";
 import { requireAdmin } from "./leads";
 import { isAdminEmail } from "./adminEmails";
 import { liveGrant, normaliseEmail } from "./candidateAccess";
@@ -489,92 +489,104 @@ export const deleteNote = mutation({
  * your criteria has reached you". The row appearing on their page is that
  * moment, so the insert and the deduction cannot be separated.
  */
+const sendArgs = {
+  leadId: v.id("leads"),
+  engagementId: v.optional(v.id("engagements")),
+  employer: v.string(),
+  roleTitle: v.string(),
+  country: v.string(),
+  location: v.optional(v.string()),
+  jobUrl: v.optional(v.string()),
+  salary: v.optional(v.string()),
+  deadlineAt: v.optional(v.number()),
+  matchReason: v.optional(v.string()),
+  jobDescription: v.optional(v.string()),
+  jobLogId: v.optional(v.string()),
+  /** The title this role is matched for. */
+  targetId: v.optional(v.id("targets")),
+};
+
+/**
+ * Send one matched role: the weekly maximum, the pause and the wallet are
+ * checked, then the row is inserted and its token deducted in one
+ * transaction, and the notice scheduled. Shared by the Delivery tab's form and
+ * the Session tab's roles found by the evening run, so both obey one rule.
+ */
+export async function sendMatched(ctx: MutationCtx, by: string, args: ObjectType<typeof sendArgs>) {
+  const lead = await ctx.db.get(args.leadId);
+  if (!lead) throw new ConvexError("Lead not found.");
+  const employer = args.employer.trim();
+  const roleTitle = args.roleTitle.trim();
+  const country = args.country.trim();
+  if (!employer || !roleTitle || !country) {
+    throw new ConvexError("Employer, role and country are all required.");
+  }
+  if (args.engagementId) {
+    const e = await ctx.db.get(args.engagementId);
+    if (!e || e.leadId !== args.leadId) throw new ConvexError("That engagement belongs to a different lead.");
+  }
+
+  await checkTarget(ctx, args.targetId, args.leadId);
+  const { wallet } = await walletFor(ctx, args.leadId);
+  if (wallet.spendable < 1) {
+    throw new ConvexError(
+      wallet.reserved
+        ? `No spendable tokens: ${wallet.reserved} are reserved for the Fit Report.`
+        : "No tokens left. Record a purchase first.",
+    );
+  }
+
+  const block = sendBlock(await matchingFor(ctx, args.leadId));
+  if (block === "paused") {
+    throw new ConvexError("Matched roles are paused for this candidate. Nothing was sent or charged.");
+  }
+  if (block === "weekly_max") {
+    throw new ConvexError(
+      `This week's maximum of ${weeklyMaxOf(lead)} matched roles is reached. Nothing was sent or charged.`,
+    );
+  }
+
+  const now = Date.now();
+  const applicationId = await ctx.db.insert("applications", {
+    leadId: args.leadId,
+    ...(args.engagementId ? { engagementId: args.engagementId } : {}),
+    ...(args.jobLogId ? { jobLogId: args.jobLogId } : {}),
+    ...(args.targetId ? { targetId: args.targetId } : {}),
+    employer,
+    roleTitle,
+    country,
+    ...(args.location?.trim() ? { location: args.location.trim() } : {}),
+    ...(args.jobUrl?.trim() ? { jobUrl: args.jobUrl.trim() } : {}),
+    ...(args.salary?.trim() ? { salary: args.salary.trim() } : {}),
+    ...(args.deadlineAt ? { deadlineAt: args.deadlineAt } : {}),
+    ...(args.matchReason?.trim() ? { matchReason: args.matchReason.trim() } : {}),
+    ...(args.jobDescription?.trim() ? { jobDescription: args.jobDescription.trim().slice(0, 20000) } : {}),
+    status: "interested",
+    // Coach-recorded so the coach can correct it; once the candidate moves
+    // it on their page the row becomes theirs. See `portal.setJobStatus`.
+    recordedBy: "coach",
+    origin: "matched",
+    savedAt: now,
+    statusChangedAt: now,
+  });
+  await ctx.db.insert("tokenLedger", {
+    leadId: args.leadId,
+    delta: -1,
+    reason: "matched_role",
+    applicationId,
+    ...(args.engagementId ? { engagementId: args.engagementId } : {}),
+    at: now,
+    by,
+  });
+  await scheduleMatchNotice(ctx, args.leadId, now);
+  return applicationId;
+}
+
 export const sendMatchedRole = mutation({
-  args: {
-    leadId: v.id("leads"),
-    engagementId: v.optional(v.id("engagements")),
-    employer: v.string(),
-    roleTitle: v.string(),
-    country: v.string(),
-    location: v.optional(v.string()),
-    jobUrl: v.optional(v.string()),
-    salary: v.optional(v.string()),
-    deadlineAt: v.optional(v.number()),
-    matchReason: v.optional(v.string()),
-    jobDescription: v.optional(v.string()),
-    jobLogId: v.optional(v.string()),
-    /** The title this role is matched for. */
-    targetId: v.optional(v.id("targets")),
-  },
+  args: sendArgs,
   handler: async (ctx, args) => {
     const by = await requireAdmin(ctx);
-    const lead = await ctx.db.get(args.leadId);
-    if (!lead) throw new ConvexError("Lead not found.");
-    const employer = args.employer.trim();
-    const roleTitle = args.roleTitle.trim();
-    const country = args.country.trim();
-    if (!employer || !roleTitle || !country) {
-      throw new ConvexError("Employer, role and country are all required.");
-    }
-    if (args.engagementId) {
-      const e = await ctx.db.get(args.engagementId);
-      if (!e || e.leadId !== args.leadId) throw new ConvexError("That engagement belongs to a different lead.");
-    }
-
-    await checkTarget(ctx, args.targetId, args.leadId);
-    const { wallet } = await walletFor(ctx, args.leadId);
-    if (wallet.spendable < 1) {
-      throw new ConvexError(
-        wallet.reserved
-          ? `No spendable tokens: ${wallet.reserved} are reserved for the Fit Report.`
-          : "No tokens left. Record a purchase first.",
-      );
-    }
-
-    const block = sendBlock(await matchingFor(ctx, args.leadId));
-    if (block === "paused") {
-      throw new ConvexError("Matched roles are paused for this candidate. Nothing was sent or charged.");
-    }
-    if (block === "weekly_max") {
-      throw new ConvexError(
-        `This week's maximum of ${weeklyMaxOf(lead)} matched roles is reached. Nothing was sent or charged.`,
-      );
-    }
-
-    const now = Date.now();
-    const applicationId = await ctx.db.insert("applications", {
-      leadId: args.leadId,
-      ...(args.engagementId ? { engagementId: args.engagementId } : {}),
-      ...(args.jobLogId ? { jobLogId: args.jobLogId } : {}),
-      ...(args.targetId ? { targetId: args.targetId } : {}),
-      employer,
-      roleTitle,
-      country,
-      ...(args.location?.trim() ? { location: args.location.trim() } : {}),
-      ...(args.jobUrl?.trim() ? { jobUrl: args.jobUrl.trim() } : {}),
-      ...(args.salary?.trim() ? { salary: args.salary.trim() } : {}),
-      ...(args.deadlineAt ? { deadlineAt: args.deadlineAt } : {}),
-      ...(args.matchReason?.trim() ? { matchReason: args.matchReason.trim() } : {}),
-      ...(args.jobDescription?.trim() ? { jobDescription: args.jobDescription.trim().slice(0, 20000) } : {}),
-      status: "interested",
-      // Coach-recorded so the coach can correct it; once the candidate moves
-      // it on their page the row becomes theirs. See `portal.setJobStatus`.
-      recordedBy: "coach",
-      origin: "matched",
-      savedAt: now,
-      statusChangedAt: now,
-    });
-    await ctx.db.insert("tokenLedger", {
-      leadId: args.leadId,
-      delta: -1,
-      reason: "matched_role",
-      applicationId,
-      ...(args.engagementId ? { engagementId: args.engagementId } : {}),
-      at: now,
-      by,
-    });
-    await scheduleMatchNotice(ctx, args.leadId, now);
-    return applicationId;
+    return await sendMatched(ctx, by, args);
   },
 });
 
@@ -1164,6 +1176,19 @@ export const exportForLead = query({
         updatedAt: p.updatedAt,
       })),
       timeZone: lead.timeZone ?? null,
+      // Roles the evening run found for them, waiting, sent or dismissed.
+      foundRoles: (
+        await ctx.db.query("foundRoles").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect()
+      ).map((f) => ({
+        foundOn: f.foundOn,
+        targetTitle: f.targetTitle,
+        employer: f.employer,
+        roleTitle: f.roleTitle,
+        country: f.country,
+        jobUrl: f.jobUrl,
+        matchReason: f.matchReason,
+        status: f.status,
+      })),
       // Cal.com bookings still waiting to be placed, matched by their email.
       unplacedBookings: lead.email
         ? (
