@@ -296,6 +296,14 @@ export interface Coach {
   name: Copy;
   role: Copy;
   summary: Copy;
+  /**
+   * The house narrative's `relevance` slot, cut to the one line a card has room
+   * for: what this person does to a CV like the reader's. Not a title. The
+   * promotional panel on `/pricing` carried `pill` until 12/11/2026 and a lead
+   * has no reason to care that we are founders; `Narrative_System.md` § 4 has
+   * said so all along, in slot 1's own rule.
+   */
+  relevance: Copy;
   pills: readonly Copy[];
   link: Copy;
   pill: Copy;
@@ -311,6 +319,7 @@ export const COACHES: readonly Coach[] = [
     name: { en: "Paul", th: "พอล" },
     role: { en: "Marketing Director in Europe · Founder of PunProfile", th: "Marketing Director ในยุโรป · ผู้ก่อตั้ง PunProfile" },
     summary: { en: "Once a Thai applicant sending CVs into Europe, now the person who reads the CVs that pass the screen and selects people for his team.", th: "เคยเป็นผู้สมัครชาวไทยที่ส่ง CV หางานในยุโรป วันนี้เป็นคนอ่าน CV ที่ผ่านการคัดกรองมาแล้ว และเลือกคนเข้าทีม" },
+    relevance: { en: "Reads the CVs that pass the screen and hires for his team in Europe", th: "อ่าน CV ที่ผ่านการคัดกรองมาแล้ว และเลือกคนเข้าทีมในยุโรป" },
     pills: [
       { en: "Working in Europe since 2016", th: "ทำงานในยุโรปตั้งแต่ปี 2016" },
       { en: "Marketing and MarTech hiring", th: "คัดเลือกคนด้าน Marketing และ MarTech" },
@@ -334,6 +343,7 @@ export const COACHES: readonly Coach[] = [
     name: { en: "Dew", th: "ดิว" },
     role: { en: "Principal Consultant, Executive Search, United States · Co-founder of PunProfile", th: "Principal Consultant ด้าน Executive Search ในสหรัฐอเมริกา · ผู้ร่วมก่อตั้ง PunProfile" },
     summary: { en: "In recruitment and HR for more than 10 years, from Bangkok to the United States, and today selecting CVs to put forward to hiring managers.", th: "ทำงานด้าน recruitment และ HR มากว่า 10 ปี เริ่มจากกรุงเทพฯ จนมาถึงสหรัฐอเมริกา วันนี้เป็นคนคัดเลือก CV เพื่อส่งต่อให้ hiring manager" },
+    relevance: { en: "Selects the CVs that go forward to hiring managers", th: "คัดเลือก CV เพื่อส่งต่อให้ hiring manager" },
     pills: [
       { en: "Recruitment and HR, 10+ years", th: "สาย recruitment และ HR กว่า 10 ปี" },
       { en: "BA Chulalongkorn · MA in HR, US", th: "ป.ตรี จุฬาฯ · ป.โท HR ที่สหรัฐฯ" },

@@ -296,6 +296,14 @@ export interface Coach {
   name: Copy;
   role: Copy;
   summary: Copy;
+  /**
+   * The house narrative's `relevance` slot, cut to the one line a card has room
+   * for: what this person does to a CV like the reader's. Not a title. The
+   * promotional panel on `/pricing` carried `pill` until 12/11/2026 and a lead
+   * has no reason to care that we are founders; `Narrative_System.md` § 4 has
+   * said so all along, in slot 1's own rule.
+   */
+  relevance: Copy;
   pills: readonly Copy[];
   link: Copy;
   pill: Copy;
@@ -311,6 +319,7 @@ export const COACHES: readonly Coach[] = [
     name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLm5hbWU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLm5hbWU:TH%% },
     role: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnJvbGU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnJvbGU:TH%% },
     summary: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN1bW1hcnk:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnN1bW1hcnk:TH%% },
+    relevance: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnJlbGV2YW5jZQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnJlbGV2YW5jZQ:TH%% },
     pills: [
       { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzBd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzBd:TH%% },
       { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzFd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzBdLnBpbGxzWzFd:TH%% },
@@ -334,6 +343,7 @@ export const COACHES: readonly Coach[] = [
     name: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLm5hbWU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLm5hbWU:TH%% },
     role: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnJvbGU:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnJvbGU:TH%% },
     summary: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN1bW1hcnk:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnN1bW1hcnk:TH%% },
+    relevance: { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnJlbGV2YW5jZQ:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnJlbGV2YW5jZQ:TH%% },
     pills: [
       { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnBpbGxzWzBd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnBpbGxzWzBd:TH%% },
       { en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnBpbGxzWzFd:EN%%, th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvYWNoaW5nLnRzOjpDT0FDSEVTWzFdLnBpbGxzWzFd:TH%% },

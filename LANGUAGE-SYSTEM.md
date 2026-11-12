@@ -32102,6 +32102,28 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[0].relevance`
+
+```yaml
+id: "src/lib/content/coaching.ts::COACHES[0].relevance"
+source: "src/lib/content/coaching.ts"
+path: "COACHES[0].relevance"
+render: "Pricing page, the promotional panel: the one line under Paul's name"
+narrative_slot: "proof"
+en: "Reads the CVs that pass the screen and hires for his team in Europe"
+th: "อ่าน CV ที่ผ่านการคัดกรองมาแล้ว และเลือกคนเข้าทีมในยุโรป"
+provenance: "draft"
+date: "12/11/2026"
+term_bindings: []
+decision_note: "Added 12/11/2026, Paul's call: the promotional panel first carried COACHES[n].pill, which is a TITLE line, and a lead has no reason to care that we are founders. The house narrative's own rule is the argument: slot 1 asks for names and what each one actually is, not titles nobody can check, and slot 3 is the bridge, which it calls the only part a reader actually acts on. So this field is that slot compressed to the one line a card has room for: what this person does to a CV like the reader's. Built from Paul's own approved COACHES[0].summary, which already says he reads the CVs that pass the screen and selects people for his team; this is that line cut to what fits one row and given the market. It is deliberately not a new claim — every clause here is already approved somewhere on the site — but the RECOMBINATION is new Thai and is not self-certified. AWAITING A NATIVE VERDICT."
+review:
+  structural_calque: pending
+  text_hash: 9a6f1e00764ede5592842ce99c1e6c78251dbd857c8c13a7952a3e2e1f76500e
+  prompt_version: structural-calque-v1
+  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/coaching.ts::COACHES[0].pills[0]`
 
 ```yaml
@@ -32440,6 +32462,28 @@ review:
   text_hash: 9ff6a7de06a9ebfb18a60b58f4318d7fe12808017923529c7284e90bb05ecc7b
   prompt_version: structural-calque-v1
   basis: Paul approved this item in review on 30/10/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/coaching.ts::COACHES[1].relevance`
+
+```yaml
+id: "src/lib/content/coaching.ts::COACHES[1].relevance"
+source: "src/lib/content/coaching.ts"
+path: "COACHES[1].relevance"
+render: "Pricing page, the promotional panel: the one line under Dew's name"
+narrative_slot: "proof"
+en: "Selects the CVs that go forward to hiring managers"
+th: "คัดเลือก CV เพื่อส่งต่อให้ hiring manager"
+provenance: "draft"
+date: "12/11/2026"
+term_bindings: []
+decision_note: "Added 12/11/2026, Paul's call: the promotional panel first carried COACHES[n].pill, which is a TITLE line, and a lead has no reason to care that we are founders. The house narrative's own rule is the argument: slot 1 asks for names and what each one actually is, not titles nobody can check, and slot 3 is the bridge, which it calls the only part a reader actually acts on. So this field is that slot compressed to the one line a card has room for: what this person does to a CV like the reader's. Built from her approved COACHES[1].summary and pull line, both of which already say she selects the CVs put forward to hiring managers; the Thai is theirs character for character. It named the United States until 12/11/2026, when Paul struck it: the reader is moving to Europe, and a bridge line that names a market the reader is not entering argues against itself, however real the credential. Where she works is biography and stays on /coaching, in who and done. Narrative_System.md section 4 now carries the rule. It is deliberately not a new claim — every clause here is already approved somewhere on the site — but the RECOMBINATION is new Thai and is not self-certified. AWAITING A NATIVE VERDICT."
+review:
+  structural_calque: pending
+  text_hash: 45d1d41acfdd202e06f4bc028cf4e6ba525662ea820d2ad54625694312d06b9c
+  prompt_version: structural-calque-v1
+  basis: "Model-drafted Thai, pending a native pass. Not approved copy."
 ```
 
 <!-- COPY-ENTRY -->
