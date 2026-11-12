@@ -366,6 +366,15 @@
     --color-primary: #163300;
     --color-action: #163300;
     --color-on-action: #e8ebe6;
+    /* `on-brand-orange` is an alias on `ink`, so it followed the scheme: in dark
+       it resolved to `#f2f5ee` and held 1.70 on the orange it is named for. The
+       same bug `ink-deep` had on the lime, in the same place, found 12/11/2026
+       while the promotional ground was being added. Nothing had used the orange
+       as a ground yet, which is the only reason it had never shown. Fixed here
+       rather than left for whoever used it first. `on-canvas-promo` needs no
+       line in this block: it is pinned to this value in both schemes in
+       `design.md`, which is the better fix and the one a new role should take. */
+    --color-on-brand-orange: #163300;
     --color-surface: #ffffff;
     --color-surface-container-lowest: #ffffff;
     /* `btn-contrast` is the button style for exactly these grounds, and it is
