@@ -518,7 +518,7 @@ export const CALC_LEFT_OVER: Copy = {
  */
 export const CALC_NEARLY: Copy = {
   en: "The cheapest set that covers it: {thb} THB would buy only {tokens}.",
-  th: "ชุดแพ็กนี้พอกับการใช้งานของคุณ และถูกที่สุดเท่าที่จะเป็นไปได้ เพราะถ้าจ่าย {thb} บาท จะได้ไม่เกิน {tokens}",
+  th: "ชุดนี้เป็นตัวเลือกที่จ่ายน้อยที่สุดและได้โทเคนพอใช้ หากจ่าย {thb} THB จะได้เพียง {tokens}",
 };
 
 export const CALC_NOTE: Copy = {
