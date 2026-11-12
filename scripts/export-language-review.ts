@@ -74,7 +74,7 @@ ${rows.length} records need a verdict. This file is a review surface, not the so
 ${items || "Nothing is waiting for review.\n"}
 `;
 
-const guard = force ? { safe: true, reasons: [] } : checkOverwrite(out);
+const guard = force ? { safe: true, reasons: [] } : checkOverwrite(out, "review:language");
 if (!guard.safe) {
   console.error(out);
   for (const reason of guard.reasons) console.error(reason);

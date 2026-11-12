@@ -338,7 +338,7 @@ const OUT =
 
 
 const force = process.argv.includes("--force");
-const guard = force ? { safe: true, reasons: [] } : checkOverwrite(OUT);
+const guard = force ? { safe: true, reasons: [] } : checkOverwrite(OUT, "review:page");
 if (!guard.safe) {
   console.error(`
 ${OUT}

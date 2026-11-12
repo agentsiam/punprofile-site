@@ -77,8 +77,12 @@ export interface GuardResult {
  *
  * A file that does not exist is safe. A file with no stamp is not, because it
  * predates this guard and there is no way to know what is in it.
+ *
+ * `regenerate` is the npm script the caller is, so a refusal can print the exact
+ * command that rebuilds the pristine view for comparison. The guard is shared by
+ * two exporters and naming the wrong one sends a reader to the wrong file.
  */
-export function checkOverwrite(path: string): GuardResult {
+export function checkOverwrite(path: string, regenerate: string): GuardResult {
   if (!existsSync(path)) return { safe: true, reasons: [] };
 
   const doc = readFileSync(path, "utf8");
@@ -114,7 +118,18 @@ export function checkOverwrite(path: string): GuardResult {
   }
   reasons.push(
     "  There may also be edits made directly to the quoted strings, which is how",
-    "  Paul reviews. Diff the file against git to see all of them.",
+    "  Paul reviews, and those do not appear in any list above.",
+    "",
+    "  To see every change, regenerate the pristine view to a path that does not",
+    "  exist yet and diff the two. A path that does not exist is never guarded, so",
+    "  this always works and never costs you the edited file:",
+    "",
+    `    npm run ${regenerate} -- "$(mktemp -d)/pristine.md"`,
+    "    diff that file against this one",
+    "",
+    "  Reach for git only if this particular export happens to be tracked. Both",
+    "  review views are untracked or ignored where they land, so a diff against git",
+    "  usually reports nothing and reads as though nothing was edited.",
   );
   return { safe: false, reasons };
 }
