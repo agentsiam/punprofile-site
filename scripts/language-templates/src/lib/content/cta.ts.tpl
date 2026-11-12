@@ -215,9 +215,19 @@ export const DESTINATIONS = {
      * contact asks for it in the same words: the services cards, the coaching
      * page, the FAQ.
      *
-     * The label itself did not change and should not: `คุยกับผม` is what the
-     * person the reader reaches actually says, and a promise in the plural from
-     * whoever picks it up is a promise from a company.
+     * **It went plural on 12/11/2026, Paul's call, and the argument it beat is
+     * worth keeping.** This note used to say the label should stay singular
+     * because `คุยกับผม` is what the person the reader reaches actually says,
+     * and a promise in the plural from whoever picks it up is a promise from a
+     * company. What settled it is that the business answered that argument by
+     * hiring: there are two coaches, and a reader who is answered by Dew was
+     * promised somebody else. The Thai never took a side — `ทักมาคุยกัน` names
+     * no person at all — so the plural is no further from it than the singular.
+     *
+     * The English also stopped saying "Talk to me" the same day, on a UX review
+     * that caught the button naming neither a channel nor a next step. `ทัก` is
+     * *message me* and the English had dropped it, so naming the channel was
+     * the rule below being applied rather than overruled.
      *
      * "คุยกับผม" and not "ติดต่อผม", his revision the same day, and the
      * difference is real. ติดต่อ is what you do to a company, through a form,

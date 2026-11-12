@@ -6006,7 +6006,7 @@ source: src/lib/content/cta.ts
 path: DESTINATIONS.contact.label
 render: Calls to action, DESTINATIONS.contact.label
 narrative_slot: utility
-en: Talk to me
+en: Message us
 th: ทักมาคุยกัน
 provenance: paul-approved
 date: 10/09/2026
@@ -6016,9 +6016,29 @@ decision_note: |-
   No string-local reasoning comment was present at migration.
 
   Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
+
+  The English was "Talk to me" until 12/11/2026, Paul's call on a UX review that
+  caught the button naming neither a channel nor a next step. The Thai is
+  untouched and still approved: ทัก already says message me, and it was the
+  English that had dropped it, so this applies the rule in cta.ts rather than
+  overruling it. The termbase entry contact-talk-to-me carries the same change.
+  Plural the same day, Paul's call. The note above argues for the singular, that
+  a promise in the plural is a promise from a company; the business answered
+  that argument by hiring, and a reader who gets a reply from Dew was promised
+  somebody else. The Thai takes no side and never did: ทักมาคุยกัน names no
+  person, so the plural sits no further from it than the singular did.
+
+  The singular is still spoken elsewhere on the site, by the house rather than
+  by the reader: FAQ_INTRO says message me and ask, the pricing limits say if
+  you want me to help with your CV, and coaching's METHOD_HEADING says before I
+  give you advice. They are not wrong, but they no longer agree with this
+  button, and the sweep is a separate decision.
+
+  The verdict is pending because the PAIR is what a structural-calque pass
+  reads, and the English half of it is new.
 review:
-  structural_calque: pass
-  text_hash: d88d225019bf784b4fc0747ec74b4c895faacbeb1fb3337f9e2aa37bc58da340
+  structural_calque: pending
+  text_hash: 73a70e34ec0484da773da6209f7cfecfd16c3ac2cdde7dca709d82220da2c9aa
   prompt_version: structural-calque-v1
   basis: Paul approved this item through the consolidated language review on 10/09/2026.
 ```

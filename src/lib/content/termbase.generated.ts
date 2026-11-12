@@ -470,7 +470,7 @@ export const TERMBASE: Termbase = {
     },
     {
       "id": "contact-talk-to-me",
-      "en": "Talk to me",
+      "en": "Message us",
       "th": [
         "ทักมาคุยกัน"
       ],
@@ -484,7 +484,7 @@ export const TERMBASE: Termbase = {
       "fixed": true,
       "rule": "LR-08",
       "decided": "23/08/2026",
-      "why": "Was คุยกับผม from 14/08/2026 to 23/08/2026. Paul changed it on the pricing review sheet, and the reasoning that survives the change is the half that was never about person: ติดต่อ is what you do to a company, through a form. คุย is what two people do, and it is the promise the page makes, a conversation rather than a ticket. ติดต่อเรา stays on the menu item deliberately, same reasoning inverted.\nWhat changed is ผม. The label no longer names who is on the other side, and that follows the site: the app now sells self-serve products with prices on them, so a button that promises one named person is promising something the packs do not. ทักมาคุยกัน also restores Paul's own collocation, which takes มา and กัน; ชวนคุย and คุยฟรี are the clipped forms that keep going wrong.\n"
+      "why": "Plural since 12/11/2026, Paul's call, and it is the second half of the same change. The note below argues for the singular, that a promise in the plural is a promise from a company; the business answered that by having two coaches, and a reader who is messaged back by Dew was promised someone else. The Thai never took a side: ทักมาคุยกัน names no person at all, so the plural is no further from it than the singular was.\nThe English was \"Talk to me\" until 12/11/2026, Paul's call on a UX review that caught the button naming no channel and no next step. The Thai did not change and does not need to: ทัก already says message me, and it was the English that had dropped it. The rule in cta.ts is that the English follows the Thai, so this is that rule being applied rather than overruled. The next step is a conversation on LINE or by email, never a checkout, and the label now says which of the two things it is.\nWas คุยกับผม from 14/08/2026 to 23/08/2026. Paul changed it on the pricing review sheet, and the reasoning that survives the change is the half that was never about person: ติดต่อ is what you do to a company, through a form. คุย is what two people do, and it is the promise the page makes, a conversation rather than a ticket. ติดต่อเรา stays on the menu item deliberately, same reasoning inverted.\nWhat changed is ผม. The label no longer names who is on the other side, and that follows the site: the app now sells self-serve products with prices on them, so a button that promises one named person is promising something the packs do not. ทักมาคุยกัน also restores Paul's own collocation, which takes มา and กัน; ชวนคุย and คุยฟรี are the clipped forms that keep going wrong.\n"
     }
   ],
   "person": {
@@ -494,7 +494,7 @@ export const TERMBASE: Termbase = {
     "reader": "คุณ",
     "why": "เรา for the brand in broadcast copy, ผม in 1:1 messages where a brand plural reads evasive, คุณ for the reader always and stated rather than implied. The contact button คุยกับผม is first person on an app surface on purpose: it is the one string that opens a 1:1, so it speaks in the register of what it starts. Listed in `terms` above rather than treated as a person violation.\n"
   },
-  "sourceHash": "554c11bf57d5ab24"
+  "sourceHash": "ac58a0a43fbe112a"
 } as const;
 
 export const TERMS = TERMBASE.terms;
