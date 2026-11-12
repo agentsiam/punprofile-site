@@ -13,6 +13,10 @@
  */
 
 const GROUND = {
+  // A warm off-white page was tried here on 12/11/2026, from a UX review, and
+  // taken out the same day: `canvas-warm` for the band with `canvas` left pure
+  // white for the cards. It worked and it was not wanted. The page is white,
+  // which is the first line of `design.md`.
   canvas: "bg-canvas",
   soft: "bg-canvas-soft",
   brand: "bg-canvas-brand ground-fixed",
