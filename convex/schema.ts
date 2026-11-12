@@ -1011,6 +1011,18 @@ export default defineSchema({
     /** When the email telling the candidate about this matched role went.
      *  @absent notyet — not a matched role, or its notice has not gone */
     notifiedAt: v.optional(v.number()),
+    /** The capability in the matched-role email's like and dislike links.
+     *  Random, unguessable, and it can do one thing: set the verdict below.
+     *  @absent notyet — not a matched role, or its notice has not been built */
+    feedbackToken: v.optional(v.string()),
+    /** The candidate's own verdict on a matched role, from the email.
+     *  @absent none — not given */
+    candidateVerdict: v.optional(v.union(v.literal("up"), v.literal("down"))),
+    /** @absent none — only present alongside a verdict */
+    candidateVerdictAt: v.optional(v.number()),
+    /** Why the role missed, one of `MATCH_FEEDBACK_REASONS` in
+     *  `src/lib/content/matchFeedback.ts`. @absent none — no reason picked */
+    candidateVerdictReason: v.optional(v.string()),
     /** How much the candidate wants this one, 1 to 5, their own mark. Teal's
      *  "excitement" column. @absent none — not marked */
     excitement: v.optional(v.number()),
@@ -1062,7 +1074,8 @@ export default defineSchema({
     ),
   })
     .index("by_lead_time", ["leadId", "savedAt"])
-    .index("by_lead_status", ["leadId", "status", "statusChangedAt"]),
+    .index("by_lead_status", ["leadId", "status", "statusChangedAt"])
+    .index("by_feedback_token", ["feedbackToken"]),
 
   /**
    * The outcome the whole business is measured on.
