@@ -22515,7 +22515,7 @@ review:
   structural_calque: pass
   text_hash: 24b25f28b280f52ad6f9332d4e17428ab5fe5eb32b80b15e72a88f9bad8a5f36
   prompt_version: structural-calque-v1
-  basis: "Paul's own wording, written on entry 7 of the review sheet and confirmed as his in chat on 12/11/2026. Recorded as pass under the rule that Paul's wording or amendment is authoritative and may be recorded as pass without a second native review. The three failed model versions and the two contradicting judge readings are preserved in the decision note; none of them judged this text."
+  basis: "Paul's own wording for this record, src/lib/content/pricing.ts::CALC_NEARLY, written on the review sheet and confirmed as his in chat on 12/11/2026. The sheet position it was first cited by is gone; the decision note says why a position is not citable. Recorded as pass under the rule that Paul's wording or amendment is authoritative and may be recorded as pass without a second native review. The three failed model versions and the two contradicting judge readings are preserved in the decision note; none of them judged this text."
 ```
 
 <!-- COPY-ENTRY -->
