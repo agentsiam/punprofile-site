@@ -192,6 +192,7 @@ export function renderMarketingEmail(args: {
 <style>
   @media only screen and (max-width:480px) {
     .stack { display:block !important; width:100% !important; max-width:100% !important; padding:0 0 20px 0 !important; }
+    .stack img { width:100% !important; max-width:100% !important; }
   }
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&display=swap">
