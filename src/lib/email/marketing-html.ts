@@ -60,6 +60,7 @@ function token(name: string): string {
 const CANVAS = token("canvas");
 const CANVAS_SOFT = token("canvas-soft");
 const CANVAS_DARK = token("canvas-dark");
+const CANVAS_BRAND = token("canvas-brand");
 const ON_CANVAS_DARK = token("on-canvas-dark");
 const INK_DEEP = token("ink-deep");
 const PRIMARY = token("primary");
@@ -78,6 +79,13 @@ const ON_PRIMARY = token("on-primary");
  * wide and shown at 160, so it stays sharp on a retina screen.
  */
 const LOGO = "https://punprofile.app/punprofile-logo-email-reversed.png";
+
+/**
+ * The same wordmark in black, for the lime banner at the top. Lime is a fill and
+ * never carries type, so the mark on it is the dark one; `design.md` puts
+ * `ink-deep` on `canvas-brand` for exactly this reason.
+ */
+const LOGO_DARK = "https://punprofile.app/punprofile-logo-email.png";
 
 const FONT =
   "Anuphan, 'Noto Sans Thai', 'Sukhumvit Set', 'Leelawadee UI', Thonburi, " +
@@ -99,7 +107,7 @@ const P = `margin:0 0 20px;font-family:${FONT};font-size:18px;line-height:32px;c
  * its label, which is why the copy puts the invitation on its own line. The
  * last paragraph is the sign-off and is set quieter.
  */
-function blocks(body: string): string {
+function blocks(body: string, image?: { src: string; alt: string }): string {
   const paragraphs = body.trim().split(/\n\s*\n/);
   return paragraphs
     .map((paragraph, index) => {
@@ -110,12 +118,22 @@ function blocks(body: string): string {
         const href = lines[urlAt];
         const label = lines[urlAt - 1] ?? href;
         const before = lines.slice(0, Math.max(0, urlAt - 1));
-        return `${before.map((l) => `<p style="${P}">${escape(l)}</p>`).join("")}
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 28px;">
-            <tr><td style="border-radius:9999px;background:${PRIMARY};">
-              <a href="${escape(href)}" style="display:inline-block;padding:13px 28px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${ON_PRIMARY};text-decoration:none;">${escape(label)}</a>
-            </td></tr>
-          </table>`;
+        const pill = `<table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr><td style="border-radius:9999px;background:${PRIMARY};">
+                <a href="${escape(href)}" style="display:inline-block;padding:13px 28px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${ON_PRIMARY};text-decoration:none;">${escape(label)}</a>
+              </td></tr>
+            </table>`;
+        const ask = image
+          ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 28px;">
+              <tr>
+                <td class="stack" width="236" valign="middle" style="width:236px;padding:0 20px 0 0;">
+                  <img src="${escape(image.src)}" alt="${escape(image.alt)}" width="236" style="display:block;width:100%;max-width:236px;height:auto;border-radius:20px;border:0;">
+                </td>
+                <td class="stack" valign="middle">${pill}</td>
+              </tr>
+            </table>`
+          : `<div style="margin:8px 0 28px;">${pill}</div>`;
+        return `${before.map((l) => `<p style="${P}">${escape(l)}</p>`).join("")}${ask}`;
       }
 
       if (index === paragraphs.length - 1) {
@@ -141,6 +159,17 @@ export function renderMarketingEmail(args: {
    */
   channels?: { label: string; href: string }[];
   /**
+   * The second ask, under the article's own. Quieter by construction: a white
+   * card like the first but shorter, and an outlined pill rather than a lime
+   * one, because `design.md` keeps lime as the single thing that reads as
+   * pressable and a second lime fill would make the email ask twice at equal
+   * volume. It carries no price: a price restated in an email is a second place
+   * for a stale number to live, so the card points at the page that owns it.
+   */
+  offer?: { title: string; body: string; ctaLabel: string; href: string };
+  /** The one way to reach a person, on the channel the business publishes. */
+  contact?: { label: string; href: string };
+  /**
    * The article's own image, at a public URL, with the alt text that already
    * describes it. Optional: an email that announces nothing visual does not
    * need one, and a broken image is worse than no image.
@@ -160,6 +189,11 @@ export function renderMarketingEmail(args: {
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
 <title>${escape(args.subject)}</title>
+<style>
+  @media only screen and (max-width:480px) {
+    .stack { display:block !important; width:100% !important; max-width:100% !important; padding:0 0 20px 0 !important; }
+  }
+</style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&display=swap">
 </head>
 <body style="margin:0;padding:0;background:${CANVAS_SOFT};">
@@ -168,23 +202,49 @@ export function renderMarketingEmail(args: {
   <tr><td align="center" style="padding:32px 16px;">
 
     <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
-      <tr><td style="padding:0 8px 20px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;letter-spacing:0.1px;color:${INK_DEEP};">PunProfile</td></tr>
-
-      <tr><td style="background:${CANVAS};border-radius:30px;padding:${args.image ? "32px 32px 48px" : "48px 32px"};">
-        ${
-          args.image
-            ? `<img src="${escape(args.image.src)}" alt="${escape(args.image.alt)}" width="536" style="display:block;width:100%;max-width:536px;height:auto;border-radius:20px;margin:0 0 32px;">`
-            : ""
-        }
-        ${blocks(args.body)}
+      <tr><td style="background:${CANVAS_BRAND};border-radius:30px;padding:28px 32px;">
+        <a href="https://punprofile.app" style="display:inline-block;text-decoration:none;">
+          <img src="${LOGO_DARK}" alt="PunProfile" width="150" style="display:block;width:150px;max-width:150px;height:auto;border:0;">
+        </a>
       </td></tr>
 
       <tr><td style="height:16px;line-height:16px;font-size:0;">&nbsp;</td></tr>
+
+      <tr><td style="background:${CANVAS};border-radius:30px;padding:48px 32px;">
+        ${blocks(args.body, args.image)}
+      </td></tr>
+
+      <tr><td style="height:16px;line-height:16px;font-size:0;">&nbsp;</td></tr>
+
+      ${
+        args.offer
+          ? `<tr><td style="background:${CANVAS};border-radius:30px;padding:32px;">
+        <p style="margin:0 0 6px;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${INK_DEEP};">${escape(args.offer.title)}</p>
+        <p style="margin:0 0 20px;font-family:${FONT};font-size:18px;line-height:32px;color:${INK_DEEP};">${escape(args.offer.body)}</p>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+          <tr><td style="border-radius:9999px;border:1px solid ${INK_DEEP};">
+            <a href="${escape(args.offer.href)}" style="display:inline-block;padding:12px 26px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${INK_DEEP};text-decoration:none;">${escape(args.offer.ctaLabel)}</a>
+          </td></tr>
+        </table>
+      </td></tr>
+
+      <tr><td style="height:16px;line-height:16px;font-size:0;">&nbsp;</td></tr>`
+          : ""
+      }
 
       <tr><td style="background:${CANVAS_DARK};border-radius:40px;padding:32px;">
         <a href="https://punprofile.app" style="display:inline-block;text-decoration:none;">
           <img src="${LOGO}" alt="PunProfile" width="160" style="display:block;width:160px;max-width:160px;height:auto;border:0;">
         </a>
+        ${
+          args.contact
+            ? `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:24px 0 0;">
+                <tr><td style="border-radius:9999px;background:${PRIMARY};">
+                  <a href="${escape(args.contact.href)}" style="display:inline-block;padding:12px 26px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${ON_PRIMARY};text-decoration:none;">${escape(args.contact.label)}</a>
+                </td></tr>
+              </table>`
+            : ""
+        }
         ${
           channels.length > 0
             ? `<p style="margin:24px 0 0;font-family:${FONT};font-size:14px;line-height:22px;color:${ON_CANVAS_DARK};">${channels
