@@ -28,6 +28,7 @@ Copy `.env.example` to `.env.local` and fill in real values. See
 | `NEXT_PUBLIC_CONVEX_URL` | Next.js client | Convex deployment URL, public/safe for client. Set by `npx convex dev`. |
 | `CONVEX_DEPLOY_KEY` | CI/CD (Vercel build) | Server-only, used for `npx convex deploy`. |
 | `RESEND_API_KEY` | Convex environment (`npx convex env set`) | Never exposed to the client — email actions run in Convex, not Next.js. |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Next.js client | Google Analytics 4. Unset means no tag. Inlined at build time, so a change on Vercel needs a deploy. See `src/lib/analytics.ts`. |
 | `NEXT_PUBLIC_POSTHOG_KEY` / `NEXT_PUBLIC_POSTHOG_HOST` | Next.js client | Analytics; must be configured to exclude PII (see PRD § 2 Security). |
 | `NEXT_PUBLIC_SENTRY_DSN` | Next.js client/server/edge | Error tracking. |
 | `SENTRY_AUTH_TOKEN` | Build time only | Source map upload; not needed at runtime. |

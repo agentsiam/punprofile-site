@@ -197,13 +197,22 @@ export default function AssessPage() {
   const session = useQuery(api.leads.getSession, leadId ? { leadId } : "skip");
 
   // Always a new session. Nothing about the candidate is stored on their
-  // device: no cookie, no localStorage, no identifier of any kind before they
-  // have consented to anything.
+  // device: no cookie, no localStorage, no identifier of any kind that this
+  // flow could read back.
   //
   // US-001's acceptance criteria require this in as many words: closing the tab
   // mid-flow without giving an email must leave no recoverable lead. Resume is
   // the magic link's job (FR-011), and that only exists once an email and its
   // consent do.
+  //
+  // Narrowed from "no identifier of any kind before they have consented to
+  // anything" on 03/11/2026, when Paul granted GA4 the analytics cookie. Once
+  // the privacy notice names that cookie and `PRIVACY_COVERS_ANALYTICS` is
+  // flipped, `_ga` is written on this page like any other. It is Google's own
+  // client ID, nothing here reads it, and it is attached to no lead, so the
+  // acceptance criterion above still holds: a half-finished assessment is still
+  // not recoverable by anyone. The sentence it replaces would simply have been
+  // untrue, which is worse than narrower.
   useEffect(() => {
     // A rejection here is usually the rate limit (TASK-039) or a dropped
     // connection. Without this the promise fails silently and the candidate

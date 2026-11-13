@@ -39148,3 +39148,157 @@ review:
   prompt_version: structural-calque-v1
   basis: "Thai editorial review on 13/11/2026. Keep เหตุผลอื่น. It is a concise final option under a question that asks for a reason. Pending Paul's read-back. Paul accepted this on 13/11/2026 on the recommendation of a Codex language check that read all 25 pending records and advised keeping the Thai already on the record here. His acceptance is the verdict. No native reader has read this Thai, which is why provenance is paul-approved and not paul-written and the record stays outside the golden-th corpus."
 ```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/cookie-consent.ts::COOKIE_CONSENT.body`
+
+```yaml
+id: "src/lib/content/cookie-consent.ts::COOKIE_CONSENT.body"
+source: "src/lib/content/cookie-consent.ts"
+path: "COOKIE_CONSENT.body"
+render: "Cookie banner, the ask"
+narrative_slot: "utility"
+en: "PunProfile uses Google Analytics cookies to count visits, to see which pages people open, and to see which job posts bring them to the site. These cookies are not used for advertising, and the site works normally if you do not allow analytics cookies. You can change your settings at any time."
+th: "PunProfile ใช้คุกกี้ Google Analytics เพื่อนับการเข้าชม ดูว่าผู้เข้าชมเปิดหน้าใด และดูว่าประกาศงานใดพาผู้เข้าชมมาที่เว็บไซต์ คุกกี้เหล่านี้ไม่ใช้เพื่อโฆษณา และคุณใช้งานเว็บไซต์ได้ตามปกติแม้ไม่อนุญาตให้ใช้คุกกี้วิเคราะห์ คุณเปลี่ยนการตั้งค่าได้ทุกเมื่อ"
+provenance: "paul-written"
+date: "04/11/2026"
+term_bindings: []
+decision_note: "Drafted by Claude 04/11/2026 for the cookie consent banner. Paul rewrote the Thai in his review pass the same day and the English was brought into parallel with it: the refusal is now named as analytics cookies rather than cookies in general, the site is said to work normally without them rather than not to need them, and the reader changes a setting rather than an answer."
+review:
+  structural_calque: "pass"
+  text_hash: "6c006f73bfacfd331a3b8dfd26d97eccdb09f2cca3e55cf1a7ddb1745283dd2e"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/cookie-consent.ts::COOKIE_CONSENT.accept`
+
+```yaml
+id: "src/lib/content/cookie-consent.ts::COOKIE_CONSENT.accept"
+source: "src/lib/content/cookie-consent.ts"
+path: "COOKIE_CONSENT.accept"
+render: "Cookie banner, the filled answer"
+narrative_slot: "utility"
+en: "Allow analytics cookies"
+th: "อนุญาตคุกกี้วิเคราะห์"
+provenance: "paul-written"
+date: "04/11/2026"
+term_bindings: []
+decision_note: "Drafted by Claude 04/11/2026 as the banner's filled answer. Paul rewrote the Thai in his review pass the same day, naming analytics cookies rather than cookies in general, and the English follows it. It is the same size and shape as the refusal beside it, which is what makes the consent freely given."
+review:
+  structural_calque: "pass"
+  text_hash: "98fa8521a591fd1d36fe1419044458477ce645a96550abfcbe679d28fe5639ad"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/cookie-consent.ts::COOKIE_CONSENT.reject`
+
+```yaml
+id: "src/lib/content/cookie-consent.ts::COOKIE_CONSENT.reject"
+source: "src/lib/content/cookie-consent.ts"
+path: "COOKIE_CONSENT.reject"
+render: "Cookie banner, the outlined answer, same size as the filled one"
+narrative_slot: "utility"
+en: "Do not allow analytics cookies"
+th: "ไม่อนุญาตคุกกี้วิเคราะห์"
+provenance: "paul-written"
+date: "04/11/2026"
+term_bindings: []
+decision_note: "Drafted by Claude 04/11/2026 as the banner's outlined answer. Paul rewrote the Thai in his review pass the same day, naming analytics cookies rather than cookies in general, and the English follows it. Same height, padding, shape and type as the acceptance."
+review:
+  structural_calque: "pass"
+  text_hash: "2e83d255596b8460526f3762925dfd2a094b02f06ea93f99795ace7c3fad384f"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/cookie-consent.ts::COOKIE_CONSENT.settings`
+
+```yaml
+id: "src/lib/content/cookie-consent.ts::COOKIE_CONSENT.settings"
+source: "src/lib/content/cookie-consent.ts"
+path: "COOKIE_CONSENT.settings"
+render: "Site footer, beside the privacy link, and the way back to the choice"
+narrative_slot: "utility"
+en: "Cookie settings"
+th: "การตั้งค่าคุกกี้"
+provenance: "paul-approved"
+date: "04/11/2026"
+term_bindings: []
+decision_note: "Drafted by Claude 04/11/2026 for the footer control that reopens the cookie choice. Paul ticked it unchanged in his review pass the same day. It is the wording his revision of the device paragraph then quotes, so the notice and the control name the same thing."
+review:
+  structural_calque: "pass"
+  text_hash: "48a503f51b48d9efdcd9b2fb9acc6284d1b0be632523d82d06fc511657e93994"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul approved this item unchanged on 04/11/2026."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].body[1]`
+
+```yaml
+id: "src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].body[1]"
+source: "src/lib/content/privacy.ts"
+path: "PRIVACY_SECTIONS[6].body[1]"
+render: "Privacy notice, what is stored on your device, from the deploy that turns the cookie banner on"
+narrative_slot: "utility"
+en: "When you sign in to your Job Search Dashboard as a paying candidate, PunProfile uses a cookie to keep you signed in, and deletes it when you sign out. If you allow analytics cookies, Google Analytics records two cookies on your device, to count visits, to see which pages visitors open, and to see which job posts brought them to the site. These cookies record numbers the system generates, not anything you typed, and they are not used for advertising. They expire 400 days after your last visit. You can refuse them or change the setting at any time, from Cookie settings at the foot of every page. If you refuse, PunProfile deletes the analytics cookies from your device. The site also stores the language you chose, Thai or English."
+th: "เมื่อคุณเข้าสู่ระบบแดชบอร์ดหางานในฐานะลูกค้าที่ชำระค่าบริการแล้ว PunProfile จะใช้คุกกี้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ หากคุณอนุญาตให้ใช้คุกกี้วิเคราะห์ Google Analytics จะบันทึกคุกกี้ 2 รายการบนอุปกรณ์ของคุณ เพื่อนับการเข้าชม ดูว่าผู้เข้าชมเปิดหน้าใด และดูว่าประกาศงานใดพาผู้เข้าชมมาที่เว็บไซต์ คุกกี้เหล่านี้บันทึกตัวเลขที่ระบบสร้างขึ้น ไม่ใช่ข้อความที่คุณกรอก และไม่ใช้เพื่อโฆษณา คุกกี้จะหมดอายุ 400 วันหลังการเข้าชมครั้งล่าสุด คุณปฏิเสธหรือเปลี่ยนการตั้งค่าได้ทุกเมื่อที่เมนู «การตั้งค่าคุกกี้» ด้านล่างของทุกหน้า หากคุณปฏิเสธ PunProfile จะลบคุกกี้วิเคราะห์ออกจากอุปกรณ์ เว็บไซต์ยังบันทึกภาษาที่คุณเลือกไว้ คือภาษาไทยหรือภาษาอังกฤษ"
+provenance: "paul-written"
+date: "04/11/2026"
+term_bindings: []
+decision_note: "The device paragraph as it reads once the cookie banner is on; body[0] stays the text for every deploy before that. Paul rewrote the Thai in his review pass of 04/11/2026 and told the English to follow it, which it now does. Two categorical claims went: that nothing on the device identifies the reader, and that the language choice is the only other thing stored. Both were true of the old paragraph and neither survives a device that also holds analytics cookies and the record of the cookie answer itself. 400 days is measured in Chrome and renewed on every visit, not Google's documented two-year default, which Chrome caps. His note asks for three checks before publishing: whether the consent choice is itself stored, the 400-day expiry, and the deletion behaviour. The expiry and the deletion are measured and hold. The consent choice is stored, in a cookie named pp_analytics_consent that lasts six months, and this paragraph does not yet name it."
+review:
+  structural_calque: "pass"
+  text_hash: "51fa4c889ab158b719c6230b2cb7310ee5531c1de3f5cb199b9438ab2ce1b9e9"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[8]`
+
+```yaml
+id: "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[8]"
+source: "src/lib/content/privacy.ts"
+path: "PRIVACY_SECTIONS[5].body[8]"
+render: "Privacy notice, the recipients list, from the deploy that turns the cookie banner on"
+narrative_slot: "utility"
+en: "- Google Analytics, the website analysis service PunProfile uses, which processes the data on Google's systems outside Thailand. Whether or not you allow analytics cookies, Google receives information about the pages you open, the link that brought you to the site, and basic details of your browser and device. If you allow analytics cookies, Google can recognise your browser when you come back. Google does not receive your name, your contact details or your answers."
+th: "- Google Analytics เป็นบริการวิเคราะห์เว็บไซต์ที่ PunProfile ใช้ โดยประมวลผลข้อมูลบนระบบของ Google นอกประเทศไทย ไม่ว่าคุณจะอนุญาตให้ใช้คุกกี้วิเคราะห์หรือไม่ Google จะได้รับข้อมูลเกี่ยวกับหน้าที่คุณเปิด ลิงก์ที่พาคุณมาที่เว็บไซต์ และข้อมูลพื้นฐานของเบราว์เซอร์และอุปกรณ์ หากคุณอนุญาตให้ใช้คุกกี้วิเคราะห์ Google จะสามารถจดจำเบราว์เซอร์ของคุณเมื่อคุณกลับมาใช้งานอีกครั้ง Google ไม่ได้รับชื่อ ข้อมูลติดต่อ หรือคำตอบของคุณ"
+provenance: "paul-written"
+date: "04/11/2026"
+term_bindings: []
+decision_note: "The recipients line as it reads once the cookie banner is on. Paul rewrote the Thai in his review pass of 04/11/2026 and the English follows it. His note asks for three checks before publishing: the requests made when analytics cookies are refused, the transfer location, and the data exclusions. Refused, the tag still posts one cookieless page view carrying the URL, the title, the browser and device hints and a number it does not store, so the line's claim that Google is told this either way is measured and holds. The exclusions hold too: nothing in this repo sends event properties, the page URL is the only content field, and the unsubscribe token is redacted out of it. The transfer location is not verified and is not claimed: the browser posts to region1.google-analytics.com, which is routing rather than a storage location, so the line says only that it leaves Thailand."
+review:
+  structural_calque: "pass"
+  text_hash: "b070679e74bbc8b706176fd27404479c451fdc157e2fd895a8a2c7cd889eb804"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].body[2]`
+
+```yaml
+id: "src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].body[2]"
+source: "src/lib/content/privacy.ts"
+path: "PRIVACY_SECTIONS[6].body[2]"
+render: "Privacy notice, what is stored on your device, the second paragraph, from the deploy that turns the cookie banner on"
+narrative_slot: "utility"
+en: "PunProfile keeps your analytics cookie setting on your device, so you are not asked again every time you open a new page. It records only whether you allowed analytics cookies. The setting is kept for six months, after which PunProfile asks you to choose again."
+th: "PunProfile จะบันทึกการตั้งค่าคุกกี้วิเคราะห์ไว้บนอุปกรณ์ของคุณ เพื่อไม่ต้องถามซ้ำทุกครั้งที่เปิดหน้าใหม่ โดยบันทึกเพียงว่าคุณอนุญาตให้ใช้คุกกี้วิเคราะห์หรือไม่ การตั้งค่านี้จะเก็บไว้ 6 เดือน หลังจากนั้น PunProfile จะขอให้คุณเลือกอีกครั้ง"
+provenance: "paul-written"
+date: "04/11/2026"
+term_bindings: []
+decision_note: "Drafted by Claude 04/11/2026 on Paul's call, after his review of the paragraph above asked whether the consent choice is itself stored. It is: one cookie holding granted or denied, 182 days, written only by the banner. Its own paragraph rather than a sentence inside his, so his wording and its verdict are not disturbed. Paul rewrote the Thai the same day and the English was brought into parallel with it: PunProfile is the one doing the keeping rather than the answer keeping itself, it is the setting rather than the answer, the repetition it avoids is per page opened, and at six months PunProfile asks the reader to choose again rather than merely asking. The technical cookie name is left out to match a notice that names no other cookie either. Rendered only while PRIVACY_COVERS_ANALYTICS is true, since nothing writes the cookie before the banner exists."
+review:
+  structural_calque: "pass"
+  text_hash: "1c8776a30f0a022f55a2b9214cf9b906fae73facc40d95a7fb478a915aec382a"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
