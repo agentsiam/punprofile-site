@@ -185,6 +185,14 @@ export function renderMarketingEmail(args: {
      * because orange looked next.
      */
     tint: "cyan" | "orange";
+    /**
+     * Optional thumbnail, beside the words rather than above them. A reel's own
+     * frame is 9:16, and a 9:16 image at card width is nearly a screen tall,
+     * which is the fault the article hero already had. So the frame is cropped
+     * to 4:5 before it gets here and shown at 160px, and it stacks on a phone
+     * through the same media query the article's call to action uses.
+     */
+    image?: { src: string; alt: string };
   }[];
   /** The one way to reach a person, on the channel the business publishes. */
   contact?: { label: string; href: string };
@@ -271,14 +279,27 @@ export function renderMarketingEmail(args: {
         .map((card) => {
           const ground = card.tint === "orange" ? ORANGE_PALE : CYAN_PALE;
           const ink = card.tint === "orange" ? ON_ORANGE_PALE : ON_CYAN_PALE;
-          return `<tr><td style="background:${ground};border-radius:30px;padding:32px;">
-        <p style="margin:0 0 6px;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${ink};">${escape(card.title)}</p>
+          const words = `<p style="margin:0 0 6px;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${ink};">${escape(card.title)}</p>
         <p style="margin:0 0 20px;font-family:${FONT};font-size:18px;line-height:32px;color:${ink};">${escape(card.body)}</p>
         <table role="presentation" cellpadding="0" cellspacing="0" border="0">
           <tr><td style="border-radius:9999px;border:1px solid ${ink};">
             <a href="${escape(card.href)}" style="display:inline-block;padding:12px 26px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${ink};text-decoration:none;">${escape(card.ctaLabel)}</a>
           </td></tr>
-        </table>
+        </table>`;
+          const inner = card.image
+            ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="stack" width="160" valign="top" style="width:160px;padding:0 20px 0 0;">
+                    <a href="${escape(card.href)}" style="display:block;text-decoration:none;">
+                      <img src="${escape(card.image.src)}" alt="${escape(card.image.alt)}" width="160" style="display:block;width:100%;max-width:160px;height:auto;border-radius:16px;border:0;">
+                    </a>
+                  </td>
+                  <td class="stack" valign="top">${words}</td>
+                </tr>
+              </table>`
+            : words;
+          return `<tr><td style="background:${ground};border-radius:30px;padding:32px;">
+        ${inner}
       </td></tr>
 
       <tr><td style="height:16px;line-height:16px;font-size:0;">&nbsp;</td></tr>`;
