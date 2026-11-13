@@ -203,9 +203,9 @@ export function renderMarketingEmail(args: {
   <tr><td align="center" style="padding:32px 16px;">
 
     <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
-      <tr><td style="background:${CANVAS_BRAND};border-radius:30px;padding:28px 32px;">
+      <tr><td align="center" style="background:${CANVAS_BRAND};border-radius:30px;padding:28px 32px;text-align:center;">
         <a href="https://punprofile.app" style="display:inline-block;text-decoration:none;">
-          <img src="${LOGO_DARK}" alt="PunProfile" width="150" style="display:block;width:150px;max-width:150px;height:auto;border:0;">
+          <img src="${LOGO_DARK}" alt="PunProfile" width="150" style="display:block;width:150px;max-width:150px;height:auto;border:0;margin:0 auto;">
         </a>
       </td></tr>
 
