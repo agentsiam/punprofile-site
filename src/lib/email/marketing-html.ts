@@ -170,11 +170,17 @@ export function renderMarketingEmail(args: {
   /** The one way to reach a person, on the channel the business publishes. */
   contact?: { label: string; href: string };
   /**
-   * The newsletter's own name, under the wordmark in the banner. Live text and
-   * never part of the banner image: a client that blocks images would take the
-   * title with it, and the title is the thing that says this arrives again.
+   * The newsletter's own name and the issue's date, under the wordmark in the
+   * banner. Live text and never part of the banner image: a client that blocks
+   * images would take the title with it, and the title is the thing that says
+   * this arrives again.
+   *
+   * The date is what turns a title into an issue. A masthead without one reads
+   * as a template; with one it reads as the thirteenth of something, which is
+   * the whole claim a newsletter makes. Its wording is handed in, because how a
+   * Thai date is written is a copy decision and not this file's to take.
    */
-  masthead?: string;
+  masthead?: { name: string; date?: string };
   /**
    * The article's own image, at a public URL, with the alt text that already
    * describes it. Optional: an email that announces nothing visual does not
@@ -215,7 +221,11 @@ export function renderMarketingEmail(args: {
         </a>
         ${
           args.masthead
-            ? `<p class="masthead" style="margin:14px 0 0;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${ON_PRIMARY};text-align:center;">${escape(args.masthead)}</p>`
+            ? `<p class="masthead" style="margin:14px 0 0;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${ON_PRIMARY};text-align:center;">${escape(args.masthead.name)}</p>${
+                args.masthead.date
+                  ? `<p style="margin:2px 0 0;font-family:${FONT};font-size:14px;line-height:22px;color:${ON_PRIMARY};text-align:center;opacity:0.75;">${escape(args.masthead.date)}</p>`
+                  : ""
+              }`
             : ""
         }
       </td></tr>
