@@ -60,9 +60,10 @@ function token(name: string): string {
 const CANVAS = token("canvas");
 const CANVAS_SOFT = token("canvas-soft");
 const CANVAS_DARK = token("canvas-dark");
-const CANVAS_BRAND = token("canvas-brand");
+const LINE = token("line");
 const ON_CANVAS_DARK = token("on-canvas-dark");
 const INK_DEEP = token("ink-deep");
+const MUTE_STRONG = token("mute-strong");
 const PRIMARY = token("primary");
 const ON_PRIMARY = token("on-primary");
 
@@ -215,22 +216,28 @@ export function renderMarketingEmail(args: {
   <tr><td align="center" style="padding:32px 16px;">
 
     <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
-      <tr><td align="center" style="background:${CANVAS_BRAND};border-radius:30px;padding:28px 32px;text-align:center;">
-        <a href="https://punprofile.app" style="display:inline-block;text-decoration:none;">
-          <img src="${LOGO_DARK}" alt="PunProfile" width="150" style="display:block;width:150px;max-width:150px;height:auto;border:0;margin:0 auto;">
-        </a>
-        ${
-          args.masthead
-            ? `<p class="masthead" style="margin:14px 0 0;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${ON_PRIMARY};text-align:center;">${escape(args.masthead.name)}</p>${
-                args.masthead.date
-                  ? `<p style="margin:2px 0 0;font-family:${FONT};font-size:14px;line-height:22px;color:${ON_PRIMARY};text-align:center;opacity:0.75;">${escape(args.masthead.date)}</p>`
+      <tr><td style="padding:4px 8px 0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td valign="top" align="left" style="text-align:left;">
+              <a href="https://punprofile.app" style="display:inline-block;text-decoration:none;">
+                <img src="${LOGO_DARK}" alt="PunProfile" width="150" style="display:block;width:150px;max-width:150px;height:auto;border:0;">
+              </a>
+              ${
+                args.masthead
+                  ? `<p class="masthead" style="margin:10px 0 0;font-family:${FONT};font-size:17px;line-height:26px;font-weight:600;color:${INK_DEEP};">${escape(args.masthead.name)}</p>`
                   : ""
-              }`
-            : ""
-        }
+              }
+            </td>
+            <td valign="top" align="right" style="text-align:right;font-family:${FONT};font-size:14px;line-height:22px;color:${MUTE_STRONG};">
+              ${args.masthead?.date ? `${escape(args.masthead.date)}<br>` : ""}punprofile.app
+            </td>
+          </tr>
+        </table>
+        <div style="border-top:1px solid ${LINE};margin:18px 0 0;font-size:0;line-height:0;">&nbsp;</div>
       </td></tr>
 
-      <tr><td style="height:16px;line-height:16px;font-size:0;">&nbsp;</td></tr>
+      <tr><td style="height:20px;line-height:20px;font-size:0;">&nbsp;</td></tr>
 
       <tr><td style="background:${CANVAS};border-radius:30px;padding:48px 32px;">
         ${blocks(args.body, args.image)}
