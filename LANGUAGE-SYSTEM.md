@@ -7113,7 +7113,7 @@ review:
 id: src/lib/content/footer.ts::FOLLOW_LABEL
 source: src/lib/content/footer.ts
 path: FOLLOW_LABEL
-render: Site footer, FOLLOW_LABEL
+render: Site footer, the accessible name on the Facebook link
 narrative_slot: utility
 en: Our Facebook page
 th: เพจ Facebook ของเรา
@@ -7129,6 +7129,67 @@ review:
   text_hash: 0c83c0100e40d41ead8f90edd1d51ceef78d5a3fdc19ec6f2c44b81852267b02
   prompt_version: structural-calque-v1
   basis: Paul approved this item through the consolidated language review on 10/09/2026.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/footer.ts::LINKEDIN_LABEL`
+
+```yaml
+id: src/lib/content/footer.ts::LINKEDIN_LABEL
+source: src/lib/content/footer.ts
+path: LINKEDIN_LABEL
+render: Site footer, the accessible name on the LinkedIn link
+narrative_slot: utility
+en: Our LinkedIn page
+th: เพจ LinkedIn ของเรา
+provenance: draft
+date: 13/11/2026
+term_bindings: []
+decision_note: |-
+  Added 13/11/2026, when the LinkedIn Page went live, as the second follow
+  button beside Facebook.
+
+  Written as the exact parallel of `FOLLOW_LABEL`, which Paul approved unchanged
+  on 10/09/2026. Only the brand name differs, and it stays in Latin script in
+  both languages, as LINE does in the Contact column.
+
+  Both follow links were reduced to marks on 13/11/2026, so this string is read
+  aloud rather than seen. It is still the only thing that says where the link
+  goes.
+review:
+  structural_calque: pending
+  text_hash: 4b50959a8df8ad27f94cd5fc2e15adc63e28b45f6d52b8c7b445b4a15ad71da0
+  prompt_version: structural-calque-v1
+  basis: Not reviewed. A model produced this Thai by substituting the brand name in an approved string, and no reader has seen it.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/footer.ts::TIKTOK_LABEL`
+
+```yaml
+id: src/lib/content/footer.ts::TIKTOK_LABEL
+source: src/lib/content/footer.ts
+path: TIKTOK_LABEL
+render: Site footer, the accessible name on the TikTok link
+narrative_slot: utility
+en: Our TikTok
+th: TikTok ของเรา
+provenance: draft
+date: 13/11/2026
+term_bindings: []
+decision_note: |-
+  Added 13/11/2026, when Paul supplied the account, as the third follow mark.
+
+  Deliberately not the `เพจ X ของเรา` shape the Facebook and LinkedIn labels
+  use. `เพจ` is Facebook's word for a Page and reads oddly against TikTok, which
+  has accounts rather than pages, so this one drops the noun instead of forcing
+  the pattern. That is the judgement worth checking here: either `TikTok ของเรา`
+  as written, or `บัญชี TikTok ของเรา` if the noun is wanted.
+review:
+  structural_calque: pending
+  text_hash: 0c7c11702a3e52cb1323477a0b6459f0b44f2b0ce786cd2a94d462aaec9e8a12
+  prompt_version: structural-calque-v1
+  basis: Not reviewed. A model wrote this Thai and chose to break the pattern the other two follow links use, and no reader has seen it.
 ```
 
 <!-- COPY-ENTRY -->

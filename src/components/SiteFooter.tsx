@@ -8,6 +8,10 @@ import {
   FACEBOOK_PAGE,
   EYEBROW,
   FOLLOW_LABEL,
+  LINKEDIN_LABEL,
+  LINKEDIN_PAGE,
+  TIKTOK_LABEL,
+  TIKTOK_PAGE,
   FOOTER_COLUMNS,
 } from "@/lib/content/footer";
 
@@ -154,23 +158,54 @@ export default function SiteFooter({
             />
           </span>
 
-          <a
-            href={FACEBOOK_PAGE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-12 items-center gap-2.5 rounded-full border border-line-strong px-5 text-body-md-strong duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
-          >
-            {/* Facebook's mark, drawn rather than fetched: one path, no
-                network request, and it inherits the text colour so it can
-                never fall out of step with the border. */}
-            <svg viewBox="0 0 24 24" aria-hidden className="size-5 shrink-0" fill="currentColor">
-              <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z" />
-            </svg>
-            {/* The label stays on the button rather than becoming a heading
-                above it. `FOLLOW_EYEBROW` was that heading and has no place in
-                a single closing row; the button already says where it goes. */}
-            {pick(FOLLOW_LABEL, locale)}
-          </a>
+          {/* Two follow links as marks, not buttons. The label each one used
+              to carry is now its accessible name, so the string still ships and
+              a screen reader still hears where the link goes; nothing but the
+              visible text was dropped. `size-12` keeps the old button's touch
+              target under a mark half that size, and `justify-between` on the
+              parent is why the pair needs its own box. */}
+          <div className="flex flex-wrap items-center gap-1">
+            <a
+              href={FACEBOOK_PAGE}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={pick(FOLLOW_LABEL, locale)}
+              className="inline-flex size-12 items-center justify-center rounded-full duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
+            >
+              {/* Facebook's mark, drawn rather than fetched: one path, no
+                  network request, and it inherits the text colour. */}
+              <svg viewBox="0 0 24 24" aria-hidden className="size-6 shrink-0" fill="currentColor">
+                <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z" />
+              </svg>
+            </a>
+
+            <a
+              href={LINKEDIN_PAGE}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={pick(LINKEDIN_LABEL, locale)}
+              className="inline-flex size-12 items-center justify-center rounded-full duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
+            >
+              {/* LinkedIn's mark, drawn the same way and for the same
+                  reason. */}
+              <svg viewBox="0 0 24 24" aria-hidden className="size-6 shrink-0" fill="currentColor">
+                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z" />
+              </svg>
+            </a>
+
+            <a
+              href={TIKTOK_PAGE}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={pick(TIKTOK_LABEL, locale)}
+              className="inline-flex size-12 items-center justify-center rounded-full duration-[350ms] ease-nav transition-colors hover:bg-primary-pale"
+            >
+              {/* TikTok's mark, drawn the same way as the other two. */}
+              <svg viewBox="0 0 24 24" aria-hidden className="size-6 shrink-0" fill="currentColor">
+                <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48Z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         {/* What PunProfile is not. Long on purpose: every clause is already

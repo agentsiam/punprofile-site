@@ -115,6 +115,43 @@ export const FOLLOW_LABEL: Copy = {
   th: "เพจ Facebook ของเรา",
 };
 
+/**
+ * The LinkedIn Page, launched 13/11/2026 and supplied by Paul the same day.
+ *
+ * A follow link and a machine-readable fact, exactly as `FACEBOOK_PAGE` is, and
+ * `SiteShell` reads both for the organisation's `sameAs`. Public contact is
+ * still LINE and email only, so LinkedIn is absent from the Contact column for
+ * the same reason Facebook is.
+ */
+export const LINKEDIN_PAGE = "https://www.linkedin.com/company/punprofile";
+
+/**
+ * The label on the LinkedIn button, written as the exact parallel of
+ * `FOLLOW_LABEL` so the pair reads as one decision rather than two.
+ */
+export const LINKEDIN_LABEL: Copy = {
+  en: "Our LinkedIn page",
+  th: "เพจ LinkedIn ของเรา",
+};
+
+/**
+ * The TikTok account, supplied by Paul 13/11/2026.
+ *
+ * The third follow link, on the same footing as the other two: a mark in the
+ * closing row and a `sameAs` entry, never a contact channel. `Content_Strategy.md`
+ * still carries the channel as "To build", and an account existing is not the
+ * same as a channel being worked, so nothing here claims it is.
+ */
+export const TIKTOK_PAGE = "https://www.tiktok.com/@punprofile";
+
+/**
+ * The label on the TikTok link, read aloud rather than seen.
+ */
+export const TIKTOK_LABEL: Copy = {
+  en: "Our TikTok",
+  th: "TikTok ของเรา",
+};
+
 /*
  * `FOLLOW_BODY` was here and is retired, 17/08/2026, on Paul: "it does not make
  * sense, we're not promoting the FB group on the web app."

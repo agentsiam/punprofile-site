@@ -14,7 +14,7 @@ import BrandLockup from "@/components/BrandLockup";
 import TopNav from "@/components/TopNav";
 import { DEFAULT_LOCALE } from "@/lib/locale";
 import type { Locale } from "@/lib/locale";
-import { DISCLAIMER, FACEBOOK_PAGE } from "@/lib/content/footer";
+import { DISCLAIMER, FACEBOOK_PAGE, LINKEDIN_PAGE, TIKTOK_PAGE } from "@/lib/content/footer";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { CONTACT_EMAIL } from "@/lib/consent-copy";
 import { DESTINATIONS } from "@/lib/content/cta";
@@ -116,7 +116,7 @@ export default function SiteShell({
               things in different languages is exactly the ambiguity an `@id` is
               there to prevent. */}
           <JsonLd
-            data={organizationJsonLd(FACEBOOK_PAGE, pick(DISCLAIMER, DEFAULT_LOCALE), {
+            data={organizationJsonLd([FACEBOOK_PAGE, LINKEDIN_PAGE, TIKTOK_PAGE], pick(DISCLAIMER, DEFAULT_LOCALE), {
               email: CONTACT_EMAIL,
               line: DESTINATIONS.line.href,
             })}

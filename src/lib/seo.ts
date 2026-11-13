@@ -341,7 +341,7 @@ export const VERIFICATION: Metadata["verification"] = {
  * somebody buys rather than a company that exists.
  */
 export function organizationJsonLd(
-  facebookPage: string,
+  profiles: readonly string[],
   disclaimer: string,
   contact: { email: string; line: string },
 ) {
@@ -354,7 +354,7 @@ export function organizationJsonLd(
     url: SITE_URL,
     logo: absolute("/punprofile-logo.svg"),
     image: absolute("/og.png"),
-    sameAs: [facebookPage],
+    sameAs: [...profiles],
     // No `telephone`, on purpose: public contact is LINE and email only, and a
     // number in the markup would be a channel the site does not offer. Both
     // channels below are the ones `/contact` already publishes, from
