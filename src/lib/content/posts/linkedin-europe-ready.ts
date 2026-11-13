@@ -23,7 +23,7 @@ export const LINKEDIN_EUROPE_READY: Post = {
     en: "Make your LinkedIn profile findable by European recruiters",
   },
   summary: {
-    th: "ถ้าคุณกำลังสมัครงานในยุโรป ลองแยกการปรับ LinkedIn เป็นสองเรื่อง: ตั้งค่าให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น แล้วเขียนให้เขาเข้าใจว่าคุณทำอะไรมา",
+    th: "ถ้าคุณกำลังสมัครงานในยุโรป ให้เริ่มจากตั้งค่า LinkedIn ให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น แล้วเล่างานที่เคยทำให้เขาเข้าใจว่าคุณรับผิดชอบอะไร",
     en: "If you are applying for jobs in Europe, treat LinkedIn as two jobs rather than one: set it up so a recruiter can find your profile more easily, then write it so they understand what you have done.",
   },
   image: {
@@ -78,7 +78,7 @@ export const LINKEDIN_EUROPE_READY: Post = {
       {
         kind: "p",
         text: {
-          th: "LinkedIn ระบุว่าการกรอกประเภทงานและสถานที่ทำงานที่ต้องการใน Open to Work ช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนส่วนแนะนำตัวให้ยาวขึ้น",
+          th: "LinkedIn บอกว่า ถ้าคุณกรอกใน Open to Work ว่าสนใจงานแบบไหนและอยากทำงานที่ไหน ข้อมูลนี้จะช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนส่วนแนะนำตัวให้ยาวขึ้น",
           en: "LinkedIn says that filling in the types of job you want and your preferred work location under Open to Work makes it easier for a recruiter to find your profile. That is fixed in the settings, not by writing a longer About section.",
         },
         cite: { label: "LinkedIn Help", href: "https://www.linkedin.com/help/linkedin/answer/a507508" },
@@ -503,7 +503,7 @@ export const LINKEDIN_EUROPE_READY: Post = {
       {
         kind: "p",
         text: {
-          th: "ทุกขั้นในคู่มือนี้ ตั้งแต่การตั้งค่างานที่สนใจไปจนถึงการเลือกสกิลที่ตรงกับงาน ทำได้โดยไม่ต้องซื้อ Premium",
+          th: "คุณตั้งค่างานที่สนใจ เลือกสกิลที่ตรงกับงาน และทำตามคู่มือนี้ได้ครบโดยไม่ต้องสมัคร LinkedIn Premium",
           en: "Every step in this guide, from setting your job preferences through to choosing the skills that match the work, you can do without buying Premium.",
         },
       },

@@ -5657,10 +5657,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "LINKEDIN_EUROPE_READY.sections[10].body[4].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[10].body[4].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "13/11/2026",
-    "decisionNote": "Trimmed on 13/11/2026 under the rule Paul gave for this round: cut any sentence that adds no\nunderstanding for the reader. The paragraph re-walked all nine steps one screen above section 11,\nwhich is the checklist of those same nine steps, and the subheading directly above it already makes\nthe no-Premium claim.\n\nPrevious Thai, live on the page until this record clears review:\nคุณเริ่มจากตั้งค่างานที่สนใจและการมองเห็น แก้ตำแหน่งที่ตั้ง ปรับชื่อตำแหน่งและคำอธิบายบริษัท เขียน headline และส่วนแนะนำตัวให้ชัด แล้วเลือกทักษะที่ตรงกับงาน ทั้งหมดนี้ทำได้โดยไม่ต้องซื้อ Premium\n\nThe span from job preferences to skills is kept, because the next paragraph's เรื่องพื้นฐานเหล่านี้\npoints back at it. ทักษะ became สกิล, which is the campaign's register decision in the open review\nsheet for the same line, so the two proposals do not disagree. English follows the Thai.",
-    "proposalTh": "คุณตั้งค่างานที่สนใจ เลือกสกิลที่ตรงกับงาน และทำตามคู่มือนี้ได้ครบโดยไม่ต้องสมัคร LinkedIn Premium"
+    "decisionNote": "Trimmed on 13/11/2026 under the rule Paul gave for this round: cut any sentence that adds no\nunderstanding for the reader. The paragraph re-walked all nine steps one screen above section 11,\nwhich is the checklist of those same nine steps, and the subheading directly above it already makes\nthe no-Premium claim.\n\nPrevious Thai, live on the page until this record clears review:\nคุณเริ่มจากตั้งค่างานที่สนใจและการมองเห็น แก้ตำแหน่งที่ตั้ง ปรับชื่อตำแหน่งและคำอธิบายบริษัท เขียน headline และส่วนแนะนำตัวให้ชัด แล้วเลือกทักษะที่ตรงกับงาน ทั้งหมดนี้ทำได้โดยไม่ต้องซื้อ Premium\n\nThe span from job preferences to skills is kept, because the next paragraph's เรื่องพื้นฐานเหล่านี้\npoints back at it. ทักษะ became สกิล, which is the campaign's register decision in the open review\nsheet for the same line, so the two proposals do not disagree. English follows the Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[10].body[5].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -5901,10 +5900,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "13/11/2026",
-    "decisionNote": "Paul rejected the Thai on 13/11/2026, quoting ให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร and\ncalling it absurd. มีโอกาสปรากฏ is an English hedge carried into Thai, and ปรากฏ is not the verb a\nThai reader uses for a profile turning up in a search. Only that clause was replaced: the second\nsentence is the half he approved on 10/11/2026 and it stands.\n\nPrevious Thai, live on the page until this record clears review:\nLinkedIn อธิบายไว้ในคู่มือ Open to Work ว่าการระบุประเภทงานและสถานที่ทำงานที่ต้องการช่วยให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนคำแนะนำตัวให้ยาวขึ้น\n\nThe claim itself is load-bearing and stays: article.md records that the piece is built outward from\nLinkedIn's own sentence about job preferences, and the cite stays on the paragraph. What changed is\nthe wording. ช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น is Paul's own phrasing for the same claim in\ngolden-th/email/c-newsletter-linkedin.md, which claims ease rather than a result. คู่มือ also went:\nit is this campaign's word for its own guide, not for a LinkedIn help page, and the cite chip already\nsays LinkedIn Help. คำแนะนำตัว became ส่วนแนะนำตัว, which is what the rest of the article calls the\nAbout section, and the sentence keeps the name of the setting so the cite still has something to\npoint at. English follows the Thai.",
-    "proposalTh": "LinkedIn บอกว่า ถ้าคุณกรอกใน Open to Work ว่าสนใจงานแบบไหนและอยากทำงานที่ไหน ข้อมูลนี้จะช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนส่วนแนะนำตัวให้ยาวขึ้น"
+    "decisionNote": "Paul rejected the Thai on 13/11/2026, quoting ให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร and\ncalling it absurd. มีโอกาสปรากฏ is an English hedge carried into Thai, and ปรากฏ is not the verb a\nThai reader uses for a profile turning up in a search. Only that clause was replaced: the second\nsentence is the half he approved on 10/11/2026 and it stands.\n\nPrevious Thai, live on the page until this record clears review:\nLinkedIn อธิบายไว้ในคู่มือ Open to Work ว่าการระบุประเภทงานและสถานที่ทำงานที่ต้องการช่วยให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนคำแนะนำตัวให้ยาวขึ้น\n\nThe claim itself is load-bearing and stays: article.md records that the piece is built outward from\nLinkedIn's own sentence about job preferences, and the cite stays on the paragraph. What changed is\nthe wording. ช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น is Paul's own phrasing for the same claim in\ngolden-th/email/c-newsletter-linkedin.md, which claims ease rather than a result. คู่มือ also went:\nit is this campaign's word for its own guide, not for a LinkedIn help page, and the cite chip already\nsays LinkedIn Help. คำแนะนำตัว became ส่วนแนะนำตัว, which is what the rest of the article calls the\nAbout section, and the sentence keeps the name of the setting so the cite still has something to\npoint at. English follows the Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -6415,10 +6413,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "LINKEDIN_EUROPE_READY.summary",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.summary",
     "narrativeSlot": "utility",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "13/11/2026",
-    "decisionNote": "Nominated on 13/11/2026 alongside sections[1].body[1].text, which Paul rejected the same day. This\nrecord carried the same hedge in its other form, มีโอกาสค้นเจอคุณ, and it is the passage AI search\nlifts, so it should not be the one place the old construction survives.\n\nPrevious Thai, live on the page until this record clears review:\nถ้าคุณกำลังสมัครงานในยุโรป ลองแยกการปรับ LinkedIn เป็นสองเรื่อง: ตั้งค่าให้คนที่กำลังหาผู้สมัครมีโอกาสค้นเจอคุณ แล้วเขียนให้เขาเข้าใจว่าคุณทำอะไรมา\n\nคนที่กำลังหาผู้สมัคร also became recruiter, which is what the article calls that reader in every\nother section and what Paul calls him in the newsletter. English follows the Thai.",
-    "proposalTh": "ถ้าคุณกำลังสมัครงานในยุโรป ให้เริ่มจากตั้งค่า LinkedIn ให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น แล้วเล่างานที่เคยทำให้เขาเข้าใจว่าคุณรับผิดชอบอะไร"
+    "decisionNote": "Nominated on 13/11/2026 alongside sections[1].body[1].text, which Paul rejected the same day. This\nrecord carried the same hedge in its other form, มีโอกาสค้นเจอคุณ, and it is the passage AI search\nlifts, so it should not be the one place the old construction survives.\n\nPrevious Thai, live on the page until this record clears review:\nถ้าคุณกำลังสมัครงานในยุโรป ลองแยกการปรับ LinkedIn เป็นสองเรื่อง: ตั้งค่าให้คนที่กำลังหาผู้สมัครมีโอกาสค้นเจอคุณ แล้วเขียนให้เขาเข้าใจว่าคุณทำอะไรมา\n\nคนที่กำลังหาผู้สมัคร also became recruiter, which is what the article calls that reader in every\nother section and what Paul calls him in the newsletter. English follows the Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.title": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -8513,18 +8510,17 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PACKS[2].bonus",
     "render": "Pricing page, Serious pack card, the time-limited extra under the list",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
-    "decisionNote": "Drafted 12/11/2026 from Paul's instruction that the Serious pack carries a free hour of one-to-one coaching until the end of 2026. It is a SEPARATE field from includes, and rendered apart from that list, because the list is what the 33 tokens cover and this is not bought with tokens at all; folding it in would make the card claim a token buys coaching. THREE THINGS FOR REVIEW. One, this is the first free call on the site since 26/10/2026, when Paul removed every free consultation; it is defensible as a 1,500 THB pack perk rather than a public free entry point, but it reads as a reversal to anyone holding only the 26/10 decision, and remove-free-call-proposal.md in the sibling repo is still unapplied. Two, ฟรี sits after the service name Coaching 1:1, which is what LR-04 asks for, and the banned นัดปรึกษาฟรี 30 นาที and คุยฟรี forms are not used. Three, the clause order was reversed on 12/11/2026, Paul's call: the first version led with the deadline, so the first thing a lead read was an expiry rather than the gift. Four, the end date is written into the copy AND declared in Narrative_System.md > promotions, which is what verify:narrative fails on once the date is past. Two places on purpose: the reader needs the limit in words, and the build needs it in a field. Change one and change the other. AWAITING A NATIVE VERDICT.",
-    "proposalTh": "แพ็กนี้เราแถม Coaching 1:1 ฟรี 1 ชั่วโมง ถึง 31 ธันวาคม 2026"
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
+    "decisionNote": "Drafted 12/11/2026 from Paul's instruction that the Serious pack carries a free hour of one-to-one coaching until the end of 2026. It is a SEPARATE field from includes, and rendered apart from that list, because the list is what the 33 tokens cover and this is not bought with tokens at all; folding it in would make the card claim a token buys coaching. THREE THINGS FOR REVIEW. One, this is the first free call on the site since 26/10/2026, when Paul removed every free consultation; it is defensible as a 1,500 THB pack perk rather than a public free entry point, but it reads as a reversal to anyone holding only the 26/10 decision, and remove-free-call-proposal.md in the sibling repo is still unapplied. Two, ฟรี sits after the service name Coaching 1:1, which is what LR-04 asks for, and the banned นัดปรึกษาฟรี 30 นาที and คุยฟรี forms are not used. Three, the clause order was reversed on 12/11/2026, Paul's call: the first version led with the deadline, so the first thing a lead read was an expiry rather than the gift. Four, the end date is written into the copy AND declared in Narrative_System.md > promotions, which is what verify:narrative fails on once the date is past. Two places on purpose: the reader needs the limit in words, and the build needs it in a field. Change one and change the other. AWAITING A NATIVE VERDICT."
   },
   "src/lib/content/pricing.ts::PACK_BUYS": {
     "source": "src/lib/content/pricing.ts",
     "path": "PACK_BUYS",
     "render": "Pricing page, pack card, what the pack's tokens buy",
     "narrativeSlot": "artefact",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Added 12/11/2026, from a UX review Paul accepted: the cards printed a price and a token count and left the reader to work out what the tokens were for. The two uses are ALTERNATIVES on one balance, not inclusions, which is why the line says or. Both figures are substituted from TOKEN_PRICE at render, never typed, so the sentence cannot contradict the token table above it. It replaces PACKS[2].includes, which said the same arithmetic on one card only and said it as if the reader got both. AWAITING A NATIVE VERDICT."
   },
   "src/lib/content/pricing.ts::PACK_BUYS_ROLES": {
@@ -8532,8 +8528,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PACK_BUYS_ROLES",
     "render": "Pricing page, pack card, what the pack's tokens buy when it cannot reach a Fit Report",
     "narrativeSlot": "artefact",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Added 12/11/2026. The line for a pack whose tokens do not reach the Fit Report's price, which today is the Starter pack alone. It is chosen by arithmetic rather than by pack id, so a price change moves it on its own. AWAITING A NATIVE VERDICT."
   },
   "src/lib/content/pricing.ts::ROLE_UNIT.one": {
@@ -8541,8 +8537,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "ROLE_UNIT.one",
     "render": "Pricing page, the unit after a count of roles, singular",
     "narrativeSlot": "artefact",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Added 12/11/2026, the same shape as TOKEN_UNIT and for the same reason: the Standard pack leaves exactly one role after a Fit Report, so a hard-coded plural would print 1 roles. Thai has no plural form and both members are the same word. AWAITING A NATIVE VERDICT."
   },
   "src/lib/content/pricing.ts::ROLE_UNIT.many": {
@@ -8550,8 +8546,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "ROLE_UNIT.many",
     "render": "Pricing page, the unit after a count of roles, plural",
     "narrativeSlot": "artefact",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Added 12/11/2026, the plural member of ROLE_UNIT. Thai has no plural form, so it is the same word as the singular. AWAITING A NATIVE VERDICT."
   },
   "src/lib/content/pricing.ts::CALC_NEARLY": {
@@ -12267,8 +12263,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COACHES[0].relevance",
     "render": "Pricing page, the promotional panel: the one line under Paul's name",
     "narrativeSlot": "proof",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Added 12/11/2026, Paul's call: the promotional panel first carried COACHES[n].pill, which is a TITLE line, and a lead has no reason to care that we are founders. The house narrative's own rule is the argument: slot 1 asks for names and what each one actually is, not titles nobody can check, and slot 3 is the bridge, which it calls the only part a reader actually acts on. So this field is that slot compressed to the one line a card has room for: what this person does to a CV like the reader's. Built from Paul's own approved COACHES[0].summary, which already says he reads the CVs that pass the screen and selects people for his team; this is that line cut to what fits one row and given the market. It is deliberately not a new claim — every clause here is already approved somewhere on the site — but the RECOMBINATION is new Thai and is not self-certified. AWAITING A NATIVE VERDICT."
   },
   "src/lib/content/coaching.ts::COACHES[0].pills[0]": {
@@ -12411,8 +12407,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COACHES[1].relevance",
     "render": "Pricing page, the promotional panel: the one line under Dew's name",
     "narrativeSlot": "proof",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Added 12/11/2026, Paul's call: the promotional panel first carried COACHES[n].pill, which is a TITLE line, and a lead has no reason to care that we are founders. The house narrative's own rule is the argument: slot 1 asks for names and what each one actually is, not titles nobody can check, and slot 3 is the bridge, which it calls the only part a reader actually acts on. So this field is that slot compressed to the one line a card has room for: what this person does to a CV like the reader's. Built from her approved COACHES[1].summary and pull line, both of which already say she selects the CVs put forward to hiring managers; the Thai is theirs character for character. It named the United States until 12/11/2026, when Paul struck it: the reader is moving to Europe, and a bridge line that names a market the reader is not entering argues against itself, however real the credential. Where she works is biography and stays on /coaching, in who and done. Narrative_System.md section 4 now carries the rule. It is deliberately not a new claim — every clause here is already approved somewhere on the site — but the RECOMBINATION is new Thai and is not self-certified. AWAITING A NATIVE VERDICT."
   },
   "src/lib/content/coaching.ts::COACHES[1].pills[0]": {
@@ -14787,8 +14783,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "MATCH_FEEDBACK_WORKING",
     "render": "Match feedback page, MATCH_FEEDBACK_WORKING",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "The holding line while the verdict posts. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_UP_HEADING": {
@@ -14796,38 +14792,35 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "MATCH_FEEDBACK_UP_HEADING",
     "render": "Match feedback page, MATCH_FEEDBACK_UP_HEADING",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
-    "decisionNote": "Confirms that a like was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
-    "proposalTh": "ขอบคุณสำหรับคำตอบ PunProfile บันทึกไว้แล้วว่าตำแหน่งนี้ตรงกับสิ่งที่คุณมองหา"
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
+    "decisionNote": "Confirms that a like was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_DOWN_HEADING": {
     "source": "src/lib/content/matchFeedback.ts",
     "path": "MATCH_FEEDBACK_DOWN_HEADING",
     "render": "Match feedback page, MATCH_FEEDBACK_DOWN_HEADING",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
-    "decisionNote": "Confirms that a dislike was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
-    "proposalTh": "ขอบคุณสำหรับคำตอบ PunProfile บันทึกไว้แล้วว่าตำแหน่งนี้ยังไม่ตรงกับสิ่งที่คุณมองหา"
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
+    "decisionNote": "Confirms that a dislike was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_BODY": {
     "source": "src/lib/content/matchFeedback.ts",
     "path": "MATCH_FEEDBACK_BODY",
     "render": "Match feedback page, MATCH_FEEDBACK_BODY",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
-    "decisionNote": "Says what PunProfile does with the answer. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
-    "proposalTh": "PunProfile จะใช้คำตอบนี้คัดตำแหน่งงานที่จะแนะนำให้คุณต่อไป"
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
+    "decisionNote": "Says what PunProfile does with the answer. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASON_ASK": {
     "source": "src/lib/content/matchFeedback.ts",
     "path": "MATCH_FEEDBACK_REASON_ASK",
     "render": "Match feedback page, MATCH_FEEDBACK_REASON_ASK",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Asks for the optional reason. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASON_SAVED": {
@@ -14835,8 +14828,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "MATCH_FEEDBACK_REASON_SAVED",
     "render": "Match feedback page, MATCH_FEEDBACK_REASON_SAVED",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Confirms that the reason was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_SWITCH": {
@@ -14844,18 +14837,17 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "MATCH_FEEDBACK_SWITCH",
     "render": "Match feedback page, MATCH_FEEDBACK_SWITCH",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
-    "decisionNote": "Offers to change a verdict tapped by mistake. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
-    "proposalTh": "หากกดผิด เปลี่ยนคำตอบได้"
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
+    "decisionNote": "Offers to change a verdict tapped by mistake. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_DASHBOARD": {
     "source": "src/lib/content/matchFeedback.ts",
     "path": "MATCH_FEEDBACK_DASHBOARD",
     "render": "Match feedback page, MATCH_FEEDBACK_DASHBOARD",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Sends the reader to their Job Search Dashboard. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[0].label": {
@@ -14863,28 +14855,26 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "MATCH_FEEDBACK_REASONS[0].label",
     "render": "Match feedback page, MATCH_FEEDBACK_REASONS[0].label",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
-    "decisionNote": "Reason closed on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
-    "proposalTh": "ปิดรับสมัครแล้ว"
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
+    "decisionNote": "Reason closed on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[1].label": {
     "source": "src/lib/content/matchFeedback.ts",
     "path": "MATCH_FEEDBACK_REASONS[1].label",
     "render": "Match feedback page, MATCH_FEEDBACK_REASONS[1].label",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
-    "decisionNote": "Reason title_level on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
-    "proposalTh": "ชื่อตำแหน่งหรือระดับงานไม่ตรง"
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
+    "decisionNote": "Reason title_level on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[2].label": {
     "source": "src/lib/content/matchFeedback.ts",
     "path": "MATCH_FEEDBACK_REASONS[2].label",
     "render": "Match feedback page, MATCH_FEEDBACK_REASONS[2].label",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Reason location on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[3].label": {
@@ -14892,8 +14882,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "MATCH_FEEDBACK_REASONS[3].label",
     "render": "Match feedback page, MATCH_FEEDBACK_REASONS[3].label",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Reason pay on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[4].label": {
@@ -14910,28 +14900,26 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "MATCH_FEEDBACK_REASONS[5].label",
     "render": "Match feedback page, MATCH_FEEDBACK_REASONS[5].label",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
-    "decisionNote": "Reason language on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
-    "proposalTh": "ต้องใช้ภาษาที่คุณพูดไม่ได้"
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
+    "decisionNote": "Reason language on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[6].label": {
     "source": "src/lib/content/matchFeedback.ts",
     "path": "MATCH_FEEDBACK_REASONS[6].label",
     "render": "Match feedback page, MATCH_FEEDBACK_REASONS[6].label",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
-    "decisionNote": "Reason applied on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
-    "proposalTh": "สมัครไปแล้ว"
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
+    "decisionNote": "Reason applied on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[7].label": {
     "source": "src/lib/content/matchFeedback.ts",
     "path": "MATCH_FEEDBACK_REASONS[7].label",
     "render": "Match feedback page, MATCH_FEEDBACK_REASONS[7].label",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "12/11/2026",
+    "provenance": "paul-approved",
+    "date": "13/11/2026",
     "decisionNote": "Reason other on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
   }
 } as const;

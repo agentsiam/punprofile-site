@@ -225,7 +225,7 @@ export const PACKS: readonly Pack[] = [
     },
     bonus: {
       en: "We add one free hour of Coaching 1:1 to this pack, until 31 December 2026",
-      th: "เราแถม Coaching 1:1 ฟรี 1 ชั่วโมงให้ด้วย ถึงวันที่ 31 ธันวาคม 2026",
+      th: "แพ็กนี้เราแถม Coaching 1:1 ฟรี 1 ชั่วโมง ถึง 31 ธันวาคม 2026",
     },
   },
 ];
