@@ -5660,7 +5660,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "draft",
     "date": "13/11/2026",
     "decisionNote": "Trimmed on 13/11/2026 under the rule Paul gave for this round: cut any sentence that adds no\nunderstanding for the reader. The paragraph re-walked all nine steps one screen above section 11,\nwhich is the checklist of those same nine steps, and the subheading directly above it already makes\nthe no-Premium claim.\n\nPrevious Thai, live on the page until this record clears review:\nคุณเริ่มจากตั้งค่างานที่สนใจและการมองเห็น แก้ตำแหน่งที่ตั้ง ปรับชื่อตำแหน่งและคำอธิบายบริษัท เขียน headline และส่วนแนะนำตัวให้ชัด แล้วเลือกทักษะที่ตรงกับงาน ทั้งหมดนี้ทำได้โดยไม่ต้องซื้อ Premium\n\nThe span from job preferences to skills is kept, because the next paragraph's เรื่องพื้นฐานเหล่านี้\npoints back at it. ทักษะ became สกิล, which is the campaign's register decision in the open review\nsheet for the same line, so the two proposals do not disagree. English follows the Thai.",
-    "proposalTh": "ตั้งค่างานที่สนใจ เลือกสกิลที่ตรงกับงาน และทำตามขั้นตอนอื่น ๆ ในคู่มือนี้ได้ด้วยบัญชีฟรี"
+    "proposalTh": "คุณตั้งค่างานที่สนใจ เลือกสกิลที่ตรงกับงาน และทำตามคู่มือนี้ได้ครบโดยไม่ต้องสมัคร LinkedIn Premium"
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[10].body[5].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -14818,7 +14818,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "12/11/2026",
-    "decisionNote": "Says what PunProfile does with the answer. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+    "decisionNote": "Says what PunProfile does with the answer. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
+    "proposalTh": "PunProfile จะใช้คำตอบนี้คัดตำแหน่งงานที่จะแนะนำให้คุณต่อไป"
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASON_ASK": {
     "source": "src/lib/content/matchFeedback.ts",
@@ -14864,7 +14865,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "12/11/2026",
-    "decisionNote": "Reason closed on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+    "decisionNote": "Reason closed on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
+    "proposalTh": "ปิดรับสมัครแล้ว"
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[1].label": {
     "source": "src/lib/content/matchFeedback.ts",
@@ -14873,7 +14875,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "12/11/2026",
-    "decisionNote": "Reason title_level on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+    "decisionNote": "Reason title_level on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
+    "proposalTh": "ชื่อตำแหน่งหรือระดับงานไม่ตรง"
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[2].label": {
     "source": "src/lib/content/matchFeedback.ts",
@@ -14919,7 +14922,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "12/11/2026",
-    "decisionNote": "Reason applied on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+    "decisionNote": "Reason applied on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
+    "proposalTh": "สมัครไปแล้ว"
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[7].label": {
     "source": "src/lib/content/matchFeedback.ts",

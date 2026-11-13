@@ -15057,12 +15057,12 @@ decision_note: |-
   The span from job preferences to skills is kept, because the next paragraph's เรื่องพื้นฐานเหล่านี้
   points back at it. ทักษะ became สกิล, which is the campaign's register decision in the open review
   sheet for the same line, so the two proposals do not disagree. English follows the Thai.
-proposal_th: "ตั้งค่างานที่สนใจ เลือกสกิลที่ตรงกับงาน และทำตามขั้นตอนอื่น ๆ ในคู่มือนี้ได้ด้วยบัญชีฟรี"
+proposal_th: "คุณตั้งค่างานที่สนใจ เลือกสกิลที่ตรงกับงาน และทำตามคู่มือนี้ได้ครบโดยไม่ต้องสมัคร LinkedIn Premium"
 review:
   structural_calque: pending
   text_hash: 6705594b576ca104021cfc0a08462a5a42dfbcb09286b7df5db2d2bc4cbd631f
   prompt_version: structural-calque-v1
-  basis: "Trimmed by a session on 13/11/2026 under Paul's rule for this round. A session's wording, so it needs his read-back. Keeps the full scope of the English while naming two of the basics that the next paragraph refers back to."
+  basis: "Trimmed by a session on 13/11/2026 under Paul's rule for this round. A session's wording, so it needs his read-back. Keeps the full scope of the English while naming two of the basics that the next paragraph refers back to. The proposal now names LinkedIn Premium in full because the article refers to a LinkedIn subscription. PunProfile uses tokens for its paid services. The previous proposal also triggered LR-04."
 ```
 
 <!-- COPY-ENTRY -->
@@ -22400,7 +22400,7 @@ review:
   structural_calque: pending
   text_hash: f5196cca0873c312ca20c40f3bafd8e18b37e2961e779e5c48bd5caebbdc5819
   prompt_version: structural-calque-v1
-  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. แถม…ให้ is the Thai commercial verb for a thrown-in extra, ฟรี sits after the service name Coaching 1:1 so LR-04 is satisfied, and the deadline tail is ordinary Thai promotional order rather than a grafted English clause. The judge noted slack it did not fail on: the pile-up ฟรี 1 ชั่วโมงให้ด้วย, and the dropped to this pack, which the card's position supplies but the sentence does not. Its tighter draft is recorded in proposal_th and is NOT applied."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. แถม…ให้ is the Thai commercial verb for a thrown-in extra, ฟรี sits after the service name Coaching 1:1 so LR-04 is satisfied, and the deadline tail is ordinary Thai promotional order rather than a grafted English clause. The judge noted slack it did not fail on: the pile-up ฟรี 1 ชั่วโมงให้ด้วย, and the dropped to this pack, which the card's position supplies but the sentence does not. Its tighter draft is recorded in proposal_th and is NOT applied. Thai editorial review on 13/11/2026. Use the existing proposal. Naming the pack first makes it clear which purchase gets the extra hour, and the line retains the end date."
 ```
 
 <!-- COPY-ENTRY -->
@@ -22422,7 +22422,7 @@ review:
   structural_calque: pending
   text_hash: 137d40c24c7bc0589ac7d02b1e9b181eeb8472d498b0cbd8f08eb3de5e73c574
   prompt_version: structural-calque-v1
-  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. Noun plus count plus classifier is the right Thai order, so a substituted 1 reads ตำแหน่งงานที่คัดให้ 1 ตำแหน่ง and never 1 roles. หรือ and พร้อมอีก keep the two uses as alternatives on one balance rather than inclusions, and ตำแหน่งงานที่คัดให้ is the phrase the neighbouring PRICING_INTRO already uses."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. Noun plus count plus classifier is the right Thai order, so a substituted 1 reads ตำแหน่งงานที่คัดให้ 1 ตำแหน่ง and never 1 roles. หรือ and พร้อมอีก keep the two uses as alternatives on one balance rather than inclusions, and ตำแหน่งงานที่คัดให้ is the phrase the neighbouring PRICING_INTRO already uses. Thai editorial review on 13/11/2026. Keep the current Thai. The count reads naturally with its classifier, and หรือ keeps the two uses of the same token balance distinct. The rest placeholder already includes the role unit."
 ```
 
 <!-- COPY-ENTRY -->
@@ -22444,7 +22444,7 @@ review:
   structural_calque: pending
   text_hash: 6770cb76a364ab5aa90cc02737e9803fc4c3924af3b2d30e710a09a39efcef28
   prompt_version: structural-calque-v1
-  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. Reads as a Thai count phrase rather than an English fragment: the classifier follows the number, so 1 and 9 both render correctly, and ที่คัดให้ carries the screening claim without adding one. Consistent with the wording already live in PRICING_INTRO on the same page."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. Reads as a Thai count phrase rather than an English fragment: the classifier follows the number, so 1 and 9 both render correctly, and ที่คัดให้ carries the screening claim without adding one. Consistent with the wording already live in PRICING_INTRO on the same page. Thai editorial review on 13/11/2026. Keep the current Thai. It uses the same phrase and count order as the other pack card."
 ```
 
 <!-- COPY-ENTRY -->
@@ -22466,7 +22466,7 @@ review:
   structural_calque: pending
   text_hash: ab9f463fefb270b81214f0f32f01308ef1258abfa2e9839105c41a71485fb15e
   prompt_version: structural-calque-v1
-  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. ตำแหน่ง is the classifier a Thai job board uses after a count, and is the decided rendering for a job opening under LR-05, so {count} ตำแหน่ง reads naturally at 1 as well as at 9."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. ตำแหน่ง is the classifier a Thai job board uses after a count, and is the decided rendering for a job opening under LR-05, so {count} ตำแหน่ง reads naturally at 1 as well as at 9. Thai editorial review on 13/11/2026. Keep ตำแหน่ง after a count of one. Thai uses the same classifier for both records."
 ```
 
 <!-- COPY-ENTRY -->
@@ -22488,7 +22488,7 @@ review:
   structural_calque: pending
   text_hash: 340f9fade63a5fcd930c7475c6e71a10bef5a64f2e4773824e5a357c73cb70cd
   prompt_version: structural-calque-v1
-  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. The same word is the correct one here rather than a shortcut: Thai marks number with the numeral, and ตำแหน่ง is the classifier in both members, so no rendered count can read as 1 roles."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. The same word is the correct one here rather than a shortcut: Thai marks number with the numeral, and ตำแหน่ง is the classifier in both members, so no rendered count can read as 1 roles. Thai editorial review on 13/11/2026. Keep ตำแหน่ง after the count. Thai uses the same classifier for both records."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32136,7 +32136,7 @@ review:
   structural_calque: pending
   text_hash: 9a6f1e00764ede5592842ce99c1e6c78251dbd857c8c13a7952a3e2e1f76500e
   prompt_version: structural-calque-v1
-  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. The line is the approved COACHES[0].summary's tail with เป็นคน dropped, leaving a bare verb phrase under the name, the pattern the card's own pills already use, so agency reads off the name rather than going missing. One relative clause, no stacking, และ coordinates two native verb phrases, and ในยุโรป attaches to ทีม the way Thai attaches it. The claim rests on a document and an action, not an adjective."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. The line is the approved COACHES[0].summary's tail with เป็นคน dropped, leaving a bare verb phrase under the name, the pattern the card's own pills already use, so agency reads off the name rather than going missing. One relative clause, no stacking, และ coordinates two native verb phrases, and ในยุโรป attaches to ทีม the way Thai attaches it. The claim rests on a document and an action, not an adjective. Thai editorial review on 13/11/2026. Keep the current Thai. The name above the line supplies the subject, and the two verbs say what he does with screened CVs and who he hires for."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32499,7 +32499,7 @@ review:
   structural_calque: pending
   text_hash: 45d1d41acfdd202e06f4bc028cf4e6ba525662ea820d2ad54625694312d06b9c
   prompt_version: structural-calque-v1
-  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. The Thai renders the English relative clause as a purpose clause with เพื่อ, the native move rather than an imported clause order, and คัดเลือก keeps a live verb whose actor is the name above it. The line points at a document and the gate it passes through rather than at praise. Judge noted that hiring manager and CV carry no termbase entry, but are the form the approved COACHES[1].summary and the neighbouring pills already use."
+  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. The Thai renders the English relative clause as a purpose clause with เพื่อ, the native move rather than an imported clause order, and คัดเลือก keeps a live verb whose actor is the name above it. The line points at a document and the gate it passes through rather than at praise. Judge noted that hiring manager and CV carry no termbase entry, but are the form the approved COACHES[1].summary and the neighbouring pills already use. Thai editorial review on 13/11/2026. Keep the current Thai. The short line makes clear that she selects CVs for the hiring manager to review."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38820,7 +38820,7 @@ review:
   structural_calque: pending
   text_hash: bac1c6afe6938cf6014f7b9706530f70d661187489145db86cb10390f977e011
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. Keep รอสักครู่. It is standard written Thai for a short wait. Pending Paul's read-back."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38843,7 +38843,7 @@ review:
   structural_calque: pending
   text_hash: bc7b5e9cf46aa8452dfe1021014437b89e1aead4e76204f78111e91b82924a25
   prompt_version: structural-calque-v1
-  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: ขอบคุณ followed straight by a name reads as thanking PunProfile until the verb arrives and forces a re-read; สำหรับคำตอบ closes the thanks, บันทึกไว้ is the house verb from PREP_TITLES, and สิ่งที่คุณมองหา is Paul's own collocation in PACKS[0].who. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it."
+  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: ขอบคุณ followed straight by a name reads as thanking PunProfile until the verb arrives and forces a re-read; สำหรับคำตอบ closes the thanks, บันทึกไว้ is the house verb from PREP_TITLES, and สิ่งที่คุณมองหา is Paul's own collocation in PACKS[0].who. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it. Thai editorial review on 13/11/2026. Use the existing proposal. ขอบคุณสำหรับคำตอบ ends the thanks clearly before PunProfile becomes the subject of the next sentence."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38866,7 +38866,7 @@ review:
   structural_calque: pending
   text_hash: 5325c683eca1168b2792b3eeed40f940c249beaf49c607a7e215498b0f1dce8b
   prompt_version: structural-calque-v1
-  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: The same misreading as the like heading, and ยังไม่ตรง was left with nothing to be ตรง with; the pair should differ only in the verdict it reports. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it."
+  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: The same misreading as the like heading, and ยังไม่ตรง was left with nothing to be ตรง with; the pair should differ only in the verdict it reports. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it. Thai editorial review on 13/11/2026. Use the existing proposal. It states what the role did not match and reads in parallel with the positive heading."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38884,11 +38884,12 @@ provenance: draft
 date: 12/11/2026
 term_bindings: []
 decision_note: "Says what PunProfile does with the answer. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+proposal_th: "PunProfile จะใช้คำตอบนี้คัดตำแหน่งงานที่จะแนะนำให้คุณต่อไป"
 review:
   structural_calque: pending
   text_hash: d9a704e147e5386b247dceeb65e3cb329d5c5b2e9522d04ea3529ed33edc2df9
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. Uses the candidate's answer to explain what PunProfile will do next. ตรงกับคุณ is vague about what the roles should match. Pending Paul's read-back."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38910,7 +38911,7 @@ review:
   structural_calque: pending
   text_hash: 53707c227f83fb85f67025c4cadbb991d3b25a19ddd0a907086138dc3048175f
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. Keep the current Thai. It asks for one main reason and tells the reader they can leave it unanswered. Pending Paul's read-back."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38932,7 +38933,7 @@ review:
   structural_calque: pending
   text_hash: 4ffe414b4ca5967e4fa188091f17bf37ab2d396782019452cd197f0fc8f66988
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. Keep the current Thai. The confirmation directly names what was saved. Pending Paul's read-back."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38955,7 +38956,7 @@ review:
   structural_calque: pending
   text_hash: d03e191a70428413feb4c1cf47746b7e109c997f19a4a9e77fe85fc19530edf5
   prompt_version: structural-calque-v1
-  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: กดผิด? is the English elliptical question kept whole, with a question mark on a phrase carrying no question particle; Paul's own SIGNIN_LOST turns exactly this English pattern into a หาก conditional, and ได้ makes the link an offer rather than an order. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it."
+  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: กดผิด? is the English elliptical question kept whole, with a question mark on a phrase carrying no question particle; Paul's own SIGNIN_LOST turns exactly this English pattern into a หาก conditional, and ได้ makes the link an offer rather than an order. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it. Thai editorial review on 13/11/2026. Use the existing proposal. หากกดผิด เปลี่ยนคำตอบได้ fits the written register and makes the action available to the reader."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38977,7 +38978,7 @@ review:
   structural_calque: pending
   text_hash: bbc18683d4b3dc4d65171b6237c473faedac39abca715d267ad30526190847a8
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. Keep the current Thai. It uses the established label แดชบอร์ดหางาน and an action verb that fits the link. Pending Paul's read-back."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38995,11 +38996,12 @@ provenance: draft
 date: 12/11/2026
 term_bindings: []
 decision_note: "Reason closed on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+proposal_th: "ปิดรับสมัครแล้ว"
 review:
   structural_calque: pending
   text_hash: 11146c4169a0d4be3ac5ecec6b9fbe9391f62b1b5bb0252ae44373503fa426b0
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. Uses the familiar phrase for a role that has stopped accepting applications. The reason list already identifies the posting. Pending Paul's read-back."
 ```
 
 <!-- COPY-ENTRY -->
@@ -39017,11 +39019,12 @@ provenance: draft
 date: 12/11/2026
 term_bindings: []
 decision_note: "Reason title_level on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+proposal_th: "ชื่อตำแหน่งหรือระดับงานไม่ตรง"
 review:
   structural_calque: pending
   text_hash: 219d4de9c146c5f36371a64396a9966a5ead6db1b4f8083495fc4f219047fab4
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. Names the two fields the English distinguishes and gives ระดับ a clear referent. Pending Paul's read-back."
 ```
 
 <!-- COPY-ENTRY -->
@@ -39043,7 +39046,7 @@ review:
   structural_calque: pending
   text_hash: ab8f26d572c9ee3ebb2a7c23a3d26e16c084308cde9b3ee167c876356f6688dc
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. Keep the current Thai. It identifies location as the mismatch without suggesting why it is unsuitable. Pending Paul's read-back."
 ```
 
 <!-- COPY-ENTRY -->
@@ -39065,7 +39068,7 @@ review:
   structural_calque: pending
   text_hash: eca5f2e3808e85880a751b2edaf58a28918f4180c12b1de6c4058d4a0b54a7be
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. Keep the current Thai. ค่าตอบแทน matches the breadth of pay and the phrase works as a short reason. Pending Paul's read-back."
 ```
 
 <!-- COPY-ENTRY -->
@@ -39110,7 +39113,7 @@ review:
   structural_calque: pending
   text_hash: 39e59ce71d09df0be0e7219e13e747163789b0116dfd51cf6ef1584b2fbba486
   prompt_version: structural-calque-v1
-  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: ไม่ได้ใช้ says the reader does not use the language, not that they cannot, so the chip no longer states the reason it stands for; พูดไม่ได้ is the ability negation, and พูด is the verb the approved language question uses. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it."
+  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: ไม่ได้ใช้ says the reader does not use the language, not that they cannot, so the chip no longer states the reason it stands for; พูดไม่ได้ is the ability negation, and พูด is the verb the approved language question uses. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it. Thai editorial review on 13/11/2026. Use the existing proposal. พูดไม่ได้ describes ability, which is the meaning of this reason."
 ```
 
 <!-- COPY-ENTRY -->
@@ -39128,11 +39131,12 @@ provenance: draft
 date: 12/11/2026
 term_bindings: []
 decision_note: "Reason applied on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+proposal_th: "สมัครไปแล้ว"
 review:
   structural_calque: pending
   text_hash: 4e30c29bb6fd9cf353f867f89a4b34e8cb501d38316d61ce276ef0c436e2525d
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. ไปแล้ว already says the candidate previously applied. Dropping เคย makes this chip shorter. Pending Paul's read-back."
 ```
 
 <!-- COPY-ENTRY -->
@@ -39154,5 +39158,5 @@ review:
   structural_calque: pending
   text_hash: de416c86c103801c636e82fb7967e8128abdffcc902d746eac65c33137914666
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Thai editorial review on 13/11/2026. Keep เหตุผลอื่น. It is a concise final option under a question that asks for a reason. Pending Paul's read-back."
 ```
