@@ -57,6 +57,22 @@ type SendResult = { attempted: number; sent: number; failed: number };
  */
 const STOP_TH = "หยุดรับอีเมลนี้";
 
+/**
+ * The footer's channels, here for the same reason `STOP_TH` is: they are on
+ * every message this function sends, whatever a caller passes, so they are
+ * furniture rather than editorial.
+ *
+ * Both links are Paul's own, supplied 13/11/2026. The Facebook Page is recorded
+ * in `00_Quick_Facts.md` as a follow link and explicitly not a contact channel,
+ * which is what it is doing here. LINE is deliberately absent: it is a real
+ * contact channel and sits in the site's footer, and an email whose close
+ * already asks for a reply does not offer a third way to answer.
+ */
+const CHANNELS = [
+  { label: "Facebook", href: "https://www.facebook.com/punprofile" },
+  { label: "TikTok", href: "https://www.tiktok.com/@punprofile" },
+];
+
 export const send = internalAction({
   args: {
     subject: v.string(),
@@ -158,6 +174,7 @@ export const send = internalAction({
               body: args.body,
               stopUrl: stop,
               stopLabel: STOP_TH,
+              channels: CHANNELS,
               image: args.image,
             }),
             // The header every mail client reads to offer its own one-click

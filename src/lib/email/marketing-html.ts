@@ -8,8 +8,9 @@
  * `marketingSend.send` takes the words as an argument, because what PunProfile
  * says to a list is an editorial decision owned by `03_Content_System.md` and
  * drafted in the coaching repo. That rule is about words. This file holds no
- * words of its own except the two unsubscribe labels it is handed: it takes the
- * same plain-text body the text part uses and lays it out.
+ * words of its own: the unsubscribe label and the footer's channel names and
+ * links are all handed to it, and it takes the same plain-text body the text
+ * part uses and lays it out.
  *
  * So the copy stays one string in one place, the two parts of the email cannot
  * drift, and nobody has to write HTML to send one.
@@ -25,8 +26,17 @@
  *
  * The layout is the design system's own idiom: a `canvas-soft` band with a
  * white 30px card on it, `ink-deep` for the copy, one lime pill for the one
- * action, and the dark band as the footer. A lime fill never carries type, but
- * on `canvas-dark` lime IS the accent, which is what the wordmark uses there.
+ * action, and the dark band as the footer. The card takes the 30px card radius
+ * and the dark band takes 40px, because `design.md` gives the large panel and
+ * the dark band `3xl` rather than the card's `2xl`.
+ *
+ * **Nothing in the footer is bare text.** The wordmark used to be the literal
+ * string `punprofile.app` set in lime. Gmail recognises a bare domain as a web
+ * address, wraps it in its own anchor and paints it its own blue with an
+ * underline, so the one place the brand colour appeared was the one place it
+ * was overridden, and no preview outside Gmail could show it. The footer is now
+ * the reversed logo linked to the site, and every other line is a real anchor
+ * carrying an explicit colour, which Gmail leaves alone.
  *
  * ---------------------------------------------------------------------------
  * WHAT EMAIL FORCES
@@ -60,6 +70,15 @@ const ON_PRIMARY = token("on-primary");
  * with macOS, iOS, Windows and Android. A Latin-only stack would leave Thai to
  * whatever the client picks, which is where clipped tone marks come from.
  */
+/**
+ * The reversed wordmark, near-white type with the orange mark, for the dark
+ * footer band. Hosted rather than inlined: Gmail refuses `data:` image URIs, and
+ * the site's own reversed logo is an SVG, which most mail clients will not
+ * render at all. Rendered from `public/punprofile-logo-reversed.svg` at 320px
+ * wide and shown at 160, so it stays sharp on a retina screen.
+ */
+const LOGO = "https://punprofile.app/punprofile-logo-email-reversed.png";
+
 const FONT =
   "Anuphan, 'Noto Sans Thai', 'Sukhumvit Set', 'Leelawadee UI', Thonburi, " +
   "Inter, system-ui, -apple-system, 'Segoe UI', sans-serif";
@@ -116,6 +135,12 @@ export function renderMarketingEmail(args: {
   /** The word the stop link is written on, passed in rather than written here. */
   stopLabel: string;
   /**
+   * The footer's channels, in the order they should read. Passed in for the
+   * same reason the copy is: which channels PunProfile points a reader at is a
+   * decision this file does not get to make.
+   */
+  channels?: { label: string; href: string }[];
+  /**
    * The article's own image, at a public URL, with the alt text that already
    * describes it. Optional: an email that announces nothing visual does not
    * need one, and a broken image is worse than no image.
@@ -124,6 +149,7 @@ export function renderMarketingEmail(args: {
 }): string {
   const preheader = args.body.trim().split(/\n\s*\n/)[1] ?? args.subject;
   const stop = escape(args.stopUrl);
+  const channels = args.channels ?? [];
   const link = `color:${ON_CANVAS_DARK};text-decoration:underline;`;
 
   return `<!doctype html>
@@ -155,11 +181,20 @@ export function renderMarketingEmail(args: {
 
       <tr><td style="height:16px;line-height:16px;font-size:0;">&nbsp;</td></tr>
 
-      <tr><td style="background:${CANVAS_DARK};border-radius:30px;padding:28px 32px;">
-        <p style="margin:0 0 18px;font-family:${FONT};font-size:14px;line-height:22px;color:${ON_CANVAS_DARK};">
+      <tr><td style="background:${CANVAS_DARK};border-radius:40px;padding:32px;">
+        <a href="https://punprofile.app" style="display:inline-block;text-decoration:none;">
+          <img src="${LOGO}" alt="PunProfile" width="160" style="display:block;width:160px;max-width:160px;height:auto;border:0;">
+        </a>
+        ${
+          channels.length > 0
+            ? `<p style="margin:24px 0 0;font-family:${FONT};font-size:14px;line-height:22px;color:${ON_CANVAS_DARK};">${channels
+                .map((c) => `<a href="${escape(c.href)}" style="${link}">${escape(c.label)}</a>`)
+                .join(`<span style="padding:0 10px;">&middot;</span>`)}</p>`
+            : ""
+        }
+        <p style="margin:18px 0 0;font-family:${FONT};font-size:14px;line-height:22px;color:${ON_CANVAS_DARK};">
           <a href="${stop}" style="${link}">${escape(args.stopLabel)}</a>
         </p>
-        <p style="margin:0;font-family:${FONT};font-size:16px;line-height:24px;font-weight:600;color:${PRIMARY};">punprofile.app</p>
       </td></tr>
 
     </table>
