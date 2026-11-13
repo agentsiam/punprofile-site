@@ -1,4 +1,6 @@
 import { Anuphan, Inter } from "next/font/google";
+import Analytics from "@/components/Analytics";
+import CookieBanner from "@/components/CookieBanner";
 import ConvexClientProvider from "@/app/ConvexClientProvider";
 import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
 import JsonLd from "@/components/JsonLd";
@@ -33,6 +35,11 @@ import { pick, t } from "@/lib/locale";
  * cookie. `(private)` is the one caller that still passes a cookie-derived
  * value, because `/admin` and `/login` are outside both language trees and their
  * behaviour is deliberately unchanged.
+ *
+ * `analytics` is the second thing the three callers differ on, added 03/11/2026
+ * with the Google tag. The two public trees pass it and `(private)` does not,
+ * which is what keeps a lead's id out of a page URL sent to Google;
+ * `Analytics.tsx` carries the reasoning.
  */
 
 /**
@@ -71,9 +78,11 @@ const fontVars = [inter.variable, anuphan.variable].join(" ");
 
 export default function SiteShell({
   locale,
+  analytics = false,
   children,
 }: {
   locale: Locale;
+  analytics?: boolean;
   children: React.ReactNode;
 }) {
   return (
@@ -89,6 +98,11 @@ export default function SiteShell({
         className={`${fontVars} h-full antialiased`}
       >
         <body className="min-h-full flex flex-col">
+          {/* First in the body, because the consent defaults inside it have to
+              be set before the Google tag it loads can decide whether it may
+              write a cookie. Absent on `(private)` and absent everywhere until
+              a measurement ID is set. */}
+          {analytics ? <Analytics /> : null}
           {/* Who this is and what site it is, for a search or answer engine.
               In the shell so it is on every page and stated once: the two nodes
               carry stable `@id`s, and the per-page blocks on the blog reference
@@ -231,8 +245,18 @@ export default function SiteShell({
                 menu: during the check, every link out costs the candidate
                 their answers. */}
             <NavLockGate>
-              <SiteFooter locale={locale} />
+              <SiteFooter locale={locale} analytics={analytics} />
             </NavLockGate>
+            {/* The cookie question, in the same gate and for a reason of its
+                own: nothing belongs over the assessment, and a candidate who
+                is never asked is a candidate nothing is stored for.
+                `CookieBanner` says the rest. Last in the body so it is last in
+                the tab order, after the page it is asking about. */}
+            {analytics ? (
+              <NavLockGate>
+                <CookieBanner />
+              </NavLockGate>
+            ) : null}
               </div>
             </div>
           </LocaleProvider>

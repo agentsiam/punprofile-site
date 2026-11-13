@@ -56,6 +56,24 @@ export const PRIVACY_REVIEWED = true;
 export const PRIVACY_LAST_UPDATED = "02/11/2026";
 
 /**
+ * Whether this notice yet tells the reader that an analytics cookie exists.
+ * False. 03/11/2026.
+ *
+ * The Google tag reads it, in `analytics.ts`, and keeps analytics storage
+ * denied while it is false, so the `_ga` cookie cannot appear on a device while
+ * the device section of this notice still says no tracking cookie is used. The
+ * same shape as `MARKETING_CONSENT_COPY_REVIEWED` below and for the same
+ * reason: the behaviour waits for the words rather than the words chasing the
+ * behaviour.
+ *
+ * It is flipped by the commit that lands the approved analytics wording, which
+ * is the commit that also moves `PRIVACY_LAST_UPDATED`. The English is proposed
+ * in `Claude outputs/privacy-notice-analytics-cookie-proposal.md` and the Thai
+ * follows it through the language review.
+ */
+export const PRIVACY_COVERS_ANALYTICS = false;
+
+/**
  * The marketing opt-in, 16/08/2026.
  *
  * A notice has to describe what the product does, and the marketing tick in
@@ -314,6 +332,18 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs3XQ:EN%%,
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs3XQ:TH%%,
       },
+      // Website measurement, 04/11/2026, and the only recipient in this list
+      // that appears and disappears. It renders while the cookie banner is
+      // live, for the same reason the banner is: naming a recipient the site
+      // does not yet use would be as wrong as using one it does not name.
+      ...(PRIVACY_COVERS_ANALYTICS
+        ? [
+            {
+              en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs4XQ:EN%%,
+              th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs4XQ:TH%%,
+            },
+          ]
+        : []),
       {
         en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs0XQ:EN%%,
         th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNV0uYm9keVs0XQ:TH%%,
@@ -326,10 +356,54 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNl0uaGVhZGluZw:TH%%,
     },
     body: [
-      {
-        en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNl0uYm9keVswXQ:EN%%,
-        th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNl0uYm9keVswXQ:TH%%,
-      },
+      /*
+       * Two versions of one paragraph, and the flag picks which is true.
+       * 04/11/2026.
+       *
+       * `body[0]` is the paragraph Paul corrected on 02/11/2026, and it says
+       * PunProfile uses no tracking cookie. That is true today and false the
+       * moment anyone accepts the banner, so it cannot simply be edited: the
+       * site has to be able to deploy in both states and say the right thing
+       * in each. `body[1]` is the same paragraph with his sentences kept and
+       * the analytics ones added, and it renders from the deploy that turns
+       * the banner on.
+       *
+       * The same shape as the marketing paragraph above, and the same reason:
+       * the words and the behaviour move together or one of them is a lie.
+       */
+      PRIVACY_COVERS_ANALYTICS
+        ? {
+            en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNl0uYm9keVsxXQ:EN%%,
+            th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNl0uYm9keVsxXQ:TH%%,
+          }
+        : {
+            en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNl0uYm9keVswXQ:EN%%,
+            th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNl0uYm9keVswXQ:TH%%,
+          },
+      /*
+       * The answer to the banner is itself kept on the device, and this is the
+       * paragraph that says so. Paul's call, 04/11/2026, after his review of
+       * the paragraph above asked whether the choice is stored. It is: one
+       * cookie holding granted or denied, for 182 days, which is what stops
+       * the question being asked on every page and what brings it back twice a
+       * year.
+       *
+       * Its own paragraph rather than a sentence added to his: the one above
+       * carries his wording and a passing verdict bound to its exact text, and
+       * editing it would send his own Thai back into review to add a sentence
+       * he did not write.
+       *
+       * Gated with the rest, because the cookie it describes cannot exist
+       * before the banner does. Nothing writes it but the banner.
+       */
+      ...(PRIVACY_COVERS_ANALYTICS
+        ? [
+            {
+              en: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNl0uYm9keVsyXQ:EN%%,
+              th: %%LANG:c3JjL2xpYi9jb250ZW50L3ByaXZhY3kudHM6OlBSSVZBQ1lfU0VDVElPTlNbNl0uYm9keVsyXQ:TH%%,
+            },
+          ]
+        : []),
     ],
   },
   {

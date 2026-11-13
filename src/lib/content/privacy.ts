@@ -56,6 +56,24 @@ export const PRIVACY_REVIEWED = true;
 export const PRIVACY_LAST_UPDATED = "02/11/2026";
 
 /**
+ * Whether this notice yet tells the reader that an analytics cookie exists.
+ * False. 03/11/2026.
+ *
+ * The Google tag reads it, in `analytics.ts`, and keeps analytics storage
+ * denied while it is false, so the `_ga` cookie cannot appear on a device while
+ * the device section of this notice still says no tracking cookie is used. The
+ * same shape as `MARKETING_CONSENT_COPY_REVIEWED` below and for the same
+ * reason: the behaviour waits for the words rather than the words chasing the
+ * behaviour.
+ *
+ * It is flipped by the commit that lands the approved analytics wording, which
+ * is the commit that also moves `PRIVACY_LAST_UPDATED`. The English is proposed
+ * in `Claude outputs/privacy-notice-analytics-cookie-proposal.md` and the Thai
+ * follows it through the language review.
+ */
+export const PRIVACY_COVERS_ANALYTICS = false;
+
+/**
  * The marketing opt-in, 16/08/2026.
  *
  * A notice has to describe what the product does, and the marketing tick in
@@ -314,6 +332,18 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
         en: "- Google Meet, the video service for our calls. It receives your name, email address and the call itself while it runs.",
         th: "- Google Meet เป็นบริการวิดีโอคอลที่ PunProfile ใช้สำหรับการพูดคุย โดย Google จะได้รับชื่อ ที่อยู่อีเมลของคุณ และข้อมูลการสนทนาระหว่างที่การพูดคุยดำเนินอยู่",
       },
+      // Website measurement, 04/11/2026, and the only recipient in this list
+      // that appears and disappears. It renders while the cookie banner is
+      // live, for the same reason the banner is: naming a recipient the site
+      // does not yet use would be as wrong as using one it does not name.
+      ...(PRIVACY_COVERS_ANALYTICS
+        ? [
+            {
+              en: "- Google Analytics, the website analysis service PunProfile uses, which processes the data on Google's systems outside Thailand. Whether or not you allow analytics cookies, Google receives information about the pages you open, the link that brought you to the site, and basic details of your browser and device. If you allow analytics cookies, Google can recognise your browser when you come back. Google does not receive your name, your contact details or your answers.",
+              th: "- Google Analytics เป็นบริการวิเคราะห์เว็บไซต์ที่ PunProfile ใช้ โดยประมวลผลข้อมูลบนระบบของ Google นอกประเทศไทย ไม่ว่าคุณจะอนุญาตให้ใช้คุกกี้วิเคราะห์หรือไม่ Google จะได้รับข้อมูลเกี่ยวกับหน้าที่คุณเปิด ลิงก์ที่พาคุณมาที่เว็บไซต์ และข้อมูลพื้นฐานของเบราว์เซอร์และอุปกรณ์ หากคุณอนุญาตให้ใช้คุกกี้วิเคราะห์ Google จะสามารถจดจำเบราว์เซอร์ของคุณเมื่อคุณกลับมาใช้งานอีกครั้ง Google ไม่ได้รับชื่อ ข้อมูลติดต่อ หรือคำตอบของคุณ",
+            },
+          ]
+        : []),
       {
         en: "These are service providers processing data on our behalf, not parties we share your information with. No one else receives it.",
         th: "ทั้งหมดนี้คือผู้ให้บริการที่ประมวลผลข้อมูลในนามของเรา ไม่ใช่บุคคลที่เราเปิดเผยข้อมูลของคุณให้ ไม่มีผู้อื่นได้รับข้อมูลนี้",
@@ -326,10 +356,54 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
       th: "ข้อมูลที่จัดเก็บบนอุปกรณ์ของคุณ",
     },
     body: [
-      {
-        en: "Nothing that identifies you, unless you sign in to your page as a paying candidate. Signing in stores a sign-in cookie on your device so you stay signed in; signing out removes it. We use no tracking cookie. The only other thing we keep on your device is your language choice, Thai or English.",
-        th: "PunProfile ไม่เก็บข้อมูลที่ระบุตัวตนของคุณบนอุปกรณ์ เว้นแต่คุณเข้าสู่ระบบแดชบอร์ดหางานในฐานะลูกค้าที่ชำระค่าบริการแล้ว เมื่อเข้าสู่ระบบ อุปกรณ์จะเก็บคุกกี้ไว้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ PunProfile ไม่ใช้คุกกี้ติดตาม นอกจากคุกกี้สำหรับเข้าสู่ระบบแล้ว ข้อมูลอื่นที่เก็บบนอุปกรณ์มีเพียงภาษาที่คุณเลือก คือภาษาไทยหรือภาษาอังกฤษ",
-      },
+      /*
+       * Two versions of one paragraph, and the flag picks which is true.
+       * 04/11/2026.
+       *
+       * `body[0]` is the paragraph Paul corrected on 02/11/2026, and it says
+       * PunProfile uses no tracking cookie. That is true today and false the
+       * moment anyone accepts the banner, so it cannot simply be edited: the
+       * site has to be able to deploy in both states and say the right thing
+       * in each. `body[1]` is the same paragraph with his sentences kept and
+       * the analytics ones added, and it renders from the deploy that turns
+       * the banner on.
+       *
+       * The same shape as the marketing paragraph above, and the same reason:
+       * the words and the behaviour move together or one of them is a lie.
+       */
+      PRIVACY_COVERS_ANALYTICS
+        ? {
+            en: "When you sign in to your Job Search Dashboard as a paying candidate, PunProfile uses a cookie to keep you signed in, and deletes it when you sign out. If you allow analytics cookies, Google Analytics records two cookies on your device, to count visits, to see which pages visitors open, and to see which job posts brought them to the site. These cookies record numbers the system generates, not anything you typed, and they are not used for advertising. They expire 400 days after your last visit. You can refuse them or change the setting at any time, from Cookie settings at the foot of every page. If you refuse, PunProfile deletes the analytics cookies from your device. The site also stores the language you chose, Thai or English.",
+            th: "เมื่อคุณเข้าสู่ระบบแดชบอร์ดหางานในฐานะลูกค้าที่ชำระค่าบริการแล้ว PunProfile จะใช้คุกกี้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ หากคุณอนุญาตให้ใช้คุกกี้วิเคราะห์ Google Analytics จะบันทึกคุกกี้ 2 รายการบนอุปกรณ์ของคุณ เพื่อนับการเข้าชม ดูว่าผู้เข้าชมเปิดหน้าใด และดูว่าประกาศงานใดพาผู้เข้าชมมาที่เว็บไซต์ คุกกี้เหล่านี้บันทึกตัวเลขที่ระบบสร้างขึ้น ไม่ใช่ข้อความที่คุณกรอก และไม่ใช้เพื่อโฆษณา คุกกี้จะหมดอายุ 400 วันหลังการเข้าชมครั้งล่าสุด คุณปฏิเสธหรือเปลี่ยนการตั้งค่าได้ทุกเมื่อที่เมนู «การตั้งค่าคุกกี้» ด้านล่างของทุกหน้า หากคุณปฏิเสธ PunProfile จะลบคุกกี้วิเคราะห์ออกจากอุปกรณ์ เว็บไซต์ยังบันทึกภาษาที่คุณเลือกไว้ คือภาษาไทยหรือภาษาอังกฤษ",
+          }
+        : {
+            en: "Nothing that identifies you, unless you sign in to your page as a paying candidate. Signing in stores a sign-in cookie on your device so you stay signed in; signing out removes it. We use no tracking cookie. The only other thing we keep on your device is your language choice, Thai or English.",
+            th: "PunProfile ไม่เก็บข้อมูลที่ระบุตัวตนของคุณบนอุปกรณ์ เว้นแต่คุณเข้าสู่ระบบแดชบอร์ดหางานในฐานะลูกค้าที่ชำระค่าบริการแล้ว เมื่อเข้าสู่ระบบ อุปกรณ์จะเก็บคุกกี้ไว้เพื่อให้คุณใช้งานต่อได้โดยไม่ต้องเข้าสู่ระบบซ้ำ และจะลบคุกกี้นี้เมื่อคุณออกจากระบบ PunProfile ไม่ใช้คุกกี้ติดตาม นอกจากคุกกี้สำหรับเข้าสู่ระบบแล้ว ข้อมูลอื่นที่เก็บบนอุปกรณ์มีเพียงภาษาที่คุณเลือก คือภาษาไทยหรือภาษาอังกฤษ",
+          },
+      /*
+       * The answer to the banner is itself kept on the device, and this is the
+       * paragraph that says so. Paul's call, 04/11/2026, after his review of
+       * the paragraph above asked whether the choice is stored. It is: one
+       * cookie holding granted or denied, for 182 days, which is what stops
+       * the question being asked on every page and what brings it back twice a
+       * year.
+       *
+       * Its own paragraph rather than a sentence added to his: the one above
+       * carries his wording and a passing verdict bound to its exact text, and
+       * editing it would send his own Thai back into review to add a sentence
+       * he did not write.
+       *
+       * Gated with the rest, because the cookie it describes cannot exist
+       * before the banner does. Nothing writes it but the banner.
+       */
+      ...(PRIVACY_COVERS_ANALYTICS
+        ? [
+            {
+              en: "PunProfile keeps your analytics cookie setting on your device, so you are not asked again every time you open a new page. It records only whether you allowed analytics cookies. The setting is kept for six months, after which PunProfile asks you to choose again.",
+              th: "PunProfile จะบันทึกการตั้งค่าคุกกี้วิเคราะห์ไว้บนอุปกรณ์ของคุณ เพื่อไม่ต้องถามซ้ำทุกครั้งที่เปิดหน้าใหม่ โดยบันทึกเพียงว่าคุณอนุญาตให้ใช้คุกกี้วิเคราะห์หรือไม่ การตั้งค่านี้จะเก็บไว้ 6 เดือน หลังจากนั้น PunProfile จะขอให้คุณเลือกอีกครั้ง",
+            },
+          ]
+        : []),
     ],
   },
   {

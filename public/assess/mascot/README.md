@@ -1,12 +1,14 @@
 # Mascot scenes
 
-**One, as of 17/08/2026.** `mascot.md` in the coaching repo gives the mascot
-whole moments at the **ends** of the assessment and gives photography the
-sections in between. Both ends had one; the opening no longer does.
+**Two, and only one of them is inside the assessment.** `mascot.md` in the
+coaching repo gives the mascot whole moments at the **ends** of the assessment
+and gives photography the sections in between. Both ends had one; the opening no
+longer does. The other scene left the assessment and found a job on the header.
 
 | File | Where | Scene |
 |---|---|---|
 | `report.png` | Mid-page on the first read | Standing with a clipboard, glasses, one hand open |
+| `welcome.jpg` | The EU Fit Check offer card in the nav menu, `large:` and up | Sitting on a clock |
 
 ## What went, and why it is worth knowing
 
@@ -15,8 +17,12 @@ question 1 from 16/08/2026 and was **retired on 17/08/2026** on Paul's call. It
 had replaced a spinner on the argument that a character arriving is more
 interesting motion than a ring, which is true and is not what a loading state is
 for: a 420px illustration was the largest thing on screen at the moment the
-candidate was waiting to be asked a question. The spinner is back. The file is
-kept untracked in this folder rather than deleted, since the pose itself is fine.
+candidate was waiting to be asked a question. The spinner is back.
+
+**It was kept rather than deleted because the pose itself is fine, and it has a
+job again.** `TopNav.tsx` renders it as the picture on the menu's EU Fit Check
+offer card: decorative, `alt=""`, and only at `large:` and up. It is tracked and
+it ships, so do not treat this folder as holding one live file.
 
 **`coach.png`**, standing with a clipboard, held the first read's slot from
 16/08/2026 until **17/08/2026**, when Paul supplied `report.png`: the same idea
@@ -69,16 +75,16 @@ sips -Z 1000 new.jpg --out welcome.jpg
 sips -s format jpeg -s formatOptions 80 welcome.jpg --out welcome.jpg
 ```
 
-## Both files are pre-fix renders
+## `welcome.jpg` is a pre-fix render
 
-Known and deliberate, 16/08/2026. They were generated before two prompt
-corrections landed, so both are due for a re-run:
+Known and deliberate, 16/08/2026. It was generated before two prompt corrections
+landed, so it carries both faults and is due for a re-run whenever it is next
+regenerated:
 
-- **The counter closes up.** `result.jpg` especially: without a clearly open
-  hole in the bowl, the character reads as a rounded blob with a face rather
-  than as the letter P.
-- **The backdrop is a neutral off-white**, not a brand wash. Welcome should be
-  cream `#FFFAE7` and result mint `#E3FAF3`.
+- **The counter closes up**, the hole the letter P is defined by. Without a
+  clearly open bowl the character reads as a rounded blob with a face rather
+  than as the letter.
+- **The backdrop is a neutral off-white**, not a brand wash. It should be cream
+  `#FFFAE7`.
 
-`scene-prompts.md` in the coaching repo carries both fixes. Scenes 1 and 2 are
-these two.
+`scene-prompts.md` in the coaching repo carries both fixes.

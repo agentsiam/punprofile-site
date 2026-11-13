@@ -14921,5 +14921,68 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "13/11/2026",
     "decisionNote": "Reason other on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+  },
+  "src/lib/content/cookie-consent.ts::COOKIE_CONSENT.body": {
+    "source": "src/lib/content/cookie-consent.ts",
+    "path": "COOKIE_CONSENT.body",
+    "render": "Cookie banner, the ask",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "04/11/2026",
+    "decisionNote": "Drafted by Claude 04/11/2026 for the cookie consent banner. Paul rewrote the Thai in his review pass the same day and the English was brought into parallel with it: the refusal is now named as analytics cookies rather than cookies in general, the site is said to work normally without them rather than not to need them, and the reader changes a setting rather than an answer."
+  },
+  "src/lib/content/cookie-consent.ts::COOKIE_CONSENT.accept": {
+    "source": "src/lib/content/cookie-consent.ts",
+    "path": "COOKIE_CONSENT.accept",
+    "render": "Cookie banner, the filled answer",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "04/11/2026",
+    "decisionNote": "Drafted by Claude 04/11/2026 as the banner's filled answer. Paul rewrote the Thai in his review pass the same day, naming analytics cookies rather than cookies in general, and the English follows it. It is the same size and shape as the refusal beside it, which is what makes the consent freely given."
+  },
+  "src/lib/content/cookie-consent.ts::COOKIE_CONSENT.reject": {
+    "source": "src/lib/content/cookie-consent.ts",
+    "path": "COOKIE_CONSENT.reject",
+    "render": "Cookie banner, the outlined answer, same size as the filled one",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "04/11/2026",
+    "decisionNote": "Drafted by Claude 04/11/2026 as the banner's outlined answer. Paul rewrote the Thai in his review pass the same day, naming analytics cookies rather than cookies in general, and the English follows it. Same height, padding, shape and type as the acceptance."
+  },
+  "src/lib/content/cookie-consent.ts::COOKIE_CONSENT.settings": {
+    "source": "src/lib/content/cookie-consent.ts",
+    "path": "COOKIE_CONSENT.settings",
+    "render": "Site footer, beside the privacy link, and the way back to the choice",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "04/11/2026",
+    "decisionNote": "Drafted by Claude 04/11/2026 for the footer control that reopens the cookie choice. Paul ticked it unchanged in his review pass the same day. It is the wording his revision of the device paragraph then quotes, so the notice and the control name the same thing."
+  },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].body[1]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[6].body[1]",
+    "render": "Privacy notice, what is stored on your device, from the deploy that turns the cookie banner on",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "04/11/2026",
+    "decisionNote": "The device paragraph as it reads once the cookie banner is on; body[0] stays the text for every deploy before that. Paul rewrote the Thai in his review pass of 04/11/2026 and told the English to follow it, which it now does. Two categorical claims went: that nothing on the device identifies the reader, and that the language choice is the only other thing stored. Both were true of the old paragraph and neither survives a device that also holds analytics cookies and the record of the cookie answer itself. 400 days is measured in Chrome and renewed on every visit, not Google's documented two-year default, which Chrome caps. His note asks for three checks before publishing: whether the consent choice is itself stored, the 400-day expiry, and the deletion behaviour. The expiry and the deletion are measured and hold. The consent choice is stored, in a cookie named pp_analytics_consent that lasts six months, and this paragraph does not yet name it."
+  },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[5].body[8]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[5].body[8]",
+    "render": "Privacy notice, the recipients list, from the deploy that turns the cookie banner on",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "04/11/2026",
+    "decisionNote": "The recipients line as it reads once the cookie banner is on. Paul rewrote the Thai in his review pass of 04/11/2026 and the English follows it. His note asks for three checks before publishing: the requests made when analytics cookies are refused, the transfer location, and the data exclusions. Refused, the tag still posts one cookieless page view carrying the URL, the title, the browser and device hints and a number it does not store, so the line's claim that Google is told this either way is measured and holds. The exclusions hold too: nothing in this repo sends event properties, the page URL is the only content field, and the unsubscribe token is redacted out of it. The transfer location is not verified and is not claimed: the browser posts to region1.google-analytics.com, which is routing rather than a storage location, so the line says only that it leaves Thailand."
+  },
+  "src/lib/content/privacy.ts::PRIVACY_SECTIONS[6].body[2]": {
+    "source": "src/lib/content/privacy.ts",
+    "path": "PRIVACY_SECTIONS[6].body[2]",
+    "render": "Privacy notice, what is stored on your device, the second paragraph, from the deploy that turns the cookie banner on",
+    "narrativeSlot": "utility",
+    "provenance": "paul-written",
+    "date": "04/11/2026",
+    "decisionNote": "Drafted by Claude 04/11/2026 on Paul's call, after his review of the paragraph above asked whether the consent choice is itself stored. It is: one cookie holding granted or denied, 182 days, written only by the banner. Its own paragraph rather than a sentence inside his, so his wording and its verdict are not disturbed. Paul rewrote the Thai the same day and the English was brought into parallel with it: PunProfile is the one doing the keeping rather than the answer keeping itself, it is the setting rather than the answer, the repetition it avoids is per page opened, and at six months PunProfile asks the reader to choose again rather than merely asking. The technical cookie name is left out to match a notice that names no other cookie either. Rendered only while PRIVACY_COVERS_ANALYTICS is true, since nothing writes the cookie before the banner exists."
   }
 } as const;

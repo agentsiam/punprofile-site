@@ -107,7 +107,7 @@ async function movePersonalRecords(
     .collect();
 
   // Titles move as they are; if both rows had targets the survivor may end
-  // up with more than five active, which the coach resolves on the 360 page
+  // up with more than four active, which the coach resolves on the 360 page
   // rather than a merge silently pausing someone's choice.
   const targets = await ctx.db
     .query("targets")
