@@ -64,6 +64,8 @@ const LINE = token("line");
 const ON_CANVAS_DARK = token("on-canvas-dark");
 const INK_DEEP = token("ink-deep");
 const MUTE_STRONG = token("mute-strong");
+const YELLOW_PALE = token("yellow-pale");
+const ON_YELLOW_PALE = token("on-yellow-pale");
 const PRIMARY = token("primary");
 const ON_PRIMARY = token("on-primary");
 
@@ -225,7 +227,11 @@ export function renderMarketingEmail(args: {
               </a>
               ${
                 args.masthead
-                  ? `<p class="masthead" style="margin:10px 0 0;font-family:${FONT};font-size:17px;line-height:26px;font-weight:600;color:${INK_DEEP};">${escape(args.masthead.name)}</p>`
+                  ? `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:12px 0 0;">
+                      <tr><td style="border-radius:9999px;background:${YELLOW_PALE};padding:4px 16px;">
+                        <span class="masthead" style="font-family:${FONT};font-size:15px;line-height:24px;font-weight:600;color:${ON_YELLOW_PALE};white-space:nowrap;">${escape(args.masthead.name)}</span>
+                      </td></tr>
+                    </table>`
                   : ""
               }
             </td>
