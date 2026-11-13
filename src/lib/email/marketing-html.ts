@@ -64,6 +64,8 @@ const LINE = token("line");
 const ON_CANVAS_DARK = token("on-canvas-dark");
 const INK_DEEP = token("ink-deep");
 const MUTE_STRONG = token("mute-strong");
+const CYAN_PALE = token("cyan-pale");
+const ON_CYAN_PALE = token("on-cyan-pale");
 const YELLOW_PALE = token("yellow-pale");
 const ON_YELLOW_PALE = token("on-yellow-pale");
 const PRIMARY = token("primary");
@@ -253,12 +255,12 @@ export function renderMarketingEmail(args: {
 
       ${
         args.offer
-          ? `<tr><td style="background:${CANVAS};border-radius:30px;padding:32px;">
-        <p style="margin:0 0 6px;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${INK_DEEP};">${escape(args.offer.title)}</p>
-        <p style="margin:0 0 20px;font-family:${FONT};font-size:18px;line-height:32px;color:${INK_DEEP};">${escape(args.offer.body)}</p>
+          ? `<tr><td style="background:${CYAN_PALE};border-radius:30px;padding:32px;">
+        <p style="margin:0 0 6px;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${ON_CYAN_PALE};">${escape(args.offer.title)}</p>
+        <p style="margin:0 0 20px;font-family:${FONT};font-size:18px;line-height:32px;color:${ON_CYAN_PALE};">${escape(args.offer.body)}</p>
         <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-          <tr><td style="border-radius:9999px;border:1px solid ${INK_DEEP};">
-            <a href="${escape(args.offer.href)}" style="display:inline-block;padding:12px 26px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${INK_DEEP};text-decoration:none;">${escape(args.offer.ctaLabel)}</a>
+          <tr><td style="border-radius:9999px;border:1px solid ${ON_CYAN_PALE};">
+            <a href="${escape(args.offer.href)}" style="display:inline-block;padding:12px 26px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${ON_CYAN_PALE};text-decoration:none;">${escape(args.offer.ctaLabel)}</a>
           </td></tr>
         </table>
       </td></tr>
@@ -274,8 +276,8 @@ export function renderMarketingEmail(args: {
         ${
           args.contact
             ? `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:24px 0 0;">
-                <tr><td style="border-radius:9999px;background:${PRIMARY};">
-                  <a href="${escape(args.contact.href)}" style="display:inline-block;padding:12px 26px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${ON_PRIMARY};text-decoration:none;">${escape(args.contact.label)}</a>
+                <tr><td style="border-radius:9999px;border:1px solid ${ON_CANVAS_DARK};">
+                  <a href="${escape(args.contact.href)}" style="display:inline-block;padding:11px 26px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${ON_CANVAS_DARK};text-decoration:none;">${escape(args.contact.label)}</a>
                 </td></tr>
               </table>`
             : ""
