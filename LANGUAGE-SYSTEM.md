@@ -38839,6 +38839,7 @@ render: "Match feedback page, MATCH_FEEDBACK_UP_HEADING"
 narrative_slot: utility
 en: "Thanks. PunProfile has recorded that this role fits what you are looking for."
 th: "ขอบคุณ PunProfile บันทึกแล้วว่าตำแหน่งนี้ตรงกับที่คุณมองหา"
+proposal_th: "ขอบคุณสำหรับคำตอบ PunProfile บันทึกไว้แล้วว่าตำแหน่งนี้ตรงกับสิ่งที่คุณมองหา"
 provenance: draft
 date: 12/11/2026
 term_bindings: []
@@ -38847,7 +38848,7 @@ review:
   structural_calque: pending
   text_hash: bc7b5e9cf46aa8452dfe1021014437b89e1aead4e76204f78111e91b82924a25
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: ขอบคุณ followed straight by a name reads as thanking PunProfile until the verb arrives and forces a re-read; สำหรับคำตอบ closes the thanks, บันทึกไว้ is the house verb from PREP_TITLES, and สิ่งที่คุณมองหา is Paul's own collocation in PACKS[0].who. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38861,6 +38862,7 @@ render: "Match feedback page, MATCH_FEEDBACK_DOWN_HEADING"
 narrative_slot: utility
 en: "Thanks. PunProfile has recorded that this role misses."
 th: "ขอบคุณ PunProfile บันทึกแล้วว่าตำแหน่งนี้ยังไม่ตรง"
+proposal_th: "ขอบคุณสำหรับคำตอบ PunProfile บันทึกไว้แล้วว่าตำแหน่งนี้ยังไม่ตรงกับสิ่งที่คุณมองหา"
 provenance: draft
 date: 12/11/2026
 term_bindings: []
@@ -38869,7 +38871,7 @@ review:
   structural_calque: pending
   text_hash: 5325c683eca1168b2792b3eeed40f940c249beaf49c607a7e215498b0f1dce8b
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: The same misreading as the like heading, and ยังไม่ตรง was left with nothing to be ตรง with; the pair should differ only in the verdict it reports. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it."
 ```
 
 <!-- COPY-ENTRY -->
@@ -38949,6 +38951,7 @@ render: "Match feedback page, MATCH_FEEDBACK_SWITCH"
 narrative_slot: utility
 en: "Tapped the wrong one? Change your answer"
 th: "กดผิด? เปลี่ยนคำตอบ"
+proposal_th: "หากกดผิด เปลี่ยนคำตอบได้"
 provenance: draft
 date: 12/11/2026
 term_bindings: []
@@ -38957,7 +38960,7 @@ review:
   structural_calque: pending
   text_hash: d03e191a70428413feb4c1cf47746b7e109c997f19a4a9e77fe85fc19530edf5
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: กดผิด? is the English elliptical question kept whole, with a question mark on a phrase carrying no question particle; Paul's own SIGNIN_LOST turns exactly this English pattern into a หาก conditional, and ได้ makes the link an offer rather than an order. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it."
 ```
 
 <!-- COPY-ENTRY -->
@@ -39103,6 +39106,7 @@ render: "Match feedback page, MATCH_FEEDBACK_REASONS[5].label"
 narrative_slot: utility
 en: "Needs a language you do not speak"
 th: "ต้องใช้ภาษาที่คุณไม่ได้ใช้"
+proposal_th: "ต้องใช้ภาษาที่คุณพูดไม่ได้"
 provenance: draft
 date: 12/11/2026
 term_bindings: []
@@ -39111,7 +39115,7 @@ review:
   structural_calque: pending
   text_hash: 39e59ce71d09df0be0e7219e13e747163789b0116dfd51cf6ef1584b2fbba486
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "A structural-calque review pass read this on 12/11/2026 and proposed a replacement rather than passing it, so the verdict stays PENDING and awaits Paul: a model may not clear Thai a model wrote. ITS READING: ไม่ได้ใช้ says the reader does not use the language, not that they cannot, so the chip no longer states the reason it stands for; พูดไม่ได้ is the ability negation, and พูด is the verb the approved language question uses. ITS PROPOSED THAI IS IN proposal_th, is a draft and is NOT applied, and no one has judged it. The proposal was first written onto the `แก้เป็น:` line of the review sheet, which that sheet reads as Paul's own handwriting, and was moved onto this record on 13/11/2026 on his instruction so the draft travels with its origin attached. The Thai in `th` is the one that arrived with the match-feedback page and no native reader has read it."
 ```
 
 <!-- COPY-ENTRY -->

@@ -14813,7 +14813,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "12/11/2026",
-    "decisionNote": "Confirms that a like was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+    "decisionNote": "Confirms that a like was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
+    "proposalTh": "ขอบคุณสำหรับคำตอบ PunProfile บันทึกไว้แล้วว่าตำแหน่งนี้ตรงกับสิ่งที่คุณมองหา"
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_DOWN_HEADING": {
     "source": "src/lib/content/matchFeedback.ts",
@@ -14822,7 +14823,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "12/11/2026",
-    "decisionNote": "Confirms that a dislike was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+    "decisionNote": "Confirms that a dislike was recorded. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
+    "proposalTh": "ขอบคุณสำหรับคำตอบ PunProfile บันทึกไว้แล้วว่าตำแหน่งนี้ยังไม่ตรงกับสิ่งที่คุณมองหา"
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_BODY": {
     "source": "src/lib/content/matchFeedback.ts",
@@ -14858,7 +14860,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "12/11/2026",
-    "decisionNote": "Offers to change a verdict tapped by mistake. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+    "decisionNote": "Offers to change a verdict tapped by mistake. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
+    "proposalTh": "หากกดผิด เปลี่ยนคำตอบได้"
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_DASHBOARD": {
     "source": "src/lib/content/matchFeedback.ts",
@@ -14921,7 +14924,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "draft",
     "date": "12/11/2026",
-    "decisionNote": "Reason language on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+    "decisionNote": "Reason language on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai.",
+    "proposalTh": "ต้องใช้ภาษาที่คุณพูดไม่ได้"
   },
   "src/lib/content/matchFeedback.ts::MATCH_FEEDBACK_REASONS[6].label": {
     "source": "src/lib/content/matchFeedback.ts",
