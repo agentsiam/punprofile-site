@@ -43,7 +43,7 @@ export const MATCH_FEEDBACK_REASONS: { id: string; label: Copy }[] = [
   { id: "title_level", label: { th: "ตำแหน่งหรือระดับไม่ตรง", en: "Wrong title or level" } },
   { id: "location", label: { th: "สถานที่ทำงานไม่ตรง", en: "Wrong location" } },
   { id: "pay", label: { th: "ค่าตอบแทนต่ำเกินไป", en: "Pay too low" } },
-  { id: "permit", label: { th: "ไม่สนับสนุนใบอนุญาตทำงาน", en: "No work permit sponsorship" } },
+  { id: "permit", label: { th: "บริษัทไม่สปอนเซอร์ใบอนุญาตทำงาน", en: "No work permit sponsorship" } },
   { id: "language", label: { th: "ต้องใช้ภาษาที่คุณไม่ได้ใช้", en: "Needs a language you do not speak" } },
   { id: "applied", label: { th: "เคยสมัครไปแล้ว", en: "Already applied" } },
   { id: "other", label: { th: "เหตุผลอื่น", en: "Something else" } },

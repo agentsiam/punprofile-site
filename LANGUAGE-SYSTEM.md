@@ -39080,16 +39080,16 @@ path: "MATCH_FEEDBACK_REASONS[4].label"
 render: "Match feedback page, MATCH_FEEDBACK_REASONS[4].label"
 narrative_slot: utility
 en: "No work permit sponsorship"
-th: "ไม่สนับสนุนใบอนุญาตทำงาน"
-provenance: draft
+th: "บริษัทไม่สปอนเซอร์ใบอนุญาตทำงาน"
+provenance: paul-written
 date: 12/11/2026
 term_bindings: []
-decision_note: "Reason permit on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. No verdict has been given on the Thai."
+decision_note: "Reason permit on the dislike list. Written 12/11/2026 with the match-feedback page and registered here unchanged when the branch merged, which is the first time these strings entered the language system. THE THAI IS NOW PAUL'S OWN WORDING, written on the review sheet against this record id on 12/11/2026 and confirmed as his in chat on 13/11/2026. The sheet could not settle authorship by itself: it was generated before the one-writer rule, so it carries no `authorship: one-writer` field, and four of the five handwritten replacements on it are a review session's drafts rather than his. It replaces ไม่สนับสนุนใบอนุญาตทำงาน, and two things change. ACTOR: บริษัท names who is not sponsoring, where the original left the subject open and could be read as PunProfile declining to sponsor. VERB: สปอนเซอร์ replaces สนับสนุน, which is the calque Paul ruled against on 17/08/2026 in the termbase entry visa-sponsorship, where สปอนเซอร์วีซ่า is the decided term and สนับสนุนวีซ่า is banned on all surfaces. PRECISELY: that ban names the visa phrase and does not cover ไม่สนับสนุนใบอนุญาตทำงาน, so the original broke no check and this is the same decision carried over to a work permit. ใบอนุญาตทำงาน stays because the English says work permit, not visa, which is also why term_bindings stays empty: the decided term สปอนเซอร์วีซ่า is not what this string says, and visa-sponsorship is fixed: false, so binding it would fail the verifier on both counts."
 review:
-  structural_calque: pending
-  text_hash: e89237f6ad444de42a3bf8e0f22345218ffb47ed144a82fb8303ebdbda481608
+  structural_calque: pass
+  text_hash: a73e4c9408889f4a387e9411476c0431bdaaaec3bde320714761c975f9a73fe4
   prompt_version: structural-calque-v1
-  basis: "No native verdict yet. The Thai arrived with the match-feedback page and has not been read by Paul or by a review pass."
+  basis: "Paul's own wording, written on the review sheet against this record on 12/11/2026 and confirmed as his in chat on 13/11/2026. Recorded as pass under the rule that Paul's wording or amendment is authoritative and may be recorded as pass without a second native review. No judge pass has read this text; the Thai it replaces had not been read by a native reader either, which is why the record was pending."
 ```
 
 <!-- COPY-ENTRY -->
