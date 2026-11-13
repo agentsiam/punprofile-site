@@ -15040,17 +15040,29 @@ source: src/lib/content/posts/linkedin-europe-ready.ts
 path: LINKEDIN_EUROPE_READY.sections[10].body[4].text
 render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[10].body[4].text'
 narrative_slot: utility
-en: "You start with your job preferences and your visibility, fix your location, adjust your job titles and company descriptions, write a clear headline and About section, then choose skills that match the work. All of that is possible without buying Premium."
-th: "คุณเริ่มจากตั้งค่างานที่สนใจและการมองเห็น แก้ตำแหน่งที่ตั้ง ปรับชื่อตำแหน่งและคำอธิบายบริษัท เขียน headline และส่วนแนะนำตัวให้ชัด แล้วเลือกทักษะที่ตรงกับงาน ทั้งหมดนี้ทำได้โดยไม่ต้องซื้อ Premium"
-provenance: paul-approved
-date: 10/11/2026
+en: "Every step in this guide, from setting your job preferences through to choosing the skills that match the work, you can do without buying Premium."
+th: "ทุกขั้นในคู่มือนี้ ตั้งแต่การตั้งค่างานที่สนใจไปจนถึงการเลือกสกิลที่ตรงกับงาน ทำได้โดยไม่ต้องซื้อ Premium"
+provenance: draft
+date: 13/11/2026
 term_bindings: []
-decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
+decision_note: |-
+  Trimmed on 13/11/2026 under the rule Paul gave for this round: cut any sentence that adds no
+  understanding for the reader. The paragraph re-walked all nine steps one screen above section 11,
+  which is the checklist of those same nine steps, and the subheading directly above it already makes
+  the no-Premium claim.
+
+  Previous Thai, live on the page until this record clears review:
+  คุณเริ่มจากตั้งค่างานที่สนใจและการมองเห็น แก้ตำแหน่งที่ตั้ง ปรับชื่อตำแหน่งและคำอธิบายบริษัท เขียน headline และส่วนแนะนำตัวให้ชัด แล้วเลือกทักษะที่ตรงกับงาน ทั้งหมดนี้ทำได้โดยไม่ต้องซื้อ Premium
+
+  The span from job preferences to skills is kept, because the next paragraph's เรื่องพื้นฐานเหล่านี้
+  points back at it. ทักษะ became สกิล, which is the campaign's register decision in the open review
+  sheet for the same line, so the two proposals do not disagree. English follows the Thai.
+proposal_th: "ตั้งค่างานที่สนใจ เลือกสกิลที่ตรงกับงาน และทำตามขั้นตอนอื่น ๆ ในคู่มือนี้ได้ด้วยบัญชีฟรี"
 review:
-  structural_calque: pass
-  text_hash: de7a59bb63aeef282d121c4f0e22c007bb9d12645bb77cfc534d17d5d6465bec
+  structural_calque: pending
+  text_hash: 6705594b576ca104021cfc0a08462a5a42dfbcb09286b7df5db2d2bc4cbd631f
   prompt_version: structural-calque-v1
-  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
+  basis: "Trimmed by a session on 13/11/2026 under Paul's rule for this round. A session's wording, so it needs his read-back. Keeps the full scope of the English while naming two of the basics that the next paragraph refers back to."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15634,17 +15646,34 @@ source: src/lib/content/posts/linkedin-europe-ready.ts
 path: LINKEDIN_EUROPE_READY.sections[1].body[1].text
 render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[1].text'
 narrative_slot: utility
-en: "LinkedIn explains in its Open to Work guide that specifying the types of job you want and your preferred work location helps your profile appear when recruiters search for candidates. That is fixed in the settings, not by writing a longer About section."
-th: "LinkedIn อธิบายไว้ในคู่มือ Open to Work ว่าการระบุประเภทงานและสถานที่ทำงานที่ต้องการช่วยให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนคำแนะนำตัวให้ยาวขึ้น"
-provenance: paul-approved
-date: 10/11/2026
+en: "LinkedIn says that filling in the types of job you want and your preferred work location under Open to Work makes it easier for a recruiter to find your profile. That is fixed in the settings, not by writing a longer About section."
+th: "LinkedIn ระบุว่าการกรอกประเภทงานและสถานที่ทำงานที่ต้องการใน Open to Work ช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนส่วนแนะนำตัวให้ยาวขึ้น"
+provenance: draft
+date: 13/11/2026
 term_bindings: []
-decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
+decision_note: |-
+  Paul rejected the Thai on 13/11/2026, quoting ให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร and
+  calling it absurd. มีโอกาสปรากฏ is an English hedge carried into Thai, and ปรากฏ is not the verb a
+  Thai reader uses for a profile turning up in a search. Only that clause was replaced: the second
+  sentence is the half he approved on 10/11/2026 and it stands.
+
+  Previous Thai, live on the page until this record clears review:
+  LinkedIn อธิบายไว้ในคู่มือ Open to Work ว่าการระบุประเภทงานและสถานที่ทำงานที่ต้องการช่วยให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนคำแนะนำตัวให้ยาวขึ้น
+
+  The claim itself is load-bearing and stays: article.md records that the piece is built outward from
+  LinkedIn's own sentence about job preferences, and the cite stays on the paragraph. What changed is
+  the wording. ช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น is Paul's own phrasing for the same claim in
+  golden-th/email/c-newsletter-linkedin.md, which claims ease rather than a result. คู่มือ also went:
+  it is this campaign's word for its own guide, not for a LinkedIn help page, and the cite chip already
+  says LinkedIn Help. คำแนะนำตัว became ส่วนแนะนำตัว, which is what the rest of the article calls the
+  About section, and the sentence keeps the name of the setting so the cite still has something to
+  point at. English follows the Thai.
+proposal_th: "LinkedIn บอกว่า ถ้าคุณกรอกใน Open to Work ว่าสนใจงานแบบไหนและอยากทำงานที่ไหน ข้อมูลนี้จะช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนส่วนแนะนำตัวให้ยาวขึ้น"
 review:
-  structural_calque: pass
-  text_hash: 72784c9324250c8780482b4f34f7bb06bc5fc133276c5d01ed5b61a1ecc806df
+  structural_calque: pending
+  text_hash: 258cdfcc5a9bfd6948a9a4238c3c69f3ba0600a3d54ffe2b2ee6b1dc16867525
   prompt_version: structural-calque-v1
-  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
+  basis: "Rewritten by a session on 13/11/2026 after Paul rejected the previous Thai in chat. His rejection clears the old passing verdict; this wording is a session's and needs his read-back. Uses the reader's own questions to explain the fields, keeps the settings sentence as it stands, and limits the search claim to the help LinkedIn describes."
 ```
 
 <!-- COPY-ENTRY -->
@@ -15692,35 +15721,13 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[4].text`
+### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[4].alt`
 
 ```yaml
-id: src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[4].text
+id: src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[4].alt
 source: src/lib/content/posts/linkedin-europe-ready.ts
-path: LINKEDIN_EUROPE_READY.sections[1].body[4].text
-render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[4].text'
-narrative_slot: utility
-en: "What you can do is fill in your job titles, skills and preferred work location clearly, so the information on your profile matches the work you are looking for."
-th: "สิ่งที่คุณทำได้คือกรอกชื่อตำแหน่ง ทักษะ และสถานที่ทำงานที่ต้องการให้ชัด เพื่อให้ข้อมูลในโปรไฟล์ตรงกับงานที่คุณกำลังมองหา"
-provenance: paul-approved
-date: 10/11/2026
-term_bindings: []
-decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
-review:
-  structural_calque: pass
-  text_hash: 472dea944e032f511d5435d88c6072c09f0fc5a0e5189d02bfb6b1f2c2845186
-  prompt_version: structural-calque-v1
-  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].alt`
-
-```yaml
-id: src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].alt
-source: src/lib/content/posts/linkedin-europe-ready.ts
-path: LINKEDIN_EUROPE_READY.sections[1].body[5].alt
-render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[5].alt'
+path: LINKEDIN_EUROPE_READY.sections[1].body[4].alt
+render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[4].alt'
 narrative_slot: utility
 en: "A bar chart of the share for each thing to fix first. The CV bar is the longest and LinkedIn is third."
 th: "กราฟแท่งแสดงสัดส่วนของเรื่องที่ควรแก้ก่อน แถบ CV ยาวที่สุด ส่วน LinkedIn อยู่ลำดับที่ 3"
@@ -15736,13 +15743,13 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].caption`
+### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[4].caption`
 
 ```yaml
-id: src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].caption
+id: src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[4].caption
 source: src/lib/content/posts/linkedin-europe-ready.ts
-path: LINKEDIN_EUROPE_READY.sections[1].body[5].caption
-render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[5].caption'
+path: LINKEDIN_EUROPE_READY.sections[1].body[4].caption
+render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[4].caption'
 narrative_slot: utility
 en: "The share of each first step PunProfile assigns to the people who completed its readiness check."
 th: "สัดส่วนของขั้นตอนแรกที่ PunProfile แนะนำแก่ผู้ที่ทำแบบประเมินความพร้อมเสร็จ"
@@ -15758,13 +15765,13 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[6].text`
+### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].text`
 
 ```yaml
-id: src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[6].text
+id: src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].text
 source: src/lib/content/posts/linkedin-europe-ready.ts
-path: LINKEDIN_EUROPE_READY.sections[1].body[6].text
-render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[6].text'
+path: LINKEDIN_EUROPE_READY.sections[1].body[5].text
+render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[5].text'
 narrative_slot: utility
 en: "Among the Thai professionals who have taken PunProfile's readiness check, LinkedIn is the third thing on the list of what to fix first."
 th: "ในกลุ่มคนไทยที่ทำแบบประเมินความพร้อมของ PunProfile นั้น LinkedIn อยู่ลำดับที่สามของเรื่องที่ต้องแก้ก่อน"
@@ -15780,13 +15787,13 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[7].text`
+### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[6].text`
 
 ```yaml
-id: src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[7].text
+id: src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[6].text
 source: src/lib/content/posts/linkedin-europe-ready.ts
-path: LINKEDIN_EUROPE_READY.sections[1].body[7].text
-render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[7].text'
+path: LINKEDIN_EUROPE_READY.sections[1].body[6].text
+render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[6].text'
 narrative_slot: utility
 en: "If you have not chosen a target market yet, or your CV is not ready, deal with those two first and come back to LinkedIn afterwards."
 th: "ถ้ายังไม่ได้เลือกตลาดเป้าหมายหรือ CV ยังไม่พร้อม ให้จัดการสองเรื่องนั้นก่อน แล้วค่อยกลับมาปรับ LinkedIn"
@@ -16748,28 +16755,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[8].body[3].text`
-
-```yaml
-id: src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[8].body[3].text
-source: src/lib/content/posts/linkedin-europe-ready.ts
-path: LINKEDIN_EUROPE_READY.sections[8].body[3].text
-render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[8].body[3].text'
-narrative_slot: utility
-en: "Give the team credit where it is due, and still make your own part clear."
-th: "ให้เครดิตทีมตามจริง พร้อมอธิบายส่วนที่คุณรับผิดชอบให้ชัด"
-provenance: paul-approved
-date: 10/11/2026
-term_bindings: []
-decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
-review:
-  structural_calque: pass
-  text_hash: 36ee69393edb263e3c5ce7c5726c21f7f2192a850aeef4ee6fe7953ff49de2f1
-  prompt_version: structural-calque-v1
-  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[8].heading`
 
 ```yaml
@@ -16932,17 +16917,27 @@ source: src/lib/content/posts/linkedin-europe-ready.ts
 path: LINKEDIN_EUROPE_READY.summary
 render: 'Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.summary'
 narrative_slot: utility
-en: "If you are applying for jobs in Europe, treat LinkedIn as two jobs rather than one: set it up so that someone looking for candidates can find you, then write it so they understand what you have done."
-th: "ถ้าคุณกำลังสมัครงานในยุโรป ลองแยกการปรับ LinkedIn เป็นสองเรื่อง: ตั้งค่าให้คนที่กำลังหาผู้สมัครมีโอกาสค้นเจอคุณ แล้วเขียนให้เขาเข้าใจว่าคุณทำอะไรมา"
-provenance: paul-approved
-date: 10/11/2026
+en: "If you are applying for jobs in Europe, treat LinkedIn as two jobs rather than one: set it up so a recruiter can find your profile more easily, then write it so they understand what you have done."
+th: "ถ้าคุณกำลังสมัครงานในยุโรป ลองแยกการปรับ LinkedIn เป็นสองเรื่อง: ตั้งค่าให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น แล้วเขียนให้เขาเข้าใจว่าคุณทำอะไรมา"
+provenance: draft
+date: 13/11/2026
 term_bindings: []
-decision_note: "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
+decision_note: |-
+  Nominated on 13/11/2026 alongside sections[1].body[1].text, which Paul rejected the same day. This
+  record carried the same hedge in its other form, มีโอกาสค้นเจอคุณ, and it is the passage AI search
+  lifts, so it should not be the one place the old construction survives.
+
+  Previous Thai, live on the page until this record clears review:
+  ถ้าคุณกำลังสมัครงานในยุโรป ลองแยกการปรับ LinkedIn เป็นสองเรื่อง: ตั้งค่าให้คนที่กำลังหาผู้สมัครมีโอกาสค้นเจอคุณ แล้วเขียนให้เขาเข้าใจว่าคุณทำอะไรมา
+
+  คนที่กำลังหาผู้สมัคร also became recruiter, which is what the article calls that reader in every
+  other section and what Paul calls him in the newsletter. English follows the Thai.
+proposal_th: "ถ้าคุณกำลังสมัครงานในยุโรป ให้เริ่มจากตั้งค่า LinkedIn ให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น แล้วเล่างานที่เคยทำให้เขาเข้าใจว่าคุณรับผิดชอบอะไร"
 review:
-  structural_calque: pass
-  text_hash: 9f563040e983d7c8ad79ed7e4ca1acb27fe9fb0c57fe427b7b0bf44a2e4c5403
+  structural_calque: pending
+  text_hash: c0001073dc2696245da1b278399847d26e3b8b3e6190c1aff4656ad6f4e3d97a
   prompt_version: structural-calque-v1
-  basis: "Paul read the Thai back on the preview page and approved it on 10/11/2026."
+  basis: "Rewritten by a session on 13/11/2026 under the rule Paul gave for this round. A session's wording, so it needs his read-back. Turns the abstract two-part framing into the two actions the article teaches."
 ```
 
 <!-- COPY-ENTRY -->

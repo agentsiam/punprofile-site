@@ -99,22 +99,22 @@ export const LINKEDIN_EUROPE_READY: Post = {
         },
       },
       {
-        kind: "p",
-        text: {
-          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNF0udGV4dA:TH%%,
-          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNF0udGV4dA:EN%%,
-        },
-      },
-      {
         kind: "figure",
         src: "/blog/linkedin-europe-ready-fig-1-first-action.jpg",
         alt: {
-          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNV0uYWx0:TH%%,
-          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNV0uYWx0:EN%%,
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNF0uYWx0:TH%%,
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNF0uYWx0:EN%%,
         },
         caption: {
-          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNV0uY2FwdGlvbg:TH%%,
-          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNV0uY2FwdGlvbg:EN%%,
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNF0uY2FwdGlvbg:TH%%,
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNF0uY2FwdGlvbg:EN%%,
+        },
+      },
+      {
+        kind: "p",
+        text: {
+          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNV0udGV4dA:TH%%,
+          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNV0udGV4dA:EN%%,
         },
       },
       {
@@ -122,13 +122,6 @@ export const LINKEDIN_EUROPE_READY: Post = {
         text: {
           th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNl0udGV4dA:TH%%,
           en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNl0udGV4dA:EN%%,
-        },
-      },
-      {
-        kind: "p",
-        text: {
-          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbN10udGV4dA:TH%%,
-          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbN10udGV4dA:EN%%,
         },
       },
       ],
@@ -434,13 +427,6 @@ export const LINKEDIN_EUROPE_READY: Post = {
         text: {
           th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzhdLmJvZHlbMl0udGV4dA:TH%%,
           en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzhdLmJvZHlbMl0udGV4dA:EN%%,
-        },
-      },
-      {
-        kind: "p",
-        text: {
-          th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzhdLmJvZHlbM10udGV4dA:TH%%,
-          en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzhdLmJvZHlbM10udGV4dA:EN%%,
         },
       },
       ],

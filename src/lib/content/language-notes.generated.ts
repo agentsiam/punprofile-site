@@ -5657,9 +5657,10 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "LINKEDIN_EUROPE_READY.sections[10].body[4].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[10].body[4].text",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "10/11/2026",
-    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
+    "provenance": "draft",
+    "date": "13/11/2026",
+    "decisionNote": "Trimmed on 13/11/2026 under the rule Paul gave for this round: cut any sentence that adds no\nunderstanding for the reader. The paragraph re-walked all nine steps one screen above section 11,\nwhich is the checklist of those same nine steps, and the subheading directly above it already makes\nthe no-Premium claim.\n\nPrevious Thai, live on the page until this record clears review:\nคุณเริ่มจากตั้งค่างานที่สนใจและการมองเห็น แก้ตำแหน่งที่ตั้ง ปรับชื่อตำแหน่งและคำอธิบายบริษัท เขียน headline และส่วนแนะนำตัวให้ชัด แล้วเลือกทักษะที่ตรงกับงาน ทั้งหมดนี้ทำได้โดยไม่ต้องซื้อ Premium\n\nThe span from job preferences to skills is kept, because the next paragraph's เรื่องพื้นฐานเหล่านี้\npoints back at it. ทักษะ became สกิล, which is the campaign's register decision in the open review\nsheet for the same line, so the two proposals do not disagree. English follows the Thai.",
+    "proposalTh": "ตั้งค่างานที่สนใจ เลือกสกิลที่ตรงกับงาน และทำตามขั้นตอนอื่น ๆ ในคู่มือนี้ได้ด้วยบัญชีฟรี"
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[10].body[5].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -5900,9 +5901,10 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[1].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[1].text",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "10/11/2026",
-    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
+    "provenance": "draft",
+    "date": "13/11/2026",
+    "decisionNote": "Paul rejected the Thai on 13/11/2026, quoting ให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร and\ncalling it absurd. มีโอกาสปรากฏ is an English hedge carried into Thai, and ปรากฏ is not the verb a\nThai reader uses for a profile turning up in a search. Only that clause was replaced: the second\nsentence is the half he approved on 10/11/2026 and it stands.\n\nPrevious Thai, live on the page until this record clears review:\nLinkedIn อธิบายไว้ในคู่มือ Open to Work ว่าการระบุประเภทงานและสถานที่ทำงานที่ต้องการช่วยให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนคำแนะนำตัวให้ยาวขึ้น\n\nThe claim itself is load-bearing and stays: article.md records that the piece is built outward from\nLinkedIn's own sentence about job preferences, and the cite stays on the paragraph. What changed is\nthe wording. ช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น is Paul's own phrasing for the same claim in\ngolden-th/email/c-newsletter-linkedin.md, which claims ease rather than a result. คู่มือ also went:\nit is this campaign's word for its own guide, not for a LinkedIn help page, and the cite chip already\nsays LinkedIn Help. คำแนะนำตัว became ส่วนแนะนำตัว, which is what the rest of the article calls the\nAbout section, and the sentence keeps the name of the setting so the cite still has something to\npoint at. English follows the Thai.",
+    "proposalTh": "LinkedIn บอกว่า ถ้าคุณกรอกใน Open to Work ว่าสนใจงานแบบไหนและอยากทำงานที่ไหน ข้อมูลนี้จะช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนส่วนแนะนำตัวให้ยาวขึ้น"
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[2].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
@@ -5922,46 +5924,37 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "10/11/2026",
     "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
-  "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[4].text": {
+  "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[4].alt": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
-    "path": "LINKEDIN_EUROPE_READY.sections[1].body[4].text",
-    "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[4].text",
+    "path": "LINKEDIN_EUROPE_READY.sections[1].body[4].alt",
+    "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[4].alt",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "10/11/2026",
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
+  },
+  "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[4].caption": {
+    "source": "src/lib/content/posts/linkedin-europe-ready.ts",
+    "path": "LINKEDIN_EUROPE_READY.sections[1].body[4].caption",
+    "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[4].caption",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "10/11/2026",
+    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
+  },
+  "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].text": {
+    "source": "src/lib/content/posts/linkedin-europe-ready.ts",
+    "path": "LINKEDIN_EUROPE_READY.sections[1].body[5].text",
+    "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[5].text",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "10/11/2026",
     "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
-  },
-  "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].alt": {
-    "source": "src/lib/content/posts/linkedin-europe-ready.ts",
-    "path": "LINKEDIN_EUROPE_READY.sections[1].body[5].alt",
-    "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[5].alt",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
-  },
-  "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[5].caption": {
-    "source": "src/lib/content/posts/linkedin-europe-ready.ts",
-    "path": "LINKEDIN_EUROPE_READY.sections[1].body[5].caption",
-    "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[5].caption",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "10/11/2026",
-    "decisionNote": "Figure, alt and title Thai composed on 10/11/2026 and reviewed in a pass of its own the same day, which the article body's copy review had not covered. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English follows that Thai."
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[6].text": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[1].body[6].text",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[6].text",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "10/11/2026",
-    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
-  },
-  "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[1].body[7].text": {
-    "source": "src/lib/content/posts/linkedin-europe-ready.ts",
-    "path": "LINKEDIN_EUROPE_READY.sections[1].body[7].text",
-    "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[1].body[7].text",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "10/11/2026",
@@ -6354,15 +6347,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "10/11/2026",
     "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
-  "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[8].body[3].text": {
-    "source": "src/lib/content/posts/linkedin-europe-ready.ts",
-    "path": "LINKEDIN_EUROPE_READY.sections[8].body[3].text",
-    "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.sections[8].body[3].text",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "10/11/2026",
-    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
-  },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.sections[8].heading": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",
     "path": "LINKEDIN_EUROPE_READY.sections[8].heading",
@@ -6431,9 +6415,10 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "LINKEDIN_EUROPE_READY.summary",
     "render": "Blog article: LinkedIn, made legible to a European recruiter, LINKEDIN_EUROPE_READY.summary",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "10/11/2026",
-    "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
+    "provenance": "draft",
+    "date": "13/11/2026",
+    "decisionNote": "Nominated on 13/11/2026 alongside sections[1].body[1].text, which Paul rejected the same day. This\nrecord carried the same hedge in its other form, มีโอกาสค้นเจอคุณ, and it is the passage AI search\nlifts, so it should not be the one place the old construction survives.\n\nPrevious Thai, live on the page until this record clears review:\nถ้าคุณกำลังสมัครงานในยุโรป ลองแยกการปรับ LinkedIn เป็นสองเรื่อง: ตั้งค่าให้คนที่กำลังหาผู้สมัครมีโอกาสค้นเจอคุณ แล้วเขียนให้เขาเข้าใจว่าคุณทำอะไรมา\n\nคนที่กำลังหาผู้สมัคร also became recruiter, which is what the article calls that reader in every\nother section and what Paul calls him in the newsletter. English follows the Thai.",
+    "proposalTh": "ถ้าคุณกำลังสมัครงานในยุโรป ให้เริ่มจากตั้งค่า LinkedIn ให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น แล้วเล่างานที่เคยทำให้เขาเข้าใจว่าคุณรับผิดชอบอะไร"
   },
   "src/lib/content/posts/linkedin-europe-ready.ts::LINKEDIN_EUROPE_READY.title": {
     "source": "src/lib/content/posts/linkedin-europe-ready.ts",

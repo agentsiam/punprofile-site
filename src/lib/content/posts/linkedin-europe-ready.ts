@@ -23,8 +23,8 @@ export const LINKEDIN_EUROPE_READY: Post = {
     en: "Make your LinkedIn profile findable by European recruiters",
   },
   summary: {
-    th: "ถ้าคุณกำลังสมัครงานในยุโรป ลองแยกการปรับ LinkedIn เป็นสองเรื่อง: ตั้งค่าให้คนที่กำลังหาผู้สมัครมีโอกาสค้นเจอคุณ แล้วเขียนให้เขาเข้าใจว่าคุณทำอะไรมา",
-    en: "If you are applying for jobs in Europe, treat LinkedIn as two jobs rather than one: set it up so that someone looking for candidates can find you, then write it so they understand what you have done.",
+    th: "ถ้าคุณกำลังสมัครงานในยุโรป ลองแยกการปรับ LinkedIn เป็นสองเรื่อง: ตั้งค่าให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น แล้วเขียนให้เขาเข้าใจว่าคุณทำอะไรมา",
+    en: "If you are applying for jobs in Europe, treat LinkedIn as two jobs rather than one: set it up so a recruiter can find your profile more easily, then write it so they understand what you have done.",
   },
   image: {
     src: "/blog/linkedin-europe-ready.jpg",
@@ -78,8 +78,8 @@ export const LINKEDIN_EUROPE_READY: Post = {
       {
         kind: "p",
         text: {
-          th: "LinkedIn อธิบายไว้ในคู่มือ Open to Work ว่าการระบุประเภทงานและสถานที่ทำงานที่ต้องการช่วยให้โปรไฟล์มีโอกาสปรากฏเมื่อ recruiter ค้นหาผู้สมัคร จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนคำแนะนำตัวให้ยาวขึ้น",
-          en: "LinkedIn explains in its Open to Work guide that specifying the types of job you want and your preferred work location helps your profile appear when recruiters search for candidates. That is fixed in the settings, not by writing a longer About section.",
+          th: "LinkedIn ระบุว่าการกรอกประเภทงานและสถานที่ทำงานที่ต้องการใน Open to Work ช่วยให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น จุดนี้แก้ที่การตั้งค่า ไม่ใช่การเขียนส่วนแนะนำตัวให้ยาวขึ้น",
+          en: "LinkedIn says that filling in the types of job you want and your preferred work location under Open to Work makes it easier for a recruiter to find your profile. That is fixed in the settings, not by writing a longer About section.",
         },
         cite: { label: "LinkedIn Help", href: "https://www.linkedin.com/help/linkedin/answer/a507508" },
       },
@@ -96,13 +96,6 @@ export const LINKEDIN_EUROPE_READY: Post = {
         text: {
           th: "ตัวเลขนี้มาจาก LinkedIn ซึ่งรายงานผลของผลิตภัณฑ์ตัวเอง ไม่ใช่งานศึกษาอิสระ และไม่ได้หมายความว่า recruiter ทุกคนเปิดดูโปรไฟล์น้อยลงเท่ากัน",
           en: "That number comes from LinkedIn reporting on its own product, not from an independent study, and it does not mean every recruiter views fewer profiles to the same degree.",
-        },
-      },
-      {
-        kind: "p",
-        text: {
-          th: "สิ่งที่คุณทำได้คือกรอกชื่อตำแหน่ง ทักษะ และสถานที่ทำงานที่ต้องการให้ชัด เพื่อให้ข้อมูลในโปรไฟล์ตรงกับงานที่คุณกำลังมองหา",
-          en: "What you can do is fill in your job titles, skills and preferred work location clearly, so the information on your profile matches the work you are looking for.",
         },
       },
       {
@@ -436,13 +429,6 @@ export const LINKEDIN_EUROPE_READY: Post = {
           en: "Instead of writing only “was part of a team that improved the process”, say which step you changed, how the result changed, and what number backs it up.",
         },
       },
-      {
-        kind: "p",
-        text: {
-          th: "ให้เครดิตทีมตามจริง พร้อมอธิบายส่วนที่คุณรับผิดชอบให้ชัด",
-          en: "Give the team credit where it is due, and still make your own part clear.",
-        },
-      },
       ],
     },
     {
@@ -517,8 +503,8 @@ export const LINKEDIN_EUROPE_READY: Post = {
       {
         kind: "p",
         text: {
-          th: "คุณเริ่มจากตั้งค่างานที่สนใจและการมองเห็น แก้ตำแหน่งที่ตั้ง ปรับชื่อตำแหน่งและคำอธิบายบริษัท เขียน headline และส่วนแนะนำตัวให้ชัด แล้วเลือกทักษะที่ตรงกับงาน ทั้งหมดนี้ทำได้โดยไม่ต้องซื้อ Premium",
-          en: "You start with your job preferences and your visibility, fix your location, adjust your job titles and company descriptions, write a clear headline and About section, then choose skills that match the work. All of that is possible without buying Premium.",
+          th: "ทุกขั้นในคู่มือนี้ ตั้งแต่การตั้งค่างานที่สนใจไปจนถึงการเลือกสกิลที่ตรงกับงาน ทำได้โดยไม่ต้องซื้อ Premium",
+          en: "Every step in this guide, from setting your job preferences through to choosing the skills that match the work, you can do without buying Premium.",
         },
       },
       {
