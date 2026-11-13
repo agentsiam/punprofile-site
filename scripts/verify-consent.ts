@@ -148,7 +148,7 @@ check(
   (["email", "line", "phone"] as const).every((c) => all.marketing[c].status === "never_asked"),
 );
 
-// --- the state of the real database ---------------------------------------
+// --- notes on the live state, none of it measured here --------------------
 
 console.log(
   "\nNote: two screens ask for marketing consent since 16/08/2026, the contact\n" +
@@ -156,8 +156,15 @@ console.log(
     "them is still `never_asked`, including all 90 imported ones, and that is the\n" +
     "correct answer rather than a gap: a `service` opt-in has never licensed a\n" +
     "digest, and the assertion above pins it.\n\n" +
-    "There is still no send path. `RESEND_API_KEY` is unset on both deployments,\n" +
-    "so a granted permission is a permission and not a queued email.\n",
+    "This script reads no deployment and no database, so this note is a\n" +
+    "recorded reading and not a measurement. THE SEND PATH EXISTS, read\n" +
+    "13/11/2026 from env NAMES only and never their values: the deployment the\n" +
+    "live site reads carries `RESEND_API_KEY`, `MAIL_FROM` and `MAIL_REPLY_TO`,\n" +
+    "and `convex/matchNotice.ts` is deployed there. That action gates every send\n" +
+    "on those two names and marks the roles not notified when either is unset,\n" +
+    "so on that deployment a granted permission can become a queued email.\n" +
+    "This file claimed the opposite until 13/11/2026, in a hardcoded line no\n" +
+    "check had re-read since it was written.\n",
 );
 
 if (failures > 0) {
