@@ -1038,7 +1038,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
 
 /**
  * The job titles this candidate goes for, `lifecycle-data-model.md` § 8a. Set
- * with them in the Direction conversation, at most five active, the first one
+ * with them in the Direction conversation, at most four active, the first one
  * pushed first. Everything below hangs off these: each title's CV, its jobs,
  * its feed.
  */
