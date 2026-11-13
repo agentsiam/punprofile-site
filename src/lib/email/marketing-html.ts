@@ -65,6 +65,8 @@ const ON_CANVAS_DARK = token("on-canvas-dark");
 const INK_DEEP = token("ink-deep");
 const MUTE_STRONG = token("mute-strong");
 const CYAN_PALE = token("cyan-pale");
+const ORANGE_PALE = token("orange-pale");
+const ON_ORANGE_PALE = token("on-orange-pale");
 const ON_CYAN_PALE = token("on-cyan-pale");
 const YELLOW_PALE = token("yellow-pale");
 const ON_YELLOW_PALE = token("on-yellow-pale");
@@ -171,7 +173,19 @@ export function renderMarketingEmail(args: {
    * volume. It carries no price: a price restated in an email is a second place
    * for a stale number to live, so the card points at the page that owns it.
    */
-  offer?: { title: string; body: string; ctaLabel: string; href: string };
+  cards?: {
+    title: string;
+    body: string;
+    ctaLabel: string;
+    href: string;
+    /**
+     * Which tint the block carries. Not decoration: `design.md` gives cyan to
+     * the EU Fit Check family and one tint to each newsletter strand, so a card
+     * about a Real Stories reel takes orange because of what it is rather than
+     * because orange looked next.
+     */
+    tint: "cyan" | "orange";
+  }[];
   /** The one way to reach a person, on the channel the business publishes. */
   contact?: { label: string; href: string };
   /**
@@ -253,21 +267,23 @@ export function renderMarketingEmail(args: {
 
       <tr><td style="height:16px;line-height:16px;font-size:0;">&nbsp;</td></tr>
 
-      ${
-        args.offer
-          ? `<tr><td style="background:${CYAN_PALE};border-radius:30px;padding:32px;">
-        <p style="margin:0 0 6px;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${ON_CYAN_PALE};">${escape(args.offer.title)}</p>
-        <p style="margin:0 0 20px;font-family:${FONT};font-size:18px;line-height:32px;color:${ON_CYAN_PALE};">${escape(args.offer.body)}</p>
+      ${(args.cards ?? [])
+        .map((card) => {
+          const ground = card.tint === "orange" ? ORANGE_PALE : CYAN_PALE;
+          const ink = card.tint === "orange" ? ON_ORANGE_PALE : ON_CYAN_PALE;
+          return `<tr><td style="background:${ground};border-radius:30px;padding:32px;">
+        <p style="margin:0 0 6px;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${ink};">${escape(card.title)}</p>
+        <p style="margin:0 0 20px;font-family:${FONT};font-size:18px;line-height:32px;color:${ink};">${escape(card.body)}</p>
         <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-          <tr><td style="border-radius:9999px;border:1px solid ${ON_CYAN_PALE};">
-            <a href="${escape(args.offer.href)}" style="display:inline-block;padding:12px 26px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${ON_CYAN_PALE};text-decoration:none;">${escape(args.offer.ctaLabel)}</a>
+          <tr><td style="border-radius:9999px;border:1px solid ${ink};">
+            <a href="${escape(card.href)}" style="display:inline-block;padding:12px 26px;border-radius:9999px;font-family:${FONT};font-size:17px;line-height:24px;font-weight:600;color:${ink};text-decoration:none;">${escape(card.ctaLabel)}</a>
           </td></tr>
         </table>
       </td></tr>
 
-      <tr><td style="height:16px;line-height:16px;font-size:0;">&nbsp;</td></tr>`
-          : ""
-      }
+      <tr><td style="height:16px;line-height:16px;font-size:0;">&nbsp;</td></tr>`;
+        })
+        .join("")}
 
       <tr><td style="background:${CANVAS_DARK};border-radius:40px;padding:32px;">
         <a href="https://punprofile.app" style="display:inline-block;text-decoration:none;">

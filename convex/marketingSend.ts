@@ -104,6 +104,23 @@ export const send = internalAction({
      * argument at all and is read off the clock when the send runs.
      */
     masthead: v.optional(v.string()),
+    /**
+     * The blocks under the article, in order. Editorial, so they are arguments
+     * rather than anything this file decides. `tint` is not a colour choice: it
+     * names which family the card belongs to, and `design.md` holds cyan for
+     * the EU Fit Check family and one tint per newsletter strand.
+     */
+    cards: v.optional(
+      v.array(
+        v.object({
+          title: v.string(),
+          body: v.string(),
+          ctaLabel: v.string(),
+          href: v.string(),
+          tint: v.union(v.literal("cyan"), v.literal("orange")),
+        }),
+      ),
+    ),
   },
   returns: v.object({ attempted: v.number(), sent: v.number(), failed: v.number() }),
   handler: async (ctx, args): Promise<SendResult> => {
@@ -182,6 +199,7 @@ export const send = internalAction({
               stopUrl: stop,
               stopLabel: STOP_TH,
               channels: CHANNELS,
+              ...(args.cards ? { cards: args.cards } : {}),
               ...(args.masthead
                 ? { masthead: { name: args.masthead, date: issueDateTh() } }
                 : {}),
