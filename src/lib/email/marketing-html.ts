@@ -170,6 +170,12 @@ export function renderMarketingEmail(args: {
   /** The one way to reach a person, on the channel the business publishes. */
   contact?: { label: string; href: string };
   /**
+   * The newsletter's own name, under the wordmark in the banner. Live text and
+   * never part of the banner image: a client that blocks images would take the
+   * title with it, and the title is the thing that says this arrives again.
+   */
+  masthead?: string;
+  /**
    * The article's own image, at a public URL, with the alt text that already
    * describes it. Optional: an email that announces nothing visual does not
    * need one, and a broken image is worse than no image.
@@ -207,6 +213,11 @@ export function renderMarketingEmail(args: {
         <a href="https://punprofile.app" style="display:inline-block;text-decoration:none;">
           <img src="${LOGO_DARK}" alt="PunProfile" width="150" style="display:block;width:150px;max-width:150px;height:auto;border:0;margin:0 auto;">
         </a>
+        ${
+          args.masthead
+            ? `<p class="masthead" style="margin:14px 0 0;font-family:${FONT};font-size:20px;line-height:32px;font-weight:600;color:${ON_PRIMARY};text-align:center;">${escape(args.masthead)}</p>`
+            : ""
+        }
       </td></tr>
 
       <tr><td style="height:16px;line-height:16px;font-size:0;">&nbsp;</td></tr>
