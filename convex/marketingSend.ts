@@ -118,6 +118,7 @@ export const send = internalAction({
           ctaLabel: v.string(),
           href: v.string(),
           tint: v.union(v.literal("cyan"), v.literal("orange")),
+          image: v.optional(v.object({ src: v.string(), alt: v.string() })),
         }),
       ),
     ),
