@@ -4,6 +4,7 @@ import { v } from "convex/values";
 import { internalAction } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { renderMarketingEmail } from "../src/lib/email/marketing-html";
+import { issueDateTh } from "../src/lib/email/issue-date";
 import type { Id } from "./_generated/dataModel";
 
 /**
@@ -97,6 +98,12 @@ export const send = internalAction({
      * picture an email carries is an editorial decision like the words.
      */
     image: v.optional(v.object({ src: v.string(), alt: v.string() })),
+    /**
+     * Which newsletter this issue belongs to, as the masthead prints it. The
+     * name is editorial and comes from the caller; the date beside it is not an
+     * argument at all and is read off the clock when the send runs.
+     */
+    masthead: v.optional(v.string()),
   },
   returns: v.object({ attempted: v.number(), sent: v.number(), failed: v.number() }),
   handler: async (ctx, args): Promise<SendResult> => {
@@ -175,6 +182,9 @@ export const send = internalAction({
               stopUrl: stop,
               stopLabel: STOP_TH,
               channels: CHANNELS,
+              ...(args.masthead
+                ? { masthead: { name: args.masthead, date: issueDateTh() } }
+                : {}),
               image: args.image,
             }),
             // The header every mail client reads to offer its own one-click
