@@ -280,7 +280,13 @@ export type Block =
    */
   | {
       kind: "figure";
-      src: string;
+      /**
+       * One path, or one per language. A picture whose own labels are Thai is
+       * unreadable on `/en`, so a figure built from text carries a `Copy` and the
+       * English render sits beside the Thai one as `<name>-en.jpg`. Artwork and
+       * photographs carry no text and stay a single string.
+       */
+      src: string | Copy;
       alt: Copy;
       /**
        * Optional line under the picture, added 03/11/2026 for

@@ -100,7 +100,10 @@ export const LINKEDIN_EUROPE_READY: Post = {
       },
       {
         kind: "figure",
-        src: "/blog/linkedin-europe-ready-fig-1-first-action.jpg",
+        src: {
+          th: "/blog/linkedin-europe-ready-fig-1-first-action.jpg",
+          en: "/blog/linkedin-europe-ready-fig-1-first-action-en.jpg",
+        },
         alt: {
           th: "กราฟแท่งแสดงสัดส่วนของเรื่องที่ควรแก้ก่อน แถบ CV ยาวที่สุด ส่วน LinkedIn อยู่ลำดับที่ 3",
           en: "A bar chart of the share for each thing to fix first. The CV bar is the longest and LinkedIn is third.",
@@ -295,7 +298,10 @@ export const LINKEDIN_EUROPE_READY: Post = {
       },
       {
         kind: "figure",
-        src: "/blog/linkedin-europe-ready-fig-3-title-rewrite.jpg",
+        src: {
+          th: "/blog/linkedin-europe-ready-fig-3-title-rewrite.jpg",
+          en: "/blog/linkedin-europe-ready-fig-3-title-rewrite-en.jpg",
+        },
         alt: {
           th: "การ์ดสองใบวางเทียบกัน ทั้งสองใบใช้ชื่อตำแหน่งเดียวกัน ส่วนการ์ดด้านขวามีคำอธิบายงานและข้อมูลบริษัทเพิ่ม",
           en: "Two cards side by side with the same job title. The one on the right adds a description of the work and context on the employer.",

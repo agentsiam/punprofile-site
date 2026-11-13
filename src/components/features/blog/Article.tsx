@@ -157,7 +157,7 @@ function Body({ blocks, person }: { blocks: readonly Block[]; person?: Copy }) {
             <figure key={i} className="mt-8">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-large">
                 <Image
-                  src={block.src}
+                  src={typeof block.src === "string" ? block.src : pick(block.src)}
                   alt={pick(block.alt)}
                   fill
                   sizes="(max-width: 672px) 100vw, 672px"

@@ -135,7 +135,10 @@ export const LANGUAGE_LEARNING_APPS: Post = {
         },
         {
           kind: "figure",
-          src: "/blog/language-learning-apps-fig-1-level-ladder.jpg",
+          src: {
+            th: "/blog/language-learning-apps-fig-1-level-ladder.jpg",
+            en: "/blog/language-learning-apps-fig-1-level-ladder-en.jpg",
+          },
           alt: {
             th: "บันไดระดับภาษา A1 ถึง B2 แสดงผลการฝึกพูดจากงานวิจัยและตัวอย่างเกณฑ์ภาษาของวีซ่าเยอรมนี",
             en: "A ladder of language levels from A1 to B2, showing speaking results from the research and examples of the language requirements for German visas",
@@ -592,7 +595,10 @@ export const LANGUAGE_LEARNING_APPS: Post = {
         },
         {
           kind: "figure",
-          src: "/blog/language-learning-apps-fig-3-goal-plans.jpg",
+          src: {
+            th: "/blog/language-learning-apps-fig-3-goal-plans.jpg",
+            en: "/blog/language-learning-apps-fig-3-goal-plans-en.jpg",
+          },
           alt: {
             th: "การ์ดสามเป้าหมาย เรียนสายอาชีพที่เยอรมนี ทำงานบริษัทที่ใช้ภาษาอังกฤษ และย้ายไปฝรั่งเศส พร้อมขั้นตอนของแต่ละเป้าหมาย",
             en: "Three goal cards, vocational training in Germany, a company job in English, and moving to France, each with its steps",

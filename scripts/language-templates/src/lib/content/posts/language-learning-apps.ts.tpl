@@ -135,7 +135,10 @@ export const LANGUAGE_LEARNING_APPS: Post = {
         },
         {
           kind: "figure",
-          src: "/blog/language-learning-apps-fig-1-level-ladder.jpg",
+          src: {
+            th: "/blog/language-learning-apps-fig-1-level-ladder.jpg",
+            en: "/blog/language-learning-apps-fig-1-level-ladder-en.jpg",
+          },
           alt: {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbMl0uYm9keVs2XS5hbHQ:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbMl0uYm9keVs2XS5hbHQ:EN%%,
@@ -592,7 +595,10 @@ export const LANGUAGE_LEARNING_APPS: Post = {
         },
         {
           kind: "figure",
-          src: "/blog/language-learning-apps-fig-3-goal-plans.jpg",
+          src: {
+            th: "/blog/language-learning-apps-fig-3-goal-plans.jpg",
+            en: "/blog/language-learning-apps-fig-3-goal-plans-en.jpg",
+          },
           alt: {
             th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbOF0uYm9keVsyXS5hbHQ:TH%%,
             en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xhbmd1YWdlLWxlYXJuaW5nLWFwcHMudHM6OkxBTkdVQUdFX0xFQVJOSU5HX0FQUFMuc2VjdGlvbnNbOF0uYm9keVsyXS5hbHQ:EN%%,

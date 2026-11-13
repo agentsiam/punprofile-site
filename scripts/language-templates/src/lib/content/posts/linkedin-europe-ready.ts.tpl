@@ -100,7 +100,10 @@ export const LINKEDIN_EUROPE_READY: Post = {
       },
       {
         kind: "figure",
-        src: "/blog/linkedin-europe-ready-fig-1-first-action.jpg",
+        src: {
+          th: "/blog/linkedin-europe-ready-fig-1-first-action.jpg",
+          en: "/blog/linkedin-europe-ready-fig-1-first-action-en.jpg",
+        },
         alt: {
           th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNF0uYWx0:TH%%,
           en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzFdLmJvZHlbNF0uYWx0:EN%%,
@@ -295,7 +298,10 @@ export const LINKEDIN_EUROPE_READY: Post = {
       },
       {
         kind: "figure",
-        src: "/blog/linkedin-europe-ready-fig-3-title-rewrite.jpg",
+        src: {
+          th: "/blog/linkedin-europe-ready-fig-3-title-rewrite.jpg",
+          en: "/blog/linkedin-europe-ready-fig-3-title-rewrite-en.jpg",
+        },
         alt: {
           th: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzVdLmJvZHlbM10uYWx0:TH%%,
           en: %%LANG:c3JjL2xpYi9jb250ZW50L3Bvc3RzL2xpbmtlZGluLWV1cm9wZS1yZWFkeS50czo6TElOS0VESU5fRVVST1BFX1JFQURZLnNlY3Rpb25zWzVdLmJvZHlbM10uYWx0:EN%%,
