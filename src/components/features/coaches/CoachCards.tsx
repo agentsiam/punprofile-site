@@ -44,11 +44,23 @@ export default function CoachCards() {
             <h3 className="text-heading-sm text-on-surface">{pick(c.name)}</h3>
             <p className="mt-1 text-body-medium text-on-surface-variant">{pick(c.role)}</p>
             <p className="mt-4 text-body-large text-on-surface">{pick(c.summary)}</p>
+            {/* Credentials, and they are facts rather than actions.
+                They were painted in the action colour until 14/11/2026, which
+                broke R16: lime is the one colour that marks what can be
+                pressed, and these cannot be. On a phone it was not a subtle
+                fault, two of the five wrap to a second line and the result was
+                a large lime lozenge that invited a tap and answered none. The
+                section's real action, the contact link below, is underlined
+                text, so lime was marking everything here except the thing that
+                does something.
+                `canvas-soft` with `ink-deep` is the pale static chip this
+                system already has, in `AudienceChip`, and both roles carry
+                their own dark values so neither scheme is named here (R20). */}
             <ul className="mt-5 flex flex-wrap gap-2">
               {c.pills.map((p, i) => (
                 <li
                   key={i}
-                  className="rounded-full bg-primary px-3 py-1 text-body-medium text-on-primary"
+                  className="rounded-full bg-canvas-soft px-3 py-1 text-body-medium text-ink-deep"
                 >
                   {pick(p)}
                 </li>
