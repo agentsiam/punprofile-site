@@ -7142,8 +7142,8 @@ render: Site footer, the accessible name on the LinkedIn link
 narrative_slot: utility
 en: Our LinkedIn page
 th: เพจ LinkedIn ของเรา
-provenance: draft
-date: 13/11/2026
+provenance: paul-approved
+date: 14/11/2026
 term_bindings: []
 decision_note: |-
   Added 13/11/2026, when the LinkedIn Page went live, as the second follow
@@ -7157,10 +7157,10 @@ decision_note: |-
   aloud rather than seen. It is still the only thing that says where the link
   goes.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 4b50959a8df8ad27f94cd5fc2e15adc63e28b45f6d52b8c7b445b4a15ad71da0
   prompt_version: structural-calque-v1
-  basis: Not reviewed. A model produced this Thai by substituting the brand name in an approved string, and no reader has seen it.
+  basis: Not reviewed. A model produced this Thai by substituting the brand name in an approved string, and no reader has seen it. Paul read both labels in the local preview on 14/11/2026, where each renders as the accessible name on its mark rather than as visible text, and approved this Thai unchanged. The verdict is pass and the provenance paul-approved rather than paul-written, because the wording is a model's and he approved it rather than wrote it, so the record stays outside the golden-th corpus.
 ```
 
 <!-- COPY-ENTRY -->
@@ -7174,8 +7174,8 @@ render: Site footer, the accessible name on the TikTok link
 narrative_slot: utility
 en: Our TikTok
 th: TikTok ของเรา
-provenance: draft
-date: 13/11/2026
+provenance: paul-approved
+date: 14/11/2026
 term_bindings: []
 decision_note: |-
   Added 13/11/2026, when Paul supplied the account, as the third follow mark.
@@ -7186,10 +7186,10 @@ decision_note: |-
   the pattern. That is the judgement worth checking here: either `TikTok ของเรา`
   as written, or `บัญชี TikTok ของเรา` if the noun is wanted.
 review:
-  structural_calque: pending
+  structural_calque: pass
   text_hash: 0c7c11702a3e52cb1323477a0b6459f0b44f2b0ce786cd2a94d462aaec9e8a12
   prompt_version: structural-calque-v1
-  basis: Not reviewed. A model wrote this Thai and chose to break the pattern the other two follow links use, and no reader has seen it.
+  basis: Not reviewed. A model wrote this Thai and chose to break the pattern the other two follow links use, and no reader has seen it. Paul read both labels in the local preview on 14/11/2026, where each renders as the accessible name on its mark rather than as visible text, and approved this Thai unchanged. The verdict is pass and the provenance paul-approved rather than paul-written, because the wording is a model's and he approved it rather than wrote it, so the record stays outside the golden-th corpus.
 ```
 
 <!-- COPY-ENTRY -->

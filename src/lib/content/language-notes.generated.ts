@@ -2552,8 +2552,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "LINKEDIN_LABEL",
     "render": "Site footer, the accessible name on the LinkedIn link",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "13/11/2026",
+    "provenance": "paul-approved",
+    "date": "14/11/2026",
     "decisionNote": "Added 13/11/2026, when the LinkedIn Page went live, as the second follow\nbutton beside Facebook.\n\nWritten as the exact parallel of `FOLLOW_LABEL`, which Paul approved unchanged\non 10/09/2026. Only the brand name differs, and it stays in Latin script in\nboth languages, as LINE does in the Contact column.\n\nBoth follow links were reduced to marks on 13/11/2026, so this string is read\naloud rather than seen. It is still the only thing that says where the link\ngoes."
   },
   "src/lib/content/footer.ts::TIKTOK_LABEL": {
@@ -2561,8 +2561,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "TIKTOK_LABEL",
     "render": "Site footer, the accessible name on the TikTok link",
     "narrativeSlot": "utility",
-    "provenance": "draft",
-    "date": "13/11/2026",
+    "provenance": "paul-approved",
+    "date": "14/11/2026",
     "decisionNote": "Added 13/11/2026, when Paul supplied the account, as the third follow mark.\n\nDeliberately not the `เพจ X ของเรา` shape the Facebook and LinkedIn labels\nuse. `เพจ` is Facebook's word for a Page and reads oddly against TikTok, which\nhas accounts rather than pages, so this one drops the noun instead of forcing\nthe pattern. That is the judgement worth checking here: either `TikTok ของเรา`\nas written, or `บัญชี TikTok ของเรา` if the noun is wanted."
   },
   "src/lib/content/footer.ts::FOOTER_COLUMNS[0].heading": {
