@@ -45,7 +45,10 @@ export default function CoachFold() {
             className="aspect-[4/3] w-full object-cover"
           />
           <div className="flex flex-1 flex-col px-6 pb-7 pt-6 medium:px-8">
-            <p className="self-start rounded-full bg-primary px-3 py-1 text-body-medium text-on-primary">
+            {/* Credential, not an action, so off the action colour as in
+                `CoachCards` and `CoachRows`, 14/11/2026 (R16). This is the
+                copy live on `/coaching`. */}
+            <p className="self-start rounded-full bg-canvas-soft px-3 py-1 text-body-medium text-ink-deep">
               {pick(c.pill)}
             </p>
             <h2 className="mt-4 text-headline-sm text-on-surface">{pick(c.heading)}</h2>

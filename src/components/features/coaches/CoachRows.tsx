@@ -39,7 +39,11 @@ export default function CoachRows() {
             className="aspect-[4/3] w-full rounded-[30px] object-cover medium:aspect-[4/5]"
           />
           <div>
-            <p className="inline-block rounded-full bg-primary px-3 py-1 text-body-medium text-on-primary">
+            {/* The same credential chip as `CoachCards`, and off the action
+                colour for the same reason, 14/11/2026 (R16). A pale chip above
+                a heading is exactly what `AudienceChip` is, so it takes that
+                treatment rather than a new one. */}
+            <p className="inline-block rounded-full bg-canvas-soft px-3 py-1 text-body-medium text-ink-deep">
               {pick(c.pill)}
             </p>
             <h2 className={`mt-4 ${SECTION_HEADING(locale)}`}>{pick(c.heading)}</h2>
