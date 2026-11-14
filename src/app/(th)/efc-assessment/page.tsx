@@ -76,6 +76,19 @@ const FLOW: FlowStep[] = [
 const TOTAL_STEPS = FLOW.length;
 
 /**
+ * The denominator the candidate is shown, questions and contact together.
+ *
+ * Contact is the last step of the survey and not a gate (see the step itself
+ * below), so the count has to say so from the first screen. It used to not:
+ * the questions were `total={TOTAL_STEPS}`, which filled the bar and read
+ * "18 / 18" on the last question, and the contact step then appeared as
+ * "19 / 19". The total grew at the exact moment the candidate had been told
+ * they were finished, which is the one place in the flow where moving the
+ * goalpost costs the most.
+ */
+const TOTAL_SHOWN = TOTAL_STEPS + 1;
+
+/**
  * The photograph for a step in the flow, or null while its block has none.
  *
  * Module level rather than inline, since 17/08/2026, because the loading screen
@@ -457,7 +470,7 @@ export default function AssessPage() {
             setStep(step + 1);
           }}
           step={step + 1}
-          total={TOTAL_STEPS}
+          total={TOTAL_SHOWN}
           onBack={() => setStep(step - 1)}
           hasPanel={Boolean(panel)}
         />
@@ -532,7 +545,7 @@ export default function AssessPage() {
         select={q.select}
         selected={local[q.key]}
         step={step + 1}
-        total={TOTAL_STEPS}
+        total={TOTAL_SHOWN}
         phase={phase}
         // The section's photograph, held across every question in the block, so
         // it changes six times across sixteen questions rather than sixteen.
@@ -568,7 +581,7 @@ export default function AssessPage() {
   if (session && session.status === "partial") {
     return (
       <ContactGate
-        totalSteps={TOTAL_STEPS + 1}
+        totalSteps={TOTAL_SHOWN}
         onSubmit={async (values) => {
           await captureContact({ leadId, ...values });
           setContactName(`${values.firstName} ${values.lastName}`.trim());

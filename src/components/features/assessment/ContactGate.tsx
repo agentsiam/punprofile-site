@@ -210,7 +210,19 @@ export default function ContactGate({
       <p className="mb-1 text-body-medium text-on-surface-variant">
         {t("assess.progress", { step: totalSteps, total: totalSteps })}
       </p>
-      <div className="mb-5 h-1 w-full overflow-hidden rounded-full bg-canvas-soft">
+      {/* The same progressbar the question screens render, 14/11/2026. It was
+          a bare pair of divs, so a screen reader was told the progress of
+          eighteen steps and then nothing at all on the nineteenth, which is
+          the step this one is. The bar is full because this is the last step;
+          the roles are here so it says so. */}
+      <div
+        className="mb-5 h-1 w-full overflow-hidden rounded-full bg-canvas-soft"
+        role="progressbar"
+        aria-label={t("assess.progress", { step: totalSteps, total: totalSteps })}
+        aria-valuemin={0}
+        aria-valuemax={totalSteps}
+        aria-valuenow={totalSteps}
+      >
         <div className="h-full w-full rounded-full bg-primary" />
       </div>
 
