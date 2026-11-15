@@ -73,6 +73,17 @@ export function draftFor(key: SituationRowKey, s: Situation): Draft {
   }
 }
 
+/**
+ * The boxes for a row that something else proposed, so taking a proposal and
+ * editing a row open the same editor on the same shape. It goes through
+ * `draftFor` rather than reading the proposal's keys directly, so a row that
+ * gains a field does not have to be handled twice.
+ */
+export function draftFromValue(value: { row: SituationRowKey } & Record<string, unknown>): Draft {
+  const { row, ...rest } = value;
+  return draftFor(row, { [row]: { ...rest, source: "coach", at: 0 } } as unknown as Situation);
+}
+
 /** The draft as the mutation takes it. */
 export function rowValue(key: SituationRowKey, d: Draft) {
   switch (key) {

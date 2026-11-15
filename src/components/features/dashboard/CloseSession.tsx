@@ -11,6 +11,12 @@
  * now and what we owe them next are asked every time, because those two move
  * in every session by definition.
  *
+ * Where a transcript has been read, its proposals appear above the rows, each
+ * one against the value the panel already holds and with what was actually
+ * said. Taking one fills that row's boxes; nothing from a transcript lands
+ * without that click, because extraction is evidence capture and not proof
+ * that every spoken statement was right.
+ *
  * About five minutes. It replaces the separate places the same facts used to
  * be typed: a call's free-text notes, the delivery notes and the summary-email
  * tick.
@@ -23,7 +29,7 @@ import type { Id } from "../../../../convex/_generated/dataModel";
 import { ROW_ASKS, ROW_LABEL, SITUATION_ROWS, type SituationRowKey } from "@/lib/situation";
 import { MADRID, formatIn } from "@/lib/sessionTime";
 import Panel from "./Panel";
-import { RowEditor, draftFor, rowValue, type Draft } from "./SituationPanel";
+import { RowEditor, draftFor, draftFromValue, rowValue, type Draft } from "./SituationPanel";
 
 const TYPE: Record<string, string> = {
   kick_start: "First call",
@@ -95,6 +101,7 @@ export default function CloseSession({ leadId }: { leadId: Id<"leads"> }) {
   const [drafts, setDrafts] = useState<Record<string, Draft> | null>(null);
   const [decisions, setDecisions] = useState<{ what: string }[]>([{ what: "" }]);
   const [owes, setOwes] = useState<{ what: string; dueOn: string }[]>([]);
+  const [settled, setSettled] = useState<Record<string, boolean>>({});
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [saved, setSaved] = useState<string | null>(null);
@@ -109,6 +116,7 @@ export default function CloseSession({ leadId }: { leadId: Id<"leads"> }) {
     setDrafts(stored);
     setDecisions([{ what: "" }]);
     setOwes([]);
+    setSettled({});
     setCallId(chosen?._id ?? "");
     setError(null);
     setSaved(null);
@@ -138,11 +146,14 @@ export default function CloseSession({ leadId }: { leadId: Id<"leads"> }) {
         rows: changedRows().map((k) => rowValue(k, drafts[k])),
         decisions: decisions.map((d) => d.what).filter((x) => x.trim()),
         candidateOwes: owes.filter((o) => o.what.trim()).map((o) => ({ what: o.what, dueOn: o.dueOn })),
+        settled: Object.entries(settled).map(([id, accepted]) => ({ id: id as Id<"situationProposals">, accepted })),
       });
       setSaved(
         `Closed. ${result.changed.length} row${result.changed.length === 1 ? "" : "s"} on the panel, ${result.decisions} decision${
           result.decisions === 1 ? "" : "s"
-        }, ${result.tasks} thing${result.tasks === 1 ? "" : "s"} asked of them.`,
+        }, ${result.tasks} thing${result.tasks === 1 ? "" : "s"} asked of them${
+          result.settled ? `, ${result.settled} proposal${result.settled === 1 ? "" : "s"} settled` : ""
+        }.`,
       );
       setOpen(false);
     } catch (e) {
@@ -153,6 +164,9 @@ export default function CloseSession({ leadId }: { leadId: Id<"leads"> }) {
   };
 
   const changed = drafts ? changedRows() : [];
+  // A proposal with no call of its own belongs to whichever call is being
+  // closed: it was read off something about this person either way.
+  const openProposals = f.proposals.filter((p) => p.consultationId === null || p.consultationId === chosen?._id);
 
   return (
     <Panel
@@ -220,6 +234,61 @@ export default function CloseSession({ leadId }: { leadId: Id<"leads"> }) {
               ))}
             </select>
           </label>
+
+          {openProposals.length > 0 && (
+            <div data-testid="close-proposals">
+              <p className="field-label">What the recording says changed</p>
+              <p className="field-support">
+                Read off the call, not applied. Take one and it fills that row below; nothing here reaches the panel on its own.
+              </p>
+              <ul className="mt-2 space-y-3">
+                {openProposals.map((p) => (
+                  <li key={p._id} className="rounded-medium border border-outline-variant p-4" data-testid={`proposal-${p.row}`}>
+                    <p className="text-label-large text-on-surface">{ROW_LABEL[p.row]}</p>
+                    <p className="mt-1 text-body-medium text-on-surface-variant">
+                      Now: {p.wasLine ?? "not established"}
+                    </p>
+                    <p className="text-body-medium text-on-surface">Proposed: {p.line ?? "nothing readable"}</p>
+                    {p.quote && <p className="mt-1 text-body-small text-on-surface-variant">Said: &ldquo;{p.quote}&rdquo;</p>}
+                    <div className="mt-3 flex flex-wrap items-center gap-4">
+                      {settled[p._id] === undefined ? (
+                        <>
+                          <button
+                            type="button"
+                            className="btn-outlined h-9 px-4 text-label-large"
+                            onClick={() => {
+                              setDrafts((d) => (d ? { ...d, [p.row]: draftFromValue(p.proposed) } : d));
+                              setSettled((x) => ({ ...x, [p._id]: true }));
+                            }}
+                          >
+                            Take it
+                          </button>
+                          <button
+                            type="button"
+                            className="text-body-medium text-ink-deep underline"
+                            onClick={() => setSettled((x) => ({ ...x, [p._id]: false }))}
+                          >
+                            Leave it
+                          </button>
+                        </>
+                      ) : (
+                        <span className="text-body-medium text-on-surface-variant">
+                          {settled[p._id] ? "Taken, and in the row below" : "Left, and recorded as read and not taken"}
+                          <button
+                            type="button"
+                            className="ml-3 text-body-small text-ink-deep underline"
+                            onClick={() => setSettled((x) => { const n = { ...x }; delete n[p._id]; return n; })}
+                          >
+                            Undo
+                          </button>
+                        </span>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div>
             <p className="field-label">1. What moved on the panel</p>

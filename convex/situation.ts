@@ -20,39 +20,18 @@ import type { Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
 import { targetsFor } from "./targets";
+import { rowInput, type RowInput } from "./situationRows";
 import {
   isPanelDate,
   missingGates,
   panel,
+  rowLine,
   searchGates,
   SITUATION_ROWS,
   type Situation,
   type SituationRowKey,
   type SituationSource,
 } from "../src/lib/situation";
-
-/**
- * One row as it arrives from a form. `row` names which, so a save carries only
- * what moved: the close form sends two or three of these, not a whole panel.
- */
-const rowInput = v.union(
-  v.object({ row: v.literal("goal"), countries: v.array(v.string()), cities: v.array(v.string()) }),
-  v.object({ row: v.literal("workRoute"), text: v.string(), changesOn: v.optional(v.string()) }),
-  v.object({ row: v.literal("availableFrom"), date: v.string() }),
-  v.object({
-    row: v.literal("employersMustOffer"),
-    sponsorship: v.union(v.literal("required"), v.literal("not_required"), v.literal("required_until_available")),
-    payFloor: v.optional(
-      v.object({ amount: v.number(), currency: v.string(), per: v.union(v.literal("year"), v.literal("month")) }),
-    ),
-    languages: v.array(v.string()),
-  }),
-  v.object({ row: v.literal("heardFromEmployers"), objections: v.array(v.string()) }),
-  v.object({ row: v.literal("whereTheyAreNow"), text: v.string() }),
-  v.object({ row: v.literal("nextFromUs"), text: v.string(), dueOn: v.optional(v.string()) }),
-);
-
-type RowInput = typeof rowInput.type;
 
 /**
  * Trim, collapse runs of space, cut at a length. A guard against a paste
@@ -169,6 +148,91 @@ export async function applyRows(
   return touched;
 }
 
+/**
+ * A proposed row as a line, so the coach compares a sentence with a sentence
+ * rather than a form with a form. It goes through the panel's own wording, so
+ * a proposal cannot describe a fact differently from the way the panel will
+ * once it is accepted.
+ */
+function proposedLine(proposed: RowInput, titles: string[]): string | null {
+  const value = valueOf(proposed);
+  const fake = { [proposed.row]: { ...value, source: "coach" as const, at: 0 } } as Situation;
+  return rowLine(fake, proposed.row, titles);
+}
+
+/**
+ * A transcript's reading of a call, waiting for the coach's click.
+ *
+ * Written from outside the app, by whatever read the recording: this has no
+ * model and is not going to extract anything itself. Nothing here reaches the
+ * panel. The close form shows each proposal beside the value the panel already
+ * holds, and the coach accepts it, edits it or throws it away.
+ *
+ * A proposal for a row that already has an identical value is dropped rather
+ * than stored: it is not a change, and a list of non-changes to click through
+ * is how a coach starts clicking without reading.
+ */
+export const propose = mutation({
+  args: {
+    leadId: v.id("leads"),
+    consultationId: v.optional(v.id("consultations")),
+    proposals: v.array(v.object({ proposed: rowInput, quote: v.optional(v.string()) })),
+  },
+  handler: async (ctx, args) => {
+    const by = await requireAdmin(ctx);
+    const lead = await ctx.db.get(args.leadId);
+    if (!lead) throw new ConvexError("Lead not found.");
+    if (args.consultationId) {
+      const call = await ctx.db.get(args.consultationId);
+      if (!call || call.leadId !== args.leadId) throw new ConvexError("That call belongs to a different lead.");
+    }
+    const titles = (await targetsFor(ctx, args.leadId)).filter((t) => t.status === "active").map((t) => t.title);
+    const held = (lead.situation ?? {}) as Situation;
+    const open = (await ctx.db.query("situationProposals").withIndex("by_lead", (q) => q.eq("leadId", args.leadId)).collect())
+      .filter((r) => r.settledAt === undefined);
+    const at = Date.now();
+    let added = 0;
+    let unchanged = 0;
+    for (const p of args.proposals) {
+      const line = proposedLine(p.proposed, titles);
+      const was = rowLine(held, p.proposed.row, titles);
+      if (line === was) {
+        unchanged++;
+        continue;
+      }
+      // The same proposal twice is one proposal. A run that dies half way is
+      // resumed by running it again.
+      if (open.some((r) => r.proposed.row === p.proposed.row && proposedLine(r.proposed, titles) === line)) {
+        unchanged++;
+        continue;
+      }
+      await ctx.db.insert("situationProposals", {
+        leadId: args.leadId,
+        ...(args.consultationId ? { consultationId: args.consultationId } : {}),
+        proposed: p.proposed,
+        ...(was ? { wasLine: was } : {}),
+        ...(p.quote?.trim() ? { quote: clean(p.quote, 600) } : {}),
+        at,
+        by,
+      });
+      added++;
+    }
+    return { added, unchanged };
+  },
+});
+
+/** The coach throws a proposal away without opening the close form. */
+export const settleProposal = mutation({
+  args: { id: v.id("situationProposals"), accepted: v.boolean() },
+  handler: async (ctx, { id, accepted }) => {
+    const by = await requireAdmin(ctx);
+    const row = await ctx.db.get(id);
+    if (!row) throw new ConvexError("No such proposal.");
+    if (row.settledAt !== undefined) return;
+    await ctx.db.patch(id, { settledAt: Date.now(), settledBy: by, accepted });
+  },
+});
+
 /** The panel as the Session tab draws it, and as a draft reads it. */
 export const forLead = query({
   args: { leadId: v.id("leads") },
@@ -215,8 +279,25 @@ export const closeForm = query({
     const ended = (c: (typeof calls)[number]) => c.heldAt + (c.durationMinutes ?? 60) * 60_000 <= now;
     const notes = await ctx.db.query("deliveryNotes").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect();
     const tasks = await ctx.db.query("candidateTasks").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect();
+    const titles = (await targetsFor(ctx, leadId)).filter((t) => t.status === "active").map((t) => t.title);
+    const proposals = (
+      await ctx.db.query("situationProposals").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect()
+    )
+      .filter((r) => r.settledAt === undefined)
+      .sort((a, b) => a.at - b.at)
+      .map((r) => ({
+        _id: r._id,
+        consultationId: r.consultationId ?? null,
+        row: r.proposed.row,
+        proposed: r.proposed,
+        line: proposedLine(r.proposed, titles),
+        wasLine: r.wasLine ?? null,
+        quote: r.quote ?? null,
+        at: r.at,
+      }));
     return {
       now,
+      proposals,
       calls: calls.map((c) => ({
         _id: c._id,
         type: c.type,
@@ -328,6 +409,9 @@ export const closeSession = mutation({
     decisions: v.array(v.string()),
     /** What the candidate owes, each with the date it is owed by. */
     candidateOwes: v.array(v.object({ what: v.string(), dueOn: v.string() })),
+    /** The transcript's proposals the coach took or threw away, settled in the
+     *  same transaction as the rows they produced. */
+    settled: v.optional(v.array(v.object({ id: v.id("situationProposals"), accepted: v.boolean() }))),
     /** How long the call ran, where the log does not have it yet. */
     durationMinutes: v.optional(v.number()),
   },
@@ -417,6 +501,14 @@ export const closeSession = mutation({
       );
     }
 
-    return { changed, decisions: decisions.length, tasks: tasks.length };
+    let settled = 0;
+    for (const p of args.settled ?? []) {
+      const row = await ctx.db.get(p.id);
+      if (!row || row.leadId !== args.leadId || row.settledAt !== undefined) continue;
+      await ctx.db.patch(p.id, { settledAt: at, settledBy: by, accepted: p.accepted });
+      settled++;
+    }
+
+    return { changed, decisions: decisions.length, tasks: tasks.length, settled };
   },
 });

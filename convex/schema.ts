@@ -1,6 +1,7 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 import { authTables } from "@convex-dev/auth/server";
+import { rowInput } from "./situationRows";
 
 /**
  * Data model per `docs/prd.md` § 3, plus the `assessments` snapshot table from
@@ -609,6 +610,7 @@ export default defineSchema({
       /** Optional for the same reason again: rows written before this table
        *  existed have no such count. */
       candidateTasks: v.optional(v.number()),
+      situationProposals: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -1488,6 +1490,49 @@ export default defineSchema({
     /** When the one reminder went. @absent notyet — not reminded yet */
     remindedAt: v.optional(v.number()),
   }).index("by_lead", ["leadId"]),
+
+  /**
+   * A Situation row a transcript proposes, waiting for the coach's click,
+   * `candidate-situation-handoff.md` § 4.
+   *
+   * Nothing from a transcript lands on the panel on its own. The delivery
+   * design is explicit that extraction is evidence capture and not proof that
+   * every spoken statement is correct, so a reading of a call arrives here,
+   * beside the value the panel already holds, and the coach accepts it, edits
+   * it or throws it away. The close form is where that happens.
+   *
+   * Written from outside the app, the same way the evening run writes the
+   * roles it found: whatever reads the recording has a model and this does
+   * not. `quote` is what was actually said, so the coach is deciding about
+   * evidence rather than about a summary of it.
+   *
+   * A settled proposal is kept. What a call proposed and what the coach did
+   * with it is the record of how a fact on the panel came to be there.
+   */
+  situationProposals: defineTable({
+    leadId: v.id("leads"),
+    /** The call it was read off. @absent none — not tied to one call */
+    consultationId: v.optional(v.id("consultations")),
+    /** The proposed row, in the shape the panel takes. */
+    proposed: rowInput,
+    /** What the panel read at the moment the proposal was made, so the coach
+     *  sees a change rather than a bare new value.
+     *  @absent none — the row was empty */
+    wasLine: v.optional(v.string()),
+    /** What was said, verbatim. @absent none — no quote was carried */
+    quote: v.optional(v.string()),
+    at: v.number(),
+    by: v.string(),
+    /** @absent notyet — still waiting for the coach */
+    settledAt: v.optional(v.number()),
+    /** @absent notyet — still waiting for the coach */
+    settledBy: v.optional(v.string()),
+    /** Whether the coach took it. An edited accept is `true`: what landed is
+     *  on the panel with its own stamp. @absent notyet — still waiting */
+    accepted: v.optional(v.boolean()),
+  })
+    .index("by_lead", ["leadId"])
+    .index("by_consultation", ["consultationId"]),
 
   /**
    * The coach's working notes on delivery, one row per entry, newest first on
