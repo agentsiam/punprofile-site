@@ -73,7 +73,10 @@ function leads(): Record<string, unknown>[] {
 
 /** The stamp a row carries once written, for the preview to show. */
 const stamped = (r: SeedRow, builtOn: string) => {
-  const { row: _key, evidence, ...value } = r;
+  const value = { ...r } as Record<string, unknown>;
+  delete value.row;
+  const evidence = value.evidence as string | undefined;
+  delete value.evidence;
   return {
     ...value,
     source: "coach" as const,
@@ -191,8 +194,10 @@ ${BRAND_FONT_STACKS}
 function sameAsStored(stored: Situation | null, r: SeedRow): boolean {
   const held = stored?.[r.row] as Record<string, unknown> | undefined;
   if (!held) return false;
-  const { row: _key, evidence: _e, ...want } = r;
-  return Object.entries(want).every((entry) => JSON.stringify(held[entry[0]]) === JSON.stringify(entry[1]));
+  const want = { ...r } as Record<string, unknown>;
+  delete want.row;
+  delete want.evidence;
+  return Object.entries(want).every(([k, v]) => JSON.stringify(held[k as keyof typeof held]) === JSON.stringify(v));
 }
 
 function write(): void {
