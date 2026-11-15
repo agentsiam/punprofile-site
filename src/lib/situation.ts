@@ -154,7 +154,7 @@ export function rowLine(s: Situation, key: SituationRowKey, titles: string[] = [
     case "nextFromUs": {
       const r = s.nextFromUs;
       if (!r?.text.trim()) return null;
-      const when = r.dueOn ? ` by ${panelDate(r.dueOn)}` : "";
+      const when = r.dueOn ? `, by ${panelDate(r.dueOn)}` : "";
       return `${r.text.trim()}${when}${r.doneAt ? " (done)" : ""}`;
     }
   }

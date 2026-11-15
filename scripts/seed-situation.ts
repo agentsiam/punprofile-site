@@ -2,7 +2,7 @@
  * The first fill of the Situation panel for each paying client,
  * `candidate-situation-handoff.md` step 3.
  *
- *   npx tsx scripts/seed-situation.ts --preview <out.html>
+ *   npx tsx scripts/seed-situation.ts --preview <out.html> [--stored]
  *   npx tsx scripts/seed-situation.ts --write [--only <nickname>]
  *
  * Two modes over one seed file, `data/clients/situation-seed.json`, so what
@@ -10,6 +10,10 @@
  * panel, row by row, with the source every value was read off, and writes no
  * row anywhere. `--write` sends each row through `situation:setRow` on the
  * deployment the live site reads, using `data/agent/convex-admin.sh`.
+ *
+ * `--preview --stored` renders what the CRM actually holds instead of what the
+ * seed proposes, which is the read-back after a write: the same rows through
+ * the same wording, out of the record rather than out of the file.
  *
  * Idempotent, so a run that dies half way is resumed by running it again: a
  * row whose stored value already matches the seed is skipped and said to be
@@ -46,6 +50,7 @@ const argv = process.argv.slice(2);
 const mode = argv.includes("--write") ? "write" : "preview";
 const out = argv[argv.indexOf("--preview") + 1];
 const only = argv.includes("--only") ? argv[argv.indexOf("--only") + 1] : null;
+const fromRecord = argv.includes("--stored");
 if (mode === "preview" && (!argv.includes("--preview") || !out || out.startsWith("--"))) {
   console.error("usage: seed-situation.ts --preview <out.html> | --write [--only <nickname>]");
   process.exit(1);
@@ -117,13 +122,20 @@ function preview(): string {
     const lead = byId.get(c.leadId);
     const held = (lead?.situation ?? null) as Situation | null;
     const titles = titlesFor(c.leadId);
-    const rows = panel(asSituation(c, seed.builtOn), titles);
+    const shown = fromRecord ? (held ?? {}) : asSituation(c, seed.builtOn);
+    const rows = panel(shown, titles);
     const absent = SITUATION_ROWS.filter((k) => rows.find((r) => r.key === k)?.line === null);
     return `
   <section>
     <h2>${esc(c.nickname)}</h2>
     <p class="meta">${esc(c.folder)} · lead ${esc(c.leadId)} · ${
-      held ? '<strong class="warn">a panel is already stored for this person</strong>' : "nothing stored yet"
+      fromRecord
+        ? held
+          ? "read back out of the CRM"
+          : '<strong class="warn">nothing is stored for this person</strong>'
+        : held
+          ? '<strong class="warn">a panel is already stored for this person</strong>'
+          : "nothing stored yet"
     }</p>
     <table>
       ${rows
@@ -179,12 +191,15 @@ ${BRAND_FONT_STACKS}
 </head>
 <body>
 <main>
-  <h1>Situation panels, first fill</h1>
-  <p class="lede">${esc(seed.note)}</p>
+  <h1>Situation panels, ${fromRecord ? "as the CRM holds them" : "first fill"}</h1>
+  <p class="lede">${esc(fromRecord ? "What is stored on each paying client's record right now, rendered through the panel's own wording. This is the read-back after the write, not a proposal." : seed.note)}</p>
   ${sections.join("\n")}
-  <footer>Built ${esc(seed.builtOn)} from the client folders and the CRM. Nothing has been written to any record: this page is the
-  check before the write. The rows below each panel are the ones nobody has established yet, which is a different thing from a row
-  that is empty, and a search holds a role it cannot judge against them.</footer>
+  <footer>${
+    fromRecord
+      ? "Read out of the deployment the live site reads. Every row carries the writer who set it and the date, which is what the panel itself shows."
+      : `Built ${esc(seed.builtOn)} from the client folders and the CRM. Nothing has been written to any record: this page is the check before the write.`
+  } The rows below each panel are the ones nobody has established yet, which is a different thing from a row that is empty, and a
+  search holds a role it cannot judge against them.</footer>
 </main>
 </body>
 </html>`;
@@ -232,7 +247,9 @@ function write(): void {
 
 if (mode === "preview") {
   writeFileSync(resolve(out), preview());
-  console.log(`${clients.length} panel(s) rendered to ${resolve(out)}. Nothing written to any record.`);
+  console.log(
+    `${clients.length} panel(s) rendered to ${resolve(out)}, ${fromRecord ? "read out of the CRM" : "from the seed file"}. Nothing written to any record.`,
+  );
 } else {
   write();
 }
