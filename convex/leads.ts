@@ -1034,6 +1034,7 @@ export const deleteLeadOnRequest = mutation({
       bookingInbox: 0,
       checklistTicks: 0,
       foundRoles: 0,
+      candidateTasks: 0,
     };
     const at = Date.now();
     for (const row of rows) {

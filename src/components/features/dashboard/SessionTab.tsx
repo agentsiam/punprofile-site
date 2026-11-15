@@ -1,18 +1,24 @@
 "use client";
 
 /**
- * The Session tab: one view for a call, `prd.md` section 8. It is
- * assembled from records that already exist, the call log, target titles,
- * the wallet, the candidate's preparation and the same open items the coach
- * queues show, through `workspace.session`. It holds nothing of its own and
- * edits nothing: bookings, decisions and the time zone are changed in the
- * Calls and notes tab, the wallet and deliverables in the Delivery tab.
+ * The Session tab: one view for a call, `prd.md` section 8, assembled from
+ * records that already exist, the call log, target titles, the wallet, the
+ * candidate's preparation and the same open items the coach queues show,
+ * through `workspace.session`.
+ *
+ * In order: the Situation panel, the end-of-session close, the delivery
+ * checklist, then the read-only assembly. The first two are
+ * `candidate-situation-handoff.md`: the candidate's current situation is on
+ * the first page of their record, every message is written from it, and the
+ * coach writes it at one moment only, the close at the end of a call.
+ *
+ * What this tab now writes: the Situation panel, the decisions of a session,
+ * what we owe next and what the candidate owes, all through the close form and
+ * the panel's own rows. What it still does not write: bookings and the time
+ * zone, changed in the Calls and notes tab, and the wallet and deliverables,
+ * changed in the Delivery tab.
  *
  * The brief is a summary of recorded information. Nothing here is generated.
- *
- * The one place it acts is the delivery checklist at the top: the coach's two
- * ticks for steps outside the app, and the roles the evening run found, sent or
- * dismissed from here with the same rules as the Delivery tab.
  */
 
 import { useState } from "react";
@@ -21,18 +27,9 @@ import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
 import { AGENDAS } from "@/lib/agendas";
 import { MADRID, formatIn } from "@/lib/sessionTime";
-
-function Panel({ title, aside, children, testid }: { title: string; aside?: React.ReactNode; children: React.ReactNode; testid?: string }) {
-  return (
-    <section className="rounded-large border border-outline-variant p-5" data-testid={testid}>
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 className="text-title-medium text-on-surface">{title}</h3>
-        {aside}
-      </div>
-      <div className="mt-3">{children}</div>
-    </section>
-  );
-}
+import Panel from "./Panel";
+import SituationPanel from "./SituationPanel";
+import CloseSession from "./CloseSession";
 
 const TYPE: Record<string, string> = {
   kick_start: "First call",
@@ -55,6 +52,8 @@ export default function SessionTab({ leadId }: { leadId: Id<"leads"> }) {
   if (s === null) return <p className="text-body-medium text-error">No lead with that id.</p>;
   return (
     <div className="space-y-5">
+      <SituationPanel leadId={leadId} />
+      <CloseSession leadId={leadId} />
       <DeliveryChecklist leadId={leadId} />
       <SessionView s={s} />
     </div>
@@ -217,7 +216,8 @@ export function SessionView({ s }: { s: S }) {
   return (
     <div className="space-y-5">
       <p className="text-body-medium text-on-surface-variant">
-        Below the checklist, read-only. Bookings, decisions and the time zone change in Calls and notes; the wallet and deliverables in Delivery.
+        Below the checklist, read-only. Bookings and the time zone change in Calls and notes; the wallet and deliverables in Delivery.
+        Decisions are written at the session close above.
       </p>
       <Panel title="Next call" testid="sx-next-call">
         {call ? (
@@ -302,7 +302,7 @@ export function SessionView({ s }: { s: S }) {
 
       <Panel title="Decisions" testid="sx-decisions">
         {s.decisions.current.length === 0 ? (
-          <p className="text-body-medium text-on-surface-variant">None recorded. Decisions are recorded on their call in Calls and notes.</p>
+          <p className="text-body-medium text-on-surface-variant">None recorded. Decisions are written at the session close.</p>
         ) : (
           <ul className="space-y-1 text-body-medium text-on-surface">
             {s.decisions.current.map((d) => (

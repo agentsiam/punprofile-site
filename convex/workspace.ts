@@ -1058,6 +1058,21 @@ export const exportForLead = query({
     return {
       fitReportSharedAt: lead.fitReportSharedAt ?? null,
       weeklyApplicationGoal: lead.weeklyApplicationGoal ?? null,
+      // The Situation panel is candidate data and goes out with the rest of
+      // it: it holds their work route, their dates and what employers said to
+      // them. Each row carries its own source and date, which is exactly what
+      // a subject-access request asks for, so the rows go out as stored.
+      situation: lead.situation ?? null,
+      owed: (
+        await ctx.db.query("candidateTasks").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect()
+      ).map((t) => ({
+        what: t.what,
+        dueOn: t.dueOn,
+        at: t.at,
+        doneAt: t.doneAt ?? null,
+        doneBy: t.doneBy ?? null,
+        remindedAt: t.remindedAt ?? null,
+      })),
       targets: targets.map((t) => ({
         title: t.title,
         alsoCalled: t.alsoCalled,

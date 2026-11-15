@@ -11,6 +11,26 @@ import { authTables } from "@convex-dev/auth/server";
  * contradicting it. Since 15/08/2026 `leads.scores` follows the same rule and
  * is no longer written or read; see its own note below.
  */
+/**
+ * The stamp every row of `leads.situation` carries, per
+ * `candidate-situation-handoff.md` § 4: which of the three writers set the
+ * value, when, and the evidence it was read off. Spread into each row rather
+ * than nested under it, so a row reads as one record.
+ *
+ * `by` is the coach's address for a coach change and absent otherwise: the
+ * candidate and the system are named by `source` already.
+ *
+ * `evidence` is where the value came from in words, a call date or a document,
+ * kept because a seeded value and a value the candidate gave are not equally
+ * firm and the panel has to be able to say which it holds.
+ */
+const situationRow = {
+  source: v.union(v.literal("candidate"), v.literal("coach"), v.literal("system")),
+  at: v.number(),
+  by: v.optional(v.string()),
+  evidence: v.optional(v.string()),
+};
+
 export default defineSchema({
   // Convex Auth's own tables (users, sessions, accounts...). Only coach
   // accounts on the `ADMIN_EMAILS` allowlist ever land here (two as of
@@ -298,6 +318,74 @@ export default defineSchema({
     /** @absent none — only present alongside a received CV */
     cvReceivedBy: v.optional(v.string()),
 
+    /**
+     * The candidate's current situation: the first panel on the Session tab,
+     * `candidate-situation-handoff.md`. Everything a coach or an agent needs
+     * before contacting them, in the one place every candidate-facing message,
+     * match reason and search is written from.
+     *
+     * Fields on the lead rather than a table of their own: one per person,
+     * read with the lead, erased with the lead, carried in the subject-access
+     * export.
+     *
+     * Each row carries where its value came from and when it changed, because
+     * three different things write this panel and only three: the candidate,
+     * at intake and through their own actions on their page; the coach, at the
+     * end-of-session close and nowhere else; and the system, for an event it
+     * records itself. A fact a skill needs and cannot find here is a gap to
+     * raise, not something to fill from a working file.
+     *
+     * Every row is optional and absent means nobody has established it yet,
+     * which is not the same as none: an empty pay floor is "no floor agreed",
+     * never "any salary will do". A gate reading an absent row holds the role
+     * rather than passing it.
+     */
+    /** @absent unmeasured — the panel has not been filled for this candidate */
+    situation: v.optional(
+      v.object({
+        /**
+         * Where they are going. The titles belong to `targets` and are read
+         * from there; only the geography is stored here.
+         */
+        goal: v.optional(v.object({ ...situationRow, countries: v.array(v.string()), cities: v.array(v.string()) })),
+        /**
+         * How they can legally work there, in the coach's own words, and the
+         * date the answer changes when it is known.
+         */
+        workRoute: v.optional(v.object({ ...situationRow, text: v.string(), changesOn: v.optional(v.string()) })),
+        /** Earliest start date, ISO, `YYYY-MM` where only the month is known. */
+        availableFrom: v.optional(v.object({ ...situationRow, date: v.string() })),
+        /**
+         * What an employer has to offer for a role to be worth sending:
+         * sponsorship or not, the floor under the pay, and the languages they
+         * hold. `required_until_available` is the real third state, a candidate
+         * who needs sponsorship now and will not once their start date passes.
+         */
+        employersMustOffer: v.optional(
+          v.object({
+            ...situationRow,
+            sponsorship: v.union(v.literal("required"), v.literal("not_required"), v.literal("required_until_available")),
+            payFloor: v.optional(
+              v.object({ amount: v.number(), currency: v.string(), per: v.union(v.literal("year"), v.literal("month")) }),
+            ),
+            languages: v.array(v.string()),
+          }),
+        ),
+        /** Objections employers have already put to them, in their own words. */
+        heardFromEmployers: v.optional(v.object({ ...situationRow, objections: v.array(v.string()) })),
+        /** One line, coach-written: what is happening this week. */
+        whereTheyAreNow: v.optional(v.object({ ...situationRow, text: v.string() })),
+        /**
+         * The one thing PunProfile owes them next, and the date it is owed by.
+         * `doneAt` closes it; until then it shows at the top of the page and on
+         * the CRM list, and the evening run reads it.
+         */
+        nextFromUs: v.optional(
+          v.object({ ...situationRow, text: v.string(), dueOn: v.optional(v.string()), doneAt: v.optional(v.number()) }),
+        ),
+      }),
+    ),
+
     // Lifecycle. `email_captured` keeps the PRD's vocabulary, but since
     // 08/08/2026 it means the whole contact set cleared the gate: name, email
     // and a LINE ID or phone number.
@@ -518,6 +606,9 @@ export default defineSchema({
       targets: v.optional(v.number()),
       preparations: v.optional(v.number()),
       bookingInbox: v.optional(v.number()),
+      /** Optional for the same reason again: rows written before this table
+       *  existed have no such count. */
+      candidateTasks: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -631,6 +722,17 @@ export default defineSchema({
      *  reschedule or cancellation finds its row. § 7b.
      *  @absent none — logged by hand */
     calBookingId: v.optional(v.string()),
+    /**
+     * When the coach closed this session on the Session tab's close form,
+     * `candidate-situation-handoff.md` § 4. The close is the one moment a coach
+     * writes the Situation panel, so this is what says a call has been written
+     * up at all: a held call without it is a call whose decisions are still in
+     * somebody's head.
+     */
+    /** @absent notyet — the call has not been closed on the form */
+    sessionClosedAt: v.optional(v.number()),
+    /** @absent notyet — only present alongside a close */
+    sessionClosedBy: v.optional(v.string()),
     /** @absent unmeasured — not recorded */
     durationMinutes: v.optional(v.number()),
     /** @absent unmeasured — not recorded */
@@ -1356,6 +1458,36 @@ export default defineSchema({
   })
     .index("by_lead", ["leadId", "status"])
     .index("by_lead_url", ["leadId", "jobUrl"]),
+
+  /**
+   * What the candidate owes, written at the end-of-session close,
+   * `candidate-situation-handoff.md` § 4. It appears on their own page as a
+   * task, and it is reminded once at its date: the delivery design's rule is
+   * one check and no repeat chasing, so a second reminder is not a setting
+   * that was left off, it is a thing this table will not do.
+   *
+   * One row per thing owed. The coach writes it, the candidate or the coach
+   * closes it, and a closed row stays: what was asked for and whether it
+   * arrived is the record of why a session went the way it did.
+   */
+  candidateTasks: defineTable({
+    leadId: v.id("leads"),
+    /** One line, in the coach's words, as the candidate will read it. */
+    what: v.string(),
+    /** The date it is owed by, ISO. */
+    dueOn: v.string(),
+    /** The call it was agreed in. @absent none — written outside a call */
+    consultationId: v.optional(v.id("consultations")),
+    at: v.number(),
+    by: v.string(),
+    /** @absent notyet — still owed */
+    doneAt: v.optional(v.number()),
+    /** Which side closed it. The coach's own address is in `by`.
+     *  @absent notyet — still owed */
+    doneBy: v.optional(v.union(v.literal("candidate"), v.literal("coach"))),
+    /** When the one reminder went. @absent notyet — not reminded yet */
+    remindedAt: v.optional(v.number()),
+  }).index("by_lead", ["leadId"]),
 
   /**
    * The coach's working notes on delivery, one row per entry, newest first on
