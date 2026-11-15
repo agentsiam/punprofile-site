@@ -4,6 +4,8 @@ import { requireAdmin } from "./leads";
 import { matchingFor, sendMatched, walletFor } from "./workspace";
 import { targetsFor } from "./targets";
 import { checklist, nextStep, MANUAL_STEPS } from "../src/lib/checklist";
+import { seeJob } from "./jobs";
+import { MATCH_FEEDBACK_REASON_IDS } from "../src/lib/content/matchFeedback";
 
 /**
  * The Session tab's delivery checklist and the roles the evening run found,
@@ -151,6 +153,24 @@ export const addFound = mutation({
         skipped++;
         continue;
       }
+      // Dual-write into the job database: one row per posting, shared with
+      // the group feed, `job-database-handoff.md` § 3. The found role keeps
+      // its own `jobUrl` as the run gave it, because that is the link the
+      // coach opens and the one `by_lead_url` has always deduplicated on.
+      const { id: jobId } = await seeJob(
+        ctx,
+        {
+          url: jobUrl,
+          employer: r.employer.trim(),
+          title: r.roleTitle.trim(),
+          country: r.country.trim(),
+          ...(r.location?.trim() ? { city: r.location.trim() } : {}),
+          ...(r.postedOn?.trim() ? { postedOn: r.postedOn.trim() } : {}),
+          ...(r.salary?.trim() ? { salary: r.salary.trim() } : {}),
+          seenOn: foundOn,
+        },
+        Date.now(),
+      );
       await ctx.db.insert("foundRoles", {
         leadId,
         foundOn,
@@ -160,6 +180,7 @@ export const addFound = mutation({
         country: r.country.trim(),
         ...(r.location?.trim() ? { location: r.location.trim() } : {}),
         jobUrl,
+        jobId,
         ...(r.salary?.trim() ? { salary: r.salary.trim() } : {}),
         ...(r.postedOn?.trim() ? { postedOn: r.postedOn.trim() } : {}),
         matchReason: r.matchReason.trim(),
@@ -172,13 +193,28 @@ export const addFound = mutation({
   },
 });
 
+/**
+ * The coach dismisses a waiting role. A dismissal is feedback too,
+ * `job-database-handoff.md` § 3, so it takes the same reason ids a candidate
+ * picks from. `closed` is the one that is a fact about the job rather than a
+ * preference, and it marks the posting filled for everyone.
+ */
 export const dismissFound = mutation({
-  args: { id: v.id("foundRoles") },
-  handler: async (ctx, { id }) => {
+  args: { id: v.id("foundRoles"), reason: v.optional(v.string()) },
+  handler: async (ctx, { id, reason }) => {
     await requireAdmin(ctx);
     const row = await ctx.db.get(id);
     if (!row || row.status !== "waiting") throw new ConvexError("That role is no longer waiting.");
-    await ctx.db.patch(id, { status: "dismissed", decidedAt: Date.now() });
+    const picked = reason && MATCH_FEEDBACK_REASON_IDS.includes(reason) ? reason : undefined;
+    await ctx.db.patch(id, {
+      status: "dismissed",
+      decidedAt: Date.now(),
+      ...(picked ? { dismissReason: picked } : {}),
+    });
+    if (picked === "closed" && row.jobId) {
+      const job = await ctx.db.get(row.jobId);
+      if (job && job.status === "open") await ctx.db.patch(row.jobId, { status: "filled", filledAt: Date.now() });
+    }
   },
 });
 
@@ -195,6 +231,7 @@ export const sendFound = mutation({
     );
     const applicationId = await sendMatched(ctx, by, {
       leadId: row.leadId,
+      ...(row.jobId ? { jobId: row.jobId } : {}),
       employer: row.employer,
       roleTitle: row.roleTitle,
       country: row.country,

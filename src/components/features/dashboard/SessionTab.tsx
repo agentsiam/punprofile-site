@@ -27,6 +27,7 @@ import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
 import { AGENDAS } from "@/lib/agendas";
 import { MADRID, formatIn } from "@/lib/sessionTime";
+import { MATCH_FEEDBACK_REASONS } from "@/lib/content/matchFeedback";
 import Panel from "./Panel";
 import SituationPanel from "./SituationPanel";
 import CloseSession from "./CloseSession";
@@ -142,6 +143,11 @@ function FoundRole({ f }: { f: Found }) {
   const [confirming, setConfirming] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // A dismissal is feedback too, `job-database-handoff.md` § 3: the same reason
+  // ids the candidate picks from. "The posting has closed" is the one that is a
+  // fact about the job rather than a preference, and it marks it filled for
+  // everyone.
+  const [reason, setReason] = useState("");
   const run = async (fn: () => Promise<unknown>) => {
     setBusy(true);
     setError(null);
@@ -181,7 +187,25 @@ function FoundRole({ f }: { f: Found }) {
             <button type="button" disabled={busy} className="btn-outlined h-9 px-4 text-label-large" onClick={() => setConfirming(true)}>
               Send
             </button>
-            <button type="button" disabled={busy} className="text-body-medium text-ink-deep underline" onClick={() => void run(() => dismiss({ id: f._id }))}>
+            <select
+              className="field field-dense max-w-56"
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+              aria-label="Why it is being dismissed"
+            >
+              <option value="">No reason</option>
+              {MATCH_FEEDBACK_REASONS.map((r) => (
+                <option key={r.id} value={r.id}>
+                  {r.label.en}
+                </option>
+              ))}
+            </select>
+            <button
+              type="button"
+              disabled={busy}
+              className="text-body-medium text-ink-deep underline"
+              onClick={() => void run(() => dismiss({ id: f._id, ...(reason ? { reason } : {}) }))}
+            >
               Dismiss
             </button>
           </>

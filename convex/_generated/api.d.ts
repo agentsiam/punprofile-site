@@ -24,6 +24,7 @@ import type * as delivery from "../delivery.js";
 import type * as erase from "../erase.js";
 import type * as http from "../http.js";
 import type * as importLeads from "../importLeads.js";
+import type * as jobs from "../jobs.js";
 import type * as leads from "../leads.js";
 import type * as market from "../market.js";
 import type * as marketing from "../marketing.js";
@@ -72,6 +73,7 @@ declare const fullApi: ApiFromModules<{
   erase: typeof erase;
   http: typeof http;
   importLeads: typeof importLeads;
+  jobs: typeof jobs;
   leads: typeof leads;
   market: typeof market;
   marketing: typeof marketing;

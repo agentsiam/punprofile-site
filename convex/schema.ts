@@ -1116,6 +1116,9 @@ export default defineSchema({
     /** When the email telling the candidate about this matched role went.
      *  @absent notyet — not a matched role, or its notice has not gone */
     notifiedAt: v.optional(v.number()),
+    /** The posting in the job database. Optional through the migration: rows
+     *  written before `jobs` existed have none. @absent notyet — not linked */
+    jobId: v.optional(v.id("jobs")),
     /** The capability in the matched-role email's like and dislike links.
      *  Random, unguessable, and it can do one thing: set the verdict below.
      *  @absent notyet — not a matched role, or its notice has not been built */
@@ -1452,6 +1455,13 @@ export default defineSchema({
     /** The posting's own date, ISO. @absent unmeasured — the page shows none */
     postedOn: v.optional(v.string()),
     matchReason: v.string(),
+    /** The posting in the job database. Optional through the migration: rows
+     *  written before `jobs` existed have none, and a read that needs the job
+     *  says so rather than inventing one. @absent notyet — not linked yet */
+    jobId: v.optional(v.id("jobs")),
+    /** A coach dismissal is feedback too, one of the reason ids in
+     *  `src/lib/content/matchFeedback.ts`. @absent none — no reason given */
+    dismissReason: v.optional(v.string()),
     status: v.union(v.literal("waiting"), v.literal("sent"), v.literal("dismissed")),
     /** The role row it became once sent. @absent notyet — not sent */
     applicationId: v.optional(v.id("applications")),
@@ -1614,6 +1624,90 @@ export default defineSchema({
   })
     .index("by_lead", ["leadId"])
     .index("by_state", ["state"]),
+
+  /**
+   * One row per job posting, shared by the public group feed and paying
+   * clients' matched roles, `job-database-handoff.md` § 3. Paul's decision of
+   * 12/11/2026: one job database, in this database, not a file.
+   *
+   * Before it there were two records that never met: `job-log.json` for the
+   * feed and per-client daily files for matches, so one posting sent to the
+   * group and to a client existed twice with no link between them.
+   *
+   * **Nothing about a person is stored here.** Who a job went to is its own
+   * row in `jobPosts`, `foundRoles` or `applications`, each pointing at this
+   * one, so a candidate's taste and an erasure request never reach the job.
+   *
+   * **A job is never re-checked.** The system looks forward at newly published
+   * postings. A job turns `filled` only when it is come across again and is
+   * gone: a run meets the URL, or a candidate reports it closed, or the
+   * matched-role skill opens it on the day a paid role is sent. There is no
+   * sweep that goes back to look, and an open job that nobody meets again
+   * simply ages out.
+   */
+  jobs: defineTable({
+    /** Canonical, by `canonicalJobUrl` in `src/lib/jobUrl.ts`. The key the
+     *  whole table rests on, so it is never written raw. */
+    url: v.string(),
+    employer: v.string(),
+    title: v.string(),
+    country: v.string(),
+    /** @absent unmeasured — the posting names no city */
+    city: v.optional(v.string()),
+    /** The posting's own date, ISO. @absent unmeasured — the page shows none */
+    postedOn: v.optional(v.string()),
+    /** Set when a run or a candidate comes across the job. Nothing goes back
+     *  to look at a job on purpose, so `lastSeenAt` is a record of encounters
+     *  and never of checks. */
+    firstSeenAt: v.number(),
+    lastSeenAt: v.number(),
+    status: v.union(v.literal("open"), v.literal("filled"), v.literal("archived")),
+    /** When it was come across again and found no longer open.
+     *  @absent notyet — still open, or archived by age */
+    filledAt: v.optional(v.number()),
+    /** From the posting's own words, never from anyone's belief about the
+     *  employer. @absent unmeasured — not read off the posting */
+    sponsorship: v.optional(v.union(v.literal("stated_yes"), v.literal("stated_no"), v.literal("silent"))),
+    /** The posting's words, so a gate decision can be checked against them.
+     *  @absent none — nothing was quoted */
+    sponsorshipQuote: v.optional(v.string()),
+    /** Languages the posting requires. Empty means none required; absent means
+     *  nobody read the qualifications. @absent unmeasured — not read */
+    languages: v.optional(v.array(v.string())),
+    /** As stated on the posting. @absent none — not stated */
+    salary: v.optional(v.string()),
+    /** `greenhouse`, `ashby`, `lever`, `employer_site`, `arbeitnow` and the
+     *  rest. Free text: a new board should not need a migration.
+     *  @absent unmeasured — not recorded */
+    source: v.optional(v.string()),
+    /** The public feed's Pass 1 to 3 outcome, today's `verdict` and `reason`
+     *  in `job-log.json`. @absent notyet — the feed has not judged it */
+    groupVerdict: v.optional(v.string()),
+    /** @absent notyet — the feed has not judged it */
+    groupReason: v.optional(v.string()),
+    /** The posting's text, kept while open and dropped at archive.
+     *  @absent none — not captured */
+    description: v.optional(v.string()),
+  })
+    .index("by_url", ["url"])
+    .index("by_status_firstSeen", ["status", "firstSeenAt"])
+    .index("by_firstSeen", ["firstSeenAt"]),
+
+  /**
+   * A job that went to the public group feed, `job-database-handoff.md` § 3.
+   * The record of what was posted, which `drafts/` used to be; the draft files
+   * stay as the text Paul posts.
+   */
+  jobPosts: defineTable({
+    jobId: v.id("jobs"),
+    channel: v.literal("facebook_group"),
+    /** The run's date, ISO. */
+    draftDate: v.string(),
+    /** @absent notyet — drafted, not yet posted by Paul */
+    publishedAt: v.optional(v.number()),
+  })
+    .index("by_job", ["jobId"])
+    .index("by_draftDate", ["draftDate"]),
 
   /**
    * The coach's working notes on delivery, one row per entry, newest first on

@@ -23,6 +23,7 @@ import { requireAdmin } from "./leads";
 import { isAdminEmail } from "./adminEmails";
 import { liveGrant, normaliseEmail } from "./candidateAccess";
 import { targetsFor } from "./targets";
+import { seeJob } from "./jobs";
 import { computeWallet, cvEarnedBySelectionNow } from "../src/lib/wallet";
 import { preparationState, nextCall, leadItems, decisionsView, previewOf, scheduledCallFor } from "../src/lib/session";
 import { isValidTimeZone } from "../src/lib/sessionTime";
@@ -502,6 +503,11 @@ const sendArgs = {
   matchReason: v.optional(v.string()),
   jobDescription: v.optional(v.string()),
   jobLogId: v.optional(v.string()),
+  /** The posting in the job database, carried through from a found role.
+   *  Where it is absent and a link was given, the row is found or created from
+   *  the link, so a role sent from the Delivery tab joins the same database as
+   *  one the evening run found. */
+  jobId: v.optional(v.id("jobs")),
   /** The title this role is matched for. */
   targetId: v.optional(v.id("targets")),
 };
@@ -547,9 +553,32 @@ export async function sendMatched(ctx: MutationCtx, by: string, args: ObjectType
   }
 
   const now = Date.now();
+  // One row per posting, `job-database-handoff.md` § 3. A role sent from the
+  // Delivery tab by hand joins the same database as one the evening run found:
+  // the link is the key, so the two meet rather than existing twice.
+  const jobId =
+    args.jobId ??
+    (args.jobUrl?.trim()
+      ? (
+          await seeJob(
+            ctx,
+            {
+              url: args.jobUrl.trim(),
+              employer,
+              title: roleTitle,
+              country,
+              ...(args.location?.trim() ? { city: args.location.trim() } : {}),
+              ...(args.salary?.trim() ? { salary: args.salary.trim() } : {}),
+              ...(args.jobDescription?.trim() ? { description: args.jobDescription.trim() } : {}),
+            },
+            now,
+          )
+        ).id
+      : undefined);
   const applicationId = await ctx.db.insert("applications", {
     leadId: args.leadId,
     ...(args.engagementId ? { engagementId: args.engagementId } : {}),
+    ...(jobId ? { jobId } : {}),
     ...(args.jobLogId ? { jobLogId: args.jobLogId } : {}),
     ...(args.targetId ? { targetId: args.targetId } : {}),
     employer,

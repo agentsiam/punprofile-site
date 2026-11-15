@@ -1,7 +1,7 @@
 /**
- * Scheduled jobs. TASK-080.
+ * Scheduled jobs. TASK-080, and the job-database archive.
  *
- * One job, and it is the retention sweep. Runs daily rather than monthly so a
+ * The first is the retention sweep. Runs daily rather than monthly so a
  * record is never much more than a day past its promised expiry, and so a
  * problem surfaces the next morning rather than four weeks later.
  *
@@ -14,6 +14,11 @@
  * Nothing falls due until July 2027 on current data, so this will do nothing at
  * all for a long time. That is the correct behaviour for a promise being kept
  * rather than a job being useful.
+ *
+ * The second is the job-database archive, `job-database-handoff.md` § 5. It
+ * holds no personal data and deletes nothing: a job filled, or first seen over
+ * 90 days ago, becomes `archived` and loses its description, and the row stays
+ * because it still blocks a repeat and still holds what the job led to.
  */
 
 import { cronJobs } from "convex/server";
@@ -27,6 +32,15 @@ crons.daily(
   // Nothing a candidate does should race a deletion.
   { hourUTC: 2, minuteUTC: 15 },
   internal.retention.sweep,
+  { apply: true },
+);
+
+crons.daily(
+  "job archive",
+  // After the retention sweep, and in the same quiet hour: the job database is
+  // written by the evening run, which is long finished by then.
+  { hourUTC: 2, minuteUTC: 45 },
+  internal.jobs.archiveOld,
   { apply: true },
 );
 
