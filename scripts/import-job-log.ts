@@ -62,6 +62,7 @@ const rows = JSON.parse(readFileSync(LOG, "utf8")) as LogRow[];
 const byUrl = new Map<string, LogRow>();
 let noUrl = 0;
 let noFields = 0;
+let notALink = 0;
 for (const r of rows) {
   // A posting with no link cannot be keyed and cannot block a repeat, which is
   // the whole job of this table. 139 of the log's rows are like this, every one
@@ -75,6 +76,14 @@ for (const r of rows) {
     continue;
   }
   const key = canonicalJobUrl(r.url);
+  // `seeJob` refuses anything that is not an http link, and the log holds one
+  // row whose link is a bare slug with no host. It cannot be keyed, any more
+  // than a row with no link at all can, so it is skipped and counted the same
+  // way rather than killing a run half way through.
+  if (!/^https?:\/\//i.test(key)) {
+    notALink++;
+    continue;
+  }
   const held = byUrl.get(key);
   // The earliest sighting wins the date; a later one fills a gap, which is the
   // same rule the mutation applies.
@@ -98,6 +107,7 @@ console.log(
     `${rows.length} rows in the log`,
     `${byUrl.size} distinct postings by canonical URL`,
     noUrl ? `${noUrl} with no link, which cannot be keyed and are skipped` : null,
+    notALink ? `${notALink} whose link is not a URL, skipped for the same reason` : null,
     noFields ? `${noFields} with no employer, title or country, skipped` : null,
   ]
     .filter(Boolean)
