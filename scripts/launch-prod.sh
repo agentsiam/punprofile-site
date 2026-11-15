@@ -115,6 +115,17 @@ npx convex dashboard
 # ---------------------------------------------------------------------------
 # 5. Point Vercel's production environment at production Convex
 # ---------------------------------------------------------------------------
+#
+# SUPERSEDED, 15/11/2026. DO NOT RUN THIS BLOCK.
+#
+# It was written for the retired Hobby project, pun-profile/punprofile-profile-app.
+# The live project is agent-siam/punprofile-site, and the move carried over
+# NEXT_PUBLIC_CONVEX_URL and SITE_URL and nothing else. The decision since is to
+# leave it that way: quiet-mule-251 is production, it holds the real lead data,
+# and the deploy key stays unset so that no build can repoint the client off it.
+# Functions are published by hand with `npx convex dev --once`, which is in the
+# pre-push list in CLAUDE.md section 6. See R38, R40 and R42.
+#
 # The old NEXT_PUBLIC_CONVEX_URL has to GO, not be updated. The build command
 # `npx convex deploy --cmd 'npm run build'` sets NEXT_PUBLIC_CONVEX_URL itself
 # from the deploy key during the build. A manually set one silently wins and
@@ -129,14 +140,16 @@ npx vercel link            # team slug is pun-profile, project punprofile-profil
 # dashboard: Settings -> Environment Variables -> the three dots -> Edit ->
 # untick Production, leave Preview ticked -> Save.
 open "https://vercel.com/pun-profile/punprofile-profile-app/settings/environment-variables"
-npx vercel env add CONVEX_DEPLOY_KEY production      # paste the key from step 4
+# npx vercel env add CONVEX_DEPLOY_KEY production    # SUPERSEDED, see above
 
-# The Build Command override is ALREADY SET, done 14/08/2026 and verified in
-# the dashboard: `npx convex deploy --cmd 'npm run build'`. Nothing to do here.
+# The Build Command override described here belonged to the Hobby project and
+# did not survive the move: punprofile-site has no override, so Vercel runs the
+# framework default, which is `npm run build` and therefore package.json.
 # The `vercel-build` script was removed from package.json in the same change,
 # so there is exactly one definition of the build and no question about which
-# of the two Vercel would have picked. Convex deploys before Next builds, so a
-# schema change can never land ahead of the frontend that needs it.
+# of the two Vercel would have picked. Nothing deploys Convex ahead of the
+# frontend any more, which is why publishing the functions is a step of its own
+# in the pre-push list.
 
 # The new-lead notification. RESEND_API_KEY is a CONVEX env var, not a Vercel
 # one, because the action runs in Convex. Sign up at resend.com with

@@ -139,7 +139,7 @@ sibling repo by the exporter that makes them.
 | **R39** | Commit before deploying anything. `git status --short` empty is the gate, because Convex pushes the working tree and not a commit. |
 | **R40** | `quiet-mule-251` may drift, and it is the one candidates reach, so drift there is visible rather than private. Keep it reproducible: from a clean tree, `npx convex dev --once` rebuilds its functions from what is committed. |
 | **R41** | A deploy that changed nothing means the wrong deployment was targeted. Re-check the target rather than deploying again. |
-| **R42** | Watch the Vercel build run `convex deploy` before `next build`, then run any pending backfill against the deployment the live site reads, which a command reaches without `--prod` (R38). A backfill sent to `--prod` rewrites rows nothing serves and leaves the real ones untouched. |
+| **R42** | The Vercel build never deploys Convex functions. `CONVEX_DEPLOY_KEY` is unset on the project by decision, so `package.json` falls through to `next build` alone. Setting it would deploy to the key's deployment, `dashing-shepherd-41`, and export that deployment's URL to the build, which either takes the live site off the real data or leaves the functions where nothing reads them (R38). Functions reach `quiet-mule-251` only from `npx convex dev --once` (R40), which is why that command is in the pre-push list. Then run any pending backfill against the deployment the live site reads, which a command reaches without `--prod` (R38). A backfill sent to `--prod` rewrites rows nothing serves and leaves the real ones untouched. |
 | **R43** | Write a code-and-data change so that any interleaving of the two steps is safe. A backfill is not part of a deploy and never will be. |
 | **R44** | Dual-write through a migration, and let reads degrade honestly rather than merely safely. |
 | **R45** | Every backfill is idempotent, so a run that dies half way is resumed by running it again. |
@@ -182,8 +182,14 @@ npm run verify:pages
 npm run verify:narrative
 npm run verify:consent
 npm run blog:cards -- --check
+npx convex dev --once
 git push origin master
 ```
+
+`npx convex dev --once` is in the list because nothing else puts functions on `quiet-mule-251`:
+the Vercel build does not (R42). It publishes the working tree rather than a commit, which is
+why the clean-tree gate is the first line (R39), and it goes before the push so that a page
+never reaches a candidate calling a function that is not there yet.
 
 `verify:copy` lints `copy.ts`, the question bank and the privacy notice. `verify:pages` covers the
 per-page content modules, which `verify:copy` does not read. `verify:narrative` fails a record
@@ -199,6 +205,7 @@ missing one of its eight slots, naming a destination `cta.ts` lacks, or stating 
 - A story record holding its own copy of a figure is a fourth place for a stale number to hide, which is why `verify:narrative` exists rather than a document being enough.
 - The consent migration is the worked example of R43 to R45: `captureContact` dual-writes, `resolveConsent` returns `never_asked` rather than guessing, and the backfill reported 200 written then 0 written on an immediate re-run.
 - A deploy that appeared to change nothing was a different deployment, not a failed push (R41).
+- Merging a PR put its pages live and left its Convex functions behind. The Vercel build has never run `convex deploy` on this project: the move to `agent-siam/punprofile-site` carried `NEXT_PUBLIC_CONVEX_URL` and `SITE_URL` across and nothing else, so `package.json`'s `CONVEX_DEPLOY_KEY` branch has never had a key to take and a 33-second build is `next build` alone. Nothing looked wrong, because the site kept reading `quiet-mule-251` from the variable that did come across. The functions went up only when someone ran `npx convex dev --once` by hand the next day (R42).
 - A coach account was deleted from the production dashboard while the live site was reading dev, so the deletion did nothing anyone could see and the production rows were lost. That is not a past misconfiguration: the live bundle still builds its client from `quiet-mule-251`, so the dashboard labelled production is the wrong one to open. Check the bundle first, every time.
 - `npx convex env list` prints every value in full, the signing key included. Filtering it with `cut -d=` does not save you, because `JWT_PRIVATE_KEY` is multi-line and its body prints as if each line were a name. Two sessions have dumped a live signing key into a terminal that way. List names only, with `grep -oE '^[A-Z_]+='`, and if a key does escape, `scripts/setup-auth.mjs` rotates the pair, which is the recovery path it was written for.
 - The Now pill shipped dark green on dark green, because `bg-primary` was paired with `.ground-fixed` and that pairing cancels itself out. On a lime ground the lime is the ground and the pill on it is the dark one (R21).
