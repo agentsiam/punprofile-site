@@ -11,6 +11,11 @@ import { checklist, nextStep, MANUAL_STEPS } from "../src/lib/checklist";
  * the only things stored here are the coach's two ticks and the found roles.
  */
 
+/**
+ * The validator still takes `summary_email`, so an older page calling it gets
+ * the reason rather than a validation error. `MANUAL_STEPS` no longer holds it
+ * and the handler refuses it: that step is ticked by the outbox now.
+ */
 const manualKey = v.union(v.literal("summary_email"), v.literal("timeline_shared"));
 
 export const forLead = query({
@@ -40,6 +45,12 @@ export const forLead = query({
       await ctx.db.query("deliveryNotes").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect()
     ).filter((n) => n.shared);
     const ticks = await ctx.db.query("checklistTicks").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect();
+    // The summary email is ticked by the draft that actually went, not by a
+    // hand tick: one input at the session close, and the outbox is where it
+    // leaves from.
+    const summaries = (await ctx.db.query("outboxDrafts").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect()).filter(
+      (d) => d.kind === "session_summary" && d.state === "sent" && d.sentAt !== undefined,
+    );
     const fit = live.find((d) => d.kind === "fit_report") ?? null;
     const cv = live.find((d) => d.entitlement === "pack_cv_rewrite") ?? null;
 
@@ -54,7 +65,11 @@ export const forLead = query({
         : null,
       calls: calls.map((c) => ({ heldAt: c.heldAt, outcome: c.outcome, deliverableId: c.deliverableId ?? null })),
       firstSharedNoteAt: sharedNotes.length ? Math.min(...sharedNotes.map((n) => n.at)) : null,
-      ticks: Object.fromEntries(ticks.map((t) => [t.key, t.at])),
+      ticks: Object.fromEntries(ticks.filter((t) => t.key === "timeline_shared").map((t) => [t.key, t.at])),
+      summaryEmail: {
+        sentAt: summaries.length ? Math.min(...summaries.map((d) => d.sentAt as number)) : null,
+        tickedByHandAt: ticks.find((t) => t.key === "summary_email")?.at ?? null,
+      },
       activeTitles: (await targetsFor(ctx, leadId)).filter((t) => t.status === "active").length,
       matching: await matchingFor(ctx, leadId),
       preview: preview ? { id: preview._id, status: preview.status, deliveredAt: preview.deliveredAt ?? null } : null,
@@ -81,7 +96,13 @@ export const tick = mutation({
   args: { leadId: v.id("leads"), key: manualKey, done: v.boolean() },
   handler: async (ctx, { leadId, key, done }) => {
     const by = await requireAdmin(ctx);
-    if (!MANUAL_STEPS.includes(key)) throw new ConvexError("Not a step the coach ticks.");
+    if (!MANUAL_STEPS.includes(key as (typeof MANUAL_STEPS)[number])) {
+      throw new ConvexError(
+        key === "summary_email"
+          ? "The summary email is ticked by the draft that goes. Approve it in the outbox."
+          : "Not a step the coach ticks.",
+      );
+    }
     const rows = await ctx.db.query("checklistTicks").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect();
     const existing = rows.filter((r) => r.key === key);
     if (done && existing.length === 0) await ctx.db.insert("checklistTicks", { leadId, key, at: Date.now(), by });

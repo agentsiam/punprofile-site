@@ -105,7 +105,7 @@ function DeliveryChecklist({ leadId }: { leadId: Id<"leads"> }) {
                   <button
                     type="button"
                     className="ml-auto text-body-medium text-ink-deep underline"
-                    onClick={() => void tick({ leadId, key: r.key as "summary_email" | "timeline_shared", done: r.state !== "done" })}
+                    onClick={() => void tick({ leadId, key: r.key as "timeline_shared", done: r.state !== "done" })}
                   >
                     {r.state === "done" ? "Undo" : "Mark done"}
                   </button>

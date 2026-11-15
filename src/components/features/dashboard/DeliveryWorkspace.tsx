@@ -182,7 +182,7 @@ export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
         engagements={engagements}
         matching={ws.matching}
       />
-      <Notes leadId={leadId} notes={ws.notes} engagements={engagements} apps={ws.applications} />
+      <Notes notes={ws.notes} engagements={engagements} apps={ws.applications} />
     </div>
   );
 }
@@ -2147,23 +2147,16 @@ function WithdrawMatched({ onWithdraw }: { onWithdraw: (note: string) => Promise
 /* ====================================================== 6. notes */
 
 function Notes({
-  leadId,
   notes,
   engagements,
   apps,
 }: {
-  leadId: Id<"leads">;
   notes: Ws["notes"];
   engagements: Engs;
   apps: Ws["applications"];
 }) {
-  const add = useMutation(api.workspace.addNote);
   const update = useMutation(api.workspace.updateNote);
   const remove = useMutation(api.workspace.deleteNote);
-  const [body, setBody] = useState("");
-  const [shared, setShared] = useState(false);
-  const [about, setAbout] = useState("");
-  const [error, setError] = useState<string | null>(null);
 
   const deliverables = engagements.flatMap((e) => e.deliverables);
   const label = (n: Ws["notes"][number]) => {
@@ -2178,60 +2171,12 @@ function Notes({
     return null;
   };
 
-  const save = async () => {
-    setError(null);
-    try {
-      const [kind, id] = about.split(":");
-      await add({
-        leadId,
-        body,
-        shared,
-        ...(kind === "d" ? { deliverableId: id as Id<"deliverables"> } : {}),
-        ...(kind === "a" ? { applicationId: id as Id<"applications"> } : {}),
-      });
-      setBody("");
-      setShared(false);
-      setAbout("");
-    } catch (e) {
-      setError(errText(e));
-    }
-  };
-
   return (
     <Panel title="Delivery notes">
-      <div className="rounded-medium border border-outline-variant bg-surface p-4">
-        <textarea
-          rows={3}
-          className="field"
-          placeholder="What was done, what is next, what you noticed"
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        />
-        <div className="mt-3 flex flex-wrap items-center gap-4">
-          <select className="field field-dense max-w-xs" value={about} onChange={(e) => setAbout(e.target.value)} aria-label="About">
-            <option value="">About the whole engagement</option>
-            {deliverables.map((d) => (
-              <option key={d._id} value={`d:${d._id}`}>
-                {KIND_LABEL[d.kind] ?? d.kind}
-                {d.notes ? `, ${d.notes}` : ""}
-              </option>
-            ))}
-            {apps.map((a) => (
-              <option key={a._id} value={`a:${a._id}`}>
-                Job: {a.roleTitle}, {a.employer}
-              </option>
-            ))}
-          </select>
-          <label className="flex items-center gap-2 text-body-medium text-on-surface">
-            <input type="checkbox" checked={shared} onChange={(e) => setShared(e.target.checked)} />
-            Show on their dashboard (write it in Thai)
-          </label>
-          <button type="button" className={BTN} disabled={!body.trim()} onClick={() => void save()}>
-            Add note
-          </button>
-        </div>
-        <ErrorLine error={error} />
-      </div>
+      <p className="text-body-medium text-on-surface-variant">
+        Written at the session close on the Session tab, and by the app for what it records itself. Everything already here stays
+        readable, and a note can still be shown to the candidate or taken off their page.
+      </p>
 
       {notes.length === 0 ? (
         <p className="mt-3 text-body-medium text-on-surface-variant">No notes yet.</p>
