@@ -611,6 +611,7 @@ export default defineSchema({
        *  existed have no such count. */
       candidateTasks: v.optional(v.number()),
       situationProposals: v.optional(v.number()),
+      outboxDrafts: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -1533,6 +1534,86 @@ export default defineSchema({
   })
     .index("by_lead", ["leadId"])
     .index("by_consultation", ["consultationId"]),
+
+  /**
+   * The outbox: what we are about to say to a candidate, waiting on the coach,
+   * `candidate-situation-handoff.md` § 4.
+   *
+   * Every draft is written from the Situation panel plus the event that
+   * triggered it and nothing else, which is the point of the panel: a message
+   * cannot then miss the work route or the start date, and cannot state a fact
+   * the panel does not hold. `writtenFrom` keeps the panel lines as they read
+   * at the moment the draft was asked for, so that claim is checkable
+   * afterwards rather than merely asserted.
+   *
+   * A row is created empty, by the event. Whatever has a model fills the body,
+   * the same way a transcript's proposals arrive. The coach approves or edits
+   * in place; an edit to a FACT goes back through the close form into the
+   * panel, not into the message alone, or the next message contradicts this
+   * one.
+   *
+   * Email is sent from here. LINE is copied, never sent: there is no LINE
+   * integration and inventing one in an outbox would be the kind of quiet
+   * capability nobody asked for.
+   */
+  outboxDrafts: defineTable({
+    leadId: v.id("leads"),
+    kind: v.union(
+      v.literal("session_summary"),
+      v.literal("line_after_session"),
+      v.literal("dashboard_note"),
+      v.literal("matched_role"),
+      v.literal("missing_input"),
+    ),
+    /** `dashboard` approves into a shared delivery note on the candidate's own
+     *  page, which is the one place a draft becomes a record here rather than
+     *  leaving the app. */
+    channel: v.union(v.literal("email"), v.literal("line"), v.literal("dashboard")),
+    /** The call it follows. @absent none — not drafted off a call */
+    consultationId: v.optional(v.id("consultations")),
+    /** The role it is about. @absent none — not about one role */
+    applicationId: v.optional(v.id("applications")),
+    /** Email only. @absent notyet — not drafted yet, or a LINE message */
+    subject: v.optional(v.string()),
+    /** @absent notyet — nothing has drafted it */
+    body: v.optional(v.string()),
+    /**
+     * `awaiting` means the event has happened and nothing has written the
+     * words yet. `copied` is the end state of a LINE draft, which is as far as
+     * this app goes towards sending one.
+     */
+    state: v.union(
+      v.literal("awaiting"),
+      v.literal("drafted"),
+      v.literal("approved"),
+      v.literal("sent"),
+      v.literal("copied"),
+      v.literal("discarded"),
+    ),
+    /** The panel as it read when the draft was asked for, label and line.
+     *  @absent none — the panel was empty */
+    writtenFrom: v.optional(v.array(v.object({ label: v.string(), line: v.string() }))),
+    /** The decisions of the session it was drafted from.
+     *  @absent none — not drafted off a session */
+    decisions: v.optional(v.array(v.string())),
+    at: v.number(),
+    by: v.string(),
+    /** @absent notyet — still awaiting words */
+    filledAt: v.optional(v.number()),
+    /** @absent notyet — still awaiting words */
+    filledBy: v.optional(v.string()),
+    /** @absent notyet — the coach has not approved or thrown it away */
+    settledAt: v.optional(v.number()),
+    /** @absent notyet — the coach has not approved or thrown it away */
+    settledBy: v.optional(v.string()),
+    /** @absent notyet — not sent */
+    sentAt: v.optional(v.number()),
+    /** Why the last send attempt failed, for the coach to read.
+     *  @absent none — nothing has failed */
+    failure: v.optional(v.string()),
+  })
+    .index("by_lead", ["leadId"])
+    .index("by_state", ["state"]),
 
   /**
    * The coach's working notes on delivery, one row per entry, newest first on

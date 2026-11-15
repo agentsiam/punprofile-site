@@ -6,8 +6,8 @@
  * candidate's preparation and the same open items the coach queues show,
  * through `workspace.session`.
  *
- * In order: the Situation panel, the end-of-session close, the delivery
- * checklist, then the read-only assembly. The first two are
+ * In order: the Situation panel, the end-of-session close, the outbox, the
+ * delivery checklist, then the read-only assembly. The first two are
  * `candidate-situation-handoff.md`: the candidate's current situation is on
  * the first page of their record, every message is written from it, and the
  * coach writes it at one moment only, the close at the end of a call.
@@ -30,6 +30,7 @@ import { MADRID, formatIn } from "@/lib/sessionTime";
 import Panel from "./Panel";
 import SituationPanel from "./SituationPanel";
 import CloseSession from "./CloseSession";
+import Outbox from "./Outbox";
 
 const TYPE: Record<string, string> = {
   kick_start: "First call",
@@ -54,6 +55,7 @@ export default function SessionTab({ leadId }: { leadId: Id<"leads"> }) {
     <div className="space-y-5">
       <SituationPanel leadId={leadId} />
       <CloseSession leadId={leadId} />
+      <Outbox leadId={leadId} />
       <DeliveryChecklist leadId={leadId} />
       <SessionView s={s} />
     </div>

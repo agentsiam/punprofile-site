@@ -34,6 +34,8 @@ import type * as matchNotice from "../matchNotice.js";
 import type * as merge from "../merge.js";
 import type * as names from "../names.js";
 import type * as notify from "../notify.js";
+import type * as outbox from "../outbox.js";
+import type * as outboxEmail from "../outboxEmail.js";
 import type * as outcomes from "../outcomes.js";
 import type * as portal from "../portal.js";
 import type * as rateLimits from "../rateLimits.js";
@@ -80,6 +82,8 @@ declare const fullApi: ApiFromModules<{
   merge: typeof merge;
   names: typeof names;
   notify: typeof notify;
+  outbox: typeof outbox;
+  outboxEmail: typeof outboxEmail;
   outcomes: typeof outcomes;
   portal: typeof portal;
   rateLimits: typeof rateLimits;

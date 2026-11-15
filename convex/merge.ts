@@ -113,6 +113,10 @@ async function movePersonalRecords(
     .query("situationProposals")
     .withIndex("by_lead", (q) => q.eq("leadId", dropId))
     .collect();
+  const outbox = await ctx.db
+    .query("outboxDrafts")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
 
   // Titles move as they are; if both rows had targets the survivor may end
   // up with more than four active, which the coach resolves on the 360 page
@@ -140,6 +144,7 @@ async function movePersonalRecords(
     ...preps,
     ...tasks,
     ...proposals,
+    ...outbox,
     ...access,
     ...ledger,
     ...cvs,

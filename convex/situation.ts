@@ -21,6 +21,7 @@ import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
 import { targetsFor } from "./targets";
 import { rowInput, type RowInput } from "./situationRows";
+import { openDraft } from "./outbox";
 import {
   isPanelDate,
   missingGates,
@@ -501,6 +502,41 @@ export const closeSession = mutation({
       );
     }
 
+    // What saving the close triggers, with no further input: the three drafts
+    // the candidate is owed after a session, each written from the panel plus
+    // this session's decisions and nothing else. They are empty until
+    // something with a model writes them, and nothing leaves until the coach
+    // approves it.
+    const titles = (await targetsFor(ctx, args.leadId)).filter((t) => t.status === "active").map((t) => t.title);
+    const decided = args.decisions.map((x) => clean(x, 400)).filter(Boolean);
+    const held = await ctx.db.query("outboxDrafts").withIndex("by_lead", (q) => q.eq("leadId", args.leadId)).collect();
+    const alreadyOpen = (kind: string) =>
+      held.some(
+        (r) =>
+          r.kind === kind &&
+          r.consultationId === args.consultationId &&
+          (r.state === "awaiting" || r.state === "drafted" || r.state === "approved"),
+      );
+    let drafts = 0;
+    for (const [kind, channel] of [
+      ["session_summary", "email"],
+      ["line_after_session", "line"],
+      ["dashboard_note", "dashboard"],
+    ] as const) {
+      if (alreadyOpen(kind)) continue;
+      await openDraft(ctx, {
+        leadId: args.leadId,
+        kind,
+        channel,
+        consultationId: args.consultationId,
+        ...(decided.length ? { decisions: decided } : {}),
+        titles,
+        at,
+        by,
+      });
+      drafts++;
+    }
+
     let settled = 0;
     for (const p of args.settled ?? []) {
       const row = await ctx.db.get(p.id);
@@ -509,6 +545,6 @@ export const closeSession = mutation({
       settled++;
     }
 
-    return { changed, decisions: decisions.length, tasks: tasks.length, settled };
+    return { changed, decisions: decisions.length, tasks: tasks.length, settled, drafts };
   },
 });
