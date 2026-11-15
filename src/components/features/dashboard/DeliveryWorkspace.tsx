@@ -182,8 +182,64 @@ export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
         engagements={engagements}
         matching={ws.matching}
       />
+      <MatchRules leadId={leadId} />
       <Notes notes={ws.notes} engagements={engagements} apps={ws.applications} />
     </div>
+  );
+}
+
+/* ====================================== 5b. what her feedback has ruled out */
+
+/**
+ * The per-person filter the evening run reads, `job-database-handoff.md` § 4.
+ *
+ * Each rule as a sentence with the role that produced it, because a rule
+ * nobody can read is a rule nobody can overrule. A rule switched off is kept:
+ * deciding not to apply one is itself a decision about her search.
+ */
+function MatchRules({ leadId }: { leadId: Id<"leads"> }) {
+  const rules = useQuery(api.candidateRules.forLead, { leadId });
+  const setActive = useMutation(api.candidateRules.setActive);
+  if (!rules) return null;
+  const waiting = rules.filter((r) => !r.active).length;
+  return (
+    <Panel title="What her feedback rules out">
+      {rules.length === 0 ? (
+        <p className="text-body-medium text-on-surface-variant">
+          Nothing yet. A Not for me with a reason writes one of these, and the run reads the ones switched on.
+        </p>
+      ) : (
+        <>
+          {waiting > 0 && (
+            <p className="mb-3 text-body-medium text-on-surface-variant">
+              {waiting} waiting on you. A term or a figure read off one dislike is a guess until you agree with it, so the run
+              ignores it until you switch it on.
+            </p>
+          )}
+          <ul className="space-y-2">
+            {rules.map((r) => (
+              <li key={r._id} className="flex flex-wrap items-baseline gap-x-3 border-b border-outline-variant pb-2 last:border-b-0">
+                <span className={`text-body-medium ${r.active ? "text-on-surface" : "text-on-surface-variant"}`}>{r.line}</span>
+                {!r.active && <Chip>Not applied</Chip>}
+                <span className="text-body-small text-on-surface-variant">
+                  {[r.from, r.source === "feedback" ? "from her answer" : r.source === "coach" ? "yours" : "from her brief", day(r.createdAt)]
+                    .filter(Boolean)
+                    .join(" · ")}
+                </span>
+                {r.quote && <span className="text-body-small text-on-surface-variant">She wrote: &ldquo;{r.quote}&rdquo;</span>}
+                <button
+                  type="button"
+                  className={`ml-auto ${LINK}`}
+                  onClick={() => void setActive({ id: r._id, active: !r.active })}
+                >
+                  {r.active ? "Switch off" : "Switch on"}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </Panel>
   );
 }
 

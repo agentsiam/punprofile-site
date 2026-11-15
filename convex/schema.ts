@@ -612,6 +612,7 @@ export default defineSchema({
       candidateTasks: v.optional(v.number()),
       situationProposals: v.optional(v.number()),
       outboxDrafts: v.optional(v.number()),
+      candidateRules: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -1131,6 +1132,12 @@ export default defineSchema({
     /** Why the role missed, one of `MATCH_FEEDBACK_REASONS` in
      *  `src/lib/content/matchFeedback.ts`. @absent none — no reason picked */
     candidateVerdictReason: v.optional(v.string()),
+    /** What the candidate wrote in their own words after the verdict,
+     *  `job-database-handoff.md` D3. The nuance the eight reasons miss, and
+     *  the signal a reason id cannot carry: it is read by the run and turned
+     *  into a proposed rule with the quote attached, never applied blindly.
+     *  @absent none — nothing written */
+    candidateVerdictComment: v.optional(v.string()),
     /** How much the candidate wants this one, 1 to 5, their own mark. Teal's
      *  "excitement" column. @absent none — not marked */
     excitement: v.optional(v.number()),
@@ -1708,6 +1715,61 @@ export default defineSchema({
   })
     .index("by_job", ["jobId"])
     .index("by_draftDate", ["draftDate"]),
+
+  /**
+   * The per-person filter the evening run reads, `job-database-handoff.md`
+   * § 3 and § 4. One candidate's taste, never anybody else's: Paul's decision
+   * D2 of 12/11/2026 is that feedback changes only that candidate's search and
+   * the public feed is untouched by anyone's preferences.
+   *
+   * Rules rather than a model, and the reason is arithmetic: a paying client
+   * receives at most 13 roles in her pack, so she yields 10 to 20 labels in
+   * total. Nothing learns a preference from that. It would fit noise and
+   * nobody could check it. A rule is a sentence the coach can read, switch off
+   * and argue with, and it works from the first answer.
+   *
+   * `active` false means proposed and not yet applied. Everything read out of
+   * free text arrives that way, and so do the two the handoff says the coach
+   * confirms, because a figure or a title term inferred from one dislike is a
+   * guess until someone agrees with it.
+   */
+  candidateRules: defineTable({
+    leadId: v.id("leads"),
+    kind: v.union(
+      v.literal("exclude_employer"),
+      v.literal("exclude_title_term"),
+      v.literal("require_sponsorship"),
+      v.literal("min_pay"),
+      v.literal("require_city"),
+      v.literal("exclude_language"),
+      v.literal("prefer_employer"),
+      v.literal("prefer_title_term"),
+    ),
+    /** The employer, term, city or language. Absent on `require_sponsorship`,
+     *  which carries no value, and on `min_pay`, which carries a figure.
+     *  @absent none — this kind carries no text */
+    value: v.optional(v.string()),
+    /** `min_pay` only, in `currency` a year. @absent none — not a pay rule */
+    amount: v.optional(v.number()),
+    /** @absent none — not a pay rule */
+    currency: v.optional(v.string()),
+    /** Where it came from. `feedback` is the candidate's own verdict,
+     *  `coach` is typed in, `brief` is carried over from a retired brief file. */
+    source: v.union(v.literal("feedback"), v.literal("coach"), v.literal("brief")),
+    /** The role whose verdict produced it, so the coach can see the case.
+     *  @absent none — not from one role */
+    applicationId: v.optional(v.id("applications")),
+    /** The candidate's own words behind it, where there were any.
+     *  @absent none — produced from a reason id alone */
+    quote: v.optional(v.string()),
+    /** False means proposed, and the run does not apply it yet. */
+    active: v.boolean(),
+    createdAt: v.number(),
+    /** @absent none — written by the feedback mutation, not a person */
+    by: v.optional(v.string()),
+    /** @absent notyet — never switched on or off by hand */
+    changedAt: v.optional(v.number()),
+  }).index("by_lead", ["leadId"]),
 
   /**
    * The coach's working notes on delivery, one row per entry, newest first on
