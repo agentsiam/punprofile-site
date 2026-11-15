@@ -323,6 +323,46 @@ export const closeForm = query({
   },
 });
 
+/**
+ * The panel as the evening run and the matched-role skill read it,
+ * `candidate-situation-handoff.md` step 4.
+ *
+ * By lead id and nothing wider. The exporter used to have no reason to touch
+ * `leads` at all, and reading the whole table to find two panels would put
+ * every lead's name, address and answers through a script that needs a work
+ * route and a pay floor. It asks for the people it already knows about.
+ *
+ * `missing` is the list a role is held against: a gate with nothing behind it
+ * holds the role rather than passing it, and the run says so in its summary
+ * instead of guessing.
+ */
+export const forRun = query({
+  args: { leadIds: v.array(v.id("leads")) },
+  handler: async (ctx, { leadIds }) => {
+    await requireAdmin(ctx);
+    if (leadIds.length > 50) throw new ConvexError("Up to 50 people in one call.");
+    const out = [];
+    for (const leadId of leadIds) {
+      const lead = await ctx.db.get(leadId);
+      if (!lead) continue;
+      const titles = (await targetsFor(ctx, leadId)).filter((t) => t.status === "active").map((t) => t.title);
+      const situation = (lead.situation ?? {}) as Situation;
+      const owed = situation.nextFromUs;
+      out.push({
+        leadId,
+        nickname: lead.nickname ?? null,
+        gates: searchGates(situation, titles),
+        /** Shown to the coach as a sentence, so the run can repeat it verbatim. */
+        lines: panel(situation, titles)
+          .filter((r) => r.line !== null)
+          .map((r) => ({ label: r.label, line: r.line as string })),
+        nextFromUs: owed && owed.doneAt === undefined ? { text: owed.text, dueOn: owed.dueOn ?? null } : null,
+      });
+    }
+    return out;
+  },
+});
+
 /** The coach corrects one row in place. */
 export const setRow = mutation({
   args: { leadId: v.id("leads"), value: rowInput, evidence: v.optional(v.string()) },
