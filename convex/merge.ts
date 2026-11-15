@@ -105,6 +105,22 @@ async function movePersonalRecords(
     .query("preparations")
     .withIndex("by_lead", (q) => q.eq("leadId", dropId))
     .collect();
+  const tasks = await ctx.db
+    .query("candidateTasks")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+  const proposals = await ctx.db
+    .query("situationProposals")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+  const outbox = await ctx.db
+    .query("outboxDrafts")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+  const rules = await ctx.db
+    .query("candidateRules")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
 
   // Titles move as they are; if both rows had targets the survivor may end
   // up with more than four active, which the coach resolves on the 360 page
@@ -130,6 +146,10 @@ async function movePersonalRecords(
     ...targets,
     ...tokenReqs,
     ...preps,
+    ...tasks,
+    ...proposals,
+    ...outbox,
+    ...rules,
     ...access,
     ...ledger,
     ...cvs,
@@ -222,6 +242,16 @@ export function mergedFields(keep: Doc<"leads">, drop: Doc<"leads">): Partial<Do
     patch.crmStatusReason = drop.crmStatusReason;
     patch.crmStatusAt = drop.crmStatusAt;
     patch.crmStatusBy = drop.crmStatusBy;
+  }
+
+  // The Situation panel, row by row rather than whole: the survivor's own rows
+  // are a coach's current reading and are never overwritten, but a row only
+  // the dropped record held is a fact about the same person and is worth
+  // keeping. Each row carries its own source and date, so a filled panel made
+  // of rows from two records still says where every value came from.
+  const situation = { ...(drop.situation ?? {}), ...(keep.situation ?? {}) };
+  if (Object.keys(situation).length > Object.keys(keep.situation ?? {}).length) {
+    patch.situation = situation;
   }
 
   // First touch wins on attribution, the rule the schema states for itself.

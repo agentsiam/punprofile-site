@@ -1,6 +1,7 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 import { authTables } from "@convex-dev/auth/server";
+import { rowInput } from "./situationRows";
 
 /**
  * Data model per `docs/prd.md` § 3, plus the `assessments` snapshot table from
@@ -11,6 +12,26 @@ import { authTables } from "@convex-dev/auth/server";
  * contradicting it. Since 15/08/2026 `leads.scores` follows the same rule and
  * is no longer written or read; see its own note below.
  */
+/**
+ * The stamp every row of `leads.situation` carries, per
+ * `candidate-situation-handoff.md` § 4: which of the three writers set the
+ * value, when, and the evidence it was read off. Spread into each row rather
+ * than nested under it, so a row reads as one record.
+ *
+ * `by` is the coach's address for a coach change and absent otherwise: the
+ * candidate and the system are named by `source` already.
+ *
+ * `evidence` is where the value came from in words, a call date or a document,
+ * kept because a seeded value and a value the candidate gave are not equally
+ * firm and the panel has to be able to say which it holds.
+ */
+const situationRow = {
+  source: v.union(v.literal("candidate"), v.literal("coach"), v.literal("system")),
+  at: v.number(),
+  by: v.optional(v.string()),
+  evidence: v.optional(v.string()),
+};
+
 export default defineSchema({
   // Convex Auth's own tables (users, sessions, accounts...). Only coach
   // accounts on the `ADMIN_EMAILS` allowlist ever land here (two as of
@@ -298,6 +319,74 @@ export default defineSchema({
     /** @absent none — only present alongside a received CV */
     cvReceivedBy: v.optional(v.string()),
 
+    /**
+     * The candidate's current situation: the first panel on the Session tab,
+     * `candidate-situation-handoff.md`. Everything a coach or an agent needs
+     * before contacting them, in the one place every candidate-facing message,
+     * match reason and search is written from.
+     *
+     * Fields on the lead rather than a table of their own: one per person,
+     * read with the lead, erased with the lead, carried in the subject-access
+     * export.
+     *
+     * Each row carries where its value came from and when it changed, because
+     * three different things write this panel and only three: the candidate,
+     * at intake and through their own actions on their page; the coach, at the
+     * end-of-session close and nowhere else; and the system, for an event it
+     * records itself. A fact a skill needs and cannot find here is a gap to
+     * raise, not something to fill from a working file.
+     *
+     * Every row is optional and absent means nobody has established it yet,
+     * which is not the same as none: an empty pay floor is "no floor agreed",
+     * never "any salary will do". A gate reading an absent row holds the role
+     * rather than passing it.
+     */
+    /** @absent unmeasured — the panel has not been filled for this candidate */
+    situation: v.optional(
+      v.object({
+        /**
+         * Where they are going. The titles belong to `targets` and are read
+         * from there; only the geography is stored here.
+         */
+        goal: v.optional(v.object({ ...situationRow, countries: v.array(v.string()), cities: v.array(v.string()) })),
+        /**
+         * How they can legally work there, in the coach's own words, and the
+         * date the answer changes when it is known.
+         */
+        workRoute: v.optional(v.object({ ...situationRow, text: v.string(), changesOn: v.optional(v.string()) })),
+        /** Earliest start date, ISO, `YYYY-MM` where only the month is known. */
+        availableFrom: v.optional(v.object({ ...situationRow, date: v.string() })),
+        /**
+         * What an employer has to offer for a role to be worth sending:
+         * sponsorship or not, the floor under the pay, and the languages they
+         * hold. `required_until_available` is the real third state, a candidate
+         * who needs sponsorship now and will not once their start date passes.
+         */
+        employersMustOffer: v.optional(
+          v.object({
+            ...situationRow,
+            sponsorship: v.union(v.literal("required"), v.literal("not_required"), v.literal("required_until_available")),
+            payFloor: v.optional(
+              v.object({ amount: v.number(), currency: v.string(), per: v.union(v.literal("year"), v.literal("month")) }),
+            ),
+            languages: v.array(v.string()),
+          }),
+        ),
+        /** Objections employers have already put to them, in their own words. */
+        heardFromEmployers: v.optional(v.object({ ...situationRow, objections: v.array(v.string()) })),
+        /** One line, coach-written: what is happening this week. */
+        whereTheyAreNow: v.optional(v.object({ ...situationRow, text: v.string() })),
+        /**
+         * The one thing PunProfile owes them next, and the date it is owed by.
+         * `doneAt` closes it; until then it shows at the top of the page and on
+         * the CRM list, and the evening run reads it.
+         */
+        nextFromUs: v.optional(
+          v.object({ ...situationRow, text: v.string(), dueOn: v.optional(v.string()), doneAt: v.optional(v.number()) }),
+        ),
+      }),
+    ),
+
     // Lifecycle. `email_captured` keeps the PRD's vocabulary, but since
     // 08/08/2026 it means the whole contact set cleared the gate: name, email
     // and a LINE ID or phone number.
@@ -518,6 +607,12 @@ export default defineSchema({
       targets: v.optional(v.number()),
       preparations: v.optional(v.number()),
       bookingInbox: v.optional(v.number()),
+      /** Optional for the same reason again: rows written before this table
+       *  existed have no such count. */
+      candidateTasks: v.optional(v.number()),
+      situationProposals: v.optional(v.number()),
+      outboxDrafts: v.optional(v.number()),
+      candidateRules: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
@@ -631,6 +726,17 @@ export default defineSchema({
      *  reschedule or cancellation finds its row. § 7b.
      *  @absent none — logged by hand */
     calBookingId: v.optional(v.string()),
+    /**
+     * When the coach closed this session on the Session tab's close form,
+     * `candidate-situation-handoff.md` § 4. The close is the one moment a coach
+     * writes the Situation panel, so this is what says a call has been written
+     * up at all: a held call without it is a call whose decisions are still in
+     * somebody's head.
+     */
+    /** @absent notyet — the call has not been closed on the form */
+    sessionClosedAt: v.optional(v.number()),
+    /** @absent notyet — only present alongside a close */
+    sessionClosedBy: v.optional(v.string()),
     /** @absent unmeasured — not recorded */
     durationMinutes: v.optional(v.number()),
     /** @absent unmeasured — not recorded */
@@ -1011,6 +1117,9 @@ export default defineSchema({
     /** When the email telling the candidate about this matched role went.
      *  @absent notyet — not a matched role, or its notice has not gone */
     notifiedAt: v.optional(v.number()),
+    /** The posting in the job database. Optional through the migration: rows
+     *  written before `jobs` existed have none. @absent notyet — not linked */
+    jobId: v.optional(v.id("jobs")),
     /** The capability in the matched-role email's like and dislike links.
      *  Random, unguessable, and it can do one thing: set the verdict below.
      *  @absent notyet — not a matched role, or its notice has not been built */
@@ -1023,6 +1132,12 @@ export default defineSchema({
     /** Why the role missed, one of `MATCH_FEEDBACK_REASONS` in
      *  `src/lib/content/matchFeedback.ts`. @absent none — no reason picked */
     candidateVerdictReason: v.optional(v.string()),
+    /** What the candidate wrote in their own words after the verdict,
+     *  `job-database-handoff.md` D3. The nuance the eight reasons miss, and
+     *  the signal a reason id cannot carry: it is read by the run and turned
+     *  into a proposed rule with the quote attached, never applied blindly.
+     *  @absent none — nothing written */
+    candidateVerdictComment: v.optional(v.string()),
     /** How much the candidate wants this one, 1 to 5, their own mark. Teal's
      *  "excitement" column. @absent none — not marked */
     excitement: v.optional(v.number()),
@@ -1347,6 +1462,13 @@ export default defineSchema({
     /** The posting's own date, ISO. @absent unmeasured — the page shows none */
     postedOn: v.optional(v.string()),
     matchReason: v.string(),
+    /** The posting in the job database. Optional through the migration: rows
+     *  written before `jobs` existed have none, and a read that needs the job
+     *  says so rather than inventing one. @absent notyet — not linked yet */
+    jobId: v.optional(v.id("jobs")),
+    /** A coach dismissal is feedback too, one of the reason ids in
+     *  `src/lib/content/matchFeedback.ts`. @absent none — no reason given */
+    dismissReason: v.optional(v.string()),
     status: v.union(v.literal("waiting"), v.literal("sent"), v.literal("dismissed")),
     /** The role row it became once sent. @absent notyet — not sent */
     applicationId: v.optional(v.id("applications")),
@@ -1356,6 +1478,298 @@ export default defineSchema({
   })
     .index("by_lead", ["leadId", "status"])
     .index("by_lead_url", ["leadId", "jobUrl"]),
+
+  /**
+   * What the candidate owes, written at the end-of-session close,
+   * `candidate-situation-handoff.md` § 4. It appears on their own page as a
+   * task, and it is reminded once at its date: the delivery design's rule is
+   * one check and no repeat chasing, so a second reminder is not a setting
+   * that was left off, it is a thing this table will not do.
+   *
+   * One row per thing owed. The coach writes it, the candidate or the coach
+   * closes it, and a closed row stays: what was asked for and whether it
+   * arrived is the record of why a session went the way it did.
+   */
+  candidateTasks: defineTable({
+    leadId: v.id("leads"),
+    /** One line, in the coach's words, as the candidate will read it. */
+    what: v.string(),
+    /** The date it is owed by, ISO. */
+    dueOn: v.string(),
+    /** The call it was agreed in. @absent none — written outside a call */
+    consultationId: v.optional(v.id("consultations")),
+    at: v.number(),
+    by: v.string(),
+    /** @absent notyet — still owed */
+    doneAt: v.optional(v.number()),
+    /** Which side closed it. The coach's own address is in `by`.
+     *  @absent notyet — still owed */
+    doneBy: v.optional(v.union(v.literal("candidate"), v.literal("coach"))),
+    /** When the one reminder went. @absent notyet — not reminded yet */
+    remindedAt: v.optional(v.number()),
+  }).index("by_lead", ["leadId"]),
+
+  /**
+   * A Situation row a transcript proposes, waiting for the coach's click,
+   * `candidate-situation-handoff.md` § 4.
+   *
+   * Nothing from a transcript lands on the panel on its own. The delivery
+   * design is explicit that extraction is evidence capture and not proof that
+   * every spoken statement is correct, so a reading of a call arrives here,
+   * beside the value the panel already holds, and the coach accepts it, edits
+   * it or throws it away. The close form is where that happens.
+   *
+   * Written from outside the app, the same way the evening run writes the
+   * roles it found: whatever reads the recording has a model and this does
+   * not. `quote` is what was actually said, so the coach is deciding about
+   * evidence rather than about a summary of it.
+   *
+   * A settled proposal is kept. What a call proposed and what the coach did
+   * with it is the record of how a fact on the panel came to be there.
+   */
+  situationProposals: defineTable({
+    leadId: v.id("leads"),
+    /** The call it was read off. @absent none — not tied to one call */
+    consultationId: v.optional(v.id("consultations")),
+    /** The proposed row, in the shape the panel takes. */
+    proposed: rowInput,
+    /** What the panel read at the moment the proposal was made, so the coach
+     *  sees a change rather than a bare new value.
+     *  @absent none — the row was empty */
+    wasLine: v.optional(v.string()),
+    /** What was said, verbatim. @absent none — no quote was carried */
+    quote: v.optional(v.string()),
+    at: v.number(),
+    by: v.string(),
+    /** @absent notyet — still waiting for the coach */
+    settledAt: v.optional(v.number()),
+    /** @absent notyet — still waiting for the coach */
+    settledBy: v.optional(v.string()),
+    /** Whether the coach took it. An edited accept is `true`: what landed is
+     *  on the panel with its own stamp. @absent notyet — still waiting */
+    accepted: v.optional(v.boolean()),
+  })
+    .index("by_lead", ["leadId"])
+    .index("by_consultation", ["consultationId"]),
+
+  /**
+   * The outbox: what we are about to say to a candidate, waiting on the coach,
+   * `candidate-situation-handoff.md` § 4.
+   *
+   * Every draft is written from the Situation panel plus the event that
+   * triggered it and nothing else, which is the point of the panel: a message
+   * cannot then miss the work route or the start date, and cannot state a fact
+   * the panel does not hold. `writtenFrom` keeps the panel lines as they read
+   * at the moment the draft was asked for, so that claim is checkable
+   * afterwards rather than merely asserted.
+   *
+   * A row is created empty, by the event. Whatever has a model fills the body,
+   * the same way a transcript's proposals arrive. The coach approves or edits
+   * in place; an edit to a FACT goes back through the close form into the
+   * panel, not into the message alone, or the next message contradicts this
+   * one.
+   *
+   * Email is sent from here. LINE is copied, never sent: there is no LINE
+   * integration and inventing one in an outbox would be the kind of quiet
+   * capability nobody asked for.
+   */
+  outboxDrafts: defineTable({
+    leadId: v.id("leads"),
+    kind: v.union(
+      v.literal("session_summary"),
+      v.literal("line_after_session"),
+      v.literal("dashboard_note"),
+      v.literal("matched_role"),
+      v.literal("missing_input"),
+    ),
+    /** `dashboard` approves into a shared delivery note on the candidate's own
+     *  page, which is the one place a draft becomes a record here rather than
+     *  leaving the app. */
+    channel: v.union(v.literal("email"), v.literal("line"), v.literal("dashboard")),
+    /** The call it follows. @absent none — not drafted off a call */
+    consultationId: v.optional(v.id("consultations")),
+    /** The role it is about. @absent none — not about one role */
+    applicationId: v.optional(v.id("applications")),
+    /** Email only. @absent notyet — not drafted yet, or a LINE message */
+    subject: v.optional(v.string()),
+    /** @absent notyet — nothing has drafted it */
+    body: v.optional(v.string()),
+    /**
+     * `awaiting` means the event has happened and nothing has written the
+     * words yet. `copied` is the end state of a LINE draft, which is as far as
+     * this app goes towards sending one.
+     */
+    state: v.union(
+      v.literal("awaiting"),
+      v.literal("drafted"),
+      v.literal("approved"),
+      v.literal("sent"),
+      v.literal("copied"),
+      v.literal("discarded"),
+    ),
+    /** The panel as it read when the draft was asked for, label and line.
+     *  @absent none — the panel was empty */
+    writtenFrom: v.optional(v.array(v.object({ label: v.string(), line: v.string() }))),
+    /** The decisions of the session it was drafted from.
+     *  @absent none — not drafted off a session */
+    decisions: v.optional(v.array(v.string())),
+    at: v.number(),
+    by: v.string(),
+    /** @absent notyet — still awaiting words */
+    filledAt: v.optional(v.number()),
+    /** @absent notyet — still awaiting words */
+    filledBy: v.optional(v.string()),
+    /** @absent notyet — the coach has not approved or thrown it away */
+    settledAt: v.optional(v.number()),
+    /** @absent notyet — the coach has not approved or thrown it away */
+    settledBy: v.optional(v.string()),
+    /** @absent notyet — not sent */
+    sentAt: v.optional(v.number()),
+    /** Why the last send attempt failed, for the coach to read.
+     *  @absent none — nothing has failed */
+    failure: v.optional(v.string()),
+  })
+    .index("by_lead", ["leadId"])
+    .index("by_state", ["state"]),
+
+  /**
+   * One row per job posting, shared by the public group feed and paying
+   * clients' matched roles, `job-database-handoff.md` § 3. Paul's decision of
+   * 12/11/2026: one job database, in this database, not a file.
+   *
+   * Before it there were two records that never met: `job-log.json` for the
+   * feed and per-client daily files for matches, so one posting sent to the
+   * group and to a client existed twice with no link between them.
+   *
+   * **Nothing about a person is stored here.** Who a job went to is its own
+   * row in `jobPosts`, `foundRoles` or `applications`, each pointing at this
+   * one, so a candidate's taste and an erasure request never reach the job.
+   *
+   * **A job is never re-checked.** The system looks forward at newly published
+   * postings. A job turns `filled` only when it is come across again and is
+   * gone: a run meets the URL, or a candidate reports it closed, or the
+   * matched-role skill opens it on the day a paid role is sent. There is no
+   * sweep that goes back to look, and an open job that nobody meets again
+   * simply ages out.
+   */
+  jobs: defineTable({
+    /** Canonical, by `canonicalJobUrl` in `src/lib/jobUrl.ts`. The key the
+     *  whole table rests on, so it is never written raw. */
+    url: v.string(),
+    employer: v.string(),
+    title: v.string(),
+    country: v.string(),
+    /** @absent unmeasured — the posting names no city */
+    city: v.optional(v.string()),
+    /** The posting's own date, ISO. @absent unmeasured — the page shows none */
+    postedOn: v.optional(v.string()),
+    /** Set when a run or a candidate comes across the job. Nothing goes back
+     *  to look at a job on purpose, so `lastSeenAt` is a record of encounters
+     *  and never of checks. */
+    firstSeenAt: v.number(),
+    lastSeenAt: v.number(),
+    status: v.union(v.literal("open"), v.literal("filled"), v.literal("archived")),
+    /** When it was come across again and found no longer open.
+     *  @absent notyet — still open, or archived by age */
+    filledAt: v.optional(v.number()),
+    /** From the posting's own words, never from anyone's belief about the
+     *  employer. @absent unmeasured — not read off the posting */
+    sponsorship: v.optional(v.union(v.literal("stated_yes"), v.literal("stated_no"), v.literal("silent"))),
+    /** The posting's words, so a gate decision can be checked against them.
+     *  @absent none — nothing was quoted */
+    sponsorshipQuote: v.optional(v.string()),
+    /** Languages the posting requires. Empty means none required; absent means
+     *  nobody read the qualifications. @absent unmeasured — not read */
+    languages: v.optional(v.array(v.string())),
+    /** As stated on the posting. @absent none — not stated */
+    salary: v.optional(v.string()),
+    /** `greenhouse`, `ashby`, `lever`, `employer_site`, `arbeitnow` and the
+     *  rest. Free text: a new board should not need a migration.
+     *  @absent unmeasured — not recorded */
+    source: v.optional(v.string()),
+    /** The public feed's Pass 1 to 3 outcome, today's `verdict` and `reason`
+     *  in `job-log.json`. @absent notyet — the feed has not judged it */
+    groupVerdict: v.optional(v.string()),
+    /** @absent notyet — the feed has not judged it */
+    groupReason: v.optional(v.string()),
+    /** The posting's text, kept while open and dropped at archive.
+     *  @absent none — not captured */
+    description: v.optional(v.string()),
+  })
+    .index("by_url", ["url"])
+    .index("by_status_firstSeen", ["status", "firstSeenAt"])
+    .index("by_firstSeen", ["firstSeenAt"]),
+
+  /**
+   * A job that went to the public group feed, `job-database-handoff.md` § 3.
+   * The record of what was posted, which `drafts/` used to be; the draft files
+   * stay as the text Paul posts.
+   */
+  jobPosts: defineTable({
+    jobId: v.id("jobs"),
+    channel: v.literal("facebook_group"),
+    /** The run's date, ISO. */
+    draftDate: v.string(),
+    /** @absent notyet — drafted, not yet posted by Paul */
+    publishedAt: v.optional(v.number()),
+  })
+    .index("by_job", ["jobId"])
+    .index("by_draftDate", ["draftDate"]),
+
+  /**
+   * The per-person filter the evening run reads, `job-database-handoff.md`
+   * § 3 and § 4. One candidate's taste, never anybody else's: Paul's decision
+   * D2 of 12/11/2026 is that feedback changes only that candidate's search and
+   * the public feed is untouched by anyone's preferences.
+   *
+   * Rules rather than a model, and the reason is arithmetic: a paying client
+   * receives at most 13 roles in her pack, so she yields 10 to 20 labels in
+   * total. Nothing learns a preference from that. It would fit noise and
+   * nobody could check it. A rule is a sentence the coach can read, switch off
+   * and argue with, and it works from the first answer.
+   *
+   * `active` false means proposed and not yet applied. Everything read out of
+   * free text arrives that way, and so do the two the handoff says the coach
+   * confirms, because a figure or a title term inferred from one dislike is a
+   * guess until someone agrees with it.
+   */
+  candidateRules: defineTable({
+    leadId: v.id("leads"),
+    kind: v.union(
+      v.literal("exclude_employer"),
+      v.literal("exclude_title_term"),
+      v.literal("require_sponsorship"),
+      v.literal("min_pay"),
+      v.literal("require_city"),
+      v.literal("exclude_language"),
+      v.literal("prefer_employer"),
+      v.literal("prefer_title_term"),
+    ),
+    /** The employer, term, city or language. Absent on `require_sponsorship`,
+     *  which carries no value, and on `min_pay`, which carries a figure.
+     *  @absent none — this kind carries no text */
+    value: v.optional(v.string()),
+    /** `min_pay` only, in `currency` a year. @absent none — not a pay rule */
+    amount: v.optional(v.number()),
+    /** @absent none — not a pay rule */
+    currency: v.optional(v.string()),
+    /** Where it came from. `feedback` is the candidate's own verdict,
+     *  `coach` is typed in, `brief` is carried over from a retired brief file. */
+    source: v.union(v.literal("feedback"), v.literal("coach"), v.literal("brief")),
+    /** The role whose verdict produced it, so the coach can see the case.
+     *  @absent none — not from one role */
+    applicationId: v.optional(v.id("applications")),
+    /** The candidate's own words behind it, where there were any.
+     *  @absent none — produced from a reason id alone */
+    quote: v.optional(v.string()),
+    /** False means proposed, and the run does not apply it yet. */
+    active: v.boolean(),
+    createdAt: v.number(),
+    /** @absent none — written by the feedback mutation, not a person */
+    by: v.optional(v.string()),
+    /** @absent notyet — never switched on or off by hand */
+    changedAt: v.optional(v.number()),
+  }).index("by_lead", ["leadId"]),
 
   /**
    * The coach's working notes on delivery, one row per entry, newest first on

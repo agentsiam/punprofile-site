@@ -19,6 +19,7 @@
 import { QUESTION_INDEX } from "./content/questions";
 import { BRAND_FONT_LINK, BRAND_FONT_STACKS, BRAND_TOKENS_CSS } from "./design-tokens";
 import { ynGrid, type ConsentChannel, type ConsentPurpose, type ConsentEvent } from "./consent";
+import { panel, type Situation } from "./situation";
 import type { FunctionReturnType } from "convex/server";
 import type { api } from "../../convex/_generated/api";
 
@@ -261,6 +262,20 @@ function readableDelivery(d: SubjectDelivery) {
     note: "What you bought from us, what we delivered, and what we keep while we work together.",
     fitReportSharedWithYou: stamp(d.fitReportSharedAt),
     weeklyApplicationGoal: d.weeklyApplicationGoal,
+    // The Situation panel, in its own words. The same wording the coach reads
+    // and the same wording a message to them is written from, so a person
+    // asking what we hold is not shown a second, tidier version of it.
+    yourSituation: panel(d.situation as Situation | null, d.targets.filter((t) => t.status === "active").map((t) => t.title))
+      .filter((r) => r.line !== null)
+      .map((r) => ({ what: r.label, says: r.line, whereItCameFrom: r.provenance })),
+    whatWeAskedYouFor: d.owed.map((t) => ({
+      what: t.what,
+      by: t.dueOn,
+      asked: stamp(t.at),
+      done: stamp(t.doneAt),
+      doneBy: t.doneBy === "candidate" ? "You" : t.doneBy === "coach" ? "Us" : null,
+      reminded: stamp(t.remindedAt),
+    })),
     titlesYouWereGoingFor: d.targets.map((t) => ({
       title: t.title,
       alsoCalled: t.alsoCalled,
@@ -584,6 +599,22 @@ function deliveryHtml(x: ReturnType<typeof readableDelivery>, row: Row): string 
         x.tokenRequests.map((r) => `${r.asked}${r.handled ? `, handled ${r.handled}` : ""}`).join("; ") || null,
       ),
     ])}`,
+    block(
+      "Where you are now, as we have it",
+      x.yourSituation.map((r) => table([row(r.what, r.says), row("Where that came from", r.whereItCameFrom)])),
+    ),
+    block("What we asked you for", [
+      table(
+        x.whatWeAskedYouFor.map((t) =>
+          row(
+            t.what,
+            [`by ${t.by}`, t.asked && `asked ${t.asked}`, t.done ? `done ${t.done}${t.doneBy ? ` (${t.doneBy})` : ""}` : "still open"]
+              .filter(Boolean)
+              .join(" · "),
+          ),
+        ),
+      ),
+    ].filter(() => x.whatWeAskedYouFor.length > 0)),
     block(
       "The job titles you were going for",
       x.titlesYouWereGoingFor.map((t) =>

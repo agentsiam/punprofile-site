@@ -182,8 +182,64 @@ export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
         engagements={engagements}
         matching={ws.matching}
       />
-      <Notes leadId={leadId} notes={ws.notes} engagements={engagements} apps={ws.applications} />
+      <MatchRules leadId={leadId} />
+      <Notes notes={ws.notes} engagements={engagements} apps={ws.applications} />
     </div>
+  );
+}
+
+/* ====================================== 5b. what her feedback has ruled out */
+
+/**
+ * The per-person filter the evening run reads, `job-database-handoff.md` § 4.
+ *
+ * Each rule as a sentence with the role that produced it, because a rule
+ * nobody can read is a rule nobody can overrule. A rule switched off is kept:
+ * deciding not to apply one is itself a decision about her search.
+ */
+function MatchRules({ leadId }: { leadId: Id<"leads"> }) {
+  const rules = useQuery(api.candidateRules.forLead, { leadId });
+  const setActive = useMutation(api.candidateRules.setActive);
+  if (!rules) return null;
+  const waiting = rules.filter((r) => !r.active).length;
+  return (
+    <Panel title="What her feedback rules out">
+      {rules.length === 0 ? (
+        <p className="text-body-medium text-on-surface-variant">
+          Nothing yet. A Not for me with a reason writes one of these, and the run reads the ones switched on.
+        </p>
+      ) : (
+        <>
+          {waiting > 0 && (
+            <p className="mb-3 text-body-medium text-on-surface-variant">
+              {waiting} waiting on you. A term or a figure read off one dislike is a guess until you agree with it, so the run
+              ignores it until you switch it on.
+            </p>
+          )}
+          <ul className="space-y-2">
+            {rules.map((r) => (
+              <li key={r._id} className="flex flex-wrap items-baseline gap-x-3 border-b border-outline-variant pb-2 last:border-b-0">
+                <span className={`text-body-medium ${r.active ? "text-on-surface" : "text-on-surface-variant"}`}>{r.line}</span>
+                {!r.active && <Chip>Not applied</Chip>}
+                <span className="text-body-small text-on-surface-variant">
+                  {[r.from, r.source === "feedback" ? "from her answer" : r.source === "coach" ? "yours" : "from her brief", day(r.createdAt)]
+                    .filter(Boolean)
+                    .join(" · ")}
+                </span>
+                {r.quote && <span className="text-body-small text-on-surface-variant">She wrote: &ldquo;{r.quote}&rdquo;</span>}
+                <button
+                  type="button"
+                  className={`ml-auto ${LINK}`}
+                  onClick={() => void setActive({ id: r._id, active: !r.active })}
+                >
+                  {r.active ? "Switch off" : "Switch on"}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </Panel>
   );
 }
 
@@ -2147,23 +2203,16 @@ function WithdrawMatched({ onWithdraw }: { onWithdraw: (note: string) => Promise
 /* ====================================================== 6. notes */
 
 function Notes({
-  leadId,
   notes,
   engagements,
   apps,
 }: {
-  leadId: Id<"leads">;
   notes: Ws["notes"];
   engagements: Engs;
   apps: Ws["applications"];
 }) {
-  const add = useMutation(api.workspace.addNote);
   const update = useMutation(api.workspace.updateNote);
   const remove = useMutation(api.workspace.deleteNote);
-  const [body, setBody] = useState("");
-  const [shared, setShared] = useState(false);
-  const [about, setAbout] = useState("");
-  const [error, setError] = useState<string | null>(null);
 
   const deliverables = engagements.flatMap((e) => e.deliverables);
   const label = (n: Ws["notes"][number]) => {
@@ -2178,60 +2227,12 @@ function Notes({
     return null;
   };
 
-  const save = async () => {
-    setError(null);
-    try {
-      const [kind, id] = about.split(":");
-      await add({
-        leadId,
-        body,
-        shared,
-        ...(kind === "d" ? { deliverableId: id as Id<"deliverables"> } : {}),
-        ...(kind === "a" ? { applicationId: id as Id<"applications"> } : {}),
-      });
-      setBody("");
-      setShared(false);
-      setAbout("");
-    } catch (e) {
-      setError(errText(e));
-    }
-  };
-
   return (
     <Panel title="Delivery notes">
-      <div className="rounded-medium border border-outline-variant bg-surface p-4">
-        <textarea
-          rows={3}
-          className="field"
-          placeholder="What was done, what is next, what you noticed"
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        />
-        <div className="mt-3 flex flex-wrap items-center gap-4">
-          <select className="field field-dense max-w-xs" value={about} onChange={(e) => setAbout(e.target.value)} aria-label="About">
-            <option value="">About the whole engagement</option>
-            {deliverables.map((d) => (
-              <option key={d._id} value={`d:${d._id}`}>
-                {KIND_LABEL[d.kind] ?? d.kind}
-                {d.notes ? `, ${d.notes}` : ""}
-              </option>
-            ))}
-            {apps.map((a) => (
-              <option key={a._id} value={`a:${a._id}`}>
-                Job: {a.roleTitle}, {a.employer}
-              </option>
-            ))}
-          </select>
-          <label className="flex items-center gap-2 text-body-medium text-on-surface">
-            <input type="checkbox" checked={shared} onChange={(e) => setShared(e.target.checked)} />
-            Show on their dashboard (write it in Thai)
-          </label>
-          <button type="button" className={BTN} disabled={!body.trim()} onClick={() => void save()}>
-            Add note
-          </button>
-        </div>
-        <ErrorLine error={error} />
-      </div>
+      <p className="text-body-medium text-on-surface-variant">
+        Written at the session close on the Session tab, and by the app for what it records itself. Everything already here stays
+        readable, and a note can still be shown to the candidate or taken off their page.
+      </p>
 
       {notes.length === 0 ? (
         <p className="mt-3 text-body-medium text-on-surface-variant">No notes yet.</p>

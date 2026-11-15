@@ -5,7 +5,13 @@
  * Pure: the Convex query gathers the records, this decides the rows.
  */
 
-export const MANUAL_STEPS = ["summary_email", "timeline_shared"] as const;
+/**
+ * One step left that the coach ticks by hand. `summary_email` was the other
+ * until the outbox existed: it is ticked now by the record that proves it, the
+ * approved draft that went. A hand tick made before then still counts, because
+ * the email it stood for was really sent.
+ */
+export const MANUAL_STEPS = ["timeline_shared"] as const;
 export type ManualStep = (typeof MANUAL_STEPS)[number];
 
 export type StepState = "done" | "todo" | "na" | "ongoing";
@@ -29,6 +35,8 @@ export type ChecklistInput = {
   calls: { heldAt: number; outcome: string; deliverableId: string | null }[];
   firstSharedNoteAt: number | null;
   ticks: Partial<Record<ManualStep, number>>;
+  /** When the summary email went from the outbox, and the hand tick from before it existed. */
+  summaryEmail: { sentAt: number | null; tickedByHandAt: number | null };
   activeTitles: number;
   matching: { weeklyMax: number; paused: boolean; sentThisWeek: number };
   preview: { id: string; status: string; deliveredAt: number | null } | null;
@@ -68,9 +76,11 @@ export function checklist(i: ChecklistInput): Step[] {
     i.firstSharedNoteAt !== null
       ? step("call1_notes", "Call 1 notes on the dashboard", "done", i.firstSharedNoteAt)
       : step("call1_notes", "Call 1 notes on the dashboard", "todo", null, "No shared note"),
-    i.ticks.summary_email !== undefined
-      ? step("summary_email", "Summary email sent", "done", i.ticks.summary_email, null, true)
-      : step("summary_email", "Summary email sent", "todo", null, "Tick when sent", true),
+    i.summaryEmail.sentAt !== null
+      ? step("summary_email", "Summary email sent", "done", i.summaryEmail.sentAt, "Sent from the outbox")
+      : i.summaryEmail.tickedByHandAt !== null
+        ? step("summary_email", "Summary email sent", "done", i.summaryEmail.tickedByHandAt, "Ticked by hand, before the outbox")
+        : step("summary_email", "Summary email sent", "todo", null, "Approve it in the outbox"),
     i.activeTitles > 0
       ? step("titles", "Target titles set", "done", null, `${i.activeTitles} active`)
       : step("titles", "Target titles set", "todo", null, "None active"),

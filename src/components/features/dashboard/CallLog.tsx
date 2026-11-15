@@ -667,14 +667,16 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
           </div>
 
           <div className="mt-6">
-            <Field label="Notes">
-              <textarea
-                rows={4}
-                value={draft.notes}
-                onChange={(e) => set("notes", e.target.value)}
-                className={INPUT}
-              />
-            </Field>
+            <p className="field-label">Notes</p>
+            <p className="field-support">
+              The write-up is the session close on the Session tab, which is where the panel, the decisions, what we owe next and
+              what they owe are all written at once. What is already here stays and is carried through a save.
+            </p>
+            {draft.notes.trim() ? (
+              <p className="mt-2 whitespace-pre-wrap text-body-medium text-on-surface">{draft.notes}</p>
+            ) : (
+              <p className="mt-2 text-body-medium text-on-surface-variant">Nothing written on this call.</p>
+            )}
           </div>
 
           {error && <p role="alert" className="field-support-error mt-3">{error}</p>}

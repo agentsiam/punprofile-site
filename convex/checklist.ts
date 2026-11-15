@@ -4,6 +4,8 @@ import { requireAdmin } from "./leads";
 import { matchingFor, sendMatched, walletFor } from "./workspace";
 import { targetsFor } from "./targets";
 import { checklist, nextStep, MANUAL_STEPS } from "../src/lib/checklist";
+import { seeJob } from "./jobs";
+import { MATCH_FEEDBACK_REASON_IDS } from "../src/lib/content/matchFeedback";
 
 /**
  * The Session tab's delivery checklist and the roles the evening run found,
@@ -11,6 +13,11 @@ import { checklist, nextStep, MANUAL_STEPS } from "../src/lib/checklist";
  * the only things stored here are the coach's two ticks and the found roles.
  */
 
+/**
+ * The validator still takes `summary_email`, so an older page calling it gets
+ * the reason rather than a validation error. `MANUAL_STEPS` no longer holds it
+ * and the handler refuses it: that step is ticked by the outbox now.
+ */
 const manualKey = v.union(v.literal("summary_email"), v.literal("timeline_shared"));
 
 export const forLead = query({
@@ -40,6 +47,12 @@ export const forLead = query({
       await ctx.db.query("deliveryNotes").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect()
     ).filter((n) => n.shared);
     const ticks = await ctx.db.query("checklistTicks").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect();
+    // The summary email is ticked by the draft that actually went, not by a
+    // hand tick: one input at the session close, and the outbox is where it
+    // leaves from.
+    const summaries = (await ctx.db.query("outboxDrafts").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect()).filter(
+      (d) => d.kind === "session_summary" && d.state === "sent" && d.sentAt !== undefined,
+    );
     const fit = live.find((d) => d.kind === "fit_report") ?? null;
     const cv = live.find((d) => d.entitlement === "pack_cv_rewrite") ?? null;
 
@@ -54,7 +67,11 @@ export const forLead = query({
         : null,
       calls: calls.map((c) => ({ heldAt: c.heldAt, outcome: c.outcome, deliverableId: c.deliverableId ?? null })),
       firstSharedNoteAt: sharedNotes.length ? Math.min(...sharedNotes.map((n) => n.at)) : null,
-      ticks: Object.fromEntries(ticks.map((t) => [t.key, t.at])),
+      ticks: Object.fromEntries(ticks.filter((t) => t.key === "timeline_shared").map((t) => [t.key, t.at])),
+      summaryEmail: {
+        sentAt: summaries.length ? Math.min(...summaries.map((d) => d.sentAt as number)) : null,
+        tickedByHandAt: ticks.find((t) => t.key === "summary_email")?.at ?? null,
+      },
       activeTitles: (await targetsFor(ctx, leadId)).filter((t) => t.status === "active").length,
       matching: await matchingFor(ctx, leadId),
       preview: preview ? { id: preview._id, status: preview.status, deliveredAt: preview.deliveredAt ?? null } : null,
@@ -81,7 +98,13 @@ export const tick = mutation({
   args: { leadId: v.id("leads"), key: manualKey, done: v.boolean() },
   handler: async (ctx, { leadId, key, done }) => {
     const by = await requireAdmin(ctx);
-    if (!MANUAL_STEPS.includes(key)) throw new ConvexError("Not a step the coach ticks.");
+    if (!MANUAL_STEPS.includes(key as (typeof MANUAL_STEPS)[number])) {
+      throw new ConvexError(
+        key === "summary_email"
+          ? "The summary email is ticked by the draft that goes. Approve it in the outbox."
+          : "Not a step the coach ticks.",
+      );
+    }
     const rows = await ctx.db.query("checklistTicks").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect();
     const existing = rows.filter((r) => r.key === key);
     if (done && existing.length === 0) await ctx.db.insert("checklistTicks", { leadId, key, at: Date.now(), by });
@@ -130,6 +153,24 @@ export const addFound = mutation({
         skipped++;
         continue;
       }
+      // Dual-write into the job database: one row per posting, shared with
+      // the group feed, `job-database-handoff.md` § 3. The found role keeps
+      // its own `jobUrl` as the run gave it, because that is the link the
+      // coach opens and the one `by_lead_url` has always deduplicated on.
+      const { id: jobId } = await seeJob(
+        ctx,
+        {
+          url: jobUrl,
+          employer: r.employer.trim(),
+          title: r.roleTitle.trim(),
+          country: r.country.trim(),
+          ...(r.location?.trim() ? { city: r.location.trim() } : {}),
+          ...(r.postedOn?.trim() ? { postedOn: r.postedOn.trim() } : {}),
+          ...(r.salary?.trim() ? { salary: r.salary.trim() } : {}),
+          seenOn: foundOn,
+        },
+        Date.now(),
+      );
       await ctx.db.insert("foundRoles", {
         leadId,
         foundOn,
@@ -139,6 +180,7 @@ export const addFound = mutation({
         country: r.country.trim(),
         ...(r.location?.trim() ? { location: r.location.trim() } : {}),
         jobUrl,
+        jobId,
         ...(r.salary?.trim() ? { salary: r.salary.trim() } : {}),
         ...(r.postedOn?.trim() ? { postedOn: r.postedOn.trim() } : {}),
         matchReason: r.matchReason.trim(),
@@ -151,13 +193,28 @@ export const addFound = mutation({
   },
 });
 
+/**
+ * The coach dismisses a waiting role. A dismissal is feedback too,
+ * `job-database-handoff.md` § 3, so it takes the same reason ids a candidate
+ * picks from. `closed` is the one that is a fact about the job rather than a
+ * preference, and it marks the posting filled for everyone.
+ */
 export const dismissFound = mutation({
-  args: { id: v.id("foundRoles") },
-  handler: async (ctx, { id }) => {
+  args: { id: v.id("foundRoles"), reason: v.optional(v.string()) },
+  handler: async (ctx, { id, reason }) => {
     await requireAdmin(ctx);
     const row = await ctx.db.get(id);
     if (!row || row.status !== "waiting") throw new ConvexError("That role is no longer waiting.");
-    await ctx.db.patch(id, { status: "dismissed", decidedAt: Date.now() });
+    const picked = reason && MATCH_FEEDBACK_REASON_IDS.includes(reason) ? reason : undefined;
+    await ctx.db.patch(id, {
+      status: "dismissed",
+      decidedAt: Date.now(),
+      ...(picked ? { dismissReason: picked } : {}),
+    });
+    if (picked === "closed" && row.jobId) {
+      const job = await ctx.db.get(row.jobId);
+      if (job && job.status === "open") await ctx.db.patch(row.jobId, { status: "filled", filledAt: Date.now() });
+    }
   },
 });
 
@@ -174,6 +231,7 @@ export const sendFound = mutation({
     );
     const applicationId = await sendMatched(ctx, by, {
       leadId: row.leadId,
+      ...(row.jobId ? { jobId: row.jobId } : {}),
       employer: row.employer,
       roleTitle: row.roleTitle,
       country: row.country,
