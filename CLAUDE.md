@@ -65,7 +65,11 @@ duplicate one into the other.
 | Roadmap and session handoff | `punprofile-work/work-projects/eu-fit-check/` |
 
 DERIVED, stale until regenerated and flagged as stale rather than built on: the two token files and
-the synced termbase, the rendered style guide beside `design.md`, `public/blog/share/<slug>.jpg`.
+the synced termbase, the rendered style guide beside `design.md`, `public/blog/share/<slug>.jpg`,
+`language-notes.generated.ts`, and **every file named in
+`scripts/language-templates/manifest.json`**. That last set is 29 files and is not only
+`src/lib/content/`: it takes in `src/components/LocaleToggle.tsx`, `src/lib/consent-copy.ts` and
+`src/lib/levers.ts` too. They read as hand-written source and are not. See R49.
 
 ## 3. Sources of truth
 
@@ -146,7 +150,7 @@ sibling repo by the exporter that makes them.
 | **R46** | RETIRED. Promoted to the core block as C47, anything reading across a boundary announces a missing source. |
 | **R47** | A product story record points at the document that owns a figure and never states the figure. |
 | **R48** | An article with artwork needs a sharing card at `public/blog/share/<slug>.jpg`, at 1200x630. |
-| **R49** | No candidate-facing string is written inline in a component. Copy lives in `src/lib/content/`, and `consent-copy.ts`, its Thai terms reach it from `termbase.yml` through `termbase.generated.ts`, and a string written anywhere else is linted by nothing and missing in the other language. |
+| **R49** | No candidate-facing string is written inline in a component. Copy lives in `src/lib/content/`, and `consent-copy.ts`, its Thai terms reach it from `termbase.yml` through `termbase.generated.ts`, and a string written anywhere else is linted by nothing and missing in the other language. Those modules are themselves generated: the text comes from `LANGUAGE-SYSTEM.md` and the code shape from `scripts/language-templates/<path>.tpl`. An edit made in the module is discarded by the next `npm run language:generate` without a warning or a diff, so change the record for a string and the template for anything that is not one, then regenerate. |
 
 ## 6. Tooling and commands
 
@@ -203,6 +207,7 @@ missing one of its eight slots, naming a destination `cta.ts` lacks, or stating 
 - `verify:copy` had never read the per-page content modules, 91 candidate-facing strings, and the first `verify:pages` run found a real LR-04 failure in `footer.ts` that had already shipped.
 - A sharing card's failure is invisible locally: every platform crops to about 1.91:1, and the 4:3 article art lost the figure's head (R48).
 - A story record holding its own copy of a figure is a fourth place for a stale number to hide, which is why `verify:narrative` exists rather than a document being enough.
+- `src/lib/content/` looks authored and is not. A LinkedIn link added straight into `footer.ts` was gone the next time `language:generate` ran, and the file showed as unmodified in git, which is the only reason it was noticed. The DERIVED row said nothing about these modules until it did, and R49's own wording pointed at them as the place copy lives.
 - The consent migration is the worked example of R43 to R45: `captureContact` dual-writes, `resolveConsent` returns `never_asked` rather than guessing, and the backfill reported 200 written then 0 written on an immediate re-run.
 - A deploy that appeared to change nothing was a different deployment, not a failed push (R41).
 - Merging a PR put its pages live and left its Convex functions behind. The Vercel build has never run `convex deploy` on this project: the move to `agent-siam/punprofile-site` carried `NEXT_PUBLIC_CONVEX_URL` and `SITE_URL` across and nothing else, so `package.json`'s `CONVEX_DEPLOY_KEY` branch has never had a key to take and a 33-second build is `next build` alone. Nothing looked wrong, because the site kept reading `quiet-mule-251` from the variable that did come across. The functions went up only when someone ran `npx convex dev --once` by hand the next day (R42).
