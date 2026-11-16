@@ -16,13 +16,6 @@ import { useCopy } from "@/components/LocaleProvider";
 import { SERVICES } from "@/lib/content/services";
 import { DESTINATIONS } from "@/lib/content/cta";
 
-/** Clay cutout per coaching service, files under `public/home/`. */
-const SERVICE_CUTOUT: Record<string, string> = {
-  coaching: "/home/service-direction.png",
-  profile: "/home/service-profile.png",
-  applications: "/home/service-applications.png",
-};
-
 const SERVICE_TINT = [
   "bg-orange-pale text-on-orange-pale",
   "bg-cyan-pale text-on-cyan-pale",
@@ -42,8 +35,9 @@ export default function CoachingCards({ className = "mt-24" }: { className?: str
           >
             <span className="relative -mt-20 block h-72 w-full">
               <Image
-                src={SERVICE_CUTOUT[s.id] ?? s.image.src}
-                alt={pick(s.image.alt)}
+                src={s.image.src}
+                // Decorative: the card's own heading names the service beside it.
+                alt=""
                 fill
                 sizes="(max-width: 1200px) 60vw, 300px"
                 className="object-contain object-bottom duration-[350ms] ease-nav transition-transform group-hover:-translate-y-1"

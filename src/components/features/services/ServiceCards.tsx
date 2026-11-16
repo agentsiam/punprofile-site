@@ -36,12 +36,8 @@ import {
   serviceForDimension,
 } from "@/lib/content/services";
 
-/** Clay cutout and tint per service, shared with the home page's cards. */
-const CUTOUT: Record<string, string> = {
-  coaching: "/home/service-direction.png",
-  profile: "/home/service-profile.png",
-  applications: "/home/service-applications.png",
-};
+/** Tint per service, shared with the home page's cards. The cutout itself is
+    `Service.image`, so the paths are not copied out a second time here. */
 const TINT: Record<string, string> = {
   coaching: "bg-orange-pale",
   profile: "bg-cyan-pale",
@@ -81,8 +77,9 @@ function Body() {
                   /products use. The person stands on the band's floor. */}
               <div className={`relative aspect-[4/3] w-full ${TINT[s.id]}`}>
                 <Image
-                  src={CUTOUT[s.id]}
-                  alt={pick(s.image.alt)}
+                  src={s.image.src}
+                  // Decorative: the card's own heading names the service beside it.
+                  alt=""
                   fill
                   sizes="(max-width: 1200px) 60vw, 360px"
                   className="object-contain object-bottom px-6 pt-6"

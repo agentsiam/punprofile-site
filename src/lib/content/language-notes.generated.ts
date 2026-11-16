@@ -10899,15 +10899,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "06/09/2026",
     "decisionNote": "Paul's wording, 06/09/2026."
   },
-  "src/lib/content/services.ts::SERVICES[0].image.alt": {
-    "source": "src/lib/content/services.ts",
-    "path": "SERVICES[0].image.alt",
-    "render": "Services page, SERVICES[0].image.alt",
-    "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
   "src/lib/content/services.ts::SERVICES[0].includes[0]": {
     "source": "src/lib/content/services.ts",
     "path": "SERVICES[0].includes[0]",
@@ -10980,15 +10971,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "03/11/2026",
     "decisionNote": "Paul's Thai, product-page copy re-approval 03/11/2026; the English follows his Thai. Was EN: \"This is the core of every coaching engagement. We get the direction clear before writing a single document, because however good a CV is, sent into the wrong market it is still an application aimed at nothing.\" TH: \"นี่คือแกนหลักของการโค้ชทุกครั้ง เราจะช่วยกันหาทิศทางให้ชัดก่อนลงมือเขียนเอกสาร เพราะต่อให้ CV ดีแค่ไหน ถ้าส่งไปผิดตลาด ก็ยังเป็นการสมัครที่ไม่ตรงเป้าอยู่ดี\"."
   },
-  "src/lib/content/services.ts::SERVICES[1].image.alt": {
-    "source": "src/lib/content/services.ts",
-    "path": "SERVICES[1].image.alt",
-    "render": "Services page, SERVICES[1].image.alt",
-    "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
   "src/lib/content/services.ts::SERVICES[1].includes[0]": {
     "source": "src/lib/content/services.ts",
     "path": "SERVICES[1].includes[0]",
@@ -11038,15 +11020,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "source": "src/lib/content/services.ts",
     "path": "SERVICES[1].summary",
     "render": "Services page, SERVICES[1].summary",
-    "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
-  },
-  "src/lib/content/services.ts::SERVICES[2].image.alt": {
-    "source": "src/lib/content/services.ts",
-    "path": "SERVICES[2].image.alt",
-    "render": "Services page, SERVICES[2].image.alt",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
     "date": "14/08/2026",

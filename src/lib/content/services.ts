@@ -18,14 +18,12 @@ import type { Copy } from "./copy";
  * either, so the page ends on a conversation. This comment is the thing to
  * delete first when the pilot closes.
  *
- * **The three illustrations became photographs on 17/08/2026**, on Paul's call:
- * `pp_mascot_steping`, `pp_mascot_cv_laptop` and `pp_mascot_magnifying` from the
- * brand assets inbox. They are studio renders of the mascot rather than flat art,
- * which is why `wash` went with them; see the note on `image` below.
- *
- * All three were cover-cropped to 4:3 and re-encoded at build time, 1200x900 at
- * quality 82, which took them from 0.5-1.7MB each to 58-85KB. The crop is decided
- * once in the asset rather than on every render.
+ * **The three pictures are the clay cast's cutouts, 04/11/2026**: the same
+ * `/home/service-*.png` files the home page and `/products` already render.
+ * `Brand_Guidelines.md` rules out a clay or 3D mascot and gives service cards to
+ * the clay cast instead, and the 3D studio renders this file pointed at from
+ * 17/08/2026 were exactly what that rule names. The cutouts are transparent and
+ * stand on the card's own tint; see the note on `image` below.
  */
 
 export type ServiceId = "coaching" | "profile" | "applications";
@@ -40,17 +38,23 @@ export interface Service {
   summary: Copy;
   includes: Copy[];
   /**
-   * Public path to the photograph for this service.
+   * Public path to this service's clay cutout, transparent, standing on the
+   * card's own tint.
+   *
+   * **`alt` is gone, with the art it described.** Every consumer renders this
+   * picture decorative, `alt=""`, because the service's own name sits beside it:
+   * an alt describing the figure makes a screen reader say the card twice.
+   * `ProductIndex` already did it that way and the cards now match it. The
+   * strings that were here described the retired mascot renders, which is how a
+   * stale alt outlived the picture it was written for.
    *
    * **`wash` is gone, 17/08/2026.** It held the exact colour each illustration
    * was drawn on, so the panel behind it could be painted to match and the image
-   * would have no visible edge. That was right for flat art on a single colour
-   * and is wrong for what replaced it: these are studio renders on a soft grey
-   * with a gradient and a cast shadow, so there is no colour to match and a panel
-   * painted to the average would seam wherever the backdrop falls away. The image
-   * fills its band edge to edge instead.
+   * would have no visible edge. The cutouts carry no ground at all, so there is
+   * nothing left to match: the card paints its own tint and the figure stands
+   * on it.
    */
-  image: { src: string; alt: Copy };
+  image: { src: string };
   /**
    * The chart axis this service answers, so the result screen can open the page
    * on the card a candidate's own chart points at. A low score here is a reason
@@ -118,13 +122,7 @@ export const SERVICES: readonly Service[] = [
         th: "เซสชันโค้ชชิ่งใช้ภาษาอังกฤษเป็นหลัก ทุกครั้งที่คุยกันจึงได้ฝึกภาษาอังกฤษสำหรับการสัมภาษณ์ไปในตัว",
       },
     ],
-    image: {
-      src: "/services/direction.jpg",
-      alt: {
-        en: "The PunProfile character climbing steps towards a signpost",
-        th: "ตัวการ์ตูน PunProfile กำลังเดินขึ้นบันไดไปหาป้ายบอกทาง",
-      },
-    },
+    image: { src: "/home/service-direction.png" },
     answers: "mobilityReadiness",
   },
   {
@@ -156,13 +154,7 @@ export const SERVICES: readonly Service[] = [
         th: "เว็บไซต์ Portfolio สำหรับสายงานนอกไอที สร้างจากผลงานและกรณีศึกษาจริงของคุณ ไม่ใช่เพียงรายการโปรเจกต์",
       },
     ],
-    image: {
-      src: "/services/profile.jpg",
-      alt: {
-        en: "The PunProfile character beside a laptop showing a profile page",
-        th: "ตัวการ์ตูน PunProfile ยืนข้างแล็ปท็อปที่เปิดหน้าโปรไฟล์อยู่",
-      },
-    },
+    image: { src: "/home/service-profile.png" },
     answers: "employability",
   },
   {
@@ -198,13 +190,7 @@ export const SERVICES: readonly Service[] = [
         th: "ช่วยประเมินข้อเสนอ เตรียมการเจรจาต่อรอง และชี้ประเด็นในสัญญาที่ควรสอบถามเพิ่มเติม",
       },
     ],
-    image: {
-      src: "/services/applications.jpg",
-      alt: {
-        en: "The PunProfile character reading a document through a magnifying glass",
-        th: "ตัวการ์ตูน PunProfile กำลังส่องเอกสารด้วยแว่นขยาย",
-      },
-    },
+    image: { src: "/home/service-applications.png" },
     answers: "europeanMarketFit",
   },
 ];

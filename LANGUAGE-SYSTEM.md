@@ -28722,28 +28722,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/services.ts::SERVICES[0].image.alt`
-
-```yaml
-id: src/lib/content/services.ts::SERVICES[0].image.alt
-source: src/lib/content/services.ts
-path: SERVICES[0].image.alt
-render: Services page, SERVICES[0].image.alt
-narrative_slot: utility
-en: The PunProfile character climbing steps towards a signpost
-th: ตัวการ์ตูน PunProfile กำลังเดินขึ้นบันไดไปหาป้ายบอกทาง
-provenance: paul-written
-date: 14/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: e3c57d835eeff96fb057a58afce0691b77a5e2197129887a657489abb4f5a286
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/services.ts::SERVICES[0].includes[0]`
 
 ```yaml
@@ -28947,28 +28925,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/services.ts::SERVICES[1].image.alt`
-
-```yaml
-id: src/lib/content/services.ts::SERVICES[1].image.alt
-source: src/lib/content/services.ts
-path: SERVICES[1].image.alt
-render: Services page, SERVICES[1].image.alt
-narrative_slot: utility
-en: The PunProfile character beside a laptop showing a profile page
-th: ตัวการ์ตูน PunProfile ยืนข้างแล็ปท็อปที่เปิดหน้าโปรไฟล์อยู่
-provenance: paul-written
-date: 14/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 1abb2feb3c0883919d407fbdc1cf6b651a9df8a47cf9e0bfac04c2fcb3683686
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/services.ts::SERVICES[1].includes[0]`
 
 ```yaml
@@ -29104,28 +29060,6 @@ decision_note: No string-local reasoning comment was present at migration.
 review:
   structural_calque: pass
   text_hash: c0130030e09da3b38a62107b98fa923b7769441a6f8a70360a84dc49156cc398
-  prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/services.ts::SERVICES[2].image.alt`
-
-```yaml
-id: src/lib/content/services.ts::SERVICES[2].image.alt
-source: src/lib/content/services.ts
-path: SERVICES[2].image.alt
-render: Services page, SERVICES[2].image.alt
-narrative_slot: utility
-en: The PunProfile character reading a document through a magnifying glass
-th: ตัวการ์ตูน PunProfile กำลังส่องเอกสารด้วยแว่นขยาย
-provenance: paul-written
-date: 14/08/2026
-term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
-review:
-  structural_calque: pass
-  text_hash: 02553e05239580e4b504de85f187925fe38c970a2af1c64739244caac36ec4ef
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
 ```

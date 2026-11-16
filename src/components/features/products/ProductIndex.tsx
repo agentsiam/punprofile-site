@@ -93,13 +93,6 @@ const HANDOVER: Record<string, string> = {
   "job-search-dashboard": "applications",
 };
 
-/** The service cutouts the home page's coaching cards use. */
-const CUTOUT: Record<string, string> = {
-  coaching: "/home/service-direction.png",
-  profile: "/home/service-profile.png",
-  applications: "/home/service-applications.png",
-};
-
 /** Two placements, each crediting the coaching work: CV, interviews. */
 const PROOF = [
   { id: "placed-hotel-germany", photo: "/home/testimonials/testimonial-photo-may.jpg" },
@@ -397,7 +390,7 @@ export default function ProductIndex() {
                 >
                   <span className="relative block size-16 shrink-0 overflow-hidden rounded-full bg-canvas-soft">
                     <Image
-                      src={CUTOUT[service.id]}
+                      src={service.image.src}
                       alt=""
                       fill
                       sizes="64px"

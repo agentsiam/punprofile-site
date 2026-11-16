@@ -40,10 +40,10 @@ import {
 export default function ServicesPage() {
   const { pick, locale } = useCopy();
 
-  /* The hero picture is the core service's own photograph, which is the one
-     the three cards below already use for it. A fourth image chosen for this
-     page would be a fourth thing to keep true, and the character climbing
-     towards a signpost is the page's subject anyway. */
+  /* The hero picture is the core service's own cutout, which is the one the
+     three cards below already use for it. A fourth image chosen for this page
+     would be a fourth thing to keep true, and a man weighing up a signpost full
+     of countries is the page's subject anyway. */
   const hero = SERVICES[0].image;
 
   return (
@@ -61,13 +61,19 @@ export default function ServicesPage() {
             </p>
             <CallToAction page="/services" className="mt-8" />
           </div>
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
+          {/* The cutout on the coaching card's own tint, the same pairing the
+              three cards below use. 04/11/2026 moved those cards to the clay
+              cast and left this hero on the 3D mascot render `Brand_Guidelines.md`
+              rules out; it now reads `Service.image` like they do, so there is
+              one path to keep true rather than two. */}
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-orange-pale">
             <Image
               src={hero.src}
-              alt={pick(hero.alt)}
+              // Decorative: the heading beside it carries the page's subject.
+              alt=""
               fill
               sizes="(max-width: 1200px) 100vw, 45vw"
-              className="object-cover"
+              className="object-contain object-bottom px-8 pt-8"
               priority
             />
           </div>
