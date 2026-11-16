@@ -95,6 +95,23 @@ Measured on the shipped pixels, eyebrow, headline and lead all sit on a clean
 #9FE870 and the chips on their own `ink-deep`: 9.45:1 for all four, the same as
 the Thai card. The lift reaches no text block.
 
+## Which page gets which card
+
+`siteCard(locale)` in `src/lib/seo.ts` answers that, and it is the only place
+that answers it. Both root layouts take their image from `SITE_CARD` and
+`SITE_CARD_EN`, and `pageMetadata` falls back to whichever the page's own locale
+asks for.
+
+**It has to be decided there, not left to the tree.** Next merges metadata
+shallowly, so a page that sets its own `openGraph` replaces the root layout's
+whole `openGraph`, image included. Nothing is inherited from the tree a page
+sits in. Repointing the English layout at `og-en.png` on 16/11/2026 therefore
+fixed `/en` alone, and the eleven English pages behind it went on serving the
+Thai card until `pageMetadata` was given the same answer later that day.
+
+A blog post overrides both, with its own card from `shareCard(post)`. That is
+the one case where the site card is the wrong answer and is meant to lose.
+
 Deliberately not a screenshot of the result screen: at thumbnail size a radar
 chart is an unreadable smudge, and a real-looking set of scores on a share card
 invites the reading that they are somebody's.

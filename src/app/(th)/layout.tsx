@@ -3,7 +3,7 @@ import "../globals.css";
 import SiteShell from "@/components/SiteShell";
 import { DEFAULT_LOCALE, pick, t } from "@/lib/locale";
 import { HOOK_EYEBROW, HOOK_LINE_1, HOOK_LINE_2 } from "@/lib/content/coaching";
-import { SITE_URL, VERIFICATION, brandedTitle } from "@/lib/seo";
+import { SITE_CARD, SITE_URL, VERIFICATION, brandedTitle } from "@/lib/seo";
 
 /**
  * The Thai tree, and the site's primary root layout. 16/08/2026.
@@ -98,13 +98,13 @@ export const metadata: Metadata = {
     url: "/",
     title: OG_TITLE,
     description: OG_DESCRIPTION,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: OG_TITLE }],
+    images: [{ url: SITE_CARD, width: 1200, height: 630, alt: OG_TITLE }],
   },
   twitter: {
     card: "summary_large_image",
     title: OG_TITLE,
     description: OG_DESCRIPTION,
-    images: ["/og.png"],
+    images: [SITE_CARD],
   },
 };
 

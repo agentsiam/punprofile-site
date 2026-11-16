@@ -117,8 +117,28 @@ export const PUBLIC_ROUTES: readonly { path: string; priority: number }[] = [
   { path: "/privacy", priority: 0.2 },
 ];
 
-/** The site's share card, `public/og.png`, 1200x630. */
+/**
+ * The site's share cards, 1200x630 each. `public/README-og.md` owns both files
+ * and says how they were built and how to rebuild them.
+ */
 export const SITE_CARD = "/og.png";
+export const SITE_CARD_EN = "/og-en.png";
+
+/**
+ * The site card in the reader's own language.
+ *
+ * 16/11/2026. `og-en.png` was added the same day so an English share would stop
+ * leading with a Thai headline, and the English root layout was repointed at
+ * it. That covered `/en` and nothing else: every other English page builds its
+ * metadata through `pageMetadata`, which fell back to `SITE_CARD` without
+ * consulting the locale it had already been handed. So the English home page
+ * carried the English card and every page behind it carried the Thai one.
+ *
+ * A function given the locale is the fix rather than a second literal, because
+ * two copies of a path are what produced the split in the first place.
+ */
+export const siteCard = (locale: Locale): string =>
+  locale === "en" ? SITE_CARD_EN : SITE_CARD;
 
 /** Longest title a search result shows whole, in characters a reader sees. */
 export const TITLE_MAX = 60;
@@ -181,9 +201,9 @@ export function pageMetadata({
    * missing one was invisible rather than broken, which is the harder kind of
    * wrong to notice.
    *
-   * Omit it and the page falls through to the site image on the root layout.
-   * That is right for a page about the whole site and wrong for an article,
-   * which is what `shareCard` exists to prevent.
+   * Omit it and the page falls through to the site card in its own language,
+   * via `siteCard`. That is right for a page about the whole site and wrong for
+   * an article, which is what `shareCard` exists to prevent.
    */
   image?: string;
 }): Metadata {
@@ -197,8 +217,13 @@ export function pageMetadata({
   // shallowly, so a page that sets its own `openGraph` replaces the root
   // layout's whole `openGraph`, image included: before 01/11/2026 every page
   // built here except the home page shipped with no `og:image` at all, and a
-  // shared link rendered as bare text. The layout's image was never inherited.
-  const card = [{ url: absolute(image ?? SITE_CARD), width: 1200, height: 630 }];
+  // shared link rendered as bare text. The layout's image was never inherited,
+  // which is also why the language has to be decided here: a page on the
+  // English tree gets nothing from that tree's card, so `siteCard` reads the
+  // locale this function was called with.
+  const card = [
+    { url: absolute(image ?? siteCard(locale)), width: 1200, height: 630 },
+  ];
 
   return {
     title: brandTitle(t),

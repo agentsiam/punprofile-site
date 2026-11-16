@@ -3,7 +3,7 @@ import "../globals.css";
 import SiteShell from "@/components/SiteShell";
 import { pick, t } from "@/lib/locale";
 import { HOOK_EYEBROW, HOOK_LINE_1, HOOK_LINE_2 } from "@/lib/content/coaching";
-import { SITE_URL, VERIFICATION, brandedTitle } from "@/lib/seo";
+import { SITE_CARD_EN, SITE_URL, VERIFICATION, brandedTitle } from "@/lib/seo";
 import { HOME_SEARCH } from "@/lib/content/search";
 
 /**
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     // lime ground, cutout and chips as the Thai tree's `og.png`, with the
     // English strings from `coaching.ts` and `services.ts` set in Inter. The
     // type is baked in, so if any of those strings change this image is stale.
-    images: [{ url: "/og-en.png", width: 1200, height: 630, alt: OG_TITLE }],
+    images: [{ url: SITE_CARD_EN, width: 1200, height: 630, alt: OG_TITLE }],
   },
   twitter: {
     card: "summary_large_image",
     title: OG_TITLE,
     description: OG_DESCRIPTION,
-    images: ["/og-en.png"],
+    images: [SITE_CARD_EN],
   },
 };
 
