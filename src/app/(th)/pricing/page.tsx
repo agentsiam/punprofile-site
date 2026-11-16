@@ -83,7 +83,7 @@ const FREE_PRODUCT_SLUGS = ["cv-check", "job-search-dashboard"] as const;
 /** The pile each pack opens with: the three sizes of the same coin. */
 const PACK_ART: Record<string, { src: string; w: number; h: number }> = {
   starter: { src: "/pricing/pricing-pack-starter.png", w: 481, h: 539 },
-  standard: { src: "/pricing/pricing-pack-standard.png", w: 560, h: 365 },
+  standard: { src: "/pricing/pricing-pack-standard.png", w: 431, h: 296 },
   serious: { src: "/pricing/pricing-pack-serious.png", w: 528, h: 560 },
 };
 
