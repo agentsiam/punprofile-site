@@ -47,7 +47,8 @@ import { SITE_CARD, SITE_URL, VERIFICATION, brandedTitle } from "@/lib/seo";
  * is still growing: `AGENTS.md` already names a job board, saved jobs and match
  * notifications alongside it. So the words are the coaching hook from
  * `coaching.ts` and the three service names from `services.ts`, and the artwork
- * is Teal rather than the Lavender that `design.md` reserves for the assessment.
+ * is a cutout from the clay cast rather than the Lavender `design.md` reserves
+ * for the assessment.
  *
  * The image is `public/og.png`, a static 1200x630 file. Static rather than
  * generated per request: it never changes per visitor, Facebook caches it for
@@ -57,9 +58,11 @@ import { SITE_CARD, SITE_URL, VERIFICATION, brandedTitle } from "@/lib/seo";
  *
  * Rebuilt 16/08/2026 onto the M3 palette: olive rather than teal, the vector
  * lockup rather than the old PNG wordmark, and Anuphan rather than Noto Serif
- * Thai. Facebook caches this aggressively, so re-scrape the production URL at
- * `developers.facebook.com/tools/debug/` or the group will keep serving the
- * teal one.
+ * Thai. Rebuilt again 05/11/2026 onto the lime `canvas-brand` ground with the
+ * clay cutout, which is what ships; `public/README-og.md` describes the card as
+ * it stands. Facebook caches this aggressively, so re-scrape the production URL
+ * at `developers.facebook.com/tools/debug/` or the group will keep serving the
+ * card before last.
  */
 const OG_TITLE = pick(HOOK_EYEBROW, DEFAULT_LOCALE);
 const OG_DESCRIPTION = `${pick(HOOK_LINE_1, DEFAULT_LOCALE)} ${pick(HOOK_LINE_2, DEFAULT_LOCALE)}`;
