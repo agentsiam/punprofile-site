@@ -8,9 +8,10 @@
  * candidate-facing message, match reason and search reads the panel, so one
  * module turns a stored row into words and nothing else writes that wording.
  *
- * The seven rows and what they hold are the handoff's, not this file's: a row
+ * The eight rows and what they hold are the handoff's, not this file's: a row
  * added or dropped here is a product decision and belongs in the sibling repo
- * first.
+ * first. Seniority is the one still outstanding: Paul decided it on 16/11/2026
+ * and the handoff's panel table has yet to record it.
  */
 
 /** Which of the three writers set a value. Nothing else writes the panel. */
@@ -27,6 +28,7 @@ export type RowStamp = {
 };
 
 export type GoalRow = RowStamp & { countries: string[]; cities: string[] };
+export type SeniorityRow = RowStamp & { text: string };
 export type WorkRouteRow = RowStamp & { text: string; changesOn?: string };
 export type AvailableFromRow = RowStamp & { date: string };
 export type PayFloor = { amount: number; currency: string; per: "year" | "month" };
@@ -41,6 +43,7 @@ export type NextFromUsRow = RowStamp & { text: string; dueOn?: string; doneAt?: 
 
 export type Situation = {
   goal?: GoalRow;
+  seniority?: SeniorityRow;
   workRoute?: WorkRouteRow;
   availableFrom?: AvailableFromRow;
   employersMustOffer?: EmployersMustOfferRow;
@@ -51,6 +54,7 @@ export type Situation = {
 
 export const SITUATION_ROWS = [
   "goal",
+  "seniority",
   "workRoute",
   "availableFrom",
   "employersMustOffer",
@@ -63,6 +67,7 @@ export type SituationRowKey = (typeof SITUATION_ROWS)[number];
 
 export const ROW_LABEL: Record<SituationRowKey, string> = {
   goal: "Goal",
+  seniority: "Seniority",
   workRoute: "Work route",
   availableFrom: "Available from",
   employersMustOffer: "What employers must offer",
@@ -74,6 +79,7 @@ export const ROW_LABEL: Record<SituationRowKey, string> = {
 /** What the row is for, shown beside its label so the coach fills the right thing. */
 export const ROW_ASKS: Record<SituationRowKey, string> = {
   goal: "Country and cities. The titles come from their target titles.",
+  seniority: "The level they are aiming at, in your words.",
   workRoute: "How they can legally work there, and the date it changes.",
   availableFrom: "Their earliest start date.",
   employersMustOffer: "Sponsorship or not, the floor under the pay, the languages they hold.",
@@ -126,6 +132,8 @@ export function rowLine(s: Situation, key: SituationRowKey, titles: string[] = [
       const parts = [what, where].filter(Boolean);
       return parts.length ? parts.join(". ") : null;
     }
+    case "seniority":
+      return s.seniority?.text.trim() || null;
     case "workRoute": {
       const r = s.workRoute;
       if (!r?.text.trim()) return null;

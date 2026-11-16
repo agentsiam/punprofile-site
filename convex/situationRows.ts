@@ -14,6 +14,7 @@ import { v } from "convex/values";
 
 export const rowInput = v.union(
   v.object({ row: v.literal("goal"), countries: v.array(v.string()), cities: v.array(v.string()) }),
+  v.object({ row: v.literal("seniority"), text: v.string() }),
   v.object({ row: v.literal("workRoute"), text: v.string(), changesOn: v.optional(v.string()) }),
   v.object({ row: v.literal("availableFrom"), date: v.string() }),
   v.object({

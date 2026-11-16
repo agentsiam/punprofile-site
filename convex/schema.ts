@@ -350,6 +350,14 @@ export default defineSchema({
          */
         goal: v.optional(v.object({ ...situationRow, countries: v.array(v.string()), cities: v.array(v.string()) })),
         /**
+         * The level they are aiming at, in the coach's own words: a first
+         * manager role, a senior IC role with scope. A line and not a band,
+         * because the mapping from a Thai title to a European one is where a
+         * band breaks, and nothing is gated on it. It is read into a draft,
+         * never compared.
+         */
+        seniority: v.optional(v.object({ ...situationRow, text: v.string() })),
+        /**
          * How they can legally work there, in the coach's own words, and the
          * date the answer changes when it is known.
          */

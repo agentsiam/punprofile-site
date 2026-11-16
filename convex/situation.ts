@@ -71,6 +71,11 @@ function valueOf(input: RowInput): Record<string, unknown> {
       if (!countries.length) throw new ConvexError("Name the country they are going to.");
       return { countries, cities };
     }
+    case "seniority": {
+      const text = clean(input.text, 300);
+      if (!text) throw new ConvexError("Write the level they are aiming at.");
+      return { text };
+    }
     case "workRoute": {
       const text = clean(input.text, 400);
       if (!text) throw new ConvexError("Write how they can legally work there.");
