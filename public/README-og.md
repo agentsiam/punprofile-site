@@ -1,13 +1,15 @@
-# og.png, the social share card
+# og.png and og-en.png, the social share cards
 
-1200x630. Referenced from `metadata.openGraph` in `src/app/(th)/layout.tsx` and
-served straight out of `public/`. Added 16/08/2026, after a link posted into the
-Facebook group rendered as a bare URL.
+1200x630 each, served straight out of `public/`. `og.png` is the Thai card and
+is referenced from `metadata.openGraph` in `src/app/(th)/layout.tsx`; `og-en.png`
+is the English one and is referenced the same way from `src/app/(en)/layout.tsx`.
+Added 16/08/2026, after a link posted into the Facebook group rendered as a bare
+URL.
 
 **The path changed later the same day**, when the `/en` tree split the root
-layout into three. The Thai tree's layout is the one that owns this card;
-`src/app/(en)/layout.tsx` points at the same file and says why an English card
-does not exist yet. See `AGENTS.md` § Routing.
+layout into three. See `AGENTS.md` § Routing. Everything below describes the Thai
+card; the English one is the same card and the section at the end of this part
+says what differs.
 
 ## What is on it, and why
 
@@ -69,6 +71,29 @@ growing, so a card built around it goes stale as the app does.
 
 If any of those strings change, this image is stale. It is not generated from
 them, only copied.
+
+## The English card
+
+`og-en.png` is the same card carrying the English members of the same strings:
+`HOOK_EYEBROW`, `HOOK_LINE_1` and `HOOK_LINE_2` from `coaching.ts`, and the three
+service names from `services.ts`. Nothing about it is decided here. It is the
+Thai card's layout with the English copy the repo already ships.
+
+Latin is set in Inter, which `globals.css` puts first in both font stacks, and
+its line breaks are hand-set with `<br>` as well. Not for the dictionary reason,
+which is Thai's: for the shape of the block, which is a decision and not the
+browser's to make at whatever width the column happens to be.
+
+**The headline is 52px, not 56px.** English needs more characters to say what the
+Thai headline says, and at 56px its second line runs into the cutout. Everything
+else is the Thai card's: left margin 64, the lockup at 58px, eyebrow 25px, lead
+27px, chips 43px tall, the cutout 364px wide bled to the bottom edge with its
+soft ellipse, and the lift behind it. Both cards put the figure at x 780 to 1143
+and y 46 to the bottom edge.
+
+Measured on the shipped pixels, eyebrow, headline and lead all sit on a clean
+#9FE870 and the chips on their own `ink-deep`: 9.45:1 for all four, the same as
+the Thai card. The lift reaches no text block.
 
 Deliberately not a screenshot of the result screen: at thumbnail size a radar
 chart is an unreadable smudge, and a real-looking set of scores on a share card

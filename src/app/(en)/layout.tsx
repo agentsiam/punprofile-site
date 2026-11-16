@@ -49,18 +49,17 @@ export const metadata: Metadata = {
     url: "/en",
     title: OG_TITLE,
     description: OG_DESCRIPTION,
-    // The same card as the Thai tree, and its headline is in Thai. Deliberate:
-    // `og.png` is a rendered image with Thai type baked into it, and an English
-    // one does not exist. A card in the wrong language is a smaller problem than
-    // no card at all, which is what a missing file gives Facebook. Replace this
-    // when `public/README-og.md`'s recipe has been run a second time in English.
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: OG_TITLE }],
+    // The English card, built by `public/README-og.md`'s recipe. Same layout,
+    // lime ground, cutout and chips as the Thai tree's `og.png`, with the
+    // English strings from `coaching.ts` and `services.ts` set in Inter. The
+    // type is baked in, so if any of those strings change this image is stale.
+    images: [{ url: "/og-en.png", width: 1200, height: 630, alt: OG_TITLE }],
   },
   twitter: {
     card: "summary_large_image",
     title: OG_TITLE,
     description: OG_DESCRIPTION,
-    images: ["/og.png"],
+    images: ["/og-en.png"],
   },
 };
 
