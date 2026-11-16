@@ -103,8 +103,8 @@ export default function FaqPage() {
             <Image
               src="/mascot-magnifier.png"
               alt=""
-              width={300}
-              height={160}
+              width={1442}
+              height={720}
               className="h-20 w-auto shrink-0"
             />
             <div className="flex-1">

@@ -191,8 +191,8 @@ export default function PricingPage() {
           <Image
             src="/mascot-magnifier.png"
             alt=""
-            width={300}
-            height={160}
+            width={1442}
+            height={720}
             className="-mb-3 hidden h-24 w-auto expanded:block"
           />
         </div>
