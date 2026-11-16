@@ -52,6 +52,8 @@ export function draftFor(key: SituationRowKey, s: Situation): Draft {
   switch (key) {
     case "goal":
       return { countries: (s.goal?.countries ?? []).join(", "), cities: (s.goal?.cities ?? []).join(", ") };
+    case "seniority":
+      return { text: s.seniority?.text ?? "" };
     case "workRoute":
       return { text: s.workRoute?.text ?? "", changesOn: s.workRoute?.changesOn ?? "" };
     case "availableFrom":
@@ -89,6 +91,8 @@ export function rowValue(key: SituationRowKey, d: Draft) {
   switch (key) {
     case "goal":
       return { row: "goal" as const, countries: splitList(d.countries ?? ""), cities: splitList(d.cities ?? "") };
+    case "seniority":
+      return { row: "seniority" as const, text: d.text ?? "" };
     case "workRoute":
       return { row: "workRoute" as const, text: d.text ?? "", ...(d.changesOn ? { changesOn: d.changesOn } : {}) };
     case "availableFrom":
@@ -123,6 +127,12 @@ export function RowEditor({ rowKey, draft, set }: { rowKey: SituationRowKey; dra
             <input className={INPUT} value={draft.cities ?? ""} onChange={(e) => set("cities", e.target.value)} />
           </Field>
         </div>
+      );
+    case "seniority":
+      return (
+        <Field label="The level they are aiming at" hint="Your words. It is quoted in drafts and holds no role back.">
+          <input className={INPUT} value={draft.text ?? ""} onChange={(e) => set("text", e.target.value)} />
+        </Field>
       );
     case "workRoute":
       return (
