@@ -25,17 +25,21 @@ referenced them afterwards, so they left `public/` on 16/11/2026, `c83ffa1`.
 They were stand-ins, and their removal was the end of a sequence rather than a
 loss. If one is ever needed again it is in history at `c83ffa1^`.
 
-## Why an auditor keeps flagging this folder
+## The guide used to read against this folder
 
-`Brand_Guidelines.md` in the coaching repo, in *Where clay and where the
-mascot*, puts "testimonial faces" in the clay family, and that section says it
-wins over anything earlier in the document. Earlier in the same document, the
-photography paragraph does carve out "real testimonials or team photos" as a
-place where an illustrated character is not appropriate — which is exactly this
-folder — but being earlier, it reads as the stale one.
+`Brand_Guidelines.md` in the coaching repo now rules on this case directly, in
+*Where clay and where the mascot*: "A testimonial card carrying a real client's
+own photograph is photography, not clay." An auditor working from the guide
+arrives at what this folder already ships, so nothing further is owed here.
 
-So the deciding table has no carve-out for a client's own photograph, and a
-reader who has only the guide will keep calling these seven a brand violation
-and proposing the clay avatars back. That has now happened. **The gap is in the
-guide, not in this folder**, and closing it is the coaching repo's change, not
-one this repo can make.
+It did not read that way until 16/11/2026. The deciding table put "testimonial
+faces" in the clay family and declared itself the winner over anything earlier
+in the document, so the photography paragraph's carve-out for "real testimonials
+or team photos" — exactly this folder — read as the stale one. An image audit
+working only from the guide called these seven a brand violation and twice
+proposed the clay avatars back over the clients' own faces. The guide was the
+thing that was wrong, and it was fixed the same evening in the coaching repo,
+`baf80a7`: the clay row now covers a stand-in only while no photograph of that
+client exists, the new first bullet under the table rules the photograph case,
+and the precedence paragraph says the table rules the two illustration families
+alone.
