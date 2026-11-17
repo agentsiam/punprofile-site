@@ -25,7 +25,7 @@
  */
 
 import { MAX_WEEKLY_MAX, MIN_WEEKLY_MAX } from "@/lib/matching";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { useConvex, useMutation } from "convex/react";
 import { openFitReport } from "@/components/features/report/openFitReport";
@@ -374,7 +374,7 @@ function Overview({
             <h2 className="text-heading-sm">{pick(C.LATEST_NOTE)}</h2>
             <p className="mt-1 text-body-medium text-on-surface-variant">{date(data.notes[0].at)}</p>
             <p className="mt-2 whitespace-pre-line text-body-large text-ink">{data.notes[0].body}</p>
-            <ReleasedWithTheNote data={data} noteId={data.notes[0]._id} />
+            <ReleasedWithTheNote data={data} noteId={data.notes[0]._id} readOnly={readOnly} />
             {data.notes.length > 1 && (
               <button type="button" className="mt-3 text-body-medium text-ink-deep underline" onClick={() => onTab("coach")}>
                 {pick(C.SEE_ALL)}
@@ -2299,9 +2299,22 @@ function StepMark({ status }: { status: "not_started" | "in_progress" | "deliver
  * `LANGUAGE-SYSTEM.md`, and only carrying a verdict on its Thai that no model
  * can give itself, which `verify:language` enforces on every build.
  */
-function ReleasedWithTheNote({ data, noteId }: { data: PortalView; noteId: string }) {
+function ReleasedWithTheNote({ data, noteId, readOnly }: { data: PortalView; noteId: string; readOnly: boolean }) {
   const { pick } = useFormat();
+  const markOpened = useMutation(api.portal.releaseOpened);
   const release = data.releases.find((r) => r.noteId === noteId);
+  const unopenedId = !readOnly && release && release.firstOpenedAt === null ? release._id : null;
+
+  // The first time a release is in front of them, and never again: § 7a's one
+  // measure of whether any of this worked. It is deliberately not a tap on an
+  // item, which would measure whether they opened a document instead. A
+  // rejection is swallowed because this is the page telling the record what
+  // happened, not the candidate asking it for anything.
+  useEffect(() => {
+    if (!unopenedId) return;
+    void markOpened({ releaseId: unopenedId }).catch(() => {});
+  }, [markOpened, unopenedId]);
+
   if (!release || release.items.length === 0) return null;
   return (
     <ul className="mt-4 space-y-2">
@@ -2351,7 +2364,7 @@ function CoachTab({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
                     {job ? ` · ${job.roleTitle}, ${job.employer}` : ""}
                   </p>
                   <p className="mt-1 whitespace-pre-line text-body-large text-ink">{n.body}</p>
-                  <ReleasedWithTheNote data={data} noteId={n._id} />
+                  <ReleasedWithTheNote data={data} noteId={n._id} readOnly={readOnly} />
                 </li>
               );
             })}

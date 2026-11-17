@@ -188,6 +188,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
     const releases = (await releasesFor(ctx, lead._id, true)).map((r) => ({
       _id: r._id,
       releasedAt: r.releasedAt ?? r.at,
+      firstOpenedAt: r.firstOpenedAt ?? null,
       noteId: r.noteId ?? null,
       items: r.items.map((i) => ({
         _id: i._id,
@@ -658,6 +659,31 @@ const cleanList = (xs: string[], max: number, each = 200) =>
  * target titles, up to two https vacancy links and their question are
  * optional. Target titles themselves stay coach-owned in `targets`.
  */
+/**
+ * The candidate has seen a release, `coaching-delivery-design.md` § 7a.
+ *
+ * Written once and never changed. The question it answers is whether they came
+ * back at all, and a second visit is not that question; the coach reads it
+ * beside the release to know whether a nudge landed.
+ *
+ * Their own page calls it when a release's items render on it, so opened means
+ * it was in front of them rather than that they tapped one of them. The coach's
+ * preview of this page cannot write it, and could not if it tried: this is
+ * scoped to the signed-in candidate, and a coach reading the preview is not
+ * one.
+ */
+export const releaseOpened = mutation({
+  args: { releaseId: v.id("releases") },
+  handler: async (ctx, args) => {
+    const lead = await requireLead(ctx);
+    const release = await ctx.db.get(args.releaseId);
+    if (!release) return;
+    if (release.leadId !== lead._id) throw new ConvexError("That release belongs to someone else.");
+    if (release.state !== "released" || release.firstOpenedAt !== undefined) return;
+    await ctx.db.patch(release._id, { firstOpenedAt: Date.now() });
+  },
+});
+
 export const submitPreparation = mutation({
   args: {
     deliverableId: v.id("deliverables"),
