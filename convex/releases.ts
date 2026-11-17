@@ -119,7 +119,7 @@ export const open = mutation({
       .withIndex("by_lead", (q) => q.eq("leadId", args.leadId))
       .collect();
     if (held.some((r) => r.state === "draft")) {
-      throw new ConvexError("There is already a draft release for this candidate. Release it or empty it first.");
+      throw new ConvexError("There is already a draft release for this candidate. Release it or discard it first.");
     }
     if (args.consultationId) {
       const call = await ctx.db.get(args.consultationId);
@@ -245,6 +245,38 @@ export const addItem = mutation({
       at: Date.now(),
       by,
     });
+  },
+});
+
+/**
+ * Throws a draft away, with its items.
+ *
+ * A release that has gone cannot be discarded: nothing here takes back what the
+ * candidate has already been given, and `draftOf` refuses it. The items go with
+ * it rather than being left behind, because an item's only meaning is the
+ * release it belongs to.
+ *
+ * Nothing is kept, and that is the difference between this and the rest of the
+ * module. A delivery note thrown away and a correction resolved both stay on
+ * the record, because each was a decision about the candidate. A draft is not:
+ * it is the coach's working surface, and an abandoned one says nothing except
+ * that the work was assembled differently in the end.
+ *
+ * It exists because `open` refuses a second draft and told the coach to empty
+ * the first, which was a path nothing had built.
+ */
+export const discardDraft = mutation({
+  args: { releaseId: v.id("releases") },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const release = await draftOf(ctx, args.releaseId);
+    const items = await ctx.db
+      .query("releaseItems")
+      .withIndex("by_release", (q) => q.eq("releaseId", release._id))
+      .collect();
+    for (const item of items) await ctx.db.delete(item._id);
+    await ctx.db.delete(release._id);
+    return { items: items.length };
   },
 });
 

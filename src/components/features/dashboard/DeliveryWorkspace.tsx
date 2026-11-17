@@ -2296,6 +2296,7 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
   const reportCorrection = useMutation(api.releases.reportItemCorrection);
   const resolveCorrection = useMutation(api.releases.resolveItemCorrection);
   const settleFact = useMutation(api.releases.settleFact);
+  const discardDraft = useMutation(api.releases.discardDraft);
   const releaseIt = useMutation(api.releases.release);
 
   const [title, setTitle] = useState("");
@@ -2305,6 +2306,7 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
   const [cvId, setCvId] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [url, setUrl] = useState("");
+  const [confirmDiscard, setConfirmDiscard] = useState(false);
   const [wrongItemId, setWrongItemId] = useState("");
   const [wrong, setWrong] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -2355,7 +2357,23 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
         <div className="mt-4 rounded-large border border-outline-variant p-4">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h4 className="text-title-small text-on-surface">{draft.title}</h4>
-            <span className="text-body-medium text-on-surface-variant">opened {day(draft.at)}</span>
+            <span className="flex flex-wrap items-baseline gap-3">
+              <span className="text-body-medium text-on-surface-variant">opened {day(draft.at)}</span>
+              <button
+                type="button"
+                className={LINK}
+                onClick={async () => {
+                  if (!confirmDiscard) {
+                    setConfirmDiscard(true);
+                    return;
+                  }
+                  await run(() => discardDraft({ releaseId: draft._id }));
+                  setConfirmDiscard(false);
+                }}
+              >
+                {confirmDiscard ? "Throw it away, items and all" : "Discard"}
+              </button>
+            </span>
           </div>
 
           <ul className="mt-3 space-y-2">
