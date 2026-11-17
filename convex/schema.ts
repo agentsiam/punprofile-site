@@ -1810,6 +1810,102 @@ export default defineSchema({
   }).index("by_lead", ["leadId", "at"]),
 
   /**
+   * A release: everything one call produced, reaching the candidate in one
+   * coach action. `coaching-delivery-design.md` § 7a.
+   *
+   * The pack has two and they are not symmetrical. The first carries no file at
+   * all, because the Fit Report, the target titles and the markets are rows
+   * this database already holds and its items point at them. The second carries
+   * the pack's documents.
+   *
+   * **The release is the unit that becomes visible**, which is why `releasedAt`
+   * lives here and not on the items: a half-shared release, a CV on the page
+   * before the report that justifies it, is the failure this table exists to
+   * prevent.
+   *
+   * The covering note stays a `deliveryNotes` row, written from the Situation
+   * panel like every candidate-facing draft, and `noteId` points at it rather
+   * than this table holding a second copy of its words.
+   */
+  releases: defineTable({
+    leadId: v.id("leads"),
+    /** The call it followed. @absent none — not drafted off a call */
+    consultationId: v.optional(v.id("consultations")),
+    /** What the coach calls it while assembling. The candidate reads the note. */
+    title: v.string(),
+    /**
+     * `draft` while the coach is adding to it. `released` is the only state the
+     * candidate sees, and it is one way: what has gone cannot be recalled, the
+     * same way a sent email cannot.
+     */
+    state: v.union(v.literal("draft"), v.literal("released")),
+    /** @absent notyet — still a draft */
+    releasedAt: v.optional(v.number()),
+    /** @absent notyet — still a draft */
+    releasedBy: v.optional(v.string()),
+    /** The covering note this release shares. @absent none — none chosen yet */
+    noteId: v.optional(v.id("deliveryNotes")),
+    /**
+     * When the candidate first opened it: the only measure of whether any of
+     * this worked. Written once, by their own page, and not written yet. Step 3
+     * of the build order in `candidate-delivery-handoff.md`.
+     * @absent notyet — they have not opened it
+     */
+    firstOpenedAt: v.optional(v.number()),
+    at: v.number(),
+    by: v.string(),
+  })
+    .index("by_lead", ["leadId", "at"])
+    .index("by_state", ["state"]),
+
+  /**
+   * One item in a release, `coaching-delivery-design.md` § 7a.
+   *
+   * An item points at the row that already holds the thing wherever one exists,
+   * and carries the thing itself only for the kinds with no home of their own.
+   * That is why no label is copied from `cvDocuments` and no note's words are
+   * copied here.
+   *
+   * `kind` says which pointer is the real one:
+   * - `report`, the Fit Report, by its `deliverableId`.
+   * - `direction`, the target titles and the markets. They are `targets` rows
+   *   and the Situation panel, so there is nothing further to point at and the
+   *   label is what the candidate reads.
+   * - `file`, either `cvDocumentId` for a CV already held, or `storageId` with
+   *   its file metadata for anything else.
+   * - `link`, `url`, an editable document. Whether an item may be a link at all
+   *   is Decision 1 in § 7a and still open, so nothing writes this yet.
+   */
+  releaseItems: defineTable({
+    releaseId: v.id("releases"),
+    /** Denormalised for the per-person query only. The release owns the link. */
+    leadId: v.id("leads"),
+    kind: v.union(v.literal("report"), v.literal("direction"), v.literal("file"), v.literal("link")),
+    /** The piece of paid work it belongs to. @absent none — not tied to one */
+    deliverableId: v.optional(v.id("deliverables")),
+    /** What the candidate reads, in their language. */
+    label: v.string(),
+    /** A CV this database already holds. @absent none — not a CV */
+    cvDocumentId: v.optional(v.id("cvDocuments")),
+    /** A file with no other home. @absent none — not an uploaded file */
+    storageId: v.optional(v.id("_storage")),
+    /** @absent none — not an uploaded file */
+    fileName: v.optional(v.string()),
+    /** @absent none — not an uploaded file */
+    contentType: v.optional(v.string()),
+    /** @absent none — not an uploaded file */
+    bytes: v.optional(v.number()),
+    /** An editable document. @absent none — not a link */
+    url: v.optional(v.string()),
+    /** Its place on the candidate's page, 1 upward. */
+    order: v.number(),
+    at: v.number(),
+    by: v.string(),
+  })
+    .index("by_release", ["releaseId", "order"])
+    .index("by_lead", ["leadId"]),
+
+  /**
    * The candidate's preparation for the complimentary preview, § 7b. One row
    * per session, kept through a reschedule, written only by the signed-in
    * candidate it belongs to (`portal.submitPreparation`).

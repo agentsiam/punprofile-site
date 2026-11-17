@@ -26,6 +26,7 @@ import { isValidWeeklyMax } from "../src/lib/matching";
 import { preparationState, previewOf, scheduledCallFor, LIMITS } from "../src/lib/session";
 import { isValidTimeZone, preparationDeadline } from "../src/lib/sessionTime";
 import { targetsFor } from "./targets";
+import { releasesFor } from "./releases";
 import { signedInCandidate } from "./candidateAccess";
 import { requireAdmin } from "./leads";
 import { isAdminEmail } from "./adminEmails";
@@ -179,6 +180,24 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       .map((n) => ({ _id: n._id, body: n.body, at: n.at, applicationId: n.applicationId ?? null }));
     const sharedCvIds = new Set(cvs.map((c) => c._id as string));
 
+    // Releases, `coaching-delivery-design.md` § 7a. Released ones only: a draft
+    // is the coach still assembling, and what crosses this boundary is what has
+    // been handed over. The covering note's words are already in `notes`, so
+    // only its id travels; an item's file is only named here if the candidate
+    // can see that file, by the same rule the job list uses for a CV.
+    const releases = (await releasesFor(ctx, lead._id, true)).map((r) => ({
+      _id: r._id,
+      releasedAt: r.releasedAt ?? r.at,
+      noteId: r.noteId ?? null,
+      items: r.items.map((i) => ({
+        _id: i._id,
+        kind: i.kind,
+        label: i.label,
+        cvDocumentId: i.cvDocumentId && sharedCvIds.has(i.cvDocumentId) ? i.cvDocumentId : null,
+        deliverableId: i.deliverableId ?? null,
+      })),
+    }));
+
     const jobs = (
       await ctx.db
         .query("applications")
@@ -260,6 +279,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       deliverables,
       cvs,
       notes,
+      releases,
       jobs,
       timeZone: lead.timeZone ?? null,
       appointments,

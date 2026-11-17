@@ -4,18 +4,21 @@
  * The delivery workspace on the Candidate 360: everything a paying candidate
  * gets after the sale, worked from one place.
  *
- * Five panels, in the order a coach works them:
+ * Six panels, in the order a coach works them:
  *
- * 1. **Wallet and link.** Token balance (`tokenLedger`, never stored) and the
+ * 1. **The release.** Everything one call produced, handed over in one action.
+ *    It carries the pieces the other panels hold rather than a copy of them,
+ *    and nothing in it reaches the candidate until it is released.
+ * 2. **Wallet and link.** Token balance (`tokenLedger`, never stored) and the
  *    candidate's own page, `/me/<token>`.
- * 2. **What was sold and what is due.** `engagements` and `deliverables`, with
+ * 3. **What was sold and what is due.** `engagements` and `deliverables`, with
  *    status moved in place and a due date per item.
- * 3. **CV versions.** Every file, never overwritten, each revision saying what
+ * 4. **CV versions.** Every file, never overwritten, each revision saying what
  *    changed and which piece of work it belongs to. Shared ones appear on the
  *    candidate's page.
- * 4. **Job tracker.** `applications` as a pipeline, matched roles sent from here
+ * 5. **Job tracker.** `applications` as a pipeline, matched roles sent from here
  *    with their token spent in the same step, and the CV used per application.
- * 5. **Delivery notes.** Private by default; a shared note is what the
+ * 6. **Delivery notes.** Private by default; a shared note is what the
  *    candidate reads as "from your coach".
  *
  * English only, like every admin surface (`copy.ts`).
@@ -168,6 +171,7 @@ export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
 
   return (
     <div className="space-y-5">
+      <Releases leadId={leadId} ws={ws} engagements={engagements} />
       <WalletAndLink leadId={leadId} ws={ws} engagements={engagements} />
       <EntitlementsPanel leadId={leadId} ws={ws} engagements={engagements} />
       <Deliverables leadId={leadId} engagements={engagements} />
@@ -2260,6 +2264,268 @@ function Notes({
           ))}
         </ul>
       )}
+    </Panel>
+  );
+}
+
+/* ========================================= 6. the release a call produced */
+
+/**
+ * The release being assembled, and the ones that have gone.
+ * `coaching-delivery-design.md` § 7a, and `prd.md` § 8 under the lead's
+ * Delivery page, where this sits under the rung that delivers it once the page
+ * is rebuilt as the ladder.
+ *
+ * One draft at a time, and one action hands over the whole of it: the note is
+ * shared and every CV in the release is shared in the same transaction, so the
+ * candidate never sees a document before the report that justifies it.
+ *
+ * The covering note is an existing delivery note, written at the session close
+ * from the Situation panel, because a release may not say anything the panel
+ * does not hold. The item labels are typed here and are what the candidate
+ * reads, so they are written in the candidate's own language: nothing
+ * prefills them, since a default would reach them in one language only.
+ */
+function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; engagements: Engs }) {
+  const rows = useQuery(api.releases.forLead, { leadId });
+  const openRelease = useMutation(api.releases.open);
+  const addItem = useMutation(api.releases.addItem);
+  const removeItem = useMutation(api.releases.removeItem);
+  const setNote = useMutation(api.releases.setNote);
+  const releaseIt = useMutation(api.releases.release);
+
+  const [title, setTitle] = useState("");
+  const [kind, setKind] = useState<"report" | "direction" | "file">("report");
+  const [label, setLabel] = useState("");
+  const [cvId, setCvId] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [confirm, setConfirm] = useState(false);
+
+  const run = async (fn: () => Promise<unknown>) => {
+    setError(null);
+    try {
+      await fn();
+      return true;
+    } catch (e) {
+      setError(errText(e));
+      return false;
+    }
+  };
+
+  if (rows === undefined) {
+    return (
+      <Panel title="The release">
+        <p className="text-body-medium text-on-surface-variant">Loading...</p>
+      </Panel>
+    );
+  }
+
+  const draft = rows.find((r) => r.state === "draft");
+  const gone = rows.filter((r) => r.state === "released");
+  const fitReport = engagements.flatMap((e) => e.deliverables).find((d) => d.kind === "fit_report");
+  const noteLine = (id: string) => {
+    const n = ws.notes.find((x) => x._id === id);
+    return n ? `${day(n.at)} · ${n.body.slice(0, 60)}${n.body.length > 60 ? "..." : ""}` : "a note that is gone";
+  };
+  const cvLine = (id: string) => {
+    const c = ws.cvs.find((x) => x._id === id);
+    return c ? `${c.label} v${c.version}` : "a file that is gone";
+  };
+
+  return (
+    <Panel
+      title="The release"
+      aside={draft ? <Chip>Draft</Chip> : gone.length > 0 ? <Chip tone="strong">{gone.length} released</Chip> : undefined}
+    >
+      <p className="text-body-medium text-on-surface-variant">
+        Everything one call produced, handed over in one action. The first release is the report with the direction, the second
+        the CV with the plan. Nothing in a draft is on the candidate&apos;s page.
+      </p>
+
+      {draft ? (
+        <div className="mt-4 rounded-large border border-outline-variant p-4">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h4 className="text-title-small text-on-surface">{draft.title}</h4>
+            <span className="text-body-medium text-on-surface-variant">opened {day(draft.at)}</span>
+          </div>
+
+          <ul className="mt-3 space-y-2">
+            {draft.items.length === 0 ? (
+              <li className="text-body-medium text-on-surface-variant">Nothing in it yet.</li>
+            ) : (
+              draft.items.map((i) => (
+                <li key={i._id} className="flex flex-wrap items-baseline justify-between gap-2 border-b border-outline-variant pb-2 last:border-b-0">
+                  <span className="text-body-large text-on-surface">
+                    {i.label}
+                    <span className="text-body-medium text-on-surface-variant">
+                      {" "}
+                      · {i.kind}
+                      {i.cvDocumentId ? ` · ${cvLine(i.cvDocumentId)}` : ""}
+                    </span>
+                  </span>
+                  <button type="button" className={LINK} onClick={() => void run(() => removeItem({ itemId: i._id }))}>
+                    Take out
+                  </button>
+                </li>
+              ))
+            )}
+          </ul>
+
+          <div className="mt-4 grid gap-3 expanded:grid-cols-[10rem_1fr_auto]">
+            <Label text="What it is">
+              <select
+                className={INPUT}
+                value={kind}
+                onChange={(e) => setKind(e.target.value as typeof kind)}
+              >
+                <option value="report">The Fit Report</option>
+                <option value="direction">The direction</option>
+                <option value="file">A CV already held</option>
+              </select>
+            </Label>
+            <Label text="What the candidate reads">
+              <input
+                className={INPUT}
+                value={label}
+                placeholder="In their language, as they will see it"
+                onChange={(e) => setLabel(e.target.value)}
+              />
+            </Label>
+            <button
+              type="button"
+              className={`${BTN} self-end`}
+              onClick={async () => {
+                const ok = await run(() =>
+                  addItem({
+                    releaseId: draft._id,
+                    kind,
+                    label,
+                    ...(kind === "report" && fitReport ? { deliverableId: fitReport._id } : {}),
+                    ...(kind === "file" && cvId ? { cvDocumentId: cvId as Id<"cvDocuments"> } : {}),
+                  }),
+                );
+                if (ok) {
+                  setLabel("");
+                  setCvId("");
+                }
+              }}
+            >
+              Add
+            </button>
+          </div>
+
+          {kind === "file" ? (
+            <Label text="Which file">
+              <select className={INPUT} value={cvId} onChange={(e) => setCvId(e.target.value)}>
+                <option value="">Pick one</option>
+                {ws.cvs.map((c) => (
+                  <option key={c._id} value={c._id}>
+                    {c.label} v{c.version}
+                    {c.sharedAt ? " (already on their page)" : ""}
+                  </option>
+                ))}
+              </select>
+            </Label>
+          ) : null}
+          {kind === "report" && !fitReport ? (
+            <p className="mt-2 text-body-medium text-on-surface-variant">
+              There is no Fit Report deliverable on this record yet. Add one in what was sold and what is due.
+            </p>
+          ) : null}
+
+          <div className="mt-4">
+            <Label text="The note they read over it">
+              <select
+                className={INPUT}
+                value={draft.noteId ?? ""}
+                onChange={(e) =>
+                  void run(() =>
+                    setNote({
+                      releaseId: draft._id,
+                      noteId: e.target.value ? (e.target.value as Id<"deliveryNotes">) : null,
+                    }),
+                  )
+                }
+              >
+                <option value="">No note chosen</option>
+                {ws.notes
+                  .filter((n) => !n.decision)
+                  .map((n) => (
+                    <option key={n._id} value={n._id}>
+                      {noteLine(n._id)}
+                    </option>
+                  ))}
+              </select>
+            </Label>
+          </div>
+
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              className={BTN}
+              onClick={async () => {
+                if (!confirm) {
+                  setConfirm(true);
+                  return;
+                }
+                const ok = await run(() => releaseIt({ releaseId: draft._id }));
+                setConfirm(false);
+                if (ok) setTitle("");
+              }}
+            >
+              {confirm ? "Release it, for good" : "Release it"}
+            </button>
+            {confirm ? (
+              <span className="text-body-medium text-on-surface-variant">
+                This puts every item and the note on their page at once, and cannot be undone.
+              </span>
+            ) : null}
+          </div>
+        </div>
+      ) : (
+        <div className="mt-4 grid gap-3 expanded:grid-cols-[1fr_auto]">
+          <Label text="Start a release">
+            <input
+              className={INPUT}
+              value={title}
+              placeholder="What you call it, for example the first call"
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </Label>
+          <button
+            type="button"
+            className={`${BTN} self-end`}
+            onClick={async () => {
+              const ok = await run(() => openRelease({ leadId, title }));
+              if (ok) setTitle("");
+            }}
+          >
+            Open it
+          </button>
+        </div>
+      )}
+
+      <ErrorLine error={error} />
+
+      {gone.length > 0 ? (
+        <ul className="mt-5 space-y-3">
+          {gone.map((r) => (
+            <li key={r._id} className="border-b border-outline-variant pb-3 last:border-b-0">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <span className="text-body-large text-on-surface">{r.title}</span>
+                <span className="text-body-medium text-on-surface-variant">
+                  released {r.releasedAt ? stamp(r.releasedAt) : day(r.at)}
+                  {r.firstOpenedAt ? ` · first opened ${stamp(r.firstOpenedAt)}` : ""}
+                </span>
+              </div>
+              <p className="mt-1 text-body-medium text-on-surface-variant">
+                {r.items.map((i) => i.label).join(" · ")}
+                {r.noteId ? ` · over ${noteLine(r.noteId)}` : ""}
+              </p>
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </Panel>
   );
 }

@@ -42,6 +42,7 @@ import type * as outcomes from "../outcomes.js";
 import type * as portal from "../portal.js";
 import type * as rateLimits from "../rateLimits.js";
 import type * as ratings from "../ratings.js";
+import type * as releases from "../releases.js";
 import type * as retention from "../retention.js";
 import type * as scoring from "../scoring.js";
 import type * as situation from "../situation.js";
@@ -92,6 +93,7 @@ declare const fullApi: ApiFromModules<{
   portal: typeof portal;
   rateLimits: typeof rateLimits;
   ratings: typeof ratings;
+  releases: typeof releases;
   retention: typeof retention;
   scoring: typeof scoring;
   situation: typeof situation;
