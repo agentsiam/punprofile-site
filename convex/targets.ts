@@ -3,7 +3,7 @@
  * Direction conversation. `lifecycle-data-model.md` § 8a.
  *
  * Admin-only writes. The candidate reads their active titles through
- * `portal.ts`. At most four active, usually three, because more titles make a
+ * `portal.ts`. At most three active, because more titles make a
  * less focused search; priorities among active titles are always 1..n with no gaps, so
  * "pushed first" is never ambiguous.
  */
@@ -13,8 +13,8 @@ import type { Doc, Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
 
-/** `10_Methodology.md` Stage 0: at most four, usually three. */
-export const MAX_ACTIVE_TARGETS = 4;
+/** `10_Methodology.md` Stage 0: at most three. */
+export const MAX_ACTIVE_TARGETS = 3;
 
 /** Every target of a lead, active first by priority, then the rest by priority. */
 export async function targetsFor(ctx: QueryCtx, leadId: Id<"leads">): Promise<Doc<"targets">[]> {
