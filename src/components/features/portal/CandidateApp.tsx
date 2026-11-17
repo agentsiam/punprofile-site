@@ -374,6 +374,7 @@ function Overview({
             <h2 className="text-heading-sm">{pick(C.LATEST_NOTE)}</h2>
             <p className="mt-1 text-body-medium text-on-surface-variant">{date(data.notes[0].at)}</p>
             <p className="mt-2 whitespace-pre-line text-body-large text-ink">{data.notes[0].body}</p>
+            <ReleasedWithTheNote data={data} noteId={data.notes[0]._id} />
             {data.notes.length > 1 && (
               <button type="button" className="mt-3 text-body-medium text-ink-deep underline" onClick={() => onTab("coach")}>
                 {pick(C.SEE_ALL)}
@@ -2282,6 +2283,45 @@ function StepMark({ status }: { status: "not_started" | "in_progress" | "deliver
   );
 }
 
+/**
+ * The items of the release this note covers, listed under it.
+ * `coaching-delivery-design.md` § 7a: a release reaches the candidate as one
+ * note with every item under it, so what one call produced reads as one thing
+ * rather than as pieces scattered across the tabs.
+ *
+ * It renders nothing when the note is not a release's covering note, which is
+ * every note written before releases existed.
+ *
+ * **No string here is new.** An item's label is what the coach wrote for this
+ * candidate in their own language, and the one action reuses the download label
+ * the CV files tab already carries. New copy cannot ship beside a feature in
+ * this repo: a candidate-facing string reaches `src/lib/content/` only through
+ * `LANGUAGE-SYSTEM.md`, and only carrying a verdict on its Thai that no model
+ * can give itself, which `verify:language` enforces on every build.
+ */
+function ReleasedWithTheNote({ data, noteId }: { data: PortalView; noteId: string }) {
+  const { pick } = useFormat();
+  const release = data.releases.find((r) => r.noteId === noteId);
+  if (!release || release.items.length === 0) return null;
+  return (
+    <ul className="mt-4 space-y-2">
+      {release.items.map((item) => {
+        const cv = item.cvDocumentId ? data.cvs.find((c) => c._id === item.cvDocumentId) : undefined;
+        return (
+          <li key={item._id} className="flex flex-wrap items-baseline justify-between gap-3">
+            <span className="text-body-large text-ink">{item.label}</span>
+            {cv?.url ? (
+              <a className="text-body-medium text-ink-deep underline" href={cv.url} download={cv.fileName}>
+                {pick(C.CV_DOWNLOAD)}
+              </a>
+            ) : null}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 function CoachTab({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
   const { pick, date } = useFormat();
   return (
@@ -2311,6 +2351,7 @@ function CoachTab({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
                     {job ? ` · ${job.roleTitle}, ${job.employer}` : ""}
                   </p>
                   <p className="mt-1 whitespace-pre-line text-body-large text-ink">{n.body}</p>
+                  <ReleasedWithTheNote data={data} noteId={n._id} />
                 </li>
               );
             })}
