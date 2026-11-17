@@ -2320,11 +2320,25 @@ function ReleasedWithTheNote({ data, noteId, readOnly }: { data: PortalView; not
     <ul className="mt-4 space-y-2">
       {release.items.map((item) => {
         const cv = item.cvDocumentId ? data.cvs.find((c) => c._id === item.cvDocumentId) : undefined;
+        // A link item's label is the link, which is why this needs no word of
+        // its own: new copy here would need Thai, and Thai needs a review pass.
+        const page = item.kind === "link" ? item.openUrl : null;
+        const fileUrl = cv?.url ?? (item.kind === "file" ? item.openUrl : null);
         return (
           <li key={item._id} className="flex flex-wrap items-baseline justify-between gap-3">
-            <span className="text-body-large text-ink">{item.label}</span>
-            {cv?.url ? (
-              <a className="text-body-medium text-ink-deep underline" href={cv.url} download={cv.fileName}>
+            {page ? (
+              <a className="text-body-large text-ink-deep underline" href={page} target="_blank" rel="noreferrer">
+                {item.label}
+              </a>
+            ) : (
+              <span className="text-body-large text-ink">{item.label}</span>
+            )}
+            {fileUrl ? (
+              <a
+                className="text-body-medium text-ink-deep underline"
+                href={fileUrl}
+                download={cv?.fileName ?? item.fileName ?? undefined}
+              >
                 {pick(C.CV_DOWNLOAD)}
               </a>
             ) : null}

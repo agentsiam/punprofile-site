@@ -24,6 +24,8 @@ export type ReleaseItemKind = "report" | "direction" | "file" | "link";
 export interface ItemPointers {
   deliverableId?: string;
   cvDocumentId?: string;
+  /** An uploaded file, for a document this database does not already hold. */
+  storageId?: string;
   url?: string;
 }
 
@@ -31,6 +33,7 @@ export interface ItemPointers {
 export interface HeldItem {
   kind: ReleaseItemKind;
   cvDocumentId?: string;
+  url?: string;
   order: number;
 }
 
@@ -48,18 +51,26 @@ export function itemFault(
 ): string | null {
   if (!label.trim()) return "Give the item the name the candidate will read.";
 
-  if (kind === "link") {
-    // Verified 17/11/2026: a Claude artifact link, opened with no Claude
-    // session, asks the visitor to sign in and shows nothing. Whether an item
-    // may be a link at all is Decision 1 in § 7a of the delivery design.
-    return "Links are not settled yet. Share the file, or add it as the report or the direction.";
-  }
-
   if (kind === "report" && !pointers.deliverableId) return "Say which Fit Report this is.";
-  if (kind === "file" && !pointers.cvDocumentId) {
-    return "Pick the file to release. Only a CV already held can be released yet.";
+
+  // Decision 1, settled 17/11/2026: both, with the uploaded file as the record.
+  // A file item is the thing the candidate reads, and it may carry the coach's
+  // own editable copy as a link that never crosses to them. A link item is for
+  // a page built to be read by anyone holding it, which no Claude artifact is:
+  // one opened with no Claude session asks the visitor to sign in and shows
+  // nothing. Nothing in code can check that, so the panel says it and the coach
+  // asserts it by adding the item.
+  if (kind === "file") {
+    if (!pointers.cvDocumentId && !pointers.storageId) return "Pick a file this record holds, or upload one.";
+    if (pointers.cvDocumentId && pointers.storageId) {
+      return "An item is one file: a CV this record holds, or an upload, not both.";
+    }
   }
-  if (kind === "direction" && (pointers.deliverableId || pointers.cvDocumentId || pointers.url)) {
+  if (kind === "link") {
+    if (!pointers.url) return "Give the link the candidate opens.";
+    if (!/^https:\/\//.test(pointers.url)) return "A link has to be https.";
+  }
+  if (kind === "direction" && (pointers.deliverableId || pointers.cvDocumentId || pointers.storageId || pointers.url)) {
     return "The direction is the titles and the markets this record already holds. It points at nothing else.";
   }
 
@@ -69,6 +80,9 @@ export function itemFault(
   }
   if (pointers.cvDocumentId && held.some((i) => i.cvDocumentId === pointers.cvDocumentId)) {
     return "That file is already in this release.";
+  }
+  if (kind === "link" && held.some((i) => i.kind === "link" && i.url === pointers.url)) {
+    return "That link is already in this release.";
   }
 
   return null;

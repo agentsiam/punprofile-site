@@ -48,16 +48,41 @@ check("an undefined note is as missing as a null one", releaseFault([report], un
 // --- the link, which is the verified one ------------------------------------
 
 check(
-  "a link is refused, whatever else is right about it",
-  itemFault("link", "Your timeline", { url: "https://example.com/page" }, none) !== null,
-  "verified 17/11/2026: an artifact link asks a visitor to sign in and shows nothing",
+  "a link to a page anyone can open is allowed",
+  itemFault("link", "Your timeline", { url: "https://example.com/page" }, none) === null,
+  "Decision 1, settled 17/11/2026: both, with the uploaded file as the record",
+);
+
+check("a link item with no link is refused", itemFault("link", "Your timeline", {}, none) !== null);
+
+check(
+  "a link that is not https is refused",
+  itemFault("link", "Your timeline", { url: "http://example.com/page" }, none) !== null,
+);
+
+check(
+  "the same link cannot be added twice",
+  itemFault("link", "Your timeline again", { url: "https://example.com/page" }, [
+    { kind: "link", url: "https://example.com/page", order: 1 },
+  ]) !== null,
+);
+
+check(
+  "a file can be an upload rather than a CV this record holds",
+  itemFault("file", "Your action plan", { storageId: "st1" }, none) === null,
+);
+
+check(
+  "an item is one file, not two",
+  itemFault("file", "Your CV", { cvDocumentId: "cv1", storageId: "st1" }, none) !== null,
+  "two files behind one row is a row the candidate opens and gets the wrong one",
 );
 
 // --- an item that would open nothing ---------------------------------------
 
 check("the report needs the deliverable it is", itemFault("report", "Fit Report", {}, none) !== null);
 
-check("a file item needs the file", itemFault("file", "Your CV", {}, none) !== null);
+check("a file item needs a file", itemFault("file", "Your CV", {}, none) !== null);
 
 check(
   "the direction points at nothing else",

@@ -33,6 +33,30 @@ import { targetsFor } from "./targets";
 import type { Doc, Id } from "./_generated/dataModel";
 import { itemFault, nextOrder, releaseFault } from "../src/lib/releases";
 
+/**
+ * The same four types and the same ceiling the CV path allows, for the same
+ * reason: a delivered document is read on a mid-range phone, and these four
+ * open on one. Size and type are read from the stored file rather than from
+ * what the browser claimed, and a refused upload is deleted in the same call so
+ * nothing is left behind.
+ */
+const DOCUMENT_TYPES = new Set([
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "text/plain",
+]);
+const DOCUMENT_MAX_BYTES = 10 * 1024 * 1024;
+
+/** Step one of adding an uploaded document: somewhere to put the bytes. */
+export const uploadUrl = mutation({
+  args: {},
+  handler: async (ctx) => {
+    await requireAdmin(ctx);
+    return await ctx.storage.generateUploadUrl();
+  },
+});
+
 const kindValidator = v.union(
   v.literal("report"),
   v.literal("direction"),
@@ -136,6 +160,15 @@ export const addItem = mutation({
     label: v.string(),
     deliverableId: v.optional(v.id("deliverables")),
     cvDocumentId: v.optional(v.id("cvDocuments")),
+    /** An uploaded document, for one this record does not already hold. */
+    storageId: v.optional(v.id("_storage")),
+    /** Required with an upload: what the file is called when they save it. */
+    fileName: v.optional(v.string()),
+    /**
+     * On a `link` item, the page the candidate opens. On a `file` item, the
+     * coach's own editable copy, which never crosses to the candidate: the file
+     * is the record, Decision 1 of § 7a.
+     */
     url: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
@@ -155,10 +188,39 @@ export const addItem = mutation({
     const fault = itemFault(
       args.kind,
       label,
-      { deliverableId: args.deliverableId, cvDocumentId: args.cvDocumentId, url: args.url },
+      {
+        deliverableId: args.deliverableId,
+        cvDocumentId: args.cvDocumentId,
+        storageId: args.storageId,
+        url: args.url,
+      },
       held,
     );
-    if (fault) throw new ConvexError(fault);
+    if (fault) {
+      if (args.storageId) await ctx.storage.delete(args.storageId);
+      throw new ConvexError(fault);
+    }
+
+    let file: { fileName: string; contentType: string; bytes: number } | null = null;
+    if (args.storageId) {
+      const fileName = (args.fileName ?? "").trim();
+      if (!fileName) {
+        await ctx.storage.delete(args.storageId);
+        throw new ConvexError("Say what the file is called.");
+      }
+      const meta = await ctx.db.system.get(args.storageId);
+      if (!meta) throw new ConvexError("The upload did not arrive. Try again.");
+      const contentType = meta.contentType ?? "";
+      if (!DOCUMENT_TYPES.has(contentType)) {
+        await ctx.storage.delete(args.storageId);
+        throw new ConvexError("Only PDF, Word or plain text.");
+      }
+      if (meta.size > DOCUMENT_MAX_BYTES) {
+        await ctx.storage.delete(args.storageId);
+        throw new ConvexError("Over 10 MB.");
+      }
+      file = { fileName, contentType, bytes: meta.size };
+    }
 
     if (args.deliverableId) {
       const d = await ctx.db.get(args.deliverableId);
@@ -177,6 +239,8 @@ export const addItem = mutation({
       label,
       ...(args.deliverableId ? { deliverableId: args.deliverableId } : {}),
       ...(args.cvDocumentId ? { cvDocumentId: args.cvDocumentId } : {}),
+      ...(args.storageId && file ? { storageId: args.storageId, ...file } : {}),
+      ...(args.url?.trim() ? { url: args.url.trim() } : {}),
       order: nextOrder(held),
       at: Date.now(),
       by,

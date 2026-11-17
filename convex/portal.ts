@@ -185,19 +185,32 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
     // been handed over. The covering note's words are already in `notes`, so
     // only its id travels; an item's file is only named here if the candidate
     // can see that file, by the same rule the job list uses for a CV.
-    const releases = (await releasesFor(ctx, lead._id, true)).map((r) => ({
-      _id: r._id,
-      releasedAt: r.releasedAt ?? r.at,
-      firstOpenedAt: r.firstOpenedAt ?? null,
-      noteId: r.noteId ?? null,
-      items: r.items.map((i) => ({
-        _id: i._id,
-        kind: i.kind,
-        label: i.label,
-        cvDocumentId: i.cvDocumentId && sharedCvIds.has(i.cvDocumentId) ? i.cvDocumentId : null,
-        deliverableId: i.deliverableId ?? null,
+    const releases = await Promise.all(
+      (await releasesFor(ctx, lead._id, true)).map(async (r) => ({
+        _id: r._id,
+        releasedAt: r.releasedAt ?? r.at,
+        firstOpenedAt: r.firstOpenedAt ?? null,
+        noteId: r.noteId ?? null,
+        items: await Promise.all(
+          r.items.map(async (i) => ({
+            _id: i._id,
+            kind: i.kind,
+            label: i.label,
+            cvDocumentId: i.cvDocumentId && sharedCvIds.has(i.cvDocumentId) ? i.cvDocumentId : null,
+            deliverableId: i.deliverableId ?? null,
+            /**
+             * What the candidate opens: the stored file, or the page a `link`
+             * item names. A `file` item's own `url` is the coach's editable
+             * copy and never crosses, which is what Decision 1 means by the
+             * file being the record.
+             */
+            openUrl:
+              i.kind === "link" ? (i.url ?? null) : i.storageId ? await ctx.storage.getUrl(i.storageId) : null,
+            fileName: i.fileName ?? null,
+          })),
+        ),
       })),
-    }));
+    );
 
     const jobs = (
       await ctx.db

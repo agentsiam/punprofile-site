@@ -2292,13 +2292,17 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
   const addItem = useMutation(api.releases.addItem);
   const removeItem = useMutation(api.releases.removeItem);
   const setNote = useMutation(api.releases.setNote);
+  const uploadUrl = useMutation(api.releases.uploadUrl);
   const settleFact = useMutation(api.releases.settleFact);
   const releaseIt = useMutation(api.releases.release);
 
   const [title, setTitle] = useState("");
-  const [kind, setKind] = useState<"report" | "direction" | "file">("report");
+  const [choice, setChoice] = useState<"report" | "direction" | "cv" | "upload" | "link">("report");
+  const kind = choice === "cv" || choice === "upload" ? "file" : choice;
   const [label, setLabel] = useState("");
   const [cvId, setCvId] = useState("");
+  const [file, setFile] = useState<File | null>(null);
+  const [url, setUrl] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [confirm, setConfirm] = useState(false);
 
@@ -2376,12 +2380,14 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
             <Label text="What it is">
               <select
                 className={INPUT}
-                value={kind}
-                onChange={(e) => setKind(e.target.value as typeof kind)}
+                value={choice}
+                onChange={(e) => setChoice(e.target.value as typeof choice)}
               >
                 <option value="report">The Fit Report</option>
                 <option value="direction">The direction</option>
-                <option value="file">A CV already held</option>
+                <option value="cv">A CV already held</option>
+                <option value="upload">A document you upload</option>
+                <option value="link">A page they open</option>
               </select>
             </Label>
             <Label text="What the candidate reads">
@@ -2396,18 +2402,35 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
               type="button"
               className={`${BTN} self-end`}
               onClick={async () => {
-                const ok = await run(() =>
-                  addItem({
+                setError(null);
+                try {
+                  let storageId: Id<"_storage"> | undefined;
+                  if (choice === "upload") {
+                    if (!file) throw new Error("Choose the file first.");
+                    const to = await uploadUrl({});
+                    const res = await fetch(to, {
+                      method: "POST",
+                      headers: { "Content-Type": file.type || "application/octet-stream" },
+                      body: file,
+                    });
+                    if (!res.ok) throw new Error(`Upload failed (${res.status}).`);
+                    storageId = ((await res.json()) as { storageId: Id<"_storage"> }).storageId;
+                  }
+                  await addItem({
                     releaseId: draft._id,
                     kind,
                     label,
-                    ...(kind === "report" && fitReport ? { deliverableId: fitReport._id } : {}),
-                    ...(kind === "file" && cvId ? { cvDocumentId: cvId as Id<"cvDocuments"> } : {}),
-                  }),
-                );
-                if (ok) {
+                    ...(choice === "report" && fitReport ? { deliverableId: fitReport._id } : {}),
+                    ...(choice === "cv" && cvId ? { cvDocumentId: cvId as Id<"cvDocuments"> } : {}),
+                    ...(storageId ? { storageId, fileName: file?.name ?? "" } : {}),
+                    ...(url.trim() ? { url: url.trim() } : {}),
+                  });
                   setLabel("");
                   setCvId("");
+                  setFile(null);
+                  setUrl("");
+                } catch (e) {
+                  setError(errText(e));
                 }
               }}
             >
@@ -2415,7 +2438,42 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
             </button>
           </div>
 
-          {kind === "file" ? (
+          {choice === "upload" ? (
+            <Label text="The document">
+              <input
+                type="file"
+                className={INPUT}
+                onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+              />
+            </Label>
+          ) : null}
+          {choice === "link" ? (
+            <div>
+              <Label text="The page they open">
+                <input
+                  className={INPUT}
+                  value={url}
+                  placeholder="https://"
+                  onChange={(e) => setUrl(e.target.value)}
+                />
+              </Label>
+              <p className="mt-1 text-body-medium text-on-surface-variant">
+                Only a page anyone holding the link can open. A Claude artifact is not one: opened without a Claude account it
+                asks the visitor to sign in and shows nothing.
+              </p>
+            </div>
+          ) : null}
+          {choice === "cv" || choice === "upload" ? (
+            <Label text="Your editable copy, if there is one">
+              <input
+                className={INPUT}
+                value={url}
+                placeholder="https://"
+                onChange={(e) => setUrl(e.target.value)}
+              />
+            </Label>
+          ) : null}
+          {choice === "cv" ? (
             <Label text="Which file">
               <select className={INPUT} value={cvId} onChange={(e) => setCvId(e.target.value)}>
                 <option value="">Pick one</option>
@@ -2428,7 +2486,7 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
               </select>
             </Label>
           ) : null}
-          {kind === "report" && !fitReport ? (
+          {choice === "report" && !fitReport ? (
             <p className="mt-2 text-body-medium text-on-surface-variant">
               There is no Fit Report deliverable on this record yet. Add one in what was sold and what is due.
             </p>
