@@ -218,6 +218,75 @@ export const setNote = mutation({
 });
 
 /**
+ * The facts a check found, written from outside the app.
+ *
+ * Whatever wrote the release's documents also knows which facts they repeat and
+ * what the panel and the candidate's own sources say about each, so it writes
+ * the reading here, exactly as a transcript writes `situationProposals`. This
+ * app has no model and a comparison it invented would be the one claim nobody
+ * could audit.
+ *
+ * It replaces the list rather than merging: a check is a reading of the whole
+ * release at one moment, and merging two readings leaves a settled mismatch
+ * standing beside a fresh one that disagrees. A settled choice does not survive
+ * a re-check, which is right, because the coach's answer was about what the
+ * last reading found.
+ */
+export const setFacts = mutation({
+  args: {
+    releaseId: v.id("releases"),
+    facts: v.array(
+      v.object({
+        label: v.string(),
+        value: v.string(),
+        source: v.string(),
+        sourceValue: v.optional(v.string()),
+        agrees: v.boolean(),
+      }),
+    ),
+  },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const release = await draftOf(ctx, args.releaseId);
+    for (const fact of args.facts) {
+      if (!fact.label.trim() || !fact.value.trim() || !fact.source.trim()) {
+        throw new ConvexError("Every fact needs what it is, the value the release uses, and where the check looked.");
+      }
+    }
+    await ctx.db.patch(release._id, { facts: args.facts });
+    return { facts: args.facts.length, disagreeing: args.facts.filter((f) => !f.agrees).length };
+  },
+});
+
+/**
+ * The coach picks the value that is right.
+ *
+ * It records the choice against the fact, which is what lets the release go. It
+ * does not change the document and it does not change the Situation panel: the
+ * panel is edited where it lives, on the same page, and a value settled here
+ * and left off the panel is the next release's disagreement. Threading the
+ * choice into the panel through the close form, which § 7a describes, is not
+ * built.
+ */
+export const settleFact = mutation({
+  args: { releaseId: v.id("releases"), index: v.number(), chosen: v.string() },
+  handler: async (ctx, args) => {
+    const by = await requireAdmin(ctx);
+    const release = await draftOf(ctx, args.releaseId);
+    const facts = release.facts ?? [];
+    const fact = facts[args.index];
+    if (!fact) throw new ConvexError("No such fact on this release.");
+    if (fact.agrees) throw new ConvexError("That fact agrees with its source. There is nothing to settle.");
+    const chosen = args.chosen.trim();
+    if (!chosen) throw new ConvexError("Say which value is the right one.");
+    const now = Date.now();
+    await ctx.db.patch(release._id, {
+      facts: facts.map((f, i) => (i === args.index ? { ...f, chosen, settledAt: now, settledBy: by } : f)),
+    });
+  },
+});
+
+/**
  * The one coach action.
  *
  * Everything the release carries becomes visible in this transaction and
@@ -239,7 +308,7 @@ export const release = mutation({
       .query("releaseItems")
       .withIndex("by_release", (q) => q.eq("releaseId", row._id))
       .collect();
-    const fault = releaseFault(items, row.noteId ?? null);
+    const fault = releaseFault(items, row.noteId ?? null, row.facts);
     if (fault) throw new ConvexError(fault);
     const note = row.noteId ? await ctx.db.get(row.noteId) : null;
     if (!note) throw new ConvexError("The note this release points at is gone. Choose another.");

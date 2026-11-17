@@ -1860,6 +1860,37 @@ export default defineSchema({
     /** The covering note this release shares. @absent none — none chosen yet */
     noteId: v.optional(v.id("deliveryNotes")),
     /**
+     * The facts this release repeats, and what the check of each one found,
+     * `coaching-delivery-design.md` § 7a. Written from outside the app, the way
+     * a transcript writes `situationProposals`, because the comparison needs
+     * something with a model and this app has none. A mismatch nobody has
+     * settled refuses the release.
+     *
+     * @absent none — nothing was found, which is not the same as nothing having
+     * been looked for
+     */
+    facts: v.optional(
+      v.array(
+        v.object({
+          /** The fact itself, in the words the coach reads. */
+          label: v.string(),
+          /** The value the release's own items use. */
+          value: v.string(),
+          /** Where the check looked: the panel, or a named source document. */
+          source: v.string(),
+          /** What that source holds. @absent none — it holds the same value */
+          sourceValue: v.optional(v.string()),
+          agrees: v.boolean(),
+          /** The value the coach settled on. @absent notyet — not settled */
+          chosen: v.optional(v.string()),
+          /** @absent notyet — not settled */
+          settledAt: v.optional(v.number()),
+          /** @absent notyet — not settled */
+          settledBy: v.optional(v.string()),
+        }),
+      ),
+    ),
+    /**
      * When the one reminder went, so a second never does. Written by the daily
      * pass, and absent on a release that was opened before the wait ran out.
      * @absent notyet — no reminder has gone

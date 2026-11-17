@@ -2292,6 +2292,7 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
   const addItem = useMutation(api.releases.addItem);
   const removeItem = useMutation(api.releases.removeItem);
   const setNote = useMutation(api.releases.setNote);
+  const settleFact = useMutation(api.releases.settleFact);
   const releaseIt = useMutation(api.releases.release);
 
   const [title, setTitle] = useState("");
@@ -2458,6 +2459,57 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
               </select>
             </Label>
           </div>
+
+          {draft.facts && draft.facts.length > 0 ? (
+            <div className="mt-4">
+              <p className="text-body-medium text-on-surface-variant">
+                The facts this release repeats, checked against the Situation panel and the candidate&apos;s own sources. A
+                disagreement holds the release until you pick the value that is right, and the panel is yours to correct above.
+              </p>
+              <ul className="mt-2 space-y-2">
+                {draft.facts.map((f, i) => {
+                  const other = f.sourceValue;
+                  return (
+                    <li key={`${f.label}-${i}`} className="border-b border-outline-variant pb-2 last:border-b-0">
+                      <div className="flex flex-wrap items-baseline justify-between gap-2">
+                        <span className="text-body-large text-on-surface">{f.label}</span>
+                        {f.agrees ? (
+                          <Chip>agrees with {f.source}</Chip>
+                        ) : f.chosen ? (
+                          <Chip tone="strong">settled on {f.chosen}</Chip>
+                        ) : (
+                          <Chip>disagrees</Chip>
+                        )}
+                      </div>
+                      {!f.agrees && !f.chosen ? (
+                        <div className="mt-1 flex flex-wrap items-center gap-3">
+                          <span className="text-body-medium text-on-surface-variant">
+                            the release says {f.value}, {f.source} says {other ?? "otherwise"}
+                          </span>
+                          <button
+                            type="button"
+                            className={LINK}
+                            onClick={() => void run(() => settleFact({ releaseId: draft._id, index: i, chosen: f.value }))}
+                          >
+                            Keep {f.value}
+                          </button>
+                          {other ? (
+                            <button
+                              type="button"
+                              className={LINK}
+                              onClick={() => void run(() => settleFact({ releaseId: draft._id, index: i, chosen: other }))}
+                            >
+                              Use {other}
+                            </button>
+                          ) : null}
+                        </div>
+                      ) : null}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ) : null}
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <button

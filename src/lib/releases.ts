@@ -74,6 +74,40 @@ export function itemFault(
   return null;
 }
 
+/** A fact a release repeats, and what the check of it found. */
+export interface CheckedFact {
+  /** The fact itself, in the words the coach will read. */
+  label: string;
+  /** The value the release's own items use. */
+  value: string;
+  /** Where the check looked: the Situation panel, or a named source document. */
+  source: string;
+  /** What that source holds, when it is not the same. */
+  sourceValue?: string;
+  agrees: boolean;
+  /** The value the coach settled on, once they have. */
+  chosen?: string;
+}
+
+/**
+ * Why the facts hold this release back, or null.
+ *
+ * Only a mismatch somebody found holds it. This gate cannot require that a
+ * check was run at all: the comparison needs something with a model, this app
+ * has none, and a release carrying the report and the direction repeats no
+ * figures to compare. So an empty list means nothing was found, and never that
+ * nothing was looked for. What stops a release going out unchecked is the
+ * process, not this function, and saying otherwise here would be a gate that
+ * only looked like one.
+ */
+export function factFault(facts: CheckedFact[] | undefined): string | null {
+  const open = (facts ?? []).filter((f) => !f.agrees && !f.chosen);
+  if (open.length === 0) return null;
+  const first = open[0];
+  if (open.length === 1) return `"${first.label}" disagrees with ${first.source}. Settle it first.`;
+  return `${open.length} facts disagree with their sources, starting with "${first.label}". Settle each one first.`;
+}
+
 /**
  * Why this release cannot go to the candidate, or null.
  *
@@ -81,10 +115,14 @@ export function itemFault(
  * Without it a release is a list of documents with nothing saying what they
  * are or why they arrived, which is the email this design exists to replace.
  */
-export function releaseFault(held: HeldItem[], noteId: string | null | undefined): string | null {
+export function releaseFault(
+  held: HeldItem[],
+  noteId: string | null | undefined,
+  facts?: CheckedFact[],
+): string | null {
   if (held.length === 0) return "There is nothing in this release.";
   if (!noteId) return "Choose the note the candidate reads over the release first.";
-  return null;
+  return factFault(facts);
 }
 
 /** The next item's place, so two items never share one. */

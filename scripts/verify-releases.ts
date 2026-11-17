@@ -11,7 +11,7 @@
  * puts half of what a call produced there and leaves the rest.
  */
 
-import { itemFault, releaseFault, nextOrder, type HeldItem } from "../src/lib/releases";
+import { itemFault, releaseFault, factFault, nextOrder, type CheckedFact, type HeldItem } from "../src/lib/releases";
 
 let failures = 0;
 
@@ -103,6 +103,46 @@ check("the next item takes the place after the highest", nextOrder([report, dire
 check(
   "a gap left by a removed item does not put two items in one place",
   nextOrder([{ kind: "report", order: 7 }]) === 8,
+);
+
+// --- the facts a release repeats -------------------------------------------
+
+const agreed: CheckedFact = { label: "Her start date", value: "04/2027", source: "the Situation panel", agrees: true };
+const disputed: CheckedFact = {
+  label: "The spend she managed",
+  value: "EUR 2.4M",
+  source: "her own CV",
+  sourceValue: "EUR 1.8M",
+  agrees: false,
+};
+
+check("facts nobody checked hold nothing", factFault(undefined) === null && factFault([]) === null);
+
+check("a fact whose sources agree holds nothing", factFault([agreed]) === null);
+
+check(
+  "a fact whose sources disagree holds the release",
+  factFault([agreed, disputed]) !== null,
+  "two different figures for the same thing is what the candidate catches, and it cannot be unsent",
+);
+
+check(
+  "the message names the fact and where the other value came from",
+  (factFault([disputed]) ?? "").includes("The spend she managed") &&
+    (factFault([disputed]) ?? "").includes("her own CV"),
+);
+
+check("a settled fact lets it go", factFault([{ ...disputed, chosen: "EUR 1.8M" }]) === null);
+
+check(
+  "the release gate reads the facts too",
+  releaseFault([report, direction], "note1", [disputed]) !== null &&
+    releaseFault([report, direction], "note1", [{ ...disputed, chosen: "EUR 1.8M" }]) === null,
+);
+
+check(
+  "an empty release is still the first thing refused, facts or no facts",
+  releaseFault(none, "note1", [agreed]) === "There is nothing in this release.",
 );
 
 // --- what this script does not measure -------------------------------------
