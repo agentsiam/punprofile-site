@@ -28,6 +28,8 @@
 import { mutation, query, type QueryCtx } from "./_generated/server";
 import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
+import { openDraft } from "./outbox";
+import { targetsFor } from "./targets";
 import type { Doc, Id } from "./_generated/dataModel";
 import { itemFault, nextOrder, releaseFault } from "../src/lib/releases";
 
@@ -256,6 +258,32 @@ export const release = mutation({
     if (!note.shared) await ctx.db.patch(note._id, { shared: true });
     await ctx.db.patch(row._id, { state: "released", releasedAt: now, releasedBy: by });
 
-    return { items: items.length, filesShared: shared };
+    // The outside message, Paul's decision of 17/11/2026: both channels. One
+    // email carrying the button, and one LINE text for the coach to copy,
+    // because this app cannot send LINE and an outbox quietly growing a sender
+    // is not a thing anybody asked for. Both open empty, as every draft here
+    // does, carrying the Situation panel as it reads now: the words are written
+    // by whatever has a model, and nothing leaves until the coach approves it.
+    //
+    // Releasing can only happen once, since `draftOf` refuses a release that
+    // has gone, so one release never opens a second pair of drafts.
+    const titles = (await targetsFor(ctx, row.leadId)).filter((t) => t.status === "active").map((t) => t.title);
+    const drafts: Id<"outboxDrafts">[] = [];
+    for (const channel of ["email", "line"] as const) {
+      drafts.push(
+        await openDraft(ctx, {
+          leadId: row.leadId,
+          kind: "release_ready",
+          channel,
+          releaseId: row._id,
+          ...(row.consultationId ? { consultationId: row.consultationId } : {}),
+          titles,
+          at: now,
+          by,
+        }),
+      );
+    }
+
+    return { items: items.length, filesShared: shared, drafts: drafts.length };
   },
 });

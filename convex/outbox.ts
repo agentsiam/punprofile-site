@@ -36,6 +36,7 @@ const KIND = v.union(
   v.literal("dashboard_note"),
   v.literal("matched_role"),
   v.literal("missing_input"),
+  v.literal("release_ready"),
 );
 
 const CHANNEL = v.union(v.literal("email"), v.literal("line"), v.literal("dashboard"));
@@ -70,6 +71,7 @@ export async function openDraft(
     channel: "email" | "line" | "dashboard";
     consultationId?: Id<"consultations">;
     applicationId?: Id<"applications">;
+    releaseId?: Id<"releases">;
     decisions?: string[];
     titles: string[];
     at: number;
@@ -83,6 +85,7 @@ export async function openDraft(
     channel: args.channel,
     ...(args.consultationId ? { consultationId: args.consultationId } : {}),
     ...(args.applicationId ? { applicationId: args.applicationId } : {}),
+    ...(args.releaseId ? { releaseId: args.releaseId } : {}),
     state: "awaiting",
     ...(writtenFrom.length ? { writtenFrom } : {}),
     ...(args.decisions?.length ? { decisions: args.decisions } : {}),

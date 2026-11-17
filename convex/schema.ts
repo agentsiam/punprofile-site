@@ -1589,6 +1589,12 @@ export default defineSchema({
       v.literal("dashboard_note"),
       v.literal("matched_role"),
       v.literal("missing_input"),
+      /**
+       * One release is waiting on the candidate's dashboard. It says that and
+       * nothing else: never a list of the items, which is the whole point of
+       * the dashboard being the place they are read.
+       */
+      v.literal("release_ready"),
     ),
     /** `dashboard` approves into a shared delivery note on the candidate's own
      *  page, which is the one place a draft becomes a record here rather than
@@ -1598,6 +1604,8 @@ export default defineSchema({
     consultationId: v.optional(v.id("consultations")),
     /** The role it is about. @absent none — not about one role */
     applicationId: v.optional(v.id("applications")),
+    /** The release it says is waiting. @absent none — not about a release */
+    releaseId: v.optional(v.id("releases")),
     /** Email only. @absent notyet — not drafted yet, or a LINE message */
     subject: v.optional(v.string()),
     /** @absent notyet — nothing has drafted it */
