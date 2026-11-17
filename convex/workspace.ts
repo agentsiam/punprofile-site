@@ -117,12 +117,24 @@ export async function scheduleMatchNotice(ctx: MutationCtx, leadId: Id<"leads">,
  * § 7a. The CRM and the candidate's page both read this, never their own sum.
  */
 export async function walletFor(ctx: QueryCtx, leadId: Id<"leads">) {
-  const [ledger, deliverables, engagements] = await Promise.all([
+  const [ledger, deliverables, engagements, items] = await Promise.all([
     ctx.db.query("tokenLedger").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
     ctx.db.query("deliverables").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
     ctx.db.query("engagements").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
+    ctx.db.query("releaseItems").withIndex("by_lead", (q) => q.eq("leadId", leadId)).collect(),
   ]);
-  return { wallet: computeWallet(ledger, deliverables, engagements, Date.now()), ledger, deliverables, engagements };
+  // An unresolved correction on a released item holds the coaching open, § 7a,
+  // beside the error reports on the complimentary documents that already did.
+  const openItemCorrections = items.reduce(
+    (n, i) => n + (i.corrections ?? []).filter((c) => c.resolvedAt === undefined).length,
+    0,
+  );
+  return {
+    wallet: computeWallet(ledger, deliverables, engagements, Date.now(), openItemCorrections),
+    ledger,
+    deliverables,
+    engagements,
+  };
 }
 
 /**

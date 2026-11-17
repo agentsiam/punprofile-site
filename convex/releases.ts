@@ -282,6 +282,53 @@ export const setNote = mutation({
 });
 
 /**
+ * What the candidate says is wrong in an item they have been given.
+ *
+ * Recorded by the coach from what the candidate told them, which is how it
+ * reaches the record until the candidate's own line on their page has its Thai
+ * read. An open one holds the coaching open, exactly as an unresolved error
+ * report on a complimentary document does, so this is not a note: it is a
+ * reason the service cannot close.
+ *
+ * Only on an item that has gone. Nothing in a draft has reached them to be
+ * wrong yet.
+ */
+export const reportItemCorrection = mutation({
+  args: { itemId: v.id("releaseItems"), summary: v.string() },
+  handler: async (ctx, args) => {
+    await requireAdmin(ctx);
+    const item = await ctx.db.get(args.itemId);
+    if (!item) throw new ConvexError("No such item.");
+    const release = await ctx.db.get(item.releaseId);
+    if (!release || release.state !== "released") {
+      throw new ConvexError("That release has not gone to the candidate yet.");
+    }
+    const summary = args.summary.trim();
+    if (!summary) throw new ConvexError("Say what is wrong in it.");
+    await ctx.db.patch(item._id, {
+      corrections: [...(item.corrections ?? []), { reportedAt: Date.now(), summary }],
+    });
+  },
+});
+
+/** The coach has put it right. The correction stays on the record, resolved. */
+export const resolveItemCorrection = mutation({
+  args: { itemId: v.id("releaseItems"), index: v.number() },
+  handler: async (ctx, args) => {
+    const by = await requireAdmin(ctx);
+    const item = await ctx.db.get(args.itemId);
+    const list = item?.corrections ?? [];
+    if (!item || !list[args.index]) throw new ConvexError("No such correction.");
+    const now = Date.now();
+    await ctx.db.patch(item._id, {
+      corrections: list.map((c, i) =>
+        i === args.index && c.resolvedAt === undefined ? { ...c, resolvedAt: now, resolvedBy: by } : c,
+      ),
+    });
+  },
+});
+
+/**
  * The facts a check found, written from outside the app.
  *
  * Whatever wrote the release's documents also knows which facts they repeat and

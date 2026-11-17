@@ -2293,6 +2293,8 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
   const removeItem = useMutation(api.releases.removeItem);
   const setNote = useMutation(api.releases.setNote);
   const uploadUrl = useMutation(api.releases.uploadUrl);
+  const reportCorrection = useMutation(api.releases.reportItemCorrection);
+  const resolveCorrection = useMutation(api.releases.resolveItemCorrection);
   const settleFact = useMutation(api.releases.settleFact);
   const releaseIt = useMutation(api.releases.release);
 
@@ -2303,6 +2305,8 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
   const [cvId, setCvId] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [url, setUrl] = useState("");
+  const [wrongItemId, setWrongItemId] = useState("");
+  const [wrong, setWrong] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [confirm, setConfirm] = useState(false);
 
@@ -2628,13 +2632,82 @@ function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; en
                   {r.firstOpenedAt ? ` · first opened ${stamp(r.firstOpenedAt)}` : ""}
                 </span>
               </div>
-              <p className="mt-1 text-body-medium text-on-surface-variant">
-                {r.items.map((i) => i.label).join(" · ")}
-                {r.noteId ? ` · over ${noteLine(r.noteId)}` : ""}
-              </p>
+              <ul className="mt-2 space-y-1">
+                {r.items.map((i) => {
+                  const list = i.corrections ?? [];
+                  const open = list.filter((c) => c.resolvedAt === undefined).length;
+                  return (
+                    <li key={i._id}>
+                      <div className="flex flex-wrap items-baseline justify-between gap-2">
+                        <span className="text-body-medium text-on-surface">{i.label}</span>
+                        {open > 0 ? <Chip tone="strong">{open} to put right</Chip> : null}
+                      </div>
+                      {list.map((cx, ix) =>
+                        cx.resolvedAt === undefined ? (
+                          <div key={ix} className="flex flex-wrap items-baseline justify-between gap-2 pl-4">
+                            <span className="text-body-medium text-on-surface-variant">
+                              {day(cx.reportedAt)} · {cx.summary}
+                            </span>
+                            <button
+                              type="button"
+                              className={LINK}
+                              onClick={() => void run(() => resolveCorrection({ itemId: i._id, index: ix }))}
+                            >
+                              Put right
+                            </button>
+                          </div>
+                        ) : null,
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+              {r.noteId ? (
+                <p className="mt-1 text-body-medium text-on-surface-variant">over {noteLine(r.noteId)}</p>
+              ) : null}
             </li>
           ))}
         </ul>
+      ) : null}
+
+      {gone.flatMap((r) => r.items).length > 0 ? (
+        <div className="mt-4 grid gap-3 expanded:grid-cols-[1fr_1fr_auto]">
+          <Label text="Something they say is wrong">
+            <select className={INPUT} value={wrongItemId} onChange={(e) => setWrongItemId(e.target.value)}>
+              <option value="">Which item</option>
+              {gone
+                .flatMap((r) => r.items)
+                .map((i) => (
+                  <option key={i._id} value={i._id}>
+                    {i.label}
+                  </option>
+                ))}
+            </select>
+          </Label>
+          <Label text="What is wrong in it">
+            <input
+              className={INPUT}
+              value={wrong}
+              placeholder="In their own words where you have them"
+              onChange={(e) => setWrong(e.target.value)}
+            />
+          </Label>
+          <button
+            type="button"
+            className={`${BTN} self-end`}
+            onClick={async () => {
+              const ok = await run(() =>
+                reportCorrection({ itemId: wrongItemId as Id<"releaseItems">, summary: wrong }),
+              );
+              if (ok) {
+                setWrong("");
+                setWrongItemId("");
+              }
+            }}
+          >
+            Record
+          </button>
+        </div>
       ) : null}
     </Panel>
   );

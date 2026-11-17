@@ -80,6 +80,15 @@ export function computeWallet(
   deliverables: DeliverableRow[],
   engagements: EngagementRow[],
   now: number,
+  /**
+   * Unresolved corrections on the items of this lead's releases, § 7a. They
+   * hold the coaching open exactly as an unresolved error report does, and they
+   * are counted outside this function because they live on another table. It
+   * defaults to none so a caller that has not fetched them reads as having
+   * found none rather than silently closing a coaching that should stay open:
+   * every caller in this repo passes the real count.
+   */
+  openItemCorrections = 0,
 ) {
   let bought = 0;
   let spent = 0;
@@ -128,10 +137,9 @@ export function computeWallet(
 
   // ---- closure, computed, never stored
   const included = [...previews, ...cvs];
-  const openErrors = included.reduce(
-    (n, d) => n + (d.errorReports ?? []).filter((e) => e.resolvedAt === undefined).length,
-    0,
-  );
+  const openErrors =
+    included.reduce((n, d) => n + (d.errorReports ?? []).filter((e) => e.resolvedAt === undefined).length, 0) +
+    openItemCorrections;
   let closure:
     | { state: "not_started" }
     | { state: "open"; waitingFor: ("preview" | "cv_rewrite" | "error_reports")[] }

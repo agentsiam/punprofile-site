@@ -1948,6 +1948,29 @@ export default defineSchema({
     bytes: v.optional(v.number()),
     /** An editable document. @absent none — not a link */
     url: v.optional(v.string()),
+    /**
+     * What the candidate says is wrong in this item, `coaching-delivery-design.md`
+     * § 7a. The same shape `deliverables.errorReports` has, for the same reason:
+     * an unresolved one holds the coaching open. The difference is that this
+     * covers every paid item rather than the complimentary documents alone.
+     *
+     * Recorded by the coach from what the candidate told them until the
+     * candidate's own line on their page has its Thai read.
+     *
+     * @absent none — nothing reported
+     */
+    corrections: v.optional(
+      v.array(
+        v.object({
+          reportedAt: v.number(),
+          summary: v.string(),
+          /** @absent notyet — still open */
+          resolvedAt: v.optional(v.number()),
+          /** @absent notyet — still open */
+          resolvedBy: v.optional(v.string()),
+        }),
+      ),
+    ),
     /** Its place on the candidate's page, 1 upward. */
     order: v.number(),
     at: v.number(),
