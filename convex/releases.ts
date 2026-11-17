@@ -29,6 +29,7 @@ import { mutation, query, type QueryCtx } from "./_generated/server";
 import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
 import type { Doc, Id } from "./_generated/dataModel";
+import { itemFault, nextOrder, releaseFault } from "../src/lib/releases";
 
 const kindValidator = v.union(
   v.literal("report"),
@@ -139,44 +140,32 @@ export const addItem = mutation({
     const by = await requireAdmin(ctx);
     const release = await draftOf(ctx, args.releaseId);
     const label = args.label.trim();
-    if (!label) throw new ConvexError("Give the item the name the candidate will read.");
 
-    if (args.kind === "link") {
-      // Verified 17/11/2026: a Claude artifact link asks a visitor to sign in,
-      // so a link is not somewhere a delivered document can live. Whether an
-      // item may be a link at all is Decision 1 in § 7a and still open.
-      throw new ConvexError("Links are not settled yet. Share the file, or add it as the report or the direction.");
-    }
-
-    if (args.kind === "report") {
-      if (!args.deliverableId) throw new ConvexError("Say which Fit Report this is.");
-      const d = await ctx.db.get(args.deliverableId);
-      if (!d || d.leadId !== release.leadId) throw new ConvexError("That deliverable belongs to a different lead.");
-      if (d.kind !== "fit_report") throw new ConvexError("That deliverable is not a Fit Report.");
-    }
-
-    if (args.kind === "file") {
-      if (!args.cvDocumentId) throw new ConvexError("Pick the file to release. Only a CV already held can be released yet.");
-      const cv = await ctx.db.get(args.cvDocumentId);
-      if (!cv || cv.leadId !== release.leadId) throw new ConvexError("That file belongs to a different lead.");
-    }
-
-    if (args.kind === "direction" && (args.deliverableId || args.cvDocumentId || args.url)) {
-      throw new ConvexError("The direction is the titles and the markets this record already holds. It points at nothing else.");
-    }
-
-    const items = await ctx.db
+    const held = await ctx.db
       .query("releaseItems")
       .withIndex("by_release", (q) => q.eq("releaseId", release._id))
       .collect();
-    if (args.kind === "report" && items.some((i) => i.kind === "report")) {
-      throw new ConvexError("The report is already in this release.");
+
+    // Every rule about the shape of a release is in `src/lib/releases.ts`, so it
+    // can be asserted without a deployment (`npm run verify:releases`). What
+    // needs the database stays here, beside the write: that the thing an item
+    // points at exists, and that it belongs to this candidate and not another.
+    const fault = itemFault(
+      args.kind,
+      label,
+      { deliverableId: args.deliverableId, cvDocumentId: args.cvDocumentId, url: args.url },
+      held,
+    );
+    if (fault) throw new ConvexError(fault);
+
+    if (args.deliverableId) {
+      const d = await ctx.db.get(args.deliverableId);
+      if (!d || d.leadId !== release.leadId) throw new ConvexError("That deliverable belongs to a different lead.");
+      if (args.kind === "report" && d.kind !== "fit_report") throw new ConvexError("That deliverable is not a Fit Report.");
     }
-    if (args.kind === "direction" && items.some((i) => i.kind === "direction")) {
-      throw new ConvexError("The direction is already in this release.");
-    }
-    if (args.cvDocumentId && items.some((i) => i.cvDocumentId === args.cvDocumentId)) {
-      throw new ConvexError("That file is already in this release.");
+    if (args.cvDocumentId) {
+      const cv = await ctx.db.get(args.cvDocumentId);
+      if (!cv || cv.leadId !== release.leadId) throw new ConvexError("That file belongs to a different lead.");
     }
 
     return await ctx.db.insert("releaseItems", {
@@ -186,7 +175,7 @@ export const addItem = mutation({
       label,
       ...(args.deliverableId ? { deliverableId: args.deliverableId } : {}),
       ...(args.cvDocumentId ? { cvDocumentId: args.cvDocumentId } : {}),
-      order: items.reduce((n, i) => Math.max(n, i.order), 0) + 1,
+      order: nextOrder(held),
       at: Date.now(),
       by,
     });
@@ -248,9 +237,9 @@ export const release = mutation({
       .query("releaseItems")
       .withIndex("by_release", (q) => q.eq("releaseId", row._id))
       .collect();
-    if (items.length === 0) throw new ConvexError("There is nothing in this release.");
-    if (!row.noteId) throw new ConvexError("Choose the note the candidate reads over the release first.");
-    const note = await ctx.db.get(row.noteId);
+    const fault = releaseFault(items, row.noteId ?? null);
+    if (fault) throw new ConvexError(fault);
+    const note = row.noteId ? await ctx.db.get(row.noteId) : null;
     if (!note) throw new ConvexError("The note this release points at is gone. Choose another.");
 
     const now = Date.now();
