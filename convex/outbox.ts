@@ -37,6 +37,7 @@ const KIND = v.union(
   v.literal("matched_role"),
   v.literal("missing_input"),
   v.literal("release_ready"),
+  v.literal("release_reminder"),
 );
 
 const CHANNEL = v.union(v.literal("email"), v.literal("line"), v.literal("dashboard"));

@@ -1,5 +1,5 @@
 /**
- * Scheduled jobs. TASK-080, and the job-database archive.
+ * Scheduled jobs. TASK-080, the reminders, and the job-database archive.
  *
  * The first is the retention sweep. Runs daily rather than monthly so a
  * record is never much more than a day past its promised expiry, and so a
@@ -15,7 +15,12 @@
  * all for a long time. That is the correct behaviour for a promise being kept
  * rather than a job being useful.
  *
- * The second is the job-database archive, `job-database-handoff.md` § 5. It
+ * The second owes two reminders and never a second of either, and it is the
+ * first code to write `candidateTasks.remindedAt`: the one reminder that table
+ * has specified from the start had never gone out. It opens drafts for Paul and
+ * sends nothing itself. `coaching-delivery-design.md` § 7a.
+ *
+ * The third is the job-database archive, `job-database-handoff.md` § 5. It
  * holds no personal data and deletes nothing: a job filled, or first seen over
  * 90 days ago, becomes `archived` and loses its description, and the row stays
  * because it still blocks a repeat and still holds what the job led to.
@@ -33,6 +38,15 @@ crons.daily(
   { hourUTC: 2, minuteUTC: 15 },
   internal.retention.sweep,
   { apply: true },
+);
+
+crons.daily(
+  "reminders",
+  // Early morning Europe/Berlin, so what it opens is in the outbox when Paul
+  // starts rather than late in his day. It sends nothing and shows the
+  // candidate nothing: it opens drafts and waits for him.
+  { hourUTC: 6, minuteUTC: 0 },
+  internal.releases.remindOnce,
 );
 
 crons.daily(

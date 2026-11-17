@@ -29,6 +29,7 @@ const KIND_LABEL: Record<string, string> = {
   matched_role: "Why this role fits",
   missing_input: "What we still need from them",
   release_ready: "A release is waiting",
+  release_reminder: "A reminder that it is still waiting",
 };
 
 const CHANNEL_WORD: Record<string, string> = {

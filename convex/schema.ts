@@ -1595,6 +1595,12 @@ export default defineSchema({
        * the dashboard being the place they are read.
        */
       v.literal("release_ready"),
+      /**
+       * The one reminder that a release is still unopened. A second
+       * `release_ready` would read as the same message twice, and this is a
+       * different message: it says they have not looked yet.
+       */
+      v.literal("release_reminder"),
     ),
     /** `dashboard` approves into a shared delivery note on the candidate's own
      *  page, which is the one place a draft becomes a record here rather than
@@ -1853,6 +1859,12 @@ export default defineSchema({
     releasedBy: v.optional(v.string()),
     /** The covering note this release shares. @absent none — none chosen yet */
     noteId: v.optional(v.id("deliveryNotes")),
+    /**
+     * When the one reminder went, so a second never does. Written by the daily
+     * pass, and absent on a release that was opened before the wait ran out.
+     * @absent notyet — no reminder has gone
+     */
+    remindedAt: v.optional(v.number()),
     /**
      * When the candidate first opened it: the only measure of whether any of
      * this worked. Written once, by their own page, and not written yet. Step 3

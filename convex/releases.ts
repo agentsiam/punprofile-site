@@ -25,7 +25,7 @@
  * disagrees.
  */
 
-import { mutation, query, type QueryCtx } from "./_generated/server";
+import { internalMutation, mutation, query, type QueryCtx } from "./_generated/server";
 import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
 import { openDraft } from "./outbox";
@@ -285,5 +285,98 @@ export const release = mutation({
     }
 
     return { items: items.length, filesShared: shared, drafts: drafts.length };
+  },
+});
+
+/**
+ * The wait before the one reminder. Three days, Paul's decision of 17/11/2026,
+ * and `coaching-delivery-design.md` § 7a holds the reasoning: it sits inside
+ * the rhythm a candidate already has, since a preparation deadline is two
+ * working days before a call and a matched role is notified the same day.
+ */
+const REMINDER_WAIT_DAYS = 3;
+
+/** Today in Bangkok, in the form a task's `dueOn` is written in. */
+function bangkokToday(now: number): string {
+  return new Date(now + 7 * 60 * 60 * 1000).toISOString().slice(0, 10);
+}
+
+/**
+ * The daily pass that owes two reminders, and never a second of either.
+ *
+ * A release that has gone, has not been opened and is past the wait gets one
+ * reminder drafted. And a task the candidate owes, due today or earlier and not
+ * done, gets the one reminder `candidateTasks.remindedAt` has specified from the
+ * start and that nothing has ever sent: that field was written by no code until
+ * this pass, so the reminder the design promised had never gone out.
+ *
+ * Both are drafts. This pass sends nothing and says nothing: it opens what is
+ * owed, carrying the Situation panel, and the coach approves it. The reminder
+ * for a task reuses the missing-input kind, because that is what it is, rather
+ * than inventing a kind for the same message.
+ *
+ * It writes its own marker before anything else can run again, so a draft the
+ * coach throws away is not reopened tomorrow. Deciding not to send a reminder
+ * is itself a decision about this candidate.
+ *
+ * Both scans read a whole table. At the volumes this product runs at, a handful
+ * of releases and tasks per paying candidate, that is the right shape; the day
+ * it is not, the releases scan already has `by_state` to narrow and the tasks
+ * would want an index of their own.
+ */
+export const remindOnce = internalMutation({
+  args: {},
+  handler: async (ctx) => {
+    const now = Date.now();
+    const cutoff = now - REMINDER_WAIT_DAYS * 24 * 60 * 60 * 1000;
+    const today = bangkokToday(now);
+
+    const titlesFor = async (leadId: Id<"leads">) =>
+      (await targetsFor(ctx, leadId)).filter((t) => t.status === "active").map((t) => t.title);
+
+    let unopened = 0;
+    for (const r of await ctx.db
+      .query("releases")
+      .withIndex("by_state", (q) => q.eq("state", "released"))
+      .collect()) {
+      if (r.firstOpenedAt !== undefined || r.remindedAt !== undefined) continue;
+      if ((r.releasedAt ?? r.at) > cutoff) continue;
+      const titles = await titlesFor(r.leadId);
+      for (const channel of ["email", "line"] as const) {
+        await openDraft(ctx, {
+          leadId: r.leadId,
+          kind: "release_reminder",
+          channel,
+          releaseId: r._id,
+          titles,
+          at: now,
+          by: "the daily pass",
+        });
+      }
+      await ctx.db.patch(r._id, { remindedAt: now });
+      unopened++;
+    }
+
+    let owed = 0;
+    for (const task of await ctx.db.query("candidateTasks").collect()) {
+      if (task.doneAt !== undefined || task.remindedAt !== undefined) continue;
+      if (task.dueOn > today) continue;
+      const titles = await titlesFor(task.leadId);
+      for (const channel of ["email", "line"] as const) {
+        await openDraft(ctx, {
+          leadId: task.leadId,
+          kind: "missing_input",
+          channel,
+          ...(task.consultationId ? { consultationId: task.consultationId } : {}),
+          titles,
+          at: now,
+          by: "the daily pass",
+        });
+      }
+      await ctx.db.patch(task._id, { remindedAt: now });
+      owed++;
+    }
+
+    return { unopened, owed };
   },
 });
