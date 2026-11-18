@@ -2409,8 +2409,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "FAQ page, FAQ[6].a[0]",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "14/08/2026",
-    "decisionNote": "Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after the Fit Report and the ฿1,500 pack's complimentary hour rather than containing them. Before this change the answer opened ค่าบริการขึ้นอยู่กับ and named no figure. Provenance is unchanged: the rest of the sentence is still his."
+    "date": "18/11/2026",
+    "decisionNote": "Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after the Fit Report and the 1,500 THB pack's complimentary hour rather than containing them. The answer previously opened with the fee and named no figure. Two model drafts of the same day put the figure in front of it and rewrote more than the figure required: the first replaced Paul's fee noun and left the English subject ungrammatical, the second corrected the English by rewriting his subject. Paul then wrote the Thai out himself and restored his own fee noun. His English sentence of 23/08/2026 is restored here as he wrote it, so the only new text in the record is the price statement his decision supplies."
   },
   "src/lib/content/faq.ts::FAQ[6].a[1]": {
     "source": "src/lib/content/faq.ts",
@@ -8600,9 +8600,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PRICING_QUESTIONS[0].a[0]",
     "render": "Pricing page, PRICING_QUESTIONS[0].a[0]",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "23/08/2026",
-    "decisionNote": "Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after the Fit Report and the ฿1,500 pack's complimentary hour rather than containing them. Before this change the answer opened ค่าบริการขึ้นอยู่กับ and named no figure. Provenance is unchanged: the rest of the sentence is still his."
+    "provenance": "paul-written",
+    "date": "18/11/2026",
+    "decisionNote": "Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after the Fit Report and the 1,500 THB pack's complimentary hour rather than containing them. The answer previously opened with the fee and named no figure. Two model drafts of the same day put the figure in front of it and rewrote more than the figure required: the first replaced Paul's fee noun and left the English subject ungrammatical, the second corrected the English by rewriting his subject. Paul then wrote the Thai out himself and restored his own fee noun. His English sentence of 23/08/2026 is restored here as he wrote it, so the only new text in the record is the price statement his decision supplies."
   },
   "src/lib/content/pricing.ts::PRICING_QUESTIONS[0].a[1]": {
     "source": "src/lib/content/pricing.ts",

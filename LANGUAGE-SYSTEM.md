@@ -6754,29 +6754,33 @@ path: FAQ[6].a[0]
 render: FAQ page, FAQ[6].a[0]
 narrative_slot: utility
 en: >-
-  Coaching 1:1 starts at 4,900 THB. The actual price depends what you want help with and how far that help
-  goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide
-  whether to go ahead.
+  Coaching 1:1 starts at 4,900 THB. It depends what you want help with and how far that help goes. We go
+  through the details and tell you the cost clearly the first time we talk, and then you decide whether to
+  go ahead.
 th: >-
   Coaching 1:1 เริ่มต้นที่ 4,900 บาท
-  ราคาจริงขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
+  ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
   เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่
 provenance: paul-written
-date: 14/08/2026
+date: 18/11/2026
 term_bindings: []
 decision_note: >-
   Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after
-  the Fit Report and the ฿1,500 pack's complimentary hour rather than containing them. Before this change the
-  answer opened ค่าบริการขึ้นอยู่กับ and named no figure. Provenance is unchanged: the rest of the sentence is
-  still his.
+  the Fit Report and the 1,500 THB pack's complimentary hour rather than containing them. The answer
+  previously opened with the fee and named no figure. Two model drafts of the same day put the figure in
+  front of it and rewrote more than the figure required: the first replaced Paul's fee noun and left the
+  English subject ungrammatical, the second corrected the English by rewriting his subject. Paul then wrote
+  the Thai out himself and restored his own fee noun. His English sentence of 23/08/2026 is restored here as
+  he wrote it, so the only new text in the record is the price statement his decision supplies.
 review:
-  structural_calque: pending
-  text_hash: 4ea2fd411067c8292bcfab7a0893a2b32e1972100ac800eccacf1f0b5f98c8c0
+  structural_calque: pass
+  text_hash: 0f3dd0b4236771d687f22ed7381c7e3f7f433648cd8c0a1f892c3b5756068cfa
   prompt_version: structural-calque-v1
   basis: >-
-    Thai changed in this session by a model, not by Paul. Only the opening was touched: the price sentence was
-    added and ค่าบริการ became ราคาจริง, so the figure has something to qualify. Everything after that is his
-    wording of 23/08/2026, unaltered. Awaiting his read.
+    Paul wrote this Thai himself on 18/11/2026, typed into the session after being shown the model draft,
+    and it is his wording that is recorded here. Section 2 makes his wording authoritative without a second
+    native review. It did not come through the generated review queue, so the authorship evidence is the
+    message itself rather than a one-writer queue line. Both page records carry the same pair and hash.
 ```
 
 <!-- COPY-ENTRY -->
@@ -22640,29 +22644,33 @@ path: PRICING_QUESTIONS[0].a[0]
 render: Pricing page, PRICING_QUESTIONS[0].a[0]
 narrative_slot: utility
 en: >-
-  Coaching 1:1 starts at 4,900 THB. The actual price depends what you want help with and how far that help
-  goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide
-  whether to go ahead.
+  Coaching 1:1 starts at 4,900 THB. It depends what you want help with and how far that help goes. We go
+  through the details and tell you the cost clearly the first time we talk, and then you decide whether to
+  go ahead.
 th: >-
   Coaching 1:1 เริ่มต้นที่ 4,900 บาท
-  ราคาจริงขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
+  ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
   เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่
-provenance: paul-approved
-date: 23/08/2026
+provenance: paul-written
+date: 18/11/2026
 term_bindings: []
 decision_note: >-
   Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after
-  the Fit Report and the ฿1,500 pack's complimentary hour rather than containing them. Before this change the
-  answer opened ค่าบริการขึ้นอยู่กับ and named no figure. Provenance is unchanged: the rest of the sentence is
-  still his.
+  the Fit Report and the 1,500 THB pack's complimentary hour rather than containing them. The answer
+  previously opened with the fee and named no figure. Two model drafts of the same day put the figure in
+  front of it and rewrote more than the figure required: the first replaced Paul's fee noun and left the
+  English subject ungrammatical, the second corrected the English by rewriting his subject. Paul then wrote
+  the Thai out himself and restored his own fee noun. His English sentence of 23/08/2026 is restored here as
+  he wrote it, so the only new text in the record is the price statement his decision supplies.
 review:
-  structural_calque: pending
-  text_hash: 4ea2fd411067c8292bcfab7a0893a2b32e1972100ac800eccacf1f0b5f98c8c0
+  structural_calque: pass
+  text_hash: 0f3dd0b4236771d687f22ed7381c7e3f7f433648cd8c0a1f892c3b5756068cfa
   prompt_version: structural-calque-v1
   basis: >-
-    Thai changed in this session by a model, not by Paul. Only the opening was touched: the price sentence was
-    added and ค่าบริการ became ราคาจริง, so the figure has something to qualify. Everything after that is his
-    wording of 23/08/2026, unaltered. Awaiting his read.
+    Paul wrote this Thai himself on 18/11/2026, typed into the session after being shown the model draft,
+    and it is his wording that is recorded here. Section 2 makes his wording authoritative without a second
+    native review. It did not come through the generated review queue, so the authorship evidence is the
+    message itself rather than a one-writer queue line. Both page records carry the same pair and hash.
 ```
 
 <!-- COPY-ENTRY -->
