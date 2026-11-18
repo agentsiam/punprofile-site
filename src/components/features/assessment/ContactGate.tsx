@@ -123,6 +123,16 @@ export default function ContactGate({
     error && (ERROR_FIELD[error] ?? []).includes(name) ? true : undefined;
   /* One id, so every marked field points at the single live message. */
   const ERROR_ID = "gate-error";
+  /**
+   * The channel rule is "one of these two", so neither field can carry
+   * `required`: that would claim each is needed on its own, and a screen
+   * reader would then report two required fields where the form accepts
+   * either. `gate.channelHint` is the only place the real rule is stated, so
+   * both fields point at it and it is read out on focus. Added 18/11/2026,
+   * after the gate was found refusing an email-only candidate while telling
+   * nobody, in text a screen reader could reach, that a channel was needed.
+   */
+  const CHANNEL_HINT_ID = "gate-channel-hint";
   const labelText = "field-label";
 
   const consentLabel = pick(CONSENT_COPY["consent.statement"]);
@@ -297,14 +307,16 @@ export default function ContactGate({
         />
       </label>
 
-      <p className="mt-8 text-body-large text-on-surface-variant">{t("gate.channelHint")}</p>
+      <p id={CHANNEL_HINT_ID} className="mt-8 text-body-large text-on-surface-variant">
+        {t("gate.channelHint")}
+      </p>
 
       <label className={`mt-4 ${labelText}`}>
         {t("gate.lineId")}
         <input
           className={field}
           aria-invalid={invalid("line")}
-          aria-describedby={invalid("line") ? ERROR_ID : undefined}
+          aria-describedby={[CHANNEL_HINT_ID, invalid("line") ? ERROR_ID : null].filter(Boolean).join(" ")}
           value={lineId}
           onChange={(e) => setLineId(e.target.value)}
         />
@@ -316,7 +328,7 @@ export default function ContactGate({
           className={field}
           type="tel"
           aria-invalid={invalid("phone")}
-          aria-describedby={invalid("phone") ? ERROR_ID : undefined}
+          aria-describedby={[CHANNEL_HINT_ID, invalid("phone") ? ERROR_ID : null].filter(Boolean).join(" ")}
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           autoComplete="tel"
