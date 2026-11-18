@@ -621,6 +621,8 @@ export default defineSchema({
       situationProposals: v.optional(v.number()),
       outboxDrafts: v.optional(v.number()),
       candidateRules: v.optional(v.number()),
+      releases: v.optional(v.number()),
+      releaseItems: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 

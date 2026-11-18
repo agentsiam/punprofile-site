@@ -467,7 +467,7 @@ export const closeSession = mutation({
     const call = await ctx.db.get(args.consultationId);
     if (!call || call.leadId !== args.leadId) throw new ConvexError("That call belongs to a different lead.");
     if (call.outcome === "cancelled" || call.outcome === "no_show") {
-      throw new ConvexError("That call is logged as not held. Change its outcome in Calls and notes first.");
+      throw new ConvexError("That call is logged as not held. Change its outcome on the Record page first.");
     }
 
     const sent = args.rows.map((r) => r.row);

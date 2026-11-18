@@ -215,7 +215,7 @@ export const updateDeliverable = mutation({
     // keeps its kind, so a reservation cannot end without its charge.
     if (row.status === "cancelled" && args.status) throw new ConvexError("Cancelled. Add it again instead.");
     if (row.kind === "fit_report" && args.status === "delivered") {
-      throw new ConvexError("Deliver the Fit Report from the Fit Report tab, which charges it.");
+      throw new ConvexError("Deliver the Fit Report from the first call's rung on the Delivery page, which charges it.");
     }
     if (args.kind === "fit_report" && row.kind !== "fit_report") {
       throw new ConvexError("A Fit Report is created by selecting it, which reserves its tokens.");

@@ -41,6 +41,8 @@ export type EraseCounts = {
   situationProposals: number;
   outboxDrafts: number;
   candidateRules: number;
+  releases: number;
+  releaseItems: number;
 };
 
 /**
@@ -248,6 +250,23 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     .withIndex("by_lead", (q) => q.eq("leadId", leadId))
     .collect();
   for (const r of rules) await ctx.db.delete(r._id);
+  // A release and the items it carried. An item may hold a document uploaded
+  // for it, so the file goes with the row the way a CV's does above. An item
+  // that points at a `cvDocuments` row holds no file of its own; that one is
+  // deleted with the CV.
+  const releaseItems = await ctx.db
+    .query("releaseItems")
+    .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+    .collect();
+  for (const i of releaseItems) {
+    if (i.storageId) await ctx.storage.delete(i.storageId);
+    await ctx.db.delete(i._id);
+  }
+  const releases = await ctx.db
+    .query("releases")
+    .withIndex("by_lead", (q) => q.eq("leadId", leadId))
+    .collect();
+  for (const r of releases) await ctx.db.delete(r._id);
   // Bookings still waiting to be placed carry only an email to tie them to
   // this person; they go with the person too.
   const leadEmail = (await ctx.db.get(leadId))?.email?.trim().toLowerCase();
@@ -302,5 +321,7 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     situationProposals: proposals.length,
     outboxDrafts: outbox.length,
     candidateRules: rules.length,
+    releases: releases.length,
+    releaseItems: releaseItems.length,
   };
 }
