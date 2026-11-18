@@ -1264,12 +1264,16 @@ function TargetTitles({ leadId, targets }: { leadId: Id<"leads">; targets: Ws["t
       id="rs-titles"
       title="Target titles"
       aside={
-        active.length < 5 ? (
+        // The ceiling is `MAX_ACTIVE_TARGETS` in `convex/targets.ts`, which
+        // throws at it. Repeated here because `src/` imports nothing from
+        // `convex/`; the one home for it would be a `src/lib` module that
+        // `convex/targets.ts` imports, as `checklist` already does.
+        active.length < 3 ? (
           <button type="button" className={LINK} onClick={() => setDraft(blank)}>
-            Add a title ({active.length} of 5)
+            Add a title ({active.length} of 3)
           </button>
         ) : (
-          <span className="text-body-medium text-on-surface-variant">5 of 5 active</span>
+          <span className="text-body-medium text-on-surface-variant">3 of 3 active</span>
         )
       }
     >
