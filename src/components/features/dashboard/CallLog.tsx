@@ -669,7 +669,7 @@ export default function CallLog({ leadId }: { leadId: Id<"leads"> }) {
           <div className="mt-6">
             <p className="field-label">Notes</p>
             <p className="field-support">
-              The write-up is the session close on the Session tab, which is where the panel, the decisions, what we owe next and
+              The write-up is the session close on the current rung of the Delivery page, which is where the panel, the decisions, what we owe next and
               what they owe are all written at once. What is already here stays and is carried through a save.
             </p>
             {draft.notes.trim() ? (

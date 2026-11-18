@@ -1,5 +1,5 @@
 /**
- * One panel on the Session tab: a titled box with an optional aside.
+ * One panel on the lead's Delivery page: a titled box with an optional aside.
  *
  * Its own file because the Situation panel and the session close share it with
  * the rest of the tab, and a second copy of the same box is how two panels on

@@ -210,13 +210,13 @@ export default function CloseSession({ leadId }: { leadId: Id<"leads"> }) {
           <button
             type="button"
             disabled={f.calls.length === 0}
-            className="btn-filled mt-4 h-9 px-4 text-label-large"
+            className="btn-tonal mt-4 h-9 px-4 text-label-large"
             onClick={start}
           >
             {waiting.length > 0 ? "Close the session" : "Open the form"}
           </button>
           {f.calls.length === 0 && (
-            <p className="mt-2 text-body-medium text-on-surface-variant">No call in the log to close. Log it in Calls and notes first.</p>
+            <p className="mt-2 text-body-medium text-on-surface-variant">No call in the log to close. Log it in the call log, on the Record page, first.</p>
           )}
         </>
       )}
@@ -318,7 +318,7 @@ export default function CloseSession({ leadId }: { leadId: Id<"leads"> }) {
 
           <Lines
             label="2. Decisions made in the session"
-            hint="One line each, as they were agreed. They land on the call in Calls and notes and are never edited afterwards."
+            hint="One line each, as they were agreed. They land on the call in the call log, on the Record page, and are never edited afterwards."
             rows={decisions}
             set={(i, patch) => setDecisions((xs) => xs.map((x, j) => (j === i ? { ...x, ...patch } : x)))}
             add={() => setDecisions((xs) => [...xs, { what: "" }])}
@@ -349,7 +349,7 @@ export default function CloseSession({ leadId }: { leadId: Id<"leads"> }) {
             </p>
           )}
           <div className="flex flex-wrap items-center gap-4">
-            <button type="button" disabled={busy || !chosen} className="btn-filled h-9 px-4 text-label-large" onClick={() => void save()}>
+            <button type="button" disabled={busy || !chosen} className="btn-tonal h-9 px-4 text-label-large" onClick={() => void save()}>
               Save the close
             </button>
             <button type="button" className="text-body-medium text-ink-deep underline" onClick={() => setOpen(false)}>

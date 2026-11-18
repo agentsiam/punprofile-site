@@ -1,5 +1,5 @@
 /**
- * The coach's delivery checklist on the Session tab, `prd.md` § 8. One row per
+ * The coach's delivery checklist, `prd.md` § 8. One row per
  * step in the order a candidate goes through them, each ticked by the record
  * that proves it. Two steps happen outside the app and are ticked by the coach.
  * Pure: the Convex query gathers the records, this decides the rows.
@@ -65,7 +65,7 @@ export function checklist(i: ChecklistInput): Step[] {
   const noPack = i.packAt === null;
 
   const rows: Step[] = [
-    i.packAt !== null ? step("pack", "Pack recorded", "done", i.packAt) : step("pack", "Pack recorded", "todo", null, "No ฿1,500 sale in the Delivery tab"),
+    i.packAt !== null ? step("pack", "Pack recorded", "done", i.packAt) : step("pack", "Pack recorded", "todo", null, "No ฿1,500 sale in the running state"),
     i.access?.codeEmailed
       ? step("signin_sent", "Dashboard sign-in sent", "done", i.access.codeIssuedAt)
       : step("signin_sent", "Dashboard sign-in sent", "todo", null, i.access ? "Not delivered by email" : "No access granted yet"),

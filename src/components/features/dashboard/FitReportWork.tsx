@@ -1,7 +1,11 @@
 "use client";
 
 /**
- * The Fit Report, in one tab, 02/11/2026.
+ * The Fit Report: a piece of work, not a place. It opens inside the first
+ * call's rung on the lead's Delivery page while that call is the rung, and
+ * `coaching-delivery-design.md` § 7b says why it is no longer a tab of its
+ * own: it is empty before the first call, finished once the report ships, and
+ * the same weight as the call log throughout.
  *
  * Before the call the Fit Report skill fills every competency the candidate's
  * own answers, CVs and documents can decide, as evidence, and leaves the
@@ -13,6 +17,11 @@
  * A draft (indicators still open) is not a rating: the report and the
  * dashboard skip it until the coach settles it, because an indicator nobody
  * observed is not one the candidate failed.
+ *
+ * It reads the lead, the corrections and the ratings itself. Convex dedupes
+ * identical subscriptions, so costing nothing extra is what lets the rung
+ * carry it without the page shell threading the report's inputs through the
+ * ladder.
  */
 
 import { useMemo, useState } from "react";
@@ -23,6 +32,8 @@ import { DIMENSIONS, GATES } from "@/lib/model";
 import { ECRA, ecraScore } from "@/lib/ecra";
 import { INTERVIEW_ITEMS, INTERVIEW_PARTS, LATER_ITEMS } from "@/lib/fitInterview";
 import { TOKEN_PRICE } from "@/lib/tokenPrices";
+import { applyCorrections } from "@/lib/corrections";
+import { openFitReport } from "@/components/features/report/openFitReport";
 
 type Rating = Doc<"competencyRatings">;
 
@@ -39,21 +50,28 @@ const day = (ms: number) => {
   return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
 };
 
-export default function FitReportTab({
-  leadId,
-  sharedAt,
-  onOpenPdf,
-}: {
-  leadId: Id<"leads">;
-  sharedAt: number | undefined;
-  onOpenPdf: (loc: "en" | "th") => Promise<void>;
-}) {
+export default function FitReportWork({ leadId }: { leadId: Id<"leads"> }) {
   const rows = useQuery(api.ratings.latestForLead, { leadId });
+  const lead = useQuery(api.leads.getForAdmin, { leadId });
+  const corrections = useQuery(api.corrections.listForLead, { leadId });
   const deliver = useMutation(api.workspace.deliverFitReport);
   const latest = useMemo(() => new Map((rows ?? []).map((r) => [r.itemKey, r])), [rows]);
   const [busy, setBusy] = useState<"pdf" | "deliver" | null>(null);
   const [error, setError] = useState<string | null>(null);
-  if (rows === undefined) return <p className="text-body-md text-mute-strong">Loading...</p>;
+  if (rows === undefined || lead === undefined || corrections === undefined) {
+    return <p className="text-body-md text-mute-strong">Loading...</p>;
+  }
+  if (lead === null) return <p className="text-body-md text-error">No lead with that id.</p>;
+
+  const sharedAt = lead.fitReportSharedAt ?? undefined;
+  /** Drafts are not ratings: the report reads only settled rows. */
+  const onOpenPdf = async (loc: "en" | "th") => {
+    const effective = applyCorrections(lead.responses, corrections).effective;
+    const usable = rows.filter((r) => !r.open || r.open.length === 0);
+    if (!(await openFitReport({ ...lead, responses: effective }, usable, loc))) {
+      setError("The report opens in a new tab. Allow popups for this site and press the button again.");
+    }
+  };
 
   const toAsk = INTERVIEW_ITEMS.filter((k) => !settled(latest.get(k)));
   const fromEvidence = ITEMS.filter((i) => settled(latest.get(i.key)) && latest.get(i.key)?.source === "evidence");
@@ -103,7 +121,7 @@ export default function FitReportTab({
                 setBusy(null);
               }
             }}
-            className="h-11 btn-filled px-6 text-label-large"
+            className="btn-tonal h-11 px-6 text-label-large"
           >
             {busy === "deliver" ? "Delivering..." : "Deliver Fit Report"}
           </button>

@@ -1,25 +1,22 @@
 "use client";
 
 /**
- * The delivery workspace on the Candidate 360: everything a paying candidate
- * gets after the sale, worked from one place.
+ * Everything a paying candidate gets after the sale, worked from one place.
  *
- * Six panels, in the order a coach works them:
+ * This file was the Delivery tab. The two-page lead broke it in two, because
+ * neither half is a tab any more (`coaching-delivery-design.md` § 7b):
  *
- * 1. **The release.** Everything one call produced, handed over in one action.
- *    It carries the pieces the other panels hold rather than a copy of them,
- *    and nothing in it reaches the candidate until it is released.
- * 2. **Wallet and link.** Token balance (`tokenLedger`, never stored) and the
- *    candidate's own page, `/me/<token>`.
- * 3. **What was sold and what is due.** `engagements` and `deliverables`, with
- *    status moved in place and a due date per item.
- * 4. **CV versions.** Every file, never overwritten, each revision saying what
- *    changed and which piece of work it belongs to. Shared ones appear on the
- *    candidate's page.
- * 5. **Job tracker.** `applications` as a pipeline, matched roles sent from here
- *    with their token spent in the same step, and the CV used per application.
- * 6. **Delivery notes.** Private by default; a shared note is what the
- *    candidate reads as "from your coach".
+ * - **`ReleasePanel`.** Everything one call produced, handed over in one
+ *   action. It opens inside the rung that delivers it, it carries the pieces
+ *   the other panels hold rather than a copy of them, and nothing in it
+ *   reaches the candidate until it is released.
+ * - **`WorkspacePanels`.** The running state beside the ladder: the wallet
+ *   (`tokenLedger`, never stored) and the candidate's own page, the
+ *   entitlements and the Fit Report reservation, what was sold and what is
+ *   due, the target titles, every CV version, the job tracker with the weekly
+ *   maximum and the pause, and the delivery notes.
+ *
+ * Nothing moved inside a panel. What changed is where the panels are shown.
  *
  * English only, like every admin surface (`copy.ts`).
  */
@@ -57,9 +54,20 @@ const INPUT = "field mt-1";
 const BTN = "btn-tonal h-10 px-5 text-label-large";
 const LINK = "text-body-medium text-ink-deep underline";
 
-function Panel({ title, aside, children }: { title: string; aside?: React.ReactNode; children: React.ReactNode }) {
+function Panel({
+  id,
+  title,
+  aside,
+  children,
+}: {
+  /** The anchor the ladder's next step scrolls to. */
+  id?: string;
+  title: string;
+  aside?: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
-    <section className="rounded-large border border-outline-variant p-5">
+    <section id={id} className="rounded-large border border-outline-variant p-5">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h3 className="text-title-medium text-on-surface">{title}</h3>
         {aside}
@@ -161,17 +169,27 @@ const ORIGIN_LABEL: Record<string, string> = {
 
 /* ================================================================== root */
 
-export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
+/**
+ * The panels of the running state that are the workspace's own, in the order
+ * `prd.md` § 8 lists them: dashboard access, the wallet with the entitlements
+ * and the Fit Report reservation, what was sold, the target titles and the CV
+ * versions, the job tracker, and the delivery notes.
+ *
+ * It is the running state because none of it completes. `RunningState` adds
+ * the parts that are not the workspace's: the evening run's roles, the row
+ * that runs rather than ticks, the exceptions and the corrections.
+ */
+export function WorkspacePanels({ leadId }: { leadId: Id<"leads"> }) {
   const ws = useQuery(api.workspace.forLead, { leadId });
   const engagements = useQuery(api.delivery.forLead, { leadId });
 
   if (ws === undefined || engagements === undefined) {
     return <p className="text-body-medium text-on-surface-variant">Loading...</p>;
   }
+  if (ws === null) return null;
 
   return (
-    <div className="space-y-5">
-      <Releases leadId={leadId} ws={ws} engagements={engagements} />
+    <>
       <WalletAndLink leadId={leadId} ws={ws} engagements={engagements} />
       <EntitlementsPanel leadId={leadId} ws={ws} engagements={engagements} />
       <Deliverables leadId={leadId} engagements={engagements} />
@@ -188,7 +206,7 @@ export default function DeliveryWorkspace({ leadId }: { leadId: Id<"leads"> }) {
       />
       <MatchRules leadId={leadId} />
       <Notes notes={ws.notes} engagements={engagements} apps={ws.applications} />
-    </div>
+    </>
   );
 }
 
@@ -207,7 +225,7 @@ function MatchRules({ leadId }: { leadId: Id<"leads"> }) {
   if (!rules) return null;
   const waiting = rules.filter((r) => !r.active).length;
   return (
-    <Panel title="What her feedback rules out">
+    <Panel id="rs-rules" title="What her feedback rules out">
       {rules.length === 0 ? (
         <p className="text-body-medium text-on-surface-variant">
           Nothing yet. A Not for me with a reason writes one of these, and the run reads the ones switched on.
@@ -299,7 +317,7 @@ function EntitlementsPanel({ leadId, ws, engagements }: { leadId: Id<"leads">; w
   const closure = e.closure;
 
   return (
-    <Panel title="Entitlements and Fit Report">
+    <Panel id="rs-entitlements" title="Entitlements and Fit Report">
       <dl className="grid gap-x-6 gap-y-2 text-body-medium medium:grid-cols-[max-content_1fr]">
         <dt className="text-on-surface-variant">฿1,500 pack</dt>
         <dd className="text-on-surface" data-testid="ent-pack">
@@ -505,7 +523,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
   };
 
   return (
-    <Panel title="Wallet and their dashboard">
+    <Panel id="rs-wallet" title="Wallet and their dashboard">
       <div className="grid gap-5 medium:grid-cols-2">
         <div>
           <p className="text-label-large text-on-surface-variant">Tokens left</p>
@@ -653,7 +671,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
               </p>
             ) : (
               <p className="mt-1 text-body-medium text-on-surface-variant">
-                Not shared yet. Rate and deliver it from the Fit Report tab, which also marks it delivered and deducts its tokens.
+                Not shared yet. Rate and deliver it from the Fit Report, on the first call&apos;s rung, which also marks it delivered and deducts its tokens.
               </p>
             )}
           </div>
@@ -794,6 +812,7 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
 
   return (
     <Panel
+      id="rs-sold"
       title="What was sold, what is due"
       aside={
         <button
@@ -1242,6 +1261,7 @@ function TargetTitles({ leadId, targets }: { leadId: Id<"leads">; targets: Ws["t
 
   return (
     <Panel
+      id="rs-titles"
       title="Target titles"
       aside={
         active.length < 5 ? (
@@ -1525,6 +1545,7 @@ function CvVersions({
 
   return (
     <Panel
+      id="rs-cvs"
       title="CV versions"
       aside={
         <span className="flex gap-4">
@@ -1805,6 +1826,7 @@ function JobTracker({
 
   return (
     <Panel
+      id="rs-jobs"
       title="Job tracker"
       aside={
         <span className="flex gap-4">
@@ -2232,9 +2254,9 @@ function Notes({
   };
 
   return (
-    <Panel title="Delivery notes">
+    <Panel id="rs-notes" title="Delivery notes">
       <p className="text-body-medium text-on-surface-variant">
-        Written at the session close on the Session tab, and by the app for what it records itself. Everything already here stays
+        Written at the session close on the current rung, and by the app for what it records itself. Everything already here stays
         readable, and a note can still be shown to the candidate or taken off their page.
       </p>
 
@@ -2286,6 +2308,28 @@ function Notes({
  * reads, so they are written in the candidate's own language: nothing
  * prefills them, since a default would reach them in one language only.
  */
+/**
+ * The release being assembled, under the rung that delivers it, `prd.md` § 8.
+ *
+ * Exported and self-reading since the two-page lead: the ladder renders it
+ * inside the current rung rather than as a panel of the running state, so it
+ * can no longer be handed the workspace the root component had already read.
+ * Convex dedupes identical subscriptions, so reading them again costs nothing.
+ */
+export function ReleasePanel({ leadId }: { leadId: Id<"leads"> }) {
+  const ws = useQuery(api.workspace.forLead, { leadId });
+  const engagements = useQuery(api.delivery.forLead, { leadId });
+  if (ws === undefined || engagements === undefined) {
+    return (
+      <Panel title="The release">
+        <p className="text-body-medium text-on-surface-variant">Loading...</p>
+      </Panel>
+    );
+  }
+  if (ws === null) return null;
+  return <Releases leadId={leadId} ws={ws} engagements={engagements} />;
+}
+
 function Releases({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: Ws; engagements: Engs }) {
   const rows = useQuery(api.releases.forLead, { leadId });
   const openRelease = useMutation(api.releases.open);

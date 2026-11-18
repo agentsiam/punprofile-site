@@ -1,7 +1,8 @@
 "use client";
 
 /**
- * The outbox on the Session tab, `candidate-situation-handoff.md` § 4.
+ * The outbox, on the current rung of the lead's Delivery page,
+ * `candidate-situation-handoff.md` § 4.
  *
  * What we are about to say to this candidate, each draft written from the
  * Situation panel plus the event that called for it. The panel lines it was
@@ -138,7 +139,7 @@ function DraftCard({ d, email }: { d: Draft; email: string | null }) {
             <button
               type="button"
               disabled={busy}
-              className="btn-filled h-9 px-4 text-label-large"
+              className="btn-tonal h-9 px-4 text-label-large"
               onClick={() => void run(() => fill({ id: d._id, body, ...(d.channel === "email" ? { subject } : {}) }))}
             >
               Save the draft
@@ -156,7 +157,7 @@ function DraftCard({ d, email }: { d: Draft; email: string | null }) {
               <button
                 type="button"
                 disabled={busy || (d.channel === "email" && !email)}
-                className="btn-filled h-9 px-4 text-label-large"
+                className="btn-tonal h-9 px-4 text-label-large"
                 onClick={() => void run(() => approve({ id: d._id }))}
               >
                 {d.channel === "line" ? "Mark it copied" : "Approve and send"}

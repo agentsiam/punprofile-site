@@ -1,5 +1,5 @@
 /**
- * The agreed call agendas, coach-facing. `prd.md` section 8, Session tab, owns
+ * The agreed call agendas, coach-facing. `prd.md` § 8, the Delivery page, owns
  * them; the assessment's run sheet itself is the Fit Report interview skill's.
  */
 export const AGENDAS: Record<"fit_report" | "coaching_session", { title: string; items: string[] }> = {

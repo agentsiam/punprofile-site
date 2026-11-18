@@ -5,7 +5,8 @@
  * data. Nothing here is stored.
  *
  * Appointments are rows of the call log, `consultations`, and nowhere else.
- * The same `leadItems` feeds the coach queues and the Session tab, so the two
+ * The same `leadItems` feeds the coach queues and the lead's Delivery page,
+ * so the two
  * can never disagree. Paul conducts every pilot call (`01_Project_Foundation.md`,
  * Coach), so a coach action's owner is Paul; where a date cannot be
  * determined from the record it is `null` and shows as unresolved.
@@ -138,7 +139,7 @@ export type Item = {
 
 /**
  * Every open item for one paid candidate, most pressing first. The coach
- * queues list these across candidates; the Session tab shows them for one.
+ * queues list these across candidates; the Delivery page shows them for one.
  */
 export function leadItems(ds: SessionDeliverable[], calls: Call[], preps: Preparation[], wallet: Wallet, now: number): Item[] {
   const out: Item[] = [];

@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * The Situation panel, first on the Session tab,
+ * The Situation panel, first on the Delivery page,
  * `candidate-situation-handoff.md`. One glance answers where this person is
  * and what anything we send them has to respect.
  *
@@ -295,7 +295,7 @@ export default function SituationPanel({ leadId }: { leadId: Id<"leads"> }) {
                     <button
                       type="button"
                       disabled={busy}
-                      className="btn-filled h-9 px-4 text-label-large"
+                      className="btn-tonal h-9 px-4 text-label-large"
                       onClick={() =>
                         void run(() =>
                           setRow({ leadId, value: rowValue(r.key, draft), ...(evidence.trim() ? { evidence: evidence.trim() } : {}) }),
