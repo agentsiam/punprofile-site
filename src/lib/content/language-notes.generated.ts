@@ -2410,7 +2410,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-written",
     "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "decisionNote": "Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after the Fit Report and the ฿1,500 pack's complimentary hour rather than containing them. Before this change the answer opened ค่าบริการขึ้นอยู่กับ and named no figure. Provenance is unchanged: the rest of the sentence is still his."
   },
   "src/lib/content/faq.ts::FAQ[6].a[1]": {
     "source": "src/lib/content/faq.ts",
@@ -8602,7 +8602,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "23/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "decisionNote": "Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after the Fit Report and the ฿1,500 pack's complimentary hour rather than containing them. Before this change the answer opened ค่าบริการขึ้นอยู่กับ and named no figure. Provenance is unchanged: the rest of the sentence is still his."
   },
   "src/lib/content/pricing.ts::PRICING_QUESTIONS[0].a[1]": {
     "source": "src/lib/content/pricing.ts",

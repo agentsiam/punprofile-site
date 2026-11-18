@@ -6754,20 +6754,29 @@ path: FAQ[6].a[0]
 render: FAQ page, FAQ[6].a[0]
 narrative_slot: utility
 en: >-
-  It depends what you want help with and how far that help goes. We go through the details and tell you the
-  cost clearly the first time we talk, and then you decide whether to go ahead.
+  Coaching 1:1 starts at 4,900 THB. The actual price depends what you want help with and how far that help
+  goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide
+  whether to go ahead.
 th: >-
-  ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
+  Coaching 1:1 เริ่มต้นที่ 4,900 บาท
+  ราคาจริงขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
   เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่
 provenance: paul-written
 date: 14/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: >-
+  Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after
+  the Fit Report and the ฿1,500 pack's complimentary hour rather than containing them. Before this change the
+  answer opened ค่าบริการขึ้นอยู่กับ and named no figure. Provenance is unchanged: the rest of the sentence is
+  still his.
 review:
-  structural_calque: pass
-  text_hash: 8896f0b0c358540c79dd3e006ca80e47edd4678b63a1acafd79a6eba78d6692a
+  structural_calque: pending
+  text_hash: 4ea2fd411067c8292bcfab7a0893a2b32e1972100ac800eccacf1f0b5f98c8c0
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: >-
+    Thai changed in this session by a model, not by Paul. Only the opening was touched: the price sentence was
+    added and ค่าบริการ became ราคาจริง, so the figure has something to qualify. Everything after that is his
+    wording of 23/08/2026, unaltered. Awaiting his read.
 ```
 
 <!-- COPY-ENTRY -->
@@ -22631,20 +22640,29 @@ path: PRICING_QUESTIONS[0].a[0]
 render: Pricing page, PRICING_QUESTIONS[0].a[0]
 narrative_slot: utility
 en: >-
-  It depends what you want help with and how far that help goes. We go through the details and tell you the
-  cost clearly the first time we talk, and then you decide whether to go ahead.
+  Coaching 1:1 starts at 4,900 THB. The actual price depends what you want help with and how far that help
+  goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide
+  whether to go ahead.
 th: >-
-  ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
+  Coaching 1:1 เริ่มต้นที่ 4,900 บาท
+  ราคาจริงขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
   เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่
 provenance: paul-approved
 date: 23/08/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: >-
+  Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after
+  the Fit Report and the ฿1,500 pack's complimentary hour rather than containing them. Before this change the
+  answer opened ค่าบริการขึ้นอยู่กับ and named no figure. Provenance is unchanged: the rest of the sentence is
+  still his.
 review:
-  structural_calque: pass
-  text_hash: 8896f0b0c358540c79dd3e006ca80e47edd4678b63a1acafd79a6eba78d6692a
+  structural_calque: pending
+  text_hash: 4ea2fd411067c8292bcfab7a0893a2b32e1972100ac800eccacf1f0b5f98c8c0
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: >-
+    Thai changed in this session by a model, not by Paul. Only the opening was touched: the price sentence was
+    added and ค่าบริการ became ราคาจริง, so the figure has something to qualify. Everything after that is his
+    wording of 23/08/2026, unaltered. Awaiting his read.
 ```
 
 <!-- COPY-ENTRY -->
