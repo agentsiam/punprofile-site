@@ -2101,7 +2101,7 @@ export default defineSchema({
    * Stage 0. Everything downstream hangs off the title: its CV, its feed, its
    * applications.
    *
-   * At most four active, usually three, enforced on write. A dropped title keeps its CVs and applications as history.
+   * At most three active, enforced on write. A dropped title keeps its CVs and applications as history.
    */
   targets: defineTable({
     leadId: v.id("leads"),
