@@ -615,6 +615,17 @@ export default defineSchema({
       targets: v.optional(v.number()),
       preparations: v.optional(v.number()),
       bookingInbox: v.optional(v.number()),
+      /**
+       * Optional for the same reason again, and the two the validator was
+       * missing. `eraseLead` began counting both on 03/11/2026 and this
+       * object was not widened with it, so every on-request erase threw on
+       * this insert and rolled the whole deletion back: the subject stayed
+       * in the database and the screen reported a server error. Found
+       * 18/11/2026 erasing a test record. The retention sweep was never
+       * affected, because it builds its own nine-field count.
+       */
+      checklistTicks: v.optional(v.number()),
+      foundRoles: v.optional(v.number()),
       /** Optional for the same reason again: rows written before this table
        *  existed have no such count. */
       candidateTasks: v.optional(v.number()),
