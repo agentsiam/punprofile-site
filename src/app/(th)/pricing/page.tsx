@@ -58,6 +58,12 @@ import {
   isFreeProduct,
   productBySlug,
 } from "@/lib/content/products";
+/* The four steps of an engagement, and their heading and lede, from the same
+   records `/services` renders. Reused rather than restated, which is the rule
+   this page already follows for `COACHES`: one set of records, rendered
+   wherever it is needed, so `/pricing` cannot grow a second and looser account
+   of how the work runs. */
+import { ENGAGEMENT, ENGAGEMENT_HEADING, ENGAGEMENT_LEDE } from "@/lib/content/services";
 import type { Copy } from "@/lib/content/copy";
 import Band from "@/components/Band";
 /* The bonus panel's coaches. Both already render on the home page and
@@ -97,6 +103,28 @@ const PACK_ART: Record<string, { src: string; w: number; h: number }> = {
  */
 const fill = (s: string, vars: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? ""));
+
+/**
+ * The four stage circles, in the secondary palette's decorative tints.
+ *
+ * `design.md` gives those three tints no meaning on purpose: lime acts, the
+ * dark ground is authority, orange is the mark and the mascot, cyan is EU Fit
+ * Check, and the pale tints rotate, so a reader learns nothing from which one
+ * turns up and nothing is being claimed by colouring a circle. That is what
+ * makes them safe here and it is also why there is no lime in the run: lime is
+ * the one colour that says a thing can be pressed, and the only pressable thing
+ * on this panel is the button under it (R16).
+ *
+ * The fourth is the white card ground rather than a fourth tint, which is the
+ * reference's own arrangement and keeps the run from reading as a four-colour
+ * chart. Each tint carries its own `on-` role for the numeral.
+ */
+const STAGE_TINT = [
+  "bg-cyan-pale text-on-cyan-pale",
+  "bg-yellow-pale text-on-yellow-pale",
+  "bg-orange-pale text-on-orange-pale",
+  "bg-canvas text-ink-deep",
+] as const;
 
 /** One spec row (B6): label and detail left, value right, hairline between. */
 function SpecRow({
@@ -532,22 +560,220 @@ export default function PricingPage() {
         <TokenCalculator />
       </Band>
 
-      {/* ---------------------------------------- questions, then the close */}
-      <Band block="B5" ground="soft" width="wide">
-        {PRICING_QUESTIONS.map((item, i) => (
-          <div key={i} className="border-b border-outline-variant py-6 last:border-b-0">
-            <h3 className="text-heading-sm">{pick(item.q)}</h3>
-            {item.a.map((line, j) => (
-              <p key={j} className="mt-3 text-body-large text-on-surface-variant">
-                {pick(line)}
-              </p>
-            ))}
+      {/* ------------------------------------------------- the close, 18/11/2026
+          **The Coaching 1:1 price is the page\'s closing panel now, not a row
+          in a question list.** It was a `B5` row-list holding one question: a
+          hairline, a bold line, and the only four-figure number on the page set
+          in the same grey body type as a token count, with the page\'s secondary
+          text link under it. The number the page works hardest to earn was its
+          quietest typography.
+
+          **It is a white panel on the soft band, not a dark one.** The first
+          build of this was `canvas-dark`, which gave the close authority and
+          then kept it for twelve hundred pixels, and a block that large reads
+          as a change of ground rather than as one more thing. White card on a
+          tinted band is what `design.md` says a card is (R18); the tonal step
+          the panel needs is spent inside it, on the stage strip, where it
+          carries meaning rather than weight.
+
+          It stays `B8` because B8 is this shape: icon chip, heading, pill, on
+          a rounded card of its own. What it is not is B8's ground, and the
+          block is written as the dark closing panel. It also carries a stage
+          strip and two faces, which that block as written does not.
+          `block-library.md` owns whether B8 gains a light variant or this
+          becomes a block of its own, and that file is in the sibling repo
+          (R1), so the entry is unchanged and this comment is the flag.
+
+          **The question is the eyebrow and the answer is the heading.** Both
+          are Paul\'s own strings, unchanged: his answer opens with the figure
+          and closes on the reason to start, which is the argument the panel
+          needs.
+
+          **The ask is `contact`, the page\'s declared primary** (`cta.ts` rule 1
+          allows one action to repeat, which is why the hero and the three pack
+          cards carry this same button). A reader who has just read that the
+          price is settled in the first conversation is one step from that
+          conversation. The secondary under it goes to `/coaching` since
+          18/11/2026, Paul\'s call: it was the EU Fit Check, and the cheapest
+          link on the page cannot be the free assessment when it sits directly
+          beneath a paid price. See `cta.ts` for that entry. */}
+      <Band block="B8" ground="soft" width="wide">
+        <div className="card-plain rounded-3xl px-6 py-12 text-center medium:px-14">
+          <span
+            aria-hidden
+            className="mx-auto flex size-12 items-center justify-center rounded-full bg-orange-pale text-on-orange-pale"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.75}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="size-6"
+            >
+              <path d="M20.25 11.4c0 3.8-3.7 6.9-8.25 6.9-.9 0-1.78-.12-2.6-.35l-4.4 1.8 1.1-3.5c-1.4-1.3-2.1-2.98-2.1-4.85 0-3.8 3.7-6.9 8.25-6.9s8.25 3.1 8.25 6.9z" />
+            </svg>
+          </span>
+          {PRICING_QUESTIONS.map((item, i) => (
+            <div key={i}>
+              <p className="mt-6 text-body-md text-mute-strong">{pick(item.q)}</p>
+              {/* The first answer line is the price and takes the price\'s
+                  typography; the rest is what qualifies it and takes the body\'s.
+                  They were one record until 18/11/2026 and one record can only
+                  be one size, which is the whole reason they are two. The index
+                  is the rule: `a[0]` is the figure, by the contract in
+                  `pricing.ts.tpl`.
+
+                  `SECTION_HEADING`, not a `display-*` class picked by hand. The
+                  Latin display tier sits on a line box 0.85 of its size and
+                  that box clips Thai tone marks outright, which is why the two
+                  scripts have separate tiers and why a page names the job
+                  rather than the class (R25). */}
+              {item.a.map((line, j) =>
+                j === 0 ? (
+                  <p key={j} className={`mt-2 ${SECTION_HEADING(locale)}`}>
+                    {pick(line)}
+                  </p>
+                ) : (
+                  <p
+                    key={j}
+                    className="mx-auto mt-4 max-w-2xl text-body-large text-on-surface-variant"
+                  >
+                    {pick(line)}
+                  </p>
+                ),
+              )}
+            </div>
+          ))}
+
+          {/* ------------------------------------------------- the approach
+              **The four stages as a run rather than a stack.** Paul\'s
+              reference, 18/11/2026: numbered circles on a flowing connector
+              with each stage\'s text in a column underneath, which reads as one
+              process rather than four separate claims.
+
+              Built in this system\'s own materials. The strip takes
+              `canvas-soft`, the quiet ground the pack cards already step down
+              to inside a white card, so the panel has one tonal move and it is
+              this one. The circles are `canvas` on it, which is the same figure
+              and ground as the reference, the connector is `line-strong`, a
+              boundary role that clears the 3:1 floor for a thing that is not
+              text, and the numerals are `ink-deep`. No lime anywhere in it:
+              lime marks what can be pressed and there is exactly one of those
+              in this panel (R16).
+
+              The copy is `ENGAGEMENT` from `services.ts`, Paul\'s wording of
+              06/09/2026, the same four records `/services` renders rather than
+              a retelling of them. `ENGAGEMENT_LEDE` is what makes a from-price
+              legible: nothing is scoped or priced until both sides know what
+              the aim is.
+
+              **These four are not a list of what 4,900 buys.**
+              `01_Project_Foundation.md` publishes the from-price and no
+              component list while the structure is open, because a published
+              list is what the next caller anchors on. They say how the work
+              runs, in order. Step one names the Fit Report, which that same
+              decision prices in tokens and puts BEFORE the engagement rather
+              than inside it; the token table three bands above is where it is
+              priced and this panel prices nothing.
+
+              The wave is `large:` only and `aria-hidden`: it needs the five
+              columns side by side to mean anything, and below that width the
+              stages stack and the circles alternate no more. Its five nodes and
+              the inset are one arrangement: at `inset-x-[10%]` the path's 0,
+              250, 500, 750 and 1000 land on 10, 30, 50, 70 and 90 per cent,
+              which is where five columns put their circles, so the circles sit
+              on the line rather than near it. Change the column count and the
+              inset changes with it. The offsets are paired so
+              the circles ride the wave while the text rows stay level, which is
+              the reference\'s own arrangement: a circle dropped by `mt-12` takes
+              `mt-4` above its text and a circle at the top takes `mt-16`. */}
+          <div className="mt-10 rounded-2xl bg-canvas-soft px-5 py-10 medium:px-8">
+            <p className="text-title-medium text-on-surface">{pick(ENGAGEMENT_HEADING)}</p>
+            <p className="mx-auto mt-2 max-w-2xl text-body-md text-on-surface-variant">
+              {pick(ENGAGEMENT_LEDE)}
+            </p>
+
+            <div className="relative mt-8">
+              <svg
+                aria-hidden
+                viewBox="0 0 1000 150"
+                preserveAspectRatio="none"
+                className="absolute inset-x-[10%] top-10 hidden h-28 text-canvas large:block"
+              >
+                <path
+                  d="M 0 30 C 110 30, 110 120, 250 120 S 390 30, 500 30 S 640 120, 750 120 S 890 30, 1000 30"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="9"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <ol className="relative grid gap-8 medium:grid-cols-3 large:grid-cols-5 large:gap-5">
+                {ENGAGEMENT.map((step, i) => {
+                  const dropped = i % 2 === 1;
+                  const tint = STAGE_TINT[i % STAGE_TINT.length];
+                  return (
+                    <li key={i} className="text-center large:text-left">
+                      <span
+                        aria-hidden
+                        className={`mx-auto flex size-20 items-center justify-center rounded-full text-display-xs large:mx-0 ${tint} ${
+                          dropped ? "large:mt-12" : ""
+                        }`}
+                      >
+                        {i + 1}
+                      </span>
+                      <p
+                        className={`mt-4 text-body-md-strong text-on-surface ${
+                          dropped ? "large:mt-4" : "large:mt-16"
+                        }`}
+                      >
+                        {pick(step.lead)}
+                      </p>
+                      <p className="mt-1.5 text-body-md text-on-surface-variant">
+                        {pick(step.body)}
+                      </p>
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
           </div>
-        ))}
-        {/* The page's secondary, exactly once, as the text link rule 5 makes
-            it. It used to sit alone in a B8 dark panel, a block built for a
-            heading and a filled pill, holding one underlined link. */}
-        <CallToAction page="/pricing" className="mt-6" show="secondary" />
+
+          {/* ------------------------------------------------- who you meet
+              Paul and Dew at a size worth looking at, 18/11/2026 on Paul\'s
+              call. They are already on this page at 48px inside the Serious
+              pack\'s promotion, where they are the faces of a free hour; here
+              they are the people a 4,900 engagement is spent with, which is the
+              last thing a reader weighs before the button.
+
+              The same `COACHES` records and the same `COACH_PHOTO` map as the
+              home page, `/coaching` and the panel above, so this page still
+              cannot grow a second and looser account of who they are. The crop
+              is the one that panel already uses: these are 4:3 portraits and a
+              centred circular crop takes the chin and leaves the forehead. */}
+          <ul className="mx-auto mt-10 grid max-w-2xl gap-8 medium:grid-cols-2">
+            {COACHES.map((c) => (
+              <li key={c.id} className="flex flex-col items-center text-center">
+                <Image
+                  src={COACH_PHOTO[c.id]}
+                  alt={pick(c.alt)}
+                  width={1200}
+                  height={900}
+                  sizes="128px"
+                  className="size-32 rounded-full object-cover object-[50%_22%]"
+                />
+                <p className="mt-4 text-body-md-strong text-on-surface">{pick(c.name)}</p>
+                <p className="mt-1 text-body-md text-on-surface-variant">{pick(c.relevance)}</p>
+              </li>
+            ))}
+          </ul>
+
+          {/* Primary and secondary, and the secondary\'s one appearance on the
+              page: rule 5 renders it as a text link under the pill. */}
+          <CallToAction page="/pricing" className="mt-10" align="center" />
+        </div>
       </Band>
     </div>
   );

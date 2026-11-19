@@ -359,6 +359,22 @@ export const ENGAGEMENT: readonly EngagementStep[] = [
       th: %%LANG:c3JjL2xpYi9jb250ZW50L3NlcnZpY2VzLnRzOjpFTkdBR0VNRU5UWzNdLmJvZHk:TH%%,
     },
   },
+  {
+    lead: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3NlcnZpY2VzLnRzOjpFTkdBR0VNRU5UWzRdLmxlYWQ:EN%%,
+      // Drafted by a model 19/11/2026, rewritten by Codex the same day, approved by
+      // Paul in chat without a native read. `paul-approved`, never `paul-written`.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3NlcnZpY2VzLnRzOjpFTkdBR0VNRU5UWzRdLmxlYWQ:TH%%,
+    },
+    body: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3NlcnZpY2VzLnRzOjpFTkdBR0VNRU5UWzRdLmJvZHk:EN%%,
+      // Same provenance as the lead above it. The last sentence carries the method's
+      // own order, that the language work starts at the beginning rather than at the
+      // end, because this stage renders last in the run and would otherwise read as
+      // the thing that happens after everything else.
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3NlcnZpY2VzLnRzOjpFTkdBR0VNRU5UWzRdLmJvZHk:TH%%,
+    },
+  },
 ];
 
 export const SERVICES_FAQ_INTRO: Copy = {

@@ -296,10 +296,10 @@ export const ENGAGEMENT_HEADING: Copy = {
 };
 
 export const ENGAGEMENT_LEDE: Copy = {
-  en: "Four steps. Nothing is scoped or priced until we both know what you are actually aiming at.",
+  en: "Five steps. Nothing is scoped or priced until we both know what you are actually aiming at.",
   // Paul's wording, 06/09/2026. `ไม่มีค่าใช้จ่าย` rather than the shorter word,
   // which is the form `faq.ts` and the product pages already use for this.
-  th: "กระบวนการมี 4 ขั้นตอน โดยเราจะกำหนดขอบเขตและค่าบริการโค้ชชิ่งเมื่อทั้งคุณและเราเข้าใจชัดเจนแล้วว่าเป้าหมายของคุณคืออะไร",
+  th: "กระบวนการมี 5 ขั้นตอน โดยเราจะกำหนดขอบเขตและค่าบริการโค้ชชิ่งเมื่อทั้งคุณและเราเข้าใจชัดเจนแล้วว่าเป้าหมายของคุณคืออะไร",
 };
 
 export interface EngagementStep {
@@ -357,6 +357,22 @@ export const ENGAGEMENT: readonly EngagementStep[] = [
       // Paul's wording, 06/09/2026. The closing clause is Paul's own, from
       // `NOT_FOR` in `coaching.ts`.
       th: "คัดตำแหน่ง ปรับเอกสาร เตรียมตัวสำหรับการสัมภาษณ์แต่ละงาน แล้วช่วยกันอ่านข้อเสนอและสัญญาจ้าง CV ถูกส่งออกไปในชื่อของคุณ และคนที่ต้องนั่งอยู่ในห้องสัมภาษณ์ก็คือคุณ",
+    },
+  },
+  {
+    lead: {
+      en: "What you change after each round",
+      // Drafted by a model 19/11/2026, rewritten by Codex the same day, approved by
+      // Paul in chat without a native read. `paul-approved`, never `paul-written`.
+      th: "ทบทวน ปรับแผน และฝึกซ้อม",
+    },
+    body: {
+      en: "After each round we go over what came back and change the targeting or the documents, practise for the interviews you have coming, and keep the language and the skill gaps moving. The language work starts at the beginning rather than at the end, because it is the slowest thing you will do.",
+      // Same provenance as the lead above it. The last sentence carries the method's
+      // own order, that the language work starts at the beginning rather than at the
+      // end, because this stage renders last in the run and would otherwise read as
+      // the thing that happens after everything else.
+      th: "หลังสมัครงานหรือสัมภาษณ์แต่ละรอบ เราจะช่วยกันดูผลตอบรับ แล้วปรับตำแหน่งเป้าหมายหรือเอกสารให้เหมาะกับงาน พร้อมฝึกซ้อมสำหรับการสัมภาษณ์ครั้งถัดไป ส่วนภาษาและทักษะที่ยังต้องเสริม เราจะวางแผนพัฒนาไปควบคู่กัน โดยเริ่มเรื่องภาษาตั้งแต่ต้น เพราะต้องใช้เวลา",
     },
   },
 ];

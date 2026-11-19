@@ -22644,33 +22644,27 @@ path: PRICING_QUESTIONS[0].a[0]
 render: Pricing page, PRICING_QUESTIONS[0].a[0]
 narrative_slot: utility
 en: >-
-  Coaching 1:1 starts at 4,900 THB. It depends what you want help with and how far that help goes. We go
-  through the details and tell you the cost clearly the first time we talk, and then you decide whether to
-  go ahead.
+  Coaching 1:1 starts at 4,900 THB.
 th: >-
   Coaching 1:1 เริ่มต้นที่ 4,900 บาท
-  ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
-  เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่
 provenance: paul-written
 date: 18/11/2026
 term_bindings: []
 decision_note: >-
-  Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after
-  the Fit Report and the 1,500 THB pack's complimentary hour rather than containing them. The answer
-  previously opened with the fee and named no figure. Two model drafts of the same day put the figure in
-  front of it and rewrote more than the figure required: the first replaced Paul's fee noun and left the
-  English subject ungrammatical, the second corrected the English by rewriting his subject. Paul then wrote
-  the Thai out himself and restored his own fee noun. His English sentence of 23/08/2026 is restored here as
-  he wrote it, so the only new text in the record is the price statement his decision supplies.
+  Split from one record into two on 18/11/2026 so the published entry price can take the typography of a
+  price rather than of a sentence, when `/pricing` closed on a B8 card instead of a B5 question row. The
+  text either side of the split is unchanged: EN broke after `4,900 THB.` and TH after `บาท`.
 review:
   structural_calque: pass
-  text_hash: 0f3dd0b4236771d687f22ed7381c7e3f7f433648cd8c0a1f892c3b5756068cfa
+  text_hash: ee84ab26cc83bda709c8bb7b6c570420ed7f3f9bbd6088a5532b65f065f63970
   prompt_version: structural-calque-v1
   basis: >-
-    Paul wrote this Thai himself on 18/11/2026, typed into the session after being shown the model draft,
-    and it is his wording that is recorded here. Section 2 makes his wording authoritative without a second
-    native review. It did not come through the generated review queue, so the authorship evidence is the
-    message itself rather than a one-writer queue line. Both page records carry the same pair and hash.
+    Paul's Thai of 18/11/2026, not one word of it altered. The record was one string holding the price
+    sentence and the three that qualify it; on 18/11/2026 the pricing page stopped rendering it as a
+    paragraph in a question list and started rendering it as the page's closing card, where the figure
+    carries the display size and the qualification sits under it as body copy. That needs the sentence
+    boundary to be a record boundary, so a model split it there, between `บาท` and `ค่าบริการ`. The split is
+    the model's; both halves are his, and `faq.ts` still carries the undivided original.
 ```
 
 <!-- COPY-ENTRY -->
@@ -22682,17 +22676,30 @@ source: src/lib/content/pricing.ts
 path: PRICING_QUESTIONS[0].a[1]
 render: Pricing page, PRICING_QUESTIONS[0].a[1]
 narrative_slot: utility
-en: The EU Fit Check is free.
-th: ทำ EU Fit Check และดูผลเบื้องต้นได้ฟรี
-provenance: paul-approved
-date: 26/10/2026
+en: >-
+  It depends what you want help with and how far that help goes. We go through the details and tell you the
+  cost clearly the first time we talk, and then you decide whether to go ahead.
+th: >-
+  ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
+  เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่
+provenance: paul-written
+date: 18/11/2026
 term_bindings: []
-decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
+decision_note: >-
+  Split from one record into two on 18/11/2026 so the published entry price can take the typography of a
+  price rather than of a sentence, when `/pricing` closed on a B8 card instead of a B5 question row. The
+  text either side of the split is unchanged: EN broke after `4,900 THB.` and TH after `บาท`.
 review:
   structural_calque: pass
-  text_hash: f11550df01b5ef3392e9230da91ec5bb285168a4be80aaa553216a0dfb4313b5
+  text_hash: 8896f0b0c358540c79dd3e006ca80e47edd4678b63a1acafd79a6eba78d6692a
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
+  basis: >-
+    Paul's Thai of 18/11/2026, not one word of it altered. The record was one string holding the price
+    sentence and the three that qualify it; on 18/11/2026 the pricing page stopped rendering it as a
+    paragraph in a question list and started rendering it as the page's closing card, where the figure
+    carries the display size and the qualification sits under it as body copy. That needs the sentence
+    boundary to be a record boundary, so a model split it there, between `บาท` and `ค่าบริการ`. The split is
+    the model's; both halves are his, and `faq.ts` still carries the undivided original.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28132,17 +28139,20 @@ source: src/lib/content/services.ts
 path: ENGAGEMENT_LEDE
 render: Services page, ENGAGEMENT_LEDE
 narrative_slot: utility
-en: Four steps. Nothing is scoped or priced until we both know what you are actually aiming at.
-th: กระบวนการมี 4 ขั้นตอน โดยเราจะกำหนดขอบเขตและค่าบริการโค้ชชิ่งเมื่อทั้งคุณและเราเข้าใจชัดเจนแล้วว่าเป้าหมายของคุณคืออะไร
+en: Five steps. Nothing is scoped or priced until we both know what you are actually aiming at.
+th: กระบวนการมี 5 ขั้นตอน โดยเราจะกำหนดขอบเขตและค่าบริการโค้ชชิ่งเมื่อทั้งคุณและเราเข้าใจชัดเจนแล้วว่าเป้าหมายของคุณคืออะไร
 provenance: paul-written
 date: 26/10/2026
 term_bindings: []
 decision_note: Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 005a86ea03b28a8280fa4b47245572ef008b6fa5b30d192d5020af5a18dacd9d
+  text_hash: c73f95df13a45258371b00943f77b724cba4149db23bc0fb6b61fc631e07a917
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: >-
+    Paul's own sentence, unchanged except the stage count, which went from four to five on his instruction
+    of 19/11/2026 when a fifth stage was added to the run. No other word was touched and the Thai is still
+    his.
 ```
 
 <!-- COPY-ENTRY -->
@@ -28339,6 +28349,78 @@ review:
   text_hash: efefda69201a17d1f241b3739b8fe40663004ee2200841f9c9c53c1cdad5700b
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/services.ts::ENGAGEMENT[4].body`
+
+```yaml
+id: src/lib/content/services.ts::ENGAGEMENT[4].body
+source: src/lib/content/services.ts
+path: ENGAGEMENT[4].body
+render: Services page, ENGAGEMENT[4].body
+narrative_slot: utility
+en: >-
+  After each round we go over what came back and change the targeting or the documents, practise for the
+  interviews you have coming, and keep the language and the skill gaps moving. The language work starts at
+  the beginning rather than at the end, because it is the slowest thing you will do.
+th: >-
+  หลังสมัครงานหรือสัมภาษณ์แต่ละรอบ เราจะช่วยกันดูผลตอบรับ แล้วปรับตำแหน่งเป้าหมายหรือเอกสารให้เหมาะกับงาน
+  พร้อมฝึกซ้อมสำหรับการสัมภาษณ์ครั้งถัดไป ส่วนภาษาและทักษะที่ยังต้องเสริม เราจะวางแผนพัฒนาไปควบคู่กัน
+  โดยเริ่มเรื่องภาษาตั้งแต่ต้น เพราะต้องใช้เวลา
+provenance: paul-approved
+date: 19/11/2026
+term_bindings: []
+decision_note: >-
+  The fifth stage of an engagement, on Paul's instruction of 19/11/2026: what is adjusted after each round,
+  the interview practice, and the language and skill gaps. It renders last in the run, so the body says in
+  its own words that the language work starts at the beginning rather than at the end, because
+  `10_Methodology.md` puts upskilling alongside the stages rather than after them.
+review:
+  structural_calque: pass
+  text_hash: f1624c8f8f219dbfc9bf7e3fbbc7f20978a889c3bcb811342378a466a0125fc5
+  prompt_version: structural-calque-v1
+  basis: >-
+    No native reader has read this Thai. A model drafted it on 19/11/2026, a second model, Codex, rewrote it
+    the same day, and Paul approved that wording in chat without reading it back. The verdict records his
+    decision to promote a model's draft and is not a native verdict: provenance is `paul-approved` rather
+    than `paul-written`, which keeps it out of the clean corpus. The register tool put its nominalisation
+    rate below band, 3.8 against 4.7 to 14.1 on a 264-character sample, which measures register and says
+    nothing about whether the Thai is correct.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/services.ts::ENGAGEMENT[4].lead`
+
+```yaml
+id: src/lib/content/services.ts::ENGAGEMENT[4].lead
+source: src/lib/content/services.ts
+path: ENGAGEMENT[4].lead
+render: Services page, ENGAGEMENT[4].lead
+narrative_slot: utility
+en: >-
+  What you change after each round
+th: >-
+  ทบทวน ปรับแผน และฝึกซ้อม
+provenance: paul-approved
+date: 19/11/2026
+term_bindings: []
+decision_note: >-
+  The fifth stage of an engagement, on Paul's instruction of 19/11/2026: what is adjusted after each round,
+  the interview practice, and the language and skill gaps. It renders last in the run, so the body says in
+  its own words that the language work starts at the beginning rather than at the end, because
+  `10_Methodology.md` puts upskilling alongside the stages rather than after them.
+review:
+  structural_calque: pass
+  text_hash: 4e9ae45e123e7b851e02443594185451b046728635406c93b65471f95baa7794
+  prompt_version: structural-calque-v1
+  basis: >-
+    No native reader has read this Thai. A model drafted it on 19/11/2026, a second model, Codex, rewrote it
+    the same day, and Paul approved that wording in chat without reading it back. The verdict records his
+    decision to promote a model's draft and is not a native verdict: provenance is `paul-approved` rather
+    than `paul-written`, which keeps it out of the clean corpus. The register tool put its nominalisation
+    rate below band, 3.8 against 4.7 to 14.1 on a 264-character sample, which measures register and says
+    nothing about whether the Thai is correct.
 ```
 
 <!-- COPY-ENTRY -->

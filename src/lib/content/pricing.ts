@@ -541,6 +541,23 @@ export interface PricingQuestion {
  * The first pair is Paul's rewrite of 23/08/2026 of strings that are ALREADY
  * LIVE in `faq.ts`. The same rewrite has to land there too, or one question is
  * answered two ways on two pages.
+ *
+ * **`a[0]` is the price and `a[1]` is everything that qualifies it**, split out
+ * of one record on 18/11/2026 and not a word of it changed. The page renders
+ * the first at the size a price is read at and the second as the body under it;
+ * one record could only ever be one size. `faq.ts` keeps the sentence whole,
+ * because an accordion answer is read as a paragraph.
+ *
+ * **One answer line, not two, since 18/11/2026.** The second line said the EU
+ * Fit Check is free. On this page that line is answering a question nobody
+ * asked here: the free band above it already lists the check among the free
+ * features, and the page's own free tier is three screens up. Under the
+ * Coaching 1:1 price it did worse than repeat, because the answer renders as
+ * the page's closing pitch now and a free alternative set directly under a paid
+ * price argues the reader out of the thing being sold. The line itself is not
+ * retired: `faq.ts` still carries its twin, where the question arrives without
+ * a pitch around it and a reader asking what things cost is owed the cheapest
+ * true answer as well as the dearest.
  */
 export const PRICING_QUESTIONS: readonly PricingQuestion[] = [
   {
@@ -550,12 +567,12 @@ export const PRICING_QUESTIONS: readonly PricingQuestion[] = [
     },
     a: [
       {
-        en: "Coaching 1:1 starts at 4,900 THB. It depends what you want help with and how far that help goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide whether to go ahead.",
-        th: "Coaching 1:1 เริ่มต้นที่ 4,900 บาท ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่",
+        en: "Coaching 1:1 starts at 4,900 THB.",
+        th: "Coaching 1:1 เริ่มต้นที่ 4,900 บาท",
       },
       {
-        en: "The EU Fit Check is free.",
-        th: "ทำ EU Fit Check และดูผลเบื้องต้นได้ฟรี",
+        en: "It depends what you want help with and how far that help goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide whether to go ahead.",
+        th: "ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่",
       },
     ],
   },

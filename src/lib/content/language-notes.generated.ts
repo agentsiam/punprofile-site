@@ -8602,16 +8602,16 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-written",
     "date": "18/11/2026",
-    "decisionNote": "Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after the Fit Report and the 1,500 THB pack's complimentary hour rather than containing them. The answer previously opened with the fee and named no figure. Two model drafts of the same day put the figure in front of it and rewrote more than the figure required: the first replaced Paul's fee noun and left the English subject ungrammatical, the second corrected the English by rewriting his subject. Paul then wrote the Thai out himself and restored his own fee noun. His English sentence of 23/08/2026 is restored here as he wrote it, so the only new text in the record is the price statement his decision supplies."
+    "decisionNote": "Split from one record into two on 18/11/2026 so the published entry price can take the typography of a price rather than of a sentence, when `/pricing` closed on a B8 card instead of a B5 question row. The text either side of the split is unchanged: EN broke after `4,900 THB.` and TH after `บาท`."
   },
   "src/lib/content/pricing.ts::PRICING_QUESTIONS[0].a[1]": {
     "source": "src/lib/content/pricing.ts",
     "path": "PRICING_QUESTIONS[0].a[1]",
     "render": "Pricing page, PRICING_QUESTIONS[0].a[1]",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Fit Report redefined as the paid full version with a 30-minute interview, and every free call removed, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
+    "provenance": "paul-written",
+    "date": "18/11/2026",
+    "decisionNote": "Split from one record into two on 18/11/2026 so the published entry price can take the typography of a price rather than of a sentence, when `/pricing` closed on a B8 card instead of a B5 question row. The text either side of the split is unchanged: EN broke after `4,900 THB.` and TH after `บาท`."
   },
   "src/lib/content/pricing.ts::PRICING_QUESTIONS[0].q": {
     "source": "src/lib/content/pricing.ts",
@@ -10745,6 +10745,24 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "06/09/2026",
     "decisionNote": "Read back 06/09/2026."
+  },
+  "src/lib/content/services.ts::ENGAGEMENT[4].body": {
+    "source": "src/lib/content/services.ts",
+    "path": "ENGAGEMENT[4].body",
+    "render": "Services page, ENGAGEMENT[4].body",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "19/11/2026",
+    "decisionNote": "The fifth stage of an engagement, on Paul's instruction of 19/11/2026: what is adjusted after each round, the interview practice, and the language and skill gaps. It renders last in the run, so the body says in its own words that the language work starts at the beginning rather than at the end, because `10_Methodology.md` puts upskilling alongside the stages rather than after them."
+  },
+  "src/lib/content/services.ts::ENGAGEMENT[4].lead": {
+    "source": "src/lib/content/services.ts",
+    "path": "ENGAGEMENT[4].lead",
+    "render": "Services page, ENGAGEMENT[4].lead",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "19/11/2026",
+    "decisionNote": "The fifth stage of an engagement, on Paul's instruction of 19/11/2026: what is adjusted after each round, the interview practice, and the language and skill gaps. It renders last in the run, so the body says in its own words that the language work starts at the beginning rather than at the end, because `10_Methodology.md` puts upskilling alongside the stages rather than after them."
   },
   "src/lib/content/services.ts::FOCUS_NOTE": {
     "source": "src/lib/content/services.ts",

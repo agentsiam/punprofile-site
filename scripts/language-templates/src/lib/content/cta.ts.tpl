@@ -418,9 +418,9 @@ export const PAGE_ACTIONS: Record<string, PageActions> = {
   },
   "/pricing": {
     primary: "contact",
-    secondary: "assess",
+    secondary: "coaching",
     because:
-      "The prices are on the screen and the next step is a bank transfer arranged one to one, so the ask is a conversation. The secondary goes back to the check for anyone who arrived at the prices before doing anything else.",
+      "The prices are on the screen and the next step is a bank transfer arranged one to one, so the ask is a conversation. The secondary was the check until 18/11/2026, Paul's call: the page now closes on the Coaching 1:1 price, and the cheapest thing on offer directly under a paid price cannot be the free assessment, which argues a reader out of the purchase and restarts a funnel they have finished. It goes to the coaching page instead, which is a read at cost 1 against the conversation's 3 and answers the question a reader who hesitates at a price actually has, which is what the hour is like. Anyone who arrived here before doing anything else still has the check in the menu and on every other page as a primary.",
   },
   "/blog": {
     primary: "assess",
