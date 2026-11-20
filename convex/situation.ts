@@ -22,6 +22,7 @@ import { requireAdmin } from "./leads";
 import { targetsFor } from "./targets";
 import { rowInput, type RowInput } from "./situationRows";
 import { openDraft } from "./outbox";
+import { deliverWith } from "./deliveredBy";
 import {
   isPanelDate,
   missingGates,
@@ -501,6 +502,8 @@ export const closeSession = mutation({
       ...(call.sessionClosedAt === undefined ? { sessionClosedAt: at, sessionClosedBy: by } : {}),
       updatedAt: at,
     });
+    // Closing the session delivers the session it was, dated the call. `deliveredBy.ts`.
+    await deliverWith(ctx, call.deliverableId, call.heldAt);
 
     const existing = (
       await ctx.db.query("deliveryNotes").withIndex("by_lead", (q) => q.eq("leadId", args.leadId)).collect()
