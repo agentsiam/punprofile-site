@@ -5,14 +5,13 @@ import type { Post } from "../blog";
  * countries, in EUR and THB, from the government pages in the coaching repo's
  * `ctxt-research/country-facts.md` (the file the EU Fit Check country page reads).
  * English written first and approved 20/11/2026; Thai by Codex from the brief,
- * amended and approved by Paul 20/11/2026. Figures are 2026 and are swapped for 2027
- * before go-live. Record: `work-content/blog/salary-thresholds-europe/article.md`.
+ * amended and approved by Paul 20/11/2026. Figures are 2026; the title year moves with them each January. Record: `work-content/blog/salary-thresholds-europe/article.md`.
  */
 export const SALARY_THRESHOLDS_EUROPE: Post = {
   slug: "salary-thresholds-europe",
   topic: "market",
   playbook: true,
-  published: "2027-01-05",
+  published: "2026-11-20",
   related: "start-in-europe",
 
   title: {

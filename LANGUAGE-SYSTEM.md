@@ -19282,15 +19282,15 @@ source: src/lib/content/posts/salary-thresholds-europe.ts
 path: SALARY_THRESHOLDS_EUROPE.seoTitle
 render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.seoTitle'
 narrative_slot: utility
-en: "Work visa minimum salary in Europe 2027, 10 countries"
-th: "เงินเดือนขั้นต่ำสำหรับวีซ่าทำงานยุโรป 2027 เทียบ 10 ประเทศ"
+en: "Work visa minimum salary in Europe 2026, 10 countries"
+th: "เงินเดือนขั้นต่ำสำหรับวีซ่าทำงานยุโรป 2026 เทียบ 10 ประเทศ"
 provenance: paul-approved
 date: 20/11/2026
 term_bindings: []
 decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
 review:
   structural_calque: pass
-  text_hash: 5984db1d0c916c9710dc755aebe147469a6460e18af646b4e0b0ab8c42d3dea8
+  text_hash: 4f378fd2bbaa5378e112000b8741f78a3f9a84e34bd52f0cf2e97b600a250d64
   prompt_version: structural-calque-v1
   basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
 ```
@@ -19326,15 +19326,15 @@ source: src/lib/content/posts/salary-thresholds-europe.ts
 path: SALARY_THRESHOLDS_EUROPE.title
 render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.title'
 narrative_slot: utility
-en: "Minimum salary for a work visa in Europe, 2027: how much each country requires"
-th: "วีซ่าทำงานในยุโรปปี 2027: แต่ละประเทศกำหนดรายได้ขั้นต่ำเท่าไหร่"
+en: "Minimum salary for a work visa in Europe, 2026: how much each country requires"
+th: "วีซ่าทำงานในยุโรปปี 2026: แต่ละประเทศกำหนดรายได้ขั้นต่ำเท่าไหร่"
 provenance: paul-approved
 date: 20/11/2026
 term_bindings: []
 decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
 review:
   structural_calque: pass
-  text_hash: 1607ce39fc34f7caeb2b2bed9656363d8ff1795f25fd7b926668f49734e16563
+  text_hash: e9484b164a7aab173d39d51ca32ce48e38ea327b1bc18ec7097bcace1b20ec38
   prompt_version: structural-calque-v1
   basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
 ```

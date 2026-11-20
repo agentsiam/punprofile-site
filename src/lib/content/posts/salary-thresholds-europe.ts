@@ -5,23 +5,22 @@ import type { Post } from "../blog";
  * countries, in EUR and THB, from the government pages in the coaching repo's
  * `ctxt-research/country-facts.md` (the file the EU Fit Check country page reads).
  * English written first and approved 20/11/2026; Thai by Codex from the brief,
- * amended and approved by Paul 20/11/2026. Figures are 2026 and are swapped for 2027
- * before go-live. Record: `work-content/blog/salary-thresholds-europe/article.md`.
+ * amended and approved by Paul 20/11/2026. Figures are 2026; the title year moves with them each January. Record: `work-content/blog/salary-thresholds-europe/article.md`.
  */
 export const SALARY_THRESHOLDS_EUROPE: Post = {
   slug: "salary-thresholds-europe",
   topic: "market",
   playbook: true,
-  published: "2027-01-05",
+  published: "2026-11-20",
   related: "start-in-europe",
 
   title: {
-    th: "วีซ่าทำงานในยุโรปปี 2027: แต่ละประเทศกำหนดรายได้ขั้นต่ำเท่าไหร่",
-    en: "Minimum salary for a work visa in Europe, 2027: how much each country requires",
+    th: "วีซ่าทำงานในยุโรปปี 2026: แต่ละประเทศกำหนดรายได้ขั้นต่ำเท่าไหร่",
+    en: "Minimum salary for a work visa in Europe, 2026: how much each country requires",
   },
   seoTitle: {
-    th: "เงินเดือนขั้นต่ำสำหรับวีซ่าทำงานยุโรป 2027 เทียบ 10 ประเทศ",
-    en: "Work visa minimum salary in Europe 2027, 10 countries",
+    th: "เงินเดือนขั้นต่ำสำหรับวีซ่าทำงานยุโรป 2026 เทียบ 10 ประเทศ",
+    en: "Work visa minimum salary in Europe 2026, 10 countries",
   },
   summary: {
     th: "เทียบเงินเดือนขั้นต่ำที่ใช้ขอวีซ่าทำงานใน 10 ประเทศยุโรป ทั้งยูโรและบาท ตามข้อมูลจากหน่วยงานรัฐ และเกณฑ์ที่ต่ำลงสำหรับคนอายุต่ำกว่า 30 ปีและผู้สำเร็จการศึกษาใหม่",
