@@ -9,6 +9,7 @@
     "src/lib/content/contact.ts",
     "src/lib/content/cookie-consent.ts",
     "src/lib/content/copy.ts",
+    "src/lib/content/country-page.ts",
     "src/lib/content/cta.ts",
     "src/lib/content/faq.ts",
     "src/lib/content/footer.ts",
@@ -27,6 +28,7 @@
     "src/lib/content/privacy.ts",
     "src/lib/content/products.ts",
     "src/lib/content/questions.ts",
+    "src/lib/content/report-upsell.ts",
     "src/lib/content/search.ts",
     "src/lib/content/services.ts",
     "src/lib/levers.ts"

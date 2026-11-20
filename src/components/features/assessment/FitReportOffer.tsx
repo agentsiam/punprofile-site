@@ -17,6 +17,8 @@
  */
 
 import { useState } from "react";
+import { useQuery } from "convex/react";
+import { api } from "../../../../convex/_generated/api";
 import Link from "next/link";
 import { useCopy } from "@/components/LocaleProvider";
 import FullSampleChart from "@/components/features/products/FullSampleChart";
@@ -32,6 +34,8 @@ export default function FitReportOffer({
 }) {
   const { t, pick, path, locale } = useCopy();
   const [building, setBuilding] = useState(false);
+  // For the report's "from everyone who has taken this" page. 20/11/2026.
+  const community = useQuery(api.stats.community);
 
   async function download() {
     // The tab opens before anything is awaited, or the browser blocks it as a
@@ -56,7 +60,7 @@ export default function FitReportOffer({
           targetCountries: input.targetCountries,
           targetRole: input.targetRole ?? undefined,
         },
-        { variant: "limited", locale, autoPrint: true },
+        { variant: "limited", locale, autoPrint: true, assetOrigin: window.location.origin, community: community ?? undefined },
       );
       win.document.open();
       win.document.write(html);

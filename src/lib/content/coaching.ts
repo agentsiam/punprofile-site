@@ -45,18 +45,18 @@ export const HOOK_EYEBROW: Copy = {
  */
 export const HOOK_LINE_1: Copy = {
   en: "It is rarely that your experience is not enough.",
-  th: "ปัญหามักไม่ใช่ว่าคุณมีประสบการณ์ไม่พอ",
+  th: "หลายคนมีประสบการณ์พออยู่แล้ว",
 };
 
 export const HOOK_LINE_2: Copy = {
   en: "It is that nobody in Europe can see what that experience is worth.",
-  th: "แต่คือคนในยุโรปยังไม่เห็นว่าประสบการณ์นั้นมีค่าอย่างไร",
+  th: "แต่คนที่อ่าน CV ในยุโรปยังดูไม่ออกว่าคุณทำอะไรได้บ้าง",
 };
 
 export const HOOK_BODY: readonly Copy[] = [
   {
     en: "A hiring manager in Amsterdam opens your CV. They do not know your last company, they cannot tell how big the job you were responsible for actually was, and the visa question has no answer yet. They are not deciding that you are not good. They simply have not been given enough reason to keep reading.",
-    th: "ลองนึกภาพว่าผู้จัดการฝ่ายสรรหาในอัมสเตอร์ดัมเปิด CV ของคุณขึ้นมา เขาไม่รู้จักบริษัทเดิมของคุณ ไม่รู้ว่างานล่าสุดที่คุณรับผิดชอบใหญ่หรือซับซ้อนแค่ไหน และยังไม่รู้ว่าคุณมีสิทธิ์ทำงานอยู่แล้วหรือต้องขอวีซ่า เขาอาจไม่ได้คิดว่าคุณไม่เก่ง เพียงแต่ยังไม่เห็นเหตุผลมากพอที่จะอ่านต่อ",
+    th: "ลองนึกว่าคนที่กำลังรับคนเข้าทีมในอัมสเตอร์ดัมเปิด CV ของคุณ เขาไม่รู้จักบริษัทเดิมของคุณ ดูไม่ออกว่าคุณรับผิดชอบงานใหญ่แค่ไหน และยังไม่รู้ว่าคุณต้องขอวีซ่าหรือเปล่า เขาอาจวาง CV ลงทั้งที่ยังไม่ได้ตัดสินเลยว่าคุณเก่งแค่ไหน เพราะข้อมูลที่เห็นยังไม่พอให้อยากอ่านต่อ",
   },
   {
     en: "The problem is getting your experience across to another market, not your ability, and sending more applications does not solve it.",
@@ -328,13 +328,13 @@ export const COACHES: readonly Coach[] = [
     link: { en: "Read Paul's story", th: "อ่านเรื่องราวของพอล" },
     pill: { en: "Founder · Hiring Manager in Marketing", th: "ผู้ก่อตั้ง · Hiring Manager ด้าน Marketing" },
     heading: { en: "Hi, I'm Paul", th: "สวัสดีครับ ผมพอล" },
-    pull: { en: "I have sat on both sides of the interview table.", th: "ผมเคยนั่งอยู่ทั้งสองฝั่งของโต๊ะสัมภาษณ์" },
+    pull: { en: "I have sat on both sides of the interview table.", th: "ผมเคยเป็นทั้งคนที่ไปสัมภาษณ์งานและคนที่สัมภาษณ์ผู้สมัคร" },
     story: [
       { en: "I moved to Spain to work in 2016 and work with clients in countries across Europe, especially the UK. I have sent thousands of job applications and sat hundreds of interviews, so I know what it is like to send a CV and receive no reply.", th: "ผมย้ายมาทำงานที่สเปนในปี 2016 และทำงานกับลูกค้าในหลายประเทศทั่วยุโรป โดยเฉพาะใน UK ที่ผ่านมาผมสมัครงานไปหลายพันตำแหน่ง และสัมภาษณ์งานมาหลายร้อยครั้ง ผมจึงเข้าใจดีว่าการส่ง CV ไปแล้วไม่ได้รับคำตอบเป็นอย่างไร" },
       { en: "Today I am a Hiring Manager in Marketing. The CVs that reach me have already passed the AI screen and the Talent Acquisition Manager, and I have read hundreds of them, so I have seen not just good CVs but the ones that actually get the job. I also hire remote workers and freelancers in Marketing and MarTech for several employers.", th: "วันนี้ผมเป็น Hiring Manager ด้าน Marketing CV ที่มาถึงผมผ่านการคัดกรองจาก AI และ Talent Acquisition Manager มาแล้ว ผมอ่าน CV ระดับนี้มาหลายร้อยฉบับ จึงได้เห็นไม่ใช่แค่ CV ที่ดี แต่เป็น CV ที่ได้งานจริง นอกจากนี้ผมยังคัดเลือก remote worker และ freelancer ด้าน Marketing และ MarTech ให้กับหลายบริษัท" },
       { en: "I work in marketing, so when I read a candidate’s profile, I ask similar questions to those I ask about a brand: what makes it stand out, what it wants to be known for, and whether the whole story is consistent.", th: "ผมทำงานด้านการตลาด เวลาอ่านโปรไฟล์ผู้สมัคร ผมจึงตั้งคำถามคล้ายกับเวลาดูแบรนด์ว่า อะไรคือจุดเด่น อยากให้คนจดจำเรื่องอะไร และสิ่งที่เล่าทั้งหมดสอดคล้องกันไหม" },
-      { en: "A company name every Thai person knows may be a name a European hiring manager has never heard. Work we know was large and difficult can become one unremarkable line on a CV. And years of accumulated experience can be passed over, not because it has no value, but because the person reading it does not have enough context to see that value.", th: "ชื่อบริษัทที่คนไทยรู้จักดี อาจเป็นเพียงชื่อที่ผู้จัดการฝ่ายสรรหาในยุโรปไม่เคยได้ยิน งานที่เรารู้ว่าใหญ่และยาก อาจกลายเป็นเพียงหนึ่งบรรทัดธรรมดาใน CV และประสบการณ์ที่สั่งสมมาหลายปีอาจถูกมองข้าม ไม่ใช่เพราะมันไม่มีค่า แต่เพราะคนอ่านยังไม่มีบริบทมากพอที่จะเห็นคุณค่านั้น" },
-      { en: "I have watched this happen again and again to Thai people in the group. When applications go unanswered, many of them try harder: send more, revise the CV again, read more advice. But in a cross-border job market, effort does not automatically turn into opportunity. If the market still cannot read you, applying more is just sending the same unclear story out over and over.", th: "ผมเห็นเรื่องนี้เกิดขึ้นซ้ำ ๆ กับคนไทยในกลุ่ม เมื่อสมัครงานแล้วไม่ได้รับคำตอบ หลายคนจึงพยายามมากขึ้น สมัครมากขึ้น แก้ CV อีกรอบ และอ่านคำแนะนำเพิ่มอีก แต่ในตลาดงานข้ามประเทศ ความพยายามไม่ได้กลายเป็นโอกาสโดยอัตโนมัติ ถ้าตลาดยังอ่านเราไม่ออก การสมัครเพิ่มก็เป็นเพียงการส่งเรื่องเดิมที่ยังไม่ชัดออกไปซ้ำ ๆ" },
+      { en: "A company name every Thai person knows may be a name a European hiring manager has never heard. Work we know was large and difficult can become one unremarkable line on a CV. And years of accumulated experience can be passed over, not because it has no value, but because the person reading it does not have enough context to see that value.", th: "คนไทยรู้จักบริษัทเดิมของคุณดี แต่คนที่กำลังรับคนเข้าทีมในยุโรปอาจไม่เคยได้ยินชื่อ พอเขาเห็นงานยาก ๆ ที่คุณเคยทำเขียนไว้แค่บรรทัดเดียวใน CV เขาก็อาจดูไม่ออกว่าคุณรับผิดชอบมากแค่ไหน ประสบการณ์ที่คุณสะสมมาหลายปีเลยถูกมองข้ามได้ง่าย" },
+      { en: "I have watched this happen again and again to Thai people in the group. When applications go unanswered, many of them try harder: send more, revise the CV again, read more advice. But in a cross-border job market, effort does not automatically turn into opportunity. If the market still cannot read you, applying more is just sending the same unclear story out over and over.", th: "ผมเจอเรื่องนี้บ่อยในกลุ่มครับ พอสมัครแล้วเงียบ หลายคนก็ส่งใบสมัครเพิ่ม แก้ CV อีกรอบ หรือหาคำแนะนำมาอ่านเพิ่ม แต่ถ้าคนอ่าน CV ในยุโรปยังดูไม่ออกว่าคุณเคยทำอะไรมา ต่อให้ส่งอีกหลายที่ เขาก็ยังเห็นข้อมูลเดิม" },
     ],
     alt: { en: "Portrait of Paul Bussabong, coach and founder of PunProfile", th: "พอล บุษบง โค้ชและผู้ก่อตั้ง PunProfile" },
   },

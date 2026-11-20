@@ -419,8 +419,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "HOOK_BODY[0]",
     "render": "Coaching page, HOOK_BODY[0]",
     "narrativeSlot": "symptom",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
   "src/lib/content/coaching.ts::HOOK_BODY[1]": {
@@ -455,8 +455,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "HOOK_LINE_1",
     "render": "Coaching page, HOOK_LINE_1",
     "narrativeSlot": "symptom",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
   "src/lib/content/coaching.ts::HOOK_LINE_2": {
@@ -464,8 +464,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "HOOK_LINE_2",
     "render": "Coaching page, HOOK_LINE_2",
     "narrativeSlot": "symptom",
-    "provenance": "paul-written",
-    "date": "14/08/2026",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
   "src/lib/content/coaching.ts::MASCOT_ALT": {
@@ -879,7 +879,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Candidate PDF, under a dimension score, when coverage is 25% to 45%",
     "narrativeSlot": "limit",
     "provenance": "paul-approved",
-    "date": "10/09/2026",
+    "date": "20/11/2026",
     "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
   },
   "src/lib/content/copy.ts::COPY.band.moderate": {
@@ -1769,8 +1769,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.report.unmeasured",
     "render": "Candidate PDF, under a dimension's table. {count} is substituted",
     "narrativeSlot": "artefact",
-    "provenance": "paul-written",
-    "date": "17/08/2026",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
     "decisionNote": "Says what is missing and why, in the candidate's own terms. The coach's\n\ncopy names each blank item individually; this names the number, which is\n\nthe honest form of the same fact without listing things they cannot act on.\n\nPaul's wording, 17/08/2026. `ต้องมาพูดคุยกัน` is an invitation where\n\n`ต้องใช้การพูดคุย` was a requirement, and he cut `แทนการเดา`: the sentence\n\nalready says the areas are left blank, and defending the choice not to\n\nguess draws attention to guessing."
   },
   "src/lib/content/copy.ts::COPY.result.caveat": {
@@ -1842,7 +1842,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "First read, the top-countries stat",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "15/08/2026",
+    "date": "20/11/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
   "src/lib/content/copy.ts::COPY.stats.heading": {
@@ -1914,7 +1914,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "First read, under the percentile line",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "15/08/2026",
+    "date": "20/11/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
   "src/lib/content/copy.ts::COPY.stats.readiness.cv": {
@@ -1923,7 +1923,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "First read, readiness bar 1",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "10/09/2026",
+    "date": "20/11/2026",
     "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
   },
   "src/lib/content/copy.ts::COPY.stats.readiness.foot": {
@@ -1940,8 +1940,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.stats.readiness.label",
     "render": "First read, the title of the readiness card",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "17/08/2026",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
     "decisionNote": "Paul's wording, 17/08/2026. `Hiring Manager` in Latin, and the English\n\nfollows it off `recruiter`: the person who reads a CV and decides is a\n\nhiring manager, and a recruiter is often neither. LR-05's principle,\n\nwhich is to reach for the loanword the audience already uses rather than\n\ntranslate into a vaguer Thai noun. `ผู้จ้างงาน` was that vaguer noun."
   },
   "src/lib/content/copy.ts::COPY.stats.readiness.linkedin": {
@@ -1950,7 +1950,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "First read, readiness bar 3",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "10/09/2026",
+    "date": "20/11/2026",
     "decisionNote": "No string-local reasoning comment was present at migration.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
   },
   "src/lib/content/copy.ts::COPY.stats.readiness.portfolio": {
@@ -1958,8 +1958,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.stats.readiness.portfolio",
     "render": "First read, readiness bar 2",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "17/08/2026",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
     "decisionNote": "Paul's wording, 17/08/2026. `portfolio` rather than `ผลงาน`, matching\n\n`item.portfolioEvidence` below, and the audience is dropped: on a bar in\n\na readiness stack, who would look at it is not the point."
   },
   "src/lib/content/copy.ts::COPY.stats.timing": {
@@ -2085,7 +2085,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "First read, the legend entry for a dimension the answers could not reach",
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
-    "date": "10/09/2026",
+    "date": "20/11/2026",
     "decisionNote": "Never a zero and never a dash. A dash reads as a broken field; a zero is\n\na claim. This says the honest thing, which is that we did not measure it.\n\nConsolidated review applied 10/09/2026. Paul approved this Thai unchanged."
   },
   "src/lib/content/copy.ts::COPY.teaser.score.value": {
@@ -2103,7 +2103,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Teaser, under the headline. FR-007 requires this to be unmissable",
     "narrativeSlot": "artefact",
     "provenance": "paul-approved",
-    "date": "15/08/2026",
+    "date": "20/11/2026",
     "decisionNote": "No string-local reasoning comment was present at migration."
   },
   "src/lib/content/cta.ts::DESTINATIONS.assess.label": {
@@ -11534,8 +11534,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.fit.legend.bar",
     "render": "Fit Report, under every chart",
     "narrativeSlot": "utility",
-    "provenance": "paul-written",
-    "date": "26/10/2026",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
     "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
   "src/lib/content/copy.ts::COPY.fit.path.heading": {
@@ -11606,8 +11606,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.fit.roles.heading",
     "render": "Fit Report, roles heading",
     "narrativeSlot": "proof",
-    "provenance": "paul-written",
-    "date": "26/10/2026",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
     "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
   "src/lib/content/copy.ts::COPY.fit.roles.lede": {
@@ -11615,8 +11615,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.fit.roles.lede",
     "render": "Fit Report, roles lede. {total}, {matching}, {countries} substituted",
     "narrativeSlot": "proof",
-    "provenance": "paul-written",
-    "date": "26/10/2026",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
     "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
   "src/lib/content/copy.ts::COPY.fit.roles.none": {
@@ -12327,7 +12327,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Home and coaching pages, Paul's pull",
     "narrativeSlot": "proof",
     "provenance": "paul-approved",
-    "date": "30/10/2026",
+    "date": "20/11/2026",
     "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
   "src/lib/content/coaching.ts::COACHES[0].story[0]": {
@@ -12363,7 +12363,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Coaching page, Paul's story",
     "narrativeSlot": "proof",
     "provenance": "paul-approved",
-    "date": "30/10/2026",
+    "date": "20/11/2026",
     "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
   "src/lib/content/coaching.ts::COACHES[0].story[4]": {
@@ -12372,7 +12372,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Coaching page, Paul's story",
     "narrativeSlot": "proof",
     "provenance": "paul-approved",
-    "date": "30/10/2026",
+    "date": "20/11/2026",
     "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
   "src/lib/content/coaching.ts::COACHES[0].alt": {
@@ -14993,5 +14993,959 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-written",
     "date": "04/11/2026",
     "decisionNote": "Drafted by Claude 04/11/2026 on Paul's call, after his review of the paragraph above asked whether the consent choice is itself stored. It is: one cookie holding granted or denied, 182 days, written only by the banner. Its own paragraph rather than a sentence inside his, so his wording and its verdict are not disturbed. Paul rewrote the Thai the same day and the English was brought into parallel with it: PunProfile is the one doing the keeping rather than the answer keeping itself, it is the setting rather than the answer, the repetition it avoids is per page opened, and at six months PunProfile asks the reader to choose again rather than merely asking. The technical cookie name is left out to match a notice that names no other cookie either. Rendered only while PRIVACY_COVERS_ANALYTICS is true, since nothing writes the cookie before the banner exists."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.title": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.title",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.intro": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.intro",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "limit",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.capital": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.capital",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.time": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.time",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.employer": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.employer",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.salary": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.salary",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.salary_none": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.salary_none",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "limit",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.as_of": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.as_of",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.source": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.source",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.partner": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.partner",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.processing": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.processing",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.official": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.official",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.other_routes": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.other_routes",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.checked": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_PAGE_LABELS.checked",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f325f396659": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f325f396659",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6584a7c546": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f6584a7c546",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5940944764": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f5940944764",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f10c2f95007": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f10c2f95007",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f43216ea995": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f43216ea995",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f812bc6d15f": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f812bc6d15f",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe7518c356b": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fe7518c356b",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4edc83cfab": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f4edc83cfab",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f45e93f8739": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f45e93f8739",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9421fc3dae": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f9421fc3dae",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f0cccec862d": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f0cccec862d",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6cc6a57f26": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f6cc6a57f26",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5b50b75d4a": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f5b50b75d4a",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4d443e1d37": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f4d443e1d37",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3f0842d2ec": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f3f0842d2ec",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1b4d735b6e": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f1b4d735b6e",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f22289a847d": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f22289a847d",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fd4c8e439a0": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fd4c8e439a0",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f15b3da5eba": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f15b3da5eba",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fbae049907b": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fbae049907b",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ffb39546db7": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.ffb39546db7",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3af4de5ba0": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f3af4de5ba0",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f205aa39954": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f205aa39954",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe5a02266a9": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fe5a02266a9",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f7fdb8b187e": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f7fdb8b187e",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ff8c014b59a": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.ff8c014b59a",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f8626f84977": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f8626f84977",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f61d2776b98": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f61d2776b98",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fffde9df813": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fffde9df813",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1f598a33b5": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f1f598a33b5",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f490d938cc2": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f490d938cc2",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f97a690c6bb": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f97a690c6bb",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe77a687346": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fe77a687346",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1714dd18b7": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f1714dd18b7",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f0da0057f94": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f0da0057f94",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1439a19a9e": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f1439a19a9e",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fab2bb4b91e": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fab2bb4b91e",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9d528123e6": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f9d528123e6",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f26fb7fd0e7": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f26fb7fd0e7",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f97758f0a81": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f97758f0a81",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f71f9e068f7": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f71f9e068f7",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fd040177be1": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fd040177be1",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f0930700cdc": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f0930700cdc",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4e3c901c72": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f4e3c901c72",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6521f634c6": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f6521f634c6",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1b646b2390": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f1b646b2390",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f31c3c9de5c": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f31c3c9de5c",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fa6ab1f4110": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fa6ab1f4110",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9a5fd75bd4": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f9a5fd75bd4",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9271a04daa": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f9271a04daa",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5ba885978f": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f5ba885978f",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f729ade6de9": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f729ade6de9",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fa7100f7c56": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fa7100f7c56",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f8f69e03459": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f8f69e03459",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f144a29f9b6": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f144a29f9b6",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f2cd371c0a1": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f2cd371c0a1",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f45f144d769": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f45f144d769",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f32996e9ce3": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f32996e9ce3",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe2cd637f15": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fe2cd637f15",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3639a556e0": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f3639a556e0",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6df6233348": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f6df6233348",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f40b4d348d8": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f40b4d348d8",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f54f93a169a": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f54f93a169a",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ff4b49cdf95": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.ff4b49cdf95",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5f2370ec82": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f5f2370ec82",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ffc0bf28ce6": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.ffc0bf28ce6",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f2b35cb5465": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f2b35cb5465",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fd040fb3c6d": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fd040fb3c6d",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3977d05c59": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f3977d05c59",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4cd6f38aea": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f4cd6f38aea",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f7e6a60859d": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f7e6a60859d",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f09298491cf": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f09298491cf",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f162d2d09ce": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f162d2d09ce",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe8dfb497df": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fe8dfb497df",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4f6c9964d6": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f4f6c9964d6",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f96301daa35": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f96301daa35",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f2d67d72c32": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f2d67d72c32",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fdff90b4071": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fdff90b4071",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fc673de5ec1": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fc673de5ec1",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f02b5372d6f": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f02b5372d6f",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f424d860421": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f424d860421",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f7fd7f606ca": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.f7fd7f606ca",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fcbb37c7719": {
+    "source": "src/lib/content/country-page.ts",
+    "path": "COUNTRY_FACTS_TEXT.fcbb37c7719",
+    "render": "src/lib/report.ts, country page after the cover (candidate report and Fit Report)",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+  },
+  "src/lib/content/report-upsell.ts::FREE_BADGE": {
+    "source": "src/lib/content/report-upsell.ts",
+    "path": "FREE_BADGE",
+    "render": "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+  },
+  "src/lib/content/report-upsell.ts::FREE_BADGE_NOTE": {
+    "source": "src/lib/content/report-upsell.ts",
+    "path": "FREE_BADGE_NOTE",
+    "render": "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners",
+    "narrativeSlot": "limit",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+  },
+  "src/lib/content/report-upsell.ts::INTERVIEW_HEADING": {
+    "source": "src/lib/content/report-upsell.ts",
+    "path": "INTERVIEW_HEADING",
+    "render": "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+  },
+  "src/lib/content/report-upsell.ts::INTERVIEW_BODY": {
+    "source": "src/lib/content/report-upsell.ts",
+    "path": "INTERVIEW_BODY",
+    "render": "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners",
+    "narrativeSlot": "mechanism",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+  },
+  "src/lib/content/report-upsell.ts::PREVIEW_LABEL": {
+    "source": "src/lib/content/report-upsell.ts",
+    "path": "PREVIEW_LABEL",
+    "render": "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+  },
+  "src/lib/content/report-upsell.ts::PREVIEW_AREAS": {
+    "source": "src/lib/content/report-upsell.ts",
+    "path": "PREVIEW_AREAS",
+    "render": "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+  },
+  "src/lib/content/report-upsell.ts::PREVIEW_MOVES": {
+    "source": "src/lib/content/report-upsell.ts",
+    "path": "PREVIEW_MOVES",
+    "render": "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+  },
+  "src/lib/content/report-upsell.ts::PREVIEW_ROLES": {
+    "source": "src/lib/content/report-upsell.ts",
+    "path": "PREVIEW_ROLES",
+    "render": "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners",
+    "narrativeSlot": "artefact",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+  },
+  "src/lib/content/report-upsell.ts::METHOD_NOTE": {
+    "source": "src/lib/content/report-upsell.ts",
+    "path": "METHOD_NOTE",
+    "render": "src/lib/report.ts, candidate report first read page and Fit Report summary section",
+    "narrativeSlot": "proof",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Paul, 20/11/2026: the EU Fit Check cites EURES to establish the report's authority (option 1a: text citation, no logo until ELA grants written permission). Wording follows 08_Coaching_Business.md, which says the assessment is inspired by EURES and ESCO, so it says 'draw on' and states that neither reviewed the report."
   }
 } as const;

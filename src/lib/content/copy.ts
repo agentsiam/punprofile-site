@@ -483,7 +483,7 @@ export const COPY = {
   "teaser.selfReported": {
     screen: "Teaser, under the headline. FR-007 requires this to be unmissable",
     en: "Self-reported and preliminary, from your own answers just now.",
-    th: "ผลประเมินนี้อ้างอิงจากคำตอบที่คุณให้ไว้",
+    th: "นี่เป็นผลเบื้องต้นจากคำตอบที่คุณเพิ่งให้ไว้",
   },
   "teaser.nextStep": {
     screen: "First read, the closing card. What happens after this screen",
@@ -587,7 +587,7 @@ export const COPY = {
     // Never a zero and never a dash. A dash reads as a broken field; a zero is
     // a claim. This says the honest thing, which is that we did not measure it.
     en: "Not measured yet",
-    th: "ยังไม่สามารถประเมินได้",
+    th: "ยังไม่ได้ประเมิน",
   },
 
   // --------------------------------------------- the readiness stack, 16/08/2026
@@ -602,12 +602,12 @@ export const COPY = {
     // hiring manager, and a recruiter is often neither. LR-05's principle,
     // which is to reach for the loanword the audience already uses rather than
     // translate into a vaguer Thai noun. `ผู้จ้างงาน` was that vaguer noun.
-    th: "ความพร้อม 3 ด้านแรกที่ผู้จัดการฝ่ายสรรหามองหา",
+    th: "คนกลุ่มนี้พร้อมแค่ไหนใน 3 เรื่องแรกที่คนรับเข้าทีมดู",
   },
   "stats.readiness.cv": {
     screen: "First read, readiness bar 1",
     en: "CV not yet written for the European market",
-    th: "เรซูเม่ยังไม่ได้ปรับให้ตรงกับตลาดยุโรป",
+    th: "ยังไม่ได้เขียน CV ให้เหมาะกับการสมัครงานในยุโรป",
   },
   "stats.readiness.portfolio": {
     screen: "First read, readiness bar 2",
@@ -615,12 +615,12 @@ export const COPY = {
     // Paul's wording, 17/08/2026. `portfolio` rather than `ผลงาน`, matching
     // `item.portfolioEvidence` below, and the audience is dropped: on a bar in
     // a readiness stack, who would look at it is not the point.
-    th: "ยังไม่มี Portfolio ที่แสดงผลงาน",
+    th: "ยังไม่มี Portfolio หรือตัวอย่างงานให้ดู",
   },
   "stats.readiness.linkedin": {
     screen: "First read, readiness bar 3",
     en: "LinkedIn empty or barely filled in",
-    th: "โปรไฟล์ LinkedIn ยังไม่สมบูรณ์",
+    th: "ยังไม่ได้ใส่ข้อมูลใน LinkedIn หรือใส่ไว้เพียงเล็กน้อย",
   },
   "stats.readiness.foot": {
     screen: "First read, under the readiness bars",
@@ -713,7 +713,7 @@ export const COPY = {
   "stats.countries.label": {
     screen: "First read, the top-countries stat",
     en: "The five countries this group is aiming at",
-    th: "5 ประเทศเป้าหมายยอดนิยม",
+    th: "5 ประเทศที่คนกลุ่มนี้อยากไปทำงานมากที่สุด",
   },
   "stats.countries.foot": {
     screen: "First read, under the top-countries list",
@@ -756,7 +756,7 @@ export const COPY = {
   "stats.percentile.foot": {
     screen: "First read, under the percentile line",
     en: "Compared on self-reported answers, the same as yours.",
-    th: "อ้างอิงจากคำตอบที่ผู้ทำแบบประเมินให้ไว้",
+    th: "เราเทียบจากคำตอบที่แต่ละคนให้ไว้ เช่นเดียวกับผลของคุณ",
   },
 
   // ------------------------------------------------------------- coaching CTA
@@ -1014,7 +1014,7 @@ export const COPY = {
     // `ต้องใช้การพูดคุย` was a requirement, and he cut `แทนการเดา`: the sentence
     // already says the areas are left blank, and defending the choice not to
     // guess draws attention to guessing.
-    th: "ในด้านนี้ยังมีอีก {count} หัวข้อที่ต้องมาพูดคุยกัน จึงจะประเมินได้",
+    th: "เรายังเว้นไว้อีก {count} หัวข้อในด้านนี้ เพราะต้องคุยกับคุณก่อนถึงจะให้คะแนนได้",
   },
   "report.strengths": {
     screen: "Candidate PDF, section heading over the strengths list",
@@ -1164,7 +1164,7 @@ export const COPY = {
   "fit.legend.bar": {
     screen: "Fit Report, under every chart",
     en: "Dashed line: the score the European market expects in this area.",
-    th: "เส้นประ: เกณฑ์คะแนนที่คาดหวังในตลาดงานยุโรปสำหรับด้านนี้",
+    th: "เส้นประแสดงเกณฑ์คะแนนของตลาดงานยุโรปในด้านนี้",
   },
   "fit.path.heading": {
     screen: "Fit Report, gate path heading",
@@ -1204,12 +1204,12 @@ export const COPY = {
   "fit.roles.heading": {
     screen: "Fit Report, roles heading",
     en: "Roles that fit you",
-    th: "ตำแหน่งงานในสายงานของคุณ",
+    th: "ตำแหน่งงานที่ตรงกับสายงานของคุณ",
   },
   "fit.roles.lede": {
     screen: "Fit Report, roles lede. {total}, {matching}, {countries} substituted",
     en: "Of the {total} roles we published in {countries}, {matching} have a title in your field. The newest:",
-    th: "จากตำแหน่งงานทั้งหมด {total} ตำแหน่งที่เราเผยแพร่ใน {countries} มี {matching} ตำแหน่งที่ชื่อตำแหน่งตรงกับสายงานของคุณ โดยตำแหน่งล่าสุดมีดังนี้",
+    th: "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ดูจากชื่องานแล้วตรงกับสายงานของคุณ งานล่าสุดมีดังนี้",
   },
   "fit.roles.none": {
     screen: "Fit Report, roles when nothing matches",
@@ -1287,7 +1287,7 @@ export const COPY = {
   "band.limited": {
     screen: "Candidate PDF, under a dimension score, when coverage is 25% to 45%",
     en: "a partial read, several areas are still unmeasured",
-    th: "ประเมินได้บางส่วน และยังมีหลายหัวข้อที่ต้องพูดคุยเพิ่มเติม",
+    th: "เราประเมินได้บางส่วน อีกหลายหัวข้อยังไม่ได้ประเมิน",
   },
   "band.indicative": {
     screen: "Candidate PDF, under a dimension score, when coverage is under 25%",

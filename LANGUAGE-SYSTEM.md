@@ -1285,20 +1285,16 @@ en: >-
   A hiring manager in Amsterdam opens your CV. They do not know your last company, they cannot tell how big
   the job you were responsible for actually was, and the visa question has no answer yet. They are not
   deciding that you are not good. They simply have not been given enough reason to keep reading.
-th: >-
-  ลองนึกภาพว่าผู้จัดการฝ่ายสรรหาในอัมสเตอร์ดัมเปิด CV ของคุณขึ้นมา เขาไม่รู้จักบริษัทเดิมของคุณ
-  ไม่รู้ว่างานล่าสุดที่คุณรับผิดชอบใหญ่หรือซับซ้อนแค่ไหน
-  และยังไม่รู้ว่าคุณมีสิทธิ์ทำงานอยู่แล้วหรือต้องขอวีซ่า เขาอาจไม่ได้คิดว่าคุณไม่เก่ง
-  เพียงแต่ยังไม่เห็นเหตุผลมากพอที่จะอ่านต่อ
-provenance: paul-written
-date: 14/08/2026
+th: "ลองนึกว่าคนที่กำลังรับคนเข้าทีมในอัมสเตอร์ดัมเปิด CV ของคุณ เขาไม่รู้จักบริษัทเดิมของคุณ ดูไม่ออกว่าคุณรับผิดชอบงานใหญ่แค่ไหน และยังไม่รู้ว่าคุณต้องขอวีซ่าหรือเปล่า เขาอาจวาง CV ลงทั้งที่ยังไม่ได้ตัดสินเลยว่าคุณเก่งแค่ไหน เพราะข้อมูลที่เห็นยังไม่พอให้อยากอ่านต่อ"
+provenance: paul-approved
+date: 20/11/2026
 term_bindings: []
 decision_note: No string-local reasoning comment was present at migration.
 review:
   structural_calque: pass
-  text_hash: 3cfe21d519efebb8e6cbc8338b9356ba055ea43f555362fca52665f79b9bd4e8
+  text_hash: 419360633cae5da096f6b27eae42802b4d07de44e23bc05fc84f689dba50c2d8
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -1381,16 +1377,16 @@ path: HOOK_LINE_1
 render: Coaching page, HOOK_LINE_1
 narrative_slot: symptom
 en: It is rarely that your experience is not enough.
-th: ปัญหามักไม่ใช่ว่าคุณมีประสบการณ์ไม่พอ
-provenance: paul-written
-date: 14/08/2026
+th: "หลายคนมีประสบการณ์พออยู่แล้ว"
+provenance: paul-approved
+date: 20/11/2026
 term_bindings: []
 decision_note: No string-local reasoning comment was present at migration.
 review:
   structural_calque: pass
-  text_hash: 8cbf91bd1943bf17f8a6deb4262e979577fa0a7e40af7a0771e48e273a8d8c3c
+  text_hash: 85bf33b54528dbf5cbedb45ba5ee4efdd2d47b58294b99067c0c796b3959c7f8
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -1403,16 +1399,16 @@ path: HOOK_LINE_2
 render: Coaching page, HOOK_LINE_2
 narrative_slot: symptom
 en: It is that nobody in Europe can see what that experience is worth.
-th: แต่คือคนในยุโรปยังไม่เห็นว่าประสบการณ์นั้นมีค่าอย่างไร
-provenance: paul-written
-date: 14/08/2026
+th: "แต่คนที่อ่าน CV ในยุโรปยังดูไม่ออกว่าคุณทำอะไรได้บ้าง"
+provenance: paul-approved
+date: 20/11/2026
 term_bindings: []
 decision_note: No string-local reasoning comment was present at migration.
 review:
   structural_calque: pass
-  text_hash: c255782a02aa0359b6e94235f3c26bf1fbe89eed48537766590392665a5a8d08
+  text_hash: 80d1830447f369029f738ed0d750f4e042ee1a3624b86ccbfea3c9b5da784b2e
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -2507,9 +2503,9 @@ path: COPY.band.limited
 render: Candidate PDF, under a dimension score, when coverage is 25% to 45%
 narrative_slot: limit
 en: a partial read, several areas are still unmeasured
-th: ประเมินได้บางส่วน และยังมีหลายหัวข้อที่ต้องพูดคุยเพิ่มเติม
+th: "เราประเมินได้บางส่วน อีกหลายหัวข้อยังไม่ได้ประเมิน"
 provenance: paul-approved
-date: 10/09/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: |-
   No string-local reasoning comment was present at migration.
@@ -2517,9 +2513,9 @@ decision_note: |-
   Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
 review:
   structural_calque: pass
-  text_hash: e84911dd7cd5afa794645791183de42f410515b467c75f63dbe7c6796e62ee70
+  text_hash: bc9bed6c56ce8407b94ee949c3d2f1e5a4199e778c73ccd258c05a9c5e60ecf1
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -4973,9 +4969,9 @@ path: COPY.report.unmeasured
 render: Candidate PDF, under a dimension's table. {count} is substituted
 narrative_slot: artefact
 en: '{count} more things in this area need a conversation rather than a form, so they are left blank.'
-th: ในด้านนี้ยังมีอีก {count} หัวข้อที่ต้องมาพูดคุยกัน จึงจะประเมินได้
-provenance: paul-written
-date: 17/08/2026
+th: "เรายังเว้นไว้อีก {count} หัวข้อในด้านนี้ เพราะต้องคุยกับคุณก่อนถึงจะให้คะแนนได้"
+provenance: paul-approved
+date: 20/11/2026
 term_bindings: []
 decision_note: |-
   Says what is missing and why, in the candidate's own terms. The coach's
@@ -4993,9 +4989,9 @@ decision_note: |-
   guess draws attention to guessing.
 review:
   structural_calque: pass
-  text_hash: 1cece303c7fde0c8c0fd741d8dde9388513755772d9a21cda4b5ab52e0c8bb60
+  text_hash: 73d35f5f4be71a72646b4305e98c40e995f20f606174a002c27d0ac0105c07dc
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -5190,16 +5186,16 @@ path: COPY.stats.countries.label
 render: First read, the top-countries stat
 narrative_slot: utility
 en: The five countries this group is aiming at
-th: 5 ประเทศเป้าหมายยอดนิยม
+th: "5 ประเทศที่คนกลุ่มนี้อยากไปทำงานมากที่สุด"
 provenance: paul-approved
-date: 15/08/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: No string-local reasoning comment was present at migration.
 review:
   structural_calque: pass
-  text_hash: 5d78774badf07c7d8dcdf2da2b429e64b95781fea1450410fd8b15841ac776f0
+  text_hash: e2459a72f18928b0648625d8edf51add1ed20ebb9bc1a101f83a83cd78c71f25
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -5408,16 +5404,16 @@ path: COPY.stats.percentile.foot
 render: First read, under the percentile line
 narrative_slot: utility
 en: Compared on self-reported answers, the same as yours.
-th: อ้างอิงจากคำตอบที่ผู้ทำแบบประเมินให้ไว้
+th: "เราเทียบจากคำตอบที่แต่ละคนให้ไว้ เช่นเดียวกับผลของคุณ"
 provenance: paul-approved
-date: 15/08/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: No string-local reasoning comment was present at migration.
 review:
   structural_calque: pass
-  text_hash: baada73d83cf757bb7f70dd11082daf40e831d436bb26d4557407ca6d64f7a55
+  text_hash: afa26022e7bbbaefb71091312e5e51b7eaa188d46123ecf02a60f0f95697d417
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -5430,9 +5426,9 @@ path: COPY.stats.readiness.cv
 render: First read, readiness bar 1
 narrative_slot: utility
 en: CV not yet written for the European market
-th: เรซูเม่ยังไม่ได้ปรับให้ตรงกับตลาดยุโรป
+th: "ยังไม่ได้เขียน CV ให้เหมาะกับการสมัครงานในยุโรป"
 provenance: paul-approved
-date: 10/09/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: |-
   No string-local reasoning comment was present at migration.
@@ -5440,9 +5436,9 @@ decision_note: |-
   Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
 review:
   structural_calque: pass
-  text_hash: 7bbd2cece9b48df45714e173d24aac3b2d2a027d9e8bdeff8d03d0a0de4e75fb
+  text_hash: 7f88c7d5c222436a1770f09ea7643b84d1e789a7fd6d712a2fd770f6210b4412
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -5482,9 +5478,9 @@ path: COPY.stats.readiness.label
 render: First read, the title of the readiness card
 narrative_slot: utility
 en: Where this group stands on the three things a hiring manager checks first
-th: ความพร้อม 3 ด้านแรกที่ผู้จัดการฝ่ายสรรหามองหา
-provenance: paul-written
-date: 17/08/2026
+th: "คนกลุ่มนี้พร้อมแค่ไหนใน 3 เรื่องแรกที่คนรับเข้าทีมดู"
+provenance: paul-approved
+date: 20/11/2026
 term_bindings: []
 decision_note: |-
   Paul's wording, 17/08/2026. `Hiring Manager` in Latin, and the English
@@ -5498,9 +5494,9 @@ decision_note: |-
   translate into a vaguer Thai noun. `ผู้จ้างงาน` was that vaguer noun.
 review:
   structural_calque: pass
-  text_hash: 509e22375222c44c5133c212a3f981344b87e0bca16510efb10bdc1249e4c1f4
+  text_hash: 63175eb037c76da2108affd39c6dc4cfd1840760acbfd6b468ae6ed3722ef3ed
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -5513,9 +5509,9 @@ path: COPY.stats.readiness.linkedin
 render: First read, readiness bar 3
 narrative_slot: utility
 en: LinkedIn empty or barely filled in
-th: โปรไฟล์ LinkedIn ยังไม่สมบูรณ์
+th: "ยังไม่ได้ใส่ข้อมูลใน LinkedIn หรือใส่ไว้เพียงเล็กน้อย"
 provenance: paul-approved
-date: 10/09/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: |-
   No string-local reasoning comment was present at migration.
@@ -5523,9 +5519,9 @@ decision_note: |-
   Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
 review:
   structural_calque: pass
-  text_hash: dec90645ece8c17f0f4146366a8b1aaf373fdf236930db1f2223017fa75fe87d
+  text_hash: a04936fd051dd14e3332eb22b943203536b9f4f75cb6ae0f58c49db412ecfef6
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -5538,9 +5534,9 @@ path: COPY.stats.readiness.portfolio
 render: First read, readiness bar 2
 narrative_slot: utility
 en: No portfolio or work anyone can look at
-th: ยังไม่มี Portfolio ที่แสดงผลงาน
-provenance: paul-written
-date: 17/08/2026
+th: "ยังไม่มี Portfolio หรือตัวอย่างงานให้ดู"
+provenance: paul-approved
+date: 20/11/2026
 term_bindings: []
 decision_note: |-
   Paul's wording, 17/08/2026. `portfolio` rather than `ผลงาน`, matching
@@ -5550,9 +5546,9 @@ decision_note: |-
   a readiness stack, who would look at it is not the point.
 review:
   structural_calque: pass
-  text_hash: 67b8fb5d809e1445396b93a68a4272a1ce2623ea434024f31ca4788aa617097e
+  text_hash: 0d9fcef5741446bcd40cde5842de31c0f4fb89fa67183a9c8c253c87a6903136
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -5889,9 +5885,9 @@ path: COPY.teaser.score.none
 render: First read, the legend entry for a dimension the answers could not reach
 narrative_slot: utility
 en: Not measured yet
-th: ยังไม่สามารถประเมินได้
+th: "ยังไม่ได้ประเมิน"
 provenance: paul-approved
-date: 10/09/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: |-
   Never a zero and never a dash. A dash reads as a broken field; a zero is
@@ -5901,9 +5897,9 @@ decision_note: |-
   Consolidated review applied 10/09/2026. Paul approved this Thai unchanged.
 review:
   structural_calque: pass
-  text_hash: 27a3d3ea2314035d5d1dd896787214b2aa99ffa60e7704ded3f3b22491d2f899
+  text_hash: ad425ac85f9b8309c69fb468d96b5ec765294793dff815f2bb065e1964412655
   prompt_version: structural-calque-v1
-  basis: Paul approved this item through the consolidated language review on 10/09/2026.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -5941,16 +5937,16 @@ path: COPY.teaser.selfReported
 render: Teaser, under the headline. FR-007 requires this to be unmissable
 narrative_slot: artefact
 en: Self-reported and preliminary, from your own answers just now.
-th: ผลประเมินนี้อ้างอิงจากคำตอบที่คุณให้ไว้
+th: "นี่เป็นผลเบื้องต้นจากคำตอบที่คุณเพิ่งให้ไว้"
 provenance: paul-approved
-date: 15/08/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: No string-local reasoning comment was present at migration.
 review:
   structural_calque: pass
-  text_hash: 94fd4797e9d89a2bbd73d201ddf7d72752e72f38ca878925ce051b0e21340985
+  text_hash: 81d4d1ff9f9ed68f8d34539d2b8ef533433246faee3158b1ae6e118af30c3256
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30422,16 +30418,16 @@ path: COPY.fit.legend.bar
 render: Fit Report, under every chart
 narrative_slot: utility
 en: 'Dashed line: the score the European market expects in this area.'
-th: 'เส้นประ: เกณฑ์คะแนนที่คาดหวังในตลาดงานยุโรปสำหรับด้านนี้'
-provenance: paul-written
-date: 26/10/2026
+th: "เส้นประแสดงเกณฑ์คะแนนของตลาดงานยุโรปในด้านนี้"
+provenance: paul-approved
+date: 20/11/2026
 term_bindings: []
 decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: bf61ab79fdbb5269f99f1d921307cd6e220b6ba8197c76abb9b5eb4c8904e6e2
+  text_hash: ff1b1cee2ede7ee605f86395c12b4c9c10c7f2de2df9d5a374c19b1fe993e3e0
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30598,16 +30594,16 @@ path: COPY.fit.roles.heading
 render: Fit Report, roles heading
 narrative_slot: proof
 en: Roles that fit you
-th: ตำแหน่งงานในสายงานของคุณ
-provenance: paul-written
-date: 26/10/2026
+th: "ตำแหน่งงานที่ตรงกับสายงานของคุณ"
+provenance: paul-approved
+date: 20/11/2026
 term_bindings: []
 decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 2b2b2d4c330c8c5931d40ca88dade1c70c0ab7b94a8203468a4757d98a4ebbb5
+  text_hash: 35f4f954820ae887c6819dbcb38d53926bf87de817cd5dc4c2a80d6c97e3b019
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30620,16 +30616,16 @@ path: COPY.fit.roles.lede
 render: Fit Report, roles lede. {total}, {matching}, {countries} substituted
 narrative_slot: proof
 en: 'Of the {total} roles we published in {countries}, {matching} have a title in your field. The newest:'
-th: จากตำแหน่งงานทั้งหมด {total} ตำแหน่งที่เราเผยแพร่ใน {countries} มี {matching} ตำแหน่งที่ชื่อตำแหน่งตรงกับสายงานของคุณ โดยตำแหน่งล่าสุดมีดังนี้
-provenance: paul-written
-date: 26/10/2026
+th: "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ดูจากชื่องานแล้วตรงกับสายงานของคุณ งานล่าสุดมีดังนี้"
+provenance: paul-approved
+date: 20/11/2026
 term_bindings: []
 decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026.
 review:
   structural_calque: pass
-  text_hash: 613d5e465f34705c19aa296f43fe89e54f950d2e45ad81cb7aa5aba2a159325e
+  text_hash: b14e1f749f13ba9d781c3c2a1c1cb6b769adce1440c9af5fafd09fdd96e3d688
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32358,16 +32354,16 @@ path: COACHES[0].pull
 render: Home and coaching pages, Paul's pull
 narrative_slot: proof
 en: "I have sat on both sides of the interview table."
-th: "ผมเคยนั่งอยู่ทั้งสองฝั่งของโต๊ะสัมภาษณ์"
+th: "ผมเคยเป็นทั้งคนที่ไปสัมภาษณ์งานและคนที่สัมภาษณ์ผู้สมัคร"
 provenance: paul-approved
-date: 30/10/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
 review:
   structural_calque: pass
-  text_hash: 44e74642b74e2e025be5962a956da41290bc9af9d1c3b1b207e4ed943f4f2f8e
+  text_hash: 741f8ec30d78231f6f8ecf0ea56d36763fc79a00fa6d062d98fb769a9d0ed806
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32457,16 +32453,16 @@ path: COACHES[0].story[3]
 render: Coaching page, Paul's story
 narrative_slot: proof
 en: "A company name every Thai person knows may be a name a European hiring manager has never heard. Work we know was large and difficult can become one unremarkable line on a CV. And years of accumulated experience can be passed over, not because it has no value, but because the person reading it does not have enough context to see that value."
-th: "ชื่อบริษัทที่คนไทยรู้จักดี อาจเป็นเพียงชื่อที่ผู้จัดการฝ่ายสรรหาในยุโรปไม่เคยได้ยิน งานที่เรารู้ว่าใหญ่และยาก อาจกลายเป็นเพียงหนึ่งบรรทัดธรรมดาใน CV และประสบการณ์ที่สั่งสมมาหลายปีอาจถูกมองข้าม ไม่ใช่เพราะมันไม่มีค่า แต่เพราะคนอ่านยังไม่มีบริบทมากพอที่จะเห็นคุณค่านั้น"
+th: "คนไทยรู้จักบริษัทเดิมของคุณดี แต่คนที่กำลังรับคนเข้าทีมในยุโรปอาจไม่เคยได้ยินชื่อ พอเขาเห็นงานยาก ๆ ที่คุณเคยทำเขียนไว้แค่บรรทัดเดียวใน CV เขาก็อาจดูไม่ออกว่าคุณรับผิดชอบมากแค่ไหน ประสบการณ์ที่คุณสะสมมาหลายปีเลยถูกมองข้ามได้ง่าย"
 provenance: paul-approved
-date: 30/10/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
 review:
   structural_calque: pass
-  text_hash: 4b9965e8376aa019acd4fb0df7e00131467ffc314df057eb349c95d6ffa81f9e
+  text_hash: e87bcfd8fff84279321e49a2197e6fa6e4ad78901cbbea6eac9ec2fb78d19941
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -32479,16 +32475,16 @@ path: COACHES[0].story[4]
 render: Coaching page, Paul's story
 narrative_slot: proof
 en: "I have watched this happen again and again to Thai people in the group. When applications go unanswered, many of them try harder: send more, revise the CV again, read more advice. But in a cross-border job market, effort does not automatically turn into opportunity. If the market still cannot read you, applying more is just sending the same unclear story out over and over."
-th: "ผมเห็นเรื่องนี้เกิดขึ้นซ้ำ ๆ กับคนไทยในกลุ่ม เมื่อสมัครงานแล้วไม่ได้รับคำตอบ หลายคนจึงพยายามมากขึ้น สมัครมากขึ้น แก้ CV อีกรอบ และอ่านคำแนะนำเพิ่มอีก แต่ในตลาดงานข้ามประเทศ ความพยายามไม่ได้กลายเป็นโอกาสโดยอัตโนมัติ ถ้าตลาดยังอ่านเราไม่ออก การสมัครเพิ่มก็เป็นเพียงการส่งเรื่องเดิมที่ยังไม่ชัดออกไปซ้ำ ๆ"
+th: "ผมเจอเรื่องนี้บ่อยในกลุ่มครับ พอสมัครแล้วเงียบ หลายคนก็ส่งใบสมัครเพิ่ม แก้ CV อีกรอบ หรือหาคำแนะนำมาอ่านเพิ่ม แต่ถ้าคนอ่าน CV ในยุโรปยังดูไม่ออกว่าคุณเคยทำอะไรมา ต่อให้ส่งอีกหลายที่ เขาก็ยังเห็นข้อมูลเดิม"
 provenance: paul-approved
-date: 30/10/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
 review:
   structural_calque: pass
-  text_hash: 0418561fe097a31771ca0523b8bf877da05397344d351dee77394e39ac331a03
+  text_hash: b8f94e3f457eae1c37ccbef90b969ef4c0b7214cb0abac954a9b2db86eb8a29c
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: "Codex revision, applied by Paul's decision on 20/11/2026 (apply all 19)."
 ```
 
 <!-- COPY-ENTRY -->
@@ -39404,4 +39400,2336 @@ review:
   text_hash: "1c8776a30f0a022f55a2b9214cf9b906fae73facc40d95a7fb478a915aec382a"
   prompt_version: "structural-calque-v1"
   basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.title`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.title"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.title"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Your first-choice country, in brief"
+th: "สรุปข้อมูลประเทศเป้าหมายที่คุณเลือกเป็นประเทศแรก"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "79eeefdf16b2724ac2d95f3ffe74ccd2f8b9e10db0060d9b10ccd59089f2939d"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.intro`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.intro"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.intro"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: limit
+en: "The ways in for most people with a job offer, read on each government's own page. Check the official link before you rely on a figure: rules change."
+th: "หากคุณได้รับข้อเสนองานแล้ว ส่วนนี้สรุปช่องทางหลักในการขออนุญาตทำงาน เราตรวจสอบข้อมูลจากหน่วยงานรัฐของแต่ละประเทศ เกณฑ์อาจเปลี่ยนได้ ก่อนใช้ตัวเลขควรตรวจอีกครั้งจากเว็บไซต์ทางการของหน่วยงานนั้น"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "8c7d4ddaaecf8e2c61f0c5f886e738fdfd028b26d766a120e0d5dfa4f9fb06c6"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.capital`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.capital"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.capital"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Capital"
+th: "เมืองหลวง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "56c445cec6b927d79f34d5dfcdb58209752f219cf80473337937e0d73c366872"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.time`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.time"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.time"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Time difference from Thailand"
+th: "เวลาต่างจากไทย"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "36faf93d39fffb1b4570f80360bd7f0325dbb239856fdd1025c69398eb33cf57"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.employer`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.employer"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.employer"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Who can hire you"
+th: "นายจ้างแบบไหนจ้างคุณได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "7c80b0a6b32b33aae78758c5fc6d6b84fb24d1d06a78aebed3488346f67abd23"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.salary`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.salary"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.salary"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Minimum salary"
+th: "เกณฑ์รายได้ขั้นต่ำ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "8e5e36683e6812e180d589fceb6349d08df325dd31739de800d873d624902070"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.salary_none`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.salary_none"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.salary_none"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: limit
+en: "No salary figure printed yet: we have not confirmed it on a government page."
+th: "เรายังไม่ระบุตัวเลข เพราะยังยืนยันรายได้ขั้นต่ำจากข้อมูลของหน่วยงานรัฐไม่ได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "41d62f5a0326b64b9456c9ea3d6afc71553a39ddb02e7b4e50260a942c62a8ac"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.as_of`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.as_of"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.as_of"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "as of"
+th: "ณ วันที่"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "29e5235bf3a14c79eccdf144630dd6c6576c3d34d18d164fe96e237e27986f5b"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.source`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.source"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.source"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "source"
+th: "ที่มา"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "c44affbc705427083c2748bf8192d9bbd27e562e3415359d9b66c4dfc0fdd770"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.partner`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.partner"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.partner"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Your partner"
+th: "คู่ครองของคุณ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "a5bcaefe5a321c28a6ea48191c2791f7c6a3c92bb814e166039c29e05f219105"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.processing`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.processing"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.processing"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "How long the decision takes"
+th: "รอผลนานแค่ไหน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "cbceb043b29544cb45c1526e4b8424b3ce671d779d6ff82b6d4538ed8e13f31b"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.official`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.official"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.official"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Official page"
+th: "เว็บไซต์ทางการ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "3876021d64f95f85257e89ecf21cc304350b12ac480e58f37be22979cd1dfe2a"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.other_routes`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.other_routes"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.other_routes"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Other routes"
+th: "เส้นทางอื่น"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "f57b312c4844d1b132d55fdd1f3c35093e8ce8052e493f2556d2a46f2ed77289"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.checked`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_PAGE_LABELS.checked"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_PAGE_LABELS.checked"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Facts checked"
+th: "ตรวจข้อมูลเมื่อ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Country page label. English meaning first; Thai composed for a candidate scanning a reference page."
+review:
+  structural_calque: pass
+  text_hash: "386a08f0ce832aef28d81a24cb2d9c4e20ce78ac2c7cb130003b4f77809fa94f"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f325f396659`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f325f396659"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f325f396659"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Skilled-worker permit under the Skilled Immigration Act; the Opportunity Card (Chancenkarte) lets you look for work without an offer"
+th: "คุณขอใบอนุญาตทำงานสำหรับผู้มีทักษะตามกฎหมาย Skilled Immigration Act ได้ ส่วน Opportunity Card (Chancenkarte) เป็นบัตรที่ให้คุณเดินทางไปหางานในเยอรมนีได้แม้ยังไม่มีข้อเสนองาน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "64676b00b4f71a15cd1faa5d3589aa265e517efde63e9c348f1a7d97f1602f21"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6584a7c546`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6584a7c546"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f6584a7c546"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "6 hours behind in winter, 5 in summer"
+th: "ช้ากว่าไทย 6 ชั่วโมงช่วงฤดูหนาว และ 5 ชั่วโมงช่วงฤดูร้อน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "119b0f9b357689903bd6d5785f193467b855d98a7056cb14a9a8695553766263"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5940944764`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5940944764"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f5940944764"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "7 hours behind in winter, 6 in summer"
+th: "ช้ากว่าไทย 7 ชั่วโมงช่วงฤดูหนาว และ 6 ชั่วโมงช่วงฤดูร้อน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "cb5b7181a270463d22d14df62bd62c370e1f002486cfb54ebe1f32e9b62a6ad5"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f10c2f95007`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f10c2f95007"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f10c2f95007"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "5 hours behind in winter, 4 in summer"
+th: "ช้ากว่าไทย 5 ชั่วโมงช่วงฤดูหนาว และ 4 ชั่วโมงช่วงฤดูร้อน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "6d917c2975b1f3de0352ccf138ac54a62594880088c4db7ff0628f7852774329"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f43216ea995`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f43216ea995"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f43216ea995"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "EU Blue Card"
+th: "EU Blue Card (ใบอนุญาตพำนักและทำงานสำหรับงานทักษะสูง)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "9f186add61f58cebf14408604cd99c034ba624e5824e8292fe7802cb9d59a777"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f812bc6d15f`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f812bc6d15f"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f812bc6d15f"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Any employer; the job must match your degree"
+th: "นายจ้างรายใดก็ได้ แต่งานต้องตรงกับวุฒิการศึกษาของคุณ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "7cedcd2fa17b1c3abae6d15e849c8bfcaea78c52de1db98e0a723e7a693e9a3a"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe7518c356b`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe7518c356b"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fe7518c356b"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "EUR 50,700 gross a year, or EUR 45,934.20 for shortage occupations, recent graduates, and IT specialists without a degree who have an offer of at least six months and three years of IT experience in the last seven"
+th: "ปีละ 50,700 ยูโรก่อนหักภาษี หรือ 45,934.20 ยูโร ถ้าเป็นอาชีพที่ขาดแคลน จบการศึกษามาไม่นาน หรือเป็นสาย IT ที่ไม่มีปริญญาแต่มีข้อเสนองานอย่างน้อย 6 เดือนและมีประสบการณ์ IT 3 ปีในช่วง 7 ปีที่ผ่านมา"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "f8268a29e4a57ed5cb87eeab6d74b2dfd0baaa5abbf852b2b2e6a4dbc280541e"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4edc83cfab`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4edc83cfab"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f4edc83cfab"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Your partner may work, with no waiting period (EU Blue Card rules, Directive 2021/1883 Article 17(6))"
+th: "เมื่อคู่ครองของคุณได้รับสิทธิพำนักในฐานะสมาชิกครอบครัวแล้ว ก็เริ่มทำงานได้โดยไม่ต้องรอ ตามมาตรา 17(6) ของ Directive 2021/1883 ว่าด้วย EU Blue Card"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "0265bb2d4c69a874e86ea8caddcae8c97aaa776e280962d20b28fe3a0d5c701e"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f45e93f8739`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f45e93f8739"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f45e93f8739"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "With the employer-led fast-track procedure, usually about 3 weeks at the embassy after the employer's pre-approval; otherwise appointment waits vary"
+th: "ถ้านายจ้างใช้ช่องทางเร่งด่วน (fast-track) หลังได้รับอนุมัติเบื้องต้นแล้ว ขั้นตอนที่สถานทูตมักใช้เวลาราว 3 สัปดาห์ หากใช้ช่องทางปกติ ระยะเวลารอนัดจะแตกต่างกันไป"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "2b3c006822d7b5a0f8cc0f6850c879a524be56b9375e6aa5093901ffd3b3dfda"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9421fc3dae`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9421fc3dae"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f9421fc3dae"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Highly Skilled Migrant (kennismigrant)"
+th: "Highly Skilled Migrant (kennismigrant) ใบอนุญาตสำหรับแรงงานทักษะสูง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "61d4fc47f5b30d6d698b7692abe8d40416dae65304fb6e1e60e96ee46d029fd5"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f0cccec862d`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f0cccec862d"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f0cccec862d"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Must be an IND-recognised sponsor"
+th: "นายจ้างต้องเป็นสปอนเซอร์ที่ IND รับรองแล้ว"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "b20e27c42e4db0022e01bf5362b0a30782a8d80bd7dee34b8aadf9918faf37e2"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6cc6a57f26`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6cc6a57f26"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f6cc6a57f26"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "EUR 5,942 gross a month from age 30, EUR 4,357 under 30, excluding holiday pay; EUR 3,122 under the reduced criteria if eligible"
+th: "สำหรับผู้มีอายุ 30 ปีขึ้นไป รายได้ขั้นต่ำอยู่ที่เดือนละ 5,942 ยูโร หากอายุต่ำกว่า 30 ปี อยู่ที่เดือนละ 4,357 ยูโร หากคุณมีสิทธิ์ใช้อัตราพิเศษ รายได้ขั้นต่ำอยู่ที่เดือนละ 3,122 ยูโร ทุกยอดเป็นรายได้ก่อนหักภาษี ไม่รวมเงินสมทบสำหรับวันหยุดพักผ่อน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "436455c8e4fff44c9a4ff289d6fd6f0b43348e156b81e560901fd03399e36dca"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5b50b75d4a`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5b50b75d4a"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f5b50b75d4a"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Your family members may work without a separate work permit"
+th: "สมาชิกครอบครัวของคุณทำงานได้โดยไม่ต้องขอใบอนุญาตทำงานแยก"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "5da0311af05e7385ae958a241e406c7ba1cc8c65e57936a6ebee0b6ce306cfb5"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4d443e1d37`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4d443e1d37"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f4d443e1d37"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Usually about 2 weeks with a recognised sponsor and a complete file (legal limit 90 days)"
+th: "ปกติราว 2 สัปดาห์ ถ้านายจ้างเป็นสปอนเซอร์ที่รับรองแล้วและเอกสารครบ (กฎหมายกำหนดไม่เกิน 90 วัน)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "bfb947632f4e5342df10fd567b7b2b55de9dfb337f291d2c47eb7442d56c333c"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3f0842d2ec`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3f0842d2ec"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f3f0842d2ec"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Need not be a recognised sponsor"
+th: "นายจ้างยื่นเรื่องให้คุณได้ แม้ไม่ได้รับการรับรองจาก IND ให้เป็นสปอนเซอร์"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "1e3b68a7ad558c9aa862c68eef8cdbaccc510170159c6f1abc2136ad8a3d0c29"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1b4d735b6e`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1b4d735b6e"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f1b4d735b6e"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "EUR 5,942 gross a month excluding holiday pay; EUR 4,754 under the reduced criteria if eligible"
+th: "รายได้ขั้นต่ำก่อนหักภาษีอยู่ที่เดือนละ 5,942 ยูโร ไม่รวมเงินสมทบสำหรับวันหยุดพักผ่อน (holiday allowance) หากคุณมีสิทธิ์ใช้อัตราที่ต่ำกว่า รายได้ขั้นต่ำอยู่ที่เดือนละ 4,754 ยูโร"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "cab8b2628ade30d3f6687bee191415c009215355a390e279193176b088ed558c"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f22289a847d`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f22289a847d"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f22289a847d"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Skilled Worker visa"
+th: "Skilled Worker visa (วีซ่าทำงานสำหรับผู้มีทักษะ)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "dcc327946191cf278092731a48e778845d478a890bf151c88c88e15ac425e2e6"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fd4c8e439a0`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fd4c8e439a0"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fd4c8e439a0"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Must hold a sponsor licence; most roles must be at degree level"
+th: "นายจ้างต้องมีใบอนุญาตเป็นสปอนเซอร์ และงานส่วนใหญ่ต้องเป็นงานระดับปริญญา"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "f30edad8af7001d0892497b7540cfeea942ceb1e50168bde3170e8aaab6a72ee"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f15b3da5eba`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f15b3da5eba"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f15b3da5eba"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Usually the higher of GBP 41,700 a year and the occupation's going rate; exceptions apply, so check the occupation code"
+th: "โดยทั่วไป รายได้ต่อปีต้องไม่ต่ำกว่า 41,700 ปอนด์ หรืออัตราค่าจ้างที่กำหนดสำหรับอาชีพนั้น แล้วแต่จำนวนใดสูงกว่า บางกรณีใช้เกณฑ์อื่นได้ ควรตรวจเงื่อนไขตามรหัสอาชีพของคุณ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "c1f0db00a0457ee7239d39e056d2f1c650dc08d8d08386f6e2b8cd7e0132878b"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fbae049907b`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fbae049907b"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fbae049907b"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Your partner on a dependant visa may work, except as a sportsperson or coach. Care workers and people in medium-skilled jobs cannot bring a partner"
+th: "คู่ครองที่ถือวีซ่าผู้ติดตามทำงานได้ ยกเว้นงานนักกีฬาอาชีพหรือผู้ฝึกสอนกีฬา ส่วนผู้ที่ไปทำงานดูแลผู้สูงอายุหรือผู้ป่วย (care worker) และผู้ที่ทำงานระดับทักษะปานกลาง (medium-skilled) พาคู่ครองไปด้วยไม่ได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "79dccf9e89967b7464758a97f6251882c34fc37ea055cbce2068c863455c314b"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ffb39546db7`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ffb39546db7"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.ffb39546db7"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Usually within 3 weeks when applying from outside the UK"
+th: "หากยื่นคำขอจากนอกสหราชอาณาจักร โดยปกติจะทราบผลภายใน 3 สัปดาห์"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "846e3f26b3b91deee5034985b20a2c9ab74228090a14d0357e6b3b85872aa2e4"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3af4de5ba0`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3af4de5ba0"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f3af4de5ba0"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Talent Passport, qualified employee"
+th: "Talent Passport ประเภทพนักงานที่มีคุณวุฒิ (salarié qualifié)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "c48aabee1a8e7995d661461a93ddb282b347bc8a870a0e8905e581f328b63678"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f205aa39954`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f205aa39954"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f205aa39954"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Any employer in France; you need a qualifying French degree and a contract over three months"
+th: "นายจ้างในฝรั่งเศสรายใดก็ได้ คุณต้องสำเร็จการศึกษาในฝรั่งเศสและได้รับวุฒิที่เข้าเกณฑ์ รวมทั้งมีสัญญาจ้างนานกว่า 3 เดือน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "eaf805851de3b6f55bb08eebdeb2f231aeb89bcfb878909240242f1017541d91"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe5a02266a9`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe5a02266a9"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fe5a02266a9"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Your spouse gets a multi-year talent-family card, without going through family reunification, and may do any work"
+th: "คู่สมรสของคุณยื่นขอบัตรพำนักแบบหลายปี (talent-famille) ได้โดยไม่ต้องยื่นคำขอรวมครอบครัวแยกต่างหาก เมื่อได้รับบัตรแล้วก็ทำงานได้ทุกประเภท"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "70525e80cfd3c3b0a6611225f0ee881c3c2b7c08068c32599df638f5d3d38f32"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f7fdb8b187e`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f7fdb8b187e"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f7fdb8b187e"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "EU Blue Card (Talent Passport)"
+th: "EU Blue Card (ใบอนุญาตพำนักและทำงานสำหรับงานทักษะสูงภายใต้ระบบ Talent Passport)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "dc48f46bb7ff952cba9dbed5bf35b0182940876f64f699db080154316ab47f2e"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ff8c014b59a`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ff8c014b59a"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.ff8c014b59a"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Any employer in France; contract of at least six months"
+th: "นายจ้างในฝรั่งเศสรายใดก็ได้ โดยต้องเสนอสัญญาจ้างอย่างน้อย 6 เดือน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "d6ad004231a47784b5e6eaff359a12ca75448fbc171666fea7a342088e5d9c9a"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f8626f84977`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f8626f84977"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f8626f84977"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Denmark does not issue the EU Blue Card. The Positive List covers shortage occupations"
+th: "เดนมาร์กไม่มี EU Blue Card หากอาชีพของคุณขาดแคลนแรงงาน ให้ตรวจรายชื่ออาชีพในโครงการ Positive List"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "4c81dd3c03a3295512f22248d145617ae74dd60381fd554cb2ae3dac8184ae9b"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f61d2776b98`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f61d2776b98"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f61d2776b98"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Pay Limit Scheme"
+th: "Pay Limit Scheme (เส้นทางตามเกณฑ์เงินเดือน)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "eaa99e6dc132704f1d300aed786b563cb86718f57327810d2c447f3bc425a4fe"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fffde9df813`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fffde9df813"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fffde9df813"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Any Danish employer"
+th: "นายจ้างในเดนมาร์กรายใดก็ได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "f666d993ee2340a4f5a9e084f826e45127b1f1d01e0d0a6a65715994fc6fdd29"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1f598a33b5`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1f598a33b5"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f1f598a33b5"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "DKK 552,000 a year (DKK 46,000 a month)"
+th: "ปีละ 552,000 โครนเดนมาร์ก (เดือนละ 46,000 โครน)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "84583d80224654b3797d4c404032c5f1e93ff21f89f361b34c0d3eaef37664be"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f490d938cc2`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f490d938cc2"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f490d938cc2"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Your partner may work on an accompanying family member permit; working for your own employer can need separate permission"
+th: "คู่ครองของคุณทำงานได้ด้วยใบอนุญาตผู้ติดตาม แต่ถ้าจะทำงานกับนายจ้างเดียวกับคุณ อาจต้องขออนุญาตแยก"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "d350998a820c92109b9bd6bda6378a66b482ebbb933a3423f3cfc15beff4ba6e"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f97a690c6bb`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f97a690c6bb"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f97a690c6bb"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Normally 1 month, up to 3 if more documents are needed; about 10 days through a Fast-Track certified employer"
+th: "ปกติใช้เวลา 1 เดือน หากต้องส่งเอกสารเพิ่มอาจใช้เวลาถึง 3 เดือน หากนายจ้างได้รับการรับรองในโครงการ Fast-Track จะใช้เวลาราว 10 วัน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "ba039aa8bea455d571a502498e310c2ed00fdf9f14eb2a0a14f2b9871f6e4784"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe77a687346`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe77a687346"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fe77a687346"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Work permit"
+th: "Work permit (ใบอนุญาตทำงาน)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "950dacd8dfe3f3489a7eb46ec496a6545bc9ee35bb960d6426f9cff39b94fea6"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1714dd18b7`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1714dd18b7"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f1714dd18b7"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Any Swedish employer; pay in line with the collective agreement or what is usual in the occupation"
+th: "นายจ้างในสวีเดนรายใดก็ได้ โดยค่าจ้างต้องเป็นไปตามข้อตกลงร่วมระหว่างนายจ้างกับลูกจ้าง (collective agreement) หรืออัตราค่าจ้างปกติของอาชีพนั้น"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "e2d5d1f6c825a873a62e55a7243c825d9caa6002d37e016e87de5714126ba63a"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f0da0057f94`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f0da0057f94"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f0da0057f94"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "SEK 34,470 gross a month, from 16/06/2026"
+th: "เดือนละ 34,470 โครนาสวีเดนก่อนหักภาษี ตั้งแต่ 16/06/2026"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "c2aa1a2ad6347ded4052fa05bff0c03195dc85cda247ef774565b2837c85f3ff"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1439a19a9e`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1439a19a9e"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f1439a19a9e"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "If your family is granted residence permits, adult family members may work"
+th: "ถ้าครอบครัวได้ใบอนุญาตพำนัก สมาชิกที่เป็นผู้ใหญ่ทำงานได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "f9b01e1d2f753d6529d68c35793520a072cdf8b791e5fe19529c55aa1acc7500"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fab2bb4b91e`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fab2bb4b91e"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fab2bb4b91e"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Three in four work permits decided within 120 days in 2026"
+th: "ในปี 2026 หน่วยงานพิจารณาคำขอใบอนุญาตทำงาน 3 ใน 4 คำขอเสร็จภายใน 120 วัน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "ded2664ec65a6637481369f078b43e840c2b6393d1af6b5cdc3763a7a42bc5d7"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9d528123e6`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9d528123e6"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f9d528123e6"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Highly qualified job of at least six months; degree (180 credits) or five years' experience"
+th: "งานทักษะสูงอย่างน้อย 6 เดือน ต้องมีปริญญา (180 หน่วยกิต) หรือประสบการณ์ทำงาน 5 ปี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "83a9e39cae47aaa51c0e169f3b45bf7de86ef277c2d9ab39580034a5f71a1a24"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f26fb7fd0e7`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f26fb7fd0e7"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f26fb7fd0e7"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "SEK 53,625 gross a month (1.25 times the average gross salary)"
+th: "รายได้ขั้นต่ำก่อนหักภาษีอยู่ที่เดือนละ 53,625 โครนาสวีเดน คิดเป็น 1.25 เท่าของค่าจ้างเฉลี่ยก่อนหักภาษี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "a5341cc7aa8708acf59782407657d6503acd06bc3cc370f69c11098d16962d87"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f97758f0a81`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f97758f0a81"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f97758f0a81"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Service pledge of a decision within 30 days for a complete application"
+th: "หน่วยงานตั้งเป้าตัดสินภายใน 30 วัน ถ้าเอกสารครบ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "bb07a0acb7d59c5b25baa4e151fb0c1e85156f2dc1a4f51837fec1730c8a712c"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f71f9e068f7`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f71f9e068f7"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f71f9e068f7"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Norway is not in the EU, so there is no EU Blue Card"
+th: "นอร์เวย์ไม่ได้เป็นสมาชิกสหภาพยุโรป จึงไม่มี EU Blue Card"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "38f75c1834b4aa31fc724bbe9e26d14d0b7bb2b0e7b7250077059aa3278a840f"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fd040177be1`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fd040177be1"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fd040177be1"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Skilled worker"
+th: "Skilled worker (ใบอนุญาตพำนักสำหรับแรงงานที่มีทักษะ)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "538e22c8557f6414138610813e3d016344cd9690bf89498460b50cd94700588d"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f0930700cdc`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f0930700cdc"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f0930700cdc"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "A concrete job offer from one employer in Norway, normally full-time"
+th: "คุณต้องได้รับข้อเสนองานจากนายจ้างในนอร์เวย์หนึ่งแห่ง โดยทั่วไปเป็นงานเต็มเวลา"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "d2d07aa0a17e9797fc4c1feeb54f9b24628d4a57992ec8911eb7002778a051fe"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4e3c901c72`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4e3c901c72"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f4e3c901c72"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Where a collective agreement applies, its wage rate. Otherwise NOK 545,400 gross a year for a job needing a bachelor's, NOK 624,700 for a master's"
+th: "ถ้าสายงานมีข้อตกลงร่วมเรื่องค่าจ้าง ใช้อัตรานั้น ถ้าไม่มี ปีละ 545,400 โครนนอร์เวย์ก่อนหักภาษีสำหรับงานที่ต้องใช้ปริญญาตรี และ 624,700 โครนสำหรับงานที่ต้องใช้ปริญญาโท"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "8231ab865f1e4e69da8bf09955a6b89cdea02130fea5744799a87fed571271c4"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6521f634c6`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6521f634c6"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f6521f634c6"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Specialist permit"
+th: "Specialist permit (ใบอนุญาตผู้เชี่ยวชาญ)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "4836c9ab47e46d4f38fc88a263a3118b5b4305d93d9c90614887601e81089233"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1b646b2390`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f1b646b2390"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f1b646b2390"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Any Finnish employer; its own qualification rules"
+th: "นายจ้างในฟินแลนด์รายใดก็ได้ โดยคุณต้องมีคุณสมบัติตามเงื่อนไขของใบอนุญาตที่ขอ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "891a9a7be8e2bcdac5afd7f5dfee6a4dae431c53c22842a5153b682b4a9224fe"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f31c3c9de5c`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f31c3c9de5c"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f31c3c9de5c"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "EUR 3,937 gross a month"
+th: "เดือนละ 3,937 ยูโรก่อนหักภาษี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "e24d4611b5bd161638b6e085463156feb62df1326dff0bdf89117a170702e554"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fa6ab1f4110`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fa6ab1f4110"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fa6ab1f4110"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Your spouse can apply for a residence permit on the basis of family ties, which gives an unrestricted right to work"
+th: "คู่สมรสของคุณยื่นขอใบอนุญาตพำนักในฐานะสมาชิกครอบครัวได้ เมื่อได้รับอนุญาตแล้วก็ทำงานได้โดยไม่มีข้อจำกัด"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "9d8704fe16a35d4b8317fac418578cfe4b6ed0852491c56b8e0c7c5e3fed5d02"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9a5fd75bd4`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9a5fd75bd4"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f9a5fd75bd4"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Decision within 14 days through the fast-track service"
+th: "ได้ผลภายใน 14 วัน ถ้ายื่นผ่านบริการ fast-track"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "f8a9f07796acb2ee00052af3cddf6aa6e2310073700543463fdda8590ef2bbc9"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9271a04daa`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f9271a04daa"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f9271a04daa"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Critical Skills Employment Permit"
+th: "Critical Skills Employment Permit (ใบอนุญาตทำงานสำหรับตำแหน่งงานที่ต้องใช้ทักษะสำคัญ)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "1ca212319bb44ddcd5cf0fbf005dfb9d1ded323ec590988f67d7385f68742cea"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5ba885978f`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5ba885978f"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f5ba885978f"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Occupation on the Critical Skills Occupations List and a job offer of at least two years"
+th: "อาชีพของคุณต้องอยู่ในบัญชีอาชีพที่ต้องการทักษะสำคัญ (Critical Skills Occupations List) และนายจ้างต้องเสนอสัญญาจ้างอย่างน้อย 2 ปี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "4395c545f4ee855f505df1cf93514afaa61ce56dd4fc93b451885001a2257d05"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f729ade6de9`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f729ade6de9"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f729ade6de9"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "EUR 40,904 a year with a relevant degree, EUR 68,911 without one"
+th: "หากคุณจบปริญญาในสาขาที่ตรงกับตำแหน่งงาน รายได้ขั้นต่ำอยู่ที่ปีละ 40,904 ยูโร ส่วนเกณฑ์สำหรับผู้ที่ไม่มีปริญญาตรงสาขาอยู่ที่ปีละ 68,911 ยูโร"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "8713f010b2323af6e0fbbc588b4d117d6002ee0799de6fa55599412ab01b6705"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fa7100f7c56`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fa7100f7c56"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fa7100f7c56"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Processed in date order; the live processing dates are on the official page"
+th: "พิจารณาตามลำดับวันที่ยื่น ดูคิวล่าสุดได้ที่เว็บไซต์ทางการของหน่วยงาน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "58264fc4ee40d619208d2c6d52889604157a2e39eadf0845e5ae070cdd884df9"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f8f69e03459`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f8f69e03459"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f8f69e03459"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "General Employment Permit"
+th: "General Employment Permit (ใบอนุญาตทำงานทั่วไป)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "b763e4903eec9e12e55ce02f7b788610acba54a30e2bdece05a1d77a9afc664a"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f144a29f9b6`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f144a29f9b6"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f144a29f9b6"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "EUR 36,605 a year"
+th: "ปีละ 36,605 ยูโร"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "5219876929da6b47b94743dc693972a36c7ddeefceb46f7164b45844d0c9f116"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f2cd371c0a1`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f2cd371c0a1"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f2cd371c0a1"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "The threshold depends on the region you work in"
+th: "เกณฑ์เงินเดือนขึ้นกับภูมิภาคที่คุณทำงาน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "fc17bd4e4bff2ae38363c853044c3bc3f0400feb7f35100a171c81d6e537acf2"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f45f144d769`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f45f144d769"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f45f144d769"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Single permit, highly qualified"
+th: "Single permit ประเภทแรงงานทักษะสูง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "798077e7a68b289811eb862d2ec678c79fc0efdc736ce498dcee08652618594a"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f32996e9ce3`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f32996e9ce3"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f32996e9ce3"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Any employer; regional rules"
+th: "นายจ้างรายใดก็ได้ ใช้กติกาของแต่ละภูมิภาค"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "8ca6df239ff66fb8e57f84dcaa5689a5edf51b167abf8cb21e7da633ac52f8c3"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe2cd637f15`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe2cd637f15"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fe2cd637f15"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Brussels: at most 120 days from a complete file, then the long-stay visa"
+th: "ในเขตบรัสเซลส์ การพิจารณาคำขอใช้เวลาไม่เกิน 120 วันนับจากวันที่เอกสารครบ จากนั้นคุณจึงยื่นขอวีซ่าระยะยาว"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "19c270287f9baef12e71b3a47a6b554d53a7d196a304647adcab1a7de9791004"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3639a556e0`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3639a556e0"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f3639a556e0"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Brussels: at most 90 days, then the long-stay visa"
+th: "ในเขตบรัสเซลส์ การพิจารณาคำขอใช้เวลาไม่เกิน 90 วัน จากนั้นคุณจึงยื่นขอวีซ่าระยะยาว"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "783ebade19a68db1474ab95a80f144f116a07a2df8c2347e41867176923e4cbe"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6df6233348`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f6df6233348"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f6df6233348"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Red-White-Red Card"
+th: "Red-White-Red Card (บัตรพำนักและทำงานของออสเตรีย)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "b2d87a0870a3e6e1e5af5385e1f6be33c299566f3a517e90b89531207970b366"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f40b4d348d8`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f40b4d348d8"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f40b4d348d8"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Any Austrian employer"
+th: "นายจ้างในออสเตรียรายใดก็ได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "c0ac33efa3bc34f659e1040c9ae25ff9850442423ada0d8829bae30b94761423"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f54f93a169a`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f54f93a169a"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f54f93a169a"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "No EU Blue Card"
+th: "ไม่มี EU Blue Card"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "6a48c17ece55a67d3616a8774373edb76cf09ddccc207d6f9fb75a43894fb23e"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ff4b49cdf95`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ff4b49cdf95"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.ff4b49cdf95"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Work permit through a Swiss employer"
+th: "ใบอนุญาตทำงานที่นายจ้างในสวิตเซอร์แลนด์เป็นผู้ยื่นขอ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "d05b1489741300d8242e72363c322e7d559fbb3c5d54a0855b3c45859aff0b2b"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5f2370ec82`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f5f2370ec82"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f5f2370ec82"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Inside an annual quota; the employer must show no Swiss or EU candidate was available"
+th: "ใบอนุญาตนี้อยู่ภายใต้โควตาประจำปี นายจ้างต้องแสดงว่าได้พยายามหาคนมารับตำแหน่งงานนี้จากกลุ่มผู้สมัครที่มีสิทธิ์ได้รับการพิจารณาก่อนแล้ว แต่ยังหาคนที่เหมาะสมไม่ได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "65e62b5030759d123d29ff0b39142d5150f5c21ee97d8dd1615e0651cb890cf9"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ffc0bf28ce6`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.ffc0bf28ce6"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.ffc0bf28ce6"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Highly Qualified Professional permit"
+th: "Highly Qualified Professional permit (ใบอนุญาตผู้เชี่ยวชาญทักษะสูง)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "25cfc1439bbffad27c7fe5e610663a21ff554740272f7be1dcd696db364f6810"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f2b35cb5465`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f2b35cb5465"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f2b35cb5465"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "The employer files electronically with the Large Companies Unit"
+th: "นายจ้างเป็นผู้ยื่นออนไลน์กับหน่วยงาน Large Companies Unit"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "212efcb3d41237e1df717a0adbb58845c1204cc47e7effa61c673b72986dbc56"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fd040fb3c6d`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fd040fb3c6d"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fd040fb3c6d"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Legal deadline 20 days from the electronic application"
+th: "กฎหมายกำหนดให้ตอบภายใน 20 วันหลังยื่นออนไลน์"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "733c8476d93db4c6be39730b6aec876f018508115d5c49d12a950c3d628ac2f6"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3977d05c59`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f3977d05c59"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f3977d05c59"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "EU Blue Card (Carta Blu UE)"
+th: "EU Blue Card (Carta Blu UE) ใบอนุญาตพำนักและทำงานสำหรับงานทักษะสูง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "282c963343fa86c5726cd819996d4a5ddca20b4439460274072c2513a14f3e6d"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4cd6f38aea`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4cd6f38aea"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f4cd6f38aea"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Outside the annual quota; the employer applies for the work authorisation (nulla osta)"
+th: "ตำแหน่งงานประเภทนี้ไม่อยู่ภายใต้โควตาประจำปี นายจ้างเป็นผู้ยื่นขออนุญาตทำงาน (nulla osta)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "ee4cd528d91622e25f13e8873fc117679bc9b8e0564efda4fc7b3ab10de4ab47"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f7e6a60859d`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f7e6a60859d"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f7e6a60859d"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Work authorisation within 30 days of the employer's application (Law 182 of 02/12/2025), then the entry visa"
+th: "ใบอนุญาตทำงานออกภายใน 30 วันหลังนายจ้างยื่น (กฎหมายฉบับที่ 182 ลงวันที่ 02/12/2025) จากนั้นจึงขอวีซ่าเข้าประเทศ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "335d9bc0311794427330ce73c509937bfee302a2cbd41ad9ca0aac90c0f0c5cf"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f09298491cf`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f09298491cf"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f09298491cf"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Highly Qualified Activity (residence visa D3, then residence permit)"
+th: "Highly Qualified Activity (วีซ่า D3 สำหรับงานที่ต้องใช้ทักษะสูง) เมื่อเดินทางเข้าโปรตุเกสแล้วจึงยื่นขอใบอนุญาตพำนัก"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "68575ee406fa6df68db51b35c613826a68f9ed44b63ec345d82656b67a7eec2d"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f162d2d09ce`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f162d2d09ce"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f162d2d09ce"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Any Portuguese employer"
+th: "นายจ้างในโปรตุเกสรายใดก็ได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "21435a1ef7e624b8118b095f2f5e2e3c27f4e3444ba3bab2b6617a8bf463a32d"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe8dfb497df`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fe8dfb497df"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fe8dfb497df"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "EU Blue Card (Cartao Azul UE)"
+th: "EU Blue Card (Cartão Azul UE) ใบอนุญาตพำนักและทำงานสำหรับงานทักษะสูง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "4345abf1a2847e791ce209d3ff4597b276953e95b1855a4c9cefebfa8a6b0248"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4f6c9964d6`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f4f6c9964d6"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f4f6c9964d6"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Work permit with a temporary residence permit"
+th: "ใบอนุญาตทำงานคู่กับใบอนุญาตพำนักชั่วคราว"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "525dc5992d663c93616f5c13c6820c02947ee6c9797d36b30fa3289161cb5027"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f96301daa35`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f96301daa35"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f96301daa35"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Contract of at least six months in a job needing high qualifications"
+th: "คุณต้องมีสัญญาจ้างอย่างน้อย 6 เดือน สำหรับตำแหน่งงานที่กำหนดให้ผู้สมัครมีคุณวุฒิระดับสูง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "40d96f6b4e6dcda2149bcfc35668bdf3709a9755738955093470f6fd07112ceb"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f2d67d72c32`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f2d67d72c32"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f2d67d72c32"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "At least PLN 160,264.08 gross a year (150% of the 2025 national average), for applications filed in 2026"
+th: "สำหรับคำขอที่ยื่นในปี 2026 ต้องมีรายได้ก่อนหักภาษีอย่างน้อยปีละ 160,264.08 ซวอตี (150% ของค่าจ้างเฉลี่ยทั่วประเทศในปี 2025)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "84133b9641c91b4683d4c52e20d663478f0a743b188ba5eefac8f8df88a7c446"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fdff90b4071`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fdff90b4071"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fdff90b4071"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Employee Card"
+th: "Employee Card (ใบอนุญาตพำนักและทำงาน)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "162ea1ba861ecc12171657ed15831545c748d0586fde9b467ae54d9582be085e"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fc673de5ec1`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fc673de5ec1"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fc673de5ec1"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "The job must be in the central database of vacancies for Employee Card holders"
+th: "ตำแหน่งงานต้องอยู่ในฐานข้อมูลตำแหน่งว่างสำหรับผู้ถือ Employee Card"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "f3a1fdfe552973549125b0aed8d448c69b8e02d6e72cc55594461eededc416a2"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f02b5372d6f`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f02b5372d6f"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f02b5372d6f"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "On a long-term residence permit for family reunification your partner may work without a further permit. A permit for 'family purposes' does not allow work, so the type matters"
+th: "ถ้าคู่ครองของคุณได้ใบอนุญาตพำนักระยะยาวแบบรวมครอบครัว (family reunification) ทำงานได้โดยไม่ต้องขอใบอนุญาตเพิ่ม แต่ถ้าเป็นแบบ 'family purposes' ทำงานไม่ได้ จึงต้องดูให้ดีว่าได้ประเภทไหน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "3ec54163d0ac793e4294bfada4d2cfa66899929290a6ae5af2d93928aaf1ad70"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f424d860421`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f424d860421"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f424d860421"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "60 days, 90 in complicated cases"
+th: "ปกติ 60 วัน ถ้าเป็นกรณีซับซ้อนใช้เวลา 90 วัน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "07a4460b23a5c7a1dae93bba95f64d3d90ed3af07e533313b4d2e64bdedf7ecd"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f7fd7f606ca`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.f7fd7f606ca"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.f7fd7f606ca"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "CZK 73,823 gross a month (1.5 times the 2025 average wage), for decisions from 01/05/2026 to 30/04/2027"
+th: "รายได้ขั้นต่ำก่อนหักภาษีอยู่ที่เดือนละ 73,823 โครูนาเช็ก คิดเป็น 1.5 เท่าของค่าจ้างเฉลี่ยปี 2025 เกณฑ์นี้ใช้กับคำขอที่หน่วยงานตัดสินระหว่างวันที่ 01/05/2026 ถึง 30/04/2027"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "129944d9a631f365f2177733c300e0eaddc1a7a609ef41b613b960afe6471f0d"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fcbb37c7719`
+
+```yaml
+id: "src/lib/content/country-page.ts::COUNTRY_FACTS_TEXT.fcbb37c7719"
+source: "src/lib/content/country-page.ts"
+path: "COUNTRY_FACTS_TEXT.fcbb37c7719"
+render: "src/lib/report.ts, country page after the cover (candidate report and Fit Report)"
+narrative_slot: utility
+en: "Legal limit 90 days"
+th: "กฎหมายกำหนดไม่เกิน 90 วัน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Fact text from country-facts.md, keyed by its exact English. When the fact changes, the English changes, this record's hash fails, and the page throws until a new record is approved."
+review:
+  structural_calque: pass
+  text_hash: "0a49e56ecdf82e0a94bd07e6bb6e5f883d0412a68fe54e49b2b533159ddfc36b"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/report-upsell.ts::FREE_BADGE`
+
+```yaml
+id: "src/lib/content/report-upsell.ts::FREE_BADGE"
+source: "src/lib/content/report-upsell.ts"
+path: "FREE_BADGE"
+render: "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners"
+narrative_slot: artefact
+en: "Free short version"
+th: "ฉบับย่อ ฟรี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+review:
+  structural_calque: pass
+  text_hash: "27fadb12e3a765ece4afd5aa300d5ba29a589071ed7a4f81af4ee2a2719dd5ee"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/report-upsell.ts::FREE_BADGE_NOTE`
+
+```yaml
+id: "src/lib/content/report-upsell.ts::FREE_BADGE_NOTE"
+source: "src/lib/content/report-upsell.ts"
+path: "FREE_BADGE_NOTE"
+render: "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners"
+narrative_slot: limit
+en: "The full Fit Report adds a 30-minute interview with a coach."
+th: "ใน Fit Report ฉบับเต็ม คุณจะได้สัมภาษณ์กับโค้ชเป็นเวลา 30 นาที"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+review:
+  structural_calque: pass
+  text_hash: "c5ea69aae74ecd3a1be1c849c4a73f2bd4def2c64493905acf640fb4eb1ea61f"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/report-upsell.ts::INTERVIEW_HEADING`
+
+```yaml
+id: "src/lib/content/report-upsell.ts::INTERVIEW_HEADING"
+source: "src/lib/content/report-upsell.ts"
+path: "INTERVIEW_HEADING"
+render: "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners"
+narrative_slot: artefact
+en: "30 minutes with a coach"
+th: "คุยกับโค้ช 30 นาที"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+review:
+  structural_calque: pass
+  text_hash: "4c97dd25dbd7dc81510c519072f6ce48211f4624fa842867b762f6bf384a166f"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/report-upsell.ts::INTERVIEW_BODY`
+
+```yaml
+id: "src/lib/content/report-upsell.ts::INTERVIEW_BODY"
+source: "src/lib/content/report-upsell.ts"
+path: "INTERVIEW_BODY"
+render: "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners"
+narrative_slot: mechanism
+en: "Your answers here reach four areas. In the interview a coach asks about the work you have actually done and scores every competency your answers cannot reach. That conversation is what makes the full version."
+th: "จากคำตอบในแบบประเมิน เราประเมินความพร้อมของคุณได้ 4 ด้าน ในการสัมภาษณ์สำหรับ Fit Report ฉบับเต็ม โค้ชจะถามถึงงานที่คุณเคยทำ เพื่อให้คะแนนได้ครบทุกทักษะ รวมถึงทักษะที่ต้องพูดคุยเพิ่มเติมจึงจะประเมินได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+review:
+  structural_calque: pass
+  text_hash: "697009417383763e5b4ecb387eda73ec073adb7a873d9a192cc16bfbc908d0fd"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/report-upsell.ts::PREVIEW_LABEL`
+
+```yaml
+id: "src/lib/content/report-upsell.ts::PREVIEW_LABEL"
+source: "src/lib/content/report-upsell.ts"
+path: "PREVIEW_LABEL"
+render: "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners"
+narrative_slot: artefact
+en: "In the full Fit Report"
+th: "ใน Fit Report ฉบับเต็ม"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+review:
+  structural_calque: pass
+  text_hash: "1db3ab4ccb819a9102ed92f515628b27a16097aedcfd71c408a0b4e91ae199ed"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/report-upsell.ts::PREVIEW_AREAS`
+
+```yaml
+id: "src/lib/content/report-upsell.ts::PREVIEW_AREAS"
+source: "src/lib/content/report-upsell.ts"
+path: "PREVIEW_AREAS"
+render: "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners"
+narrative_slot: artefact
+en: "Every competency in this area gets its own score, including the ones left blank here."
+th: "ในด้านนี้ โค้ชจะให้คะแนนแยกทีละทักษะ รวมถึงข้อที่ยังเว้นว่างไว้ในฉบับนี้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+review:
+  structural_calque: pass
+  text_hash: "8810ae7ee0229d143523b41e30e06d5cd3f13de0f4aea37228cfc659a8f6db02"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/report-upsell.ts::PREVIEW_MOVES`
+
+```yaml
+id: "src/lib/content/report-upsell.ts::PREVIEW_MOVES"
+source: "src/lib/content/report-upsell.ts"
+path: "PREVIEW_MOVES"
+render: "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners"
+narrative_slot: artefact
+en: "The moves that would lift your score most, and how much each one adds."
+th: "คุณควรเริ่มปรับเรื่องไหนก่อน และแต่ละเรื่องจะช่วยเพิ่มคะแนนได้เท่าไร"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+review:
+  structural_calque: pass
+  text_hash: "e11b58bc514425f01c7aeb20f5948f63e5a997a487863bb0249fbe81d28b7c88"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/report-upsell.ts::PREVIEW_ROLES`
+
+```yaml
+id: "src/lib/content/report-upsell.ts::PREVIEW_ROLES"
+source: "src/lib/content/report-upsell.ts"
+path: "PREVIEW_ROLES"
+render: "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners"
+narrative_slot: artefact
+en: "Open roles in your target countries that match your field, from the job adverts we screen."
+th: "เราตรวจประกาศงานที่ยังเปิดรับในประเทศเป้าหมายของคุณ แล้วคัดตำแหน่งงานที่ตรงกับสายงานของคุณ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+review:
+  structural_calque: pass
+  text_hash: "3566530787199552748aad00761e83f52c5392aeb9c81cdf58f796753af8f244"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/report-upsell.ts::METHOD_NOTE`
+
+```yaml
+id: "src/lib/content/report-upsell.ts::METHOD_NOTE"
+source: "src/lib/content/report-upsell.ts"
+path: "METHOD_NOTE"
+render: "src/lib/report.ts, candidate report first read page and Fit Report summary section"
+narrative_slot: proof
+en: "How this report was built: the four areas draw on EURES, the European job mobility network, and the European Commission's ESCO skills framework. Country facts are read on each government's own pages. EURES and the Commission have not reviewed this report."
+th: "เราประเมินความพร้อมใน 4 ด้าน โดยอ้างอิงข้อมูลจาก EURES เครือข่ายที่ช่วยให้คนหางานข้ามประเทศในยุโรป และ ESCO กรอบทักษะของคณะกรรมาธิการยุโรป สำหรับข้อมูลรายประเทศ เราตรวจสอบจากเว็บไซต์ทางการของหน่วยงานรัฐในแต่ละประเทศโดยตรง ทั้ง EURES และคณะกรรมาธิการยุโรปไม่ได้ตรวจสอบรายงานฉบับนี้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Paul, 20/11/2026: the EU Fit Check cites EURES to establish the report's authority (option 1a: text citation, no logo until ELA grants written permission). Wording follows 08_Coaching_Business.md, which says the assessment is inspired by EURES and ESCO, so it says 'draw on' and states that neither reviewed the report."
+review:
+  structural_calque: pass
+  text_hash: "ae46f52cfa36d5c838db3e13056930c80ad2c65b290be090ddcd645e683772fc"
+  prompt_version: "structural-calque-v1"
+  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
 ```

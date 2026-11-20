@@ -73,11 +73,135 @@ import { BAND_COPY, DIMENSIONS, GATES } from "./model";
 import { topStrengths, developmentPriorities, scoreResponse, scoreFull } from "./scoring";
 import { ECRA } from "./ecra";
 import { FIT_SAMPLE_INPUT, fitSampleRatings } from "./fit-sample-core";
-import { SAMPLE_LABEL } from "./content/home";
+import { RESULTS, SAMPLE_LABEL } from "./content/home";
 import { projectUnlock } from "./levers";
 import { FIT_CALLOUTS, FULL_CTA, FULL_SAMPLE, HERO_SAMPLE_SCORES } from "./content/products";
+import { CLOSE_LEAD, COACHES, HOOK_BODY, HOOK_EYEBROW, HOOK_LINE_1, HOOK_LINE_2, PAIN_HEADING, PAINS } from "./content/coaching";
+import { PRICING_QUESTIONS } from "./content/pricing";
+import { DESTINATIONS } from "./content/cta";
 import type { ProfileScore } from "./scoring";
 import type { Tier } from "./model";
+import { COUNTRY_FACTS, COUNTRY_FACTS_RESEARCHED } from "./content/country-facts.generated";
+import { COUNTRY_FACTS_TEXT, COUNTRY_PAGE_LABELS } from "./content/country-page";
+import { FREE_BADGE, FREE_BADGE_NOTE, INTERVIEW_BODY, METHOD_NOTE, INTERVIEW_HEADING, PREVIEW_AREAS, PREVIEW_LABEL, PREVIEW_MOVES, PREVIEW_ROLES } from "./content/report-upsell";
+
+/**
+ * The country page, added 20/11/2026: quick facts for the first country the
+ * candidate ticked, laid out per permit route (Paul, Q2 option 2a).
+ *
+ * Facts come from `country-facts.generated.ts`, which already drops anything the
+ * coaching repo has not confirmed on a government page. Every sentence of fact
+ * text is looked up in `COUNTRY_FACTS_TEXT` by its exact English; a miss throws,
+ * because a fact that changed upstream must not reach a candidate untranslated
+ * or carrying last year's Thai (Paul, Q1 option 1a). Country and capital names
+ * stay in English, as the country question itself prints them.
+ *
+ * Returns "" when the first choice is "not sure" or a country with no facts row.
+ */
+export function countryFactsBody(country: string | undefined, locale: Locale, asset: (p: string) => string = (p) => p): string {
+  const row = COUNTRY_FACTS.find((c) => c.country === country);
+  if (!row) return "";
+  const L = (k: keyof typeof COUNTRY_PAGE_LABELS) => esc(COUNTRY_PAGE_LABELS[k][locale]);
+  const tx = (en: string) => {
+    const hit = COUNTRY_FACTS_TEXT[en];
+    if (!hit) throw new Error(`countryFactsBody: no copy record for fact text "${en}". Add it to LANGUAGE-SYSTEM.md.`);
+    return esc(hit[locale]);
+  };
+  const link = (href: string, label: string) => `<a href="${esc(href)}">${label}</a>`;
+  const routes = row.routes
+    .map((r) => {
+      const rows: string[] = [];
+      if (r.employer) rows.push(`<dt>${L("employer")}</dt><dd>${tx(r.employer)}</dd>`);
+      rows.push(
+        `<dt>${L("salary")}</dt><dd>${
+          r.salary
+            ? `${tx(r.salary)}${r.salaryAsOf ? ` <span class="cf-meta">${L("as_of")} ${esc(r.salaryAsOf)}</span>` : ""}${
+                r.salarySource ? ` <span class="cf-meta">${link(r.salarySource, L("source"))}</span>` : ""
+              }`
+            : `<span class="cf-meta">${L("salary_none")}</span>`
+        }</dd>`,
+      );
+      if (r.partner) rows.push(`<dt>${L("partner")}</dt><dd>${tx(r.partner)}</dd>`);
+      if (r.processing)
+        rows.push(
+          `<dt>${L("processing")}</dt><dd>${tx(r.processing)}${
+            r.processingUrl ? ` <span class="cf-meta">${link(r.processingUrl, L("official"))}</span>` : ""
+          }</dd>`,
+        );
+      return `<article class="cf-route">
+    <h3>${tx(r.name)}</h3>
+    <dl>${rows.join("")}</dl>
+    ${r.url ? `<p class="cf-link">${link(r.url, L("official"))}</p>` : ""}
+  </article>`;
+    })
+    .join("\n  ");
+  // Paul's photographs of each capital, 20/11/2026, in public/images/countries/
+  // named by the country in lower case with hyphens.
+  const photo = asset(`/images/countries/${row.country.toLowerCase().replace(/\s+/g, "-")}.jpg`);
+  return `<div class="cf">
+  <div class="cf-hero">
+    <img src="${photo}" alt="" onerror="this.parentNode.classList.add('no-photo');this.remove()">
+    <div class="cf-hero-text">
+      <p class="cf-eyebrow">${L("title")}</p>
+      <h2>${esc(row.country)}</h2>
+      <p class="cf-facts"><span>${L("capital")} <strong>${esc(row.capital)}</strong></span><span>${L("time")} <strong>${tx(row.timeFromBangkok)}</strong></span></p>
+    </div>
+  </div>
+  <p class="cf-lede">${L("intro")}</p>
+  ${row.note ? `<p class="cf-note">${tx(row.note)}</p>` : ""}
+  ${routes}
+  ${row.otherRoutes ? `<p class="cf-note"><strong>${L("other_routes")}:</strong> ${tx(row.otherRoutes)}</p>` : ""}
+  <p class="cf-meta">${L("checked")} ${esc(COUNTRY_FACTS_RESEARCHED)}</p>
+</div>`;
+}
+
+export const UPSELL_STYLES = `
+  .cover-badge { margin: 8mm 0 0; max-width: 68mm; font-size: 9.5pt; font-weight: 600; line-height: 1.4; }
+  .cover-badge span { display: table; padding: 1.5mm 4mm; margin-right: 2mm; border-radius: 4mm; background: var(--color-ink-deep); color: var(--color-canvas-brand); font-size: 11pt; font-weight: 900; margin-bottom: 1.5mm; }
+  .preview { margin: 4mm 0 0; padding: 3mm 4mm; border-radius: 3mm; background: var(--color-canvas-brand); font-size: 8.5pt; break-inside: avoid; }
+  .preview strong { margin-right: 1.5mm; }
+  .method-note { margin: 4mm 0 0; padding-top: 2.5mm; border-top: 0.3mm solid var(--color-line); font-size: 7.5pt; color: var(--color-mute-strong); }
+  .interview { display: grid; grid-template-columns: 42mm 1fr; gap: 5mm; align-items: center; margin: 4mm 0 5mm; padding: 4mm; border-radius: 5mm; background: var(--color-action); color: var(--color-on-action); break-inside: avoid; }
+  .interview img { width: 42mm; height: 30mm; object-fit: cover; border-radius: 3mm; }
+  .interview h3 { margin: 0 0 1.5mm; font-size: 15pt; font-weight: 900; }
+  .interview p { margin: 0; font-size: 9.5pt; line-height: 1.45; }
+`;
+
+export const FUN_FACTS_STYLES = `
+  .ff-card { border: 0.3mm solid var(--color-line); border-radius: 4mm; padding: 4mm 5mm; margin: 0 0 4mm; break-inside: avoid; }
+  .ff-label { margin: 0 0 3mm; font-size: 10pt; font-weight: 800; }
+  .ff-bars { list-style: none; padding: 0; margin: 0; display: grid; gap: 2mm; }
+  .ff-bars li { display: grid; grid-template-columns: 52mm 1fr 12mm; align-items: center; gap: 3mm; font-size: 8.5pt; }
+  .ff-track { height: 2mm; border-radius: 1mm; background: var(--color-surface-container); }
+  .ff-track span { display: block; height: 2mm; border-radius: 1mm; background: var(--color-primary); }
+  .ff-pct { text-align: right; font-weight: 700; }
+  .ff-line { margin: 3mm 0 0; font-size: 9pt; }
+  .ff-foot { margin: 2mm 0 0; font-size: 7.5pt; color: var(--color-mute-strong); }
+  .ff-you ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 2.5mm; font-size: 9pt; }
+  .ff-big { font-size: 14pt; font-weight: 900; margin-right: 1.5mm; }
+`;
+
+export const COUNTRY_STYLES = `
+  .cf-hero { position: relative; height: 78mm; margin: 0 0 5mm; border-radius: 6mm; overflow: hidden; background: var(--color-ink-deep); break-inside: avoid; }
+  .cf-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cf-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 15%, rgba(0,0,0,0.8) 100%); }
+  .cf-hero.no-photo::after { display: none; }
+  .cf-hero-text { position: absolute; left: 7mm; right: 7mm; bottom: 6mm; z-index: 1; color: #fff; }
+  .cf-eyebrow { display: inline-block; margin: 0 0 2mm; padding: 0.8mm 3mm; border-radius: 3mm; font-size: 8.5pt; font-weight: 800; background: var(--color-brand-lime); color: var(--color-ink-deep); }
+  .cf-hero h2 { margin: 0 0 2mm; font-size: 30pt; font-weight: 900; line-height: 1; color: #fff; }
+  .cf-facts { display: flex; gap: 7mm; flex-wrap: wrap; margin: 0; font-size: 8.5pt; }
+  .cf-facts strong { display: block; font-size: 10pt; }
+  .cf-lede { margin: 0 0 4mm; font-size: 9.5pt; }
+  .cf-note { margin: 0 0 3mm; font-size: 8.5pt; }
+  .cf-route { border-radius: 4mm; padding: 4mm 5mm; margin: 0 0 3mm; background: var(--color-canvas-soft); border-left: 2mm solid var(--color-brand-lime); break-inside: avoid; }
+  .cf-route h3 { margin: 0 0 2.5mm; font-size: 11.5pt; font-weight: 800; }
+  .cf-route dl { display: grid; grid-template-columns: 38mm 1fr; gap: 1.2mm 4mm; margin: 0; font-size: 8.5pt; }
+  .cf-route dt { font-weight: 700; }
+  .cf-route dd { margin: 0; }
+  .cf-link { margin: 2mm 0 0; font-size: 8pt; }
+  .cf-meta { font-size: 7.5pt; color: var(--color-mute-strong); }
+  .cf a { color: inherit; text-decoration: underline; }
+`;
 
 export interface ReportMeta {
   /** Display name or a pseudonymous reference. */
@@ -117,6 +241,39 @@ export interface ReportOptions {
    * real advice. 28/10/2026.
    */
   sampleNotes?: boolean;
+  /**
+   * Candidate report only: include the two Coaching 1:1 pages at the end.
+   * Default on; a coach sending the report to someone already in Coaching 1:1
+   * turns it off. Paul 2a, 20/11/2026.
+   */
+  coaching?: boolean;
+  /**
+   * Candidate report only: where its pictures load from. The document is
+   * written into a blank tab, so callers in the browser pass their own origin.
+   */
+  assetOrigin?: string;
+  /**
+   * Candidate report only: the result of `api.stats.community`, for the
+   * "from everyone who has taken this" page (Paul, Q1 option 1a, 20/11/2026).
+   * Aggregates and percentages only; the query never returns a sample size, so
+   * this page cannot print how many people completed the check. Absent or all
+   * null, the page is left out.
+   */
+  community?: CommunityStats;
+}
+
+/** The shape `convex/stats.ts` `community` returns. Percentages only, by design. */
+export interface CommunityStats {
+  shares: Record<string, { pct: number } | null>;
+  topCountries: { country: string; share: number }[] | null;
+  distribution: Record<string, number[] | null>;
+  mostLanguages: number | null;
+}
+
+/** Same rule as `CommunityStats.tsx`: understates on ties, caps at 95. */
+function percentBelow(score: number, boundaries: number[]): number {
+  const under = boundaries.filter((b) => b < score).length;
+  return Math.max(0, (under - 1) * 5);
 }
 
 const esc = (s: string) =>
@@ -544,12 +701,31 @@ ${dimSections}
 /**
  * What the candidate is sent.
  *
- * Same document, internals removed. See the variant note at the top of this
- * file for what "internals" covers and why the unscored rows are part of it.
+ * Same scores as the coach's copy, internals removed (see the variant note at
+ * the top of this file), laid out as fixed A4 pages rather than one flowing
+ * column. Redesigned 20/11/2026, Paul's call: a white-paper layout in the
+ * brand's own colours, with pictures, ending on the Coaching 1:1 offer.
  *
- * Every candidate-visible string resolves through `copy.ts`, so a key with no
- * Thai yet renders its English rather than a machine translation, which is the
- * rule `locale.ts` states and `narrative.ts` refuses to break.
+ * Pages, in order: cover, first read, the four areas over two pages,
+ * strengths and priorities, the Fit Report, then two Coaching 1:1 pages.
+ * The Fit Report page stays in front of the coaching pages (Paul 1a,
+ * 20/11/2026): the cheaper offer first, the engagement as the close.
+ *
+ * The two coaching pages are on by default, because the candidate who
+ * downloads this from the result screen has bought nothing yet. A coach
+ * sending it to someone already in Coaching 1:1 turns them off with
+ * `coaching: false` (Paul 2a, 20/11/2026). Nothing is stored about who paid.
+ *
+ * Every sentence a reader sees is a line that already exists: `copy.ts` for
+ * the report, and the /coaching, home and /pricing modules for the two
+ * coaching pages. No wording was written for this layout.
+ *
+ * Pictures follow "Where clay and where the mascot" in `Brand_Guidelines.md`:
+ * a clay scene is a page's main picture, the flat mascot appears only as spot
+ * art in a card corner, the two never share a page, and client faces are
+ * their own photographs. Images are loaded from the site by absolute URL,
+ * because this document is written into a blank tab where a relative path has
+ * nothing to resolve against.
  */
 export function renderCandidateReport(
   profile: ProfileScore,
@@ -558,16 +734,16 @@ export function renderCandidateReport(
 ): string {
   const locale: Locale = opts.locale ?? "th";
   const s = (key: Parameters<typeof t>[0], vars?: Record<string, string | number>) => t(key, locale, vars);
+  const pick = (c: { en: string; th: string }) => c[locale];
+  const origin = opts.assetOrigin ?? (typeof location !== "undefined" ? location.origin : "");
+  const asset = (path: string) => `${origin}${path}`;
+  const sitePath = (path: string) => `https://punprofile.app${locale === "en" ? `/en${path}` : path}`;
+  const withCoaching = opts.coaching ?? true;
 
   const dimLabel = (key: string, fallback: string) => dimensionName(key, fallback, locale);
   const notMeasured = s("teaser.score.none");
-  // `BAND_COPY` is the coach report's English. The candidate's copy of the same
-  // three sentences is keyed, so it can be reviewed in Thai like every other
-  // string they read.
-  //
   // Written out rather than composed as `band.${d.band}`, because `verify-copy`
-  // greps the source for each key to prove it is reachable, and a key it cannot
-  // see is a key it reports as dead.
+  // greps the source for each key to prove it is reachable.
   const bandCopy = (band: string) =>
     band === "moderate"
       ? s("band.moderate")
@@ -575,186 +751,352 @@ export function renderCandidateReport(
         ? s("band.limited")
         : s("band.indicative");
 
-  const overviewAxes: RadarAxis[] = profile.dimensions.map((d) => ({
-    label: dimLabel(d.key, d.label),
-    value: d.score,
-  }));
-  // Values off and the box widened, for the same reason the first read does it:
-  // a Thai axis name plus its number is wider than the plot leaves room for.
-  //
-  // `size` is the viewBox height, and the axis labels are 11px IN THAT BOX, so
-  // the only thing that decides how big they land on paper is the ratio between
-  // the box and the width it is drawn into. The coach report's 460 renders into
-  // a 544px figure at 1.9 wide, which is a 0.6 scale and a 6px label: legible on
-  // a laptop, gone in print. These are sized to land near 1:1.
-  const overview = radarSvg(overviewAxes, {
-    idPrefix: "overview",
-    size: 300,
-    values: false,
-    maxLabel: 40,
-    widthRatio: 2.1,
-    caption: s("teaser.chart.heading"),
-  });
-
-  const dimSections = profile.dimensions
-    .map((d, idx) => {
-      const scored = d.items.filter((i) => i.score !== null);
-      const unmeasured = d.totalCount - d.scoredCount;
-
-      const axes: RadarAxis[] = scored.map((i) => ({ label: itemName(i.key, i.label, locale), value: i.score }));
-      // A radar needs three axes to be a shape. Below that it is a line or a
-      // dot and says less than the table under it, so the table stands alone.
-      const svg =
-        axes.length >= 3
-          ? radarSvg(axes, {
-              idPrefix: `dim${idx}`,
-              size: 240,
-              values: false,
-              // Thai competency names run past the 24-character default and got
-              // an ellipsis mid-word, which reads as a rendering fault rather
-              // than as a shortened label. The wider box is what pays for it.
-              maxLabel: 40,
-              widthRatio: 2.3,
-            })
-          : "";
-
-      const rows = scored
-        .map(
-          (i) => `<tr>
-        <th scope="row">${esc(itemName(i.key, i.label, locale))}</th>
-        <td class="num">${(i.score as number).toFixed(1)}</td>
-      </tr>`,
-        )
-        .join("\n");
-
-      const table = rows
-        ? `<table class="scores">
-        <thead><tr><th scope="col">${esc(s("report.competency"))}</th><th scope="col">${esc(s("report.score"))}</th></tr></thead>
-        <tbody>
-${rows}
-        </tbody>
-      </table>`
-        : "";
-
-      return `<section class="dim" id="${d.key}">
-  <header class="dim-head">
-    <h2>${esc(dimLabel(d.key, d.label))}</h2>
-    <p class="dim-score">${
-      d.score === null
-        ? esc(notMeasured)
-        : `<strong>${d.score.toFixed(1)}</strong> / 5 <span class="dim-cov">· ${esc(bandCopy(d.band))}</span>`
-    }</p>
-  </header>
-  <div class="dim-body${svg ? "" : " is-solo"}">
-    ${svg ? `<figure class="chart">${svg}</figure>` : ""}
-    <div class="dim-text">
-      ${table}
-      ${unmeasured > 0 ? `<p class="unmeasured">${esc(s("report.unmeasured", { count: unmeasured }))}</p>` : ""}
-    </div>
-  </div>
-</section>`;
-    })
-    .join("\n");
-
-  const strengths = topStrengths(profile, 3);
-  const priorities = developmentPriorities(profile, 3);
-
-  const listOf = (items: { key: string; label: string; score: number; dimension: string }[]) =>
-    items.length
-      ? `<ol class="highlights">${items
-          .map(
-            (h) =>
-              `<li><span class="h-score">${h.score.toFixed(1)}</span><span class="h-label">${esc(itemName(h.key, h.label, locale))}</span><span class="h-dim">${esc(dimensionNameByLabel(h.dimension, locale))}</span></li>`,
-          )
-          .join("")}</ol>`
-      : `<p class="muted">${esc(notMeasured)}</p>`;
-
+  const coverName = meta.coverName ?? meta.candidate;
   const metaBits = [
     meta.targetRole ? esc(meta.targetRole) : "",
     meta.targetCountries?.length ? esc(meta.targetCountries.join(", ")) : "",
     meta.submittedAt ? esc(ddmmyyyy(meta.submittedAt)) : "",
   ].filter(Boolean);
 
-  // The same projection the result screen shows, not a second count of the same
-  // thing. `more` is what an engagement unlocks, which is a smaller number than
-  // "everything unmeasured" and is the one the copy key was written against.
+  let pageNo = 1;
+  const head = (dark = false) =>
+    `<header class="pg-head"><img class="pg-logo" src="${asset(dark ? "/punprofile-logo-reversed.svg" : "/efc-logo.svg")}" alt=""></header>`;
+  const foot = (dark = false) =>
+    `<footer class="pg-foot${dark ? " on-dark" : ""}"><span>EU Fit Check · ${esc(coverName)}</span><span class="pg-n">${String(++pageNo).padStart(2, "0")}</span></footer>`;
+  const opener = (n: string, title = "", eyebrow = "", dark = false) =>
+    `<div class="opener${dark ? " on-dark" : ""}"><span class="sec-n">${n}</span><span class="rule"></span>${
+      eyebrow ? `<p class="op-eyebrow">${esc(eyebrow)}</p>` : ""
+    }${title ? `<h2>${esc(title)}</h2>` : ""}</div>`;
+
+  // What the paid version adds, one line per page that has a paid counterpart.
+  const preview = (c: { en: string; th: string }) =>
+    `<p class="preview"><strong>${esc(pick(PREVIEW_LABEL))}</strong> ${esc(pick(c))}</p>`;
+
+  // ------------------------------------------------------------------ cover
+  const cover = `<section class="page cover">
+  <div class="cover-band">
+    <img class="cover-logo" src="${asset("/efc-logo.svg")}" alt="EU Fit Check by PunProfile">
+    <p class="cover-badge"><span>${esc(pick(FREE_BADGE))}</span> ${esc(pick(FREE_BADGE_NOTE))}</p>
+    <p class="cover-eyebrow">${esc(s("teaser.headline"))}</p>
+    <h1>${esc(coverName)}</h1>
+    <p class="cover-sub">${metaBits.join(" · ")}</p>
+    <div class="cover-collage">
+      <img class="cc-tall" src="${asset("/images/photos/cafe-woman-reading-tall.jpg")}" alt="">
+      <img src="${asset("/images/photos/copenhagen-nyhavn.jpg")}" alt="">
+      <img src="${asset("/images/photos/cinque-terre-coast.jpg")}" alt="">
+      <img class="cc-wide" src="${asset("/images/photos/eu-flag-sky-wide.jpg")}" alt="">
+    </div>
+    <img class="cover-art" src="${asset("/products/product-eu-fit-check.jpg")}" alt="">
+  </div>
+  <div class="cover-low">
+    <p class="cover-caveat"><strong>${esc(s("teaser.selfReported"))}</strong> ${esc(s("result.caveat"))}</p>
+  </div>
+  <img class="cover-pp" src="${asset("/punprofile-logo.svg")}" alt="PunProfile">
+</section>`;
+
+  // ------------------------------------------------------- 01 first read
+  // Values off and the box widened: a Thai axis name plus its number is wider
+  // than the plot leaves room for. Sized to land near 1:1 on paper.
+  const overview = radarSvg(
+    profile.dimensions.map((d) => ({ label: dimLabel(d.key, d.label), value: d.score })),
+    { idPrefix: "overview", size: 300, values: false, maxLabel: 40, widthRatio: 2.1, caption: s("teaser.chart.heading") },
+  );
+  const tiles = profile.dimensions
+    .map(
+      (d) => `<div class="tile">
+      <p class="tile-label">${esc(dimLabel(d.key, d.label))}</p>
+      ${
+        d.score === null
+          ? `<p class="tile-score is-none">${esc(notMeasured)}</p>`
+          : `<p class="tile-score">${d.score.toFixed(1)}<span>/5</span></p>`
+      }
+      <p class="tile-band">${esc(bandCopy(d.band))}</p>
+    </div>`,
+    )
+    .join("");
+  // The same projection the result screen shows, not a second count.
   const unlock = projectUnlock(profile);
-
-  // The full version, shown as the book it is: a closed cover and an open
-  // spread of two real pages, the summary against the market bar and one area
-  // with every competency. Invented, labelled example data. Every word on these
-  // pages is the Fit Report's own copy, so nothing here is new wording.
-  // Was a single 8-axis chart, 26/10/2026; the book, 27/10/2026.
-  // The cover carries the reader's own name, as the real cover does. Paul 1a, 27/10/2026.
-  // 30/10/2026 (Paul, 2a): the book gave way to the Fit Report page's own
-  // picture, one real page of the sample report, flat on the lime ground, with
-  // the same three notes beside it. The book's builder stays for its history.
-  const fullSample = flatShowcase(locale);
-
-  const body = `  <header class="top">
-    <p class="eyebrow">PunProfile · EU Fit Check</p>
-    <h1>${esc(meta.candidate)}</h1>
-    <p class="sub">${metaBits.join(" · ")}</p>
-    <p class="banner"><strong>${esc(s("teaser.selfReported"))}</strong> ${esc(s("result.caveat"))}</p>
-  </header>
-
-  <section id="summary">
-    <h2>${esc(s("teaser.headline"))}</h2>
-    ${scoreStrip(profile, dimLabel, bandCopy, notMeasured)}
-    <figure class="chart" style="max-width:34rem">${overview}</figure>
-    <p class="unmeasured">${esc(
+  const firstRead = `<section class="page">
+  ${head()}
+  ${opener("01", s("teaser.headline"))}
+  <div class="tiles">${tiles}</div>
+  <figure class="chart overview">${overview}</figure>
+  <div class="measured">
+    <p>${esc(
       s("result.measured", {
         count: unlock.measuredNow,
         total: unlock.totalItems,
         more: unlock.measuredAfter - unlock.measuredNow,
       }),
     )}</p>
-  </section>
+    <img class="spot" src="${asset("/mascot-magnifier.png")}" alt="">
+  </div>
+  <p class="method-note">${esc(pick(METHOD_NOTE))}</p>
+  ${foot()}
+</section>`;
 
-${dimSections}
-
-  <section class="cols">
-    <div>
-      <h2>${esc(s("report.strengths"))}</h2>
-      ${listOf(strengths)}
+  // ------------------------------------------------- 02 the four areas
+  const area = (d: ProfileScore["dimensions"][number], idx: number) => {
+    const scored = d.items.filter((i) => i.score !== null);
+    const unmeasured = d.totalCount - d.scoredCount;
+    const axes: RadarAxis[] = scored.map((i) => ({ label: itemName(i.key, i.label, locale), value: i.score }));
+    // A radar needs three axes to be a shape; below that the table stands alone.
+    const svg =
+      axes.length >= 3
+        ? radarSvg(axes, { idPrefix: `dim${idx}`, size: 240, values: false, maxLabel: 40, widthRatio: 2.3 })
+        : "";
+    const rows = scored
+      .map(
+        (i) =>
+          `<tr><th scope="row">${esc(itemName(i.key, i.label, locale))}</th><td class="num">${(i.score as number).toFixed(1)}</td></tr>`,
+      )
+      .join("");
+    return `<article class="area" id="${d.key}">
+    <header class="area-head">
+      <p class="area-n">${String(idx + 1).padStart(2, "0")}</p>
+      <h3>${esc(dimLabel(d.key, d.label))}</h3>
+      <p class="area-score">${d.score === null ? esc(notMeasured) : `<strong>${d.score.toFixed(1)}</strong>/5`}</p>
+    </header>
+    <p class="area-band">${esc(bandCopy(d.band))}</p>
+    <div class="area-body${svg ? "" : " is-solo"}">
+      ${svg ? `<figure class="chart">${svg}</figure>` : ""}
+      <div>
+        ${
+          rows
+            ? `<table class="scores"><thead><tr><th scope="col">${esc(s("report.competency"))}</th><th scope="col">${esc(s("report.score"))}</th></tr></thead><tbody>${rows}</tbody></table>`
+            : ""
+        }
+        ${unmeasured > 0 ? `<p class="unmeasured">${esc(s("report.unmeasured", { count: unmeasured }))}</p>` : ""}
+      </div>
     </div>
+  </article>`;
+  };
+  const dims = profile.dimensions;
+  const areaPages = [dims.slice(0, 2), dims.slice(2)]
+    .filter((pair) => pair.length)
+    .map(
+      (pair, p) => `<section class="page soft">
+  ${head()}
+  ${p === 0 ? opener("02", s("teaser.chart.heading")) : ""}
+  ${pair.map((d, i) => area(d, p * 2 + i)).join("\n")}
+  ${p === 0 ? preview(PREVIEW_AREAS) : ""}
+  ${foot()}
+</section>`,
+    )
+    .join("\n");
+
+  // --------------------------------------- 03 strengths and priorities
+  const listOf = (items: { key: string; label: string; score: number; dimension: string }[]) =>
+    items.length
+      ? `<ol class="hl">${items
+          .map(
+            (h) =>
+              `<li><span class="hl-score">${h.score.toFixed(1)}</span><span class="hl-label">${esc(itemName(h.key, h.label, locale))}<small>${esc(dimensionNameByLabel(h.dimension, locale))}</small></span></li>`,
+          )
+          .join("")}</ol>`
+      : `<p class="muted">${esc(notMeasured)}</p>`;
+  const strengthsPage = `<section class="page">
+  ${head()}
+  ${opener("03")}
+  <div class="two">
+    <div class="card cyan"><h3>${esc(s("report.strengths"))}</h3>${listOf(topStrengths(profile, 3))}</div>
+    <div class="card orange"><h3>${esc(s("report.priorities"))}</h3>${listOf(developmentPriorities(profile, 3))}</div>
+  </div>
+  <figure class="photo-card">
+    <img src="${asset("/home/service-direction.png")}" alt="">
+    <figcaption>
+      <h3>${esc(s("report.next"))}</h3>
+      <p>${esc(s("teaser.nextStep"))}</p>
+    </figcaption>
+  </figure>
+  ${preview(PREVIEW_MOVES)}
+  ${foot()}
+</section>`;
+
+  // ------------------------------------------------- 04 the Fit Report
+  // One real page of the sample Fit Report, flat on the lime ground, with its
+  // three notes beside it (Paul 2a, 30/10/2026). Invented, labelled data.
+  const fitPage = `<section class="page" id="full">
+  ${head()}
+  ${opener("04", s("report.full.heading"))}
+  <p class="lede">${esc(s("report.full.body"))}</p>
+  <div class="interview">
+    <img src="${asset("/pricing/pricing-fit-report-interview.jpg")}" alt="">
+    <div><h3>${esc(pick(INTERVIEW_HEADING))}</h3><p>${esc(pick(INTERVIEW_BODY))}</p></div>
+  </div>
+  <p class="eyebrow-s">${esc(s("report.full.example"))}</p>
+  ${flatShowcase(locale)}
+  <p class="cta-row"><a class="btn" href="${sitePath("/products/fit-report")}">${esc(FULL_CTA[locale])}</a></p>
+  ${foot()}
+</section>`;
+
+  // ------------------------------------------ 05 and 06 Coaching 1:1
+  // The /coaching page's own lines, in its order: the hook, the pains, the
+  // people, a placement in the client's words, the price and the close.
+  const europe = asset("/images/photos/europe-street-cafe.jpg");
+  const europeFallback = asset("/home/home-hero.jpg");
+  const pains = PAINS.map((p) => `<li><span class="tick">✓</span><span>${esc(pick(p))}</span></li>`).join("");
+  const hookPage = `<section class="page dark">
+  ${head(true)}
+  ${opener("05", "", pick(HOOK_EYEBROW), true)}
+  <p class="hook">${esc(pick(HOOK_LINE_1))}<br><span>${esc(pick(HOOK_LINE_2))}</span></p>
+  <div class="hook-grid">
+    <div>${HOOK_BODY.map((p) => `<p class="hook-body">${esc(pick(p))}</p>`).join("")}</div>
+    <img class="hook-img" src="${europe}" onerror="this.onerror=null;this.src='${europeFallback}'" alt="">
+  </div>
+  <div class="pains">
+    <h3>${esc(pick(PAIN_HEADING))}</h3>
+    <ul>${pains}</ul>
+  </div>
+  ${foot(true)}
+</section>`;
+
+  // Photographs as on /coaching and the home page's placements.
+  const COACH_PHOTO: Record<string, string> = { paul: "/coach-paul.jpg", dew: "/coach-tatiya.jpg" };
+  const PLACED_PHOTO: Record<string, string> = {
+    "placed-hotel-germany": "/home/testimonials/testimonial-photo-may.jpg",
+    "placed-chef-netherlands": "/home/testimonials/testimonial-photo-ton.jpg",
+    "placed-it-ireland": "/home/testimonials/testimonial-photo-nat.jpg",
+    "placed-logistics-sweden": "/home/testimonials/testimonial-photo-nut.jpg",
+  };
+  const coaches = COACHES.map(
+    (c) => `<article class="coach">
+      <img src="${asset(COACH_PHOTO[c.id] ?? "/coach-paul.jpg")}" alt="${esc(pick(c.alt))}">
+      <div>
+        <p class="coach-pill">${esc(pick(c.pill))}</p>
+        <h3>${esc(pick(c.heading))}</h3>
+        <p class="coach-pull">${esc(pick(c.pull))}</p>
+        <p class="coach-sum">${esc(pick(c.summary))}</p>
+      </div>
+    </article>`,
+  ).join("");
+  const placed = RESULTS.filter((r) => PLACED_PHOTO[r.id]);
+  const quoted = placed.find((r) => r.id === "placed-it-ireland") ?? placed[0];
+  const proof = placed
+    .map(
+      (r) =>
+        `<li><img src="${asset(PLACED_PHOTO[r.id])}" alt=""><p class="who">${esc(pick(r.who))}</p><p class="where">${esc(pick(r.role))}</p></li>`,
+    )
+    .join("");
+  const price = PRICING_QUESTIONS[0];
+  const closePage = `<section class="page">
+  ${head()}
+  ${opener("06")}
+  <div class="coaches">${coaches}</div>
+  ${
+    quoted
+      ? `<blockquote class="quote"><span class="qmark">“</span>${esc(pick(quoted.quote))}<cite>${esc(pick(quoted.who))} · ${esc(pick(quoted.role))}</cite></blockquote>`
+      : ""
+  }
+  <ul class="proof">${proof}</ul>
+  <div class="close">
     <div>
-      <h2>${esc(s("report.priorities"))}</h2>
-      ${listOf(priorities)}
+      <p class="close-lead">${esc(pick(CLOSE_LEAD))}</p>
+      ${price ? price.a.map((line, i) => `<p class="${i === 0 ? "price" : "price-sub"}">${esc(pick(line))}</p>`).join("") : ""}
+      <p class="cta-row">
+        <a class="btn" href="${DESTINATIONS.line.href}">${esc(pick(DESTINATIONS.line.label))}</a>
+        <a class="btn-ghost" href="${sitePath(DESTINATIONS.coaching.href)}">${esc(pick(DESTINATIONS.coaching.label))}</a>
+      </p>
     </div>
-  </section>
+    <img class="spot" src="${asset("/mascot-laptop.png")}" alt="">
+  </div>
+  <p class="fine">${esc(s("report.footer"))}</p>
+  ${foot()}
+</section>`;
 
-  <section id="full">
-    <h2>${esc(s("report.full.heading"))}</h2>
-    <p>${esc(s("report.full.body"))}</p>
-    <p class="eyebrow">${esc(s("report.full.example"))}</p>
-    ${fullSample}
-    <p class="cta-row">
-      <a class="cta-btn" href="https://punprofile.app/products/fit-report">${esc(FULL_CTA[locale])}</a>
-    </p>
-  </section>
+  // Country page, straight after the cover, for the first country ticked.
+  const countryInner = countryFactsBody(meta.targetCountries?.[0], locale, asset);
+  const countryPage = countryInner
+    ? `<section class="page">
+  ${head()}
+  ${countryInner}
+  ${preview(PREVIEW_ROLES)}
+  ${foot()}
+</section>`
+    : "";
 
-  <section>
-    <h2>${esc(s("report.next"))}</h2>
-    <p class="next">${esc(s("teaser.nextStep"))}</p>
-  </section>
+  // From everyone who has taken this: top five countries, the three readiness
+  // shares, and where the candidate sits on each area. All copy is the
+  // first read's, already approved. Each block renders only when the query
+  // cleared its own sample floor; the whole page goes when none did.
+  const stats = opts.community;
+  const ffCountries = stats?.topCountries?.length
+    ? `<div class="ff-card"><p class="ff-label">${esc(s("stats.countries.label"))}</p><ol class="ff-bars">${stats.topCountries
+        .map(
+          (c) =>
+            `<li><span class="ff-name">${esc(c.country)}</span><span class="ff-track"><span style="width:${Math.max(6, (c.share / stats.topCountries![0].share) * 100)}%"></span></span><span class="ff-pct">${c.share}%</span></li>`,
+        )
+        .join("")}</ol><p class="ff-foot">${esc(s("stats.countries.foot"))}</p></div>`
+    : "";
+  const ready = (
+    [
+      ["cvNotForEurope", s("stats.readiness.cv")],
+      ["noPortfolio", s("stats.readiness.portfolio")],
+      ["linkedinThin", s("stats.readiness.linkedin")],
+    ] as const
+  ).map(([k, label]) => ({ label, pct: stats?.shares[k]?.pct ?? null }));
+  const waiting = stats?.shares.notApplyingYet?.pct ?? null;
+  const soon = stats?.shares.soonWithin3m?.pct ?? null;
+  const ffReady = ready.every((r) => r.pct !== null)
+    ? `<div class="ff-card"><p class="ff-label">${esc(s("stats.readiness.label"))}</p><ul class="ff-bars">${ready
+        .map((r) => `<li><span class="ff-name">${esc(r.label)}</span><span class="ff-track"><span style="width:${r.pct}%"></span></span><span class="ff-pct">${r.pct}%</span></li>`)
+        .join("")}</ul>${
+        waiting !== null && soon !== null ? `<p class="ff-line">${esc(s("stats.timing", { waiting, soon }))}</p>` : ""
+      }<p class="ff-foot">${esc(s("stats.readiness.foot"))}</p></div>`
+    : "";
+  const standing = profile.dimensions
+    .map((d) => {
+      const b = stats?.distribution[d.key];
+      if (typeof d.score !== "number" || !b) return "";
+      return `<li><span class="ff-big">${percentBelow(d.score, b)}%</span> ${esc(s("stats.percentile", { dimension: dimLabel(d.key, d.label) }))}</li>`;
+    })
+    .filter(Boolean)
+    .join("");
+  const ffStanding = standing
+    ? `<div class="ff-card ff-you"><ul>${standing}</ul><p class="ff-foot">${esc(s("stats.percentile.foot"))}</p></div>`
+    : "";
+  const funFactsPage =
+    ffCountries || ffReady || ffStanding
+      ? `<section class="page">
+  ${head()}
+  ${opener("", s("stats.heading"))}
+  ${ffCountries}
+  ${ffReady}
+  ${ffStanding}
+  ${foot()}
+</section>`
+      : "";
 
-  <footer>
-    ${esc(s("report.footer"))}
-  </footer>`;
+  const body = [
+    cover,
+    countryPage,
+    firstRead,
+    funFactsPage,
+    areaPages,
+    strengthsPage,
+    fitPage,
+    withCoaching ? hookPage : "",
+    withCoaching ? closePage : "",
+  ]
+    .filter(Boolean)
+    .join("\n")
+    // Pages are built out of order (the country and community pages after the
+    // ones they precede), so the footers are numbered here, in reading order.
+    .replace(/<span class="pg-n">\d+<\/span>/g, (() => {
+      let n = 1;
+      return () => `<span class="pg-n">${String(++n).padStart(2, "0")}</span>`;
+    })());
 
   const html = document_({
     lang: locale,
-    title: `EU Fit Check — ${meta.candidate}`,
+    title: `EU Fit Check — ${coverName}`,
     variant: "limited",
     printLabel: s("report.savePdf"),
     body,
     autoPrint: opts.autoPrint ?? false,
-  }).replace("</style>", `${FLAT_STYLES}\n${FIT_STYLES}\n</style>`);
+  }).replace("</style>", `${FLAT_STYLES}\n${FIT_STYLES}\n${PAGED_STYLES}\n${COUNTRY_STYLES}\n${FUN_FACTS_STYLES}\n${UPSELL_STYLES}\n</style>`);
 
   // The check that makes the whitelist rule enforceable rather than aspirational.
-  // Run against the rendered document, so a word hard-coded into a template here
-  // is caught as well as one that arrives through the data.
   const leaks = assertCandidateSafe(stripMarkup(html));
   if (leaks.length) {
     throw new Error(
@@ -764,6 +1106,141 @@ ${dimSections}
   }
   return html;
 }
+
+/**
+ * The candidate report's page layout, appended after the shared stylesheet so
+ * it wins. Every colour is a brand token; lime is a fill and never type.
+ * Fixed A4 pages with no printer margin, because the cover and the dark page
+ * run to the paper's edge. A page that outgrows A4 flows onto the next sheet
+ * rather than clipping, which is why the pages take a minimum height.
+ */
+const PAGED_STYLES = `
+  @page { size: A4; margin: 0; }
+  .is-limited { background: var(--color-canvas-soft); padding: 0 0 2rem; }
+  .is-limited main { max-width: none; }
+  .is-limited .toolbar { max-width: 210mm; margin: 1.25rem auto .5rem; }
+  .page { position: relative; box-sizing: border-box; width: 210mm; min-height: 296.5mm; margin: 0 auto 8mm; padding: 22mm 16mm 20mm; background: var(--color-canvas); color: var(--color-ink); break-after: page; overflow: hidden; box-shadow: 0 1px 6px rgba(14,15,12,.12); }
+  .page:last-child { break-after: auto; }
+  .page.soft { background: var(--color-canvas-soft); }
+  .page.dark { background: var(--color-canvas-dark); color: var(--color-on-canvas-dark); }
+  .page h1, .page h2, .page h3 { margin: 0; }
+  @media print {
+    .is-limited { background: var(--color-canvas); padding: 0; font-size: inherit; }
+    .page { margin: 0; box-shadow: none; }
+  }
+
+  .pg-head { position: absolute; top: 9mm; right: 16mm; }
+  .pg-logo { height: 7mm; display: block; }
+  .pg-foot { position: absolute; bottom: 8mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; border-top: 1px solid var(--color-line); padding-top: 2.5mm; font-size: 7.5pt; color: var(--color-mute-strong); }
+  .pg-foot.on-dark { border-color: rgba(232,235,230,.25); color: var(--color-on-canvas-dark); }
+  .pg-n { font-weight: 700; color: inherit; }
+
+  .opener { margin: 0 0 7mm; }
+  .sec-n { display: inline-block; font-size: 9pt; font-weight: 700; background: var(--color-canvas-brand); color: var(--color-on-primary); border-radius: 999px; padding: .5mm 3mm; }
+  .rule { display: block; width: 14mm; height: 1.2mm; background: var(--color-ink); margin: 5mm 0 4mm; border-radius: 1mm; }
+  .opener.on-dark .rule { background: var(--color-canvas-brand); }
+  .op-eyebrow { margin: 0; font-size: 11pt; font-weight: 700; }
+  .opener h2 { font-size: 24pt; line-height: 1.15; letter-spacing: -0.02em; font-weight: 800; max-width: 150mm; }
+
+  .cover { padding: 0; }
+  .cover-band { position: relative; height: 190mm; background: var(--color-canvas-brand); color: var(--color-on-primary); padding: 18mm 16mm; }
+  .cover-logo { height: 11mm; display: block; }
+  .cover-eyebrow { margin: 34mm 0 3mm; font-size: 11pt; font-weight: 700; }
+  .cover h1 { font-size: 54pt; line-height: 1; letter-spacing: -0.03em; font-weight: 900; color: var(--color-ink-deep); max-width: 80mm; overflow-wrap: anywhere; }
+  .cover-sub { margin: 5mm 0 0; font-size: 11pt; font-weight: 500; max-width: 78mm; }
+  /* Europe as the reader will live it, per "Where clay and where the
+     mascot" in Brand_Guidelines.md. */
+  .cover-collage { position: absolute; left: 102mm; right: 16mm; top: 16mm; height: 120mm; display: grid; grid-template-columns: 1.05fr 1fr; grid-template-rows: 1fr 1fr .5fr; gap: 2.5mm; }
+  .cover-collage img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4mm; min-height: 0; }
+  .cover-collage .cc-tall { grid-row: 1 / 3; }
+  .cover-collage .cc-wide { grid-column: 1 / 3; }
+  .cover-art { position: absolute; right: 16mm; bottom: -22mm; width: 92mm; border-radius: 6mm; box-shadow: 0 2mm 6mm rgba(22,51,0,.18); }
+  .cover-low { position: absolute; left: 16mm; right: 116mm; top: 202mm; }
+  .cover-caveat { font-size: 9.5pt; color: var(--color-body); margin: 0; }
+  .cover-caveat strong { display: block; color: var(--color-ink); font-size: 11pt; margin-bottom: 1.5mm; }
+  .cover-pp { position: absolute; left: 16mm; bottom: 14mm; height: 8mm; }
+
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+  .tile { background: var(--color-cyan-pale); color: var(--color-on-cyan-pale); border-radius: 5mm; padding: 4mm 4mm 4.5mm; }
+  .tile-label { margin: 0; font-size: 8.5pt; font-weight: 700; line-height: 1.3; min-height: 2.6em; }
+  .tile-score { margin: 2mm 0 0; font-size: 30pt; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+  .tile-score span { font-size: 10pt; font-weight: 600; margin-left: .5mm; }
+  .tile-score.is-none { font-size: 10pt; }
+  .tile-band { margin: 2mm 0 0; font-size: 7.5pt; line-height: 1.35; }
+  figure.chart.overview { width: 150mm; margin: 8mm auto 0; background: transparent; }
+  .measured { position: relative; margin-top: 6mm; background: var(--color-canvas-soft); border-radius: 5mm; padding: 5mm 58mm 5mm 6mm; min-height: 26mm; }
+  .measured p { margin: 0; font-size: 10pt; }
+  .spot { position: absolute; right: 2mm; bottom: 0; width: 52mm; }
+
+  .area { background: var(--color-canvas); border-radius: 6mm; padding: 6mm 7mm; margin-bottom: 6mm; break-inside: avoid; }
+  .area-head { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 4mm; border-bottom: 1px solid var(--color-line); padding-bottom: 3mm; }
+  .area-n { margin: 0; font-size: 9pt; font-weight: 700; color: var(--color-mute-strong); }
+  .area h3 { font-size: 16pt; font-weight: 800; letter-spacing: -0.015em; }
+  .area-score { margin: 0; font-size: 10pt; color: var(--color-body); }
+  .area-score strong { font-size: 24pt; color: var(--color-ink); font-weight: 800; }
+  .area-band { margin: 2.5mm 0 3mm; font-size: 8.5pt; color: var(--color-body); }
+  .area-body { display: grid; grid-template-columns: 1.25fr 1fr; gap: 5mm; align-items: center; }
+  .area-body.is-solo { grid-template-columns: 1fr; }
+  .area figure.chart { margin: 0; }
+  .area table.scores { margin-top: 0; font-size: 8.5pt; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+  .card { border-radius: 6mm; padding: 6mm; }
+  .card h3 { font-size: 15pt; font-weight: 800; margin-bottom: 2mm; }
+  .card.cyan { background: var(--color-cyan-pale); color: var(--color-on-cyan-pale); }
+  .card.orange { background: var(--color-orange-pale); color: var(--color-on-orange-pale); }
+  ol.hl { list-style: none; margin: 0; padding: 0; }
+  ol.hl li { display: grid; grid-template-columns: 13mm 1fr; gap: 2mm; align-items: baseline; padding: 2.5mm 0; border-bottom: 1px solid rgba(22,51,0,.12); }
+  .hl-score { font-size: 17pt; font-weight: 800; }
+  .hl-label { font-size: 10pt; font-weight: 600; }
+  .hl-label small { display: block; font-size: 7.5pt; font-weight: 500; color: var(--color-body); }
+  .photo-card { margin: 7mm 0 0; display: grid; grid-template-columns: 1fr 1fr; background: var(--color-yellow-pale); color: var(--color-on-yellow-pale); border-radius: 6mm; overflow: hidden; }
+  .photo-card img { width: 100%; height: 120mm; object-fit: contain; object-position: center bottom; display: block; padding-top: 6mm; }
+  .photo-card figcaption { padding: 8mm 7mm; align-self: center; }
+  .photo-card h3 { font-size: 15pt; font-weight: 800; margin-bottom: 3mm; }
+  .photo-card p { margin: 0; font-size: 10pt; }
+
+  .lede { font-size: 10.5pt; margin: -2mm 0 4mm; max-width: 160mm; color: var(--color-body); }
+  .eyebrow-s { font-size: 7.5pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--color-mute-strong); margin: 0 0 2mm; }
+  .btn { display: inline-block; font-weight: 700; font-size: 10pt; background: var(--color-canvas-brand); color: var(--color-on-primary); border-radius: 999px; padding: 3mm 7mm; text-decoration: none; }
+  .btn-ghost { display: inline-block; font-weight: 700; font-size: 10pt; color: var(--color-ink); border: 1.5px solid currentColor; border-radius: 999px; padding: 2.6mm 6mm; text-decoration: none; }
+  .page .cta-row { display: flex; gap: 3mm; flex-wrap: wrap; margin: 5mm 0 0; }
+
+  .hook { font-size: 25pt; line-height: 1.18; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 7mm; }
+  .hook span { background: var(--color-canvas-brand); color: var(--color-on-primary); padding: 0 1.5mm; border-radius: 1.5mm; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .hook-grid { display: grid; grid-template-columns: 1fr 72mm; gap: 7mm; align-items: start; }
+  .hook-body { font-size: 9.5pt; margin: 0 0 3mm; }
+  .hook-img { width: 72mm; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 5mm; display: block; }
+  .pains { margin-top: 7mm; background: rgba(255,255,255,.06); border-radius: 6mm; padding: 6mm 7mm; }
+  .pains h3 { font-size: 13pt; font-weight: 800; margin-bottom: 3mm; }
+  .pains ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 6mm; }
+  .pains li { display: grid; grid-template-columns: 6mm 1fr; gap: 2mm; font-size: 9pt; line-height: 1.4; }
+  .tick { width: 5mm; height: 5mm; border-radius: 50%; background: var(--color-canvas-brand); color: var(--color-on-primary); font-size: 7pt; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+
+  .coaches { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+  .coach { background: var(--color-canvas-soft); border-radius: 6mm; overflow: hidden; }
+  .coach img { width: 100%; height: 44mm; object-fit: cover; object-position: center 25%; display: block; }
+  .coach > div { padding: 4mm 5mm 5mm; }
+  .coach-pill { display: inline-block; margin: 0 0 2mm; font-size: 7pt; font-weight: 700; background: var(--color-canvas); border-radius: 999px; padding: .5mm 2.5mm; }
+  .coach h3 { font-size: 12pt; font-weight: 800; }
+  .coach-pull { margin: 1mm 0 1.5mm; font-size: 9pt; font-weight: 600; }
+  .coach-sum { margin: 0; font-size: 8pt; color: var(--color-body); }
+  .quote { margin: 6mm 0 0; padding: 0 0 0 14mm; position: relative; font-size: 10.5pt; font-weight: 600; line-height: 1.45; break-inside: avoid; }
+  .qmark { position: absolute; left: 0; top: -4mm; font-size: 40pt; font-weight: 900; line-height: 1; }
+  .quote cite { display: block; margin-top: 2mm; font-style: normal; font-size: 8pt; font-weight: 500; color: var(--color-body); }
+  .proof { list-style: none; padding: 0; margin: 5mm 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; text-align: center; }
+  .proof img { width: 15mm; height: 15mm; border-radius: 50%; object-fit: cover; }
+  .proof .who { margin: 1mm 0 0; font-size: 8pt; font-weight: 700; }
+  .proof .where { margin: 0; font-size: 7pt; color: var(--color-body); }
+  .close { position: relative; margin-top: 6mm; background: var(--color-canvas-brand); color: var(--color-on-primary); border-radius: 6mm; padding: 6mm 62mm 6mm 7mm; break-inside: avoid; }
+  .close-lead { margin: 0 0 3mm; font-size: 13pt; font-weight: 800; line-height: 1.25; }
+  .price { margin: 0; font-size: 11pt; font-weight: 800; }
+  .price-sub { margin: 1mm 0 0; font-size: 8pt; }
+  .close .btn { background: var(--color-ink-deep); color: var(--color-canvas-brand); }
+  .close .btn-ghost { color: var(--color-on-primary); }
+  .close .spot { width: 60mm; right: 1mm; bottom: 1mm; }
+  .fine { font-size: 7pt; color: var(--color-mute-strong); margin: 3mm 0 0; }
+`;
 
 /**
  * Text content only, for the safety check.
@@ -1046,6 +1523,57 @@ const FIT_STYLES = `
     ol.path, ol.moves li, table.gap { break-inside: avoid; }
   }`;
 
+/**
+ * The Fit Report as fixed A4 pages, redesigned 20/11/2026 to match the EU Fit
+ * Check report. Scoped to `body.is-fit`, the Fit Report's own document, so the
+ * page of it the free report shows (`flatShowcase`) keeps its own styling.
+ * Lime is a fill and never type; the dashed bar keeps `--viz-bar`.
+ */
+const FIT_PAGED_STYLES = `
+  .fit-logo { display: none; }
+  body.is-fit { background: var(--color-canvas-soft); padding: 0 0 2rem; }
+  body.is-fit main { max-width: none; }
+  body.is-fit .toolbar { max-width: 210mm; margin: 1.25rem auto .5rem; }
+  body.is-fit .fit-sec { position: relative; box-sizing: border-box; width: 210mm; min-height: 296.5mm; margin: 0 auto 8mm; padding: 22mm 16mm 22mm; background: var(--color-canvas); overflow: hidden; break-before: page; box-shadow: 0 1px 6px rgba(14,15,12,.12); }
+  body.is-fit .fit-sec:not(#summary):not(#path):not(#moves):not(#roles) { background: var(--color-canvas-soft); }
+  body.is-fit .fit-logo { display: block; position: absolute; top: 9mm; right: 16mm; height: 7mm; }
+  body.is-fit .fit-sec h2 { font-size: 24pt; line-height: 1.15; letter-spacing: -0.02em; font-weight: 800; margin: 0 0 6mm; max-width: 150mm; }
+  body.is-fit .fit-sec .sec-num { position: relative; display: block; width: fit-content; min-width: 0; font-size: 9pt; font-weight: 700; letter-spacing: 0; background: var(--color-canvas-brand); color: var(--color-on-primary); border-radius: 999px; padding: .5mm 3mm; margin-bottom: 13mm; }
+  body.is-fit .fit-sec .sec-num::after { content: ""; position: absolute; left: 0; top: calc(100% + 5mm); width: 14mm; height: 1.2mm; border-radius: 1mm; background: var(--color-ink); }
+  body.is-fit .sec-foot { position: absolute; bottom: 8mm; left: 16mm; right: 16mm; margin: 0; padding-top: 2.5mm; font-size: 7.5pt; color: var(--color-mute-strong); border-top: 1px solid var(--color-line); }
+  body.is-fit .fit-sec > p { font-size: 10.5pt; color: var(--color-body); max-width: 165mm; }
+  body.is-fit .dim-score { font-size: 11pt; margin: -2mm 0 2mm; }
+  body.is-fit .dim-score strong { font-size: 30pt; font-weight: 800; letter-spacing: -0.03em; color: var(--color-ink); }
+  body.is-fit figure.chart { background: transparent; margin: 0 auto !important; max-width: 118mm !important; }
+  body.is-fit table.gap, body.is-fit table.scores { background: var(--color-canvas); border-radius: 5mm; overflow: hidden; border-collapse: separate; border-spacing: 0; }
+  body.is-fit table.gap th, body.is-fit table.gap td, body.is-fit table.scores th, body.is-fit table.scores td { padding: 1.8mm 4mm; }
+  body.is-fit table.gap thead th, body.is-fit table.scores thead th { background: var(--color-cyan-pale); color: var(--color-on-cyan-pale); }
+  body.is-fit table.gap tr:last-child > *, body.is-fit table.scores tr:last-child > * { border-bottom: 0; }
+  body.is-fit ol.path li { border: 0; background: var(--color-canvas-soft); border-radius: 5mm; padding: 4mm; }
+  body.is-fit ol.path li.is-start { background: var(--color-yellow-pale); outline: 2px solid var(--color-warning-deep); }
+  body.is-fit ol.moves li { border: 0; background: var(--color-canvas-soft); border-radius: 5mm; padding: 5mm; }
+  body.is-fit ul.roles li { padding: 3mm 0; }
+  body.is-fit .fit-fine { font-size: 7.5pt !important; color: var(--color-mute-strong) !important; margin-top: 8mm; }
+
+  body.is-fit .cover { position: relative; box-sizing: border-box; display: block; width: 210mm; min-height: 296.5mm; margin: 0 auto 8mm; padding: 0; border-radius: 0; background: var(--color-canvas); color: var(--color-ink); overflow: hidden; box-shadow: 0 1px 6px rgba(14,15,12,.12); }
+  body.is-fit .fc-band { position: relative; height: 200mm; padding: 18mm 16mm; background: var(--color-canvas-dark); color: var(--color-on-canvas-dark); }
+  body.is-fit .fc-logo { height: 11mm; display: block; }
+  body.is-fit .cover .eyebrow { margin: 30mm 0 3mm; color: var(--color-on-canvas-dark); font-size: 11pt; letter-spacing: .12em; }
+  body.is-fit .cover h1 { margin: 0; font-size: 50pt; line-height: 1.02; letter-spacing: -0.03em; font-weight: 900; color: var(--color-canvas); max-width: 110mm; }
+  body.is-fit .cover .sub { margin: 5mm 0 0; font-size: 11pt; color: var(--color-on-canvas-dark); max-width: 100mm; }
+  body.is-fit .cover .cover-line { display: inline-block; margin: 9mm 0 0; padding: 2mm 4mm; border-radius: 2mm; background: var(--color-canvas-brand); color: var(--color-on-primary); font-size: 11pt; font-weight: 700; max-width: 100mm; }
+  body.is-fit .fc-art { position: absolute; right: 16mm; bottom: -24mm; width: 92mm; border-radius: 6mm; box-shadow: 0 2mm 6mm rgba(22,51,0,.25); }
+  body.is-fit .cover-date { position: absolute; left: 16mm; top: 212mm; margin: 0; font-size: 10pt; color: var(--color-body); }
+  body.is-fit .fc-pp { position: absolute; left: 16mm; bottom: 14mm; height: 8mm; }
+
+  @page { size: A4; margin: 0; }
+  @media print {
+    body.is-fit { background: var(--color-canvas); padding: 0; }
+    body.is-fit .fit-sec, body.is-fit .cover { margin: 0; box-shadow: none; }
+    body.is-fit .cover { break-after: page; min-height: 296.5mm; }
+  }
+`;
+
 export interface FitReportInput {
   profile: ProfileScore;
   full: import("./scoring").FullDimensionScore[];
@@ -1060,6 +1588,8 @@ export function renderFitReport(input: FitReportInput, meta: ReportMeta, opts: R
   const name = (key: string, fallback: string) => itemName(key, fallback, locale);
   const { full, moves, roles } = input;
   const today = ddmmyyyy(new Date().toISOString().slice(0, 10));
+  const origin = opts.assetOrigin ?? (typeof location !== "undefined" ? location.origin : "");
+  const asset = (path: string) => `${origin}${path}`;
   const competencies = full.reduce((n, d) => n + d.items.length, 0);
 
   let secNo = 0;
@@ -1067,6 +1597,7 @@ export function renderFitReport(input: FitReportInput, meta: ReportMeta, opts: R
     secNo++;
     const num = String(secNo).padStart(2, "0");
     return `<section class="fit-sec" id="${id}">
+  <img class="fit-logo" src="${asset("/efc-logo.svg")}" alt="">
   <h2><span class="sec-num">${num}</span>${esc(heading)}</h2>
 ${inner}
   <p class="sec-foot"><span>${esc(s("fit.eyebrow"))} · ${esc(meta.candidate)}</span><span>${num} · ${esc(heading)}</span></p>
@@ -1094,7 +1625,8 @@ ${inner}
     s("fit.summary.heading"),
     `  <figure class="chart" style="max-width:36rem">${overview}</figure>
   <p class="legend-bar">${esc(s("fit.legend.bar"))}</p>
-  <table class="gap"><thead><tr><th scope="col">${esc(s("fit.col.area"))}</th><th scope="col">${esc(s("fit.col.score"))}</th><th scope="col">${esc(s("fit.col.bar"))}</th><th scope="col">${esc(s("fit.col.gap"))}</th></tr></thead><tbody>${gapRows}</tbody></table>`,
+  <table class="gap"><thead><tr><th scope="col">${esc(s("fit.col.area"))}</th><th scope="col">${esc(s("fit.col.score"))}</th><th scope="col">${esc(s("fit.col.bar"))}</th><th scope="col">${esc(s("fit.col.gap"))}</th></tr></thead><tbody>${gapRows}</tbody></table>
+  <p class="method-note">${esc(METHOD_NOTE[locale])}</p>`,
   );
 
   // ---- the order to work in: gates in dependency order, first uncleared marked
@@ -1172,28 +1704,39 @@ ${inner}
     .join("")}</ul>
   <p class="legend-bar" style="margin-top:1rem">${esc(s("fit.roles.note"))}</p>`
       : `  <p>${esc(s("fit.roles.none"))}</p>`,
-  );
+  ).replace("</section>", `  <p class="fit-fine">${esc(s("fit.footer"))}</p>\n</section>`);
 
   const metaBits = [meta.targetRole ? esc(meta.targetRole) : "", countries ? esc(countries) : ""].filter(Boolean);
+  const countryInner = countryFactsBody(meta.targetCountries?.[0], locale, asset);
+  const countrySec = countryInner
+    ? `<section class="fit-sec" id="country">
+  <img class="fit-logo" src="${asset("/efc-logo.svg")}" alt="">
+${countryInner}
+</section>`
+    : "";
+  // The cover, redesigned 20/11/2026 to match the EU Fit Check report: a dark
+  // band with the name, the Fit Report interview scene (clay, a page's main
+  // picture), the date and the mark below. Still `.cover`, which the product
+  // page's page tiles hide.
   const body = `  <div class="cover">
-    <div>
+    <div class="fc-band">
+      <img class="fc-logo" src="${asset("/efc-logo-reversed.svg")}" alt="EU Fit Check by PunProfile">
       <p class="eyebrow">${esc(s("fit.eyebrow"))}</p>
       <h1>${esc(meta.candidate)}</h1>
       <p class="sub">${metaBits.join(" · ")}</p>
-    </div>
-    <div>
       <p class="cover-line">${esc(s("fit.cover.sub", { count: competencies }))}</p>
-      <p class="cover-date">${esc(s("fit.cover.prepared", { date: today }))}</p>
+      <img class="fc-art" src="${asset("/pricing/pricing-fit-report-interview.jpg")}" alt="">
     </div>
+    <p class="cover-date">${esc(s("fit.cover.prepared", { date: today }))}</p>
+    <img class="fc-pp" src="${asset("/punprofile-logo.svg")}" alt="PunProfile">
   </div>
 
+${countrySec}
 ${summary}
 ${path}
 ${areas}
 ${movesSec}
-${rolesSec}
-
-  <footer>${esc(s("fit.footer"))}</footer>`;
+${rolesSec}`;
 
   const html = document_({
     lang: locale,
@@ -1202,7 +1745,7 @@ ${rolesSec}
     printLabel: s("report.savePdf"),
     body,
     autoPrint: opts.autoPrint ?? false,
-  }).replace("</style>", `${FIT_STYLES}\n</style>`);
+  }).replace("</style>", `${FIT_STYLES}\n${FIT_PAGED_STYLES}\n${COUNTRY_STYLES}\n${UPSELL_STYLES}\n</style>`);
 
   const leaks = assertCandidateSafe(stripMarkup(html));
   if (leaks.length) {
@@ -1265,10 +1808,10 @@ export function renderBookPreview(locale: Locale, cover: { name: string; sub: st
 export function fitReportPage(html: string, sectionId: string): string {
   const css = `<style>
   html, body { background: #fff !important; margin: 0; padding: 0; overflow: hidden; }
-  body { width: 794px; height: 1123px; padding: 56px 60px !important; box-sizing: border-box; }
+  body { width: 794px; height: 1123px; padding: 0 !important; box-sizing: border-box; }
   .toolbar, footer, .cover { display: none !important; }
   .fit-sec { display: none !important; }
-  .fit-sec#${sectionId} { display: flex !important; flex-direction: column; break-before: auto; margin: 0; }
+  .fit-sec#${sectionId} { display: block !important; break-before: auto; margin: 0 !important; box-shadow: none !important; }
   main { max-width: none !important; }
 </style>`;
   return html.replace("</head>", `${css}\n</head>`);

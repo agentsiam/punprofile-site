@@ -60,6 +60,8 @@ const slug = (s: string) =>
 async function openReport(
   lead: { fullName: string | null; responses: Record<string, unknown>; createdAt: number },
   variant: "full" | "limited",
+  coaching = true,
+  community?: import("@/lib/report").CommunityStats,
 ) {
   const win = window.open("", "_blank");
   if (!win) {
@@ -95,7 +97,9 @@ async function openReport(
     // language they will be interviewed in, and the document they keep is part
     // of that. A Thai report handed over before an English engagement would be
     // the one artefact working against it.
-    { variant, locale: "en", autoPrint: true },
+    // `coaching` is off for someone already in Coaching 1:1, so their copy
+    // does not end on an offer for what they have bought. Paul 2a, 20/11/2026.
+    { variant, locale: "en", autoPrint: true, coaching, assetOrigin: window.location.origin, community },
   );
 
   win.document.open();
@@ -119,12 +123,15 @@ export default function RecordPage({ leadId }: { leadId: Id<"leads"> }) {
   const lead = useQuery(api.leads.getForAdmin, { leadId });
   const calls = useQuery(api.consultations.listForLead, { leadId });
   const corrections = useQuery(api.corrections.listForLead, { leadId });
+  // For the report's "from everyone who has taken this" page. 20/11/2026.
+  const community = useQuery(api.stats.community);
   const coachIcp = useMemo(() => latestCoachIcp(calls ?? []), [calls]);
   const deleteLead = useMutation(api.leads.deleteLeadOnRequest);
   const setCrmStatus = useMutation(api.leads.setCrmStatus);
   const [dispReason, setDispReason] = useState("");
   // Which report is being built, so one spinner cannot appear on both buttons.
   const [building, setBuilding] = useState<"full" | "limited" | null>(null);
+  const [withCoaching, setWithCoaching] = useState(true);
   const [confirmText, setConfirmText] = useState("");
   const [deleteNote, setDeleteNote] = useState("");
   const [deleting, setDeleting] = useState(false);
@@ -173,7 +180,7 @@ export default function RecordPage({ leadId }: { leadId: Id<"leads"> }) {
               onClick={async () => {
                 setBuilding("limited");
                 try {
-                  await openReport({ ...lead, responses: corrected.effective }, "limited");
+                  await openReport({ ...lead, responses: corrected.effective }, "limited", withCoaching, community ?? undefined);
                 } finally {
                   setBuilding(null);
                 }
@@ -198,6 +205,14 @@ export default function RecordPage({ leadId }: { leadId: Id<"leads"> }) {
               {building === "full" ? "Building..." : "Full report PDF (coach)"}
             </button>
           </div>
+          <label className="mt-3 flex items-center gap-2 text-body-medium text-on-surface-variant">
+            <input
+              type="checkbox"
+              checked={withCoaching}
+              onChange={(e) => setWithCoaching(e.target.checked)}
+            />
+            Candidate PDF ends with the Coaching 1:1 pages (untick for a Coaching 1:1 client)
+          </label>
           {Object.keys(lead.responses).length === 0 && (
             <p className="mt-2 text-body-medium text-on-surface-variant">
               No answers yet, so there is nothing to report on.

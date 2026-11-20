@@ -44,7 +44,7 @@ export async function openFitReport(
       targetCountries: input.targetCountries,
       targetRole: input.targetRole ?? undefined,
     },
-    { locale, autoPrint: true },
+    { locale, autoPrint: true, assetOrigin: window.location.origin },
   );
   win.document.open();
   win.document.write(html);
