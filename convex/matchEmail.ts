@@ -1,4 +1,4 @@
-import { C, DISPLAY, FONT, SITE, button, esc } from "./codeEmail";
+import { C, DISPLAY, FONT, SITE, button, emailDocument, esc, footerBlock, siteLink } from "./emailShell";
 
 /**
  * The matched-role notice, `prd.md` § 8, Matched roles.
@@ -46,9 +46,9 @@ export const matchEmailSubject = (n: number) =>
 /** Kept for callers that want the one-role wording. */
 export const MATCH_EMAIL_SUBJECT = matchEmailSubject(1);
 
-/** The header picture's own backdrop, so the slot keeps its colour when a
- *  mail client blocks images. Sampled from `public/email-matched-roles-header.jpg`. */
-const HEADER_GROUND = "#9dcddb";
+/** Its own backdrop, so the slot keeps its colour when a client blocks
+ *  images. In the palette since 20/11/2026, with the other twelve. */
+const HEADER_GROUND = C.headerGround;
 
 const where = (r: NoticeRole) => [r.location, r.country].filter(Boolean).join(", ");
 const feedbackUrl = (token: string, v: "up" | "down") => `${SITE}/match-feedback/${encodeURIComponent(token)}?v=${v}`;
@@ -104,7 +104,6 @@ function roleCard(r: NoticeRole) {
 
 export function matchEmailHtml(firstName: string | null, roles: NoticeRole[], receipt?: NoticeReceipt) {
   const greetTh = firstName ? `สวัสดีคุณ ${esc(firstName)}` : "สวัสดี";
-  const greetEn = firstName ? `Hi ${esc(firstName)},` : "Hi,";
   const meUrl = `${SITE}/me`;
   const n = roles.length;
   const subject = matchEmailSubject(n);
@@ -112,26 +111,12 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[], re
     ? `ใช้ ${receipt.used} โทเคนจากแพ็กเกจของคุณ เหลืออีก ${receipt.left} โทเคน · ${receipt.used} token used, ${receipt.left} left`
     : "";
 
-  return `<!DOCTYPE html>
-<html lang="th" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="light">
-<meta name="supported-color-schemes" content="light">
-<title>${subject}</title>
-<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  @media (max-width:620px){ .px{padding-left:16px!important;padding-right:16px!important} .h1{font-size:26px!important} }
-  a{color:${C.deep}}
-</style>
-</head>
-<body style="margin:0;padding:0;background:${C.soft};">
-<div style="display:none;max-height:0;overflow:hidden;opacity:0;">${n === 1 ? `${esc(roles[0].roleTitle)} ที่ ${esc(roles[0].employer)}` : `ตำแหน่งใหม่ ${n} ตำแหน่ง`} คัดมาให้คุณแล้ว</div>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${C.soft};">
-<tr><td align="center" style="padding:24px 10px 32px;">
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
-
+  return emailDocument({
+    title: subject,
+    preheader: `${n === 1 ? `${esc(roles[0].roleTitle)} ที่ ${esc(roles[0].employer)}` : `ตำแหน่งใหม่ ${n} ตำแหน่ง`} คัดมาให้คุณแล้ว`,
+    gutter: "24px 10px 32px",
+    css: `  @media (max-width:620px){ .px{padding-left:16px!important;padding-right:16px!important} .h1{font-size:26px!important} }`,
+    rows: `
   <tr><td style="background:${C.deep};border-radius:24px 24px 0 0;line-height:0;font-size:0;">
     <img src="${SITE}/email-matched-roles-header.jpg" width="600" height="198" alt="PunProfile คัดตำแหน่งงานให้คุณ · Roles picked for you" style="display:block;width:100%;max-width:600px;height:auto;border:0;border-radius:24px 24px 0 0;background:${HEADER_GROUND};">
   </td></tr>
@@ -151,20 +136,13 @@ export function matchEmailHtml(firstName: string | null, roles: NoticeRole[], re
     ทุกตำแหน่งอยู่ใน<a href="${meUrl}" style="color:${C.deep};font-weight:600;">แดชบอร์ดหางาน</a>ของคุณแล้ว ติดตามการสมัครต่อได้ที่นั่น
   </td></tr>
 
-  <tr><td class="px" style="padding:24px 24px 0;" lang="en">
-    <p style="margin:0;font-family:${FONT};font-size:14px;line-height:1.7;color:${C.mute};">${greetEn} PunProfile picked ${n === 1 ? "a new role" : `${n} new roles`} for you, checked as still open and matching your goals. ${n === 1 ? "It is" : "They are"} on your <a href="${meUrl}" style="color:${C.deep};font-weight:600;">Job Search Dashboard</a>. Tap Yes or Not for me to help PunProfile pick the next.</p>
-  </td></tr>
-
-  <tr><td align="center" style="padding:28px 24px 0;font-family:${FONT};font-size:12px;line-height:1.7;color:${C.mute};">
-    ${tokenLine ? `${tokenLine}<br>` : ""}คุณได้รับอีเมลนี้เพราะใช้บริการคัดตำแหน่งงานของ PunProfile · ตอบกลับอีเมลนี้ได้หากมีคำถาม<br>
-    <a href="${SITE}" style="color:${C.mute};">punprofile.app</a>
-  </td></tr>
-
-</table>
-</td></tr>
-</table>
-</body>
-</html>`;
+${footerBlock("28px 24px 0", [
+    ...(tokenLine ? [tokenLine] : []),
+    "คุณได้รับอีเมลนี้เพราะใช้บริการคัดตำแหน่งงานของ PunProfile · ตอบกลับอีเมลนี้ได้หากมีคำถาม",
+    siteLink,
+  ])}
+`,
+  });
 }
 
 export function matchEmailText(firstName: string | null, roles: NoticeRole[], receipt?: NoticeReceipt) {
@@ -192,8 +170,6 @@ export function matchEmailText(firstName: string | null, roles: NoticeRole[], re
     list,
     "",
     `ทุกตำแหน่งอยู่ในแดชบอร์ดหางานของคุณแล้ว: ${SITE}/me`,
-    "",
-    `${firstName ? `Hi ${firstName},` : "Hi,"} PunProfile picked ${n === 1 ? "a new role" : `${n} new roles`} for you. ${n === 1 ? "It is" : "They are"} on your Job Search Dashboard: ${SITE}/me`,
     "",
     ...(receipt ? [`ใช้ ${receipt.used} โทเคนจากแพ็กเกจของคุณ เหลืออีก ${receipt.left} โทเคน · ${receipt.used} token used, ${receipt.left} left`] : []),
     "คุณได้รับอีเมลนี้เพราะใช้บริการคัดตำแหน่งงานของ PunProfile",

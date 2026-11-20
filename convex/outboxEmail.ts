@@ -15,7 +15,7 @@
  * anything goes. This file only puts them in an envelope.
  */
 
-import { C, DISPLAY, FONT, SITE, esc } from "./codeEmail";
+import { C, FONT, SITE, card, emailDocument, esc, headerBand } from "./emailShell";
 
 /** One blank line between paragraphs, which is how a coach writes a message. */
 export const paragraphs = (body: string): string[] =>
@@ -33,36 +33,16 @@ export function outboxEmailHtml(firstName: string | null, subject: string, body:
     )
     .join("\n      ");
 
-  return `<!DOCTYPE html>
-<html lang="th" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="light">
-<meta name="supported-color-schemes" content="light">
-<title>${esc(subject)}</title>
-<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-<style>
-  @media (max-width:620px){ .px{padding-left:24px!important;padding-right:24px!important} .h1{font-size:24px!important} }
-  a{color:${C.deep}}
-</style>
-</head>
-<body style="margin:0;padding:0;background:${C.soft};">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${C.soft};">
-<tr><td align="center" style="padding:32px 12px;">
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
-
-  <tr><td style="padding:0 8px 20px;">
+  return emailDocument({
+    title: esc(subject),
+    gutter: "32px 12px",
+    heavyDisplay: true,
+    css: `  @media (max-width:620px){ .px{padding-left:24px!important;padding-right:24px!important} .h1{font-size:24px!important} }`,
+    rows: `  <tr><td style="padding:0 8px 20px;">
     <a href="${SITE}"><img src="${SITE}/punprofile-logo-email.png" width="160" height="44" alt="PunProfile" style="display:block;border:0;"></a>
   </td></tr>
 
-  <tr><td style="background:${C.canvas};border-radius:24px;overflow:hidden;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-
-    <tr><td class="px" style="background:${C.deep};padding:36px 40px 32px;border-radius:24px 24px 0 0;">
-      <p style="margin:0 0 12px;font-family:${FONT};font-size:15px;color:${C.onDeep};">${greet}</p>
-      <h1 class="h1" style="margin:0;font-family:${DISPLAY};font-size:28px;font-weight:700;line-height:1.35;color:${C.lime};">${esc(subject)}</h1>
-    </td></tr>
+${card(`${headerBand({ greeting: greet, heading: esc(subject), padding: "36px 40px 32px", size: 28, greetingGap: 12 })}
 
     <tr><td class="px" style="padding:32px 40px 8px;">
       ${paras}
@@ -72,20 +52,12 @@ export function outboxEmailHtml(firstName: string | null, subject: string, body:
       <p style="margin:0;font-family:${FONT};font-size:14px;line-height:1.7;color:${C.body};">
         ความคืบหน้าทั้งหมดอยู่ที่ <a href="${SITE}/me">${SITE}/me</a>
       </p>
-    </td></tr>
-
-  </table>
-  </td></tr>
+    </td></tr>`)}
 
   <tr><td style="padding:20px 8px 0;">
     <p style="margin:0;font-family:${FONT};font-size:12px;line-height:1.7;color:${C.mute};">PunProfile</p>
-  </td></tr>
-
-</table>
-</td></tr>
-</table>
-</body>
-</html>`;
+  </td></tr>`,
+  });
 }
 
 export function outboxEmailText(firstName: string | null, subject: string, body: string): string {
