@@ -23,6 +23,7 @@ import { requireAdmin } from "./leads";
 import { isAdminEmail } from "./adminEmails";
 import { liveGrant, normaliseEmail } from "./candidateAccess";
 import { targetsFor } from "./targets";
+import { openDraft } from "./outbox";
 import { seeJob } from "./jobs";
 import { computeWallet, cvEarnedBySelectionNow } from "../src/lib/wallet";
 import { preparationState, nextCall, leadItems, decisionsView, previewOf, scheduledCallFor } from "../src/lib/session";
@@ -1276,6 +1277,13 @@ export const exportForLead = query({
  * deliverable, and leave a note on the record. One transaction, so a half
  * delivery (shared but not charged, charged but not shared) cannot happen.
  *
+ * And tell them, 20/11/2026. Read from a candidate's page after their report
+ * had gone out, this said nothing to them at all: the report appeared and no note,
+ * no email and no LINE message followed, because the only thing built to
+ * announce anything was a release and the Fit Report does not go out inside
+ * one. So delivery opens the drafts a release opens, which is a channel that
+ * already exists rather than a second one invented here.
+ *
  * Refuses while any interview competency is still unrated or a draft, because
  * the report would go out with holes the coach meant to fill.
  */
@@ -1348,6 +1356,11 @@ export const deliverFitReport = mutation({
       throw new ConvexError("No Fit Report deliverable on this record. Add one in Delivery, kind Fit Report, first.");
     }
 
+    // Whether this delivery is the one that puts the report in front of them,
+    // read before the patch that sets it. A report already on the dashboard is
+    // being charged or tidied up here, not announced, and announcing it twice
+    // would say the same thing twice.
+    const firstShare = lead.fitReportSharedAt === undefined;
     await ctx.db.patch(args.leadId, { fitReportSharedAt: lead.fitReportSharedAt ?? now });
     await ctx.db.insert("deliveryNotes", {
       leadId: args.leadId,
@@ -1357,6 +1370,19 @@ export const deliverFitReport = mutation({
       at: now,
       by,
     });
+
+    // The same three drafts a release opens, and for the same reason: the note
+    // the candidate reads on their own page, and the nudge on both channels
+    // Paul settled on 17/11/2026. Each opens empty, carrying the Situation
+    // panel as it reads now, and nothing reaches her until the coach has
+    // written it and approved it. The note above is the record of the event
+    // and stays unshared: it is written in the coach's words, not theirs.
+    if (!firstShare) return { drafts: 0 };
+    const titles = (await targetsFor(ctx, args.leadId)).filter((t) => t.status === "active").map((t) => t.title);
+    for (const channel of ["dashboard", "email", "line"] as const) {
+      await openDraft(ctx, { leadId: args.leadId, kind: "fit_report_ready", channel, titles, at: now, by });
+    }
+    return { drafts: 3 };
   },
 });
 

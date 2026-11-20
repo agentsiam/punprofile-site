@@ -1614,6 +1614,14 @@ export default defineSchema({
        * different message: it says they have not looked yet.
        */
       v.literal("release_reminder"),
+      /**
+       * The Fit Report is on their dashboard. Its own kind rather than
+       * `release_ready`, because it is not a release and has no `releaseId`:
+       * the Fit Report is delivered by the one action that charges its tokens,
+       * so it reaches the candidate outside a release and the coach reading
+       * the draft should be told which it is.
+       */
+      v.literal("fit_report_ready"),
     ),
     /** `dashboard` approves into a shared delivery note on the candidate's own
      *  page, which is the one place a draft becomes a record here rather than

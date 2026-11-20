@@ -920,7 +920,26 @@ function Deliverables({ leadId, engagements }: { leadId: Id<"leads">; engagement
                       {d.status === "cancelled" ? (
                         `Cancelled ${day(d.cancelledAt)}`
                       ) : d.status === "delivered" ? (
-                        `Delivered ${day(d.deliveredAt)}`
+                        <label className="flex items-center gap-2">
+                          Delivered
+                          <input
+                            type="date"
+                            aria-label="Delivered on"
+                            className="field field-dense w-auto"
+                            value={toIso(d.deliveredAt)}
+                            max={toIso(Date.now())}
+                            onChange={(ev) => {
+                              const ms = toMs(ev.target.value);
+                              if (ms === undefined) return;
+                              // A day is sent as midday UTC, which for today is
+                              // still ahead of now, and work is not delivered in
+                              // the future. Today means this moment.
+                              void run(() =>
+                                updateDeliverable({ deliverableId: d._id, deliveredAt: Math.min(ms, Date.now()) }),
+                              );
+                            }}
+                          />
+                        </label>
                       ) : (
                         <label className="flex items-center gap-2">
                           Due

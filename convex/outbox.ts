@@ -38,6 +38,7 @@ const KIND = v.union(
   v.literal("missing_input"),
   v.literal("release_ready"),
   v.literal("release_reminder"),
+  v.literal("fit_report_ready"),
 );
 
 const CHANNEL = v.union(v.literal("email"), v.literal("line"), v.literal("dashboard"));

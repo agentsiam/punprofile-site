@@ -189,6 +189,17 @@ export const updateDeliverable = mutation({
     producedAssessment: v.optional(v.id("assessments")),
     /** Null clears it. */
     dueAt: v.optional(v.union(v.number(), v.null())),
+    /**
+     * The day the work was handed over, corrected by hand.
+     *
+     * Every other path stamps `deliveredAt` with the moment the status moved,
+     * which is right when the work and the tick happen together and wrong
+     * whenever they do not: a session ticked three days after its call read the
+     * day of the tick, on the candidate's own page. The date they see is the
+     * date it happened, so a coach can set it. Only on work that is delivered,
+     * and never in the future.
+     */
+    deliveredAt: v.optional(v.number()),
     /** Empty string clears it. */
     title: v.optional(v.string()),
     /** Empty string clears it. Must be https. */
@@ -224,12 +235,26 @@ export const updateDeliverable = mutation({
       throw new ConvexError("This Fit Report is selected. Cancel it rather than changing its kind.");
     }
     const now = Date.now();
+    if (args.deliveredAt !== undefined) {
+      // Correcting the date is not delivering the work: it says nothing about
+      // whether it was handed over, so the row has to be delivered already or
+      // becoming delivered in this same call. A Fit Report reaches `delivered`
+      // only through its own charging path, and once there its date corrects
+      // here like any other.
+      if (args.status ? args.status !== "delivered" : row.status !== "delivered") {
+        throw new ConvexError("Only delivered work has a delivered date.");
+      }
+      if (args.deliveredAt > now) throw new ConvexError("A delivered date cannot be in the future.");
+    }
     await ctx.db.patch(args.deliverableId, {
       ...(args.kind ? { kind: args.kind } : {}),
       ...(args.status ? { status: args.status } : {}),
       ...(args.status === "delivered" && row.deliveredAt === undefined
         ? { deliveredAt: now }
         : {}),
+      // Last, so a coach who ticks it delivered and dates it in one go keeps
+      // the date they gave rather than this moment.
+      ...(args.deliveredAt !== undefined ? { deliveredAt: args.deliveredAt } : {}),
       ...(args.producedAssessment ? { producedAssessment: args.producedAssessment } : {}),
       ...(args.notes !== undefined ? { notes: args.notes } : {}),
       ...(args.dueAt !== undefined ? { dueAt: args.dueAt ?? undefined } : {}),
