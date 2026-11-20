@@ -232,6 +232,18 @@ export interface ReportMeta {
 export type ReportVariant = "full" | "limited" | "fit";
 
 export interface ReportOptions {
+  /**
+   * Whether the free report carries the Fit Report with it: the free-version
+   * badge on the cover, the banners saying what the paid version adds, and the
+   * page that sells it with the 30-minute interview and a sample sheet.
+   *
+   * On by default, because the candidate who downloads this from the result
+   * screen has bought nothing yet. Off for someone who already has the Fit
+   * Report, and the coach's own screen reads that off the record rather than
+   * asking: a tick box that has to be remembered is a wrong document waiting to
+   * be sent, and it was the badge on the cover that gave it away.
+   */
+  fitReport?: boolean;
   /** Defaults to `full`, so the two offline scripts need no argument. */
   variant?: ReportVariant;
   /**
@@ -768,6 +780,7 @@ export function renderCandidateReport(
   const asset = (path: string) => `${origin}${path}`;
   const sitePath = (path: string) => `https://punprofile.app${locale === "en" ? `/en${path}` : path}`;
   const withCoaching = opts.coaching ?? true;
+  const withFitReport = opts.fitReport ?? true;
 
   const dimLabel = (key: string, fallback: string) => dimensionName(key, fallback, locale);
   const notMeasured = s("teaser.score.none");
@@ -805,7 +818,7 @@ export function renderCandidateReport(
   const cover = `<section class="page cover">
   <div class="cover-band">
     <img class="cover-logo" src="${asset("/efc-logo.svg")}" alt="EU Fit Check by PunProfile">
-    <p class="cover-badge"><span>${esc(pick(FREE_BADGE))}</span> ${esc(pick(FREE_BADGE_NOTE))}</p>
+    ${withFitReport ? `<p class="cover-badge"><span>${esc(pick(FREE_BADGE))}</span> ${esc(pick(FREE_BADGE_NOTE))}</p>` : ""}
     <p class="cover-eyebrow">${esc(s("teaser.headline"))}</p>
     ${coverName(coverNameText)}
     <p class="cover-sub">${metaBits.join(" · ")}</p>
@@ -908,7 +921,7 @@ export function renderCandidateReport(
   ${head()}
   ${p === 0 ? opener("02", s("teaser.chart.heading")) : ""}
   ${pair.map((d, i) => area(d, p * 2 + i)).join("\n")}
-  ${p === 0 ? preview(PREVIEW_AREAS) : ""}
+  ${p === 0 && withFitReport ? preview(PREVIEW_AREAS) : ""}
   ${foot()}
 </section>`,
     )
@@ -938,7 +951,7 @@ export function renderCandidateReport(
       <p>${esc(s("teaser.nextStep"))}</p>
     </figcaption>
   </figure>
-  ${preview(PREVIEW_MOVES)}
+  ${withFitReport ? preview(PREVIEW_MOVES) : ""}
   ${foot()}
 </section>`;
 
@@ -1039,7 +1052,7 @@ export function renderCandidateReport(
     ? `<section class="page">
   ${head()}
   ${countryInner}
-  ${preview(PREVIEW_ROLES)}
+  ${withFitReport ? preview(PREVIEW_ROLES) : ""}
   ${foot()}
 </section>`
     : "";
@@ -1103,7 +1116,7 @@ export function renderCandidateReport(
     funFactsPage,
     areaPages,
     strengthsPage,
-    fitPage,
+    withFitReport ? fitPage : "",
     withCoaching ? hookPage : "",
     withCoaching ? closePage : "",
   ]
@@ -1114,6 +1127,13 @@ export function renderCandidateReport(
     .replace(/<span class="pg-n">\d+<\/span>/g, (() => {
       let n = 1;
       return () => `<span class="pg-n">${String(++n).padStart(2, "0")}</span>`;
+    })())
+    // The numbers on the pages themselves, for the same reason and now for one
+    // more: a report with no Fit Report page in it would otherwise count
+    // 01, 02, 03, 05, 06. The unnumbered opener has no digits and is left alone.
+    .replace(/<span class="sec-n">\d+<\/span>/g, (() => {
+      let n = 0;
+      return () => `<span class="sec-n">${String(++n).padStart(2, "0")}</span>`;
     })());
 
   const html = document_({

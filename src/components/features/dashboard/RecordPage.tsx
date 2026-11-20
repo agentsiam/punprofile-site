@@ -62,6 +62,8 @@ async function openReport(
   variant: "full" | "limited",
   coaching = true,
   community?: import("@/lib/report").CommunityStats,
+  /** False for someone who already has the Fit Report. Read off the record. */
+  fitReport = true,
 ) {
   const win = window.open("", "_blank");
   if (!win) {
@@ -99,7 +101,10 @@ async function openReport(
     // the one artefact working against it.
     // `coaching` is off for someone already in Coaching 1:1, so their copy
     // does not end on an offer for what they have bought. Paul 2a, 20/11/2026.
-    { variant, locale: "en", autoPrint: true, coaching, assetOrigin: window.location.origin, community },
+    // `fitReport` is the same idea for the cheaper offer, except that it is not
+    // a tick box: the record knows whether this person has the Fit Report, so
+    // the wrong version cannot be sent by forgetting to untick anything.
+    { variant, locale: "en", autoPrint: true, coaching, fitReport, assetOrigin: window.location.origin, community },
   );
 
   win.document.open();
@@ -180,7 +185,13 @@ export default function RecordPage({ leadId }: { leadId: Id<"leads"> }) {
               onClick={async () => {
                 setBuilding("limited");
                 try {
-                  await openReport({ ...lead, responses: corrected.effective }, "limited", withCoaching, community ?? undefined);
+                  await openReport(
+                    { ...lead, responses: corrected.effective },
+                    "limited",
+                    withCoaching,
+                    community ?? undefined,
+                    lead.fitReportSharedAt === undefined,
+                  );
                 } finally {
                   setBuilding(null);
                 }

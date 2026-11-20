@@ -19,7 +19,7 @@
  * substitute for doing so.
  */
 
-import { renderFitReport, SHEET, sheetRow, COVER_EM } from "../src/lib/report.js";
+import { renderFitReport, renderReport, SHEET, sheetRow, COVER_EM } from "../src/lib/report.js";
 import { FIT_SAMPLE_INPUT, fitSampleRatings } from "../src/lib/fit-sample.js";
 import { scoreResponse, scoreFull } from "../src/lib/scoring.js";
 import { ECRA } from "../src/lib/ecra.js";
@@ -150,6 +150,46 @@ for (const [nameCase, candidate] of NAMES) {
   }
 }
 
+// ---------------------------------------------------------------- the free report
+//
+// The same two rules it shares with the paid one, a header and a footer on every
+// sheet, plus the switch: someone who already has the Fit Report must not be sent
+// the version that sells it to them, and the pages must still count straight once
+// that page is gone.
+for (const has of [false, true]) {
+  const html = renderReport(
+    profile,
+    { candidate: "Siriporn-Chaiyasit", coverName: "Siriporn-Chaiyasit", targetCountries: FIT_SAMPLE_INPUT.targetCountries },
+    { variant: "limited", locale: "en", assetOrigin: "", fitReport: !has },
+  );
+  const who = has ? "already has the Fit Report" : "has not bought it";
+  const pages = html.match(/<section class="page[\s\S]*?<\/section>/g) ?? [];
+  if (!pages.length) fail(`free report, ${who}: no pages rendered`);
+  for (const page of pages) {
+    // The cover carries neither, in this report and in the paid one: a running
+    // header and a page number on a cover would be furniture on a title page.
+    const cls = /<section class="([^"]*)"/.exec(page)?.[1] ?? "";
+    if (cls.split(" ").includes("cover")) continue;
+    const id = /id="([^"]*)"/.exec(page)?.[1] ?? cls;
+    if (!/class="pg-head"/.test(page)) fail(`free report, ${who}: page ${id} has no header`);
+    if (!/class="pg-foot/.test(page)) fail(`free report, ${who}: page ${id} has no footer`);
+  }
+  // The badge and the page that sells it, present for one and gone for the other.
+  for (const [what, re] of [
+    ["the free-version badge", /class="cover-badge"/],
+    ["the page selling the Fit Report", /<section class="page" id="full">/],
+    ["a banner saying what the paid version adds", /class="preview"/],
+  ] as const) {
+    if (re.test(html) === has) fail(`free report, ${who}: ${what} is ${has ? "there" : "missing"}`);
+  }
+  // The numbers on the pages run straight either way.
+  const ns = [...html.matchAll(/<span class="sec-n">(\d+)<\/span>/g)].map((m) => Number(m[1]));
+  if (!ns.every((n, i) => n === i + 1)) fail(`free report, ${who}: page numbers are ${ns.join(", ")}`);
+  // And the footers keep counting every sheet, numbered or not.
+  const fs = [...html.matchAll(/class="pg-n">(\d+)</g)].map((m) => Number(m[1]));
+  if (!fs.every((n, i) => n === i + 2)) fail(`free report, ${who}: footer numbers are ${fs.join(", ")}`);
+}
+
 const cases = NAMES.length * 2 * 2 * 2;
 if (failures.length) {
   for (const f of failures) console.error(`FAIL ${f}`);
@@ -157,6 +197,7 @@ if (failures.length) {
   process.exit(1);
 }
 console.log(`report sheets OK: ${cases} fictional candidates, every sheet a whole page`);
+console.log("  free report: the badge, the banners and the page that sells the Fit Report go for someone who has it");
 console.log(`  widest split: ${widest.sheets} sheets for "${widest.heading.trim()}" (${widest.label})`);
 for (const [nameCase, candidate] of NAMES) {
   console.log(`  cover, ${nameCase}: ${coverSize(candidate, 110, 50).toFixed(1)}pt for "${candidate}"`);
