@@ -58,7 +58,7 @@ export default function FitReportWork({ leadId }: { leadId: Id<"leads"> }) {
   const roles = useQuery(api.reportRoles.forReport, { leadId });
   const deliver = useMutation(api.workspace.deliverFitReport);
   const latest = useMemo(() => new Map((rows ?? []).map((r) => [r.itemKey, r])), [rows]);
-  const [busy, setBusy] = useState<"pdf" | "deliver" | null>(null);
+  const [busy, setBusy] = useState<"pdf" | "pdf-th" | "deliver" | null>(null);
   const [error, setError] = useState<string | null>(null);
   if (rows === undefined || lead === undefined || corrections === undefined || roles === undefined) {
     return <p className="text-body-md text-mute-strong">Loading...</p>;
@@ -110,6 +110,21 @@ export default function FitReportWork({ leadId }: { leadId: Id<"leads"> }) {
           </button>
           <button
             type="button"
+            disabled={busy !== null}
+            onClick={async () => {
+              setBusy("pdf-th");
+              try {
+                await onOpenPdf("th");
+              } finally {
+                setBusy(null);
+              }
+            }}
+            className="btn-outlined h-11 px-5 text-label-large"
+          >
+            {busy === "pdf-th" ? "Building..." : "Preview in Thai"}
+          </button>
+          <button
+            type="button"
             disabled={busy !== null || toAsk.length > 0 || sharedAt !== undefined}
             onClick={async () => {
               if (!confirm(`Deliver the Fit Report? It goes on their dashboard, the Fit Report is marked delivered and ${TOKEN_PRICE.fitReport} tokens are deducted.`)) return;
@@ -134,9 +149,6 @@ export default function FitReportWork({ leadId }: { leadId: Id<"leads"> }) {
                 ? "Delivers once every interview area is settled."
                 : `Shares it on their dashboard, marks it delivered, deducts ${TOKEN_PRICE.fitReport} tokens.`}
           </span>
-          <button type="button" className="text-body-md text-ink-deep underline" onClick={() => void onOpenPdf("th")}>
-            Thai version
-          </button>
         </div>
         {error && <p className="mt-2 text-body-md text-error">{error}</p>}
       </section>
