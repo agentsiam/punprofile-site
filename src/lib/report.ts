@@ -1138,6 +1138,15 @@ const PAGED_STYLES = `
   @media print {
     .is-limited { background: var(--color-canvas); padding: 0; font-size: inherit; }
     .page { margin: 0; box-shadow: none; }
+    /* Nothing see-through reaches the PDF. macOS Preview, which candidates open
+       the file in, draws Chrome's transparent layers wrongly: a fade prints pink
+       and a shadow prints as a visible square. So every shadow, fade and
+       semi-transparent overlay either goes in print, as below, or is flattened
+       into one picture, the way the country photo is. */
+    .cover-art { box-shadow: none; }
+    .pg-foot.on-dark { border-top: 0; }
+    ol.hl li { border-bottom-color: var(--color-line); }
+    .pains { background: none; }
   }
 
   .pg-head { position: absolute; top: 9mm; right: 16mm; }
@@ -1469,6 +1478,16 @@ const BOOK_STYLES = `
   }
   @media print {
     .book { --k: .37; --kc: .27; gap: 1.75rem; padding: 1.75rem 1rem 1.5rem; }
+    /* Nothing see-through reaches the PDF. macOS Preview, which candidates open
+       the file in, draws Chrome's transparent layers wrongly: a fade prints pink
+       and a shadow prints as a visible square. So every shadow, fade and
+       semi-transparent overlay either goes in print, as below, or is flattened
+       into one picture, the way the country photo is. */
+    .bk-closed .bk-frame { box-shadow: 3px 3px 0 #f4f2ec, 6px 6px 0 #e6e3da, 9px 9px 0 #f4f2ec, 12px 12px 0 #dcd8cc; }
+    .bk-closed .bk-frame::before { display: none; }
+    .bk-open { filter: none; }
+    .bk-open .bk-frame:first-child, .bk-open .bk-frame:last-child { box-shadow: none; }
+    .bk-line-dark { background: var(--color-on-canvas-dark); }
   }
 `;
 
@@ -1587,6 +1606,12 @@ const FIT_PAGED_STYLES = `
   @media print {
     body.is-fit { background: var(--color-canvas); padding: 0; }
     body.is-fit .fit-sec, body.is-fit .cover { margin: 0; box-shadow: none; }
+    /* Nothing see-through reaches the PDF. macOS Preview, which candidates open
+       the file in, draws Chrome's transparent layers wrongly: a fade prints pink
+       and a shadow prints as a visible square. So every shadow, fade and
+       semi-transparent overlay either goes in print, as below, or is flattened
+       into one picture, the way the country photo is. */
+    body.is-fit .fc-art { box-shadow: none; }
     body.is-fit .cover { break-after: page; min-height: 296.5mm; }
   }
 `;
