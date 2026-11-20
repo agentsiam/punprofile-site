@@ -409,6 +409,11 @@ export const PRODUCTS: readonly Product[] = [
   /* ------------------------------------------------------------- Fit Report */
   {
     slug: "fit-report",
+    // The name alone titled this page in both trees.
+    seoTitle: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5zZW9UaXRsZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5zZW9UaXRsZQ:TH%%,
+    },
     // Read back 25/08/2026. Draft for `PROD-01-fit-report`.
     audience: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1syXS5hdWRpZW5jZQ:EN%%,
@@ -483,6 +488,11 @@ export const PRODUCTS: readonly Product[] = [
   /* ----------------------------------------------------------- Matched Jobs */
   {
     slug: "matched-jobs",
+    // The name alone titled this page in both trees.
+    seoTitle: {
+      en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5zZW9UaXRsZQ:EN%%,
+      th: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5zZW9UaXRsZQ:TH%%,
+    },
     // Read back 25/08/2026. Draft for `PROD-01-matched-jobs`.
     audience: {
       en: %%LANG:c3JjL2xpYi9jb250ZW50L3Byb2R1Y3RzLnRzOjpQUk9EVUNUU1szXS5hdWRpZW5jZQ:EN%%,

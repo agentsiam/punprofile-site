@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PRODUCTS, productBySlug } from "@/lib/content/products";
+import { productSearch } from "@/lib/content/search";
 import { NOT_YET_INDEXED, pageMetadata } from "@/lib/seo";
 
 /** `/en/products/<slug>`. See `src/app/(en)/en/page.tsx` for why this exists. */
@@ -20,7 +21,7 @@ export async function generateMetadata({
     ...pageMetadata({
       path: `/products/${slug}`,
       title: product.seoTitle ?? product.name,
-      description: product.headline,
+      description: productSearch(product),
       locale: "en",
     }),
     ...(product.status === "soon" ? NOT_YET_INDEXED : {}),

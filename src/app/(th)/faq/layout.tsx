@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
-import { FAQ_HEADING, FAQ_INTRO } from "@/lib/content/faq";
 import JsonLd from "@/components/JsonLd";
+import { FAQ_SEARCH, FAQ_TITLE } from "@/lib/content/search";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
 /** See `services/layout.tsx` for why a layout carries this. */
 export const metadata: Metadata = pageMetadata({
   path: "/faq",
-  title: FAQ_HEADING,
-  description: FAQ_INTRO,
+  // Was the visible heading and intro. Both are right on the page and wrong
+  // in a result: the heading named no subject and the intro is 44 characters.
+  // 20/11/2026.
+  title: FAQ_TITLE,
+  description: FAQ_SEARCH,
 });
 
 // The FAQPage markup is emitted here, a server component, rather than in the

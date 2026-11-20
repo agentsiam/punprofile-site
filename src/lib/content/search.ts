@@ -1,8 +1,9 @@
 import type { Copy } from "./copy";
 
 /**
- * Search descriptions: the line under a page's title in a search result.
- * 01/11/2026.
+ * Search-only titles and descriptions: what a search result shows, where the
+ * page's own copy is the wrong text for it. 01/11/2026, widened 20/11/2026 from
+ * descriptions to titles as well.
  *
  * Search-only. Nothing here appears on a page, and the visible text these
  * stand beside (the home subhead, the article summaries) is unchanged. They
@@ -21,6 +22,23 @@ export const EFC_ASSESSMENT_SEARCH: Copy = {
   th: "ทำ EU Fit Check ได้ฟรีบนมือถือ ใช้เวลาประมาณ 2 นาที ประเมินความพร้อมทำงานในยุโรปทั้ง 4 ด้าน ดูผลเบื้องต้นได้โดยไม่ต้องสมัครสมาชิก",
 };
 
+/** `/efc-assessment`. Its title was the navigation label, identical in both trees. */
+export const EFC_ASSESSMENT_TITLE: Copy = {
+  en: "EU Fit Check: free two-minute readiness check",
+  th: "EU Fit Check",
+};
+
+/** `/faq`. Its title and description were the visible heading and intro. */
+export const FAQ_TITLE: Copy = {
+  en: "Questions about working in Europe",
+  th: "คำถามที่พบบ่อย",
+};
+
+export const FAQ_SEARCH: Copy = {
+  en: "The questions Thai professionals ask most before moving to Europe: visas, language, cost and applications. If yours is not here, message me and ask.",
+  th: "ถ้ายังไม่เจอคำตอบที่ต้องการ ทักมาถามผมได้เลย",
+};
+
 /** The home page. Only `en` is read: the Thai root layout keeps `landing.subhead`. */
 export const HOME_SEARCH: Copy = {
   en: "PunProfile works with Thai professionals targeting Europe on career direction, profile refinement and applications, one role at a time.",
@@ -33,6 +51,10 @@ export const ARTICLE_SEARCH: Record<string, Copy> = {
     en: "Cara's 6 lessons from Thai student to work in Spain: a third language is not always needed, age is not the main issue, and CV photos help less than you think.",
     th: "ไม่ต้องพูดภาษาที่ 3 ก็ทำงานในบริษัทได้ อายุไม่ใช่ปัญหาหลัก และรูปในเรซูเม่ไม่ได้ช่วยอย่างที่คิด คาร่าเล่า 6 เรื่องจากเส้นทางนักเรียนไทยสู่คนทำงานในสเปน",
   },
+  "linkedin-europe-ready": {
+    en: "Applying for jobs in Europe? Treat LinkedIn as two jobs: set it up so recruiters can find you, then write it so they understand what you did.",
+    th: "ถ้าคุณกำลังสมัครงานในยุโรป ให้เริ่มจากตั้งค่า LinkedIn ให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น แล้วเล่างานที่เคยทำให้เขาเข้าใจว่าคุณรับผิดชอบอะไร",
+  },
   "start-in-europe": {
     en: "Plan three things before applying in Europe: which market to target, how to relocate and how to show employers the value of your experience in Thailand.",
     th: "วางแผน 3 เรื่องก่อนสมัครงานในยุโรป: จะเจาะตลาดไหน ย้ายประเทศด้วยเส้นทางใด และจะทำให้นายจ้างเห็นคุณค่าของประสบการณ์จากไทยอย่างไร",
@@ -42,4 +64,26 @@ export const ARTICLE_SEARCH: Record<string, Copy> = {
 /** An article's search description: the override where there is one, else its summary. */
 export function articleSearch(post: { slug: string; summary: Copy }): Copy {
   return ARTICLE_SEARCH[post.slug] ?? post.summary;
+}
+
+/**
+ * Per product, by slug, where the headline is the wrong length for a result.
+ * A product page's description is its `headline`, which is visible page copy:
+ * stretching that to suit a search result would damage the page, so the result
+ * gets its own line here and the page keeps its own.
+ */
+export const PRODUCT_SEARCH: Record<string, Copy> = {
+  "fit-report": {
+    en: "You have your four EU Fit Check scores. The Fit Report says which gap to close first, why that one, and how you will know it has moved.",
+    th: "รู้ผลเบื้องต้นแล้ว ควรเริ่มพัฒนาตรงไหนก่อน?",
+  },
+  "matched-jobs": {
+    en: "There are plenty of roles in Europe. Not many you can actually apply for. We read your profile and send only the ones whose visa and language terms fit you.",
+    th: "ตำแหน่งงานในยุโรปมีเยอะ แต่ที่คุณสมัครได้จริงมีไม่กี่ตำแหน่ง",
+  },
+};
+
+/** A product's search description: the override where there is one, else its headline. */
+export function productSearch(product: { slug: string; headline: Copy }): Copy {
+  return PRODUCT_SEARCH[product.slug] ?? product.headline;
 }

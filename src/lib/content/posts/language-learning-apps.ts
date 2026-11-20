@@ -18,7 +18,7 @@ export const LANGUAGE_LEARNING_APPS: Post = {
   },
   seoTitle: {
     th: "แอปเรียนภาษาเยอรมัน ฝรั่งเศส สเปน สำหรับคนไทย ฟรีและเสียเงิน",
-    en: "Apps to learn German, French and Spanish for Thai speakers, free and paid",
+    en: "Language apps for Thai speakers: German, French, Spanish",
   },
   summary: {
     th: "แอปเรียนภาษาส่วนใหญ่ไม่มีเมนูภาษาไทย เน้นทักษะต่างกัน และมีไม่กี่ตัวที่พาไปถึงระดับที่งานในยุโรปต้องการ เราเทียบให้ทีละข้อ",

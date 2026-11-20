@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProductPage from "@/components/features/products/ProductPage";
 import { PRODUCTS, productBySlug } from "@/lib/content/products";
+import { productSearch } from "@/lib/content/search";
 import { NOT_YET_INDEXED, pageMetadata } from "@/lib/seo";
 
 /**
@@ -36,7 +37,7 @@ export async function generateMetadata({
       // The name in the tab, the headline as the description. The headline is the
       // problem the reader has, which is what a search result should be answering.
       title: product.seoTitle ?? product.name,
-      description: product.headline,
+      description: productSearch(product),
     }),
     // A product that is not open yet is not a search result. Spread AFTER the
     // metadata so the tag wins, and applied here rather than inside

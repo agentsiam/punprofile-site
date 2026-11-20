@@ -409,6 +409,11 @@ export const PRODUCTS: readonly Product[] = [
   /* ------------------------------------------------------------- Fit Report */
   {
     slug: "fit-report",
+    // The name alone titled this page in both trees.
+    seoTitle: {
+      en: "Fit Report: what to work on first",
+      th: "Fit Report",
+    },
     // Read back 25/08/2026. Draft for `PROD-01-fit-report`.
     audience: {
       en: "For anyone who has done the EU Fit Check and wants to know what to work on next",
@@ -483,6 +488,11 @@ export const PRODUCTS: readonly Product[] = [
   /* ----------------------------------------------------------- Matched Jobs */
   {
     slug: "matched-jobs",
+    // The name alone titled this page in both trees.
+    seoTitle: {
+      en: "Matched Jobs: roles you can apply for",
+      th: "Matched Jobs",
+    },
     // Read back 25/08/2026. Draft for `PROD-01-matched-jobs`.
     audience: {
       en: "For anyone tired of scrolling job boards",

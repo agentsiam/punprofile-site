@@ -14850,15 +14850,15 @@ source: src/lib/content/posts/language-learning-apps.ts
 path: LANGUAGE_LEARNING_APPS.seoTitle
 render: 'Blog article: Language learning apps, LANGUAGE_LEARNING_APPS.seoTitle'
 narrative_slot: utility
-en: "Apps to learn German, French and Spanish for Thai speakers, free and paid"
+en: "Language apps for Thai speakers: German, French, Spanish"
 th: "แอปเรียนภาษาเยอรมัน ฝรั่งเศส สเปน สำหรับคนไทย ฟรีและเสียเงิน"
 provenance: paul-approved
 date: 03/11/2026
 term_bindings: []
-decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+decision_note: "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai. English shortened 20/11/2026 from 73 to 56 visible characters: it was the longest title on the site, a result cut it before 'for Thai speakers', and that is the part a Thai reader clicks for. Same languages, same audience, no new claim. The Thai is untouched."
 review:
   structural_calque: pass
-  text_hash: 92327bea8c52bba2634743586a989d134d118d1feaf0d0c59b9bc2a51bff7fa5
+  text_hash: 8736dcff8894d143decd9c5432569ce6485a428b592de0f6959f8037cd65c436
   prompt_version: structural-calque-v1
   basis: Paul approved the Thai on 03/11/2026; the English is translated from it.
 ```
@@ -38876,6 +38876,182 @@ review:
   text_hash: d66b902df3f9d45b933ce0090c1eaa8a72374f2c055905154218e31e29701c98
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/search.ts::EFC_ASSESSMENT_TITLE`
+
+```yaml
+id: "src/lib/content/search.ts::EFC_ASSESSMENT_TITLE"
+source: "src/lib/content/search.ts"
+path: "EFC_ASSESSMENT_TITLE"
+render: "Search result title for /efc-assessment"
+narrative_slot: utility
+en: "EU Fit Check: free two-minute readiness check"
+th: "EU Fit Check"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the navigation label, carried unchanged, because a record is a pair and only the English needed a new line. The page borrowed COPY.nav.assess for its title, so the Thai and English trees rendered the same title and neither said what the page does."
+review:
+  structural_calque: pass
+  text_hash: 908ab4d43b89bf712f887fe2e6ef2e464754131c66b55d85a1202fb5b76b60d5
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision. The Thai here is unchanged; only the English is new."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/search.ts::FAQ_TITLE`
+
+```yaml
+id: "src/lib/content/search.ts::FAQ_TITLE"
+source: "src/lib/content/search.ts"
+path: "FAQ_TITLE"
+render: "Search result title for /faq"
+narrative_slot: utility
+en: "Questions about working in Europe"
+th: "คำถามที่พบบ่อย"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the page heading, carried unchanged, because a record is a pair and only the English needed a new line. The heading is the visible h1 and is right for the page; as a search title it named no subject."
+review:
+  structural_calque: pass
+  text_hash: 44922c7258342db2f7cd7b0f224c5b9d431cf6ab85f980a322f167b27bae4d2a
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision. The Thai here is unchanged; only the English is new."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/search.ts::FAQ_SEARCH`
+
+```yaml
+id: "src/lib/content/search.ts::FAQ_SEARCH"
+source: "src/lib/content/search.ts"
+path: "FAQ_SEARCH"
+render: "Search result description for /faq"
+narrative_slot: utility
+en: "The questions Thai professionals ask most before moving to Europe: visas, language, cost and applications. If yours is not here, message me and ask."
+th: "ถ้ายังไม่เจอคำตอบที่ต้องการ ทักมาถามผมได้เลย"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the visible intro line, carried unchanged, because a record is a pair and only the English needed a new line. The intro is 44 characters because an intro should be, which leaves most of a result blank."
+review:
+  structural_calque: pass
+  text_hash: acbdc513eef296a05cf0fba1d92bce5a22aea7d6e24094437d0f238c67367b24
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision. The Thai here is unchanged; only the English is new."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/search.ts::PRODUCT_SEARCH.fit-report`
+
+```yaml
+id: "src/lib/content/search.ts::PRODUCT_SEARCH.fit-report"
+source: "src/lib/content/search.ts"
+path: "PRODUCT_SEARCH.fit-report"
+render: "Search result description for /products/fit-report"
+narrative_slot: utility
+en: "You have your four EU Fit Check scores. The Fit Report says which gap to close first, why that one, and how you will know it has moved."
+th: "รู้ผลเบื้องต้นแล้ว ควรเริ่มพัฒนาตรงไหนก่อน?"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the product headline, carried unchanged, because a record is a pair and only the English needed a new line. The headline is visible page copy and is 43 characters, so it was both short for a result and shared with the page."
+review:
+  structural_calque: pass
+  text_hash: 171209771c1403ab5d259a78e5fda0b20a946b9b825b2af95f06ff3c6512bf42
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision. The Thai here is unchanged; only the English is new."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/search.ts::PRODUCT_SEARCH.matched-jobs`
+
+```yaml
+id: "src/lib/content/search.ts::PRODUCT_SEARCH.matched-jobs"
+source: "src/lib/content/search.ts"
+path: "PRODUCT_SEARCH.matched-jobs"
+render: "Search result description for /products/matched-jobs"
+narrative_slot: utility
+en: "There are plenty of roles in Europe. Not many you can actually apply for. We read your profile and send only the ones whose visa and language terms fit you."
+th: "ตำแหน่งงานในยุโรปมีเยอะ แต่ที่คุณสมัครได้จริงมีไม่กี่ตำแหน่ง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the product headline, carried unchanged, because a record is a pair and only the English needed a new line. The headline is visible page copy; its first sentence is kept word for word here."
+review:
+  structural_calque: pass
+  text_hash: 806bd626c7115b48f3a4dc1cc57bed0470c21453876f4df499408e344f58378a
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision. The Thai here is unchanged; only the English is new."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[2].seoTitle`
+
+```yaml
+id: "src/lib/content/products.ts::PRODUCTS[2].seoTitle"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[2].seoTitle"
+render: "Search result title for the Fit Report product page"
+narrative_slot: utility
+en: "Fit Report: what to work on first"
+th: "Fit Report"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the product name, carried unchanged, because a record is a pair and only the English needed a new line. The page titled itself with the product name alone, so the Thai and English trees rendered the same title."
+review:
+  structural_calque: pass
+  text_hash: cba78371725d2c97e3940b670c3aeb82a7bbe82784d56393e9c5e855501084a4
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision. The Thai here is unchanged; only the English is new."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/products.ts::PRODUCTS[3].seoTitle`
+
+```yaml
+id: "src/lib/content/products.ts::PRODUCTS[3].seoTitle"
+source: "src/lib/content/products.ts"
+path: "PRODUCTS[3].seoTitle"
+render: "Search result title for the Matched Jobs product page"
+narrative_slot: utility
+en: "Matched Jobs: roles you can apply for"
+th: "Matched Jobs"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the product name, carried unchanged, because a record is a pair and only the English needed a new line. The page titled itself with the product name alone, so the Thai and English trees rendered the same title."
+review:
+  structural_calque: pass
+  text_hash: ae6b355f30ea7d543cb8979b2c7b745ef2e7b1cd29659ee70e52dbb0018bec07
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision. The Thai here is unchanged; only the English is new."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/search.ts::ARTICLE_SEARCH.linkedin-europe-ready`
+
+```yaml
+id: "src/lib/content/search.ts::ARTICLE_SEARCH.linkedin-europe-ready"
+source: "src/lib/content/search.ts"
+path: "ARTICLE_SEARCH.linkedin-europe-ready"
+render: "Search result description for the linkedin-europe-ready article"
+narrative_slot: utility
+en: "Applying for jobs in Europe? Treat LinkedIn as two jobs: set it up so recruiters can find you, then write it so they understand what you did."
+th: "ถ้าคุณกำลังสมัครงานในยุโรป ให้เริ่มจากตั้งค่า LinkedIn ให้ recruiter หาโปรไฟล์คุณเจอง่ายขึ้น แล้วเล่างานที่เคยทำให้เขาเข้าใจว่าคุณรับผิดชอบอะไร"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "Search-only English, 20/11/2026. The article summary runs to 196 characters and a result cuts it mid sentence, which is the reason search.ts exists. The Thai is the approved summary of 13/11/2026, carried unchanged, because a record is a pair and only the English needed a new line. The page took 25 impressions and no clicks in the 19 days to 18/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 045ed5a187de3c352eb66e28416df70dabb6da892a6a4226af58eb98d45a9c99
+  prompt_version: structural-calque-v1
+  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision. The Thai here is unchanged from the approved summary of 13/11/2026; only the English is new."
 ```
 
 <!-- COPY-ENTRY -->

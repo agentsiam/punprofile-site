@@ -5569,7 +5569,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "narrativeSlot": "utility",
     "provenance": "paul-approved",
     "date": "03/11/2026",
-    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai."
+    "decisionNote": "Claude's draft, 03/11/2026, for the language-apps article; Paul revised the research section and the figure captions and approved the whole Thai 03/11/2026. English translated from the approved Thai. English shortened 20/11/2026 from 73 to 56 visible characters: it was the longest title on the site, a result cut it before 'for Thai speakers', and that is the part a Thai reader clicks for. Same languages, same audience, no new claim. The Thai is untouched."
   },
   "src/lib/content/posts/language-learning-apps.ts::LANGUAGE_LEARNING_APPS.summary": {
     "source": "src/lib/content/posts/language-learning-apps.ts",
@@ -14777,6 +14777,78 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "01/11/2026",
     "decisionNote": "Search-only description from seo-meta-copy-handoff.md, approved 01/11/2026 by the reviewer Paul delegated to; Paul shipped it the same day."
+  },
+  "src/lib/content/search.ts::EFC_ASSESSMENT_TITLE": {
+    "source": "src/lib/content/search.ts",
+    "path": "EFC_ASSESSMENT_TITLE",
+    "render": "Search result title for /efc-assessment",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the navigation label, carried unchanged, because a record is a pair and only the English needed a new line. The page borrowed COPY.nav.assess for its title, so the Thai and English trees rendered the same title and neither said what the page does."
+  },
+  "src/lib/content/search.ts::FAQ_TITLE": {
+    "source": "src/lib/content/search.ts",
+    "path": "FAQ_TITLE",
+    "render": "Search result title for /faq",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the page heading, carried unchanged, because a record is a pair and only the English needed a new line. The heading is the visible h1 and is right for the page; as a search title it named no subject."
+  },
+  "src/lib/content/search.ts::FAQ_SEARCH": {
+    "source": "src/lib/content/search.ts",
+    "path": "FAQ_SEARCH",
+    "render": "Search result description for /faq",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the visible intro line, carried unchanged, because a record is a pair and only the English needed a new line. The intro is 44 characters because an intro should be, which leaves most of a result blank."
+  },
+  "src/lib/content/search.ts::PRODUCT_SEARCH.fit-report": {
+    "source": "src/lib/content/search.ts",
+    "path": "PRODUCT_SEARCH.fit-report",
+    "render": "Search result description for /products/fit-report",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the product headline, carried unchanged, because a record is a pair and only the English needed a new line. The headline is visible page copy and is 43 characters, so it was both short for a result and shared with the page."
+  },
+  "src/lib/content/search.ts::PRODUCT_SEARCH.matched-jobs": {
+    "source": "src/lib/content/search.ts",
+    "path": "PRODUCT_SEARCH.matched-jobs",
+    "render": "Search result description for /products/matched-jobs",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the product headline, carried unchanged, because a record is a pair and only the English needed a new line. The headline is visible page copy; its first sentence is kept word for word here."
+  },
+  "src/lib/content/products.ts::PRODUCTS[2].seoTitle": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[2].seoTitle",
+    "render": "Search result title for the Fit Report product page",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the product name, carried unchanged, because a record is a pair and only the English needed a new line. The page titled itself with the product name alone, so the Thai and English trees rendered the same title."
+  },
+  "src/lib/content/products.ts::PRODUCTS[3].seoTitle": {
+    "source": "src/lib/content/products.ts",
+    "path": "PRODUCTS[3].seoTitle",
+    "render": "Search result title for the Matched Jobs product page",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Search-only English, 20/11/2026, from titles-and-descriptions.md in the coaching repo. The Thai is the product name, carried unchanged, because a record is a pair and only the English needed a new line. The page titled itself with the product name alone, so the Thai and English trees rendered the same title."
+  },
+  "src/lib/content/search.ts::ARTICLE_SEARCH.linkedin-europe-ready": {
+    "source": "src/lib/content/search.ts",
+    "path": "ARTICLE_SEARCH.linkedin-europe-ready",
+    "render": "Search result description for the linkedin-europe-ready article",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "Search-only English, 20/11/2026. The article summary runs to 196 characters and a result cuts it mid sentence, which is the reason search.ts exists. The Thai is the approved summary of 13/11/2026, carried unchanged, because a record is a pair and only the English needed a new line. The page took 25 impressions and no clicks in the 19 days to 18/11/2026."
   },
   "src/lib/content/search.ts::ARTICLE_SEARCH.start-in-europe": {
     "source": "src/lib/content/search.ts",

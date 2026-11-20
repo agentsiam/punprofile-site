@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ALL_COPY } from "@/lib/locale";
 import { pageMetadata } from "@/lib/seo";
-import { EFC_ASSESSMENT_SEARCH } from "@/lib/content/search";
+import { EFC_ASSESSMENT_SEARCH, EFC_ASSESSMENT_TITLE } from "@/lib/content/search";
 
 /**
  * The assessment's own title and description. Added 16/08/2026.
@@ -18,7 +18,10 @@ import { EFC_ASSESSMENT_SEARCH } from "@/lib/content/search";
  */
 export const metadata: Metadata = pageMetadata({
   path: "/efc-assessment",
-  title: ALL_COPY["nav.assess"],
+  // Was `nav.assess`, the navigation label, which is "EU Fit Check" in both
+  // trees by termbase decision, so both trees rendered the same title and
+  // neither said what the page does. 20/11/2026.
+  title: EFC_ASSESSMENT_TITLE,
   description: EFC_ASSESSMENT_SEARCH,
 });
 
