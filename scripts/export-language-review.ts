@@ -57,6 +57,8 @@ import { QUEUE_PATH, buildSheet, parseSheet } from "./lib/review-sheet.js";
 
 const args = process.argv.slice(2);
 const apply = args.includes("--apply");
+/** `--approve-from-chat=<n>`, where n is how many are expected to be waiting. */
+const fromChat = args.find((arg) => arg.startsWith("--approve-from-chat="));
 const force = args.includes("--force");
 /**
  * An explicit path exports a pristine copy somewhere else, which is how you diff
@@ -155,7 +157,50 @@ function applyPass() {
   if (refused.length) process.exit(1);
 }
 
-if (apply) {
+/**
+ * Record a pass Paul gave in conversation rather than on the sheet.
+ *
+ * The sheet is the normal route and the better evidence: a mark against each
+ * line says that line was looked at in the file. Sometimes he reads them in a
+ * reply and says so, and refusing that would be pedantry, but it is weaker
+ * evidence and the record says which it was rather than quietly reading like a
+ * sheet pass. A model still never writes in the sheet, here least of all:
+ * ticking the boxes on his behalf would make the one file whose handwriting is
+ * his say something he did not write.
+ *
+ * It takes the number of records he approved and refuses if that is not what is
+ * waiting, so a batch approval can never clear something that arrived after he
+ * gave it.
+ */
+function approveFromChat(expected: number) {
+  const system = readLanguageSystem();
+  const waiting = system.entries.filter((entry) => entry.review.structural_calque !== "pass");
+  if (waiting.length !== expected) {
+    console.error(`${waiting.length} records are waiting, not ${expected}. Nothing applied: a batch`);
+    console.error("  approval only covers what was in front of him when he gave it.");
+    process.exit(1);
+  }
+  const basis =
+    `Paul approved these in conversation on ${today()}, as printed, after being shown what the ` +
+    "sheet route and this one each record. Given for the batch in a reply, not marked per line on " +
+    "the review sheet, which is the weaker of the two and is why it says so here.";
+  let doc = readFileSync(LANGUAGE_PATH, "utf8");
+  for (const entry of waiting) {
+    doc = patchRecord(doc, entry.id, {
+      provenance: "paul-approved",
+      dropProposal: true,
+      review: { structural_calque: "pass", text_hash: textHash(entry.en, entry.th), basis },
+    });
+  }
+  writeFileSync(LANGUAGE_PATH, doc);
+  exportSheet(QUEUE_PATH, true);
+  execFileSync("npm", ["run", "language:generate"], { stdio: "inherit" });
+  for (const entry of waiting) console.log(`cleared ${entry.id} (approved in conversation)`);
+}
+
+if (fromChat) {
+  approveFromChat(Number(fromChat.split("=")[1]));
+} else if (apply) {
   applyPass();
 } else {
   exportSheet(out, force);
