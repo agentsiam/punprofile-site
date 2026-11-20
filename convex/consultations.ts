@@ -18,6 +18,7 @@ import { requireAdmin } from "./leads";
 import { v, ConvexError } from "convex/values";
 import type { Id } from "./_generated/dataModel";
 import { preparationState } from "../src/lib/session";
+import { deliverHeldCall } from "./deliveredBy";
 
 const TYPE = v.union(
   v.literal("kick_start"),
@@ -134,13 +135,17 @@ export const log = mutation({
     await checkDeliverable(ctx, leadId, fields.deliverableId);
 
     const now = Date.now();
-    return await ctx.db.insert("consultations", {
+    const id = await ctx.db.insert("consultations", {
       leadId,
       ...fields,
       createdBy: adminEmail,
       createdAt: now,
       updatedAt: now,
     });
+    // A call logged as already held delivers the session it is for. `deliveredBy.ts`.
+    const row = await ctx.db.get(id);
+    if (row) await deliverHeldCall(ctx, row);
+    return id;
   },
 });
 
@@ -193,6 +198,10 @@ export const update = mutation({
       prepRequestedAt: args.prepRequestedAt,
       updatedAt: Date.now(),
     });
+    // Marking the call held, or linking a held call to its session, delivers
+    // that session. `deliveredBy.ts`.
+    const row = await ctx.db.get(args.consultationId);
+    if (row) await deliverHeldCall(ctx, row);
   },
 });
 

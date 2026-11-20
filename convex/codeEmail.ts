@@ -57,7 +57,7 @@ export function button(href: string, label: string) {
 </td></tr></table>`;
 }
 
-function step(n: number, text: string) {
+export function step(n: number, text: string) {
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 10px;"><tr>
 <td width="32" valign="top"><div style="width:26px;height:26px;border-radius:9999px;background:${C.deep};color:${C.lime};font-family:${FONT};font-size:13px;font-weight:700;line-height:26px;text-align:center;">${n}</div></td>
 <td style="padding-left:10px;font-family:${FONT};font-size:15px;line-height:26px;color:${C.body};">${text}</td>

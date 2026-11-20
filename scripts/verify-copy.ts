@@ -28,6 +28,7 @@ import { DESTINATIONS } from "../src/lib/content/cta.js";
 import { lintThai, type LintTarget } from "./lint-thai.js";
 import { matchEmailHtml, matchEmailText } from "../convex/matchEmail.js";
 import { codeEmailHtml } from "../convex/codeEmail.js";
+import { reportEmailHtml, reportEmailText } from "../convex/reportEmail.js";
 import { readSource, hashOf } from "./sync-termbase.js";
 import { TERMBASE } from "../src/lib/content/termbase.generated.js";
 
@@ -303,6 +304,8 @@ for (const used of sources.matchAll(/\bt\(\s*"([a-z][a-zA-Z.]+)"/g)) {
       { id: "email matched-role html", body: matchEmailHtml("A", [{ employer: "E", roleTitle: "R", country: "C", location: null, jobUrl: null, matchReason: null }]).replace(/<head>[\s\S]*?<\/head>/, "").replace(/<[^>]+>/g, " ") },
       { id: "email matched-role", body: matchEmailText("A", [{ employer: "E", roleTitle: "R", country: "C", location: null, jobUrl: null, matchReason: null }]) },
       { id: "email sign-in code", body: codeEmailHtml("A", "a@b.c", "123456", null).replace(/<head>[\s\S]*?<\/head>/, "").replace(/<[^>]+>/g, " ") },
+      { id: "email fit report html", body: reportEmailHtml("A", { used: 20, left: 13 }).replace(/<head>[\s\S]*?<\/head>/, "").replace(/<[^>]+>/g, " ") },
+      { id: "email fit report", body: reportEmailText("A", { used: 20, left: 13 }) },
     ].map((e) => ({ id: e.id, th: e.body, en: "", surface: "message" as const })),
   ];
 

@@ -302,6 +302,14 @@ export default defineSchema({
      *  Candidate 360; nothing is stored but this switch.
      *  @absent notyet — not shared */
     fitReportSharedAt: v.optional(v.number()),
+    /** When the Fit Report email is scheduled to go, so re-sharing the report
+     *  does not queue a second one. Cleared when it settles, sent or not.
+     *  @absent none — nothing pending */
+    fitReportNoticeAt: v.optional(v.number()),
+    /** When the candidate was emailed that the Fit Report is ready. Written
+     *  once: the email announces the report on the first share and never
+     *  again. @absent notyet — never sent */
+    fitReportNoticeSentAt: v.optional(v.number()),
     /** The candidate's own weekly target for applications sent, Teal's goal
      *  ring. Set by them on their page. @absent none — no goal set */
     weeklyApplicationGoal: v.optional(v.number()),
@@ -1614,6 +1622,14 @@ export default defineSchema({
        * different message: it says they have not looked yet.
        */
       v.literal("release_reminder"),
+      /**
+       * The Fit Report is on their dashboard. Its own kind rather than
+       * `release_ready`, because it is not a release and has no `releaseId`:
+       * the Fit Report is delivered by the one action that charges its tokens,
+       * so it reaches the candidate outside a release and the coach reading
+       * the draft should be told which it is.
+       */
+      v.literal("fit_report_ready"),
     ),
     /** `dashboard` approves into a shared delivery note on the candidate's own
      *  page, which is the one place a draft becomes a record here rather than

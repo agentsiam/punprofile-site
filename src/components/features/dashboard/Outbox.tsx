@@ -31,6 +31,7 @@ const KIND_LABEL: Record<string, string> = {
   missing_input: "What we still need from them",
   release_ready: "A release is waiting",
   release_reminder: "A reminder that it is still waiting",
+  fit_report_ready: "The Fit Report is on their page",
 };
 
 const CHANNEL_WORD: Record<string, string> = {

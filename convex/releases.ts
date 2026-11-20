@@ -30,6 +30,7 @@ import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
 import { openDraft } from "./outbox";
 import { targetsFor } from "./targets";
+import { deliverWith } from "./deliveredBy";
 import type { Doc, Id } from "./_generated/dataModel";
 import { itemFault, nextOrder, releaseFault } from "../src/lib/releases";
 
@@ -458,15 +459,20 @@ export const release = mutation({
 
     const now = Date.now();
     let shared = 0;
+    // Every deliverable the release hands over is delivered by it. `deliveredBy.ts`.
+    const delivers = new Set<Id<"deliverables">>();
     for (const item of items) {
+      if (item.deliverableId) delivers.add(item.deliverableId);
       if (!item.cvDocumentId) continue;
       const cv = await ctx.db.get(item.cvDocumentId);
       if (!cv) throw new ConvexError(`"${item.label}" points at a file that is gone. Take it out of the release.`);
+      if (cv.deliverableId) delivers.add(cv.deliverableId);
       if (cv.sharedAt === undefined) {
         await ctx.db.patch(cv._id, { sharedAt: now });
         shared++;
       }
     }
+    for (const id of delivers) await deliverWith(ctx, id, now);
     if (!note.shared) await ctx.db.patch(note._id, { shared: true });
     await ctx.db.patch(row._id, { state: "released", releasedAt: now, releasedBy: by });
 

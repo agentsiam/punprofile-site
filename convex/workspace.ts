@@ -23,6 +23,7 @@ import { requireAdmin } from "./leads";
 import { isAdminEmail } from "./adminEmails";
 import { liveGrant, normaliseEmail } from "./candidateAccess";
 import { targetsFor } from "./targets";
+import { openDraft } from "./outbox";
 import { seeJob } from "./jobs";
 import { computeWallet, cvEarnedBySelectionNow } from "../src/lib/wallet";
 import { preparationState, nextCall, leadItems, decisionsView, previewOf, scheduledCallFor } from "../src/lib/session";
@@ -110,6 +111,35 @@ export async function scheduleMatchNotice(ctx: MutationCtx, leadId: Id<"leads">,
       : now + NOTICE_DELAY_MS;
   await ctx.db.patch(leadId, { matchNoticeAt: at });
   await ctx.scheduler.runAt(at, internal.matchNotice.send, { leadId, attempt: 1 });
+}
+
+/**
+ * Schedule the Fit Report email, Paul's decision of 20/11/2026. Called by both
+ * mutations that put the report on the candidate's page, so she is told however
+ * the coach got there, and the stamps make it once only.
+ *
+ * It is the second message this product sends without the coach approving it,
+ * after the matched-role notice, and `candidate-delivery-handoff.md` names it
+ * as such in its Constraints. The reason is what the message is: it says the
+ * report is waiting and carries one button, so there is nothing in it written
+ * about this candidate for a coach to read back. The note on her own page and
+ * the LINE nudge beside it do carry her words, and both stay drafts.
+ *
+ * The same quarter-hour wait the matched-role notice takes, and here it buys
+ * something that notice does not need: a coach who shares the wrong person's
+ * report has fifteen minutes to take it off the dashboard, and `pending`
+ * re-reads the share rather than trusting the schedule, so the email goes
+ * nowhere. Nothing is sent from inside the mutation, because a delivery that
+ * charged tokens must not roll back over a mail provider's bad afternoon.
+ */
+export async function scheduleFitReportNotice(ctx: MutationCtx, leadId: Id<"leads">, now: number) {
+  const lead = await ctx.db.get(leadId);
+  if (!lead) return;
+  if (lead.fitReportNoticeSentAt !== undefined) return;
+  if (lead.fitReportNoticeAt !== undefined && lead.fitReportNoticeAt > now) return;
+  const at = now + NOTICE_DELAY_MS;
+  await ctx.db.patch(leadId, { fitReportNoticeAt: at });
+  await ctx.scheduler.runAt(at, internal.reportNotice.send, { leadId, attempt: 1 });
 }
 
 /**
@@ -1036,7 +1066,9 @@ export const shareFitReport = mutation({
       ).some((r) => !r.open || r.open.length === 0);
       if (!rated) throw new ConvexError("Rate the interview first; the report has nothing scored yet.");
     }
-    await ctx.db.patch(args.leadId, { fitReportSharedAt: args.shared ? (lead.fitReportSharedAt ?? Date.now()) : undefined });
+    const now = Date.now();
+    await ctx.db.patch(args.leadId, { fitReportSharedAt: args.shared ? (lead.fitReportSharedAt ?? now) : undefined });
+    if (args.shared) await scheduleFitReportNotice(ctx, args.leadId, now);
   },
 });
 
@@ -1276,6 +1308,13 @@ export const exportForLead = query({
  * deliverable, and leave a note on the record. One transaction, so a half
  * delivery (shared but not charged, charged but not shared) cannot happen.
  *
+ * And tell them, 20/11/2026. Read from a candidate's page after their report
+ * had gone out, this said nothing to them at all: the report appeared and no note,
+ * no email and no LINE message followed, because the only thing built to
+ * announce anything was a release and the Fit Report does not go out inside
+ * one. So delivery opens the drafts a release opens, which is a channel that
+ * already exists rather than a second one invented here.
+ *
  * Refuses while any interview competency is still unrated or a draft, because
  * the report would go out with holes the coach meant to fill.
  */
@@ -1348,6 +1387,11 @@ export const deliverFitReport = mutation({
       throw new ConvexError("No Fit Report deliverable on this record. Add one in Delivery, kind Fit Report, first.");
     }
 
+    // Whether this delivery is the one that puts the report in front of them,
+    // read before the patch that sets it. A report already on the dashboard is
+    // being charged or tidied up here, not announced, and announcing it twice
+    // would say the same thing twice.
+    const firstShare = lead.fitReportSharedAt === undefined;
     await ctx.db.patch(args.leadId, { fitReportSharedAt: lead.fitReportSharedAt ?? now });
     await ctx.db.insert("deliveryNotes", {
       leadId: args.leadId,
@@ -1357,6 +1401,26 @@ export const deliverFitReport = mutation({
       at: now,
       by,
     });
+
+    // The email goes on its own, Paul's decision of 20/11/2026. It is the one
+    // of the three that says only that the report is waiting and carries one
+    // button, so there is nothing in it about this candidate to read back, and
+    // a delivery at nine at night should not wait for the outbox to be opened.
+    // It is scheduled before the guard below, because the report can reach her
+    // dashboard through `shareFitReport` without passing here at all.
+    await scheduleFitReportNotice(ctx, args.leadId, now);
+
+    // The two that do carry her words: the note she reads on her own page, and
+    // the LINE nudge on the channel Paul settled on 17/11/2026. Each opens
+    // empty, carrying the Situation panel as it reads now, and neither reaches
+    // her until the coach has written it and approved it. The note above is the
+    // record of the event and stays unshared: it is in the coach's words.
+    if (!firstShare) return { drafts: 0 };
+    const titles = (await targetsFor(ctx, args.leadId)).filter((t) => t.status === "active").map((t) => t.title);
+    for (const channel of ["dashboard", "line"] as const) {
+      await openDraft(ctx, { leadId: args.leadId, kind: "fit_report_ready", channel, titles, at: now, by });
+    }
+    return { drafts: 2 };
   },
 });
 
