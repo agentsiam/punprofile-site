@@ -7,34 +7,67 @@
  * the layout rather than to look plausible: a hyphenated name, a 40-character
  * name, one word, a nickname and a Thai name; an area where every competency
  * carries a long coach note and one with none; three active target titles and
- * none; roles that were sent and none at all. Nothing here reads a real
- * candidate, and nothing is written to disk.
+ * none; roles that were sent, none sent so that the public pipeline is what
+ * the page shows, and nothing at all. Nothing here reads a real candidate,
+ * and nothing is written to disk.
  *
  * What it asserts is everything about a printed sheet that can be read off the
  * markup: the logo and the footer on every sheet, a header row on every table,
  * unique ids, section numbers that run straight, no sheet asked to hold more
- * than it has room for, and a cover name that fits its band at the size the
+ * than it has room for, the roles page included, and a cover name that fits
+ * its band at the size the
  * stylesheet will choose. What it cannot assert is how any of it looks, so a
  * pass here is the precondition for printing the thing and reading it, not a
  * substitute for doing so.
  */
 
-import { renderFitReport, renderReport, SHEET, sheetRow, COVER_EM } from "../src/lib/report.js";
+import { renderFitReport, renderReport, ROLE, SHEET, roleRow, sheetRow, COVER_EM } from "../src/lib/report.js";
 import { FIT_SAMPLE_INPUT, fitSampleRatings } from "../src/lib/fit-sample.js";
 import { scoreResponse, scoreFull } from "../src/lib/scoring.js";
 import { ECRA } from "../src/lib/ecra.js";
 import { rankMoves } from "../src/lib/levers.js";
-import type { SentRoleRow } from "../src/lib/market-match.js";
+import { matchPipeline, type RoleMatch, type SentRoleRow, type TargetRow } from "../src/lib/market-match.js";
 
 const failures: string[] = [];
 const fail = (msg: string) => failures.push(msg);
 /** The widest split any one section needed, so a pass says what it exercised. */
 let widest = { label: "none", heading: "", sheets: 1 };
 
-const SENT: SentRoleRow[] = [
-  { employer: "Zalando", title: "Senior Customer Success Manager (DACH)", country: "Germany", url: "https://example.com/a", reason: "Their DACH book is the work you already do, and the posting asks for English plus one more language.", liked: true },
-  { employer: "Wise", title: "Technical Account Manager", country: "Netherlands", url: "https://example.com/b", reason: "API onboarding, which is most of your current role.", liked: false },
-];
+/**
+ * `ROLE_CAP` roles, each carrying what a sent role really carries: a reason,
+ * which `checklist.addFound` requires of every role the evening run adds, and
+ * the posting's own link. Six of those do not fit one sheet, which is why the
+ * page is dealt into sheets, so the full set is what this has to exercise.
+ */
+const SENT: SentRoleRow[] = (
+  [
+    ["Zalando", "Senior Customer Success Manager (DACH)", "Germany"],
+    ["Wise", "Technical Account Manager", "Netherlands"],
+    ["Adyen", "Enterprise Customer Success Manager, Benelux", "Netherlands"],
+    ["Personio", "Customer Success Manager (m/f/d) — Mid-Market", "Germany"],
+    ["Mollie", "Technical Account Manager, Payments Platform", "Netherlands"],
+    ["N26", "FinOps Analyst, Cost and Cloud", "Germany"],
+  ] as const
+).map(([employer, title, country], i) => ({
+  employer,
+  title,
+  country,
+  url: `https://example.com/very/long/posting/path/that/wraps/${i}-${employer.toLowerCase()}-role`,
+  reason:
+    "Their DACH book is the work you already do, and the posting asks for English plus one more language, which is the pairing your last two roles were built on.",
+  liked: i % 2 === 0,
+}));
+
+/** With nothing sent, the page falls back to the published list, matched on
+ *  the candidate's own target titles. That is the state between roles sent and
+ *  no page at all, and it is read out of the generated market snapshot. */
+const TARGETS: TargetRow[] = ["Customer Success Manager", "Technical Account Manager", "FinOps Analyst"].map((title) => ({
+  title,
+  alsoCalled: [],
+  roleCategory: null,
+  countries: null,
+}));
+const NO_PIPELINE: RoleMatch = { inCountries: 0, matching: 0, examples: [] };
 
 const NAMES: [string, string][] = [
   ["hyphenated", "Siriporn-Chaiyasit"],
@@ -53,6 +86,22 @@ function coverSize(name: string, bandMm: number, maxPt: number, minPt = 24): num
   return Math.max(minPt, Math.min(maxPt, pt(bandMm / (run * COVER_EM)), pt((bandMm * 3) / (len * COVER_EM))));
 }
 
+const PIPELINE: RoleMatch = matchPipeline(FIT_SAMPLE_INPUT.targetCountries ?? [], TARGETS, FIT_SAMPLE_INPUT.targetRole);
+if (!PIPELINE.matching) {
+  // C47. The published list is read across a boundary. A snapshot that matched
+  // none of the sample's titles would leave this file quietly testing two of
+  // the roles page's three states and still passing.
+  console.error("FAIL the published role list matches none of the sample's target titles, so the pipeline state went untested");
+  process.exit(1);
+}
+
+/** The roles page has three states and the page is a different page in each. */
+const ROLE_STATES: [string, SentRoleRow[], RoleMatch][] = [
+  ["sent", SENT, NO_PIPELINE],
+  ["pipeline", [], PIPELINE],
+  ["no roles", [], NO_PIPELINE],
+];
+
 const profile = scoreResponse(FIT_SAMPLE_INPUT);
 const LONG =
   "Strong on the evidence she gave in the call, and she talked through two examples unprompted, " +
@@ -62,12 +111,12 @@ const LONG =
 for (const [nameCase, candidate] of NAMES) {
   for (const notes of ["every note long", "no notes"] as const) {
     for (const titles of [["Customer Success Manager", "Technical Account Manager", "FinOps Analyst"], []]) {
-      for (const sent of [SENT, []]) {
+      for (const [state, sent, pipeline] of ROLE_STATES) {
         const ratings = fitSampleRatings().map((r) => ({ ...r, note: notes === "no notes" ? undefined : LONG }));
         const full = scoreFull(profile, ratings, (k) => ECRA[k]?.formula);
-        const label = `${nameCase} / ${notes} / ${titles.length} titles / ${sent.length} sent`;
+        const label = `${nameCase} / ${notes} / ${titles.length} titles / ${state}`;
         const html = renderFitReport(
-          { profile, full, moves: rankMoves(FIT_SAMPLE_INPUT), roles: { sent, pipeline: { inCountries: 0, matching: 0, examples: [] } } },
+          { profile, full, moves: rankMoves(FIT_SAMPLE_INPUT), roles: { sent, pipeline } },
           { candidate, targetCountries: FIT_SAMPLE_INPUT.targetCountries, targetRole: FIT_SAMPLE_INPUT.targetRole ?? undefined, targetTitles: titles },
           { locale: "en", assetOrigin: "" },
         );
@@ -131,10 +180,37 @@ for (const [nameCase, candidate] of NAMES) {
           }
         }
 
-        // ---- the roles page is there when there is something to put on it
+        // ---- the roles page is there when there is something to put on it,
+        //      which is roles sent OR a published list matched on their titles,
+        //      and gone when there is neither.
         const hasRoles = /<section class="fit-sec" id="roles"/.test(html);
-        if (hasRoles !== sent.length > 0) {
-          fail(`${label}: roles page ${hasRoles ? "present" : "absent"} with ${sent.length} sent`);
+        const wantRoles = sent.length > 0 || pipeline.matching > 0;
+        if (hasRoles !== wantRoles) {
+          fail(`${label}: roles page ${hasRoles ? "present" : "absent"} in the ${state} state`);
+        }
+
+        // ---- no sheet of the roles page is asked to hold more than it has
+        //      room for either. Nothing in the tab reflows a list of roles, so
+        //      the renderer's own split is the only thing standing between six
+        //      roles and a sheet with the footer alone on it.
+        const roleSheets = sheets.filter((sheet) => /id="roles(-\d+)?"/.test(sheet));
+        if (wantRoles && !roleSheets.length) fail(`${label}: no roles sheet rendered in the ${state} state`);
+        for (const [i, sheet] of roleSheets.entries()) {
+          const id = /id="([^"]+)"/.exec(sheet)?.[1] ?? "?";
+          const items = sheet.match(/<li>[\s\S]*?<\/li>/g) ?? [];
+          const used =
+            SHEET.heading +
+            (i === 0 ? ROLE.lede : 0) +
+            (i === roleSheets.length - 1 ? ROLE.note + ROLE.fine : 0) +
+            items.reduce((mm, item) => {
+              const title = /class="r-title">([\s\S]*?)<\/span>/.exec(item)?.[1] ?? "";
+              const reason = /class="r-why">([\s\S]*?)<\/span>/.exec(item)?.[1] ?? null;
+              const url = /class="r-link" href="([^"]*)"/.exec(item)?.[1] ?? null;
+              return mm + roleRow({ title, reason, url });
+            }, 0);
+          if (used > SHEET.content) {
+            fail(`${label}: roles sheet ${id} is asked to hold ${used.toFixed(0)}mm of a ${SHEET.content}mm page`);
+          }
         }
 
         // ---- the cover name fits its band at the size the stylesheet will pick
@@ -190,7 +266,7 @@ for (const has of [false, true]) {
   if (!fs.every((n, i) => n === i + 2)) fail(`free report, ${who}: footer numbers are ${fs.join(", ")}`);
 }
 
-const cases = NAMES.length * 2 * 2 * 2;
+const cases = NAMES.length * 2 * 2 * ROLE_STATES.length;
 if (failures.length) {
   for (const f of failures) console.error(`FAIL ${f}`);
   console.error(`\n${failures.length} failure(s) across ${cases} fictional candidates`);

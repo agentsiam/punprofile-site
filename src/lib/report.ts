@@ -1704,6 +1704,54 @@ export const sheetRow = (label: string, note: string, lines = 0) =>
     Math.max(1, lines, Math.ceil(label.length / SHEET.nameChars), Math.ceil(note.length / SHEET.noteChars));
 
 /**
+ * What fits on a sheet of the roles page, in millimetres, so that the roles
+ * PunProfile sent are split into whole pages the way a long area is.
+ *
+ * The roles page was the one section nothing measured. An area table is dealt
+ * into sheets by `sheetGroups` and corrected in the tab by `SHEET_FIT`, which
+ * only ever moves table rows; a list of roles went through neither, and
+ * `ROLE_CAP`'s six turned out to be six only for roles carrying no reason.
+ * Six roles with a coach's reason measured 313mm of a 296.5mm sheet, which put
+ * the report's fine print and the whole of the roles footer on a sixteenth
+ * sheet with no top margin, no logo and nothing else on it.
+ *
+ * Measured off a rendered report in a browser, as `SHEET` was, and every
+ * number rounded the safe way, so a row is budgeted at least as tall as it
+ * comes out and the split can only ever happen early. The wrap points found
+ * were a title at 81 to 89 characters, a link at 121 to 139, and a reason at
+ * 101 in English and past 130 in Thai; each divisor below sits at or under the
+ * narrowest of them, so a line is never under-counted.
+ *
+ * Nothing corrects these in the tab: `SHEET_FIT` moves table rows and a role
+ * is not one. They stand on their own, which is why they are measured and
+ * conservative rather than tight.
+ */
+export const ROLE = {
+  /** A role with its title, its employer and country, and nothing else. */
+  row: 19.5,
+  /** Each further line: a line of the reason, the link, a wrapped title. */
+  line: 6.7,
+  /** Characters to a line in the reason, the link and the title. */
+  reasonChars: 100,
+  linkChars: 110,
+  titleChars: 70,
+  /** The lede over the list, and the space above the list itself. */
+  lede: 14,
+  /** The note under the list, which belongs on the last sheet of it. */
+  note: 16,
+  /** The report's fine print, which lands on the last sheet of the document. */
+  fine: 13,
+};
+
+/** How tall one sent role comes out, given what was written about it. */
+export const roleRow = (r: { title: string; reason: string | null; url: string | null }) =>
+  ROLE.row +
+  ROLE.line *
+    (Math.ceil((r.reason?.length ?? 0) / ROLE.reasonChars) +
+      Math.ceil((r.url?.length ?? 0) / ROLE.linkChars) +
+      Math.max(0, Math.ceil(r.title.length / ROLE.titleChars) - 1));
+
+/**
  * Deal items into sheets, the first of which has less room than the rest
  * because it carries the chart. Every sheet takes at least one item, so an item
  * taller than a whole page gets its own sheet rather than an empty one.
@@ -1803,7 +1851,7 @@ const FIT_PAGED_STYLES = `
   body.is-fit main { max-width: none; }
   body.is-fit .toolbar { max-width: 210mm; margin: 1.25rem auto .5rem; }
   body.is-fit .fit-sec { position: relative; box-sizing: border-box; width: 210mm; min-height: 296.5mm; margin: 0 auto 8mm; padding: 22mm 16mm 22mm; background: var(--color-canvas); overflow: hidden; break-before: page; box-shadow: 0 1px 6px rgba(14,15,12,.12); }
-  body.is-fit .fit-sec:not(#summary):not(#path):not(#moves):not(#roles) { background: var(--color-canvas-soft); }
+  body.is-fit .fit-sec:not(#summary):not(#path):not(#moves):not([id^="roles"]) { background: var(--color-canvas-soft); }
   body.is-fit .fit-logo { display: block; position: absolute; top: 9mm; right: 16mm; height: 7mm; }
   body.is-fit .fit-sec h2 { font-size: 24pt; line-height: 1.15; letter-spacing: -0.02em; font-weight: 800; margin: 0 0 6mm; max-width: 150mm; }
   body.is-fit .fit-sec .sec-num { position: relative; display: block; width: fit-content; min-width: 0; font-size: 9pt; font-weight: 700; letter-spacing: 0; background: var(--color-canvas-brand); color: var(--color-on-primary); border-radius: 999px; padding: .5mm 3mm; margin-bottom: 13mm; }
@@ -2034,24 +2082,55 @@ ${inner}
     const link = r.url ? `<br><a class="r-link" href="${esc(r.url)}">${esc(r.url)}</a>` : "";
     return `<li><span class="r-title">${esc(r.title)}</span>${liked}<br><span class="r-meta">${esc(r.employer)} · ${esc(r.country)}</span>${why}${link}</li>`;
   };
-  const rolesInner = roles.sent.length
-    ? `  <p>${esc(s("fit.roles.sent.lede", { count: roles.sent.length }))}</p>
-  <ul class="roles">${roles.sent.map(sentRole).join("")}</ul>
-  <p class="legend-bar" style="margin-top:1rem">${esc(s("fit.roles.sent.note"))}</p>`
-    : roles.pipeline.matching
-      ? `  <p>${esc(
-          s(meta.targetTitles?.length ? "fit.roles.titles.lede" : "fit.roles.lede", {
-            total: roles.pipeline.inCountries,
-            matching: roles.pipeline.matching,
-            countries,
-          }),
-        )}</p>
+  const legend = (key: "fit.roles.sent.note" | "fit.roles.note") =>
+    `\n  <p class="legend-bar" style="margin-top:1rem">${esc(s(key))}</p>`;
+  /**
+   * The roles PunProfile sent, dealt into whole sheets. Six roles each
+   * carrying a reason do not fit one A4 page, and nothing split this section
+   * or measured it, so the overflow landed on a sheet of its own with no
+   * margin, logo or footer. Dealt by the same helper the area tables use, with
+   * the lede on the first sheet and the note under the list on the last.
+   *
+   * The note and the fine print are budgeted out of every sheet rather than
+   * only the last, which costs nothing here and keeps the arithmetic one line.
+   */
+  const sentSheets = sheetGroups(
+    roles.sent,
+    roleRow,
+    SHEET.content - SHEET.heading - ROLE.lede - ROLE.note - ROLE.fine,
+    SHEET.content - SHEET.heading - ROLE.note - ROLE.fine,
+  );
+  const rolesSec = roles.sent.length
+    ? sentSheets
+        .map((group, n) =>
+          section(
+            "roles",
+            s("fit.roles.heading"),
+            `${n === 0 ? `  <p>${esc(s("fit.roles.sent.lede", { count: roles.sent.length }))}</p>\n` : ""}  <ul class="roles">${group
+              .map(sentRole)
+              .join("")}</ul>${n === sentSheets.length - 1 ? legend("fit.roles.sent.note") : ""}`,
+            { sheet: n + 1, sheets: sentSheets.length },
+          ),
+        )
+        .join("\n")
+    : // The public pipeline shows at most the three examples `matchPipeline`
+      // keeps, each a title and one line under it, so this branch is one sheet.
+      roles.pipeline.matching
+      ? section(
+          "roles",
+          s("fit.roles.heading"),
+          `  <p>${esc(
+            s(meta.targetTitles?.length ? "fit.roles.titles.lede" : "fit.roles.lede", {
+              total: roles.pipeline.inCountries,
+              matching: roles.pipeline.matching,
+              countries,
+            }),
+          )}</p>
   <ul class="roles">${roles.pipeline.examples
     .map((r) => `<li><span class="r-title">${esc(r.title)}</span><br><span class="r-meta">${esc(r.employer)} · ${esc(r.country)} · ${esc(ddmmyyyy(r.firstSeen))}</span></li>`)
-    .join("")}</ul>
-  <p class="legend-bar" style="margin-top:1rem">${esc(s("fit.roles.note"))}</p>`
+    .join("")}</ul>${legend("fit.roles.note")}`,
+        )
       : "";
-  const rolesSec = rolesInner ? section("roles", s("fit.roles.heading"), rolesInner) : "";
 
   /**
    * The report's fine print goes on whichever sheet turns out to be the last
