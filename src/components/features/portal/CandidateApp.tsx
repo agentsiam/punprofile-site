@@ -460,9 +460,14 @@ function FitReportCard({ readOnly }: { readOnly: boolean }) {
           className="mt-4 h-11 btn-filled px-5 text-label-large"
           onClick={async () => {
             setState("busy");
-            const input = await convex.query(api.portal.fitReport, {});
+            // Both reads together, so the page the candidate opens is built
+            // from the same roles the coach's copy is built from.
+            const [input, roles] = await Promise.all([
+              convex.query(api.portal.fitReport, {}),
+              convex.query(api.reportRoles.forReport, {}),
+            ]);
             if (!input) return setState("idle");
-            const ok = await openFitReport(input, input.ratings, locale === "en" ? "en" : "th");
+            const ok = await openFitReport(input, input.ratings, locale === "en" ? "en" : "th", roles);
             setState(ok ? "idle" : "blocked");
           }}
         >

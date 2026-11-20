@@ -30629,28 +30629,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/copy.ts::COPY.fit.roles.none`
-
-```yaml
-id: src/lib/content/copy.ts::COPY.fit.roles.none
-source: src/lib/content/copy.ts
-path: COPY.fit.roles.none
-render: Fit Report, roles when nothing matches
-narrative_slot: proof
-en: None of the roles we have published so far match your field in those countries.
-th: ยังไม่มีตำแหน่งที่เราเผยแพร่ซึ่งตรงกับสายงานของคุณในประเทศเหล่านี้
-provenance: paul-approved
-date: 26/10/2026
-term_bindings: []
-decision_note: Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat.
-review:
-  structural_calque: pass
-  text_hash: a8e28cd3a8fbf0819e5b7640340489acd45920f1674bd843880216be95d733f1
-  prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 26/10/2026.
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/copy.ts::COPY.fit.roles.note`
 
 ```yaml
@@ -30670,6 +30648,125 @@ review:
   text_hash: 766c084d6ebfabe86464aaaad736763ef29f98c9274bc4e588e8f017252c93c9
   prompt_version: structural-calque-v1
   basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.roles.sent.lede`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.roles.sent.lede
+source: src/lib/content/copy.ts
+path: COPY.fit.roles.sent.lede
+render: "Fit Report, the roles page when PunProfile has sent them roles. {count} substituted"
+narrative_slot: proof
+en: "The {count} roles we picked for you and sent, newest first."
+th: "ตำแหน่งงาน {count} รายการที่เราคัดมาให้คุณและส่งไปแล้ว เรียงจากใหม่สุด"
+proposal_th: "ตำแหน่งงาน {count} รายการที่เราคัดมาให้คุณและส่งไปแล้ว เรียงจากใหม่สุด"
+provenance: draft
+date: 20/11/2026
+term_bindings: []
+decision_note: |-
+  The roles page used to read only the public pipeline, so a paying client who had
+  already been sent roles and liked one was told nothing matched them. The page now
+  opens with what they were actually sent, and this is its first line.
+
+  Composed in Thai from the meaning rather than translated (LR-09): what we chose
+  for you, and already sent. Thai is a model draft and carries no approval.
+review:
+  structural_calque: pending
+  text_hash: 9f18f3f32b60c7f867ff4cef076717a13f707b2c03ae544f60f146b22f6398b6
+  prompt_version: structural-calque-v1
+  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.roles.sent.note`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.roles.sent.note
+source: src/lib/content/copy.ts
+path: COPY.fit.roles.sent.note
+render: "Fit Report, under the roles PunProfile sent"
+narrative_slot: limit
+en: "Each one was read against your target titles before it was sent. Whether you can apply is still checked role by role."
+th: "ทุกตำแหน่งที่นี่ผ่านการอ่านเทียบกับตำแหน่งเป้าหมายของคุณก่อนส่ง ส่วนจะสมัครได้หรือไม่ ยังต้องดูเงื่อนไขของแต่ละตำแหน่ง"
+proposal_th: "ทุกตำแหน่งที่นี่ผ่านการอ่านเทียบกับตำแหน่งเป้าหมายของคุณก่อนส่ง ส่วนจะสมัครได้หรือไม่ ยังต้องดูเงื่อนไขของแต่ละตำแหน่ง"
+provenance: draft
+date: 20/11/2026
+term_bindings: []
+decision_note: |-
+  The limit line for sent roles. The existing one under the public pipeline says the
+  match was made on job title, which understates a role a coach read and chose, and
+  overstates nothing: eligibility is still per role.
+
+  Keeps the second half of the pipeline note's promise, that whether you can apply is
+  checked role by role, because that is still true and a candidate should not read a
+  sent role as a confirmed eligibility. Thai is a model draft and carries no approval.
+review:
+  structural_calque: pending
+  text_hash: b51f6bce15fcba74a9652506d0da595c1b47c2e85a46c844707360a4a6ece9d5
+  prompt_version: structural-calque-v1
+  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.roles.liked`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.roles.liked
+source: src/lib/content/copy.ts
+path: COPY.fit.roles.liked
+render: "Fit Report, beside a sent role the candidate marked a yes"
+narrative_slot: proof
+en: "You marked this one a yes"
+th: "คุณบอกว่าสนใจตำแหน่งนี้"
+proposal_th: "คุณบอกว่าสนใจตำแหน่งนี้"
+provenance: draft
+date: 20/11/2026
+term_bindings: []
+decision_note: |-
+  The candidate's own verdict, shown beside the role it belongs to. Only a yes can
+  appear: a role they marked "Not for me" is left off the page entirely, so there is
+  no matching string for a no and there should not be one.
+
+  Short, in their own register, and it states what they did rather than praising it.
+  Thai is a model draft and carries no approval.
+review:
+  structural_calque: pending
+  text_hash: 908d13f2d26a2721c636ccc530d350e4239ec80bca820549d90f70ea86b800fe
+  prompt_version: structural-calque-v1
+  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.roles.titles.lede`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.roles.titles.lede
+source: src/lib/content/copy.ts
+path: COPY.fit.roles.titles.lede
+render: "Fit Report, the pipeline lede for a candidate with target titles. {total}, {matching}, {countries} substituted"
+narrative_slot: proof
+en: "Of the {total} roles we published in {countries}, {matching} carry one of your target titles. The newest:"
+th: "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ใช้ชื่อตำแหน่งเป้าหมายของคุณ งานล่าสุดมีดังนี้"
+proposal_th: "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ใช้ชื่อตำแหน่งเป้าหมายของคุณ งานล่าสุดมีดังนี้"
+provenance: draft
+date: 20/11/2026
+term_bindings: []
+decision_note: |-
+  The paid report matches the public pipeline on the candidate's active target titles
+  where they have any, so the existing lede, which says a title in your field, no
+  longer describes what was matched. This is that line for the titles case; the field
+  wording stays for a candidate with no titles, where it is still exactly right.
+
+  Built on the sentence shape Paul rewrote himself for the field version, changing
+  only the clause that says what was matched, so the two ledes read as one voice.
+  Thai is a model draft and carries no approval.
+review:
+  structural_calque: pending
+  text_hash: 1792f58e3099f8d3011fadcbf5967aa7c7c5bad4922186a299ecc38d1edbdcd1
+  prompt_version: structural-calque-v1
+  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
 ```
 
 <!-- COPY-ENTRY -->

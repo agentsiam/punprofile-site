@@ -11619,15 +11619,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "20/11/2026",
     "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
   },
-  "src/lib/content/copy.ts::COPY.fit.roles.none": {
-    "source": "src/lib/content/copy.ts",
-    "path": "COPY.fit.roles.none",
-    "render": "Fit Report, roles when nothing matches",
-    "narrativeSlot": "proof",
-    "provenance": "paul-approved",
-    "date": "26/10/2026",
-    "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat."
-  },
   "src/lib/content/copy.ts::COPY.fit.roles.note": {
     "source": "src/lib/content/copy.ts",
     "path": "COPY.fit.roles.note",
@@ -11636,6 +11627,46 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-written",
     "date": "26/10/2026",
     "decisionNote": "Paid Fit Report, full-version renderer, on Paul's direction 26/10/2026. Draft Thai read back and approved by Paul in chat. Thai rewritten by Paul 26/10/2026."
+  },
+  "src/lib/content/copy.ts::COPY.fit.roles.sent.lede": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.roles.sent.lede",
+    "render": "Fit Report, the roles page when PunProfile has sent them roles. {count} substituted",
+    "narrativeSlot": "proof",
+    "provenance": "draft",
+    "date": "20/11/2026",
+    "decisionNote": "The roles page used to read only the public pipeline, so a paying client who had\nalready been sent roles and liked one was told nothing matched them. The page now\nopens with what they were actually sent, and this is its first line.\n\nComposed in Thai from the meaning rather than translated (LR-09): what we chose\nfor you, and already sent. Thai is a model draft and carries no approval.",
+    "proposalTh": "ตำแหน่งงาน {count} รายการที่เราคัดมาให้คุณและส่งไปแล้ว เรียงจากใหม่สุด"
+  },
+  "src/lib/content/copy.ts::COPY.fit.roles.sent.note": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.roles.sent.note",
+    "render": "Fit Report, under the roles PunProfile sent",
+    "narrativeSlot": "limit",
+    "provenance": "draft",
+    "date": "20/11/2026",
+    "decisionNote": "The limit line for sent roles. The existing one under the public pipeline says the\nmatch was made on job title, which understates a role a coach read and chose, and\noverstates nothing: eligibility is still per role.\n\nKeeps the second half of the pipeline note's promise, that whether you can apply is\nchecked role by role, because that is still true and a candidate should not read a\nsent role as a confirmed eligibility. Thai is a model draft and carries no approval.",
+    "proposalTh": "ทุกตำแหน่งที่นี่ผ่านการอ่านเทียบกับตำแหน่งเป้าหมายของคุณก่อนส่ง ส่วนจะสมัครได้หรือไม่ ยังต้องดูเงื่อนไขของแต่ละตำแหน่ง"
+  },
+  "src/lib/content/copy.ts::COPY.fit.roles.liked": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.roles.liked",
+    "render": "Fit Report, beside a sent role the candidate marked a yes",
+    "narrativeSlot": "proof",
+    "provenance": "draft",
+    "date": "20/11/2026",
+    "decisionNote": "The candidate's own verdict, shown beside the role it belongs to. Only a yes can\nappear: a role they marked \"Not for me\" is left off the page entirely, so there is\nno matching string for a no and there should not be one.\n\nShort, in their own register, and it states what they did rather than praising it.\nThai is a model draft and carries no approval.",
+    "proposalTh": "คุณบอกว่าสนใจตำแหน่งนี้"
+  },
+  "src/lib/content/copy.ts::COPY.fit.roles.titles.lede": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.roles.titles.lede",
+    "render": "Fit Report, the pipeline lede for a candidate with target titles. {total}, {matching}, {countries} substituted",
+    "narrativeSlot": "proof",
+    "provenance": "draft",
+    "date": "20/11/2026",
+    "decisionNote": "The paid report matches the public pipeline on the candidate's active target titles\nwhere they have any, so the existing lede, which says a title in your field, no\nlonger describes what was matched. This is that line for the titles case; the field\nwording stays for a candidate with no titles, where it is still exactly right.\n\nBuilt on the sentence shape Paul rewrote himself for the field version, changing\nonly the clause that says what was matched, so the two ledes read as one voice.\nThai is a model draft and carries no approval.",
+    "proposalTh": "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ใช้ชื่อตำแหน่งเป้าหมายของคุณ งานล่าสุดมีดังนี้"
   },
   "src/lib/content/copy.ts::COPY.fit.footer": {
     "source": "src/lib/content/copy.ts",

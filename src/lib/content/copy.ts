@@ -1211,15 +1211,30 @@ export const COPY = {
     en: "Of the {total} roles we published in {countries}, {matching} have a title in your field. The newest:",
     th: "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ดูจากชื่องานแล้วตรงกับสายงานของคุณ งานล่าสุดมีดังนี้",
   },
-  "fit.roles.none": {
-    screen: "Fit Report, roles when nothing matches",
-    en: "None of the roles we have published so far match your field in those countries.",
-    th: "ยังไม่มีตำแหน่งที่เราเผยแพร่ซึ่งตรงกับสายงานของคุณในประเทศเหล่านี้",
-  },
   "fit.roles.note": {
     screen: "Fit Report, under the roles",
     en: "Matched by job title. Whether you can apply is checked role by role.",
     th: "รายการนี้จับคู่จากชื่อตำแหน่งงาน ส่วนคุณมีคุณสมบัติตรงตามเงื่อนไขการสมัครหรือไม่ ต้องตรวจสอบรายละเอียดของแต่ละตำแหน่ง",
+  },
+  "fit.roles.sent.lede": {
+    screen: "Fit Report, the roles page when PunProfile has sent them roles. {count} substituted",
+    en: "The {count} roles we picked for you and sent, newest first.",
+    th: "ตำแหน่งงาน {count} รายการที่เราคัดมาให้คุณและส่งไปแล้ว เรียงจากใหม่สุด",
+  },
+  "fit.roles.sent.note": {
+    screen: "Fit Report, under the roles PunProfile sent",
+    en: "Each one was read against your target titles before it was sent. Whether you can apply is still checked role by role.",
+    th: "ทุกตำแหน่งที่นี่ผ่านการอ่านเทียบกับตำแหน่งเป้าหมายของคุณก่อนส่ง ส่วนจะสมัครได้หรือไม่ ยังต้องดูเงื่อนไขของแต่ละตำแหน่ง",
+  },
+  "fit.roles.liked": {
+    screen: "Fit Report, beside a sent role the candidate marked a yes",
+    en: "You marked this one a yes",
+    th: "คุณบอกว่าสนใจตำแหน่งนี้",
+  },
+  "fit.roles.titles.lede": {
+    screen: "Fit Report, the pipeline lede for a candidate with target titles. {total}, {matching}, {countries} substituted",
+    en: "Of the {total} roles we published in {countries}, {matching} carry one of your target titles. The newest:",
+    th: "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ใช้ชื่อตำแหน่งเป้าหมายของคุณ งานล่าสุดมีดังนี้",
   },
   "fit.footer": {
     screen: "Fit Report, last page footing",

@@ -1211,15 +1211,30 @@ export const COPY = {
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLmxlZGU:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLmxlZGU:TH%%,
   },
-  "fit.roles.none": {
-    screen: "Fit Report, roles when nothing matches",
-    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLm5vbmU:EN%%,
-    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLm5vbmU:TH%%,
-  },
   "fit.roles.note": {
     screen: "Fit Report, under the roles",
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLm5vdGU:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLm5vdGU:TH%%,
+  },
+  "fit.roles.sent.lede": {
+    screen: "Fit Report, the roles page when PunProfile has sent them roles. {count} substituted",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLnNlbnQubGVkZQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLnNlbnQubGVkZQ:TH%%,
+  },
+  "fit.roles.sent.note": {
+    screen: "Fit Report, under the roles PunProfile sent",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLnNlbnQubm90ZQ:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLnNlbnQubm90ZQ:TH%%,
+  },
+  "fit.roles.liked": {
+    screen: "Fit Report, beside a sent role the candidate marked a yes",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLmxpa2Vk:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLmxpa2Vk:TH%%,
+  },
+  "fit.roles.titles.lede": {
+    screen: "Fit Report, the pipeline lede for a candidate with target titles. {total}, {matching}, {countries} substituted",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLnRpdGxlcy5sZWRl:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLnRpdGxlcy5sZWRl:TH%%,
   },
   "fit.footer": {
     screen: "Fit Report, last page footing",

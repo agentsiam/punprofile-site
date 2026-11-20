@@ -27,7 +27,7 @@ export function fitSampleInput(): FitReportInput {
     profile,
     full: scoreFull(profile, fitSampleRatings(), (k) => ECRA[k]?.formula),
     moves: rankMoves(FIT_SAMPLE_INPUT),
-    roles: matchRoles(FIT_SAMPLE_INPUT.targetCountries ?? [], FIT_SAMPLE_INPUT.targetRole),
+    roles: { sent: [], pipeline: matchRoles(FIT_SAMPLE_INPUT.targetCountries ?? [], FIT_SAMPLE_INPUT.targetRole) },
   };
 }
 

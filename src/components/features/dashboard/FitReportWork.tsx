@@ -54,11 +54,13 @@ export default function FitReportWork({ leadId }: { leadId: Id<"leads"> }) {
   const rows = useQuery(api.ratings.latestForLead, { leadId });
   const lead = useQuery(api.leads.getForAdmin, { leadId });
   const corrections = useQuery(api.corrections.listForLead, { leadId });
+  // The one read the candidate's own copy of this report goes through too.
+  const roles = useQuery(api.reportRoles.forReport, { leadId });
   const deliver = useMutation(api.workspace.deliverFitReport);
   const latest = useMemo(() => new Map((rows ?? []).map((r) => [r.itemKey, r])), [rows]);
   const [busy, setBusy] = useState<"pdf" | "deliver" | null>(null);
   const [error, setError] = useState<string | null>(null);
-  if (rows === undefined || lead === undefined || corrections === undefined) {
+  if (rows === undefined || lead === undefined || corrections === undefined || roles === undefined) {
     return <p className="text-body-md text-mute-strong">Loading...</p>;
   }
   if (lead === null) return <p className="text-body-md text-error">No lead with that id.</p>;
@@ -68,7 +70,7 @@ export default function FitReportWork({ leadId }: { leadId: Id<"leads"> }) {
   const onOpenPdf = async (loc: "en" | "th") => {
     const effective = applyCorrections(lead.responses, corrections).effective;
     const usable = rows.filter((r) => !r.open || r.open.length === 0);
-    if (!(await openFitReport({ ...lead, responses: effective }, usable, loc))) {
+    if (!(await openFitReport({ ...lead, responses: effective }, usable, loc, roles))) {
       setError("The report opens in a new tab. Allow popups for this site and press the button again.");
     }
   };

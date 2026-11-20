@@ -212,6 +212,14 @@ export interface ReportMeta {
   submittedAt?: string;
   targetCountries?: string[];
   targetRole?: string;
+  /**
+   * The candidate's active target titles, as job ads write them, in the
+   * coach's priority order. The paid report's cover and its roles page
+   * prefer these to `targetRole`, which is the questionnaire's broad field:
+   * "IT & Software" is not what a client with three live titles is being
+   * put forward for. The field stays the fallback for someone with none.
+   */
+  targetTitles?: string[];
   currentRole?: string;
   /**
    * The name on the Fit Report book's cover in the free report, when it is not
@@ -1352,7 +1360,7 @@ function flatShowcase(locale: Locale): string {
       profile,
       full: scoreFull(profile, fitSampleRatings(), (k) => ECRA[k]?.formula),
       moves: [],
-      roles: { inCountries: 0, matching: 0, examples: [] },
+      roles: { sent: [], pipeline: { inCountries: 0, matching: 0, examples: [] } },
     },
     { candidate: SAMPLE_LABEL[locale] },
     { locale, sampleNotes: true },
@@ -1520,6 +1528,9 @@ const FIT_STYLES = `
   ul.roles li { padding: .6rem 0; border-bottom: 1px solid var(--border); }
   .r-title { font-weight: 600; }
   .r-meta { color: var(--ink-2); font-size: .8rem; }
+  .r-yes { display: inline-block; margin-left: .4rem; padding: .05rem .4rem; border-radius: 1rem; font-size: .7rem; font-weight: 700; background: var(--color-primary-pale); color: var(--color-on-primary-pale); }
+  .r-why { color: var(--color-ink); font-size: .82rem; }
+  .r-link { color: var(--color-mute-strong); font-size: .72rem; word-break: break-all; }
   @media print {
     .cover { min-height: 255mm; border-radius: 0; margin: 0; break-after: page; }
     .is-fit .fit-sec { break-before: page; }
@@ -1555,7 +1566,10 @@ const FIT_PAGED_STYLES = `
   body.is-fit ol.path li { border: 0; background: var(--color-canvas-soft); border-radius: 5mm; padding: 4mm; }
   body.is-fit ol.path li.is-start { background: var(--color-yellow-pale); outline: 2px solid var(--color-warning-deep); }
   body.is-fit ol.moves li { border: 0; background: var(--color-canvas-soft); border-radius: 5mm; padding: 5mm; }
-  body.is-fit ul.roles li { padding: 3mm 0; }
+  body.is-fit ul.roles li { padding: 3mm 0; break-inside: avoid; }
+  body.is-fit .r-yes { font-size: 7.5pt; }
+  body.is-fit .r-why { font-size: 9pt; }
+  body.is-fit .r-link { font-size: 7.5pt; }
   body.is-fit .fit-fine { font-size: 7.5pt !important; color: var(--color-mute-strong) !important; margin-top: 8mm; }
 
   body.is-fit .cover { position: relative; box-sizing: border-box; display: block; width: 210mm; min-height: 296.5mm; margin: 0 auto 8mm; padding: 0; border-radius: 0; background: var(--color-canvas); color: var(--color-ink); overflow: hidden; box-shadow: 0 1px 6px rgba(14,15,12,.12); }
@@ -1581,7 +1595,17 @@ export interface FitReportInput {
   profile: ProfileScore;
   full: import("./scoring").FullDimensionScore[];
   moves: import("./levers").MoveImpact[];
-  roles: import("./market-match").RoleMatch;
+  /**
+   * The candidate's own roles first, the public pipeline only as a fallback.
+   * `sent` is what PunProfile screened and sent them, from the one Convex read
+   * in `convex/reportRoles.ts` that the coach's copy and the candidate's copy
+   * both go through; `pipeline` is the published list, matched on their active
+   * target titles, and it is read only when `sent` is empty.
+   */
+  roles: {
+    sent: import("./market-match").SentRoleRow[];
+    pipeline: import("./market-match").RoleMatch;
+  };
 }
 
 export function renderFitReport(input: FitReportInput, meta: ReportMeta, opts: ReportOptions = {}): string {
@@ -1696,20 +1720,55 @@ ${inner}
     : "";
 
   // ---- roles that fit
+  //
+  // Three states, in this order. Roles PunProfile screened and sent them,
+  // newest first, which is what a paying client has actually been given. Then,
+  // only when there are none, the public pipeline matched on their target
+  // titles. Then nothing at all: the page is left out rather than telling
+  // someone who paid that nothing fits them. A role still waiting for the
+  // coach's approval never appears, because it has not reached them either.
   const countries = (meta.targetCountries ?? []).join(", ");
-  const rolesSec = section(
-    "roles",
-    s("fit.roles.heading"),
-    roles.matching
-      ? `  <p>${esc(s("fit.roles.lede", { total: roles.inCountries, matching: roles.matching, countries }))}</p>
-  <ul class="roles">${roles.examples
+  const sentRole = (r: import("./market-match").SentRoleRow) => {
+    const liked = r.liked ? ` <span class="r-yes">${esc(s("fit.roles.liked"))}</span>` : "";
+    const why = r.reason ? `<br><span class="r-why">${esc(r.reason)}</span>` : "";
+    const link = r.url ? `<br><a class="r-link" href="${esc(r.url)}">${esc(r.url)}</a>` : "";
+    return `<li><span class="r-title">${esc(r.title)}</span>${liked}<br><span class="r-meta">${esc(r.employer)} · ${esc(r.country)}</span>${why}${link}</li>`;
+  };
+  const rolesInner = roles.sent.length
+    ? `  <p>${esc(s("fit.roles.sent.lede", { count: roles.sent.length }))}</p>
+  <ul class="roles">${roles.sent.map(sentRole).join("")}</ul>
+  <p class="legend-bar" style="margin-top:1rem">${esc(s("fit.roles.sent.note"))}</p>`
+    : roles.pipeline.matching
+      ? `  <p>${esc(
+          s(meta.targetTitles?.length ? "fit.roles.titles.lede" : "fit.roles.lede", {
+            total: roles.pipeline.inCountries,
+            matching: roles.pipeline.matching,
+            countries,
+          }),
+        )}</p>
+  <ul class="roles">${roles.pipeline.examples
     .map((r) => `<li><span class="r-title">${esc(r.title)}</span><br><span class="r-meta">${esc(r.employer)} · ${esc(r.country)} · ${esc(ddmmyyyy(r.firstSeen))}</span></li>`)
     .join("")}</ul>
   <p class="legend-bar" style="margin-top:1rem">${esc(s("fit.roles.note"))}</p>`
-      : `  <p>${esc(s("fit.roles.none"))}</p>`,
-  ).replace("</section>", `  <p class="fit-fine">${esc(s("fit.footer"))}</p>\n</section>`);
+      : "";
+  const rolesSec = rolesInner ? section("roles", s("fit.roles.heading"), rolesInner) : "";
 
-  const metaBits = [meta.targetRole ? esc(meta.targetRole) : "", countries ? esc(countries) : ""].filter(Boolean);
+  /**
+   * The report's fine print goes on whichever sheet turns out to be the last
+   * one. It used to be nailed to the roles page, which takes the fine print
+   * out of the report entirely for a candidate whose roles page is absent.
+   */
+  const withFinePrint = (html: string) => {
+    const at = html.lastIndexOf("</section>");
+    if (at < 0) return html;
+    return `${html.slice(0, at)}  <p class="fit-fine">${esc(s("fit.footer"))}</p>\n${html.slice(at)}`;
+  };
+
+  // The paid report describes the person as the coach knows them: their own
+  // target titles where they have any, and the questionnaire's broad field
+  // only where they have none.
+  const titles = meta.targetTitles?.length ? meta.targetTitles.join(", ") : meta.targetRole;
+  const metaBits = [titles ? esc(titles) : "", countries ? esc(countries) : ""].filter(Boolean);
   const countryInner = countryFactsBody(meta.targetCountries?.[0], locale, asset);
   const countrySec = countryInner
     ? `<section class="fit-sec" id="country">
@@ -1721,7 +1780,7 @@ ${countryInner}
   // band with the name, the Fit Report interview scene (clay, a page's main
   // picture), the date and the mark below. Still `.cover`, which the product
   // page's page tiles hide.
-  const body = `  <div class="cover">
+  const body = withFinePrint(`  <div class="cover">
     <div class="fc-band">
       <img class="fc-logo" src="${asset("/efc-logo-reversed.svg")}" alt="EU Fit Check by PunProfile">
       <p class="eyebrow">${esc(s("fit.eyebrow"))}</p>
@@ -1739,7 +1798,7 @@ ${summary}
 ${path}
 ${areas}
 ${movesSec}
-${rolesSec}`;
+${rolesSec}`);
 
   const html = document_({
     lang: locale,
