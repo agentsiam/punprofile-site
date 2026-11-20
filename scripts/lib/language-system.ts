@@ -167,3 +167,59 @@ export function renderLanguageSources(system = readLanguageSystem()): RenderedSo
   }
   return rendered;
 }
+
+/** What a finished pass changes on a record. Anything absent is left alone. */
+export interface RecordPatch {
+  th?: string;
+  provenance?: LanguageProvenance;
+  /** Drop a spent `proposal_th`, so a cleared record cannot be misread later. */
+  dropProposal?: boolean;
+  review?: { structural_calque?: string; text_hash?: string; basis?: string };
+}
+
+/**
+ * Rewrite one record in `LANGUAGE-SYSTEM.md`, in place, by id.
+ *
+ * Only the keys named are touched and only inside that record's own YAML block,
+ * so a neighbouring record, a `decision_note` block scalar and everything else
+ * in the file come through unchanged. The review keys are found after the
+ * `review:` line rather than by indent, because a decision note's own lines are
+ * indented too and a line of prose is not a field.
+ */
+export function patchRecord(doc: string, id: string, patch: RecordPatch): string {
+  const heading = "### `" + id + "`";
+  const at = doc.indexOf(heading);
+  if (at < 0) throw new Error(`${id}: no record with that id`);
+  const open = doc.indexOf("```yaml\n", at);
+  const close = doc.indexOf("\n```", open);
+  if (open < 0 || close < 0) throw new Error(`${id}: the record has no YAML block`);
+
+  const lines = doc.slice(open + "```yaml\n".length, close).split("\n");
+  // Looked up every time rather than held, because dropping a key shifts every
+  // line below it and a stale index writes a second copy of a field instead of
+  // replacing the one that is there.
+  const reviewAt = () => lines.findIndex((l) => l === "review:");
+  const set = (key: string, value: string, from: number, to: number) => {
+    const prefix = from > 0 ? "  " : "";
+    const i = lines.findIndex((l, n) => n >= from && n < to && l.startsWith(`${prefix}${key}: `));
+    if (i >= 0) lines[i] = `${prefix}${key}: ${value}`;
+    else lines.splice(to, 0, `${prefix}${key}: ${value}`);
+  };
+  const top = () => (reviewAt() < 0 ? lines.length : reviewAt());
+
+  if (patch.th !== undefined) set("th", JSON.stringify(patch.th), 0, top());
+  if (patch.provenance) set("provenance", patch.provenance, 0, top());
+  if (patch.dropProposal) {
+    const i = lines.findIndex((l) => l.startsWith("proposal_th: "));
+    if (i >= 0) lines.splice(i, 1);
+  }
+  if (patch.review && reviewAt() >= 0) {
+    const from = reviewAt() + 1;
+    const after = lines.findIndex((l, n) => n >= from && l.length > 0 && !l.startsWith("  "));
+    const to = after < 0 ? lines.length : after;
+    for (const [key, value] of Object.entries(patch.review)) {
+      if (value !== undefined) set(key, JSON.stringify(value), from, to);
+    }
+  }
+  return doc.slice(0, open + "```yaml\n".length) + lines.join("\n") + doc.slice(close);
+}

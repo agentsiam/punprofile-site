@@ -12,6 +12,8 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { relative, resolve } from "node:path";
 import { LANGUAGE_ROOT, readLanguageSystem, renderLanguageSources } from "./lib/language-system.js";
+import { QUEUE_PATH, buildSheet } from "./lib/review-sheet.js";
+import { checkOverwrite } from "./lib/review-guard.js";
 
 const check = process.argv.includes("--check");
 const system = readLanguageSystem();
@@ -69,3 +71,28 @@ console.log(
     ? `language sources current: ${system.entries.length} records across ${rendered.length + 1} files`
     : `generated ${system.entries.length} records across ${rendered.length + 1} files`,
 );
+
+/**
+ * Keep the review sheet level with the source.
+ *
+ * A record added after the sheet was exported leaves the sheet short by exactly
+ * the lines nobody has been asked about, and nothing says so: a reviewer reads
+ * four items off a sheet while six are waiting, which is how two of them went
+ * unseen. Rebuilding it here means the sheet is a function of the source rather
+ * than of whoever last remembered to run the exporter.
+ *
+ * It never overwrites an edited sheet. A pass sitting in there unapplied is
+ * worth more than being up to date, so that case says so and leaves it alone.
+ */
+if (!check) {
+  const waiting = system.entries.filter((entry) => entry.review.structural_calque !== "pass");
+  if (waiting.length) {
+    if (checkOverwrite(QUEUE_PATH, "review:language").safe) {
+      writeFileSync(QUEUE_PATH, buildSheet(waiting));
+      console.log(`review sheet: ${waiting.length} records waiting`);
+    } else {
+      console.log(`review sheet: edited since it was generated, so it was left alone.`);
+      console.log(`  It is now behind the source. Apply it with: npm run review:language -- --apply`);
+    }
+  }
+}

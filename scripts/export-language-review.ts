@@ -49,57 +49,114 @@
  * which is C43 and is what is holding the line on the live sheet today.
  */
 
-import { writeFileSync } from "node:fs";
-import { checkOverwrite, stamp } from "./lib/review-guard.js";
-import { LANGUAGE_PATH, readLanguageSystem } from "./lib/language-system.js";
+import { execFileSync } from "node:child_process";
+import { readFileSync, writeFileSync } from "node:fs";
+import { checkOverwrite } from "./lib/review-guard.js";
+import { LANGUAGE_PATH, patchRecord, readLanguageSystem, textHash } from "./lib/language-system.js";
+import { QUEUE_PATH, buildSheet, parseSheet } from "./lib/review-sheet.js";
 
-const out = process.argv.slice(2).find((arg) => !arg.startsWith("-")) ?? "LANGUAGE-REVIEW-QUEUE.md";
-const force = process.argv.includes("--force");
-const system = readLanguageSystem();
-const rows = system.entries.filter((entry) => entry.review.structural_calque !== "pass");
+const args = process.argv.slice(2);
+const apply = args.includes("--apply");
+const force = args.includes("--force");
+/**
+ * An explicit path exports a pristine copy somewhere else, which is how you diff
+ * an edited sheet. Applying only ever reads the one home: a pass picked up from
+ * a copy is how a verdict gets read off the wrong file.
+ */
+const out = args.find((arg) => !arg.startsWith("-")) ?? QUEUE_PATH;
 
-const items = rows.map((entry, index) => `## ${index + 1}. \`${entry.id}\`
+const waiting = () => readLanguageSystem().entries.filter((entry) => entry.review.structural_calque !== "pass");
 
-- [ ] Reviewed
-- Status: **${entry.review.structural_calque}**
-- Renders: ${entry.render}
-- Narrative slot: \`${entry.narrative_slot}\`
-- Provenance: \`${entry.provenance}\`, ${entry.date}
-
-> EN: ${entry.en.replaceAll("\n", "\n> ")}
->
-> TH: ${entry.th.replaceAll("\n", "\n> ")}
-
-${entry.proposal_th ? `ร่างให้พิจารณา: ${entry.proposal_th}\n\n[printed from \`proposal_th\` in the source: a model's draft, not approval, and not Paul's wording]\n` : ""}
-แก้เป็น:
-
-เหตุผล / หมายเหตุ:
-`).join("\n---\n\n");
-
-const document = `---
-status: generated review view
-source: ${LANGUAGE_PATH}
-authorship: one-writer
----
-
-# PunProfile language review queue
-
-${rows.length} records need a verdict. This file is a review surface, not the source of truth. Read every item in one pass. Tick an unchanged item or write a replacement after \`แก้เป็น:\`. Apply the finished pass back to \`LANGUAGE-SYSTEM.md\`, update provenance and the text hash, then regenerate the TypeScript.
-
-**This sheet has one writer, and that is Paul.** Everything handwritten in it is his, which is what makes his wording recordable as a pass without a second native review. Nothing else in the file is handwritten: every other line was printed from \`LANGUAGE-SYSTEM.md\` by the exporter, including any \`ร่างให้พิจารณา:\` draft, which is marked with where it came from.
-
-**If you are a model, do not write in this file.** Put proposed Thai in \`proposal_th\` on the record in \`LANGUAGE-SYSTEM.md\`, where the contract already defines it as a draft and never approval, and it will be printed here on the next run with its origin attached. A proposal written straight onto a \`แก้เป็น:\` line is indistinguishable from Paul's own wording the moment you close the file, and repairing that means asking him who wrote a line he should never have been asked about. Judge findings go in \`review.basis\`, not in \`เหตุผล / หมายเหตุ:\`.
-
-**Applying a finished pass:** this sheet's frontmatter says \`authorship: one-writer\`, so it was generated under the rule above and text on a \`แก้เป็น:\` line is Paul's. A sheet without that field predates the rule and nothing about it is safe to assume: a filled \`แก้เป็น:\` line on one of those may be a model's draft, and recording it as his wording would clear Thai nobody has read, which is the failure this whole arrangement exists to prevent. Establish who wrote each line before applying any of it. A handwritten authorship note in the file outranks this paragraph whichever way it points, on any sheet. Worth a glance either way: text byte-identical to the \`ร่างให้พิจารณา:\` draft printed above it is a model copying its own proposal across, not Paul accepting it, and does not clear the record. Cite what you apply by record id, never by an item's number here, because these numbers are rebuilt from whatever is still pending and go stale as soon as a record clears.
-
-${items || "Nothing is waiting for review.\n"}
-`;
-
-const guard = force ? { safe: true, reasons: [] } : checkOverwrite(out, "review:language");
-if (!guard.safe) {
-  console.error(out);
-  for (const reason of guard.reasons) console.error(reason);
-  process.exit(1);
+function exportSheet(path: string, forced: boolean) {
+  const guard = forced ? { safe: true, reasons: [] } : checkOverwrite(path, "review:language");
+  if (!guard.safe) {
+    console.error(path);
+    for (const reason of guard.reasons) console.error(reason);
+    process.exit(1);
+  }
+  const rows = waiting();
+  writeFileSync(path, buildSheet(rows));
+  console.log(`wrote ${path}: ${rows.length} records waiting`);
 }
-writeFileSync(out, stamp(document));
-console.log(`wrote ${out}: ${rows.length} records waiting`);
+
+function today(): string {
+  const d = new Date();
+  return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
+}
+
+/**
+ * Write a finished pass back into the record, from the sheet.
+ *
+ * A tick clears the line as printed and the record becomes `paul-approved`;
+ * Thai on the correction line becomes the record's Thai and it becomes
+ * `paul-written`. Either way the text hash is recomputed, the spent draft is
+ * dropped, and the basis says which it was and when. Nothing is interpreted:
+ * a model moves his words, it never types them.
+ *
+ * Refused, by record id and without touching the file: an id the source does
+ * not have, and a correction that is the printed draft word for word, which is
+ * a model copying its own proposal across rather than a pass. An item with
+ * neither a tick nor a correction is simply still waiting.
+ */
+function applyPass() {
+  let sheet = "";
+  try {
+    sheet = readFileSync(QUEUE_PATH, "utf8");
+  } catch {
+    console.error(`${QUEUE_PATH}: no sheet to apply. Run \`npm run review:language\` to make one.`);
+    process.exit(1);
+  }
+  const { oneWriter, verdicts } = parseSheet(sheet);
+  if (!oneWriter) {
+    console.error(`${QUEUE_PATH}: this sheet does not say \`authorship: one-writer\`, so it predates the`);
+    console.error("  rule that makes handwriting in it Paul's. Who wrote each line has to be");
+    console.error("  established first. Nothing applied.");
+    process.exit(1);
+  }
+
+  const system = readLanguageSystem();
+  let doc = readFileSync(LANGUAGE_PATH, "utf8");
+  const cleared: string[] = [];
+  const refused: string[] = [];
+
+  for (const verdict of verdicts) {
+    if (!verdict.ticked && !verdict.rewrite) continue;
+    const entry = system.byId.get(verdict.id);
+    if (!entry) {
+      refused.push(`${verdict.id}: the source has no record with that id`);
+      continue;
+    }
+    if (verdict.rewrite && verdict.draft && verdict.rewrite === verdict.draft) {
+      refused.push(`${verdict.id}: the correction is the printed draft word for word, so it is a model's proposal copied across rather than a pass`);
+      continue;
+    }
+    const th = verdict.rewrite ?? entry.th;
+    const how = verdict.rewrite ? "Paul wrote this Thai on the review sheet" : "Paul ticked this unchanged on the review sheet";
+    const basis = `${how}, applied ${today()}.${verdict.note ? ` ${verdict.note.replace(/\s+/g, " ")}` : ""}`;
+    doc = patchRecord(doc, verdict.id, {
+      th,
+      provenance: verdict.rewrite ? "paul-written" : "paul-approved",
+      dropProposal: true,
+      review: { structural_calque: "pass", text_hash: textHash(entry.en, th), basis },
+    });
+    cleared.push(`${verdict.id} (${verdict.rewrite ? "rewritten" : "unchanged"})`);
+  }
+
+  if (cleared.length) {
+    writeFileSync(LANGUAGE_PATH, doc);
+    exportSheet(QUEUE_PATH, true);
+    // The modules are regenerated here so the pass is finished rather than staged:
+    // a cleared record that has not reached `copy.ts` is still not on the page.
+    execFileSync("npm", ["run", "language:generate"], { stdio: "inherit" });
+  }
+  for (const line of cleared) console.log(`cleared ${line}`);
+  for (const line of refused) console.error(`REFUSED ${line}`);
+  if (!cleared.length && !refused.length) console.log("nothing on the sheet to apply: no ticks and no corrections");
+  if (refused.length) process.exit(1);
+}
+
+if (apply) {
+  applyPass();
+} else {
+  exportSheet(out, force);
+}
