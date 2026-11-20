@@ -17030,6 +17030,2316 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.image.alt`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.image.alt
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.image.alt
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.image.alt'
+narrative_slot: utility
+en: "A clay Thai woman kneels by a doorframe, placing one more coin on a stack that has just reached a cyan line marked on the frame."
+th: "ประติมากรรมดินเหนียวรูปหญิงไทยคุกเข่าข้างวงกบประตู กำลังวางเหรียญเพิ่มอีกเหรียญบนกองที่เพิ่งสูงถึงขีดสีฟ้าบนวงกบ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: e5f6d4cca8ebf31de92ff114e6c269c4d1b1aac94f61c86e5bcd51868bdacdf9
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.question`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.question
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.question
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.question'
+narrative_slot: utility
+en: "How far is your current salary from the bar of the country you want to move to, and which of the lower bars might you qualify for?"
+th: "เงินเดือนปัจจุบันของคุณต่างจากเกณฑ์ของประเทศที่อยากย้ายไปเท่าไหร่ แล้วมีเกณฑ์ไหนที่ต่ำกว่านั้นที่คุณอาจมีสิทธิ์ใช้บ้าง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 71a79d3d4d16af1b507f4b21976ba7975a7269460052d22c8ae7483c38f1163f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[0].body[0].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[0].body[0].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[0].body[0].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[0].body[0].text'
+narrative_slot: utility
+en: "Most work visas for skilled jobs in Europe set a minimum salary the employer must pay. If the offer is below it, the visa is refused, however good your experience is."
+th: "วีซ่าทำงานสำหรับตำแหน่งงานที่ต้องใช้ทักษะสูงในยุโรปส่วนใหญ่กำหนดว่านายจ้างต้องจ่ายเงินเดือนขั้นต่ำเท่าไหร่ ถ้าเงินเดือนที่เสนอให้คุณต่ำกว่าเกณฑ์ ต่อให้คุณมีประสบการณ์ดีแค่ไหนก็ขอวีซ่าไม่ผ่าน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: eae0e58f6e994f3199387b337cd3a6b9050e90f1dedb02280d371238169bc502
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[0].body[1].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[0].body[1].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[0].body[1].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[0].body[1].text'
+narrative_slot: utility
+en: "In 2026 the main routes run from about 114,000 THB a month in Poland and the Czech Republic to about 231,000 THB a month in Denmark, before tax. Some countries set a lower bar for under-30s, recent graduates and jobs in short supply."
+th: "ในปี 2026 สำหรับเส้นทางวีซ่าทำงานหลักของแต่ละประเทศ เงินเดือนก่อนหักภาษีเริ่มต้นที่ประมาณ 114,000 บาทต่อเดือนในโปแลนด์และสาธารณรัฐเช็ก และสูงสุดที่ประมาณ 231,000 บาทต่อเดือนในเดนมาร์ก บางประเทศลดเกณฑ์ให้คนอายุต่ำกว่า 30 ปี คนที่เพิ่งเรียนจบ และคนที่ทำงานในอาชีพขาดแคลน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 39bb240f503ee83d5470abf1b338f56052f974e50ee2fe8c11d43fef6c215dd9
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[0].heading`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[0].heading
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[0].heading
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[0].heading'
+narrative_slot: utility
+en: "Short answer"
+th: "สรุปสั้น ๆ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 4a41f023c8d7e8d8f9c6c41347db37c11dd6a934c6611c2e15f16d3261cc8084
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[1].body[0].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[1].body[0].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[1].body[0].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[1].body[0].text'
+narrative_slot: utility
+en: "It is the lowest gross salary an employer must pay for you to get that type of work visa. The immigration authority checks the figure in your contract, and if it falls short, the application fails."
+th: "คือระดับรายได้ก่อนหักภาษีขั้นต่ำที่นายจ้างต้องจ่ายให้คุณ เพื่อให้คุณมีสิทธิ์ยื่นขอวีซ่าทำงานประเภทนั้น เจ้าหน้าที่ตรวจคนเข้าเมืองจะดูยอดในสัญญาจ้าง ถ้าต่ำกว่าเกณฑ์ คุณจะขอวีซ่าไม่ผ่าน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 498a4cd02d455efba392c50234a930887fa23ead3f351ffcad5e689f036c6a0f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[1].body[1].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[1].body[1].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[1].body[1].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[1].body[1].text'
+narrative_slot: utility
+en: "That makes it the first gate in a European job search, before language or experience. If the role pays below the bar, the employer cannot sponsor your visa, even if they want to hire you."
+th: "เวลาหางานในยุโรป เงินเดือนจึงเป็นเรื่องแรกที่ต้องเช็ก ก่อนดูว่าภาษาหรือประสบการณ์ของคุณตรงแค่ไหน ถ้าตำแหน่งงานนั้นจ่ายต่ำกว่าเกณฑ์ ต่อให้นายจ้างอยากรับคุณเข้าทำงาน ก็สปอนเซอร์วีซ่าให้คุณไม่ได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 83954932ded3490f5f6440ed9ded759c3b2bfc25596e2d5f17b9d88ec19ab3de
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[1].heading`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[1].heading
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[1].heading
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[1].heading'
+narrative_slot: utility
+en: "What is a visa's minimum salary?"
+th: "รายได้ขั้นต่ำสำหรับการขอวีซ่าทำงานคืออะไร"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 8c0d4f7684126d8794c39da806bbcdb42ceabbaf2342aa177912643c7da04093
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[0].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[0].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[0].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[0].text'
+narrative_slot: utility
+en: "This table shows the main work route for graduates in each country, with the bar its government publishes. 2026 figures, converted at 37.49 THB to the euro, the European Central Bank reference rate on 11 November 2026."
+th: "ตารางนี้เปรียบเทียบเส้นทางวีซ่าทำงานหลักสำหรับผู้สำเร็จการศึกษาระดับมหาวิทยาลัย โดยใช้เกณฑ์ปี 2026 ที่รัฐบาลแต่ละประเทศประกาศ เราแปลงเป็นเงินบาทที่อัตรา 37.49 บาทต่อยูโร ตามอัตราอ้างอิงของธนาคารกลางยุโรป ณ วันที่ 11/11/2026"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: f680677d4e41684a15d763bf8ef92c3510e050d5f60ce24151b39d0b51a28e32
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[0]'
+narrative_slot: utility
+en: "Country"
+th: "ประเทศ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 92f0a137f5892949b2175a489b56b6f735623760772b79d455158abf62d2918c
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[1]'
+narrative_slot: utility
+en: "Route"
+th: "เส้นทางวีซ่าหรือใบอนุญาต"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 979471785a1bc279017c30235819b68eb120d0e5a1b222d40a8c8a17a518ebd3
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[2]'
+narrative_slot: utility
+en: "The rule"
+th: "เกณฑ์รายได้ขั้นต่ำ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: e764119f451dcf74ebf7bb7edce6ea65dba4a421f13f2220aa746319e78ec699
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[3]'
+narrative_slot: utility
+en: "Per year (EUR)"
+th: "ต่อปี (EUR)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 66aed5c78023bce54cdc83951680b125c3e3ea324bbf3d5e30dad08e67f88866
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[4]'
+narrative_slot: utility
+en: "Average per month (THB)"
+th: "เฉลี่ยต่อเดือน (THB)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 8227f7259bb6e0852cbe2ff191e5d65053cb8d875225b5b81a45b8de2cb4a810
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][0]'
+narrative_slot: utility
+en: "Denmark"
+th: "เดนมาร์ก"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 346032f84173ff6f5df769f8ca3d76c15c49e4632aac73c5afa0b8812a95276d
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][1]'
+narrative_slot: utility
+en: "Pay Limit Scheme"
+th: "Pay Limit Scheme (เส้นทางวีซ่าตามเกณฑ์รายได้)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 6fcfca74b8af635985db7f5a710cc825a7ccddc1dcd300da699e4df4196edccc
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][2]'
+narrative_slot: utility
+en: "DKK 552,000 a year"
+th: "DKK 552,000 ต่อปี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 6fb0d8b4a2c5109cf2574d66a19d8c0cda64b51059e5f3bfe18a24b791b57963
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][3]'
+narrative_slot: utility
+en: "73,800"
+th: "73,800"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 5ed5e677e7c29546d38e070ff07a6d26964db2d3cc3a64d787aca2a660b05afe
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][4]'
+narrative_slot: utility
+en: "231,000"
+th: "231,000"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: ee16f4538157086947e406da50d9b8c6630ac47ed9f662333a6f1b9b37e9baa7
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][0]'
+narrative_slot: utility
+en: "Netherlands"
+th: "เนเธอร์แลนด์"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: e572a6ef996b1d7159681a7fb35065e0964da80b84a77124aac3b141b3ddde60
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][1]'
+narrative_slot: utility
+en: "Highly Skilled Migrant, age 30 and over"
+th: "Highly Skilled Migrant (ใบอนุญาตสำหรับผู้มีทักษะสูง) อายุ 30 ปีขึ้นไป"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: cfb832fe053906d6477d1507a84394cf866f7f455acfc440d3c836cf359eca39
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][2]'
+narrative_slot: utility
+en: "€5,942 a month, excluding holiday pay"
+th: "€5,942 ต่อเดือน ไม่รวมเงินค่าวันหยุดประจำปี (holiday allowance)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 4f04e1752bb8e23fcd7d9076f376b3f3e5eb34304bdb7fc4bb1a28a893f3e4b7
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][3]'
+narrative_slot: utility
+en: "71,300"
+th: "71,300"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: f9def73d2c528399f1be0cfe07799bf451d4fe48c70a380cc247d97dd1e9d31e
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][4]'
+narrative_slot: utility
+en: "223,000"
+th: "223,000"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 18de404e0f9c67963a896c46adfcd64684d58c152530493b07eb91fff28a0c7d
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][0]'
+narrative_slot: utility
+en: "Norway"
+th: "นอร์เวย์"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: e735039cf11e1b410ba3ebc27e0284913eaf3da48491e78600f3f5305c0563d5
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][1]'
+narrative_slot: utility
+en: "Skilled worker, bachelor's-level job"
+th: "ใบอนุญาตสำหรับผู้มีทักษะ สำหรับตำแหน่งงานที่ต้องใช้วุฒิระดับปริญญาตรี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: a491ce2d2f6c086b01f9fe7cd83b44084535fa6d7efbb3bf373ab22ce29ca9f6
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][2]'
+narrative_slot: utility
+en: "NOK 545,400 a year, or the collective agreement rate where one applies"
+th: "NOK 545,400 ต่อปี หากมีข้อตกลงการจ้างงานร่วม (collective agreement) ให้ใช้อัตราค่าจ้างตามข้อตกลง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 855622887af4244ac7f68f595458c8ee937d97bf73644645b4df07205ed0e48f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][3]'
+narrative_slot: utility
+en: "51,400"
+th: "51,400"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 68abbaf3610218a316b91c853ebdedfb87a5f0d1f0c77556c051c03c96fcd3ac
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][4]'
+narrative_slot: utility
+en: "161,000"
+th: "161,000"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: dd2be9d1433207e629f494f10e6c612e342981d17b165139431ea357e5f8ebe5
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][0]'
+narrative_slot: utility
+en: "Germany"
+th: "เยอรมนี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: a5b352aeb1c7a5314601e3e0a567f016821ff4325f8db5d05318601e21a29fe9
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][1]'
+narrative_slot: utility
+en: "EU Blue Card"
+th: "EU Blue Card (ใบอนุญาตพำนักและทำงานสำหรับงานทักษะสูง)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 9f186add61f58cebf14408604cd99c034ba624e5824e8292fe7802cb9d59a777
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][2]'
+narrative_slot: utility
+en: "€50,700 a year"
+th: "€50,700 ต่อปี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 8ca98429a9927da94a34f63235e5e6550ba79fe71205726d9df2d7f59f2b1d92
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][3]'
+narrative_slot: utility
+en: "50,700"
+th: "50,700"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: dac705cb8b9a7b514b7f14cc4cf861ff064bbdef16f2e94783d153cf477e2ee2
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][4]'
+narrative_slot: utility
+en: "158,000"
+th: "158,000"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 7b99c2c0662d97e2c7528bcd8a3ce936da39a6986ba8f6d8a494a1cf69a5df46
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][0]'
+narrative_slot: utility
+en: "United Kingdom"
+th: "สหราชอาณาจักร"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: bc88508b80f741634c2b5aa53ec7a66dddcb84baef1c87802bc1c63fa3a5610c
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][1]'
+narrative_slot: utility
+en: "Skilled Worker"
+th: "Skilled Worker (วีซ่าทำงานสำหรับผู้มีทักษะ)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 3663818d62301dcd09260be19e83370d98de277861a2edfc948632c1605d1ddf
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][2]'
+narrative_slot: utility
+en: "£41,700 a year, or the occupation's going rate if higher"
+th: "£41,700 ต่อปี หรืออัตราค่าจ้างประจำอาชีพ หากอัตรานั้นสูงกว่า"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 1c56601458d4d1ae552f723dccba6cea2b711cae46df26ca3b3571fae688bf61
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][3]'
+narrative_slot: utility
+en: "49,900"
+th: "49,900"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: fa6697297d9d018613067fc00cae3b78074ee1e066a78a46bfdddfdb3db0c0cc
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][4]'
+narrative_slot: utility
+en: "156,000"
+th: "156,000"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: a7c5bed9ee136599ddc8acb295d6161639620974a51d3699739957afa3cff977
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][0]'
+narrative_slot: utility
+en: "Finland"
+th: "ฟินแลนด์"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 581a83ebafe40d2fa5ed64551cc9fcde6febf8f41fb84e4c165c8dce3d9b742d
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][1]'
+narrative_slot: utility
+en: "Specialist permit and EU Blue Card"
+th: "ใบอนุญาตสำหรับผู้เชี่ยวชาญ (Specialist permit) และ EU Blue Card"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 8ccd6890a41011038c78db027496d942dd4e46e0d47711a03e839b186a60d209
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][2]'
+narrative_slot: utility
+en: "€3,937 a month"
+th: "€3,937 ต่อเดือน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 3dfa07e9243632910ef533503aa4906cfa5bd4ded0ed212bba5b226b45440f8d
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][3]'
+narrative_slot: utility
+en: "47,200"
+th: "47,200"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 2d5c3b570c9480c42508c60976c239ed32ec97e3ef50499e290987cea5c26f38
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][4]'
+narrative_slot: utility
+en: "148,000"
+th: "148,000"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: f2e644ae071cf04926a38251591391ab78bffb89953f339aea77563b9d009e5b
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][0]'
+narrative_slot: utility
+en: "Ireland"
+th: "ไอร์แลนด์"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 2163b0ac003626cb3aa0fd1a87d18f7a2ab298a3cbfa1ba4291ffc99fd07300c
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][1]'
+narrative_slot: utility
+en: "Critical Skills Employment Permit"
+th: "Critical Skills Employment Permit (ใบอนุญาตทำงานสำหรับอาชีพที่อยู่ในรายการทักษะสำคัญ)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 77ee8fbc4bc6c9c370226253345ef3d819a19178b931122498d7985f72f1575a
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][2]'
+narrative_slot: utility
+en: "€40,904 a year with a relevant degree"
+th: "€40,904 ต่อปี สำหรับผู้มีคุณวุฒิที่เกี่ยวข้องกับตำแหน่งงาน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 85546af5fd2ddb78d8aac9105cd1d5bb86a9b7e10d265b412990834c155a7837
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][3]'
+narrative_slot: utility
+en: "40,900"
+th: "40,900"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 78972533463ba467f350a0734733488e326e191d3c50df59d3113dba300417a8
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][4]'
+narrative_slot: utility
+en: "128,000"
+th: "128,000"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 84ddd7acb205f2233a80ccfb66b05abc9df3286c5ccf4eeb52a229442cf81042
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][0]'
+narrative_slot: utility
+en: "Sweden"
+th: "สวีเดน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: b6711ab29244b1c791e98a6ddcc91b4c022222b6e1e2daf03eedf4d0bb337a09
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][1]'
+narrative_slot: utility
+en: "Work permit"
+th: "ใบอนุญาตทำงาน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: d4c924cbbf5d1a23c8776e2297c8eff9f18cc4ddb2e51d08ff6f1f6d6038b1a6
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][2]'
+narrative_slot: utility
+en: "SEK 34,470 a month"
+th: "SEK 34,470 ต่อเดือน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 931dec6ead479b3dfdbdfb1703fb8e090ea82f6ab21dbd314a06a015bb2d7a7c
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][3]'
+narrative_slot: utility
+en: "37,400"
+th: "37,400"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: a08e2d84d982c793829f90fa688056de4efa3fbb39228db9c6527b9bcd5255a3
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][4]'
+narrative_slot: utility
+en: "117,000"
+th: "117,000"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 9d1ff2ef780c420d31fb060df2b04923ed7b2ef9c0aec3e2cb98fe4ab04e56c1
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][0]'
+narrative_slot: utility
+en: "Poland"
+th: "โปแลนด์"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: fa5b8f4225083544b2b5b452fd439d64d27075adadb20c7ef2c2c57ac538a035
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][1]'
+narrative_slot: utility
+en: "EU Blue Card"
+th: "EU Blue Card"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 8e5125c4faf3d4185e49a0b712fd9609daae3a5332de87f4d63564f6323558d7
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][2]'
+narrative_slot: utility
+en: "PLN 160,264 a year"
+th: "PLN 160,264 ต่อปี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: affe336f78314cf5c85a9847e42630872fa2f8ee11e5a0f9e3b5187264ece2f5
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][3]'
+narrative_slot: utility
+en: "36,400"
+th: "36,400"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: a4d5253a5863927a028e58fe16cf35f517d5f5b59cd2bfcc86e7a82318405037
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][4]'
+narrative_slot: utility
+en: "114,000"
+th: "114,000"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 15e577a10c8f07aa36ae49794e5333ce6dd345b401dcd39c3911119e98b6d76e
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][0]'
+narrative_slot: utility
+en: "Czech Republic"
+th: "สาธารณรัฐเช็ก"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 588f1a7bed6a73f1654987e8ecac77ca05a8bdafd7879162c83abd50c61ee4f8
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][1]'
+narrative_slot: utility
+en: "EU Blue Card"
+th: "EU Blue Card"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 8e5125c4faf3d4185e49a0b712fd9609daae3a5332de87f4d63564f6323558d7
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][2]'
+narrative_slot: utility
+en: "CZK 73,823 a month"
+th: "CZK 73,823 ต่อเดือน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: bcdd5f07bbe402432acb7ac15440e7c13726dd2064db04ed54def661e3500a96
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][3]'
+narrative_slot: utility
+en: "36,300"
+th: "36,300"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: b54310170e028575d9252858fa9c9c18e918837d0e4aa00daf12ea1fd781ea08
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][4]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][4]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][4]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][4]'
+narrative_slot: utility
+en: "114,000"
+th: "114,000"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 15e577a10c8f07aa36ae49794e5333ce6dd345b401dcd39c3911119e98b6d76e
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[2].items[0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[2].items[0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[2].items[0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[2].items[0]'
+narrative_slot: utility
+en: "Some countries have a second route with a different bar. Sweden's EU Blue Card needs SEK 53,625 a month (about 182,000 THB), and Norway asks NOK 624,700 a year (about 184,000 THB a month) for a job that needs a master's. Ireland's Critical Skills permit without a relevant degree needs €68,911 a year (about 215,000 THB a month)."
+th: "บางประเทศมีเส้นทางใบอนุญาตอื่นที่ใช้เกณฑ์รายได้ต่างกัน ถ้าจะขอ EU Blue Card ในสวีเดน คุณต้องได้เงินเดือน SEK 53,625 ต่อเดือน (ประมาณ 182,000 บาท) ในนอร์เวย์ ถ้าตำแหน่งงานกำหนดวุฒิปริญญาโท เกณฑ์อยู่ที่ NOK 624,700 ต่อปี (ประมาณ 184,000 บาทต่อเดือน) ส่วนไอร์แลนด์ ถ้าคุณไม่มีคุณวุฒิที่เกี่ยวข้องกับตำแหน่งงานแต่จะขอ Critical Skills Employment Permit ต้องได้ €68,911 ต่อปี (ประมาณ 215,000 บาทต่อเดือน)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 633a8ae97ea4e082d511f5b468d799c4bfa3a96b7d4dbebe900bce1957233e2e
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[3].alt`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[3].alt
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[3].alt
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[3].alt'
+narrative_slot: utility
+en: "Bar chart of the minimum monthly salary for a work visa in 10 European countries in 2026, in THB, from about 114,000 in Poland and the Czech Republic to 231,000 in Denmark."
+th: "กราฟแท่งแสดงเงินเดือนขั้นต่ำต่อเดือนสำหรับวีซ่าทำงานใน 10 ประเทศยุโรป ปี 2026 ตั้งแต่ประมาณ 114,000 บาท ในโปแลนด์และสาธารณรัฐเช็ก ไปจนถึง 231,000 บาท ในเดนมาร์ก"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 9e707c0461c6a20955b163498e91bf711d51afe569e230529454801d84b2002a
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[3].caption`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[3].caption
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].body[3].caption
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[3].caption'
+narrative_slot: utility
+en: "The main work route in each country, 2026, before tax, converted at 37.49 THB to the euro."
+th: "เงินเดือนก่อนหักภาษีตามเกณฑ์ของวีซ่าทำงานประเภทหลักในแต่ละประเทศ ปี 2026 คิดที่ 37.49 บาทต่อยูโร"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 67590394c8b78c2a9b82e9697591bbbc88cfb3aa0e8f6ec62bcc66a2ad022a3a
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].heading`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].heading
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[2].heading
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].heading'
+narrative_slot: utility
+en: "10 countries compared, in EUR and THB"
+th: "เทียบเงินเดือนขั้นต่ำใน 10 ประเทศ ทั้งยูโรและบาท"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: fef73d6aa120ad87382c2db38400f5dcc10c408f70065df200799cb45dbc61a5
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[0].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[0].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[3].body[0].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[0].text'
+narrative_slot: utility
+en: "Some countries lower the bar for younger people, recent graduates or jobs they cannot fill. If you fit one of these groups, a country that looks out of reach may be within it."
+th: "บางประเทศลดเกณฑ์รายได้ขั้นต่ำให้คนอายุน้อย คนที่เพิ่งเรียนจบ หรือคนที่ทำงานในอาชีพที่ขาดแคลนแรงงาน ถ้าคุณอยู่ในกลุ่มเหล่านี้ เงินเดือนของคุณอาจถึงเกณฑ์ของประเทศที่ตอนแรกคิดว่าสูงเกินไป"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: b110850e36219ad30e7446f252ab4b2c23f4c9550467f9ae8072dfa6b507588a
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[0]'
+narrative_slot: utility
+en: "Netherlands: under 30, €4,357 a month (about 163,000 THB); under the reduced criteria, for example a recent graduate who qualifies, €3,122 a month (about 117,000 THB)."
+th: "เนเธอร์แลนด์ ถ้าคุณอายุต่ำกว่า 30 ปี เกณฑ์อยู่ที่ €4,357 ต่อเดือน (ประมาณ 163,000 บาท) ส่วนคนที่มีสิทธิ์ใช้เกณฑ์รายได้ขั้นต่ำที่ต่ำกว่า เช่น คนที่เพิ่งเรียนจบและมีคุณสมบัติครบ ใช้เกณฑ์ €3,122 ต่อเดือน (ประมาณ 117,000 บาท)"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: a59e2abd5666c220f10406cf11980069dfd2f20a6560f45ee6d1f8c6a21b1ed3
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[1]'
+narrative_slot: utility
+en: "Germany: shortage occupations, recent graduates, and IT specialists without a degree who have three years of IT experience in the last seven, €45,934.20 a year (about 143,000 THB a month)."
+th: "เยอรมนี เกณฑ์ €45,934.20 ต่อปี (ประมาณ 143,000 บาทต่อเดือน) ใช้กับคนทำงานในอาชีพขาดแคลน คนที่เพิ่งเรียนจบ และผู้เชี่ยวชาญด้านไอทีที่ไม่มีวุฒิปริญญาแต่มีประสบการณ์ทำงานด้านไอที 3 ปีในช่วง 7 ปีที่ผ่านมา"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 18d9d989121f4d6283b77234dd8a14ef8081a80b3ab538b57a5f21f94b547f51
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[2]'
+narrative_slot: utility
+en: "Ireland: the General Employment Permit, for jobs outside the critical skills list, €36,605 a year (about 114,000 THB a month). It usually needs a labour market test."
+th: "ไอร์แลนด์ ถ้าอาชีพของคุณอยู่นอกรายชื่ออาชีพที่ต้องใช้ทักษะสำคัญ General Employment Permit (ใบอนุญาตทำงานทั่วไป) ใช้เกณฑ์ €36,605 ต่อปี (ประมาณ 114,000 บาทต่อเดือน) โดยปกตินายจ้างต้องดำเนินการทดสอบตลาดแรงงานเพื่อแสดงว่าไม่สามารถหาผู้สมัครในประเทศได้"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 24ddcc8a25230b7be8745311bda672d910b1f2878964b9844c6812f9909bec1a
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[2].alt`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[2].alt
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[3].body[2].alt
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[2].alt'
+narrative_slot: utility
+en: "Bars comparing the standard and the lower minimum salary in the Netherlands, Germany and Ireland in 2026, in THB a month."
+th: "กราฟแท่งเปรียบเทียบเงินเดือนขั้นต่ำตามเกณฑ์ปกติกับเกณฑ์ที่ต่ำกว่าในเนเธอร์แลนด์ เยอรมนี และไอร์แลนด์ ปี 2026 หน่วยเป็นบาทต่อเดือน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 0850f400d363641cc611ff3dca63410e0959eea7abfe4cb7dbbdd63e2b6ee142
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[2].caption`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[2].caption
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[3].body[2].caption
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[2].caption'
+narrative_slot: utility
+en: "The lower bar applies only if you meet that country's conditions."
+th: "คุณใช้เกณฑ์ที่ต่ำกว่าได้เฉพาะเมื่อมีคุณสมบัติตรงตามเงื่อนไขของประเทศนั้น"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: e77d74e52e7d9bed2ebef340a876803e389daa54bc4cf7eef4e2b0343f73845a
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].heading`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].heading
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[3].heading
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].heading'
+narrative_slot: utility
+en: "Under 30, a recent graduate or in a shortage job? The bar may be lower"
+th: "อายุต่ำกว่า 30 ปี เพิ่งเรียนจบ หรือทำงานในอาชีพขาดแคลน ใช้เกณฑ์ที่ต่ำกว่าได้ไหม"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 9f1418e71bc45dc958f9bff1efc964002c75e756a6b733b3ba5f6ea7ce3898bd
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[0].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[0].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[4].body[0].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].body[0].text'
+narrative_slot: utility
+en: "The figures in the table are a floor, not the salary to expect. Several countries also check that you are paid what local staff earn for the same job."
+th: "ตัวเลขในตารางเป็นเพียงระดับขั้นต่ำ ไม่ใช่ระดับเงินเดือนที่ควรคาดหวัง หลายประเทศยังตรวจด้วยว่านายจ้างจ่ายให้คุณเท่ากับคนในประเทศที่ทำงานเดียวกันหรือเปล่า"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 95ab399de11e9a23b2a479b69bb373ec17fc44fd545c0043e80ac27f3c76b22f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[1].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[1].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[4].body[1].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].body[1].text'
+narrative_slot: utility
+en: "In Germany, the reduced bar needs approval from the Federal Employment Agency, which may require more than the minimum."
+th: "ในเยอรมนี หากต้องการใช้เกณฑ์รายได้ที่ต่ำกว่า คุณต้องได้รับอนุมัติจากสำนักงานแรงงานของรัฐบาลกลางก่อน และสำนักงานอาจกำหนดเงินเดือนสูงกว่าขั้นต่ำ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: b0bf65c39317c499cf2122f05266f8fdaffdc77c685d3dc4da7057b41a04a509
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[2].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[2].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[4].body[2].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].body[2].text'
+narrative_slot: utility
+en: "In the UK, the salary must meet both the general threshold and the going rate for the occupation, whichever is higher."
+th: "ในสหราชอาณาจักร เงินเดือนต้องถึงทั้งเกณฑ์ทั่วไปและอัตราค่าจ้างประจำอาชีพ จึงต้องยึดตัวที่สูงกว่า"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 1b516c6a423c75efc191b52139643672ec4411b3ffa6e8dfeae78855dba5ff05
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[3].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[3].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[4].body[3].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].body[3].text'
+narrative_slot: utility
+en: "In Norway, a collective agreement's wage rate applies where there is one."
+th: "ในนอร์เวย์ ถ้าตำแหน่งงานนั้นอยู่ภายใต้ข้อตกลงการจ้างงานร่วม ให้ใช้อัตราค่าจ้างตามข้อตกลง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: c5d00e95994d057d2f533aef24eef270d55e98812dc47539e4049cee9bb5b273
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[4].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[4].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[4].body[4].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].body[4].text'
+narrative_slot: utility
+en: "Every figure is before tax and social security. What reaches your bank account each month is noticeably less."
+th: "ตัวเลขทั้งหมดเป็นยอดก่อนหักภาษีและเงินสมทบประกันสังคม เงินที่เข้าบัญชีคุณจริงแต่ละเดือนจึงน้อยกว่านี้พอสมควร"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: daf5646005ac15a7265bd97d63733e0b93d991dc9619baaf46a2162825fdeefb
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].heading`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].heading
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[4].heading
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].heading'
+narrative_slot: utility
+en: "Meeting the minimum does not guarantee the visa"
+th: "เงินเดือนถึงเกณฑ์แล้ว วีซ่าก็ยังอาจไม่ผ่าน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: a29bc0639e17e02c6880822049541ff74ec1d7b58b76dddf69671b9492c9f0dc
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[5].body[0].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[5].body[0].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[5].body[0].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[5].body[0].text'
+narrative_slot: utility
+en: "France, Spain, Austria, Belgium, Switzerland, Italy and Portugal are missing on purpose. We print a figure only once we have read it on the government's own page, and for these we have not yet. If one of them is your target, ask the employer or the embassy what your role must pay."
+th: "เรายังเว้นฝรั่งเศส สเปน ออสเตรีย เบลเยียม สวิตเซอร์แลนด์ อิตาลี และโปรตุเกสไว้ เพราะเราจะระบุตัวเลขเมื่อได้อ่านจากเว็บไซต์ทางการของประเทศนั้นแล้ว และเรายังไม่ได้ตรวจตัวเลขของประเทศเหล่านี้ ถ้าคุณเล็งประเทศใดประเทศหนึ่งไว้ ลองถามนายจ้างหรือสถานทูตว่าตำแหน่งงานของคุณต้องได้เงินเดือนอย่างน้อยเท่าไหร่"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: f88349e15b7dfccfc0108f9b03e2312491aac0b40ff1295fd188b4b0a8a34b3c
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[5].heading`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[5].heading
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[5].heading
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[5].heading'
+narrative_slot: utility
+en: "Countries not in this table yet"
+th: "ประเทศใดที่ยังไม่รวมอยู่ในตาราง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: a44f17941a1d89588085158d4887467e98edeaf15e3d53497c0659944be6b0d2
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[0].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[0].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[6].body[0].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].body[0].text'
+narrative_slot: utility
+en: "Most bars change every year. What counts is the figure in force on the day you apply, not the day you receive the offer."
+th: "เกณฑ์รายได้ขั้นต่ำส่วนใหญ่เปลี่ยนทุกปี ให้ดูเกณฑ์ที่มีผลในวันที่คุณยื่นคำขอ แม้วันที่ได้รับข้อเสนองานจะยังใช้เกณฑ์เดิม"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 2367f8286d571a674a5b79b278cc0c4dcd40c83620f680f76daf613b773b2388
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[0]'
+narrative_slot: utility
+en: "The Netherlands changes its salary thresholds and fees from 1 January 2027."
+th: "เนเธอร์แลนด์ปรับเกณฑ์รายได้ขั้นต่ำและค่าธรรมเนียมตั้งแต่ 01/01/2027"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 6789032cb8a945d930c34b7bc8bd04498e69c4cf140105371bbecf87c92433e0
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[1]'
+narrative_slot: utility
+en: "Germany sets a new EU Blue Card figure every year."
+th: "เยอรมนีกำหนดเกณฑ์รายได้ขั้นต่ำสำหรับ EU Blue Card ใหม่ทุกปี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 83e6520b5af23c48b7126927d37021f5fba55f7fc8990905274420bf94533453
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[2]'
+narrative_slot: utility
+en: "Ireland plans further increases from 2027."
+th: "ไอร์แลนด์มีแผนปรับเกณฑ์ขึ้นอีกตั้งแต่ปี 2027"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 9ff027c1951b4bf892b4599a326ea125579685258e0355094ea70168c5333a42
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[3]'
+narrative_slot: utility
+en: "Poland's figure is for applications filed in 2026, and the Czech figure applies to decisions until 30 April 2027."
+th: "โปแลนด์ใช้ตัวเลขนี้กับคำขอที่ยื่นในปี 2026 ส่วนสาธารณรัฐเช็กใช้ตัวเลขนี้กับคำขอที่หน่วยงานตัดสินภายในวันที่ 30/04/2027"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 7c46ed1f8aec7f3d8acfee277b4e18e548b19d45ec095c0abe995968ffaecf3f
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].heading`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].heading
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[6].heading
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].heading'
+narrative_slot: utility
+en: "What changes on 1 January 2027"
+th: "ตั้งแต่วันที่ 1 มกราคม 2027 มีอะไรเปลี่ยนแปลงบ้าง"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 9d3338544805ca8effc62e0750b157d331d85e0460b11aaf3a4a3c9afdae2c90
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[0]'
+narrative_slot: utility
+en: "Find out which route the job uses, an EU Blue Card or the country's own permit, because the bars differ."
+th: "ตรวจสอบก่อนว่าตำแหน่งงานนี้ใช้ EU Blue Card หรือใบอนุญาตทำงานของประเทศนั้น เพราะเกณฑ์รายได้ขั้นต่ำต่างกัน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: ac4548cec28b0acf54ca40506aa9debd6cbf0d8435fe3f39cb4b443399b081b2
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[1]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[1]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[1]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[1]'
+narrative_slot: utility
+en: "Check whether you qualify for a lower bar, by age, graduation year or occupation."
+th: "ดูว่าอายุ ปีที่เรียนจบ หรืออาชีพของคุณ ทำให้คุณมีสิทธิ์ใช้เกณฑ์ที่ต่ำกว่าหรือเปล่า"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 8e44ee5e02891b0ff3c1e414379e794e4a0511d87a358d8ab479d01013f1f852
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[2]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[2]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[2]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[2]'
+narrative_slot: utility
+en: "Compare it with the offer as a gross yearly figure, and check whether that country counts extras such as holiday pay."
+th: "เทียบเกณฑ์กับเงินเดือนที่นายจ้างเสนอ โดยคิดเป็นยอดต่อปีก่อนหักภาษี แล้วเช็กว่าประเทศนั้นนับเงินส่วนอื่น เช่น เงินวันหยุดพักร้อน รวมด้วยไหม"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: feee9565ab23c12413f99368e0b1ec824f2f44fc17de9ca2562927d8cb4c24c5
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[3]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[3]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[3]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[3]'
+narrative_slot: utility
+en: "Ask the employer directly whether the role sponsors a visa, and which route they will apply for."
+th: "สอบถามนายจ้างโดยตรงว่าตำแหน่งงานนี้สปอนเซอร์วีซ่าให้หรือไม่ และจะยื่นขอวีซ่าหรือใบอนุญาตประเภทไหนให้คุณ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: d03b158875bf9674b10b8d2ecf9a70c995933c3efd09ccd95097df84b9a5beda
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[1].text`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[1].text
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[7].body[1].text
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].body[1].text'
+narrative_slot: utility
+en: "If you are not yet sure where to start, read “Want to work in Europe? Where to start”, then pick two countries your salary can reach. Then take the “EU Fit Check” to see how ready you are for the one you choose."
+th: "ถ้ายังไม่แน่ใจว่าจะเริ่มตรงไหน ลองอ่าน “อยากไปทำงานยุโรป เริ่มจากตรงไหน” แล้วเลือกไว้สองประเทศที่เงินเดือนของคุณถึงเกณฑ์ จากนั้นลองทำ “EU Fit Check” เพื่อดูว่าคุณพร้อมแค่ไหนสำหรับประเทศที่เลือก"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 9f531d57cd1542e326b57a435a0c236fde8d3119384150e5daebbe083fba8c81
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].heading`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].heading
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[7].heading
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].heading'
+narrative_slot: utility
+en: "How to use this table: 4 steps"
+th: "วิธีตรวจสอบข้อเสนองานกับตารางใน 4 ขั้นตอน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 933558291b2817990051ab9aa2f8da9232aa64cc20a910938c1a002446e30073
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[0].a[0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[0].a[0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[8].body[0].a[0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[0].a[0]'
+narrative_slot: utility
+en: "€50,700 a year before tax, or €45,934.20 for shortage occupations, recent graduates and some IT specialists. The figure changes every year."
+th: "€50,700 ต่อปีก่อนหักภาษี หรือ €45,934.20 สำหรับผู้ทำงานในอาชีพที่ขาดแคลน คนที่เพิ่งเรียนจบ และผู้เชี่ยวชาญด้านไอทีบางกลุ่ม ตัวเลขนี้เปลี่ยนทุกปี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 7aa71083738fdec748bb94d7274f8ffaaffd99e2c8af7c2c233f47d5d4be7bc4
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[0].q`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[0].q
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[8].body[0].q
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[0].q'
+narrative_slot: utility
+en: "What salary does a German EU Blue Card need in 2026?"
+th: "ขอ EU Blue Card ในเยอรมนีปี 2026 ต้องได้เงินเดือนเท่าไหร่"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 7aa14b45a6b6876cbbd30389125d350da2431d88f1854588c7463a03484e87ae
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[1].a[0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[1].a[0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[8].body[1].a[0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[1].a[0]'
+narrative_slot: utility
+en: "Before tax and social security, in every country in this table."
+th: "ทุกประเทศในตารางใช้ยอดก่อนหักภาษีและเงินสมทบประกันสังคม"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 22fac2d079a937cb822cdf9ed519c595bf295b1bdba42dfd472bf7a6e17b0788
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[1].q`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[1].q
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[8].body[1].q
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[1].q'
+narrative_slot: utility
+en: "Is a visa's minimum salary before or after tax?"
+th: "เกณฑ์รายได้ขั้นต่ำสำหรับวีซ่าคิดก่อนหรือหลังหักภาษี"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: e665e8840ec412e38a40d39e74e7cffcdecbde061037cf723b294fa1a81f9768
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[2].a[0]`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[2].a[0]
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[8].body[2].a[0]
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[2].a[0]'
+narrative_slot: utility
+en: "In our table, Poland and the Czech Republic, both about 114,000 THB a month on their EU Blue Card. Ireland's General Employment Permit is about the same."
+th: "ในตารางของเรา โปแลนด์และสาธารณรัฐเช็กมีเกณฑ์ประมาณ 114,000 บาทต่อเดือนเท่ากันสำหรับ EU Blue Card ส่วน General Employment Permit ของไอร์แลนด์ก็ใช้เกณฑ์ใกล้เคียงกัน"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: f48222c09e72c0740be3868d3a020b056dc045281e7cd97b50e7d22d625cdb13
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[2].q`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[2].q
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[8].body[2].q
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[2].q'
+narrative_slot: utility
+en: "Which European country has the lowest salary bar?"
+th: "ประเทศไหนในยุโรปกำหนดเงินเดือนขั้นต่ำไว้ต่ำที่สุด"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: c62945fc094fc7241659abcb069fe1c3716de60c74c5181160787161dba8e653
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].heading`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].heading
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.sections[8].heading
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].heading'
+narrative_slot: utility
+en: "Frequently asked questions"
+th: "คำถามที่พบบ่อยเกี่ยวกับวีซ่า"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: c20ee92127dee17bea9aed06d4fb269ca2a2befaccd2d4e7864f3e934189c93b
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.seoTitle`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.seoTitle
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.seoTitle
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.seoTitle'
+narrative_slot: utility
+en: "Work visa minimum salary in Europe 2027, 10 countries"
+th: "เงินเดือนขั้นต่ำสำหรับวีซ่าทำงานยุโรป 2027 เทียบ 10 ประเทศ"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 5984db1d0c916c9710dc755aebe147469a6460e18af646b4e0b0ab8c42d3dea8
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.summary`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.summary
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.summary
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.summary'
+narrative_slot: utility
+en: "Minimum salary for a work visa in 10 European countries, in EUR and THB, from official sources, with lower bars for under-30s and recent graduates."
+th: "เทียบเงินเดือนขั้นต่ำที่ใช้ขอวีซ่าทำงานใน 10 ประเทศยุโรป ทั้งยูโรและบาท ตามข้อมูลจากหน่วยงานรัฐ และเกณฑ์ที่ต่ำลงสำหรับคนอายุต่ำกว่า 30 ปีและผู้สำเร็จการศึกษาใหม่"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: cf1fcbea4744fb122b9ff60818b388cb653f883d4238e5dc32d0b626d739eb00
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
+### `src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.title`
+
+```yaml
+id: src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.title
+source: src/lib/content/posts/salary-thresholds-europe.ts
+path: SALARY_THRESHOLDS_EUROPE.title
+render: 'Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.title'
+narrative_slot: utility
+en: "Minimum salary for a work visa in Europe, 2027: how much each country requires"
+th: "วีซ่าทำงานในยุโรปปี 2027: แต่ละประเทศกำหนดรายได้ขั้นต่ำเท่าไหร่"
+provenance: paul-approved
+date: 20/11/2026
+term_bindings: []
+decision_note: "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+review:
+  structural_calque: pass
+  text_hash: 1607ce39fc34f7caeb2b2bed9656363d8ff1795f25fd7b926668f49734e16563
+  prompt_version: structural-calque-v1
+  basis: Paul approved the Thai on 20/11/2026 after amending Codex's draft.
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.image.alt`
 
 ```yaml

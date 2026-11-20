@@ -6444,6 +6444,951 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "10/11/2026",
     "decisionNote": "Composed from the corpus on 10/11/2026 and edited line by line in a copy review the same day. Paul read it back on the Thai preview page and approved it on 10/11/2026. The English is translated from that Thai."
   },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.image.alt": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.image.alt",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.image.alt",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.question": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.question",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.question",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[0].body[0].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[0].body[0].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[0].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[0].body[1].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[0].body[1].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[0].body[1].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[0].heading": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[0].heading",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[0].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[1].body[0].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[1].body[0].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[1].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[1].body[1].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[1].body[1].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[1].body[1].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[1].heading": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[1].heading",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[1].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[0].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[0].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].head[4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[0][4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[1][4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[2][4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[3][4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[4][4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[5][4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[6][4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[7][4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[8][4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][4]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][4]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[1].rows[9][4]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[2].items[0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[2].items[0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[2].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[3].alt": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[3].alt",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[3].alt",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].body[3].caption": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].body[3].caption",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].body[3].caption",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[2].heading": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[2].heading",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[2].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[0].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[3].body[0].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[1].items[2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[2].alt": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[3].body[2].alt",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[2].alt",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].body[2].caption": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[3].body[2].caption",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].body[2].caption",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[3].heading": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[3].heading",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[3].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[0].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[4].body[0].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[1].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[4].body[1].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].body[1].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[2].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[4].body[2].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].body[2].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[3].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[4].body[3].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].body[3].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].body[4].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[4].body[4].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].body[4].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[4].heading": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[4].heading",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[4].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[5].body[0].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[5].body[0].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[5].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[5].heading": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[5].heading",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[5].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[0].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[6].body[0].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].body[0].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].body[1].items[3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[6].heading": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[6].heading",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[6].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[1]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[1]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[1]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[2]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[2]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[2]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[3]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[3]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].body[0].items[3]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].body[1].text": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[7].body[1].text",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].body[1].text",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[7].heading": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[7].heading",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[7].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[0].a[0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[8].body[0].a[0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[0].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[0].q": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[8].body[0].q",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[0].q",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[1].a[0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[8].body[1].a[0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[1].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[1].q": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[8].body[1].q",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[1].q",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[2].a[0]": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[8].body[2].a[0]",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[2].a[0]",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].body[2].q": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[8].body[2].q",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].body[2].q",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.sections[8].heading": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.sections[8].heading",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.sections[8].heading",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.seoTitle": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.seoTitle",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.seoTitle",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.summary": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.summary",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.summary",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
+  "src/lib/content/posts/salary-thresholds-europe.ts::SALARY_THRESHOLDS_EUROPE.title": {
+    "source": "src/lib/content/posts/salary-thresholds-europe.ts",
+    "path": "SALARY_THRESHOLDS_EUROPE.title",
+    "render": "Blog article: Minimum salary for a work visa, SALARY_THRESHOLDS_EUROPE.title",
+    "narrativeSlot": "utility",
+    "provenance": "paul-approved",
+    "date": "20/11/2026",
+    "decisionNote": "English written first and approved 20/11/2026 (Paul delegated the call); Thai drafted by Codex from thai-handoff.md, amended by Paul with two review notes and approved by him 20/11/2026."
+  },
   "src/lib/content/posts/start-in-europe.ts::START_IN_EUROPE.image.alt": {
     "source": "src/lib/content/posts/start-in-europe.ts",
     "path": "START_IN_EUROPE.image.alt",
