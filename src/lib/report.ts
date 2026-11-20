@@ -1535,6 +1535,70 @@ const BOOK_STYLES = `
   }
 `;
 
+/**
+ * What fits on one sheet of the paid report, in millimetres, so that a long
+ * area is split into whole pages instead of spilling onto a short strip with no
+ * margin, logo or footer.
+ *
+ * An area page used to be one A4 box however much the coach had written, and a
+ * coach's notes are a different length for every candidate, so the layout could
+ * not go on assuming they fit. These numbers are measured off the stylesheet
+ * above: the page is 296.5mm with 22mm of margin top and bottom, the heading
+ * block runs to the rule under its number, and the score line, the radar at
+ * 118mm across a 2.1:1 viewBox, and the legend sit above the table on the
+ * first sheet only.
+ *
+ * They are estimates, and the two stylesheet rules that go with them are what
+ * make an estimate safe: a repeated header group and rows that refuse to break,
+ * so underestimating costs a tidier page rather than a header-less table or a
+ * row cut in half.
+ */
+export const SHEET = {
+  /** A4 less the top and bottom margins. */
+  content: 248,
+  /** The numbered heading, its badge and the rule under it. */
+  heading: 45,
+  /** The score line, the radar and its legend. First sheet only. */
+  opener: 83,
+  /** The table's header row, repeated on every sheet it continues onto. */
+  thead: 8,
+  /** A row's own padding, and one line of text in it. */
+  rowPad: 3.6,
+  rowLine: 4.2,
+  /** Characters to a line in the note column and in the competency column. */
+  noteChars: 43,
+  nameChars: 50,
+};
+
+/** How tall one competency row comes out, given what is written in it. */
+export const sheetRow = (label: string, note: string, lines = 0) =>
+  SHEET.rowPad +
+  SHEET.rowLine *
+    Math.max(1, lines, Math.ceil(label.length / SHEET.nameChars), Math.ceil(note.length / SHEET.noteChars));
+
+/**
+ * Deal items into sheets, the first of which has less room than the rest
+ * because it carries the chart. Every sheet takes at least one item, so an item
+ * taller than a whole page gets its own sheet rather than an empty one.
+ */
+function sheetGroups<T>(items: T[], height: (item: T) => number, first: number, rest: number): T[][] {
+  const out: T[][] = [];
+  let room = first;
+  let sheet: T[] = [];
+  for (const item of items) {
+    const h = height(item);
+    if (sheet.length && h > room) {
+      out.push(sheet);
+      sheet = [];
+      room = rest;
+    }
+    sheet.push(item);
+    room -= h;
+  }
+  if (sheet.length) out.push(sheet);
+  return out;
+}
+
 /* ===================================================================== */
 /* THE PAID FIT REPORT                                                    */
 /* ===================================================================== */
@@ -1626,6 +1690,11 @@ const FIT_PAGED_STYLES = `
   body.is-fit table.gap th, body.is-fit table.gap td, body.is-fit table.scores th, body.is-fit table.scores td { padding: 1.8mm 4mm; }
   body.is-fit table.gap thead th, body.is-fit table.scores thead th { background: var(--color-cyan-pale); color: var(--color-on-cyan-pale); }
   body.is-fit table.gap tr:last-child > *, body.is-fit table.scores tr:last-child > * { border-bottom: 0; }
+  /* The renderer deals rows into whole sheets; these two make an underestimate
+     harmless. A header group reprints itself wherever a table does carry on, and
+     a row that will not fit moves down whole instead of being cut in half. */
+  body.is-fit table.gap thead, body.is-fit table.scores thead { display: table-header-group; }
+  body.is-fit table.gap tr, body.is-fit table.scores tr { break-inside: avoid; }
   body.is-fit ol.path li { border: 0; background: var(--color-canvas-soft); border-radius: 5mm; padding: 4mm; }
   body.is-fit ol.path li.is-start { background: var(--color-yellow-pale); outline: 2px solid var(--color-warning-deep); }
   body.is-fit ol.moves li { border: 0; background: var(--color-canvas-soft); border-radius: 5mm; padding: 5mm; }
@@ -1690,14 +1759,23 @@ export function renderFitReport(input: FitReportInput, meta: ReportMeta, opts: R
   const competencies = full.reduce((n, d) => n + d.items.length, 0);
 
   let secNo = 0;
-  const section = (id: string, heading: string, inner: string) => {
-    secNo++;
+  /**
+   * One sheet: a whole A4 page carrying its own top margin, logo, numbered
+   * heading and footer. `of` is passed where a section runs onto more than one
+   * sheet. The number counts sections rather than sheets, so a continued sheet
+   * keeps it and says its place in the footer as a figure, which needs no word
+   * in either language; its id takes a suffix, because an id is unique per
+   * document and the first sheet keeps the bare one that `flatShowcase` cuts by.
+   */
+  const section = (id: string, heading: string, inner: string, of?: { sheet: number; sheets: number }) => {
+    if (!of || of.sheet === 1) secNo++;
     const num = String(secNo).padStart(2, "0");
-    return `<section class="fit-sec" id="${id}">
+    const place = of && of.sheets > 1 ? ` · ${of.sheet}/${of.sheets}` : "";
+    return `<section class="fit-sec" id="${of && of.sheet > 1 ? `${id}-${of.sheet}` : id}">
   <img class="fit-logo" src="${asset("/efc-logo.svg")}" alt="">
   <h2><span class="sec-num">${num}</span>${esc(heading)}</h2>
 ${inner}
-  <p class="sec-foot"><span>${esc(s("fit.eyebrow"))} · ${esc(meta.candidate)}</span><span>${num} · ${esc(heading)}</span></p>
+  <p class="sec-foot"><span>${esc(s("fit.eyebrow"))} · ${esc(meta.candidate)}</span><span>${num} · ${esc(heading)}${place}</span></p>
 </section>`;
   };
   const gapCell = (score: number | null, bar: number) =>
@@ -1747,26 +1825,46 @@ ${inner}
         d.items.map((i) => ({ label: name(i.key, i.label), value: i.score })),
         { idPrefix: `fitdim${idx}`, size: 300, values: false, maxLabel: 60, widthRatio: 2.1, wrapLabels: true, threshold: d.bar },
       );
-      const rows = d.items
-        .map(
-          (i) =>
-            `<tr><th scope="row">${esc(name(i.key, i.label))}</th><td class="num">${i.score === null ? "–" : i.score.toFixed(1)}</td><td class="coach-note">${
-              i.note
-                ? esc(i.note)
-                : opts.sampleNotes && i.score !== null && i.score < d.bar
-                  ? `<span class="bk-line" style="width:86%"></span><span class="bk-line" style="width:54%"></span>`
-                  : ""
-            }</td></tr>`,
-        )
-        .join("");
-      return section(
-        d.key,
-        dimLabel(d.key, d.label),
-        `  <p class="dim-score">${d.score === null ? esc(s("fit.how.none")) : `<strong>${d.score.toFixed(1)}</strong> / 5 · ${esc(s("fit.col.bar"))} ${d.bar.toFixed(1)}`}</p>
-  <figure class="chart" style="max-width:36rem">${svg}</figure>
-  <p class="legend-bar">${esc(s("fit.legend.bar"))}</p>
-  <table class="scores"><thead><tr><th scope="col">${esc(s("report.competency"))}</th><th scope="col">${esc(s("report.score"))}</th><th scope="col">${esc(s("fit.col.note"))}</th></tr></thead><tbody>${rows}</tbody></table>`,
+      const cells = d.items.map((i) => {
+        const label = name(i.key, i.label);
+        const skeleton = !i.note && opts.sampleNotes && i.score !== null && i.score < d.bar;
+        return {
+          // The sample's two ruled lines stand in for a note and take two lines.
+          h: sheetRow(label, i.note ?? "", skeleton ? 2 : 0),
+          html: `<tr><th scope="row">${esc(label)}</th><td class="num">${i.score === null ? "–" : i.score.toFixed(1)}</td><td class="coach-note">${
+            i.note
+              ? esc(i.note)
+              : skeleton
+                ? `<span class="bk-line" style="width:86%"></span><span class="bk-line" style="width:54%"></span>`
+                : ""
+          }</td></tr>`,
+        };
+      });
+      const sheets = sheetGroups(
+        cells,
+        (c) => c.h,
+        SHEET.content - SHEET.heading - SHEET.opener - SHEET.thead,
+        SHEET.content - SHEET.heading - SHEET.thead,
       );
+      const scores = (rows: typeof cells) =>
+        `<table class="scores"><thead><tr><th scope="col">${esc(s("report.competency"))}</th><th scope="col">${esc(s("report.score"))}</th><th scope="col">${esc(s("fit.col.note"))}</th></tr></thead><tbody>${rows
+          .map((c) => c.html)
+          .join("")}</tbody></table>`;
+      const opener = `  <p class="dim-score">${d.score === null ? esc(s("fit.how.none")) : `<strong>${d.score.toFixed(1)}</strong> / 5 · ${esc(s("fit.col.bar"))} ${d.bar.toFixed(1)}`}</p>
+  <figure class="chart" style="max-width:36rem">${svg}</figure>
+  <p class="legend-bar">${esc(s("fit.legend.bar"))}</p>`;
+      // The chart and the score go on the first sheet; the table carries on over
+      // as many more as the coach's notes need, each one a whole page.
+      return sheets
+        .map((rows, n) =>
+          section(
+            d.key,
+            dimLabel(d.key, d.label),
+            n === 0 ? `${opener}\n  ${scores(rows)}` : `  ${scores(rows)}`,
+            { sheet: n + 1, sheets: sheets.length },
+          ),
+        )
+        .join("\n");
     })
     .join("\n");
 
@@ -1840,10 +1938,15 @@ ${inner}
   const titles = meta.targetTitles?.length ? meta.targetTitles.join(", ") : meta.targetRole;
   const metaBits = [titles ? esc(titles) : "", countries ? esc(countries) : ""].filter(Boolean);
   const countryInner = countryFactsBody(meta.targetCountries?.[0], locale, asset);
+  // Built by hand rather than through `section()`, because this page has its own
+  // title over the photograph and takes no number: numbering counts the scored
+  // sections, and the country page sits outside them. It still owes the reader
+  // the same furniture as every other sheet, which is the footer below.
   const countrySec = countryInner
     ? `<section class="fit-sec" id="country">
   <img class="fit-logo" src="${asset("/efc-logo.svg")}" alt="">
 ${countryInner}
+  <p class="sec-foot"><span>${esc(s("fit.eyebrow"))} · ${esc(meta.candidate)}</span><span>${esc(meta.targetCountries?.[0] ?? "")}</span></p>
 </section>`
     : "";
   // The cover, redesigned 20/11/2026 to match the EU Fit Check report: a dark
