@@ -154,6 +154,7 @@ sibling repo by the exporter that makes them.
 | **R48** | An article with artwork needs a sharing card at `public/blog/share/<slug>.jpg`, at 1200x630. |
 | **R49** | No candidate-facing string is written inline in a component. Copy lives in `src/lib/content/`, and `consent-copy.ts`, its Thai terms reach it from `termbase.yml` through `termbase.generated.ts`, and a string written anywhere else is linted by nothing and missing in the other language. Those modules are themselves generated: the text comes from `LANGUAGE-SYSTEM.md` and the code shape from `scripts/language-templates/<path>.tpl`. An edit made in the module is discarded by the next `npm run language:generate` without a warning or a diff, so change the record for a string and the template for anything that is not one, then regenerate. |
 | **R50** | Both reports open the country page from `targetCountries[0]`, so a delivered Fit Report needs nothing extra to get it. A country fact changes in three steps, all before a push: edit `country-facts.md` in the sibling repo (C32), run `scripts/sync-country-facts.ts`, then give the changed English a record. Each fact's record id is a hash of its English, so the old record no longer matches and `countryFactsBody()` throws for that country until `LANGUAGE-SYSTEM.md` holds a record for the new English, with Thai, and the line in `scripts/language-templates/src/lib/content/country-page.ts.tpl` names it. Then run `npm run language:generate` and the verifier. |
+| **R51** | `convex/emailShell.ts` is the email frame and the email palette. A template holds its own content and nothing else: no doctype, no `<head>`, no hex. The palette is the light scheme flattened, because no mail client reads a CSS variable, so a colour an email needs is a token in `design.md` first and `verify:email` reads the generated light values back. Emails are Thai only and carry no translation of themselves; nothing records which language a candidate reads, and the day something does, the email follows it. |
 
 ## 6. Tooling and commands
 
@@ -173,6 +174,7 @@ trusting a name before touching data in either dashboard.
 | `npm run design:html` | regenerates the rendered style guide beside `design.md` |
 | `npm run termbase` | syncs the decided Thai terms into this repo |
 | `npm run verify:thai-register` | checks the Thai register against `golden-th/` in the sibling repo |
+| `npm run verify:email` | renders every email and checks the frame: one document, Thai only, every colour a light-scheme token, every link absolute, no em dash, and a foot that says why it arrived (R51) |
 | `npm run blog:cards` | generates missing sharing cards, `--force` redoes them. macOS only, output committed, so the Vercel build never runs it |
 | `npm run review:page` | exports a page for review into the sibling repo, and refuses to overwrite a `PB:` line without `--force` (C43) |
 | `npm run review:language` | rebuilds the Thai review sheet at `LANGUAGE-REVIEW-QUEUE.md` in this repo's root, which is the only place it is ever written. `language:generate` rebuilds it too, so the sheet cannot fall behind the source, and neither of them overwrites a sheet that has been written in |
@@ -191,6 +193,7 @@ npm run verify:pages
 npm run verify:narrative
 npm run verify:consent
 npm run verify:report
+npm run verify:email
 npm run blog:cards -- --check
 npx convex dev --once
 git push origin master
