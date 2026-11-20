@@ -1821,6 +1821,7 @@ ${inner}
     `  <figure class="chart" style="max-width:36rem">${overview}</figure>
   <p class="legend-bar">${esc(s("fit.legend.bar"))}</p>
   <table class="gap"><thead><tr><th scope="col">${esc(s("fit.col.area"))}</th><th scope="col">${esc(s("fit.col.score"))}</th><th scope="col">${esc(s("fit.col.bar"))}</th><th scope="col">${esc(s("fit.col.gap"))}</th></tr></thead><tbody>${gapRows}</tbody></table>
+  <p>${esc(s("fit.scores.replace"))}</p>
   <p class="method-note">${esc(METHOD_NOTE[locale])}</p>`,
   );
 

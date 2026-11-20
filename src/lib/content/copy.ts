@@ -1236,6 +1236,11 @@ export const COPY = {
     en: "Of the {total} roles we published in {countries}, {matching} carry one of your target titles. The newest:",
     th: "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ใช้ชื่อตำแหน่งเป้าหมายของคุณ งานล่าสุดมีดังนี้",
   },
+  "fit.scores.replace": {
+    screen: "Fit Report, under the summary table, on why these scores differ from the free report's",
+    en: "These scores draw on the interview as well as your own answers, so where they differ from the short version, these are the ones that stand.",
+    th: "คะแนนในรายงานฉบับนี้มาจากการสัมภาษณ์ร่วมกับคำตอบที่คุณกรอกไว้ ถ้าต่างจากผลในฉบับย่อ ให้ยึดตามฉบับนี้",
+  },
   "fit.footer": {
     screen: "Fit Report, last page footing",
     en: "Fit Report prepared by PunProfile Career Coaching from your EU Fit Check answers and a 30-minute interview.",

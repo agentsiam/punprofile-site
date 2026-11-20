@@ -1236,6 +1236,11 @@ export const COPY = {
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLnRpdGxlcy5sZWRl:EN%%,
     th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnJvbGVzLnRpdGxlcy5sZWRl:TH%%,
   },
+  "fit.scores.replace": {
+    screen: "Fit Report, under the summary table, on why these scores differ from the free report's",
+    en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnNjb3Jlcy5yZXBsYWNl:EN%%,
+    th: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LnNjb3Jlcy5yZXBsYWNl:TH%%,
+  },
   "fit.footer": {
     screen: "Fit Report, last page footing",
     en: %%LANG:c3JjL2xpYi9jb250ZW50L2NvcHkudHM6OkNPUFkuZml0LmZvb3Rlcg:EN%%,

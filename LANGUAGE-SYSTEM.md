@@ -30770,6 +30770,41 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
+### `src/lib/content/copy.ts::COPY.fit.scores.replace`
+
+```yaml
+id: src/lib/content/copy.ts::COPY.fit.scores.replace
+source: src/lib/content/copy.ts
+path: COPY.fit.scores.replace
+render: "Fit Report, under the summary table, on why these scores differ from the free report's"
+narrative_slot: limit
+en: "These scores draw on the interview as well as your own answers, so where they differ from the short version, these are the ones that stand."
+th: "คะแนนในรายงานฉบับนี้มาจากการสัมภาษณ์ร่วมกับคำตอบที่คุณกรอกไว้ ถ้าต่างจากผลในฉบับย่อ ให้ยึดตามฉบับนี้"
+proposal_th: "คะแนนในรายงานฉบับนี้มาจากการสัมภาษณ์ร่วมกับคำตอบที่คุณกรอกไว้ ถ้าต่างจากผลในฉบับย่อ ให้ยึดตามฉบับนี้"
+provenance: draft
+date: 20/11/2026
+term_bindings: []
+decision_note: |-
+  One person holds two documents scoring the same four areas, and the numbers can
+  differ widely: the free report is what they said about themselves, and this one
+  includes the coach's interview. Nothing said so, which leaves the reader to
+  decide which to believe, or to conclude that one of them is wrong.
+
+  It sits under the summary table, where the scores are first read, rather than in
+  the fine print, because it is the reason the numbers are what they are and not a
+  caveat about them.
+
+  It names the other document the way that document's own cover names itself,
+  ฉบับย่อ, the short version, rather than calling it the free one: ฟรี does not
+  collocate with ฉบับ in Thai, which LR-04 exists to catch and did.
+review:
+  structural_calque: pending
+  text_hash: a5ce2a79447f1aed33a0404fc90394e5d3b475125ff71f52201d8597425999b9
+  prompt_version: structural-calque-v1
+  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
+```
+
+<!-- COPY-ENTRY -->
 ### `src/lib/content/copy.ts::COPY.fit.footer`
 
 ```yaml

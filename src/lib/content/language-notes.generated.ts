@@ -11668,6 +11668,16 @@ export const LANGUAGE_DECISION_NOTES = {
     "decisionNote": "The paid report matches the public pipeline on the candidate's active target titles\nwhere they have any, so the existing lede, which says a title in your field, no\nlonger describes what was matched. This is that line for the titles case; the field\nwording stays for a candidate with no titles, where it is still exactly right.\n\nBuilt on the sentence shape Paul rewrote himself for the field version, changing\nonly the clause that says what was matched, so the two ledes read as one voice.\nThai is a model draft and carries no approval.",
     "proposalTh": "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ใช้ชื่อตำแหน่งเป้าหมายของคุณ งานล่าสุดมีดังนี้"
   },
+  "src/lib/content/copy.ts::COPY.fit.scores.replace": {
+    "source": "src/lib/content/copy.ts",
+    "path": "COPY.fit.scores.replace",
+    "render": "Fit Report, under the summary table, on why these scores differ from the free report's",
+    "narrativeSlot": "limit",
+    "provenance": "draft",
+    "date": "20/11/2026",
+    "decisionNote": "One person holds two documents scoring the same four areas, and the numbers can\ndiffer widely: the free report is what they said about themselves, and this one\nincludes the coach's interview. Nothing said so, which leaves the reader to\ndecide which to believe, or to conclude that one of them is wrong.\n\nIt sits under the summary table, where the scores are first read, rather than in\nthe fine print, because it is the reason the numbers are what they are and not a\ncaveat about them.\n\nIt names the other document the way that document's own cover names itself,\nฉบับย่อ, the short version, rather than calling it the free one: ฟรี does not\ncollocate with ฉบับ in Thai, which LR-04 exists to catch and did.",
+    "proposalTh": "คะแนนในรายงานฉบับนี้มาจากการสัมภาษณ์ร่วมกับคำตอบที่คุณกรอกไว้ ถ้าต่างจากผลในฉบับย่อ ให้ยึดตามฉบับนี้"
+  },
   "src/lib/content/copy.ts::COPY.fit.footer": {
     "source": "src/lib/content/copy.ts",
     "path": "COPY.fit.footer",
