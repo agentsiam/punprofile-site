@@ -31939,17 +31939,17 @@ source: src/lib/content/products.ts
 path: FIT_EXPERT.role
 render: Fit Report page, who interviews you
 narrative_slot: proof
-en: Paul · founder of PunProfile · Marketing Director in Europe
-th: พอล · ผู้ก่อตั้ง PunProfile · Marketing Director ในยุโรป
+en: Paul · founder of PunProfile · Hiring Manager in Marketing in Europe
+th: พอล · ผู้ก่อตั้ง PunProfile · Hiring Manager ด้าน Marketing ในยุโรป
 provenance: paul-approved
-date: 28/10/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: 22a1a44e16e3e4a91f9ae0a866c661e2402245f772e943108d853118d829a24c
+  text_hash: be1c0d719cf699c7272733970c5dbe6bd553d58ba2a0cf8d9be8a0d9199ba8bf
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul approved the title change to Hiring Manager in Marketing on 20/11/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32027,17 +32027,17 @@ source: src/lib/content/products.ts
 path: FIT_EXPERT.hiring
 render: Fit Report page, who interviews you
 narrative_slot: proof
-en: Today I am a Marketing Director. The CVs that reach me have already passed the AI screen and the Talent Acquisition manager, and I have read hundreds of them, so I have seen not just good CVs but the ones that actually get the job. I also hire remote workers and freelancers in Marketing and MarTech for several employers.
-th: วันนี้ผมเป็น Marketing Director CV ที่มาถึงผมผ่านการคัดกรองจาก AI และ Talent Acquisition Manager มาแล้ว ผมอ่าน CV ระดับนี้มาหลายร้อยฉบับ จึงได้เห็นไม่ใช่แค่ CV ที่ดี แต่เป็น CV ที่ได้งานจริง นอกจากนี้ผมยังคัดเลือก remote worker และ freelancer ด้าน Marketing และ MarTech ให้กับหลายบริษัท
+en: Today I am a Hiring Manager in Marketing. The CVs that reach me have already passed the AI screen and the Talent Acquisition manager, and I have read hundreds of them, so I have seen not just good CVs but the ones that actually get the job. I also hire remote workers and freelancers in Marketing and MarTech for several employers.
+th: วันนี้ผมเป็น Hiring Manager ด้าน Marketing CV ที่มาถึงผมผ่านการคัดกรองจาก AI และ Talent Acquisition Manager มาแล้ว ผมอ่าน CV ระดับนี้มาหลายร้อยฉบับ จึงได้เห็นไม่ใช่แค่ CV ที่ดี แต่เป็น CV ที่ได้งานจริง นอกจากนี้ผมยังคัดเลือก remote worker และ freelancer ด้าน Marketing และ MarTech ให้กับหลายบริษัท
 provenance: paul-approved
-date: 28/10/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026.
 review:
   structural_calque: pass
-  text_hash: 8def00404a992e5e205691ec23fbdae3ffa1fbf93fd09d9fe41ef8e34c2a6ad3
+  text_hash: d53f8c2999b617e23d268f07c3e536d127c60321499a6e40f5cdb67b755aa129
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 28/10/2026.
+  basis: Paul approved the title change to Hiring Manager in Marketing on 20/11/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32181,17 +32181,17 @@ source: src/lib/content/coaching.ts
 path: COACHES[0].role
 render: Home and coaching pages, Paul's role
 narrative_slot: proof
-en: "Marketing Director in Europe · Founder of PunProfile"
-th: "Marketing Director ในยุโรป · ผู้ก่อตั้ง PunProfile"
+en: "Hiring Manager in Marketing in Europe · Founder of PunProfile"
+th: "Hiring Manager ด้าน Marketing ในยุโรป · ผู้ก่อตั้ง PunProfile"
 provenance: paul-approved
-date: 30/10/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
 review:
   structural_calque: pass
-  text_hash: aeca74fe76814b4cabc962fa3378cbb7ee2f1eaf3df4790f4d39c777d4418c93
+  text_hash: 7eb87fa0f002a120d81e731a373be2e0ec0d0d7c6b8f42d926ccbe1f8694d4cd
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: Paul approved the title change to Hiring Manager in Marketing on 20/11/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32313,17 +32313,17 @@ source: src/lib/content/coaching.ts
 path: COACHES[0].pill
 render: Home and coaching pages, Paul's pill
 narrative_slot: proof
-en: "Founder · Marketing Director"
-th: "ผู้ก่อตั้ง · Marketing Director"
+en: "Founder · Hiring Manager in Marketing"
+th: "ผู้ก่อตั้ง · Hiring Manager ด้าน Marketing"
 provenance: paul-approved
-date: 30/10/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
 review:
   structural_calque: pass
-  text_hash: cf3ab40e46f8812e61c0a971c74d41b1d62fc27341b546bc0a555426a8b54f01
+  text_hash: 7b8c9bbb00a8debcccec84bb0d657e2c6b9798d878232f4a6dda78963c6a29de
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: Paul approved the title change to Hiring Manager in Marketing on 20/11/2026.
 ```
 
 <!-- COPY-ENTRY -->
@@ -32401,17 +32401,17 @@ source: src/lib/content/coaching.ts
 path: COACHES[0].story[1]
 render: Coaching page, Paul's story
 narrative_slot: proof
-en: "Today I am a Marketing Director. The CVs that reach me have already passed the AI screen and the Talent Acquisition Manager, and I have read hundreds of them, so I have seen not just good CVs but the ones that actually get the job. I also hire remote workers and freelancers in Marketing and MarTech for several employers."
-th: "วันนี้ผมเป็น Marketing Director CV ที่มาถึงผมผ่านการคัดกรองจาก AI และ Talent Acquisition Manager มาแล้ว ผมอ่าน CV ระดับนี้มาหลายร้อยฉบับ จึงได้เห็นไม่ใช่แค่ CV ที่ดี แต่เป็น CV ที่ได้งานจริง นอกจากนี้ผมยังคัดเลือก remote worker และ freelancer ด้าน Marketing และ MarTech ให้กับหลายบริษัท"
+en: "Today I am a Hiring Manager in Marketing. The CVs that reach me have already passed the AI screen and the Talent Acquisition Manager, and I have read hundreds of them, so I have seen not just good CVs but the ones that actually get the job. I also hire remote workers and freelancers in Marketing and MarTech for several employers."
+th: "วันนี้ผมเป็น Hiring Manager ด้าน Marketing CV ที่มาถึงผมผ่านการคัดกรองจาก AI และ Talent Acquisition Manager มาแล้ว ผมอ่าน CV ระดับนี้มาหลายร้อยฉบับ จึงได้เห็นไม่ใช่แค่ CV ที่ดี แต่เป็น CV ที่ได้งานจริง นอกจากนี้ผมยังคัดเลือก remote worker และ freelancer ด้าน Marketing และ MarTech ให้กับหลายบริษัท"
 provenance: paul-approved
-date: 30/10/2026
+date: 20/11/2026
 term_bindings: []
 decision_note: "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
 review:
   structural_calque: pass
-  text_hash: c67320763e5a521872bb8a5e6608ef65fbb3e0bf939dfd2763491d1e8ca4f789
+  text_hash: 80fa253230f55802309ace4ea284b1b859971a78c5a46ef579c4189347bb90ef
   prompt_version: structural-calque-v1
-  basis: Paul approved this item in review on 30/10/2026.
+  basis: Paul approved the title change to Hiring Manager in Marketing on 20/11/2026.
 ```
 
 <!-- COPY-ENTRY -->

@@ -12156,7 +12156,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Fit Report page, who interviews you",
     "narrativeSlot": "proof",
     "provenance": "paul-approved",
-    "date": "28/10/2026",
+    "date": "20/11/2026",
     "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
   },
   "src/lib/content/products.ts::FIT_EXPERT.applicantHeading": {
@@ -12192,7 +12192,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Fit Report page, who interviews you",
     "narrativeSlot": "proof",
     "provenance": "paul-approved",
-    "date": "28/10/2026",
+    "date": "20/11/2026",
     "decisionNote": "Fit Report page round 2 (fit-report-page-v2.md), Paul's answers of 28/10/2026."
   },
   "src/lib/content/products.ts::FIT_EXPERT.bridge": {
@@ -12255,7 +12255,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Home and coaching pages, Paul's role",
     "narrativeSlot": "proof",
     "provenance": "paul-approved",
-    "date": "30/10/2026",
+    "date": "20/11/2026",
     "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
   "src/lib/content/coaching.ts::COACHES[0].summary": {
@@ -12309,7 +12309,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Home and coaching pages, Paul's pill",
     "narrativeSlot": "proof",
     "provenance": "paul-approved",
-    "date": "30/10/2026",
+    "date": "20/11/2026",
     "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
   "src/lib/content/coaching.ts::COACHES[0].heading": {
@@ -12345,7 +12345,7 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Coaching page, Paul's story",
     "narrativeSlot": "proof",
     "provenance": "paul-approved",
-    "date": "30/10/2026",
+    "date": "20/11/2026",
     "decisionNote": "Coach section redesign (founder-copy.md), Paul's review of 30/10/2026."
   },
   "src/lib/content/coaching.ts::COACHES[0].story[2]": {
