@@ -127,7 +127,7 @@ export default function FitReportWork({ leadId }: { leadId: Id<"leads"> }) {
             type="button"
             disabled={busy !== null || toAsk.length > 0 || sharedAt !== undefined}
             onClick={async () => {
-              if (!confirm(`Deliver the Fit Report? It goes on their dashboard, the Fit Report is marked delivered, ${TOKEN_PRICE.fitReport} tokens are deducted, and a note and two messages are drafted in the outbox for you to write and approve.`)) return;
+              if (!confirm(`Deliver the Fit Report? It goes on their dashboard, is marked delivered and costs ${TOKEN_PRICE.fitReport} tokens. The email telling them goes on its own in 15 minutes, and the dashboard note and the LINE message are drafted in the outbox for you to write and approve.`)) return;
               setBusy("deliver");
               setError(null);
               try {
@@ -144,10 +144,10 @@ export default function FitReportWork({ leadId }: { leadId: Id<"leads"> }) {
           </button>
           <span className="text-body-md text-mute-strong">
             {sharedAt !== undefined
-              ? `On their dashboard since ${day(sharedAt)}. The note and the messages are in the outbox.`
+              ? `On their dashboard since ${day(sharedAt)}. The note and the LINE message are in the outbox.`
               : toAsk.length > 0
                 ? "Delivers once every interview area is settled."
-                : `Shares it on their dashboard, marks it delivered, deducts ${TOKEN_PRICE.fitReport} tokens, and drafts the note and the two messages that tell them.`}
+                : `Shares it on their dashboard, marks it delivered, deducts ${TOKEN_PRICE.fitReport} tokens, emails them in 15 minutes, and drafts the note and the LINE message.`}
           </span>
         </div>
         {error && <p className="mt-2 text-body-md text-error">{error}</p>}

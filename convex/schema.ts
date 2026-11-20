@@ -302,6 +302,14 @@ export default defineSchema({
      *  Candidate 360; nothing is stored but this switch.
      *  @absent notyet — not shared */
     fitReportSharedAt: v.optional(v.number()),
+    /** When the Fit Report email is scheduled to go, so re-sharing the report
+     *  does not queue a second one. Cleared when it settles, sent or not.
+     *  @absent none — nothing pending */
+    fitReportNoticeAt: v.optional(v.number()),
+    /** When the candidate was emailed that the Fit Report is ready. Written
+     *  once: the email announces the report on the first share and never
+     *  again. @absent notyet — never sent */
+    fitReportNoticeSentAt: v.optional(v.number()),
     /** The candidate's own weekly target for applications sent, Teal's goal
      *  ring. Set by them on their page. @absent none — no goal set */
     weeklyApplicationGoal: v.optional(v.number()),
