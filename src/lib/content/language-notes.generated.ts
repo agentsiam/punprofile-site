@@ -11633,50 +11633,45 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "COPY.fit.roles.sent.lede",
     "render": "Fit Report, the roles page when PunProfile has sent them roles. {count} substituted",
     "narrativeSlot": "proof",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "20/11/2026",
-    "decisionNote": "The roles page used to read only the public pipeline, so a paying client who had\nalready been sent roles and liked one was told nothing matched them. The page now\nopens with what they were actually sent, and this is its first line.\n\nComposed in Thai from the meaning rather than translated (LR-09): what we chose\nfor you, and already sent. Thai is a model draft and carries no approval.",
-    "proposalTh": "ตำแหน่งงาน {count} รายการที่เราคัดมาให้คุณและส่งไปแล้ว เรียงจากใหม่สุด"
+    "decisionNote": "The roles page used to read only the public pipeline, so a paying client who had\nalready been sent roles and liked one was told nothing matched them. The page now\nopens with what they were actually sent, and this is its first line.\n\nComposed in Thai from the meaning rather than translated (LR-09): what we chose\nfor you, and already sent. Thai is a model draft and carries no approval."
   },
   "src/lib/content/copy.ts::COPY.fit.roles.sent.note": {
     "source": "src/lib/content/copy.ts",
     "path": "COPY.fit.roles.sent.note",
     "render": "Fit Report, under the roles PunProfile sent",
     "narrativeSlot": "limit",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "20/11/2026",
-    "decisionNote": "The limit line for sent roles. The existing one under the public pipeline says the\nmatch was made on job title, which understates a role a coach read and chose, and\noverstates nothing: eligibility is still per role.\n\nKeeps the second half of the pipeline note's promise, that whether you can apply is\nchecked role by role, because that is still true and a candidate should not read a\nsent role as a confirmed eligibility. Thai is a model draft and carries no approval.",
-    "proposalTh": "ทุกตำแหน่งที่นี่ผ่านการอ่านเทียบกับตำแหน่งเป้าหมายของคุณก่อนส่ง ส่วนจะสมัครได้หรือไม่ ยังต้องดูเงื่อนไขของแต่ละตำแหน่ง"
+    "decisionNote": "The limit line for sent roles. The existing one under the public pipeline says the\nmatch was made on job title, which understates a role a coach read and chose, and\noverstates nothing: eligibility is still per role.\n\nKeeps the second half of the pipeline note's promise, that whether you can apply is\nchecked role by role, because that is still true and a candidate should not read a\nsent role as a confirmed eligibility. Thai is a model draft and carries no approval."
   },
   "src/lib/content/copy.ts::COPY.fit.roles.liked": {
     "source": "src/lib/content/copy.ts",
     "path": "COPY.fit.roles.liked",
     "render": "Fit Report, beside a sent role the candidate marked a yes",
     "narrativeSlot": "proof",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "20/11/2026",
-    "decisionNote": "The candidate's own verdict, shown beside the role it belongs to. Only a yes can\nappear: a role they marked \"Not for me\" is left off the page entirely, so there is\nno matching string for a no and there should not be one.\n\nShort, in their own register, and it states what they did rather than praising it.\nThai is a model draft and carries no approval.",
-    "proposalTh": "คุณบอกว่าสนใจตำแหน่งนี้"
+    "decisionNote": "The candidate's own verdict, shown beside the role it belongs to. Only a yes can\nappear: a role they marked \"Not for me\" is left off the page entirely, so there is\nno matching string for a no and there should not be one.\n\nShort, in their own register, and it states what they did rather than praising it.\nThai is a model draft and carries no approval."
   },
   "src/lib/content/copy.ts::COPY.fit.roles.titles.lede": {
     "source": "src/lib/content/copy.ts",
     "path": "COPY.fit.roles.titles.lede",
     "render": "Fit Report, the pipeline lede for a candidate with target titles. {total}, {matching}, {countries} substituted",
     "narrativeSlot": "proof",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "20/11/2026",
-    "decisionNote": "The paid report matches the public pipeline on the candidate's active target titles\nwhere they have any, so the existing lede, which says a title in your field, no\nlonger describes what was matched. This is that line for the titles case; the field\nwording stays for a candidate with no titles, where it is still exactly right.\n\nBuilt on the sentence shape Paul rewrote himself for the field version, changing\nonly the clause that says what was matched, so the two ledes read as one voice.\nThai is a model draft and carries no approval.",
-    "proposalTh": "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ใช้ชื่อตำแหน่งเป้าหมายของคุณ งานล่าสุดมีดังนี้"
+    "decisionNote": "The paid report matches the public pipeline on the candidate's active target titles\nwhere they have any, so the existing lede, which says a title in your field, no\nlonger describes what was matched. This is that line for the titles case; the field\nwording stays for a candidate with no titles, where it is still exactly right.\n\nBuilt on the sentence shape Paul rewrote himself for the field version, changing\nonly the clause that says what was matched, so the two ledes read as one voice.\nThai is a model draft and carries no approval."
   },
   "src/lib/content/copy.ts::COPY.fit.scores.replace": {
     "source": "src/lib/content/copy.ts",
     "path": "COPY.fit.scores.replace",
     "render": "Fit Report, under the summary table, on why these scores differ from the free report's",
     "narrativeSlot": "limit",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "20/11/2026",
-    "decisionNote": "One person holds two documents scoring the same four areas, and the numbers can\ndiffer widely: the free report is what they said about themselves, and this one\nincludes the coach's interview. Nothing said so, which leaves the reader to\ndecide which to believe, or to conclude that one of them is wrong.\n\nIt sits under the summary table, where the scores are first read, rather than in\nthe fine print, because it is the reason the numbers are what they are and not a\ncaveat about them.\n\nIt names the other document the way that document's own cover names itself,\nฉบับย่อ, the short version, rather than calling it the free one: ฟรี does not\ncollocate with ฉบับ in Thai, which LR-04 exists to catch and did.",
-    "proposalTh": "คะแนนในรายงานฉบับนี้มาจากการสัมภาษณ์ร่วมกับคำตอบที่คุณกรอกไว้ ถ้าต่างจากผลในฉบับย่อ ให้ยึดตามฉบับนี้"
+    "decisionNote": "One person holds two documents scoring the same four areas, and the numbers can\ndiffer widely: the free report is what they said about themselves, and this one\nincludes the coach's interview. Nothing said so, which leaves the reader to\ndecide which to believe, or to conclude that one of them is wrong.\n\nIt sits under the summary table, where the scores are first read, rather than in\nthe fine print, because it is the reason the numbers are what they are and not a\ncaveat about them.\n\nIt names the other document the way that document's own cover names itself,\nฉบับย่อ, the short version, rather than calling it the free one: ฟรี does not\ncollocate with ฉบับ in Thai, which LR-04 exists to catch and did."
   },
   "src/lib/content/copy.ts::COPY.fit.footer": {
     "source": "src/lib/content/copy.ts",
@@ -15976,10 +15971,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PREVIEW_ROLES",
     "render": "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners",
     "narrativeSlot": "artefact",
-    "provenance": "draft",
+    "provenance": "paul-approved",
     "date": "20/11/2026",
-    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for:\nfree short version badge, 30-minute interview made to stand out on page 6,\npreview banners of what the paid version adds. Reuses the approved wording of\nreport.full.body and fit.cover.sub where it can.\n\nThe line sat on the free report's country page promising what the paid report\nwould list, and the paid report's roles page then matched on the questionnaire's\nbroad field. That page now matches a client's own target titles first, so \"your\nfield\" is no longer what gets matched and the promise was no longer true of the\ndocument it was promising. Only the clause that says what is matched changed;\nthe rest keeps the shape Paul approved, in both languages.",
-    "proposalTh": "เราตรวจประกาศงานที่ยังเปิดรับในประเทศเป้าหมายของคุณ แล้วคัดตำแหน่งงานที่ตรงกับชื่อตำแหน่งที่คุณตั้งเป้าไว้"
+    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for:\nfree short version badge, 30-minute interview made to stand out on page 6,\npreview banners of what the paid version adds. Reuses the approved wording of\nreport.full.body and fit.cover.sub where it can.\n\nThe line sat on the free report's country page promising what the paid report\nwould list, and the paid report's roles page then matched on the questionnaire's\nbroad field. That page now matches a client's own target titles first, so \"your\nfield\" is no longer what gets matched and the promise was no longer true of the\ndocument it was promising. Only the clause that says what is matched changed;\nthe rest keeps the shape Paul approved, in both languages."
   },
   "src/lib/content/report-upsell.ts::METHOD_NOTE": {
     "source": "src/lib/content/report-upsell.ts",

@@ -30661,8 +30661,7 @@ render: "Fit Report, the roles page when PunProfile has sent them roles. {count}
 narrative_slot: proof
 en: "The {count} roles we picked for you and sent, newest first."
 th: "ตำแหน่งงาน {count} รายการที่เราคัดมาให้คุณและส่งไปแล้ว เรียงจากใหม่สุด"
-proposal_th: "ตำแหน่งงาน {count} รายการที่เราคัดมาให้คุณและส่งไปแล้ว เรียงจากใหม่สุด"
-provenance: draft
+provenance: paul-approved
 date: 20/11/2026
 term_bindings: []
 decision_note: |-
@@ -30673,10 +30672,10 @@ decision_note: |-
   Composed in Thai from the meaning rather than translated (LR-09): what we chose
   for you, and already sent. Thai is a model draft and carries no approval.
 review:
-  structural_calque: pending
-  text_hash: 9f18f3f32b60c7f867ff4cef076717a13f707b2c03ae544f60f146b22f6398b6
+  structural_calque: "pass"
+  text_hash: "9f18f3f32b60c7f867ff4cef076717a13f707b2c03ae544f60f146b22f6398b6"
   prompt_version: structural-calque-v1
-  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
+  basis: "Paul approved these in conversation on 20/11/2026, as printed, after being shown what the sheet route and this one each record. Given for the batch in a reply, not marked per line on the review sheet, which is the weaker of the two and is why it says so here."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30690,8 +30689,7 @@ render: "Fit Report, under the roles PunProfile sent"
 narrative_slot: limit
 en: "Each one was read against your target titles before it was sent. Whether you can apply is still checked role by role."
 th: "ทุกตำแหน่งที่นี่ผ่านการอ่านเทียบกับตำแหน่งเป้าหมายของคุณก่อนส่ง ส่วนจะสมัครได้หรือไม่ ยังต้องดูเงื่อนไขของแต่ละตำแหน่ง"
-proposal_th: "ทุกตำแหน่งที่นี่ผ่านการอ่านเทียบกับตำแหน่งเป้าหมายของคุณก่อนส่ง ส่วนจะสมัครได้หรือไม่ ยังต้องดูเงื่อนไขของแต่ละตำแหน่ง"
-provenance: draft
+provenance: paul-approved
 date: 20/11/2026
 term_bindings: []
 decision_note: |-
@@ -30703,10 +30701,10 @@ decision_note: |-
   checked role by role, because that is still true and a candidate should not read a
   sent role as a confirmed eligibility. Thai is a model draft and carries no approval.
 review:
-  structural_calque: pending
-  text_hash: b51f6bce15fcba74a9652506d0da595c1b47c2e85a46c844707360a4a6ece9d5
+  structural_calque: "pass"
+  text_hash: "b51f6bce15fcba74a9652506d0da595c1b47c2e85a46c844707360a4a6ece9d5"
   prompt_version: structural-calque-v1
-  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
+  basis: "Paul approved these in conversation on 20/11/2026, as printed, after being shown what the sheet route and this one each record. Given for the batch in a reply, not marked per line on the review sheet, which is the weaker of the two and is why it says so here."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30720,8 +30718,7 @@ render: "Fit Report, beside a sent role the candidate marked a yes"
 narrative_slot: proof
 en: "You marked this one a yes"
 th: "คุณบอกว่าสนใจตำแหน่งนี้"
-proposal_th: "คุณบอกว่าสนใจตำแหน่งนี้"
-provenance: draft
+provenance: paul-approved
 date: 20/11/2026
 term_bindings: []
 decision_note: |-
@@ -30732,10 +30729,10 @@ decision_note: |-
   Short, in their own register, and it states what they did rather than praising it.
   Thai is a model draft and carries no approval.
 review:
-  structural_calque: pending
-  text_hash: 908d13f2d26a2721c636ccc530d350e4239ec80bca820549d90f70ea86b800fe
+  structural_calque: "pass"
+  text_hash: "908d13f2d26a2721c636ccc530d350e4239ec80bca820549d90f70ea86b800fe"
   prompt_version: structural-calque-v1
-  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
+  basis: "Paul approved these in conversation on 20/11/2026, as printed, after being shown what the sheet route and this one each record. Given for the batch in a reply, not marked per line on the review sheet, which is the weaker of the two and is why it says so here."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30749,8 +30746,7 @@ render: "Fit Report, the pipeline lede for a candidate with target titles. {tota
 narrative_slot: proof
 en: "Of the {total} roles we published in {countries}, {matching} carry one of your target titles. The newest:"
 th: "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ใช้ชื่อตำแหน่งเป้าหมายของคุณ งานล่าสุดมีดังนี้"
-proposal_th: "เราเผยแพร่งานใน {countries} ไปแล้ว {total} ตำแหน่ง ในจำนวนนี้มี {matching} ตำแหน่งที่ใช้ชื่อตำแหน่งเป้าหมายของคุณ งานล่าสุดมีดังนี้"
-provenance: draft
+provenance: paul-approved
 date: 20/11/2026
 term_bindings: []
 decision_note: |-
@@ -30763,10 +30759,10 @@ decision_note: |-
   only the clause that says what was matched, so the two ledes read as one voice.
   Thai is a model draft and carries no approval.
 review:
-  structural_calque: pending
-  text_hash: 1792f58e3099f8d3011fadcbf5967aa7c7c5bad4922186a299ecc38d1edbdcd1
+  structural_calque: "pass"
+  text_hash: "1792f58e3099f8d3011fadcbf5967aa7c7c5bad4922186a299ecc38d1edbdcd1"
   prompt_version: structural-calque-v1
-  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
+  basis: "Paul approved these in conversation on 20/11/2026, as printed, after being shown what the sheet route and this one each record. Given for the batch in a reply, not marked per line on the review sheet, which is the weaker of the two and is why it says so here."
 ```
 
 <!-- COPY-ENTRY -->
@@ -30780,8 +30776,7 @@ render: "Fit Report, under the summary table, on why these scores differ from th
 narrative_slot: limit
 en: "These scores draw on the interview as well as your own answers, so where they differ from the short version, these are the ones that stand."
 th: "คะแนนในรายงานฉบับนี้มาจากการสัมภาษณ์ร่วมกับคำตอบที่คุณกรอกไว้ ถ้าต่างจากผลในฉบับย่อ ให้ยึดตามฉบับนี้"
-proposal_th: "คะแนนในรายงานฉบับนี้มาจากการสัมภาษณ์ร่วมกับคำตอบที่คุณกรอกไว้ ถ้าต่างจากผลในฉบับย่อ ให้ยึดตามฉบับนี้"
-provenance: draft
+provenance: paul-approved
 date: 20/11/2026
 term_bindings: []
 decision_note: |-
@@ -30798,10 +30793,10 @@ decision_note: |-
   ฉบับย่อ, the short version, rather than calling it the free one: ฟรี does not
   collocate with ฉบับ in Thai, which LR-04 exists to catch and did.
 review:
-  structural_calque: pending
-  text_hash: a5ce2a79447f1aed33a0404fc90394e5d3b475125ff71f52201d8597425999b9
+  structural_calque: "pass"
+  text_hash: "a5ce2a79447f1aed33a0404fc90394e5d3b475125ff71f52201d8597425999b9"
   prompt_version: structural-calque-v1
-  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
+  basis: "Paul approved these in conversation on 20/11/2026, as printed, after being shown what the sheet route and this one each record. Given for the batch in a reply, not marked per line on the review sheet, which is the weaker of the two and is why it says so here."
 ```
 
 <!-- COPY-ENTRY -->
@@ -41833,8 +41828,7 @@ render: "src/lib/report.ts, candidate report: cover badge, page 6 interview pane
 narrative_slot: artefact
 en: "Open roles in your target countries that carry the job titles you are aiming for, from the job adverts we screen."
 th: "เราตรวจประกาศงานที่ยังเปิดรับในประเทศเป้าหมายของคุณ แล้วคัดตำแหน่งงานที่ตรงกับชื่อตำแหน่งที่คุณตั้งเป้าไว้"
-proposal_th: "เราตรวจประกาศงานที่ยังเปิดรับในประเทศเป้าหมายของคุณ แล้วคัดตำแหน่งงานที่ตรงกับชื่อตำแหน่งที่คุณตั้งเป้าไว้"
-provenance: draft
+provenance: paul-approved
 date: 20/11/2026
 term_bindings: []
 decision_note: |-
@@ -41850,10 +41844,10 @@ decision_note: |-
   document it was promising. Only the clause that says what is matched changed;
   the rest keeps the shape Paul approved, in both languages.
 review:
-  structural_calque: pending
+  structural_calque: "pass"
   text_hash: "f61c6b848c054a0a20f4c3fa50d9ac0a98c1b592240ab193a1b8d760533f8b17"
   prompt_version: "structural-calque-v1"
-  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
+  basis: "Paul approved these in conversation on 20/11/2026, as printed, after being shown what the sheet route and this one each record. Given for the batch in a reply, not marked per line on the review sheet, which is the weaker of the two and is why it says so here."
 ```
 
 <!-- COPY-ENTRY -->
