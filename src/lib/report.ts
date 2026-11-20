@@ -356,6 +356,110 @@ const TIER_BADGE: Record<Tier, { text: string; title: string }> = {
  * The dialog is opened once. A coach who wants a second copy uses the button,
  * which is why the button exists rather than being a duplicate of this.
  */
+/**
+ * Deal a long table onto as many whole sheets as it needs, by measuring the
+ * page instead of guessing at it.
+ *
+ * The renderer splits an area first, from an estimate of how tall each row
+ * comes out. That is close, and it is still an estimate: a coach's note, a
+ * longer competency name, Thai rather than English, or a webfont that lands
+ * after first paint all move it, and when it is wrong the table spills onto a
+ * sheet with no top margin and no logo, which is the thing the rule forbids.
+ *
+ * So this runs in the tab the report is opened in, once the fonts are in and
+ * again before printing. It moves rows down until no sheet is taller than a
+ * page, pulls them back up while they fit, drops any sheet left empty, and
+ * renumbers the sheet positions. Every sheet it makes is a clone of the one it
+ * came from, so it carries the same logo, heading and footer.
+ *
+ * It only ever moves whole table rows between sheets of one section. If
+ * anything throws, the report prints as the renderer laid it out.
+ */
+const SHEET_FIT = `<script>
+(function () {
+  var PAGE = 0;
+  function measure() {
+    var probe = document.createElement("div");
+    probe.style.cssText = "position:absolute;left:-9999px;top:0;visibility:hidden;height:296.5mm";
+    document.body.appendChild(probe);
+    var h = probe.offsetHeight;
+    probe.parentNode.removeChild(probe);
+    return h;
+  }
+  function group(src) {
+    var out = [src], next = src.nextElementSibling;
+    while (next && next.getAttribute("data-sheet-of") === src.id) { out.push(next); next = next.nextElementSibling; }
+    return out;
+  }
+  function rows(el) { return el.querySelector("table.scores tbody"); }
+  function over(el) { return el.offsetHeight > PAGE + 1; }
+  function addSheet(src, after) {
+    var sheet = document.createElement("section");
+    sheet.className = src.className;
+    sheet.setAttribute("data-sheet-of", src.id);
+    var logo = src.querySelector(".fit-logo");
+    if (logo) sheet.appendChild(logo.cloneNode(true));
+    var h2 = src.querySelector("h2");
+    if (h2) sheet.appendChild(h2.cloneNode(true));
+    var table = src.querySelector("table.scores");
+    var copy = table.cloneNode(false);
+    var head = table.querySelector("thead");
+    if (head) copy.appendChild(head.cloneNode(true));
+    copy.appendChild(document.createElement("tbody"));
+    sheet.appendChild(copy);
+    var foot = src.querySelector(".sec-foot");
+    if (foot) sheet.appendChild(foot.cloneNode(true));
+    after.parentNode.insertBefore(sheet, after.nextSibling);
+    return sheet;
+  }
+  function run() {
+    try {
+      PAGE = measure();
+      if (!PAGE) return;
+      var all = document.querySelectorAll(".fit-sec"), srcs = [], i;
+      for (i = 0; i < all.length; i++) {
+        if (!all[i].getAttribute("data-sheet-of") && all[i].querySelector("table.scores")) srcs.push(all[i]);
+      }
+      for (var s = 0; s < srcs.length; s++) {
+        var sheets = group(srcs[s]), guard = 0;
+        for (var g = 0; g < sheets.length && guard < 500; g++) {
+          var cur = sheets[g];
+          while (over(cur) && guard++ < 500) {
+            var from = rows(cur);
+            if (!from || from.rows.length < 2) break;
+            if (!sheets[g + 1]) sheets.push(addSheet(srcs[s], cur));
+            var to = rows(sheets[g + 1]);
+            if (!to) break;
+            to.insertBefore(from.rows[from.rows.length - 1], to.firstChild);
+          }
+          while (sheets[g + 1] && guard++ < 500) {
+            var below = rows(sheets[g + 1]), here = rows(cur);
+            if (!below || !below.rows.length || !here) break;
+            var row = below.rows[0];
+            here.appendChild(row);
+            if (over(cur)) { below.insertBefore(row, below.firstChild); break; }
+          }
+        }
+        sheets = group(srcs[s]);
+        for (var k = sheets.length - 1; k > 0; k--) {
+          var left = rows(sheets[k]);
+          if (left && !left.rows.length) { sheets[k].parentNode.removeChild(sheets[k]); sheets.splice(k, 1); }
+        }
+        for (var m = 0; m < sheets.length; m++) {
+          if (m > 0) sheets[m].id = srcs[s].id + "-" + (m + 1);
+          var pos = sheets[m].querySelector(".sec-pos");
+          if (pos) pos.textContent = sheets.length > 1 ? " · " + (m + 1) + "/" + sheets.length : "";
+        }
+      }
+    } catch (e) {
+      /* A report that could not be reflowed still prints as the renderer laid it out. */
+    }
+  }
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(run); } else { window.addEventListener("load", run); }
+  window.addEventListener("beforeprint", run);
+})();
+</script>`;
+
 const PRINT_BOOTSTRAP = `<script>
 (function () {
   var go = function () { setTimeout(function () { window.print(); }, 300); };
@@ -601,6 +705,7 @@ ${STYLES}
 <main>
 ${args.body}
 </main>
+${args.variant === "fit" ? SHEET_FIT : ""}
 ${args.autoPrint ? PRINT_BOOTSTRAP : ""}
 </body>
 </html>`;
@@ -1568,25 +1673,27 @@ const BOOK_STYLES = `
  * 118mm across a 2.1:1 viewBox, and the legend sit above the table on the
  * first sheet only.
  *
- * They are estimates, and the two stylesheet rules that go with them are what
- * make an estimate safe: a repeated header group and rows that refuse to break,
- * so underestimating costs a tidier page rather than a header-less table or a
- * row cut in half.
+ * Measured off a rendered report in a browser rather than reasoned about, which
+ * is how the row heights were found to be half as tall again as they had been
+ * guessed at. They are still only a first cut: the pass that runs in the tab
+ * measures the real page and rebalances, and that is what makes the rule true.
+ * These numbers are what the renderer gets right before it is corrected, and
+ * what `verify:report` can check without a browser.
  */
 export const SHEET = {
-  /** A4 less the top and bottom margins. */
-  content: 248,
+  /** A4 less the 22mm of margin top and bottom. */
+  content: 252,
   /** The numbered heading, its badge and the rule under it. */
-  heading: 45,
-  /** The score line, the radar and its legend. First sheet only. */
-  opener: 83,
+  heading: 34,
+  /** The score line, the radar at 56mm and its legend. First sheet only. */
+  opener: 81,
   /** The table's header row, repeated on every sheet it continues onto. */
-  thead: 8,
+  thead: 9,
   /** A row's own padding, and one line of text in it. */
-  rowPad: 3.6,
-  rowLine: 4.2,
+  rowPad: 3.8,
+  rowLine: 5.7,
   /** Characters to a line in the note column and in the competency column. */
-  noteChars: 43,
+  noteChars: 40,
   nameChars: 50,
 };
 
@@ -1791,11 +1898,15 @@ export function renderFitReport(input: FitReportInput, meta: ReportMeta, opts: R
     if (!of || of.sheet === 1) secNo++;
     const num = String(secNo).padStart(2, "0");
     const place = of && of.sheets > 1 ? ` · ${of.sheet}/${of.sheets}` : "";
-    return `<section class="fit-sec" id="${of && of.sheet > 1 ? `${id}-${of.sheet}` : id}">
+    // A continuation sheet says which section it belongs to, so the measuring
+    // pass in the tab treats the whole run as one group and rebalances across
+    // all of it rather than mistaking the second sheet for a section of its own.
+    const belongs = of && of.sheet > 1 ? ` data-sheet-of="${id}"` : "";
+    return `<section class="fit-sec" id="${of && of.sheet > 1 ? `${id}-${of.sheet}` : id}"${belongs}>
   <img class="fit-logo" src="${asset("/efc-logo.svg")}" alt="">
   <h2><span class="sec-num">${num}</span>${esc(heading)}</h2>
 ${inner}
-  <p class="sec-foot"><span>${esc(s("fit.eyebrow"))} · ${esc(meta.candidate)}</span><span>${num} · ${esc(heading)}${place}</span></p>
+  <p class="sec-foot"><span>${esc(s("fit.eyebrow"))} · ${esc(meta.candidate)}</span><span>${num} · ${esc(heading)}<span class="sec-pos">${place}</span></span></p>
 </section>`;
   };
   const gapCell = (score: number | null, bar: number) =>
