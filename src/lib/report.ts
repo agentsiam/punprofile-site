@@ -140,7 +140,7 @@ export function countryFactsBody(country: string | undefined, locale: Locale, as
   const photo = asset(`/images/countries/${row.country.toLowerCase().replace(/\s+/g, "-")}.jpg`);
   return `<div class="cf">
   <div class="cf-hero">
-    <img src="${photo}" alt="" onerror="this.parentNode.classList.add('no-photo');this.remove()">
+    <div class="cf-photo"><img src="${photo}" alt="" onerror="this.closest('.cf-hero').classList.add('no-photo');this.parentNode.remove()"></div>
     <div class="cf-hero-text">
       <p class="cf-eyebrow">${L("title")}</p>
       <h2>${esc(row.country)}</h2>
@@ -183,9 +183,12 @@ export const FUN_FACTS_STYLES = `
 
 export const COUNTRY_STYLES = `
   .cf-hero { position: relative; height: 78mm; margin: 0 0 5mm; border-radius: 6mm; overflow: hidden; background: var(--color-ink-deep); break-inside: avoid; }
-  .cf-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .cf-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 15%, rgba(0,0,0,0.8) 100%); }
-  .cf-hero.no-photo::after { display: none; }
+  /* The photo and its dark fade sit in their own box with a filter that does nothing visible, so
+     Chrome prints them as one flat picture. Printed as a see-through gradient instead, macOS Preview
+     drew the fade pink (Paul, 20/11/2026). The text stays outside the box, so it prints as text. */
+  .cf-photo { position: absolute; inset: 0; filter: saturate(1.0001); }
+  .cf-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cf-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 15%, rgba(0,0,0,0.8) 100%); }
   .cf-hero-text { position: absolute; left: 7mm; right: 7mm; bottom: 6mm; z-index: 1; color: #fff; }
   .cf-eyebrow { display: inline-block; margin: 0 0 2mm; padding: 0.8mm 3mm; border-radius: 3mm; font-size: 8.5pt; font-weight: 800; background: var(--color-brand-lime); color: var(--color-ink-deep); }
   .cf-hero h2 { margin: 0 0 2mm; font-size: 30pt; font-weight: 900; line-height: 1; color: #fff; }
