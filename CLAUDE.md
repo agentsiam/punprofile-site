@@ -188,6 +188,7 @@ npm run verify:copy
 npm run verify:pages
 npm run verify:narrative
 npm run verify:consent
+npm run verify:report
 npm run blog:cards -- --check
 npx convex dev --once
 git push origin master
@@ -201,6 +202,14 @@ never reaches a candidate calling a function that is not there yet.
 `verify:copy` lints `copy.ts`, the question bank and the privacy notice. `verify:pages` covers the
 per-page content modules, which `verify:copy` does not read. `verify:narrative` fails a record
 missing one of its eight slots, naming a destination `cta.ts` lacks, or stating a figure (R47).
+`verify:report` renders the paid report for 40 fictional candidates, five name shapes crossed
+with long coach notes and none, three target titles and none, roles sent and none, and reads
+every sheet: the logo and the footer on each, a header row on every score table, unique ids,
+section numbers running straight with one per section however many sheets it takes, no sheet
+asked to hold more than it has room for, and a cover name that fits its band at the size the
+stylesheet will pick. It reads `SHEET` and `COVER_EM` out of `report.ts`, so the check and the
+page cannot drift apart. It cannot see any of it, so printing a report and reading it is still
+a separate act and this list does not replace it.
 
 ## 7. Traps
 
