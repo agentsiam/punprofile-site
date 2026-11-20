@@ -62,12 +62,13 @@ duplicate one into the other.
 | Which candidate data exists and where it sits | `data-inventory.md` |
 | The campaign link parameters every posted URL carries | `00_Quick_Facts.md` |
 | The four similarly named instruments, in full | `08_Coaching_Business.md` |
+| The report's country page: permit routes, salary thresholds, partner rules, processing times | `country-facts.md`, in `ctxt-research/` |
 | Roadmap and session handoff | `punprofile-work/work-projects/eu-fit-check/` |
 
 DERIVED, stale until regenerated and flagged as stale rather than built on: the two token files and
 the synced termbase, the rendered style guide beside `design.md`, `public/blog/share/<slug>.jpg`,
-`language-notes.generated.ts`, and **every file named in
-`scripts/language-templates/manifest.json`**. That last set is 29 files and is not only
+`language-notes.generated.ts`, `src/lib/content/country-facts.generated.ts`, and **every file named in
+`scripts/language-templates/manifest.json`**. That last set is 31 files and is not only
 `src/lib/content/`: it takes in `src/components/LocaleToggle.tsx`, `src/lib/consent-copy.ts` and
 `src/lib/levers.ts` too. They read as hand-written source and are not. See R49.
 
@@ -81,6 +82,7 @@ the synced termbase, the rendered style guide beside `design.md`, `public/blog/s
 | The public route list | `PUBLIC_ROUTES` in `src/lib/seo.ts` | sitemap, `hreflang` and `llms.txt` all follow it |
 | A figure quoted in a product story | the document that owns the figure | the story record points, it never states (R47) |
 | Which deployment is which | section 6 of this file | |
+| A country fact the report prints | `country-facts.md`, sibling repo | `scripts/sync-country-facts.ts` writes `country-facts.generated.ts`; a field marked `verify` or `hold` is never printed (R50) |
 
 ## 4. Where a new file goes
 
@@ -151,6 +153,7 @@ sibling repo by the exporter that makes them.
 | **R47** | A product story record points at the document that owns a figure and never states the figure. |
 | **R48** | An article with artwork needs a sharing card at `public/blog/share/<slug>.jpg`, at 1200x630. |
 | **R49** | No candidate-facing string is written inline in a component. Copy lives in `src/lib/content/`, and `consent-copy.ts`, its Thai terms reach it from `termbase.yml` through `termbase.generated.ts`, and a string written anywhere else is linted by nothing and missing in the other language. Those modules are themselves generated: the text comes from `LANGUAGE-SYSTEM.md` and the code shape from `scripts/language-templates/<path>.tpl`. An edit made in the module is discarded by the next `npm run language:generate` without a warning or a diff, so change the record for a string and the template for anything that is not one, then regenerate. |
+| **R50** | Both reports open the country page from `targetCountries[0]`, so a delivered Fit Report needs nothing extra to get it. A country fact changes in three steps, all before a push: edit `country-facts.md` in the sibling repo (C32), run `scripts/sync-country-facts.ts`, then give the changed English a record. Each fact's record id is a hash of its English, so the old record no longer matches and `countryFactsBody()` throws for that country until `LANGUAGE-SYSTEM.md` holds a record for the new English, with Thai, and the line in `scripts/language-templates/src/lib/content/country-page.ts.tpl` names it. Then run `npm run language:generate` and the verifier. |
 
 ## 6. Tooling and commands
 
