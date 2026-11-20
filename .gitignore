@@ -60,3 +60,6 @@ next-env.d.ts
 
 # Parked for Paul to empty. Gitignored: nothing here is kept.
 _to_delete/
+
+# full-size photo originals: a local pool to cut page copies from, never deployed
+/public/images/photos/originals/
