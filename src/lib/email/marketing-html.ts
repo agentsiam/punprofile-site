@@ -21,7 +21,7 @@
  *
  * Read out of `design-tokens.generated.ts` rather than typed, because a hex
  * typed here is a copy of the palette that goes stale the day the palette
- * changes (C54). Email clients strip `:root` and do not resolve `var()`, so the
+ * changes (coaching repo CLAUDE.md R23). Email clients strip `:root` and do not resolve `var()`, so the
  * values are resolved to literals at render time instead of being referenced.
  *
  * The layout is the design system's own idiom: a `canvas-soft` band with a
