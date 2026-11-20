@@ -15966,9 +15966,10 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "PREVIEW_ROLES",
     "render": "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners",
     "narrativeSlot": "artefact",
-    "provenance": "paul-approved",
+    "provenance": "draft",
     "date": "20/11/2026",
-    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+    "decisionNote": "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for:\nfree short version badge, 30-minute interview made to stand out on page 6,\npreview banners of what the paid version adds. Reuses the approved wording of\nreport.full.body and fit.cover.sub where it can.\n\nThe line sat on the free report's country page promising what the paid report\nwould list, and the paid report's roles page then matched on the questionnaire's\nbroad field. That page now matches a client's own target titles first, so \"your\nfield\" is no longer what gets matched and the promise was no longer true of the\ndocument it was promising. Only the clause that says what is matched changed;\nthe rest keeps the shape Paul approved, in both languages.",
+    "proposalTh": "เราตรวจประกาศงานที่ยังเปิดรับในประเทศเป้าหมายของคุณ แล้วคัดตำแหน่งงานที่ตรงกับชื่อตำแหน่งที่คุณตั้งเป้าไว้"
   },
   "src/lib/content/report-upsell.ts::METHOD_NOTE": {
     "source": "src/lib/content/report-upsell.ts",

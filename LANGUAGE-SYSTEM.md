@@ -41796,17 +41796,29 @@ source: "src/lib/content/report-upsell.ts"
 path: "PREVIEW_ROLES"
 render: "src/lib/report.ts, candidate report: cover badge, page 6 interview panel, preview banners"
 narrative_slot: artefact
-en: "Open roles in your target countries that match your field, from the job adverts we screen."
-th: "เราตรวจประกาศงานที่ยังเปิดรับในประเทศเป้าหมายของคุณ แล้วคัดตำแหน่งงานที่ตรงกับสายงานของคุณ"
-provenance: paul-approved
+en: "Open roles in your target countries that carry the job titles you are aiming for, from the job adverts we screen."
+th: "เราตรวจประกาศงานที่ยังเปิดรับในประเทศเป้าหมายของคุณ แล้วคัดตำแหน่งงานที่ตรงกับชื่อตำแหน่งที่คุณตั้งเป้าไว้"
+proposal_th: "เราตรวจประกาศงานที่ยังเปิดรับในประเทศเป้าหมายของคุณ แล้วคัดตำแหน่งงานที่ตรงกับชื่อตำแหน่งที่คุณตั้งเป้าไว้"
+provenance: draft
 date: 20/11/2026
 term_bindings: []
-decision_note: "Claude draft 20/11/2026 for the free report's upsell changes Paul asked for: free short version badge, 30-minute interview made to stand out on page 6, preview banners of what the paid version adds. Reuses the approved wording of report.full.body and fit.cover.sub where it can."
+decision_note: |-
+  Claude draft 20/11/2026 for the free report's upsell changes Paul asked for:
+  free short version badge, 30-minute interview made to stand out on page 6,
+  preview banners of what the paid version adds. Reuses the approved wording of
+  report.full.body and fit.cover.sub where it can.
+
+  The line sat on the free report's country page promising what the paid report
+  would list, and the paid report's roles page then matched on the questionnaire's
+  broad field. That page now matches a client's own target titles first, so "your
+  field" is no longer what gets matched and the promise was no longer true of the
+  document it was promising. Only the clause that says what is matched changed;
+  the rest keeps the shape Paul approved, in both languages.
 review:
-  structural_calque: pass
-  text_hash: "3566530787199552748aad00761e83f52c5392aeb9c81cdf58f796753af8f244"
+  structural_calque: pending
+  text_hash: "f61c6b848c054a0a20f4c3fa50d9ac0a98c1b592240ab193a1b8d760533f8b17"
   prompt_version: "structural-calque-v1"
-  basis: "Paul signed off on 20/11/2026, after Codex review the same day."
+  basis: "No judge run. The Thai is a model draft, composed in Thai under LR-09 and never approved, and it waits for Paul's pass in the review queue."
 ```
 
 <!-- COPY-ENTRY -->
