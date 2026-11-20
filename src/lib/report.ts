@@ -299,6 +299,24 @@ const esc = (s: string) =>
  * as it came, because a submission date that cannot be parsed is still better
  * shown than silently dropped.
  */
+/**
+ * A candidate's name on a cover, sized to its band instead of wrapped badly.
+ *
+ * Three things, because a name is the one string on the page we do not control
+ * the shape of: a hyphenated name keeps its hyphen non-breaking, so it never
+ * splits across two lines at the hyphen; the longest unbreakable run and the
+ * whole length go to the stylesheet as numbers, which shrinks the type until
+ * the run fits the band and the name fits three lines; and only once the floor
+ * is reached does the stylesheet break a word, which is better than a name
+ * running off the cover. Latin, Thai, one word, a nickname or a double-barrelled
+ * name all come out whole.
+ */
+function coverName(name: string): string {
+  const whole = name.replace(/-/g, "\u2011");
+  const run = Math.max(1, ...whole.split(/\s+/).map((w) => w.length));
+  return `<h1 style="--cover-run:${run};--cover-len:${Math.max(1, whole.length)}">${esc(whole)}</h1>`;
+}
+
 function ddmmyyyy(raw: string): string {
   const iso = raw.match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (iso) return `${iso[3]}/${iso[2]}/${iso[1]}`;
@@ -762,7 +780,7 @@ export function renderCandidateReport(
         ? s("band.limited")
         : s("band.indicative");
 
-  const coverName = meta.coverName ?? meta.candidate;
+  const coverNameText = meta.coverName ?? meta.candidate;
   const metaBits = [
     meta.targetRole ? esc(meta.targetRole) : "",
     meta.targetCountries?.length ? esc(meta.targetCountries.join(", ")) : "",
@@ -773,7 +791,7 @@ export function renderCandidateReport(
   const head = (dark = false) =>
     `<header class="pg-head"><img class="pg-logo" src="${asset(dark ? "/punprofile-logo-reversed.svg" : "/efc-logo.svg")}" alt=""></header>`;
   const foot = (dark = false) =>
-    `<footer class="pg-foot${dark ? " on-dark" : ""}"><span>EU Fit Check · ${esc(coverName)}</span><span class="pg-n">${String(++pageNo).padStart(2, "0")}</span></footer>`;
+    `<footer class="pg-foot${dark ? " on-dark" : ""}"><span>EU Fit Check · ${esc(coverNameText)}</span><span class="pg-n">${String(++pageNo).padStart(2, "0")}</span></footer>`;
   const opener = (n: string, title = "", eyebrow = "", dark = false) =>
     `<div class="opener${dark ? " on-dark" : ""}"><span class="sec-n">${n}</span><span class="rule"></span>${
       eyebrow ? `<p class="op-eyebrow">${esc(eyebrow)}</p>` : ""
@@ -789,7 +807,7 @@ export function renderCandidateReport(
     <img class="cover-logo" src="${asset("/efc-logo.svg")}" alt="EU Fit Check by PunProfile">
     <p class="cover-badge"><span>${esc(pick(FREE_BADGE))}</span> ${esc(pick(FREE_BADGE_NOTE))}</p>
     <p class="cover-eyebrow">${esc(s("teaser.headline"))}</p>
-    <h1>${esc(coverName)}</h1>
+    ${coverName(coverNameText)}
     <p class="cover-sub">${metaBits.join(" · ")}</p>
     <div class="cover-collage">
       <img class="cc-tall" src="${asset("/images/photos/cafe-woman-reading-tall.jpg")}" alt="">
@@ -1100,7 +1118,7 @@ export function renderCandidateReport(
 
   const html = document_({
     lang: locale,
-    title: `EU Fit Check — ${coverName}`,
+    title: `EU Fit Check — ${coverNameText}`,
     variant: "limited",
     printLabel: s("report.savePdf"),
     body,
@@ -1125,6 +1143,30 @@ export function renderCandidateReport(
  * run to the paper's edge. A page that outgrows A4 flows onto the next sheet
  * rather than clipping, which is why the pages take a minimum height.
  */
+/**
+ * The type size for a name on a cover, shared by all three of them.
+ *
+ * Two ceilings and a floor. The name shrinks until its longest unbreakable run
+ * fits the band's width, and until the whole name fits three lines of it; the
+ * smaller of the two wins, capped at the cover's own size. `--cover-em` is the
+ * average advance of a glyph at these heavy weights, as a fraction of the type
+ * size, and it is the one number here that is measured rather than derived, so
+ * it is named once and tuned in one place. Below the floor the stylesheet
+ * breaks a word instead, which only happens to a name long enough that running
+ * off the cover would be the only alternative.
+ *
+ * Each cover sets `--cover-w` and `--cover-max`; the renderer sets
+ * `--cover-run` and `--cover-len` on the element, per name.
+ */
+/** The average advance of a glyph at these weights, as a fraction of the type
+ *  size. Measured, not derived, and read by `scripts/verify-report.ts` as well
+ *  as by the stylesheet, so the check and the page cannot drift apart. */
+export const COVER_EM = 0.58;
+
+const COVER_NAME_FIT = `--cover-em: ${COVER_EM};
+    font-size: max(var(--cover-min, 24pt), min(var(--cover-max), calc(var(--cover-w) / (var(--cover-run, 8) * var(--cover-em))), calc(var(--cover-w) * 3 / (var(--cover-len, 8) * var(--cover-em)))));
+    hyphens: none; overflow-wrap: anywhere;`;
+
 const PAGED_STYLES = `
   @page { size: A4; margin: 0; }
   .is-limited { background: var(--color-canvas-soft); padding: 0 0 2rem; }
@@ -1166,7 +1208,8 @@ const PAGED_STYLES = `
   .cover-band { position: relative; height: 190mm; background: var(--color-canvas-brand); color: var(--color-on-primary); padding: 18mm 16mm; }
   .cover-logo { height: 11mm; display: block; }
   .cover-eyebrow { margin: 34mm 0 3mm; font-size: 11pt; font-weight: 700; }
-  .cover h1 { font-size: 54pt; line-height: 1; letter-spacing: -0.03em; font-weight: 900; color: var(--color-ink-deep); max-width: 80mm; overflow-wrap: anywhere; }
+  .cover h1 { --cover-w: 80mm; --cover-max: 54pt; ${COVER_NAME_FIT}
+    line-height: 1; letter-spacing: -0.03em; font-weight: 900; color: var(--color-ink-deep); max-width: 80mm; }
   .cover-sub { margin: 5mm 0 0; font-size: 11pt; font-weight: 500; max-width: 78mm; }
   /* Europe as the reader will live it, per "Where clay and where the
      mascot" in Brand_Guidelines.md. */
@@ -1327,7 +1370,7 @@ function bookShowcase(
       <div class="bk-frame"><div class="bk-page bk-cover">
         <div>
           <p class="bk-eyebrow">${esc(s("fit.eyebrow"))}</p>
-          <p class="bk-title">${esc(cover.name)}</p>
+          <p class="bk-title" style="--cover-run:${Math.max(1, ...cover.name.replace(/-/g, "\u2011").split(/\s+/).map((w) => w.length))};--cover-len:${Math.max(1, cover.name.length)}">${esc(cover.name.replace(/-/g, "\u2011"))}</p>
           ${cover.sub ? `<p class="bk-sub">${esc(cover.sub)}</p>` : ""}
         </div>
         <div>
@@ -1459,7 +1502,8 @@ const BOOK_STYLES = `
   .bk-closed .bk-frame::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 9px; background: linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0)); z-index: 2; }
   .bk-cover { background: var(--color-canvas-dark); color: var(--color-on-canvas-dark); justify-content: space-between; padding: 64px 48px 56px 60px; }
   .bk-eyebrow { color: var(--color-canvas-brand); font-size: 16px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin: 0; }
-  .bk-title { color: #fff; font-size: 52px; font-weight: 800; line-height: 1.1; margin: 22px 0 0; overflow-wrap: anywhere; }
+  .bk-title { --cover-w: 452px; --cover-max: 52px; --cover-min: 22px; ${COVER_NAME_FIT}
+    color: #fff; font-weight: 800; line-height: 1.1; margin: 22px 0 0; }
   .bk-sub { color: var(--color-on-canvas-dark); font-size: 18px; margin: 12px 0 0; }
   .bk-coverline { color: var(--color-canvas-brand); font-size: 22px; font-weight: 600; line-height: 1.35; margin: 0 0 22px; }
 
@@ -1595,7 +1639,8 @@ const FIT_PAGED_STYLES = `
   body.is-fit .fc-band { position: relative; height: 200mm; padding: 18mm 16mm; background: var(--color-canvas-dark); color: var(--color-on-canvas-dark); }
   body.is-fit .fc-logo { height: 11mm; display: block; }
   body.is-fit .cover .eyebrow { margin: 30mm 0 3mm; color: var(--color-on-canvas-dark); font-size: 11pt; letter-spacing: .12em; }
-  body.is-fit .cover h1 { margin: 0; font-size: 50pt; line-height: 1.02; letter-spacing: -0.03em; font-weight: 900; color: var(--color-canvas); max-width: 110mm; }
+  body.is-fit .cover h1 { --cover-w: 110mm; --cover-max: 50pt; ${COVER_NAME_FIT}
+    margin: 0; line-height: 1.02; letter-spacing: -0.03em; font-weight: 900; color: var(--color-canvas); max-width: 110mm; }
   body.is-fit .cover .sub { margin: 5mm 0 0; font-size: 11pt; color: var(--color-on-canvas-dark); max-width: 100mm; }
   body.is-fit .cover .cover-line { display: inline-block; margin: 9mm 0 0; padding: 2mm 4mm; border-radius: 2mm; background: var(--color-canvas-brand); color: var(--color-on-primary); font-size: 11pt; font-weight: 700; max-width: 100mm; }
   body.is-fit .fc-art { position: absolute; right: 16mm; bottom: -24mm; width: 92mm; border-radius: 6mm; box-shadow: 0 2mm 6mm rgba(22,51,0,.25); }
@@ -1809,7 +1854,7 @@ ${countryInner}
     <div class="fc-band">
       <img class="fc-logo" src="${asset("/efc-logo-reversed.svg")}" alt="EU Fit Check by PunProfile">
       <p class="eyebrow">${esc(s("fit.eyebrow"))}</p>
-      <h1>${esc(meta.candidate)}</h1>
+      ${coverName(meta.candidate)}
       <p class="sub">${metaBits.join(" · ")}</p>
       <p class="cover-line">${esc(s("fit.cover.sub", { count: competencies }))}</p>
       <img class="fc-art" src="${asset("/pricing/pricing-fit-report-interview.jpg")}" alt="">
