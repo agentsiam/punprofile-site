@@ -15,7 +15,7 @@
  * anything goes. This file only puts them in an envelope.
  */
 
-import { C, FONT, SITE, card, emailDocument, esc, headerBand } from "./emailShell";
+import { C, FONT, SITE, card, emailDocument, esc, headerBand, logoRow } from "./emailShell";
 
 /** One blank line between paragraphs, which is how a coach writes a message. */
 export const paragraphs = (body: string): string[] =>
@@ -38,9 +38,7 @@ export function outboxEmailHtml(firstName: string | null, subject: string, body:
     gutter: "32px 12px",
     heavyDisplay: true,
     css: `  @media (max-width:620px){ .px{padding-left:24px!important;padding-right:24px!important} .h1{font-size:24px!important} }`,
-    rows: `  <tr><td style="padding:0 8px 20px;">
-    <a href="${SITE}"><img src="${SITE}/punprofile-logo-email.png" width="160" height="44" alt="PunProfile" style="display:block;border:0;"></a>
-  </td></tr>
+    rows: `${logoRow()}
 
 ${card(`${headerBand({ greeting: greet, heading: esc(subject), padding: "36px 40px 32px", size: 28, greetingGap: 12 })}
 
