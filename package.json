@@ -18,6 +18,7 @@
     "lint:thai": "tsx scripts/lint-thai.ts",
     "verify:consent": "tsx scripts/verify-consent.ts",
     "verify:releases": "tsx scripts/verify-releases.ts",
+    "verify:report": "tsx scripts/verify-report.ts",
     "dictionary": "tsx scripts/build-field-dictionary.ts",
     "verify:attribution": "tsx scripts/verify-attribution.ts",
     "verify:thai-register": "tsx scripts/verify-thai-register.ts",
