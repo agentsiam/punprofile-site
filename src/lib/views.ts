@@ -315,7 +315,12 @@ export function buildTeaserSummary(
  */
 const BANNED: RegExp[] = [
   /\blead\b/i, /\bleads\b/i, /\bICP\b/, /propensity/i, /entry point/i,
-  /\btriage\b/i, /temperature/i, /\btier\b/i, /qualif/i, /\basset\b/i, /conversion/i,
+  /\btriage\b/i, /temperature/i, /\btier\b/i, /\basset\b/i, /conversion/i,
+  // "qualif" alone is gone (Paul, 20/11/2026). It was meant to catch the sales
+  // sense, "lead qualification" and "qualified lead", and both still fail on
+  // \blead\b above. Bare "qualif" also blocked official permit names a
+  // candidate needs, such as Spain's Highly Qualified Professional permit.
+  /\bpre-?qualif/i,
 ];
 
 export function assertCandidateSafe(renderedText: string): string[] {
