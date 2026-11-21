@@ -567,6 +567,33 @@ export const removeJob = mutation({
 });
 
 /**
+ * Whether the person asking already has the Fit Report. One boolean, about
+ * whoever is signed in, and nothing at all for anyone who is not.
+ *
+ * The free report's result screen builds the candidate's own PDF in the
+ * browser, and that PDF carries the free-version badge, the preview banners
+ * and a page selling the Fit Report — which is the wrong document to hand
+ * someone who has already bought one. The coach's own copy of that screen gets
+ * this right because it is looking at a record. The candidate's screen is an
+ * anonymous page and knows nobody.
+ *
+ * So the answer comes from an identity the person proved, by signing in with a
+ * code sent to their address, and never from the email typed into the contact
+ * form. Keyed on a typed address this would answer "does this address own a
+ * paid report?" for any address anyone cared to type, which is a worse thing
+ * to ship than the badge it would remove. Signed out it is `false`, which is
+ * the honest answer to "is the person in front of me an owner" when nobody has
+ * said who they are: they get the document they get today.
+ */
+export const ownsFitReport = query({
+  args: {},
+  handler: async (ctx) => {
+    const who = await signedInCandidate(ctx);
+    return who.state === "candidate" && who.lead.fitReportSharedAt !== undefined;
+  },
+});
+
+/**
  * What the Fit Report needs, for the signed-in candidate, once a coach has
  * shared it. The same inputs the Candidate 360 builds it from: the answers
  * with the coach's corrections applied, and the latest rating per competency.

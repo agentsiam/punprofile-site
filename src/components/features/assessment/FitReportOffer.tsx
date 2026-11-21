@@ -14,6 +14,15 @@
  * The PDF is the same `limited` document a coach sends, in the locale the
  * candidate is reading, and `renderReport` runs `assertCandidateSafe` on it as
  * it always does. Nothing is stored: it is built in the browser at the click.
+ *
+ * Someone who already owns the Fit Report gets it without the free-version
+ * badge, the preview banners or the page that sells it, the same as the copy
+ * the coach sends from the record. This page is anonymous and knows nobody, so
+ * it asks `portal.ownsFitReport`, which answers only about whoever is signed
+ * in. Not signed in means not known to be an owner and the document is
+ * unchanged: the email typed into the contact step says nothing here, because
+ * a page that answered from a typed address would tell any visitor whether an
+ * address owns a paid report.
  */
 
 import { useState } from "react";
@@ -36,6 +45,8 @@ export default function FitReportOffer({
   const [building, setBuilding] = useState(false);
   // For the report's "from everyone who has taken this" page. 20/11/2026.
   const community = useQuery(api.stats.community);
+  // False while it is still loading, which is the same document as today.
+  const owns = useQuery(api.portal.ownsFitReport) === true;
 
   async function download() {
     // The tab opens before anything is awaited, or the browser blocks it as a
@@ -60,7 +71,14 @@ export default function FitReportOffer({
           targetCountries: input.targetCountries,
           targetRole: input.targetRole ?? undefined,
         },
-        { variant: "limited", locale, autoPrint: true, assetOrigin: window.location.origin, community: community ?? undefined },
+        {
+          variant: "limited",
+          locale,
+          autoPrint: true,
+          assetOrigin: window.location.origin,
+          community: community ?? undefined,
+          fitReport: !owns,
+        },
       );
       win.document.open();
       win.document.write(html);
