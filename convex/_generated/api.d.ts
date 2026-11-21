@@ -23,6 +23,7 @@ import type * as corrections from "../corrections.js";
 import type * as crons from "../crons.js";
 import type * as deliveredBy from "../deliveredBy.js";
 import type * as delivery from "../delivery.js";
+import type * as emailShell from "../emailShell.js";
 import type * as erase from "../erase.js";
 import type * as http from "../http.js";
 import type * as importLeads from "../importLeads.js";
@@ -78,6 +79,7 @@ declare const fullApi: ApiFromModules<{
   crons: typeof crons;
   deliveredBy: typeof deliveredBy;
   delivery: typeof delivery;
+  emailShell: typeof emailShell;
   erase: typeof erase;
   http: typeof http;
   importLeads: typeof importLeads;
