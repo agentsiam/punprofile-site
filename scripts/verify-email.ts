@@ -36,14 +36,20 @@ import { readFileSync } from "node:fs";
 const PALETTE = new Set(Object.values(C).map((h) => h.toLowerCase()));
 
 /**
- * The email palette is the design system's light scheme, flattened to hex
- * because no mail client reads a CSS variable. Every colour an email uses has
- * to be a token first, which is what this reads: the generated light values
- * out of `tokens.generated.css`, whose own source is `design.md` (R14).
+ * What this assertion proves changed when the palette stopped being typed.
+ *
+ * `emailShell.ts` now resolves every role from `design-tokens.generated.ts`, so
+ * the old question, whether someone typed a hex that was never a token, can no
+ * longer be answered no. The question now is whether the **two** generated
+ * outputs still agree: the shell reads `design-tokens.generated.ts` and this
+ * reads `src/app/tokens.generated.css`. `npm run tokens` writes both from
+ * `design.md` (R14), so they disagree only when one was regenerated and the
+ * other was not, or when one was hand-edited, which the law forbids and this
+ * catches.
  *
  * One exception, declared rather than discovered: the backdrop behind the
  * matched-roles header picture is sampled from the photograph, so it answers to
- * the image and not to the system.
+ * the image and not to the system, and is the one literal on the surface.
  */
 const OWN_TO_EMAIL = new Set(["headerGround"]);
 
@@ -163,7 +169,7 @@ const MAILS: Mail[] = [
 const problems: string[] = [];
 const fail = (id: string, what: string) => problems.push(`${id}: ${what}`);
 
-// The palette against the design system, before any email is rendered.
+// The two generated token files against each other, before anything renders.
 const light = lightTokenValues();
 for (const [role, hex] of Object.entries(C)) {
   if (OWN_TO_EMAIL.has(role)) continue;

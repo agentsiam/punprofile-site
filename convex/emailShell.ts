@@ -10,14 +10,14 @@
  * someone remembered. This module owns the frame; a template owns its content
  * and nothing else.
  *
- * **Why the colours are literals here and not tokens.** A mail client does not
- * read CSS variables, so every colour has to be written into the markup as hex.
- * `design.md` in the sibling repo owns the design system and says nothing about
- * email, which is how seven of these twelve values came to match no token at
- * all. Until that document has an email section (drafted for Paul), this table
- * is the email surface's palette and the one place it may be stated. **Never
- * write a hex into a template.** A colour a template needs and this table does
- * not hold is a change to the design system, not a literal in a `<td>`.
+ * **Why there is no hex here.** A mail client does not read CSS variables, so
+ * every colour still has to reach the markup as a literal, but it is resolved
+ * from the generated token layer at render time rather than typed. The typed
+ * version is what let seven of twelve values drift until they matched no token
+ * at all; a copy of a palette goes stale the day the palette changes, and
+ * nothing about writing it down makes it notice. **Never write a hex into this
+ * module or a template.** A colour an email needs is a token in `design.md`
+ * first, then `npm run tokens`, and it is available here by name.
  *
  * The shape of an email here: a logo row, one white card with a dark header
  * band at its top, the content, and a quiet centred footer saying why this
@@ -27,26 +27,37 @@
  */
 
 import { POSTS, TOPICS, type Post } from "../src/lib/content/blog";
+import { token } from "../src/lib/email/tokens";
 
 export const SITE = "https://punprofile.app";
 
-/** The email palette. See the note above before adding to it. */
+/**
+ * The email palette: a name per role, each resolved from the design system's
+ * own light scheme. See the note above before adding to it. The role names are
+ * the email surface's and the token names are `design.md`'s, which is why the
+ * two columns read differently: `mute` here is `mute-strong` there, because
+ * `mute` itself is not a text colour under 19px and nothing on this surface is
+ * larger than that.
+ */
 export const C = {
-  canvas: "#ffffff",
-  soft: "#ecefeb",
-  ink: "#0e0f0c",
-  body: "#454745",
-  mute: "#6a6c6a",
-  line: "#dfe3dc",
-  primary: "#9fe870",
-  onPrimary: "#163300",
-  pale: "#e2f6d5",
-  deep: "#163300",
-  onDeep: "#e8ebe6",
-  lime: "#cdffad",
-  /** The backdrop behind the matched-roles header picture, sampled from it, so
-   *  a client that blocks images still shows a band of the same colour rather
-   *  than a white gap. Declared in `matchEmail.ts` until 20/11/2026, which is
+  canvas: token("canvas"),
+  soft: token("canvas-soft"),
+  ink: token("ink"),
+  body: token("body"),
+  mute: token("mute-strong"),
+  line: token("line"),
+  primary: token("primary"),
+  onPrimary: token("on-primary"),
+  pale: token("primary-pale"),
+  deep: token("ink-deep"),
+  onDeep: token("on-canvas-dark"),
+  lime: token("primary-active"),
+  /** **The one literal on this surface, and the only one permitted.** The
+   *  backdrop behind the matched-roles header picture, sampled from the
+   *  photograph so a client that blocks images still shows a band of the same
+   *  colour rather than a white gap. It answers to the image and not to the
+   *  design system, so there is no token to resolve; resample it when the
+   *  picture changes. Declared in `matchEmail.ts` until 20/11/2026, which is
    *  how it escaped every check there was. */
   headerGround: "#9dcddb",
 };

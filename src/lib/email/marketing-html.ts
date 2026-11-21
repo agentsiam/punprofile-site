@@ -48,14 +48,7 @@
  * the line box: Thai tone marks stack above and below the baseline, so the
  * `thai-*` line heights are carried inline on every block of copy.
  */
-import { BRAND_TOKENS_CSS } from "../design-tokens.generated";
-
-/** One token's value, by its generated custom-property name. */
-function token(name: string): string {
-  const found = BRAND_TOKENS_CSS.match(new RegExp(`--color-${name}:\\s*([^;]+);`));
-  if (!found) throw new Error(`design token --color-${name} is not in the generated block`);
-  return found[1].trim();
-}
+import { token } from "./tokens";
 
 const CANVAS = token("canvas");
 const CANVAS_SOFT = token("canvas-soft");
