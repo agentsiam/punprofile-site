@@ -40,11 +40,15 @@ import { scoreResponse, scoreFull } from "../src/lib/scoring.js";
 import { ECRA } from "../src/lib/ecra.js";
 import { rankMoves } from "../src/lib/levers.js";
 import { matchPipeline, type RoleMatch, type SentRoleRow, type TargetRow } from "../src/lib/market-match.js";
+import { readFileSync, readdirSync, statSync } from "node:fs";
+import { join } from "node:path";
 
 const failures: string[] = [];
 const fail = (msg: string) => failures.push(msg);
 /** The widest split any one section needed, so a pass says what it exercised. */
 let widest = { label: "none", heading: "", sheets: 1 };
+/** How many callers render the candidate's own report, so a pass says so too. */
+let candidateCallers = 0;
 
 /**
  * `ROLE_CAP` roles, each carrying what a sent role really carries: a reason,
@@ -303,6 +307,57 @@ for (const [nameCase, candidate] of NAMES) {
   }
 }
 
+// ------------------------------------- every caller says who it is rendering for
+//
+// The renderer has had the switch since 20/11/2026 and does the right thing
+// when it is told. Being told is the part nothing checked: the coach's screen
+// passed it and the candidate's own result screen did not, so a client who
+// had bought the Fit Report and took the free check again downloaded a
+// document selling her the report she owned. A default cannot be right for
+// both callers, so a caller that renders the candidate's document has to say.
+{
+  const roots = ["src", "scripts"];
+  const files: string[] = [];
+  const walk = (dir: string) => {
+    for (const entry of readdirSync(dir)) {
+      const full = join(dir, entry);
+      if (statSync(full).isDirectory()) walk(full);
+      else if (/\.tsx?$/.test(entry)) files.push(full);
+    }
+  };
+  for (const root of roots) walk(root);
+
+  /** The text of each `renderReport(...)` call, parentheses matched. */
+  const calls: [string, string][] = [];
+  for (const file of files) {
+    const src = readFileSync(file, "utf8");
+    for (let i = src.indexOf("renderReport("); i >= 0; i = src.indexOf("renderReport(", i + 1)) {
+      if (/[\w.]/.test(src[i - 1] ?? "")) continue; // `assertRenderReport`, a property, a word
+      let depth = 0;
+      let j = src.indexOf("(", i);
+      for (; j < src.length; j++) {
+        if (src[j] === "(") depth += 1;
+        else if (src[j] === ")" && --depth === 0) break;
+      }
+      calls.push([file, src.slice(i, j + 1)]);
+    }
+  }
+
+  const limited = calls.filter(([, text]) => /variant:\s*"limited"/.test(text));
+  if (!limited.length) {
+    // C47. A rename or a refactor that moved these calls would leave this
+    // block passing while checking nothing at all.
+    console.error("FAIL no call renders the candidate's own report, so the caller check went untested");
+    process.exit(1);
+  }
+  candidateCallers = limited.length;
+  for (const [file, text] of limited) {
+    if (!/\bfitReport:/.test(text)) {
+      fail(`${file}: renders the candidate's report without saying whether they already have the Fit Report`);
+    }
+  }
+}
+
 // ------------------------------------------------- the free report's own cover
 //
 // It puts its collage where the paid cover puts its photograph, and keeps its
@@ -370,6 +425,7 @@ if (failures.length) {
 }
 console.log(`report sheets OK: ${cases} fictional candidates, every sheet a whole page`);
 console.log("  free report: the badge, the banners and the page that sells the Fit Report go for someone who has it");
+console.log(`  free report: ${candidateCallers} caller(s) render it, each saying whether the reader already has the Fit Report`);
 console.log(`  widest split: ${widest.sheets} sheets for "${widest.heading.trim()}" (${widest.label})`);
 for (const [nameCase, candidate] of NAMES) {
   const size = coverNameSize(candidate, COVER.nameW, COVER.nameMax, COVER_TEXT.nameBudget);

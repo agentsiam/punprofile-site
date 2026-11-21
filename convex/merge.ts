@@ -122,6 +122,49 @@ async function movePersonalRecords(
     .withIndex("by_lead", (q) => q.eq("leadId", dropId))
     .collect();
 
+  /**
+   * The five that were missing until 21/11/2026, and what their absence did.
+   *
+   * Four of them — the ticks, the found roles, the releases and the items in
+   * them — are in `eraseLead`, so the net below fired and `captureContact`
+   * threw for anyone holding one. Every page load writes a new session row and
+   * the contact step merges the old one in, so a returning candidate who had
+   * ever had a role found for them could not get past it. Loud, and nothing
+   * lost, but they were stopped.
+   *
+   * `competencyRatings` was the quiet one: in neither cascade, so the net could
+   * not fire for it either, and the interview scores stayed pointing at a row
+   * that had just been deleted. The survivor lost the Fit Report's own marks
+   * and nothing said so. It is in `eraseLead` now as well.
+   *
+   * None of these is read through `.unique()`, and the two that could collide
+   * tolerate it by construction: a tick is inserted only where none exists and
+   * untick deletes every match, and a rating is read as the latest per item. A
+   * found role repeated under two urls shows twice until the coach clears it,
+   * which is the same answer the targets below take: move what is there and
+   * let the coach resolve it, rather than have a merge silently drop a row.
+   */
+  const ticks = await ctx.db
+    .query("checklistTicks")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+  const found = await ctx.db
+    .query("foundRoles")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+  const releases = await ctx.db
+    .query("releases")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+  const releaseItems = await ctx.db
+    .query("releaseItems")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+  const ratings = await ctx.db
+    .query("competencyRatings")
+    .withIndex("by_lead_item", (q) => q.eq("leadId", dropId))
+    .collect();
+
   // Titles move as they are; if both rows had targets the survivor may end
   // up with more than three active, which the coach resolves on the 360 page
   // rather than a merge silently pausing someone's choice.
@@ -144,6 +187,11 @@ async function movePersonalRecords(
 
   for (const row of [
     ...targets,
+    ...ticks,
+    ...found,
+    ...releases,
+    ...releaseItems,
+    ...ratings,
     ...tokenReqs,
     ...preps,
     ...tasks,

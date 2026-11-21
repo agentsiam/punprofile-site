@@ -1393,14 +1393,24 @@ export const deliverFitReport = mutation({
     // would say the same thing twice.
     const firstShare = lead.fitReportSharedAt === undefined;
     await ctx.db.patch(args.leadId, { fitReportSharedAt: lead.fitReportSharedAt ?? now });
-    await ctx.db.insert("deliveryNotes", {
-      leadId: args.leadId,
-      body: "Fit Report delivered and shared on the dashboard.",
-      shared: false,
-      ...(fit ? { deliverableId: fit._id } : {}),
-      at: now,
-      by,
-    });
+    // The note is the record of an event, so it is written only where there was
+    // one: a report marked delivered here, or a report reaching her dashboard
+    // for the first time. Called again on a record where both have already
+    // happened, this mutation changes nothing, and a second note saying the
+    // report was delivered would put an event in the record that never
+    // happened. Not the `firstShare` guard below on its own: a report shared
+    // through `shareFitReport` and delivered here afterwards is a delivery
+    // worth recording even though the sharing is not new.
+    if (fit || firstShare) {
+      await ctx.db.insert("deliveryNotes", {
+        leadId: args.leadId,
+        body: "Fit Report delivered and shared on the dashboard.",
+        shared: false,
+        ...(fit ? { deliverableId: fit._id } : {}),
+        at: now,
+        by,
+      });
+    }
 
     // The email goes on its own, Paul's decision of 20/11/2026. It is the one
     // of the three that says only that the report is waiting and carries one

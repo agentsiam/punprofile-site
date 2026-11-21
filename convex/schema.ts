@@ -642,6 +642,14 @@ export default defineSchema({
       candidateRules: v.optional(v.number()),
       releases: v.optional(v.number()),
       releaseItems: v.optional(v.number()),
+      /**
+       * The same trap a third time, and the last: `eraseLead` began counting
+       * the interview marks on 21/11/2026, which it had never erased at all,
+       * and this object had to be widened with it or every on-request erase
+       * would have thrown here again. `verify:cascades` now compares
+       * `EraseCounts` against this object, so the next table cannot repeat it.
+       */
+      competencyRatings: v.optional(v.number()),
     }),
   }).index("by_time", ["deletedAt"]),
 
