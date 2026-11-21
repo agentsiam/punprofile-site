@@ -19,6 +19,7 @@
     "verify:consent": "tsx scripts/verify-consent.ts",
     "verify:releases": "tsx scripts/verify-releases.ts",
     "verify:report": "tsx scripts/verify-report.ts",
+    "verify:report-email": "tsx scripts/verify-report-email.ts",
     "dictionary": "tsx scripts/build-field-dictionary.ts",
     "verify:attribution": "tsx scripts/verify-attribution.ts",
     "verify:thai-register": "tsx scripts/verify-thai-register.ts",

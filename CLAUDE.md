@@ -191,6 +191,7 @@ npm run verify:pages
 npm run verify:narrative
 npm run verify:consent
 npm run verify:report
+npm run verify:report-email
 npm run blog:cards -- --check
 npx convex dev --once
 git push origin master
@@ -201,16 +202,28 @@ the Vercel build does not (R42). It publishes the working tree rather than a com
 why the clean-tree gate is the first line (R39), and it goes before the push so that a page
 never reaches a candidate calling a function that is not there yet.
 
+`verify:report-email` holds the Fit Report email to the Thai Paul approved in
+`d-fit-report-delivery.md`, line by line, in both parts of the message. It is the one
+candidate-facing message that leaves without a coach approving it, it is not under the language
+system because no email template in `convex/` is, and the pull on the file is towards
+`codeEmail.ts`'s different register. It also pins where the email is scheduled from, off the
+source, because no laptop can run that mutation (R38).
+
 `verify:copy` lints `copy.ts`, the question bank and the privacy notice. `verify:pages` covers the
 per-page content modules, which `verify:copy` does not read. `verify:narrative` fails a record
 missing one of its eight slots, naming a destination `cta.ts` lacks, or stating a figure (R47).
-`verify:report` renders the paid report for 40 fictional candidates, five name shapes crossed
-with long coach notes and none, three target titles and none, roles sent and none, and reads
-every sheet: the logo and the footer on each, a header row on every score table, unique ids,
+`verify:report` renders the paid report for 96 fictional candidates, eight name shapes crossed
+with long coach notes and none, three target titles and none, and the roles page's three states:
+roles sent, none sent so the published list is what it shows, and neither so the page is absent.
+It reads every sheet: the logo and the footer on each, a header row on every score table, unique ids,
 section numbers running straight with one per section however many sheets it takes, no sheet
 asked to hold more than it has room for, and a cover name that fits its band at the size the
-stylesheet will pick. It reads `SHEET` and `COVER_EM` out of `report.ts`, so the check and the
-page cannot drift apart. It cannot see any of it, so printing a report and reading it is still
+stylesheet will pick. It also measures the cover's name, meta line and lime line against the
+photograph beside them and fails any that reaches it — a cover is a text column and a picture
+column, and before this check an ordinary two-word name printed its lime line under the picture.
+It reads `SHEET`, `ROLE`, `COVER`, `COVER_ART`, `COVER_TEXT` and `COVER_EM` out of `report.ts`, and
+wraps the name with `report.ts`'s own `coverLines` and `coverNameSize`, so the check and the page
+cannot drift apart. It cannot see any of it, so printing a report and reading it is still
 a separate act and this list does not replace it.
 
 ## 7. Traps
