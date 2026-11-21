@@ -194,6 +194,7 @@ npm run verify:narrative
 npm run verify:consent
 npm run verify:report
 npm run verify:email
+npm run verify:report-email
 npm run blog:cards -- --check
 npx convex dev --once
 git push origin master
@@ -204,16 +205,28 @@ the Vercel build does not (R42). It publishes the working tree rather than a com
 why the clean-tree gate is the first line (R39), and it goes before the push so that a page
 never reaches a candidate calling a function that is not there yet.
 
+`verify:report-email` holds the Fit Report email to the Thai Paul approved in
+`d-fit-report-delivery.md`, line by line, in both parts of the message. It is the one
+candidate-facing message that leaves without a coach approving it, it is not under the language
+system because no email template in `convex/` is, and the pull on the file is towards
+`codeEmail.ts`'s different register. It also pins where the email is scheduled from, off the
+source, because no laptop can run that mutation (R38).
+
 `verify:copy` lints `copy.ts`, the question bank and the privacy notice. `verify:pages` covers the
 per-page content modules, which `verify:copy` does not read. `verify:narrative` fails a record
 missing one of its eight slots, naming a destination `cta.ts` lacks, or stating a figure (R47).
-`verify:report` renders the paid report for 40 fictional candidates, five name shapes crossed
-with long coach notes and none, three target titles and none, roles sent and none, and reads
-every sheet: the logo and the footer on each, a header row on every score table, unique ids,
+`verify:report` renders the paid report for 96 fictional candidates, eight name shapes crossed
+with long coach notes and none, three target titles and none, and the roles page's three states:
+roles sent, none sent so the published list is what it shows, and neither so the page is absent.
+It reads every sheet: the logo and the footer on each, a header row on every score table, unique ids,
 section numbers running straight with one per section however many sheets it takes, no sheet
 asked to hold more than it has room for, and a cover name that fits its band at the size the
-stylesheet will pick. It reads `SHEET` and `COVER_EM` out of `report.ts`, so the check and the
-page cannot drift apart. It cannot see any of it, so printing a report and reading it is still
+stylesheet will pick. It also measures the cover's name, meta line and lime line against the
+photograph beside them and fails any that reaches it — a cover is a text column and a picture
+column, and before this check an ordinary two-word name printed its lime line under the picture.
+It reads `SHEET`, `ROLE`, `COVER`, `COVER_ART`, `COVER_TEXT` and `COVER_EM` out of `report.ts`, and
+wraps the name with `report.ts`'s own `coverLines` and `coverNameSize`, so the check and the page
+cannot drift apart. It cannot see any of it, so printing a report and reading it is still
 a separate act and this list does not replace it.
 
 ## 7. Traps
@@ -230,6 +243,11 @@ a separate act and this list does not replace it.
 - Merging a PR put its pages live and left its Convex functions behind. The Vercel build has never run `convex deploy` on this project: the move to `agent-siam/punprofile-site` carried `NEXT_PUBLIC_CONVEX_URL` and `SITE_URL` across and nothing else, so `package.json`'s `CONVEX_DEPLOY_KEY` branch has never had a key to take and a 33-second build is `next build` alone. Nothing looked wrong, because the site kept reading `quiet-mule-251` from the variable that did come across. The functions went up only when someone ran `npx convex dev --once` by hand the next day (R42).
 - A coach account was deleted from the production dashboard while the live site was reading dev, so the deletion did nothing anyone could see and the production rows were lost. That is not a past misconfiguration: the live bundle still builds its client from `quiet-mule-251`, so the dashboard labelled production is the wrong one to open. Check the bundle first, every time.
 - `npx convex env list` prints every value in full, the signing key included. Filtering it with `cut -d=` does not save you, because `JWT_PRIVATE_KEY` is multi-line and its body prints as if each line were a name. Two sessions have dumped a live signing key into a terminal that way. List names only, with `grep -oE '^[A-Z_]+='`, and if a key does escape, `scripts/setup-auth.mjs` rotates the pair, which is the recovery path it was written for.
+- `scripts/setup-auth.mjs` is the recovery path for an escaped key and nothing else. It calls
+  `configure(false)` and then `configure(true)`, and each call generates a fresh key pair, so running
+  it rotates the signing key on both deployments. The first of those is `quiet-mule-251`, the one the
+  live site reads (R38), so every signed-in candidate is signed out by a script that reads as setup.
+  It cannot be borrowed to stand up a local harness: generate keys in a throwaway script instead.
 - The Thai review sheet was written wherever the exporter happened to run, so eight of them accumulated across two repositories and a work folder under three names, and two records added after an export left the live sheet short by exactly the lines nobody had been asked about. A session named one path while the reviewer read another. The sheet has one home now, rebuilds itself whenever anything is pending, and a finished pass goes back through `--apply` rather than a model retyping it into the record.
 - The Now pill shipped dark green on dark green, because `bg-primary` was paired with `.ground-fixed` and that pairing cancels itself out. On a lime ground the lime is the ground and the pill on it is the dark one (R21).
 
