@@ -132,8 +132,8 @@ export const CONSENT_COPY = {
   },
   "consent.purpose": {
     screen: "Contact gate, above the fields: what the data is for",
-    en: "We use your email to send your result. If you would like us to contact you by phone or on LINE, fill in that channel and tick the consent box. We keep your information for twelve months from the last time you were in touch, and we do not pass it to anyone else. Change your mind at any point and tell us at punprofile.career@gmail.com.",
-    th: "เราจะใช้อีเมลของคุณเพื่อส่งผลประเมิน หากต้องการให้เราติดต่อทางโทรศัพท์หรือ LINE ให้กรอกช่องทางนั้นและติ๊กช่องยินยอม เราจะเก็บข้อมูลของคุณไว้สิบสองเดือนนับจากการติดต่อครั้งล่าสุด และจะไม่ส่งต่อข้อมูลให้บุคคลอื่น หากคุณเปลี่ยนใจ แจ้งเราได้ทุกเมื่อที่ punprofile.career@gmail.com",
+    en: "We use your email to send your result, and we ask for a phone number or a LINE ID so the team can contact you to talk the details through. Please fill in whichever channel suits you and tick the consent box. We keep your information for twelve months from the last time you were in touch, and we do not disclose it or pass it to anyone else. Change your mind at any point and tell us at punprofile.career@gmail.com.",
+    th: "เราจะใช้อีเมลของคุณเพื่อส่งผลการประเมิน และขอเบอร์โทรศัพท์หรือ LINE ID เพื่อให้ทีมงานสามารถติดต่อคุณเพื่อพูดคุยรายละเอียดได้ กรุณากรอกช่องทางที่สะดวกและติ๊กช่องยินยอม เราจะเก็บข้อมูลของคุณไว้ 12 เดือนนับจากการติดต่อครั้งล่าสุด และจะไม่เปิดเผยหรือส่งต่อข้อมูลให้บุคคลอื่น หากคุณเปลี่ยนใจ สามารถแจ้งเราได้ทุกเมื่อที่ punprofile.career@gmail.com",
   },
   /**
    * Rendered as a link to `/privacy`, which is why it is its own key: an

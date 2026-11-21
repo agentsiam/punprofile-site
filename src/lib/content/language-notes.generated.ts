@@ -86,9 +86,9 @@ export const LANGUAGE_DECISION_NOTES = {
     "path": "CONSENT_COPY.consent.purpose",
     "render": "Contact gate, above the fields: what the data is for",
     "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "14/08/2026",
-    "decisionNote": "No string-local reasoning comment was present at migration."
+    "provenance": "paul-written",
+    "date": "21/11/2026",
+    "decisionNote": "Paul's decision of 21/11/2026: the LINE and phone fields stay required together, because a phone number or a LINE ID is what makes a pitch possible and email alone does not. The wording here said the opposite. \"If you would like us to contact you by phone or on LINE\" framed as optional the thing the gate has refused to submit without since b005e99, so the notice is rewritten to ask for the channel rather than offer it. Paul wrote the Thai himself, typed into the session after being shown a model draft, and his is what is recorded. He made it fuller than that draft in six places: ผลการประเมิน for ผลประเมิน, เบอร์โทรศัพท์ for the draft's เบอร์โทร, ทีมงาน rather than เรา as the party making contact, กรุณา before the instruction, 12 in numerals, and ไม่เปิดเผยหรือส่งต่อ where this record and the draft both said only ส่งต่อ. The English is aligned to his Thai and not the reverse: \"we ask for\" for ขอ, \"the team\" for ทีมงาน, \"Please\" for กรุณา, and \"disclose it or pass it\" for เปิดเผยหรือส่งต่อ, so that on a PDPA notice the English never promises less than the Thai. The numbers differ by language on purpose: the English spells twelve out and the Thai uses 12, which is ordinary in each, so neither is a mismatch to correct."
   },
   "src/lib/consent-copy.ts::CONSENT_COPY.consent.statement": {
     "source": "src/lib/consent-copy.ts",

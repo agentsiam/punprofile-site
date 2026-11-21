@@ -289,23 +289,40 @@ path: CONSENT_COPY.consent.purpose
 render: 'Contact gate, above the fields: what the data is for'
 narrative_slot: utility
 en: >-
-  We use your email to send your result. If you would like us to contact you by phone or on LINE, fill in that
-  channel and tick the consent box. We keep your information for twelve months from the last time you were in
-  touch, and we do not pass it to anyone else. Change your mind at any point and tell us at
-  punprofile.career@gmail.com.
+  We use your email to send your result, and we ask for a phone number or a LINE ID so the team can contact you
+  to talk the details through. Please fill in whichever channel suits you and tick the consent box. We keep your
+  information for twelve months from the last time you were in touch, and we do not disclose it or pass it to
+  anyone else. Change your mind at any point and tell us at punprofile.career@gmail.com.
 th: >-
-  เราจะใช้อีเมลของคุณเพื่อส่งผลประเมิน หากต้องการให้เราติดต่อทางโทรศัพท์หรือ LINE
-  ให้กรอกช่องทางนั้นและติ๊กช่องยินยอม เราจะเก็บข้อมูลของคุณไว้สิบสองเดือนนับจากการติดต่อครั้งล่าสุด
-  และจะไม่ส่งต่อข้อมูลให้บุคคลอื่น หากคุณเปลี่ยนใจ แจ้งเราได้ทุกเมื่อที่ punprofile.career@gmail.com
-provenance: paul-approved
-date: 14/08/2026
+  เราจะใช้อีเมลของคุณเพื่อส่งผลการประเมิน และขอเบอร์โทรศัพท์หรือ LINE ID
+  เพื่อให้ทีมงานสามารถติดต่อคุณเพื่อพูดคุยรายละเอียดได้ กรุณากรอกช่องทางที่สะดวกและติ๊กช่องยินยอม
+  เราจะเก็บข้อมูลของคุณไว้ 12 เดือนนับจากการติดต่อครั้งล่าสุด และจะไม่เปิดเผยหรือส่งต่อข้อมูลให้บุคคลอื่น
+  หากคุณเปลี่ยนใจ สามารถแจ้งเราได้ทุกเมื่อที่ punprofile.career@gmail.com
+provenance: paul-written
+date: 21/11/2026
 term_bindings: []
-decision_note: No string-local reasoning comment was present at migration.
+decision_note: >-
+  Paul's decision of 21/11/2026: the LINE and phone fields stay required together, because a phone number or a
+  LINE ID is what makes a pitch possible and email alone does not. The wording here said the opposite. "If you
+  would like us to contact you by phone or on LINE" framed as optional the thing the gate has refused to submit
+  without since b005e99, so the notice is rewritten to ask for the channel rather than offer it. Paul wrote the
+  Thai himself, typed into the session after being shown a model draft, and his is what is recorded. He made it
+  fuller than that draft in six places: ผลการประเมิน for ผลประเมิน, เบอร์โทรศัพท์ for the draft's เบอร์โทร,
+  ทีมงาน rather than เรา as the party making contact, กรุณา before the instruction, 12 in numerals, and
+  ไม่เปิดเผยหรือส่งต่อ where this record and the draft both said only ส่งต่อ. The English is aligned to his Thai
+  and not the reverse: "we ask for" for ขอ, "the team" for ทีมงาน, "Please" for กรุณา, and "disclose it or pass
+  it" for เปิดเผยหรือส่งต่อ, so that on a PDPA notice the English never promises less than the Thai. The numbers
+  differ by language on purpose: the English spells twelve out and the Thai uses 12, which is ordinary in each,
+  so neither is a mismatch to correct.
 review:
   structural_calque: pass
-  text_hash: 3682a635727027f428fbfcaed675837e5409fabe648ef6ba8731101e82617385
+  text_hash: 943f384149ff0135a823b0476d13a8d517f045f00eb71add69a53ec9fccd0c4b
   prompt_version: structural-calque-v1
-  basis: Paul-authored or Paul-approved Thai is authoritative by project decision.
+  basis: >-
+    Paul wrote this Thai himself on 21/11/2026, typed into the session after being shown a model draft, and it
+    is his wording that is recorded. Section 2 makes his wording authoritative without a second native review.
+    It did not come through `npm run review:language`, so the authorship evidence is the message itself rather
+    than a mark against the line on the sheet.
 ```
 
 <!-- COPY-ENTRY -->
