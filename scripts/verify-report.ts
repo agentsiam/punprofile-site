@@ -160,7 +160,9 @@ const LONG =
 
 for (const [nameCase, candidate] of NAMES) {
   for (const notes of ["every note long", "no notes"] as const) {
-    for (const titles of [["Customer Success Manager", "Technical Account Manager", "FinOps Analyst"], []]) {
+    // "Growth Lead" and "Team Lead" are real job titles. They must render: the
+    // vocabulary check is for PunProfile's own words, never a client's target title.
+    for (const titles of [["Customer Success Manager", "Growth Lead", "Team Lead, FinOps"], []]) {
       for (const [state, sent, pipeline] of ROLE_STATES) {
         const ratings = fitSampleRatings().map((r) => ({ ...r, note: notes === "no notes" ? undefined : LONG }));
         const full = scoreFull(profile, ratings, (k) => ECRA[k]?.formula);

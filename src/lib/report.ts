@@ -1326,7 +1326,7 @@ export function renderCandidateReport(
   }).replace("</style>", `${FLAT_STYLES}\n${FIT_STYLES}\n${PAGED_STYLES}\n${COUNTRY_STYLES}\n${FUN_FACTS_STYLES}\n${UPSELL_STYLES}\n</style>`);
 
   // The check that makes the whitelist rule enforceable rather than aspirational.
-  const leaks = assertCandidateSafe(stripMarkup(html));
+  const leaks = assertCandidateSafe(stripMarkup(html), metaNames(meta));
   if (leaks.length) {
     throw new Error(
       `renderCandidateReport: internal vocabulary reached a candidate document (${leaks.join(", ")}). ` +
@@ -1575,6 +1575,15 @@ const PAGED_STYLES = `
  * a check run over raw HTML would fail on a CSS class name rather than on
  * anything a candidate can read.
  */
+/**
+ * The real-world names a report prints as given, which the vocabulary check
+ * skips: a client's target title can be "Growth Lead", and that is a job, not
+ * the sales word the check is there to catch (`assertCandidateSafe`).
+ */
+function metaNames(meta: ReportMeta): (string | undefined)[] {
+  return [meta.candidate, meta.coverName, meta.currentRole, meta.targetRole, ...(meta.targetTitles ?? []), ...(meta.targetCountries ?? [])];
+}
+
 function stripMarkup(html: string): string {
   return html
     .replace(/<style>[\s\S]*?<\/style>/g, " ")
@@ -2331,7 +2340,11 @@ ${rolesSec}`);
     autoPrint: opts.autoPrint ?? false,
   }).replace("</style>", `${FIT_STYLES}\n${FIT_PAGED_STYLES}\n${COUNTRY_STYLES}\n${UPSELL_STYLES}\n</style>`);
 
-  const leaks = assertCandidateSafe(stripMarkup(html));
+  const leaks = assertCandidateSafe(stripMarkup(html), [
+    ...metaNames(meta),
+    ...roles.sent.flatMap((r) => [r.title, r.employer, r.country, r.url]),
+    ...roles.pipeline.examples.flatMap((r) => [r.title, r.employer, r.country]),
+  ]);
   if (leaks.length) {
     throw new Error(`renderFitReport: internal vocabulary reached a candidate document (${leaks.join(", ")}).`);
   }

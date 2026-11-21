@@ -323,6 +323,27 @@ const BANNED: RegExp[] = [
   /\bpre-?qualif/i,
 ];
 
-export function assertCandidateSafe(renderedText: string): string[] {
-  return BANNED.filter((re) => re.test(renderedText)).map((re) => String(re));
+/**
+ * `names` are the real-world names a document prints as given: the person's
+ * own name, job titles, employers, places and links. They are data, not
+ * PunProfile's vocabulary, so they are taken out of the text before the check.
+ * "Growth Lead" and "Team Lead" are job titles, and "Highly Qualified
+ * Professional" is a permit's official name; none of them is the sales sense
+ * the list exists to catch. Everything PunProfile writes itself, templates,
+ * copy and coach notes, is still checked.
+ */
+export function assertCandidateSafe(renderedText: string, names: readonly (string | null | undefined)[] = []): string[] {
+  let text = renderedText;
+  for (const raw of names) {
+    const name = raw?.trim();
+    if (!name) continue;
+    for (const form of new Set([name, escapeHtml(name)])) {
+      text = text.replace(new RegExp(form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"), " ");
+    }
+  }
+  return BANNED.filter((re) => re.test(text)).map((re) => String(re));
+}
+
+function escapeHtml(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
