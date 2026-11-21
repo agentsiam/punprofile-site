@@ -190,6 +190,7 @@ npm run verify:copy
 npm run verify:pages
 npm run verify:narrative
 npm run verify:consent
+npm run verify:cascades
 npm run verify:report
 npm run verify:report-email
 npm run blog:cards -- --check
@@ -212,6 +213,16 @@ source, because no laptop can run that mutation (R38).
 `verify:copy` lints `copy.ts`, the question bank and the privacy notice. `verify:pages` covers the
 per-page content modules, which `verify:copy` does not read. `verify:narrative` fails a record
 missing one of its eight slots, naming a destination `cta.ts` lacks, or stating a figure (R47).
+`verify:cascades` reads `movePersonalRecords` in `merge.ts` and `eraseLead` in `erase.ts` as
+source and fails any table in the schema that carries a `leadId` and is missing from either. A
+table in the erase cascade and not the merge makes `captureContact` throw for anyone holding one
+of its rows, which on 21/11/2026 meant a returning candidate with a found role could not get past
+the contact step; a table in neither is worse and quieter, which is what `competencyRatings` was —
+a merge stranded the interview marks on a deleted row and an erasure request left them on the
+record. `mergeLeads` has a net for the first kind and it only fires at runtime, on a real merge,
+in front of whoever triggered it. A table that genuinely belongs out of a cascade goes in that
+file's `COPIED_NOT_MOVED` with its reason rather than the check being removed.
+
 `verify:report` renders the paid report for 96 fictional candidates, eight name shapes crossed
 with long coach notes and none, three target titles and none, and the roles page's three states:
 roles sent, none sent so the published list is what it shows, and neither so the page is absent.

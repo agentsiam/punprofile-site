@@ -43,6 +43,7 @@ export type EraseCounts = {
   candidateRules: number;
   releases: number;
   releaseItems: number;
+  competencyRatings: number;
 };
 
 /**
@@ -267,6 +268,16 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     .withIndex("by_lead", (q) => q.eq("leadId", leadId))
     .collect();
   for (const r of releases) await ctx.db.delete(r._id);
+  // The interview marks, added here 21/11/2026. They were in no cascade at
+  // all: nothing in `convex/` has ever deleted this table, so an erasure left
+  // behind a score and a written note per competency — what the coach made of
+  // the person, which is exactly what this file exists to destroy. It is also
+  // what `merge.ts` could not move while they were invisible to the net here.
+  const ratings = await ctx.db
+    .query("competencyRatings")
+    .withIndex("by_lead_item", (q) => q.eq("leadId", leadId))
+    .collect();
+  for (const r of ratings) await ctx.db.delete(r._id);
   // Bookings still waiting to be placed carry only an email to tie them to
   // this person; they go with the person too.
   const leadEmail = (await ctx.db.get(leadId))?.email?.trim().toLowerCase();
@@ -323,5 +334,6 @@ export async function eraseLead(ctx: MutationCtx, leadId: Id<"leads">): Promise<
     candidateRules: rules.length,
     releases: releases.length,
     releaseItems: releaseItems.length,
+    competencyRatings: ratings.length,
   };
 }
