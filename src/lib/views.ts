@@ -324,26 +324,12 @@ const BANNED: RegExp[] = [
 ];
 
 /**
- * `names` are the real-world names a document prints as given: the person's
- * own name, job titles, employers, places and links. They are data, not
- * PunProfile's vocabulary, so they are taken out of the text before the check.
- * "Growth Lead" and "Team Lead" are job titles, and "Highly Qualified
- * Professional" is a permit's official name; none of them is the sales sense
- * the list exists to catch. Everything PunProfile writes itself, templates,
- * copy and coach notes, is still checked.
+ * Checks PunProfile's own wording: copy files and report templates, at build
+ * time (`verify-copy`, `verify-report`). It never runs on a live document in the
+ * coach or candidate dashboard, because a client's own words, such as a
+ * "Growth Lead" target title, are not PunProfile's vocabulary and must never
+ * stop a delivery (Paul, 21/11/2026).
  */
-export function assertCandidateSafe(renderedText: string, names: readonly (string | null | undefined)[] = []): string[] {
-  let text = renderedText;
-  for (const raw of names) {
-    const name = raw?.trim();
-    if (!name) continue;
-    for (const form of new Set([name, escapeHtml(name)])) {
-      text = text.replace(new RegExp(form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"), " ");
-    }
-  }
-  return BANNED.filter((re) => re.test(text)).map((re) => String(re));
-}
-
-function escapeHtml(s: string): string {
-  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+export function assertCandidateSafe(renderedText: string): string[] {
+  return BANNED.filter((re) => re.test(renderedText)).map((re) => String(re));
 }

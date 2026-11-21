@@ -34,7 +34,9 @@ import {
   coverNameSize,
   roleRow,
   sheetRow,
+  stripMarkup,
 } from "../src/lib/report.js";
+import { assertCandidateSafe } from "../src/lib/views.js";
 import { FIT_SAMPLE_INPUT, fitSampleRatings } from "../src/lib/fit-sample.js";
 import { scoreResponse, scoreFull } from "../src/lib/scoring.js";
 import { ECRA } from "../src/lib/ecra.js";
@@ -172,6 +174,14 @@ for (const [nameCase, candidate] of NAMES) {
           { candidate, targetCountries: FIT_SAMPLE_INPUT.targetCountries, targetRole: FIT_SAMPLE_INPUT.targetRole ?? undefined, targetTitles: titles },
           { locale: "en", assetOrigin: "" },
         );
+
+        // ---- PunProfile's own wording carries no internal vocabulary. Checked on
+        // the cases with no target titles, so only the templates and the
+        // fictional fixtures are read; a client's own title is never checked.
+        if (!titles.length) {
+          const leaks = assertCandidateSafe(stripMarkup(html));
+          if (leaks.length) fail(`${label}: internal vocabulary in the report's own wording (${leaks.join(", ")})`);
+        }
 
         // ---- every sheet is a whole page
         const sheets = html.match(/<section class="fit-sec"[\s\S]*?<\/section>/g) ?? [];

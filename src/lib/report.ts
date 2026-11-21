@@ -52,9 +52,10 @@
  * `limited` is what the candidate is sent, and is the same document with the
  * internals taken out: no tier badges, no why-blank column, no raw coverage
  * percentage, and no rows for competencies the survey cannot reach. It is
- * localised, and it is checked by `assertCandidateSafe` before it is returned,
- * so an internal word reaching a candidate is a thrown error rather than a
- * document already sent.
+ * localised. Its own wording is checked for internal vocabulary by
+ * `scripts/verify-report.ts` and `verify-copy`, before a release, never while a
+ * coach or candidate opens it: the client's own words, such as a "Growth Lead"
+ * target title, must never stop a report from being delivered (Paul, 21/11/2026).
  *
  * The unscored ROWS go too, which is one step past "hide the internal
  * columns". With the why-blank column removed their only remaining content was
@@ -67,7 +68,7 @@ import { radarSvg } from "./radar";
 import { BRAND_FONT_LINK, BRAND_FONT_STACKS, BRAND_TOKENS_CSS } from "./design-tokens";
 import type { RadarAxis } from "./radar";
 import { buildNarrative } from "./narrative";
-import { assertCandidateSafe, itemName, dimensionName, dimensionNameByLabel } from "./views";
+import { itemName, dimensionName, dimensionNameByLabel } from "./views";
 import { t, type Locale } from "./locale";
 import { BAND_COPY, DIMENSIONS, GATES } from "./model";
 import { topStrengths, developmentPriorities, scoreResponse, scoreFull } from "./scoring";
@@ -1325,14 +1326,6 @@ export function renderCandidateReport(
     autoPrint: opts.autoPrint ?? false,
   }).replace("</style>", `${FLAT_STYLES}\n${FIT_STYLES}\n${PAGED_STYLES}\n${COUNTRY_STYLES}\n${FUN_FACTS_STYLES}\n${UPSELL_STYLES}\n</style>`);
 
-  // The check that makes the whitelist rule enforceable rather than aspirational.
-  const leaks = assertCandidateSafe(stripMarkup(html), metaNames(meta));
-  if (leaks.length) {
-    throw new Error(
-      `renderCandidateReport: internal vocabulary reached a candidate document (${leaks.join(", ")}). ` +
-        `See the naming rule in 08_Coaching_Business.md.`,
-    );
-  }
   return html;
 }
 
@@ -1575,16 +1568,8 @@ const PAGED_STYLES = `
  * a check run over raw HTML would fail on a CSS class name rather than on
  * anything a candidate can read.
  */
-/**
- * The real-world names a report prints as given, which the vocabulary check
- * skips: a client's target title can be "Growth Lead", and that is a job, not
- * the sales word the check is there to catch (`assertCandidateSafe`).
- */
-function metaNames(meta: ReportMeta): (string | undefined)[] {
-  return [meta.candidate, meta.coverName, meta.currentRole, meta.targetRole, ...(meta.targetTitles ?? []), ...(meta.targetCountries ?? [])];
-}
-
-function stripMarkup(html: string): string {
+/** The text a reader sees, for the vocabulary check in `scripts/verify-report.ts`. */
+export function stripMarkup(html: string): string {
   return html
     .replace(/<style>[\s\S]*?<\/style>/g, " ")
     .replace(/<script>[\s\S]*?<\/script>/g, " ")
@@ -2340,14 +2325,6 @@ ${rolesSec}`);
     autoPrint: opts.autoPrint ?? false,
   }).replace("</style>", `${FIT_STYLES}\n${FIT_PAGED_STYLES}\n${COUNTRY_STYLES}\n${UPSELL_STYLES}\n</style>`);
 
-  const leaks = assertCandidateSafe(stripMarkup(html), [
-    ...metaNames(meta),
-    ...roles.sent.flatMap((r) => [r.title, r.employer, r.country, r.url]),
-    ...roles.pipeline.examples.flatMap((r) => [r.title, r.employer, r.country]),
-  ]);
-  if (leaks.length) {
-    throw new Error(`renderFitReport: internal vocabulary reached a candidate document (${leaks.join(", ")}).`);
-  }
   return html;
 }
 
