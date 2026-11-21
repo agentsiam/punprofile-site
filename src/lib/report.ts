@@ -155,8 +155,77 @@ export function countryFactsBody(country: string | undefined, locale: Locale, as
 </div>`;
 }
 
+/**
+ * The cover's geometry, in millimetres of the printed page.
+ *
+ * A cover is a text column on the left and a picture on the right, and the
+ * picture is 92mm wide pinned to the band's right edge, so the column the text
+ * may use ends where the picture's column begins. Nothing used to say so on the
+ * Fit Report's cover: the name was given 110mm and the line under it 100mm of a
+ * band whose picture starts at 102mm, so an ordinary two-word name printed its
+ * lime line under the photograph. The free report's cover already keeps that
+ * gutter, and these are the numbers that make both of them keep it.
+ *
+ * The name is the one element allowed the full width, because it sits above the
+ * picture rather than beside it — so what it needs instead is a floor: its
+ * block has to end before the picture's top edge, which is `nameBudget` below.
+ *
+ * Read by `scripts/verify-report.ts` as well as by the stylesheet, so a cover
+ * element and the check that it clears the picture cannot drift apart.
+ */
+export const COVER = {
+  /** The page, and the Fit Report band's own height and padding. */
+  page: 210,
+  band: 200,
+  padX: 16,
+  padY: 18,
+  /** The logo above the eyebrow, then the eyebrow's margins and its one line. */
+  logo: 11,
+  eyebrowTop: 30,
+  eyebrowLine: 6,
+  eyebrowBottom: 3,
+  /** The picture: square, pinned to the band's right, hanging below the band. */
+  artW: 92,
+  artRight: 16,
+  artBelow: 24,
+  /** What is kept between the text column and the picture's column. */
+  gutter: 8,
+  /** The name: its own width, its ceiling and floor, and its line height. */
+  nameW: 110,
+  nameMax: 50,
+  nameMin: 24,
+  nameLead: 1.02,
+  /** 11pt text in the band: one line box, and one character's own advance. */
+  line: 6,
+  charMm: 2.17,
+  /** The meta line's top margin; the lime line's top margin and its padding. */
+  subTop: 5,
+  pillTop: 9,
+  pillPad: 2,
+  /** The free report's cover, which puts its picture in the same column. */
+  freeNameW: 80,
+  freeSubW: 78,
+  freeBadgeW: 68,
+};
+
+/** The picture's own edges on the Fit Report's cover, from the band's corner. */
+export const COVER_ART = {
+  left: COVER.page - COVER.artRight - COVER.artW,
+  right: COVER.page - COVER.artRight,
+  top: COVER.band + COVER.artBelow - COVER.artW,
+  bottom: COVER.band + COVER.artBelow,
+};
+
+/** The column the text may use, where it starts, and the name's own ceiling. */
+export const COVER_TEXT = {
+  left: COVER.padX,
+  width: COVER_ART.left - COVER.padX - COVER.gutter,
+  top: COVER.padY + COVER.logo + COVER.eyebrowTop + COVER.eyebrowLine + COVER.eyebrowBottom,
+  nameBudget: COVER_ART.top - (COVER.padY + COVER.logo + COVER.eyebrowTop + COVER.eyebrowLine + COVER.eyebrowBottom) - COVER.gutter,
+};
+
 export const UPSELL_STYLES = `
-  .cover-badge { margin: 8mm 0 0; max-width: 68mm; font-size: 9.5pt; font-weight: 600; line-height: 1.4; }
+  .cover-badge { margin: 8mm 0 0; max-width: ${COVER.freeBadgeW}mm; font-size: 9.5pt; font-weight: 600; line-height: 1.4; }
   .cover-badge span { display: table; padding: 1.5mm 4mm; margin-right: 2mm; border-radius: 4mm; background: var(--color-ink-deep); color: var(--color-canvas-brand); font-size: 11pt; font-weight: 900; margin-bottom: 1.5mm; }
   .preview { margin: 4mm 0 0; padding: 3mm 4mm; border-radius: 3mm; background: var(--color-canvas-brand); font-size: 8.5pt; break-inside: avoid; }
   .preview strong { margin-right: 1.5mm; }
@@ -323,10 +392,16 @@ const esc = (s: string) =>
  * running off the cover. Latin, Thai, one word, a nickname or a double-barrelled
  * name all come out whole.
  */
-function coverName(name: string): string {
+function coverName(name: string, fit?: { width: number; max: number; budget: number }): string {
   const whole = name.replace(/-/g, "\u2011");
-  const run = Math.max(1, ...whole.split(/\s+/).map((w) => w.length));
-  return `<h1 style="--cover-run:${run};--cover-len:${Math.max(1, whole.length)}">${esc(whole)}</h1>`;
+  const run = Math.max(1, ...whole.split(/\s+/).filter(Boolean).map((w) => w.length));
+  // A cover that keeps a height for its name needs the line count to divide it
+  // by, and CSS cannot wrap a string. So the wrap is done here, at the size the
+  // name's own two ceilings give, and sent out as a number. A smaller size only
+  // ever takes fewer lines, so a count made at the larger one cannot let the
+  // name grow past the height it was given.
+  const lines = fit ? `;--cover-lines:${coverLines(whole, fit.width, coverNameSize(whole, fit.width, fit.max))}` : "";
+  return `<h1 style="--cover-run:${run};--cover-len:${Math.max(1, whole.length)}${lines}">${esc(whole)}</h1>`;
 }
 
 function ddmmyyyy(raw: string): string {
@@ -1288,8 +1363,71 @@ export function renderCandidateReport(
  *  as by the stylesheet, so the check and the page cannot drift apart. */
 export const COVER_EM = 0.58;
 
+/**
+ * The characters of a word that take width. Thai writes its vowels and tones
+ * above and below the consonant they belong to, and a combining mark has no
+ * advance of its own, so counting them would make every Thai name look a third
+ * longer than it sets. Only the line count uses this: `--cover-run` and
+ * `--cover-len` keep counting codepoints, because they are what the shipped
+ * covers were sized against and a name that prints well today must not move.
+ */
+const advances = (word: string) => word.replace(/[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E]/g, "").length;
+
+/**
+ * How many lines a name takes at a size, wrapped the way the browser wraps it:
+ * a whole word to a line while the line has room, a word too long for a line of
+ * its own broken across lines. `COVER_EM` stands in for the font's own metrics,
+ * so this is an estimate — and it is the same estimate the stylesheet's own
+ * ceilings make, which is the point: the page and the check agree or neither is
+ * worth anything. Checked against a browser for every name shape in
+ * `scripts/verify-report.ts`.
+ */
+export function coverLines(name: string, widthMm: number, sizePt: number): number {
+  const charMm = COVER_EM * ((sizePt * 25.4) / 72);
+  const chars = Math.max(1, widthMm / charMm);
+  const words = name.replace(/-/g, "\u2011").split(/\s+/).filter(Boolean);
+  let lines = 0;
+  let used = 0;
+  for (const word of words) {
+    if (lines === 0) lines = 1;
+    const w = advances(word);
+    const need = used === 0 ? w : used + 1 + w;
+    if (used > 0 && need > chars) {
+      lines += 1;
+      used = w;
+    } else {
+      used = need;
+    }
+    if (used > chars) {
+      const broken = Math.ceil(used / chars) - 1;
+      lines += broken;
+      used -= broken * chars;
+    }
+  }
+  return Math.max(1, lines);
+}
+
+/**
+ * The size the stylesheet will land on for a name, in points.
+ *
+ * Two ceilings from the name's own shape, a third from the height the cover
+ * gives it where it gives it one, and the floor underneath all three. A cover
+ * that passes no `budgetMm` has nothing below its name to clear.
+ */
+export function coverNameSize(name: string, widthMm: number, maxPt: number, budgetMm?: number): number {
+  const whole = name.replace(/-/g, "\u2011");
+  const words = whole.split(/\s+/).filter(Boolean);
+  const run = Math.max(1, ...words.map((w) => w.length));
+  const len = Math.max(1, whole.length);
+  const pt = (mm: number) => (mm * 72) / 25.4;
+  const shape = Math.min(maxPt, pt(widthMm / (run * COVER_EM)), pt((widthMm * 3) / (len * COVER_EM)));
+  const ceiling =
+    budgetMm === undefined ? shape : Math.min(shape, pt(budgetMm / (coverLines(whole, widthMm, shape) * COVER.nameLead)));
+  return Math.max(COVER.nameMin, ceiling);
+}
+
 const COVER_NAME_FIT = `--cover-em: ${COVER_EM};
-    font-size: max(var(--cover-min, 24pt), min(var(--cover-max), calc(var(--cover-w) / (var(--cover-run, 8) * var(--cover-em))), calc(var(--cover-w) * 3 / (var(--cover-len, 8) * var(--cover-em)))));
+    font-size: max(var(--cover-min, ${COVER.nameMin}pt), min(var(--cover-max), calc(var(--cover-w) / (var(--cover-run, 8) * var(--cover-em))), calc(var(--cover-w) * 3 / (var(--cover-len, 8) * var(--cover-em))), calc(var(--cover-h, 999mm) / (var(--cover-lines, 1) * ${COVER.nameLead}))));
     hyphens: none; overflow-wrap: anywhere;`;
 
 const PAGED_STYLES = `
@@ -1333,17 +1471,17 @@ const PAGED_STYLES = `
   .cover-band { position: relative; height: 190mm; background: var(--color-canvas-brand); color: var(--color-on-primary); padding: 18mm 16mm; }
   .cover-logo { height: 11mm; display: block; }
   .cover-eyebrow { margin: 34mm 0 3mm; font-size: 11pt; font-weight: 700; }
-  .cover h1 { --cover-w: 80mm; --cover-max: 54pt; ${COVER_NAME_FIT}
+  .cover h1 { --cover-w: ${COVER.freeNameW}mm; --cover-max: 54pt; ${COVER_NAME_FIT}
     line-height: 1; letter-spacing: -0.03em; font-weight: 900; color: var(--color-ink-deep); max-width: 80mm; }
-  .cover-sub { margin: 5mm 0 0; font-size: 11pt; font-weight: 500; max-width: 78mm; }
+  .cover-sub { margin: ${COVER.subTop}mm 0 0; font-size: 11pt; font-weight: 500; max-width: ${COVER.freeSubW}mm; }
   /* Europe as the reader will live it, per "Where clay and where the
      mascot" in Brand_Guidelines.md. */
-  .cover-collage { position: absolute; left: 102mm; right: 16mm; top: 16mm; height: 120mm; display: grid; grid-template-columns: 1.05fr 1fr; grid-template-rows: 1fr 1fr .5fr; gap: 2.5mm; }
+  .cover-collage { position: absolute; left: ${COVER_ART.left}mm; right: ${COVER.artRight}mm; top: 16mm; height: 120mm; display: grid; grid-template-columns: 1.05fr 1fr; grid-template-rows: 1fr 1fr .5fr; gap: 2.5mm; }
   .cover-collage img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4mm; min-height: 0; }
   .cover-collage .cc-tall { grid-row: 1 / 3; }
   .cover-collage .cc-wide { grid-column: 1 / 3; }
-  .cover-art { position: absolute; right: 16mm; bottom: -22mm; width: 92mm; border-radius: 6mm; box-shadow: 0 2mm 6mm rgba(22,51,0,.18); }
-  .cover-low { position: absolute; left: 16mm; right: 116mm; top: 202mm; }
+  .cover-art { position: absolute; right: ${COVER.artRight}mm; bottom: -22mm; width: ${COVER.artW}mm; border-radius: 6mm; box-shadow: 0 2mm 6mm rgba(22,51,0,.18); }
+  .cover-low { position: absolute; left: ${COVER.padX}mm; right: ${COVER.page - COVER_ART.left + COVER.gutter}mm; top: 202mm; }
   .cover-caveat { font-size: 9.5pt; color: var(--color-body); margin: 0; }
   .cover-caveat strong { display: block; color: var(--color-ink); font-size: 11pt; margin-bottom: 1.5mm; }
   .cover-pp { position: absolute; left: 16mm; bottom: 14mm; height: 8mm; }
@@ -1880,14 +2018,14 @@ const FIT_PAGED_STYLES = `
   body.is-fit .fit-fine { font-size: 7.5pt !important; color: var(--color-mute-strong) !important; margin-top: 8mm; }
 
   body.is-fit .cover { position: relative; box-sizing: border-box; display: block; width: 210mm; min-height: 296.5mm; margin: 0 auto 8mm; padding: 0; border-radius: 0; background: var(--color-canvas); color: var(--color-ink); overflow: hidden; box-shadow: 0 1px 6px rgba(14,15,12,.12); }
-  body.is-fit .fc-band { position: relative; height: 200mm; padding: 18mm 16mm; background: var(--color-canvas-dark); color: var(--color-on-canvas-dark); }
-  body.is-fit .fc-logo { height: 11mm; display: block; }
-  body.is-fit .cover .eyebrow { margin: 30mm 0 3mm; color: var(--color-on-canvas-dark); font-size: 11pt; letter-spacing: .12em; }
-  body.is-fit .cover h1 { --cover-w: 110mm; --cover-max: 50pt; ${COVER_NAME_FIT}
-    margin: 0; line-height: 1.02; letter-spacing: -0.03em; font-weight: 900; color: var(--color-canvas); max-width: 110mm; }
-  body.is-fit .cover .sub { margin: 5mm 0 0; font-size: 11pt; color: var(--color-on-canvas-dark); max-width: 100mm; }
-  body.is-fit .cover .cover-line { display: inline-block; margin: 9mm 0 0; padding: 2mm 4mm; border-radius: 2mm; background: var(--color-canvas-brand); color: var(--color-on-primary); font-size: 11pt; font-weight: 700; max-width: 100mm; }
-  body.is-fit .fc-art { position: absolute; right: 16mm; bottom: -24mm; width: 92mm; border-radius: 6mm; box-shadow: 0 2mm 6mm rgba(22,51,0,.25); }
+  body.is-fit .fc-band { position: relative; height: ${COVER.band}mm; padding: ${COVER.padY}mm ${COVER.padX}mm; background: var(--color-canvas-dark); color: var(--color-on-canvas-dark); }
+  body.is-fit .fc-logo { height: ${COVER.logo}mm; display: block; }
+  body.is-fit .cover .eyebrow { margin: ${COVER.eyebrowTop}mm 0 ${COVER.eyebrowBottom}mm; color: var(--color-on-canvas-dark); font-size: 11pt; letter-spacing: .12em; }
+  body.is-fit .cover h1 { --cover-w: ${COVER.nameW}mm; --cover-max: ${COVER.nameMax}pt; --cover-h: ${COVER_TEXT.nameBudget}mm; ${COVER_NAME_FIT}
+    margin: 0; line-height: ${COVER.nameLead}; letter-spacing: -0.03em; font-weight: 900; color: var(--color-canvas); max-width: ${COVER.nameW}mm; }
+  body.is-fit .cover .sub { margin: ${COVER.subTop}mm 0 0; font-size: 11pt; color: var(--color-on-canvas-dark); max-width: ${COVER_TEXT.width}mm; }
+  body.is-fit .cover .cover-line { display: inline-block; margin: ${COVER.pillTop}mm 0 0; padding: ${COVER.pillPad}mm 4mm; border-radius: 2mm; background: var(--color-canvas-brand); color: var(--color-on-primary); font-size: 11pt; font-weight: 700; max-width: ${COVER_TEXT.width}mm; }
+  body.is-fit .fc-art { position: absolute; right: ${COVER.artRight}mm; bottom: -${COVER.artBelow}mm; width: ${COVER.artW}mm; border-radius: 6mm; box-shadow: 0 2mm 6mm rgba(22,51,0,.25); }
   body.is-fit .cover-date { position: absolute; left: 16mm; top: 212mm; margin: 0; font-size: 10pt; color: var(--color-body); }
   body.is-fit .fc-pp { position: absolute; left: 16mm; bottom: 14mm; height: 8mm; }
 
@@ -2168,7 +2306,7 @@ ${countryInner}
     <div class="fc-band">
       <img class="fc-logo" src="${asset("/efc-logo-reversed.svg")}" alt="EU Fit Check by PunProfile">
       <p class="eyebrow">${esc(s("fit.eyebrow"))}</p>
-      ${coverName(meta.candidate)}
+      ${coverName(meta.candidate, { width: COVER.nameW, max: COVER.nameMax, budget: COVER_TEXT.nameBudget })}
       <p class="sub">${metaBits.join(" · ")}</p>
       <p class="cover-line">${esc(s("fit.cover.sub", { count: competencies }))}</p>
       <img class="fc-art" src="${asset("/pricing/pricing-fit-report-interview.jpg")}" alt="">

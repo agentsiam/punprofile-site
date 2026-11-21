@@ -21,7 +21,20 @@
  * substitute for doing so.
  */
 
-import { renderFitReport, renderReport, ROLE, SHEET, roleRow, sheetRow, COVER_EM } from "../src/lib/report.js";
+import {
+  renderFitReport,
+  renderReport,
+  COVER,
+  COVER_ART,
+  COVER_EM,
+  COVER_TEXT,
+  ROLE,
+  SHEET,
+  coverLines,
+  coverNameSize,
+  roleRow,
+  sheetRow,
+} from "../src/lib/report.js";
 import { FIT_SAMPLE_INPUT, fitSampleRatings } from "../src/lib/fit-sample.js";
 import { scoreResponse, scoreFull } from "../src/lib/scoring.js";
 import { ECRA } from "../src/lib/ecra.js";
@@ -75,16 +88,49 @@ const NAMES: [string, string][] = [
   ["one word", "Phatcharaporn"],
   ["nickname", "Nok"],
   ["Thai", "ศิริพร ชัยยาสิทธิ์"],
+  // An ordinary two-word name, which is what a delivered report turned out to
+  // print its lime line under the photograph with, and the shapes either side
+  // of it: more words than lines, and more Thai words than a name usually has.
+  ["two words", "Mind Harness"],
+  ["seven words", "Maria del Carmen de la Cruz Santos"],
+  ["four Thai words", "ณัฐพงษ์ แซ่ลิ้ม วรรณกิจ ธนาคาร"],
 ];
 
-/** The size the stylesheet will land on, in millimetres of type. */
-function coverSize(name: string, bandMm: number, maxPt: number, minPt = 24): number {
-  const whole = name.replace(/-/g, "‑");
-  const run = Math.max(1, ...whole.split(/\s+/).map((w) => w.length));
-  const len = Math.max(1, whole.length);
-  const pt = (mm: number) => (mm * 72) / 25.4;
-  return Math.max(minPt, Math.min(maxPt, pt(bandMm / (run * COVER_EM)), pt((bandMm * 3) / (len * COVER_EM))));
+/**
+ * Where everything on the Fit Report's cover lands, in millimetres from the
+ * band's top-left corner.
+ *
+ * The name's size and its line count come from the renderer's own two
+ * functions, so this reads what the page will do rather than a second copy of
+ * it; the meta line and the lime line are wrapped the same way at 11pt, in the
+ * column the stylesheet gives them, and the text they wrap is read back out of
+ * the rendered markup so that longer copy moves these boxes too. An escaped
+ * entity counts as its own characters, which can only over-count a line.
+ */
+function coverBoxes(candidate: string, html: string) {
+  const text = (cls: string) => (new RegExp(`<p class="${cls}">([\\s\\S]*?)</p>`).exec(html)?.[1] ?? "").trim();
+  const mm = (pt: number) => (pt * 25.4) / 72;
+  const size = coverNameSize(candidate, COVER.nameW, COVER.nameMax, COVER_TEXT.nameBudget);
+  const column = { left: COVER_TEXT.left, right: COVER_TEXT.left + COVER_TEXT.width };
+  const name = {
+    left: COVER_TEXT.left,
+    right: COVER_TEXT.left + COVER.nameW,
+    top: COVER_TEXT.top,
+    bottom: COVER_TEXT.top + coverLines(candidate, COVER.nameW, size) * mm(size) * COVER.nameLead,
+  };
+  const subTop = name.bottom + COVER.subTop;
+  const sub = { ...column, top: subTop, bottom: subTop + coverLines(text("sub"), COVER_TEXT.width, 11) * COVER.line };
+  const pillTop = sub.bottom + COVER.pillTop;
+  const pill = {
+    ...column,
+    top: pillTop,
+    bottom: pillTop + 2 * COVER.pillPad + coverLines(text("cover-line"), COVER_TEXT.width, 11) * COVER.line,
+  };
+  return { size, boxes: [["name", name], ["meta line", sub], ["lime line", pill]] as const, pill };
 }
+
+type Box = { left: number; right: number; top: number; bottom: number };
+const overlap = (a: Box, b: Box) => a.right > b.left && a.left < b.right && a.bottom > b.top && a.top < b.bottom;
 
 const PIPELINE: RoleMatch = matchPipeline(FIT_SAMPLE_INPUT.targetCountries ?? [], TARGETS, FIT_SAMPLE_INPUT.targetRole);
 if (!PIPELINE.matching) {
@@ -214,15 +260,65 @@ for (const [nameCase, candidate] of NAMES) {
         }
 
         // ---- the cover name fits its band at the size the stylesheet will pick
-        const h1 = /<h1 style="--cover-run:(\d+);--cover-len:(\d+)"/.exec(html);
+        const h1 = /<h1 style="--cover-run:(\d+);--cover-len:(\d+);--cover-lines:(\d+)"/.exec(html);
         if (!h1) fail(`${label}: the cover name carries no measurements`);
         else {
-          const size = coverSize(candidate, 110, 50);
-          const runMm = Number(h1[1]) * COVER_EM * ((size * 25.4) / 72);
-          if (runMm > 110.5 && size > 24) fail(`${label}: the longest run needs ${runMm.toFixed(0)}mm of a 110mm band at ${size.toFixed(1)}pt`);
+          const cover = coverBoxes(candidate, html);
+          const runMm = Number(h1[1]) * COVER_EM * ((cover.size * 25.4) / 72);
+          if (runMm > COVER.nameW + 0.5 && cover.size > COVER.nameMin) {
+            fail(`${label}: the longest run needs ${runMm.toFixed(0)}mm of a ${COVER.nameW}mm band at ${cover.size.toFixed(1)}pt`);
+          }
+          // The line count the renderer sends out is a ceiling, not a count: it
+          // is taken at the size the name's own two ceilings give, and the
+          // height ceiling can only shrink the name from there, which can only
+          // take fewer lines. Under the true count the stylesheet would divide
+          // the height by too little and the name would run past it.
+          const took = coverLines(candidate, COVER.nameW, cover.size);
+          if (Number(h1[3]) < took) {
+            fail(`${label}: the cover sends ${h1[3]} lines to the stylesheet and the name takes ${took} at ${cover.size.toFixed(1)}pt`);
+          }
+
+          // ---- nothing on the cover runs into the photograph
+          //
+          // The name, the meta line under it and the lime line all sit in a band
+          // whose right-hand side is a 92mm picture, and a delivered report
+          // printed its lime line under that picture on an ordinary two-word
+          // name. So every one of the three is measured against the picture's
+          // own edges rather than against the band it is in.
+          for (const [what, box] of cover.boxes) {
+            if (overlap(box, COVER_ART)) {
+              fail(
+                `${label}: the cover's ${what} runs into the photograph ` +
+                  `(${what} ${box.left}–${box.right.toFixed(0)}mm across, ${box.top.toFixed(0)}–${box.bottom.toFixed(0)}mm down; ` +
+                  `the picture is ${COVER_ART.left}–${COVER_ART.right}mm across from ${COVER_ART.top}mm down)`,
+              );
+            }
+          }
+          if (cover.pill.bottom > COVER.band) {
+            fail(`${label}: the cover's lime line ends ${cover.pill.bottom.toFixed(0)}mm down a ${COVER.band}mm band`);
+          }
         }
       }
     }
+  }
+}
+
+// ------------------------------------------------- the free report's own cover
+//
+// It puts its collage where the paid cover puts its photograph, and keeps its
+// text out of that column by being narrower rather than by ending above it: the
+// collage starts at the top of its band, so there is no above. Three widths
+// stand between the text and the pictures, and nothing was checking them.
+for (const [what, width] of [
+  ["name", COVER.freeNameW],
+  ["meta line", COVER.freeSubW],
+  ["free-version badge", COVER.freeBadgeW],
+] as const) {
+  if (COVER.padX + width > COVER_ART.left) {
+    fail(
+      `free report cover: the ${what} is ${width}mm from ${COVER.padX}mm, which reaches ${COVER.padX + width}mm ` +
+        `and the collage starts at ${COVER_ART.left}mm`,
+    );
   }
 }
 
@@ -276,5 +372,12 @@ console.log(`report sheets OK: ${cases} fictional candidates, every sheet a whol
 console.log("  free report: the badge, the banners and the page that sells the Fit Report go for someone who has it");
 console.log(`  widest split: ${widest.sheets} sheets for "${widest.heading.trim()}" (${widest.label})`);
 for (const [nameCase, candidate] of NAMES) {
-  console.log(`  cover, ${nameCase}: ${coverSize(candidate, 110, 50).toFixed(1)}pt for "${candidate}"`);
+  const size = coverNameSize(candidate, COVER.nameW, COVER.nameMax, COVER_TEXT.nameBudget);
+  const shape = coverNameSize(candidate, COVER.nameW, COVER.nameMax);
+  const held = size < shape - 0.05 ? `, held down from ${shape.toFixed(1)}pt to clear the picture` : "";
+  console.log(`  cover, ${nameCase}: ${size.toFixed(1)}pt on ${coverLines(candidate, COVER.nameW, size)} line(s) for "${candidate}"${held}`);
 }
+console.log(
+  `  cover: text column ${COVER_TEXT.width}mm, the picture from ${COVER_ART.left}mm across and ${COVER_ART.top}mm down, ` +
+    `the name's own ${COVER_TEXT.nameBudget}mm above it`,
+);
