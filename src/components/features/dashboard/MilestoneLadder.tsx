@@ -13,7 +13,7 @@
  *
  * - **The next step is the first undone thing on the current rung**, and it is
  *   the only thing on this page that can be pressed. A rung is not pressable.
- *   `Brand_Guidelines.md` reserves the view's one `action` button for it.
+ *   `design.md` reserves the view's one `action` button for it.
  * - **The work of the current rung opens inside it**, never beside it: the
  *   competency ratings under the first call while that call is the rung, the
  *   close form under a call whose end time has passed, the release under the
@@ -21,7 +21,7 @@
  *   A rung that is not current shows what it settled and what it delivered,
  *   and nothing to fill in.
  *
- * The state colours take roles that already exist, per `Brand_Guidelines.md`:
+ * The state colours take roles that already exist, per `design.md`:
  * `secondary` for now, an outline for waiting, the `line` hairline and
  * `mute-strong` for done, and the same without the tick for not applying.
  * Lateness is words, never colour.

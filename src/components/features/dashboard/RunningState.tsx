@@ -193,7 +193,7 @@ function FoundRole({ f }: { f: Found }) {
         {confirming ? (
           <>
             {/* Tonal, not filled: the page's one filled button is the next
-                step on the ladder, `Brand_Guidelines.md`. */}
+                step on the ladder, `design.md`. */}
             <button
               type="button"
               disabled={busy}

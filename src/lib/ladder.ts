@@ -18,7 +18,7 @@ import type { Step } from "./checklist";
 export type RungKey = "pack" | "first_call" | "hour" | "closed";
 
 /**
- * The four states of `prd.md` § 8, which `Brand_Guidelines.md` maps onto roles
+ * The four states of `prd.md` § 8, which `design.md` maps onto roles
  * that already exist rather than onto a new colour family:
  *
  * - `done`, no colour, because most rows on a finished engagement are done.

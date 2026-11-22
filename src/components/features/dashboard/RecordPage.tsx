@@ -178,7 +178,7 @@ export default function RecordPage({ leadId }: { leadId: Id<"leads"> }) {
                 because it is the one with a recipient: it gets sent after the
                 call. The coach copy is preparation for that call. Neither is
                 filled: the lead's one filled button is the ladder's next step
-                on the Delivery page (`Brand_Guidelines.md`). */}
+                on the Delivery page (`design.md`). */}
             <button
               type="button"
               disabled={building !== null || Object.keys(corrected.effective).length === 0}

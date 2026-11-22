@@ -20,7 +20,7 @@ import type { Copy } from "./copy";
  *
  * **The three pictures are the clay cast's cutouts, 04/11/2026**: the same
  * `/home/service-*.png` files the home page and `/products` already render.
- * `Brand_Guidelines.md` rules out a clay or 3D mascot and gives service cards to
+ * `design.md` rules out a clay or 3D mascot and gives service cards to
  * the clay cast instead, and the 3D studio renders this file pointed at from
  * 17/08/2026 were exactly what that rule names. The cutouts are transparent and
  * stand on the card's own tint; see the note on `image` below.

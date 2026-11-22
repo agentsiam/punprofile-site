@@ -155,7 +155,7 @@ export default function Home() {
         screens only; a phone still gets the words first and the picture under
         them. The mascot moved out because the brand guide keeps it for small
         moments and gives page heroes to clay scenes ("Where clay and where the
-        mascot", Brand_Guidelines.md). The scene is cast member C walking from a
+        mascot", design.md). The scene is cast member C walking from a
         Thai shophouse to a row of European houses.
       */}
       <Band block="B1" ground="canvas" width="wide">

@@ -32,6 +32,7 @@
     "blog:cards": "tsx scripts/build-share-cards.ts",
     "snapshot:leads": "tsx scripts/export-leads-snapshot.ts",
     "verify:narrative": "tsx scripts/verify-narrative.ts",
+    "verify:single-owner": "tsx scripts/verify-single-owner.ts",
     "audit:seo": "node scripts/seo-audit.mjs",
     "verify:email": "tsx scripts/verify-email.ts"
   },
