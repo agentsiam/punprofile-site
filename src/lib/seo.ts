@@ -74,12 +74,13 @@ export const PUBLIC_ROUTES: readonly { path: string; priority: number }[] = [
    * to keep this file free of a content import, and 0.7 rather than 0.8 because
    * they sit one level below the pages that route into them.
    *
-   * **Only the built one is here.** CV Check, Fit Report, Matched Jobs and
-   * the Job Search Dashboard (then Guided Job Hunt) had pages and those pages say, above the fold, that the
-   * product is not open yet. That is honest on the page and thin content in an
-   * index: a crawler would file four "coming soon" pages against a site whose
-   * whole argument is that it does not overstate what it can do. Each joins this
-   * list on the day its product ships.
+   * **A product page joins this list on the day its product opens**, and three
+   * of them have: Fit Report on 26/10/2026, Matched Jobs and the Job Search
+   * Dashboard on 03/11/2026, each dated on its own line below. CV Check is the
+   * only one still absent, and the reason is the original one: its page says
+   * above the fold that the product is not open yet, which is honest on the page
+   * and thin content in an index, against a site whose whole argument is that it
+   * does not overstate what it can do.
    */
   /*
    * `/products`, `/services` and `/method` joined on 06/09/2026, when Paul
@@ -299,14 +300,16 @@ export const NOT_INDEXED: Metadata = {
  * a crawler reads and does not list.
  *
  * **Why it is needed at all, given `PUBLIC_ROUTES` omits them.** A sitemap is a
- * suggestion. These four are linked from the Products menu on every page of the
- * site, and a crawler that follows a link does not consult the sitemap first to
- * ask whether it was invited. Without this tag the site's four thinnest pages
- * are the four most linked-to, which is the shape Google reads as a thin site.
+ * suggestion. A `soon` page is linked from the Products menu on every page of
+ * the site, and a crawler that follows a link does not consult the sitemap first
+ * to ask whether it was invited. Without this tag the site's thinnest pages are
+ * among its most linked-to, which is the shape Google reads as a thin site.
  *
- * **Remove it per product on the day that product opens**, at the same time as
- * `status` flips to `live` and the route joins `PUBLIC_ROUTES`. All three are
- * the same decision and drift apart if they are made on different days.
+ * **Nothing has to be removed by hand.** The product page applies this only
+ * while `status` is `soon`, so flipping a product to `live` drops the tag in the
+ * same move; adding its route to `PUBLIC_ROUTES` is the one step that is still
+ * separate, and the two belong in one commit. CV Check is the only product this
+ * still applies to.
  */
 export const NOT_YET_INDEXED: Metadata = {
   robots: { index: false, follow: true },

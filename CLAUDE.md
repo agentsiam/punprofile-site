@@ -36,6 +36,7 @@ duplicate one into the other.
 | `termbase.yml`, sibling | decided Thai terms | `npm run termbase` syncs it here, `verify:copy` enforces it |
 | `convex/_generated/ai/guidelines.md` | Convex API rules that override training data | read it before writing anything under `convex/` |
 | `node_modules/next/dist/docs/` | this Next version's own docs | its APIs, conventions and file structure differ from training data |
+| The PunProfile product system canvas, `https://claude.ai/artifact/8F1TjeWthtdraki2XescsK` | the map: the growth loop, what is free and why, the gates, every capability with the document that owns it and the evidence taken, the candidate's journey, and how a change moves | open it first on any product question, for direction and for which document to read next. It is a map and never a source: a figure on it is read back from the owning document before it is used, and a session without the Artifact tool skips it and uses section 2's ownership table instead |
 
 **Never answer from memory, from this file, or from `README.md`. Open the file.**
 
@@ -56,7 +57,7 @@ duplicate one into the other.
 | Why a competency is scored `proxy` or not at all | `self-report-scoring.md`, in `ctxt-product/` |
 | Lead qualification, ICP, ECRA, live form URLs | `08_Coaching_Business.md` |
 | Writing standards, Thai tone, the fixed CTA pool | `03_Content_System.md` |
-| Brand personality, voice, colour meaning | `Brand_Guidelines.md` |
+| Brand personality, the logo and the P mark, the mascot, colour meaning | `design.md` |
 | Mission, offerings, scope, audience | `01_Project_Foundation.md` |
 | Product story slots and their destinations | `Narrative_System.md` |
 | Which candidate data exists and where it sits | `data-inventory.md` |
@@ -83,6 +84,7 @@ the synced termbase, the rendered style guide beside `design.md`, `public/blog/s
 | A figure quoted in a product story | the document that owns the figure | the story record points, it never states (R47) |
 | Which deployment is which | section 6 of this file | |
 | A country fact the report prints | `country-facts.md`, sibling repo | `scripts/sync-country-facts.ts` writes `country-facts.generated.ts`; a field marked `verify` or `hold` is never printed (R50) |
+| How many leads there are | `stateFor` in `src/lib/lifecycle.ts` | **A row in `leads` is not a lead.** A row is created by `startSession` on the first tap, before any answer and before any contact, so the table holds traffic as well as people. `stateFor` returns `null` for a row with no contact, which is traffic and has no lifecycle position at all (Paul, 26/08/2026). Reachable people and rows are about five times apart, so a count over the table is wrong by that much. See R52 |
 
 ## 4. Where a new file goes
 
@@ -155,6 +157,7 @@ sibling repo by the exporter that makes them.
 | **R49** | No candidate-facing string is written inline in a component. Copy lives in `src/lib/content/`, and `consent-copy.ts`, its Thai terms reach it from `termbase.yml` through `termbase.generated.ts`, and a string written anywhere else is linted by nothing and missing in the other language. Those modules are themselves generated: the text comes from `LANGUAGE-SYSTEM.md` and the code shape from `scripts/language-templates/<path>.tpl`. An edit made in the module is discarded by the next `npm run language:generate` without a warning or a diff, so change the record for a string and the template for anything that is not one, then regenerate. |
 | **R50** | Both reports open the country page from `targetCountries[0]`, so a delivered Fit Report needs nothing extra to get it. A country fact changes in three steps, all before a push: edit `country-facts.md` in the sibling repo (C32), run `scripts/sync-country-facts.ts`, then give the changed English a record. Each fact's record id is a hash of its English, so the old record no longer matches and `countryFactsBody()` throws for that country until `LANGUAGE-SYSTEM.md` holds a record for the new English, with Thai, and the line in `scripts/language-templates/src/lib/content/country-page.ts.tpl` names it. Then run `npm run language:generate` and the verifier. |
 | **R51** | **No hex is written anywhere on the email surface.** A mail client reads no CSS variable, so a colour still has to reach the markup as a literal, but it is resolved by token name through `token()` in `src/lib/email/tokens.ts`, which reads the generated layer and throws on a name that is not there. A colour an email needs is a token in `design.md` first, then `npm run tokens`. One literal is permitted and it is named in `emailShell.ts`: the backdrop sampled from the matched-roles photograph, which answers to the image and not to the system. `convex/emailShell.ts` is the frame for every candidate-facing email, and a template holds its own content and nothing else: no doctype, no `<head>`. Emails are Thai only and carry no translation of themselves; nothing records which language a candidate reads, and the day something does, the email follows it. **A label inside a block is not a translation of the message, and those stay.** `รหัสเข้าใช้งาน · Sign-in code` names the thing a reader is scanning for, and the Fit Report's English receipt line is Paul's own writing; roughly ten such strings sit across three templates, the matched-roles email holding most. The line is drawn at a block that restates the message: `verify:email` fails a `lang="en"` block or an `In English` heading and says nothing about a label, which is the rule exactly. Do not read this as room to add English: a new one is a copy decision for the sibling repo, not a template's to take. **One exception to the frame, and it is a list email rather than a service message:** `src/lib/email/marketing-html.ts` frames the newsletter itself and reaches tokens the four have no reason to carry. `verify:email` holds it to the same document rules and swaps the two that genuinely move: any light-scheme token is legitimate, and what it must carry is the recipient's own one-click stop rather than a line saying why the mail arrived, because that reason lives in copy the sender hands in. Writing a second frame is not licensed by this: the exception is one file and it is named here. |
+| **R52** | **Every count of people names its population and the test that selected it.** A bare number of leads is wrong by default, because `startSession` creates a `leads` row on the first tap and the table holds traffic as well as people. For a lifecycle question the test is `stateFor`, and `null` means traffic rather than the weakest rung. For any other question the test is the answer being counted, the way `SHARES` in `convex/stats.ts` already does it: a row that answered under neither key is out of the numerator and the denominator both, so a share never quietly means "of everybody". Never reuse a denominator across two questions, and never quote one without the date it was read. |
 
 ## 6. Tooling and commands
 
@@ -191,6 +194,7 @@ npm run lint
 npm run verify:copy
 npm run verify:pages
 npm run verify:narrative
+npm run verify:single-owner
 npm run verify:consent
 npm run verify:cascades
 npm run verify:report
@@ -261,6 +265,7 @@ a separate act and this list does not replace it.
   It cannot be borrowed to stand up a local harness: generate keys in a throwaway script instead.
 - The Thai review sheet was written wherever the exporter happened to run, so eight of them accumulated across two repositories and a work folder under three names, and two records added after an export left the live sheet short by exactly the lines nobody had been asked about. A session named one path while the reviewer read another. The sheet has one home now, rebuilds itself whenever anything is pending, and a finished pass goes back through `--apply` rather than a model retyping it into the record.
 - The Now pill shipped dark green on dark green, because `bg-primary` was paired with `.ground-fixed` and that pairing cancels itself out. On a lime ground the lime is the ground and the pill on it is the dark one (R21).
+- One session got the lead denominator wrong four times in one day, each time differently, and each time from a source it had already read. It counted 157 rows from an export that ended three months earlier, then 573 rows from a current one without noticing that 346 held no answers at all, then built a gate reading on that, then recomputed by hand a filter the snapshot beside it already carried as `lifecycle`. The rule it needed was written in a comment in `src/lib/lifecycle.ts` on the day the decision was made, naming the factor of three, and the spec's own lifecycle table still listed the retired `visitor` state as live. A rule that lives only in the file it governs will be rediscovered by measurement, repeatedly, at the cost of whatever was built on the wrong number (R52).
 
 ## 8. Cadence
 
@@ -273,7 +278,7 @@ looking for it. The full cross-check is the pre-push list in section 6, on every
 
 # CLAUDE core rules
 
-Version 3.12. This line is bumped on every edit to this file, no exceptions, and it travels inside
+Version 3.13. This line is bumped on every edit to this file, no exceptions, and it travels inside
 every pasted block, so any repo's copy says which core it came from. Byte-identity against the
 canonical file is verified by diffing the pasted block against
 `/Users/paulb/Documents/LTD OS/_standards/CLAUDE-core.md` directly; no hash is needed.
@@ -554,13 +559,13 @@ from a current one.
 
 ## House rules
 
-**C28. Dates in prose are DD/MM/YYYY**, in messages to Paul and in documents alike. Dates in code,
-filenames and data formats are ISO `YYYY-MM-DD`, so they sort and parse; a prose-format date never
-goes into a filename.
+**C28. Dates in prose are DD/MM/YYYY. Dates in code, filenames and data formats are ISO
+`YYYY-MM-DD`.** A prose-format date never goes into a filename. ISO sorts and parses; one prose
+format because a date with both numbers under thirteen cannot be read from the string, and a mixed
+corpus therefore hides errors nobody can find.
 
-**C29. No em dashes, en dashes or arrow characters in anything a person outside the repo reads, or in
-anything written to Paul.** Commas or shorter sentences. Each repo states in its own file whether its
-product and marketing copy is exempt.
+**C29. No em dashes, en dashes or arrow characters in prose.** Commas or shorter sentences. Each
+repo states in its own file whether its product and marketing copy is exempt.
 
 **C30. Minimal, precise output.** No unsolicited explanation, no padding caveats, no
 self-congratulation.
