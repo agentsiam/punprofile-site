@@ -2035,7 +2035,18 @@ function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
   const saved = new Set(data.jobs.flatMap((j) => [j.jobLogId ?? "", j.jobUrl ?? ""]).filter(Boolean));
   const byTitle = data.feed?.byTitle === true;
 
-  if (!byTitle && (!data.target.countries.length || !data.target.role)) {
+  /**
+   * No search ran, so there is nothing to report about the market.
+   *
+   * Three ways to get here and the candidate is owed the same answer for all
+   * three: no country, no field, or a field the keyword table cannot read,
+   * which every imported survey lead carries. `FEED_EMPTY` below is a claim
+   * about Europe and would be false for all of them. This says the target is
+   * not set and asks them to get in touch, which is the true state and the
+   * action that fixes it.
+   */
+  const searched = data.feed ? data.feed.searched : Boolean(data.target.countries.length && data.target.role);
+  if (!byTitle && !searched) {
     return <Empty art="magnifier" text={pick(C.FEED_NO_TARGET)} />;
   }
 

@@ -44,5 +44,25 @@ export function titleMatches(title: string, category: string): boolean {
   return words.some((w) => t.includes(w));
 }
 
+/**
+ * Whether the table can answer for this field at all.
+ *
+ * `titleMatches` returns false for a field it does not hold, which is
+ * indistinguishable from a field it searched and found nothing for. The
+ * difference matters to a candidate: one is a thin market and the other is a
+ * question we never asked. Imported survey leads carry free text here, so the
+ * lookup misses every role ever published and the screen used to report that as
+ * an empty market.
+ *
+ * Mapping that free text automatically was considered and rejected. Of 78 such
+ * answers, 24 match exactly one category, 29 match several and 25 match none,
+ * and the 24 include false matches: "Energy, Oil & Gas, Infrastructure" lands on
+ * IT & Software because `infrastructure` is an IT keyword. Guessing a field
+ * produces confident wrong results, which is the failure being fixed rather than
+ * a cure for it. The field is resolved by a person or not at all.
+ */
+export const knowsCategory = (c: string | null): c is string =>
+  c !== null && Object.prototype.hasOwnProperty.call(ROLE_KEYWORDS, c);
+
 /** The UK is stored as "United Kingdom" in the job log; the assessment says "UK". */
 export const logCountry = (c: string) => (c === "UK" ? "United Kingdom" : c);

@@ -10,7 +10,7 @@
 import { internalMutation, type QueryCtx } from "./_generated/server";
 import type { Doc, Id } from "./_generated/dataModel";
 import { v } from "convex/values";
-import { logCountry, titleMatches } from "../src/lib/role-keywords";
+import { knowsCategory, logCountry, titleMatches } from "../src/lib/role-keywords";
 
 const role = v.object({
   id: v.string(),
@@ -109,14 +109,19 @@ export async function feedFor(
       countries: t.countries?.length ? new Set(t.countries.map(logCountry)) : leadCountries,
     }));
   const useTitles = byTitle.length > 0;
-  const rows =
-    useTitles || (category && leadCountries.size)
-      ? await ctx.db
-          .query("marketRoles")
-          .withIndex("by_first_seen", (q) => q.gte("firstSeen", since))
-          .order("desc")
-          .collect()
-      : [];
+  /**
+   * Whether a search ran at all. Without it an empty result is reported as an
+   * empty market, which is a claim about Europe rather than about us, and it is
+   * false for every lead whose field the keyword table cannot read.
+   */
+  const searched = useTitles || (knowsCategory(category) && leadCountries.size > 0);
+  const rows = searched
+    ? await ctx.db
+        .query("marketRoles")
+        .withIndex("by_first_seen", (q) => q.gte("firstSeen", since))
+        .order("desc")
+        .collect()
+    : [];
   const out = [];
   for (const r of rows) {
     let targetId: Id<"targets"> | null = null;
@@ -140,5 +145,5 @@ export async function feedFor(
       targetId,
     });
   }
-  return { syncedAt: newest.syncedAt, byTitle: useTitles, roles: out };
+  return { syncedAt: newest.syncedAt, byTitle: useTitles, searched, roles: out };
 }
