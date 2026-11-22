@@ -31,7 +31,7 @@ duplicate one into the other.
 
 | File | Holds | Convention |
 |---|---|---|
-| `design.md`, sibling `ctxt-brand/` | the real design system, wise-1: every colour, type, shape and elevation token | source of this repo's generated token layer (R14) |
+| `design-system.md`, sibling `ctxt-brand/` | the real design system, wise-1: every colour, type, shape and elevation token | source of this repo's generated token layer (R14) |
 | `Language_System.md`, sibling | Thai language rules LR-01 to LR-09 | enforced over copy by `verify:copy` and `verify:pages` |
 | `termbase.yml`, sibling | decided Thai terms | `npm run termbase` syncs it here, `verify:copy` enforces it |
 | `convex/_generated/ai/guidelines.md` | Convex API rules that override training data | read it before writing anything under `convex/` |
@@ -57,7 +57,7 @@ duplicate one into the other.
 | Why a competency is scored `proxy` or not at all | `self-report-scoring.md`, in `ctxt-product/` |
 | Lead qualification, ICP, ECRA, live form URLs | `08_Coaching_Business.md` |
 | Writing standards, Thai tone, the fixed CTA pool | `03_Content_System.md` |
-| Brand personality, the logo and the P mark, the mascot, colour meaning | `design.md` |
+| Brand personality, the logo and the P mark, the mascot, colour meaning | `design-system.md` |
 | Mission, offerings, scope, audience | `01_Project_Foundation.md` |
 | Product story slots and their destinations | `Narrative_System.md` |
 | Which candidate data exists and where it sits | `data-inventory.md` |
@@ -67,7 +67,7 @@ duplicate one into the other.
 | Roadmap and session handoff | `punprofile-work/work-projects/eu-fit-check/` |
 
 DERIVED, stale until regenerated and flagged as stale rather than built on: the two token files and
-the synced termbase, the rendered style guide beside `design.md`, `public/blog/share/<slug>.jpg`,
+the synced termbase, the rendered style guide beside `design-system.md`, `public/blog/share/<slug>.jpg`,
 `language-notes.generated.ts`, `src/lib/content/country-facts.generated.ts`, and **every file named in
 `scripts/language-templates/manifest.json`**. That last set is 31 files and is not only
 `src/lib/content/`: it takes in `src/components/LocaleToggle.tsx`, `src/lib/consent-copy.ts` and
@@ -78,7 +78,7 @@ the synced termbase, the rendered style guide beside `design.md`, `public/blog/s
 | Value | Lives in | Notes |
 |---|---|---|
 | Scoring, every consumer of it | `src/lib/scoring.ts` | `convex/scoring.ts` wraps it, the client and `scripts/` call it (R11) |
-| Every design token | `design.md`, sibling repo | this repo holds generated output only |
+| Every design token | `design-system.md`, sibling repo | this repo holds generated output only |
 | Decided Thai terms | `termbase.yml`, sibling repo | |
 | The public route list | `PUBLIC_ROUTES` in `src/lib/seo.ts` | sitemap, `hreflang` and `llms.txt` all follow it |
 | A figure quoted in a product story | the document that owns the figure | the story record points, it never states (R47) |
@@ -119,12 +119,12 @@ sibling repo by the exporter that makes them.
 | **R11** | `src/lib/scoring.ts` is the only scoring implementation. Never add a second, including as a spreadsheet formula. |
 | **R12** | A score is tiered `ecra` where the survey collects that competency's own defined inputs, `proxy` where it evidences part of the picture, `coach` where it does not reach. Never score a `coach` item, and never name a proxy after the competency it gestures at. |
 | **R13** | Run `npx tsx scripts/audit.ts <responses.json>` after touching `src/lib/normalize.ts`. It reports per-question parse rates, prints every rejected value, and asserts the scoring invariants. |
-| **R14 LAW** | `src/app/tokens.generated.css` and `src/lib/design-tokens.generated.ts` are generated. Never hand-edit either: change the token in `design.md`, run `npm run tokens`, commit both. |
+| **R14 LAW** | `src/app/tokens.generated.css` and `src/lib/design-tokens.generated.ts` are generated. Never hand-edit either: change the token in `design-system.md`, run `npm run tokens`, commit both. |
 | **R15** | `globals.css` holds only what is not a token: the base layer, the chart styles, the animations. `src/lib/design-tokens.ts` is a re-export and nothing more. |
 | **R16** | One action colour. `primary` is a fill, never type, and the only colour that marks what can be pressed. The secondary palette's tints (`orange-pale`, `cyan-pale`, `yellow-pale`) are decorative card grounds with their own `on-` roles, never an action. Text that has to say what the lime says takes `ink`, `ink-deep`, or the `-deep` member of a semantic pair. `positive` and `accent-cyan` are fills for the same reason. |
 | **R17** | `mute` is not a text colour under 19px. Captions, chart ticks and field hints take `mute-strong`. |
 | **R18** | `canvas` is the card, `canvas-soft` is the band it sits in. A sage card on a white page is backwards. |
-| **R19** | The aliases in `design.md > aliases` are read, never written. An alias leaves the map when nothing references it. |
+| **R19** | The aliases in `design-system.md > aliases` are read, never written. An alias leaves the map when nothing references it. |
 | **R20** | No component names the dark scheme and Tailwind's `dark:` prefix is never used. A surface that looks wrong in dark holds a literal colour or the wrong role. |
 | **R21** | A fixed fill carries `.ground-fixed`, because the content inside it does change between schemes. The lime fill is `bg-canvas-brand`, never `bg-primary`: inside a fixed ground `primary` is remapped to the green-black, so the two together paint ink on ink. |
 | **R22** | Hover is a state layer, 8% of the element's own content colour over its own background. There is no second, brighter token per interactive colour. |
@@ -156,7 +156,7 @@ sibling repo by the exporter that makes them.
 | **R48** | An article with artwork needs a sharing card at `public/blog/share/<slug>.jpg`, at 1200x630. |
 | **R49** | No candidate-facing string is written inline in a component. Copy lives in `src/lib/content/`, and `consent-copy.ts`, its Thai terms reach it from `termbase.yml` through `termbase.generated.ts`, and a string written anywhere else is linted by nothing and missing in the other language. Those modules are themselves generated: the text comes from `LANGUAGE-SYSTEM.md` and the code shape from `scripts/language-templates/<path>.tpl`. An edit made in the module is discarded by the next `npm run language:generate` without a warning or a diff, so change the record for a string and the template for anything that is not one, then regenerate. |
 | **R50** | Both reports open the country page from `targetCountries[0]`, so a delivered Fit Report needs nothing extra to get it. A country fact changes in three steps, all before a push: edit `country-facts.md` in the sibling repo (C32), run `scripts/sync-country-facts.ts`, then give the changed English a record. Each fact's record id is a hash of its English, so the old record no longer matches and `countryFactsBody()` throws for that country until `LANGUAGE-SYSTEM.md` holds a record for the new English, with Thai, and the line in `scripts/language-templates/src/lib/content/country-page.ts.tpl` names it. Then run `npm run language:generate` and the verifier. |
-| **R51** | **No hex is written anywhere on the email surface.** A mail client reads no CSS variable, so a colour still has to reach the markup as a literal, but it is resolved by token name through `token()` in `src/lib/email/tokens.ts`, which reads the generated layer and throws on a name that is not there. A colour an email needs is a token in `design.md` first, then `npm run tokens`. One literal is permitted and it is named in `emailShell.ts`: the backdrop sampled from the matched-roles photograph, which answers to the image and not to the system. `convex/emailShell.ts` is the frame for every candidate-facing email, and a template holds its own content and nothing else: no doctype, no `<head>`. Emails are Thai only and carry no translation of themselves; nothing records which language a candidate reads, and the day something does, the email follows it. **A label inside a block is not a translation of the message, and those stay.** `รหัสเข้าใช้งาน · Sign-in code` names the thing a reader is scanning for, and the Fit Report's English receipt line is Paul's own writing; roughly ten such strings sit across three templates, the matched-roles email holding most. The line is drawn at a block that restates the message: `verify:email` fails a `lang="en"` block or an `In English` heading and says nothing about a label, which is the rule exactly. Do not read this as room to add English: a new one is a copy decision for the sibling repo, not a template's to take. **One exception to the frame, and it is a list email rather than a service message:** `src/lib/email/marketing-html.ts` frames the newsletter itself and reaches tokens the four have no reason to carry. `verify:email` holds it to the same document rules and swaps the two that genuinely move: any light-scheme token is legitimate, and what it must carry is the recipient's own one-click stop rather than a line saying why the mail arrived, because that reason lives in copy the sender hands in. Writing a second frame is not licensed by this: the exception is one file and it is named here. |
+| **R51** | **No hex is written anywhere on the email surface.** A mail client reads no CSS variable, so a colour still has to reach the markup as a literal, but it is resolved by token name through `token()` in `src/lib/email/tokens.ts`, which reads the generated layer and throws on a name that is not there. A colour an email needs is a token in `design-system.md` first, then `npm run tokens`. One literal is permitted and it is named in `emailShell.ts`: the backdrop sampled from the matched-roles photograph, which answers to the image and not to the system. `convex/emailShell.ts` is the frame for every candidate-facing email, and a template holds its own content and nothing else: no doctype, no `<head>`. Emails are Thai only and carry no translation of themselves; nothing records which language a candidate reads, and the day something does, the email follows it. **A label inside a block is not a translation of the message, and those stay.** `รหัสเข้าใช้งาน · Sign-in code` names the thing a reader is scanning for, and the Fit Report's English receipt line is Paul's own writing; roughly ten such strings sit across three templates, the matched-roles email holding most. The line is drawn at a block that restates the message: `verify:email` fails a `lang="en"` block or an `In English` heading and says nothing about a label, which is the rule exactly. Do not read this as room to add English: a new one is a copy decision for the sibling repo, not a template's to take. **One exception to the frame, and it is a list email rather than a service message:** `src/lib/email/marketing-html.ts` frames the newsletter itself and reaches tokens the four have no reason to carry. `verify:email` holds it to the same document rules and swaps the two that genuinely move: any light-scheme token is legitimate, and what it must carry is the recipient's own one-click stop rather than a line saying why the mail arrived, because that reason lives in copy the sender hands in. Writing a second frame is not licensed by this: the exception is one file and it is named here. |
 | **R52** | **Every count of people names its population and the test that selected it.** A bare number of leads is wrong by default, because `startSession` creates a `leads` row on the first tap and the table holds traffic as well as people. For a lifecycle question the test is `stateFor`, and `null` means traffic rather than the weakest rung. For any other question the test is the answer being counted, the way `SHARES` in `convex/stats.ts` already does it: a row that answered under neither key is out of the numerator and the denominator both, so a share never quietly means "of everybody". Never reuse a denominator across two questions, and never quote one without the date it was read. |
 
 ## 6. Tooling and commands
@@ -173,8 +173,8 @@ trusting a name before touching data in either dashboard.
 
 | Command | Does |
 |---|---|
-| `npm run tokens` | regenerates the token layer from `design.md` (R14) |
-| `npm run design:html` | regenerates the rendered style guide beside `design.md` |
+| `npm run tokens` | regenerates the token layer from `design-system.md` (R14) |
+| `npm run design:html` | regenerates the rendered style guide beside `design-system.md` |
 | `npm run termbase` | syncs the decided Thai terms into this repo |
 | `npm run verify:thai-register` | checks the Thai register against `golden-th/` in the sibling repo |
 | `npm run verify:email` | renders all five email templates, the newsletter twice so its optional blocks are covered, and checks the frame: one document, Thai only, every link absolute, no em dash, and a clean plain-text part. Then by contract: the four on the shell take its palette and a foot saying why the mail arrived, the newsletter takes any light-scheme token and the reader's own stop link (R51) |
@@ -247,7 +247,7 @@ a separate act and this list does not replace it.
 ## 7. Traps
 
 - Reading this repo in isolation produced wrong work twice. The specification is always in the sibling repo, and the ownership table in section 2 says which document answers which question.
-- This repo's `docs/design.md` said no design tokens existed. It was wrong, and it is gone. The design system is the sibling repo's `design.md` and always was.
+- This repo's `docs/design-system.md` said no design tokens existed. It was wrong, and it is gone. The design system is the sibling repo's `design-system.md` and always was.
 - Conflating the four instruments has produced confidently wrong analysis, usually by reading the funnel's shape off a form link or a row count (R5, R6).
 - `verify:copy` had never read the per-page content modules, 91 candidate-facing strings, and the first `verify:pages` run found a real LR-04 failure in `footer.ts` that had already shipped.
 - A sharing card's failure is invisible locally: every platform crops to about 1.91:1, and the 4:3 article art lost the figure's head (R48).

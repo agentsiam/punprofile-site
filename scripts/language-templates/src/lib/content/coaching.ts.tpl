@@ -38,7 +38,7 @@ export const HOOK_EYEBROW: Copy = {
 /**
  * Two lines, the second in Teal.
  *
- * `design.md` reserves Terracotta for the single primary action on a screen so
+ * `design-system.md` reserves Terracotta for the single primary action on a screen so
  * it keeps its persuasive weight, and a headline in the button colour spends
  * exactly that. Teal is the colour the brand is known by and carries emphasis
  * everywhere that is not a button.

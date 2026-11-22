@@ -2,7 +2,7 @@
 
 /**
  * The milestone ladder, first thing under the Situation panel on the lead's
- * Delivery page. `prd.md` § 8 and `coaching-delivery-design.md` § 7b.
+ * Delivery page. `prd.md` § 8 and `coaching-delivery-design-system.md` § 7b.
  *
  * Four rungs in order, each naming the decision it settled, what the candidate
  * owes and what it delivers, and each showing one of four states. The fifteen
@@ -13,7 +13,7 @@
  *
  * - **The next step is the first undone thing on the current rung**, and it is
  *   the only thing on this page that can be pressed. A rung is not pressable.
- *   `design.md` reserves the view's one `action` button for it.
+ *   `design-system.md` reserves the view's one `action` button for it.
  * - **The work of the current rung opens inside it**, never beside it: the
  *   competency ratings under the first call while that call is the rung, the
  *   close form under a call whose end time has passed, the release under the
@@ -21,7 +21,7 @@
  *   A rung that is not current shows what it settled and what it delivered,
  *   and nothing to fill in.
  *
- * The state colours take roles that already exist, per `design.md`:
+ * The state colours take roles that already exist, per `design-system.md`:
  * `secondary` for now, an outline for waiting, the `line` hairline and
  * `mute-strong` for done, and the same without the tick for not applying.
  * Lateness is words, never colour.

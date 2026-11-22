@@ -107,7 +107,7 @@ const fill = (s: string, vars: Record<string, string | number>) =>
 /**
  * The four stage circles, in the secondary palette's decorative tints.
  *
- * `design.md` gives those three tints no meaning on purpose: lime acts, the
+ * `design-system.md` gives those three tints no meaning on purpose: lime acts, the
  * dark ground is authority, orange is the mark and the mascot, cyan is EU Fit
  * Check, and the pale tints rotate, so a reader learns nothing from which one
  * turns up and nothing is being claimed by colouring a circle. That is what
@@ -329,7 +329,7 @@ export default function PricingPage() {
                review asked for and is also the quieter answer: `line-strong` is
                a boundary role that passes the 3:1 non-text floor, so the card is
                marked without being shouted. The dark ground is not gone from the
-               page, it is back to meaning what `design.md` says it means. */
+               page, it is back to meaning what `design-system.md` says it means. */
             return (
               <section
                 key={pack.id}
@@ -455,7 +455,7 @@ export default function PricingPage() {
 
                 {/* The promotion, and the only one this page is allowed. It is
                     the first block on the site to take `canvas-promo`, the fifth
-                    ground, added to `design.md` on 12/11/2026 because the system
+                    ground, added to `design-system.md` on 12/11/2026 because the system
                     had four grounds with a look and none with a meaning, so an
                     offer had nowhere to sit and twice took a colour that already
                     meant something else: a pale tint, which is what a disclaimer
@@ -572,7 +572,7 @@ export default function PricingPage() {
           build of this was `canvas-dark`, which gave the close authority and
           then kept it for twelve hundred pixels, and a block that large reads
           as a change of ground rather than as one more thing. White card on a
-          tinted band is what `design.md` says a card is (R18); the tonal step
+          tinted band is what `design-system.md` says a card is (R18); the tonal step
           the panel needs is spent inside it, on the stage strip, where it
           carries meaning rather than weight.
 

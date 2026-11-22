@@ -53,7 +53,7 @@ const toMs = (iso: string) => (iso ? Date.parse(`${iso}T12:00:00Z`) : null);
 const toIso = (ms: number | null) => (ms === null ? "" : new Date(ms).toISOString().slice(0, 10));
 
 /*
- * Colour, 01/11/2026. The secondary tints (design.md § The secondary palette)
+ * Colour, 01/11/2026. The secondary tints (design-system.md § The secondary palette)
  * decorate and tell like things apart: one per target role, one per summary
  * card, one per tab icon. They never mark a state. State uses the system's own
  * roles: the open tab is `secondary` (ink-deep with lime text), counts are
@@ -2290,7 +2290,7 @@ function StepMark({ status }: { status: "not_started" | "in_progress" | "deliver
 
 /**
  * The items of the release this note covers, listed under it.
- * `coaching-delivery-design.md` § 7a: a release reaches the candidate as one
+ * `coaching-delivery-design-system.md` § 7a: a release reaches the candidate as one
  * note with every item under it, so what one call produced reads as one thing
  * rather than as pieces scattered across the tabs.
  *

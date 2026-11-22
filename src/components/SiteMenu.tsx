@@ -23,7 +23,7 @@
  * a tap they should not have been offered. See `src/lib/navLock.ts`.
  *
  * The panel is Liquid Glass, which is the third and last surface in the app
- * that qualifies under the rule in `design.md`: the functional layer above
+ * that qualifies under the rule in `design-system.md`: the functional layer above
  * content, never the content layer itself. It shares that budget with the
  * header bar it drops out of and the assessment's bottom action bar, and those
  * two are never on screen at the same time as this one.

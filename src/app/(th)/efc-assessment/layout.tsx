@@ -36,7 +36,7 @@ export const metadata: Metadata = pageMetadata({
  * ground has to be continuous across all of them. It is now
  * `surface-container-low`, one tier off the default, which is how M3 marks a
  * region as its own without a colour change. That also keeps the EU Fit Check
- * identity where `design.md` puts it, in `tertiary` on the controls, rather
+ * identity where `design-system.md` puts it, in `tertiary` on the controls, rather
  * than in a full-bleed wash competing with PunProfile's own chrome.
  *
  * `min-h-full` and `flex-1` so it reaches the bottom of short screens.

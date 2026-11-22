@@ -6,7 +6,7 @@
  * because pinning it was a navigation decision rather than a property of what
  * it was made of.
  *
- * It is now `navigation-bar` from `design.md`: `surface-container` with a
+ * It is now `navigation-bar` from `design-system.md`: `surface-container` with a
  * hairline above it. A distinct container tier rather than a shadow, because
  * M3 builds depth from surface tiers and keeps elevation for things that
  * genuinely float free of an edge.

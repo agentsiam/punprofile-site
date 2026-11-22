@@ -63,7 +63,7 @@ export default function ServicesPage() {
           </div>
           {/* The cutout on the coaching card's own tint, the same pairing the
               three cards below use. 04/11/2026 moved those cards to the clay
-              cast and left this hero on the 3D mascot render `design.md`
+              cast and left this hero on the 3D mascot render `design-system.md`
               rules out; it now reads `Service.image` like they do, so there is
               one path to keep true rather than two. */}
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-orange-pale">

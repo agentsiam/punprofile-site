@@ -20,7 +20,7 @@
  * second time does not fire it again, because a prompt that returns after being
  * dismissed is an argument rather than an offer.
  *
- * **A dialog, not a card.** `design.md` gives dialogs `surface-container-high`
+ * **A dialog, not a card.** `design-system.md` gives dialogs `surface-container-high`
  * at elevation level 3 with an extra-large radius, which is the one place M3
  * spends that much lift. On a scrim.
  */

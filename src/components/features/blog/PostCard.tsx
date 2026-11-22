@@ -3,7 +3,7 @@
 /**
  * One article, as a card. 16/08/2026.
  *
- * White with a 1px border and no shadow, which is `design.md`'s elevation rule
+ * White with a 1px border and no shadow, which is `design-system.md`'s elevation rule
  * rather than a style choice: border-only for a card sitting on `surface`, soft
  * shadow only for one floating on a colour wash. The grid these sit in is white,
  * so they take the border.

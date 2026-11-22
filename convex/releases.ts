@@ -1,6 +1,6 @@
 /**
  * Releases: everything one call produced, reaching the candidate in one coach
- * action. Spec: `coaching-delivery-design.md` § 7a, and `prd.md` § 8 under the
+ * action. Spec: `coaching-delivery-design-system.md` § 7a, and `prd.md` § 8 under the
  * lead's Delivery page.
  *
  * Coach surface. `releasesFor` is the one thing that crosses to the candidate's
@@ -508,7 +508,7 @@ export const release = mutation({
 
 /**
  * The wait before the one reminder. Three days, Paul's decision of 17/11/2026,
- * and `coaching-delivery-design.md` § 7a holds the reasoning: it sits inside
+ * and `coaching-delivery-design-system.md` § 7a holds the reasoning: it sits inside
  * the rhythm a candidate already has, since a preparation deadline is two
  * working days before a call and a matched role is notified the same day.
  */

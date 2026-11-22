@@ -4,7 +4,7 @@
  * Everything a paying candidate gets after the sale, worked from one place.
  *
  * This file was the Delivery tab. The two-page lead broke it in two, because
- * neither half is a tab any more (`coaching-delivery-design.md` § 7b):
+ * neither half is a tab any more (`coaching-delivery-design-system.md` § 7b):
  *
  * - **`ReleasePanel`.** Everything one call produced, handed over in one
  *   action. It opens inside the rung that delivers it, it carries the pieces
@@ -2317,7 +2317,7 @@ function Notes({
 
 /**
  * The release being assembled, and the ones that have gone.
- * `coaching-delivery-design.md` § 7a, and `prd.md` § 8 under the lead's
+ * `coaching-delivery-design-system.md` § 7a, and `prd.md` § 8 under the lead's
  * Delivery page, where this sits under the rung that delivers it once the page
  * is rebuilt as the ladder.
  *

@@ -2,7 +2,7 @@
 
 /**
  * The horizontal top navigation, from `expanded` (840px) up. Added 23/08/2026,
- * rebuilt 25/08/2026 on the `wise-1` navigation spec in `design.md`.
+ * rebuilt 25/08/2026 on the `wise-1` navigation spec in `design-system.md`.
  *
  * **It replaces `SideNav`, and that is a deliberate departure from an audit.**
  * `SideNav.tsx` was added on 16/08/2026 after an M3 compliance pass whose
@@ -48,7 +48,7 @@
  * The panel does not drop, slide or scale. It sits in a full-width white
  * viewport pinned under the bar with `overflow: hidden`, and the VIEWPORT
  * animates its height from nothing to the panel's own measured height. The
- * panel fades in inside it. `design.md`'s navigation section is where that
+ * panel fades in inside it. `design-system.md`'s navigation section is where that
  * comes from and it was measured off the reference rather than guessed: 350ms
  * on `--ease-nav`, and nothing in this header uses a different curve.
  *

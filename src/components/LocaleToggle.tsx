@@ -3,7 +3,7 @@
 /**
  * The language switch in the header: a pill that opens a right-hand drawer.
  *
- * Rebuilt 25/08/2026 on `design.md`'s navigation section. It was a round flag
+ * Rebuilt 25/08/2026 on `design-system.md`'s navigation section. It was a round flag
  * opening a 9rem menu; the shape below is the reference's, and the reasoning
  * about flags and circles that follows is unchanged and still load-bearing.
  *

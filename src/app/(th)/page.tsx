@@ -49,7 +49,7 @@
  * the only one that hands something back the same minute. What changed is the
  * secondary, from `/coaching` to `/pricing`, because until last week nothing on
  * this site had a price and now the second question is answerable in one tap.
- * One filled action per view per `design.md`; every other route on this page is
+ * One filled action per view per `design-system.md`; every other route on this page is
  * a text link or a card.
  */
 
@@ -155,7 +155,7 @@ export default function Home() {
         screens only; a phone still gets the words first and the picture under
         them. The mascot moved out because the brand guide keeps it for small
         moments and gives page heroes to clay scenes ("Where clay and where the
-        mascot", design.md). The scene is cast member C walking from a
+        mascot", design-system.md). The scene is cast member C walking from a
         Thai shophouse to a row of European houses.
       */}
       <Band block="B1" ground="canvas" width="wide">

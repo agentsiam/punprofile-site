@@ -9,7 +9,7 @@
  * **On the assessment route the header shows the EU Fit Check lockup; everywhere
  * else it shows PunProfile.** The EFC lockup carries "by PunProfile" under its
  * own name, so the parent is never absent, it is subordinated. That is the whole
- * of what a sub-brand is, and it makes visible the split `design.md` has held
+ * of what a sub-brand is, and it makes visible the split `design-system.md` has held
  * since 14/08/2026: the assessment is a product a candidate uses, PunProfile is
  * the company they are being introduced to, and a candidate has to be able to
  * tell them apart.
@@ -74,7 +74,7 @@ export default function BrandLockup() {
    *
    * **A filter was the wrong answer and worth saying why.** `invert()` would take
    * the wordmark from black to white and the brand orange mark to a blue-green,
-   * and `design.md` is explicit that the mark is never recoloured outside brand
+   * and `design-system.md` is explicit that the mark is never recoloured outside brand
    * orange. The reversed assets already solve this properly: they change only the
    * wordmark and leave `#E7703A` and EU Fit Check's `#135CB4` untouched, so the
    * mark is identical in both schemes and only the type flips.

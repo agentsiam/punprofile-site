@@ -26,7 +26,7 @@
  * **The colour.** Theirs is a black button with yellow type on cream. Terracotta
  * is this system's single primary action per view and it is already spent at
  * the foot of the page by `CallToAction`, so this button is `primary` Teal,
- * which `design.md` reserves for "everything else that needs emphasis". Two
+ * which `design-system.md` reserves for "everything else that needs emphasis". Two
  * Terracotta buttons on one page is the exact failure that rule exists to stop.
  *
  * ---------------------------------------------------------------------------
@@ -128,7 +128,7 @@ export default function SignupForm() {
           placeholder={SIGNUP_PLACEHOLDER}
           aria-invalid={state === "bad_email"}
           aria-describedby="blog-signup-note"
-          // `input` from `design.md`: 48px, `rounded.sm`, and the focus ring is
+          // `input` from `design-system.md`: 48px, `rounded.sm`, and the focus ring is
           // the accent one the base layer already puts on every focusable.
           className="field min-w-0 flex-1"
         />

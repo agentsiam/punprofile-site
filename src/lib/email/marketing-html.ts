@@ -16,7 +16,7 @@
  * drift, and nobody has to write HTML to send one.
  *
  * ---------------------------------------------------------------------------
- * EVERY COLOUR COMES FROM design.md
+ * EVERY COLOUR COMES FROM design-system.md
  * ---------------------------------------------------------------------------
  *
  * Read out of `design-tokens.generated.ts` rather than typed, because a hex
@@ -27,7 +27,7 @@
  * The layout is the design system's own idiom: a `canvas-soft` band with a
  * white 30px card on it, `ink-deep` for the copy, one lime pill for the one
  * action, and the dark band as the footer. The card takes the 30px card radius
- * and the dark band takes 40px, because `design.md` gives the large panel and
+ * and the dark band takes 40px, because `design-system.md` gives the large panel and
  * the dark band `3xl` rather than the card's `2xl`.
  *
  * **Nothing in the footer is bare text.** The wordmark used to be the literal
@@ -82,7 +82,7 @@ const LOGO = "https://punprofile.app/punprofile-logo-email-reversed.png";
 
 /**
  * The same wordmark in black, for the lime banner at the top. Lime is a fill and
- * never carries type, so the mark on it is the dark one; `design.md` puts
+ * never carries type, so the mark on it is the dark one; `design-system.md` puts
  * `ink-deep` on `canvas-brand` for exactly this reason.
  */
 const LOGO_DARK = "https://punprofile.app/punprofile-logo-email.png";
@@ -161,7 +161,7 @@ export function renderMarketingEmail(args: {
   /**
    * The second ask, under the article's own. Quieter by construction: a white
    * card like the first but shorter, and an outlined pill rather than a lime
-   * one, because `design.md` keeps lime as the single thing that reads as
+   * one, because `design-system.md` keeps lime as the single thing that reads as
    * pressable and a second lime fill would make the email ask twice at equal
    * volume. It carries no price: a price restated in an email is a second place
    * for a stale number to live, so the card points at the page that owns it.
@@ -172,7 +172,7 @@ export function renderMarketingEmail(args: {
     ctaLabel: string;
     href: string;
     /**
-     * Which tint the block carries. Not decoration: `design.md` gives cyan to
+     * Which tint the block carries. Not decoration: `design-system.md` gives cyan to
      * the EU Fit Check family and one tint to each newsletter strand, so a card
      * about a Real Stories reel takes orange because of what it is rather than
      * because orange looked next.

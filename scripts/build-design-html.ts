@@ -3,16 +3,16 @@
  *
  *   npx tsx scripts/build-design-html.ts
  *
- * `design.md` in `../punprofile-career-coaching/punprofile-context/ctxt-brand/`
+ * `design-system.md` in `../punprofile-career-coaching/punprofile-context/ctxt-brand/`
  * is the source and the only place a token is edited. Its YAML frontmatter is
- * read here and emitted as `design.html` beside it: one self-contained page
+ * read here and emitted as `design-system.html` beside it: one self-contained page
  * that renders every token and component live, for a human to look at.
  *
  * Same contract as `sync-termbase.ts`. The generated file is never hand-edited.
  * Edit the frontmatter, re-run this, commit both.
  *
  * The colour values themselves come from `pp_material_colors.json`, a Material
- * Theme Builder export, and reach `design.md` from there. This script does not
+ * Theme Builder export, and reach `design-system.md` from there. This script does not
  * invent a value; if a token is missing from the frontmatter it is missing from
  * the page, which is the intended failure.
  *
@@ -24,9 +24,9 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { load } from "js-yaml";
 
 const SOURCE =
-  "../punprofile-career-coaching/punprofile-context/ctxt-brand/design.md";
+  "../punprofile-career-coaching/punprofile-context/ctxt-brand/design-system.md";
 const OUT =
-  "../punprofile-career-coaching/punprofile-context/ctxt-brand/design.html";
+  "../punprofile-career-coaching/punprofile-context/ctxt-brand/design-system.html";
 
 interface TypeRole {
   fontFamily: string;
@@ -305,7 +305,7 @@ function scaleSection(d: Design): string {
     const resolved = aliased ? d.colors[aliased] : undefined;
     if (!resolved) {
       throw new Error(
-        `design.md has no colour for "${name}", and no alias resolving to one. ` +
+        `design-system.md has no colour for "${name}", and no alias resolving to one. ` +
           `The page would render it as undefined, which is worse than not building.`,
       );
     }
@@ -456,7 +456,7 @@ ${vars}
   <span><strong>scheme</strong> ${esc(d.scheme)}</span>
   <span><strong>values from</strong> <code>${esc(d.source)}</code></span>
 </div>
-<p class="note"><strong>Generated from <code>design.md</code> by <code>scripts/build-design-html.ts</code> in the app repo. Do not hand-edit.</strong> Edit the frontmatter, re-run, commit both. The written rules, the retirements and the reasoning live in <code>design.md</code>; this page is the tokens made visible, not a substitute for reading it.</p>
+<p class="note"><strong>Generated from <code>design-system.md</code> by <code>scripts/build-design-html.ts</code> in the app repo. Do not hand-edit.</strong> Edit the frontmatter, re-run, commit both. The written rules, the retirements and the reasoning live in <code>design-system.md</code>; this page is the tokens made visible, not a substitute for reading it.</p>
 ${colourSection(d)}
 ${typeSection(d)}
 ${scaleSection(d)}
@@ -480,7 +480,7 @@ for (const key of ["colors", "typography", "shape", "components"] as const) {
 
 writeFileSync(OUT, page(design));
 console.log(
-  `design.html <- design.md  (${Object.keys(design.colors).length} colours, ` +
+  `design-system.html <- design-system.md  (${Object.keys(design.colors).length} colours, ` +
     `${Object.keys(design.typography).length} type roles, ` +
     `${Object.keys(design.components).length} components)`,
 );

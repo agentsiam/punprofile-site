@@ -1,6 +1,6 @@
 /**
  * The milestone ladder on the lead's Delivery page, `prd.md` § 8 and
- * `coaching-delivery-design.md` § 7b.
+ * `coaching-delivery-design-system.md` § 7b.
  *
  * Four rungs in order. Each carries one decision that is ours, whatever the
  * candidate owes before the next rung can start, and what it delivers. A rung
@@ -18,7 +18,7 @@ import type { Step } from "./checklist";
 export type RungKey = "pack" | "first_call" | "hour" | "closed";
 
 /**
- * The four states of `prd.md` § 8, which `design.md` maps onto roles
+ * The four states of `prd.md` § 8, which `design-system.md` maps onto roles
  * that already exist rather than onto a new colour family:
  *
  * - `done`, no colour, because most rows on a finished engagement are done.
@@ -41,7 +41,7 @@ export type RungSpec = {
   delivers: string;
   /**
    * The checklist rows that are this rung's evidence, in the order they
-   * happen. `coaching-delivery-design.md` § 7b groups them; the numbers stay
+   * happen. `coaching-delivery-design-system.md` § 7b groups them; the numbers stay
    * the checklist's own.
    *
    * The hour reads in happening order rather than in row-number order, which

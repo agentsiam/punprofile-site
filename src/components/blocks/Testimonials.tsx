@@ -101,7 +101,7 @@ export default function Testimonials({
   if (items.length === 0 && placeholders === 0) return null;
 
   /*
-   * Grounds rotate dark green, then the secondary palette's tints (design.md,
+   * Grounds rotate dark green, then the secondary palette's tints (design-system.md,
    * 30/10/2026). Each tint carries its own text role. Lime-pale sits out: the
    * drawn avatars already bring the lime, and lime stays the action colour.
    */

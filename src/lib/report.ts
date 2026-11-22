@@ -5,7 +5,7 @@
  * Structure": executive summary, one spider chart per assessment, top
  * strengths, development priorities, readiness summary.
  *
- * Styling is token-driven, from the brand system in `design.md`. The tokens
+ * Styling is token-driven, from the brand system in `design-system.md`. The tokens
  * themselves live in `design-tokens.ts`, shared with the report book and the
  * two-views demo, so a palette change is one edit rather than three. Report
  * HTML is standalone and cannot use `next/font`, hence the font <link>.
@@ -942,7 +942,7 @@ ${dimSections}
  * the report, and the /coaching, home and /pricing modules for the two
  * coaching pages. No wording was written for this layout.
  *
- * Pictures follow "Where clay and where the mascot" in `design.md`:
+ * Pictures follow "Where clay and where the mascot" in `design-system.md`:
  * a clay scene is a page's main picture, the flat mascot appears only as spot
  * art in a card corner, the two never share a page, and client faces are
  * their own photographs. Images are loaded from the site by absolute URL,
@@ -1468,7 +1468,7 @@ const PAGED_STYLES = `
     line-height: 1; letter-spacing: -0.03em; font-weight: 900; color: var(--color-ink-deep); max-width: 80mm; }
   .cover-sub { margin: ${COVER.subTop}mm 0 0; font-size: 11pt; font-weight: 500; max-width: ${COVER.freeSubW}mm; }
   /* Europe as the reader will live it, per "Where clay and where the
-     mascot" in design.md. */
+     mascot" in design-system.md. */
   .cover-collage { position: absolute; left: ${COVER_ART.left}mm; right: ${COVER.artRight}mm; top: 16mm; height: 120mm; display: grid; grid-template-columns: 1.05fr 1fr; grid-template-rows: 1fr 1fr .5fr; gap: 2.5mm; }
   .cover-collage img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4mm; min-height: 0; }
   .cover-collage .cc-tall { grid-row: 1 / 3; }

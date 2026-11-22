@@ -3,7 +3,7 @@ import { C, FONT, SITE, button, card, emailDocument, esc, footerBlock, headerBan
 /**
  * The Fit Report notice: the paid report is on the candidate's dashboard.
  *
- * Spec: `coaching-delivery-design.md` § 7a, the outside message, and the row
+ * Spec: `coaching-delivery-design-system.md` § 7a, the outside message, and the row
  * of its own audit table that read "The Fit Report delivered: Nothing". It
  * says what arrived and carries one button to the dashboard, and it does not
  * repeat what is in the report: a paid document is read where it lives, not

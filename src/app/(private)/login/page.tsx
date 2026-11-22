@@ -10,7 +10,7 @@ import { useState } from "react";
  * email but the admin's, so the "first time" button is safe to show.
  *
  * Latin-only, so it opts into the system's body line-height of 1.5 rather than
- * the Thai-first 1.6 the app's base carries. Components follow `design.md`.
+ * the Thai-first 1.6 the app's base carries. Components follow `design-system.md`.
  */
 export default function LoginPage() {
   const { signIn } = useAuthActions();

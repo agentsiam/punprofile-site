@@ -45,7 +45,7 @@ import { pick, t } from "@/lib/locale";
 /**
  * The two faces the design system names: Inter for Latin, Anuphan for Thai.
  * `globals.css` composes them into one stack per tier, so Thai and Latin
- * coexist in a single string without a language switch. See `design.md` in the
+ * coexist in a single string without a language switch. See `design-system.md` in the
  * sibling coaching repo.
  *
  * Loaded here rather than per layout: `next/font` deduplicates by call site, and
@@ -130,7 +130,7 @@ export default function SiteShell({
               in the document head is not something to keep on the chance a
               future feature wants it. */}
           <LocaleProvider initial={locale}>
-            {/* The bar from `design.md`'s navigation section: 76px, on
+            {/* The bar from `design-system.md`'s navigation section: 76px, on
                 `canvas`, no border and no shadow. The bar is the page rather
                 than a surface above it, and what separates it from the content
                 is the dimmer that appears when a menu opens, not a hairline.

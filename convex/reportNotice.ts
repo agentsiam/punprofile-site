@@ -9,7 +9,7 @@ import { walletFor } from "./workspace";
  * The Fit Report notice. Scheduled by `workspace.scheduleFitReportNotice` from
  * the two mutations that put the report on the candidate's page; never called
  * by a client. `matchNotice.ts` is the pattern, for the same reason it was the
- * pattern for the release message in `coaching-delivery-design.md` § 7a: a
+ * pattern for the release message in `coaching-delivery-design-system.md` § 7a: a
  * notice that can be retried without any chance of charging a token twice.
  *
  * It reads and announces. It never shares a report, marks a deliverable or

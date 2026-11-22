@@ -18,7 +18,7 @@
  * The second owes two reminders and never a second of either, and it is the
  * first code to write `candidateTasks.remindedAt`: the one reminder that table
  * has specified from the start had never gone out. It opens drafts for Paul and
- * sends nothing itself. `coaching-delivery-design.md` § 7a.
+ * sends nothing itself. `coaching-delivery-design-system.md` § 7a.
  *
  * The third is the job-database archive, `job-database-handoff.md` § 5. It
  * holds no personal data and deletes nothing: a job filled, or first seen over

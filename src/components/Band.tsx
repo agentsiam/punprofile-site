@@ -2,7 +2,7 @@
  * A full-bleed section band. 25/08/2026, with the `wise-1` system.
  *
  * The page is white and structure comes from bands laid across it edge to edge,
- * not from tinted cards inside a single column. `design.md`'s "four grounds"
+ * not from tinted cards inside a single column. `design-system.md`'s "four grounds"
  * table is the whole specification: a section picks one ground, the band paints
  * it full width, and the content sits in a centred column inside it.
  *
@@ -16,7 +16,7 @@ const GROUND = {
   // A warm off-white page was tried here on 12/11/2026, from a UX review, and
   // taken out the same day: `canvas-warm` for the band with `canvas` left pure
   // white for the cards. It worked and it was not wanted. The page is white,
-  // which is the first line of `design.md`.
+  // which is the first line of `design-system.md`.
   canvas: "bg-canvas",
   soft: "bg-canvas-soft",
   brand: "bg-canvas-brand ground-fixed",

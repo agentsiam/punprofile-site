@@ -3,7 +3,7 @@
 /**
  * The Fit Report: a piece of work, not a place. It opens inside the first
  * call's rung on the lead's Delivery page while that call is the rung, and
- * `coaching-delivery-design.md` § 7b says why it is no longer a tab of its
+ * `coaching-delivery-design-system.md` § 7b says why it is no longer a tab of its
  * own: it is empty before the first call, finished once the report ships, and
  * the same weight as the call log throughout.
  *

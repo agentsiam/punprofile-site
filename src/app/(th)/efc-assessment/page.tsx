@@ -775,7 +775,7 @@ export default function AssessPage() {
 
               **Teal, from 16/08/2026.** It was Terracotta until the percentile
               block took that colour on Paul's call. Two Terracotta elements on
-              one view is the thing `design.md` warns about, and of the two the
+              one view is the thing `design-system.md` warns about, and of the two the
               stat block is the one he wants loud. `mt-auto` keeps the button on
               the card's floor so it lines up with the card beside it. */}
           <Link

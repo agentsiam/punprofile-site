@@ -3,7 +3,7 @@
 /**
  * The blog index. 16/08/2026.
  *
- * Three sections, one background each, which is `design.md`'s wash rule applied
+ * Three sections, one background each, which is `design-system.md`'s wash rule applied
  * literally: the hero on Mint, the list on white, and the closing block a Mint
  * material panel rather than a fourth full-bleed wash, the same shape the FAQ
  * page closes with.
@@ -61,7 +61,7 @@ function Chip({
   return (
     <Link
       href={href}
-      // `chip-filter-selected` from `design.md`: `secondary-container`, which is
+      // `chip-filter-selected` from `design-system.md`: `secondary-container`, which is
       // what M3 uses for a selected state everywhere. Not the `action` colour,
       // which is reserved for the single primary action on a view and on this
       // page is the button at the bottom. It was a solid `primary` fill until
@@ -92,7 +92,7 @@ export default function BlogIndex({ topic }: { topic?: string }) {
   return (
     <>
       {/* Brand lime, the one unmissable ground on this page. It is allowed here
-          because the blog index carries no brand orange; `design.md` permits one
+          because the blog index carries no brand orange; `design-system.md` permits one
           fixed high-energy ground per page and no more. Ink text, never white. */}
       <Band block="B1" ground="brand" width="wide">
         <div>
@@ -109,7 +109,7 @@ export default function BlogIndex({ topic }: { topic?: string }) {
           judgement the empty blog makes about its own menu entry.
 
           On white, so the wash rotation reads hero -> white -> white rather
-          than three colours down the page. `design.md` asks for one wash per
+          than three colours down the page. `design-system.md` asks for one wash per
           section and lets spacing do the sub-grouping. */}
       {playbooks().length > 1 && (
         <Band block="B19" ground="canvas" width="wide">

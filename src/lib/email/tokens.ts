@@ -5,7 +5,7 @@
  * be written into the markup as a literal, which is how the email surface came
  * to hold a hand-written copy of the palette with seven values matching no
  * token at all. Reading each one out of the generated block at render time
- * instead means the copy cannot exist: `design.md` changes, `npm run tokens`
+ * instead means the copy cannot exist: `design-system.md` changes, `npm run tokens`
  * regenerates, and the next render is already right.
  *
  * **It throws rather than falling back.** A colour that quietly defaults is one

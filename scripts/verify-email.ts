@@ -43,7 +43,7 @@ const PALETTE = new Set(Object.values(C).map((h) => h.toLowerCase()));
  * longer be answered no. The question now is whether the **two** generated
  * outputs still agree: the shell reads `design-tokens.generated.ts` and this
  * reads `src/app/tokens.generated.css`. `npm run tokens` writes both from
- * `design.md` (R14), so they disagree only when one was regenerated and the
+ * `design-system.md` (R14), so they disagree only when one was regenerated and the
  * other was not, or when one was hand-edited, which the law forbids and this
  * catches.
  *
@@ -174,7 +174,7 @@ const light = lightTokenValues();
 for (const [role, hex] of Object.entries(C)) {
   if (OWN_TO_EMAIL.has(role)) continue;
   if (!light.has(hex.toLowerCase())) {
-    fail("palette", `${role} ${hex} is no longer a light-scheme token; change it in design.md and run npm run tokens`);
+    fail("palette", `${role} ${hex} is no longer a light-scheme token; change it in design-system.md and run npm run tokens`);
   }
 }
 

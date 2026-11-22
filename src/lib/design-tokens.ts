@@ -3,7 +3,7 @@
  *
  * This file is now a re-export. The values live in
  * `design-tokens.generated.ts`, written by `scripts/build-tokens.ts` from
- * `design.md` in the sibling coaching repo. The import path is kept so the
+ * `design-system.md` in the sibling coaching repo. The import path is kept so the
  * report, the report book and the two-views demo did not all have to change.
  *
  * Before 16/08/2026 this file and `src/app/globals.css` each held a hand-copied

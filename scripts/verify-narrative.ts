@@ -4,7 +4,7 @@
  *   npm run verify:narrative
  *
  * `Narrative_System.md` in the coaching repo carries its records as YAML
- * frontmatter, the same arrangement `design.md` uses, so one file is both the
+ * frontmatter, the same arrangement `design-system.md` uses, so one file is both the
  * document a person reads and the data a script can check. A narrative system
  * nobody can verify is a document that drifts from the site within a month,
  * which is the failure `termbase.yml` and `lint-thai.ts` were built to prevent

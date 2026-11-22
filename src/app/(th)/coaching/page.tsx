@@ -24,7 +24,7 @@
  * side by side, the coaches as two cards with their stories folded, and the
  * "why we do this" as a two-column panel.
  *
- * One accent button per view, per `design.md`. The quiet link to /contact under
+ * One accent button per view, per `design-system.md`. The quiet link to /contact under
  * it is text, not a second button.
  */
 

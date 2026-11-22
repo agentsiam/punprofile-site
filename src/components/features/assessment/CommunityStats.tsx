@@ -203,7 +203,7 @@ export default function CommunityStats({ scores }: { scores: Scores }) {
             goes last and it gets the only coloured panel in the section.
 
             **Terracotta, on Paul's call 16/08/2026**, which reverses what this
-            component shipped with a few hours earlier. `design.md` reserves
+            component shipped with a few hours earlier. `design-system.md` reserves
             Terracotta for the single action on a view and warns against two
             things competing to be pressed, so this block was built in
             `eufit-deep`. He looked at both and took the mockup: the block is

@@ -180,7 +180,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       .map((n) => ({ _id: n._id, body: n.body, at: n.at, applicationId: n.applicationId ?? null }));
     const sharedCvIds = new Set(cvs.map((c) => c._id as string));
 
-    // Releases, `coaching-delivery-design.md` § 7a. Released ones only: a draft
+    // Releases, `coaching-delivery-design-system.md` § 7a. Released ones only: a draft
     // is the coach still assembling, and what crosses this boundary is what has
     // been handed over. The covering note's words are already in `notes`, so
     // only its id travels; an item's file is only named here if the candidate
@@ -700,7 +700,7 @@ const cleanList = (xs: string[], max: number, each = 200) =>
  * optional. Target titles themselves stay coach-owned in `targets`.
  */
 /**
- * The candidate has seen a release, `coaching-delivery-design.md` § 7a.
+ * The candidate has seen a release, `coaching-delivery-design-system.md` § 7a.
  *
  * Written once and never changed. The question it answers is whether they came
  * back at all, and a second visit is not that question; the coach reads it

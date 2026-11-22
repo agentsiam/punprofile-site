@@ -8,12 +8,12 @@
  * already been sent to `notFound()` upstream.
  *
  * The header sits on the topic's own wash and the body on white. That is the
- * one place `design.md`'s wash rotation fits a blog cleanly, because one article
+ * one place `design-system.md`'s wash rotation fits a blog cleanly, because one article
  * has one topic, so a whole section can take one wash without blending. Cards on
  * the index deliberately do not, and `PostCard` says why.
  *
  * Measure is `max-w-2xl`, the same reading column as the FAQ and the privacy
- * notice. `design.md` asks for generous spacing over density, and a wider column
+ * notice. `design-system.md` asks for generous spacing over density, and a wider column
  * would cost more than the space buys: Thai carries tone marks above and below
  * the line and is written without word spaces, so a long line has fewer places
  * for the eye to reacquire itself than the same line in Latin.

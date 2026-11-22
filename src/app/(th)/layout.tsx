@@ -47,7 +47,7 @@ import { SITE_CARD, SITE_URL, VERIFICATION, brandedTitle } from "@/lib/seo";
  * is still growing: `AGENTS.md` already names a job board, saved jobs and match
  * notifications alongside it. So the words are the coaching hook from
  * `coaching.ts` and the three service names from `services.ts`, and the artwork
- * is a cutout from the clay cast rather than the Lavender `design.md` reserves
+ * is a cutout from the clay cast rather than the Lavender `design-system.md` reserves
  * for the assessment.
  *
  * The image is `public/og.png`, a static 1200x630 file. Static rather than

@@ -107,7 +107,7 @@ export const send = internalAction({
     /**
      * The blocks under the article, in order. Editorial, so they are arguments
      * rather than anything this file decides. `tint` is not a colour choice: it
-     * names which family the card belongs to, and `design.md` holds cyan for
+     * names which family the card belongs to, and `design-system.md` holds cyan for
      * the EU Fit Check family and one tint per newsletter strand.
      */
     cards: v.optional(

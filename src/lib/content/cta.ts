@@ -28,7 +28,7 @@ import { CONTACT_EMAIL } from "@/lib/consent-copy";
  * where each reader happens to have finished reading. Which is the whole test,
  * and it is why `CallToAction` takes a `show` prop rather than letting a page
  * hand-roll a card button: repeated instances cannot drift apart if none of
- * them is written by hand. `design.md` already says this about colour: Terracotta
+ * them is written by hand. `design-system.md` already says this about colour: Terracotta
  * is reserved for the single primary action so it keeps its persuasive weight.
  * This is the same rule stated as information architecture rather than as
  * palette, and it is checked by `scripts/verify-content.ts`.

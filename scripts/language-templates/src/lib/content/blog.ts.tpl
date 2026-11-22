@@ -85,7 +85,7 @@ import { START_IN_EUROPE } from "./posts/start-in-europe";
  *   the three services and are captioned as those services on `/services`.
  *   Reusing them here would caption an article with a picture of something else.
  *   The cards carry a topic wash instead, which is the system's own device
- *   (`design.md` § Colors) and needs no asset that does not exist.
+ *   (`design-system.md` § Colors) and needs no asset that does not exist.
  *
  *   **Reversed 18/08/2026, and the reasoning above is why it could be.** The
  *   objection was never to illustration, it was to captioning an article with a
@@ -115,7 +115,7 @@ export interface Topic {
   id: TopicId;
   label: Copy;
   /**
-   * The wash this topic's cards and article header take, from `design.md`'s
+   * The wash this topic's cards and article header take, from `design-system.md`'s
    * section washes. One per topic and never blended, which is the same rule the
    * services page follows with the mascot panels.
    */

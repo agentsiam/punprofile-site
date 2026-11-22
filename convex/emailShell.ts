@@ -16,7 +16,7 @@
  * version is what let seven of twelve values drift until they matched no token
  * at all; a copy of a palette goes stale the day the palette changes, and
  * nothing about writing it down makes it notice. **Never write a hex into this
- * module or a template.** A colour an email needs is a token in `design.md`
+ * module or a template.** A colour an email needs is a token in `design-system.md`
  * first, then `npm run tokens`, and it is available here by name.
  *
  * The shape of an email here: a logo row, one white card with a dark header
@@ -34,7 +34,7 @@ export const SITE = "https://punprofile.app";
 /**
  * The email palette: a name per role, each resolved from the design system's
  * own light scheme. See the note above before adding to it. The role names are
- * the email surface's and the token names are `design.md`'s, which is why the
+ * the email surface's and the token names are `design-system.md`'s, which is why the
  * two columns read differently: `mute` here is `mute-strong` there, because
  * `mute` itself is not a text colour under 19px and nothing on this surface is
  * larger than that.

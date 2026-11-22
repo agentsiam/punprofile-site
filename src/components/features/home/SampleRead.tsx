@@ -99,7 +99,7 @@ export default function SampleRead() {
 
       <p className="mt-3 text-body-medium text-on-surface-variant">{pick(SAMPLE_NOTE)}</p>
 
-      {/* A text link, not a button. `design.md` allows one filled action per
+      {/* A text link, not a button. `design-system.md` allows one filled action per
           view and the hero already spent it on this same destination. */}
       <Link
         href={path(DESTINATIONS.assess.href)}

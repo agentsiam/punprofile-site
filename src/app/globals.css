@@ -2,7 +2,7 @@
 @import "./tokens.generated.css";
 
 /*
- * The token layer is GENERATED from `design.md` in the sibling coaching repo by
+ * The token layer is GENERATED from `design-system.md` in the sibling coaching repo by
  * `scripts/build-tokens.ts`. Run `npm run tokens` after changing a token there,
  * and commit both. Do not declare a colour, a type role, a radius, a shadow or
  * an easing curve in this file; it will drift, which is exactly what the two
@@ -155,7 +155,7 @@
    needed something to bend. All removed with the move to Material Design 3,
    which answers the same question with tonal surfaces and elevation. An app
    carrying both would have two definitions of what a floating control looks
-   like. `design.md` records the decision and the reasoning that went with it.
+   like. `design-system.md` records the decision and the reasoning that went with it.
 
    Two things that came out of that work survive, because they were about the
    audience rather than the material. The bottom action bar stays sticky; that
@@ -166,7 +166,7 @@
    product's actual audience. Removing it removes the cost outright, which is a
    gain for exactly those users rather than a neutral change.
 
-   Replacements are in the component list in `design.md`: `top-app-bar-scrolled`
+   Replacements are in the component list in `design-system.md`: `top-app-bar-scrolled`
    for the header, `card-elevated` at level 2 for the language menu, and
    `navigation-bar` on `surface-container` for the bottom bar.
    --------------------------------------------------------------------------- */
@@ -230,7 +230,7 @@
    Two variants of each logo exist and differ in one respect: the wordmark is
    `#000000` in the light files and `#F0F2E7` in the reversed ones. Brand orange
    and EU Fit Check's blue are identical in both, so the mark never changes
-   colour, which `design.md` requires and which a CSS `invert()` filter would
+   colour, which `design-system.md` requires and which a CSS `invert()` filter would
    have broken.
 
    **The choice is not the colour scheme, it is the ground the logo sits on**,
@@ -257,7 +257,7 @@
  * One curve and one duration for every drawer, 25/08/2026.
  *
  * These were 220/200/200/180ms on three different M3 easings, which was correct
- * when the header was a Material top app bar. `design.md`'s navigation section
+ * when the header was a Material top app bar. `design-system.md`'s navigation section
  * now says the whole header moves on `--ease-nav` for 350ms, and the language
  * drawer already does. Two drawers opening from the same edge at two different
  * speeds reads as two different components, so they are the same numbers.
@@ -341,7 +341,7 @@
    * `bg-canvas-promo`, the gold promotional ground. All three are fixed values
    * that do not rotate with the scheme. Measured on the gold: ink-deep 8.79,
    * ink 12.17, body 5.91, mute-strong 3.34 — below AA, so a caption on that
-   * ground takes `body`. See `design.md > The promotional ground`.
+   * ground takes `body`. See `design-system.md > The promotional ground`.
    * Measured on lime: ink 14.31, on-surface-variant 8.03, primary 5.44.
    */
   .ground-fixed {
@@ -379,7 +379,7 @@
        as a ground yet, which is the only reason it had never shown. Fixed here
        rather than left for whoever used it first. `on-canvas-promo` needs no
        line in this block: it is pinned to this value in both schemes in
-       `design.md`, which is the better fix and the one a new role should take. */
+       `design-system.md`, which is the better fix and the one a new role should take. */
     --color-on-brand-orange: #163300;
     --color-surface: #ffffff;
     --color-surface-container-lowest: #ffffff;
@@ -394,7 +394,7 @@
 
 @layer components {
   /*
-   * `text-field-outlined` from `design.md`, and the three corrections the
+   * `text-field-outlined` from `design-system.md`, and the three corrections the
    * 16/08/2026 audit made to it.
    *
    * **The border is `outline`, not `outline-variant`.** Every field in the app
@@ -484,7 +484,7 @@
    * tile now reads as filled-in rather than blacked-out.
    *
    * Tertiary rather than secondary, which is what M3 uses for selection
-   * generally, because this is EU Fit Check and `design.md` gives the
+   * generally, because this is EU Fit Check and `design-system.md` gives the
    * assessment the tertiary family. One colour story per surface.
    *
    * 56px, matching the text field. 48 is the touch-target floor.
@@ -515,7 +515,7 @@
 
      The edge is `on-primary-pale`, not `on-primary`. Both are `#163300` in
      light, so this changes nothing there; in dark `on-primary` is `#0e0f0c` and
-     held 1.41 on the fill, which is the role's own rule in `design.md`: it is
+     held 1.41 on the fill, which is the role's own rule in `design-system.md`: it is
      the ink for a lime fill and nothing else. */
   .tile:hover:not([aria-pressed="true"]) {
     background-color: color-mix(
@@ -628,7 +628,7 @@
 
 @layer components {
   /*
-   * `button-filled` from `design.md`: the single primary action per view.
+   * `button-filled` from `design-system.md`: the single primary action per view.
    *
    * A class rather than ten copies of the same six utilities, because the two
    * parts that are easy to get wrong are the ones utilities express badly.
@@ -678,7 +678,7 @@
    * invisible even though its label is legible. M3's version assumes a surface
    * it separates from more than this warm off-white does. The skill's own 3:1
    * bar for a non-text UI element outranks the component's default styling, so
-   * ours gets a border. `design.md` records the departure.
+   * ours gets a border. `design-system.md` records the departure.
    *
    * **`btn-contrast` is for a button on a fixed high-energy ground.** Brand lime
    * and brand orange sit outside the role system, so there is no container pair
@@ -710,7 +710,7 @@
      white: a button nobody could read. The lime is a fill in this system and
      this button has no fill, so its type takes the green-black ink instead.
 
-     It was `on-primary` until `design.md` stated that role's rule: the ink for
+     It was `on-primary` until `design-system.md` stated that role's rule: the ink for
      a lime fill and nothing else. Both are `#163300` in light, so the light
      button is unchanged; in dark `on-primary` is `#0e0f0c`, the page itself,
      and this label measured 1.0 on every screen that carries it, the
@@ -755,7 +755,7 @@
    * class called `.material` meaning "Apple's translucent material" inside a
    * Material Design 3 codebase is a trap for the next reader.
    *
-   * `card-outlined` and `card-tonal` are the two card specs in `design.md`.
+   * `card-outlined` and `card-tonal` are the two card specs in `design-system.md`.
    * Neither takes elevation: M3 keeps level 0 for almost everything and builds
    * depth from the surface container tiers instead.
    */
