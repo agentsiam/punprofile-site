@@ -27,7 +27,7 @@
  *   gets ignored.
  *
  * **Two pages, not five tabs.** The lead now has the Delivery page and the
- * Record page, `prd.md` § 8 and `coaching-delivery-design-system.md` § 7b. The
+ * Record page, `prd.md` § 8 and `coaching-delivery-design.md` § 7b. The
  * delivery used to be split across the Session and Delivery tabs and neither
  * answered what the next thing to do for this person was; the Fit Report was a
  * tab the same weight as the call log while being a piece of work; and three

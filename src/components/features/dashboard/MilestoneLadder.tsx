@@ -2,7 +2,7 @@
 
 /**
  * The milestone ladder, first thing under the Situation panel on the lead's
- * Delivery page. `prd.md` § 8 and `coaching-delivery-design-system.md` § 7b.
+ * Delivery page. `prd.md` § 8 and `coaching-delivery-design.md` § 7b.
  *
  * Four rungs in order, each naming the decision it settled, what the candidate
  * owes and what it delivers, and each showing one of four states. The fifteen

@@ -1894,7 +1894,7 @@ export default defineSchema({
 
   /**
    * A release: everything one call produced, reaching the candidate in one
-   * coach action. `coaching-delivery-design-system.md` § 7a.
+   * coach action. `coaching-delivery-design.md` § 7a.
    *
    * The pack has two and they are not symmetrical. The first carries no file at
    * all, because the Fit Report, the target titles and the markets are rows
@@ -1930,7 +1930,7 @@ export default defineSchema({
     noteId: v.optional(v.id("deliveryNotes")),
     /**
      * The facts this release repeats, and what the check of each one found,
-     * `coaching-delivery-design-system.md` § 7a. Written from outside the app, the way
+     * `coaching-delivery-design.md` § 7a. Written from outside the app, the way
      * a transcript writes `situationProposals`, because the comparison needs
      * something with a model and this app has none. A mismatch nobody has
      * settled refuses the release.
@@ -1979,7 +1979,7 @@ export default defineSchema({
     .index("by_state", ["state"]),
 
   /**
-   * One item in a release, `coaching-delivery-design-system.md` § 7a.
+   * One item in a release, `coaching-delivery-design.md` § 7a.
    *
    * An item points at the row that already holds the thing wherever one exists,
    * and carries the thing itself only for the kinds with no home of their own.
@@ -2018,7 +2018,7 @@ export default defineSchema({
     /** An editable document. @absent none — not a link */
     url: v.optional(v.string()),
     /**
-     * What the candidate says is wrong in this item, `coaching-delivery-design-system.md`
+     * What the candidate says is wrong in this item, `coaching-delivery-design.md`
      * § 7a. The same shape `deliverables.errorReports` has, for the same reason:
      * an unresolved one holds the coaching open. The difference is that this
      * covers every paid item rather than the complimentary documents alone.

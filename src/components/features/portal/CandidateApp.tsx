@@ -2301,7 +2301,7 @@ function StepMark({ status }: { status: "not_started" | "in_progress" | "deliver
 
 /**
  * The items of the release this note covers, listed under it.
- * `coaching-delivery-design-system.md` § 7a: a release reaches the candidate as one
+ * `coaching-delivery-design.md` § 7a: a release reaches the candidate as one
  * note with every item under it, so what one call produced reads as one thing
  * rather than as pieces scattered across the tabs.
  *

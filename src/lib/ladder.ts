@@ -1,6 +1,6 @@
 /**
  * The milestone ladder on the lead's Delivery page, `prd.md` § 8 and
- * `coaching-delivery-design-system.md` § 7b.
+ * `coaching-delivery-design.md` § 7b.
  *
  * Four rungs in order. Each carries one decision that is ours, whatever the
  * candidate owes before the next rung can start, and what it delivers. A rung
@@ -41,7 +41,7 @@ export type RungSpec = {
   delivers: string;
   /**
    * The checklist rows that are this rung's evidence, in the order they
-   * happen. `coaching-delivery-design-system.md` § 7b groups them; the numbers stay
+   * happen. `coaching-delivery-design.md` § 7b groups them; the numbers stay
    * the checklist's own.
    *
    * The hour reads in happening order rather than in row-number order, which

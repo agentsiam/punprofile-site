@@ -19,7 +19,7 @@ introducing itself, and the assessment is one feature of an app that is still
 growing, so a card built around it goes stale as the app does.
 
 - **Lime**, `primary` (#9FE870), flat, with the green-black `ink-deep`
-  (#163300) as every text colour on it. This is the pairing `design.md` calls
+  (#163300) as every text colour on it. This is the pairing `design-system.md` calls
   the brand. It is also the one colour a Facebook or LINE feed does not already
   have, and a column of white cards and grey chrome is where this image has to
   compete. Blue is EU Fit Check's identity and would say the wrong thing on a

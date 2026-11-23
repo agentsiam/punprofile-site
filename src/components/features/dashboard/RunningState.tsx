@@ -42,7 +42,7 @@ export default function RunningState({ leadId }: { leadId: Id<"leads"> }) {
 /**
  * The checklist row that is not a tick. On the ladder it would never tick, and
  * a ladder holding a rung that never ticks reads as a delivery that is
- * permanently late (`coaching-delivery-design-system.md` § 7b). The weekly maximum,
+ * permanently late (`coaching-delivery-design.md` § 7b). The weekly maximum,
  * the pause and the send form itself are in the job tracker above.
  */
 function Matching({ leadId }: { leadId: Id<"leads"> }) {
