@@ -153,10 +153,27 @@ export function headerBand(o: { greeting: string; heading: string; sub?: string;
     </td></tr>`;
 }
 
+/**
+ * Keep a label that wraps breaking at its spaces only.
+ *
+ * Thai is written without spaces, so a client breaks a long label at its own
+ * dictionary points and will split a word down the middle; `word-break:
+ * keep-all` does not stop it, because Chrome applies that to CJK and breaks Thai
+ * by dictionary anyway. Holding each space-delimited run in `nowrap` leaves the
+ * spaces as the only places a break can land. Inert on a label that fits, which
+ * is why `button` applies it to every label rather than each template
+ * remembering to.
+ */
+const nowrapWords = (label: string) =>
+  label
+    .split(" ")
+    .map((w) => `<span style="white-space:nowrap;">${w}</span>`)
+    .join(" ");
+
 /** The one action. Always the pill, always the lime. */
 export function button(href: string, label: string) {
   return `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:9999px;background:${C.primary};">
-<a href="${href}" style="display:inline-block;padding:15px 30px;font-family:${FONT};font-size:16px;font-weight:600;line-height:20px;color:${C.onPrimary};text-decoration:none;border-radius:9999px;">${label}</a>
+<a href="${href}" style="display:inline-block;padding:15px 30px;font-family:${FONT};font-size:16px;font-weight:600;line-height:20px;color:${C.onPrimary};text-decoration:none;border-radius:9999px;">${nowrapWords(label)}</a>
 </td></tr></table>`;
 }
 

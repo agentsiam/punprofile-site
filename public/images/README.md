@@ -26,4 +26,5 @@ something uses it.
 | `photos/cafe-woman-reading-tall.jpg` | candidate report cover collage; 800x1300, cut from `originals/People-rainier-ridao-LFGF6SL3Co0--no-copy-right.jpg` |
 | `photos/copenhagen-nyhavn.jpg` | candidate report cover collage; 900x720, cut from `originals/EU_cityjulius-jansson-yNNa5rEIcF8--no-copy-right.jpg` |
 | `photos/cinque-terre-coast.jpg` | candidate report cover collage; 900x720, cut from `originals/EU_citytaisha-ellison-6asCAiJ7fSY--no-copy-right.jpg` |
+| `photos/amsterdam-canal-houses-wide.jpg` | the retake email's header picture (`convex/retakeEmail.ts`); 1200x396, the email header slot, cut from `originals/EU_citymathilda-khoo-avCtoCI4vAo--no-copy-right.jpg` with the window taken from the left three quarters so the one shopfront sign falls at the edge |
 | `photos/eu-flag-sky-wide.jpg` | candidate report cover collage; 1600x340, cut from `originals/EU_cityalexey-larionov-1X3li7TGf6o--no-copy-right.jpg` |

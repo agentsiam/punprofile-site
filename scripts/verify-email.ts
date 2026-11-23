@@ -28,6 +28,7 @@ import { codeEmailHtml } from "../convex/codeEmail.js";
 import { matchEmailHtml, matchEmailText, type NoticeRole } from "../convex/matchEmail.js";
 import { outboxEmailHtml, outboxEmailText } from "../convex/outboxEmail.js";
 import { reportEmailHtml, reportEmailText } from "../convex/reportEmail.js";
+import { retakeEmailHtml, retakeEmailText } from "../convex/retakeEmail.js";
 import { C } from "../convex/emailShell.js";
 import { renderMarketingEmail } from "../src/lib/email/marketing-html.js";
 import { issueDateTh } from "../src/lib/email/issue-date.js";
@@ -116,6 +117,10 @@ const MAILS: Mail[] = [
   { id: "matched roles", html: matchEmailHtml("มายด์", [role], { used: 1, left: 12 }), text: matchEmailText("มายด์", [role], { used: 1, left: 12 }) },
   { id: "coach message", html: outboxEmailHtml("มายด์", "เรื่องที่ต้องแจ้ง", "ย่อหน้าแรก\n\nย่อหน้าที่สอง"), text: outboxEmailText("มายด์", "เรื่องที่ต้องแจ้ง", "ย่อหน้าแรก\n\nย่อหน้าที่สอง") },
   { id: "fit report", html: reportEmailHtml("มายด์", { used: 20, left: 13 }), text: reportEmailText("มายด์", { used: 20, left: 13 }) },
+  // Both greetings, because this one is written for a cohort the name helper
+  // cannot fill: `{ชื่อ}` resolves for none of them, so the no-name line ships.
+  { id: "retake", html: retakeEmailHtml("มายด์"), text: retakeEmailText("มายด์") },
+  { id: "retake, no name", html: retakeEmailHtml(null), text: retakeEmailText(null) },
 
   // The newsletter, twice: every optional block off, then every one on. The
   // optional branches are where a frame fault hides, because nothing else
@@ -225,7 +230,7 @@ for (const m of MAILS) {
   if (kind === "list") {
     if (!html.includes(STOP_TH)) fail(id, "no stop link, which is what a list email owes its reader");
     if (!html.includes(STOP_URL)) fail(id, "the stop link does not carry the recipient's own token");
-  } else if (id !== "coach message" && !html.includes("คุณได้รับอีเมลนี้เพราะ")) {
+  } else if (id !== "coach message" && !/คุณได้รับอีเมลนี้(เพราะ|เนื่องจาก)/.test(html)) {
     fail(id, "does not say why the candidate received it");
   }
 
