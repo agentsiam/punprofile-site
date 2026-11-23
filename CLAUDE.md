@@ -266,6 +266,15 @@ a separate act and this list does not replace it.
 - The Thai review sheet was written wherever the exporter happened to run, so eight of them accumulated across two repositories and a work folder under three names, and two records added after an export left the live sheet short by exactly the lines nobody had been asked about. A session named one path while the reviewer read another. The sheet has one home now, rebuilds itself whenever anything is pending, and a finished pass goes back through `--apply` rather than a model retyping it into the record.
 - The Now pill shipped dark green on dark green, because `bg-primary` was paired with `.ground-fixed` and that pairing cancels itself out. On a lime ground the lime is the ground and the pill on it is the dark one (R21).
 - One session got the lead denominator wrong four times in one day, each time differently, and each time from a source it had already read. It counted 157 rows from an export that ended three months earlier, then 573 rows from a current one without noticing that 346 held no answers at all, then built a gate reading on that, then recomputed by hand a filter the snapshot beside it already carried as `lifecycle`. The rule it needed was written in a comment in `src/lib/lifecycle.ts` on the day the decision was made, naming the factor of three, and the spec's own lifecycle table still listed the retired `visitor` state as live. A rule that lives only in the file it governs will be rediscovered by measurement, repeatedly, at the cost of whatever was built on the wrong number (R52).
+- Headless Chrome will not open a window narrower than about 500px on this Mac,
+  so `--window-size=390` silently gives a wider viewport and an email's 480px rule
+  never fires in a direct screenshot. A first attempt at checking the refresh
+  email on a phone reported its paragraphs as clipped; they were not, the window
+  had been widened and a centred iframe had shifted out from under the crop.
+  Render the email inside an iframe of the target width instead, pinned to the
+  left edge, and read where its own background stops: the media queries inside an
+  iframe evaluate against the iframe. Checked that way the email holds at 320,
+  360, 375 and 390.
 
 ## 8. Cadence
 
