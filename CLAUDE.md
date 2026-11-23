@@ -85,6 +85,7 @@ the synced termbase, the rendered style guide beside `design-system.md`, `public
 | Which deployment is which | section 6 of this file | |
 | A country fact the report prints | `country-facts.md`, sibling repo | `scripts/sync-country-facts.ts` writes `country-facts.generated.ts`; a field marked `verify` or `hold` is never printed (R50) |
 | How many leads there are | `stateFor` in `src/lib/lifecycle.ts` | **A row in `leads` is not a lead.** A row is created by `startSession` on the first tap, before any answer and before any contact, so the table holds traffic as well as people. `stateFor` returns `null` for a row with no contact, which is traffic and has no lifecycle position at all (Paul, 26/08/2026). Reachable people and rows are about five times apart, so a count over the table is wrong by that much. See R52 |
+| The candidate in any picture of the product | `FIT_SAMPLE_INPUT` in `src/lib/fit-sample-core.ts` | The fictional assessment the report verifiers already run on. Anything candidate-shaped that leaves this repo is rendered from it: the Fit Report sample, the product pages, and the free report's first page that the refresh email shows beside its button. A real record never renders into a public artefact, and R2 in the sibling repo is why |
 
 ## 4. Where a new file goes
 
