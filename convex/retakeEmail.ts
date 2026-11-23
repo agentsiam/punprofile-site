@@ -15,13 +15,9 @@
  * whether the message is service or marketing is unsettled, and `recipients` in
  * `marketing.ts` requires marketing consent, which none of that cohort holds.
  *
- * **The picture beside the button is no longer a proof block.** It shows the free
- * report's first page, and the design system says a proof block shows what
- * pressing the button gives and nothing else; the button now goes to LINE, which
- * does not give a report. It keeps the block's geometry and stacks the same way,
- * and it is not a link, so there is still one action. What it illustrates is the
- * paragraph above it rather than the button beside it, and that is a weaker job
- * than the slot was built for.
+ * The picture beside the button is the proof block from the design system's
+ * Email section: what pressing the primary gives, in a 236px column, stacking
+ * above the pill under 480px.
  */
 
 import {
@@ -38,21 +34,34 @@ import {
 } from "./emailShell";
 
 /**
- * LINE, not the assessment. `nurture-flow.md` section 3 names LINE the primary
- * channel for this audience, email the fallback and the only one with a working
- * send path, so email is the vehicle and this button is the handover.
+ * The two asks, per the design system's Email section.
  *
- * An add-friend link carries no query string, so `src` and `campaign` cannot
- * ride on it: a click here is not attributed and the campaign name covers the
- * send rather than the click.
+ * The pill is the primary: EU Fit Check, which is what the paragraphs argue for
+ * and what the picture beside it shows, and it carries the campaign parameters
+ * so the send is attributed. LINE is the secondary, a link inside the closing
+ * sentence rather than a second button, which is the quieter of the two forms
+ * the section allows and the right one here because the sentence says what it is
+ * for. An add-friend link takes no query string, so that tap is not recorded;
+ * the link worth measuring is the primary.
  */
-const HREF = "https://line.me/ti/p/m5CG2t8Aa4";
+const HREF = `${SITE}/efc-assessment?src=email&campaign=survey-import-retake-2026-11`;
+const LINE_HREF = "https://line.me/ti/p/m5CG2t8Aa4";
+/** `cta.ts` › DESTINATIONS.line, with `LINE` fixed uppercase by the termbase. */
+const LINE_PHRASE = "ทักทาง LINE";
 
 const SUBJECT = "เมื่อไหร่จะได้ย้ายไป EU ตอบแบบสอบถามแล้วโหลดรายงานเลย";
 const HEADING = "มาดูกันว่าตอนนี้คุณอยู่จุดไหน";
 const PREHEADER = "ใช้เวลาแค่ไม่กี่นาที ก็เห็นว่าควรเริ่มแก้เรื่องไหนก่อน โดยไม่มีค่าใช้จ่าย";
-const CTA = "ทักทาง LINE";  // `cta.ts` › DESTINATIONS.line, with `LINE` fixed by the termbase
-const REPLY = "หากมีอะไรอยากสอบถาม ตอบกลับอีเมลนี้ได้เลยครับ";
+const CTA = "ทำ EFC และโหลดรายงานของคุณ";
+/**
+ * The closing line, which carries the secondary ask.
+ *
+ * It used to say reply to this email, and `MAIL_FROM` is `no-reply@`: a reader
+ * sees that and does not write back whatever `MAIL_REPLY_TO` is set to, so the
+ * copy asked for something its own sender said was impossible.
+ */
+const REPLY_BEFORE = "หากมีอะไรอยากสอบถาม ";
+const REPLY_AFTER = " ได้เลยครับ";
 const FOOT = "คุณได้รับอีเมลนี้เนื่องจากคุณเคยทำแบบสอบถามของ PunProfile ไว้";
 
 /** The city photograph at the head, and the free report's first page beside the pill. */
@@ -108,13 +117,13 @@ ${PARAGRAPHS.map(para).join("\n")}
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td class="stack" width="236" valign="middle" style="width:236px;padding:0 20px 0 0;">
-            <img src="${PROOF_PICTURE}" width="236" alt="${PROOF_ALT}" style="display:block;width:100%;max-width:236px;height:auto;border:1px solid ${C.line};border-radius:8px;">
+            <a href="${HREF}" style="display:block;text-decoration:none;"><img src="${PROOF_PICTURE}" width="236" alt="${PROOF_ALT}" style="display:block;width:100%;max-width:236px;height:auto;border:1px solid ${C.line};border-radius:8px;"></a>
           </td>
           <td class="stack" valign="middle">${button(HREF, CTA)}</td>
         </tr>
       </table>
     </td></tr>
-${para(REPLY)}
+${para(`${REPLY_BEFORE}<a href="${LINE_HREF}" style="color:${C.deep};text-decoration:underline;">${LINE_PHRASE}</a>${REPLY_AFTER}`)}
     <tr><td class="px" style="padding:10px 40px 40px;font-family:${DISPLAY};font-size:16px;line-height:1.7;color:${C.deep};">Paul<br>PunProfile</td></tr>`,
 )}
 ${footerBlock("22px 24px 0", [FOOT])}`,
@@ -129,7 +138,7 @@ export function retakeEmailText(name: string | null): string {
     CTA,
     HREF,
     "",
-    REPLY,
+    `${REPLY_BEFORE}${LINE_PHRASE}${REPLY_AFTER} ${LINE_HREF}`,
     "",
     "Paul",
     "PunProfile",
