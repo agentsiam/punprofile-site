@@ -15,9 +15,13 @@
  * whether the message is service or marketing is unsettled, and `recipients` in
  * `marketing.ts` requires marketing consent, which none of that cohort holds.
  *
- * The picture beside the button is the proof block from the design system's
- * Email section: what pressing the button gives, in a 236px column, stacking
- * above the pill under 480px.
+ * **The picture beside the button is no longer a proof block.** It shows the free
+ * report's first page, and the design system says a proof block shows what
+ * pressing the button gives and nothing else; the button now goes to LINE, which
+ * does not give a report. It keeps the block's geometry and stacks the same way,
+ * and it is not a link, so there is still one action. What it illustrates is the
+ * paragraph above it rather than the button beside it, and that is a weaker job
+ * than the slot was built for.
  */
 
 import {
@@ -33,12 +37,21 @@ import {
   logoRow,
 } from "./emailShell";
 
-const HREF = `${SITE}/efc-assessment?src=email&campaign=survey-import-retake-2026-11`;
+/**
+ * LINE, not the assessment. `nurture-flow.md` section 3 names LINE the primary
+ * channel for this audience, email the fallback and the only one with a working
+ * send path, so email is the vehicle and this button is the handover.
+ *
+ * An add-friend link carries no query string, so `src` and `campaign` cannot
+ * ride on it: a click here is not attributed and the campaign name covers the
+ * send rather than the click.
+ */
+const HREF = "https://line.me/ti/p/m5CG2t8Aa4";
 
 const SUBJECT = "เมื่อไหร่จะได้ย้ายไป EU ตอบแบบสอบถามแล้วโหลดรายงานเลย";
 const HEADING = "มาดูกันว่าตอนนี้คุณอยู่จุดไหน";
 const PREHEADER = "ใช้เวลาแค่ไม่กี่นาที ก็เห็นว่าควรเริ่มแก้เรื่องไหนก่อน โดยไม่มีค่าใช้จ่าย";
-const CTA = "ทำ EFC และโหลดรายงานของคุณ";
+const CTA = "ทักทาง LINE";  // `cta.ts` › DESTINATIONS.line, with `LINE` fixed by the termbase
 const REPLY = "หากมีอะไรอยากสอบถาม ตอบกลับอีเมลนี้ได้เลยครับ";
 const FOOT = "คุณได้รับอีเมลนี้เนื่องจากคุณเคยทำแบบสอบถามของ PunProfile ไว้";
 
@@ -95,7 +108,7 @@ ${PARAGRAPHS.map(para).join("\n")}
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td class="stack" width="236" valign="middle" style="width:236px;padding:0 20px 0 0;">
-            <a href="${HREF}" style="display:block;text-decoration:none;"><img src="${PROOF_PICTURE}" width="236" alt="${PROOF_ALT}" style="display:block;width:100%;max-width:236px;height:auto;border:1px solid ${C.line};border-radius:8px;"></a>
+            <img src="${PROOF_PICTURE}" width="236" alt="${PROOF_ALT}" style="display:block;width:100%;max-width:236px;height:auto;border:1px solid ${C.line};border-radius:8px;">
           </td>
           <td class="stack" valign="middle">${button(HREF, CTA)}</td>
         </tr>
