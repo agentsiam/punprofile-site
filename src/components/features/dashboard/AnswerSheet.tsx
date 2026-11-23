@@ -34,6 +34,7 @@ export default function AnswerSheet({
   responses,
   corrected,
   dates,
+  reading,
 }: {
   leadId: Id<"leads">;
   /** When the survey was imported and the app last answered, for superseded rows. */
@@ -41,6 +42,17 @@ export default function AnswerSheet({
   /** The candidate's own answers, uncorrected. */
   responses: Record<string, unknown>;
   corrected: CorrectedRecord;
+  /**
+   * A field somebody read out of a prose answer, keyed by the question it was
+   * read from. It is what the job board searches on, so a coach who cannot see
+   * it cannot tell why a feed looked where it did.
+   *
+   * Not a correction. The answer stands, is not struck through, and the two are
+   * labelled differently on purpose: one says the candidate answered wrongly,
+   * this one says their prose had to be resolved before anything could be
+   * searched for.
+   */
+  reading?: { key: string; value: string; at: number | null; by: string | null };
 }) {
   // Read from the candidate's own record, so every row shows the question and
   // the answer THEY gave. The correction is rendered beside it, never in place
@@ -82,6 +94,7 @@ export default function AnswerSheet({
           leadId={leadId}
           row={r}
           correction={corrected.byKey.get(r.key)}
+          reading={reading && reading.key === r.key ? reading : undefined}
           open={editing === r.key}
           onOpen={() => setEditing(editing === r.key ? null : r.key)}
           onDone={() => setEditing(null)}
@@ -92,7 +105,12 @@ export default function AnswerSheet({
         <>
           <h3 className="mt-6 text-label-large text-on-surface-variant">Carried across from the sheet</h3>
           {columns.map((r) => (
-            <QaRow key={r.key} leadId={leadId} row={r} />
+            <QaRow
+              key={r.key}
+              leadId={leadId}
+              row={r}
+              reading={reading && reading.key === r.key ? reading : undefined}
+            />
           ))}
         </>
       )}
@@ -116,6 +134,7 @@ function QaRow({
   leadId,
   row,
   correction,
+  reading,
   open,
   onOpen,
   onDone,
@@ -123,6 +142,7 @@ function QaRow({
   leadId: Id<"leads">;
   row: AnswerRow;
   correction?: FieldCorrection;
+  reading?: { value: string; at: number | null; by: string | null };
   open?: boolean;
   onOpen?: () => void;
   onDone?: () => void;
@@ -173,6 +193,25 @@ function QaRow({
                 undo
               </button>
             </p>
+          )}
+
+          {/* Not struck through and not pilled "yours": the answer above is
+              intact and this is a reading of it, which the label has to say or
+              the row claims the candidate chose a category they never saw. */}
+          {reading && (
+            <>
+              <p className="text-body-large text-on-surface">
+                {reading.value}
+                <span className="ml-2 whitespace-nowrap rounded-full bg-secondary-container px-2 py-0.5 text-body-medium text-on-primary-container">
+                  our reading
+                </span>
+              </p>
+              <p className="mt-1 text-body-medium text-on-surface-variant">
+                The field the job board searches, read from the answer above
+                {reading.by ? ` by ${reading.by}` : ""}
+                {reading.at ? `, ${stamp(reading.at)}` : ""}
+              </p>
+            </>
           )}
 
           {row.options && onOpen && (

@@ -270,6 +270,16 @@ export default function RecordPage({ leadId }: { leadId: Id<"leads"> }) {
               responses={lead.responses}
               corrected={corrected}
               dates={{ surveyAt: lead.createdAt, appAt: lead.lastActivityAt }}
+              reading={
+                lead.roleCategory
+                  ? {
+                      key: "targetRole",
+                      value: lead.roleCategory,
+                      at: lead.roleCategoryAt,
+                      by: lead.roleCategoryBy,
+                    }
+                  : undefined
+              }
             />
           </div>
         </Section>

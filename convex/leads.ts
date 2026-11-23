@@ -921,6 +921,27 @@ export const getForAdmin = query({
       cvReceivedAt: lead.cvReceivedAt ?? null,
       cvReceivedBy: lead.cvReceivedBy ?? null,
       /**
+       * The field a person read out of this lead's own Q8 answer, where that
+       * answer is prose the keyword table cannot read.
+       *
+       * Projected for two reasons. The job board searches on it, so a coach
+       * reading only the raw answer cannot tell which field the feed actually
+       * looked for, and a screen that showed one while searching the other
+       * would be lying in the way `linkedinUrl` above is kept apart from the
+       * candidate's own rating. And it belongs in the subject-access export
+       * this whitelist feeds: someone asking what is held about them is
+       * entitled to the reading we made of their words, not only the words.
+       *
+       * It is a reading and not a correction, so the answer it came from is
+       * never struck through on the sheet. `corrections.ts` is the other
+       * mechanism and asserts the candidate answered wrongly; this one asserts
+       * only that prose had to be resolved to a category before anything could
+       * be searched for.
+       */
+      roleCategory: lead.roleCategory ?? null,
+      roleCategoryAt: lead.roleCategoryAt ?? null,
+      roleCategoryBy: lead.roleCategoryBy ?? null,
+      /**
        * Resolved from `consentEvents`, per channel and per purpose. This is the
        * only field that can answer "may we send them a job digest", and today
        * it answers `never_asked` for every lead in the database, which is
