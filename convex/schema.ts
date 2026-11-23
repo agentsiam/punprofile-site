@@ -509,6 +509,7 @@ export default defineSchema({
           v.literal("fb_group_post"),
           v.literal("fb_pinned_post"),
           v.literal("line_oa"),
+          v.literal("email"),
           v.literal("direct"),
           v.literal("referral"),
           v.literal("other"),

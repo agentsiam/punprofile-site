@@ -39,12 +39,24 @@ for (const [q, expected] of [
   ["?src=FB", "fb_group_post"],
   ["?src=Pinned", "fb_pinned_post"],
   ["?utm_source=line", "line_oa"],
+  ["?src=email", "email"],
+  ["?src=Newsletter", "email"],
   ["?source=ref", "referral"],
 ] as const) {
   check(`${q} → ${expected}`, parseAttribution(q, T).channel === expected);
 }
 
 // --- the honesty invariants ----------------------------------------------
+
+// A send is a channel PunProfile owns, so it must not fall through to `other`:
+// a column of `other` rows does not answer how an email performed.
+const send = parseAttribution("?src=email&campaign=survey-import-retake-2026-11-24", T);
+check("a send lands on email, not other", send.channel === "email", send.channel);
+check(
+  "the send's own name survives intact",
+  send.campaign === "survey-import-retake-2026-11-24",
+  send.campaign,
+);
 
 const unknown = parseAttribution("?src=tiktok", T);
 check("an unrecognised source becomes other, not direct", unknown.channel === "other");
