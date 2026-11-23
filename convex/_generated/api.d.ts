@@ -49,6 +49,7 @@ import type * as reportEmail from "../reportEmail.js";
 import type * as reportNotice from "../reportNotice.js";
 import type * as reportRoles from "../reportRoles.js";
 import type * as retakeEmail from "../retakeEmail.js";
+import type * as retakeSend from "../retakeSend.js";
 import type * as retakeTest from "../retakeTest.js";
 import type * as retention from "../retention.js";
 import type * as scoring from "../scoring.js";
@@ -107,6 +108,7 @@ declare const fullApi: ApiFromModules<{
   reportNotice: typeof reportNotice;
   reportRoles: typeof reportRoles;
   retakeEmail: typeof retakeEmail;
+  retakeSend: typeof retakeSend;
   retakeTest: typeof retakeTest;
   retention: typeof retention;
   scoring: typeof scoring;
