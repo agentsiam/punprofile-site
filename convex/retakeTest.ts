@@ -1,13 +1,14 @@
 /**
  * Send the retake email to the admin address, to see it in a real inbox.
  *
- * **It takes no recipient.** The address comes from `ADMIN_EMAIL` on the
- * deployment, which is where `notify.ts` already sends new-lead alerts, so this
- * reaches somebody this system emails anyway and there is no argument that could
- * point it at a candidate. That is the same property `marketingSend`'s `only`
- * argument protects, and the reason it filters the consented list rather than
- * replacing it: nothing here should be able to name a recipient it would not
- * otherwise have reached.
+ * **It takes no recipient.** The address is built from `ADMIN_EMAIL` on the
+ * deployment, which is where `notify.ts` already sends new-lead alerts, with a
+ * `+test<tag>` added: Gmail delivers any plus-tag to the same mailbox, so the
+ * tag sorts one test from another without naming anybody new. The tag is
+ * stripped to lowercase letters, digits and hyphens, so nothing passed here can
+ * reach outside that one mailbox, and there is no argument that could point this
+ * at a candidate. That is the property `marketingSend`'s `only` argument protects
+ * when it filters the consented list rather than replacing it.
  *
  * It is a test of the frame, not of the campaign. Whether the retake email may
  * be sent to the 78 at all is the consent question, which is unsettled and lives
@@ -27,24 +28,27 @@ export const send = internalAction({
   args: {
     /** What fills `{ชื่อ}`. Pass nothing to see the no-name greeting that ships. */
     name: v.optional(v.string()),
+    /** Sorts one test from another in the inbox. Defaults to the email's name. */
+    tag: v.optional(v.string()),
   },
   handler: async (_ctx, args): Promise<{ sent: boolean; reason?: string }> => {
     const key = process.env.RESEND_API_KEY;
     const from = process.env.MAIL_FROM;
-    const to = process.env.ADMIN_EMAIL;
+    const admin = process.env.ADMIN_EMAIL;
 
-    // Refuse loudly and name which one is missing, rather than half-sending.
-    for (const [label, value] of [
-      ["RESEND_API_KEY", key],
-      ["MAIL_FROM", from],
-      ["ADMIN_EMAIL", to],
-    ] as const) {
-      if (!value) {
-        const reason = `${label} is not set on this deployment, so nothing was sent.`;
-        console.warn(`retakeTest.send refused: ${reason}`);
-        return { sent: false, reason };
-      }
-    }
+    /** Refuse loudly and name which one is missing, rather than half-sending. */
+    const refuse = (label: string) => {
+      const reason = `${label} is not set on this deployment, so nothing was sent.`;
+      console.warn(`retakeTest.send refused: ${reason}`);
+      return { sent: false, reason };
+    };
+    if (!key) return refuse("RESEND_API_KEY");
+    if (!from) return refuse("MAIL_FROM");
+    if (!admin) return refuse("ADMIN_EMAIL");
+
+    /** `name@host` becomes `name+test<tag>@host`, and the tag cannot escape it. */
+    const tag = (args.tag ?? "retake").toLowerCase().replace(/[^a-z0-9-]/g, "") || "retake";
+    const to = admin.replace(/^([^@]+)@/, `$1+test${tag}@`);
 
     const name = args.name?.trim() || null;
     const res = await fetch("https://api.resend.com/emails", {
@@ -68,7 +72,7 @@ export const send = internalAction({
       console.warn(`retakeTest.send failed: ${reason}`);
       return { sent: false, reason };
     }
-    console.log(`retakeTest.send: sent the retake email to the admin address, greeting ${name ? "filled" : "empty"}`);
+    console.log(`retakeTest.send: sent to the admin mailbox tagged +test${tag}, greeting ${name ? "filled" : "empty"}`);
     return { sent: true };
   },
 });
