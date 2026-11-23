@@ -1,5 +1,6 @@
 import { internalMutation } from "./_generated/server";
 import { v } from "convex/values";
+import { knowsCategory } from "../src/lib/role-keywords";
 
 /**
  * TASK-053: backfill the historical Lead Discovery Survey responses.
@@ -126,5 +127,117 @@ export const importLegacyLeads = internalMutation({
       }
     }
     return { inserted, updated };
+  },
+});
+
+/**
+ * Sets `leads.roleCategory` from a field a person read out of each lead's own
+ * free-text answer to the field question. Fed the reviewed file directly:
+ *
+ *   npx convex run importLeads:setRoleFields "$(cat data/role-field-2026-11-23.json)"
+ *
+ * **The raw answer is never touched.** What the candidate wrote stays in
+ * `responses.targetRole` and is still what the coach's answer record shows.
+ * Only the reading is stored, beside it, with who read it and when.
+ *
+ * **`answer` is a guard, not data.** It is the answer as the reader saw it, and
+ * a row whose answer has changed since is skipped and reported rather than
+ * written: a reading belongs to the words it was made from. Same reason
+ * `backfill-leads.ts` refuses a shifted sheet instead of guessing.
+ *
+ * **Idempotent.** A row already holding the same field is left alone and
+ * counted as unchanged, so a run that dies half way is resumed by running it
+ * again (R45). Nothing here depends on the deploy that added the field, and
+ * nothing the deploy does depends on this having run (R43): before it, the
+ * write is rejected by the schema and nothing happens; after it and before
+ * this, every row's field is absent and `portal.ts` falls back to the raw
+ * answer, which is today's behaviour.
+ *
+ * **Stamped with the day the answers were read, not the day this ran**, for
+ * the reason `backfillEmailConsent` dates consent to submission: the timestamp
+ * answers when the reading was made, and a reading made on one day does not
+ * become a different one because the write was slow. It also keeps re-runs
+ * byte-identical.
+ *
+ * `field: null` is an answer that named no field, or named only a sector no
+ * category covers. Those are left absent rather than guessed, which is the
+ * whole point of `knowsCategory`: never searched reads differently to nothing
+ * found.
+ */
+export const setRoleFields = internalMutation({
+  args: {
+    /** ISO date the answers were read. Written to every row it sets. */
+    readOn: v.string(),
+    /** Who read them. */
+    by: v.string(),
+    /** Which export the answers were read out of. Not stored: it is here so
+     *  the file says what it was made from (C33). */
+    source: v.string(),
+    /** The rule the reader applied, in one sentence. Not stored, same reason. */
+    rule: v.string(),
+    leads: v.array(
+      v.object({
+        leadId: v.id("leads"),
+        /** The answer as the reader saw it. Checked, never written. */
+        answer: v.string(),
+        /** One of ROLE_CATEGORIES, or null where the answer named no field. */
+        field: v.union(v.string(), v.null()),
+        /** Why, for whoever reads the run. Not stored. */
+        note: v.string(),
+        /** How many countries the lead named. Context only, not stored. */
+        countries: v.optional(v.number()),
+      }),
+    ),
+  },
+  handler: async (ctx, args) => {
+    const at = Date.parse(`${args.readOn}T00:00:00Z`);
+    if (Number.isNaN(at)) throw new Error(`readOn is not an ISO date: ${args.readOn}`);
+
+    // A category the keyword table cannot read would store a field that finds
+    // nothing and still reports itself as searched, which is worse than absent.
+    // The whole batch stops, because one bad value means the file is wrong.
+    for (const l of args.leads) {
+      if (l.field !== null && !knowsCategory(l.field)) {
+        throw new Error(`not a role category the keyword table holds: ${l.field}`);
+      }
+    }
+
+    let set = 0;
+    let unchanged = 0;
+    let unmapped = 0;
+    const missing: string[] = [];
+    const changed: string[] = [];
+
+    for (const l of args.leads) {
+      if (l.field === null) {
+        unmapped++;
+        continue;
+      }
+      const lead = await ctx.db.get(l.leadId);
+      // Erased since the export was taken, which is a PDPA deletion doing
+      // exactly what it should.
+      if (!lead) {
+        missing.push(l.leadId);
+        continue;
+      }
+      const current = (lead.responses ?? {}) as Record<string, unknown>;
+      if (current.targetRole !== l.answer) {
+        changed.push(l.leadId);
+        continue;
+      }
+      if (lead.roleCategory === l.field) {
+        unchanged++;
+        continue;
+      }
+      await ctx.db.patch(l.leadId, {
+        roleCategory: l.field,
+        roleCategoryAt: at,
+        roleCategoryBy: args.by,
+        updatedAt: Date.now(),
+      });
+      set++;
+    }
+
+    return { set, unchanged, unmapped, missing, changed };
   },
 });

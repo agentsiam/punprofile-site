@@ -131,6 +131,38 @@ export default defineSchema({
     responses: v.optional(v.record(v.string(), v.any())),
 
     /**
+     * The field a person read out of this lead's own `responses.targetRole`,
+     * one of ROLE_CATEGORIES.
+     *
+     * The assessment asks for a field and takes a tap, so an app-native lead
+     * never needs this. The 90 imported survey leads answered the same
+     * question as free text, and 78 of those answers are prose: a sector, a
+     * list of titles, an essay, or in one case a list of countries. The
+     * keyword table in `role-keywords.ts` cannot read any of them, which is
+     * what `knowsCategory` is there to say out loud rather than report as an
+     * empty market.
+     *
+     * **Read by `portal.ts` in preference to `responses.targetRole`, and the
+     * raw answer is never overwritten.** The candidate's own words stay in
+     * `responses` and are what the coach's answer record shows. This field is
+     * one person's reading of them, which is a different kind of thing, and
+     * the two are kept apart for the same reason `crmStatus` is not `status`.
+     *
+     * Mapping the free text automatically was tried and rejected; the
+     * reasoning is in `role-keywords.ts` above `knowsCategory`. An answer that
+     * names no field, or only a sector no category covers, is left absent
+     * rather than guessed.
+     */
+    /** @absent none — nobody has read this lead's answer, or it named no field */
+    roleCategory: v.optional(v.string()),
+    /** The day the answer was read, not the day the backfill ran.
+     *  @absent none — only present alongside a field */
+    roleCategoryAt: v.optional(v.number()),
+    /** Who read it. `backfill:role-field` for the 23/11/2026 pass.
+     *  @absent none — only present alongside a field */
+    roleCategoryBy: v.optional(v.string()),
+
+    /**
      * **Legacy. Written by nothing, read by nothing, since 15/08/2026.**
      *
      * This held the denormalised dimension scores, computed at answer time.

@@ -239,10 +239,18 @@ async function movePersonalRecords(
  * Split out from the write so the backfill can report what it would do without
  * doing it, and so the rules are readable as rules rather than as a patch call.
  *
- * The three coach fields move as groups: text, its date and its author travel
- * together or not at all, because a note dated by one row and written by
- * another is a record of nothing. A group moves only when the survivor has
- * nothing in it, so a coach's own words are never overwritten by an older row's.
+ * The four read-by-a-person fields move as groups: the value, its date and its
+ * author travel together or not at all, because a note dated by one row and
+ * written by another is a record of nothing. A group moves only when the
+ * survivor has nothing in it, so a coach's own words are never overwritten by
+ * an older row's.
+ *
+ * `roleCategory` carries one condition more than the other three, because it is
+ * not a judgement about the person but a reading of one answer of theirs. It
+ * travels only when the surviving answer is the one it was read from, which
+ * here means the survivor had no answer of its own and took the dropped row's.
+ * Where both answered, the survivor's answer won above and a reading of the
+ * answer that lost is a reading of nothing.
  */
 export function mergedFields(keep: Doc<"leads">, drop: Doc<"leads">): Partial<Doc<"leads">> {
   const patch: Partial<Doc<"leads">> = {};
@@ -290,6 +298,15 @@ export function mergedFields(keep: Doc<"leads">, drop: Doc<"leads">): Partial<Do
     patch.crmStatusReason = drop.crmStatusReason;
     patch.crmStatusAt = drop.crmStatusAt;
     patch.crmStatusBy = drop.crmStatusBy;
+  }
+  if (
+    keep.roleCategory === undefined &&
+    drop.roleCategory !== undefined &&
+    (keep.responses ?? {}).targetRole === undefined
+  ) {
+    patch.roleCategory = drop.roleCategory;
+    patch.roleCategoryAt = drop.roleCategoryAt;
+    patch.roleCategoryBy = drop.roleCategoryBy;
   }
 
   // The Situation panel, row by row rather than whole: the survivor's own rows

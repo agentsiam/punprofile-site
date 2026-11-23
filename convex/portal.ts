@@ -262,7 +262,21 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
     const resp = (lead.responses ?? {}) as Record<string, unknown>;
     const target = {
       countries: Array.isArray(resp.targetCountries) ? (resp.targetCountries as string[]) : [],
-      role: typeof resp.targetRole === "string" ? resp.targetRole : null,
+      /**
+       * `roleCategory` first: an imported survey lead answered the field
+       * question as free text, and `leads.roleCategory` is the field a person
+       * read out of it. The raw answer is the fallback and is what an
+       * app-native lead has, since the assessment takes a tap.
+       *
+       * The feed and the line introducing it both read this one value, so the
+       * screen cannot name one field and search another.
+       */
+      role:
+        typeof lead.roleCategory === "string"
+          ? lead.roleCategory
+          : typeof resp.targetRole === "string"
+            ? resp.targetRole
+            : null,
     };
     return {
       target,
