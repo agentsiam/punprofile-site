@@ -3,8 +3,10 @@
  * Survey, on the **service** consent they gave when they filled it in.
  *
  * **Why this is not `marketingSend`.** That one resolves `("email", "marketing")`
- * and returns 24 leads, none of them this cohort: the imported survey leads gave
- * service consent and were never asked for marketing. Paul's call, 23/11/2026,
+ * and reaches nobody in this cohort: the imported survey leads gave service
+ * consent and were never asked for marketing. The count it does return is not
+ * restated here, because a comment holding a generated figure is a place for a
+ * stale number to hide; `npx convex run audience:tally` prints it. Paul's call, 23/11/2026,
  * is that this message is service, so it goes on the consent these people
  * actually gave rather than through a gate they would all fail. The gate is not
  * removed, it is a different purpose: `resolveConsent(events, "email",
