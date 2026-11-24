@@ -29,7 +29,7 @@ Copy `.env.example` to `.env.local` and fill in real values. See
 | `CONVEX_DEPLOY_KEY` | nowhere | **Not set, by decision.** The Vercel build has no deploy key and never runs `convex deploy`; functions are published with `npx convex dev --once`. Setting it would point the build at `dashing-shepherd-41`. See CLAUDE.md R42. |
 | `RESEND_API_KEY` | Convex environment (`npx convex env set`) | Never exposed to the client — email actions run in Convex, not Next.js. |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Next.js client | Google Analytics 4. Unset means no tag. Inlined at build time, so a change on Vercel needs a deploy. See `src/lib/analytics.ts`. |
-| `NEXT_PUBLIC_POSTHOG_KEY` / `NEXT_PUBLIC_POSTHOG_HOST` | Next.js client | Analytics; must be configured to exclude PII (see PRD § 2 Security). |
+| `NEXT_PUBLIC_POSTHOG_KEY` / `NEXT_PUBLIC_POSTHOG_HOST` | nowhere | **Not set, and PostHog is not installed.** The PRD names it and no code ever loaded it, so until GA4 arrived nothing measured traffic at all. The two constraints the PRD put on analytics came across to `src/lib/analytics.ts` rather than lapsing with the product that named them: no personal data reaches an analytics product, and analytics is never a hard dependency of the assessment. |
 | `NEXT_PUBLIC_SENTRY_DSN` | Next.js client/server/edge | Error tracking. |
 | `SENTRY_AUTH_TOKEN` | Build time only | Source map upload; not needed at runtime. |
 | `ADMIN_EMAILS` | Convex Auth config | Comma-separated allowlist of coach accounts — no public sign-up path. Read via `convex/adminEmails.ts`. |
@@ -37,8 +37,8 @@ Copy `.env.example` to `.env.local` and fill in real values. See
 
 ## Stack
 
-Next.js (App Router) + Convex + Convex Auth + Resend + PostHog + Sentry,
-deployed on Vercel. See `docs/VISION.md` § Tech Stack for the rationale
+Next.js (App Router) + Convex + Convex Auth + Resend + Google Analytics 4 +
+Sentry, deployed on Vercel. See `docs/VISION.md` § Tech Stack for the rationale
 behind each choice.
 
 ## Build Status
