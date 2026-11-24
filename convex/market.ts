@@ -19,6 +19,8 @@ const role = v.object({
   country: v.string(),
   firstSeen: v.string(),
   url: v.string(),
+  /** Optional so a push from before the field existed is still accepted. */
+  reason: v.optional(v.string()),
 });
 
 /**
@@ -49,6 +51,9 @@ export const replaceRoles = internalMutation({
         country: r.country,
         firstSeen: r.firstSeen,
         url: r.url,
+        // An empty reason is stored as absent rather than as "", so a row the
+        // log has nothing for reads the same as one pushed before the field.
+        reason: r.reason ? r.reason : undefined,
         syncedAt: now,
       });
       pushed.delete(r.id);
@@ -62,6 +67,7 @@ export const replaceRoles = internalMutation({
         country: r.country,
         firstSeen: r.firstSeen,
         url: r.url,
+        ...(r.reason ? { reason: r.reason } : {}),
         syncedAt: now,
       });
       added++;
@@ -142,6 +148,7 @@ export async function feedFor(
       country: r.country,
       firstSeen: r.firstSeen,
       url: r.url,
+      reason: r.reason ?? null,
       targetId,
     });
   }

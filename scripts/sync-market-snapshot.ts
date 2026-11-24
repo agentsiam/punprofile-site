@@ -43,6 +43,8 @@ export interface JobRow {
   country: string;
   first_seen: string;
   verdict: string;
+  /** The run's own words on why it reached this verdict. Absent on older rows. */
+  reason?: string;
 }
 
 export interface MarketSnapshot {
@@ -96,9 +98,19 @@ export function publishedRoles(rows: JobRow[]) {
       title: r.title ?? "",
       country: r.country === "UK" ? "United Kingdom" : r.country,
       firstSeen: r.first_seen,
-      // The posting itself, for the candidate's "Jobs for you" feed. Already
-      // public in the group; the internal `reason` stays out.
+      // The posting itself, for the candidate's job board. Already public in
+      // the group.
       url: r.url ?? "",
+      /**
+       * Why the pipeline published it. It used to stay out of the feed as
+       * internal, and that is worth restating rather than silently reversing:
+       * what the run writes here is the sponsorship, relocation and language
+       * evidence quoted off the posting, which is the first thing this audience
+       * has to know and the gate `10_Methodology.md` tests first. Withholding it
+       * left the board strictly worse than the group, where the posted text says
+       * these things. It travels as the pipeline's note, never as product copy.
+       */
+      reason: r.reason ?? "",
     }))
     .sort((a, b) => b.firstSeen.localeCompare(a.firstSeen));
 }

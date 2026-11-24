@@ -2157,6 +2157,20 @@ export default defineSchema({
     firstSeen: v.string(),
     /** Empty when the log has no link. */
     url: v.string(),
+    /**
+     * Why the pipeline published it, in its own words, as `reason` in
+     * `job-log.json`. It is the sponsorship, relocation and language evidence
+     * read off the posting, which is the one thing a candidate here cannot get
+     * from the job advert at a glance and the first gate the method tests.
+     *
+     * It is written by the evening run, in English, and nobody has reviewed it
+     * as candidate copy. The screen presents it as the pipeline's note rather
+     * than as the product's own sentence, and the day it reads as ours it needs
+     * the language system like any other string.
+     *
+     * @absent notyet — pushed before the field existed, or the log had none
+     */
+    reason: v.optional(v.string()),
     /** When the push that last wrote this row ran. */
     syncedAt: v.number(),
   })

@@ -2029,7 +2029,11 @@ function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
   const roles = useMemo(
     () =>
       data.feed?.roles ??
-      rolesFor(data.target.countries, data.target.role, 30, now).map((r) => ({ ...r, targetId: null })),
+      rolesFor(data.target.countries, data.target.role, 30, now).map((r) => ({
+        ...r,
+        targetId: null,
+        reason: null,
+      })),
     [data.feed, data.target, now],
   );
   const saved = new Set(data.jobs.flatMap((j) => [j.jobLogId ?? "", j.jobUrl ?? ""]).filter(Boolean));
@@ -2062,6 +2066,17 @@ function Feed({ data, readOnly }: { data: PortalView; readOnly: boolean }) {
                 {r.employer} · {r.country} · {t(C.FEED_SEEN, { date: date(Date.parse(`${r.firstSeen}T12:00:00Z`)) })}
               </p>
             </div>
+            {/*
+              Why the pipeline published it, in its own words: the sponsorship,
+              relocation and language evidence read off the posting. It carries
+              no label, which is not laziness. A label is a candidate-facing
+              string and would have to go through the language system (R49),
+              and this line is the run's note rather than the product's
+              sentence. Unlabelled it reads as a note about the job, which is
+              what it is. It is English, like the title and the employer beside
+              it, and nobody has reviewed it as copy.
+            */}
+            {r.reason && <p className="text-body-small text-on-surface-variant">{r.reason}</p>}
             <div className="mt-auto flex flex-wrap items-center gap-4">
               {r.url && (
                 <a href={r.url} target="_blank" rel="noreferrer" className="text-body-medium text-ink-deep underline">
