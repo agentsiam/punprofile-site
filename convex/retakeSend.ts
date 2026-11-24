@@ -23,58 +23,79 @@
  */
 
 import { v } from "convex/values";
-import { internalAction, internalQuery } from "./_generated/server";
+import { internalAction, internalMutation, internalQuery } from "./_generated/server";
+import type { Doc, Id } from "./_generated/dataModel";
 import { internal } from "./_generated/api";
 import { eventsFor } from "./consentDb";
 import { resolveConsent } from "../src/lib/consent";
 import { knowsCategory } from "../src/lib/role-keywords";
+import { audienceFor } from "./audience";
 import { retakeEmailHtml, retakeEmailSubject, retakeEmailText } from "./retakeEmail";
 
-type Recipient = { leadId: string; email: string; readableField: boolean };
+type Recipient = { leadId: Id<"leads">; email: string; readableField: boolean };
+
+/**
+ * The campaign's own name, and the key the duplicate guard turns on.
+ *
+ * Before this existed nothing logged a send and `send` had no check, so a
+ * second run reached everybody a first run had already reached and the only
+ * thing standing in the way was whoever remembered. `audience.ts` reads the
+ * `sends` table in the same call that assembles the list, so "already had this
+ * message" is no longer a thing a sender can forget to ask.
+ */
+const CAMPAIGN = "retake-2026";
+
+/** Rows this campaign is about: the imported survey leads, and nobody else. */
+const IS_SURVEY_IMPORT = (lead: Doc<"leads">) => lead.consentSource === "survey_import";
 
 /**
  * Everyone this send may reach, and the counts that say who they are.
  *
  * Read-only. Every count names the test that selected it, because a bare number
  * of people is wrong by default on this table.
+ *
+ * **The scan is gone from this file.** It used to run here, and again in
+ * `sendable` below with the same test written a second time, and neither read
+ * conversion state: that is how a retake invitation reached a paying client.
+ * Both now call `audienceFor`, which resolves consent first and the lifecycle
+ * stage second and will not hand back a client.
  */
 export const cohort = internalQuery({
   args: {},
   handler: async (ctx) => {
-    let imported = 0;
-    let withEmail = 0;
+    const audience = await audienceFor(ctx, {
+      channel: "email",
+      purpose: "service",
+      campaign: CAMPAIGN,
+      cohort: IS_SURVEY_IMPORT,
+    });
+
+    let readable = 0;
     let alsoMarketing = 0;
-    const list: Recipient[] = [];
-
-    for (const lead of await ctx.db.query("leads").collect()) {
-      if (lead.consentSource !== "survey_import") continue;
-      imported++;
-      if (!lead.email) continue;
-      withEmail++;
-
-      const events = await eventsFor(ctx, lead._id);
-      if (resolveConsent(events, "email", "service").status !== "opted_in") continue;
-      if (resolveConsent(events, "email", "marketing").status === "opted_in") alsoMarketing++;
-
-      list.push({
-        leadId: lead._id,
-        email: lead.email,
-        readableField: knowsCategory(lead.roleCategory ?? null),
-      });
+    for (const r of audience.recipients) {
+      const lead = await ctx.db.get(r.leadId);
+      if (lead && knowsCategory(lead.roleCategory ?? null)) readable += 1;
+      if (resolveConsent(await eventsFor(ctx, r.leadId), "email", "marketing").status === "opted_in") {
+        alsoMarketing += 1;
+      }
     }
 
     return {
-      /** Rows carrying `consentSource: "survey_import"`. */
-      imported,
-      /** Of those, the ones holding an email address at all. */
-      withEmail,
-      /** Of those, the ones whose email+service consent resolves to opted_in. */
-      sendable: list.length,
+      /** Rows read, traffic included. Not a headcount; see `audience.ts`. */
+      rowsRead: audience.rowsRead,
+      /** Of the imported survey leads, the ones both tests let through. */
+      sendable: audience.recipients.length,
+      /**
+       * Why the rest were left out. `stage` is the one this campaign exists to
+       * respect: a client is being served rather than sold to, and the free
+       * instrument is a step they have already paid to skip.
+       */
+      excluded: audience.excluded,
       /** Of the sendable, how many also hold a marketing opt-in. */
       alsoMarketing,
       /** Of the sendable, the split the draft's 78 came from. */
-      readableField: list.filter((r) => r.readableField).length,
-      unreadableField: list.filter((r) => !r.readableField).length,
+      readableField: readable,
+      unreadableField: audience.recipients.length - readable,
     };
   },
 });
@@ -83,18 +104,49 @@ export const cohort = internalQuery({
 export const sendable = internalQuery({
   args: {},
   handler: async (ctx): Promise<Recipient[]> => {
+    const audience = await audienceFor(ctx, {
+      channel: "email",
+      purpose: "service",
+      campaign: CAMPAIGN,
+      cohort: IS_SURVEY_IMPORT,
+    });
     const out: Recipient[] = [];
-    for (const lead of await ctx.db.query("leads").collect()) {
-      if (lead.consentSource !== "survey_import" || !lead.email) continue;
-      const events = await eventsFor(ctx, lead._id);
-      if (resolveConsent(events, "email", "service").status !== "opted_in") continue;
+    for (const r of audience.recipients) {
+      const lead = await ctx.db.get(r.leadId);
       out.push({
-        leadId: lead._id,
-        email: lead.email,
-        readableField: knowsCategory(lead.roleCategory ?? null),
+        leadId: r.leadId,
+        email: r.address,
+        readableField: knowsCategory(lead?.roleCategory ?? null),
       });
     }
     return out;
+  },
+});
+
+/**
+ * Written after a send actually leaves, one row per person per campaign.
+ *
+ * It is the thing that makes a second run safe, so it is written per recipient
+ * rather than once at the end: a run that dies half way leaves the people it
+ * reached marked and the rest still reachable, which is what lets the same
+ * command be the resume (R45).
+ */
+export const recordSend = internalMutation({
+  args: { leadId: v.id("leads"), to: v.string() },
+  returns: v.null(),
+  handler: async (ctx, args) => {
+    const already = await ctx.db
+      .query("sends")
+      .withIndex("by_campaign_lead", (q) => q.eq("campaign", CAMPAIGN).eq("leadId", args.leadId))
+      .first();
+    if (already !== null) return null;
+    await ctx.db.insert("sends", {
+      leadId: args.leadId,
+      campaign: CAMPAIGN,
+      to: args.to,
+      sentAt: Date.now(),
+    });
+    return null;
   },
 });
 
@@ -161,8 +213,14 @@ export const send = internalAction({
             html: retakeEmailHtml(null),
           }),
         });
-        if (res.ok) sent++;
-        else {
+        if (res.ok) {
+          sent++;
+          // Logged per recipient, not once at the end: see `recordSend`.
+          await ctx.runMutation(internal.retakeSend.recordSend, {
+            leadId: r.leadId as Id<"leads">,
+            to: r.email,
+          });
+        } else {
           failed++;
           console.warn(`retakeSend: Resend returned ${res.status} for one recipient`);
         }

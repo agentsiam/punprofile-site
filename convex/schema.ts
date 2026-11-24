@@ -654,6 +654,10 @@ export default defineSchema({
       candidateAccess: v.optional(v.number()),
       tokenRequests: v.optional(v.number()),
       targets: v.optional(v.number()),
+      /** Optional for the same reason as the counts above it: a deletion
+       *  recorded before `sends` existed has no such count, and backfilling a
+       *  zero would claim we checked a table that was not there to check. */
+      sends: v.optional(v.number()),
       preparations: v.optional(v.number()),
       bookingInbox: v.optional(v.number()),
       /**
@@ -2207,4 +2211,38 @@ export default defineSchema({
     createdAt: v.number(),
     by: v.string(),
   }).index("by_lead", ["leadId", "priority"]),
+
+  /**
+   * One row per person per campaign, written when a send with a list behind it
+   * actually goes out.
+   *
+   * **It exists because a second run reached the same people.** The retake
+   * campaign logged nothing and its sender had no guard, so the only thing
+   * standing between a cohort and a duplicate message was whoever remembered
+   * running it. `convex/audience.ts` reads this table in the same call that
+   * assembles the list, which is what makes "already had this message" an
+   * answer the sender cannot forget to ask for.
+   *
+   * **Not a delivery log.** It records that this address was addressed by this
+   * campaign, nothing about whether the mail arrived, opened or bounced. A
+   * delivery question is Resend's to answer and a second table's to hold.
+   *
+   * It carries a `leadId`, so it is in `movePersonalRecords` and `eraseLead`
+   * and `verify:cascades` fails it otherwise.
+   */
+  sends: defineTable({
+    leadId: v.id("leads"),
+    /** The campaign's own name, as its sender passes it: `retake-2026`. Free
+     *  text rather than a union, because a campaign is an act and not a
+     *  schema change, and a typo costs a duplicate send rather than a wrong
+     *  one. */
+    campaign: v.string(),
+    /** The address it went to, as it was at the time. Kept because a candidate
+     *  can change their address and the question this table answers is whether
+     *  this person has had this message, not whether this mailbox has. */
+    to: v.string(),
+    sentAt: v.number(),
+  })
+    .index("by_campaign_lead", ["campaign", "leadId"])
+    .index("by_lead", ["leadId"]),
 });

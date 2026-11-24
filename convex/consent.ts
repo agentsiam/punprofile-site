@@ -20,6 +20,7 @@ import type { Id } from "./_generated/dataModel";
 import { v, ConvexError } from "convex/values";
 import { requireAdmin } from "./leads";
 import { eventsFor, recordConsent } from "./consentDb";
+import { audienceFor } from "./audience";
 import { resolveConsent, resolveAll, type ConsentChannel } from "../src/lib/consent";
 
 const channelValidator = v.union(v.literal("email"), v.literal("line"), v.literal("phone"));
@@ -119,8 +120,15 @@ export const forLead = query({
 });
 
 /**
- * Who may actually be sent a marketing message. The query TASK-060 and
- * TASK-082 must both call before they send anything.
+ * Who may actually be sent a marketing message, for the admin screen to read.
+ *
+ * **It no longer carries its own scan, and it is not the gate.** It used to say
+ * that the digest and the nurture track must both call it before sending, and
+ * no sender ever did, which made it one of four declared chokepoints with zero
+ * callers. The gate is `audienceFor` in `audience.ts`, which this delegates to:
+ * a consent-only list is exactly the list that reached a paying client, because
+ * consent says whether a channel may carry a purpose and says nothing about
+ * whether somebody is in an audience at all.
  *
  * It returns the empty list today and that is the correct answer, not a bug: no
  * screen asks for marketing consent, so nobody has given it. A digest built on
@@ -132,12 +140,16 @@ export const marketingAudience = query({
   args: { channel: channelValidator },
   handler: async (ctx, args) => {
     await requireAdmin(ctx);
-    const leads = await ctx.db.query("leads").collect();
+    const audience = await audienceFor(ctx, {
+      channel: args.channel,
+      purpose: "marketing",
+      campaign: null,
+    });
     const out: Array<{ leadId: Id<"leads">; fullName: string | null; optedInAt: number }> = [];
-    for (const lead of leads) {
-      const state = resolveConsent(await eventsFor(ctx, lead._id), args.channel, "marketing");
-      if (state.status === "opted_in" && state.optedInAt !== null) {
-        out.push({ leadId: lead._id, fullName: lead.fullName ?? null, optedInAt: state.optedInAt });
+    for (const r of audience.recipients) {
+      const state = resolveConsent(await eventsFor(ctx, r.leadId), args.channel, "marketing");
+      if (state.optedInAt !== null) {
+        out.push({ leadId: r.leadId, fullName: r.fullName, optedInAt: state.optedInAt });
       }
     }
     return out;

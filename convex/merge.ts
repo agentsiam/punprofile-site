@@ -185,7 +185,17 @@ async function movePersonalRecords(
     await ctx.db.patch(t._id, { priority: ++next });
   }
 
+  // Campaign sends move so the survivor keeps "already had this message". A
+  // merge that dropped them would re-open the duplicate the sends table exists
+  // to close: the same person, under their surviving row, back in a cohort they
+  // have already been mailed.
+  const sends = await ctx.db
+    .query("sends")
+    .withIndex("by_lead", (q) => q.eq("leadId", dropId))
+    .collect();
+
   for (const row of [
+    ...sends,
     ...targets,
     ...ticks,
     ...found,

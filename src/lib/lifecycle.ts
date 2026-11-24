@@ -143,3 +143,65 @@ export const LIFECYCLE_LABELS: Record<LifecycleState, string> = {
   placed: "Signed a contract",
   withdrawn: "Asked us to stop",
 };
+
+/**
+ * Whether a stage may be put in a list.
+ *
+ * `08_Coaching_Business.md` owns this rule and states an answer for every
+ * stage; this is that table and defines nothing (R1). It is a `Record` over the
+ * state union rather than a switch or a set, so a seventh stage added to
+ * `LIFECYCLE_STATES` fails the typecheck here until somebody answers for it.
+ * That is the point: reaching a stage grants no permission by itself, and the
+ * table is complete rather than a list of exclusions.
+ *
+ * **Two kinds of message and only one is governed.** A message to one person
+ * about their own result, booking, engagement or the roles found for them is
+ * part of the delivery and is addressed by the thing that caused it. A send with
+ * a list behind it reaches people because of who they are, and that is a
+ * campaign, a digest or a re-engagement.
+ *
+ * **It stops at the sale because every campaign asks for a step a client has
+ * already taken.** An invitation to try the free instrument reaches somebody who
+ * has paid for the human reading of it, and a digest of openings reaches
+ * somebody whose roles are already being found for them one at a time.
+ */
+export const LISTED_SEND_BY_STAGE: Record<LifecycleState, boolean> = {
+  lead: true,
+  sql: true,
+  consulted: true,
+  client: false,
+  placed: false,
+  withdrawn: false,
+};
+
+/**
+ * The predicate itself, keyed on the stage and nothing else.
+ *
+ * **`null` is in the audience, and that is not an oversight.** `stateFor`
+ * returns null for somebody who gave an email alone, which includes every blog
+ * subscriber holding a live marketing opt-in. `hasContact` tests whether
+ * somebody can be coached, not whether they can be emailed, so suppressing the
+ * null stage would empty the newsletter's own list. Whether anybody is reachable
+ * is the address they gave and the permission on it, never the stage.
+ *
+ * **The lawful basis is a separate test and neither answers for the other.** The
+ * consent record decides whether a channel may carry a purpose for one person
+ * and is read first. This decides whether somebody is in an audience at all.
+ *
+ * **Known limitation, stated rather than solved.** `client` covers `agreed`,
+ * `active`, `completed` and `lapsed` alike, so a past client reads the same as
+ * one mid-delivery and a message to past clients cannot be addressed without
+ * reaching people still being served. The answer is the `dormant` stage the
+ * spine names and `stateFor` does not return, not a second test beside this one.
+ */
+export function mayReceiveListedSend(state: LifecycleState | null): boolean {
+  if (state === null) return true;
+  return LISTED_SEND_BY_STAGE[state];
+}
+
+/** Why somebody was left out of a list, for the tally every audience returns (R52). */
+export type ExclusionReason =
+  | "no_address"
+  | "consent"
+  | "stage"
+  | "already_sent";

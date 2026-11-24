@@ -1,7 +1,7 @@
 import { v, ConvexError } from "convex/values";
 import { internalQuery, internalMutation, mutation } from "./_generated/server";
-import type { Id } from "./_generated/dataModel";
 import { recordConsent, eventsFor } from "./consentDb";
+import { audienceFor } from "./audience";
 import { resolveConsent } from "../src/lib/consent";
 
 /**
@@ -43,6 +43,17 @@ import { resolveConsent } from "../src/lib/consent";
 /**
  * Everyone who may currently be sent a marketing email.
  *
+ * **This used to carry its own scan and no longer does.** It tested consent and
+ * stopped there, which is how the newsletter could have reached a paying
+ * client: being entitled to write is not the same as having something to say,
+ * and a campaign asks for a step a client has already taken. `audience.ts` runs
+ * both tests in order and is the only place in `convex/` permitted to take an
+ * address off a `leads` row for a list.
+ *
+ * `campaign: null`, deliberately. A newsletter is repeatable and having had
+ * last month's issue is not a reason to miss this one. A one-shot campaign
+ * passes its own name and gets the duplicate guard with it.
+ *
  * A full scan, which is correct at this size and stated rather than assumed: at
  * a few hundred leads this reads the table once, and a per-lead consent lookup
  * would be the more expensive mistake. Revisit alongside `listForAdmin`, which
@@ -51,14 +62,12 @@ import { resolveConsent } from "../src/lib/consent";
 export const recipients = internalQuery({
   args: {},
   handler: async (ctx) => {
-    const out: { leadId: Id<"leads">; email: string }[] = [];
-    for (const lead of await ctx.db.query("leads").collect()) {
-      if (!lead.email) continue;
-      const events = await eventsFor(ctx, lead._id);
-      if (resolveConsent(events, "email", "marketing").status !== "opted_in") continue;
-      out.push({ leadId: lead._id, email: lead.email });
-    }
-    return out;
+    const audience = await audienceFor(ctx, {
+      channel: "email",
+      purpose: "marketing",
+      campaign: null,
+    });
+    return audience.recipients.map((r) => ({ leadId: r.leadId, email: r.address }));
   },
 });
 

@@ -179,6 +179,7 @@ trusting a name before touching data in either dashboard.
 | `npm run design:html` | regenerates the rendered style guide beside `design-system.md` |
 | `npm run termbase` | syncs the decided Thai terms into this repo |
 | `npm run verify:thai-register` | checks the Thai register against `golden-th/` in the sibling repo |
+| `npm run verify:audience` | fails any module in `convex/` that both reaches a mail sender and collects the whole `leads` table, which together are a list send assembled outside `convex/audience.ts`. The signal is the scan rather than the address: a sender reading `lead.email` off a row it fetched by id is answering an event, which is the six senders that must keep working. It also fails a module that had its own scan removed and no longer calls `audienceFor`, and a lifecycle stage that `LISTED_SEND_BY_STAGE` has no answer for |
 | `npm run verify:email` | renders all six email templates in eight renders, the newsletter twice so its optional blocks are covered and the retake email twice for both greetings, and checks the frame: one document, Thai only, every link absolute, no em dash, and a clean plain-text part. Then by contract: the four on the shell take its palette and a foot saying why the mail arrived, the newsletter takes any light-scheme token and the reader's own stop link (R51) |
 | `npm run blog:cards` | generates missing sharing cards, `--force` redoes them. macOS only, output committed, so the Vercel build never runs it |
 | `npm run samples` | reprints the two Fit Report sample PDFs the product page links, from the invented candidate, by serving `public/` and printing with the installed Chrome. It fails on a file with no pictures in it, which is how the pair it replaced had been sitting there. macOS only, needs the network for the webfonts, output committed |
@@ -200,6 +201,7 @@ npm run verify:narrative
 npm run verify:single-owner
 npm run verify:consent
 npm run verify:cascades
+npm run verify:audience
 npm run verify:report
 npm run verify:email
 npm run verify:report-email

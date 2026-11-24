@@ -18,6 +18,7 @@
     "lint:thai": "tsx scripts/lint-thai.ts",
     "verify:consent": "tsx scripts/verify-consent.ts",
     "verify:cascades": "tsx scripts/verify-cascades.ts",
+    "verify:audience": "tsx scripts/verify-audience.ts",
     "verify:releases": "tsx scripts/verify-releases.ts",
     "verify:report": "tsx scripts/verify-report.ts",
     "verify:report-email": "tsx scripts/verify-report-email.ts",

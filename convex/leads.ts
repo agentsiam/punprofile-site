@@ -1039,6 +1039,7 @@ export const deleteLeadOnRequest = mutation({
       leads: 0,
       assessments: 0,
       magicLinks: 0,
+      sends: 0,
       consultations: 0,
       consentEvents: 0,
       engagements: 0,
