@@ -68,7 +68,8 @@ duplicate one into the other.
 
 DERIVED, stale until regenerated and flagged as stale rather than built on: the two token files and
 the synced termbase, the rendered style guide beside `design-system.md`, `public/blog/share/<slug>.jpg`,
-`language-notes.generated.ts`, `src/lib/content/country-facts.generated.ts`, and **every file named in
+`language-notes.generated.ts`, `src/lib/content/country-facts.generated.ts`,
+`public/samples/fit-report-sample-{th,en}.pdf`, and **every file named in
 `scripts/language-templates/manifest.json`**. That last set is 31 files and is not only
 `src/lib/content/`: it takes in `src/components/LocaleToggle.tsx`, `src/lib/consent-copy.ts` and
 `src/lib/levers.ts` too. They read as hand-written source and are not. See R49.
@@ -180,6 +181,7 @@ trusting a name before touching data in either dashboard.
 | `npm run verify:thai-register` | checks the Thai register against `golden-th/` in the sibling repo |
 | `npm run verify:email` | renders all six email templates in eight renders, the newsletter twice so its optional blocks are covered and the retake email twice for both greetings, and checks the frame: one document, Thai only, every link absolute, no em dash, and a clean plain-text part. Then by contract: the four on the shell take its palette and a foot saying why the mail arrived, the newsletter takes any light-scheme token and the reader's own stop link (R51) |
 | `npm run blog:cards` | generates missing sharing cards, `--force` redoes them. macOS only, output committed, so the Vercel build never runs it |
+| `npm run samples` | reprints the two Fit Report sample PDFs the product page links, from the invented candidate, by serving `public/` and printing with the installed Chrome. It fails on a file with no pictures in it, which is how the pair it replaced had been sitting there. macOS only, needs the network for the webfonts, output committed |
 | `npm run review:page` | exports a page for review into the sibling repo, and refuses to overwrite a `PB:` line without `--force` (C43) |
 | `npm run review:language` | rebuilds the Thai review sheet at `LANGUAGE-REVIEW-QUEUE.md` in this repo's root, which is the only place it is ever written. `language:generate` rebuilds it too, so the sheet cannot fall behind the source, and neither of them overwrites a sheet that has been written in |
 | `npm run review:language -- --apply` | reads the finished sheet and writes the pass into `LANGUAGE-SYSTEM.md`: a tick clears the line as printed and the record becomes `paul-approved`, Thai on a correction line becomes the record's Thai and it becomes `paul-written`, and either way the hash and the basis are rewritten and the spent `proposal_th` dropped. It refuses, by record id, an id the source does not have and a correction that is the printed draft word for word. Then it regenerates the modules, so a cleared record reaches the page |
