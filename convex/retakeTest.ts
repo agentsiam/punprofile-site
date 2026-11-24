@@ -10,9 +10,9 @@
  * at a candidate. That is the property `marketingSend`'s `only` argument protects
  * when it filters the consented list rather than replacing it.
  *
- * It is a test of the frame, not of the campaign. Whether the retake email may
- * be sent to the 78 at all is the consent question, which is unsettled and lives
- * nowhere near this file.
+ * It is a test of the frame, not of the campaign. Who the campaign may reach is
+ * the consent question, settled as service and answered by the cohort test in
+ * `retakeSend.ts`, which lives nowhere near this file.
  *
  *   npx convex run retakeTest:send '{"name":"มายด์"}'
  *

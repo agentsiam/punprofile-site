@@ -8,12 +8,16 @@
  * the copy, as every template on this shell does, and decides nothing about
  * either.
  *
- * **Two things this file deliberately does not do.** It takes the greeting name
+ * **One thing this file deliberately does not do.** It takes the greeting name
  * rather than deriving one, because `greetingName()` reads `nickname` then
  * `firstName` and the cohort this is written for has only `fullName`, so what
- * fills `{ชื่อ}` is a decision above this layer. And there is no send path here:
- * whether the message is service or marketing is unsettled, and `recipients` in
- * `marketing.ts` requires marketing consent, which none of that cohort holds.
+ * fills `{ชื่อ}` is a decision above this layer. It went out on 24/11/2026 with
+ * that argument null, so every recipient got the no-name greeting.
+ *
+ * The send path is `retakeSend.ts`, and it resolves `("email", "service")`: this
+ * message is service, Paul's call, so it rests on the consent the cohort gave
+ * when they filled the survey in rather than on `marketing.ts`, which requires a
+ * marketing opt-in all but three of them never gave.
  *
  * The picture beside the button is the proof block from the design system's
  * Email section: what pressing the primary gives, in a 236px column, stacking
