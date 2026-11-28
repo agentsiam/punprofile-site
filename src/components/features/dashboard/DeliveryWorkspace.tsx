@@ -116,6 +116,7 @@ const MODULE_LABEL: Record<string, string> = {
   job_application_lifecycle: "Job Application Lifecycle",
   bundle: "Europe-Ready bundle",
   token_pack: "Token pack",
+  fit_report: "Fit Report",
 };
 
 export const KIND_LABEL: Record<string, string> = {
@@ -529,7 +530,7 @@ function WalletAndLink({ leadId, ws, engagements }: { leadId: Id<"leads">; ws: W
           <p className="text-label-large text-on-surface-variant">Tokens left</p>
           <p className="text-display-small text-on-surface" data-testid="crm-balance">{ws.wallet.balance}</p>
           <p className="text-body-medium text-on-surface-variant">
-            {ws.wallet.bought} bought, {ws.wallet.spent} spent
+            {ws.wallet.credited} in, {ws.wallet.bought} of it bought, {ws.wallet.spent} spent
           </p>
           <dl className="mt-2 grid grid-cols-2 gap-x-4 text-body-medium">
             <dt className="text-on-surface-variant">Reserved for Fit Report</dt>

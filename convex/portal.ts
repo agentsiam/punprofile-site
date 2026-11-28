@@ -60,7 +60,7 @@ const statusValidator = v.union(
 );
 
 async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
-    const { balance, bought, rows } = await tokenBalance(ctx, lead._id);
+    const { balance, bought, credited, rows } = await tokenBalance(ctx, lead._id);
     // The same calculation the coach's CRM shows, § 7a.
     const { wallet } = await walletFor(ctx, lead._id);
 
@@ -294,6 +294,7 @@ async function buildView(ctx: QueryCtx, lead: Doc<"leads">) {
       tokens: {
         balance,
         bought,
+        credited,
         matchedSent,
         requestedAt: openTokenRequest?.at ?? null,
         reserved: wallet.reserved,

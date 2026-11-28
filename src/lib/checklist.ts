@@ -29,6 +29,17 @@ export type Step = {
 };
 
 export type ChecklistInput = {
+  /**
+   * When they bought anything at all, whatever it was. `prd.md` § 8: the first
+   * rung asks whether they have bought and never what they paid. It read the
+   * ฿1,500 pack entitlement until 28/11/2026, which left a Coaching 1:1
+   * customer on rung one forever once the engagement became a second way to
+   * buy (`01_Project_Foundation.md`).
+   */
+  saleAt: number | null;
+  /** When the ฿1,500 pack was sold, which is a different question: it is what
+   *  the complimentary hour and the CV rewrite are owed from, and nothing
+   *  else on this list depends on it. */
   packAt: number | null;
   access: { codeIssuedAt: number | null; codeEmailed: boolean; lastSignInAt: number | null } | null;
   /** Every logged call, oldest first. */
@@ -63,9 +74,14 @@ export function checklist(i: ChecklistInput): Step[] {
   const previewHeld = previewCalls.find((c) => c.outcome === "held");
   const previewDone = i.preview?.status === "delivered" ? (i.preview.deliveredAt ?? previewHeld?.heldAt ?? null) : (previewHeld?.heldAt ?? null);
   const noPack = i.packAt === null;
+  // The row's key stays `pack` because the rung's key is, and neither is
+  // stored anywhere; what changed on 28/11/2026 is which fact it reads.
+
 
   const rows: Step[] = [
-    i.packAt !== null ? step("pack", "Pack recorded", "done", i.packAt) : step("pack", "Pack recorded", "todo", null, "No ฿1,500 sale in the running state"),
+    i.saleAt !== null
+      ? step("pack", "Sale recorded", "done", i.saleAt)
+      : step("pack", "Sale recorded", "todo", null, "Nothing sold in the running state"),
     i.access?.codeEmailed
       ? step("signin_sent", "Dashboard sign-in sent", "done", i.access.codeIssuedAt)
       : step("signin_sent", "Dashboard sign-in sent", "todo", null, i.access ? "Not delivered by email" : "No access granted yet"),

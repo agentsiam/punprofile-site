@@ -972,6 +972,12 @@ export default defineSchema({
        *  `tokenLedger`, never in a field here, so the balance is a sum and
        *  cannot drift from the history that produced it. */
       v.literal("token_pack"),
+      /** A Fit Report sold on its own, 990 THB in one payment, from the
+       *  decision of 28/11/2026 in `01_Project_Foundation.md` that no coach
+       *  hour is bought with tokens. Unlike `token_pack` it credits nothing:
+       *  the wallet's 20 is internal accounting against this sale and is never
+       *  a price a candidate is quoted. */
+      v.literal("fit_report"),
     ),
 
     status: v.union(

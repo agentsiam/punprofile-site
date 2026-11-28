@@ -25,10 +25,12 @@ import type { Copy } from "./copy";
  * merged. A grid mixing a 1,000 THB purchase with a 15,000 to 25,000 engagement
  * asks the reader to compare things that are not comparable.
  *
- * **One currency.** A token is the only unit. A matched role is 1, a Fit Report
- * is 20, and the packs below are the only prices printed anywhere on the site.
- * Coaching stays outside it, because it is a conversation and it is priced in
- * one.
+ * **One currency per thing sold**, 28/11/2026, `01_Project_Foundation.md`. A
+ * token is machine work and nothing else: a matched role is 1, and the packs
+ * below are the only token prices. A coach hour is baht and never tokens,
+ * because an hour is already a unit and a second price for the same hour is an
+ * arbitrage, so the Fit Report is 990 THB and Coaching 1:1 starts at 8,900.
+ * The Fit Report's row below is therefore a baht row inside a token table.
  *
  * **No price appears on any product page**, by the same decision. A number
  * repeated across six marketing pages is six places for it to drift.
@@ -247,31 +249,10 @@ export const PACKS: readonly Pack[] = [
  * `TOKEN_PRICE`. Nothing here is typed, so no card can contradict the token
  * table printed above it.
  */
-export const PACK_BUYS: Copy = {
-  en: "{count} matched roles, or a Fit Report and {rest}",
-  th: "ตำแหน่งงานที่คัดให้ {count} ตำแหน่ง หรือ Fit Report พร้อมอีก {rest}",
-};
-
 export const PACK_BUYS_ROLES: Copy = {
   en: "{count} matched roles",
   th: "ตำแหน่งงานที่คัดให้ {count} ตำแหน่ง",
 };
-
-/**
- * The unit after a count of roles, singular and plural, exactly as `TOKEN_UNIT`
- * does it for tokens. It exists because the Standard pack leaves one role after
- * a Fit Report and `1 roles` is the kind of thing that ships.
- */
-export const ROLE_UNIT = {
-  one: {
-    en: "role",
-    th: "ตำแหน่ง",
-  },
-  many: {
-    en: "roles",
-    th: "ตำแหน่ง",
-  },
-} as const;
 
 /**
  * The badge on the recommended pack.
@@ -357,13 +338,18 @@ export const TOKEN_BODY: Copy = {
 export interface TokenRow {
   label: Copy;
   detail: Copy;
-  /** Tokens, not baht. The packs are the only baht on the site. */
-  tokens: number;
+  /**
+   * The price, in the currency the thing is actually bought in. A matched role
+   * is tokens because it is machine work with a measured marginal cost; a coach
+   * hour is baht (`01_Project_Foundation.md`, 28/11/2026). The union is what
+   * stops a baht figure being printed with a token unit beside it.
+   */
+  price: { tokens: number } | { thb: number };
 }
 
 /**
  * Spec rows (B6) since 02/11/2026: the thing on the left, what it is in one
- * line, the price in tokens on the right. They were two bullets, and the Fit
+ * line, the price on the right in the currency it is bought in. They were two bullets, and the Fit
  * Report bullet left out the 30-minute interview, which is what the Fit Report
  * is since 26/10/2026.
  */
@@ -377,7 +363,7 @@ export const TOKEN_ROWS: readonly TokenRow[] = [
       en: "Sent to your Job Search Dashboard, with the work rights it needs stated",
       th: "ส่งไปยังแดชบอร์ดหางานของคุณ พร้อมระบุสิทธิ์การทำงานที่ผู้สมัครต้องมี",
     },
-    tokens: 1,
+    price: { tokens: 1 },
   },
   {
     label: {
@@ -389,7 +375,7 @@ export const TOKEN_ROWS: readonly TokenRow[] = [
       // Built from the Fit Report's own `how` steps in `products.ts`.
       th: "สัมภาษณ์ 30 นาทีกับโค้ช และรับรายงานฉบับเต็มภายในวันเดียวกัน",
     },
-    tokens: 20,
+    price: { thb: 990 },
   },
 ];
 
@@ -455,21 +441,6 @@ export const CALC_HEADING: Copy = {
   en: "Work out which pack fits how much you will use it",
   // Paul's wording, 23/08/2026. The heading stayed; the tool now answers it.
   th: "ลองคำนวณดูว่าแพ็กไหนพอดีกับการใช้งานของคุณ",
-};
-
-export const CALC_FIT_REPORT: Copy = {
-  en: "Do you want the Fit Report?",
-  th: "คุณต้องการ Fit Report หรือไม่?",
-};
-
-export const CALC_FIT_YES: Copy = {
-  en: "Yes",
-  th: "ต้องการ",
-};
-
-export const CALC_FIT_NO: Copy = {
-  en: "Not yet",
-  th: "ยังไม่ต้องการ",
 };
 
 export const CALC_PER_WEEK: Copy = {
@@ -567,8 +538,8 @@ export const PRICING_QUESTIONS: readonly PricingQuestion[] = [
     },
     a: [
       {
-        en: "Coaching 1:1 starts at 4,900 THB.",
-        th: "Coaching 1:1 เริ่มต้นที่ 4,900 บาท",
+        en: "Coaching 1:1 starts at 8,900 THB.",
+        th: "Coaching 1:1 เริ่มต้นที่ 8,900 บาท",
       },
       {
         en: "It depends what you want help with and how far that help goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide whether to go ahead.",

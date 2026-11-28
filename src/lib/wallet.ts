@@ -55,7 +55,8 @@ export type EngagementRow = {
   createdAt: number;
 };
 
-const SOLD = new Set(["agreed", "active", "completed"]);
+/** An engagement that has been sold, as against one only proposed. */
+export const SOLD = new Set(["agreed", "active", "completed"]);
 
 /** A deliverable has been charged if any negative ledger row points at it. */
 export function chargedIds(ledger: LedgerRow[]) {
@@ -90,13 +91,22 @@ export function computeWallet(
    */
   openItemCorrections = 0,
 ) {
+  /* `credited` is every token that ever entered the wallet and is what the
+     balance is built from. `bought` is the subset they PURCHASED, which since
+     28/11/2026 is not the same thing: a coach credits tokens as an adjustment
+     against a sale paid in baht, internal accounting for a Fit Report the
+     candidate never bought with tokens, and counting that as bought showed
+     them a wallet they had not bought into (`01_Project_Foundation.md`). */
+  let credited = 0;
   let bought = 0;
   let spent = 0;
   for (const r of ledger) {
-    if (r.delta > 0) bought += r.delta;
-    else spent += -r.delta;
+    if (r.delta > 0) {
+      credited += r.delta;
+      if (r.reason === "purchase") bought += r.delta;
+    } else spent += -r.delta;
   }
-  const balance = bought - spent;
+  const balance = credited - spent;
   const charged = chargedIds(ledger);
 
   const reservations = deliverables.filter((d) => isOpenReservation(d, charged));
@@ -187,6 +197,7 @@ export function computeWallet(
 
   return {
     balance,
+    credited,
     bought,
     spent,
     reserved,

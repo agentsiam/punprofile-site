@@ -11,9 +11,10 @@
  * Its heading asked which pack fits and nothing on screen ever named one.
  *
  * **What this asks instead is usage**, the shape credit-pack calculators take:
- * does the reader want the Fit Report, how many matched roles a week, and for how
- * long. The output is the token count and the cheapest set of packs that covers
- * it. The honesty rules of the old one still hold, applied to a better input:
+ * how many matched roles a week, and for how long. The output is the token
+ * count and the cheapest set of packs that covers it. It stopped asking about
+ * the Fit Report on 28/11/2026, when `01_Project_Foundation.md` priced it in
+ * baht: a token answer cannot include something tokens do not buy. The honesty rules of the old one still hold, applied to a better input:
  *
  * 1. Every number traces to the reader's three answers or a pack in `PACKS`.
  *    No salary, no market figure, nothing PunProfile claims about outcomes.
@@ -33,9 +34,6 @@ import TokenCoin from "@/components/features/pricing/TokenCoin";
 import { SECTION_HEADING } from "@/lib/content/footer";
 import {
   CALC_BEST_FIT,
-  CALC_FIT_NO,
-  CALC_FIT_REPORT,
-  CALC_FIT_YES,
   CALC_HEADING,
   CALC_HOW_LONG,
   CALC_LEFT_OVER,
@@ -50,8 +48,12 @@ import {
   type Pack,
 } from "@/lib/content/pricing";
 
-const ROLE_TOKENS = TOKEN_ROWS[0].tokens;
-const FIT_REPORT_TOKENS = TOKEN_ROWS[1].tokens;
+/* The matched-role row, which is the only row this tool can count. The throw
+   is an invariant rather than a fallback: inventing a number here would be the
+   one thing this component promises never to do. */
+const ROLE_PRICE = TOKEN_ROWS[0].price;
+if (!("tokens" in ROLE_PRICE)) throw new Error("TOKEN_ROWS[0] is not priced in tokens");
+const ROLE_TOKENS = ROLE_PRICE.tokens;
 const WEEKS_PER_MONTH = 4;
 
 const PER_WEEK_OPTIONS = [1, 2, 3, 5] as const;
@@ -140,12 +142,10 @@ function mostTokensUnder(thb: number): { thb: number; tokens: number } {
 
 export default function TokenCalculator() {
   const { pick, locale } = useCopy();
-  const [fitReport, setFitReport] = useState(true);
   const [perWeek, setPerWeek] = useState<number>(2);
   const [months, setMonths] = useState<number>(3);
 
-  const need =
-    (fitReport ? FIT_REPORT_TOKENS : 0) + perWeek * WEEKS_PER_MONTH * months * ROLE_TOKENS;
+  const need = perWeek * WEEKS_PER_MONTH * months * ROLE_TOKENS;
   const plan = useMemo(() => cheapestPlan(need), [need]);
   const leftOver = plan.tokens - need;
   /* Only shown when the step below genuinely falls short. At the smallest need
@@ -195,15 +195,6 @@ export default function TokenCalculator() {
     <div className="grid gap-8 large:grid-cols-2 large:items-start">
       <div className="flex flex-col gap-7">
         <h2 className={SECTION_HEADING(locale)}>{pick(CALC_HEADING)}</h2>
-        {group(
-          pick(CALC_FIT_REPORT),
-          [
-            { value: true, text: pick(CALC_FIT_YES) },
-            { value: false, text: pick(CALC_FIT_NO) },
-          ],
-          fitReport,
-          setFitReport,
-        )}
         {group(
           pick(CALC_PER_WEEK),
           PER_WEEK_OPTIONS.map((n) => ({ value: n as number, text: String(n) })),

@@ -281,12 +281,20 @@ function Overview({
       <div className="space-y-5 large:col-span-2">
         <div className="grid gap-4 medium:grid-cols-3">
           {data.tokens.bought > 0 && (
-            <Stat tint={TINTS[1]} label={pick(C.TOKENS_HEADING)} big={String(data.tokens.balance)} small={t(C.TOKENS_OF, { n: data.tokens.bought })}>
-              {data.tokens.reserved > 0 && (
-                <span className="block break-keep" data-testid="me-reserved">
-                  {t(C.TOKENS_RESERVED, { n: data.tokens.reserved })}
-                  <br />
-                  <span data-testid="me-spendable">{t(C.TOKENS_SPENDABLE, { n: data.tokens.spendable })}</span>
+            <Stat tint={TINTS[1]} label={pick(C.TOKENS_HEADING)} big={String(data.tokens.balance)} small={t(C.TOKENS_OF, { n: data.tokens.credited })}>
+              {/* What they can actually use, and never why the rest is held
+                  back. Until 28/11/2026 this said "{n} reserved for your Fit
+                  Report" above it, which was true while a report was bought
+                  with tokens. It is not any more: the report is 990 THB
+                  (`01_Project_Foundation.md`) and the twenty the wallet still
+                  moves are internal accounting against a sale already paid in
+                  baht. Naming them to the candidate quotes them a token price
+                  for a coach hour, which is the one thing that decision
+                  forbids. The spendable line stays, because a balance that
+                  cannot all be spent has to say what can. */}
+              {data.tokens.spendable !== data.tokens.balance && (
+                <span className="block break-keep" data-testid="me-spendable">
+                  {t(C.TOKENS_SPENDABLE, { n: data.tokens.spendable })}
                 </span>
               )}
               {t(C.TOKENS_MATCHED, { n: data.tokens.matchedSent })}

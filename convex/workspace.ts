@@ -76,13 +76,22 @@ export async function tokenBalance(ctx: QueryCtx, leadId: Id<"leads">) {
     .query("tokenLedger")
     .withIndex("by_lead", (q) => q.eq("leadId", leadId))
     .collect();
+  /* `credited` is every token that ever entered the wallet and is what the
+     balance is built from. `bought` is the subset they PURCHASED, which since
+     28/11/2026 is not the same thing: a coach credits tokens as an adjustment
+     against a sale paid in baht, internal accounting for a Fit Report the
+     candidate never bought with tokens, and counting that as bought showed
+     them a wallet they had not bought into (`01_Project_Foundation.md`). */
+  let credited = 0;
   let bought = 0;
   let spent = 0;
   for (const r of rows) {
-    if (r.delta > 0) bought += r.delta;
-    else spent += -r.delta;
+    if (r.delta > 0) {
+      credited += r.delta;
+      if (r.reason === "purchase") bought += r.delta;
+    } else spent += -r.delta;
   }
-  return { balance: bought - spent, bought, spent, rows };
+  return { balance: credited - spent, credited, bought, spent, rows };
 }
 
 /** The weekly maximum, the pause and this week's count, `prd.md` § 8. */
