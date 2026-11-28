@@ -24043,72 +24043,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::CALC_FIT_REPORT`
-
-```yaml
-id: "src/lib/content/pricing.ts::CALC_FIT_REPORT"
-source: "src/lib/content/pricing.ts"
-path: "CALC_FIT_REPORT"
-render: "Pricing page, CALC_FIT_REPORT"
-narrative_slot: "utility"
-en: "Do you want the Fit Report?"
-th: "คุณต้องการ Fit Report หรือไม่?"
-provenance: paul-approved
-date: "02/11/2026"
-term_bindings: []
-decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ปรับคำถามให้เป็นภาษาเขียน"
-review:
-  structural_calque: pass
-  text_hash: d756c3859f0ca8b0bb68fd0cff1bf6287ae49aea2888970457aa729009cf1d87
-  prompt_version: structural-calque-v1
-  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::CALC_FIT_YES`
-
-```yaml
-id: "src/lib/content/pricing.ts::CALC_FIT_YES"
-source: "src/lib/content/pricing.ts"
-path: "CALC_FIT_YES"
-render: "Pricing page, CALC_FIT_YES"
-narrative_slot: "utility"
-en: "Yes"
-th: "ต้องการ"
-provenance: paul-approved
-date: "02/11/2026"
-term_bindings: []
-decision_note: "Approved in Paul's review pass 02/11/2026, unchanged."
-review:
-  structural_calque: pass
-  text_hash: 76918b318b795adae5aebafed3f746fcff40c31f277fdc47de4a59ed7daa52f6
-  prompt_version: structural-calque-v1
-  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::CALC_FIT_NO`
-
-```yaml
-id: "src/lib/content/pricing.ts::CALC_FIT_NO"
-source: "src/lib/content/pricing.ts"
-path: "CALC_FIT_NO"
-render: "Pricing page, CALC_FIT_NO"
-narrative_slot: "utility"
-en: "Not yet"
-th: "ยังไม่ต้องการ"
-provenance: paul-approved
-date: "02/11/2026"
-term_bindings: []
-decision_note: "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ให้สอดคล้องกับคำถามและน้ำเสียงภาษาเขียน"
-review:
-  structural_calque: pass
-  text_hash: 6634f0dcbef4d42a86b7e7c6921e9a2db05d8615a6d0df5c7208e72ec8362c97
-  prompt_version: structural-calque-v1
-  basis: "Paul-authored or Paul-approved Thai is authoritative by project decision."
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/pricing.ts::CALC_PER_WEEK`
 
 ```yaml
@@ -24804,28 +24738,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::PACK_BUYS`
-
-```yaml
-id: "src/lib/content/pricing.ts::PACK_BUYS"
-source: "src/lib/content/pricing.ts"
-path: "PACK_BUYS"
-render: "Pricing page, pack card, what the pack's tokens buy"
-narrative_slot: "artefact"
-en: "{count} matched roles, or a Fit Report and {rest}"
-th: "ตำแหน่งงานที่คัดให้ {count} ตำแหน่ง หรือ Fit Report พร้อมอีก {rest}"
-provenance: paul-approved
-date: 13/11/2026
-term_bindings: []
-decision_note: "Added 12/11/2026, from a UX review Paul accepted: the cards printed a price and a token count and left the reader to work out what the tokens were for. The two uses are ALTERNATIVES on one balance, not inclusions, which is why the line says or. Both figures are substituted from TOKEN_PRICE at render, never typed, so the sentence cannot contradict the token table above it. It replaces PACKS[2].includes, which said the same arithmetic on one card only and said it as if the reader got both. AWAITING A NATIVE VERDICT."
-review:
-  structural_calque: pass
-  text_hash: 137d40c24c7bc0589ac7d02b1e9b181eeb8472d498b0cbd8f08eb3de5e73c574
-  prompt_version: structural-calque-v1
-  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. Noun plus count plus classifier is the right Thai order, so a substituted 1 reads ตำแหน่งงานที่คัดให้ 1 ตำแหน่ง and never 1 roles. หรือ and พร้อมอีก keep the two uses as alternatives on one balance rather than inclusions, and ตำแหน่งงานที่คัดให้ is the phrase the neighbouring PRICING_INTRO already uses. Thai editorial review on 13/11/2026. Keep the current Thai. The count reads naturally with its classifier, and หรือ keeps the two uses of the same token balance distinct. The rest placeholder already includes the role unit. Paul accepted this on 13/11/2026 on the recommendation of a Codex language check that read all 25 pending records and advised keeping the Thai already on the record here. His acceptance is the verdict. No native reader has read this Thai, which is why provenance is paul-approved and not paul-written and the record stays outside the golden-th corpus. Withdrawn on 13/11/2026. An acceptance given on a model's recommendation is not a native read, and recording it as a pass let Thai that no native reader has read clear the gate. The verdict returns to pending and the provenance to draft until a native reader reads this record. The Thai in th is unchanged and is the text live on master, so nothing a candidate sees changes with this branch; what changes is that the record stops claiming a clearance it never had. Paul read this in the review queue on 13/11/2026 and approved the Thai as it stands, confirming the remaining twenty-three in one pass rather than string by string. The verdict is pass and the provenance paul-approved rather than paul-written, because the wording is a model's and he approved it rather than wrote it, so the record stays outside the golden-th corpus."
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/pricing.ts::PACK_BUYS_ROLES`
 
 ```yaml
@@ -24845,50 +24757,6 @@ review:
   text_hash: 6770cb76a364ab5aa90cc02737e9803fc4c3924af3b2d30e710a09a39efcef28
   prompt_version: structural-calque-v1
   basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. Reads as a Thai count phrase rather than an English fragment: the classifier follows the number, so 1 and 9 both render correctly, and ที่คัดให้ carries the screening claim without adding one. Consistent with the wording already live in PRICING_INTRO on the same page. Thai editorial review on 13/11/2026. Keep the current Thai. It uses the same phrase and count order as the other pack card. Paul accepted this on 13/11/2026 on the recommendation of a Codex language check that read all 25 pending records and advised keeping the Thai already on the record here. His acceptance is the verdict. No native reader has read this Thai, which is why provenance is paul-approved and not paul-written and the record stays outside the golden-th corpus. Withdrawn on 13/11/2026. An acceptance given on a model's recommendation is not a native read, and recording it as a pass let Thai that no native reader has read clear the gate. The verdict returns to pending and the provenance to draft until a native reader reads this record. The Thai in th is unchanged and is the text live on master, so nothing a candidate sees changes with this branch; what changes is that the record stops claiming a clearance it never had. Paul read this in the review queue on 13/11/2026 and approved the Thai as it stands, confirming the remaining twenty-three in one pass rather than string by string. The verdict is pass and the provenance paul-approved rather than paul-written, because the wording is a model's and he approved it rather than wrote it, so the record stays outside the golden-th corpus."
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::ROLE_UNIT.one`
-
-```yaml
-id: "src/lib/content/pricing.ts::ROLE_UNIT.one"
-source: "src/lib/content/pricing.ts"
-path: "ROLE_UNIT.one"
-render: "Pricing page, the unit after a count of roles, singular"
-narrative_slot: "artefact"
-en: "role"
-th: "ตำแหน่ง"
-provenance: paul-approved
-date: 13/11/2026
-term_bindings: []
-decision_note: "Added 12/11/2026, the same shape as TOKEN_UNIT and for the same reason: the Standard pack leaves exactly one role after a Fit Report, so a hard-coded plural would print 1 roles. Thai has no plural form and both members are the same word. AWAITING A NATIVE VERDICT."
-review:
-  structural_calque: pass
-  text_hash: ab9f463fefb270b81214f0f32f01308ef1258abfa2e9839105c41a71485fb15e
-  prompt_version: structural-calque-v1
-  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. ตำแหน่ง is the classifier a Thai job board uses after a count, and is the decided rendering for a job opening under LR-05, so {count} ตำแหน่ง reads naturally at 1 as well as at 9. Thai editorial review on 13/11/2026. Keep ตำแหน่ง after a count of one. Thai uses the same classifier for both records. Paul accepted this on 13/11/2026 on the recommendation of a Codex language check that read all 25 pending records and advised keeping the Thai already on the record here. His acceptance is the verdict. No native reader has read this Thai, which is why provenance is paul-approved and not paul-written and the record stays outside the golden-th corpus. Withdrawn on 13/11/2026. An acceptance given on a model's recommendation is not a native read, and recording it as a pass let Thai that no native reader has read clear the gate. The verdict returns to pending and the provenance to draft until a native reader reads this record. The Thai in th is unchanged and is the text live on master, so nothing a candidate sees changes with this branch; what changes is that the record stops claiming a clearance it never had. Paul read this in the review queue on 13/11/2026 and approved the Thai as it stands, confirming the remaining twenty-three in one pass rather than string by string. The verdict is pass and the provenance paul-approved rather than paul-written, because the wording is a model's and he approved it rather than wrote it, so the record stays outside the golden-th corpus."
-```
-
-<!-- COPY-ENTRY -->
-### `src/lib/content/pricing.ts::ROLE_UNIT.many`
-
-```yaml
-id: "src/lib/content/pricing.ts::ROLE_UNIT.many"
-source: "src/lib/content/pricing.ts"
-path: "ROLE_UNIT.many"
-render: "Pricing page, the unit after a count of roles, plural"
-narrative_slot: "artefact"
-en: "roles"
-th: "ตำแหน่ง"
-provenance: paul-approved
-date: 13/11/2026
-term_bindings: []
-decision_note: "Added 12/11/2026, the plural member of ROLE_UNIT. Thai has no plural form, so it is the same word as the singular. AWAITING A NATIVE VERDICT."
-review:
-  structural_calque: pass
-  text_hash: 340f9fade63a5fcd930c7475c6e71a10bef5a64f2e4773824e5a357c73cb70cd
-  prompt_version: structural-calque-v1
-  basis: "Judge structural-calque-v1 read this on 12/11/2026 and returned pass, run as a separate review pass and not by the session that wrote the Thai. The verdict stays PENDING because this is draft copy and draft copy cannot carry a passing native verdict: a model may not clear Thai a model wrote. The judge's reading is recorded here as a pre-read to shorten Paul's pass, not as approval. The same word is the correct one here rather than a shortcut: Thai marks number with the numeral, and ตำแหน่ง is the classifier in both members, so no rendered count can read as 1 roles. Thai editorial review on 13/11/2026. Keep ตำแหน่ง after the count. Thai uses the same classifier for both records. Paul accepted this on 13/11/2026 on the recommendation of a Codex language check that read all 25 pending records and advised keeping the Thai already on the record here. His acceptance is the verdict. No native reader has read this Thai, which is why provenance is paul-approved and not paul-written and the record stays outside the golden-th corpus. Withdrawn on 13/11/2026. An acceptance given on a model's recommendation is not a native read, and recording it as a pass let Thai that no native reader has read clear the gate. The verdict returns to pending and the provenance to draft until a native reader reads this record. The Thai in th is unchanged and is the text live on master, so nothing a candidate sees changes with this branch; what changes is that the record stops claiming a clearance it never had. Paul read this in the review queue on 13/11/2026 and approved the Thai as it stands, confirming the remaining twenty-three in one pass rather than string by string. The verdict is pass and the provenance paul-approved rather than paul-written, because the wording is a model's and he approved it rather than wrote it, so the record stays outside the golden-th corpus."
 ```
 
 <!-- COPY-ENTRY -->

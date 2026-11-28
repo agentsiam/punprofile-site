@@ -37,11 +37,9 @@ import {
   INCLUDES_HEADING,
   LIMITS_HEADING,
   NOTHING_FOUND,
-  PACK_BUYS,
   PACK_BUYS_ROLES,
   PACKS,
   PACKS_HEADING,
-  ROLE_UNIT,
   PRICING_QUESTIONS,
   RECOMMENDED_BADGE,
   TOKEN_BODY,
@@ -71,7 +69,6 @@ import Band from "@/components/Band";
    allowed a second, looser version of who the coaches are. */
 import { COACHES } from "@/lib/content/coaching";
 import { COACH_PHOTO } from "@/components/features/coaches/CoachCards";
-import { TOKEN_PRICE } from "@/lib/tokenPrices";
 import { HERO_HEADING, SECTION_HEADING } from "@/lib/content/footer";
 
 /**
@@ -94,12 +91,14 @@ const PACK_ART: Record<string, { src: string; w: number; h: number }> = {
 };
 
 /**
- * `{price}` and `{count}` in a pack's `includes` line, substituted here.
+ * `{price}` and `{count}` in a pack's `includes` line, substituted here, so a
+ * card never types a figure and becomes another place for a price to go stale
+ * on the one page that prints prices.
  *
- * The lines state the Fit Report's price and what the pack has left after it,
- * and neither figure is written into the copy: `TOKEN_PRICE` owns the first and
- * the second is arithmetic on it. A card that typed them would be a third and a
- * fourth place for a price to go stale, on the one page that prints prices.
+ * It used to fill the Fit Report's token price and the roles a pack had left
+ * after it. Since 28/11/2026 no pack has a remainder to state, because the
+ * report is not bought with tokens (`01_Project_Foundation.md`), and `{count}`
+ * is now the pack's own token count and nothing else.
  */
 const fill = (s: string, vars: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? ""));
@@ -157,7 +156,11 @@ function SpecRow({
 export default function PricingPage() {
   const { pick, locale } = useCopy();
   const tokens = (n: number) => `${n} ${pick(n === 1 ? TOKEN_UNIT.one : TOKEN_UNIT.many)}`;
-  const roles = (n: number) => `${n} ${pick(n === 1 ? ROLE_UNIT.one : ROLE_UNIT.many)}`;
+  /* THB in both languages, the way the calculator's own answer line prints it.
+     Paul's call of 12/11/2026 was that the figures on this page carry one
+     label, so a baht price in the spec rows does not take บาท while the card
+     below it takes THB. */
+  const thb = (n: number) => `${n.toLocaleString("en-US")} THB`;
 
   const freeProducts = FREE_PRODUCT_SLUGS.map((slug) => productBySlug(slug))
     .filter((p): p is NonNullable<typeof p> => !!p && isFreeProduct(p.slug));
@@ -259,8 +262,8 @@ export default function PricingPage() {
               key={i}
               label={pick(row.label)}
               detail={pick(row.detail)}
-              value={tokens(row.tokens)}
-              coin
+              value={"tokens" in row.price ? tokens(row.price.tokens) : thb(row.price.thb)}
+              coin={"tokens" in row.price}
             />
           ))}
         </div>
@@ -376,80 +379,26 @@ export default function PricingPage() {
                     card carried, and it is better than that list was for two
                     reasons.
 
-                    One, a reader at three cards is asking which, and a question
+                    A reader at three cards is asking which, and a question
                     asked of three cards has to be answered by three cards in the
-                    same words and the same position. Two, the list said "what
-                    you get in this pack" and named a Fit Report AND thirteen
-                    roles, which is one of the two things 33 tokens can do, not
-                    the pack's contents. A pack is a balance. This line says `or`
-                    and states both uses, which is what is actually true.
+                    same words and the same position. It replaced a list that
+                    said "what you get in this pack" and named a Fit Report AND
+                    thirteen roles, which was one of the two things 33 tokens
+                    could do rather than the pack's contents. A pack is a
+                    balance.
 
-                    Which line a card takes is arithmetic, not an id: a pack that
-                    cannot reach the Fit Report's price cannot offer the choice.
-                    Today that is Starter alone, and if a price moves it moves on
-                    its own.
-
-                    The detail under it is `TOKEN_ROWS[1].detail`, already on this
-                    page and already approved, shown on the cards where a Fit
-                    Report is actually reachable. A reader should not have to
-                    scroll back up to find out what the thirty minutes are. */}
-                {(() => {
-                  const rest = pack.tokens - TOKEN_PRICE.fitReport;
-                  const reaches = rest >= 0;
-                  return (
-                    <>
-                      <p className="mt-4 text-body-large text-on-surface">
-                        {fill(pick(reaches ? PACK_BUYS : PACK_BUYS_ROLES), {
-                          count: pack.tokens,
-                          rest: roles(rest),
-                        })}
-                      </p>
-                      {/* The interview, carded rather than captioned, on both
-                          packs that can reach it. 12/11/2026, Paul's call: it is
-                          the one thing on a pack card that is a person rather
-                          than a number, and set as a line of small print under
-                          the outcome it read as a footnote to the arithmetic.
-
-                          `canvas-soft` and not the gold. The gold is
-                          `canvas-promo` and the rule that came with it is that
-                          it means something the reader does NOT pay for; this
-                          half hour is inside the Fit Report's twenty tokens, so
-                          claiming it in the promotional colour would be the
-                          system lying about what is being given away. Soft is
-                          the quiet ground, which is what this is: the same card,
-                          one step down.
-
-                          One class works on both packs because the role does the
-                          work. On the Serious card `canvas-soft` is the pale
-                          grey-green; inside the recommended card `.ground-dark`
-                          pins it to #1d4200 and it comes out a lift on the dark
-                          green instead. Nothing here names a scheme or a pack
-                          (R20). */}
-                      {reaches && (
-                        <div className="mt-3 flex items-start gap-3 rounded-2xl border border-line bg-canvas-soft px-4 py-4">
-                          <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-canvas">
-                            <svg
-                              aria-hidden
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth={1.75}
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="size-5 text-ink-deep"
-                            >
-                              <circle cx="12" cy="12" r="8.5" />
-                              <path d="M12 7.25V12l3 1.75" />
-                            </svg>
-                          </span>
-                          <p className="text-body-medium text-on-surface">
-                            {pick(TOKEN_ROWS[1].detail)}
-                          </p>
-                        </div>
-                      )}
-                    </>
-                  );
-                })()}
+                    It said `or` until 28/11/2026, because 33 tokens could buy
+                    the report or thirteen roles. Tokens now buy matched roles
+                    and nothing else, the Fit Report being 990 THB
+                    (`01_Project_Foundation.md`), so there is no choice left to
+                    state: every card takes the roles line. `PACK_BUYS` is
+                    retired with it, and so is the interview card that sat
+                    underneath on the two packs that could reach twenty tokens,
+                    whose own ground colour was reasoned from the half hour
+                    being inside those twenty. */}
+                <p className="mt-4 text-body-large text-on-surface">
+                  {fill(pick(PACK_BUYS_ROLES), { count: pack.tokens })}
+                </p>
 
                 <p className="mt-5 text-body-large text-on-surface-variant">{pick(pack.who)}</p>
 

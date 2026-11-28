@@ -9180,33 +9180,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "02/11/2026",
     "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: อธิบายข้อจำกัดของบริการโดยตรง แทนการใช้โทเคนเป็นสิ่งที่รวมบริการไว้"
   },
-  "src/lib/content/pricing.ts::CALC_FIT_REPORT": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "CALC_FIT_REPORT",
-    "render": "Pricing page, CALC_FIT_REPORT",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "02/11/2026",
-    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ปรับคำถามให้เป็นภาษาเขียน"
-  },
-  "src/lib/content/pricing.ts::CALC_FIT_YES": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "CALC_FIT_YES",
-    "render": "Pricing page, CALC_FIT_YES",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "02/11/2026",
-    "decisionNote": "Approved in Paul's review pass 02/11/2026, unchanged."
-  },
-  "src/lib/content/pricing.ts::CALC_FIT_NO": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "CALC_FIT_NO",
-    "render": "Pricing page, CALC_FIT_NO",
-    "narrativeSlot": "utility",
-    "provenance": "paul-approved",
-    "date": "02/11/2026",
-    "decisionNote": "Approved in Paul's review pass 02/11/2026, Thai corrected in that pass: ให้สอดคล้องกับคำถามและน้ำเสียงภาษาเขียน"
-  },
   "src/lib/content/pricing.ts::CALC_PER_WEEK": {
     "source": "src/lib/content/pricing.ts",
     "path": "CALC_PER_WEEK",
@@ -9477,15 +9450,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "date": "13/11/2026",
     "decisionNote": "Drafted 12/11/2026 from Paul's instruction that the Serious pack carries a free hour of one-to-one coaching until the end of 2026. It is a SEPARATE field from includes, and rendered apart from that list, because the list is what the 33 tokens cover and this is not bought with tokens at all; folding it in would make the card claim a token buys coaching. THREE THINGS FOR REVIEW. One, this is the first free call on the site since 26/10/2026, when Paul removed every free consultation; it is defensible as a 1,500 THB pack perk rather than a public free entry point, but it reads as a reversal to anyone holding only the 26/10 decision, and remove-free-call-proposal.md in the sibling repo is still unapplied. Two, ฟรี sits after the service name Coaching 1:1, which is what LR-04 asks for, and the banned นัดปรึกษาฟรี 30 นาที and คุยฟรี forms are not used. Three, the clause order was reversed on 12/11/2026, Paul's call: the first version led with the deadline, so the first thing a lead read was an expiry rather than the gift. Four, the end date is written into the copy AND declared in Narrative_System.md > promotions, which is what verify:narrative fails on once the date is past. Two places on purpose: the reader needs the limit in words, and the build needs it in a field. Change one and change the other. AWAITING A NATIVE VERDICT."
   },
-  "src/lib/content/pricing.ts::PACK_BUYS": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "PACK_BUYS",
-    "render": "Pricing page, pack card, what the pack's tokens buy",
-    "narrativeSlot": "artefact",
-    "provenance": "paul-approved",
-    "date": "13/11/2026",
-    "decisionNote": "Added 12/11/2026, from a UX review Paul accepted: the cards printed a price and a token count and left the reader to work out what the tokens were for. The two uses are ALTERNATIVES on one balance, not inclusions, which is why the line says or. Both figures are substituted from TOKEN_PRICE at render, never typed, so the sentence cannot contradict the token table above it. It replaces PACKS[2].includes, which said the same arithmetic on one card only and said it as if the reader got both. AWAITING A NATIVE VERDICT."
-  },
   "src/lib/content/pricing.ts::PACK_BUYS_ROLES": {
     "source": "src/lib/content/pricing.ts",
     "path": "PACK_BUYS_ROLES",
@@ -9494,24 +9458,6 @@ export const LANGUAGE_DECISION_NOTES = {
     "provenance": "paul-approved",
     "date": "13/11/2026",
     "decisionNote": "Added 12/11/2026. The line for a pack whose tokens do not reach the Fit Report's price, which today is the Starter pack alone. It is chosen by arithmetic rather than by pack id, so a price change moves it on its own. AWAITING A NATIVE VERDICT."
-  },
-  "src/lib/content/pricing.ts::ROLE_UNIT.one": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "ROLE_UNIT.one",
-    "render": "Pricing page, the unit after a count of roles, singular",
-    "narrativeSlot": "artefact",
-    "provenance": "paul-approved",
-    "date": "13/11/2026",
-    "decisionNote": "Added 12/11/2026, the same shape as TOKEN_UNIT and for the same reason: the Standard pack leaves exactly one role after a Fit Report, so a hard-coded plural would print 1 roles. Thai has no plural form and both members are the same word. AWAITING A NATIVE VERDICT."
-  },
-  "src/lib/content/pricing.ts::ROLE_UNIT.many": {
-    "source": "src/lib/content/pricing.ts",
-    "path": "ROLE_UNIT.many",
-    "render": "Pricing page, the unit after a count of roles, plural",
-    "narrativeSlot": "artefact",
-    "provenance": "paul-approved",
-    "date": "13/11/2026",
-    "decisionNote": "Added 12/11/2026, the plural member of ROLE_UNIT. Thai has no plural form, so it is the same word as the singular. AWAITING A NATIVE VERDICT."
   },
   "src/lib/content/pricing.ts::CALC_NEARLY": {
     "source": "src/lib/content/pricing.ts",
