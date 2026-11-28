@@ -116,6 +116,7 @@ const MODULE_LABEL: Record<string, string> = {
   job_application_lifecycle: "Job Application Lifecycle",
   bundle: "Europe-Ready bundle",
   token_pack: "Token pack",
+  fit_report: "Fit Report",
 };
 
 export const KIND_LABEL: Record<string, string> = {

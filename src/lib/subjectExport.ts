@@ -215,6 +215,7 @@ const MODULE_LABEL: Record<string, string> = {
   job_application_lifecycle: "Job application support",
   bundle: "Coaching bundle",
   token_pack: "Token pack",
+  fit_report: "Fit Report",
 };
 const ENGAGEMENT_STATUS: Record<string, string> = {
   proposed: "Offered to you",

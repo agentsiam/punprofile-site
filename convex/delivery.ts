@@ -24,6 +24,7 @@ const moduleValidator = v.union(
   v.literal("job_application_lifecycle"),
   v.literal("bundle"),
   v.literal("token_pack"),
+  v.literal("fit_report"),
 );
 
 const engagementStatusValidator = v.union(
