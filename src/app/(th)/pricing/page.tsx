@@ -669,14 +669,15 @@ export default function PricingPage() {
               legible: nothing is scoped or priced until both sides know what
               the aim is.
 
-              **These four are not a list of what 4,900 buys.**
+              **These four are not a list of what 8,900 buys.**
               `01_Project_Foundation.md` publishes the from-price and no
               component list while the structure is open, because a published
               list is what the next caller anchors on. They say how the work
-              runs, in order. Step one names the Fit Report, which that same
-              decision prices in tokens and puts BEFORE the engagement rather
-              than inside it; the token table three bands above is where it is
-              priced and this panel prices nothing.
+              runs, in order. Step one names the Fit Report, which that document
+              prices at 990 THB on its own and also includes inside the
+              engagement, 28/11/2026; it is no longer bought with tokens, which
+              now buy matched roles and nothing else. This panel prices
+              nothing.
 
               The wave is `large:` only and `aria-hidden`: it needs the five
               columns side by side to mean anything, and below that width the
@@ -745,7 +746,7 @@ export default function PricingPage() {
               Paul and Dew at a size worth looking at, 18/11/2026 on Paul\'s
               call. They are already on this page at 48px inside the Serious
               pack\'s promotion, where they are the faces of a free hour; here
-              they are the people a 4,900 engagement is spent with, which is the
+              they are the people an 8,900 engagement is spent with, which is the
               last thing a reader weighs before the button.
 
               The same `COACHES` records and the same `COACH_PHOTO` map as the
