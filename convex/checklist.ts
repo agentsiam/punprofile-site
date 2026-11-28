@@ -4,6 +4,7 @@ import { requireAdmin } from "./leads";
 import { matchingFor, sendMatched, walletFor } from "./workspace";
 import { targetsFor } from "./targets";
 import { checklist, nextStep, MANUAL_STEPS } from "../src/lib/checklist";
+import { SOLD } from "../src/lib/wallet";
 import { seeJob } from "./jobs";
 import { MATCH_FEEDBACK_REASON_IDS } from "../src/lib/content/matchFeedback";
 
@@ -27,7 +28,11 @@ export const forLead = query({
     const lead = await ctx.db.get(leadId);
     if (!lead) return null;
     const now = Date.now();
-    const { wallet, deliverables } = await walletFor(ctx, leadId);
+    const { wallet, deliverables, engagements } = await walletFor(ctx, leadId);
+    /* Anything sold, which is what the first rung reads (`prd.md` § 8). The
+       pack entitlement below answers a different question and keeps its own
+       line. SOLD is imported rather than restated so the two cannot drift. */
+    const sold = engagements.filter((e) => SOLD.has(e.status));
     const live = deliverables.filter((d) => d.status !== "cancelled");
     const calls = (
       await ctx.db.query("consultations").withIndex("by_lead_time", (q) => q.eq("leadId", leadId)).collect()
@@ -57,6 +62,7 @@ export const forLead = query({
     const cv = live.find((d) => d.entitlement === "pack_cv_rewrite") ?? null;
 
     const rows = checklist({
+      saleAt: sold.length ? Math.min(...sold.map((e) => e.agreedAt ?? e._creationTime)) : null,
       packAt: wallet.entitlements.pack ? (wallet.entitlements.pack.agreedAt ?? now) : null,
       access: access
         ? {

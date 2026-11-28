@@ -57,8 +57,8 @@ export type RungSpec = {
 export const RUNGS: RungSpec[] = [
   {
     key: "pack",
-    title: "The pack",
-    entry: "The sale is recorded",
+    title: "The sale",
+    entry: "The sale is recorded, whatever was sold",
     settles: "None. The access email goes by itself",
     owed: "Nothing",
     delivers: "The sign-in code, and the dashboard",
@@ -133,7 +133,7 @@ export type NextStep = {
 /** What to do about each row, and where that is done. */
 const STEP: Record<string, { what: string; theirs?: boolean; action: NextAction }> = {
   pack: {
-    what: "Record the ฿1,500 sale",
+    what: "Record the sale",
     action: { kind: "running", target: "rs-sold", label: "Open what was sold" },
   },
   signin_sent: {

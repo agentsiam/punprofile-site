@@ -55,7 +55,8 @@ export type EngagementRow = {
   createdAt: number;
 };
 
-const SOLD = new Set(["agreed", "active", "completed"]);
+/** An engagement that has been sold, as against one only proposed. */
+export const SOLD = new Set(["agreed", "active", "completed"]);
 
 /** A deliverable has been charged if any negative ledger row points at it. */
 export function chargedIds(ledger: LedgerRow[]) {
