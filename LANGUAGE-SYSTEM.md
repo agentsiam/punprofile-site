@@ -6767,15 +6767,15 @@ path: FAQ[6].a[0]
 render: FAQ page, FAQ[6].a[0]
 narrative_slot: utility
 en: >-
-  Coaching 1:1 starts at 4,900 THB. It depends what you want help with and how far that help goes. We go
+  Coaching 1:1 starts at 8,900 THB. It depends what you want help with and how far that help goes. We go
   through the details and tell you the cost clearly the first time we talk, and then you decide whether to
   go ahead.
 th: >-
-  Coaching 1:1 เริ่มต้นที่ 4,900 บาท
+  Coaching 1:1 เริ่มต้นที่ 8,900 บาท
   ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ
   เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่
 provenance: paul-written
-date: 18/11/2026
+date: 28/11/2026
 term_bindings: []
 decision_note: >-
   Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after
@@ -6785,15 +6785,22 @@ decision_note: >-
   English subject ungrammatical, the second corrected the English by rewriting his subject. Paul then wrote
   the Thai out himself and restored his own fee noun. His English sentence of 23/08/2026 is restored here as
   he wrote it, so the only new text in the record is the price statement his decision supplies.
+  Repriced from 4,900 to 8,900 THB on Paul's decision of 28/11/2026, recorded in
+  `01_Project_Foundation.md`: Coaching 1:1 now includes the Fit Report and both the first and the
+  second call, and 8,900 is the published from-price every surface reads. Only the numeral changed in
+  either language; the sentence either side of it is his, unaltered.
 review:
   structural_calque: pass
-  text_hash: 0f3dd0b4236771d687f22ed7381c7e3f7f433648cd8c0a1f892c3b5756068cfa
+  text_hash: 673c1df394632d4b2af136e939a9d59fac67f41f6bb8cdb7153bdd43b7301044
   prompt_version: structural-calque-v1
   basis: >-
     Paul wrote this Thai himself on 18/11/2026, typed into the session after being shown the model draft,
     and it is his wording that is recorded here. Section 2 makes his wording authoritative without a second
     native review. It did not come through the generated review queue, so the authorship evidence is the
     message itself rather than a one-writer queue line. Both page records carry the same pair and hash.
+    The numeral moved from 4,900 to 8,900 on 28/11/2026 and nothing else in either language moved with
+    it, so the structural-calque verdict carries: a figure substitution inside a sentence that is
+    already his cannot change the architecture a verdict judges.
 ```
 
 <!-- COPY-ENTRY -->
@@ -24967,19 +24974,23 @@ path: PRICING_QUESTIONS[0].a[0]
 render: Pricing page, PRICING_QUESTIONS[0].a[0]
 narrative_slot: utility
 en: >-
-  Coaching 1:1 starts at 4,900 THB.
+  Coaching 1:1 starts at 8,900 THB.
 th: >-
-  Coaching 1:1 เริ่มต้นที่ 4,900 บาท
+  Coaching 1:1 เริ่มต้นที่ 8,900 บาท
 provenance: paul-written
-date: 18/11/2026
+date: 28/11/2026
 term_bindings: []
 decision_note: >-
   Split from one record into two on 18/11/2026 so the published entry price can take the typography of a
   price rather than of a sentence, when `/pricing` closed on a B8 card instead of a B5 question row. The
   text either side of the split is unchanged: EN broke after `4,900 THB.` and TH after `บาท`.
+  Repriced from 4,900 to 8,900 THB on Paul's decision of 28/11/2026, recorded in
+  `01_Project_Foundation.md`: Coaching 1:1 now includes the Fit Report and both the first and the
+  second call, and 8,900 is the published from-price every surface reads. Only the numeral changed in
+  either language; the sentence either side of it is his, unaltered.
 review:
   structural_calque: pass
-  text_hash: ee84ab26cc83bda709c8bb7b6c570420ed7f3f9bbd6088a5532b65f065f63970
+  text_hash: c9f6508b9bca9dde34b6bed61df6b2d89faac7fac872f5f02147f5381c4847c0
   prompt_version: structural-calque-v1
   basis: >-
     Paul's Thai of 18/11/2026, not one word of it altered. The record was one string holding the price
@@ -24988,6 +24999,9 @@ review:
     carries the display size and the qualification sits under it as body copy. That needs the sentence
     boundary to be a record boundary, so a model split it there, between `บาท` and `ค่าบริการ`. The split is
     the model's; both halves are his, and `faq.ts` still carries the undivided original.
+    The numeral moved from 4,900 to 8,900 on 28/11/2026 and nothing else in either language moved with
+    it, so the structural-calque verdict carries: a figure substitution inside a sentence that is
+    already his cannot change the architecture a verdict judges.
 ```
 
 <!-- COPY-ENTRY -->

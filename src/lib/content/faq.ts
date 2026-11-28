@@ -142,8 +142,8 @@ export const FAQ: readonly FaqItem[] = [
     q: { en: "What does Coaching 1:1 cost?", th: "Coaching 1:1 ราคาเท่าไร" },
     a: [
       {
-        en: "Coaching 1:1 starts at 4,900 THB. It depends what you want help with and how far that help goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide whether to go ahead.",
-        th: "Coaching 1:1 เริ่มต้นที่ 4,900 บาท ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่",
+        en: "Coaching 1:1 starts at 8,900 THB. It depends what you want help with and how far that help goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide whether to go ahead.",
+        th: "Coaching 1:1 เริ่มต้นที่ 8,900 บาท ค่าบริการขึ้นอยู่กับเรื่องที่คุณอยากให้เราช่วยและขอบเขตความช่วยเหลือที่ต้องการ เราจะคุยรายละเอียดพร้อมแจ้งค่าใช้จ่ายให้ชัดเจนตั้งแต่ครั้งแรก แล้วคุณค่อยตัดสินใจว่าจะใช้บริการหรือไม่",
       },
       {
         en: "The EU Fit Check is free.",

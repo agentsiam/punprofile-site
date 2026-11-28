@@ -567,8 +567,8 @@ export const PRICING_QUESTIONS: readonly PricingQuestion[] = [
     },
     a: [
       {
-        en: "Coaching 1:1 starts at 4,900 THB.",
-        th: "Coaching 1:1 เริ่มต้นที่ 4,900 บาท",
+        en: "Coaching 1:1 starts at 8,900 THB.",
+        th: "Coaching 1:1 เริ่มต้นที่ 8,900 บาท",
       },
       {
         en: "It depends what you want help with and how far that help goes. We go through the details and tell you the cost clearly the first time we talk, and then you decide whether to go ahead.",

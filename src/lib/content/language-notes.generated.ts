@@ -2409,8 +2409,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "FAQ page, FAQ[6].a[0]",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "18/11/2026",
-    "decisionNote": "Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after the Fit Report and the 1,500 THB pack's complimentary hour rather than containing them. The answer previously opened with the fee and named no figure. Two model drafts of the same day put the figure in front of it and rewrote more than the figure required: the first replaced Paul's fee noun and left the English subject ungrammatical, the second corrected the English by rewriting his subject. Paul then wrote the Thai out himself and restored his own fee noun. His English sentence of 23/08/2026 is restored here as he wrote it, so the only new text in the record is the price statement his decision supplies."
+    "date": "28/11/2026",
+    "decisionNote": "Coaching 1:1 priced from 4,900 THB on Paul's decision of 18/11/2026, option 1a: the engagement begins after the Fit Report and the 1,500 THB pack's complimentary hour rather than containing them. The answer previously opened with the fee and named no figure. Two model drafts of the same day put the figure in front of it and rewrote more than the figure required: the first replaced Paul's fee noun and left the English subject ungrammatical, the second corrected the English by rewriting his subject. Paul then wrote the Thai out himself and restored his own fee noun. His English sentence of 23/08/2026 is restored here as he wrote it, so the only new text in the record is the price statement his decision supplies. Repriced from 4,900 to 8,900 THB on Paul's decision of 28/11/2026, recorded in `01_Project_Foundation.md`: Coaching 1:1 now includes the Fit Report and both the first and the second call, and 8,900 is the published from-price every surface reads. Only the numeral changed in either language; the sentence either side of it is his, unaltered."
   },
   "src/lib/content/faq.ts::FAQ[6].a[1]": {
     "source": "src/lib/content/faq.ts",
@@ -9546,8 +9546,8 @@ export const LANGUAGE_DECISION_NOTES = {
     "render": "Pricing page, PRICING_QUESTIONS[0].a[0]",
     "narrativeSlot": "utility",
     "provenance": "paul-written",
-    "date": "18/11/2026",
-    "decisionNote": "Split from one record into two on 18/11/2026 so the published entry price can take the typography of a price rather than of a sentence, when `/pricing` closed on a B8 card instead of a B5 question row. The text either side of the split is unchanged: EN broke after `4,900 THB.` and TH after `บาท`."
+    "date": "28/11/2026",
+    "decisionNote": "Split from one record into two on 18/11/2026 so the published entry price can take the typography of a price rather than of a sentence, when `/pricing` closed on a B8 card instead of a B5 question row. The text either side of the split is unchanged: EN broke after `4,900 THB.` and TH after `บาท`. Repriced from 4,900 to 8,900 THB on Paul's decision of 28/11/2026, recorded in `01_Project_Foundation.md`: Coaching 1:1 now includes the Fit Report and both the first and the second call, and 8,900 is the published from-price every surface reads. Only the numeral changed in either language; the sentence either side of it is his, unaltered."
   },
   "src/lib/content/pricing.ts::PRICING_QUESTIONS[0].a[1]": {
     "source": "src/lib/content/pricing.ts",
