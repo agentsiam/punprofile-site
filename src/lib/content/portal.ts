@@ -123,11 +123,6 @@ export const TOKENS_MATCHED: Copy = {
   en: "Jobs picked for you: {n}",
   th: "ตำแหน่งงานที่คัดให้แล้ว {n} ตำแหน่ง",
 };
-/** Shown only while a Fit Report is selected, `01_Project_Foundation.md`. */
-export const TOKENS_RESERVED: Copy = {
-  en: "{n} reserved for your Fit Report",
-  th: "กันไว้สำหรับ Fit Report {n} โทเคน",
-};
 export const TOKENS_SPENDABLE: Copy = {
   en: "{n} available for matched jobs",
   th: "ใช้รับตำแหน่งงานที่คัดให้ได้ {n} โทเคน",

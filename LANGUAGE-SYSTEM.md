@@ -36091,28 +36091,6 @@ review:
 ```
 
 <!-- COPY-ENTRY -->
-### `src/lib/content/portal.ts::TOKENS_RESERVED`
-
-```yaml
-id: "src/lib/content/portal.ts::TOKENS_RESERVED"
-source: "src/lib/content/portal.ts"
-path: "TOKENS_RESERVED"
-render: "Candidate page /me, TOKENS_RESERVED"
-narrative_slot: "utility"
-en: "{n} reserved for your Fit Report"
-th: "กันไว้สำหรับ Fit Report {n} โทเคน"
-provenance: "paul-approved"
-date: "02/11/2026"
-term_bindings: []
-decision_note: "Drafted by Claude 02/11/2026 for Fit Report reservations. Shown under the balance while a Fit Report is selected. Dashboard voice: written register, no ครับ. Awaiting Paul's Thai verdict. Paul approved the Thai unchanged in review 02/11/2026."
-review:
-  structural_calque: "pass"
-  text_hash: "a837cebaf23a3a61f4549dad7947c23152a7ddb148168e3e5fcbede99806116e"
-  prompt_version: "structural-calque-v1"
-  basis: "Paul approved this item in review on 02/11/2026."
-```
-
-<!-- COPY-ENTRY -->
 ### `src/lib/content/portal.ts::TOKENS_SPENDABLE`
 
 ```yaml
