@@ -281,7 +281,7 @@ function Overview({
       <div className="space-y-5 large:col-span-2">
         <div className="grid gap-4 medium:grid-cols-3">
           {data.tokens.bought > 0 && (
-            <Stat tint={TINTS[1]} label={pick(C.TOKENS_HEADING)} big={String(data.tokens.balance)} small={t(C.TOKENS_OF, { n: data.tokens.bought })}>
+            <Stat tint={TINTS[1]} label={pick(C.TOKENS_HEADING)} big={String(data.tokens.balance)} small={t(C.TOKENS_OF, { n: data.tokens.credited })}>
               {/* What they can actually use, and never why the rest is held
                   back. Until 28/11/2026 this said "{n} reserved for your Fit
                   Report" above it, which was true while a report was bought
